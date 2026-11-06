@@ -1,0 +1,19 @@
+name: Set up pinned protobuf generators
+description: Install Go and the exact protobuf tools used by this repository.
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      with:
+        go-version-file: go.mod
+    - name: Install protoc 36.1 and protoc-gen-go v1.36.12
+      shell: bash
+      run: |
+        archive="$RUNNER_TEMP/protoc-36.1-linux-x86_64.zip"
+        curl --fail --location --retry 3 \
+          https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-linux-x86_64.zip \
+          --output "$archive"
+        echo "c4bc672d9d49214dc8cafdceadf4df92182d6ca8e3ec65a56b2d7de5602669b4  $archive" | sha256sum --check --strict
+        unzip -q "$archive" -d "$RUNNER_TEMP/protoc"
+        echo "$RUNNER_TEMP/protoc/bin" >> "$GITHUB_PATH"
+        go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12

@@ -1,0 +1,44 @@
+name: Update schemas
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Full lowercase 40-character upstream Git SHA
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: update-schemas-main
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: ./.github/actions/setup-protobuf
+      - name: Update exact upstream revision
+        env:
+          UPSTREAM_REVISION: ${{ inputs.revision }}
+        run: python3 scripts/update-protos.py --revision "$UPSTREAM_REVISION"
+      - run: python3 scripts/update-protos.py --check
+      - run: go test ./...
+      - run: go vet ./...
+      - name: Commit and push changed schemas and bindings
+        env:
+          UPSTREAM_REVISION: ${{ inputs.revision }}
+        shell: bash
+        run: |
+          git add schemas proto
+          if git diff --cached --quiet; then
+            echo 'Schemas and bindings already match the requested revision.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Update Quasar schemas to $UPSTREAM_REVISION"
+          git push origin HEAD:main

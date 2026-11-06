@@ -1,0 +1,2 @@
+# Preserve upstream snapshot bytes, including its trailing blank lines.
+schemas/**/*.proto -text whitespace=-blank-at-eof
