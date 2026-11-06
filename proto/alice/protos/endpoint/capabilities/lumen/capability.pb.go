@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lumen/capability.proto
 
-package lumenspb
+package lumen
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -187,8 +187,8 @@ const file_alice_protos_endpoint_capabilities_lumen_capability_proto_rawDesc = "
 	"\x06TState\x12\"\n" +
 	"\x06Avatar\x18\x01 \x01(\tB\n" +
 	"\xaa\xdd\x1b\x06avatarR\x06avatar\x12\x1f\n" +
-	"\x05Color\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05colorR\x05color:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x96\x02B\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19LumenStateCapabilityProtoZBa.yandex-team.ru/alice/protos/endpoint/capabilities/lumen;lumenspbb\x06proto3"
+	"\x05Color\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05colorR\x05color:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x96\x02B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19LumenStateCapabilityProtoZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lumenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lumen_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/attachment_render/capability.proto
 
-package attachment_rendergpb
+package attachment_render
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -271,8 +271,8 @@ const file_alice_protos_endpoint_capabilities_attachment_render_capability_proto
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x90\x01\n" +
 	"\x10ImageAttachments\x18\x01 \x03(\v2N.NAlice.TAttachmentRenderCapability.TImageAttachmentDirective.TImageAttachmentB\x14\xaa\xdd\x1b\x10image_attachmentR\x10image_attachment\x1a3\n" +
 	"\x10TImageAttachment\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04:'\x92\x82\x19\x1aimage_attachment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xad\x01B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15AttachmentRenderProtoZZa.yandex-team.ru/alice/protos/endpoint/capabilities/attachment_render;attachment_rendergpbb\x06proto3"
+	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04:'\x92\x82\x19\x1aimage_attachment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xad\x01B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15AttachmentRenderProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/attachment_renderb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_attachment_render_capability_proto_rawDescOnce sync.Once

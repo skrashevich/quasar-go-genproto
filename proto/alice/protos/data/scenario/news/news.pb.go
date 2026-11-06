@@ -573,8 +573,8 @@ const file_alice_protos_data_scenario_news_news_proto_rawDesc = "" +
 	"\x06Agency\x18\x02 \x01(\tB\n" +
 	"\xaa\xdd\x1b\x06agencyR\x06agency\x12\x1c\n" +
 	"\x04Logo\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04logoR\x04logo\x12*\n" +
-	"\bIsChosen\x18\x04 \x01(\bB\r\xaa\xdd\x1b\tis_chosenR\tis_chosen:\x04\xa8\xdd\x1b\x04B]\n" +
-	")ru.yandex.alice.protos.data.scenario.newsZ0a.yandex-team.ru/alice/protos/data/scenario/newsb\x06proto3"
+	"\bIsChosen\x18\x04 \x01(\bB\r\xaa\xdd\x1b\tis_chosenR\tis_chosen:\x04\xa8\xdd\x1b\x04B|\n" +
+	")ru.yandex.alice.protos.data.scenario.newsZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/newsb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_news_news_proto_rawDescOnce sync.Once

@@ -77,13 +77,13 @@ func (TAliceResponseProto_TResponse_TButton_TTheme_EPlacement) EnumDescriptor() 
 
 type TAliceResponseProto struct {
 	state                 protoimpl.MessageState                          `protogen:"open.v1"`
-	Header                *TAliceResponseProto_THeader                    `protobuf:"bytes,1,opt,name=Header,json=header,proto3" json:"Header,omitempty"`
-	VoiceResponse         *TAliceResponseProto_TVoiceResponse             `protobuf:"bytes,2,opt,name=VoiceResponse,json=voice_response,proto3" json:"VoiceResponse,omitempty"`
-	Response              *TAliceResponseProto_TResponse                  `protobuf:"bytes,3,opt,name=Response,json=response,proto3" json:"Response,omitempty"`
-	MegamindAnalyticsInfo *response_analytics_info.TResponseAnalyticsInfo `protobuf:"bytes,10,opt,name=MegamindAnalyticsInfo,json=megamind_analytics_info,proto3" json:"MegamindAnalyticsInfo,omitempty"`
-	Error                 *TAliceResponseProto_TError                     `protobuf:"bytes,11,opt,name=Error,json=error,proto3" json:"Error,omitempty"`
-	ForceServerRequest    bool                                            `protobuf:"varint,15,opt,name=ForceServerRequest,json=force_server_request,proto3" json:"ForceServerRequest,omitempty"`
-	IsGeneratedByClient   *bool                                           `protobuf:"varint,17,opt,name=IsGeneratedByClient,json=is_generated_by_client,proto3,oneof" json:"IsGeneratedByClient,omitempty"`
+	Header                *TAliceResponseProto_THeader                    `protobuf:"bytes,1,opt,name=Header,proto3" json:"Header,omitempty"`
+	VoiceResponse         *TAliceResponseProto_TVoiceResponse             `protobuf:"bytes,2,opt,name=VoiceResponse,proto3" json:"VoiceResponse,omitempty"`
+	Response              *TAliceResponseProto_TResponse                  `protobuf:"bytes,3,opt,name=Response,proto3" json:"Response,omitempty"`
+	MegamindAnalyticsInfo *response_analytics_info.TResponseAnalyticsInfo `protobuf:"bytes,10,opt,name=MegamindAnalyticsInfo,proto3" json:"MegamindAnalyticsInfo,omitempty"`
+	Error                 *TAliceResponseProto_TError                     `protobuf:"bytes,11,opt,name=Error,proto3" json:"Error,omitempty"`
+	ForceServerRequest    bool                                            `protobuf:"varint,15,opt,name=ForceServerRequest,proto3" json:"ForceServerRequest,omitempty"`
+	IsGeneratedByClient   *bool                                           `protobuf:"varint,17,opt,name=IsGeneratedByClient,proto3,oneof" json:"IsGeneratedByClient,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -169,11 +169,11 @@ func (x *TAliceResponseProto) GetIsGeneratedByClient() bool {
 
 type TAliceResponseProto_THeader struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	RequestId       *string                `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3,oneof" json:"RequestId,omitempty"`
-	ResponseId      *string                `protobuf:"bytes,2,opt,name=ResponseId,json=response_id,proto3,oneof" json:"ResponseId,omitempty"`
-	SequenceNumber  *uint32                `protobuf:"varint,3,opt,name=SequenceNumber,json=sequence_number,proto3,oneof" json:"SequenceNumber,omitempty"`
-	DialogId        *string                `protobuf:"bytes,4,opt,name=DialogId,json=dialog_id,proto3,oneof" json:"DialogId,omitempty"`
-	ParentRequestId *string                `protobuf:"bytes,7,opt,name=ParentRequestId,json=parent_request_id,proto3,oneof" json:"ParentRequestId,omitempty"`
+	RequestId       *string                `protobuf:"bytes,1,opt,name=RequestId,proto3,oneof" json:"RequestId,omitempty"`
+	ResponseId      *string                `protobuf:"bytes,2,opt,name=ResponseId,proto3,oneof" json:"ResponseId,omitempty"`
+	SequenceNumber  *uint32                `protobuf:"varint,3,opt,name=SequenceNumber,proto3,oneof" json:"SequenceNumber,omitempty"`
+	DialogId        *string                `protobuf:"bytes,4,opt,name=DialogId,proto3,oneof" json:"DialogId,omitempty"`
+	ParentRequestId *string                `protobuf:"bytes,7,opt,name=ParentRequestId,proto3,oneof" json:"ParentRequestId,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -245,9 +245,9 @@ func (x *TAliceResponseProto_THeader) GetParentRequestId() string {
 
 type TAliceResponseProto_TVoiceResponse struct {
 	state            protoimpl.MessageState                            `protogen:"open.v1"`
-	OutputSpeech     *TAliceResponseProto_TVoiceResponse_TOutputSpeech `protobuf:"bytes,1,opt,name=OutputSpeech,json=output_speech,proto3" json:"OutputSpeech,omitempty"`
-	ShouldListen     bool                                              `protobuf:"varint,2,opt,name=ShouldListen,json=should_listen,proto3" json:"ShouldListen,omitempty"`
-	HasVoiceResponse bool                                              `protobuf:"varint,9,opt,name=HasVoiceResponse,json=has_voice_response,proto3" json:"HasVoiceResponse,omitempty"`
+	OutputSpeech     *TAliceResponseProto_TVoiceResponse_TOutputSpeech `protobuf:"bytes,1,opt,name=OutputSpeech,proto3" json:"OutputSpeech,omitempty"`
+	ShouldListen     bool                                              `protobuf:"varint,2,opt,name=ShouldListen,proto3" json:"ShouldListen,omitempty"`
+	HasVoiceResponse bool                                              `protobuf:"varint,9,opt,name=HasVoiceResponse,proto3" json:"HasVoiceResponse,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -305,14 +305,14 @@ func (x *TAliceResponseProto_TVoiceResponse) GetHasVoiceResponse() bool {
 
 type TAliceResponseProto_TResponse struct {
 	state                   protoimpl.MessageState                                  `protogen:"open.v1"`
-	Cards                   []*TAliceResponseProto_TResponse_TCard                  `protobuf:"bytes,1,rep,name=Cards,json=cards,proto3" json:"Cards,omitempty"`
-	Directives              []*directives.TDirective                                `protobuf:"bytes,2,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	Suggest                 *TAliceResponseProto_TResponse_TSuggest                 `protobuf:"bytes,6,opt,name=Suggest,json=suggest,proto3" json:"Suggest,omitempty"`
-	Templates               *structpb.Struct                                        `protobuf:"bytes,7,opt,name=Templates,json=templates,proto3" json:"Templates,omitempty"`
-	Palette                 *structpb.Struct                                        `protobuf:"bytes,10,opt,name=Palette,json=palette,proto3" json:"Palette,omitempty"`
-	IsStreaming             bool                                                    `protobuf:"varint,11,opt,name=IsStreaming,json=is_streaming,proto3" json:"IsStreaming,omitempty"`
-	Alice2EffectiveSettings *TAliceResponseProto_TResponse_TAlice2EffectiveSettings `protobuf:"bytes,13,opt,name=Alice2EffectiveSettings,json=alice_2_effective_settings,proto3" json:"Alice2EffectiveSettings,omitempty"`
-	RequestAnnotation       *annotations.TRequestAnnotation                         `protobuf:"bytes,14,opt,name=RequestAnnotation,json=request_annotation,proto3,oneof" json:"RequestAnnotation,omitempty"`
+	Cards                   []*TAliceResponseProto_TResponse_TCard                  `protobuf:"bytes,1,rep,name=Cards,proto3" json:"Cards,omitempty"`
+	Directives              []*directives.TDirective                                `protobuf:"bytes,2,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	Suggest                 *TAliceResponseProto_TResponse_TSuggest                 `protobuf:"bytes,6,opt,name=Suggest,proto3" json:"Suggest,omitempty"`
+	Templates               *structpb.Struct                                        `protobuf:"bytes,7,opt,name=Templates,proto3" json:"Templates,omitempty"`
+	Palette                 *structpb.Struct                                        `protobuf:"bytes,10,opt,name=Palette,proto3" json:"Palette,omitempty"`
+	IsStreaming             bool                                                    `protobuf:"varint,11,opt,name=IsStreaming,proto3" json:"IsStreaming,omitempty"`
+	Alice2EffectiveSettings *TAliceResponseProto_TResponse_TAlice2EffectiveSettings `protobuf:"bytes,13,opt,name=Alice2EffectiveSettings,proto3" json:"Alice2EffectiveSettings,omitempty"`
+	RequestAnnotation       *annotations.TRequestAnnotation                         `protobuf:"bytes,14,opt,name=RequestAnnotation,proto3,oneof" json:"RequestAnnotation,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -405,8 +405,8 @@ func (x *TAliceResponseProto_TResponse) GetRequestAnnotation() *annotations.TReq
 
 type TAliceResponseProto_TError struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          *uint32                `protobuf:"varint,1,opt,name=Code,json=code,proto3,oneof" json:"Code,omitempty"`
-	Reason        *string                `protobuf:"bytes,2,opt,name=Reason,json=reason,proto3,oneof" json:"Reason,omitempty"`
+	Code          *uint32                `protobuf:"varint,1,opt,name=Code,proto3,oneof" json:"Code,omitempty"`
+	Reason        *string                `protobuf:"bytes,2,opt,name=Reason,proto3,oneof" json:"Reason,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -457,7 +457,7 @@ func (x *TAliceResponseProto_TError) GetReason() string {
 
 type TAliceResponseProto_TVoiceResponse_TOutputSpeech struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Text          *string                `protobuf:"bytes,2,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	Text          *string                `protobuf:"bytes,2,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -501,11 +501,11 @@ func (x *TAliceResponseProto_TVoiceResponse_TOutputSpeech) GetText() string {
 
 type TAliceResponseProto_TResponse_TButton struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Type          string                                        `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Directives    []*directives.TDirective                      `protobuf:"bytes,3,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	Theme         *TAliceResponseProto_TResponse_TButton_TTheme `protobuf:"bytes,5,opt,name=Theme,json=theme,proto3" json:"Theme,omitempty"`
-	Title         *string                                       `protobuf:"bytes,2,opt,name=Title,json=title,proto3,oneof" json:"Title,omitempty"`
-	Text          *string                                       `protobuf:"bytes,4,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	Type          string                                        `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Directives    []*directives.TDirective                      `protobuf:"bytes,3,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	Theme         *TAliceResponseProto_TResponse_TButton_TTheme `protobuf:"bytes,5,opt,name=Theme,proto3" json:"Theme,omitempty"`
+	Title         *string                                       `protobuf:"bytes,2,opt,name=Title,proto3,oneof" json:"Title,omitempty"`
+	Text          *string                                       `protobuf:"bytes,4,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -577,17 +577,17 @@ func (x *TAliceResponseProto_TResponse_TButton) GetText() string {
 
 type TAliceResponseProto_TResponse_TCard struct {
 	state                protoimpl.MessageState                   `protogen:"open.v1"`
-	Type                 string                                   `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Body                 *structpb.Struct                         `protobuf:"bytes,3,opt,name=Body,json=body,proto3" json:"Body,omitempty"`
-	Buttons              []*TAliceResponseProto_TResponse_TButton `protobuf:"bytes,4,rep,name=Buttons,json=buttons,proto3" json:"Buttons,omitempty"`
-	HasBorders           *wrapperspb.BoolValue                    `protobuf:"bytes,5,opt,name=HasBorders,json=has_borders,proto3" json:"HasBorders,omitempty"`
-	ProgressivePrinting  bool                                     `protobuf:"varint,7,opt,name=ProgressivePrinting,json=progressive_printing,proto3" json:"ProgressivePrinting,omitempty"`
-	Sources              []string                                 `protobuf:"bytes,11,rep,name=Sources,json=sources,proto3" json:"Sources,omitempty"`
-	Text                 *string                                  `protobuf:"bytes,2,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
-	CardId               *string                                  `protobuf:"bytes,6,opt,name=CardId,json=card_id,proto3,oneof" json:"CardId,omitempty"`
-	StringBody           *string                                  `protobuf:"bytes,8,opt,name=StringBody,json=string_body,proto3,oneof" json:"StringBody,omitempty"`
-	HideBorders          *bool                                    `protobuf:"varint,10,opt,name=HideBorders,json=hide_borders,proto3,oneof" json:"HideBorders,omitempty"`
-	DontAddToChatHistory *bool                                    `protobuf:"varint,12,opt,name=DontAddToChatHistory,json=dont_add_to_chat_history,proto3,oneof" json:"DontAddToChatHistory,omitempty"`
+	Type                 string                                   `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Body                 *structpb.Struct                         `protobuf:"bytes,3,opt,name=Body,proto3" json:"Body,omitempty"`
+	Buttons              []*TAliceResponseProto_TResponse_TButton `protobuf:"bytes,4,rep,name=Buttons,proto3" json:"Buttons,omitempty"`
+	HasBorders           *wrapperspb.BoolValue                    `protobuf:"bytes,5,opt,name=HasBorders,proto3" json:"HasBorders,omitempty"`
+	ProgressivePrinting  bool                                     `protobuf:"varint,7,opt,name=ProgressivePrinting,proto3" json:"ProgressivePrinting,omitempty"`
+	Sources              []string                                 `protobuf:"bytes,11,rep,name=Sources,proto3" json:"Sources,omitempty"`
+	Text                 *string                                  `protobuf:"bytes,2,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
+	CardId               *string                                  `protobuf:"bytes,6,opt,name=CardId,proto3,oneof" json:"CardId,omitempty"`
+	StringBody           *string                                  `protobuf:"bytes,8,opt,name=StringBody,proto3,oneof" json:"StringBody,omitempty"`
+	HideBorders          *bool                                    `protobuf:"varint,10,opt,name=HideBorders,proto3,oneof" json:"HideBorders,omitempty"`
+	DontAddToChatHistory *bool                                    `protobuf:"varint,12,opt,name=DontAddToChatHistory,proto3,oneof" json:"DontAddToChatHistory,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -701,7 +701,7 @@ func (x *TAliceResponseProto_TResponse_TCard) GetDontAddToChatHistory() bool {
 
 type TAliceResponseProto_TResponse_TSuggest struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Items         []*TAliceResponseProto_TResponse_TButton `protobuf:"bytes,1,rep,name=Items,json=items,proto3" json:"Items,omitempty"`
+	Items         []*TAliceResponseProto_TResponse_TButton `protobuf:"bytes,1,rep,name=Items,proto3" json:"Items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -745,8 +745,8 @@ func (x *TAliceResponseProto_TResponse_TSuggest) GetItems() []*TAliceResponsePro
 
 type TAliceResponseProto_TResponse_TAlice2EffectiveSettings struct {
 	state             protoimpl.MessageState             `protogen:"open.v1"`
-	EffectiveSettings *alice_mode_info.TAlice2ModeInfo   `protobuf:"bytes,1,opt,name=EffectiveSettings,json=effective_settings,proto3" json:"EffectiveSettings,omitempty"`
-	TrialState        *alice_mode_info.TAlice2TrialState `protobuf:"bytes,2,opt,name=TrialState,json=trial_state,proto3" json:"TrialState,omitempty"`
+	EffectiveSettings *alice_mode_info.TAlice2ModeInfo   `protobuf:"bytes,1,opt,name=EffectiveSettings,proto3" json:"EffectiveSettings,omitempty"`
+	TrialState        *alice_mode_info.TAlice2TrialState `protobuf:"bytes,2,opt,name=TrialState,proto3" json:"TrialState,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -797,8 +797,8 @@ func (x *TAliceResponseProto_TResponse_TAlice2EffectiveSettings) GetTrialState()
 
 type TAliceResponseProto_TResponse_TButton_TTheme struct {
 	state         protoimpl.MessageState                                  `protogen:"open.v1"`
-	Placement     TAliceResponseProto_TResponse_TButton_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,json=placement,proto3,enum=NAlice.NAliceApi.TAliceResponseProto_TResponse_TButton_TTheme_EPlacement" json:"Placement,omitempty"`
-	ImageUrl      *string                                                 `protobuf:"bytes,1,opt,name=ImageUrl,json=image_url,proto3,oneof" json:"ImageUrl,omitempty"`
+	Placement     TAliceResponseProto_TResponse_TButton_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,proto3,enum=NAlice.NAliceApi.TAliceResponseProto_TResponse_TButton_TTheme_EPlacement" json:"Placement,omitempty"`
+	ImageUrl      *string                                                 `protobuf:"bytes,1,opt,name=ImageUrl,proto3,oneof" json:"ImageUrl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -851,112 +851,110 @@ var File_alice_protos_api_alicekit_events_alice_response_alice_response_proto pr
 
 const file_alice_protos_api_alicekit_events_alice_response_alice_response_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/alice_response/alice_response.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1aYalice/protos/api/alicekit/analytics/response_analytics_info/response_analytics_info.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xcf#\n" +
-	"\x13TAliceResponseProto\x12Q\n" +
-	"\x06Header\x18\x01 \x01(\v2-.NAlice.NAliceApi.TAliceResponseProto.THeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header\x12o\n" +
-	"\rVoiceResponse\x18\x02 \x01(\v24.NAlice.NAliceApi.TAliceResponseProto.TVoiceResponseB\x12\xaa\xdd\x1b\x0evoice_responseR\x0evoice_response\x12Y\n" +
-	"\bResponse\x18\x03 \x01(\v2/.NAlice.NAliceApi.TAliceResponseProto.TResponseB\f\xaa\xdd\x1b\bresponseR\bresponse\x12}\n" +
+	"Dalice/protos/api/alicekit/events/alice_response/alice_response.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1aYalice/protos/api/alicekit/analytics/response_analytics_info/response_analytics_info.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xd7\x1c\n" +
+	"\x13TAliceResponseProto\x12E\n" +
+	"\x06Header\x18\x01 \x01(\v2-.NAlice.NAliceApi.TAliceResponseProto.THeaderR\x06Header\x12Z\n" +
+	"\rVoiceResponse\x18\x02 \x01(\v24.NAlice.NAliceApi.TAliceResponseProto.TVoiceResponseR\rVoiceResponse\x12K\n" +
+	"\bResponse\x18\x03 \x01(\v2/.NAlice.NAliceApi.TAliceResponseProto.TResponseR\bResponse\x12^\n" +
 	"\x15MegamindAnalyticsInfo\x18\n" +
-	" \x01(\v2(.NAlice.NAliceApi.TResponseAnalyticsInfoB\x1b\xaa\xdd\x1b\x17megamind_analytics_infoR\x17megamind_analytics_info\x12M\n" +
-	"\x05Error\x18\v \x01(\v2,.NAlice.NAliceApi.TAliceResponseProto.TErrorB\t\xaa\xdd\x1b\x05errorR\x05error\x12J\n" +
-	"\x12ForceServerRequest\x18\x0f \x01(\bB\x18\xaa\xdd\x1b\x14force_server_requestR\x14force_server_request\x128\n" +
-	"\x13IsGeneratedByClient\x18\x11 \x01(\bH\x00R\x16is_generated_by_client\x88\x01\x01\x1a\xac\x03\n" +
-	"\aTHeader\x122\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idH\x00R\n" +
-	"request_id\x88\x01\x01\x125\n" +
+	" \x01(\v2(.NAlice.NAliceApi.TResponseAnalyticsInfoR\x15MegamindAnalyticsInfo\x12B\n" +
+	"\x05Error\x18\v \x01(\v2,.NAlice.NAliceApi.TAliceResponseProto.TErrorR\x05Error\x12.\n" +
+	"\x12ForceServerRequest\x18\x0f \x01(\bR\x12ForceServerRequest\x125\n" +
+	"\x13IsGeneratedByClient\x18\x11 \x01(\bH\x00R\x13IsGeneratedByClient\x88\x01\x01\x1a\xc4\x02\n" +
+	"\aTHeader\x12!\n" +
+	"\tRequestId\x18\x01 \x01(\tH\x00R\tRequestId\x88\x01\x01\x12#\n" +
 	"\n" +
-	"ResponseId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vresponse_idH\x01R\vresponse_id\x88\x01\x01\x12A\n" +
-	"\x0eSequenceNumber\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0fsequence_numberH\x02R\x0fsequence_number\x88\x01\x01\x12/\n" +
-	"\bDialogId\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x03R\tdialog_id\x88\x01\x01\x12F\n" +
-	"\x0fParentRequestId\x18\a \x01(\tB\x15\xaa\xdd\x1b\x11parent_request_idH\x04R\x11parent_request_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"ResponseId\x18\x02 \x01(\tH\x01R\n" +
+	"ResponseId\x88\x01\x01\x12+\n" +
+	"\x0eSequenceNumber\x18\x03 \x01(\rH\x02R\x0eSequenceNumber\x88\x01\x01\x12\x1f\n" +
+	"\bDialogId\x18\x04 \x01(\tH\x03R\bDialogId\x88\x01\x01\x12-\n" +
+	"\x0fParentRequestId\x18\a \x01(\tH\x04R\x0fParentRequestId\x88\x01\x01B\f\n" +
 	"\n" +
 	"_RequestIdB\r\n" +
 	"\v_ResponseIdB\x11\n" +
 	"\x0f_SequenceNumberB\v\n" +
 	"\t_DialogIdB\x12\n" +
-	"\x10_ParentRequestIdJ\x04\b\x05\x10\x06J\x04\b\x06\x10\aR\fRefMessageIdR\tSessionId\x1a\xdb\x03\n" +
-	"\x0eTVoiceResponse\x12z\n" +
-	"\fOutputSpeech\x18\x01 \x01(\v2B.NAlice.NAliceApi.TAliceResponseProto.TVoiceResponse.TOutputSpeechB\x11\xaa\xdd\x1b\routput_speechR\routput_speech\x126\n" +
-	"\fShouldListen\x18\x02 \x01(\bB\x11\xaa\xdd\x1b\rshould_listenR\rshould_listen\x12D\n" +
-	"\x10HasVoiceResponse\x18\t \x01(\bB\x16\xaa\xdd\x1b\x12has_voice_responseR\x12has_voice_response\x1aQ\n" +
-	"\rTOutputSpeech\x12%\n" +
-	"\x04Text\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02H\x00R\x04text\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_TextJ\x04\b\x01\x10\x02R\x04Type:\x04\xa8\xdd\x1b\x04J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\n" +
-	"DirectivesR\x0eIsTrashPartialR\rOutputEmotionR\x12UniproxyDirectivesR\x13IsStreamingResponse\x1a\xbd\x14\n" +
-	"\tTResponse\x12V\n" +
-	"\x05Cards\x18\x01 \x03(\v25.NAlice.NAliceApi.TAliceResponseProto.TResponse.TCardB\t\xaa\xdd\x1b\x05cardsR\x05cards\x12L\n" +
+	"\x10_ParentRequestIdJ\x04\b\x05\x10\x06J\x04\b\x06\x10\aR\fRefMessageIdR\tSessionId\x1a\xff\x02\n" +
+	"\x0eTVoiceResponse\x12f\n" +
+	"\fOutputSpeech\x18\x01 \x01(\v2B.NAlice.NAliceApi.TAliceResponseProto.TVoiceResponse.TOutputSpeechR\fOutputSpeech\x12\"\n" +
+	"\fShouldListen\x18\x02 \x01(\bR\fShouldListen\x12*\n" +
+	"\x10HasVoiceResponse\x18\t \x01(\bR\x10HasVoiceResponse\x1a=\n" +
+	"\rTOutputSpeech\x12\x17\n" +
+	"\x04Text\x18\x02 \x01(\tH\x00R\x04Text\x88\x01\x01B\a\n" +
+	"\x05_TextJ\x04\b\x01\x10\x02R\x04TypeJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\n" +
+	"DirectivesR\x0eIsTrashPartialR\rOutputEmotionR\x12UniproxyDirectivesR\x13IsStreamingResponse\x1a\x9d\x10\n" +
+	"\tTResponse\x12K\n" +
+	"\x05Cards\x18\x01 \x03(\v25.NAlice.NAliceApi.TAliceResponseProto.TResponse.TCardR\x05Cards\x12<\n" +
 	"\n" +
-	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12_\n" +
-	"\aSuggest\x18\x06 \x01(\v28.NAlice.NAliceApi.TAliceResponseProto.TResponse.TSuggestB\v\xaa\xdd\x1b\asuggestR\asuggest\x12H\n" +
-	"\tTemplates\x18\a \x01(\v2\x17.google.protobuf.StructB\x11\xa0\xdd\x1b\x05\xaa\xdd\x1b\ttemplatesR\ttemplates\x12B\n" +
+	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12R\n" +
+	"\aSuggest\x18\x06 \x01(\v28.NAlice.NAliceApi.TAliceResponseProto.TResponse.TSuggestR\aSuggest\x125\n" +
+	"\tTemplates\x18\a \x01(\v2\x17.google.protobuf.StructR\tTemplates\x121\n" +
 	"\aPalette\x18\n" +
-	" \x01(\v2\x17.google.protobuf.StructB\x0f\xa0\xdd\x1b\x05\xaa\xdd\x1b\apaletteR\apalette\x123\n" +
-	"\vIsStreaming\x18\v \x01(\bB\x10\xaa\xdd\x1b\fis_streamingR\fis_streaming\x12\xa5\x01\n" +
-	"\x17Alice2EffectiveSettings\x18\r \x01(\v2H.NAlice.NAliceApi.TAliceResponseProto.TResponse.TAlice2EffectiveSettingsB\x1e\xaa\xdd\x1b\x1aalice_2_effective_settingsR\x1aalice_2_effective_settings\x12p\n" +
-	"\x11RequestAnnotation\x18\x0e \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationB\x16\xaa\xdd\x1b\x12request_annotationH\x00R\x12request_annotation\x88\x01\x01\x1a\xb8\x04\n" +
-	"\aTButton\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12L\n" +
+	" \x01(\v2\x17.google.protobuf.StructR\aPalette\x12 \n" +
+	"\vIsStreaming\x18\v \x01(\bR\vIsStreaming\x12\x82\x01\n" +
+	"\x17Alice2EffectiveSettings\x18\r \x01(\v2H.NAlice.NAliceApi.TAliceResponseProto.TResponse.TAlice2EffectiveSettingsR\x17Alice2EffectiveSettings\x12W\n" +
+	"\x11RequestAnnotation\x18\x0e \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationH\x00R\x11RequestAnnotation\x88\x01\x01\x1a\xcb\x03\n" +
+	"\aTButton\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12<\n" +
 	"\n" +
-	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12_\n" +
-	"\x05Theme\x18\x05 \x01(\v2>.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButton.TThemeB\t\xaa\xdd\x1b\x05themeR\x05theme\x12(\n" +
-	"\x05Title\x18\x02 \x01(\tB\r\xaa\xdd\x1b\x05title\xa8\x8d'\x02H\x00R\x05title\x88\x01\x01\x12%\n" +
-	"\x04Text\x18\x04 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02H\x01R\x04text\x88\x01\x01\x1a\xf5\x01\n" +
-	"\x06TTheme\x12v\n" +
-	"\tPlacement\x18\x02 \x01(\x0e2I.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButton.TTheme.EPlacementB\r\xaa\xdd\x1b\tplacementR\tplacement\x12/\n" +
-	"\bImageUrl\x18\x01 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x00R\timage_url\x88\x01\x01\"/\n" +
+	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12T\n" +
+	"\x05Theme\x18\x05 \x01(\v2>.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButton.TThemeR\x05Theme\x12\x19\n" +
+	"\x05Title\x18\x02 \x01(\tH\x00R\x05Title\x88\x01\x01\x12\x17\n" +
+	"\x04Text\x18\x04 \x01(\tH\x01R\x04Text\x88\x01\x01\x1a\xd0\x01\n" +
+	"\x06TTheme\x12g\n" +
+	"\tPlacement\x18\x02 \x01(\x0e2I.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButton.TTheme.EPlacementR\tPlacement\x12\x1f\n" +
+	"\bImageUrl\x18\x01 \x01(\tH\x00R\bImageUrl\x88\x01\x01\"/\n" +
 	"\n" +
 	"EPlacement\x12\x14\n" +
 	"\x10UnknownPlacement\x10\x00\x12\v\n" +
-	"\aNewLine\x10\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\t_ImageUrl:\x04\xa8\xdd\x1b\x04B\b\n" +
+	"\aNewLine\x10\x01B\v\n" +
+	"\t_ImageUrlB\b\n" +
 	"\x06_TitleB\a\n" +
-	"\x05_Text\x1a\x88\x06\n" +
-	"\x05TCard\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x129\n" +
-	"\x04Body\x18\x03 \x01(\v2\x17.google.protobuf.StructB\f\xa0\xdd\x1b\x05\xaa\xdd\x1b\x04bodyR\x04body\x12b\n" +
-	"\aButtons\x18\x04 \x03(\v27.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButtonB\x0f\xaa\xdd\x1b\abuttons\xa8\x8d'\x02R\abuttons\x12L\n" +
+	"\x05_Text\x1a\xbc\x04\n" +
+	"\x05TCard\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12+\n" +
+	"\x04Body\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x04Body\x12Q\n" +
+	"\aButtons\x18\x04 \x03(\v27.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButtonR\aButtons\x12:\n" +
 	"\n" +
-	"HasBorders\x18\x05 \x01(\v2\x1a.google.protobuf.BoolValueB\x0f\xaa\xdd\x1b\vhas_bordersR\vhas_borders\x12K\n" +
-	"\x13ProgressivePrinting\x18\a \x01(\bB\x18\xaa\xdd\x1b\x14progressive_printingR\x14progressive_printing\x12%\n" +
-	"\aSources\x18\v \x03(\tB\v\xaa\xdd\x1b\asourcesR\asources\x12%\n" +
-	"\x04Text\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02H\x00R\x04text\x88\x01\x01\x12)\n" +
-	"\x06CardId\x18\x06 \x01(\tB\v\xaa\xdd\x1b\acard_idH\x01R\acard_id\x88\x01\x01\x125\n" +
+	"HasBorders\x18\x05 \x01(\v2\x1a.google.protobuf.BoolValueR\n" +
+	"HasBorders\x120\n" +
+	"\x13ProgressivePrinting\x18\a \x01(\bR\x13ProgressivePrinting\x12\x18\n" +
+	"\aSources\x18\v \x03(\tR\aSources\x12\x17\n" +
+	"\x04Text\x18\x02 \x01(\tH\x00R\x04Text\x88\x01\x01\x12\x1b\n" +
+	"\x06CardId\x18\x06 \x01(\tH\x01R\x06CardId\x88\x01\x01\x12#\n" +
 	"\n" +
-	"StringBody\x18\b \x01(\tB\x0f\xaa\xdd\x1b\vstring_bodyH\x02R\vstring_body\x88\x01\x01\x128\n" +
+	"StringBody\x18\b \x01(\tH\x02R\n" +
+	"StringBody\x88\x01\x01\x12%\n" +
 	"\vHideBorders\x18\n" +
-	" \x01(\bB\x10\xaa\xdd\x1b\fhide_bordersH\x03R\fhide_borders\x88\x01\x01\x12Y\n" +
-	"\x14DontAddToChatHistory\x18\f \x01(\bB\x1c\xaa\xdd\x1b\x18dont_add_to_chat_historyH\x04R\x18dont_add_to_chat_history\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	" \x01(\bH\x03R\vHideBorders\x88\x01\x01\x127\n" +
+	"\x14DontAddToChatHistory\x18\f \x01(\bH\x04R\x14DontAddToChatHistory\x88\x01\x01B\a\n" +
 	"\x05_TextB\t\n" +
 	"\a_CardIdB\r\n" +
 	"\v_StringBodyB\x0e\n" +
 	"\f_HideBordersB\x17\n" +
 	"\x15_DontAddToChatHistoryJ\x04\b\t\x10\n" +
 	"R\n" +
-	"StringView\x1an\n" +
-	"\bTSuggest\x12X\n" +
-	"\x05Items\x18\x01 \x03(\v27.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButtonB\t\xaa\xdd\x1b\x05itemsR\x05items:\b\xa8\xdd\x1b\x04\xa8\x8d'\x02\x1a\xef\x01\n" +
-	"\x18TAlice2EffectiveSettings\x12o\n" +
-	"\x11EffectiveSettings\x18\x01 \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoB\x16\xaa\xdd\x1b\x12effective_settingsR\x12effective_settings\x12\\\n" +
+	"StringView\x1aY\n" +
+	"\bTSuggest\x12M\n" +
+	"\x05Items\x18\x01 \x03(\v27.NAlice.NAliceApi.TAliceResponseProto.TResponse.TButtonR\x05Items\x1a\xbe\x01\n" +
+	"\x18TAlice2EffectiveSettings\x12V\n" +
+	"\x11EffectiveSettings\x18\x01 \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoR\x11EffectiveSettings\x12J\n" +
 	"\n" +
-	"TrialState\x18\x02 \x01(\v2*.NAlice.NApi.NAlice2Mode.TAlice2TrialStateB\x0f\xaa\xdd\x1b\vtrial_stateR\vtrial_state:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x14\n" +
+	"TrialState\x18\x02 \x01(\v2*.NAlice.NApi.NAlice2Mode.TAlice2TrialStateR\n" +
+	"TrialStateB\x14\n" +
 	"\x12_RequestAnnotationJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\b\x10\tJ\x04\b\t\x10\n" +
-	"J\x04\b\f\x10\rR\x04MetaR\x0eQualityStorageR\vExperimentsR\x19DirectivesExecutionPolicyR\x14ResponseErrorMessageR\x10ChatDialogUpdate\x1ah\n" +
-	"\x06TError\x12!\n" +
-	"\x04Code\x18\x01 \x01(\rB\b\xaa\xdd\x1b\x04codeH\x00R\x04code\x88\x01\x01\x12'\n" +
-	"\x06Reason\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06reasonH\x01R\x06reason\x88\x01\x01B\a\n" +
+	"J\x04\b\f\x10\rR\x04MetaR\x0eQualityStorageR\vExperimentsR\x19DirectivesExecutionPolicyR\x14ResponseErrorMessageR\x10ChatDialogUpdate\x1aR\n" +
+	"\x06TError\x12\x17\n" +
+	"\x04Code\x18\x01 \x01(\rH\x00R\x04Code\x88\x01\x01\x12\x1b\n" +
+	"\x06Reason\x18\x02 \x01(\tH\x01R\x06Reason\x88\x01\x01B\a\n" +
 	"\x05_CodeB\t\n" +
-	"\a_Reason:\x04\xa8\xdd\x1b\x04B\x16\n" +
+	"\a_ReasonB\x16\n" +
 	"\x14_IsGeneratedByClientJ\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x10\x10\x11R\x0eanalytics_infoR\x10OldAnalyticsInfoR\bSessionsR\x15ContainsSensitiveDataR\aVersionR\x11ContentPropertiesR\x15ProactivityLogStorageR\x19CounteractivationFeaturesR\n" +
-	"IsDeferredR\x17EffectiveAlice2SettingsB\x93\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.events.alice_responseB\x12AliceResponseProtoP\x01Z@a.yandex-team.ru/alice/protos/api/alicekit/events/alice_responseb\x06proto3"
+	"IsDeferredR\x17EffectiveAlice2SettingsB\xec\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12AliceResponseProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/alice_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_alice_response_alice_response_proto_rawDescOnce sync.Once

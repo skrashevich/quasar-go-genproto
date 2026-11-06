@@ -267,8 +267,8 @@ func (x *MatterDevice_NetworkInterfaceInfo) GetEthernetMac() []byte {
 }
 
 type MatterDevice_Cluster struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Attributes    map[uint32][]byte      `protobuf:"bytes,1,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	Attributes    []*MatterDevice_Cluster_AttributesEntry `protobuf:"bytes,1,rep,name=attributes,proto3" json:"attributes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -303,7 +303,7 @@ func (*MatterDevice_Cluster) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 2}
 }
 
-func (x *MatterDevice_Cluster) GetAttributes() map[uint32][]byte {
+func (x *MatterDevice_Cluster) GetAttributes() []*MatterDevice_Cluster_AttributesEntry {
 	if x != nil {
 		return x.Attributes
 	}
@@ -311,10 +311,10 @@ func (x *MatterDevice_Cluster) GetAttributes() map[uint32][]byte {
 }
 
 type MatterDevice_Endpoint struct {
-	state             protoimpl.MessageState           `protogen:"open.v1"`
-	ServerClusters    map[uint32]*MatterDevice_Cluster `protobuf:"bytes,1,rep,name=serverClusters,proto3" json:"serverClusters,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	IsBridgeRootNode  *bool                            `protobuf:"varint,2,opt,name=isBridgeRootNode,proto3,oneof" json:"isBridgeRootNode,omitempty"`
-	BridgedDeviceInfo *MatterDevice_DeviceInfo         `protobuf:"bytes,3,opt,name=bridgedDeviceInfo,proto3,oneof" json:"bridgedDeviceInfo,omitempty"`
+	state             protoimpl.MessageState                       `protogen:"open.v1"`
+	ServerClusters    []*MatterDevice_Endpoint_ServerClustersEntry `protobuf:"bytes,1,rep,name=serverClusters,proto3" json:"serverClusters,omitempty"`
+	IsBridgeRootNode  *bool                                        `protobuf:"varint,2,opt,name=isBridgeRootNode,proto3,oneof" json:"isBridgeRootNode,omitempty"`
+	BridgedDeviceInfo *MatterDevice_DeviceInfo                     `protobuf:"bytes,3,opt,name=bridgedDeviceInfo,proto3,oneof" json:"bridgedDeviceInfo,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -349,7 +349,7 @@ func (*MatterDevice_Endpoint) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 3}
 }
 
-func (x *MatterDevice_Endpoint) GetServerClusters() map[uint32]*MatterDevice_Cluster {
+func (x *MatterDevice_Endpoint) GetServerClusters() []*MatterDevice_Endpoint_ServerClustersEntry {
 	if x != nil {
 		return x.ServerClusters
 	}
@@ -371,8 +371,8 @@ func (x *MatterDevice_Endpoint) GetBridgedDeviceInfo() *MatterDevice_DeviceInfo 
 }
 
 type MatterDevice_Endpoints struct {
-	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Endpoints     map[uint32]*MatterDevice_Endpoint `protobuf:"bytes,1,rep,name=endpoints,proto3" json:"endpoints,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                   `protogen:"open.v1"`
+	Endpoints     []*MatterDevice_Endpoints_EndpointsEntry `protobuf:"bytes,1,rep,name=endpoints,proto3" json:"endpoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -407,9 +407,165 @@ func (*MatterDevice_Endpoints) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 4}
 }
 
-func (x *MatterDevice_Endpoints) GetEndpoints() map[uint32]*MatterDevice_Endpoint {
+func (x *MatterDevice_Endpoints) GetEndpoints() []*MatterDevice_Endpoints_EndpointsEntry {
 	if x != nil {
 		return x.Endpoints
+	}
+	return nil
+}
+
+type MatterDevice_Cluster_AttributesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         []byte                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatterDevice_Cluster_AttributesEntry) Reset() {
+	*x = MatterDevice_Cluster_AttributesEntry{}
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatterDevice_Cluster_AttributesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatterDevice_Cluster_AttributesEntry) ProtoMessage() {}
+
+func (x *MatterDevice_Cluster_AttributesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatterDevice_Cluster_AttributesEntry.ProtoReflect.Descriptor instead.
+func (*MatterDevice_Cluster_AttributesEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 2, 0}
+}
+
+func (x *MatterDevice_Cluster_AttributesEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *MatterDevice_Cluster_AttributesEntry) GetValue() []byte {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type MatterDevice_Endpoint_ServerClustersEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *MatterDevice_Cluster  `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatterDevice_Endpoint_ServerClustersEntry) Reset() {
+	*x = MatterDevice_Endpoint_ServerClustersEntry{}
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatterDevice_Endpoint_ServerClustersEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatterDevice_Endpoint_ServerClustersEntry) ProtoMessage() {}
+
+func (x *MatterDevice_Endpoint_ServerClustersEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatterDevice_Endpoint_ServerClustersEntry.ProtoReflect.Descriptor instead.
+func (*MatterDevice_Endpoint_ServerClustersEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 3, 0}
+}
+
+func (x *MatterDevice_Endpoint_ServerClustersEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *MatterDevice_Endpoint_ServerClustersEntry) GetValue() *MatterDevice_Cluster {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type MatterDevice_Endpoints_EndpointsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *MatterDevice_Endpoint `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatterDevice_Endpoints_EndpointsEntry) Reset() {
+	*x = MatterDevice_Endpoints_EndpointsEntry{}
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatterDevice_Endpoints_EndpointsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatterDevice_Endpoints_EndpointsEntry) ProtoMessage() {}
+
+func (x *MatterDevice_Endpoints_EndpointsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_matter_model_proto_device_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatterDevice_Endpoints_EndpointsEntry.ProtoReflect.Descriptor instead.
+func (*MatterDevice_Endpoints_EndpointsEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP(), []int{0, 4, 0}
+}
+
+func (x *MatterDevice_Endpoints_EndpointsEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *MatterDevice_Endpoints_EndpointsEntry) GetValue() *MatterDevice_Endpoint {
+	if x != nil {
+		return x.Value
 	}
 	return nil
 }
@@ -418,7 +574,7 @@ var File_smart_devices_libs_matter_model_proto_device_proto protoreflect.FileDes
 
 const file_smart_devices_libs_matter_model_proto_device_proto_rawDesc = "" +
 	"\n" +
-	"2smart_devices/libs/matter/model/proto/device.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdb\r\n" +
+	"2smart_devices/libs/matter/model/proto/device.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcf\r\n" +
 	"\fMatterDevice\x122\n" +
 	"\x04info\x18\x01 \x01(\v2\x1e.proto.MatterDevice.DeviceInfoR\x04info\x12V\n" +
 	"\x11networkInterfaces\x18\x02 \x01(\v2(.proto.MatterDevice.NetworkInterfaceInfoR\x11networkInterfaces\x12;\n" +
@@ -459,28 +615,29 @@ const file_smart_devices_libs_matter_model_proto_device_proto_rawDesc = "" +
 	"\b_wifiMacB\f\n" +
 	"\n" +
 	"_threadMacB\x0e\n" +
-	"\f_ethernetMac\x1a\x95\x01\n" +
+	"\f_ethernetMac\x1a\x91\x01\n" +
 	"\aCluster\x12K\n" +
 	"\n" +
 	"attributes\x18\x01 \x03(\v2+.proto.MatterDevice.Cluster.AttributesEntryR\n" +
-	"attributes\x1a=\n" +
+	"attributes\x1a9\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01\x1a\xf3\x02\n" +
+	"\x05value\x18\x02 \x01(\fR\x05value\x1a\xef\x02\n" +
 	"\bEndpoint\x12X\n" +
 	"\x0eserverClusters\x18\x01 \x03(\v20.proto.MatterDevice.Endpoint.ServerClustersEntryR\x0eserverClusters\x12/\n" +
 	"\x10isBridgeRootNode\x18\x02 \x01(\bH\x00R\x10isBridgeRootNode\x88\x01\x01\x12Q\n" +
-	"\x11bridgedDeviceInfo\x18\x03 \x01(\v2\x1e.proto.MatterDevice.DeviceInfoH\x01R\x11bridgedDeviceInfo\x88\x01\x01\x1a^\n" +
+	"\x11bridgedDeviceInfo\x18\x03 \x01(\v2\x1e.proto.MatterDevice.DeviceInfoH\x01R\x11bridgedDeviceInfo\x88\x01\x01\x1aZ\n" +
 	"\x13ServerClustersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x121\n" +
-	"\x05value\x18\x02 \x01(\v2\x1b.proto.MatterDevice.ClusterR\x05value:\x028\x01B\x13\n" +
+	"\x05value\x18\x02 \x01(\v2\x1b.proto.MatterDevice.ClusterR\x05valueB\x13\n" +
 	"\x11_isBridgeRootNodeB\x14\n" +
-	"\x12_bridgedDeviceInfo\x1a\xb3\x01\n" +
+	"\x12_bridgedDeviceInfo\x1a\xaf\x01\n" +
 	"\tEndpoints\x12J\n" +
-	"\tendpoints\x18\x01 \x03(\v2,.proto.MatterDevice.Endpoints.EndpointsEntryR\tendpoints\x1aZ\n" +
+	"\tendpoints\x18\x01 \x03(\v2,.proto.MatterDevice.Endpoints.EndpointsEntryR\tendpoints\x1aV\n" +
 	"\x0eEndpointsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x122\n" +
-	"\x05value\x18\x02 \x01(\v2\x1c.proto.MatterDevice.EndpointR\x05value:\x028\x01b\x06proto3"
+	"\x05value\x18\x02 \x01(\v2\x1c.proto.MatterDevice.EndpointR\x05valueB\xa3\x01\n" +
+	"\tcom.protoB\vDeviceProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/matter/model/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_matter_model_proto_device_proto_rawDescOnce sync.Once
@@ -496,15 +653,15 @@ func file_smart_devices_libs_matter_model_proto_device_proto_rawDescGZIP() []byt
 
 var file_smart_devices_libs_matter_model_proto_device_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_smart_devices_libs_matter_model_proto_device_proto_goTypes = []any{
-	(*MatterDevice)(nil),                      // 0: proto.MatterDevice
-	(*MatterDevice_DeviceInfo)(nil),           // 1: proto.MatterDevice.DeviceInfo
-	(*MatterDevice_NetworkInterfaceInfo)(nil), // 2: proto.MatterDevice.NetworkInterfaceInfo
-	(*MatterDevice_Cluster)(nil),              // 3: proto.MatterDevice.Cluster
-	(*MatterDevice_Endpoint)(nil),             // 4: proto.MatterDevice.Endpoint
-	(*MatterDevice_Endpoints)(nil),            // 5: proto.MatterDevice.Endpoints
-	nil,                                       // 6: proto.MatterDevice.Cluster.AttributesEntry
-	nil,                                       // 7: proto.MatterDevice.Endpoint.ServerClustersEntry
-	nil,                                       // 8: proto.MatterDevice.Endpoints.EndpointsEntry
+	(*MatterDevice)(nil),                              // 0: proto.MatterDevice
+	(*MatterDevice_DeviceInfo)(nil),                   // 1: proto.MatterDevice.DeviceInfo
+	(*MatterDevice_NetworkInterfaceInfo)(nil),         // 2: proto.MatterDevice.NetworkInterfaceInfo
+	(*MatterDevice_Cluster)(nil),                      // 3: proto.MatterDevice.Cluster
+	(*MatterDevice_Endpoint)(nil),                     // 4: proto.MatterDevice.Endpoint
+	(*MatterDevice_Endpoints)(nil),                    // 5: proto.MatterDevice.Endpoints
+	(*MatterDevice_Cluster_AttributesEntry)(nil),      // 6: proto.MatterDevice.Cluster.AttributesEntry
+	(*MatterDevice_Endpoint_ServerClustersEntry)(nil), // 7: proto.MatterDevice.Endpoint.ServerClustersEntry
+	(*MatterDevice_Endpoints_EndpointsEntry)(nil),     // 8: proto.MatterDevice.Endpoints.EndpointsEntry
 }
 var file_smart_devices_libs_matter_model_proto_device_proto_depIdxs = []int32{
 	1, // 0: proto.MatterDevice.info:type_name -> proto.MatterDevice.DeviceInfo

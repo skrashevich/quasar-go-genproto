@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/reminders_play/capability.proto
 
-package reminders_playpb
+package reminders_play
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -397,8 +397,8 @@ const file_alice_protos_endpoint_capabilities_reminders_play_capability_proto_ra
 	"\tEPlayType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\v\n" +
 	"\aInstant\x10\x01\x12\x19\n" +
-	"\x15QueueWithConfirmation\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa7\x02B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cRemindersPlayCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/reminders_play;reminders_playpbb\x06proto3"
+	"\x15QueueWithConfirmation\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa7\x02B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cRemindersPlayCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/reminders_playb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_reminders_play_capability_proto_rawDescOnce sync.Once

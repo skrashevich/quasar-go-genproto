@@ -2755,7 +2755,8 @@ const file_infra_proto_logger_api_api_proto_rawDesc = "" +
 	"\n" +
 	"CommonData\x18\x02 \x01(\v22.NProtoLogger.NApi.TReqWriteIotCloudLogs2LogQuasarH\x00R\n" +
 	"CommonData\x88\x01\x01B\r\n" +
-	"\v_CommonDatab\x06proto3"
+	"\v_CommonDataB\xce\x01\n" +
+	"\x15com.NProtoLogger.NApiB\bApiProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/infra/proto_logger/api\xa2\x02\x03NNX\xaa\x02\x11NProtoLogger.NApi\xca\x02\x11NProtoLogger\\NApi\xe2\x02\x1dNProtoLogger\\NApi\\GPBMetadata\xea\x02\x12NProtoLogger::NApib\x06proto3"
 
 var (
 	file_infra_proto_logger_api_api_proto_rawDescOnce sync.Once

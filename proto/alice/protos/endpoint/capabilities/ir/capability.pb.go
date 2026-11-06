@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ir/capability.proto
 
-package irpb
+package ir
 
 import (
 	ir "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/ir"
@@ -27,9 +27,9 @@ const (
 
 type TIrCapability struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIrCapability_TParameters  `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIrCapability_TState       `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIrCapability_TParameters  `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIrCapability_TState       `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,9 +87,9 @@ func (x *TIrCapability) GetState() *TIrCapability_TState {
 
 type TIrRemoteCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIrRemoteCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIrRemoteCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIrRemoteCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIrRemoteCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,10 +219,10 @@ func (*TIrCapability_TState) Descriptor() ([]byte, []int) {
 
 type TIrCapability_TTryIrCommandDirective struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Name              string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,json=key_ids,proto3" json:"KeyIds,omitempty"`
-	Data              *ir.TRemoteData        `protobuf:"bytes,2,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
-	CommandIntervalMs uint32                 `protobuf:"varint,3,opt,name=CommandIntervalMs,json=command_interval_ms,proto3" json:"CommandIntervalMs,omitempty"`
+	Name              string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,proto3" json:"KeyIds,omitempty"`
+	Data              *ir.TRemoteData        `protobuf:"bytes,2,opt,name=Data,proto3" json:"Data,omitempty"`
+	CommandIntervalMs uint32                 `protobuf:"varint,3,opt,name=CommandIntervalMs,proto3" json:"CommandIntervalMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -287,10 +287,10 @@ func (x *TIrCapability_TTryIrCommandDirective) GetCommandIntervalMs() uint32 {
 
 type TIrCapability_TTryIrAcCommandDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AcKey         ir.EAcKey              `protobuf:"varint,1,opt,name=AcKey,json=ac_key,proto3,enum=NAlice.NIr.EAcKey" json:"AcKey,omitempty"`
-	AcState       *ir.TAcState           `protobuf:"bytes,2,opt,name=AcState,json=ac_state,proto3" json:"AcState,omitempty"`
-	Data          *ir.TRemoteData        `protobuf:"bytes,3,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AcKey         ir.EAcKey              `protobuf:"varint,1,opt,name=AcKey,proto3,enum=NAlice.NIr.EAcKey" json:"AcKey,omitempty"`
+	AcState       *ir.TAcState           `protobuf:"bytes,2,opt,name=AcState,proto3" json:"AcState,omitempty"`
+	Data          *ir.TRemoteData        `protobuf:"bytes,3,opt,name=Data,proto3" json:"Data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -355,9 +355,9 @@ func (x *TIrCapability_TTryIrAcCommandDirective) GetData() *ir.TRemoteData {
 
 type TIrCapability_TRecordIrPulseDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	RequestId      string                 `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
-	TimeoutSeconds uint32                 `protobuf:"varint,2,opt,name=TimeoutSeconds,json=timeout_seconds,proto3" json:"TimeoutSeconds,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	RequestId      string                 `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
+	TimeoutSeconds uint32                 `protobuf:"varint,2,opt,name=TimeoutSeconds,proto3" json:"TimeoutSeconds,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -415,8 +415,8 @@ func (x *TIrCapability_TRecordIrPulseDirective) GetTimeoutSeconds() uint32 {
 
 type TIrCapability_TCancelRecordIrPulseDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -467,10 +467,10 @@ func (x *TIrCapability_TCancelRecordIrPulseDirective) GetRequestId() string {
 
 type TIrCapability_TAddIrRemoteDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	Remote        *ir.TRemote            `protobuf:"bytes,2,opt,name=Remote,json=remote,proto3" json:"Remote,omitempty"`
-	RequestId     string                 `protobuf:"bytes,3,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	Remote        *ir.TRemote            `protobuf:"bytes,2,opt,name=Remote,proto3" json:"Remote,omitempty"`
+	RequestId     string                 `protobuf:"bytes,3,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -535,8 +535,8 @@ func (x *TIrCapability_TAddIrRemoteDirective) GetRequestId() string {
 
 type TIrCapability_TForgetIrRemoteDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -586,9 +586,9 @@ func (x *TIrCapability_TForgetIrRemoteDirective) GetEndpointId() string {
 }
 
 type TIrCapability_TRestoreIrRemotesDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Remotes       map[string]*ir.TRemote `protobuf:"bytes,1,rep,name=Remotes,json=remotes,proto3" json:"Remotes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                                   `protogen:"open.v1"`
+	Name          string                                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Remotes       []*TIrCapability_TRestoreIrRemotesDirective_RemotesEntry `protobuf:"bytes,1,rep,name=Remotes,proto3" json:"Remotes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -630,7 +630,7 @@ func (x *TIrCapability_TRestoreIrRemotesDirective) GetName() string {
 	return ""
 }
 
-func (x *TIrCapability_TRestoreIrRemotesDirective) GetRemotes() map[string]*ir.TRemote {
+func (x *TIrCapability_TRestoreIrRemotesDirective) GetRemotes() []*TIrCapability_TRestoreIrRemotesDirective_RemotesEntry {
 	if x != nil {
 		return x.Remotes
 	}
@@ -639,9 +639,9 @@ func (x *TIrCapability_TRestoreIrRemotesDirective) GetRemotes() map[string]*ir.T
 
 type TIrCapability_TIrPulseEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
-	Pulse         []uint32               `protobuf:"varint,2,rep,packed,name=Pulse,json=pulse,proto3" json:"Pulse,omitempty"`
-	Frequency     uint32                 `protobuf:"varint,3,opt,name=Frequency,json=frequency,proto3" json:"Frequency,omitempty"`
+	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
+	Pulse         []uint32               `protobuf:"varint,2,rep,packed,name=Pulse,proto3" json:"Pulse,omitempty"`
+	Frequency     uint32                 `protobuf:"varint,3,opt,name=Frequency,proto3" json:"Frequency,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -735,8 +735,8 @@ func (*TIrCapability_TRestoreIrRemotesEvent) Descriptor() ([]byte, []int) {
 
 type TIrCapability_TAddIrRemoteEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Endpoint      *endpoint.TEndpoint    `protobuf:"bytes,4,opt,name=Endpoint,json=endpoint,proto3" json:"Endpoint,omitempty"`
-	RequestId     string                 `protobuf:"bytes,3,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	Endpoint      *endpoint.TEndpoint    `protobuf:"bytes,4,opt,name=Endpoint,proto3" json:"Endpoint,omitempty"`
+	RequestId     string                 `protobuf:"bytes,3,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -785,9 +785,61 @@ func (x *TIrCapability_TAddIrRemoteEvent) GetRequestId() string {
 	return ""
 }
 
+type TIrCapability_TRestoreIrRemotesDirective_RemotesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *ir.TRemote            `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) Reset() {
+	*x = TIrCapability_TRestoreIrRemotesDirective_RemotesEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_ir_capability_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) ProtoMessage() {}
+
+func (x *TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_ir_capability_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIrCapability_TRestoreIrRemotesDirective_RemotesEntry.ProtoReflect.Descriptor instead.
+func (*TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_ir_capability_proto_rawDescGZIP(), []int{0, 8, 0}
+}
+
+func (x *TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TIrCapability_TRestoreIrRemotesDirective_RemotesEntry) GetValue() *ir.TRemote {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 type TIrRemoteCapability_TParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Remote        *ir.TRemote            `protobuf:"bytes,1,opt,name=Remote,json=remote,proto3" json:"Remote,omitempty"`
+	Remote        *ir.TRemote            `protobuf:"bytes,1,opt,name=Remote,proto3" json:"Remote,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -831,7 +883,7 @@ func (x *TIrRemoteCapability_TParameters) GetRemote() *ir.TRemote {
 
 type TIrRemoteCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AcState       *ir.TAcState           `protobuf:"bytes,1,opt,name=AcState,json=ac_state,proto3" json:"AcState,omitempty"`
+	AcState       *ir.TAcState           `protobuf:"bytes,1,opt,name=AcState,proto3" json:"AcState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -875,9 +927,9 @@ func (x *TIrRemoteCapability_TState) GetAcState() *ir.TAcState {
 
 type TIrRemoteCapability_TSendIrCommandDirective struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Name              string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,json=key_ids,proto3" json:"KeyIds,omitempty"`
-	CommandIntervalMs uint32                 `protobuf:"varint,2,opt,name=CommandIntervalMs,json=command_interval_ms,proto3" json:"CommandIntervalMs,omitempty"`
+	Name              string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,proto3" json:"KeyIds,omitempty"`
+	CommandIntervalMs uint32                 `protobuf:"varint,2,opt,name=CommandIntervalMs,proto3" json:"CommandIntervalMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -935,10 +987,10 @@ func (x *TIrRemoteCapability_TSendIrCommandDirective) GetCommandIntervalMs() uin
 
 type TIrRemoteCapability_TSendIrCustomCommandDirective struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Name              string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,json=key_ids,proto3" json:"KeyIds,omitempty"`
-	Data              *ir.TRemoteData        `protobuf:"bytes,2,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
-	CommandIntervalMs uint32                 `protobuf:"varint,3,opt,name=CommandIntervalMs,json=command_interval_ms,proto3" json:"CommandIntervalMs,omitempty"`
+	Name              string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	KeyIds            []uint32               `protobuf:"varint,1,rep,packed,name=KeyIds,proto3" json:"KeyIds,omitempty"`
+	Data              *ir.TRemoteData        `protobuf:"bytes,2,opt,name=Data,proto3" json:"Data,omitempty"`
+	CommandIntervalMs uint32                 `protobuf:"varint,3,opt,name=CommandIntervalMs,proto3" json:"CommandIntervalMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1003,9 +1055,9 @@ func (x *TIrRemoteCapability_TSendIrCustomCommandDirective) GetCommandIntervalMs
 
 type TIrRemoteCapability_TSendIrAcCommandDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AcKey         ir.EAcKey              `protobuf:"varint,1,opt,name=AcKey,json=ac_key,proto3,enum=NAlice.NIr.EAcKey" json:"AcKey,omitempty"`
-	AcState       *ir.TAcState           `protobuf:"bytes,2,opt,name=AcState,json=ac_state,proto3" json:"AcState,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AcKey         ir.EAcKey              `protobuf:"varint,1,opt,name=AcKey,proto3,enum=NAlice.NIr.EAcKey" json:"AcKey,omitempty"`
+	AcState       *ir.TAcState           `protobuf:"bytes,2,opt,name=AcState,proto3" json:"AcState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1063,7 +1115,7 @@ func (x *TIrRemoteCapability_TSendIrAcCommandDirective) GetAcState() *ir.TAcStat
 
 type TIrRemoteCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TIrRemoteCapability   `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIrRemoteCapability   `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1109,102 +1161,88 @@ var File_alice_protos_endpoint_capabilities_ir_capability_proto protoreflect.Fil
 
 const file_alice_protos_endpoint_capabilities_ir_capability_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/endpoint/capabilities/ir/capability.proto\x12\x06NAlice\x1a\x1dalice/protos/data/ir/ir.proto\x1a&alice/protos/endpoint/capability.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc4\x11\n" +
-	"\rTIrCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Q\n" +
+	"6alice/protos/endpoint/capabilities/ir/capability.proto\x12\x06NAlice\x1a\x1dalice/protos/data/ir/ir.proto\x1a&alice/protos/endpoint/capability.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd8\v\n" +
+	"\rTIrCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12A\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2!.NAlice.TIrCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12=\n" +
-	"\x05State\x18\x03 \x01(\v2\x1c.NAlice.TIrCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a'\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x11RemoteEndpointIDs\x1a\x83\x02\n" +
-	"\x16TTryIrCommandDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06KeyIds\x18\x01 \x03(\rB\v\xaa\xdd\x1b\akey_idsR\akey_ids\x125\n" +
-	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataB\b\xaa\xdd\x1b\x04dataR\x04data\x12G\n" +
-	"\x11CommandIntervalMs\x18\x03 \x01(\rB\x17\xaa\xdd\x1b\x13command_interval_msR\x13command_interval_ms:$\x92\x82\x19\x18try_ir_command_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cW\x1a\x8f\x02\n" +
-	"\x18TTryIrAcCommandDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\x05AcKey\x18\x01 \x01(\x0e2\x12.NAlice.NIr.EAcKeyB\n" +
-	"\xaa\xdd\x1b\x06ac_keyR\x06ac_key\x12=\n" +
-	"\aAcState\x18\x02 \x01(\v2\x14.NAlice.NIr.TAcStateB\f\xaa\xdd\x1b\bac_stateR\bac_state\x125\n" +
-	"\x04Data\x18\x03 \x01(\v2\x17.NAlice.NIr.TRemoteDataB\b\xaa\xdd\x1b\x04dataR\x04data:'\x92\x82\x19\x1btry_ir_ac_command_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cX\x1a\xcc\x01\n" +
-	"\x17TRecordIrPulseDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12<\n" +
-	"\x0eTimeoutSeconds\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0ftimeout_secondsR\x0ftimeout_seconds:%\x92\x82\x19\x19record_ir_pulse_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cY\x1a\x9c\x01\n" +
-	"\x1dTCancelRecordIrPulseDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:-\x92\x82\x19 cancel_record_ir_pulse_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa4\x01\x1a\xf5\x01\n" +
-	"\x15TAddIrRemoteDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"Parameters\x18\x02 \x01(\v2!.NAlice.TIrCapability.TParametersR\n" +
+	"Parameters\x122\n" +
+	"\x05State\x18\x03 \x01(\v2\x1c.NAlice.TIrCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a!\n" +
+	"\x06TStateJ\x04\b\x01\x10\x02R\x11RemoteEndpointIDs\x1a\xa0\x01\n" +
+	"\x16TTryIrCommandDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x16\n" +
+	"\x06KeyIds\x18\x01 \x03(\rR\x06KeyIds\x12+\n" +
+	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataR\x04Data\x12,\n" +
+	"\x11CommandIntervalMs\x18\x03 \x01(\rR\x11CommandIntervalMs\x1a\xb6\x01\n" +
+	"\x18TTryIrAcCommandDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12(\n" +
+	"\x05AcKey\x18\x01 \x01(\x0e2\x12.NAlice.NIr.EAcKeyR\x05AcKey\x12.\n" +
+	"\aAcState\x18\x02 \x01(\v2\x14.NAlice.NIr.TAcStateR\aAcState\x12+\n" +
+	"\x04Data\x18\x03 \x01(\v2\x17.NAlice.NIr.TRemoteDataR\x04Data\x1at\n" +
+	"\x17TRecordIrPulseDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x12&\n" +
+	"\x0eTimeoutSeconds\x18\x02 \x01(\rR\x0eTimeoutSeconds\x1aR\n" +
+	"\x1dTCancelRecordIrPulseDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x1a\x97\x01\n" +
+	"\x15TAddIrRemoteDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x127\n" +
-	"\x06Remote\x18\x02 \x01(\v2\x13.NAlice.NIr.TRemoteB\n" +
-	"\xaa\xdd\x1b\x06remoteR\x06remote\x12-\n" +
-	"\tRequestId\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:#\x92\x82\x19\x17add_ir_remote_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cZ\x1a\x93\x01\n" +
-	"\x18TForgetIrRemoteDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12+\n" +
+	"\x06Remote\x18\x02 \x01(\v2\x13.NAlice.NIr.TRemoteR\x06Remote\x12\x1c\n" +
+	"\tRequestId\x18\x03 \x01(\tR\tRequestId\x1aO\n" +
+	"\x18TForgetIrRemoteDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:&\x92\x82\x19\x1aforget_ir_remote_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c[\x1a\x9c\x02\n" +
-	"\x1aTRestoreIrRemotesDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12d\n" +
-	"\aRemotes\x18\x01 \x03(\v2=.NAlice.TIrCapability.TRestoreIrRemotesDirective.RemotesEntryB\v\xaa\xdd\x1b\aremotesR\aremotes\x1aO\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x1a\xd7\x01\n" +
+	"\x1aTRestoreIrRemotesDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12W\n" +
+	"\aRemotes\x18\x01 \x03(\v2=.NAlice.TIrCapability.TRestoreIrRemotesDirective.RemotesEntryR\aRemotes\x1aK\n" +
 	"\fRemotesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12)\n" +
-	"\x05value\x18\x02 \x01(\v2\x13.NAlice.NIr.TRemoteR\x05value:\x028\x01:(\x92\x82\x19\x1crestore_ir_remotes_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\\\x1a\x96\x01\n" +
-	"\rTIrPulseEvent\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12\x1f\n" +
-	"\x05Pulse\x18\x02 \x03(\rB\t\xaa\xdd\x1b\x05pulseR\x05pulse\x12+\n" +
-	"\tFrequency\x18\x03 \x01(\rB\r\xaa\xdd\x1b\tfrequencyR\tfrequency:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x1b\x1a\"\n" +
-	"\x16TRestoreIrRemotesEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x1c\x1a\xaf\x01\n" +
-	"\x11TAddIrRemoteEvent\x12;\n" +
-	"\bEndpoint\x18\x04 \x01(\v2\x11.NAlice.TEndpointB\f\xaa\xdd\x1b\bendpointR\bendpoint\x12-\n" +
-	"\tRequestId\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\n" +
-	"EndpointIdR\fCapabilities:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c#\"\xc3\t\n" +
-	"\x13TIrRemoteCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"\x05value\x18\x02 \x01(\v2\x13.NAlice.NIr.TRemoteR\x05value\x1aa\n" +
+	"\rTIrPulseEvent\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x12\x14\n" +
+	"\x05Pulse\x18\x02 \x03(\rR\x05Pulse\x12\x1c\n" +
+	"\tFrequency\x18\x03 \x01(\rR\tFrequency\x1a\x18\n" +
+	"\x16TRestoreIrRemotesEvent\x1a\x86\x01\n" +
+	"\x11TAddIrRemoteEvent\x12-\n" +
+	"\bEndpoint\x18\x04 \x01(\v2\x11.NAlice.TEndpointR\bEndpoint\x12\x1c\n" +
+	"\tRequestId\x18\x03 \x01(\tR\tRequestIdJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\n" +
+	"EndpointIdR\fCapabilities\"\xbc\x06\n" +
+	"\x13TIrRemoteCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TIrRemoteCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TIrRemoteCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1aL\n" +
-	"\vTParameters\x127\n" +
-	"\x06Remote\x18\x01 \x01(\v2\x13.NAlice.NIr.TRemoteB\n" +
-	"\xaa\xdd\x1b\x06remoteR\x06remote:\x04\xa8\xdd\x1b\x04\x1aM\n" +
-	"\x06TState\x12=\n" +
-	"\aAcState\x18\x01 \x01(\v2\x14.NAlice.NIr.TAcStateB\f\xaa\xdd\x1b\bac_stateR\bac_state:\x04\xa8\xdd\x1b\x04\x1a\xce\x01\n" +
-	"\x17TSendIrCommandDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06KeyIds\x18\x01 \x03(\rB\v\xaa\xdd\x1b\akey_idsR\akey_ids\x12G\n" +
-	"\x11CommandIntervalMs\x18\x02 \x01(\rB\x17\xaa\xdd\x1b\x13command_interval_msR\x13command_interval_ms:%\x92\x82\x19\x19send_ir_command_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c]\x1a\x93\x02\n" +
-	"\x1dTSendIrCustomCommandDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06KeyIds\x18\x01 \x03(\rB\v\xaa\xdd\x1b\akey_idsR\akey_ids\x125\n" +
-	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataB\b\xaa\xdd\x1b\x04dataR\x04data\x12G\n" +
-	"\x11CommandIntervalMs\x18\x03 \x01(\rB\x17\xaa\xdd\x1b\x13command_interval_msR\x13command_interval_ms:-\x92\x82\x19 send_ir_custom_command_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x88\x04\x1a\xda\x01\n" +
-	"\x19TSendIrAcCommandDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\x05AcKey\x18\x01 \x01(\x0e2\x12.NAlice.NIr.EAcKeyB\n" +
-	"\xaa\xdd\x1b\x06ac_keyR\x06ac_key\x12=\n" +
-	"\aAcState\x18\x02 \x01(\v2\x14.NAlice.NIr.TAcStateB\f\xaa\xdd\x1b\bac_stateR\bac_state:(\x92\x82\x19\x1csend_ir_ac_command_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c^\x1aj\n" +
-	"\x11TUpdateStateEvent\x12K\n" +
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TIrRemoteCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TIrRemoteCapability.TStateR\x05State\x1a:\n" +
+	"\vTParameters\x12+\n" +
+	"\x06Remote\x18\x01 \x01(\v2\x13.NAlice.NIr.TRemoteR\x06Remote\x1a8\n" +
+	"\x06TState\x12.\n" +
+	"\aAcState\x18\x01 \x01(\v2\x14.NAlice.NIr.TAcStateR\aAcState\x1at\n" +
+	"\x17TSendIrCommandDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x16\n" +
+	"\x06KeyIds\x18\x01 \x03(\rR\x06KeyIds\x12,\n" +
+	"\x11CommandIntervalMs\x18\x02 \x01(\rR\x11CommandIntervalMs\x1a\xa7\x01\n" +
+	"\x1dTSendIrCustomCommandDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x16\n" +
+	"\x06KeyIds\x18\x01 \x03(\rR\x06KeyIds\x12+\n" +
+	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataR\x04Data\x12,\n" +
+	"\x11CommandIntervalMs\x18\x03 \x01(\rR\x11CommandIntervalMs\x1a\x8a\x01\n" +
+	"\x19TSendIrAcCommandDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12(\n" +
+	"\x05AcKey\x18\x01 \x01(\x0e2\x12.NAlice.NIr.EAcKeyR\x05AcKey\x12.\n" +
+	"\aAcState\x18\x02 \x01(\v2\x14.NAlice.NIr.TAcStateR\aAcState\x1aP\n" +
+	"\x11TUpdateStateEvent\x12;\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1b.NAlice.TIrRemoteCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x1d:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c$B~\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11IrCapabilityProtoZ;a.yandex-team.ru/alice/protos/endpoint/capabilities/ir;irpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x1b.NAlice.TIrRemoteCapabilityR\n" +
+	"CapabilityB\xac\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ir\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ir_capability_proto_rawDescOnce sync.Once
@@ -1220,33 +1258,33 @@ func file_alice_protos_endpoint_capabilities_ir_capability_proto_rawDescGZIP() [
 
 var file_alice_protos_endpoint_capabilities_ir_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_alice_protos_endpoint_capabilities_ir_capability_proto_goTypes = []any{
-	(*TIrCapability)(nil),                                     // 0: NAlice.TIrCapability
-	(*TIrRemoteCapability)(nil),                               // 1: NAlice.TIrRemoteCapability
-	(*TIrCapability_TParameters)(nil),                         // 2: NAlice.TIrCapability.TParameters
-	(*TIrCapability_TState)(nil),                              // 3: NAlice.TIrCapability.TState
-	(*TIrCapability_TTryIrCommandDirective)(nil),              // 4: NAlice.TIrCapability.TTryIrCommandDirective
-	(*TIrCapability_TTryIrAcCommandDirective)(nil),            // 5: NAlice.TIrCapability.TTryIrAcCommandDirective
-	(*TIrCapability_TRecordIrPulseDirective)(nil),             // 6: NAlice.TIrCapability.TRecordIrPulseDirective
-	(*TIrCapability_TCancelRecordIrPulseDirective)(nil),       // 7: NAlice.TIrCapability.TCancelRecordIrPulseDirective
-	(*TIrCapability_TAddIrRemoteDirective)(nil),               // 8: NAlice.TIrCapability.TAddIrRemoteDirective
-	(*TIrCapability_TForgetIrRemoteDirective)(nil),            // 9: NAlice.TIrCapability.TForgetIrRemoteDirective
-	(*TIrCapability_TRestoreIrRemotesDirective)(nil),          // 10: NAlice.TIrCapability.TRestoreIrRemotesDirective
-	(*TIrCapability_TIrPulseEvent)(nil),                       // 11: NAlice.TIrCapability.TIrPulseEvent
-	(*TIrCapability_TRestoreIrRemotesEvent)(nil),              // 12: NAlice.TIrCapability.TRestoreIrRemotesEvent
-	(*TIrCapability_TAddIrRemoteEvent)(nil),                   // 13: NAlice.TIrCapability.TAddIrRemoteEvent
-	nil,                                                       // 14: NAlice.TIrCapability.TRestoreIrRemotesDirective.RemotesEntry
-	(*TIrRemoteCapability_TParameters)(nil),                   // 15: NAlice.TIrRemoteCapability.TParameters
-	(*TIrRemoteCapability_TState)(nil),                        // 16: NAlice.TIrRemoteCapability.TState
-	(*TIrRemoteCapability_TSendIrCommandDirective)(nil),       // 17: NAlice.TIrRemoteCapability.TSendIrCommandDirective
-	(*TIrRemoteCapability_TSendIrCustomCommandDirective)(nil), // 18: NAlice.TIrRemoteCapability.TSendIrCustomCommandDirective
-	(*TIrRemoteCapability_TSendIrAcCommandDirective)(nil),     // 19: NAlice.TIrRemoteCapability.TSendIrAcCommandDirective
-	(*TIrRemoteCapability_TUpdateStateEvent)(nil),             // 20: NAlice.TIrRemoteCapability.TUpdateStateEvent
-	(*endpoint.TCapability_TMeta)(nil),                        // 21: NAlice.TCapability.TMeta
-	(*ir.TRemoteData)(nil),                                    // 22: NAlice.NIr.TRemoteData
-	(ir.EAcKey)(0),                                            // 23: NAlice.NIr.EAcKey
-	(*ir.TAcState)(nil),                                       // 24: NAlice.NIr.TAcState
-	(*ir.TRemote)(nil),                                        // 25: NAlice.NIr.TRemote
-	(*endpoint.TEndpoint)(nil),                                // 26: NAlice.TEndpoint
+	(*TIrCapability)(nil),                                         // 0: NAlice.TIrCapability
+	(*TIrRemoteCapability)(nil),                                   // 1: NAlice.TIrRemoteCapability
+	(*TIrCapability_TParameters)(nil),                             // 2: NAlice.TIrCapability.TParameters
+	(*TIrCapability_TState)(nil),                                  // 3: NAlice.TIrCapability.TState
+	(*TIrCapability_TTryIrCommandDirective)(nil),                  // 4: NAlice.TIrCapability.TTryIrCommandDirective
+	(*TIrCapability_TTryIrAcCommandDirective)(nil),                // 5: NAlice.TIrCapability.TTryIrAcCommandDirective
+	(*TIrCapability_TRecordIrPulseDirective)(nil),                 // 6: NAlice.TIrCapability.TRecordIrPulseDirective
+	(*TIrCapability_TCancelRecordIrPulseDirective)(nil),           // 7: NAlice.TIrCapability.TCancelRecordIrPulseDirective
+	(*TIrCapability_TAddIrRemoteDirective)(nil),                   // 8: NAlice.TIrCapability.TAddIrRemoteDirective
+	(*TIrCapability_TForgetIrRemoteDirective)(nil),                // 9: NAlice.TIrCapability.TForgetIrRemoteDirective
+	(*TIrCapability_TRestoreIrRemotesDirective)(nil),              // 10: NAlice.TIrCapability.TRestoreIrRemotesDirective
+	(*TIrCapability_TIrPulseEvent)(nil),                           // 11: NAlice.TIrCapability.TIrPulseEvent
+	(*TIrCapability_TRestoreIrRemotesEvent)(nil),                  // 12: NAlice.TIrCapability.TRestoreIrRemotesEvent
+	(*TIrCapability_TAddIrRemoteEvent)(nil),                       // 13: NAlice.TIrCapability.TAddIrRemoteEvent
+	(*TIrCapability_TRestoreIrRemotesDirective_RemotesEntry)(nil), // 14: NAlice.TIrCapability.TRestoreIrRemotesDirective.RemotesEntry
+	(*TIrRemoteCapability_TParameters)(nil),                       // 15: NAlice.TIrRemoteCapability.TParameters
+	(*TIrRemoteCapability_TState)(nil),                            // 16: NAlice.TIrRemoteCapability.TState
+	(*TIrRemoteCapability_TSendIrCommandDirective)(nil),           // 17: NAlice.TIrRemoteCapability.TSendIrCommandDirective
+	(*TIrRemoteCapability_TSendIrCustomCommandDirective)(nil),     // 18: NAlice.TIrRemoteCapability.TSendIrCustomCommandDirective
+	(*TIrRemoteCapability_TSendIrAcCommandDirective)(nil),         // 19: NAlice.TIrRemoteCapability.TSendIrAcCommandDirective
+	(*TIrRemoteCapability_TUpdateStateEvent)(nil),                 // 20: NAlice.TIrRemoteCapability.TUpdateStateEvent
+	(*endpoint.TCapability_TMeta)(nil),                            // 21: NAlice.TCapability.TMeta
+	(*ir.TRemoteData)(nil),                                        // 22: NAlice.NIr.TRemoteData
+	(ir.EAcKey)(0),                                                // 23: NAlice.NIr.EAcKey
+	(*ir.TAcState)(nil),                                           // 24: NAlice.NIr.TAcState
+	(*ir.TRemote)(nil),                                            // 25: NAlice.NIr.TRemote
+	(*endpoint.TEndpoint)(nil),                                    // 26: NAlice.TEndpoint
 }
 var file_alice_protos_endpoint_capabilities_ir_capability_proto_depIdxs = []int32{
 	21, // 0: NAlice.TIrCapability.Meta:type_name -> NAlice.TCapability.TMeta

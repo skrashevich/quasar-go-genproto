@@ -24,9 +24,8 @@ const (
 )
 
 type TSpeechSession struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/api/speech_mode/session/speech_session.proto.
-	SpeechMode        *mode.TSpeechMode                  `protobuf:"bytes,1,opt,name=SpeechMode,json=speech_mode,proto3" json:"SpeechMode,omitempty"`
+	state             protoimpl.MessageState             `protogen:"open.v1"`
+	SpeechMode        *mode.TSpeechMode                  `protobuf:"bytes,1,opt,name=SpeechMode,proto3" json:"SpeechMode,omitempty"`
 	InitialRequestRef *TSpeechSession_TInitialRequestRef `protobuf:"bytes,2,opt,name=InitialRequestRef,json=initial_request_ref,proto3" json:"InitialRequestRef,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -62,7 +61,6 @@ func (*TSpeechSession) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_speech_mode_session_speech_session_proto_rawDescGZIP(), []int{0}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/speech_mode/session/speech_session.proto.
 func (x *TSpeechSession) GetSpeechMode() *mode.TSpeechMode {
 	if x != nil {
 		return x.SpeechMode
@@ -133,10 +131,11 @@ var File_alice_protos_api_speech_mode_session_speech_session_proto protoreflect.
 
 const file_alice_protos_api_speech_mode_session_speech_session_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/api/speech_mode/session/speech_session.proto\x12\x06NAlice\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc7\x02\n" +
-	"\x0eTSpeechSession\x12G\n" +
+	"9alice/protos/api/speech_mode/session/speech_session.proto\x12\x06NAlice\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xad\x02\n" +
+	"\x0eTSpeechSession\x123\n" +
 	"\n" +
-	"SpeechMode\x18\x01 \x01(\v2\x13.NAlice.TSpeechModeB\x11\xaa\xdd\x1b\vspeech_mode\x18\x01R\vspeech_mode\x12r\n" +
+	"SpeechMode\x18\x01 \x01(\v2\x13.NAlice.TSpeechModeR\n" +
+	"SpeechMode\x12r\n" +
 	"\x11InitialRequestRef\x18\x02 \x01(\v2).NAlice.TSpeechSession.TInitialRequestRefB\x17\xaa\xdd\x1b\x13initial_request_refR\x13initial_request_ref\x1ar\n" +
 	"\x12TInitialRequestRef\x12-\n" +
 	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
@@ -144,7 +143,9 @@ const file_alice_protos_api_speech_mode_session_speech_session_proto_rawDesc = "
 	"request_id\x12-\n" +
 	"\tMessageId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"message_idR\n" +
-	"message_id:\x04\xa8\xdd\x1b\x04B7Z5a.yandex-team.ru/alice/protos/api/speech_mode/sessionb\x06proto3"
+	"message_idB\xae\x01\n" +
+	"\n" +
+	"com.NAliceB\x12SpeechSessionProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/speech_mode/session\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_speech_mode_session_speech_session_proto_rawDescOnce sync.Once

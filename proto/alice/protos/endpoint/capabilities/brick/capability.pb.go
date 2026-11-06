@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/brick/capability.proto
 
-package brickpb
+package brick
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -130,9 +130,9 @@ func (TBrickCapability_ESubscriptionStatus) EnumDescriptor() ([]byte, []int) {
 
 type TBrickCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBrickCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBrickCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBrickCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBrickCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -225,13 +225,12 @@ func (*TBrickCapability_TParameters) Descriptor() ([]byte, []int) {
 }
 
 type TBrickCapability_TState struct {
-	state          protoimpl.MessageState        `protogen:"open.v1"`
-	BrickStatus    TBrickCapability_EBrickStatus `protobuf:"varint,1,opt,name=BrickStatus,json=brick_status,proto3,enum=NAlice.TBrickCapability_EBrickStatus" json:"BrickStatus,omitempty"`
-	DisabledReason string                        `protobuf:"bytes,2,opt,name=DisabledReason,json=disabled_reason,proto3" json:"DisabledReason,omitempty"`
-	StatusUrl      string                        `protobuf:"bytes,3,opt,name=StatusUrl,json=status_url,proto3" json:"StatusUrl,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/brick/capability.proto.
-	SubscriptionMode   bool                                 `protobuf:"varint,4,opt,name=SubscriptionMode,json=subscription_mode,proto3" json:"SubscriptionMode,omitempty"`
-	SubscriptionStatus TBrickCapability_ESubscriptionStatus `protobuf:"varint,5,opt,name=SubscriptionStatus,json=subscription_status,proto3,enum=NAlice.TBrickCapability_ESubscriptionStatus" json:"SubscriptionStatus,omitempty"`
+	state              protoimpl.MessageState               `protogen:"open.v1"`
+	BrickStatus        TBrickCapability_EBrickStatus        `protobuf:"varint,1,opt,name=BrickStatus,proto3,enum=NAlice.TBrickCapability_EBrickStatus" json:"BrickStatus,omitempty"`
+	DisabledReason     string                               `protobuf:"bytes,2,opt,name=DisabledReason,proto3" json:"DisabledReason,omitempty"`
+	StatusUrl          string                               `protobuf:"bytes,3,opt,name=StatusUrl,proto3" json:"StatusUrl,omitempty"`
+	SubscriptionMode   bool                                 `protobuf:"varint,4,opt,name=SubscriptionMode,proto3" json:"SubscriptionMode,omitempty"`
+	SubscriptionStatus TBrickCapability_ESubscriptionStatus `protobuf:"varint,5,opt,name=SubscriptionStatus,proto3,enum=NAlice.TBrickCapability_ESubscriptionStatus" json:"SubscriptionStatus,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -287,7 +286,6 @@ func (x *TBrickCapability_TState) GetStatusUrl() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/brick/capability.proto.
 func (x *TBrickCapability_TState) GetSubscriptionMode() bool {
 	if x != nil {
 		return x.SubscriptionMode
@@ -306,23 +304,20 @@ var File_alice_protos_endpoint_capabilities_brick_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_brick_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/brick/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd4\x06\n" +
-	"\x10TBrickCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/brick/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xab\x05\n" +
+	"\x10TBrickCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TBrickCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TBrickCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x95\x03\n" +
-	"\x06TState\x12Z\n" +
-	"\vBrickStatus\x18\x01 \x01(\x0e2%.NAlice.TBrickCapability.EBrickStatusB\x10\xaa\xdd\x1b\fbrick_statusR\fbrick_status\x12<\n" +
-	"\x0eDisabledReason\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fdisabled_reasonR\x0fdisabled_reason\x12-\n" +
-	"\tStatusUrl\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"status_urlR\n" +
-	"status_url\x12D\n" +
-	"\x10SubscriptionMode\x18\x04 \x01(\bB\x17\xaa\xdd\x1b\x11subscription_mode\x18\x01R\x11subscription_mode\x12v\n" +
-	"\x12SubscriptionStatus\x18\x05 \x01(\x0e2,.NAlice.TBrickCapability.ESubscriptionStatusB\x17\xaa\xdd\x1b\x13subscription_statusR\x13subscription_status:\x04\xa8\xdd\x1b\x04\"U\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TBrickCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TBrickCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xa1\x02\n" +
+	"\x06TState\x12G\n" +
+	"\vBrickStatus\x18\x01 \x01(\x0e2%.NAlice.TBrickCapability.EBrickStatusR\vBrickStatus\x12&\n" +
+	"\x0eDisabledReason\x18\x02 \x01(\tR\x0eDisabledReason\x12\x1c\n" +
+	"\tStatusUrl\x18\x03 \x01(\tR\tStatusUrl\x12*\n" +
+	"\x10SubscriptionMode\x18\x04 \x01(\bR\x10SubscriptionMode\x12\\\n" +
+	"\x12SubscriptionStatus\x18\x05 \x01(\x0e2,.NAlice.TBrickCapability.ESubscriptionStatusR\x12SubscriptionStatus\"U\n" +
 	"\fEBrickStatus\x12\v\n" +
 	"\aUnknown\x10\x00\x12\t\n" +
 	"\x05Brick\x10\x01\x12\f\n" +
@@ -333,9 +328,9 @@ const file_alice_protos_endpoint_capabilities_brick_capability_proto_rawDesc = "
 	"\x13ESubscriptionStatus\x12\x17\n" +
 	"\x13SubscriptionUnknown\x10\x00\x12\x18\n" +
 	"\x14SubscriptionDisabled\x10\x01\x12\x17\n" +
-	"\x13SubscriptionEnabled\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cCB}\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"BrickProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/brick;brickpbb\x06proto3"
+	"\x13SubscriptionEnabled\x10\x02B\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/brick\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_brick_capability_proto_rawDescOnce sync.Once

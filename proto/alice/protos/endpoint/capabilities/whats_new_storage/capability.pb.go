@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/whats_new_storage/capability.proto
 
-package whatsnewstoragepb
+package whats_new_storage
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -207,8 +207,8 @@ const file_alice_protos_endpoint_capabilities_whats_new_storage_capability_proto
 	"\x05State\x18\x03 \x01(\v2).NAlice.TWhatsNewStorageCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aD\n" +
-	"\x1dTOpenWhatsNewStorageDirective:#\x92\x82\x19\x16open_whats_new_storage\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf6\x01B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eWhatsNewStorageCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/whats_new_storage;whatsnewstoragepbb\x06proto3"
+	"\x1dTOpenWhatsNewStorageDirective:#\x92\x82\x19\x16open_whats_new_storage\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf6\x01B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eWhatsNewStorageCapabilityProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/whats_new_storageb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_whats_new_storage_capability_proto_rawDescOnce sync.Once

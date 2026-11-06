@@ -24,10 +24,10 @@ const (
 
 type TFmRadioInfo struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	FmRadioIds     []string               `protobuf:"bytes,1,rep,name=FmRadioIds,json=fm_radio_ids,proto3" json:"FmRadioIds,omitempty"`
-	SimpleNlu      bool                   `protobuf:"varint,2,opt,name=SimpleNlu,json=simple_nlu,proto3" json:"SimpleNlu,omitempty"`
-	ContentMetatag string                 `protobuf:"bytes,3,opt,name=ContentMetatag,json=content_metatag,proto3" json:"ContentMetatag,omitempty"`
-	TrackId        string                 `protobuf:"bytes,4,opt,name=TrackId,json=track_id,proto3" json:"TrackId,omitempty"`
+	FmRadioIds     []string               `protobuf:"bytes,1,rep,name=FmRadioIds,proto3" json:"FmRadioIds,omitempty"`
+	SimpleNlu      bool                   `protobuf:"varint,2,opt,name=SimpleNlu,proto3" json:"SimpleNlu,omitempty"`
+	ContentMetatag string                 `protobuf:"bytes,3,opt,name=ContentMetatag,proto3" json:"ContentMetatag,omitempty"`
+	TrackId        string                 `protobuf:"bytes,4,opt,name=TrackId,proto3" json:"TrackId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -94,15 +94,15 @@ var File_alice_protos_data_fm_radio_info_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_fm_radio_info_proto_rawDesc = "" +
 	"\n" +
-	"%alice/protos/data/fm_radio_info.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbc\x01\n" +
-	"\fTFmRadioInfo\x12 \n" +
+	"%alice/protos/data/fm_radio_info.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8e\x01\n" +
+	"\fTFmRadioInfo\x12\x1e\n" +
 	"\n" +
-	"FmRadioIds\x18\x01 \x03(\tR\ffm_radio_ids\x12\x1d\n" +
-	"\tSimpleNlu\x18\x02 \x01(\bR\n" +
-	"simple_nlu\x12<\n" +
-	"\x0eContentMetatag\x18\x03 \x01(\tB\x13\xaa\xdd\x1b\x0fcontent_metatagR\x0fcontent_metatag\x12'\n" +
-	"\aTrackId\x18\x04 \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"FmRadioIds\x18\x01 \x03(\tR\n" +
+	"FmRadioIds\x12\x1c\n" +
+	"\tSimpleNlu\x18\x02 \x01(\bR\tSimpleNlu\x12&\n" +
+	"\x0eContentMetatag\x18\x03 \x01(\tR\x0eContentMetatag\x12\x18\n" +
+	"\aTrackId\x18\x04 \x01(\tR\aTrackIdB\xb8\x01\n" +
+	"\x10com.NAlice.NDataB\x10FmRadioInfoProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_fm_radio_info_proto_rawDescOnce sync.Once

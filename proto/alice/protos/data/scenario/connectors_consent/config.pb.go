@@ -205,8 +205,8 @@ const file_alice_protos_data_scenario_connectors_consent_config_proto_rawDesc = 
 	"\fTrainAllowed\x18\x05 \x01(\bB\x11\xaa\xdd\x1b\rtrain_allowedR\rtrain_allowed:\x04\xa8\xdd\x1b\x04*G\n" +
 	"\x0eEConnectorType\x12\x1c\n" +
 	"\x18CONNECTOR_TYPE_UNDEFINED\x10\x00\x12\x17\n" +
-	"\x13CONNECTOR_TYPE_MAIL\x10\x01By\n" +
-	"7ru.yandex.alice.protos.data.scenario.connectors_consentZ>a.yandex-team.ru/alice/protos/data/scenario/connectors_consentb\x06proto3"
+	"\x13CONNECTOR_TYPE_MAIL\x10\x01B\x98\x01\n" +
+	"7ru.yandex.alice.protos.data.scenario.connectors_consentZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/connectors_consentb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_connectors_consent_config_proto_rawDescOnce sync.Once

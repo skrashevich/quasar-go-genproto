@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/video_details_screen/capability.proto
 
-package videodetailsscreenpb
+package video_details_screen
 
 import (
 	client_analytics "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/analytics/client_analytics"
@@ -1063,8 +1063,8 @@ const file_alice_protos_endpoint_capabilities_video_details_screen_capability_pr
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:3\x92\x82\x19&open_current_content_trailer_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8e\x01\x1a\xe2\x01\n" +
 	"!TCentaurOpenSeriesScreenDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12k\n" +
-	"\x13SeasonSeriesDetails\x18\x01 \x01(\v2\x1c.NAlice.TSeasonSeriesDetailsB\x19\xaa\xdd\x1b\x15season_series_detailsR\x15season_series_details:1\x92\x82\x19$centaur_open_series_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8d\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1eB\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!VideoDetailsScreenCapabilityProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/video_details_screen;videodetailsscreenpbb\x06proto3"
+	"\x13SeasonSeriesDetails\x18\x01 \x01(\v2\x1c.NAlice.TSeasonSeriesDetailsB\x19\xaa\xdd\x1b\x15season_series_detailsR\x15season_series_details:1\x92\x82\x19$centaur_open_series_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8d\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1eB\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!VideoDetailsScreenCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_details_screenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_details_screen_capability_proto_rawDescOnce sync.Once

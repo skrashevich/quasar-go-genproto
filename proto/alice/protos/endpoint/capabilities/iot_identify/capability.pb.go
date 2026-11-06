@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_identify/capability.proto
 
-package iotidentifypb
+package iot_identify
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotIdentifyCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotIdentifyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotIdentifyCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotIdentifyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotIdentifyCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,7 +87,7 @@ func (x *TIotIdentifyCapability) GetState() *TIotIdentifyCapability_TState {
 
 type TIotIdentifyCapability_TParameters struct {
 	state                protoimpl.MessageState                     `protogen:"open.v1"`
-	IdentifyTimeRangeSec *TIotIdentifyCapability_TParameters_TRange `protobuf:"bytes,1,opt,name=IdentifyTimeRangeSec,json=identify_time_range_sec,proto3" json:"IdentifyTimeRangeSec,omitempty"`
+	IdentifyTimeRangeSec *TIotIdentifyCapability_TParameters_TRange `protobuf:"bytes,1,opt,name=IdentifyTimeRangeSec,proto3" json:"IdentifyTimeRangeSec,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -167,8 +167,8 @@ func (*TIotIdentifyCapability_TState) Descriptor() ([]byte, []int) {
 
 type TIotIdentifyCapability_TStartIdentifyDirective struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Name            string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IdentifyTimeSec uint32                 `protobuf:"varint,1,opt,name=IdentifyTimeSec,json=identify_time_sec,proto3" json:"IdentifyTimeSec,omitempty"`
+	Name            string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	IdentifyTimeSec uint32                 `protobuf:"varint,1,opt,name=IdentifyTimeSec,proto3" json:"IdentifyTimeSec,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -219,8 +219,8 @@ func (x *TIotIdentifyCapability_TStartIdentifyDirective) GetIdentifyTimeSec() ui
 
 type TIotIdentifyCapability_TParameters_TRange struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           uint32                 `protobuf:"varint,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           uint32                 `protobuf:"varint,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Min           uint32                 `protobuf:"varint,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           uint32                 `protobuf:"varint,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -273,24 +273,24 @@ var File_alice_protos_endpoint_capabilities_iot_identify_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_iot_identify_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/iot_identify/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x05\n" +
-	"\x16TIotIdentifyCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"@alice/protos/endpoint/capabilities/iot_identify/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd9\x03\n" +
+	"\x16TIotIdentifyCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotIdentifyCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotIdentifyCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xdb\x01\n" +
-	"\vTParameters\x12\x85\x01\n" +
-	"\x14IdentifyTimeRangeSec\x18\x01 \x01(\v21.NAlice.TIotIdentifyCapability.TParameters.TRangeB\x1b\xaa\xdd\x1b\x17identify_time_range_secR\x17identify_time_range_sec\x1a>\n" +
-	"\x06TRange\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\rB\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\rB\a\xaa\xdd\x1b\x03maxR\x03max:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xa6\x01\n" +
-	"\x17TStartIdentifyDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12A\n" +
-	"\x0fIdentifyTimeSec\x18\x01 \x01(\rB\x15\xaa\xdd\x1b\x11identify_time_secR\x11identify_time_sec:)\x92\x82\x19\x1ciot_start_identify_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x93\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ccB\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aIotIdentifyCapabilityProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_identify;iotidentifypbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotIdentifyCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotIdentifyCapability.TStateR\x05State\x1a\xa2\x01\n" +
+	"\vTParameters\x12e\n" +
+	"\x14IdentifyTimeRangeSec\x18\x01 \x01(\v21.NAlice.TIotIdentifyCapability.TParameters.TRangeR\x14IdentifyTimeRangeSec\x1a,\n" +
+	"\x06TRange\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\rR\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\rR\x03Max\x1a\b\n" +
+	"\x06TState\x1aX\n" +
+	"\x17TStartIdentifyDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12(\n" +
+	"\x0fIdentifyTimeSec\x18\x01 \x01(\rR\x0fIdentifyTimeSecB\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_identify\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_identify_capability_proto_rawDescOnce sync.Once

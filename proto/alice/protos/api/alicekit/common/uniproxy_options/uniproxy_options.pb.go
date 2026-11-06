@@ -26,13 +26,13 @@ const (
 
 type TUniproxyOptions struct {
 	state                              protoimpl.MessageState                                `protogen:"open.v1"`
-	OwnerContextLoadOptions            *TUniproxyOptions_TContextLoadOptions                 `protobuf:"bytes,2,opt,name=OwnerContextLoadOptions,json=owner_context_load_options,proto3" json:"OwnerContextLoadOptions,omitempty"`
-	CapabilityUpdatesOptions           *TUniproxyOptions_TCapabilityUpdatesOptions           `protobuf:"bytes,8,opt,name=CapabilityUpdatesOptions,json=capability_updates_options,proto3" json:"CapabilityUpdatesOptions,omitempty"`
-	BackgroundResponseStreamingOptions *TUniproxyOptions_TBackgroundResponseStreamingOptions `protobuf:"bytes,9,opt,name=BackgroundResponseStreamingOptions,json=background_response_streaming_options,proto3" json:"BackgroundResponseStreamingOptions,omitempty"`
+	OwnerContextLoadOptions            *TUniproxyOptions_TContextLoadOptions                 `protobuf:"bytes,2,opt,name=OwnerContextLoadOptions,proto3" json:"OwnerContextLoadOptions,omitempty"`
+	CapabilityUpdatesOptions           *TUniproxyOptions_TCapabilityUpdatesOptions           `protobuf:"bytes,8,opt,name=CapabilityUpdatesOptions,proto3" json:"CapabilityUpdatesOptions,omitempty"`
+	BackgroundResponseStreamingOptions *TUniproxyOptions_TBackgroundResponseStreamingOptions `protobuf:"bytes,9,opt,name=BackgroundResponseStreamingOptions,proto3" json:"BackgroundResponseStreamingOptions,omitempty"`
+	MegamindUrl                        *string                                               `protobuf:"bytes,1,opt,name=MegamindUrl,proto3,oneof" json:"MegamindUrl,omitempty"`
+	WaitClientApproval                 *bool                                                 `protobuf:"varint,4,opt,name=WaitClientApproval,proto3,oneof" json:"WaitClientApproval,omitempty"`
 	BidirectionalOptions               *TUniproxyBidirectionalOptions                        `protobuf:"bytes,10,opt,name=BidirectionalOptions,json=bidirectional_options,proto3" json:"BidirectionalOptions,omitempty"`
 	DialogOptions                      *dialog_options.TDialogOptions                        `protobuf:"bytes,11,opt,name=DialogOptions,json=dialog_options,proto3" json:"DialogOptions,omitempty"`
-	MegamindUrl                        *string                                               `protobuf:"bytes,1,opt,name=MegamindUrl,json=megamind_url,proto3,oneof" json:"MegamindUrl,omitempty"`
-	WaitClientApproval                 *bool                                                 `protobuf:"varint,4,opt,name=WaitClientApproval,json=wait_client_approval,proto3,oneof" json:"WaitClientApproval,omitempty"`
 	unknownFields                      protoimpl.UnknownFields
 	sizeCache                          protoimpl.SizeCache
 }
@@ -88,20 +88,6 @@ func (x *TUniproxyOptions) GetBackgroundResponseStreamingOptions() *TUniproxyOpt
 	return nil
 }
 
-func (x *TUniproxyOptions) GetBidirectionalOptions() *TUniproxyBidirectionalOptions {
-	if x != nil {
-		return x.BidirectionalOptions
-	}
-	return nil
-}
-
-func (x *TUniproxyOptions) GetDialogOptions() *dialog_options.TDialogOptions {
-	if x != nil {
-		return x.DialogOptions
-	}
-	return nil
-}
-
 func (x *TUniproxyOptions) GetMegamindUrl() string {
 	if x != nil && x.MegamindUrl != nil {
 		return *x.MegamindUrl
@@ -116,17 +102,31 @@ func (x *TUniproxyOptions) GetWaitClientApproval() bool {
 	return false
 }
 
+func (x *TUniproxyOptions) GetBidirectionalOptions() *TUniproxyBidirectionalOptions {
+	if x != nil {
+		return x.BidirectionalOptions
+	}
+	return nil
+}
+
+func (x *TUniproxyOptions) GetDialogOptions() *dialog_options.TDialogOptions {
+	if x != nil {
+		return x.DialogOptions
+	}
+	return nil
+}
+
 type TUniproxyOptions_TContextLoadOptions struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	UseBlackbox          bool                   `protobuf:"varint,1,opt,name=UseBlackbox,json=use_blackbox,proto3" json:"UseBlackbox,omitempty"`
-	UseCachalotMMSession bool                   `protobuf:"varint,2,opt,name=UseCachalotMMSession,json=use_cachalot_mm_session,proto3" json:"UseCachalotMMSession,omitempty"`
-	UseContacts          bool                   `protobuf:"varint,3,opt,name=UseContacts,json=use_contacts,proto3" json:"UseContacts,omitempty"`
-	UseDatasync          bool                   `protobuf:"varint,4,opt,name=UseDatasync,json=use_datasync,proto3" json:"UseDatasync,omitempty"`
-	UseFlagsJson         bool                   `protobuf:"varint,5,opt,name=UseFlagsJson,json=use_flags_json,proto3" json:"UseFlagsJson,omitempty"`
-	UseIotUserInfo       bool                   `protobuf:"varint,6,opt,name=UseIotUserInfo,json=use_iot_user_info,proto3" json:"UseIotUserInfo,omitempty"`
-	UseLaas              bool                   `protobuf:"varint,7,opt,name=UseLaas,json=use_laas,proto3" json:"UseLaas,omitempty"`
-	UseMemento           bool                   `protobuf:"varint,8,opt,name=UseMemento,json=use_memento,proto3" json:"UseMemento,omitempty"`
-	UseNotifications     bool                   `protobuf:"varint,9,opt,name=UseNotifications,json=use_notifications,proto3" json:"UseNotifications,omitempty"`
+	UseBlackbox          bool                   `protobuf:"varint,1,opt,name=UseBlackbox,proto3" json:"UseBlackbox,omitempty"`
+	UseCachalotMMSession bool                   `protobuf:"varint,2,opt,name=UseCachalotMMSession,proto3" json:"UseCachalotMMSession,omitempty"`
+	UseContacts          bool                   `protobuf:"varint,3,opt,name=UseContacts,proto3" json:"UseContacts,omitempty"`
+	UseDatasync          bool                   `protobuf:"varint,4,opt,name=UseDatasync,proto3" json:"UseDatasync,omitempty"`
+	UseFlagsJson         bool                   `protobuf:"varint,5,opt,name=UseFlagsJson,proto3" json:"UseFlagsJson,omitempty"`
+	UseIotUserInfo       bool                   `protobuf:"varint,6,opt,name=UseIotUserInfo,proto3" json:"UseIotUserInfo,omitempty"`
+	UseLaas              bool                   `protobuf:"varint,7,opt,name=UseLaas,proto3" json:"UseLaas,omitempty"`
+	UseMemento           bool                   `protobuf:"varint,8,opt,name=UseMemento,proto3" json:"UseMemento,omitempty"`
+	UseNotifications     bool                   `protobuf:"varint,9,opt,name=UseNotifications,proto3" json:"UseNotifications,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -226,7 +226,7 @@ func (x *TUniproxyOptions_TContextLoadOptions) GetUseNotifications() bool {
 
 type TUniproxyOptions_TCapabilityUpdatesOptions struct {
 	state                       protoimpl.MessageState                                              `protogen:"open.v1"`
-	WaitClientCapabilityUpdates []*TUniproxyOptions_TCapabilityUpdatesOptions_TCapabilityUpdateInfo `protobuf:"bytes,1,rep,name=WaitClientCapabilityUpdates,json=wait_client_capability_updates,proto3" json:"WaitClientCapabilityUpdates,omitempty"`
+	WaitClientCapabilityUpdates []*TUniproxyOptions_TCapabilityUpdatesOptions_TCapabilityUpdateInfo `protobuf:"bytes,1,rep,name=WaitClientCapabilityUpdates,proto3" json:"WaitClientCapabilityUpdates,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -270,7 +270,7 @@ func (x *TUniproxyOptions_TCapabilityUpdatesOptions) GetWaitClientCapabilityUpda
 
 type TUniproxyOptions_TBackgroundResponseStreamingOptions struct {
 	state                     protoimpl.MessageState                                                           `protogen:"open.v1"`
-	RequestWithShownNewDialog *TUniproxyOptions_TBackgroundResponseStreamingOptions_TRequestWithShownNewDialog `protobuf:"bytes,1,opt,name=RequestWithShownNewDialog,json=request_with_shown_new_dialog,proto3" json:"RequestWithShownNewDialog,omitempty"`
+	RequestWithShownNewDialog *TUniproxyOptions_TBackgroundResponseStreamingOptions_TRequestWithShownNewDialog `protobuf:"bytes,1,opt,name=RequestWithShownNewDialog,proto3" json:"RequestWithShownNewDialog,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -314,7 +314,7 @@ func (x *TUniproxyOptions_TBackgroundResponseStreamingOptions) GetRequestWithSho
 
 type TUniproxyOptions_TCapabilityUpdatesOptions_TCapabilityUpdateInfo struct {
 	state          protoimpl.MessageState               `protogen:"open.v1"`
-	CapabilityType endpoint.TCapability_ECapabilityType `protobuf:"varint,1,opt,name=CapabilityType,json=capability_type,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
+	CapabilityType endpoint.TCapability_ECapabilityType `protobuf:"varint,1,opt,name=CapabilityType,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -397,37 +397,38 @@ var File_alice_protos_api_alicekit_common_uniproxy_options_uniproxy_options_prot
 
 const file_alice_protos_api_alicekit_common_uniproxy_options_uniproxy_options_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x12\x10NAlice.NAliceApi\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aValice/protos/api/alicekit/common/uniproxy_options/uniproxy_bidirectional_options.proto\x1aCalice/protos/api/dialog_history/dialog_options/dialog_options.proto\"\xa2\x11\n" +
-	"\x10TUniproxyOptions\x12\x93\x01\n" +
-	"\x17OwnerContextLoadOptions\x18\x02 \x01(\v26.NAlice.NAliceApi.TUniproxyOptions.TContextLoadOptionsB\x1e\xaa\xdd\x1b\x1aowner_context_load_optionsR\x1aowner_context_load_options\x12\x9a\x01\n" +
-	"\x18CapabilityUpdatesOptions\x18\b \x01(\v2<.NAlice.NAliceApi.TUniproxyOptions.TCapabilityUpdatesOptionsB\x1e\xaa\xdd\x1b\x1acapability_updates_optionsR\x1acapability_updates_options\x12\xc4\x01\n" +
-	"\"BackgroundResponseStreamingOptions\x18\t \x01(\v2F.NAlice.NAliceApi.TUniproxyOptions.TBackgroundResponseStreamingOptionsB)\xaa\xdd\x1b%background_response_streaming_optionsR%background_response_streaming_options\x12\x7f\n" +
+	"Halice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x12\x10NAlice.NAliceApi\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aValice/protos/api/alicekit/common/uniproxy_options/uniproxy_bidirectional_options.proto\x1aCalice/protos/api/dialog_history/dialog_options/dialog_options.proto\"\xbf\r\n" +
+	"\x10TUniproxyOptions\x12p\n" +
+	"\x17OwnerContextLoadOptions\x18\x02 \x01(\v26.NAlice.NAliceApi.TUniproxyOptions.TContextLoadOptionsR\x17OwnerContextLoadOptions\x12x\n" +
+	"\x18CapabilityUpdatesOptions\x18\b \x01(\v2<.NAlice.NAliceApi.TUniproxyOptions.TCapabilityUpdatesOptionsR\x18CapabilityUpdatesOptions\x12\x96\x01\n" +
+	"\"BackgroundResponseStreamingOptions\x18\t \x01(\v2F.NAlice.NAliceApi.TUniproxyOptions.TBackgroundResponseStreamingOptionsR\"BackgroundResponseStreamingOptions\x12%\n" +
+	"\vMegamindUrl\x18\x01 \x01(\tH\x00R\vMegamindUrl\x88\x01\x01\x123\n" +
+	"\x12WaitClientApproval\x18\x04 \x01(\bH\x01R\x12WaitClientApproval\x88\x01\x01\x12\x7f\n" +
 	"\x14BidirectionalOptions\x18\n" +
 	" \x01(\v2/.NAlice.NAliceApi.TUniproxyBidirectionalOptionsB\x19\xaa\xdd\x1b\x15bidirectional_optionsR\x15bidirectional_options\x12e\n" +
-	"\rDialogOptions\x18\v \x01(\v2*.NAlice.NApi.NDialogHistory.TDialogOptionsB\x12\xaa\xdd\x1b\x0edialog_optionsR\x0edialog_options\x128\n" +
-	"\vMegamindUrl\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fmegamind_urlH\x00R\fmegamind_url\x88\x01\x01\x12O\n" +
-	"\x12WaitClientApproval\x18\x04 \x01(\bB\x18\xaa\xdd\x1b\x14wait_client_approvalH\x01R\x14wait_client_approval\x88\x01\x01\x1a\xa3\x04\n" +
-	"\x13TContextLoadOptions\x123\n" +
-	"\vUseBlackbox\x18\x01 \x01(\bB\x10\xaa\xdd\x1b\fuse_blackboxR\fuse_blackbox\x12R\n" +
-	"\x14UseCachalotMMSession\x18\x02 \x01(\bB\x1b\xaa\xdd\x1b\x17use_cachalot_mm_sessionR\x17use_cachalot_mm_session\x123\n" +
-	"\vUseContacts\x18\x03 \x01(\bB\x10\xaa\xdd\x1b\fuse_contactsR\fuse_contacts\x123\n" +
-	"\vUseDatasync\x18\x04 \x01(\bB\x10\xaa\xdd\x1b\fuse_datasyncR\fuse_datasync\x128\n" +
-	"\fUseFlagsJson\x18\x05 \x01(\bB\x12\xaa\xdd\x1b\x0euse_flags_jsonR\x0euse_flags_json\x12@\n" +
-	"\x0eUseIotUserInfo\x18\x06 \x01(\bB\x15\xaa\xdd\x1b\x11use_iot_user_infoR\x11use_iot_user_info\x12'\n" +
-	"\aUseLaas\x18\a \x01(\bB\f\xaa\xdd\x1b\buse_laasR\buse_laas\x120\n" +
+	"\rDialogOptions\x18\v \x01(\v2*.NAlice.NApi.NDialogHistory.TDialogOptionsB\x12\xaa\xdd\x1b\x0edialog_optionsR\x0edialog_options\x1a\xe1\x02\n" +
+	"\x13TContextLoadOptions\x12 \n" +
+	"\vUseBlackbox\x18\x01 \x01(\bR\vUseBlackbox\x122\n" +
+	"\x14UseCachalotMMSession\x18\x02 \x01(\bR\x14UseCachalotMMSession\x12 \n" +
+	"\vUseContacts\x18\x03 \x01(\bR\vUseContacts\x12 \n" +
+	"\vUseDatasync\x18\x04 \x01(\bR\vUseDatasync\x12\"\n" +
+	"\fUseFlagsJson\x18\x05 \x01(\bR\fUseFlagsJson\x12&\n" +
+	"\x0eUseIotUserInfo\x18\x06 \x01(\bR\x0eUseIotUserInfo\x12\x18\n" +
+	"\aUseLaas\x18\a \x01(\bR\aUseLaas\x12\x1e\n" +
 	"\n" +
-	"UseMemento\x18\b \x01(\bB\x0f\xaa\xdd\x1b\vuse_mementoR\vuse_memento\x12B\n" +
-	"\x10UseNotifications\x18\t \x01(\bB\x15\xaa\xdd\x1b\x11use_notificationsR\x11use_notifications\x1a\xe2\x02\n" +
-	"\x19TCapabilityUpdatesOptions\x12\xbb\x01\n" +
-	"\x1bWaitClientCapabilityUpdates\x18\x01 \x03(\v2R.NAlice.NAliceApi.TUniproxyOptions.TCapabilityUpdatesOptions.TCapabilityUpdateInfoB\"\xaa\xdd\x1b\x1ewait_client_capability_updatesR\x1ewait_client_capability_updates\x1a\x80\x01\n" +
-	"\x15TCapabilityUpdateInfo\x12a\n" +
-	"\x0eCapabilityType\x18\x01 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeB\x13\xaa\xdd\x1b\x0fcapability_typeR\x0fcapability_type:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\x98\x02\n" +
-	"#TBackgroundResponseStreamingOptions\x12\xc6\x01\n" +
-	"\x19RequestWithShownNewDialog\x18\x01 \x01(\v2a.NAlice.NAliceApi.TUniproxyOptions.TBackgroundResponseStreamingOptions.TRequestWithShownNewDialogB!\xaa\xdd\x1b\x1drequest_with_shown_new_dialogR\x1drequest_with_shown_new_dialog\x1a\"\n" +
-	"\x1aTRequestWithShownNewDialog:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x0e\n" +
+	"UseMemento\x18\b \x01(\bR\n" +
+	"UseMemento\x12*\n" +
+	"\x10UseNotifications\x18\t \x01(\bR\x10UseNotifications\x1a\x98\x02\n" +
+	"\x19TCapabilityUpdatesOptions\x12\x94\x01\n" +
+	"\x1bWaitClientCapabilityUpdates\x18\x01 \x03(\v2R.NAlice.NAliceApi.TUniproxyOptions.TCapabilityUpdatesOptions.TCapabilityUpdateInfoR\x1bWaitClientCapabilityUpdates\x1ad\n" +
+	"\x15TCapabilityUpdateInfo\x12K\n" +
+	"\x0eCapabilityType\x18\x01 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeR\x0eCapabilityType\x1a\xe5\x01\n" +
+	"#TBackgroundResponseStreamingOptions\x12\x9f\x01\n" +
+	"\x19RequestWithShownNewDialog\x18\x01 \x01(\v2a.NAlice.NAliceApi.TUniproxyOptions.TBackgroundResponseStreamingOptions.TRequestWithShownNewDialogR\x19RequestWithShownNewDialog\x1a\x1c\n" +
+	"\x1aTRequestWithShownNewDialogB\x0e\n" +
 	"\f_MegamindUrlB\x15\n" +
-	"\x13_WaitClientApprovalJ\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\x17GuestContextLoadOptionsR\x0eLastChunksInfoR\x19FirstEventServerTimestampB\x99\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.common.uniproxy_optionsB\x14UniproxyOptionsProtoP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/common/uniproxy_optionsb\x06proto3"
+	"\x13_WaitClientApprovalJ\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\x17GuestContextLoadOptionsR\x0eLastChunksInfoR\x19FirstEventServerTimestampB\xf0\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x14UniproxyOptionsProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/uniproxy_options\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_common_uniproxy_options_uniproxy_options_proto_rawDescOnce sync.Once

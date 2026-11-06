@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tv_player/capability.proto
 
-package tvplayerpb
+package tv_player
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -278,8 +278,8 @@ const file_alice_protos_endpoint_capabilities_tv_player_capability_proto_rawDesc
 	"\tContentId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"content_idH\x00R\n" +
 	"content_id:#\x92\x82\x19\x16play_channel_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xec\x04B\x04\n" +
-	"\x02Id:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x81\x02B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TTvPlayerCapabilityProtoP\x01ZHa.yandex-team.ru/alice/protos/endpoint/capabilities/tv_player;tvplayerpbb\x06proto3"
+	"\x02Id:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x81\x02B\xa8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TTvPlayerCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tv_playerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tv_player_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/led_mask/capability.proto
 
-package ledmaskpb
+package led_mask
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -292,8 +292,8 @@ const file_alice_protos_endpoint_capabilities_led_mask_capability_proto_rawDesc 
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TLedMaskCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1ct:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb1\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16LedMaskCapabilityProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/led_mask;ledmaskpbb\x06proto3"
+	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1ct:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb1\x01B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16LedMaskCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/led_maskb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_led_mask_capability_proto_rawDescOnce sync.Once

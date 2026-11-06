@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_door_lock/capability.proto
 
-package doorlockpb
+package iot_door_lock
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -544,8 +544,8 @@ const file_alice_protos_endpoint_capabilities_iot_door_lock_capability_proto_raw
 	"\x04Rfid\x10\x04\x12\n" +
 	"\n" +
 	"\x06Remote\x10\x05\x12\b\n" +
-	"\x04Auto\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x88\x02B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17DoorLockCapabilityProtoP\x01ZLa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_door_lock;doorlockpbb\x06proto3"
+	"\x04Auto\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x88\x02B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17DoorLockCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_door_lockb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_door_lock_capability_proto_rawDescOnce sync.Once

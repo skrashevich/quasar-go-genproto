@@ -24,7 +24,7 @@ const (
 
 type TInputStartAck struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	RequestStartTime uint64                 `protobuf:"varint,1,opt,name=RequestStartTime,json=request_start_time,proto3" json:"RequestStartTime,omitempty"`
+	RequestStartTime uint64                 `protobuf:"varint,1,opt,name=RequestStartTime,proto3" json:"RequestStartTime,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -70,10 +70,10 @@ var File_alice_protos_api_alicekit_events_input_start_ack_input_start_ack_proto 
 
 const file_alice_protos_api_alicekit_events_input_start_ack_input_start_ack_proto_rawDesc = "" +
 	"\n" +
-	"Falice/protos/api/alicekit/events/input_start_ack/input_start_ack.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\\\n" +
-	"\x0eTInputStartAck\x12D\n" +
-	"\x10RequestStartTime\x18\x01 \x01(\x04B\x16\xaa\xdd\x1b\x12request_start_timeR\x12request_start_time:\x04\xa8\xdd\x1b\x04B\x90\x01\n" +
-	":ru.yandex.alice.protos.api.alicekit.events.input_start_ackB\rInputStartAckP\x01ZAa.yandex-team.ru/alice/protos/api/alicekit/events/input_start_ackb\x06proto3"
+	"Falice/protos/api/alicekit/events/input_start_ack/input_start_ack.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"<\n" +
+	"\x0eTInputStartAck\x12*\n" +
+	"\x10RequestStartTime\x18\x01 \x01(\x04R\x10RequestStartTimeB\xed\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12InputStartAckProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/input_start_ack\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_input_start_ack_input_start_ack_proto_rawDescOnce sync.Once

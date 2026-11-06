@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/notification/capability.proto
 
-package notificationpb
+package notification
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -125,9 +125,9 @@ func (TNotificationCapability_ERingType) EnumDescriptor() ([]byte, []int) {
 
 type TNotificationCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNotificationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNotificationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNotificationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNotificationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -185,7 +185,7 @@ func (x *TNotificationCapability) GetState() *TNotificationCapability_TState {
 
 type TNotificationCapability_TNotification struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -265,8 +265,8 @@ func (*TNotificationCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNotificationCapability_TState struct {
 	state             protoimpl.MessageState                    `protogen:"open.v1"`
-	NotificationCount int32                                     `protobuf:"varint,1,opt,name=NotificationCount,json=notification_count,proto3" json:"NotificationCount,omitempty"`
-	NotificationMode  TNotificationCapability_ENotificationMode `protobuf:"varint,2,opt,name=NotificationMode,json=notification_mode,proto3,enum=NAlice.TNotificationCapability_ENotificationMode" json:"NotificationMode,omitempty"`
+	NotificationCount int32                                     `protobuf:"varint,1,opt,name=NotificationCount,proto3" json:"NotificationCount,omitempty"`
+	NotificationMode  TNotificationCapability_ENotificationMode `protobuf:"varint,2,opt,name=NotificationMode,proto3,enum=NAlice.TNotificationCapability_ENotificationMode" json:"NotificationMode,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -425,10 +425,10 @@ func (*TNotificationCapability_TNotificationFinishedEvent) Descriptor() ([]byte,
 
 type TNotificationCapability_TNotifyDirective struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Name          string                                   `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Notifications []*TNotificationCapability_TNotification `protobuf:"bytes,2,rep,name=Notifications,json=notifications,proto3" json:"Notifications,omitempty"`
-	Ring          TNotificationCapability_ERingType        `protobuf:"varint,3,opt,name=Ring,json=ring,proto3,enum=NAlice.TNotificationCapability_ERingType" json:"Ring,omitempty"`
-	VersionId     string                                   `protobuf:"bytes,4,opt,name=VersionId,json=version_id,proto3" json:"VersionId,omitempty"`
+	Name          string                                   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Notifications []*TNotificationCapability_TNotification `protobuf:"bytes,2,rep,name=Notifications,proto3" json:"Notifications,omitempty"`
+	Ring          TNotificationCapability_ERingType        `protobuf:"varint,3,opt,name=Ring,proto3,enum=NAlice.TNotificationCapability_ERingType" json:"Ring,omitempty"`
+	VersionId     string                                   `protobuf:"bytes,4,opt,name=VersionId,proto3" json:"VersionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -531,31 +531,28 @@ var File_alice_protos_endpoint_capabilities_notification_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_notification_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/notification/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd2\b\n" +
-	"\x17TNotificationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"@alice/protos/endpoint/capabilities/notification/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd7\x06\n" +
+	"\x17TNotificationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TNotificationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TNotificationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a'\n" +
-	"\rTNotification\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xcc\x01\n" +
-	"\x06TState\x12E\n" +
-	"\x11NotificationCount\x18\x01 \x01(\x05B\x16\xaa\xdd\x1b\x12notification_countR\x12notification_count\x12u\n" +
-	"\x10NotificationMode\x18\x02 \x01(\x0e21.NAlice.TNotificationCapability.ENotificationModeB\x15\xaa\xdd\x1b\x11notification_modeR\x11notification_mode:\x04\xa8\xdd\x1b\x04\x1a%\n" +
-	"\x19TNotificationPendingEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c&\x1a%\n" +
-	"\x19TNotificationStartedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c'\x1a&\n" +
-	"\x1aTNotificationFinishedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c(\x1a\xa4\x02\n" +
-	"\x10TNotifyDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12f\n" +
-	"\rNotifications\x18\x02 \x03(\v2-.NAlice.TNotificationCapability.TNotificationB\x11\xaa\xdd\x1b\rnotificationsR\rnotifications\x12G\n" +
-	"\x04Ring\x18\x03 \x01(\x0e2).NAlice.TNotificationCapability.ERingTypeB\b\xaa\xdd\x1b\x04ringR\x04ring\x12-\n" +
-	"\tVersionId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"version_idR\n" +
-	"version_id:\x12\x92\x82\x19\x06notify\xa8\xdd\x1b\x04\xa8\xc8\x1c{\x1a6\n" +
-	"\x17TApproveNotifyDirective:\x1b\x92\x82\x19\x0eapprove_notify\xa8\xdd\x1b\x04\xa8\xc8\x1c\x89\x01\"5\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TNotificationCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TNotificationCapability.TStateR\x05State\x1a\x1f\n" +
+	"\rTNotification\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x1a\r\n" +
+	"\vTParameters\x1a\x95\x01\n" +
+	"\x06TState\x12,\n" +
+	"\x11NotificationCount\x18\x01 \x01(\x05R\x11NotificationCount\x12]\n" +
+	"\x10NotificationMode\x18\x02 \x01(\x0e21.NAlice.TNotificationCapability.ENotificationModeR\x10NotificationMode\x1a\x1b\n" +
+	"\x19TNotificationPendingEvent\x1a\x1b\n" +
+	"\x19TNotificationStartedEvent\x1a\x1c\n" +
+	"\x1aTNotificationFinishedEvent\x1a\xd8\x01\n" +
+	"\x10TNotifyDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12S\n" +
+	"\rNotifications\x18\x02 \x03(\v2-.NAlice.TNotificationCapability.TNotificationR\rNotifications\x12=\n" +
+	"\x04Ring\x18\x03 \x01(\x0e2).NAlice.TNotificationCapability.ERingTypeR\x04Ring\x12\x1c\n" +
+	"\tVersionId\x18\x04 \x01(\tR\tVersionId\x1a\x19\n" +
+	"\x17TApproveNotifyDirective\"5\n" +
 	"\x11ENotificationMode\x12\b\n" +
 	"\x04None\x10\x00\x12\t\n" +
 	"\x05Actve\x10\x01\x12\v\n" +
@@ -563,8 +560,9 @@ const file_alice_protos_endpoint_capabilities_notification_capability_proto_rawD
 	"\tERingType\x12\v\n" +
 	"\aNoSound\x10\x00\x12\f\n" +
 	"\bDelicate\x10\x01\x12\r\n" +
-	"\tProactive\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c0B\x92\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11NotificationProtoZOa.yandex-team.ru/alice/protos/endpoint/capabilities/notification;notificationpbb\x06proto3"
+	"\tProactive\x10\x02B\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/notification\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_notification_capability_proto_rawDescOnce sync.Once

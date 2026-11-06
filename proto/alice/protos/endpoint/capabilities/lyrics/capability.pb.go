@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lyrics/capability.proto
 
-package lyricspb
+package lyrics
 
 import (
 	lyrics "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/lyrics"
@@ -348,8 +348,8 @@ const file_alice_protos_endpoint_capabilities_lyrics_capability_proto_rawDesc = 
 	"\x16TEnableLyricsDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17enable_lyrics_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xae\x03\x1a^\n" +
 	"\x17TDisableLyricsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:%\x92\x82\x19\x18disable_lyrics_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaf\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cAB\x80\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\vLyricsProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/lyrics;lyricspbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:%\x92\x82\x19\x18disable_lyrics_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaf\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cAB\x96\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\vLyricsProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lyricsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lyrics_capability_proto_rawDescOnce sync.Once

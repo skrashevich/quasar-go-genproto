@@ -116,11 +116,11 @@ type isTClientMessage_Message interface {
 }
 
 type TClientMessage_Event struct {
-	Event *TClientMessage_TEvent `protobuf:"bytes,1,opt,name=Event,json=event,proto3,oneof"`
+	Event *TClientMessage_TEvent `protobuf:"bytes,1,opt,name=Event,proto3,oneof"`
 }
 
 type TClientMessage_StreamControl struct {
-	StreamControl *stream_control.TStreamControl `protobuf:"bytes,2,opt,name=StreamControl,json=stream_control,proto3,oneof"`
+	StreamControl *stream_control.TStreamControl `protobuf:"bytes,2,opt,name=StreamControl,proto3,oneof"`
 }
 
 func (*TClientMessage_Event) isTClientMessage_Message() {}
@@ -129,7 +129,7 @@ func (*TClientMessage_StreamControl) isTClientMessage_Message() {}
 
 type TClientMessage_TEvent struct {
 	state  protoimpl.MessageState     `protogen:"open.v1"`
-	Header *event_header.TEventHeader `protobuf:"bytes,1,opt,name=Header,json=header,proto3" json:"Header,omitempty"`
+	Header *event_header.TEventHeader `protobuf:"bytes,1,opt,name=Header,proto3" json:"Header,omitempty"`
 	// Types that are valid to be assigned to Event:
 	//
 	//	*TClientMessage_TEvent_TextInput
@@ -144,7 +144,6 @@ type TClientMessage_TEvent struct {
 	//	*TClientMessage_TEvent_CancelRequest
 	//	*TClientMessage_TEvent_AsrRecognize
 	//	*TClientMessage_TEvent_TtsGenerate
-	//	*TClientMessage_TEvent_DeferredTtsGenerate
 	//	*TClientMessage_TEvent_DataProxyInput
 	//	*TClientMessage_TEvent_FileUploadRequest
 	//	*TClientMessage_TEvent_CapabilityUpdateState
@@ -156,6 +155,7 @@ type TClientMessage_TEvent struct {
 	//	*TClientMessage_TEvent_TranslateInput
 	//	*TClientMessage_TEvent_AudioTranscriptionInputRequest
 	//	*TClientMessage_TEvent_FinishRequest
+	//	*TClientMessage_TEvent_DeferredTtsGenerate
 	//	*TClientMessage_TEvent_Ping
 	Event         isTClientMessage_TEvent_Event `protobuf_oneof:"Event"`
 	unknownFields protoimpl.UnknownFields
@@ -314,15 +314,6 @@ func (x *TClientMessage_TEvent) GetTtsGenerate() *tts_generate.TTtsGenerate {
 	return nil
 }
 
-func (x *TClientMessage_TEvent) GetDeferredTtsGenerate() *deferred_tts_generate.TDeferredTtsGenerate {
-	if x != nil {
-		if x, ok := x.Event.(*TClientMessage_TEvent_DeferredTtsGenerate); ok {
-			return x.DeferredTtsGenerate
-		}
-	}
-	return nil
-}
-
 func (x *TClientMessage_TEvent) GetDataProxyInput() *data_proxy_input.TDataProxyInput {
 	if x != nil {
 		if x, ok := x.Event.(*TClientMessage_TEvent_DataProxyInput); ok {
@@ -395,7 +386,6 @@ func (x *TClientMessage_TEvent) GetRequestStat() *request_stat.TRequestStat {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/protocol/client/client_message.proto.
 func (x *TClientMessage_TEvent) GetTranslateInput() *translate_input.TTranslateInput {
 	if x != nil {
 		if x, ok := x.Event.(*TClientMessage_TEvent_TranslateInput); ok {
@@ -423,6 +413,15 @@ func (x *TClientMessage_TEvent) GetFinishRequest() *finish_request.TFinishReques
 	return nil
 }
 
+func (x *TClientMessage_TEvent) GetDeferredTtsGenerate() *deferred_tts_generate.TDeferredTtsGenerate {
+	if x != nil {
+		if x, ok := x.Event.(*TClientMessage_TEvent_DeferredTtsGenerate); ok {
+			return x.DeferredTtsGenerate
+		}
+	}
+	return nil
+}
+
 func (x *TClientMessage_TEvent) GetPing() *ping.TPing {
 	if x != nil {
 		if x, ok := x.Event.(*TClientMessage_TEvent_Ping); ok {
@@ -437,100 +436,99 @@ type isTClientMessage_TEvent_Event interface {
 }
 
 type TClientMessage_TEvent_TextInput struct {
-	TextInput *alice_request.TAliceRequestProto `protobuf:"bytes,2,opt,name=TextInput,json=text_input,proto3,oneof"`
+	TextInput *alice_request.TAliceRequestProto `protobuf:"bytes,2,opt,name=TextInput,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_VoiceInput struct {
-	VoiceInput *alice_request.TAliceRequestProto `protobuf:"bytes,3,opt,name=VoiceInput,json=voice_input,proto3,oneof"`
+	VoiceInput *alice_request.TAliceRequestProto `protobuf:"bytes,3,opt,name=VoiceInput,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_MusicInput struct {
-	MusicInput *alice_request.TAliceRequestProto `protobuf:"bytes,4,opt,name=MusicInput,json=music_input,proto3,oneof"`
+	MusicInput *alice_request.TAliceRequestProto `protobuf:"bytes,4,opt,name=MusicInput,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_SynchronizeStateRequest struct {
-	SynchronizeStateRequest *synchronize_state_request.TSynchronizeStateRequest `protobuf:"bytes,5,opt,name=SynchronizeStateRequest,json=synchronize_state_request,proto3,oneof"`
+	SynchronizeStateRequest *synchronize_state_request.TSynchronizeStateRequest `protobuf:"bytes,5,opt,name=SynchronizeStateRequest,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_LogSpotter struct {
-	LogSpotter *log_spotter.TLogSpotter `protobuf:"bytes,6,opt,name=LogSpotter,json=log_spotter,proto3,oneof"`
+	LogSpotter *log_spotter.TLogSpotter `protobuf:"bytes,6,opt,name=LogSpotter,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_MatchedUser struct {
-	MatchedUser *alice_request.TAliceRequestProto `protobuf:"bytes,7,opt,name=MatchedUser,json=matched_user,proto3,oneof"`
+	MatchedUser *alice_request.TAliceRequestProto `protobuf:"bytes,7,opt,name=MatchedUser,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_SyncPushResponse struct {
-	SyncPushResponse *sync_push_response.TSyncPushResponse `protobuf:"bytes,8,opt,name=SyncPushResponse,json=sync_push_response,proto3,oneof"`
+	SyncPushResponse *sync_push_response.TSyncPushResponse `protobuf:"bytes,8,opt,name=SyncPushResponse,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_Ack struct {
-	Ack *ack.TAck `protobuf:"bytes,9,opt,name=Ack,json=ack,proto3,oneof"`
+	Ack *ack.TAck `protobuf:"bytes,9,opt,name=Ack,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_ContinueRequest struct {
-	ContinueRequest *continue_request.TContinueRequest `protobuf:"bytes,10,opt,name=ContinueRequest,json=continue_request,proto3,oneof"`
+	ContinueRequest *continue_request.TContinueRequest `protobuf:"bytes,10,opt,name=ContinueRequest,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_CancelRequest struct {
-	CancelRequest *cancel_request.TCancelRequest `protobuf:"bytes,11,opt,name=CancelRequest,json=cancel_request,proto3,oneof"`
+	CancelRequest *cancel_request.TCancelRequest `protobuf:"bytes,11,opt,name=CancelRequest,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_AsrRecognize struct {
-	AsrRecognize *asr_recognize.TAsrRecognize `protobuf:"bytes,12,opt,name=AsrRecognize,json=asr_recognize,proto3,oneof"`
+	AsrRecognize *asr_recognize.TAsrRecognize `protobuf:"bytes,12,opt,name=AsrRecognize,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_TtsGenerate struct {
-	TtsGenerate *tts_generate.TTtsGenerate `protobuf:"bytes,13,opt,name=TtsGenerate,json=tts_generate,proto3,oneof"`
+	TtsGenerate *tts_generate.TTtsGenerate `protobuf:"bytes,13,opt,name=TtsGenerate,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_DataProxyInput struct {
+	DataProxyInput *data_proxy_input.TDataProxyInput `protobuf:"bytes,14,opt,name=DataProxyInput,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_FileUploadRequest struct {
+	FileUploadRequest *file_upload_request.TFileUploadRequest `protobuf:"bytes,16,opt,name=FileUploadRequest,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_CapabilityUpdateState struct {
+	CapabilityUpdateState *capability_update_state.TCapabilityUpdateState `protobuf:"bytes,17,opt,name=CapabilityUpdateState,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_SpeechInput struct {
+	SpeechInput *alice_request.TAliceRequestProto `protobuf:"bytes,18,opt,name=SpeechInput,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_TtsUpdateState struct {
+	TtsUpdateState *tts_update_state.TTtsUpdateState `protobuf:"bytes,19,opt,name=TtsUpdateState,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_RecordInput struct {
+	RecordInput *record_input_request.TRecordInputRequest `protobuf:"bytes,22,opt,name=RecordInput,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_ClientSubscriptionState struct {
+	ClientSubscriptionState *client_subscription_state.TClientSubscriptionState `protobuf:"bytes,25,opt,name=ClientSubscriptionState,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_RequestStat struct {
+	RequestStat *request_stat.TRequestStat `protobuf:"bytes,28,opt,name=RequestStat,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_TranslateInput struct {
+	TranslateInput *translate_input.TTranslateInput `protobuf:"bytes,29,opt,name=TranslateInput,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_AudioTranscriptionInputRequest struct {
+	AudioTranscriptionInputRequest *audio_transcription_input.TAudioTranscriptionInputRequest `protobuf:"bytes,31,opt,name=AudioTranscriptionInputRequest,proto3,oneof"`
+}
+
+type TClientMessage_TEvent_FinishRequest struct {
+	FinishRequest *finish_request.TFinishRequest `protobuf:"bytes,32,opt,name=FinishRequest,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_DeferredTtsGenerate struct {
 	DeferredTtsGenerate *deferred_tts_generate.TDeferredTtsGenerate `protobuf:"bytes,34,opt,name=DeferredTtsGenerate,json=deferred_tts_generate,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_DataProxyInput struct {
-	DataProxyInput *data_proxy_input.TDataProxyInput `protobuf:"bytes,14,opt,name=DataProxyInput,json=data_proxy_input,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_FileUploadRequest struct {
-	FileUploadRequest *file_upload_request.TFileUploadRequest `protobuf:"bytes,16,opt,name=FileUploadRequest,json=file_upload_request,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_CapabilityUpdateState struct {
-	CapabilityUpdateState *capability_update_state.TCapabilityUpdateState `protobuf:"bytes,17,opt,name=CapabilityUpdateState,json=capability_update_state,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_SpeechInput struct {
-	SpeechInput *alice_request.TAliceRequestProto `protobuf:"bytes,18,opt,name=SpeechInput,json=speech_input,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_TtsUpdateState struct {
-	TtsUpdateState *tts_update_state.TTtsUpdateState `protobuf:"bytes,19,opt,name=TtsUpdateState,json=tts_update_state,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_RecordInput struct {
-	RecordInput *record_input_request.TRecordInputRequest `protobuf:"bytes,22,opt,name=RecordInput,json=record_input,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_ClientSubscriptionState struct {
-	ClientSubscriptionState *client_subscription_state.TClientSubscriptionState `protobuf:"bytes,25,opt,name=ClientSubscriptionState,json=client_subscription_state,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_RequestStat struct {
-	RequestStat *request_stat.TRequestStat `protobuf:"bytes,28,opt,name=RequestStat,json=request_stat,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_TranslateInput struct {
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/protocol/client/client_message.proto.
-	TranslateInput *translate_input.TTranslateInput `protobuf:"bytes,29,opt,name=TranslateInput,json=translate_input,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_AudioTranscriptionInputRequest struct {
-	AudioTranscriptionInputRequest *audio_transcription_input.TAudioTranscriptionInputRequest `protobuf:"bytes,31,opt,name=AudioTranscriptionInputRequest,json=audio_transcription_input_request,proto3,oneof"`
-}
-
-type TClientMessage_TEvent_FinishRequest struct {
-	FinishRequest *finish_request.TFinishRequest `protobuf:"bytes,32,opt,name=FinishRequest,json=finish_request,proto3,oneof"`
 }
 
 type TClientMessage_TEvent_Ping struct {
@@ -561,8 +559,6 @@ func (*TClientMessage_TEvent_AsrRecognize) isTClientMessage_TEvent_Event() {}
 
 func (*TClientMessage_TEvent_TtsGenerate) isTClientMessage_TEvent_Event() {}
 
-func (*TClientMessage_TEvent_DeferredTtsGenerate) isTClientMessage_TEvent_Event() {}
-
 func (*TClientMessage_TEvent_DataProxyInput) isTClientMessage_TEvent_Event() {}
 
 func (*TClientMessage_TEvent_FileUploadRequest) isTClientMessage_TEvent_Event() {}
@@ -585,53 +581,55 @@ func (*TClientMessage_TEvent_AudioTranscriptionInputRequest) isTClientMessage_TE
 
 func (*TClientMessage_TEvent_FinishRequest) isTClientMessage_TEvent_Event() {}
 
+func (*TClientMessage_TEvent_DeferredTtsGenerate) isTClientMessage_TEvent_Event() {}
+
 func (*TClientMessage_TEvent_Ping) isTClientMessage_TEvent_Event() {}
 
 var File_alice_protos_api_alicekit_protocol_client_client_message_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_alicekit_protocol_client_client_message_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/api/alicekit/protocol/client/client_message.proto\x12\x10NAlice.NAliceApi\x1a.alice/protos/api/alicekit/events/ack/ack.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aBalice/protos/api/alicekit/events/asr_recognize/asr_recognize.proto\x1abalice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto\x1aDalice/protos/api/alicekit/events/cancel_request/cancel_request.proto\x1aValice/protos/api/alicekit/events/capability_update_state/capability_update_state.proto\x1aZalice/protos/api/alicekit/events/client_subscription_state/client_subscription_state.proto\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1aHalice/protos/api/alicekit/events/continue_request/continue_request.proto\x1aHalice/protos/api/alicekit/events/data_proxy_input/data_proxy_input.proto\x1aNalice/protos/api/alicekit/events/file_upload_request/file_upload_request.proto\x1aDalice/protos/api/alicekit/events/finish_request/finish_request.proto\x1a>alice/protos/api/alicekit/events/log_spotter/log_spotter.proto\x1a0alice/protos/api/alicekit/events/ping/ping.proto\x1aPalice/protos/api/alicekit/events/record_input_request/record_input_request.proto\x1a@alice/protos/api/alicekit/events/request_stat/request_stat.proto\x1aDalice/protos/api/alicekit/events/stream_control/stream_control.proto\x1aLalice/protos/api/alicekit/events/sync_push_response/sync_push_response.proto\x1aZalice/protos/api/alicekit/events/synchronize_state_request/synchronize_state_request.proto\x1aRalice/protos/api/alicekit/events/deferred_tts_generate/deferred_tts_generate.proto\x1aFalice/protos/api/alicekit/events/translate_input/translate_input.proto\x1a@alice/protos/api/alicekit/events/tts_generate/tts_generate.proto\x1aHalice/protos/api/alicekit/events/tts_update_state/tts_update_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x91\x18\n" +
-	"\x0eTClientMessage\x12J\n" +
-	"\x05Event\x18\x01 \x01(\v2'.NAlice.NAliceApi.TClientMessage.TEventB\t\xaa\xdd\x1b\x05eventH\x00R\x05event\x12]\n" +
-	"\rStreamControl\x18\x02 \x01(\v2 .NAlice.NAliceApi.TStreamControlB\x12\xaa\xdd\x1b\x0estream_controlH\x00R\x0estream_control\x1a\x91\x16\n" +
-	"\x06TEvent\x12B\n" +
-	"\x06Header\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header\x12K\n" +
-	"\tTextInput\x18\x02 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x0e\xaa\xdd\x1b\n" +
-	"text_inputH\x00R\n" +
-	"text_input\x12N\n" +
+	">alice/protos/api/alicekit/protocol/client/client_message.proto\x12\x10NAlice.NAliceApi\x1a.alice/protos/api/alicekit/events/ack/ack.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aBalice/protos/api/alicekit/events/asr_recognize/asr_recognize.proto\x1abalice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto\x1aDalice/protos/api/alicekit/events/cancel_request/cancel_request.proto\x1aValice/protos/api/alicekit/events/capability_update_state/capability_update_state.proto\x1aZalice/protos/api/alicekit/events/client_subscription_state/client_subscription_state.proto\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1aHalice/protos/api/alicekit/events/continue_request/continue_request.proto\x1aHalice/protos/api/alicekit/events/data_proxy_input/data_proxy_input.proto\x1aNalice/protos/api/alicekit/events/file_upload_request/file_upload_request.proto\x1aDalice/protos/api/alicekit/events/finish_request/finish_request.proto\x1a>alice/protos/api/alicekit/events/log_spotter/log_spotter.proto\x1aPalice/protos/api/alicekit/events/record_input_request/record_input_request.proto\x1a@alice/protos/api/alicekit/events/request_stat/request_stat.proto\x1aDalice/protos/api/alicekit/events/stream_control/stream_control.proto\x1aLalice/protos/api/alicekit/events/sync_push_response/sync_push_response.proto\x1aZalice/protos/api/alicekit/events/synchronize_state_request/synchronize_state_request.proto\x1aFalice/protos/api/alicekit/events/translate_input/translate_input.proto\x1a@alice/protos/api/alicekit/events/tts_generate/tts_generate.proto\x1aHalice/protos/api/alicekit/events/tts_update_state/tts_update_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aRalice/protos/api/alicekit/events/deferred_tts_generate/deferred_tts_generate.proto\x1a0alice/protos/api/alicekit/events/ping/ping.proto\"\xb2\x13\n" +
+	"\x0eTClientMessage\x12?\n" +
+	"\x05Event\x18\x01 \x01(\v2'.NAlice.NAliceApi.TClientMessage.TEventH\x00R\x05Event\x12H\n" +
+	"\rStreamControl\x18\x02 \x01(\v2 .NAlice.NAliceApi.TStreamControlH\x00R\rStreamControl\x1a\xe5\x11\n" +
+	"\x06TEvent\x126\n" +
+	"\x06Header\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderR\x06Header\x12:\n" +
+	"\tTextInput\x18\x02 \x01(\v2\x1a.NAlice.TAliceRequestProtoH\x00R\tTextInput\x12<\n" +
 	"\n" +
-	"VoiceInput\x18\x03 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x0f\xaa\xdd\x1b\vvoice_inputH\x00R\vvoice_input\x12N\n" +
+	"VoiceInput\x18\x03 \x01(\v2\x1a.NAlice.TAliceRequestProtoH\x00R\n" +
+	"VoiceInput\x12<\n" +
 	"\n" +
-	"MusicInput\x18\x04 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x0f\xaa\xdd\x1b\vmusic_inputH\x00R\vmusic_input\x12\x87\x01\n" +
-	"\x17SynchronizeStateRequest\x18\x05 \x01(\v2*.NAlice.NAliceApi.TSynchronizeStateRequestB\x1d\xaa\xdd\x1b\x19synchronize_state_requestH\x00R\x19synchronize_state_request\x12Q\n" +
+	"MusicInput\x18\x04 \x01(\v2\x1a.NAlice.TAliceRequestProtoH\x00R\n" +
+	"MusicInput\x12f\n" +
+	"\x17SynchronizeStateRequest\x18\x05 \x01(\v2*.NAlice.NAliceApi.TSynchronizeStateRequestH\x00R\x17SynchronizeStateRequest\x12?\n" +
 	"\n" +
-	"LogSpotter\x18\x06 \x01(\v2\x1d.NAlice.NAliceApi.TLogSpotterB\x0f\xaa\xdd\x1b\vlog_spotterH\x00R\vlog_spotter\x12Q\n" +
-	"\vMatchedUser\x18\a \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x10\xaa\xdd\x1b\fmatched_userH\x00R\fmatched_user\x12k\n" +
-	"\x10SyncPushResponse\x18\b \x01(\v2#.NAlice.NAliceApi.TSyncPushResponseB\x16\xaa\xdd\x1b\x12sync_push_responseH\x00R\x12sync_push_response\x123\n" +
-	"\x03Ack\x18\t \x01(\v2\x16.NAlice.NAliceApi.TAckB\a\xaa\xdd\x1b\x03ackH\x00R\x03ack\x12e\n" +
+	"LogSpotter\x18\x06 \x01(\v2\x1d.NAlice.NAliceApi.TLogSpotterH\x00R\n" +
+	"LogSpotter\x12>\n" +
+	"\vMatchedUser\x18\a \x01(\v2\x1a.NAlice.TAliceRequestProtoH\x00R\vMatchedUser\x12Q\n" +
+	"\x10SyncPushResponse\x18\b \x01(\v2#.NAlice.NAliceApi.TSyncPushResponseH\x00R\x10SyncPushResponse\x12*\n" +
+	"\x03Ack\x18\t \x01(\v2\x16.NAlice.NAliceApi.TAckH\x00R\x03Ack\x12N\n" +
 	"\x0fContinueRequest\x18\n" +
-	" \x01(\v2\".NAlice.NAliceApi.TContinueRequestB\x14\xaa\xdd\x1b\x10continue_requestH\x00R\x10continue_request\x12]\n" +
-	"\rCancelRequest\x18\v \x01(\v2 .NAlice.NAliceApi.TCancelRequestB\x12\xaa\xdd\x1b\x0ecancel_requestH\x00R\x0ecancel_request\x12Y\n" +
-	"\fAsrRecognize\x18\f \x01(\v2\x1f.NAlice.NAliceApi.TAsrRecognizeB\x11\xaa\xdd\x1b\rasr_recognizeH\x00R\rasr_recognize\x12U\n" +
-	"\vTtsGenerate\x18\r \x01(\v2\x1e.NAlice.NAliceApi.TTtsGenerateB\x10\xaa\xdd\x1b\ftts_generateH\x00R\ftts_generate\x12w\n" +
-	"\x13DeferredTtsGenerate\x18\" \x01(\v2&.NAlice.NAliceApi.TDeferredTtsGenerateB\x19\xaa\xdd\x1b\x15deferred_tts_generateH\x00R\x15deferred_tts_generate\x12c\n" +
-	"\x0eDataProxyInput\x18\x0e \x01(\v2!.NAlice.NAliceApi.TDataProxyInputB\x14\xaa\xdd\x1b\x10data_proxy_inputH\x00R\x10data_proxy_input\x12o\n" +
-	"\x11FileUploadRequest\x18\x10 \x01(\v2$.NAlice.NAliceApi.TFileUploadRequestB\x17\xaa\xdd\x1b\x13file_upload_requestH\x00R\x13file_upload_request\x12\x7f\n" +
-	"\x15CapabilityUpdateState\x18\x11 \x01(\v2(.NAlice.NAliceApi.TCapabilityUpdateStateB\x1b\xaa\xdd\x1b\x17capability_update_stateH\x00R\x17capability_update_state\x12Q\n" +
-	"\vSpeechInput\x18\x12 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x10\xaa\xdd\x1b\fspeech_inputH\x00R\fspeech_input\x12c\n" +
-	"\x0eTtsUpdateState\x18\x13 \x01(\v2!.NAlice.NAliceApi.TTtsUpdateStateB\x14\xaa\xdd\x1b\x10tts_update_stateH\x00R\x10tts_update_state\x12\\\n" +
-	"\vRecordInput\x18\x16 \x01(\v2%.NAlice.NAliceApi.TRecordInputRequestB\x10\xaa\xdd\x1b\frecord_inputH\x00R\frecord_input\x12\x87\x01\n" +
-	"\x17ClientSubscriptionState\x18\x19 \x01(\v2*.NAlice.NAliceApi.TClientSubscriptionStateB\x1d\xaa\xdd\x1b\x19client_subscription_stateH\x00R\x19client_subscription_state\x12U\n" +
-	"\vRequestStat\x18\x1c \x01(\v2\x1e.NAlice.NAliceApi.TRequestStatB\x10\xaa\xdd\x1b\frequest_statH\x00R\frequest_stat\x12c\n" +
-	"\x0eTranslateInput\x18\x1d \x01(\v2!.NAlice.NAliceApi.TTranslateInputB\x15\xaa\xdd\x1b\x0ftranslate_input\x18\x01H\x00R\x0ftranslate_input\x12\xa5\x01\n" +
-	"\x1eAudioTranscriptionInputRequest\x18\x1f \x01(\v21.NAlice.NAliceApi.TAudioTranscriptionInputRequestB%\xaa\xdd\x1b!audio_transcription_input_requestH\x00R!audio_transcription_input_request\x12]\n" +
-	"\rFinishRequest\x18  \x01(\v2 .NAlice.NAliceApi.TFinishRequestB\x12\xaa\xdd\x1b\x0efinish_requestH\x00R\x0efinish_request\x127\n" +
-	"\x04Ping\x18! \x01(\v2\x17.NAlice.NAliceApi.TPingB\b\xaa\xdd\x1b\x04pingH\x00R\x04ping:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Event\x12\t\xaa\xdd\x1b\x05eventJ\x04\b\x0f\x10\x10J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x17\x10\x18J\x04\b\x18\x10\x19J\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1e\x10\x1fR\x10DataProxyConnectR\x1cIotCloudTechnicalPushRequestR\x1aIotCloudEventsBatchRequestR\x17IotCloudLogBatchRequestR\x1dIotCloudTelemetryBatchRequestR#IotCloudGeneralQuasarRequestRequestR\x12IotCloudOtaRequestR\x19GeneralHttpRequestRequest:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aMessage\x12\v\xaa\xdd\x1b\amessageJ\x04\bd\x10eR\x1cPredefinedDataForServerTestsB\x82\x01\n" +
-	"3ru.yandex.alice.protos.api.alicekit.protocol.clientB\rClientMessageP\x01Z:a.yandex-team.ru/alice/protos/api/alicekit/protocol/clientb\x06proto3"
+	" \x01(\v2\".NAlice.NAliceApi.TContinueRequestH\x00R\x0fContinueRequest\x12H\n" +
+	"\rCancelRequest\x18\v \x01(\v2 .NAlice.NAliceApi.TCancelRequestH\x00R\rCancelRequest\x12E\n" +
+	"\fAsrRecognize\x18\f \x01(\v2\x1f.NAlice.NAliceApi.TAsrRecognizeH\x00R\fAsrRecognize\x12B\n" +
+	"\vTtsGenerate\x18\r \x01(\v2\x1e.NAlice.NAliceApi.TTtsGenerateH\x00R\vTtsGenerate\x12K\n" +
+	"\x0eDataProxyInput\x18\x0e \x01(\v2!.NAlice.NAliceApi.TDataProxyInputH\x00R\x0eDataProxyInput\x12T\n" +
+	"\x11FileUploadRequest\x18\x10 \x01(\v2$.NAlice.NAliceApi.TFileUploadRequestH\x00R\x11FileUploadRequest\x12`\n" +
+	"\x15CapabilityUpdateState\x18\x11 \x01(\v2(.NAlice.NAliceApi.TCapabilityUpdateStateH\x00R\x15CapabilityUpdateState\x12>\n" +
+	"\vSpeechInput\x18\x12 \x01(\v2\x1a.NAlice.TAliceRequestProtoH\x00R\vSpeechInput\x12K\n" +
+	"\x0eTtsUpdateState\x18\x13 \x01(\v2!.NAlice.NAliceApi.TTtsUpdateStateH\x00R\x0eTtsUpdateState\x12I\n" +
+	"\vRecordInput\x18\x16 \x01(\v2%.NAlice.NAliceApi.TRecordInputRequestH\x00R\vRecordInput\x12f\n" +
+	"\x17ClientSubscriptionState\x18\x19 \x01(\v2*.NAlice.NAliceApi.TClientSubscriptionStateH\x00R\x17ClientSubscriptionState\x12B\n" +
+	"\vRequestStat\x18\x1c \x01(\v2\x1e.NAlice.NAliceApi.TRequestStatH\x00R\vRequestStat\x12K\n" +
+	"\x0eTranslateInput\x18\x1d \x01(\v2!.NAlice.NAliceApi.TTranslateInputH\x00R\x0eTranslateInput\x12{\n" +
+	"\x1eAudioTranscriptionInputRequest\x18\x1f \x01(\v21.NAlice.NAliceApi.TAudioTranscriptionInputRequestH\x00R\x1eAudioTranscriptionInputRequest\x12H\n" +
+	"\rFinishRequest\x18  \x01(\v2 .NAlice.NAliceApi.TFinishRequestH\x00R\rFinishRequest\x12w\n" +
+	"\x13DeferredTtsGenerate\x18\" \x01(\v2&.NAlice.NAliceApi.TDeferredTtsGenerateB\x19\xaa\xdd\x1b\x15deferred_tts_generateH\x00R\x15deferred_tts_generate\x127\n" +
+	"\x04Ping\x18! \x01(\v2\x17.NAlice.NAliceApi.TPingB\b\xaa\xdd\x1b\x04pingH\x00R\x04pingB\a\n" +
+	"\x05EventJ\x04\b\x0f\x10\x10J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x17\x10\x18J\x04\b\x18\x10\x19J\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1e\x10\x1fR\x10DataProxyConnectR\x1cIotCloudTechnicalPushRequestR\x1aIotCloudEventsBatchRequestR\x17IotCloudLogBatchRequestR\x1dIotCloudTelemetryBatchRequestR#IotCloudGeneralQuasarRequestRequestR\x12IotCloudOtaRequestR\x19GeneralHttpRequestRequestB\t\n" +
+	"\aMessageJ\x04\bd\x10eR\x1cPredefinedDataForServerTestsB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12ClientMessageProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/protocol/client\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_protocol_client_client_message_proto_rawDescOnce sync.Once
@@ -660,17 +658,17 @@ var file_alice_protos_api_alicekit_protocol_client_client_message_proto_goTypes 
 	(*cancel_request.TCancelRequest)(nil),                             // 10: NAlice.NAliceApi.TCancelRequest
 	(*asr_recognize.TAsrRecognize)(nil),                               // 11: NAlice.NAliceApi.TAsrRecognize
 	(*tts_generate.TTtsGenerate)(nil),                                 // 12: NAlice.NAliceApi.TTtsGenerate
-	(*deferred_tts_generate.TDeferredTtsGenerate)(nil),                // 13: NAlice.NAliceApi.TDeferredTtsGenerate
-	(*data_proxy_input.TDataProxyInput)(nil),                          // 14: NAlice.NAliceApi.TDataProxyInput
-	(*file_upload_request.TFileUploadRequest)(nil),                    // 15: NAlice.NAliceApi.TFileUploadRequest
-	(*capability_update_state.TCapabilityUpdateState)(nil),            // 16: NAlice.NAliceApi.TCapabilityUpdateState
-	(*tts_update_state.TTtsUpdateState)(nil),                          // 17: NAlice.NAliceApi.TTtsUpdateState
-	(*record_input_request.TRecordInputRequest)(nil),                  // 18: NAlice.NAliceApi.TRecordInputRequest
-	(*client_subscription_state.TClientSubscriptionState)(nil),        // 19: NAlice.NAliceApi.TClientSubscriptionState
-	(*request_stat.TRequestStat)(nil),                                 // 20: NAlice.NAliceApi.TRequestStat
-	(*translate_input.TTranslateInput)(nil),                           // 21: NAlice.NAliceApi.TTranslateInput
-	(*audio_transcription_input.TAudioTranscriptionInputRequest)(nil), // 22: NAlice.NAliceApi.TAudioTranscriptionInputRequest
-	(*finish_request.TFinishRequest)(nil),                             // 23: NAlice.NAliceApi.TFinishRequest
+	(*data_proxy_input.TDataProxyInput)(nil),                          // 13: NAlice.NAliceApi.TDataProxyInput
+	(*file_upload_request.TFileUploadRequest)(nil),                    // 14: NAlice.NAliceApi.TFileUploadRequest
+	(*capability_update_state.TCapabilityUpdateState)(nil),            // 15: NAlice.NAliceApi.TCapabilityUpdateState
+	(*tts_update_state.TTtsUpdateState)(nil),                          // 16: NAlice.NAliceApi.TTtsUpdateState
+	(*record_input_request.TRecordInputRequest)(nil),                  // 17: NAlice.NAliceApi.TRecordInputRequest
+	(*client_subscription_state.TClientSubscriptionState)(nil),        // 18: NAlice.NAliceApi.TClientSubscriptionState
+	(*request_stat.TRequestStat)(nil),                                 // 19: NAlice.NAliceApi.TRequestStat
+	(*translate_input.TTranslateInput)(nil),                           // 20: NAlice.NAliceApi.TTranslateInput
+	(*audio_transcription_input.TAudioTranscriptionInputRequest)(nil), // 21: NAlice.NAliceApi.TAudioTranscriptionInputRequest
+	(*finish_request.TFinishRequest)(nil),                             // 22: NAlice.NAliceApi.TFinishRequest
+	(*deferred_tts_generate.TDeferredTtsGenerate)(nil),                // 23: NAlice.NAliceApi.TDeferredTtsGenerate
 	(*ping.TPing)(nil),                                                // 24: NAlice.NAliceApi.TPing
 }
 var file_alice_protos_api_alicekit_protocol_client_client_message_proto_depIdxs = []int32{
@@ -689,18 +687,18 @@ var file_alice_protos_api_alicekit_protocol_client_client_message_proto_depIdxs 
 	10, // 12: NAlice.NAliceApi.TClientMessage.TEvent.CancelRequest:type_name -> NAlice.NAliceApi.TCancelRequest
 	11, // 13: NAlice.NAliceApi.TClientMessage.TEvent.AsrRecognize:type_name -> NAlice.NAliceApi.TAsrRecognize
 	12, // 14: NAlice.NAliceApi.TClientMessage.TEvent.TtsGenerate:type_name -> NAlice.NAliceApi.TTtsGenerate
-	13, // 15: NAlice.NAliceApi.TClientMessage.TEvent.DeferredTtsGenerate:type_name -> NAlice.NAliceApi.TDeferredTtsGenerate
-	14, // 16: NAlice.NAliceApi.TClientMessage.TEvent.DataProxyInput:type_name -> NAlice.NAliceApi.TDataProxyInput
-	15, // 17: NAlice.NAliceApi.TClientMessage.TEvent.FileUploadRequest:type_name -> NAlice.NAliceApi.TFileUploadRequest
-	16, // 18: NAlice.NAliceApi.TClientMessage.TEvent.CapabilityUpdateState:type_name -> NAlice.NAliceApi.TCapabilityUpdateState
-	4,  // 19: NAlice.NAliceApi.TClientMessage.TEvent.SpeechInput:type_name -> NAlice.TAliceRequestProto
-	17, // 20: NAlice.NAliceApi.TClientMessage.TEvent.TtsUpdateState:type_name -> NAlice.NAliceApi.TTtsUpdateState
-	18, // 21: NAlice.NAliceApi.TClientMessage.TEvent.RecordInput:type_name -> NAlice.NAliceApi.TRecordInputRequest
-	19, // 22: NAlice.NAliceApi.TClientMessage.TEvent.ClientSubscriptionState:type_name -> NAlice.NAliceApi.TClientSubscriptionState
-	20, // 23: NAlice.NAliceApi.TClientMessage.TEvent.RequestStat:type_name -> NAlice.NAliceApi.TRequestStat
-	21, // 24: NAlice.NAliceApi.TClientMessage.TEvent.TranslateInput:type_name -> NAlice.NAliceApi.TTranslateInput
-	22, // 25: NAlice.NAliceApi.TClientMessage.TEvent.AudioTranscriptionInputRequest:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest
-	23, // 26: NAlice.NAliceApi.TClientMessage.TEvent.FinishRequest:type_name -> NAlice.NAliceApi.TFinishRequest
+	13, // 15: NAlice.NAliceApi.TClientMessage.TEvent.DataProxyInput:type_name -> NAlice.NAliceApi.TDataProxyInput
+	14, // 16: NAlice.NAliceApi.TClientMessage.TEvent.FileUploadRequest:type_name -> NAlice.NAliceApi.TFileUploadRequest
+	15, // 17: NAlice.NAliceApi.TClientMessage.TEvent.CapabilityUpdateState:type_name -> NAlice.NAliceApi.TCapabilityUpdateState
+	4,  // 18: NAlice.NAliceApi.TClientMessage.TEvent.SpeechInput:type_name -> NAlice.TAliceRequestProto
+	16, // 19: NAlice.NAliceApi.TClientMessage.TEvent.TtsUpdateState:type_name -> NAlice.NAliceApi.TTtsUpdateState
+	17, // 20: NAlice.NAliceApi.TClientMessage.TEvent.RecordInput:type_name -> NAlice.NAliceApi.TRecordInputRequest
+	18, // 21: NAlice.NAliceApi.TClientMessage.TEvent.ClientSubscriptionState:type_name -> NAlice.NAliceApi.TClientSubscriptionState
+	19, // 22: NAlice.NAliceApi.TClientMessage.TEvent.RequestStat:type_name -> NAlice.NAliceApi.TRequestStat
+	20, // 23: NAlice.NAliceApi.TClientMessage.TEvent.TranslateInput:type_name -> NAlice.NAliceApi.TTranslateInput
+	21, // 24: NAlice.NAliceApi.TClientMessage.TEvent.AudioTranscriptionInputRequest:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest
+	22, // 25: NAlice.NAliceApi.TClientMessage.TEvent.FinishRequest:type_name -> NAlice.NAliceApi.TFinishRequest
+	23, // 26: NAlice.NAliceApi.TClientMessage.TEvent.DeferredTtsGenerate:type_name -> NAlice.NAliceApi.TDeferredTtsGenerate
 	24, // 27: NAlice.NAliceApi.TClientMessage.TEvent.Ping:type_name -> NAlice.NAliceApi.TPing
 	28, // [28:28] is the sub-list for method output_type
 	28, // [28:28] is the sub-list for method input_type
@@ -731,7 +729,6 @@ func file_alice_protos_api_alicekit_protocol_client_client_message_proto_init() 
 		(*TClientMessage_TEvent_CancelRequest)(nil),
 		(*TClientMessage_TEvent_AsrRecognize)(nil),
 		(*TClientMessage_TEvent_TtsGenerate)(nil),
-		(*TClientMessage_TEvent_DeferredTtsGenerate)(nil),
 		(*TClientMessage_TEvent_DataProxyInput)(nil),
 		(*TClientMessage_TEvent_FileUploadRequest)(nil),
 		(*TClientMessage_TEvent_CapabilityUpdateState)(nil),
@@ -743,6 +740,7 @@ func file_alice_protos_api_alicekit_protocol_client_client_message_proto_init() 
 		(*TClientMessage_TEvent_TranslateInput)(nil),
 		(*TClientMessage_TEvent_AudioTranscriptionInputRequest)(nil),
 		(*TClientMessage_TEvent_FinishRequest)(nil),
+		(*TClientMessage_TEvent_DeferredTtsGenerate)(nil),
 		(*TClientMessage_TEvent_Ping)(nil),
 	}
 	type x struct{}

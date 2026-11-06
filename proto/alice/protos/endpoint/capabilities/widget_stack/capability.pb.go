@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/widget_stack/capability.proto
 
-package widgetstackpb
+package widget_stack
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -935,8 +935,8 @@ const file_alice_protos_endpoint_capabilities_widget_stack_capability_proto_rawD
 	"\aUnknown\x10\x00\x12\x16\n" +
 	"\x12ReminderWidgetType\x10\x01\x12\x15\n" +
 	"\x11WeatherWidgetType\x10\x02\x12\x11\n" +
-	"\rIoTWidgetType\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9c\x02B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aWidgetStackCapabilityProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/widget_stack;widgetstackpbb\x06proto3"
+	"\rIoTWidgetType\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9c\x02B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aWidgetStackCapabilityProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/widget_stackb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_widget_stack_capability_proto_rawDescOnce sync.Once

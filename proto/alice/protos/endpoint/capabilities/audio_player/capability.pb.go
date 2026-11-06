@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/audio_player/capability.proto
 
-package audioplayerpb
+package audio_player
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -258,9 +258,9 @@ func (TAudioPlayerCapability_TState_EStateType) EnumDescriptor() ([]byte, []int)
 
 type TAudioPlayerCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAudioPlayerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAudioPlayerCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAudioPlayerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAudioPlayerCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,14 +318,14 @@ func (x *TAudioPlayerCapability) GetState() *TAudioPlayerCapability_TState {
 
 type TAudioPlayerCapability_TParameters struct {
 	state                                 protoimpl.MessageState                                                     `protogen:"open.v1"`
-	GenericHlsPlaybackSupport             bool                                                                       `protobuf:"varint,1,opt,name=GenericHlsPlaybackSupport,json=generic_hls_playback_support,proto3" json:"GenericHlsPlaybackSupport,omitempty"`
-	SupportedCodecs                       []TAudioPlayerCapability_TParameters_ECodec                                `protobuf:"varint,2,rep,packed,name=SupportedCodecs,json=supported_codecs,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_ECodec" json:"SupportedCodecs,omitempty"`
-	SupportedStrmFeatures                 []TAudioPlayerCapability_TParameters_EStrmFeatures                         `protobuf:"varint,3,rep,packed,name=SupportedStrmFeatures,json=supported_strm_features,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_EStrmFeatures" json:"SupportedStrmFeatures,omitempty"`
-	KaraokeSupport                        bool                                                                       `protobuf:"varint,4,opt,name=KaraokeSupport,json=karaoke_support,proto3" json:"KaraokeSupport,omitempty"`
-	Quality                               TAudioPlayerCapability_TParameters_EQuality                                `protobuf:"varint,5,opt,name=Quality,json=quality,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_EQuality" json:"Quality,omitempty"`
-	AutoQualityEnabled                    bool                                                                       `protobuf:"varint,8,opt,name=AutoQualityEnabled,json=auto_quality_enabled,proto3" json:"AutoQualityEnabled,omitempty"`
-	SequenceStateConditionalSupportParams *TAudioPlayerCapability_TParameters_TSequenceStateConditionalSupportParams `protobuf:"bytes,7,opt,name=SequenceStateConditionalSupportParams,json=sequence_state_conditional_support_params,proto3" json:"SequenceStateConditionalSupportParams,omitempty"`
-	MusicSetSupport                       bool                                                                       `protobuf:"varint,9,opt,name=MusicSetSupport,json=music_set_support,proto3" json:"MusicSetSupport,omitempty"`
+	GenericHlsPlaybackSupport             bool                                                                       `protobuf:"varint,1,opt,name=GenericHlsPlaybackSupport,proto3" json:"GenericHlsPlaybackSupport,omitempty"`
+	SupportedCodecs                       []TAudioPlayerCapability_TParameters_ECodec                                `protobuf:"varint,2,rep,packed,name=SupportedCodecs,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_ECodec" json:"SupportedCodecs,omitempty"`
+	SupportedStrmFeatures                 []TAudioPlayerCapability_TParameters_EStrmFeatures                         `protobuf:"varint,3,rep,packed,name=SupportedStrmFeatures,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_EStrmFeatures" json:"SupportedStrmFeatures,omitempty"`
+	KaraokeSupport                        bool                                                                       `protobuf:"varint,4,opt,name=KaraokeSupport,proto3" json:"KaraokeSupport,omitempty"`
+	Quality                               TAudioPlayerCapability_TParameters_EQuality                                `protobuf:"varint,5,opt,name=Quality,proto3,enum=NAlice.TAudioPlayerCapability_TParameters_EQuality" json:"Quality,omitempty"`
+	AutoQualityEnabled                    bool                                                                       `protobuf:"varint,8,opt,name=AutoQualityEnabled,proto3" json:"AutoQualityEnabled,omitempty"`
+	SequenceStateConditionalSupportParams *TAudioPlayerCapability_TParameters_TSequenceStateConditionalSupportParams `protobuf:"bytes,7,opt,name=SequenceStateConditionalSupportParams,proto3" json:"SequenceStateConditionalSupportParams,omitempty"`
+	MusicSetSupport                       bool                                                                       `protobuf:"varint,9,opt,name=MusicSetSupport,proto3" json:"MusicSetSupport,omitempty"`
 	unknownFields                         protoimpl.UnknownFields
 	sizeCache                             protoimpl.SizeCache
 }
@@ -418,20 +418,20 @@ func (x *TAudioPlayerCapability_TParameters) GetMusicSetSupport() bool {
 
 type TAudioPlayerCapability_TState struct {
 	state                     protoimpl.MessageState                                    `protogen:"open.v1"`
-	CommonPlayerState         *common_player_state.TCommonPlayerState                   `protobuf:"bytes,1,opt,name=CommonPlayerState,json=common_player_state,proto3" json:"CommonPlayerState,omitempty"`
-	StateType                 TAudioPlayerCapability_TState_EStateType                  `protobuf:"varint,2,opt,name=StateType,json=state_type,proto3,enum=NAlice.TAudioPlayerCapability_TState_EStateType" json:"StateType,omitempty"`
-	StreamId                  string                                                    `protobuf:"bytes,3,opt,name=StreamId,json=stream_id,proto3" json:"StreamId,omitempty"`
-	StreamType                string                                                    `protobuf:"bytes,4,opt,name=StreamType,json=stream_type,proto3" json:"StreamType,omitempty"`
-	Title                     string                                                    `protobuf:"bytes,5,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	SubTitle                  string                                                    `protobuf:"bytes,6,opt,name=SubTitle,json=subtitle,proto3" json:"SubTitle,omitempty"`
-	SequenceState             *TAudioPlayerSequenceState                                `protobuf:"bytes,7,opt,name=SequenceState,json=sequence_state,proto3" json:"SequenceState,omitempty"`
-	SwitchStreamsMetadata     *music.TSwitchingStreamsMetadata                          `protobuf:"bytes,10,opt,name=SwitchStreamsMetadata,json=switch_streams_metadata,proto3" json:"SwitchStreamsMetadata,omitempty"`
-	PlaybackOpts              *data.TPlaybackOptions                                    `protobuf:"bytes,11,opt,name=PlaybackOpts,json=playback_opts,proto3" json:"PlaybackOpts,omitempty"`
-	PlaybackSpeed             float64                                                   `protobuf:"fixed64,12,opt,name=PlaybackSpeed,json=playback_speed,proto3" json:"PlaybackSpeed,omitempty"`
-	IsCrossfaded              bool                                                      `protobuf:"varint,13,opt,name=IsCrossfaded,json=is_crossfaded,proto3" json:"IsCrossfaded,omitempty"`
-	UserMusicSessionTimestamp int64                                                     `protobuf:"varint,14,opt,name=UserMusicSessionTimestamp,json=user_music_session_timestamp,proto3" json:"UserMusicSessionTimestamp,omitempty"`
-	FinishingTrackPlayerState *TAudioPlayerCapability_TState_TFinishingTrackPlayerState `protobuf:"bytes,15,opt,name=FinishingTrackPlayerState,json=finishing_track_player_state,proto3" json:"FinishingTrackPlayerState,omitempty"`
-	KaraokeMode               music.EKaraokeMode                                        `protobuf:"varint,16,opt,name=KaraokeMode,json=karaoke_mode,proto3,enum=NAlice.NData.NMusic.EKaraokeMode" json:"KaraokeMode,omitempty"`
+	CommonPlayerState         *common_player_state.TCommonPlayerState                   `protobuf:"bytes,1,opt,name=CommonPlayerState,proto3" json:"CommonPlayerState,omitempty"`
+	StateType                 TAudioPlayerCapability_TState_EStateType                  `protobuf:"varint,2,opt,name=StateType,proto3,enum=NAlice.TAudioPlayerCapability_TState_EStateType" json:"StateType,omitempty"`
+	StreamId                  string                                                    `protobuf:"bytes,3,opt,name=StreamId,proto3" json:"StreamId,omitempty"`
+	StreamType                string                                                    `protobuf:"bytes,4,opt,name=StreamType,proto3" json:"StreamType,omitempty"`
+	Title                     string                                                    `protobuf:"bytes,5,opt,name=Title,proto3" json:"Title,omitempty"`
+	SubTitle                  string                                                    `protobuf:"bytes,6,opt,name=SubTitle,proto3" json:"SubTitle,omitempty"`
+	SequenceState             *TAudioPlayerSequenceState                                `protobuf:"bytes,7,opt,name=SequenceState,proto3" json:"SequenceState,omitempty"`
+	SwitchStreamsMetadata     *music.TSwitchingStreamsMetadata                          `protobuf:"bytes,10,opt,name=SwitchStreamsMetadata,proto3" json:"SwitchStreamsMetadata,omitempty"`
+	PlaybackOpts              *data.TPlaybackOptions                                    `protobuf:"bytes,11,opt,name=PlaybackOpts,proto3" json:"PlaybackOpts,omitempty"`
+	PlaybackSpeed             float64                                                   `protobuf:"fixed64,12,opt,name=PlaybackSpeed,proto3" json:"PlaybackSpeed,omitempty"`
+	IsCrossfaded              bool                                                      `protobuf:"varint,13,opt,name=IsCrossfaded,proto3" json:"IsCrossfaded,omitempty"`
+	UserMusicSessionTimestamp int64                                                     `protobuf:"varint,14,opt,name=UserMusicSessionTimestamp,proto3" json:"UserMusicSessionTimestamp,omitempty"`
+	FinishingTrackPlayerState *TAudioPlayerCapability_TState_TFinishingTrackPlayerState `protobuf:"bytes,15,opt,name=FinishingTrackPlayerState,proto3" json:"FinishingTrackPlayerState,omitempty"`
+	KaraokeMode               music.EKaraokeMode                                        `protobuf:"varint,16,opt,name=KaraokeMode,proto3,enum=NAlice.NData.NMusic.EKaraokeMode" json:"KaraokeMode,omitempty"`
 	IsVinylPlayer             bool                                                      `protobuf:"varint,19,opt,name=IsVinylPlayer,json=is_vinyl_player,proto3" json:"IsVinylPlayer,omitempty"`
 	PrefetchedTrack           *TAudioPlayerCapability_TState_TPrefetchedTrack           `protobuf:"bytes,18,opt,name=PrefetchedTrack,json=prefetched_track,proto3,oneof" json:"PrefetchedTrack,omitempty"`
 	unknownFields             protoimpl.UnknownFields
@@ -580,6 +580,770 @@ func (x *TAudioPlayerCapability_TState) GetPrefetchedTrack() *TAudioPlayerCapabi
 	return nil
 }
 
+type TAudioPlayerCapability_TSetSequenceStateDirective struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Name          string                     `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SequenceState *TAudioPlayerSequenceState `protobuf:"bytes,1,opt,name=SequenceState,proto3" json:"SequenceState,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TSetSequenceStateDirective) Reset() {
+	*x = TAudioPlayerCapability_TSetSequenceStateDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TSetSequenceStateDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TSetSequenceStateDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TSetSequenceStateDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TSetSequenceStateDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TSetSequenceStateDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 2}
+}
+
+func (x *TAudioPlayerCapability_TSetSequenceStateDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TAudioPlayerCapability_TSetSequenceStateDirective) GetSequenceState() *TAudioPlayerSequenceState {
+	if x != nil {
+		return x.SequenceState
+	}
+	return nil
+}
+
+type TAudioPlayerCapability_TPlayDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TPlayDirective) Reset() {
+	*x = TAudioPlayerCapability_TPlayDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TPlayDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TPlayDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TPlayDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TPlayDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TPlayDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 3}
+}
+
+func (x *TAudioPlayerCapability_TPlayDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TLikeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TLikeDirective) Reset() {
+	*x = TAudioPlayerCapability_TLikeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TLikeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TLikeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TLikeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TLikeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TLikeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 4}
+}
+
+func (x *TAudioPlayerCapability_TLikeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TUnlikeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TUnlikeDirective) Reset() {
+	*x = TAudioPlayerCapability_TUnlikeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TUnlikeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TUnlikeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TUnlikeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TUnlikeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TUnlikeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 5}
+}
+
+func (x *TAudioPlayerCapability_TUnlikeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TDislikeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TDislikeDirective) Reset() {
+	*x = TAudioPlayerCapability_TDislikeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TDislikeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TDislikeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TDislikeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TDislikeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TDislikeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 6}
+}
+
+func (x *TAudioPlayerCapability_TDislikeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TUndislikeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TUndislikeDirective) Reset() {
+	*x = TAudioPlayerCapability_TUndislikeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TUndislikeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TUndislikeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TUndislikeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TUndislikeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TUndislikeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 7}
+}
+
+func (x *TAudioPlayerCapability_TUndislikeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TNextDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TNextDirective) Reset() {
+	*x = TAudioPlayerCapability_TNextDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TNextDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TNextDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TNextDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TNextDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TNextDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 8}
+}
+
+func (x *TAudioPlayerCapability_TNextDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TPreviousDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TPreviousDirective) Reset() {
+	*x = TAudioPlayerCapability_TPreviousDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TPreviousDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TPreviousDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TPreviousDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TPreviousDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TPreviousDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 9}
+}
+
+func (x *TAudioPlayerCapability_TPreviousDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TRepeatOneDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TRepeatOneDirective) Reset() {
+	*x = TAudioPlayerCapability_TRepeatOneDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TRepeatOneDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TRepeatOneDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TRepeatOneDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TRepeatOneDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TRepeatOneDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 10}
+}
+
+func (x *TAudioPlayerCapability_TRepeatOneDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TRepeatAllDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TRepeatAllDirective) Reset() {
+	*x = TAudioPlayerCapability_TRepeatAllDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TRepeatAllDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TRepeatAllDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TRepeatAllDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TRepeatAllDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TRepeatAllDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 11}
+}
+
+func (x *TAudioPlayerCapability_TRepeatAllDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TUnrepeatDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TUnrepeatDirective) Reset() {
+	*x = TAudioPlayerCapability_TUnrepeatDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TUnrepeatDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TUnrepeatDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TUnrepeatDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TUnrepeatDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TUnrepeatDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 12}
+}
+
+func (x *TAudioPlayerCapability_TUnrepeatDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TShuffleDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TShuffleDirective) Reset() {
+	*x = TAudioPlayerCapability_TShuffleDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TShuffleDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TShuffleDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TShuffleDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TShuffleDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TShuffleDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 13}
+}
+
+func (x *TAudioPlayerCapability_TShuffleDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TUnshuffleDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TUnshuffleDirective) Reset() {
+	*x = TAudioPlayerCapability_TUnshuffleDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TUnshuffleDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TUnshuffleDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TUnshuffleDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TUnshuffleDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TUnshuffleDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 14}
+}
+
+func (x *TAudioPlayerCapability_TUnshuffleDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TGetLyricsDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TGetLyricsDirective) Reset() {
+	*x = TAudioPlayerCapability_TGetLyricsDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TGetLyricsDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TGetLyricsDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TGetLyricsDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TGetLyricsDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TGetLyricsDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 15}
+}
+
+func (x *TAudioPlayerCapability_TGetLyricsDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TAudioSetSpeedLevelDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	PlaybackSpeed *float64               `protobuf:"fixed64,1,opt,name=PlaybackSpeed,proto3,oneof" json:"PlaybackSpeed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) Reset() {
+	*x = TAudioPlayerCapability_TAudioSetSpeedLevelDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TAudioSetSpeedLevelDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TAudioSetSpeedLevelDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TAudioSetSpeedLevelDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 16}
+}
+
+func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) GetPlaybackSpeed() float64 {
+	if x != nil && x.PlaybackSpeed != nil {
+		return *x.PlaybackSpeed
+	}
+	return 0
+}
+
+type TAudioPlayerCapability_TEnableKaraokeModeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) Reset() {
+	*x = TAudioPlayerCapability_TEnableKaraokeModeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TEnableKaraokeModeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TEnableKaraokeModeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TEnableKaraokeModeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 17}
+}
+
+func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
+type TAudioPlayerCapability_TDisableKaraokeModeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,proto3,oneof" json:"TrackId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) Reset() {
+	*x = TAudioPlayerCapability_TDisableKaraokeModeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioPlayerCapability_TDisableKaraokeModeDirective) ProtoMessage() {}
+
+func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioPlayerCapability_TDisableKaraokeModeDirective.ProtoReflect.Descriptor instead.
+func (*TAudioPlayerCapability_TDisableKaraokeModeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 18}
+}
+
+func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) GetTrackId() string {
+	if x != nil && x.TrackId != nil {
+		return *x.TrackId
+	}
+	return ""
+}
+
 type TAudioPlayerCapability_TProgressEvent struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
 	StateType     TAudioPlayerCapability_TState_EStateType `protobuf:"varint,1,opt,name=StateType,json=state_type,proto3,enum=NAlice.TAudioPlayerCapability_TState_EStateType" json:"StateType,omitempty"`
@@ -593,7 +1357,7 @@ type TAudioPlayerCapability_TProgressEvent struct {
 
 func (x *TAudioPlayerCapability_TProgressEvent) Reset() {
 	*x = TAudioPlayerCapability_TProgressEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[3]
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -605,7 +1369,7 @@ func (x *TAudioPlayerCapability_TProgressEvent) String() string {
 func (*TAudioPlayerCapability_TProgressEvent) ProtoMessage() {}
 
 func (x *TAudioPlayerCapability_TProgressEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[3]
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -618,7 +1382,7 @@ func (x *TAudioPlayerCapability_TProgressEvent) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use TAudioPlayerCapability_TProgressEvent.ProtoReflect.Descriptor instead.
 func (*TAudioPlayerCapability_TProgressEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 2}
+	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 19}
 }
 
 func (x *TAudioPlayerCapability_TProgressEvent) GetStateType() TAudioPlayerCapability_TState_EStateType {
@@ -656,773 +1420,9 @@ func (x *TAudioPlayerCapability_TProgressEvent) GetStreamId() string {
 	return ""
 }
 
-type TAudioPlayerCapability_TSetSequenceStateDirective struct {
-	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Name          string                     `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SequenceState *TAudioPlayerSequenceState `protobuf:"bytes,1,opt,name=SequenceState,json=sequence_state,proto3" json:"SequenceState,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TSetSequenceStateDirective) Reset() {
-	*x = TAudioPlayerCapability_TSetSequenceStateDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TSetSequenceStateDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TSetSequenceStateDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TSetSequenceStateDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TSetSequenceStateDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TSetSequenceStateDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 3}
-}
-
-func (x *TAudioPlayerCapability_TSetSequenceStateDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *TAudioPlayerCapability_TSetSequenceStateDirective) GetSequenceState() *TAudioPlayerSequenceState {
-	if x != nil {
-		return x.SequenceState
-	}
-	return nil
-}
-
-type TAudioPlayerCapability_TPlayDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TPlayDirective) Reset() {
-	*x = TAudioPlayerCapability_TPlayDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TPlayDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TPlayDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TPlayDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TPlayDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TPlayDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 4}
-}
-
-func (x *TAudioPlayerCapability_TPlayDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TLikeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TLikeDirective) Reset() {
-	*x = TAudioPlayerCapability_TLikeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TLikeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TLikeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TLikeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TLikeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TLikeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 5}
-}
-
-func (x *TAudioPlayerCapability_TLikeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TUnlikeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TUnlikeDirective) Reset() {
-	*x = TAudioPlayerCapability_TUnlikeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TUnlikeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TUnlikeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TUnlikeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TUnlikeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TUnlikeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 6}
-}
-
-func (x *TAudioPlayerCapability_TUnlikeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TDislikeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TDislikeDirective) Reset() {
-	*x = TAudioPlayerCapability_TDislikeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TDislikeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TDislikeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TDislikeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TDislikeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TDislikeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 7}
-}
-
-func (x *TAudioPlayerCapability_TDislikeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TUndislikeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TUndislikeDirective) Reset() {
-	*x = TAudioPlayerCapability_TUndislikeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[9]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TUndislikeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TUndislikeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TUndislikeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[9]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TUndislikeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TUndislikeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 8}
-}
-
-func (x *TAudioPlayerCapability_TUndislikeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TNextDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TNextDirective) Reset() {
-	*x = TAudioPlayerCapability_TNextDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[10]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TNextDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TNextDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TNextDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[10]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TNextDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TNextDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 9}
-}
-
-func (x *TAudioPlayerCapability_TNextDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TPreviousDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TPreviousDirective) Reset() {
-	*x = TAudioPlayerCapability_TPreviousDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TPreviousDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TPreviousDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TPreviousDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TPreviousDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TPreviousDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 10}
-}
-
-func (x *TAudioPlayerCapability_TPreviousDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TRepeatOneDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TRepeatOneDirective) Reset() {
-	*x = TAudioPlayerCapability_TRepeatOneDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TRepeatOneDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TRepeatOneDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TRepeatOneDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TRepeatOneDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TRepeatOneDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 11}
-}
-
-func (x *TAudioPlayerCapability_TRepeatOneDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TRepeatAllDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TRepeatAllDirective) Reset() {
-	*x = TAudioPlayerCapability_TRepeatAllDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[13]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TRepeatAllDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TRepeatAllDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TRepeatAllDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[13]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TRepeatAllDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TRepeatAllDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 12}
-}
-
-func (x *TAudioPlayerCapability_TRepeatAllDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TUnrepeatDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TUnrepeatDirective) Reset() {
-	*x = TAudioPlayerCapability_TUnrepeatDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[14]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TUnrepeatDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TUnrepeatDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TUnrepeatDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[14]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TUnrepeatDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TUnrepeatDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 13}
-}
-
-func (x *TAudioPlayerCapability_TUnrepeatDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TShuffleDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TShuffleDirective) Reset() {
-	*x = TAudioPlayerCapability_TShuffleDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[15]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TShuffleDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TShuffleDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TShuffleDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[15]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TShuffleDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TShuffleDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 14}
-}
-
-func (x *TAudioPlayerCapability_TShuffleDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TUnshuffleDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TUnshuffleDirective) Reset() {
-	*x = TAudioPlayerCapability_TUnshuffleDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[16]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TUnshuffleDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TUnshuffleDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TUnshuffleDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[16]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TUnshuffleDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TUnshuffleDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 15}
-}
-
-func (x *TAudioPlayerCapability_TUnshuffleDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TGetLyricsDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TGetLyricsDirective) Reset() {
-	*x = TAudioPlayerCapability_TGetLyricsDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[17]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TGetLyricsDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TGetLyricsDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TGetLyricsDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[17]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TGetLyricsDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TGetLyricsDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 16}
-}
-
-func (x *TAudioPlayerCapability_TGetLyricsDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TAudioSetSpeedLevelDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	PlaybackSpeed *float64               `protobuf:"fixed64,1,opt,name=PlaybackSpeed,json=playback_speed,proto3,oneof" json:"PlaybackSpeed,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) Reset() {
-	*x = TAudioPlayerCapability_TAudioSetSpeedLevelDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[18]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TAudioSetSpeedLevelDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[18]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TAudioSetSpeedLevelDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TAudioSetSpeedLevelDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 17}
-}
-
-func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *TAudioPlayerCapability_TAudioSetSpeedLevelDirective) GetPlaybackSpeed() float64 {
-	if x != nil && x.PlaybackSpeed != nil {
-		return *x.PlaybackSpeed
-	}
-	return 0
-}
-
-type TAudioPlayerCapability_TEnableKaraokeModeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) Reset() {
-	*x = TAudioPlayerCapability_TEnableKaraokeModeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[19]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TEnableKaraokeModeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[19]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TEnableKaraokeModeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TEnableKaraokeModeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 18}
-}
-
-func (x *TAudioPlayerCapability_TEnableKaraokeModeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
-type TAudioPlayerCapability_TDisableKaraokeModeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackId       *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id,proto3,oneof" json:"TrackId,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) Reset() {
-	*x = TAudioPlayerCapability_TDisableKaraokeModeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[20]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAudioPlayerCapability_TDisableKaraokeModeDirective) ProtoMessage() {}
-
-func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[20]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAudioPlayerCapability_TDisableKaraokeModeDirective.ProtoReflect.Descriptor instead.
-func (*TAudioPlayerCapability_TDisableKaraokeModeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescGZIP(), []int{0, 19}
-}
-
-func (x *TAudioPlayerCapability_TDisableKaraokeModeDirective) GetTrackId() string {
-	if x != nil && x.TrackId != nil {
-		return *x.TrackId
-	}
-	return ""
-}
-
 type TAudioPlayerCapability_TParameters_TSequenceStateConditionalSupportParams struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
-	AllowMultiroomSharing bool                   `protobuf:"varint,1,opt,name=AllowMultiroomSharing,json=allow_multiroom_sharing,proto3" json:"AllowMultiroomSharing,omitempty"`
+	AllowMultiroomSharing bool                   `protobuf:"varint,1,opt,name=AllowMultiroomSharing,proto3" json:"AllowMultiroomSharing,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -1466,8 +1466,8 @@ func (x *TAudioPlayerCapability_TParameters_TSequenceStateConditionalSupportPara
 
 type TAudioPlayerCapability_TState_TFinishingTrackPlayerState struct {
 	state             protoimpl.MessageState                  `protogen:"open.v1"`
-	CommonPlayerState *common_player_state.TCommonPlayerState `protobuf:"bytes,1,opt,name=CommonPlayerState,json=common_player_state,proto3" json:"CommonPlayerState,omitempty"`
-	StreamId          string                                  `protobuf:"bytes,2,opt,name=StreamId,json=stream_id,proto3" json:"StreamId,omitempty"`
+	CommonPlayerState *common_player_state.TCommonPlayerState `protobuf:"bytes,1,opt,name=CommonPlayerState,proto3" json:"CommonPlayerState,omitempty"`
+	StreamId          string                                  `protobuf:"bytes,2,opt,name=StreamId,proto3" json:"StreamId,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1564,26 +1564,24 @@ var File_alice_protos_endpoint_capabilities_audio_player_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/audio_player/capability.proto\x12\x06NAlice\x1a?alice/protos/data/common_player_state/common_player_state.proto\x1a(alice/protos/data/playback_options.proto\x1a3alice/protos/data/scenario/music/karaoke_mode.proto\x1aAalice/protos/data/scenario/music/switching_streams_metadata.proto\x1aDalice/protos/endpoint/capabilities/audio_player/sequence_state.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xca.\n" +
-	"\x16TAudioPlayerCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"@alice/protos/endpoint/capabilities/audio_player/capability.proto\x12\x06NAlice\x1a?alice/protos/data/common_player_state/common_player_state.proto\x1a(alice/protos/data/playback_options.proto\x1a3alice/protos/data/scenario/music/karaoke_mode.proto\x1aAalice/protos/data/scenario/music/switching_streams_metadata.proto\x1aDalice/protos/endpoint/capabilities/audio_player/sequence_state.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe3 \n" +
+	"\x16TAudioPlayerCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TAudioPlayerCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TAudioPlayerCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x9d\n" +
-	"\n" +
-	"\vTParameters\x12a\n" +
-	"\x19GenericHlsPlaybackSupport\x18\x01 \x01(\bB \xaa\xdd\x1b\x1cgeneric_hls_playback_supportR\x1cgeneric_hls_playback_support\x12r\n" +
-	"\x0fSupportedCodecs\x18\x02 \x03(\x0e21.NAlice.TAudioPlayerCapability.TParameters.ECodecB\x14\xaa\xdd\x1b\x10supported_codecsR\x10supported_codecs\x12\x8d\x01\n" +
-	"\x15SupportedStrmFeatures\x18\x03 \x03(\x0e28.NAlice.TAudioPlayerCapability.TParameters.EStrmFeaturesB\x1b\xaa\xdd\x1b\x17supported_strm_featuresR\x17supported_strm_features\x12<\n" +
-	"\x0eKaraokeSupport\x18\x04 \x01(\bB\x13\xaa\xdd\x1b\x0fkaraoke_supportR\x0fkaraoke_support\x12Z\n" +
-	"\aQuality\x18\x05 \x01(\x0e23.NAlice.TAudioPlayerCapability.TParameters.EQualityB\v\xaa\xdd\x1b\aqualityR\aquality\x12J\n" +
-	"\x12AutoQualityEnabled\x18\b \x01(\bB\x18\xaa\xdd\x1b\x14auto_quality_enabledR\x14auto_quality_enabled\x12\xda\x01\n" +
-	"%SequenceStateConditionalSupportParams\x18\a \x01(\v2Q.NAlice.TAudioPlayerCapability.TParameters.TSequenceStateConditionalSupportParamsB-\xaa\xdd\x1b)sequence_state_conditional_support_paramsR)sequence_state_conditional_support_params\x12A\n" +
-	"\x0fMusicSetSupport\x18\t \x01(\bB\x15\xaa\xdd\x1b\x11music_set_supportR\x11music_set_support\x1a\x83\x01\n" +
-	"&TSequenceStateConditionalSupportParams\x12S\n" +
-	"\x15AllowMultiroomSharing\x18\x01 \x01(\bB\x1b\xaa\xdd\x1b\x17allow_multiroom_sharingR\x17allow_multiroom_sharing:\x04\xa8\xdd\x1b\x04\"`\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TAudioPlayerCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TAudioPlayerCapability.TStateR\x05State\x1a\x8a\b\n" +
+	"\vTParameters\x12<\n" +
+	"\x19GenericHlsPlaybackSupport\x18\x01 \x01(\bR\x19GenericHlsPlaybackSupport\x12[\n" +
+	"\x0fSupportedCodecs\x18\x02 \x03(\x0e21.NAlice.TAudioPlayerCapability.TParameters.ECodecR\x0fSupportedCodecs\x12n\n" +
+	"\x15SupportedStrmFeatures\x18\x03 \x03(\x0e28.NAlice.TAudioPlayerCapability.TParameters.EStrmFeaturesR\x15SupportedStrmFeatures\x12&\n" +
+	"\x0eKaraokeSupport\x18\x04 \x01(\bR\x0eKaraokeSupport\x12M\n" +
+	"\aQuality\x18\x05 \x01(\x0e23.NAlice.TAudioPlayerCapability.TParameters.EQualityR\aQuality\x12.\n" +
+	"\x12AutoQualityEnabled\x18\b \x01(\bR\x12AutoQualityEnabled\x12\xa7\x01\n" +
+	"%SequenceStateConditionalSupportParams\x18\a \x01(\v2Q.NAlice.TAudioPlayerCapability.TParameters.TSequenceStateConditionalSupportParamsR%SequenceStateConditionalSupportParams\x12(\n" +
+	"\x0fMusicSetSupport\x18\t \x01(\bR\x0fMusicSetSupport\x1a^\n" +
+	"&TSequenceStateConditionalSupportParams\x124\n" +
+	"\x15AllowMultiroomSharing\x18\x01 \x01(\bR\x15AllowMultiroomSharing\"`\n" +
 	"\x06ECodec\x12\a\n" +
 	"\x03Mp3\x10\x00\x12\b\n" +
 	"\x04Opus\x10\x01\x12\a\n" +
@@ -1604,31 +1602,30 @@ const file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawD
 	"\n" +
 	"\x06Normal\x10\x03\x12\b\n" +
 	"\x04High\x10\x04\x12\f\n" +
-	"\bLossless\x10\x05:\x04\xa8\xdd\x1b\x04J\x04\b\x06\x10\aR(IsMultiroomSequenceStateSharingSupported\x1a\x8b\x0e\n" +
-	"\x06TState\x12c\n" +
-	"\x11CommonPlayerState\x18\x01 \x01(\v2\x1a.NAlice.TCommonPlayerStateB\x17\xaa\xdd\x1b\x13common_player_stateR\x13common_player_state\x12_\n" +
-	"\tStateType\x18\x02 \x01(\x0e20.NAlice.TAudioPlayerCapability.TState.EStateTypeB\x0e\xaa\xdd\x1b\n" +
-	"state_typeR\n" +
-	"state_type\x12*\n" +
-	"\bStreamId\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tstream_idR\tstream_id\x120\n" +
+	"\bLossless\x10\x05J\x04\b\x06\x10\aR(IsMultiroomSequenceStateSharingSupported\x1a\x89\v\n" +
+	"\x06TState\x12H\n" +
+	"\x11CommonPlayerState\x18\x01 \x01(\v2\x1a.NAlice.TCommonPlayerStateR\x11CommonPlayerState\x12N\n" +
+	"\tStateType\x18\x02 \x01(\x0e20.NAlice.TAudioPlayerCapability.TState.EStateTypeR\tStateType\x12\x1a\n" +
+	"\bStreamId\x18\x03 \x01(\tR\bStreamId\x12\x1e\n" +
 	"\n" +
-	"StreamType\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vstream_typeR\vstream_type\x12\x1f\n" +
-	"\x05Title\x18\x05 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubTitle\x18\x06 \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle\x12\\\n" +
-	"\rSequenceState\x18\a \x01(\v2!.NAlice.TAudioPlayerSequenceStateB\x12\xaa\xdd\x1b\x0esequence_stateR\x0esequence_state\x12\x83\x01\n" +
+	"StreamType\x18\x04 \x01(\tR\n" +
+	"StreamType\x12\x14\n" +
+	"\x05Title\x18\x05 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubTitle\x18\x06 \x01(\tR\bSubTitle\x12G\n" +
+	"\rSequenceState\x18\a \x01(\v2!.NAlice.TAudioPlayerSequenceStateR\rSequenceState\x12d\n" +
 	"\x15SwitchStreamsMetadata\x18\n" +
-	" \x01(\v2..NAlice.NData.NMusic.TSwitchingStreamsMetadataB\x1b\xaa\xdd\x1b\x17switch_streams_metadataR\x17switch_streams_metadata\x12V\n" +
-	"\fPlaybackOpts\x18\v \x01(\v2\x1e.NAlice.NData.TPlaybackOptionsB\x11\xaa\xdd\x1b\rplayback_optsR\rplayback_opts\x129\n" +
-	"\rPlaybackSpeed\x18\f \x01(\x01B\x12\xaa\xdd\x1b\x0eplayback_speedR\x0eplayback_speed\x126\n" +
-	"\fIsCrossfaded\x18\r \x01(\bB\x11\xaa\xdd\x1b\ris_crossfadedR\ris_crossfaded\x12a\n" +
-	"\x19UserMusicSessionTimestamp\x18\x0e \x01(\x03B \xaa\xdd\x1b\x1cuser_music_session_timestampR\x1cuser_music_session_timestamp\x12\xa3\x01\n" +
-	"\x19FinishingTrackPlayerState\x18\x0f \x01(\v2@.NAlice.TAudioPlayerCapability.TState.TFinishingTrackPlayerStateB \xaa\xdd\x1b\x1cfinishing_track_player_stateR\x1cfinishing_track_player_state\x12V\n" +
-	"\vKaraokeMode\x18\x10 \x01(\x0e2!.NAlice.NData.NMusic.EKaraokeModeB\x10\xaa\xdd\x1b\fkaraoke_modeR\fkaraoke_mode\x128\n" +
+	" \x01(\v2..NAlice.NData.NMusic.TSwitchingStreamsMetadataR\x15SwitchStreamsMetadata\x12B\n" +
+	"\fPlaybackOpts\x18\v \x01(\v2\x1e.NAlice.NData.TPlaybackOptionsR\fPlaybackOpts\x12$\n" +
+	"\rPlaybackSpeed\x18\f \x01(\x01R\rPlaybackSpeed\x12\"\n" +
+	"\fIsCrossfaded\x18\r \x01(\bR\fIsCrossfaded\x12<\n" +
+	"\x19UserMusicSessionTimestamp\x18\x0e \x01(\x03R\x19UserMusicSessionTimestamp\x12~\n" +
+	"\x19FinishingTrackPlayerState\x18\x0f \x01(\v2@.NAlice.TAudioPlayerCapability.TState.TFinishingTrackPlayerStateR\x19FinishingTrackPlayerState\x12C\n" +
+	"\vKaraokeMode\x18\x10 \x01(\x0e2!.NAlice.NData.NMusic.EKaraokeModeR\vKaraokeMode\x128\n" +
 	"\rIsVinylPlayer\x18\x13 \x01(\bB\x10\xaa\xdd\x1b\fvinyl_playerR\x0fis_vinyl_player\x12|\n" +
-	"\x0fPrefetchedTrack\x18\x12 \x01(\v26.NAlice.TAudioPlayerCapability.TState.TPrefetchedTrackB\x14\xaa\xdd\x1b\x10prefetched_trackH\x00R\x10prefetched_track\x88\x01\x01\x1a\xad\x01\n" +
-	"\x1aTFinishingTrackPlayerState\x12c\n" +
-	"\x11CommonPlayerState\x18\x01 \x01(\v2\x1a.NAlice.TCommonPlayerStateB\x17\xaa\xdd\x1b\x13common_player_stateR\x13common_player_state\x12*\n" +
-	"\bStreamId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tstream_idR\tstream_id\x1aG\n" +
+	"\x0fPrefetchedTrack\x18\x12 \x01(\v26.NAlice.TAudioPlayerCapability.TState.TPrefetchedTrackB\x14\xaa\xdd\x1b\x10prefetched_trackH\x00R\x10prefetched_track\x88\x01\x01\x1a\x82\x01\n" +
+	"\x1aTFinishingTrackPlayerState\x12H\n" +
+	"\x11CommonPlayerState\x18\x01 \x01(\v2\x1a.NAlice.TCommonPlayerStateR\x11CommonPlayerState\x12\x1a\n" +
+	"\bStreamId\x18\x02 \x01(\tR\bStreamId\x1aG\n" +
 	"\x10TPrefetchedTrack\x12-\n" +
 	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"request_idR\n" +
@@ -1642,9 +1639,76 @@ const file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawD
 	"\x06Paused\x10\x03\x12\r\n" +
 	"\tBuffering\x10\x04\x12\v\n" +
 	"\aStopped\x10\x05\x12\f\n" +
-	"\bFinished\x10\x06:\x04\xa8\xdd\x1b\x04B\x12\n" +
+	"\bFinished\x10\x06B\x12\n" +
 	"\x10_PrefetchedTrackJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
-	"J\x04\b\x11\x10\x12R\x0fPlaybackOptionsR\x18SwitchingStreamsMetadataR\x12HasPrefetchedTrack\x1a\xb2\x02\n" +
+	"R\x0fPlaybackOptionsR\x18SwitchingStreamsMetadata\x1az\n" +
+	"\x1aTSetSequenceStateDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12G\n" +
+	"\rSequenceState\x18\x01 \x01(\v2!.NAlice.TAudioPlayerSequenceStateR\rSequenceState\x1a;\n" +
+	"\x0eTPlayDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a;\n" +
+	"\x0eTLikeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a=\n" +
+	"\x10TUnlikeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a>\n" +
+	"\x11TDislikeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a@\n" +
+	"\x13TUndislikeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a;\n" +
+	"\x0eTNextDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a?\n" +
+	"\x12TPreviousDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a@\n" +
+	"\x13TRepeatOneDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a@\n" +
+	"\x13TRepeatAllDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a?\n" +
+	"\x12TUnrepeatDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a>\n" +
+	"\x11TShuffleDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a@\n" +
+	"\x13TUnshuffleDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a@\n" +
+	"\x13TGetLyricsDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1ap\n" +
+	"\x1cTAudioSetSpeedLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12)\n" +
+	"\rPlaybackSpeed\x18\x01 \x01(\x01H\x00R\rPlaybackSpeed\x88\x01\x01B\x10\n" +
+	"\x0e_PlaybackSpeed\x1aH\n" +
+	"\x1bTEnableKaraokeModeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1aI\n" +
+	"\x1cTDisableKaraokeModeDirective\x12\x1d\n" +
+	"\aTrackId\x18\x01 \x01(\tH\x00R\aTrackId\x88\x01\x01B\n" +
+	"\n" +
+	"\b_TrackId\x1a\xb2\x02\n" +
 	"\x0eTProgressEvent\x12_\n" +
 	"\tStateType\x18\x01 \x01(\x0e20.NAlice.TAudioPlayerCapability.TState.EStateTypeB\x0e\xaa\xdd\x1b\n" +
 	"state_typeR\n" +
@@ -1653,75 +1717,9 @@ const file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawD
 	"\n" +
 	"DurationMs\x18\x03 \x01(\x03B\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12*\n" +
 	"\bPlayedMs\x18\x04 \x01(\x03B\r\xaa\xdd\x1b\tplayed_msR\tplayed_ms\x12*\n" +
-	"\bStreamId\x18\x05 \x01(\tB\r\xaa\xdd\x1b\tstream_idR\tstream_id:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xc8\x01\x1a\xd1\x01\n" +
-	"\x1aTSetSequenceStateDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\\\n" +
-	"\rSequenceState\x18\x01 \x01(\v2!.NAlice.TAudioPlayerSequenceStateB\x12\xaa\xdd\x1b\x0esequence_stateR\x0esequence_state:6\x92\x82\x19)set_audio_player_sequence_state_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x98\x01\x1at\n" +
-	"\x0eTPlayDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:(\x92\x82\x19\x1baudio_player_play_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9b\x01B\n" +
+	"\bStreamId\x18\x05 \x01(\tB\r\xaa\xdd\x1b\tstream_idR\tstream_id:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xc8\x01B\xb6\x01\n" +
 	"\n" +
-	"\b_TrackId\x1at\n" +
-	"\x0eTLikeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:(\x92\x82\x19\x1baudio_player_like_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9c\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1ax\n" +
-	"\x10TUnlikeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:*\x92\x82\x19\x1daudio_player_unlike_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9d\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1az\n" +
-	"\x11TDislikeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:+\x92\x82\x19\x1eaudio_player_dislike_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9e\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a~\n" +
-	"\x13TUndislikeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:-\x92\x82\x19 audio_player_undislike_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9f\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1at\n" +
-	"\x0eTNextDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:(\x92\x82\x19\x1baudio_player_next_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa0\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a|\n" +
-	"\x12TPreviousDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:,\x92\x82\x19\x1faudio_player_previous_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa1\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a\x7f\n" +
-	"\x13TRepeatOneDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:.\x92\x82\x19!audio_player_repeat_one_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa2\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a\x7f\n" +
-	"\x13TRepeatAllDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:.\x92\x82\x19!audio_player_repeat_all_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa3\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a|\n" +
-	"\x12TUnrepeatDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:,\x92\x82\x19\x1faudio_player_unrepeat_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaa\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1az\n" +
-	"\x11TShuffleDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:+\x92\x82\x19\x1eaudio_player_shuffle_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xab\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a~\n" +
-	"\x13TUnshuffleDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:-\x92\x82\x19 audio_player_unshuffle_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xac\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1ar\n" +
-	"\x13TGetLyricsDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:!\x92\x82\x19\x14get_lyrics_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc4\x01B\n" +
-	"\n" +
-	"\b_TrackId\x1a\xbd\x01\n" +
-	"\x1cTAudioSetSpeedLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\rPlaybackSpeed\x18\x01 \x01(\x01B\x12\xaa\xdd\x1b\x0eplayback_speedH\x00R\x0eplayback_speed\x88\x01\x01:,\x92\x82\x19\x1faudio_set_speed_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd9\x01B\x10\n" +
-	"\x0e_PlaybackSpeed\x1a\x83\x01\n" +
-	"\x1bTEnableKaraokeModeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:*\x92\x82\x19\x1denable_karaoke_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb8\x02B\n" +
-	"\n" +
-	"\b_TrackId\x1a\x85\x01\n" +
-	"\x1cTDisableKaraokeModeDirective\x12,\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idH\x00R\btrack_id\x88\x01\x01:+\x92\x82\x19\x1edisable_karaoke_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb9\x02B\n" +
-	"\n" +
-	"\b_TrackId:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c.B\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAudioPlayerCapabilitiesProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/audio_player;audioplayerpbb\x06proto3"
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/audio_player\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_rawDescOnce sync.Once
@@ -1745,24 +1743,24 @@ var file_alice_protos_endpoint_capabilities_audio_player_capability_proto_goType
 	(*TAudioPlayerCapability)(nil),                                                    // 4: NAlice.TAudioPlayerCapability
 	(*TAudioPlayerCapability_TParameters)(nil),                                        // 5: NAlice.TAudioPlayerCapability.TParameters
 	(*TAudioPlayerCapability_TState)(nil),                                             // 6: NAlice.TAudioPlayerCapability.TState
-	(*TAudioPlayerCapability_TProgressEvent)(nil),                                     // 7: NAlice.TAudioPlayerCapability.TProgressEvent
-	(*TAudioPlayerCapability_TSetSequenceStateDirective)(nil),                         // 8: NAlice.TAudioPlayerCapability.TSetSequenceStateDirective
-	(*TAudioPlayerCapability_TPlayDirective)(nil),                                     // 9: NAlice.TAudioPlayerCapability.TPlayDirective
-	(*TAudioPlayerCapability_TLikeDirective)(nil),                                     // 10: NAlice.TAudioPlayerCapability.TLikeDirective
-	(*TAudioPlayerCapability_TUnlikeDirective)(nil),                                   // 11: NAlice.TAudioPlayerCapability.TUnlikeDirective
-	(*TAudioPlayerCapability_TDislikeDirective)(nil),                                  // 12: NAlice.TAudioPlayerCapability.TDislikeDirective
-	(*TAudioPlayerCapability_TUndislikeDirective)(nil),                                // 13: NAlice.TAudioPlayerCapability.TUndislikeDirective
-	(*TAudioPlayerCapability_TNextDirective)(nil),                                     // 14: NAlice.TAudioPlayerCapability.TNextDirective
-	(*TAudioPlayerCapability_TPreviousDirective)(nil),                                 // 15: NAlice.TAudioPlayerCapability.TPreviousDirective
-	(*TAudioPlayerCapability_TRepeatOneDirective)(nil),                                // 16: NAlice.TAudioPlayerCapability.TRepeatOneDirective
-	(*TAudioPlayerCapability_TRepeatAllDirective)(nil),                                // 17: NAlice.TAudioPlayerCapability.TRepeatAllDirective
-	(*TAudioPlayerCapability_TUnrepeatDirective)(nil),                                 // 18: NAlice.TAudioPlayerCapability.TUnrepeatDirective
-	(*TAudioPlayerCapability_TShuffleDirective)(nil),                                  // 19: NAlice.TAudioPlayerCapability.TShuffleDirective
-	(*TAudioPlayerCapability_TUnshuffleDirective)(nil),                                // 20: NAlice.TAudioPlayerCapability.TUnshuffleDirective
-	(*TAudioPlayerCapability_TGetLyricsDirective)(nil),                                // 21: NAlice.TAudioPlayerCapability.TGetLyricsDirective
-	(*TAudioPlayerCapability_TAudioSetSpeedLevelDirective)(nil),                       // 22: NAlice.TAudioPlayerCapability.TAudioSetSpeedLevelDirective
-	(*TAudioPlayerCapability_TEnableKaraokeModeDirective)(nil),                        // 23: NAlice.TAudioPlayerCapability.TEnableKaraokeModeDirective
-	(*TAudioPlayerCapability_TDisableKaraokeModeDirective)(nil),                       // 24: NAlice.TAudioPlayerCapability.TDisableKaraokeModeDirective
+	(*TAudioPlayerCapability_TSetSequenceStateDirective)(nil),                         // 7: NAlice.TAudioPlayerCapability.TSetSequenceStateDirective
+	(*TAudioPlayerCapability_TPlayDirective)(nil),                                     // 8: NAlice.TAudioPlayerCapability.TPlayDirective
+	(*TAudioPlayerCapability_TLikeDirective)(nil),                                     // 9: NAlice.TAudioPlayerCapability.TLikeDirective
+	(*TAudioPlayerCapability_TUnlikeDirective)(nil),                                   // 10: NAlice.TAudioPlayerCapability.TUnlikeDirective
+	(*TAudioPlayerCapability_TDislikeDirective)(nil),                                  // 11: NAlice.TAudioPlayerCapability.TDislikeDirective
+	(*TAudioPlayerCapability_TUndislikeDirective)(nil),                                // 12: NAlice.TAudioPlayerCapability.TUndislikeDirective
+	(*TAudioPlayerCapability_TNextDirective)(nil),                                     // 13: NAlice.TAudioPlayerCapability.TNextDirective
+	(*TAudioPlayerCapability_TPreviousDirective)(nil),                                 // 14: NAlice.TAudioPlayerCapability.TPreviousDirective
+	(*TAudioPlayerCapability_TRepeatOneDirective)(nil),                                // 15: NAlice.TAudioPlayerCapability.TRepeatOneDirective
+	(*TAudioPlayerCapability_TRepeatAllDirective)(nil),                                // 16: NAlice.TAudioPlayerCapability.TRepeatAllDirective
+	(*TAudioPlayerCapability_TUnrepeatDirective)(nil),                                 // 17: NAlice.TAudioPlayerCapability.TUnrepeatDirective
+	(*TAudioPlayerCapability_TShuffleDirective)(nil),                                  // 18: NAlice.TAudioPlayerCapability.TShuffleDirective
+	(*TAudioPlayerCapability_TUnshuffleDirective)(nil),                                // 19: NAlice.TAudioPlayerCapability.TUnshuffleDirective
+	(*TAudioPlayerCapability_TGetLyricsDirective)(nil),                                // 20: NAlice.TAudioPlayerCapability.TGetLyricsDirective
+	(*TAudioPlayerCapability_TAudioSetSpeedLevelDirective)(nil),                       // 21: NAlice.TAudioPlayerCapability.TAudioSetSpeedLevelDirective
+	(*TAudioPlayerCapability_TEnableKaraokeModeDirective)(nil),                        // 22: NAlice.TAudioPlayerCapability.TEnableKaraokeModeDirective
+	(*TAudioPlayerCapability_TDisableKaraokeModeDirective)(nil),                       // 23: NAlice.TAudioPlayerCapability.TDisableKaraokeModeDirective
+	(*TAudioPlayerCapability_TProgressEvent)(nil),                                     // 24: NAlice.TAudioPlayerCapability.TProgressEvent
 	(*TAudioPlayerCapability_TParameters_TSequenceStateConditionalSupportParams)(nil), // 25: NAlice.TAudioPlayerCapability.TParameters.TSequenceStateConditionalSupportParams
 	(*TAudioPlayerCapability_TState_TFinishingTrackPlayerState)(nil),                  // 26: NAlice.TAudioPlayerCapability.TState.TFinishingTrackPlayerState
 	(*TAudioPlayerCapability_TState_TPrefetchedTrack)(nil),                            // 27: NAlice.TAudioPlayerCapability.TState.TPrefetchedTrack
@@ -1789,8 +1787,8 @@ var file_alice_protos_endpoint_capabilities_audio_player_capability_proto_depIdx
 	26, // 12: NAlice.TAudioPlayerCapability.TState.FinishingTrackPlayerState:type_name -> NAlice.TAudioPlayerCapability.TState.TFinishingTrackPlayerState
 	33, // 13: NAlice.TAudioPlayerCapability.TState.KaraokeMode:type_name -> NAlice.NData.NMusic.EKaraokeMode
 	27, // 14: NAlice.TAudioPlayerCapability.TState.PrefetchedTrack:type_name -> NAlice.TAudioPlayerCapability.TState.TPrefetchedTrack
-	3,  // 15: NAlice.TAudioPlayerCapability.TProgressEvent.StateType:type_name -> NAlice.TAudioPlayerCapability.TState.EStateType
-	30, // 16: NAlice.TAudioPlayerCapability.TSetSequenceStateDirective.SequenceState:type_name -> NAlice.TAudioPlayerSequenceState
+	30, // 15: NAlice.TAudioPlayerCapability.TSetSequenceStateDirective.SequenceState:type_name -> NAlice.TAudioPlayerSequenceState
+	3,  // 16: NAlice.TAudioPlayerCapability.TProgressEvent.StateType:type_name -> NAlice.TAudioPlayerCapability.TState.EStateType
 	29, // 17: NAlice.TAudioPlayerCapability.TState.TFinishingTrackPlayerState.CommonPlayerState:type_name -> NAlice.TCommonPlayerState
 	18, // [18:18] is the sub-list for method output_type
 	18, // [18:18] is the sub-list for method input_type
@@ -1806,6 +1804,7 @@ func file_alice_protos_endpoint_capabilities_audio_player_capability_proto_init(
 	}
 	file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_init()
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[2].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[4].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[5].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[6].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[7].OneofWrappers = []any{}
@@ -1821,7 +1820,6 @@ func file_alice_protos_endpoint_capabilities_audio_player_capability_proto_init(
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[17].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[18].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[19].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_audio_player_capability_proto_msgTypes[20].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

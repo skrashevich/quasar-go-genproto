@@ -88,8 +88,8 @@ const file_alice_mode_proto_rawDesc = "" +
 	"\tAliceMode\x12\r\n" +
 	"\tUNDEFINED\x10\x00\x12\b\n" +
 	"\x04BASE\x10\x01\x12\a\n" +
-	"\x03PRO\x10\x02B,\n" +
-	"\x19ru.yandex.quasar.protobufB\x0fAliceModeProtos"
+	"\x03PRO\x10\x02B]\n" +
+	"\x19ru.yandex.quasar.protobufB\x0fAliceModeProtosZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_alice_mode_proto_rawDescOnce sync.Once

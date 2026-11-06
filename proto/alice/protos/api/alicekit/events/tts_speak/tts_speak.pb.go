@@ -70,10 +70,10 @@ func (TTtsSpeak_ESoundChunkType) EnumDescriptor() ([]byte, []int) {
 
 type TTtsSpeak struct {
 	state            protoimpl.MessageState    `protogen:"open.v1"`
-	Format           string                    `protobuf:"bytes,1,opt,name=Format,json=format,proto3" json:"Format,omitempty"`
-	LazyTtsStreaming bool                      `protobuf:"varint,2,opt,name=LazyTtsStreaming,json=lazy_tts_streaming,proto3" json:"LazyTtsStreaming,omitempty"`
-	SoundChunkType   TTtsSpeak_ESoundChunkType `protobuf:"varint,6,opt,name=SoundChunkType,json=sound_chunk_type,proto3,enum=NAlice.NAliceApi.TTtsSpeak_ESoundChunkType" json:"SoundChunkType,omitempty"`
-	SubStreamId      *uint32                   `protobuf:"varint,7,opt,name=SubStreamId,json=sub_stream_id,proto3,oneof" json:"SubStreamId,omitempty"`
+	Format           string                    `protobuf:"bytes,1,opt,name=Format,proto3" json:"Format,omitempty"`
+	LazyTtsStreaming bool                      `protobuf:"varint,2,opt,name=LazyTtsStreaming,proto3" json:"LazyTtsStreaming,omitempty"`
+	SoundChunkType   TTtsSpeak_ESoundChunkType `protobuf:"varint,6,opt,name=SoundChunkType,proto3,enum=NAlice.NAliceApi.TTtsSpeak_ESoundChunkType" json:"SoundChunkType,omitempty"`
+	SubStreamId      *uint32                   `protobuf:"varint,7,opt,name=SubStreamId,proto3,oneof" json:"SubStreamId,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -140,18 +140,17 @@ var File_alice_protos_api_alicekit_events_tts_speak_tts_speak_proto protoreflect
 
 const file_alice_protos_api_alicekit_events_tts_speak_tts_speak_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/api/alicekit/events/tts_speak/tts_speak.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb6\x03\n" +
-	"\tTTtsSpeak\x12\"\n" +
-	"\x06Format\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06formatR\x06format\x12D\n" +
-	"\x10LazyTtsStreaming\x18\x02 \x01(\bB\x16\xaa\xdd\x1b\x12lazy_tts_streamingR\x12lazy_tts_streaming\x12k\n" +
-	"\x0eSoundChunkType\x18\x06 \x01(\x0e2+.NAlice.NAliceApi.TTtsSpeak.ESoundChunkTypeB\x14\xaa\xdd\x1b\x10sound_chunk_typeR\x10sound_chunk_type\x12:\n" +
-	"\vSubStreamId\x18\a \x01(\rB\x11\xaa\xdd\x1b\rsub_stream_idH\x00R\rsub_stream_id\x88\x01\x01\"9\n" +
+	":alice/protos/api/alicekit/events/tts_speak/tts_speak.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdd\x02\n" +
+	"\tTTtsSpeak\x12\x16\n" +
+	"\x06Format\x18\x01 \x01(\tR\x06Format\x12*\n" +
+	"\x10LazyTtsStreaming\x18\x02 \x01(\bR\x10LazyTtsStreaming\x12S\n" +
+	"\x0eSoundChunkType\x18\x06 \x01(\x0e2+.NAlice.NAliceApi.TTtsSpeak.ESoundChunkTypeR\x0eSoundChunkType\x12%\n" +
+	"\vSubStreamId\x18\a \x01(\rH\x00R\vSubStreamId\x88\x01\x01\"9\n" +
 	"\x0fESoundChunkType\x12\x11\n" +
 	"\rCHUNK_DEFAULT\x10\x00\x12\x13\n" +
-	"\x0fCHUNK_WITH_META\x10\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
-	"\f_SubStreamIdJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06R\fEnableBarginR\tFromCacheR\x1aDisableInterruptionSpotterB\x7f\n" +
-	"4ru.yandex.alice.protos.api.alicekit.events.tts_speakB\bTtsSpeakP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/events/tts_speakb\x06proto3"
+	"\x0fCHUNK_WITH_META\x10\x01B\x0e\n" +
+	"\f_SubStreamIdJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06R\fEnableBarginR\tFromCacheR\x1aDisableInterruptionSpotterB\xe2\x01\n" +
+	"\x14com.NAlice.NAliceApiB\rTtsSpeakProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/tts_speak\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_tts_speak_tts_speak_proto_rawDescOnce sync.Once

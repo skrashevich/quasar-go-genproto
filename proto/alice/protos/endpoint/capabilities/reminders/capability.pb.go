@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/reminders/capability.proto
 
-package reminderspb
+package reminders
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -169,8 +169,8 @@ const file_alice_protos_endpoint_capabilities_reminders_capability_proto_rawDesc
 	"parameters\x12D\n" +
 	"\x05State\x18\x03 \x01(\v2#.NAlice.TRemindersCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8b\x01B\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18RemindersCapabilityProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/reminders;reminderspbb\x06proto3"
+	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8b\x01B\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18RemindersCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/remindersb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_reminders_capability_proto_rawDescOnce sync.Once

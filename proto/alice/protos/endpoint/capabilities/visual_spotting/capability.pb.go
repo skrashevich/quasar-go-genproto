@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/visual_spotting/capability.proto
 
-package visual_spottingpb
+package visual_spotting
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -263,8 +263,8 @@ const file_alice_protos_endpoint_capabilities_visual_spotting_capability_proto_r
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\"\n" +
 	"\x06Active\x18\x01 \x01(\bB\n" +
 	"\xaa\xdd\x1b\x06activeR\x06active\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:*\x92\x82\x19\x1dset_visual_spotting_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf6\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cXB\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18VisualSpottingCapabilityP\x01ZUa.yandex-team.ru/alice/protos/endpoint/capabilities/visual_spotting;visual_spottingpbb\x06proto3"
+	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:*\x92\x82\x19\x1dset_visual_spotting_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf6\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cXB\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18VisualSpottingCapabilityP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/visual_spottingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_visual_spotting_capability_proto_rawDescOnce sync.Once

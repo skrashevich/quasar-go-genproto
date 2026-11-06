@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alarm/capability.proto
 
-package alarmpb
+package alarm
 
 import (
 	alarm "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/alarm"
@@ -29,9 +29,9 @@ const (
 
 type TAlarmCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAlarmCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAlarmCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAlarmCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAlarmCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -89,7 +89,7 @@ func (x *TAlarmCapability) GetState() *TAlarmCapability_TState {
 
 type TAlarmCapability_TParameters struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	AvailableDefaultSounds []*alarm.TDefaultSound `protobuf:"bytes,1,rep,name=AvailableDefaultSounds,json=available_default_sounds,proto3" json:"AvailableDefaultSounds,omitempty"`
+	AvailableDefaultSounds []*alarm.TDefaultSound `protobuf:"bytes,1,rep,name=AvailableDefaultSounds,proto3" json:"AvailableDefaultSounds,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -133,10 +133,10 @@ func (x *TAlarmCapability_TParameters) GetAvailableDefaultSounds() []*alarm.TDef
 
 type TAlarmCapability_TState struct {
 	state                 protoimpl.MessageState     `protogen:"open.v1"`
-	Alarms                []*alarm.TAlarm            `protobuf:"bytes,1,rep,name=Alarms,json=alarms,proto3" json:"Alarms,omitempty"`
-	Timers                []*timer.TTimerDescription `protobuf:"bytes,2,rep,name=Timers,json=timers,proto3" json:"Timers,omitempty"`
-	AlarmSoundSettings    *alarm.TAlarmSoundSettings `protobuf:"bytes,3,opt,name=AlarmSoundSettings,json=alarm_sound_settings,proto3" json:"AlarmSoundSettings,omitempty"`
-	MediaCurrentlyPlaying bool                       `protobuf:"varint,4,opt,name=MediaCurrentlyPlaying,json=media_currently_playing,proto3" json:"MediaCurrentlyPlaying,omitempty"`
+	Alarms                []*alarm.TAlarm            `protobuf:"bytes,1,rep,name=Alarms,proto3" json:"Alarms,omitempty"`
+	Timers                []*timer.TTimerDescription `protobuf:"bytes,2,rep,name=Timers,proto3" json:"Timers,omitempty"`
+	AlarmSoundSettings    *alarm.TAlarmSoundSettings `protobuf:"bytes,3,opt,name=AlarmSoundSettings,proto3" json:"AlarmSoundSettings,omitempty"`
+	MediaCurrentlyPlaying bool                       `protobuf:"varint,4,opt,name=MediaCurrentlyPlaying,proto3" json:"MediaCurrentlyPlaying,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -201,8 +201,8 @@ func (x *TAlarmCapability_TState) GetMediaCurrentlyPlaying() bool {
 
 type TAlarmCapability_TAlarmSoundSettingsUpdateDirective struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Name          string                     `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Settings      *alarm.TAlarmSoundSettings `protobuf:"bytes,2,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
+	Name          string                     `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Settings      *alarm.TAlarmSoundSettings `protobuf:"bytes,2,opt,name=Settings,proto3" json:"Settings,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -253,8 +253,8 @@ func (x *TAlarmCapability_TAlarmSoundSettingsUpdateDirective) GetSettings() *ala
 
 type TAlarmCapability_TAlarmUpdateSoundLevelDirective struct {
 	state          protoimpl.MessageState                     `protogen:"open.v1"`
-	Name           string                                     `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SoundLevelInfo *alarm.TAlarmSoundSettings_TSoundLevelInfo `protobuf:"bytes,2,opt,name=SoundLevelInfo,json=sound_level_info,proto3" json:"SoundLevelInfo,omitempty"`
+	Name           string                                     `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	SoundLevelInfo *alarm.TAlarmSoundSettings_TSoundLevelInfo `protobuf:"bytes,2,opt,name=SoundLevelInfo,proto3" json:"SoundLevelInfo,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -305,8 +305,8 @@ func (x *TAlarmCapability_TAlarmUpdateSoundLevelDirective) GetSoundLevelInfo() *
 
 type TAlarmCapability_TAlarmUpdateDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Alarms        []*alarm.TAlarm        `protobuf:"bytes,2,rep,name=Alarms,json=alarms,proto3" json:"Alarms,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Alarms        []*alarm.TAlarm        `protobuf:"bytes,2,rep,name=Alarms,proto3" json:"Alarms,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -357,9 +357,9 @@ func (x *TAlarmCapability_TAlarmUpdateDirective) GetAlarms() []*alarm.TAlarm {
 
 type TAlarmCapability_TAlarmSnoozeDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
-	DurationSec   uint32                 `protobuf:"varint,3,opt,name=DurationSec,json=duration_sec,proto3" json:"DurationSec,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
+	DurationSec   uint32                 `protobuf:"varint,3,opt,name=DurationSec,proto3" json:"DurationSec,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -417,8 +417,8 @@ func (x *TAlarmCapability_TAlarmSnoozeDirective) GetDurationSec() uint32 {
 
 type TAlarmCapability_TAlarmStopDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StopMedia     *bool                  `protobuf:"varint,2,opt,name=StopMedia,json=stop_media,proto3,oneof" json:"StopMedia,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	StopMedia     *bool                  `protobuf:"varint,2,opt,name=StopMedia,proto3,oneof" json:"StopMedia,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -469,8 +469,8 @@ func (x *TAlarmCapability_TAlarmStopDirective) GetStopMedia() bool {
 
 type TAlarmCapability_TAlarmAddDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Alarm         *alarm.TAlarm          `protobuf:"bytes,2,opt,name=Alarm,json=alarm,proto3" json:"Alarm,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Alarm         *alarm.TAlarm          `protobuf:"bytes,2,opt,name=Alarm,proto3" json:"Alarm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -521,8 +521,8 @@ func (x *TAlarmCapability_TAlarmAddDirective) GetAlarm() *alarm.TAlarm {
 
 type TAlarmCapability_TAlarmCancelDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -573,8 +573,8 @@ func (x *TAlarmCapability_TAlarmCancelDirective) GetAlarmId() string {
 
 type TAlarmCapability_TTimerSetDirective struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Name          string                   `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Timer         *timer.TTimerDescription `protobuf:"bytes,2,opt,name=Timer,json=timer,proto3" json:"Timer,omitempty"`
+	Name          string                   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Timer         *timer.TTimerDescription `protobuf:"bytes,2,opt,name=Timer,proto3" json:"Timer,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -625,8 +625,8 @@ func (x *TAlarmCapability_TTimerSetDirective) GetTimer() *timer.TTimerDescriptio
 
 type TAlarmCapability_TTimerCancelDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -677,8 +677,8 @@ func (x *TAlarmCapability_TTimerCancelDirective) GetTimerId() string {
 
 type TAlarmCapability_TTimerPauseDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -729,8 +729,8 @@ func (x *TAlarmCapability_TTimerPauseDirective) GetTimerId() string {
 
 type TAlarmCapability_TTimerResumeDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -781,8 +781,8 @@ func (x *TAlarmCapability_TTimerResumeDirective) GetTimerId() string {
 
 type TAlarmCapability_TTimerStopDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -975,65 +975,59 @@ var File_alice_protos_endpoint_capabilities_alarm_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_alarm_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/alarm/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/alarm/alarm.proto\x1a,alice/protos/data/scenario/timer/timer.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x16\n" +
-	"\x10TAlarmCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/alarm/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/alarm/alarm.proto\x1a,alice/protos/data/scenario/timer/timer.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\x0e\n" +
+	"\x10TAlarmCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TAlarmCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAlarmCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x88\x01\n" +
-	"\vTParameters\x12s\n" +
-	"\x16AvailableDefaultSounds\x18\x01 \x03(\v2\x1b.NAlice.NData.TDefaultSoundB\x1c\xaa\xdd\x1b\x18available_default_soundsR\x18available_default_sounds:\x04\xa8\xdd\x1b\x04\x1a\xd1\x02\n" +
-	"\x06TState\x128\n" +
-	"\x06Alarms\x18\x01 \x03(\v2\x14.NAlice.NData.TAlarmB\n" +
-	"\xaa\xdd\x1b\x06alarmsR\x06alarms\x12C\n" +
-	"\x06Timers\x18\x02 \x03(\v2\x1f.NAlice.NData.TTimerDescriptionB\n" +
-	"\xaa\xdd\x1b\x06timersR\x06timers\x12m\n" +
-	"\x12AlarmSoundSettings\x18\x03 \x01(\v2!.NAlice.NData.TAlarmSoundSettingsB\x18\xaa\xdd\x1b\x14alarm_sound_settingsR\x14alarm_sound_settings\x12S\n" +
-	"\x15MediaCurrentlyPlaying\x18\x04 \x01(\bB\x1b\xaa\xdd\x1b\x17media_currently_playingR\x17media_currently_playing:\x04\xa8\xdd\x1b\x04\x1a\xc2\x01\n" +
-	"\"TAlarmSoundSettingsUpdateDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12K\n" +
-	"\bSettings\x18\x02 \x01(\v2!.NAlice.NData.TAlarmSoundSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings:1\x92\x82\x19%alarm_sound_settings_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cx\x1a\xe3\x01\n" +
-	"\x1fTAlarmUpdateSoundLevelDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12q\n" +
-	"\x0eSoundLevelInfo\x18\x02 \x01(\v21.NAlice.NData.TAlarmSoundSettings.TSoundLevelInfoB\x14\xaa\xdd\x1b\x10sound_level_infoR\x10sound_level_info:/\x92\x82\x19\"alarm_update_sound_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x02\x1a\x93\x01\n" +
-	"\x15TAlarmUpdateDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x128\n" +
-	"\x06Alarms\x18\x02 \x03(\v2\x14.NAlice.NData.TAlarmB\n" +
-	"\xaa\xdd\x1b\x06alarmsR\x06alarms:\"\x92\x82\x19\x16alarm_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\"\x1a\xb7\x01\n" +
-	"\x15TAlarmSnoozeDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aAlarmId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id\x123\n" +
-	"\vDurationSec\x18\x03 \x01(\rB\x10\xaa\xdd\x1b\fduration_secR\fduration_sec:\"\x92\x82\x19\x16alarm_snooze_directive\xa8\xdd\x1b\x04\xa8\xc8\x1ct\x1a\x97\x01\n" +
-	"\x13TAlarmStopDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x122\n" +
-	"\tStopMedia\x18\x02 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"stop_mediaH\x00R\n" +
-	"stop_media\x88\x01\x01: \x92\x82\x19\x14alarm_stop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cvB\f\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TAlarmCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAlarmCapability.TStateR\x05State\x1ab\n" +
+	"\vTParameters\x12S\n" +
+	"\x16AvailableDefaultSounds\x18\x01 \x03(\v2\x1b.NAlice.NData.TDefaultSoundR\x16AvailableDefaultSounds\x1a\xf8\x01\n" +
+	"\x06TState\x12,\n" +
+	"\x06Alarms\x18\x01 \x03(\v2\x14.NAlice.NData.TAlarmR\x06Alarms\x127\n" +
+	"\x06Timers\x18\x02 \x03(\v2\x1f.NAlice.NData.TTimerDescriptionR\x06Timers\x12Q\n" +
+	"\x12AlarmSoundSettings\x18\x03 \x01(\v2!.NAlice.NData.TAlarmSoundSettingsR\x12AlarmSoundSettings\x124\n" +
+	"\x15MediaCurrentlyPlaying\x18\x04 \x01(\bR\x15MediaCurrentlyPlaying\x1aw\n" +
+	"\"TAlarmSoundSettingsUpdateDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12=\n" +
+	"\bSettings\x18\x02 \x01(\v2!.NAlice.NData.TAlarmSoundSettingsR\bSettings\x1a\x90\x01\n" +
+	"\x1fTAlarmUpdateSoundLevelDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12Y\n" +
+	"\x0eSoundLevelInfo\x18\x02 \x01(\v21.NAlice.NData.TAlarmSoundSettings.TSoundLevelInfoR\x0eSoundLevelInfo\x1aY\n" +
+	"\x15TAlarmUpdateDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12,\n" +
+	"\x06Alarms\x18\x02 \x03(\v2\x14.NAlice.NData.TAlarmR\x06Alarms\x1ag\n" +
+	"\x15TAlarmSnoozeDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aAlarmId\x18\x02 \x01(\tR\aAlarmId\x12 \n" +
+	"\vDurationSec\x18\x03 \x01(\rR\vDurationSec\x1aZ\n" +
+	"\x13TAlarmStopDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12!\n" +
+	"\tStopMedia\x18\x02 \x01(\bH\x00R\tStopMedia\x88\x01\x01B\f\n" +
 	"\n" +
-	"_StopMedia\x1a\x8a\x01\n" +
-	"\x12TAlarmAddDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\x05Alarm\x18\x02 \x01(\v2\x14.NAlice.NData.TAlarmB\t\xaa\xdd\x1b\x05alarmR\x05alarm:\x1f\x92\x82\x19\x13alarm_add_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c \x1a\x83\x01\n" +
-	"\x15TAlarmCancelDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aAlarmId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:#\x92\x82\x19\x16alarm_cancel_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x84\x01\x1a\x95\x01\n" +
-	"\x12TTimerSetDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12@\n" +
-	"\x05Timer\x18\x02 \x01(\v2\x1f.NAlice.NData.TTimerDescriptionB\t\xaa\xdd\x1b\x05timerR\x05timer:\x1f\x92\x82\x19\x13timer_set_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cp\x1a\x82\x01\n" +
-	"\x15TTimerCancelDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:\"\x92\x82\x19\x16timer_cancel_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cq\x1a\x80\x01\n" +
-	"\x14TTimerPauseDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:!\x92\x82\x19\x15timer_pause_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cr\x1a\x82\x01\n" +
-	"\x15TTimerResumeDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:\"\x92\x82\x19\x16timer_resume_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cs\x1a\x7f\n" +
-	"\x13TTimerStopDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:!\x92\x82\x19\x14timer_stop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x94\x02\x1aL\n" +
+	"_StopMedia\x1aT\n" +
+	"\x12TAlarmAddDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12*\n" +
+	"\x05Alarm\x18\x02 \x01(\v2\x14.NAlice.NData.TAlarmR\x05Alarm\x1aE\n" +
+	"\x15TAlarmCancelDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aAlarmId\x18\x02 \x01(\tR\aAlarmId\x1a_\n" +
+	"\x12TTimerSetDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x125\n" +
+	"\x05Timer\x18\x02 \x01(\v2\x1f.NAlice.NData.TTimerDescriptionR\x05Timer\x1aE\n" +
+	"\x15TTimerCancelDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\x1aD\n" +
+	"\x14TTimerPauseDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\x1aE\n" +
+	"\x15TTimerResumeDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\x1aC\n" +
+	"\x13TTimerStopDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\x1aL\n" +
 	"\x16TAlarmApproachingEvent\x12'\n" +
 	"\aAlarmId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xa7\x01\x1aF\n" +
 	"\x10TAlarmFiredEvent\x12'\n" +
@@ -1042,9 +1036,9 @@ const file_alice_protos_endpoint_capabilities_alarm_capability_proto_rawDesc = "
 	"TCondition\x12B\n" +
 	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
 	"\xaa\xdd\x1b\x06eventsR\x06events\x12'\n" +
-	"\aAlarmId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x15B}\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"AlarmProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/alarm;alarmpbb\x06proto3"
+	"\aAlarmId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:\x04\xa8\xdd\x1b\x04B\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alarm\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alarm_capability_proto_rawDescOnce sync.Once

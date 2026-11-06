@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/audio_player_screen/capability.proto
 
-package audioplayerscreenpb
+package audio_player_screen
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -233,8 +233,8 @@ const file_alice_protos_endpoint_capabilities_audio_player_screen_capability_pro
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\x9a\x01\n" +
 	"\x1fTShowAudioPlayerScreenDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id:/\x92\x82\x19\"show_audio_player_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x89\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c_B\xaf\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AudioPlayerScreenCapabilitiesProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/audio_player_screen;audioplayerscreenpbb\x06proto3"
+	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id:/\x92\x82\x19\"show_audio_player_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x89\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c_B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AudioPlayerScreenCapabilitiesProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/audio_player_screenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_audio_player_screen_capability_proto_rawDescOnce sync.Once

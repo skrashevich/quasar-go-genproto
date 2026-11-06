@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/alicekit/common/environment_state/environment_state.proto
 
-package environmentstatepb
+package environment_state
 
 import (
 	protos "github.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protos"
@@ -125,8 +125,8 @@ func (TEnvironmentGroupInfo_EEnvironmentGroupDeviceRole) EnumDescriptor() ([]byt
 
 type TEnvironmentDeviceInfo struct {
 	state             protoimpl.MessageState   `protogen:"open.v1"`
-	Application       *protos.TClientInfoProto `protobuf:"bytes,1,opt,name=Application,json=application,proto3" json:"Application,omitempty"`
-	SupportedFeatures []string                 `protobuf:"bytes,2,rep,name=SupportedFeatures,json=supported_features,proto3" json:"SupportedFeatures,omitempty"`
+	Application       *protos.TClientInfoProto `protobuf:"bytes,1,opt,name=Application,proto3" json:"Application,omitempty"`
+	SupportedFeatures []string                 `protobuf:"bytes,2,rep,name=SupportedFeatures,proto3" json:"SupportedFeatures,omitempty"`
 	// Types that are valid to be assigned to OneOfStates:
 	//
 	//	*TEnvironmentDeviceInfo_SpeakerDeviceState
@@ -200,15 +200,15 @@ type isTEnvironmentDeviceInfo_OneOfStates interface {
 }
 
 type TEnvironmentDeviceInfo_SpeakerDeviceState struct {
-	SpeakerDeviceState *device_state.TDeviceState `protobuf:"bytes,4,opt,name=SpeakerDeviceState,json=device_state,proto3,oneof"`
+	SpeakerDeviceState *device_state.TDeviceState `protobuf:"bytes,4,opt,name=SpeakerDeviceState,proto3,oneof"`
 }
 
 func (*TEnvironmentDeviceInfo_SpeakerDeviceState) isTEnvironmentDeviceInfo_OneOfStates() {}
 
 type TEnvironmentGroupInfo struct {
 	state         protoimpl.MessageState                               `protogen:"open.v1"`
-	Type          TEnvironmentGroupInfo_EEnvironmentGroupType          `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.NAliceApi.TEnvironmentGroupInfo_EEnvironmentGroupType" json:"Type,omitempty"`
-	Devices       []*TEnvironmentGroupInfo_TEnvironmentGroupDeviceInfo `protobuf:"bytes,2,rep,name=Devices,json=devices,proto3" json:"Devices,omitempty"`
+	Type          TEnvironmentGroupInfo_EEnvironmentGroupType          `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.NAliceApi.TEnvironmentGroupInfo_EEnvironmentGroupType" json:"Type,omitempty"`
+	Devices       []*TEnvironmentGroupInfo_TEnvironmentGroupDeviceInfo `protobuf:"bytes,2,rep,name=Devices,proto3" json:"Devices,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -259,9 +259,9 @@ func (x *TEnvironmentGroupInfo) GetDevices() []*TEnvironmentGroupInfo_TEnvironme
 
 type TEnvironmentState struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Devices       []*TEnvironmentDeviceInfo `protobuf:"bytes,1,rep,name=Devices,json=devices,proto3" json:"Devices,omitempty"`
-	Groups        []*TEnvironmentGroupInfo  `protobuf:"bytes,2,rep,name=Groups,json=groups,proto3" json:"Groups,omitempty"`
-	Endpoints     []*endpoint.TEndpoint     `protobuf:"bytes,3,rep,name=Endpoints,json=endpoints,proto3" json:"Endpoints,omitempty"`
+	Devices       []*TEnvironmentDeviceInfo `protobuf:"bytes,1,rep,name=Devices,proto3" json:"Devices,omitempty"`
+	Groups        []*TEnvironmentGroupInfo  `protobuf:"bytes,2,rep,name=Groups,proto3" json:"Groups,omitempty"`
+	Endpoints     []*endpoint.TEndpoint     `protobuf:"bytes,3,rep,name=Endpoints,proto3" json:"Endpoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -319,9 +319,9 @@ func (x *TEnvironmentState) GetEndpoints() []*endpoint.TEndpoint {
 
 type TEnvironmentGroupInfo_TEnvironmentGroupDeviceInfo struct {
 	state         protoimpl.MessageState                            `protogen:"open.v1"`
-	Id            string                                            `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Platform      string                                            `protobuf:"bytes,2,opt,name=Platform,json=platform,proto3" json:"Platform,omitempty"`
-	Role          TEnvironmentGroupInfo_EEnvironmentGroupDeviceRole `protobuf:"varint,3,opt,name=Role,json=role,proto3,enum=NAlice.NAliceApi.TEnvironmentGroupInfo_EEnvironmentGroupDeviceRole" json:"Role,omitempty"`
+	Id            string                                            `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Platform      string                                            `protobuf:"bytes,2,opt,name=Platform,proto3" json:"Platform,omitempty"`
+	Role          TEnvironmentGroupInfo_EEnvironmentGroupDeviceRole `protobuf:"varint,3,opt,name=Role,proto3,enum=NAlice.NAliceApi.TEnvironmentGroupInfo_EEnvironmentGroupDeviceRole" json:"Role,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -381,19 +381,19 @@ var File_alice_protos_api_alicekit_common_environment_state_environment_state_pr
 
 const file_alice_protos_api_alicekit_common_environment_state_environment_state_proto_rawDesc = "" +
 	"\n" +
-	"Jalice/protos/api/alicekit/common/environment_state/environment_state.proto\x12\x10NAlice.NAliceApi\x1a-alice/library/client/protos/client_info.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc5\x02\n" +
-	"\x16TEnvironmentDeviceInfo\x12K\n" +
-	"\vApplication\x18\x01 \x01(\v2\x18.NAlice.TClientInfoProtoB\x0f\xaa\xdd\x1b\vapplicationR\vapplication\x12E\n" +
-	"\x11SupportedFeatures\x18\x02 \x03(\tB\x16\xaa\xdd\x1b\x12supported_featuresR\x12supported_features\x12\\\n" +
-	"\x12SpeakerDeviceState\x18\x04 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateB\x10\xaa\xdd\x1b\fdevice_stateH\x00R\fdevice_state:\x04\xa8\xdd\x1b\x04B \n" +
-	"\vOneOfStates\x12\x11\xaa\xdd\x1b\rone_of_statesJ\x04\b\x03\x10\x04R\vDeviceState\"\xc4\x04\n" +
-	"\x15TEnvironmentGroupInfo\x12[\n" +
-	"\x04Type\x18\x01 \x01(\x0e2=.NAlice.NAliceApi.TEnvironmentGroupInfo.EEnvironmentGroupTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12j\n" +
-	"\aDevices\x18\x02 \x03(\v2C.NAlice.NAliceApi.TEnvironmentGroupInfo.TEnvironmentGroupDeviceInfoB\v\xaa\xdd\x1b\adevicesR\adevices\x1a\xc8\x01\n" +
-	"\x1bTEnvironmentGroupDeviceInfo\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12(\n" +
-	"\bPlatform\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bplatformR\bplatform\x12a\n" +
-	"\x04Role\x18\x03 \x01(\x0e2C.NAlice.NAliceApi.TEnvironmentGroupInfo.EEnvironmentGroupDeviceRoleB\b\xaa\xdd\x1b\x04roleR\x04role:\x04\xa8\xdd\x1b\x04\"F\n" +
+	"Jalice/protos/api/alicekit/common/environment_state/environment_state.proto\x12\x10NAlice.NAliceApi\x1a-alice/library/client/protos/client_info.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf6\x01\n" +
+	"\x16TEnvironmentDeviceInfo\x12:\n" +
+	"\vApplication\x18\x01 \x01(\v2\x18.NAlice.TClientInfoProtoR\vApplication\x12,\n" +
+	"\x11SupportedFeatures\x18\x02 \x03(\tR\x11SupportedFeatures\x12P\n" +
+	"\x12SpeakerDeviceState\x18\x04 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateH\x00R\x12SpeakerDeviceStateB\r\n" +
+	"\vOneOfStatesJ\x04\b\x03\x10\x04R\vDeviceState\"\x81\x04\n" +
+	"\x15TEnvironmentGroupInfo\x12Q\n" +
+	"\x04Type\x18\x01 \x01(\x0e2=.NAlice.NAliceApi.TEnvironmentGroupInfo.EEnvironmentGroupTypeR\x04Type\x12]\n" +
+	"\aDevices\x18\x02 \x03(\v2C.NAlice.NAliceApi.TEnvironmentGroupInfo.TEnvironmentGroupDeviceInfoR\aDevices\x1a\xa2\x01\n" +
+	"\x1bTEnvironmentGroupDeviceInfo\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x1a\n" +
+	"\bPlatform\x18\x02 \x01(\tR\bPlatform\x12W\n" +
+	"\x04Role\x18\x03 \x01(\x0e2C.NAlice.NAliceApi.TEnvironmentGroupInfo.EEnvironmentGroupDeviceRoleR\x04Role\"F\n" +
 	"\x15EEnvironmentGroupType\x12\x11\n" +
 	"\runknown_group\x10\x00\x12\n" +
 	"\n" +
@@ -404,13 +404,12 @@ const file_alice_protos_api_alicekit_common_environment_state_environment_state_
 	"\funknown_role\x10\x00\x12\n" +
 	"\n" +
 	"\x06leader\x10\x01\x12\f\n" +
-	"\bfollower\x10\x02:\x04\xa8\xdd\x1b\x04\"\xf7\x01\n" +
-	"\x11TEnvironmentState\x12O\n" +
-	"\aDevices\x18\x01 \x03(\v2(.NAlice.NAliceApi.TEnvironmentDeviceInfoB\v\xaa\xdd\x1b\adevicesR\adevices\x12K\n" +
-	"\x06Groups\x18\x02 \x03(\v2'.NAlice.NAliceApi.TEnvironmentGroupInfoB\n" +
-	"\xaa\xdd\x1b\x06groupsR\x06groups\x12>\n" +
-	"\tEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointB\r\xaa\xdd\x1b\tendpointsR\tendpoints:\x04\xa8\xdd\x1b\x04B\xad\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.common.environment_stateB\x15EnvironmentStateProtoZVa.yandex-team.ru/alice/protos/api/alicekit/common/environment_state;environmentstatepbb\x06proto3"
+	"\bfollower\x10\x02\"\xc9\x01\n" +
+	"\x11TEnvironmentState\x12B\n" +
+	"\aDevices\x18\x01 \x03(\v2(.NAlice.NAliceApi.TEnvironmentDeviceInfoR\aDevices\x12?\n" +
+	"\x06Groups\x18\x02 \x03(\v2'.NAlice.NAliceApi.TEnvironmentGroupInfoR\x06Groups\x12/\n" +
+	"\tEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointR\tEndpointsB\xf2\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x15EnvironmentStateProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/environment_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_common_environment_state_environment_state_proto_rawDescOnce sync.Once

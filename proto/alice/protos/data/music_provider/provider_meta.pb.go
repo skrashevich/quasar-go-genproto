@@ -340,7 +340,7 @@ func (AgeRestrictions_RestrictionLevel) EnumDescriptor() ([]byte, []int) {
 type ArtistRelation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ArtistType    ArtistType             `protobuf:"varint,2,opt,name=artist_type,proto3,enum=Alice.Music.ArtistType" json:"artist_type,omitempty"`
+	ArtistType    ArtistType             `protobuf:"varint,2,opt,name=artist_type,json=artistType,proto3,enum=Alice.Music.ArtistType" json:"artist_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -391,9 +391,9 @@ func (x *ArtistRelation) GetArtistType() ArtistType {
 
 type ContentId struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentType   ContentId_ContentType  `protobuf:"varint,1,opt,name=content_type,proto3,enum=Alice.Music.ContentId_ContentType" json:"content_type,omitempty"`
+	ContentType   ContentId_ContentType  `protobuf:"varint,1,opt,name=content_type,json=contentType,proto3,enum=Alice.Music.ContentId_ContentType" json:"content_type,omitempty"`
 	Id            string                 `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
-	IsTrial       bool                   `protobuf:"varint,3,opt,name=is_trial,proto3" json:"is_trial,omitempty"`
+	IsTrial       bool                   `protobuf:"varint,3,opt,name=is_trial,json=isTrial,proto3" json:"is_trial,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -451,7 +451,7 @@ func (x *ContentId) GetIsTrial() bool {
 
 type AgeRestrictions struct {
 	state            protoimpl.MessageState           `protogen:"open.v1"`
-	RestrictionLevel AgeRestrictions_RestrictionLevel `protobuf:"varint,1,opt,name=restriction_level,proto3,enum=Alice.Music.AgeRestrictions_RestrictionLevel" json:"restriction_level,omitempty"`
+	RestrictionLevel AgeRestrictions_RestrictionLevel `protobuf:"varint,1,opt,name=restriction_level,json=restrictionLevel,proto3,enum=Alice.Music.AgeRestrictions_RestrictionLevel" json:"restriction_level,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -495,10 +495,10 @@ func (x *AgeRestrictions) GetRestrictionLevel() AgeRestrictions_RestrictionLevel
 
 type AlbumItemInfo struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	AlbumMeta        *AlbumMeta             `protobuf:"bytes,1,opt,name=album_meta,proto3" json:"album_meta,omitempty"`
-	TracksMeta       []*TrackMeta           `protobuf:"bytes,2,rep,name=tracks_meta,proto3" json:"tracks_meta,omitempty"`
-	ArtistsMeta      []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,proto3" json:"artists_meta,omitempty"`
-	LastListenedInfo *LastListenedInfo      `protobuf:"bytes,4,opt,name=last_listened_info,proto3" json:"last_listened_info,omitempty"`
+	AlbumMeta        *AlbumMeta             `protobuf:"bytes,1,opt,name=album_meta,json=albumMeta,proto3" json:"album_meta,omitempty"`
+	TracksMeta       []*TrackMeta           `protobuf:"bytes,2,rep,name=tracks_meta,json=tracksMeta,proto3" json:"tracks_meta,omitempty"`
+	ArtistsMeta      []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,json=artistsMeta,proto3" json:"artists_meta,omitempty"`
+	LastListenedInfo *LastListenedInfo      `protobuf:"bytes,4,opt,name=last_listened_info,json=lastListenedInfo,proto3" json:"last_listened_info,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -563,9 +563,9 @@ func (x *AlbumItemInfo) GetLastListenedInfo() *LastListenedInfo {
 
 type ArtistItemInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TracksMeta    []*TrackMeta           `protobuf:"bytes,1,rep,name=tracks_meta,proto3" json:"tracks_meta,omitempty"`
-	AlbumsMeta    []*AlbumMeta           `protobuf:"bytes,2,rep,name=albums_meta,proto3" json:"albums_meta,omitempty"`
-	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,proto3" json:"artists_meta,omitempty"`
+	TracksMeta    []*TrackMeta           `protobuf:"bytes,1,rep,name=tracks_meta,json=tracksMeta,proto3" json:"tracks_meta,omitempty"`
+	AlbumsMeta    []*AlbumMeta           `protobuf:"bytes,2,rep,name=albums_meta,json=albumsMeta,proto3" json:"albums_meta,omitempty"`
+	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,json=artistsMeta,proto3" json:"artists_meta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -623,9 +623,9 @@ func (x *ArtistItemInfo) GetArtistsMeta() []*ArtistMeta {
 
 type TrackItemInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TrackMeta     *TrackMeta             `protobuf:"bytes,1,opt,name=track_meta,proto3" json:"track_meta,omitempty"`
-	AlbumMeta     *AlbumMeta             `protobuf:"bytes,2,opt,name=album_meta,proto3" json:"album_meta,omitempty"`
-	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,proto3" json:"artists_meta,omitempty"`
+	TrackMeta     *TrackMeta             `protobuf:"bytes,1,opt,name=track_meta,json=trackMeta,proto3" json:"track_meta,omitempty"`
+	AlbumMeta     *AlbumMeta             `protobuf:"bytes,2,opt,name=album_meta,json=albumMeta,proto3" json:"album_meta,omitempty"`
+	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,3,rep,name=artists_meta,json=artistsMeta,proto3" json:"artists_meta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -683,10 +683,10 @@ func (x *TrackItemInfo) GetArtistsMeta() []*ArtistMeta {
 
 type PlaylistItemInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PlaylistMeta  *PlaylistMeta          `protobuf:"bytes,1,opt,name=playlist_meta,proto3" json:"playlist_meta,omitempty"`
-	TracksMeta    []*TrackMeta           `protobuf:"bytes,2,rep,name=tracks_meta,proto3" json:"tracks_meta,omitempty"`
-	AlbumsMeta    []*AlbumMeta           `protobuf:"bytes,3,rep,name=albums_meta,proto3" json:"albums_meta,omitempty"`
-	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,4,rep,name=artists_meta,proto3" json:"artists_meta,omitempty"`
+	PlaylistMeta  *PlaylistMeta          `protobuf:"bytes,1,opt,name=playlist_meta,json=playlistMeta,proto3" json:"playlist_meta,omitempty"`
+	TracksMeta    []*TrackMeta           `protobuf:"bytes,2,rep,name=tracks_meta,json=tracksMeta,proto3" json:"tracks_meta,omitempty"`
+	AlbumsMeta    []*AlbumMeta           `protobuf:"bytes,3,rep,name=albums_meta,json=albumsMeta,proto3" json:"albums_meta,omitempty"`
+	ArtistsMeta   []*ArtistMeta          `protobuf:"bytes,4,rep,name=artists_meta,json=artistsMeta,proto3" json:"artists_meta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -751,10 +751,10 @@ func (x *PlaylistItemInfo) GetArtistsMeta() []*ArtistMeta {
 
 type Fade struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InStartMs     *uint64                `protobuf:"varint,1,opt,name=in_start_ms,proto3,oneof" json:"in_start_ms,omitempty"`
-	InStopMs      *uint64                `protobuf:"varint,2,opt,name=in_stop_ms,proto3,oneof" json:"in_stop_ms,omitempty"`
-	OutStartMs    *uint64                `protobuf:"varint,3,opt,name=out_start_ms,proto3,oneof" json:"out_start_ms,omitempty"`
-	OutStopMs     *uint64                `protobuf:"varint,4,opt,name=out_stop_ms,proto3,oneof" json:"out_stop_ms,omitempty"`
+	InStartMs     *uint64                `protobuf:"varint,1,opt,name=in_start_ms,json=inStartMs,proto3,oneof" json:"in_start_ms,omitempty"`
+	InStopMs      *uint64                `protobuf:"varint,2,opt,name=in_stop_ms,json=inStopMs,proto3,oneof" json:"in_stop_ms,omitempty"`
+	OutStartMs    *uint64                `protobuf:"varint,3,opt,name=out_start_ms,json=outStartMs,proto3,oneof" json:"out_start_ms,omitempty"`
+	OutStopMs     *uint64                `protobuf:"varint,4,opt,name=out_stop_ms,json=outStopMs,proto3,oneof" json:"out_stop_ms,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -878,24 +878,23 @@ func (x *DisclaimerInfo) GetDescription() string {
 }
 
 type TrackMeta struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/music_provider/provider_meta.proto.
-	ArtistIds              []string          `protobuf:"bytes,3,rep,name=artist_ids,proto3" json:"artist_ids,omitempty"`
-	StreamUrl              *StreamUrl        `protobuf:"bytes,9,opt,name=stream_url,proto3" json:"stream_url,omitempty"`
-	ArtistRelations        []*ArtistRelation `protobuf:"bytes,10,rep,name=artist_relations,proto3" json:"artist_relations,omitempty"`
-	AgeRestrictions        *AgeRestrictions  `protobuf:"bytes,11,opt,name=age_restrictions,proto3" json:"age_restrictions,omitempty"`
-	Fade                   *Fade             `protobuf:"bytes,13,opt,name=fade,proto3" json:"fade,omitempty"`
-	Disclaimers            []*DisclaimerInfo `protobuf:"bytes,16,rep,name=disclaimers,proto3" json:"disclaimers,omitempty"`
-	AlbumId                *string           `protobuf:"bytes,2,opt,name=album_id,proto3,oneof" json:"album_id,omitempty"`
-	Title                  *string           `protobuf:"bytes,4,opt,name=title,proto3,oneof" json:"title,omitempty"`
-	ImageUrl               *string           `protobuf:"bytes,5,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
-	BackgroundImageUrl     *string           `protobuf:"bytes,7,opt,name=background_image_url,proto3,oneof" json:"background_image_url,omitempty"`
-	HasAvailableSyncLyrics *bool             `protobuf:"varint,8,opt,name=has_available_sync_lyrics,proto3,oneof" json:"has_available_sync_lyrics,omitempty"`
-	DurationMs             *uint32           `protobuf:"varint,12,opt,name=duration_ms,proto3,oneof" json:"duration_ms,omitempty"`
-	Colors                 *ColorScheme      `protobuf:"bytes,14,opt,name=colors,json=color,proto3,oneof" json:"colors,omitempty"`
-	Available              *bool             `protobuf:"varint,15,opt,name=available,proto3,oneof" json:"available,omitempty"`
-	EverFinishedChapter    *bool             `protobuf:"varint,17,opt,name=ever_finished_chapter,proto3,oneof" json:"ever_finished_chapter,omitempty"`
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ArtistIds              []string               `protobuf:"bytes,3,rep,name=artist_ids,json=artistIds,proto3" json:"artist_ids,omitempty"`
+	StreamUrl              *StreamUrl             `protobuf:"bytes,9,opt,name=stream_url,json=streamUrl,proto3" json:"stream_url,omitempty"`
+	ArtistRelations        []*ArtistRelation      `protobuf:"bytes,10,rep,name=artist_relations,json=artistRelations,proto3" json:"artist_relations,omitempty"`
+	AgeRestrictions        *AgeRestrictions       `protobuf:"bytes,11,opt,name=age_restrictions,json=ageRestrictions,proto3" json:"age_restrictions,omitempty"`
+	Fade                   *Fade                  `protobuf:"bytes,13,opt,name=fade,proto3" json:"fade,omitempty"`
+	Disclaimers            []*DisclaimerInfo      `protobuf:"bytes,16,rep,name=disclaimers,proto3" json:"disclaimers,omitempty"`
+	AlbumId                *string                `protobuf:"bytes,2,opt,name=album_id,json=albumId,proto3,oneof" json:"album_id,omitempty"`
+	Title                  *string                `protobuf:"bytes,4,opt,name=title,proto3,oneof" json:"title,omitempty"`
+	ImageUrl               *string                `protobuf:"bytes,5,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
+	BackgroundImageUrl     *string                `protobuf:"bytes,7,opt,name=background_image_url,json=backgroundImageUrl,proto3,oneof" json:"background_image_url,omitempty"`
+	HasAvailableSyncLyrics *bool                  `protobuf:"varint,8,opt,name=has_available_sync_lyrics,json=hasAvailableSyncLyrics,proto3,oneof" json:"has_available_sync_lyrics,omitempty"`
+	DurationMs             *uint32                `protobuf:"varint,12,opt,name=duration_ms,json=durationMs,proto3,oneof" json:"duration_ms,omitempty"`
+	Colors                 *ColorScheme           `protobuf:"bytes,14,opt,name=colors,proto3,oneof" json:"colors,omitempty"`
+	Available              *bool                  `protobuf:"varint,15,opt,name=available,proto3,oneof" json:"available,omitempty"`
+	EverFinishedChapter    *bool                  `protobuf:"varint,17,opt,name=ever_finished_chapter,json=everFinishedChapter,proto3,oneof" json:"ever_finished_chapter,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -937,7 +936,6 @@ func (x *TrackMeta) GetId() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/music_provider/provider_meta.proto.
 func (x *TrackMeta) GetArtistIds() []string {
 	if x != nil {
 		return x.ArtistIds
@@ -1044,18 +1042,17 @@ func (x *TrackMeta) GetEverFinishedChapter() bool {
 }
 
 type AlbumMeta struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/music_provider/provider_meta.proto.
-	ArtistIds          []string          `protobuf:"bytes,3,rep,name=artist_ids,proto3" json:"artist_ids,omitempty"`
-	ArtistRelations    []*ArtistRelation `protobuf:"bytes,8,rep,name=artist_relations,proto3" json:"artist_relations,omitempty"`
-	AgeRestrictions    *AgeRestrictions  `protobuf:"bytes,9,opt,name=age_restrictions,proto3" json:"age_restrictions,omitempty"`
-	Disclaimers        []*DisclaimerInfo `protobuf:"bytes,10,rep,name=disclaimers,proto3" json:"disclaimers,omitempty"`
-	Title              *string           `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
-	ImageUrl           *string           `protobuf:"bytes,4,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
-	BackgroundImageUrl *string           `protobuf:"bytes,5,opt,name=background_image_url,proto3,oneof" json:"background_image_url,omitempty"`
-	Year               *int32            `protobuf:"varint,6,opt,name=year,proto3,oneof" json:"year,omitempty"`
-	TotalTracksCount   *uint32           `protobuf:"varint,7,opt,name=total_tracks_count,proto3,oneof" json:"total_tracks_count,omitempty"`
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ArtistIds          []string               `protobuf:"bytes,3,rep,name=artist_ids,json=artistIds,proto3" json:"artist_ids,omitempty"`
+	ArtistRelations    []*ArtistRelation      `protobuf:"bytes,8,rep,name=artist_relations,json=artistRelations,proto3" json:"artist_relations,omitempty"`
+	AgeRestrictions    *AgeRestrictions       `protobuf:"bytes,9,opt,name=age_restrictions,json=ageRestrictions,proto3" json:"age_restrictions,omitempty"`
+	Disclaimers        []*DisclaimerInfo      `protobuf:"bytes,10,rep,name=disclaimers,proto3" json:"disclaimers,omitempty"`
+	Title              *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
+	ImageUrl           *string                `protobuf:"bytes,4,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
+	BackgroundImageUrl *string                `protobuf:"bytes,5,opt,name=background_image_url,json=backgroundImageUrl,proto3,oneof" json:"background_image_url,omitempty"`
+	Year               *int32                 `protobuf:"varint,6,opt,name=year,proto3,oneof" json:"year,omitempty"`
+	TotalTracksCount   *uint32                `protobuf:"varint,7,opt,name=total_tracks_count,json=totalTracksCount,proto3,oneof" json:"total_tracks_count,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1097,7 +1094,6 @@ func (x *AlbumMeta) GetId() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/music_provider/provider_meta.proto.
 func (x *AlbumMeta) GetArtistIds() []string {
 	if x != nil {
 		return x.ArtistIds
@@ -1166,8 +1162,8 @@ type ArtistMeta struct {
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Disclaimers      []*DisclaimerInfo      `protobuf:"bytes,5,rep,name=disclaimers,proto3" json:"disclaimers,omitempty"`
 	Name             *string                `protobuf:"bytes,2,opt,name=name,proto3,oneof" json:"name,omitempty"`
-	ImageUrl         *string                `protobuf:"bytes,3,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
-	TotalTracksCount *uint32                `protobuf:"varint,4,opt,name=total_tracks_count,proto3,oneof" json:"total_tracks_count,omitempty"`
+	ImageUrl         *string                `protobuf:"bytes,3,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
+	TotalTracksCount *uint32                `protobuf:"varint,4,opt,name=total_tracks_count,json=totalTracksCount,proto3,oneof" json:"total_tracks_count,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1240,7 +1236,7 @@ func (x *ArtistMeta) GetTotalTracksCount() uint32 {
 type StreamUrl struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Url           *string                `protobuf:"bytes,1,opt,name=url,proto3,oneof" json:"url,omitempty"`
-	ValidUntil    *uint64                `protobuf:"varint,2,opt,name=valid_until,proto3,oneof" json:"valid_until,omitempty"`
+	ValidUntil    *uint64                `protobuf:"varint,2,opt,name=valid_until,json=validUntil,proto3,oneof" json:"valid_until,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1293,9 +1289,9 @@ type PlaylistMeta struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title              *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
-	ImageUrl           *string                `protobuf:"bytes,3,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
-	BackgroundImageUrl *string                `protobuf:"bytes,4,opt,name=background_image_url,proto3,oneof" json:"background_image_url,omitempty"`
-	TotalTracksCount   *uint32                `protobuf:"varint,5,opt,name=total_tracks_count,proto3,oneof" json:"total_tracks_count,omitempty"`
+	ImageUrl           *string                `protobuf:"bytes,3,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
+	BackgroundImageUrl *string                `protobuf:"bytes,4,opt,name=background_image_url,json=backgroundImageUrl,proto3,oneof" json:"background_image_url,omitempty"`
+	TotalTracksCount   *uint32                `protobuf:"varint,5,opt,name=total_tracks_count,json=totalTracksCount,proto3,oneof" json:"total_tracks_count,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1421,7 +1417,7 @@ type GenerativeMeta struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
-	ImageUrl      *string                `protobuf:"bytes,3,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
+	ImageUrl      *string                `protobuf:"bytes,3,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1481,8 +1477,8 @@ type FmRadioMeta struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title              *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
-	ImageUrl           *string                `protobuf:"bytes,3,opt,name=image_url,proto3,oneof" json:"image_url,omitempty"`
-	BackgroundImageUrl *string                `protobuf:"bytes,4,opt,name=background_image_url,proto3,oneof" json:"background_image_url,omitempty"`
+	ImageUrl           *string                `protobuf:"bytes,3,opt,name=image_url,json=imageUrl,proto3,oneof" json:"image_url,omitempty"`
+	BackgroundImageUrl *string                `protobuf:"bytes,4,opt,name=background_image_url,json=backgroundImageUrl,proto3,oneof" json:"background_image_url,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1547,8 +1543,8 @@ func (x *FmRadioMeta) GetBackgroundImageUrl() string {
 
 type LastListenedInfo struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
-	TrackPositionInsideEntity uint32                 `protobuf:"varint,1,opt,name=track_position_inside_entity,proto3" json:"track_position_inside_entity,omitempty"`
-	OffsetMs                  uint32                 `protobuf:"varint,2,opt,name=offset_ms,proto3" json:"offset_ms,omitempty"`
+	TrackPositionInsideEntity uint32                 `protobuf:"varint,1,opt,name=track_position_inside_entity,json=trackPositionInsideEntity,proto3" json:"track_position_inside_entity,omitempty"`
+	OffsetMs                  uint32                 `protobuf:"varint,2,opt,name=offset_ms,json=offsetMs,proto3" json:"offset_ms,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -1599,8 +1595,8 @@ func (x *LastListenedInfo) GetOffsetMs() uint32 {
 
 type ColorScheme struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	MainColor       string                 `protobuf:"bytes,1,opt,name=MainColor,json=main_color,proto3" json:"MainColor,omitempty"`
-	AdditionalColor string                 `protobuf:"bytes,2,opt,name=AdditionalColor,json=additional_color,proto3" json:"AdditionalColor,omitempty"`
+	MainColor       string                 `protobuf:"bytes,1,opt,name=MainColor,proto3" json:"MainColor,omitempty"`
+	AdditionalColor string                 `protobuf:"bytes,2,opt,name=AdditionalColor,proto3" json:"AdditionalColor,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1653,96 +1649,91 @@ var File_alice_protos_data_music_provider_provider_meta_proto protoreflect.FileD
 
 const file_alice_protos_data_music_provider_provider_meta_proto_rawDesc = "" +
 	"\n" +
-	"4alice/protos/data/music_provider/provider_meta.proto\x12\vAlice.Music\x1a&yt/yt_proto/yt/formats/extension.proto\"t\n" +
-	"\x0eArtistRelation\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12J\n" +
-	"\vartist_type\x18\x02 \x01(\x0e2\x17.Alice.Music.ArtistTypeB\x0f\xaa\xdd\x1b\vartist_typeR\vartist_type\"\xe1\x02\n" +
-	"\tContentId\x12X\n" +
-	"\fcontent_type\x18\x01 \x01(\x0e2\".Alice.Music.ContentId.ContentTypeB\x10\xaa\xdd\x1b\fcontent_typeR\fcontent_type\x12\x16\n" +
-	"\x02id\x18\x02 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12(\n" +
-	"\bis_trial\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bis_trialR\bis_trial\"\xb1\x01\n" +
+	"4alice/protos/data/music_provider/provider_meta.proto\x12\vAlice.Music\x1a&yt/yt_proto/yt/formats/extension.proto\"Z\n" +
+	"\x0eArtistRelation\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x128\n" +
+	"\vartist_type\x18\x02 \x01(\x0e2\x17.Alice.Music.ArtistTypeR\n" +
+	"artistType\"\xb1\x02\n" +
+	"\tContentId\x12E\n" +
+	"\fcontent_type\x18\x01 \x01(\x0e2\".Alice.Music.ContentId.ContentTypeR\vcontentType\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\tR\x02id\x12\x19\n" +
+	"\bis_trial\x18\x03 \x01(\bR\aisTrial\"\xb1\x01\n" +
 	"\vContentType\x12\x1c\n" +
 	"\x18CONTENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n" +
 	"\x12CONTENT_TYPE_TRACK\x10\x01\x12\x16\n" +
 	"\x12CONTENT_TYPE_ALBUM\x10\x02\x12\x17\n" +
 	"\x13CONTENT_TYPE_ARTIST\x10\x03\x12\x19\n" +
 	"\x15CONTENT_TYPE_PLAYLIST\x10\x04\x12 \n" +
-	"\x1cCONTENT_TYPE_RECOMMENDATIONS\x10\x05:\x04\xa8\xdd\x1b\x04\"\x99\x02\n" +
-	"\x0fAgeRestrictions\x12r\n" +
-	"\x11restriction_level\x18\x01 \x01(\x0e2-.Alice.Music.AgeRestrictions.RestrictionLevelB\x15\xaa\xdd\x1b\x11restriction_levelR\x11restriction_level\"\x91\x01\n" +
+	"\x1cCONTENT_TYPE_RECOMMENDATIONS\x10\x05\"\x81\x02\n" +
+	"\x0fAgeRestrictions\x12Z\n" +
+	"\x11restriction_level\x18\x01 \x01(\x0e2-.Alice.Music.AgeRestrictions.RestrictionLevelR\x10restrictionLevel\"\x91\x01\n" +
 	"\x10RestrictionLevel\x12\x1d\n" +
 	"\x19RESTRICTION_LEVEL_UNKNOWN\x10\x00\x12\x1e\n" +
 	"\x1aRESTRICTION_LEVEL_EXPLICIT\x10\x01\x12\x1c\n" +
 	"\x18RESTRICTION_LEVEL_NORMAL\x10\x02\x12 \n" +
-	"\x1cRESTRICTION_LEVEL_CHILD_SAFE\x10\x03\"\xd8\x02\n" +
-	"\rAlbumItemInfo\x12F\n" +
+	"\x1cRESTRICTION_LEVEL_CHILD_SAFE\x10\x03\"\x88\x02\n" +
+	"\rAlbumItemInfo\x125\n" +
 	"\n" +
-	"album_meta\x18\x01 \x01(\v2\x16.Alice.Music.AlbumMetaB\x0e\xaa\xdd\x1b\n" +
-	"album_metaR\n" +
-	"album_meta\x12I\n" +
-	"\vtracks_meta\x18\x02 \x03(\v2\x16.Alice.Music.TrackMetaB\x0f\xaa\xdd\x1b\vtracks_metaR\vtracks_meta\x12M\n" +
-	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaB\x10\xaa\xdd\x1b\fartists_metaR\fartists_meta\x12e\n" +
-	"\x12last_listened_info\x18\x04 \x01(\v2\x1d.Alice.Music.LastListenedInfoB\x16\xaa\xdd\x1b\x12last_listened_infoR\x12last_listened_info\"\xf5\x01\n" +
-	"\x0eArtistItemInfo\x12I\n" +
-	"\vtracks_meta\x18\x01 \x03(\v2\x16.Alice.Music.TrackMetaB\x0f\xaa\xdd\x1b\vtracks_metaR\vtracks_meta\x12I\n" +
-	"\valbums_meta\x18\x02 \x03(\v2\x16.Alice.Music.AlbumMetaB\x0f\xaa\xdd\x1b\valbums_metaR\valbums_meta\x12M\n" +
-	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaB\x10\xaa\xdd\x1b\fartists_metaR\fartists_meta\"\xee\x01\n" +
-	"\rTrackItemInfo\x12F\n" +
+	"album_meta\x18\x01 \x01(\v2\x16.Alice.Music.AlbumMetaR\talbumMeta\x127\n" +
+	"\vtracks_meta\x18\x02 \x03(\v2\x16.Alice.Music.TrackMetaR\n" +
+	"tracksMeta\x12:\n" +
+	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaR\vartistsMeta\x12K\n" +
+	"\x12last_listened_info\x18\x04 \x01(\v2\x1d.Alice.Music.LastListenedInfoR\x10lastListenedInfo\"\xbe\x01\n" +
+	"\x0eArtistItemInfo\x127\n" +
+	"\vtracks_meta\x18\x01 \x03(\v2\x16.Alice.Music.TrackMetaR\n" +
+	"tracksMeta\x127\n" +
+	"\valbums_meta\x18\x02 \x03(\v2\x16.Alice.Music.AlbumMetaR\n" +
+	"albumsMeta\x12:\n" +
+	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaR\vartistsMeta\"\xb9\x01\n" +
+	"\rTrackItemInfo\x125\n" +
 	"\n" +
-	"track_meta\x18\x01 \x01(\v2\x16.Alice.Music.TrackMetaB\x0e\xaa\xdd\x1b\n" +
-	"track_metaR\n" +
-	"track_meta\x12F\n" +
+	"track_meta\x18\x01 \x01(\v2\x16.Alice.Music.TrackMetaR\ttrackMeta\x125\n" +
 	"\n" +
-	"album_meta\x18\x02 \x01(\v2\x16.Alice.Music.AlbumMetaB\x0e\xaa\xdd\x1b\n" +
-	"album_metaR\n" +
-	"album_meta\x12M\n" +
-	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaB\x10\xaa\xdd\x1b\fartists_metaR\fartists_meta\"\xcb\x02\n" +
-	"\x10PlaylistItemInfo\x12R\n" +
-	"\rplaylist_meta\x18\x01 \x01(\v2\x19.Alice.Music.PlaylistMetaB\x11\xaa\xdd\x1b\rplaylist_metaR\rplaylist_meta\x12I\n" +
-	"\vtracks_meta\x18\x02 \x03(\v2\x16.Alice.Music.TrackMetaB\x0f\xaa\xdd\x1b\vtracks_metaR\vtracks_meta\x12I\n" +
-	"\valbums_meta\x18\x03 \x03(\v2\x16.Alice.Music.AlbumMetaB\x0f\xaa\xdd\x1b\valbums_metaR\valbums_meta\x12M\n" +
-	"\fartists_meta\x18\x04 \x03(\v2\x17.Alice.Music.ArtistMetaB\x10\xaa\xdd\x1b\fartists_metaR\fartists_meta\"\xac\x02\n" +
-	"\x04Fade\x126\n" +
-	"\vin_start_ms\x18\x01 \x01(\x04B\x0f\xaa\xdd\x1b\vin_start_msH\x00R\vin_start_ms\x88\x01\x01\x123\n" +
+	"album_meta\x18\x02 \x01(\v2\x16.Alice.Music.AlbumMetaR\talbumMeta\x12:\n" +
+	"\fartists_meta\x18\x03 \x03(\v2\x17.Alice.Music.ArtistMetaR\vartistsMeta\"\x80\x02\n" +
+	"\x10PlaylistItemInfo\x12>\n" +
+	"\rplaylist_meta\x18\x01 \x01(\v2\x19.Alice.Music.PlaylistMetaR\fplaylistMeta\x127\n" +
+	"\vtracks_meta\x18\x02 \x03(\v2\x16.Alice.Music.TrackMetaR\n" +
+	"tracksMeta\x127\n" +
+	"\valbums_meta\x18\x03 \x03(\v2\x16.Alice.Music.AlbumMetaR\n" +
+	"albumsMeta\x12:\n" +
+	"\fartists_meta\x18\x04 \x03(\v2\x17.Alice.Music.ArtistMetaR\vartistsMeta\"\xda\x01\n" +
+	"\x04Fade\x12#\n" +
+	"\vin_start_ms\x18\x01 \x01(\x04H\x00R\tinStartMs\x88\x01\x01\x12!\n" +
 	"\n" +
-	"in_stop_ms\x18\x02 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"in_stop_msH\x01R\n" +
-	"in_stop_ms\x88\x01\x01\x129\n" +
-	"\fout_start_ms\x18\x03 \x01(\x04B\x10\xaa\xdd\x1b\fout_start_msH\x02R\fout_start_ms\x88\x01\x01\x126\n" +
-	"\vout_stop_ms\x18\x04 \x01(\x04B\x0f\xaa\xdd\x1b\vout_stop_msH\x03R\vout_stop_ms\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
+	"in_stop_ms\x18\x02 \x01(\x04H\x01R\binStopMs\x88\x01\x01\x12%\n" +
+	"\fout_start_ms\x18\x03 \x01(\x04H\x02R\n" +
+	"outStartMs\x88\x01\x01\x12#\n" +
+	"\vout_stop_ms\x18\x04 \x01(\x04H\x03R\toutStopMs\x88\x01\x01B\x0e\n" +
 	"\f_in_start_msB\r\n" +
 	"\v_in_stop_msB\x0f\n" +
 	"\r_out_start_msB\x0e\n" +
-	"\f_out_stop_ms\"\x88\x01\n" +
-	"\x0eDisclaimerInfo\x12\x1c\n" +
-	"\x04type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1f\n" +
-	"\x05title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x121\n" +
-	"\vdescription\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription:\x04\xa8\xdd\x1b\x04\"\xcd\t\n" +
-	"\tTrackMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x120\n" +
+	"\f_out_stop_ms\"\\\n" +
+	"\x0eDisclaimerInfo\x12\x12\n" +
+	"\x04type\x18\x01 \x01(\tR\x04type\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\"\xa7\a\n" +
+	"\tTrackMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
-	"artist_ids\x18\x03 \x03(\tB\x10\xaa\xdd\x1b\n" +
-	"artist_ids\x18\x01R\n" +
-	"artist_ids\x12F\n" +
+	"artist_ids\x18\x03 \x03(\tR\tartistIds\x125\n" +
 	"\n" +
-	"stream_url\x18\t \x01(\v2\x16.Alice.Music.StreamUrlB\x0e\xaa\xdd\x1b\n" +
-	"stream_urlR\n" +
-	"stream_url\x12]\n" +
+	"stream_url\x18\t \x01(\v2\x16.Alice.Music.StreamUrlR\tstreamUrl\x12F\n" +
 	"\x10artist_relations\x18\n" +
-	" \x03(\v2\x1b.Alice.Music.ArtistRelationB\x14\xaa\xdd\x1b\x10artist_relationsR\x10artist_relations\x12^\n" +
-	"\x10age_restrictions\x18\v \x01(\v2\x1c.Alice.Music.AgeRestrictionsB\x14\xaa\xdd\x1b\x10age_restrictionsR\x10age_restrictions\x12/\n" +
-	"\x04fade\x18\r \x01(\v2\x11.Alice.Music.FadeB\b\xaa\xdd\x1b\x04fadeR\x04fade\x12N\n" +
-	"\vdisclaimers\x18\x10 \x03(\v2\x1b.Alice.Music.DisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers\x12-\n" +
-	"\balbum_id\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balbum_idH\x00R\balbum_id\x88\x01\x01\x12$\n" +
-	"\x05title\x18\x04 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x01R\x05title\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x05 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x02R\timage_url\x88\x01\x01\x12Q\n" +
-	"\x14background_image_url\x18\a \x01(\tB\x18\xaa\xdd\x1b\x14background_image_urlH\x03R\x14background_image_url\x88\x01\x01\x12`\n" +
-	"\x19has_available_sync_lyrics\x18\b \x01(\bB\x1d\xaa\xdd\x1b\x19has_available_sync_lyricsH\x04R\x19has_available_sync_lyrics\x88\x01\x01\x126\n" +
-	"\vduration_ms\x18\f \x01(\rB\x0f\xaa\xdd\x1b\vduration_msH\x05R\vduration_ms\x88\x01\x01\x12@\n" +
-	"\x06colors\x18\x0e \x01(\v2\x18.Alice.Music.ColorSchemeB\n" +
-	"\xaa\xdd\x1b\x06colorsH\x06R\x05color\x88\x01\x01\x120\n" +
-	"\tavailable\x18\x0f \x01(\bB\r\xaa\xdd\x1b\tavailableH\aR\tavailable\x88\x01\x01\x12T\n" +
-	"\x15ever_finished_chapter\x18\x11 \x01(\bB\x19\xaa\xdd\x1b\x15ever_finished_chapterH\bR\x15ever_finished_chapter\x88\x01\x01B\v\n" +
+	" \x03(\v2\x1b.Alice.Music.ArtistRelationR\x0fartistRelations\x12G\n" +
+	"\x10age_restrictions\x18\v \x01(\v2\x1c.Alice.Music.AgeRestrictionsR\x0fageRestrictions\x12%\n" +
+	"\x04fade\x18\r \x01(\v2\x11.Alice.Music.FadeR\x04fade\x12=\n" +
+	"\vdisclaimers\x18\x10 \x03(\v2\x1b.Alice.Music.DisclaimerInfoR\vdisclaimers\x12\x1e\n" +
+	"\balbum_id\x18\x02 \x01(\tH\x00R\aalbumId\x88\x01\x01\x12\x19\n" +
+	"\x05title\x18\x04 \x01(\tH\x01R\x05title\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x05 \x01(\tH\x02R\bimageUrl\x88\x01\x01\x125\n" +
+	"\x14background_image_url\x18\a \x01(\tH\x03R\x12backgroundImageUrl\x88\x01\x01\x12>\n" +
+	"\x19has_available_sync_lyrics\x18\b \x01(\bH\x04R\x16hasAvailableSyncLyrics\x88\x01\x01\x12$\n" +
+	"\vduration_ms\x18\f \x01(\rH\x05R\n" +
+	"durationMs\x88\x01\x01\x125\n" +
+	"\x06colors\x18\x0e \x01(\v2\x18.Alice.Music.ColorSchemeH\x06R\x06colors\x88\x01\x01\x12!\n" +
+	"\tavailable\x18\x0f \x01(\bH\aR\tavailable\x88\x01\x01\x127\n" +
+	"\x15ever_finished_chapter\x18\x11 \x01(\bH\bR\x13everFinishedChapter\x88\x01\x01B\v\n" +
 	"\t_album_idB\b\n" +
 	"\x06_titleB\f\n" +
 	"\n" +
@@ -1753,83 +1744,80 @@ const file_alice_protos_data_music_provider_provider_meta_proto_rawDesc = "" +
 	"\a_colorsB\f\n" +
 	"\n" +
 	"_availableB\x18\n" +
-	"\x16_ever_finished_chapterJ\x04\b\x06\x10\aR\vis_explicit\"\xd0\x05\n" +
-	"\tAlbumMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x120\n" +
+	"\x16_ever_finished_chapterJ\x04\b\x06\x10\aR\vis_explicit\"\x9b\x04\n" +
+	"\tAlbumMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
-	"artist_ids\x18\x03 \x03(\tB\x10\xaa\xdd\x1b\n" +
-	"artist_ids\x18\x01R\n" +
-	"artist_ids\x12]\n" +
-	"\x10artist_relations\x18\b \x03(\v2\x1b.Alice.Music.ArtistRelationB\x14\xaa\xdd\x1b\x10artist_relationsR\x10artist_relations\x12^\n" +
-	"\x10age_restrictions\x18\t \x01(\v2\x1c.Alice.Music.AgeRestrictionsB\x14\xaa\xdd\x1b\x10age_restrictionsR\x10age_restrictions\x12N\n" +
+	"artist_ids\x18\x03 \x03(\tR\tartistIds\x12F\n" +
+	"\x10artist_relations\x18\b \x03(\v2\x1b.Alice.Music.ArtistRelationR\x0fartistRelations\x12G\n" +
+	"\x10age_restrictions\x18\t \x01(\v2\x1c.Alice.Music.AgeRestrictionsR\x0fageRestrictions\x12=\n" +
 	"\vdisclaimers\x18\n" +
-	" \x03(\v2\x1b.Alice.Music.DisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers\x12$\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x04 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x01R\timage_url\x88\x01\x01\x12Q\n" +
-	"\x14background_image_url\x18\x05 \x01(\tB\x18\xaa\xdd\x1b\x14background_image_urlH\x02R\x14background_image_url\x88\x01\x01\x12!\n" +
-	"\x04year\x18\x06 \x01(\x05B\b\xaa\xdd\x1b\x04yearH\x03R\x04year\x88\x01\x01\x12K\n" +
-	"\x12total_tracks_count\x18\a \x01(\rB\x16\xaa\xdd\x1b\x12total_tracks_countH\x04R\x12total_tracks_count\x88\x01\x01B\b\n" +
+	" \x03(\v2\x1b.Alice.Music.DisclaimerInfoR\vdisclaimers\x12\x19\n" +
+	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x04 \x01(\tH\x01R\bimageUrl\x88\x01\x01\x125\n" +
+	"\x14background_image_url\x18\x05 \x01(\tH\x02R\x12backgroundImageUrl\x88\x01\x01\x12\x17\n" +
+	"\x04year\x18\x06 \x01(\x05H\x03R\x04year\x88\x01\x01\x121\n" +
+	"\x12total_tracks_count\x18\a \x01(\rH\x04R\x10totalTracksCount\x88\x01\x01B\b\n" +
 	"\x06_titleB\f\n" +
 	"\n" +
 	"_image_urlB\x17\n" +
 	"\x15_background_image_urlB\a\n" +
 	"\x05_yearB\x15\n" +
-	"\x13_total_tracks_count\"\xc4\x02\n" +
+	"\x13_total_tracks_count\"\xf7\x01\n" +
 	"\n" +
-	"ArtistMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12N\n" +
-	"\vdisclaimers\x18\x05 \x03(\v2\x1b.Alice.Music.DisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers\x12!\n" +
-	"\x04name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameH\x00R\x04name\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x03 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x01R\timage_url\x88\x01\x01\x12K\n" +
-	"\x12total_tracks_count\x18\x04 \x01(\rB\x16\xaa\xdd\x1b\x12total_tracks_countH\x02R\x12total_tracks_count\x88\x01\x01B\a\n" +
+	"ArtistMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12=\n" +
+	"\vdisclaimers\x18\x05 \x03(\v2\x1b.Alice.Music.DisclaimerInfoR\vdisclaimers\x12\x17\n" +
+	"\x04name\x18\x02 \x01(\tH\x00R\x04name\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x03 \x01(\tH\x01R\bimageUrl\x88\x01\x01\x121\n" +
+	"\x12total_tracks_count\x18\x04 \x01(\rH\x02R\x10totalTracksCount\x88\x01\x01B\a\n" +
 	"\x05_nameB\f\n" +
 	"\n" +
 	"_image_urlB\x15\n" +
-	"\x13_total_tracks_count\"{\n" +
-	"\tStreamUrl\x12\x1e\n" +
-	"\x03url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlH\x00R\x03url\x88\x01\x01\x126\n" +
-	"\vvalid_until\x18\x02 \x01(\x04B\x0f\xaa\xdd\x1b\vvalid_untilH\x01R\vvalid_until\x88\x01\x01B\x06\n" +
+	"\x13_total_tracks_count\"`\n" +
+	"\tStreamUrl\x12\x15\n" +
+	"\x03url\x18\x01 \x01(\tH\x00R\x03url\x88\x01\x01\x12$\n" +
+	"\vvalid_until\x18\x02 \x01(\x04H\x01R\n" +
+	"validUntil\x88\x01\x01B\x06\n" +
 	"\x04_urlB\x0e\n" +
-	"\f_valid_until\"\xe6\x02\n" +
-	"\fPlaylistMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12$\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x03 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x01R\timage_url\x88\x01\x01\x12Q\n" +
-	"\x14background_image_url\x18\x04 \x01(\tB\x18\xaa\xdd\x1b\x14background_image_urlH\x02R\x14background_image_url\x88\x01\x01\x12K\n" +
-	"\x12total_tracks_count\x18\x05 \x01(\rB\x16\xaa\xdd\x1b\x12total_tracks_countH\x03R\x12total_tracks_count\x88\x01\x01B\b\n" +
+	"\f_valid_until\"\x8d\x02\n" +
+	"\fPlaylistMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x03 \x01(\tH\x01R\bimageUrl\x88\x01\x01\x125\n" +
+	"\x14background_image_url\x18\x04 \x01(\tH\x02R\x12backgroundImageUrl\x88\x01\x01\x121\n" +
+	"\x12total_tracks_count\x18\x05 \x01(\rH\x03R\x10totalTracksCount\x88\x01\x01B\b\n" +
 	"\x06_titleB\f\n" +
 	"\n" +
 	"_image_urlB\x17\n" +
 	"\x15_background_image_urlB\x15\n" +
-	"\x13_total_tracks_count\"]\n" +
-	"\x13RecommendationsMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12$\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01B\b\n" +
-	"\x06_title\"\x98\x01\n" +
-	"\x0eGenerativeMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12$\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x03 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x01R\timage_url\x88\x01\x01B\b\n" +
+	"\x13_total_tracks_count\"J\n" +
+	"\x13RecommendationsMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01B\b\n" +
+	"\x06_title\"u\n" +
+	"\x0eGenerativeMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x03 \x01(\tH\x01R\bimageUrl\x88\x01\x01B\b\n" +
 	"\x06_titleB\f\n" +
 	"\n" +
-	"_image_url\"\x81\x02\n" +
-	"\vFmRadioMeta\x12\x16\n" +
-	"\x02id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12$\n" +
-	"\x05title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x120\n" +
-	"\timage_url\x18\x03 \x01(\tB\r\xaa\xdd\x1b\timage_urlH\x01R\timage_url\x88\x01\x01\x12Q\n" +
-	"\x14background_image_url\x18\x04 \x01(\tB\x18\xaa\xdd\x1b\x14background_image_urlH\x02R\x14background_image_url\x88\x01\x01B\b\n" +
+	"_image_url\"\xc2\x01\n" +
+	"\vFmRadioMeta\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12 \n" +
+	"\timage_url\x18\x03 \x01(\tH\x01R\bimageUrl\x88\x01\x01\x125\n" +
+	"\x14background_image_url\x18\x04 \x01(\tH\x02R\x12backgroundImageUrl\x88\x01\x01B\b\n" +
 	"\x06_titleB\f\n" +
 	"\n" +
 	"_image_urlB\x17\n" +
-	"\x15_background_image_url\"\xa5\x01\n" +
-	"\x10LastListenedInfo\x12d\n" +
-	"\x1ctrack_position_inside_entity\x18\x01 \x01(\rB \xaa\xdd\x1b\x1ctrack_position_inside_entityR\x1ctrack_position_inside_entity\x12+\n" +
-	"\toffset_ms\x18\x02 \x01(\rB\r\xaa\xdd\x1b\toffset_msR\toffset_ms\"}\n" +
-	"\vColorScheme\x12-\n" +
-	"\tMainColor\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"main_colorR\n" +
-	"main_color\x12?\n" +
-	"\x0fAdditionalColor\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10additional_colorR\x10additional_color*\x87\x01\n" +
+	"\x15_background_image_url\"p\n" +
+	"\x10LastListenedInfo\x12?\n" +
+	"\x1ctrack_position_inside_entity\x18\x01 \x01(\rR\x19trackPositionInsideEntity\x12\x1b\n" +
+	"\toffset_ms\x18\x02 \x01(\rR\boffsetMs\"U\n" +
+	"\vColorScheme\x12\x1c\n" +
+	"\tMainColor\x18\x01 \x01(\tR\tMainColor\x12(\n" +
+	"\x0fAdditionalColor\x18\x02 \x01(\tR\x0fAdditionalColor*\x87\x01\n" +
 	"\rMusicProvider\x12\x1e\n" +
 	"\x1aMUSIC_PROVIDER_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bMUSIC_PROVIDER_YANDEX_MUSIC\x10\x01\x12\x1a\n" +
@@ -1851,8 +1839,8 @@ const file_alice_protos_data_music_provider_provider_meta_proto_rawDesc = "" +
 	"\x17REPEAT_TYPE_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10REPEAT_TYPE_NONE\x10\x01\x12\x15\n" +
 	"\x11REPEAT_TYPE_TRACK\x10\x02\x12\x13\n" +
-	"\x0fREPEAT_TYPE_ALL\x10\x03B_\n" +
-	"*ru.yandex.alice.protos.data.music_providerZ1a.yandex-team.ru/alice/protos/data/music_providerb\x06proto3"
+	"\x0fREPEAT_TYPE_ALL\x10\x03B\xc3\x01\n" +
+	"\x0fcom.Alice.MusicB\x11ProviderMetaProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/music_provider\xa2\x02\x03AMX\xaa\x02\vAlice.Music\xca\x02\vAlice\\Music\xe2\x02\x17Alice\\Music\\GPBMetadata\xea\x02\fAlice::Musicb\x06proto3"
 
 var (
 	file_alice_protos_data_music_provider_provider_meta_proto_rawDescOnce sync.Once

@@ -25,16 +25,16 @@ const (
 
 type TTtsGenerate struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Experiments   *experiments.TExperimentsProto `protobuf:"bytes,10,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
-	Lang          *string                        `protobuf:"bytes,1,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
-	Emotion       *string                        `protobuf:"bytes,2,opt,name=Emotion,json=emotion,proto3,oneof" json:"Emotion,omitempty"`
-	Format        *string                        `protobuf:"bytes,3,opt,name=Format,json=format,proto3,oneof" json:"Format,omitempty"`
-	Quality       *string                        `protobuf:"bytes,4,opt,name=Quality,json=quality,proto3,oneof" json:"Quality,omitempty"`
-	Speed         *float64                       `protobuf:"fixed64,5,opt,name=Speed,json=speed,proto3,oneof" json:"Speed,omitempty"`
-	Tag           *string                        `protobuf:"bytes,6,opt,name=Tag,json=tag,proto3,oneof" json:"Tag,omitempty"`
-	Text          *string                        `protobuf:"bytes,7,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
-	Voice         *string                        `protobuf:"bytes,8,opt,name=Voice,json=voice,proto3,oneof" json:"Voice,omitempty"`
-	Volume        *float64                       `protobuf:"fixed64,9,opt,name=Volume,json=volume,proto3,oneof" json:"Volume,omitempty"`
+	Experiments   *experiments.TExperimentsProto `protobuf:"bytes,10,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
+	Lang          *string                        `protobuf:"bytes,1,opt,name=Lang,proto3,oneof" json:"Lang,omitempty"`
+	Emotion       *string                        `protobuf:"bytes,2,opt,name=Emotion,proto3,oneof" json:"Emotion,omitempty"`
+	Format        *string                        `protobuf:"bytes,3,opt,name=Format,proto3,oneof" json:"Format,omitempty"`
+	Quality       *string                        `protobuf:"bytes,4,opt,name=Quality,proto3,oneof" json:"Quality,omitempty"`
+	Speed         *float64                       `protobuf:"fixed64,5,opt,name=Speed,proto3,oneof" json:"Speed,omitempty"`
+	Tag           *string                        `protobuf:"bytes,6,opt,name=Tag,proto3,oneof" json:"Tag,omitempty"`
+	Text          *string                        `protobuf:"bytes,7,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
+	Voice         *string                        `protobuf:"bytes,8,opt,name=Voice,proto3,oneof" json:"Voice,omitempty"`
+	Volume        *float64                       `protobuf:"fixed64,9,opt,name=Volume,proto3,oneof" json:"Volume,omitempty"`
 	IsStreaming   *bool                          `protobuf:"varint,12,opt,name=IsStreaming,json=is_streaming,proto3,oneof" json:"IsStreaming,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -151,22 +151,20 @@ var File_alice_protos_api_alicekit_events_tts_generate_tts_generate_proto protor
 
 const file_alice_protos_api_alicekit_events_tts_generate_tts_generate_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/api/alicekit/events/tts_generate/tts_generate.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfc\x04\n" +
-	"\fTTtsGenerate\x12L\n" +
+	"@alice/protos/api/alicekit/events/tts_generate/tts_generate.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x80\x04\n" +
+	"\fTTtsGenerate\x12;\n" +
 	"\vExperiments\x18\n" +
-	" \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12!\n" +
-	"\x04Lang\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04langH\x00R\x04lang\x88\x01\x01\x12*\n" +
-	"\aEmotion\x18\x02 \x01(\tB\v\xaa\xdd\x1b\aemotionH\x01R\aemotion\x88\x01\x01\x12'\n" +
-	"\x06Format\x18\x03 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06formatH\x02R\x06format\x88\x01\x01\x12*\n" +
-	"\aQuality\x18\x04 \x01(\tB\v\xaa\xdd\x1b\aqualityH\x03R\aquality\x88\x01\x01\x12$\n" +
-	"\x05Speed\x18\x05 \x01(\x01B\t\xaa\xdd\x1b\x05speedH\x04R\x05speed\x88\x01\x01\x12\x1e\n" +
-	"\x03Tag\x18\x06 \x01(\tB\a\xaa\xdd\x1b\x03tagH\x05R\x03tag\x88\x01\x01\x12!\n" +
-	"\x04Text\x18\a \x01(\tB\b\xaa\xdd\x1b\x04textH\x06R\x04text\x88\x01\x01\x12$\n" +
-	"\x05Voice\x18\b \x01(\tB\t\xaa\xdd\x1b\x05voiceH\aR\x05voice\x88\x01\x01\x12'\n" +
-	"\x06Volume\x18\t \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06volumeH\bR\x06volume\x88\x01\x01\x128\n" +
-	"\vIsStreaming\x18\f \x01(\bB\x10\xaa\xdd\x1b\fis_streamingH\tR\fis_streaming\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	" \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12\x17\n" +
+	"\x04Lang\x18\x01 \x01(\tH\x00R\x04Lang\x88\x01\x01\x12\x1d\n" +
+	"\aEmotion\x18\x02 \x01(\tH\x01R\aEmotion\x88\x01\x01\x12\x1b\n" +
+	"\x06Format\x18\x03 \x01(\tH\x02R\x06Format\x88\x01\x01\x12\x1d\n" +
+	"\aQuality\x18\x04 \x01(\tH\x03R\aQuality\x88\x01\x01\x12\x19\n" +
+	"\x05Speed\x18\x05 \x01(\x01H\x04R\x05Speed\x88\x01\x01\x12\x15\n" +
+	"\x03Tag\x18\x06 \x01(\tH\x05R\x03Tag\x88\x01\x01\x12\x17\n" +
+	"\x04Text\x18\a \x01(\tH\x06R\x04Text\x88\x01\x01\x12\x19\n" +
+	"\x05Voice\x18\b \x01(\tH\aR\x05Voice\x88\x01\x01\x12\x1b\n" +
+	"\x06Volume\x18\t \x01(\x01H\bR\x06Volume\x88\x01\x01\x128\n" +
+	"\vIsStreaming\x18\f \x01(\bB\x10\xaa\xdd\x1b\fis_streamingH\tR\fis_streaming\x88\x01\x01B\a\n" +
 	"\x05_LangB\n" +
 	"\n" +
 	"\b_EmotionB\t\n" +
@@ -178,8 +176,8 @@ const file_alice_protos_api_alicekit_events_tts_generate_tts_generate_proto_rawD
 	"\x05_TextB\b\n" +
 	"\x06_VoiceB\t\n" +
 	"\a_VolumeB\x0e\n" +
-	"\f_IsStreamingJ\x04\b\v\x10\fR\x10RealtimeStreamerB\x88\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.events.tts_generateB\vTtsGenerateP\x01Z>a.yandex-team.ru/alice/protos/api/alicekit/events/tts_generateb\x06proto3"
+	"\f_IsStreamingJ\x04\b\v\x10\fR\x10RealtimeStreamerB\xe8\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10TtsGenerateProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/tts_generate\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_tts_generate_tts_generate_proto_rawDescOnce sync.Once

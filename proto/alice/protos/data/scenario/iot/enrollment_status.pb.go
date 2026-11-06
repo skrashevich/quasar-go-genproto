@@ -25,11 +25,10 @@ const (
 type TEnrollmentStatus_EFailureReason int32
 
 const (
-	TEnrollmentStatus_Unknown       TEnrollmentStatus_EFailureReason = 0
-	TEnrollmentStatus_ClientTimeout TEnrollmentStatus_EFailureReason = 1
-	TEnrollmentStatus_ScenarioError TEnrollmentStatus_EFailureReason = 2
-	TEnrollmentStatus_PassportError TEnrollmentStatus_EFailureReason = 3
-	// Deprecated: Marked as deprecated in alice/protos/data/scenario/iot/enrollment_status.proto.
+	TEnrollmentStatus_Unknown               TEnrollmentStatus_EFailureReason = 0
+	TEnrollmentStatus_ClientTimeout         TEnrollmentStatus_EFailureReason = 1
+	TEnrollmentStatus_ScenarioError         TEnrollmentStatus_EFailureReason = 2
+	TEnrollmentStatus_PassportError         TEnrollmentStatus_EFailureReason = 3
 	TEnrollmentStatus_RequestedByUser       TEnrollmentStatus_EFailureReason = 4
 	TEnrollmentStatus_EnrolledUser          TEnrollmentStatus_EFailureReason = 5
 	TEnrollmentStatus_ActiveEnrollment      TEnrollmentStatus_EFailureReason = 6
@@ -156,10 +155,10 @@ func (TEnrollmentStatus_ESource) EnumDescriptor() ([]byte, []int) {
 
 type TEnrollmentStatus struct {
 	state                protoimpl.MessageState           `protogen:"open.v1"`
-	Success              bool                             `protobuf:"varint,1,opt,name=Success,json=success,proto3" json:"Success,omitempty"`
-	FailureReason        TEnrollmentStatus_EFailureReason `protobuf:"varint,2,opt,name=FailureReason,json=failure_reason,proto3,enum=NAlice.NData.NIoT.TEnrollmentStatus_EFailureReason" json:"FailureReason,omitempty"`
-	FailureReasonDetails string                           `protobuf:"bytes,3,opt,name=FailureReasonDetails,json=failure_reason_details,proto3" json:"FailureReasonDetails,omitempty"`
-	Source               TEnrollmentStatus_ESource        `protobuf:"varint,4,opt,name=Source,json=source,proto3,enum=NAlice.NData.NIoT.TEnrollmentStatus_ESource" json:"Source,omitempty"`
+	Success              bool                             `protobuf:"varint,1,opt,name=Success,proto3" json:"Success,omitempty"`
+	FailureReason        TEnrollmentStatus_EFailureReason `protobuf:"varint,2,opt,name=FailureReason,proto3,enum=NAlice.NData.NIoT.TEnrollmentStatus_EFailureReason" json:"FailureReason,omitempty"`
+	FailureReasonDetails string                           `protobuf:"bytes,3,opt,name=FailureReasonDetails,proto3" json:"FailureReasonDetails,omitempty"`
+	Source               TEnrollmentStatus_ESource        `protobuf:"varint,4,opt,name=Source,proto3,enum=NAlice.NData.NIoT.TEnrollmentStatus_ESource" json:"Source,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -226,19 +225,18 @@ var File_alice_protos_data_scenario_iot_enrollment_status_proto protoreflect.Fil
 
 const file_alice_protos_data_scenario_iot_enrollment_status_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/data/scenario/iot/enrollment_status.proto\x12\x11NAlice.NData.NIoT\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x06\n" +
-	"\x11TEnrollmentStatus\x12%\n" +
-	"\aSuccess\x18\x01 \x01(\bB\v\xaa\xdd\x1b\asuccessR\asuccess\x12n\n" +
-	"\rFailureReason\x18\x02 \x01(\x0e23.NAlice.NData.NIoT.TEnrollmentStatus.EFailureReasonB\x12\xaa\xdd\x1b\x0efailure_reasonR\x0efailure_reason\x12P\n" +
-	"\x14FailureReasonDetails\x18\x03 \x01(\tB\x1a\xaa\xdd\x1b\x16failure_reason_detailsR\x16failure_reason_details\x12P\n" +
-	"\x06Source\x18\x04 \x01(\x0e2,.NAlice.NData.NIoT.TEnrollmentStatus.ESourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\"\x80\x02\n" +
+	"6alice/protos/data/scenario/iot/enrollment_status.proto\x12\x11NAlice.NData.NIoT\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc0\x05\n" +
+	"\x11TEnrollmentStatus\x12\x18\n" +
+	"\aSuccess\x18\x01 \x01(\bR\aSuccess\x12Y\n" +
+	"\rFailureReason\x18\x02 \x01(\x0e23.NAlice.NData.NIoT.TEnrollmentStatus.EFailureReasonR\rFailureReason\x122\n" +
+	"\x14FailureReasonDetails\x18\x03 \x01(\tR\x14FailureReasonDetails\x12D\n" +
+	"\x06Source\x18\x04 \x01(\x0e2,.NAlice.NData.NIoT.TEnrollmentStatus.ESourceR\x06Source\"\xfc\x01\n" +
 	"\x0eEFailureReason\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x11\n" +
 	"\rClientTimeout\x10\x01\x12\x11\n" +
 	"\rScenarioError\x10\x02\x12\x11\n" +
-	"\rPassportError\x10\x03\x12\x17\n" +
-	"\x0fRequestedByUser\x10\x04\x1a\x02\b\x01\x12\x10\n" +
+	"\rPassportError\x10\x03\x12\x13\n" +
+	"\x0fRequestedByUser\x10\x04\x12\x10\n" +
 	"\fEnrolledUser\x10\x05\x12\x14\n" +
 	"\x10ActiveEnrollment\x10\x06\x12\x18\n" +
 	"\x14SoundEnrollmentError\x10\a\x12\x17\n" +
@@ -252,8 +250,8 @@ const file_alice_protos_data_scenario_iot_enrollment_status_proto_rawDesc = "" +
 	"\x16RemoveAccountDirective\x10\x02\x12\x1e\n" +
 	"\x1aUpdateVoicePrintsDirective\x10\x03\x12 \n" +
 	"\x1cRemoveAccountPersIdDirective\x10\x04\x12'\n" +
-	"#RegisterFaceEnrollmentTypedCallback\x10\x05:\x04\xa8\xdd\x1b\x04B[\n" +
-	"(ru.yandex.alice.protos.data.scenario.iotZ/a.yandex-team.ru/alice/protos/data/scenario/iotb\x06proto3"
+	"#RegisterFaceEnrollmentTypedCallback\x10\x05B\xe4\x01\n" +
+	"\x15com.NAlice.NData.NIoTB\x15EnrollmentStatusProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/iot\xa2\x02\x03NNN\xaa\x02\x11NAlice.NData.NIoT\xca\x02\x11NAlice\\NData\\NIoT\xe2\x02\x1dNAlice\\NData\\NIoT\\GPBMetadata\xea\x02\x13NAlice::NData::NIoTb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_iot_enrollment_status_proto_rawDescOnce sync.Once

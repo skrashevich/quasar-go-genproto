@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/data/iot_bind/iot_bind.proto
 
-package iotbindpb
+package iot_bind
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -134,8 +134,8 @@ const file_alice_protos_data_iot_bind_iot_bind_proto_rawDesc = "" +
 	"\n" +
 	"\x06CLIENT\x10\x00\x12\n" +
 	"\n" +
-	"\x06SERVER\x10\x01Bk\n" +
-	"$ru.yandex.alice.protos.data.iot_bindB\fIotBindProtoZ5a.yandex-team.ru/alice/protos/data/iot_bind;iotbindpbb\x06proto3"
+	"\x06SERVER\x10\x01B\x80\x01\n" +
+	"$ru.yandex.alice.protos.data.iot_bindB\fIotBindProtoZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot_bindb\x06proto3"
 
 var (
 	file_alice_protos_data_iot_bind_iot_bind_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/counter_activation/capability.proto
 
-package counteractivationpb
+package counter_activation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -71,9 +71,9 @@ func (TCounterActivationCapability_TCounterActivationPriorityEvent_EType) EnumDe
 
 type TCounterActivationCapability struct {
 	state         protoimpl.MessageState                    `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta               `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TCounterActivationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TCounterActivationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta               `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TCounterActivationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TCounterActivationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,8 +167,8 @@ func (*TCounterActivationCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TCounterActivationCapability_TState struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Enabled         bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
-	AvailableModels []string               `protobuf:"bytes,2,rep,name=AvailableModels,json=available_models,proto3" json:"AvailableModels,omitempty"`
+	Enabled         bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
+	AvailableModels []string               `protobuf:"bytes,2,rep,name=AvailableModels,proto3" json:"AvailableModels,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -219,9 +219,9 @@ func (x *TCounterActivationCapability_TState) GetAvailableModels() []string {
 
 type TCounterActivationCapability_TCounterActivationStartedEvent struct {
 	state         protoimpl.MessageState                                                     `protogen:"open.v1"`
-	Phrase        string                                                                     `protobuf:"bytes,1,opt,name=Phrase,json=phrase,proto3" json:"Phrase,omitempty"`
-	ModelResults  []*TCounterActivationCapability_TCounterActivationStartedEvent_ModelResult `protobuf:"bytes,2,rep,name=ModelResults,json=model_results,proto3" json:"ModelResults,omitempty"`
-	SessionId     string                                                                     `protobuf:"bytes,3,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
+	Phrase        string                                                                     `protobuf:"bytes,1,opt,name=Phrase,proto3" json:"Phrase,omitempty"`
+	ModelResults  []*TCounterActivationCapability_TCounterActivationStartedEvent_ModelResult `protobuf:"bytes,2,rep,name=ModelResults,proto3" json:"ModelResults,omitempty"`
+	SessionId     string                                                                     `protobuf:"bytes,3,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -279,8 +279,8 @@ func (x *TCounterActivationCapability_TCounterActivationStartedEvent) GetSession
 
 type TCounterActivationCapability_TCounterActivationPriorityEvent struct {
 	state         protoimpl.MessageState                                             `protogen:"open.v1"`
-	Event         TCounterActivationCapability_TCounterActivationPriorityEvent_EType `protobuf:"varint,1,opt,name=Event,json=event,proto3,enum=NAlice.TCounterActivationCapability_TCounterActivationPriorityEvent_EType" json:"Event,omitempty"`
-	SessionId     string                                                             `protobuf:"bytes,2,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
+	Event         TCounterActivationCapability_TCounterActivationPriorityEvent_EType `protobuf:"varint,1,opt,name=Event,proto3,enum=NAlice.TCounterActivationCapability_TCounterActivationPriorityEvent_EType" json:"Event,omitempty"`
+	SessionId     string                                                             `protobuf:"bytes,2,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -331,8 +331,8 @@ func (x *TCounterActivationCapability_TCounterActivationPriorityEvent) GetSessio
 
 type TCounterActivationCapability_TCounterActivationStartedEvent_ModelResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ModelName     string                 `protobuf:"bytes,1,opt,name=ModelName,json=model_name,proto3" json:"ModelName,omitempty"`
-	Confidence    float32                `protobuf:"fixed32,2,opt,name=Confidence,json=confidence,proto3" json:"Confidence,omitempty"`
+	ModelName     string                 `protobuf:"bytes,1,opt,name=ModelName,proto3" json:"ModelName,omitempty"`
+	Confidence    float32                `protobuf:"fixed32,2,opt,name=Confidence,proto3" json:"Confidence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -385,42 +385,34 @@ var File_alice_protos_endpoint_capabilities_counter_activation_capability_proto 
 
 const file_alice_protos_endpoint_capabilities_counter_activation_capability_proto_rawDesc = "" +
 	"\n" +
-	"Falice/protos/endpoint/capabilities/counter_activation/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9a\b\n" +
-	"\x1cTCounterActivationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12`\n" +
+	"Falice/protos/endpoint/capabilities/counter_activation/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x06\n" +
+	"\x1cTCounterActivationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12P\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v20.NAlice.TCounterActivationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12L\n" +
-	"\x05State\x18\x03 \x01(\v2+.NAlice.TCounterActivationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1av\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled\x12?\n" +
-	"\x0fAvailableModels\x18\x02 \x03(\tB\x14\xaa\xdd\x1b\x10available_modelsR\x10available_models:\x04\xa8\xdd\x1b\x04\x1a\xfb\x02\n" +
-	"\x1eTCounterActivationStartedEvent\x12\"\n" +
-	"\x06Phrase\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06phraseR\x06phrase\x12\x87\x01\n" +
-	"\fModelResults\x18\x02 \x03(\v2O.NAlice.TCounterActivationCapability.TCounterActivationStartedEvent.ModelResultB\x11\xaa\xdd\x1b\rmodel_resultsR\rmodel_results\x12-\n" +
-	"\tSessionId\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x1ar\n" +
-	"\vModelResult\x12-\n" +
-	"\tModelName\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"model_nameR\n" +
-	"model_name\x12.\n" +
+	"Parameters\x18\x02 \x01(\v20.NAlice.TCounterActivationCapability.TParametersR\n" +
+	"Parameters\x12A\n" +
+	"\x05State\x18\x03 \x01(\v2+.NAlice.TCounterActivationCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aL\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x12(\n" +
+	"\x0fAvailableModels\x18\x02 \x03(\tR\x0fAvailableModels\x1a\x98\x02\n" +
+	"\x1eTCounterActivationStartedEvent\x12\x16\n" +
+	"\x06Phrase\x18\x01 \x01(\tR\x06Phrase\x12s\n" +
+	"\fModelResults\x18\x02 \x03(\v2O.NAlice.TCounterActivationCapability.TCounterActivationStartedEvent.ModelResultR\fModelResults\x12\x1c\n" +
+	"\tSessionId\x18\x03 \x01(\tR\tSessionId\x1aK\n" +
+	"\vModelResult\x12\x1c\n" +
+	"\tModelName\x18\x01 \x01(\tR\tModelName\x12\x1e\n" +
 	"\n" +
-	"Confidence\x18\x02 \x01(\x02B\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cN\x1a\xfa\x01\n" +
-	"\x1fTCounterActivationPriorityEvent\x12k\n" +
-	"\x05Event\x18\x01 \x01(\x0e2J.NAlice.TCounterActivationCapability.TCounterActivationPriorityEvent.ETypeB\t\xaa\xdd\x1b\x05eventR\x05event\x12-\n" +
-	"\tSessionId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\"1\n" +
+	"Confidence\x18\x02 \x01(\x02R\n" +
+	"Confidence\x1a\xd4\x01\n" +
+	"\x1fTCounterActivationPriorityEvent\x12`\n" +
+	"\x05Event\x18\x01 \x01(\x0e2J.NAlice.TCounterActivationCapability.TCounterActivationPriorityEvent.ETypeR\x05Event\x12\x1c\n" +
+	"\tSessionId\x18\x02 \x01(\tR\tSessionId\"1\n" +
 	"\x05EType\x12\x11\n" +
 	"\rPhraseSpotted\x10\x00\x12\x15\n" +
-	"\x11IrrelevantRequest\x10\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c_:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8d\x01B\xae\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB CounterActivationCapabilityProtoP\x01ZZa.yandex-team.ru/alice/protos/endpoint/capabilities/counter_activation;counteractivationpbb\x06proto3"
+	"\x11IrrelevantRequest\x10\x01B\xbc\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/counter_activation\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_counter_activation_capability_proto_rawDescOnce sync.Once

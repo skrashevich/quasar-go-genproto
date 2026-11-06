@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/video_main_screen/capability.proto
 
-package videomainscreenpb
+package video_main_screen
 
 import (
 	home "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/home"
@@ -226,8 +226,8 @@ const file_alice_protos_endpoint_capabilities_video_main_screen_capability_proto
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xcd\x01\n" +
 	"\x1dTOpenVideoMainScreenDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12i\n" +
-	"\x15CentaurFeedResultData\x18\x02 \x01(\v2\".NAlice.NTv.TCentaurFeedResultDataB\x14\xaa\xdd\x1b\x10feed_result_dataR\x10feed_result_data:#\x92\x82\x19\x16open_video_main_screen\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cYB\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eVideoMainScreenCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/video_main_screen;videomainscreenpbb\x06proto3"
+	"\x15CentaurFeedResultData\x18\x02 \x01(\v2\".NAlice.NTv.TCentaurFeedResultDataB\x14\xaa\xdd\x1b\x10feed_result_dataR\x10feed_result_data:#\x92\x82\x19\x16open_video_main_screen\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cYB\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eVideoMainScreenCapabilityProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_main_screenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_main_screen_capability_proto_rawDescOnce sync.Once

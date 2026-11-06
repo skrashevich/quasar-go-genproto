@@ -521,8 +521,8 @@ const file_alice_protos_endpoint_capabilities_thermostat_capability_proto_rawDes
 	"\x04COOL\x10\x02\x12\a\n" +
 	"\x03DRY\x10\x03\x12\f\n" +
 	"\bFAN_ONLY\x10\x04\x12\b\n" +
-	"\x04HEAT\x10\x05:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cMB\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19ThermostatCapabilityProtoP\x01ZIa.yandex-team.ru/alice/protos/endpoint/capabilities/thermostat;thermostatb\x06proto3"
+	"\x04HEAT\x10\x05:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cMB\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19ThermostatCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/thermostatb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_thermostat_capability_proto_rawDescOnce sync.Once

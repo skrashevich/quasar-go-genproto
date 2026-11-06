@@ -1494,7 +1494,8 @@ const file_alice_cuttlefish_library_speechkit_proto_client_ws_proto_rawDesc = ""
 	"\x13FORMAT_OPUS_IN_WEBM\x10\x03\x12\x13\n" +
 	"\x0fFORMAT_8000_PCM\x10\x04\x12\x14\n" +
 	"\x10FORMAT_16000_PCM\x10\x05\x12\x12\n" +
-	"\x0eFORMAT_UNKNOWN\x10\x06"
+	"\x0eFORMAT_UNKNOWN\x10\x06B\xe9\x01\n" +
+	"\x16com.NSpeechkitProtocolB\rClientWsProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/cuttlefish/library/speechkit_proto\xa2\x02\x03NXX\xaa\x02\x12NSpeechkitProtocol\xca\x02\x12NSpeechkitProtocol\xe2\x02\x1eNSpeechkitProtocol\\GPBMetadata\xea\x02\x12NSpeechkitProtocol"
 
 var (
 	file_alice_cuttlefish_library_speechkit_proto_client_ws_proto_rawDescOnce sync.Once

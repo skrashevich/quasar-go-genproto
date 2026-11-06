@@ -72,12 +72,12 @@ func (TSuggest_TTheme_EPlacement) EnumDescriptor() ([]byte, []int) {
 
 type TSuggest struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	SuggestId     string                   `protobuf:"bytes,1,opt,name=SuggestId,json=suggest_id,proto3" json:"SuggestId,omitempty"`
-	Type          string                   `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Title         string                   `protobuf:"bytes,3,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Directives    []*directives.TDirective `protobuf:"bytes,4,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	Text          string                   `protobuf:"bytes,5,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	Theme         *TSuggest_TTheme         `protobuf:"bytes,6,opt,name=Theme,json=theme,proto3" json:"Theme,omitempty"`
+	SuggestId     string                   `protobuf:"bytes,1,opt,name=SuggestId,proto3" json:"SuggestId,omitempty"`
+	Type          string                   `protobuf:"bytes,2,opt,name=Type,proto3" json:"Type,omitempty"`
+	Title         string                   `protobuf:"bytes,3,opt,name=Title,proto3" json:"Title,omitempty"`
+	Directives    []*directives.TDirective `protobuf:"bytes,4,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	Text          string                   `protobuf:"bytes,5,opt,name=Text,proto3" json:"Text,omitempty"`
+	Theme         *TSuggest_TTheme         `protobuf:"bytes,6,opt,name=Theme,proto3" json:"Theme,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -156,8 +156,8 @@ func (x *TSuggest) GetTheme() *TSuggest_TTheme {
 
 type TSuggest_TTheme struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	ImageUrl      string                     `protobuf:"bytes,1,opt,name=ImageUrl,json=image_url,proto3" json:"ImageUrl,omitempty"`
-	Placement     TSuggest_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,json=placement,proto3,enum=NAlice.NAliceApi.TSuggest_TTheme_EPlacement" json:"Placement,omitempty"`
+	ImageUrl      string                     `protobuf:"bytes,1,opt,name=ImageUrl,proto3" json:"ImageUrl,omitempty"`
+	Placement     TSuggest_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,proto3,enum=NAlice.NAliceApi.TSuggest_TTheme_EPlacement" json:"Placement,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -210,27 +210,24 @@ var File_alice_protos_api_alicekit_suggests_suggest_proto protoreflect.FileDescr
 
 const file_alice_protos_api_alicekit_suggests_suggest_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/api/alicekit/suggests/suggest.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf3\x03\n" +
-	"\bTSuggest\x12-\n" +
-	"\tSuggestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"suggest_idR\n" +
-	"suggest_id\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12#\n" +
-	"\x05Title\x18\x03 \x01(\tB\r\xaa\xdd\x1b\x05title\xa8\x8d'\x02R\x05title\x12L\n" +
+	"0alice/protos/api/alicekit/suggests/suggest.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x81\x03\n" +
+	"\bTSuggest\x12\x1c\n" +
+	"\tSuggestId\x18\x01 \x01(\tR\tSuggestId\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x12\x14\n" +
+	"\x05Title\x18\x03 \x01(\tR\x05Title\x12<\n" +
 	"\n" +
-	"Directives\x18\x04 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12 \n" +
-	"\x04Text\x18\x05 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02R\x04text\x12B\n" +
-	"\x05Theme\x18\x06 \x01(\v2!.NAlice.NAliceApi.TSuggest.TThemeB\t\xaa\xdd\x1b\x05themeR\x05theme\x1a\xc0\x01\n" +
-	"\x06TTheme\x12*\n" +
-	"\bImageUrl\x18\x01 \x01(\tB\r\xaa\xdd\x1b\timage_urlR\timage_url\x12Y\n" +
-	"\tPlacement\x18\x02 \x01(\x0e2,.NAlice.NAliceApi.TSuggest.TTheme.EPlacementB\r\xaa\xdd\x1b\tplacementR\tplacement\"/\n" +
+	"Directives\x18\x04 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12\x12\n" +
+	"\x04Text\x18\x05 \x01(\tR\x04Text\x127\n" +
+	"\x05Theme\x18\x06 \x01(\v2!.NAlice.NAliceApi.TSuggest.TThemeR\x05Theme\x1a\xa1\x01\n" +
+	"\x06TTheme\x12\x1a\n" +
+	"\bImageUrl\x18\x01 \x01(\tR\bImageUrl\x12J\n" +
+	"\tPlacement\x18\x02 \x01(\x0e2,.NAlice.NAliceApi.TSuggest.TTheme.EPlacementR\tPlacement\"/\n" +
 	"\n" +
 	"EPlacement\x12\x14\n" +
 	"\x10UnknownPlacement\x10\x00\x12\v\n" +
-	"\aNewLine\x10\x01Bs\n" +
-	",ru.yandex.alice.protos.api.alicekit.suggestsB\fSuggestProtoP\x01Z3a.yandex-team.ru/alice/protos/api/alicekit/suggestsb\x06proto3"
+	"\aNewLine\x10\x01B\xd9\x01\n" +
+	"\x14com.NAlice.NAliceApiB\fSuggestProtoP\x01ZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/suggests\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_suggests_suggest_proto_rawDescOnce sync.Once

@@ -62,8 +62,8 @@ var File_alice_protos_api_alicekit_events_go_away_go_away_proto protoreflect.Fil
 const file_alice_protos_api_alicekit_events_go_away_go_away_proto_rawDesc = "" +
 	"\n" +
 	"6alice/protos/api/alicekit/events/go_away/go_away.proto\x12\x10NAlice.NAliceApi\"\t\n" +
-	"\aTGoAwayBy\n" +
-	"2ru.yandex.alice.protos.api.alicekit.events.go_awayB\x06GoAwayP\x01Z9a.yandex-team.ru/alice/protos/api/alicekit/events/go_awayb\x06proto3"
+	"\aTGoAwayB\xde\x01\n" +
+	"\x14com.NAlice.NAliceApiB\vGoAwayProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/go_away\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_go_away_go_away_proto_rawDescOnce sync.Once

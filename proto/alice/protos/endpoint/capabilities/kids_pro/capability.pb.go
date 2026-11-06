@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/kids_pro/capability.proto
 
-package kidspropb
+package kids_pro
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -232,8 +232,8 @@ const file_alice_protos_endpoint_capabilities_kids_pro_capability_proto_rawDesc 
 	"\bSettings\x18\x01 \x01(\v2+.NAlice.TKidsProCapability.TState.TSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x1a\xa6\x01\n" +
 	"\tTSettings\x12G\n" +
 	"\x11KidsSearchEnabled\x18\x01 \x01(\bB\x17\xaa\xdd\x1b\x13kids_search_enabledR\x13kids_search_enabled\x12J\n" +
-	"\x12KidsContentEnabled\x18\x02 \x01(\bB\x18\xaa\xdd\x1b\x14kids_content_enabledR\x14kids_content_enabled:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb8\x02B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16KidsProCapabilityProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/kids_pro;kidspropbb\x06proto3"
+	"\x12KidsContentEnabled\x18\x02 \x01(\bB\x18\xaa\xdd\x1b\x14kids_content_enabledR\x14kids_content_enabled:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb8\x02B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16KidsProCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/kids_prob\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_kids_pro_capability_proto_rawDescOnce sync.Once

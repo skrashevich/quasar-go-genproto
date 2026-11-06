@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/local_iot/capability.proto
 
-package localiotpb
+package local_iot
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common"
@@ -172,9 +172,9 @@ func (TLocalIoTCapability_TCompleteScheduledActionEvent_EStatus) EnumDescriptor(
 
 type TLocalIoTCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLocalIoTCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLocalIoTCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLocalIoTCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLocalIoTCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -268,8 +268,8 @@ func (*TLocalIoTCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TLocalIoTCapability_TState struct {
 	state              protoimpl.MessageState                   `protogen:"open.v1"`
-	IoTAccountSettings *TLocalIoTCapability_TIoTAccountSettings `protobuf:"bytes,2,opt,name=IoTAccountSettings,json=iot_account_settings,proto3" json:"IoTAccountSettings,omitempty"`
-	IoTUserInfo        *common.TIoTClientUserInfo               `protobuf:"bytes,3,opt,name=IoTUserInfo,json=iot_user_info,proto3" json:"IoTUserInfo,omitempty"`
+	IoTAccountSettings *TLocalIoTCapability_TIoTAccountSettings `protobuf:"bytes,2,opt,name=IoTAccountSettings,proto3" json:"IoTAccountSettings,omitempty"`
+	IoTUserInfo        *common.TIoTClientUserInfo               `protobuf:"bytes,3,opt,name=IoTUserInfo,proto3" json:"IoTUserInfo,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -320,7 +320,7 @@ func (x *TLocalIoTCapability_TState) GetIoTUserInfo() *common.TIoTClientUserInfo
 
 type TLocalIoTCapability_TIoTAccountSettings struct {
 	state                protoimpl.MessageState                                `protogen:"open.v1"`
-	ResponseReactionType TLocalIoTCapability_TIoTAccountSettings_EReactionType `protobuf:"varint,1,opt,name=ResponseReactionType,json=response_reaction_type,proto3,enum=NAlice.TLocalIoTCapability_TIoTAccountSettings_EReactionType" json:"ResponseReactionType,omitempty"`
+	ResponseReactionType TLocalIoTCapability_TIoTAccountSettings_EReactionType `protobuf:"varint,1,opt,name=ResponseReactionType,proto3,enum=NAlice.TLocalIoTCapability_TIoTAccountSettings_EReactionType" json:"ResponseReactionType,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -364,7 +364,7 @@ func (x *TLocalIoTCapability_TIoTAccountSettings) GetResponseReactionType() TLoc
 
 type TLocalIoTCapability_TSyncIoTUserInfoDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -408,9 +408,9 @@ func (x *TLocalIoTCapability_TSyncIoTUserInfoDirective) GetName() string {
 
 type TLocalIoTCapability_TSetIoTUserInfoDirective struct {
 	state                 protoimpl.MessageState     `protogen:"open.v1"`
-	Name                  string                     `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IoTUserInfoSerialized []byte                     `protobuf:"bytes,2,opt,name=IoTUserInfoSerialized,json=iot_user_info_serialized,proto3" json:"IoTUserInfoSerialized,omitempty"`
-	IoTClientUserInfo     *common.TIoTClientUserInfo `protobuf:"bytes,4,opt,name=IoTClientUserInfo,json=iot_client_user_info,proto3" json:"IoTClientUserInfo,omitempty"`
+	Name                  string                     `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	IoTUserInfoSerialized []byte                     `protobuf:"bytes,2,opt,name=IoTUserInfoSerialized,proto3" json:"IoTUserInfoSerialized,omitempty"`
+	IoTClientUserInfo     *common.TIoTClientUserInfo `protobuf:"bytes,4,opt,name=IoTClientUserInfo,proto3" json:"IoTClientUserInfo,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -468,8 +468,8 @@ func (x *TLocalIoTCapability_TSetIoTUserInfoDirective) GetIoTClientUserInfo() *c
 
 type TLocalIoTCapability_TSetIoTAccountSettingsDirective struct {
 	state              protoimpl.MessageState                   `protogen:"open.v1"`
-	Name               string                                   `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IoTAccountSettings *TLocalIoTCapability_TIoTAccountSettings `protobuf:"bytes,2,opt,name=IoTAccountSettings,json=iot_account_settings,proto3" json:"IoTAccountSettings,omitempty"`
+	Name               string                                   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	IoTAccountSettings *TLocalIoTCapability_TIoTAccountSettings `protobuf:"bytes,2,opt,name=IoTAccountSettings,proto3" json:"IoTAccountSettings,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -520,9 +520,9 @@ func (x *TLocalIoTCapability_TSetIoTAccountSettingsDirective) GetIoTAccountSetti
 
 type TLocalIoTCapability_TRouteDirective struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Name              string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Directive         *directives.TDirective `protobuf:"bytes,2,opt,name=Directive,json=directive,proto3" json:"Directive,omitempty"`
-	FallbackDirective *directives.TDirective `protobuf:"bytes,3,opt,name=FallbackDirective,json=fallback_directive,proto3" json:"FallbackDirective,omitempty"`
+	Name              string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Directive         *directives.TDirective `protobuf:"bytes,2,opt,name=Directive,proto3" json:"Directive,omitempty"`
+	FallbackDirective *directives.TDirective `protobuf:"bytes,3,opt,name=FallbackDirective,proto3" json:"FallbackDirective,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -580,8 +580,8 @@ func (x *TLocalIoTCapability_TRouteDirective) GetFallbackDirective() *directives
 
 type TLocalIoTCapability_TScenarioVoiceTriggerDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ScenarioID    string                 `protobuf:"bytes,2,opt,name=ScenarioID,json=scenario_id,proto3" json:"ScenarioID,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	ScenarioID    string                 `protobuf:"bytes,2,opt,name=ScenarioID,proto3" json:"ScenarioID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -632,9 +632,9 @@ func (x *TLocalIoTCapability_TScenarioVoiceTriggerDirective) GetScenarioID() str
 
 type TLocalIoTCapability_TAction struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	ID            string                   `protobuf:"bytes,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Directives    []*directives.TDirective `protobuf:"bytes,2,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	DelayMs       uint64                   `protobuf:"varint,3,opt,name=DelayMs,json=delay_ms,proto3" json:"DelayMs,omitempty"`
+	ID            string                   `protobuf:"bytes,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Directives    []*directives.TDirective `protobuf:"bytes,2,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	DelayMs       uint64                   `protobuf:"varint,3,opt,name=DelayMs,proto3" json:"DelayMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -692,8 +692,8 @@ func (x *TLocalIoTCapability_TAction) GetDelayMs() uint64 {
 
 type TLocalIoTCapability_TScheduledAction struct {
 	state              protoimpl.MessageState       `protogen:"open.v1"`
-	Action             *TLocalIoTCapability_TAction `protobuf:"bytes,1,opt,name=Action,json=action,proto3" json:"Action,omitempty"`
-	ScheduledTimestamp *timestamppb.Timestamp       `protobuf:"bytes,2,opt,name=ScheduledTimestamp,json=scheduled_timestamp,proto3" json:"ScheduledTimestamp,omitempty"`
+	Action             *TLocalIoTCapability_TAction `protobuf:"bytes,1,opt,name=Action,proto3" json:"Action,omitempty"`
+	ScheduledTimestamp *timestamppb.Timestamp       `protobuf:"bytes,2,opt,name=ScheduledTimestamp,proto3" json:"ScheduledTimestamp,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -744,9 +744,9 @@ func (x *TLocalIoTCapability_TScheduledAction) GetScheduledTimestamp() *timestam
 
 type TLocalIoTCapability_TScheduleActionDirective struct {
 	state                     protoimpl.MessageState       `protogen:"open.v1"`
-	Name                      string                       `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Action                    *TLocalIoTCapability_TAction `protobuf:"bytes,2,opt,name=Action,json=action,proto3" json:"Action,omitempty"`
-	OnScheduledActionCallback *directives.TDirective       `protobuf:"bytes,3,opt,name=OnScheduledActionCallback,json=on_scheduled_action_callback,proto3" json:"OnScheduledActionCallback,omitempty"`
+	Name                      string                       `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Action                    *TLocalIoTCapability_TAction `protobuf:"bytes,2,opt,name=Action,proto3" json:"Action,omitempty"`
+	OnScheduledActionCallback *directives.TDirective       `protobuf:"bytes,3,opt,name=OnScheduledActionCallback,proto3" json:"OnScheduledActionCallback,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -804,7 +804,7 @@ func (x *TLocalIoTCapability_TScheduleActionDirective) GetOnScheduledActionCallb
 
 type TLocalIoTCapability_TCancelScheduledActionDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to Policy:
 	//
 	//	*TLocalIoTCapability_TCancelScheduledActionDirective_CancelAllPolicy
@@ -891,15 +891,15 @@ type isTLocalIoTCapability_TCancelScheduledActionDirective_Policy interface {
 }
 
 type TLocalIoTCapability_TCancelScheduledActionDirective_CancelAllPolicy struct {
-	CancelAllPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelAllPolicy `protobuf:"bytes,2,opt,name=CancelAllPolicy,json=cancel_all_policy,proto3,oneof"`
+	CancelAllPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelAllPolicy `protobuf:"bytes,2,opt,name=CancelAllPolicy,proto3,oneof"`
 }
 
 type TLocalIoTCapability_TCancelScheduledActionDirective_CancelLastPolicy struct {
-	CancelLastPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelLastPolicy `protobuf:"bytes,3,opt,name=CancelLastPolicy,json=cancel_last_policy,proto3,oneof"`
+	CancelLastPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelLastPolicy `protobuf:"bytes,3,opt,name=CancelLastPolicy,proto3,oneof"`
 }
 
 type TLocalIoTCapability_TCancelScheduledActionDirective_CancelExactPolicy struct {
-	CancelExactPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelExactPolicy `protobuf:"bytes,4,opt,name=CancelExactPolicy,json=cancel_exact_policy,proto3,oneof"`
+	CancelExactPolicy *TLocalIoTCapability_TCancelScheduledActionDirective_TCancelExactPolicy `protobuf:"bytes,4,opt,name=CancelExactPolicy,proto3,oneof"`
 }
 
 func (*TLocalIoTCapability_TCancelScheduledActionDirective_CancelAllPolicy) isTLocalIoTCapability_TCancelScheduledActionDirective_Policy() {
@@ -913,8 +913,8 @@ func (*TLocalIoTCapability_TCancelScheduledActionDirective_CancelExactPolicy) is
 
 type TLocalIoTCapability_TIoTEndpointsStateChangedDirective struct {
 	state                 protoimpl.MessageState                    `protogen:"open.v1"`
-	Name                  string                                    `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EndpointsStateChanged *endpoint_protocol.TEndpointsStateChanged `protobuf:"bytes,2,opt,name=EndpointsStateChanged,json=endpoints_state_changed,proto3" json:"EndpointsStateChanged,omitempty"`
+	Name                  string                                    `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	EndpointsStateChanged *endpoint_protocol.TEndpointsStateChanged `protobuf:"bytes,2,opt,name=EndpointsStateChanged,proto3" json:"EndpointsStateChanged,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -965,8 +965,8 @@ func (x *TLocalIoTCapability_TIoTEndpointsStateChangedDirective) GetEndpointsSta
 
 type TLocalIoTCapability_TIoTEndpointsRemovedDirective struct {
 	state            protoimpl.MessageState               `protogen:"open.v1"`
-	Name             string                               `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EndpointsRemoved *endpoint_protocol.TEndpointsRemoved `protobuf:"bytes,2,opt,name=EndpointsRemoved,json=endpoints_removed,proto3" json:"EndpointsRemoved,omitempty"`
+	Name             string                               `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	EndpointsRemoved *endpoint_protocol.TEndpointsRemoved `protobuf:"bytes,2,opt,name=EndpointsRemoved,proto3" json:"EndpointsRemoved,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1017,8 +1017,8 @@ func (x *TLocalIoTCapability_TIoTEndpointsRemovedDirective) GetEndpointsRemoved(
 
 type TLocalIoTCapability_TSubscribeIoTEndpointsDirective struct {
 	state         protoimpl.MessageState                              `protogen:"open.v1"`
-	Name          string                                              `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Subscriptions []*endpoint_protocol.TUniversalEndpointSubscription `protobuf:"bytes,2,rep,name=Subscriptions,json=subscriptions,proto3" json:"Subscriptions,omitempty"`
+	Name          string                                              `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Subscriptions []*endpoint_protocol.TUniversalEndpointSubscription `protobuf:"bytes,2,rep,name=Subscriptions,proto3" json:"Subscriptions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1069,8 +1069,8 @@ func (x *TLocalIoTCapability_TSubscribeIoTEndpointsDirective) GetSubscriptions()
 
 type TLocalIoTCapability_TUnsubscribeIoTEndpointsDirective struct {
 	state         protoimpl.MessageState                              `protogen:"open.v1"`
-	Name          string                                              `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Subscriptions []*endpoint_protocol.TUniversalEndpointSubscription `protobuf:"bytes,2,rep,name=Subscriptions,json=subscriptions,proto3" json:"Subscriptions,omitempty"`
+	Name          string                                              `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Subscriptions []*endpoint_protocol.TUniversalEndpointSubscription `protobuf:"bytes,2,rep,name=Subscriptions,proto3" json:"Subscriptions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1157,7 +1157,7 @@ func (*TLocalIoTCapability_TSyncIoTUserInfoEvent) Descriptor() ([]byte, []int) {
 
 type TLocalIoTCapability_TScenarioVoiceTriggerEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ScenarioID    string                 `protobuf:"bytes,1,opt,name=ScenarioID,json=scenario_id,proto3" json:"ScenarioID,omitempty"`
+	ScenarioID    string                 `protobuf:"bytes,1,opt,name=ScenarioID,proto3" json:"ScenarioID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1201,7 +1201,7 @@ func (x *TLocalIoTCapability_TScenarioVoiceTriggerEvent) GetScenarioID() string 
 
 type TLocalIoTCapability_TCondition struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1245,7 +1245,7 @@ func (x *TLocalIoTCapability_TCondition) GetEvents() []endpoint.TCapability_EEve
 
 type TLocalIoTCapability_TScheduledActionEvent struct {
 	state           protoimpl.MessageState                `protogen:"open.v1"`
-	ScheduledAction *TLocalIoTCapability_TScheduledAction `protobuf:"bytes,1,opt,name=ScheduledAction,json=scheduled_action,proto3" json:"ScheduledAction,omitempty"`
+	ScheduledAction *TLocalIoTCapability_TScheduledAction `protobuf:"bytes,1,opt,name=ScheduledAction,proto3" json:"ScheduledAction,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1289,7 +1289,7 @@ func (x *TLocalIoTCapability_TScheduledActionEvent) GetScheduledAction() *TLocal
 
 type TLocalIoTCapability_TCancelScheduledActionsEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ActionIDs     []string               `protobuf:"bytes,1,rep,name=ActionIDs,json=action_ids,proto3" json:"ActionIDs,omitempty"`
+	ActionIDs     []string               `protobuf:"bytes,1,rep,name=ActionIDs,proto3" json:"ActionIDs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1333,8 +1333,8 @@ func (x *TLocalIoTCapability_TCancelScheduledActionsEvent) GetActionIDs() []stri
 
 type TLocalIoTCapability_TCompleteScheduledActionEvent struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	ActionID      string                                                    `protobuf:"bytes,1,opt,name=ActionID,json=action_id,proto3" json:"ActionID,omitempty"`
-	Status        TLocalIoTCapability_TCompleteScheduledActionEvent_EStatus `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.TLocalIoTCapability_TCompleteScheduledActionEvent_EStatus" json:"Status,omitempty"`
+	ActionID      string                                                    `protobuf:"bytes,1,opt,name=ActionID,proto3" json:"ActionID,omitempty"`
+	Status        TLocalIoTCapability_TCompleteScheduledActionEvent_EStatus `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.TLocalIoTCapability_TCompleteScheduledActionEvent_EStatus" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1457,7 +1457,7 @@ func (*TLocalIoTCapability_TCancelScheduledActionDirective_TCancelLastPolicy) De
 
 type TLocalIoTCapability_TCancelScheduledActionDirective_TCancelExactPolicy struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ActionID      string                 `protobuf:"bytes,1,opt,name=ActionID,json=action_id,proto3" json:"ActionID,omitempty"`
+	ActionID      string                 `protobuf:"bytes,1,opt,name=ActionID,proto3" json:"ActionID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1503,105 +1503,99 @@ var File_alice_protos_endpoint_capabilities_local_iot_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_local_iot_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/local_iot/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a-alice/megamind/protos/common/iot_client.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1aGalice/protos/api/alicekit/iot/endpoint_protocol/endpoint_protocol.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd3%\n" +
-	"\x13TLocalIoTCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"=alice/protos/endpoint/capabilities/local_iot/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a-alice/megamind/protos/common/iot_client.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1aGalice/protos/api/alicekit/iot/endpoint_protocol/endpoint_protocol.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x1b\n" +
+	"\x13TLocalIoTCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TLocalIoTCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TLocalIoTCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xfb\x01\n" +
-	"\x06TState\x12{\n" +
-	"\x12IoTAccountSettings\x18\x02 \x01(\v2/.NAlice.TLocalIoTCapability.TIoTAccountSettingsB\x18\xaa\xdd\x1b\x14iot_account_settingsR\x14iot_account_settings\x12Q\n" +
-	"\vIoTUserInfo\x18\x03 \x01(\v2\x1a.NAlice.TIoTClientUserInfoB\x11\xaa\xdd\x1b\riot_user_infoR\riot_user_info:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x15IoTUserInfoSerialized\x1a\xcc\x01\n" +
-	"\x13TIoTAccountSettings\x12\x8f\x01\n" +
-	"\x14ResponseReactionType\x18\x01 \x01(\x0e2=.NAlice.TLocalIoTCapability.TIoTAccountSettings.EReactionTypeB\x1a\xaa\xdd\x1b\x16response_reaction_typeR\x16response_reaction_type\"#\n" +
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TLocalIoTCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TLocalIoTCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xc4\x01\n" +
+	"\x06TState\x12_\n" +
+	"\x12IoTAccountSettings\x18\x02 \x01(\v2/.NAlice.TLocalIoTCapability.TIoTAccountSettingsR\x12IoTAccountSettings\x12<\n" +
+	"\vIoTUserInfo\x18\x03 \x01(\v2\x1a.NAlice.TIoTClientUserInfoR\vIoTUserInfoJ\x04\b\x01\x10\x02R\x15IoTUserInfoSerialized\x1a\xad\x01\n" +
+	"\x13TIoTAccountSettings\x12q\n" +
+	"\x14ResponseReactionType\x18\x01 \x01(\x0e2=.NAlice.TLocalIoTCapability.TIoTAccountSettings.EReactionTypeR\x14ResponseReactionType\"#\n" +
 	"\rEReactionType\x12\t\n" +
 	"\x05SOUND\x10\x00\x12\a\n" +
-	"\x03NLG\x10\x01\x1aq\n" +
-	"\x19TSyncIoTUserInfoDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1f\x92\x82\x19\x12sync_iot_user_info\xa8\xdd\x1b\x04\xa8\xc8\x1c\x99\x01J\x04\b\x02\x10\x03R\x0fIoTUserInfoType\x1a\xad\x02\n" +
-	"\x18TSetIoTUserInfoDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12U\n" +
-	"\x15IoTUserInfoSerialized\x18\x02 \x01(\fB\x1c\xaa\xdd\x1b\x18iot_user_info_serializedR\x18iot_user_info_serialized\x12e\n" +
-	"\x11IoTClientUserInfo\x18\x04 \x01(\v2\x1a.NAlice.TIoTClientUserInfoB\x18\xaa\xdd\x1b\x14iot_client_user_infoR\x14iot_client_user_info:\x1e\x92\x82\x19\x11set_iot_user_info\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9a\x01J\x04\b\x03\x10\x04R\x0fIoTUserInfoType\x1a\xe3\x01\n" +
-	"\x1fTSetIoTAccountSettingsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12{\n" +
-	"\x12IoTAccountSettings\x18\x02 \x01(\v2/.NAlice.TLocalIoTCapability.TIoTAccountSettingsB\x18\xaa\xdd\x1b\x14iot_account_settingsR\x14iot_account_settings:%\x92\x82\x19\x18set_iot_account_settings\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcb\x01\x1a\xfd\x01\n" +
-	"\x0fTRouteDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12I\n" +
-	"\tDirective\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB\r\xaa\xdd\x1b\tdirectiveR\tdirective\x12c\n" +
-	"\x11FallbackDirective\x18\x03 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x16\xaa\xdd\x1b\x12fallback_directiveR\x12fallback_directive:\x1c\x92\x82\x19\x0froute_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcc\x01\x1a\x95\x01\n" +
-	"\x1eTScenarioVoiceTriggerDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"\x03NLG\x10\x01\x1aF\n" +
+	"\x19TSyncIoTUserInfoDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04NameJ\x04\b\x02\x10\x03R\x0fIoTUserInfoType\x1a\xc5\x01\n" +
+	"\x18TSetIoTUserInfoDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x124\n" +
+	"\x15IoTUserInfoSerialized\x18\x02 \x01(\fR\x15IoTUserInfoSerialized\x12H\n" +
+	"\x11IoTClientUserInfo\x18\x04 \x01(\v2\x1a.NAlice.TIoTClientUserInfoR\x11IoTClientUserInfoJ\x04\b\x03\x10\x04R\x0fIoTUserInfoType\x1a\x96\x01\n" +
+	"\x1fTSetIoTAccountSettingsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12_\n" +
+	"\x12IoTAccountSettings\x18\x02 \x01(\v2/.NAlice.TLocalIoTCapability.TIoTAccountSettingsR\x12IoTAccountSettings\x1a\xad\x01\n" +
+	"\x0fTRouteDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12:\n" +
+	"\tDirective\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tDirective\x12J\n" +
+	"\x11FallbackDirective\x18\x03 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\x11FallbackDirective\x1aT\n" +
+	"\x1eTScenarioVoiceTriggerDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"ScenarioID\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vscenario_idR\vscenario_id:#\x92\x82\x19\x16scenario_voice_trigger\xa8\xdd\x1b\x04\xa8\xc8\x1c\xce\x01\x1a\x9e\x01\n" +
-	"\aTAction\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12L\n" +
+	"ScenarioID\x18\x02 \x01(\tR\n" +
+	"ScenarioID\x1aq\n" +
+	"\aTAction\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\tR\x02ID\x12<\n" +
 	"\n" +
-	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12'\n" +
-	"\aDelayMs\x18\x03 \x01(\x04B\f\xaa\xdd\x1b\bdelay_msR\bdelay_ms:\x04\xa8\xdd\x1b\x04\x1a\xc7\x01\n" +
-	"\x10TScheduledAction\x12G\n" +
-	"\x06Action\x18\x01 \x01(\v2#.NAlice.TLocalIoTCapability.TActionB\n" +
-	"\xaa\xdd\x1b\x06actionR\x06action\x12d\n" +
-	"\x12ScheduledTimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x17\xaa\xdd\x1b\x13scheduled_timestampR\x13scheduled_timestamp:\x04\xa8\xdd\x1b\x04\x1a\xa0\x02\n" +
-	"\x18TScheduleActionDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12G\n" +
-	"\x06Action\x18\x02 \x01(\v2#.NAlice.TLocalIoTCapability.TActionB\n" +
-	"\xaa\xdd\x1b\x06actionR\x06action\x12\x7f\n" +
-	"\x19OnScheduledActionCallback\x18\x03 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB \xaa\xdd\x1b\x1con_scheduled_action_callbackR\x1con_scheduled_action_callback:\x1c\x92\x82\x19\x0fschedule_action\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdc\x01\x1a\xae\x05\n" +
-	"\x1fTCancelScheduledActionDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x91\x01\n" +
-	"\x0fCancelAllPolicy\x18\x02 \x01(\v2L.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelAllPolicyB\x15\xaa\xdd\x1b\x11cancel_all_policyH\x00R\x11cancel_all_policy\x12\x95\x01\n" +
-	"\x10CancelLastPolicy\x18\x03 \x01(\v2M.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelLastPolicyB\x16\xaa\xdd\x1b\x12cancel_last_policyH\x00R\x12cancel_last_policy\x12\x99\x01\n" +
-	"\x11CancelExactPolicy\x18\x04 \x01(\v2N.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelExactPolicyB\x17\xaa\xdd\x1b\x13cancel_exact_policyH\x00R\x13cancel_exact_policy\x1a\x12\n" +
+	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12\x18\n" +
+	"\aDelayMs\x18\x03 \x01(\x04R\aDelayMs\x1a\x9b\x01\n" +
+	"\x10TScheduledAction\x12;\n" +
+	"\x06Action\x18\x01 \x01(\v2#.NAlice.TLocalIoTCapability.TActionR\x06Action\x12J\n" +
+	"\x12ScheduledTimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x12ScheduledTimestamp\x1a\xc7\x01\n" +
+	"\x18TScheduleActionDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12;\n" +
+	"\x06Action\x18\x02 \x01(\v2#.NAlice.TLocalIoTCapability.TActionR\x06Action\x12Z\n" +
+	"\x19OnScheduledActionCallback\x18\x03 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\x19OnScheduledActionCallback\x1a\x91\x04\n" +
+	"\x1fTCancelScheduledActionDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12x\n" +
+	"\x0fCancelAllPolicy\x18\x02 \x01(\v2L.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelAllPolicyH\x00R\x0fCancelAllPolicy\x12{\n" +
+	"\x10CancelLastPolicy\x18\x03 \x01(\v2M.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelLastPolicyH\x00R\x10CancelLastPolicy\x12~\n" +
+	"\x11CancelExactPolicy\x18\x04 \x01(\v2N.NAlice.TLocalIoTCapability.TCancelScheduledActionDirective.TCancelExactPolicyH\x00R\x11CancelExactPolicy\x1a\x12\n" +
 	"\x10TCancelAllPolicy\x1a\x13\n" +
-	"\x11TCancelLastPolicy\x1a@\n" +
-	"\x12TCancelExactPolicy\x12*\n" +
-	"\bActionID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\taction_idR\taction_id:$\x92\x82\x19\x17cancel_scheduled_action\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdd\x01B\x14\n" +
-	"\x06Policy\x12\n" +
-	"\xaa\xdd\x1b\x06policy\x1a\xf5\x01\n" +
-	"\"TIoTEndpointsStateChangedDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12}\n" +
-	"\x15EndpointsStateChanged\x18\x02 \x01(\v2(.NAlice.NAliceApi.TEndpointsStateChangedB\x1b\xaa\xdd\x1b\x17endpoints_state_changedR\x17endpoints_state_changed:2\x92\x82\x19%iot_endpoints_state_changed_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb5\x03\x1a\xd4\x01\n" +
-	"\x1dTIoTEndpointsRemovedDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12g\n" +
-	"\x10EndpointsRemoved\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEndpointsRemovedB\x15\xaa\xdd\x1b\x11endpoints_removedR\x11endpoints_removed:,\x92\x82\x19\x1fiot_endpoints_removed_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb6\x03\x1a\xda\x01\n" +
-	"\x1fTSubscribeIoTEndpointsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12i\n" +
-	"\rSubscriptions\x18\x02 \x03(\v20.NAlice.NAliceApi.TUniversalEndpointSubscriptionB\x11\xaa\xdd\x1b\rsubscriptionsR\rsubscriptions:.\x92\x82\x19!subscribe_iot_endpoints_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb7\x03\x1a\xde\x01\n" +
-	"!TUnsubscribeIoTEndpointsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12i\n" +
-	"\rSubscriptions\x18\x02 \x03(\v20.NAlice.NAliceApi.TUniversalEndpointSubscriptionB\x11\xaa\xdd\x1b\rsubscriptionsR\rsubscriptions:0\x92\x82\x19#unsubscribe_iot_endpoints_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb8\x03\x1a8\n" +
-	"\x15TSyncIoTUserInfoEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c*J\x04\b\x01\x10\x02R\x0fIoTUserInfoType\x1aX\n" +
-	"\x1aTScenarioVoiceTriggerEvent\x120\n" +
+	"\x11TCancelLastPolicy\x1a0\n" +
+	"\x12TCancelExactPolicy\x12\x1a\n" +
+	"\bActionID\x18\x01 \x01(\tR\bActionIDB\b\n" +
+	"\x06Policy\x1a\x98\x01\n" +
+	"\"TIoTEndpointsStateChangedDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12^\n" +
+	"\x15EndpointsStateChanged\x18\x02 \x01(\v2(.NAlice.NAliceApi.TEndpointsStateChangedR\x15EndpointsStateChanged\x1a\x84\x01\n" +
+	"\x1dTIoTEndpointsRemovedDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12O\n" +
+	"\x10EndpointsRemoved\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEndpointsRemovedR\x10EndpointsRemoved\x1a\x8d\x01\n" +
+	"\x1fTSubscribeIoTEndpointsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12V\n" +
+	"\rSubscriptions\x18\x02 \x03(\v20.NAlice.NAliceApi.TUniversalEndpointSubscriptionR\rSubscriptions\x1a\x8f\x01\n" +
+	"!TUnsubscribeIoTEndpointsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12V\n" +
+	"\rSubscriptions\x18\x02 \x03(\v20.NAlice.NAliceApi.TUniversalEndpointSubscriptionR\rSubscriptions\x1a.\n" +
+	"\x15TSyncIoTUserInfoEventJ\x04\b\x01\x10\x02R\x0fIoTUserInfoType\x1a<\n" +
+	"\x1aTScenarioVoiceTriggerEvent\x12\x1e\n" +
 	"\n" +
-	"ScenarioID\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vscenario_idR\vscenario_id:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c3\x1aV\n" +
+	"ScenarioID\x18\x01 \x01(\tR\n" +
+	"ScenarioID\x1aD\n" +
 	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04\x1a\x90\x01\n" +
-	"\x15TScheduledActionEvent\x12m\n" +
-	"\x0fScheduledAction\x18\x01 \x01(\v2,.NAlice.TLocalIoTCapability.TScheduledActionB\x14\xaa\xdd\x1b\x10scheduled_actionR\x10scheduled_action:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c5\x1aW\n" +
-	"\x1cTCancelScheduledActionsEvent\x12-\n" +
-	"\tActionIDs\x18\x01 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"action_idsR\n" +
-	"action_ids:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c6\x1a\xde\x01\n" +
-	"\x1dTCompleteScheduledActionEvent\x12*\n" +
-	"\bActionID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\taction_idR\taction_id\x12e\n" +
-	"\x06Status\x18\x02 \x01(\x0e2A.NAlice.TLocalIoTCapability.TCompleteScheduledActionEvent.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\" \n" +
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06Events\x1ao\n" +
+	"\x15TScheduledActionEvent\x12V\n" +
+	"\x0fScheduledAction\x18\x01 \x01(\v2,.NAlice.TLocalIoTCapability.TScheduledActionR\x0fScheduledAction\x1a<\n" +
+	"\x1cTCancelScheduledActionsEvent\x12\x1c\n" +
+	"\tActionIDs\x18\x01 \x03(\tR\tActionIDs\x1a\xb8\x01\n" +
+	"\x1dTCompleteScheduledActionEvent\x12\x1a\n" +
+	"\bActionID\x18\x01 \x01(\tR\bActionID\x12Y\n" +
+	"\x06Status\x18\x02 \x01(\x0e2A.NAlice.TLocalIoTCapability.TCompleteScheduledActionEvent.EStatusR\x06Status\" \n" +
 	"\aEStatus\x12\v\n" +
 	"\aSUCCESS\x10\x00\x12\b\n" +
-	"\x04FAIL\x10\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c8\"S\n" +
+	"\x04FAIL\x10\x01\"S\n" +
 	"\x10TIoTUserInfoType\x12\x15\n" +
 	"\x11USER_INFO_UNKNOWN\x10\x00\x12\x12\n" +
 	"\x0eUSER_INFO_FULL\x10\x01\x12\x14\n" +
-	"\x10USER_INFO_CLIENT\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c9B\x87\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\rLocalIotProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/local_iot;localiotpbb\x06proto3"
+	"\x10USER_INFO_CLIENT\x10\x02B\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/local_iot\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_local_iot_capability_proto_rawDescOnce sync.Once

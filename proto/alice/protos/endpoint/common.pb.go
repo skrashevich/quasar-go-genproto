@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/common.proto
 
-package endpointpb
+package endpoint
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -182,9 +182,9 @@ func (EProtocol) EnumDescriptor() ([]byte, []int) {
 
 type TRange struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           float64                `protobuf:"fixed64,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
-	Precision     float64                `protobuf:"fixed64,3,opt,name=Precision,json=precision,proto3" json:"Precision,omitempty"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           float64                `protobuf:"fixed64,2,opt,name=Max,proto3" json:"Max,omitempty"`
+	Precision     float64                `protobuf:"fixed64,3,opt,name=Precision,proto3" json:"Precision,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -242,8 +242,8 @@ func (x *TRange) GetPrecision() float64 {
 
 type TPositiveIntegerRange struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           uint64                 `protobuf:"varint,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           uint64                 `protobuf:"varint,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Min           uint64                 `protobuf:"varint,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           uint64                 `protobuf:"varint,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -294,8 +294,8 @@ func (x *TPositiveIntegerRange) GetMax() uint64 {
 
 type THueAndSaturation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Hue           float64                `protobuf:"fixed64,1,opt,name=Hue,json=hue,proto3" json:"Hue,omitempty"`
-	Saturation    float64                `protobuf:"fixed64,2,opt,name=Saturation,json=saturation,proto3" json:"Saturation,omitempty"`
+	Hue           float64                `protobuf:"fixed64,1,opt,name=Hue,proto3" json:"Hue,omitempty"`
+	Saturation    float64                `protobuf:"fixed64,2,opt,name=Saturation,proto3" json:"Saturation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -348,20 +348,19 @@ var File_alice_protos_endpoint_common_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_common_proto_rawDesc = "" +
 	"\n" +
-	"\"alice/protos/endpoint/common.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"k\n" +
-	"\x06TRange\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x01B\a\xaa\xdd\x1b\x03maxR\x03max\x12+\n" +
-	"\tPrecision\x18\x03 \x01(\x01B\r\xaa\xdd\x1b\tprecisionR\tprecision\"M\n" +
-	"\x15TPositiveIntegerRange\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x04B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x04B\a\xaa\xdd\x1b\x03maxR\x03max\"^\n" +
-	"\x11THueAndSaturation\x12\x19\n" +
-	"\x03Hue\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03hueR\x03hue\x12.\n" +
+	"\"alice/protos/endpoint/common.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"J\n" +
+	"\x06TRange\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x01R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x01R\x03Max\x12\x1c\n" +
+	"\tPrecision\x18\x03 \x01(\x01R\tPrecision\";\n" +
+	"\x15TPositiveIntegerRange\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x04R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x04R\x03Max\"E\n" +
+	"\x11THueAndSaturation\x12\x10\n" +
+	"\x03Hue\x18\x01 \x01(\x01R\x03Hue\x12\x1e\n" +
 	"\n" +
-	"Saturation\x18\x02 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"saturationR\n" +
-	"saturation*\xe9\x02\n" +
+	"Saturation\x18\x02 \x01(\x01R\n" +
+	"Saturation*\xe9\x02\n" +
 	"\x05EUnit\x12\n" +
 	"\n" +
 	"\x06NoUnit\x10\x00\x12\x0f\n" +
@@ -392,8 +391,9 @@ const file_alice_protos_endpoint_common_proto_rawDesc = "" +
 	"\rPROTOCOL_WIFI\x10\x03\x12\x0f\n" +
 	"\vPROTOCOL_IR\x10\x04\x12\x13\n" +
 	"\x0fPROTOCOL_CRADLE\x10\x05\x12\x12\n" +
-	"\x0ePROTOCOL_ZENOH\x10\x06Ba\n" +
-	"\x1fru.yandex.alice.protos.endpointB\vCommonProtoZ1a.yandex-team.ru/alice/protos/endpoint;endpointpbb\x06proto3"
+	"\x0ePROTOCOL_ZENOH\x10\x06B\x98\x01\n" +
+	"\n" +
+	"com.NAliceB\vCommonProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_common_proto_rawDescOnce sync.Once

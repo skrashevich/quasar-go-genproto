@@ -84,7 +84,7 @@ func (TSearchResultItem_EItemType) EnumDescriptor() ([]byte, []int) {
 
 type TGetVideoGalleriesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CategoryId    string                 `protobuf:"bytes,1,opt,name=CategoryId,json=category_id,proto3" json:"CategoryId,omitempty"`
+	CategoryId    string                 `protobuf:"bytes,1,opt,name=CategoryId,proto3" json:"CategoryId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,9 +128,9 @@ func (x *TGetVideoGalleriesRequest) GetCategoryId() string {
 
 type TSearchResultItem struct {
 	state       protoimpl.MessageState      `protogen:"open.v1"`
-	Visible     bool                        `protobuf:"varint,1,opt,name=Visible,json=visible,proto3" json:"Visible,omitempty"`
-	Number      int32                       `protobuf:"varint,2,opt,name=Number,json=number,proto3" json:"Number,omitempty"`
-	ContentType TSearchResultItem_EItemType `protobuf:"varint,3,opt,name=ContentType,json=content_type,proto3,enum=NAlice.TSearchResultItem_EItemType" json:"ContentType,omitempty"`
+	Visible     bool                        `protobuf:"varint,1,opt,name=Visible,proto3" json:"Visible,omitempty"`
+	Number      int32                       `protobuf:"varint,2,opt,name=Number,proto3" json:"Number,omitempty"`
+	ContentType TSearchResultItem_EItemType `protobuf:"varint,3,opt,name=ContentType,proto3,enum=NAlice.TSearchResultItem_EItemType" json:"ContentType,omitempty"`
 	// Types that are valid to be assigned to Item:
 	//
 	//	*TSearchResultItem_VideoItem
@@ -251,23 +251,23 @@ type isTSearchResultItem_Item interface {
 }
 
 type TSearchResultItem_VideoItem struct {
-	VideoItem *video.TVideoItem `protobuf:"bytes,21,opt,name=VideoItem,json=video_item,proto3,oneof"`
+	VideoItem *video.TVideoItem `protobuf:"bytes,21,opt,name=VideoItem,proto3,oneof"`
 }
 
 type TSearchResultItem_PersonItem struct {
-	PersonItem *video.TPersonItem `protobuf:"bytes,22,opt,name=PersonItem,json=person_item,proto3,oneof"`
+	PersonItem *video.TPersonItem `protobuf:"bytes,22,opt,name=PersonItem,proto3,oneof"`
 }
 
 type TSearchResultItem_CollectionItem struct {
-	CollectionItem *video.TCollectionItem `protobuf:"bytes,23,opt,name=CollectionItem,json=collection_item,proto3,oneof"`
+	CollectionItem *video.TCollectionItem `protobuf:"bytes,23,opt,name=CollectionItem,proto3,oneof"`
 }
 
 type TSearchResultItem_OttVideoItem struct {
-	OttVideoItem *video.TOttVideoItem `protobuf:"bytes,24,opt,name=OttVideoItem,json=ott_video_item,proto3,oneof"`
+	OttVideoItem *video.TOttVideoItem `protobuf:"bytes,24,opt,name=OttVideoItem,proto3,oneof"`
 }
 
 type TSearchResultItem_SearchVideoItem struct {
-	SearchVideoItem *video.TWebVideoItem `protobuf:"bytes,25,opt,name=SearchVideoItem,json=search_video_item,proto3,oneof"`
+	SearchVideoItem *video.TWebVideoItem `protobuf:"bytes,25,opt,name=SearchVideoItem,proto3,oneof"`
 }
 
 func (*TSearchResultItem_VideoItem) isTSearchResultItem_Item() {}
@@ -282,10 +282,10 @@ func (*TSearchResultItem_SearchVideoItem) isTSearchResultItem_Item() {}
 
 type TSearchResultGallery struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Visible       bool                   `protobuf:"varint,2,opt,name=Visible,json=visible,proto3" json:"Visible,omitempty"`
-	Items         []*TSearchResultItem   `protobuf:"bytes,3,rep,name=Items,json=items,proto3" json:"Items,omitempty"`
-	DivJson       *structpb.Struct       `protobuf:"bytes,4,opt,name=DivJson,json=div_json,proto3" json:"DivJson,omitempty"`
+	Title         string                 `protobuf:"bytes,1,opt,name=Title,proto3" json:"Title,omitempty"`
+	Visible       bool                   `protobuf:"varint,2,opt,name=Visible,proto3" json:"Visible,omitempty"`
+	Items         []*TSearchResultItem   `protobuf:"bytes,3,rep,name=Items,proto3" json:"Items,omitempty"`
+	DivJson       *structpb.Struct       `protobuf:"bytes,4,opt,name=DivJson,proto3" json:"DivJson,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -350,7 +350,7 @@ func (x *TSearchResultGallery) GetDivJson() *structpb.Struct {
 
 type TSearchResultData struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Galleries     []*TSearchResultGallery `protobuf:"bytes,1,rep,name=Galleries,json=galleries,proto3" json:"Galleries,omitempty"`
+	Galleries     []*TSearchResultGallery `protobuf:"bytes,1,rep,name=Galleries,proto3" json:"Galleries,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -396,23 +396,22 @@ var File_alice_protos_data_search_result_search_result_proto protoreflect.FileDe
 
 const file_alice_protos_data_search_result_search_result_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/data/search_result/search_result.proto\x12\x06NAlice\x1a#alice/protos/data/video/video.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"S\n" +
-	"\x19TGetVideoGalleriesRequest\x120\n" +
+	"3alice/protos/data/search_result/search_result.proto\x12\x06NAlice\x1a#alice/protos/data/video/video.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\";\n" +
+	"\x19TGetVideoGalleriesRequest\x12\x1e\n" +
 	"\n" +
-	"CategoryId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vcategory_idR\vcategory_id:\x04\xa8\xdd\x1b\x04\"\xba\x05\n" +
-	"\x11TSearchResultItem\x12%\n" +
-	"\aVisible\x18\x01 \x01(\bB\v\xaa\xdd\x1b\avisibleR\avisible\x12\"\n" +
-	"\x06Number\x18\x02 \x01(\x05B\n" +
-	"\xaa\xdd\x1b\x06numberR\x06number\x12X\n" +
-	"\vContentType\x18\x03 \x01(\x0e2#.NAlice.TSearchResultItem.EItemTypeB\x10\xaa\xdd\x1b\fcontent_typeR\fcontent_type\x12C\n" +
-	"\tVideoItem\x18\x15 \x01(\v2\x12.NAlice.TVideoItemB\x0e\xaa\xdd\x1b\n" +
-	"video_itemH\x00R\n" +
-	"video_item\x12G\n" +
+	"CategoryId\x18\x01 \x01(\tR\n" +
+	"CategoryId\"\xa0\x04\n" +
+	"\x11TSearchResultItem\x12\x18\n" +
+	"\aVisible\x18\x01 \x01(\bR\aVisible\x12\x16\n" +
+	"\x06Number\x18\x02 \x01(\x05R\x06Number\x12E\n" +
+	"\vContentType\x18\x03 \x01(\x0e2#.NAlice.TSearchResultItem.EItemTypeR\vContentType\x122\n" +
+	"\tVideoItem\x18\x15 \x01(\v2\x12.NAlice.TVideoItemH\x00R\tVideoItem\x125\n" +
 	"\n" +
-	"PersonItem\x18\x16 \x01(\v2\x13.NAlice.TPersonItemB\x0f\xaa\xdd\x1b\vperson_itemH\x00R\vperson_item\x12W\n" +
-	"\x0eCollectionItem\x18\x17 \x01(\v2\x17.NAlice.TCollectionItemB\x13\xaa\xdd\x1b\x0fcollection_itemH\x00R\x0fcollection_item\x12Q\n" +
-	"\fOttVideoItem\x18\x18 \x01(\v2\x15.NAlice.TOttVideoItemB\x12\xaa\xdd\x1b\x0eott_video_itemH\x00R\x0eott_video_item\x12Z\n" +
-	"\x0fSearchVideoItem\x18\x19 \x01(\v2\x15.NAlice.TWebVideoItemB\x15\xaa\xdd\x1b\x11search_video_itemH\x00R\x11search_video_item\"\\\n" +
+	"PersonItem\x18\x16 \x01(\v2\x13.NAlice.TPersonItemH\x00R\n" +
+	"PersonItem\x12A\n" +
+	"\x0eCollectionItem\x18\x17 \x01(\v2\x17.NAlice.TCollectionItemH\x00R\x0eCollectionItem\x12;\n" +
+	"\fOttVideoItem\x18\x18 \x01(\v2\x15.NAlice.TOttVideoItemH\x00R\fOttVideoItem\x12A\n" +
+	"\x0fSearchVideoItem\x18\x19 \x01(\v2\x15.NAlice.TWebVideoItemH\x00R\x0fSearchVideoItem\"\\\n" +
 	"\tEItemType\x12\v\n" +
 	"\aunknown\x10\x00\x12\n" +
 	"\n" +
@@ -422,16 +421,17 @@ const file_alice_protos_data_search_result_search_result_proto_rawDesc = "" +
 	"\x05actor\x10\x03\x12\x0f\n" +
 	"\vassociation\x10\x04\x12\x0e\n" +
 	"\n" +
-	"collection\x10\x05:\x04\xa8\xdd\x1b\x04B\x06\n" +
-	"\x04Item\"\xe2\x01\n" +
-	"\x14TSearchResultGallery\x12\x1f\n" +
-	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12%\n" +
-	"\aVisible\x18\x02 \x01(\bB\v\xaa\xdd\x1b\avisibleR\avisible\x12:\n" +
-	"\x05Items\x18\x03 \x03(\v2\x19.NAlice.TSearchResultItemB\t\xaa\xdd\x1b\x05itemsR\x05items\x12@\n" +
-	"\aDivJson\x18\x04 \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bdiv_jsonR\bdiv_json:\x04\xa8\xdd\x1b\x04\"d\n" +
-	"\x11TSearchResultData\x12I\n" +
-	"\tGalleries\x18\x01 \x03(\v2\x1c.NAlice.TSearchResultGalleryB\r\xaa\xdd\x1b\tgalleriesR\tgalleries:\x04\xa8\xdd\x1b\x04Bk\n" +
-	")ru.yandex.alice.protos.data.search_resultB\fSearchResultZ0a.yandex-team.ru/alice/protos/data/search_resultb\x06proto3"
+	"collection\x10\x05B\x06\n" +
+	"\x04Item\"\xaa\x01\n" +
+	"\x14TSearchResultGallery\x12\x14\n" +
+	"\x05Title\x18\x01 \x01(\tR\x05Title\x12\x18\n" +
+	"\aVisible\x18\x02 \x01(\bR\aVisible\x12/\n" +
+	"\x05Items\x18\x03 \x03(\v2\x19.NAlice.TSearchResultItemR\x05Items\x121\n" +
+	"\aDivJson\x18\x04 \x01(\v2\x17.google.protobuf.StructR\aDivJson\"O\n" +
+	"\x11TSearchResultData\x12:\n" +
+	"\tGalleries\x18\x01 \x03(\v2\x1c.NAlice.TSearchResultGalleryR\tGalleriesB\xa8\x01\n" +
+	"\n" +
+	"com.NAliceB\x11SearchResultProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/search_result\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_search_result_search_result_proto_rawDescOnce sync.Once

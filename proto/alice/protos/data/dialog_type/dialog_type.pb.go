@@ -144,8 +144,8 @@ const file_alice_protos_data_dialog_type_dialog_type_proto_rawDesc = "" +
 	"\x0eFASTMASTERS_AI\x10\x0f\x12\x0f\n" +
 	"\vJEVEES_CHAT\x10\x10\x12\x0f\n" +
 	"\vJEEVES_CHAT\x10\x11\x12\v\n" +
-	"\aMONOCLE\x10\x12BY\n" +
-	"'ru.yandex.alice.protos.data.dialog_typeZ.a.yandex-team.ru/alice/protos/data/dialog_typeb\x06proto3"
+	"\aMONOCLE\x10\x12B\xc3\x01\n" +
+	"\x10com.NAlice.NDataB\x0fDialogTypeProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialog_type\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_dialog_type_dialog_type_proto_rawDescOnce sync.Once

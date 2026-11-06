@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_settings/capability.proto
 
-package alicechatsettingspb
+package alice_chat_settings
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -297,8 +297,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_settings_capability_pro
 	"\x1cTSetChatSettingModeDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x16\n" +
 	"\x02Id\x18\x02 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12(\n" +
-	"\bIsActive\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bisActiveR\bisActive:,\x92\x82\x19\x1fset_chat_setting_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb0\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceChatSettingsProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_settings;alicechatsettingspbb\x06proto3"
+	"\bIsActive\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bisActiveR\bisActive:,\x92\x82\x19\x1fset_chat_setting_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb0\x01B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceChatSettingsProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_settingsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_settings_capability_proto_rawDescOnce sync.Once

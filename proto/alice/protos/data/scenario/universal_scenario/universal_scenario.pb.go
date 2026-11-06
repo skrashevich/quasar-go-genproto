@@ -109,8 +109,8 @@ const file_alice_protos_data_scenario_universal_scenario_universal_scenario_prot
 	"\x04Text\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12\x1f\n" +
 	"\x05Title\x18\x04 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12\"\n" +
 	"\x06Action\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06actionR\x06actionBp\n" +
-	".ru.yandex.alice.protos.data.scenario.universalZ>a.yandex-team.ru/alice/protos/data/scenario/universal_scenariob\x06proto3"
+	"\xaa\xdd\x1b\x06actionR\x06actionB\x8f\x01\n" +
+	".ru.yandex.alice.protos.data.scenario.universalZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/universal_scenariob\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_universal_scenario_universal_scenario_proto_rawDescOnce sync.Once

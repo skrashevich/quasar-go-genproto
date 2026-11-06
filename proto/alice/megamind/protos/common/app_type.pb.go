@@ -164,8 +164,8 @@ const file_alice_megamind_protos_common_app_type_proto_rawDesc = "" +
 	"\vP_UNDEFINED\x10\x00\x12\r\n" +
 	"\tP_ANDROID\x10\x01\x12\t\n" +
 	"\x05P_IOS\x10\x02\x12\r\n" +
-	"\tP_BROWSER\x10\x03BW\n" +
-	"&ru.yandex.alice.megamind.protos.commonZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\tP_BROWSER\x10\x03Bv\n" +
+	"&ru.yandex.alice.megamind.protos.commonZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_app_type_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/iot_cloud/extensions/extensions.proto
 
-package extensionspb
+package extensions
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_cloud/endpoint/capabilities/common"
@@ -63,11 +63,11 @@ var File_alice_protos_api_iot_cloud_extensions_extensions_proto protoreflect.Fil
 
 const file_alice_protos_api_iot_cloud_extensions_extensions_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/api/iot_cloud/extensions/extensions.proto\x12\x10NAlice.NIotCloud\x1aHalice/protos/api/iot_cloud/endpoint/capabilities/common/capability.proto\x1a google/protobuf/descriptor.proto:G\n" +
+	"6alice/protos/api/iot_cloud/extensions/extensions.proto\x12\x10NAlice.NIotCloud\x1a google/protobuf/descriptor.proto\x1aHalice/protos/api/iot_cloud/endpoint/capabilities/common/capability.proto:G\n" +
 	"\rDirectiveName\x12\x1f.google.protobuf.MessageOptions\x18\xf3\xa8\x03 \x01(\tR\rDirectiveName:\x85\x01\n" +
 	"\x15IotCloudDirectiveType\x12\x1f.google.protobuf.MessageOptions\x18\xf4\xa8\x03 \x01(\x0e2,.NAlice.NIotCloud.TCapability.EDirectiveTypeR\x15IotCloudDirectiveType:y\n" +
-	"\x11IotCloudEventType\x12\x1f.google.protobuf.MessageOptions\x18\xf5\xa8\x03 \x01(\x0e2(.NAlice.NIotCloud.TCapability.EEventTypeR\x11IotCloudEventTypeB\x87\x01\n" +
-	"/ru.yandex.alice.protos.api.iot_cloud.extensionsB\x0fExtensionsProtoZCa.yandex-team.ru/alice/protos/api/iot_cloud/extensions;extensionspbb\x06proto3"
+	"\x11IotCloudEventType\x12\x1f.google.protobuf.MessageOptions\x18\xf5\xa8\x03 \x01(\x0e2(.NAlice.NIotCloud.TCapability.EEventTypeR\x11IotCloudEventTypeB\xdf\x01\n" +
+	"\x14com.NAlice.NIotCloudB\x0fExtensionsProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_cloud/extensions\xa2\x02\x03NNX\xaa\x02\x10NAlice.NIotCloud\xca\x02\x10NAlice\\NIotCloud\xe2\x02\x1cNAlice\\NIotCloud\\GPBMetadata\xea\x02\x11NAlice::NIotCloudb\x06proto3"
 
 var file_alice_protos_api_iot_cloud_extensions_extensions_proto_goTypes = []any{
 	(*descriptorpb.MessageOptions)(nil),    // 0: google.protobuf.MessageOptions

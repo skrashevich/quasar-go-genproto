@@ -27,7 +27,7 @@ const (
 
 type TSyncRequest struct {
 	state                protoimpl.MessageState              `protogen:"open.v1"`
-	GetClientInfoOptions *TSyncRequest_TGetClientInfoOptions `protobuf:"bytes,4,opt,name=GetClientInfoOptions,json=get_client_info_options,proto3" json:"GetClientInfoOptions,omitempty"`
+	GetClientInfoOptions *TSyncRequest_TGetClientInfoOptions `protobuf:"bytes,4,opt,name=GetClientInfoOptions,proto3" json:"GetClientInfoOptions,omitempty"`
 	// Types that are valid to be assigned to Request:
 	//
 	//	*TSyncRequest_GetDeviceState
@@ -114,15 +114,15 @@ type isTSyncRequest_Request interface {
 }
 
 type TSyncRequest_GetDeviceState struct {
-	GetDeviceState *get_device_state.TGetDeviceState `protobuf:"bytes,1,opt,name=GetDeviceState,json=get_device_state,proto3,oneof"`
+	GetDeviceState *get_device_state.TGetDeviceState `protobuf:"bytes,1,opt,name=GetDeviceState,proto3,oneof"`
 }
 
 type TSyncRequest_ExecuteDirective struct {
-	ExecuteDirective *execute_directive.TExecuteDirective `protobuf:"bytes,2,opt,name=ExecuteDirective,json=execute_directive,proto3,oneof"`
+	ExecuteDirective *execute_directive.TExecuteDirective `protobuf:"bytes,2,opt,name=ExecuteDirective,proto3,oneof"`
 }
 
 type TSyncRequest_ExecuteDirectiveChain struct {
-	ExecuteDirectiveChain *execute_directive_chain.TExecuteDirectiveChain `protobuf:"bytes,3,opt,name=ExecuteDirectiveChain,json=execute_directive_chain,proto3,oneof"`
+	ExecuteDirectiveChain *execute_directive_chain.TExecuteDirectiveChain `protobuf:"bytes,3,opt,name=ExecuteDirectiveChain,proto3,oneof"`
 }
 
 func (*TSyncRequest_GetDeviceState) isTSyncRequest_Request() {}
@@ -171,15 +171,15 @@ var File_alice_protos_api_alicekit_events_sync_push_sync_request_sync_request_pr
 
 const file_alice_protos_api_alicekit_events_sync_push_sync_request_sync_request_proto_rawDesc = "" +
 	"\n" +
-	"Jalice/protos/api/alicekit/events/sync_push/sync_request/sync_request.proto\x12\x10NAlice.NAliceApi\x1aaalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive/execute_directive.proto\x1amalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chain/execute_directive_chain.proto\x1a_alice/protos/api/alicekit/events/sync_push/sync_request/get_device_state/get_device_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x94\x04\n" +
-	"\fTSyncRequest\x12\x88\x01\n" +
-	"\x14GetClientInfoOptions\x18\x04 \x01(\v24.NAlice.NAliceApi.TSyncRequest.TGetClientInfoOptionsB\x1b\xaa\xdd\x1b\x17get_client_info_optionsR\x17get_client_info_options\x12c\n" +
-	"\x0eGetDeviceState\x18\x01 \x01(\v2!.NAlice.NAliceApi.TGetDeviceStateB\x14\xaa\xdd\x1b\x10get_device_stateH\x00R\x10get_device_state\x12i\n" +
-	"\x10ExecuteDirective\x18\x02 \x01(\v2#.NAlice.NAliceApi.TExecuteDirectiveB\x15\xaa\xdd\x1b\x11execute_directiveH\x00R\x11execute_directive\x12\x7f\n" +
-	"\x15ExecuteDirectiveChain\x18\x03 \x01(\v2(.NAlice.NAliceApi.TExecuteDirectiveChainB\x1b\xaa\xdd\x1b\x17execute_directive_chainH\x00R\x17execute_directive_chain\x1a\x17\n" +
-	"\x15TGetClientInfoOptions:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\aRequestB\x9c\x01\n" +
-	"Aru.yandex.alice.protos.api.alicekit.events.sync_push.sync_requestB\vSyncRequestP\x01ZHa.yandex-team.ru/alice/protos/api/alicekit/events/sync_push/sync_requestb\x06proto3"
+	"Jalice/protos/api/alicekit/events/sync_push/sync_request/sync_request.proto\x12\x10NAlice.NAliceApi\x1aaalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive/execute_directive.proto\x1amalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chain/execute_directive_chain.proto\x1a_alice/protos/api/alicekit/events/sync_push/sync_request/get_device_state/get_device_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x03\n" +
+	"\fTSyncRequest\x12h\n" +
+	"\x14GetClientInfoOptions\x18\x04 \x01(\v24.NAlice.NAliceApi.TSyncRequest.TGetClientInfoOptionsR\x14GetClientInfoOptions\x12K\n" +
+	"\x0eGetDeviceState\x18\x01 \x01(\v2!.NAlice.NAliceApi.TGetDeviceStateH\x00R\x0eGetDeviceState\x12Q\n" +
+	"\x10ExecuteDirective\x18\x02 \x01(\v2#.NAlice.NAliceApi.TExecuteDirectiveH\x00R\x10ExecuteDirective\x12`\n" +
+	"\x15ExecuteDirectiveChain\x18\x03 \x01(\v2(.NAlice.NAliceApi.TExecuteDirectiveChainH\x00R\x15ExecuteDirectiveChain\x1a\x17\n" +
+	"\x15TGetClientInfoOptionsB\t\n" +
+	"\aRequestB\xf2\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10SyncRequestProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push/sync_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_sync_request_sync_request_proto_rawDescOnce sync.Once

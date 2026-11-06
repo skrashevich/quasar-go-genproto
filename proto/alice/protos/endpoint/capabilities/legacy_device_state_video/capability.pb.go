@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/legacy_device_state_video/capability.proto
 
-package legacydevicestatevideopb
+package legacy_device_state_video
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -915,8 +915,8 @@ const file_alice_protos_endpoint_capabilities_legacy_device_state_video_capabili
 	"\x12_LastStopTimestampB\t\n" +
 	"\a_PlayerB\x13\n" +
 	"\x11_TvInterfaceStateB\r\n" +
-	"\v_PlayerNameJ\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\f\x10\rR\rTvScreenState:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xba\x02B\xb5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bLegacyDeviceStateVideoProtoP\x01Zfa.yandex-team.ru/alice/protos/endpoint/capabilities/legacy_device_state_video;legacydevicestatevideopbb\x06proto3"
+	"\v_PlayerNameJ\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\f\x10\rR\rTvScreenState:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xba\x02B\xbb\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bLegacyDeviceStateVideoProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/legacy_device_state_videob\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_legacy_device_state_video_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_driving_modes/capability.proto
 
-package automotive_driving_modespb
+package automotive_driving_modes
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -388,8 +388,8 @@ const file_alice_protos_endpoint_capabilities_automotive_driving_modes_capabilit
 	"\x18DRIVING_MODE_HEIGHT_LOCK\x10\x03\x12\x17\n" +
 	"\x13DRIVING_MODE_WADING\x10\x04\x12\x17\n" +
 	"\x13DRIVING_MODE_EXPERT\x10\x05\x12\x1b\n" +
-	"\x17DRIVING_MODE_INDIVIDUAL\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xad\x02B\xbe\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB%AutomotiveDrivingModesCapabilityProtoZga.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_driving_modes;automotive_driving_modespbb\x06proto3"
+	"\x17DRIVING_MODE_INDIVIDUAL\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xad\x02B\xc2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB%AutomotiveDrivingModesCapabilityProtoZkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_driving_modesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_driving_modes_capability_proto_rawDescOnce sync.Once

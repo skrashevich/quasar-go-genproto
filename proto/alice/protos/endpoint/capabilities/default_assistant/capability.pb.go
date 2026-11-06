@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/default_assistant/capability.proto
 
-package defaultassistantpb
+package default_assistant
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -206,8 +206,8 @@ const file_alice_protos_endpoint_capabilities_default_assistant_capability_proto
 	"\x05State\x18\x03 \x01(\v2*.NAlice.TDefaultAssistantCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aU\n" +
-	"!TShowAssistantOnboardingDirective:0\x92\x82\x19#show_assistant_onboarding_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf9\x04:\x0e\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfd\x01\xa8\xc8\x1c\xf9\x04B\x9f\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15DefaultAssistantProtoZXa.yandex-team.ru/alice/protos/endpoint/capabilities/default_assistant;defaultassistantpbb\x06proto3"
+	"!TShowAssistantOnboardingDirective:0\x92\x82\x19#show_assistant_onboarding_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf9\x04:\x0e\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfd\x01\xa8\xc8\x1c\xf9\x04B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15DefaultAssistantProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/default_assistantb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_default_assistant_capability_proto_rawDescOnce sync.Once

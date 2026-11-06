@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/bugreport/capability.proto
 
-package bugreportpb
+package bugreport
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TBugreportCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBugreportCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBugreportCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBugreportCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBugreportCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -159,10 +159,10 @@ func (*TBugreportCapability_TState) Descriptor() ([]byte, []int) {
 
 type TBugreportCapability_TSendBugReport struct {
 	state         protoimpl.MessageState                          `protogen:"open.v1"`
-	UserMessage   string                                          `protobuf:"bytes,1,opt,name=UserMessage,json=user_message,proto3" json:"UserMessage,omitempty"`
-	BugreportId   string                                          `protobuf:"bytes,2,opt,name=BugreportId,json=bugreport_id,proto3" json:"BugreportId,omitempty"`
-	Analytics     *TBugreportCapability_TSendBugReport_TAnalytics `protobuf:"bytes,999,opt,name=Analytics,json=analytics,proto3" json:"Analytics,omitempty"`
-	Name          string                                          `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	UserMessage   string                                          `protobuf:"bytes,1,opt,name=UserMessage,proto3" json:"UserMessage,omitempty"`
+	BugreportId   string                                          `protobuf:"bytes,2,opt,name=BugreportId,proto3" json:"BugreportId,omitempty"`
+	Analytics     *TBugreportCapability_TSendBugReport_TAnalytics `protobuf:"bytes,999,opt,name=Analytics,proto3" json:"Analytics,omitempty"`
+	Name          string                                          `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -227,8 +227,8 @@ func (x *TBugreportCapability_TSendBugReport) GetName() string {
 
 type TBugreportCapability_TLegacySendBugReport struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	RequestId     string                 `protobuf:"bytes,2,opt,name=RequestId,json=id,proto3" json:"RequestId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	RequestId     string                 `protobuf:"bytes,2,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,27 +317,27 @@ var File_alice_protos_endpoint_capabilities_bugreport_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_bugreport_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/bugreport/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcf\x05\n" +
-	"\x14TBugreportCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/bugreport/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfe\x03\n" +
+	"\x14TBugreportCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TBugreportCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TBugreportCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xbb\x02\n" +
-	"\x0eTSendBugReport\x123\n" +
-	"\vUserMessage\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fuser_messageR\fuser_message\x123\n" +
-	"\vBugreportId\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fbugreport_idR\fbugreport_id\x12d\n" +
-	"\tAnalytics\x18\xe7\a \x01(\v26.NAlice.TBugreportCapability.TSendBugReport.TAnalyticsB\r\xaa\xdd\x1b\tanalyticsR\tanalytics\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x1a\x12\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TBugreportCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TBugreportCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\b\n" +
+	"\x06TState\x1a\xce\x01\n" +
+	"\x0eTSendBugReport\x12 \n" +
+	"\vUserMessage\x18\x01 \x01(\tR\vUserMessage\x12 \n" +
+	"\vBugreportId\x18\x02 \x01(\tR\vBugreportId\x12U\n" +
+	"\tAnalytics\x18\xe7\a \x01(\v26.NAlice.TBugreportCapability.TSendBugReport.TAnalyticsR\tAnalytics\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a\f\n" +
 	"\n" +
-	"TAnalytics:\x04\xa8\xdd\x1b\x04:&\x92\x82\x19\x19capability_send_bugreport\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9d\x02\x1aq\n" +
-	"\x14TLegacySendBugReport\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1d\n" +
-	"\tRequestId\x18\x02 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\x1c\x92\x82\x19\x0fsend_bug_report\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe8\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cgB\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18BugreportCapabilityProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/bugreport;bugreportpbb\x06proto3"
+	"TAnalytics\x1aH\n" +
+	"\x14TLegacySendBugReport\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1c\n" +
+	"\tRequestId\x18\x02 \x01(\tR\tRequestIdB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/bugreport\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_bugreport_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/endpoint.proto
 
-package endpointpb
+package endpoint
 
 import (
 	protos "github.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protos"
@@ -350,11 +350,11 @@ func (TEndpoint_TMeta_TTag_ELayoutTag) EnumDescriptor() ([]byte, []int) {
 
 type TEndpoint struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
-	Id              string                  `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Meta            *TEndpoint_TMeta        `protobuf:"bytes,2,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Capabilities    []*anypb.Any            `protobuf:"bytes,3,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
-	AnyCapabilities []*TAnyCapabilityHolder `protobuf:"bytes,5,rep,name=AnyCapabilities,json=any_capabilities,proto3" json:"AnyCapabilities,omitempty"`
-	Status          *TEndpoint_TStatus      `protobuf:"bytes,4,opt,name=Status,json=status,proto3" json:"Status,omitempty"`
+	Id              string                  `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Meta            *TEndpoint_TMeta        `protobuf:"bytes,2,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Capabilities    []*anypb.Any            `protobuf:"bytes,3,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
+	AnyCapabilities []*TAnyCapabilityHolder `protobuf:"bytes,5,rep,name=AnyCapabilities,proto3" json:"AnyCapabilities,omitempty"`
+	Status          *TEndpoint_TStatus      `protobuf:"bytes,4,opt,name=Status,proto3" json:"Status,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -426,11 +426,11 @@ func (x *TEndpoint) GetStatus() *TEndpoint_TStatus {
 
 type TEndpoint_TMeta struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Type          TEndpoint_EEndpointType  `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TEndpoint_EEndpointType" json:"Type,omitempty"`
-	DeviceInfo    *TEndpoint_TDeviceInfo   `protobuf:"bytes,2,opt,name=DeviceInfo,json=device_info,proto3" json:"DeviceInfo,omitempty"`
-	AccessType    TEndpoint_EAccessType    `protobuf:"varint,3,opt,name=AccessType,json=access_type,proto3,enum=NAlice.TEndpoint_EAccessType" json:"AccessType,omitempty"`
-	Tags          []*TEndpoint_TMeta_TTag  `protobuf:"bytes,4,rep,name=Tags,json=tags,proto3" json:"Tags,omitempty"`
-	ClientInfo    *protos.TClientInfoProto `protobuf:"bytes,5,opt,name=ClientInfo,json=client_info,proto3" json:"ClientInfo,omitempty"`
+	Type          TEndpoint_EEndpointType  `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TEndpoint_EEndpointType" json:"Type,omitempty"`
+	DeviceInfo    *TEndpoint_TDeviceInfo   `protobuf:"bytes,2,opt,name=DeviceInfo,proto3" json:"DeviceInfo,omitempty"`
+	AccessType    TEndpoint_EAccessType    `protobuf:"varint,3,opt,name=AccessType,proto3,enum=NAlice.TEndpoint_EAccessType" json:"AccessType,omitempty"`
+	Tags          []*TEndpoint_TMeta_TTag  `protobuf:"bytes,4,rep,name=Tags,proto3" json:"Tags,omitempty"`
+	ClientInfo    *protos.TClientInfoProto `protobuf:"bytes,5,opt,name=ClientInfo,proto3" json:"ClientInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -502,8 +502,8 @@ func (x *TEndpoint_TMeta) GetClientInfo() *protos.TClientInfoProto {
 
 type TEndpoint_TStatus struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Status        TEndpoint_EEndpointStatus `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.TEndpoint_EEndpointStatus" json:"Status,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp    `protobuf:"bytes,2,opt,name=UpdatedAt,json=updated_at,proto3" json:"UpdatedAt,omitempty"`
+	Status        TEndpoint_EEndpointStatus `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.TEndpoint_EEndpointStatus" json:"Status,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp    `protobuf:"bytes,2,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -554,14 +554,14 @@ func (x *TEndpoint_TStatus) GetUpdatedAt() *timestamppb.Timestamp {
 
 type TEndpoint_TDeviceInfo struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Manufacturer     string                 `protobuf:"bytes,1,opt,name=Manufacturer,json=manufacturer,proto3" json:"Manufacturer,omitempty"`
-	Model            string                 `protobuf:"bytes,2,opt,name=Model,json=model,proto3" json:"Model,omitempty"`
-	HwVersion        string                 `protobuf:"bytes,3,opt,name=HwVersion,json=hw_version,proto3" json:"HwVersion,omitempty"`
-	SwVersion        string                 `protobuf:"bytes,4,opt,name=SwVersion,json=sw_version,proto3" json:"SwVersion,omitempty"`
-	Protocol         EProtocol              `protobuf:"varint,5,opt,name=Protocol,json=protocol,proto3,enum=NAlice.EProtocol" json:"Protocol,omitempty"`
-	SerialNumber     string                 `protobuf:"bytes,6,opt,name=SerialNumber,json=serial_number,proto3" json:"SerialNumber,omitempty"`
-	Color            color.EColor           `protobuf:"varint,7,opt,name=Color,json=color,proto3,enum=NAlice.NData.EColor" json:"Color,omitempty"`
-	SetupCodePayload string                 `protobuf:"bytes,8,opt,name=SetupCodePayload,json=setup_code_payload,proto3" json:"SetupCodePayload,omitempty"`
+	Manufacturer     string                 `protobuf:"bytes,1,opt,name=Manufacturer,proto3" json:"Manufacturer,omitempty"`
+	Model            string                 `protobuf:"bytes,2,opt,name=Model,proto3" json:"Model,omitempty"`
+	HwVersion        string                 `protobuf:"bytes,3,opt,name=HwVersion,proto3" json:"HwVersion,omitempty"`
+	SwVersion        string                 `protobuf:"bytes,4,opt,name=SwVersion,proto3" json:"SwVersion,omitempty"`
+	Protocol         EProtocol              `protobuf:"varint,5,opt,name=Protocol,proto3,enum=NAlice.EProtocol" json:"Protocol,omitempty"`
+	SerialNumber     string                 `protobuf:"bytes,6,opt,name=SerialNumber,proto3" json:"SerialNumber,omitempty"`
+	Color            color.EColor           `protobuf:"varint,7,opt,name=Color,proto3,enum=NAlice.NData.EColor" json:"Color,omitempty"`
+	SetupCodePayload string                 `protobuf:"bytes,8,opt,name=SetupCodePayload,proto3" json:"SetupCodePayload,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -713,7 +713,7 @@ type isTEndpoint_TMeta_TTag_Tag interface {
 }
 
 type TEndpoint_TMeta_TTag_Layout struct {
-	Layout TEndpoint_TMeta_TTag_ELayoutTag `protobuf:"varint,1,opt,name=Layout,json=layout,proto3,enum=NAlice.TEndpoint_TMeta_TTag_ELayoutTag,oneof"`
+	Layout TEndpoint_TMeta_TTag_ELayoutTag `protobuf:"varint,1,opt,name=Layout,proto3,enum=NAlice.TEndpoint_TMeta_TTag_ELayoutTag,oneof"`
 }
 
 func (*TEndpoint_TMeta_TTag_Layout) isTEndpoint_TMeta_TTag_Tag() {}
@@ -722,26 +722,27 @@ var File_alice_protos_endpoint_endpoint_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_endpoint_proto_rawDesc = "" +
 	"\n" +
-	"$alice/protos/endpoint/endpoint.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a-alice/library/client/protos/client_info.proto\x1a#alice/protos/data/color/color.proto\x1a*alice/protos/endpoint/any_capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9d\x15\n" +
-	"\tTEndpoint\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x125\n" +
-	"\x04Meta\x18\x02 \x01(\v2\x17.NAlice.TEndpoint.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12J\n" +
-	"\fCapabilities\x18\x03 \x03(\v2\x14.google.protobuf.AnyB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x12]\n" +
-	"\x0fAnyCapabilities\x18\x05 \x03(\v2\x1c.NAlice.TAnyCapabilityHolderB\x14\xaa\xdd\x1b\x10any_capabilitiesR\x10any_capabilities\x12=\n" +
-	"\x06Status\x18\x04 \x01(\v2\x19.NAlice.TEndpoint.TStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x1a\xd0\x04\n" +
-	"\x05TMeta\x12=\n" +
-	"\x04Type\x18\x01 \x01(\x0e2\x1f.NAlice.TEndpoint.EEndpointTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12O\n" +
+	"$alice/protos/endpoint/endpoint.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a-alice/library/client/protos/client_info.proto\x1a#alice/protos/data/color/color.proto\x1a*alice/protos/endpoint/any_capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb5\x12\n" +
+	"\tTEndpoint\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12+\n" +
+	"\x04Meta\x18\x02 \x01(\v2\x17.NAlice.TEndpoint.TMetaR\x04Meta\x128\n" +
+	"\fCapabilities\x18\x03 \x03(\v2\x14.google.protobuf.AnyR\fCapabilities\x12F\n" +
+	"\x0fAnyCapabilities\x18\x05 \x03(\v2\x1c.NAlice.TAnyCapabilityHolderR\x0fAnyCapabilities\x121\n" +
+	"\x06Status\x18\x04 \x01(\v2\x19.NAlice.TEndpoint.TStatusR\x06Status\x1a\xe5\x03\n" +
+	"\x05TMeta\x123\n" +
+	"\x04Type\x18\x01 \x01(\x0e2\x1f.NAlice.TEndpoint.EEndpointTypeR\x04Type\x12=\n" +
 	"\n" +
-	"DeviceInfo\x18\x02 \x01(\v2\x1d.NAlice.TEndpoint.TDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info\x12O\n" +
+	"DeviceInfo\x18\x02 \x01(\v2\x1d.NAlice.TEndpoint.TDeviceInfoR\n" +
+	"DeviceInfo\x12=\n" +
 	"\n" +
-	"AccessType\x18\x03 \x01(\x0e2\x1d.NAlice.TEndpoint.EAccessTypeB\x0f\xaa\xdd\x1b\vaccess_typeR\vaccess_type\x12:\n" +
-	"\x04Tags\x18\x04 \x03(\v2\x1c.NAlice.TEndpoint.TMeta.TTagB\b\xaa\xdd\x1b\x04tagsR\x04tags\x12J\n" +
+	"AccessType\x18\x03 \x01(\x0e2\x1d.NAlice.TEndpoint.EAccessTypeR\n" +
+	"AccessType\x120\n" +
+	"\x04Tags\x18\x04 \x03(\v2\x1c.NAlice.TEndpoint.TMeta.TTagR\x04Tags\x128\n" +
 	"\n" +
-	"ClientInfo\x18\x05 \x01(\v2\x18.NAlice.TClientInfoProtoB\x0f\xaa\xdd\x1b\vclient_infoR\vclient_info\x1a\xd7\x01\n" +
-	"\x04TTag\x12M\n" +
-	"\x06Layout\x18\x01 \x01(\x0e2'.NAlice.TEndpoint.TMeta.TTag.ELayoutTagB\n" +
-	"\xaa\xdd\x1b\x06layoutH\x00R\x06layout\"j\n" +
+	"ClientInfo\x18\x05 \x01(\v2\x18.NAlice.TClientInfoProtoR\n" +
+	"ClientInfo\x1a\xbc\x01\n" +
+	"\x04TTag\x12A\n" +
+	"\x06Layout\x18\x01 \x01(\x0e2'.NAlice.TEndpoint.TMeta.TTag.ELayoutTagH\x00R\x06Layout\"j\n" +
 	"\n" +
 	"ELayoutTag\x12\x11\n" +
 	"\rUnknownLayout\x10\x00\x12\n" +
@@ -753,27 +754,20 @@ const file_alice_protos_endpoint_endpoint_proto_rawDesc = "" +
 	"\x04Back\x10\x05\x12\a\n" +
 	"\x03Top\x10\x06\x12\n" +
 	"\n" +
-	"\x06Bottom\x10\a:\x04\xa8\xdd\x1b\x04B\x0e\n" +
-	"\x03Tag\x12\a\xaa\xdd\x1b\x03tag:\x04\xa8\xdd\x1b\x04\x1a\xa1\x01\n" +
-	"\aTStatus\x12E\n" +
-	"\x06Status\x18\x01 \x01(\x0e2!.NAlice.TEndpoint.EEndpointStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12I\n" +
-	"\tUpdatedAt\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x0e\xaa\xdd\x1b\n" +
-	"updated_atR\n" +
-	"updated_at:\x04\xa8\xdd\x1b\x04\x1a\xba\x03\n" +
-	"\vTDeviceInfo\x124\n" +
-	"\fManufacturer\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fmanufacturerR\fmanufacturer\x12\x1f\n" +
-	"\x05Model\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05modelR\x05model\x12-\n" +
-	"\tHwVersion\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"hw_versionR\n" +
-	"hw_version\x12-\n" +
-	"\tSwVersion\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"sw_versionR\n" +
-	"sw_version\x12;\n" +
-	"\bProtocol\x18\x05 \x01(\x0e2\x11.NAlice.EProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x126\n" +
-	"\fSerialNumber\x18\x06 \x01(\tB\x11\xaa\xdd\x1b\rserial_numberR\rserial_number\x125\n" +
-	"\x05Color\x18\a \x01(\x0e2\x14.NAlice.NData.EColorB\t\xaa\xdd\x1b\x05colorR\x05color\x12D\n" +
-	"\x10SetupCodePayload\x18\b \x01(\tB\x16\xaa\xdd\x1b\x12setup_code_payloadR\x12setup_code_payload:\x04\xa8\xdd\x1b\x04\"7\n" +
+	"\x06Bottom\x10\aB\x05\n" +
+	"\x03Tag\x1a~\n" +
+	"\aTStatus\x129\n" +
+	"\x06Status\x18\x01 \x01(\x0e2!.NAlice.TEndpoint.EEndpointStatusR\x06Status\x128\n" +
+	"\tUpdatedAt\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tUpdatedAt\x1a\xae\x02\n" +
+	"\vTDeviceInfo\x12\"\n" +
+	"\fManufacturer\x18\x01 \x01(\tR\fManufacturer\x12\x14\n" +
+	"\x05Model\x18\x02 \x01(\tR\x05Model\x12\x1c\n" +
+	"\tHwVersion\x18\x03 \x01(\tR\tHwVersion\x12\x1c\n" +
+	"\tSwVersion\x18\x04 \x01(\tR\tSwVersion\x12-\n" +
+	"\bProtocol\x18\x05 \x01(\x0e2\x11.NAlice.EProtocolR\bProtocol\x12\"\n" +
+	"\fSerialNumber\x18\x06 \x01(\tR\fSerialNumber\x12*\n" +
+	"\x05Color\x18\a \x01(\x0e2\x14.NAlice.NData.EColorR\x05Color\x12*\n" +
+	"\x10SetupCodePayload\x18\b \x01(\tR\x10SetupCodePayload\"7\n" +
 	"\x0fEEndpointStatus\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aOffline\x10\x01\x12\n" +
@@ -825,8 +819,9 @@ const file_alice_protos_endpoint_endpoint_proto_rawDesc = "" +
 	"\bEmbedded\x10\x02\x12\n" +
 	"\n" +
 	"\x06Remote\x10\x03\x12\v\n" +
-	"\aVirtual\x10\x04:\x04\xa8\xdd\x1b\x04Bc\n" +
-	"\x1fru.yandex.alice.protos.endpointB\rEndpointProtoZ1a.yandex-team.ru/alice/protos/endpoint;endpointpbb\x06proto3"
+	"\aVirtual\x10\x04B\x9a\x01\n" +
+	"\n" +
+	"com.NAliceB\rEndpointProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_endpoint_proto_rawDescOnce sync.Once

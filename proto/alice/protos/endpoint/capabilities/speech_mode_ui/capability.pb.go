@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/speech_mode_ui/capability.proto
 
-package speechmodeuipb
+package speech_mode_ui
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -431,8 +431,8 @@ const file_alice_protos_endpoint_capabilities_speech_mode_ui_capability_proto_ra
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
 	"\bDialogId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tdialog_idR\tdialog_id\x128\n" +
 	"\vCharacterId\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fcharacter_idH\x00R\fcharacter_id\x88\x01\x01:\x1d\x92\x82\x19\x10speech_mode_show\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdf\x03B\x0e\n" +
-	"\f_CharacterId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb4\x01B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11SpeechModeUiProtoZQa.yandex-team.ru/alice/protos/endpoint/capabilities/speech_mode_ui;speechmodeuipbb\x06proto3"
+	"\f_CharacterId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb4\x01B\xa4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11SpeechModeUiProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/speech_mode_uib\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_speech_mode_ui_capability_proto_rawDescOnce sync.Once

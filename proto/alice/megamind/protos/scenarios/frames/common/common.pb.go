@@ -133,7 +133,7 @@ type isTBoolSlot_Value interface {
 }
 
 type TBoolSlot_BoolValue struct {
-	BoolValue bool `protobuf:"varint,1,opt,name=BoolValue,json=bool_value,proto3,oneof"`
+	BoolValue bool `protobuf:"varint,1,opt,name=BoolValue,proto3,oneof"`
 }
 
 func (*TBoolSlot_BoolValue) isTBoolSlot_Value() {}
@@ -199,7 +199,7 @@ type isTSysNumSlot_Value interface {
 }
 
 type TSysNumSlot_NumValue struct {
-	NumValue uint32 `protobuf:"varint,1,opt,name=NumValue,json=num_value,proto3,oneof"`
+	NumValue uint32 `protobuf:"varint,1,opt,name=NumValue,proto3,oneof"`
 }
 
 func (*TSysNumSlot_NumValue) isTSysNumSlot_Value() {}
@@ -265,7 +265,7 @@ type isTUInt32Slot_Value interface {
 }
 
 type TUInt32Slot_UInt32Value struct {
-	UInt32Value uint32 `protobuf:"varint,1,opt,name=UInt32Value,json=uint32_value,proto3,oneof"`
+	UInt32Value uint32 `protobuf:"varint,1,opt,name=UInt32Value,proto3,oneof"`
 }
 
 func (*TUInt32Slot_UInt32Value) isTUInt32Slot_Value() {}
@@ -331,7 +331,7 @@ type isTInt64Slot_Value interface {
 }
 
 type TInt64Slot_Int64Value struct {
-	Int64Value int64 `protobuf:"varint,1,opt,name=Int64Value,json=int64_value,proto3,oneof"`
+	Int64Value int64 `protobuf:"varint,1,opt,name=Int64Value,proto3,oneof"`
 }
 
 func (*TInt64Slot_Int64Value) isTInt64Slot_Value() {}
@@ -467,35 +467,35 @@ type isTLocationSlot_Value interface {
 }
 
 type TLocationSlot_UserIotRoomValue struct {
-	UserIotRoomValue string `protobuf:"bytes,1,opt,name=UserIotRoomValue,json=user_iot_room_value,proto3,oneof"`
+	UserIotRoomValue string `protobuf:"bytes,1,opt,name=UserIotRoomValue,proto3,oneof"`
 }
 
 type TLocationSlot_DeviceIotRoomValue struct {
-	DeviceIotRoomValue string `protobuf:"bytes,2,opt,name=DeviceIotRoomValue,json=device_iot_room_value,proto3,oneof"`
+	DeviceIotRoomValue string `protobuf:"bytes,2,opt,name=DeviceIotRoomValue,proto3,oneof"`
 }
 
 type TLocationSlot_UserIotGroupValue struct {
-	UserIotGroupValue string `protobuf:"bytes,3,opt,name=UserIotGroupValue,json=user_iot_group_value,proto3,oneof"`
+	UserIotGroupValue string `protobuf:"bytes,3,opt,name=UserIotGroupValue,proto3,oneof"`
 }
 
 type TLocationSlot_DeviceIotGroupValue struct {
-	DeviceIotGroupValue string `protobuf:"bytes,4,opt,name=DeviceIotGroupValue,json=device_iot_group_value,proto3,oneof"`
+	DeviceIotGroupValue string `protobuf:"bytes,4,opt,name=DeviceIotGroupValue,proto3,oneof"`
 }
 
 type TLocationSlot_UserIotDeviceValue struct {
-	UserIotDeviceValue string `protobuf:"bytes,5,opt,name=UserIotDeviceValue,json=user_iot_device_value,proto3,oneof"`
+	UserIotDeviceValue string `protobuf:"bytes,5,opt,name=UserIotDeviceValue,proto3,oneof"`
 }
 
 type TLocationSlot_DeviceIotDeviceValue struct {
-	DeviceIotDeviceValue string `protobuf:"bytes,6,opt,name=DeviceIotDeviceValue,json=device_iot_device_value,proto3,oneof"`
+	DeviceIotDeviceValue string `protobuf:"bytes,6,opt,name=DeviceIotDeviceValue,proto3,oneof"`
 }
 
 type TLocationSlot_UserIotMultiroomAllDevicesValue struct {
-	UserIotMultiroomAllDevicesValue string `protobuf:"bytes,7,opt,name=UserIotMultiroomAllDevicesValue,json=user_iot_multiroom_all_devices_value,proto3,oneof"`
+	UserIotMultiroomAllDevicesValue string `protobuf:"bytes,7,opt,name=UserIotMultiroomAllDevicesValue,proto3,oneof"`
 }
 
 type TLocationSlot_DeviceIotMultiroomAllDevicesValue struct {
-	DeviceIotMultiroomAllDevicesValue string `protobuf:"bytes,8,opt,name=DeviceIotMultiroomAllDevicesValue,json=device_iot_multiroom_all_devices_value,proto3,oneof"`
+	DeviceIotMultiroomAllDevicesValue string `protobuf:"bytes,8,opt,name=DeviceIotMultiroomAllDevicesValue,proto3,oneof"`
 }
 
 func (*TLocationSlot_UserIotRoomValue) isTLocationSlot_Value() {}
@@ -623,7 +623,6 @@ func (x *TStringSlot) GetVideoActionValue() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/common/common.proto.
 func (x *TStringSlot) GetActionRequestValue() string {
 	if x != nil {
 		if x, ok := x.Value.(*TStringSlot_ActionRequestValue); ok {
@@ -656,40 +655,39 @@ type isTStringSlot_Value interface {
 }
 
 type TStringSlot_StringValue struct {
-	StringValue string `protobuf:"bytes,1,opt,name=StringValue,json=string_value,proto3,oneof"`
+	StringValue string `protobuf:"bytes,1,opt,name=StringValue,proto3,oneof"`
 }
 
 type TStringSlot_SpecialPlaylistValue struct {
-	SpecialPlaylistValue string `protobuf:"bytes,2,opt,name=SpecialPlaylistValue,json=special_playlist_value,proto3,oneof"`
+	SpecialPlaylistValue string `protobuf:"bytes,2,opt,name=SpecialPlaylistValue,proto3,oneof"`
 }
 
 type TStringSlot_NewsTopicValue struct {
-	NewsTopicValue string `protobuf:"bytes,3,opt,name=NewsTopicValue,json=news_topic_value,proto3,oneof"`
+	NewsTopicValue string `protobuf:"bytes,3,opt,name=NewsTopicValue,proto3,oneof"`
 }
 
 type TStringSlot_SpecialAnswerInfoValue struct {
-	SpecialAnswerInfoValue string `protobuf:"bytes,4,opt,name=SpecialAnswerInfoValue,json=special_answer_info,proto3,oneof"`
+	SpecialAnswerInfoValue string `protobuf:"bytes,4,opt,name=SpecialAnswerInfoValue,proto3,oneof"`
 }
 
 type TStringSlot_VideoContentTypeValue struct {
-	VideoContentTypeValue string `protobuf:"bytes,5,opt,name=VideoContentTypeValue,json=video_content_type_value,proto3,oneof"`
+	VideoContentTypeValue string `protobuf:"bytes,5,opt,name=VideoContentTypeValue,proto3,oneof"`
 }
 
 type TStringSlot_VideoActionValue struct {
-	VideoActionValue string `protobuf:"bytes,6,opt,name=VideoActionValue,json=video_action_value,proto3,oneof"`
+	VideoActionValue string `protobuf:"bytes,6,opt,name=VideoActionValue,proto3,oneof"`
 }
 
 type TStringSlot_ActionRequestValue struct {
-	// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/common/common.proto.
-	ActionRequestValue string `protobuf:"bytes,8,opt,name=ActionRequestValue,json=action_request_value,proto3,oneof"`
+	ActionRequestValue string `protobuf:"bytes,8,opt,name=ActionRequestValue,proto3,oneof"`
 }
 
 type TStringSlot_EpochValue struct {
-	EpochValue string `protobuf:"bytes,9,opt,name=EpochValue,json=epoch_value,proto3,oneof"`
+	EpochValue string `protobuf:"bytes,9,opt,name=EpochValue,proto3,oneof"`
 }
 
 type TStringSlot_VideoSelectionActionValue struct {
-	VideoSelectionActionValue string `protobuf:"bytes,10,opt,name=VideoSelectionActionValue,json=video_selection_action_value,proto3,oneof"`
+	VideoSelectionActionValue string `protobuf:"bytes,10,opt,name=VideoSelectionActionValue,proto3,oneof"`
 }
 
 func (*TStringSlot_StringValue) isTStringSlot_Value() {}
@@ -771,7 +769,7 @@ type isTTokenTypeSlot_Value interface {
 }
 
 type TTokenTypeSlot_EnumValue struct {
-	EnumValue TTokenTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TTokenTypeSlot_EValue,oneof"`
+	EnumValue TTokenTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TTokenTypeSlot_EValue,oneof"`
 }
 
 func (*TTokenTypeSlot_EnumValue) isTTokenTypeSlot_Value() {}
@@ -837,7 +835,7 @@ type isTLanguageSlot_Value interface {
 }
 
 type TLanguageSlot_LanguageValue struct {
-	LanguageValue string `protobuf:"bytes,1,opt,name=LanguageValue,json=language_value,proto3,oneof"`
+	LanguageValue string `protobuf:"bytes,1,opt,name=LanguageValue,proto3,oneof"`
 }
 
 func (*TLanguageSlot_LanguageValue) isTLanguageSlot_Value() {}
@@ -903,7 +901,7 @@ type isTNumSlot_Value interface {
 }
 
 type TNumSlot_NumValue struct {
-	NumValue uint32 `protobuf:"varint,1,opt,name=NumValue,json=num_value,proto3,oneof"`
+	NumValue uint32 `protobuf:"varint,1,opt,name=NumValue,proto3,oneof"`
 }
 
 func (*TNumSlot_NumValue) isTNumSlot_Value() {}
@@ -969,7 +967,7 @@ type isTDoubleSlot_Value interface {
 }
 
 type TDoubleSlot_DoubleValue struct {
-	DoubleValue float64 `protobuf:"fixed64,1,opt,name=DoubleValue,json=double_value,proto3,oneof"`
+	DoubleValue float64 `protobuf:"fixed64,1,opt,name=DoubleValue,proto3,oneof"`
 }
 
 func (*TDoubleSlot_DoubleValue) isTDoubleSlot_Value() {}
@@ -978,68 +976,66 @@ var File_alice_megamind_protos_scenarios_frames_common_common_proto protoreflect
 
 const file_alice_megamind_protos_scenarios_frames_common_common_proto_rawDesc = "" +
 	"\n" +
-	":alice/megamind/protos/scenarios/frames/common/common.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a(alice/protos/extensions/extensions.proto\"h\n" +
-	"\tTBoolSlot\x127\n" +
-	"\tBoolValue\x18\x01 \x01(\bB\x16\xaa\xdd\x1b\n" +
-	"bool_value\u0085\x1c\x04boolH\x00R\n" +
-	"bool_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"`\n" +
-	"\vTSysNumSlot\x127\n" +
-	"\bNumValue\x18\x01 \x01(\rB\x18\xaa\xdd\x1b\tnum_value\u0085\x1c\asys.numH\x00R\tnum_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"r\n" +
-	"\vTUInt32Slot\x12?\n" +
-	"\vUInt32Value\x18\x01 \x01(\rB\x1a\xaa\xdd\x1b\fuint32_value\u0085\x1c\x06uint32H\x00R\fuint32_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"c\n" +
+	":alice/megamind/protos/scenarios/frames/common/common.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a(alice/protos/extensions/extensions.proto\">\n" +
+	"\tTBoolSlot\x12\x1e\n" +
+	"\tBoolValue\x18\x01 \x01(\bH\x00R\tBoolValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\"4\n" +
+	"\vTSysNumSlot\x12\x1c\n" +
+	"\bNumValue\x18\x01 \x01(\rH\x00R\bNumValueB\a\n" +
+	"\x05Value\"D\n" +
+	"\vTUInt32Slot\x12\"\n" +
+	"\vUInt32Value\x18\x01 \x01(\rH\x00R\vUInt32ValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\"7\n" +
 	"\n" +
-	"TInt64Slot\x12;\n" +
+	"TInt64Slot\x12 \n" +
 	"\n" +
-	"Int64Value\x18\x01 \x01(\x03B\x18\xaa\xdd\x1b\vint64_value\u0085\x1c\x05int64H\x00R\vint64_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xbf\a\n" +
-	"\rTLocationSlot\x12Y\n" +
-	"\x10UserIotRoomValue\x18\x01 \x01(\tB(\xaa\xdd\x1b\x13user_iot_room_value\u0085\x1c\ruser.iot.roomH\x00R\x13user_iot_room_value\x12a\n" +
-	"\x12DeviceIotRoomValue\x18\x02 \x01(\tB,\xaa\xdd\x1b\x15device_iot_room_value\u0085\x1c\x0fdevice.iot.roomH\x00R\x15device_iot_room_value\x12]\n" +
-	"\x11UserIotGroupValue\x18\x03 \x01(\tB*\xaa\xdd\x1b\x14user_iot_group_value\u0085\x1c\x0euser.iot.groupH\x00R\x14user_iot_group_value\x12e\n" +
-	"\x13DeviceIotGroupValue\x18\x04 \x01(\tB.\xaa\xdd\x1b\x16device_iot_group_value\u0085\x1c\x10device.iot.groupH\x00R\x16device_iot_group_value\x12a\n" +
-	"\x12UserIotDeviceValue\x18\x05 \x01(\tB,\xaa\xdd\x1b\x15user_iot_device_value\u0085\x1c\x0fuser.iot.deviceH\x00R\x15user_iot_device_value\x12i\n" +
-	"\x14DeviceIotDeviceValue\x18\x06 \x01(\tB0\xaa\xdd\x1b\x17device_iot_device_value\u0085\x1c\x11device.iot.deviceH\x00R\x17device_iot_device_value\x12\x9b\x01\n" +
-	"\x1fUserIotMultiroomAllDevicesValue\x18\a \x01(\tBJ\xaa\xdd\x1b$user_iot_multiroom_all_devices_value\u0085\x1c\x1euser.iot.multiroom_all_devicesH\x00R$user_iot_multiroom_all_devices_value\x12\xa3\x01\n" +
-	"!DeviceIotMultiroomAllDevicesValue\x18\b \x01(\tBN\xaa\xdd\x1b&device_iot_multiroom_all_devices_value\u0085\x1c device.iot.multiroom_all_devicesH\x00R&device_iot_multiroom_all_devices_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\x85\a\n" +
-	"\vTStringSlot\x12?\n" +
-	"\vStringValue\x18\x01 \x01(\tB\x1a\xaa\xdd\x1b\fstring_value\u0085\x1c\x06stringH\x00R\fstring_value\x12f\n" +
-	"\x14SpecialPlaylistValue\x18\x02 \x01(\tB.\xaa\xdd\x1b\x16special_playlist_value\u0085\x1c\x10special_playlistH\x00R\x16special_playlist_value\x12U\n" +
-	"\x0eNewsTopicValue\x18\x03 \x01(\tB)\xaa\xdd\x1b\x10news_topic_value\u0085\x1c\x11custom.news_topicH\x00R\x10news_topic_value\x12e\n" +
-	"\x16SpecialAnswerInfoValue\x18\x04 \x01(\tB.\xaa\xdd\x1b\x13special_answer_info\u0085\x1c\x13special_answer_infoH\x00R\x13special_answer_info\x12m\n" +
-	"\x15VideoContentTypeValue\x18\x05 \x01(\tB2\xaa\xdd\x1b\x18video_content_type_value\u0085\x1c\x12video_content_typeH\x00R\x18video_content_type_value\x12V\n" +
-	"\x10VideoActionValue\x18\x06 \x01(\tB&\xaa\xdd\x1b\x12video_action_value\u0085\x1c\fvideo_actionH\x00R\x12video_action_value\x12`\n" +
-	"\x12ActionRequestValue\x18\b \x01(\tB,\xaa\xdd\x1b\x14action_request_value\u0085\x1c\x0eaction_request\x18\x01H\x00R\x14action_request_value\x12;\n" +
+	"Int64Value\x18\x01 \x01(\x03H\x00R\n" +
+	"Int64ValueB\a\n" +
+	"\x05Value\"\xe0\x03\n" +
+	"\rTLocationSlot\x12,\n" +
+	"\x10UserIotRoomValue\x18\x01 \x01(\tH\x00R\x10UserIotRoomValue\x120\n" +
+	"\x12DeviceIotRoomValue\x18\x02 \x01(\tH\x00R\x12DeviceIotRoomValue\x12.\n" +
+	"\x11UserIotGroupValue\x18\x03 \x01(\tH\x00R\x11UserIotGroupValue\x122\n" +
+	"\x13DeviceIotGroupValue\x18\x04 \x01(\tH\x00R\x13DeviceIotGroupValue\x120\n" +
+	"\x12UserIotDeviceValue\x18\x05 \x01(\tH\x00R\x12UserIotDeviceValue\x124\n" +
+	"\x14DeviceIotDeviceValue\x18\x06 \x01(\tH\x00R\x14DeviceIotDeviceValue\x12J\n" +
+	"\x1fUserIotMultiroomAllDevicesValue\x18\a \x01(\tH\x00R\x1fUserIotMultiroomAllDevicesValue\x12N\n" +
+	"!DeviceIotMultiroomAllDevicesValue\x18\b \x01(\tH\x00R!DeviceIotMultiroomAllDevicesValueB\a\n" +
+	"\x05Value\"\xd8\x03\n" +
+	"\vTStringSlot\x12\"\n" +
+	"\vStringValue\x18\x01 \x01(\tH\x00R\vStringValue\x124\n" +
+	"\x14SpecialPlaylistValue\x18\x02 \x01(\tH\x00R\x14SpecialPlaylistValue\x12(\n" +
+	"\x0eNewsTopicValue\x18\x03 \x01(\tH\x00R\x0eNewsTopicValue\x128\n" +
+	"\x16SpecialAnswerInfoValue\x18\x04 \x01(\tH\x00R\x16SpecialAnswerInfoValue\x126\n" +
+	"\x15VideoContentTypeValue\x18\x05 \x01(\tH\x00R\x15VideoContentTypeValue\x12,\n" +
+	"\x10VideoActionValue\x18\x06 \x01(\tH\x00R\x10VideoActionValue\x120\n" +
+	"\x12ActionRequestValue\x18\b \x01(\tH\x00R\x12ActionRequestValue\x12 \n" +
 	"\n" +
-	"EpochValue\x18\t \x01(\tB\x18\xaa\xdd\x1b\vepoch_value\u0085\x1c\x05epochH\x00R\vepoch_value\x12\x84\x01\n" +
+	"EpochValue\x18\t \x01(\tH\x00R\n" +
+	"EpochValue\x12>\n" +
 	"\x19VideoSelectionActionValue\x18\n" +
-	" \x01(\tBA\xaa\xdd\x1b\x1cvideo_selection_action_value\u0085\x1c\x1dcustom.video_selection_actionH\x00R\x1cvideo_selection_action_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"\xbb\x01\n" +
-	"\x0eTTokenTypeSlot\x12\\\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2\x1d.NAlice.TTokenTypeSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"1\n" +
+	" \x01(\tH\x00R\x19VideoSelectionActionValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\"\x8b\x01\n" +
+	"\x0eTTokenTypeSlot\x12=\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2\x1d.NAlice.TTokenTypeSlot.EValueH\x00R\tEnumValue\"1\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
 	"\n" +
 	"\x06XToken\x10\x01\x12\x0e\n" +
 	"\n" +
-	"OAuthToken\x10\x02:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"|\n" +
-	"\rTLanguageSlot\x12G\n" +
-	"\rLanguageValue\x18\x01 \x01(\tB\x1e\xaa\xdd\x1b\x0elanguage_value\u0085\x1c\blanguageH\x00R\x0elanguage_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"c\n" +
-	"\bTNumSlot\x123\n" +
-	"\bNumValue\x18\x01 \x01(\rB\x14\xaa\xdd\x1b\tnum_value\u0085\x1c\x03numH\x00R\tnum_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"h\n" +
-	"\vTDoubleSlot\x12?\n" +
-	"\vDoubleValue\x18\x01 \x01(\x01B\x1a\xaa\xdd\x1b\fdouble_value\u0085\x1c\x06doubleH\x00R\fdouble_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueB\x88\x01\n" +
-	"7ru.yandex.alice.megamind.protos.scenarios.frames.commonB\vFrameCommonP\x01Z>a.yandex-team.ru/alice/megamind/protos/scenarios/frames/commonb\x06proto3"
+	"OAuthToken\x10\x02B\a\n" +
+	"\x05Value\"J\n" +
+	"\rTLanguageSlot\x12&\n" +
+	"\rLanguageValue\x18\x01 \x01(\tH\x00R\rLanguageValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\";\n" +
+	"\bTNumSlot\x12\x1c\n" +
+	"\bNumValue\x18\x01 \x01(\rH\x00R\bNumValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\":\n" +
+	"\vTDoubleSlot\x12\"\n" +
+	"\vDoubleValue\x18\x01 \x01(\x01H\x00R\vDoubleValueB\a\n" +
+	"\x05ValueB\xb0\x01\n" +
+	"\n" +
+	"com.NAliceB\vCommonProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_common_common_proto_rawDescOnce sync.Once

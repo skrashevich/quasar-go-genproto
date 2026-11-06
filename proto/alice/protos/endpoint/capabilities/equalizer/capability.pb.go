@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/equalizer/capability.proto
 
-package equalizerpb
+package equalizer
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -128,9 +128,9 @@ func (TEqualizerCapability_TBandState_EType) EnumDescriptor() ([]byte, []int) {
 
 type TEqualizerCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TEqualizerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TEqualizerCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TEqualizerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TEqualizerCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,8 +188,8 @@ func (x *TEqualizerCapability) GetState() *TEqualizerCapability_TState {
 
 type TEqualizerCapability_TParameters struct {
 	state                protoimpl.MessageState                         `protogen:"open.v1"`
-	BandsLimits          *TEqualizerCapability_TParameters_TBandsLimits `protobuf:"bytes,1,opt,name=BandsLimits,json=bands_limits,proto3" json:"BandsLimits,omitempty"`
-	SupportedPresetModes []TEqualizerCapability_EPresetMode             `protobuf:"varint,2,rep,packed,name=SupportedPresetModes,json=supported_preset_modes,proto3,enum=NAlice.TEqualizerCapability_EPresetMode" json:"SupportedPresetModes,omitempty"`
+	BandsLimits          *TEqualizerCapability_TParameters_TBandsLimits `protobuf:"bytes,1,opt,name=BandsLimits,proto3" json:"BandsLimits,omitempty"`
+	SupportedPresetModes []TEqualizerCapability_EPresetMode             `protobuf:"varint,2,rep,packed,name=SupportedPresetModes,proto3,enum=NAlice.TEqualizerCapability_EPresetMode" json:"SupportedPresetModes,omitempty"`
 	// Types that are valid to be assigned to BandsConfiguration:
 	//
 	//	*TEqualizerCapability_TParameters_Fixed
@@ -273,11 +273,11 @@ type isTEqualizerCapability_TParameters_BandsConfiguration interface {
 }
 
 type TEqualizerCapability_TParameters_Fixed struct {
-	Fixed *TEqualizerCapability_TParameters_TFixedBandsConfiguration `protobuf:"bytes,3,opt,name=Fixed,json=fixed,proto3,oneof"`
+	Fixed *TEqualizerCapability_TParameters_TFixedBandsConfiguration `protobuf:"bytes,3,opt,name=Fixed,proto3,oneof"`
 }
 
 type TEqualizerCapability_TParameters_Adjustable struct {
-	Adjustable *TEqualizerCapability_TParameters_TAdjustableBandsConfiguration `protobuf:"bytes,4,opt,name=Adjustable,json=adjustable,proto3,oneof"`
+	Adjustable *TEqualizerCapability_TParameters_TAdjustableBandsConfiguration `protobuf:"bytes,4,opt,name=Adjustable,proto3,oneof"`
 }
 
 func (*TEqualizerCapability_TParameters_Fixed) isTEqualizerCapability_TParameters_BandsConfiguration() {
@@ -288,9 +288,9 @@ func (*TEqualizerCapability_TParameters_Adjustable) isTEqualizerCapability_TPara
 
 type TEqualizerCapability_TState struct {
 	state           protoimpl.MessageState             `protogen:"open.v1"`
-	Bands           []*TEqualizerCapability_TBandState `protobuf:"bytes,1,rep,name=Bands,json=bands,proto3" json:"Bands,omitempty"`
-	PresetMode      TEqualizerCapability_EPresetMode   `protobuf:"varint,2,opt,name=PresetMode,json=preset_mode,proto3,enum=NAlice.TEqualizerCapability_EPresetMode" json:"PresetMode,omitempty"`
-	PreventClipping bool                               `protobuf:"varint,3,opt,name=PreventClipping,json=prevent_clipping,proto3" json:"PreventClipping,omitempty"`
+	Bands           []*TEqualizerCapability_TBandState `protobuf:"bytes,1,rep,name=Bands,proto3" json:"Bands,omitempty"`
+	PresetMode      TEqualizerCapability_EPresetMode   `protobuf:"varint,2,opt,name=PresetMode,proto3,enum=NAlice.TEqualizerCapability_EPresetMode" json:"PresetMode,omitempty"`
+	PreventClipping bool                               `protobuf:"varint,3,opt,name=PreventClipping,proto3" json:"PreventClipping,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -348,10 +348,10 @@ func (x *TEqualizerCapability_TState) GetPreventClipping() bool {
 
 type TEqualizerCapability_TBandState struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Frequency     float64                               `protobuf:"fixed64,1,opt,name=Frequency,json=frequency,proto3" json:"Frequency,omitempty"`
-	Gain          float64                               `protobuf:"fixed64,2,opt,name=Gain,json=gain,proto3" json:"Gain,omitempty"`
-	Width         float64                               `protobuf:"fixed64,3,opt,name=Width,json=width,proto3" json:"Width,omitempty"`
-	Type          TEqualizerCapability_TBandState_EType `protobuf:"varint,4,opt,name=Type,json=type,proto3,enum=NAlice.TEqualizerCapability_TBandState_EType" json:"Type,omitempty"`
+	Frequency     float64                               `protobuf:"fixed64,1,opt,name=Frequency,proto3" json:"Frequency,omitempty"`
+	Gain          float64                               `protobuf:"fixed64,2,opt,name=Gain,proto3" json:"Gain,omitempty"`
+	Width         float64                               `protobuf:"fixed64,3,opt,name=Width,proto3" json:"Width,omitempty"`
+	Type          TEqualizerCapability_TBandState_EType `protobuf:"varint,4,opt,name=Type,proto3,enum=NAlice.TEqualizerCapability_TBandState_EType" json:"Type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -416,8 +416,8 @@ func (x *TEqualizerCapability_TBandState) GetType() TEqualizerCapability_TBandSt
 
 type TEqualizerCapability_TSetAdjustableEqualizerBandsDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Name          string                             `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Bands         []*TEqualizerCapability_TBandState `protobuf:"bytes,1,rep,name=Bands,json=bands,proto3" json:"Bands,omitempty"`
+	Name          string                             `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Bands         []*TEqualizerCapability_TBandState `protobuf:"bytes,1,rep,name=Bands,proto3" json:"Bands,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -468,8 +468,8 @@ func (x *TEqualizerCapability_TSetAdjustableEqualizerBandsDirective) GetBands() 
 
 type TEqualizerCapability_TSetFixedEqualizerBandsDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Gains         []float64              `protobuf:"fixed64,1,rep,packed,name=Gains,json=gains,proto3" json:"Gains,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Gains         []float64              `protobuf:"fixed64,1,rep,packed,name=Gains,proto3" json:"Gains,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -520,10 +520,10 @@ func (x *TEqualizerCapability_TSetFixedEqualizerBandsDirective) GetGains() []flo
 
 type TEqualizerCapability_TParameters_TBandsLimits struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MinBandsCount uint32                 `protobuf:"varint,1,opt,name=MinBandsCount,json=min_bands_count,proto3" json:"MinBandsCount,omitempty"`
-	MaxBandsCount uint32                 `protobuf:"varint,2,opt,name=MaxBandsCount,json=max_bands_count,proto3" json:"MaxBandsCount,omitempty"`
-	MinBandGain   float64                `protobuf:"fixed64,3,opt,name=MinBandGain,json=min_band_gain,proto3" json:"MinBandGain,omitempty"`
-	MaxBandGain   float64                `protobuf:"fixed64,4,opt,name=MaxBandGain,json=max_band_gain,proto3" json:"MaxBandGain,omitempty"`
+	MinBandsCount uint32                 `protobuf:"varint,1,opt,name=MinBandsCount,proto3" json:"MinBandsCount,omitempty"`
+	MaxBandsCount uint32                 `protobuf:"varint,2,opt,name=MaxBandsCount,proto3" json:"MaxBandsCount,omitempty"`
+	MinBandGain   float64                `protobuf:"fixed64,3,opt,name=MinBandGain,proto3" json:"MinBandGain,omitempty"`
+	MaxBandGain   float64                `protobuf:"fixed64,4,opt,name=MaxBandGain,proto3" json:"MaxBandGain,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -624,7 +624,7 @@ func (*TEqualizerCapability_TParameters_TAdjustableBandsConfiguration) Descripto
 
 type TEqualizerCapability_TParameters_TFixedBandsConfiguration struct {
 	state         protoimpl.MessageState                                                  `protogen:"open.v1"`
-	FixedBands    []*TEqualizerCapability_TParameters_TFixedBandsConfiguration_TFixedBand `protobuf:"bytes,1,rep,name=FixedBands,json=fixed_bands,proto3" json:"FixedBands,omitempty"`
+	FixedBands    []*TEqualizerCapability_TParameters_TFixedBandsConfiguration_TFixedBand `protobuf:"bytes,1,rep,name=FixedBands,proto3" json:"FixedBands,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -668,8 +668,8 @@ func (x *TEqualizerCapability_TParameters_TFixedBandsConfiguration) GetFixedBand
 
 type TEqualizerCapability_TParameters_TFixedBandsConfiguration_TFixedBand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Frequency     float64                `protobuf:"fixed64,1,opt,name=Frequency,json=frequency,proto3" json:"Frequency,omitempty"`
-	Width         float64                `protobuf:"fixed64,2,opt,name=Width,json=width,proto3" json:"Width,omitempty"`
+	Frequency     float64                `protobuf:"fixed64,1,opt,name=Frequency,proto3" json:"Frequency,omitempty"`
+	Width         float64                `protobuf:"fixed64,2,opt,name=Width,proto3" json:"Width,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -722,63 +722,64 @@ var File_alice_protos_endpoint_capabilities_equalizer_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_equalizer_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/equalizer/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd0\x11\n" +
-	"\x14TEqualizerCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/equalizer/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\r\n" +
+	"\x14TEqualizerCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TEqualizerCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TEqualizerCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xb5\b\n" +
-	"\vTParameters\x12j\n" +
-	"\vBandsLimits\x18\x01 \x01(\v25.NAlice.TEqualizerCapability.TParameters.TBandsLimitsB\x10\xaa\xdd\x1b\fbands_limitsR\fbands_limits\x12z\n" +
-	"\x14SupportedPresetModes\x18\x02 \x03(\x0e2(.NAlice.TEqualizerCapability.EPresetModeB\x1a\xaa\xdd\x1b\x16supported_preset_modesR\x16supported_preset_modes\x12d\n" +
-	"\x05Fixed\x18\x03 \x01(\v2A.NAlice.TEqualizerCapability.TParameters.TFixedBandsConfigurationB\t\xaa\xdd\x1b\x05fixedH\x00R\x05fixed\x12x\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TEqualizerCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TEqualizerCapability.TStateR\x05State\x1a\xae\x06\n" +
+	"\vTParameters\x12W\n" +
+	"\vBandsLimits\x18\x01 \x01(\v25.NAlice.TEqualizerCapability.TParameters.TBandsLimitsR\vBandsLimits\x12\\\n" +
+	"\x14SupportedPresetModes\x18\x02 \x03(\x0e2(.NAlice.TEqualizerCapability.EPresetModeR\x14SupportedPresetModes\x12Y\n" +
+	"\x05Fixed\x18\x03 \x01(\v2A.NAlice.TEqualizerCapability.TParameters.TFixedBandsConfigurationH\x00R\x05Fixed\x12h\n" +
 	"\n" +
-	"Adjustable\x18\x04 \x01(\v2F.NAlice.TEqualizerCapability.TParameters.TAdjustableBandsConfigurationB\x0e\xaa\xdd\x1b\n" +
-	"adjustableH\x00R\n" +
-	"adjustable\x1a\xfc\x01\n" +
-	"\fTBandsLimits\x12;\n" +
-	"\rMinBandsCount\x18\x01 \x01(\rB\x13\xaa\xdd\x1b\x0fmin_bands_countR\x0fmin_bands_count\x12;\n" +
-	"\rMaxBandsCount\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0fmax_bands_countR\x0fmax_bands_count\x125\n" +
-	"\vMinBandGain\x18\x03 \x01(\x01B\x11\xaa\xdd\x1b\rmin_band_gainR\rmin_band_gain\x125\n" +
-	"\vMaxBandGain\x18\x04 \x01(\x01B\x11\xaa\xdd\x1b\rmax_band_gainR\rmax_band_gain:\x04\xa8\xdd\x1b\x04\x1a%\n" +
-	"\x1dTAdjustableBandsConfiguration:\x04\xa8\xdd\x1b\x04\x1a\x82\x02\n" +
-	"\x18TFixedBandsConfiguration\x12~\n" +
+	"Adjustable\x18\x04 \x01(\v2F.NAlice.TEqualizerCapability.TParameters.TAdjustableBandsConfigurationH\x00R\n" +
+	"Adjustable\x1a\x9e\x01\n" +
+	"\fTBandsLimits\x12$\n" +
+	"\rMinBandsCount\x18\x01 \x01(\rR\rMinBandsCount\x12$\n" +
+	"\rMaxBandsCount\x18\x02 \x01(\rR\rMaxBandsCount\x12 \n" +
+	"\vMinBandGain\x18\x03 \x01(\x01R\vMinBandGain\x12 \n" +
+	"\vMaxBandGain\x18\x04 \x01(\x01R\vMaxBandGain\x1a\x1f\n" +
+	"\x1dTAdjustableBandsConfiguration\x1a\xca\x01\n" +
+	"\x18TFixedBandsConfiguration\x12l\n" +
 	"\n" +
-	"FixedBands\x18\x01 \x03(\v2L.NAlice.TEqualizerCapability.TParameters.TFixedBandsConfiguration.TFixedBandB\x0f\xaa\xdd\x1b\vfixed_bandsR\vfixed_bands\x1a`\n" +
+	"FixedBands\x18\x01 \x03(\v2L.NAlice.TEqualizerCapability.TParameters.TFixedBandsConfiguration.TFixedBandR\n" +
+	"FixedBands\x1a@\n" +
 	"\n" +
-	"TFixedBand\x12+\n" +
-	"\tFrequency\x18\x01 \x01(\x01B\r\xaa\xdd\x1b\tfrequencyR\tfrequency\x12\x1f\n" +
-	"\x05Width\x18\x02 \x01(\x01B\t\xaa\xdd\x1b\x05widthR\x05width:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B-\n" +
-	"\x12BandsConfiguration\x12\x17\xaa\xdd\x1b\x13bands_configuration\x1a\xf5\x01\n" +
-	"\x06TState\x12H\n" +
-	"\x05Bands\x18\x01 \x03(\v2'.NAlice.TEqualizerCapability.TBandStateB\t\xaa\xdd\x1b\x05bandsR\x05bands\x12Z\n" +
+	"TFixedBand\x12\x1c\n" +
+	"\tFrequency\x18\x01 \x01(\x01R\tFrequency\x12\x14\n" +
+	"\x05Width\x18\x02 \x01(\x01R\x05WidthB\x14\n" +
+	"\x12BandsConfiguration\x1a\xbb\x01\n" +
+	"\x06TState\x12=\n" +
+	"\x05Bands\x18\x01 \x03(\v2'.NAlice.TEqualizerCapability.TBandStateR\x05Bands\x12H\n" +
 	"\n" +
-	"PresetMode\x18\x02 \x01(\x0e2(.NAlice.TEqualizerCapability.EPresetModeB\x0f\xaa\xdd\x1b\vpreset_modeR\vpreset_mode\x12?\n" +
-	"\x0fPreventClipping\x18\x03 \x01(\bB\x14\xaa\xdd\x1b\x10prevent_clippingR\x10prevent_clipping:\x04\xa8\xdd\x1b\x04\x1a\x8a\x02\n" +
+	"PresetMode\x18\x02 \x01(\x0e2(.NAlice.TEqualizerCapability.EPresetModeR\n" +
+	"PresetMode\x12(\n" +
+	"\x0fPreventClipping\x18\x03 \x01(\bR\x0fPreventClipping\x1a\xd6\x01\n" +
 	"\n" +
-	"TBandState\x12+\n" +
-	"\tFrequency\x18\x01 \x01(\x01B\r\xaa\xdd\x1b\tfrequencyR\tfrequency\x12\x1c\n" +
-	"\x04Gain\x18\x02 \x01(\x01B\b\xaa\xdd\x1b\x04gainR\x04gain\x12\x1f\n" +
-	"\x05Width\x18\x03 \x01(\x01B\t\xaa\xdd\x1b\x05widthR\x05width\x12K\n" +
-	"\x04Type\x18\x04 \x01(\x0e2-.NAlice.TEqualizerCapability.TBandState.ETypeB\b\xaa\xdd\x1b\x04typeR\x04type\"=\n" +
+	"TBandState\x12\x1c\n" +
+	"\tFrequency\x18\x01 \x01(\x01R\tFrequency\x12\x12\n" +
+	"\x04Gain\x18\x02 \x01(\x01R\x04Gain\x12\x14\n" +
+	"\x05Width\x18\x03 \x01(\x01R\x05Width\x12A\n" +
+	"\x04Type\x18\x04 \x01(\x0e2-.NAlice.TEqualizerCapability.TBandState.ETypeR\x04Type\"=\n" +
 	"\x05EType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04Peak\x10\x01\x12\f\n" +
 	"\bLowShelf\x10\x02\x12\r\n" +
-	"\tHighShelf\x10\x03:\x04\xa8\xdd\x1b\x04\x1a\xc6\x01\n" +
-	"%TSetAdjustableEqualizerBandsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
-	"\x05Bands\x18\x01 \x03(\v2'.NAlice.TEqualizerCapability.TBandStateB\t\xaa\xdd\x1b\x05bandsR\x05bands:4\x92\x82\x19(set_adjustable_equalizer_bands_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x10\x1a\x93\x01\n" +
-	" TSetFixedEqualizerBandsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Gains\x18\x01 \x03(\x01B\t\xaa\xdd\x1b\x05gainsR\x05gains:/\x92\x82\x19#set_fixed_equalizer_bands_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x11\"9\n" +
+	"\tHighShelf\x10\x03\x1a{\n" +
+	"%TSetAdjustableEqualizerBandsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12=\n" +
+	"\x05Bands\x18\x01 \x03(\v2'.NAlice.TEqualizerCapability.TBandStateR\x05Bands\x1aM\n" +
+	" TSetFixedEqualizerBandsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Gains\x18\x01 \x03(\x01R\x05Gains\"9\n" +
 	"\vEPresetMode\x12\v\n" +
 	"\aDefault\x10\x00\x12\b\n" +
 	"\x04User\x10\x01\x12\x13\n" +
-	"\x0fMediaCorrection\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\aB\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18EqualizerCapabilityProtoP\x01ZIa.yandex-team.ru/alice/protos/endpoint/capabilities/equalizer;equalizerpbb\x06proto3"
+	"\x0fMediaCorrection\x10\x02B\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/equalizer\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_equalizer_capability_proto_rawDescOnce sync.Once

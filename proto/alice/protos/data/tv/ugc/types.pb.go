@@ -137,9 +137,9 @@ const file_alice_protos_data_tv_ugc_types_proto_rawDesc = "" +
 	"\bEIT_Film\x10\x00\x12\x0e\n" +
 	"\n" +
 	"EIT_Series\x10\x01\x12\x15\n" +
-	"\x11EIT_UndefinedType\x10dB[\n" +
+	"\x11EIT_UndefinedType\x10dBz\n" +
 	"\"ru.yandex.alice.protos.data.tv.ugcB\n" +
-	"TvUgcTypesZ)a.yandex-team.ru/alice/protos/data/tv/ugcb\x06proto3"
+	"TvUgcTypesZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/ugcb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_ugc_types_proto_rawDescOnce sync.Once

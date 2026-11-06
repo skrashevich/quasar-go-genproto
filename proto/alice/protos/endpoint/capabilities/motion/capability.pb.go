@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/motion/capability.proto
 
-package motionpb
+package motion
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -132,9 +132,9 @@ func (TMotionCapability_EDetectionRangeLevel) EnumDescriptor() ([]byte, []int) {
 
 type TMotionCapability struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta    `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TMotionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TMotionCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta    `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TMotionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TMotionCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -192,8 +192,8 @@ func (x *TMotionCapability) GetState() *TMotionCapability_TState {
 
 type TMotionCapability_TParameters struct {
 	state                           protoimpl.MessageState          `protogen:"open.v1"`
-	MotionDetectionIntervalRangeSec *endpoint.TPositiveIntegerRange `protobuf:"bytes,1,opt,name=MotionDetectionIntervalRangeSec,json=motion_detection_interval_range_sec,proto3" json:"MotionDetectionIntervalRangeSec,omitempty"`
-	SupportedSettings               []*TMotionCapability_TSetting   `protobuf:"bytes,2,rep,name=SupportedSettings,json=supported_settings,proto3" json:"SupportedSettings,omitempty"`
+	MotionDetectionIntervalRangeSec *endpoint.TPositiveIntegerRange `protobuf:"bytes,1,opt,name=MotionDetectionIntervalRangeSec,proto3" json:"MotionDetectionIntervalRangeSec,omitempty"`
+	SupportedSettings               []*TMotionCapability_TSetting   `protobuf:"bytes,2,rep,name=SupportedSettings,proto3" json:"SupportedSettings,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
 	sizeCache                       protoimpl.SizeCache
 }
@@ -244,9 +244,9 @@ func (x *TMotionCapability_TParameters) GetSupportedSettings() []*TMotionCapabil
 
 type TMotionCapability_TState struct {
 	state                      protoimpl.MessageState        `protogen:"open.v1"`
-	MotionDetectionIntervalSec uint32                        `protobuf:"varint,1,opt,name=MotionDetectionIntervalSec,json=motion_detection_interval_sec,proto3" json:"MotionDetectionIntervalSec,omitempty"`
-	LastEvent                  *events.TTypedCapabilityEvent `protobuf:"bytes,2,opt,name=LastEvent,json=last_event,proto3" json:"LastEvent,omitempty"`
-	Settings                   []*TMotionCapability_TSetting `protobuf:"bytes,3,rep,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
+	MotionDetectionIntervalSec uint32                        `protobuf:"varint,1,opt,name=MotionDetectionIntervalSec,proto3" json:"MotionDetectionIntervalSec,omitempty"`
+	LastEvent                  *events.TTypedCapabilityEvent `protobuf:"bytes,2,opt,name=LastEvent,proto3" json:"LastEvent,omitempty"`
+	Settings                   []*TMotionCapability_TSetting `protobuf:"bytes,3,rep,name=Settings,proto3" json:"Settings,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -436,8 +436,8 @@ func (*TMotionCapability_TSetting_AdvancedParameters) isTMotionCapability_TSetti
 
 type TMotionCapability_TSetMotionDetectionInterval struct {
 	state                      protoimpl.MessageState `protogen:"open.v1"`
-	Name                       string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	MotionDetectionIntervalSec uint32                 `protobuf:"varint,1,opt,name=MotionDetectionIntervalSec,json=motion_detection_interval_sec,proto3" json:"MotionDetectionIntervalSec,omitempty"`
+	Name                       string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	MotionDetectionIntervalSec uint32                 `protobuf:"varint,1,opt,name=MotionDetectionIntervalSec,proto3" json:"MotionDetectionIntervalSec,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -488,8 +488,8 @@ func (x *TMotionCapability_TSetMotionDetectionInterval) GetMotionDetectionInterv
 
 type TMotionCapability_TSetMotionSettingDirective struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Setting       *TMotionCapability_TSetting `protobuf:"bytes,1,opt,name=Setting,json=setting,proto3" json:"Setting,omitempty"`
+	Name          string                      `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Setting       *TMotionCapability_TSetting `protobuf:"bytes,1,opt,name=Setting,proto3" json:"Setting,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -648,7 +648,7 @@ func (*TMotionCapability_TNoMotionEvent) Descriptor() ([]byte, []int) {
 
 type TMotionCapability_TCondition struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -692,8 +692,8 @@ func (x *TMotionCapability_TCondition) GetEvents() []endpoint.TCapability_EEvent
 
 type TMotionCapability_TSetting_TAdvancedDetectionParams struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	MotionEventCount uint32                 `protobuf:"varint,1,opt,name=MotionEventCount,json=motion_event_count,proto3" json:"MotionEventCount,omitempty"`
-	TimeWindowSec    uint32                 `protobuf:"varint,2,opt,name=TimeWindowSec,json=time_window_sec,proto3" json:"TimeWindowSec,omitempty"`
+	MotionEventCount uint32                 `protobuf:"varint,1,opt,name=MotionEventCount,proto3" json:"MotionEventCount,omitempty"`
+	TimeWindowSec    uint32                 `protobuf:"varint,2,opt,name=TimeWindowSec,proto3" json:"TimeWindowSec,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -746,23 +746,20 @@ var File_alice_protos_endpoint_capabilities_motion_capability_proto protoreflect
 
 const file_alice_protos_endpoint_capabilities_motion_capability_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/endpoint/capabilities/motion/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x10\n" +
-	"\x11TMotionCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12U\n" +
+	":alice/protos/endpoint/capabilities/motion/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\r\n" +
+	"\x11TMotionCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12E\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2%.NAlice.TMotionCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12A\n" +
-	"\x05State\x18\x03 \x01(\v2 .NAlice.TMotionCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x95\x02\n" +
-	"\vTParameters\x12\x94\x01\n" +
-	"\x1fMotionDetectionIntervalRangeSec\x18\x01 \x01(\v2\x1d.NAlice.TPositiveIntegerRangeB'\xaa\xdd\x1b#motion_detection_interval_range_secR#motion_detection_interval_range_sec\x12i\n" +
-	"\x11SupportedSettings\x18\x02 \x03(\v2\".NAlice.TMotionCapability.TSettingB\x16\xaa\xdd\x1b\x12supported_settingsR\x12supported_settings:\x04\xa8\xdd\x1b\x04\x1a\x90\x02\n" +
-	"\x06TState\x12d\n" +
-	"\x1aMotionDetectionIntervalSec\x18\x01 \x01(\rB!\xaa\xdd\x1b\x1dmotion_detection_interval_secR\x1dmotion_detection_interval_sec\x12L\n" +
-	"\tLastEvent\x18\x02 \x01(\v2\x1d.NAlice.TTypedCapabilityEventB\x0e\xaa\xdd\x1b\n" +
-	"last_eventR\n" +
-	"last_event\x12L\n" +
-	"\bSettings\x18\x03 \x03(\v2\".NAlice.TMotionCapability.TSettingB\f\xaa\xdd\x1b\bsettingsR\bsettings:\x04\xa8\xdd\x1b\x04\x1a\xc4\x04\n" +
+	"Parameters\x18\x02 \x01(\v2%.NAlice.TMotionCapability.TParametersR\n" +
+	"Parameters\x126\n" +
+	"\x05State\x18\x03 \x01(\v2 .NAlice.TMotionCapability.TStateR\x05State\x1a\xc8\x01\n" +
+	"\vTParameters\x12g\n" +
+	"\x1fMotionDetectionIntervalRangeSec\x18\x01 \x01(\v2\x1d.NAlice.TPositiveIntegerRangeR\x1fMotionDetectionIntervalRangeSec\x12P\n" +
+	"\x11SupportedSettings\x18\x02 \x03(\v2\".NAlice.TMotionCapability.TSettingR\x11SupportedSettings\x1a\xc5\x01\n" +
+	"\x06TState\x12>\n" +
+	"\x1aMotionDetectionIntervalSec\x18\x01 \x01(\rR\x1aMotionDetectionIntervalSec\x12;\n" +
+	"\tLastEvent\x18\x02 \x01(\v2\x1d.NAlice.TTypedCapabilityEventR\tLastEvent\x12>\n" +
+	"\bSettings\x18\x03 \x03(\v2\".NAlice.TMotionCapability.TSettingR\bSettings\x1a\xa7\x04\n" +
 	"\bTSetting\x12@\n" +
 	"\x1aMotionDetectionIntervalSec\x18\x01 \x01(\rH\x00R\x1aMotionDetectionIntervalSec\x12D\n" +
 	"\x1cOccupiedToUnoccupiedDelaySec\x18\x02 \x01(\rH\x00R\x1cOccupiedToUnoccupiedDelaySec\x12Y\n" +
@@ -771,24 +768,23 @@ const file_alice_protos_endpoint_capabilities_motion_capability_proto_rawDesc = 
 	"RangeLevel\x18\x04 \x01(\x0e2..NAlice.TMotionCapability.EDetectionRangeLevelH\x00R\n" +
 	"RangeLevel\x12m\n" +
 	"\x12AdvancedParameters\x18\n" +
-	" \x01(\v2;.NAlice.TMotionCapability.TSetting.TAdvancedDetectionParamsH\x00R\x12AdvancedParameters\x1av\n" +
-	"\x18TAdvancedDetectionParams\x12,\n" +
-	"\x10MotionEventCount\x18\x01 \x01(\rR\x12motion_event_count\x12&\n" +
-	"\rTimeWindowSec\x18\x02 \x01(\rR\x0ftime_window_sec:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aSetting\x12\v\xaa\xdd\x1b\asetting\x1a\xcd\x01\n" +
-	"\x1bTSetMotionDetectionInterval\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12d\n" +
-	"\x1aMotionDetectionIntervalSec\x18\x01 \x01(\rB!\xaa\xdd\x1b\x1dmotion_detection_interval_secR\x1dmotion_detection_interval_sec:)\x92\x82\x19\x1dset_motion_detection_interval\xa8\xdd\x1b\x04\xa8\xc8\x1cj\x1a\x9d\x01\n" +
+	" \x01(\v2;.NAlice.TMotionCapability.TSetting.TAdvancedDetectionParamsH\x00R\x12AdvancedParameters\x1al\n" +
+	"\x18TAdvancedDetectionParams\x12*\n" +
+	"\x10MotionEventCount\x18\x01 \x01(\rR\x10MotionEventCount\x12$\n" +
+	"\rTimeWindowSec\x18\x02 \x01(\rR\rTimeWindowSecB\t\n" +
+	"\aSetting\x1ar\n" +
+	"\x1bTSetMotionDetectionInterval\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12>\n" +
+	"\x1aMotionDetectionIntervalSec\x18\x01 \x01(\rR\x1aMotionDetectionIntervalSec\x1ao\n" +
 	"\x1aTSetMotionSettingDirective\x12\x13\n" +
-	"\x04Name\x18\xe8\a \x01(\tR\x04name\x12I\n" +
-	"\aSetting\x18\x01 \x01(\v2\".NAlice.TMotionCapability.TSettingB\v\xaa\xdd\x1b\asettingR\asetting:\x1f\x92\x82\x19\x12set_motion_setting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaf\x04\x1a \n" +
-	"\x14TMotionDetectedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\a\x1a!\n" +
-	"\x14TMotionFinishedEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xa2\x04\x1a\x1b\n" +
-	"\x0eTNoMotionEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xa5\x04\x1aV\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12<\n" +
+	"\aSetting\x18\x01 \x01(\v2\".NAlice.TMotionCapability.TSettingR\aSetting\x1a\x16\n" +
+	"\x14TMotionDetectedEvent\x1a\x16\n" +
+	"\x14TMotionFinishedEvent\x1a\x10\n" +
+	"\x0eTNoMotionEvent\x1aD\n" +
 	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04\"k\n" +
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06Events\"k\n" +
 	"\x11ESensitivityLevel\x12\x16\n" +
 	"\x12SensitivityUnknown\x10\x00\x12\x12\n" +
 	"\x0eSensitivityLow\x10\x01\x12\x15\n" +
@@ -798,8 +794,9 @@ const file_alice_protos_endpoint_capabilities_motion_capability_proto_rawDesc = 
 	"\fRangeUnknown\x10\x00\x12\r\n" +
 	"\tRangeNear\x10\x01\x12\x0f\n" +
 	"\vRangeMedium\x10\x02\x12\f\n" +
-	"\bRangeFar\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\tB\x8c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15MotionCapabilityProtoP\x01ZCa.yandex-team.ru/alice/protos/endpoint/capabilities/motion;motionpbb\x06proto3"
+	"\bRangeFar\x10\x03B\xb0\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/motion\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_motion_capability_proto_rawDescOnce sync.Once

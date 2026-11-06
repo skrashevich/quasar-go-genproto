@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_mute/capability.proto
 
-package alicechatmutepb
+package alice_chat_mute
 
 import (
 	aliceapp_native_settings "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/aliceapp_native_settings"
@@ -234,8 +234,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_mute_capability_proto_r
 	"\fSettingState\x18\x01 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:\x04\xa8\xdd\x1b\x04\x1a\xf0\x01\n" +
 	"$TAliceChatMuteToggleSettingDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12}\n" +
-	"\fSettingState\x18\x02 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:+\x92\x82\x19\x1ealice_chat_mute_toggle_setting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa2\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x94\x02B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x12AliceChatMuteProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_mute;alicechatmutepbb\x06proto3"
+	"\fSettingState\x18\x02 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:+\x92\x82\x19\x1ealice_chat_mute_toggle_setting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa2\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x94\x02B\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x12AliceChatMuteProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_muteb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_mute_capability_proto_rawDescOnce sync.Once

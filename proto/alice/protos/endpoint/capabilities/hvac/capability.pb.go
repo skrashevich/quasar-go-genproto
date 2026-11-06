@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/hvac/capability.proto
 
-package hvacpb
+package hvac
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -3265,8 +3265,8 @@ const file_alice_protos_endpoint_capabilities_hvac_capability_proto_rawDesc = ""
 	"\x1cFAN_DIRECTION_FACE_AND_FLOOR\x10\x03\x12\x19\n" +
 	"\x15FAN_DIRECTION_DEFROST\x10\x04\x12\"\n" +
 	"\x1eFAN_DIRECTION_FACE_AND_DEFROST\x10\x05\x12#\n" +
-	"\x1fFAN_DIRECTION_DEFROST_AND_FLOOR\x10\x06:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ciB\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB2HeatingVentilationAirConditioningCapabilitiesProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/hvac;hvacpbb\x06proto3"
+	"\x1fFAN_DIRECTION_DEFROST_AND_FLOOR\x10\x06:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ciB\xbb\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB2HeatingVentilationAirConditioningCapabilitiesProtoZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/hvacb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_hvac_capability_proto_rawDescOnce sync.Once

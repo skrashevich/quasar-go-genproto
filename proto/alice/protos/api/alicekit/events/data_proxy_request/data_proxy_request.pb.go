@@ -28,7 +28,7 @@ type TDataProxyRequest struct {
 	//
 	//	*TDataProxyRequest_RequestGet
 	Request       isTDataProxyRequest_Request `protobuf_oneof:"Request"`
-	InteractionId *string                     `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3,oneof" json:"InteractionId,omitempty"`
+	InteractionId *string                     `protobuf:"bytes,1,opt,name=InteractionId,proto3,oneof" json:"InteractionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -91,15 +91,15 @@ type isTDataProxyRequest_Request interface {
 }
 
 type TDataProxyRequest_RequestGet struct {
-	RequestGet *TDataProxyRequest_TGetRequest `protobuf:"bytes,2,opt,name=RequestGet,json=request_get,proto3,oneof"`
+	RequestGet *TDataProxyRequest_TGetRequest `protobuf:"bytes,2,opt,name=RequestGet,proto3,oneof"`
 }
 
 func (*TDataProxyRequest_RequestGet) isTDataProxyRequest_Request() {}
 
 type TDataProxyRequest_TGetRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Namespace     *string                `protobuf:"bytes,1,opt,name=Namespace,json=namespace,proto3,oneof" json:"Namespace,omitempty"`
-	Key           *string                `protobuf:"bytes,2,opt,name=Key,json=key,proto3,oneof" json:"Key,omitempty"`
+	Namespace     *string                `protobuf:"bytes,1,opt,name=Namespace,proto3,oneof" json:"Namespace,omitempty"`
+	Key           *string                `protobuf:"bytes,2,opt,name=Key,proto3,oneof" json:"Key,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -152,20 +152,21 @@ var File_alice_protos_api_alicekit_events_data_proxy_request_data_proxy_request_
 
 const file_alice_protos_api_alicekit_events_data_proxy_request_data_proxy_request_proto_rawDesc = "" +
 	"\n" +
-	"Lalice/protos/api/alicekit/events/data_proxy_request/data_proxy_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd8\x02\n" +
-	"\x11TDataProxyRequest\x12c\n" +
+	"Lalice/protos/api/alicekit/events/data_proxy_request/data_proxy_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8d\x02\n" +
+	"\x11TDataProxyRequest\x12Q\n" +
 	"\n" +
-	"RequestGet\x18\x02 \x01(\v2/.NAlice.NAliceApi.TDataProxyRequest.TGetRequestB\x0f\xaa\xdd\x1b\vrequest_getH\x00R\vrequest_get\x12>\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idH\x01R\x0einteraction_id\x88\x01\x01\x1a{\n" +
-	"\vTGetRequest\x120\n" +
-	"\tNamespace\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tnamespaceH\x00R\tnamespace\x88\x01\x01\x12\x1e\n" +
-	"\x03Key\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03keyH\x01R\x03key\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"RequestGet\x18\x02 \x01(\v2/.NAlice.NAliceApi.TDataProxyRequest.TGetRequestH\x00R\n" +
+	"RequestGet\x12)\n" +
+	"\rInteractionId\x18\x01 \x01(\tH\x01R\rInteractionId\x88\x01\x01\x1a]\n" +
+	"\vTGetRequest\x12!\n" +
+	"\tNamespace\x18\x01 \x01(\tH\x00R\tNamespace\x88\x01\x01\x12\x15\n" +
+	"\x03Key\x18\x02 \x01(\tH\x01R\x03Key\x88\x01\x01B\f\n" +
 	"\n" +
 	"_NamespaceB\x06\n" +
-	"\x04_Key:\x04\xa8\xdd\x1b\x04B\t\n" +
+	"\x04_KeyB\t\n" +
 	"\aRequestB\x10\n" +
-	"\x0e_InteractionIdB\x99\x01\n" +
-	"=ru.yandex.alice.protos.api.alicekit.events.data_proxy_requestB\x10DataProxyRequestP\x01ZDa.yandex-team.ru/alice/protos/api/alicekit/events/data_proxy_requestb\x06proto3"
+	"\x0e_InteractionIdB\xf3\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x15DataProxyRequestProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/data_proxy_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_data_proxy_request_data_proxy_request_proto_rawDescOnce sync.Once

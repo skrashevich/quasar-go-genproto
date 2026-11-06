@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/alicekit/iot/endpoint_protocol/endpoint_protocol.proto
 
-package endpointprotocolpb
+package endpoint_protocol
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -124,10 +124,10 @@ func (TSubscriptionResponse_EClientStatus) EnumDescriptor() ([]byte, []int) {
 
 type TSubscriptionStatus struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	EndpointId    string                      `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	SmartHomeId   string                      `protobuf:"bytes,4,opt,name=SmartHomeId,json=smart_home_id,proto3" json:"SmartHomeId,omitempty"`
-	Status        TSubscriptionStatus_EStatus `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.NAliceApi.TSubscriptionStatus_EStatus" json:"Status,omitempty"`
-	Message       string                      `protobuf:"bytes,3,opt,name=Message,json=message,proto3" json:"Message,omitempty"`
+	EndpointId    string                      `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	SmartHomeId   string                      `protobuf:"bytes,4,opt,name=SmartHomeId,proto3" json:"SmartHomeId,omitempty"`
+	Status        TSubscriptionStatus_EStatus `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.NAliceApi.TSubscriptionStatus_EStatus" json:"Status,omitempty"`
+	Message       string                      `protobuf:"bytes,3,opt,name=Message,proto3" json:"Message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -192,9 +192,9 @@ func (x *TSubscriptionStatus) GetMessage() string {
 
 type TEndpointSubscription struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	EndpointId    string                               `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	SmartHomeId   string                               `protobuf:"bytes,5,opt,name=SmartHomeId,json=smart_home_id,proto3" json:"SmartHomeId,omitempty"`
-	Capabilities  []*TEndpointSubscription_TCapability `protobuf:"bytes,2,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
+	EndpointId    string                               `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	SmartHomeId   string                               `protobuf:"bytes,5,opt,name=SmartHomeId,proto3" json:"SmartHomeId,omitempty"`
+	Capabilities  []*TEndpointSubscription_TCapability `protobuf:"bytes,2,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -252,10 +252,10 @@ func (x *TEndpointSubscription) GetCapabilities() []*TEndpointSubscription_TCapa
 
 type TUniversalEndpointSubscription struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	EndpointId    string                                        `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	ListenerId    string                                        `protobuf:"bytes,3,opt,name=ListenerId,json=listener_id,proto3" json:"ListenerId,omitempty"`
-	SmartHomeId   string                                        `protobuf:"bytes,5,opt,name=SmartHomeId,json=smart_home_id,proto3" json:"SmartHomeId,omitempty"`
-	Capabilities  []*TUniversalEndpointSubscription_TCapability `protobuf:"bytes,2,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
+	EndpointId    string                                        `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	ListenerId    string                                        `protobuf:"bytes,3,opt,name=ListenerId,proto3" json:"ListenerId,omitempty"`
+	SmartHomeId   string                                        `protobuf:"bytes,5,opt,name=SmartHomeId,proto3" json:"SmartHomeId,omitempty"`
+	Capabilities  []*TUniversalEndpointSubscription_TCapability `protobuf:"bytes,2,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -320,8 +320,8 @@ func (x *TUniversalEndpointSubscription) GetCapabilities() []*TUniversalEndpoint
 
 type TEndpointState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Endpoint      *endpoint.TEndpoint    `protobuf:"bytes,1,opt,name=Endpoint,json=endpoint,proto3" json:"Endpoint,omitempty"`
-	SmartHomeId   string                 `protobuf:"bytes,2,opt,name=SmartHomeId,json=smart_home_id,proto3" json:"SmartHomeId,omitempty"`
+	Endpoint      *endpoint.TEndpoint    `protobuf:"bytes,1,opt,name=Endpoint,proto3" json:"Endpoint,omitempty"`
+	SmartHomeId   string                 `protobuf:"bytes,2,opt,name=SmartHomeId,proto3" json:"SmartHomeId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -372,7 +372,7 @@ func (x *TEndpointState) GetSmartHomeId() string {
 
 type TEndpointsStateChanged struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	EndpointsState []*TEndpointState      `protobuf:"bytes,1,rep,name=EndpointsState,json=endpoints_state,proto3" json:"EndpointsState,omitempty"`
+	EndpointsState []*TEndpointState      `protobuf:"bytes,1,rep,name=EndpointsState,proto3" json:"EndpointsState,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -416,8 +416,8 @@ func (x *TEndpointsStateChanged) GetEndpointsState() []*TEndpointState {
 
 type TEndpointsRemoved struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointIds   []string               `protobuf:"bytes,1,rep,name=EndpointIds,json=endpoint_ids,proto3" json:"EndpointIds,omitempty"`
-	SmartHomeIds  []string               `protobuf:"bytes,2,rep,name=SmartHomeIds,json=smart_home_ids,proto3" json:"SmartHomeIds,omitempty"`
+	EndpointIds   []string               `protobuf:"bytes,1,rep,name=EndpointIds,proto3" json:"EndpointIds,omitempty"`
+	SmartHomeIds  []string               `protobuf:"bytes,2,rep,name=SmartHomeIds,proto3" json:"SmartHomeIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -468,7 +468,7 @@ func (x *TEndpointsRemoved) GetSmartHomeIds() []string {
 
 type TSubscriptionResponse struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Endpoints     []*TSubscriptionResponse_TEndpointStatus `protobuf:"bytes,1,rep,name=Endpoints,json=endpoints,proto3" json:"Endpoints,omitempty"`
+	Endpoints     []*TSubscriptionResponse_TEndpointStatus `protobuf:"bytes,1,rep,name=Endpoints,proto3" json:"Endpoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -512,8 +512,8 @@ func (x *TSubscriptionResponse) GetEndpoints() []*TSubscriptionResponse_TEndpoin
 
 type TEndpointSubscription_TCapability struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Capability    *anypb.Any                     `protobuf:"bytes,2,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
-	AnyCapability *endpoint.TAnyCapabilityHolder `protobuf:"bytes,3,opt,name=AnyCapability,json=any_capability,proto3" json:"AnyCapability,omitempty"`
+	Capability    *anypb.Any                     `protobuf:"bytes,2,opt,name=Capability,proto3" json:"Capability,omitempty"`
+	AnyCapability *endpoint.TAnyCapabilityHolder `protobuf:"bytes,3,opt,name=AnyCapability,proto3" json:"AnyCapability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -564,10 +564,10 @@ func (x *TEndpointSubscription_TCapability) GetAnyCapability() *endpoint.TAnyCap
 
 type TUniversalEndpointSubscription_TCapability struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Id            string                         `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Capability    *anypb.Any                     `protobuf:"bytes,2,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
-	AnyCapability *endpoint.TAnyCapabilityHolder `protobuf:"bytes,3,opt,name=AnyCapability,json=any_capability,proto3" json:"AnyCapability,omitempty"`
-	ListenerId    string                         `protobuf:"bytes,4,opt,name=ListenerId,json=listener_id,proto3" json:"ListenerId,omitempty"`
+	Id            string                         `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Capability    *anypb.Any                     `protobuf:"bytes,2,opt,name=Capability,proto3" json:"Capability,omitempty"`
+	AnyCapability *endpoint.TAnyCapabilityHolder `protobuf:"bytes,3,opt,name=AnyCapability,proto3" json:"AnyCapability,omitempty"`
+	ListenerId    string                         `protobuf:"bytes,4,opt,name=ListenerId,proto3" json:"ListenerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -632,8 +632,8 @@ func (x *TUniversalEndpointSubscription_TCapability) GetListenerId() string {
 
 type TSubscriptionResponse_TCapabilityStatus struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	CapabilityId  string                              `protobuf:"bytes,1,opt,name=CapabilityId,json=capability_id,proto3" json:"CapabilityId,omitempty"`
-	ClientStatus  TSubscriptionResponse_EClientStatus `protobuf:"varint,2,opt,name=ClientStatus,json=client_status,proto3,enum=NAlice.NAliceApi.TSubscriptionResponse_EClientStatus" json:"ClientStatus,omitempty"`
+	CapabilityId  string                              `protobuf:"bytes,1,opt,name=CapabilityId,proto3" json:"CapabilityId,omitempty"`
+	ClientStatus  TSubscriptionResponse_EClientStatus `protobuf:"varint,2,opt,name=ClientStatus,proto3,enum=NAlice.NAliceApi.TSubscriptionResponse_EClientStatus" json:"ClientStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -684,11 +684,11 @@ func (x *TSubscriptionResponse_TCapabilityStatus) GetClientStatus() TSubscriptio
 
 type TSubscriptionResponse_TEndpointStatus struct {
 	state                      protoimpl.MessageState                     `protogen:"open.v1"`
-	EndpointId                 string                                     `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	SmartHomeId                string                                     `protobuf:"bytes,4,opt,name=SmartHomeId,json=smart_home_id,proto3" json:"SmartHomeId,omitempty"`
-	BackendStatus              TSubscriptionStatus_EStatus                `protobuf:"varint,2,opt,name=BackendStatus,json=backend_status,proto3,enum=NAlice.NAliceApi.TSubscriptionStatus_EStatus" json:"BackendStatus,omitempty"`
-	Capabilities               []*TSubscriptionResponse_TCapabilityStatus `protobuf:"bytes,3,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
-	DirectiveHandlerEndpointId string                                     `protobuf:"bytes,5,opt,name=DirectiveHandlerEndpointId,json=directive_handler_endpoint_id,proto3" json:"DirectiveHandlerEndpointId,omitempty"`
+	EndpointId                 string                                     `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	SmartHomeId                string                                     `protobuf:"bytes,4,opt,name=SmartHomeId,proto3" json:"SmartHomeId,omitempty"`
+	BackendStatus              TSubscriptionStatus_EStatus                `protobuf:"varint,2,opt,name=BackendStatus,proto3,enum=NAlice.NAliceApi.TSubscriptionStatus_EStatus" json:"BackendStatus,omitempty"`
+	Capabilities               []*TSubscriptionResponse_TCapabilityStatus `protobuf:"bytes,3,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
+	DirectiveHandlerEndpointId string                                     `protobuf:"bytes,5,opt,name=DirectiveHandlerEndpointId,proto3" json:"DirectiveHandlerEndpointId,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -762,74 +762,77 @@ var File_alice_protos_api_alicekit_iot_endpoint_protocol_endpoint_protocol_proto
 
 const file_alice_protos_api_alicekit_iot_endpoint_protocol_endpoint_protocol_proto_rawDesc = "" +
 	"\n" +
-	"Galice/protos/api/alicekit/iot/endpoint_protocol/endpoint_protocol.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/endpoint/any_capability.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x02\n" +
-	"\x13TSubscriptionStatus\x120\n" +
+	"Galice/protos/api/alicekit/iot/endpoint_protocol/endpoint_protocol.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/endpoint/any_capability.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe2\x01\n" +
+	"\x13TSubscriptionStatus\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x125\n" +
-	"\vSmartHomeId\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\rsmart_home_idR\rsmart_home_id\x12Q\n" +
-	"\x06Status\x18\x02 \x01(\x0e2-.NAlice.NAliceApi.TSubscriptionStatus.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12%\n" +
-	"\aMessage\x18\x03 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage\"(\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12 \n" +
+	"\vSmartHomeId\x18\x04 \x01(\tR\vSmartHomeId\x12E\n" +
+	"\x06Status\x18\x02 \x01(\x0e2-.NAlice.NAliceApi.TSubscriptionStatus.EStatusR\x06Status\x12\x18\n" +
+	"\aMessage\x18\x03 \x01(\tR\aMessage\"(\n" +
 	"\aEStatus\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\x06\n" +
 	"\x02OK\x10\x01\x12\b\n" +
-	"\x04FAIL\x10\x02\"\xe0\x03\n" +
-	"\x15TEndpointSubscription\x120\n" +
+	"\x04FAIL\x10\x02\"\xfc\x02\n" +
+	"\x15TEndpointSubscription\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x125\n" +
-	"\vSmartHomeId\x18\x05 \x01(\tB\x11\xaa\xdd\x1b\rsmart_home_idR\rsmart_home_id\x12i\n" +
-	"\fCapabilities\x18\x02 \x03(\v23.NAlice.NAliceApi.TEndpointSubscription.TCapabilityB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x1a\xc8\x01\n" +
-	"\vTCapability\x12D\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12 \n" +
+	"\vSmartHomeId\x18\x05 \x01(\tR\vSmartHomeId\x12W\n" +
+	"\fCapabilities\x18\x02 \x03(\v23.NAlice.NAliceApi.TEndpointSubscription.TCapabilityR\fCapabilities\x1a\xa3\x01\n" +
+	"\vTCapability\x124\n" +
 	"\n" +
-	"Capability\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability\x12W\n" +
-	"\rAnyCapability\x18\x03 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderB\x12\xaa\xdd\x1b\x0eany_capabilityR\x0eany_capabilityJ\x04\b\x01\x10\x02J\x04\b\x04\x10\x05R\x02IdR\n" +
-	"ListenerId:\x04\xa8\xdd\x1b\x04J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05R\n" +
+	"Capability\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\n" +
+	"Capability\x12B\n" +
+	"\rAnyCapability\x18\x03 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderR\rAnyCapabilityJ\x04\b\x01\x10\x02J\x04\b\x04\x10\x05R\x02IdR\n" +
+	"ListenerIdJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05R\n" +
 	"ListenerIdR\n" +
-	"ExternalId\"\xc0\x04\n" +
-	"\x1eTUniversalEndpointSubscription\x120\n" +
+	"ExternalId\"\xb0\x03\n" +
+	"\x1eTUniversalEndpointSubscription\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12\x1e\n" +
 	"\n" +
-	"ListenerId\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vlistener_idR\vlistener_id\x125\n" +
-	"\vSmartHomeId\x18\x05 \x01(\tB\x11\xaa\xdd\x1b\rsmart_home_idR\rsmart_home_id\x12r\n" +
-	"\fCapabilities\x18\x02 \x03(\v2<.NAlice.NAliceApi.TUniversalEndpointSubscription.TCapabilityB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x1a\xf6\x01\n" +
-	"\vTCapability\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12D\n" +
+	"ListenerId\x18\x03 \x01(\tR\n" +
+	"ListenerId\x12 \n" +
+	"\vSmartHomeId\x18\x05 \x01(\tR\vSmartHomeId\x12`\n" +
+	"\fCapabilities\x18\x02 \x03(\v2<.NAlice.NAliceApi.TUniversalEndpointSubscription.TCapabilityR\fCapabilities\x1a\xb7\x01\n" +
+	"\vTCapability\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x124\n" +
 	"\n" +
-	"Capability\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability\x12W\n" +
-	"\rAnyCapability\x18\x03 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderB\x12\xaa\xdd\x1b\x0eany_capabilityR\x0eany_capability\x120\n" +
+	"Capability\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\n" +
+	"Capability\x12B\n" +
+	"\rAnyCapability\x18\x03 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderR\rAnyCapability\x12\x1e\n" +
 	"\n" +
-	"ListenerId\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vlistener_idR\vlistener_id:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05R\n" +
-	"ExternalId\"\x8a\x01\n" +
-	"\x0eTEndpointState\x12;\n" +
-	"\bEndpoint\x18\x01 \x01(\v2\x11.NAlice.TEndpointB\f\xaa\xdd\x1b\bendpointR\bendpoint\x125\n" +
-	"\vSmartHomeId\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rsmart_home_idR\rsmart_home_id:\x04\xa8\xdd\x1b\x04\"~\n" +
-	"\x16TEndpointsStateChanged\x12^\n" +
-	"\x0eEndpointsState\x18\x01 \x03(\v2 .NAlice.NAliceApi.TEndpointStateB\x13\xaa\xdd\x1b\x0fendpoints_stateR\x0fendpoints_state:\x04\xa8\xdd\x1b\x04\"\x88\x01\n" +
-	"\x11TEndpointsRemoved\x123\n" +
-	"\vEndpointIds\x18\x01 \x03(\tB\x10\xaa\xdd\x1b\fendpoint_idsR\fendpoint_ids\x128\n" +
-	"\fSmartHomeIds\x18\x02 \x03(\tB\x12\xaa\xdd\x1b\x0esmart_home_idsR\x0esmart_home_ids:\x04\xa8\xdd\x1b\x04\"\xae\x06\n" +
-	"\x15TSubscriptionResponse\x12d\n" +
-	"\tEndpoints\x18\x01 \x03(\v27.NAlice.NAliceApi.TSubscriptionResponse.TEndpointStatusB\r\xaa\xdd\x1b\tendpointsR\tendpoints\x1a\xba\x01\n" +
-	"\x11TCapabilityStatus\x126\n" +
-	"\fCapabilityId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rcapability_idR\rcapability_id\x12m\n" +
-	"\fClientStatus\x18\x02 \x01(\x0e25.NAlice.NAliceApi.TSubscriptionResponse.EClientStatusB\x11\xaa\xdd\x1b\rclient_statusR\rclient_status\x1a\xbb\x03\n" +
-	"\x0fTEndpointStatus\x120\n" +
+	"ListenerId\x18\x04 \x01(\tR\n" +
+	"ListenerIdJ\x04\b\x04\x10\x05R\n" +
+	"ExternalId\"a\n" +
+	"\x0eTEndpointState\x12-\n" +
+	"\bEndpoint\x18\x01 \x01(\v2\x11.NAlice.TEndpointR\bEndpoint\x12 \n" +
+	"\vSmartHomeId\x18\x02 \x01(\tR\vSmartHomeId\"b\n" +
+	"\x16TEndpointsStateChanged\x12H\n" +
+	"\x0eEndpointsState\x18\x01 \x03(\v2 .NAlice.NAliceApi.TEndpointStateR\x0eEndpointsState\"Y\n" +
+	"\x11TEndpointsRemoved\x12 \n" +
+	"\vEndpointIds\x18\x01 \x03(\tR\vEndpointIds\x12\"\n" +
+	"\fSmartHomeIds\x18\x02 \x03(\tR\fSmartHomeIds\"\xfd\x04\n" +
+	"\x15TSubscriptionResponse\x12U\n" +
+	"\tEndpoints\x18\x01 \x03(\v27.NAlice.NAliceApi.TSubscriptionResponse.TEndpointStatusR\tEndpoints\x1a\x92\x01\n" +
+	"\x11TCapabilityStatus\x12\"\n" +
+	"\fCapabilityId\x18\x01 \x01(\tR\fCapabilityId\x12Y\n" +
+	"\fClientStatus\x18\x02 \x01(\x0e25.NAlice.NAliceApi.TSubscriptionResponse.EClientStatusR\fClientStatus\x1a\xc7\x02\n" +
+	"\x0fTEndpointStatus\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x125\n" +
-	"\vSmartHomeId\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\rsmart_home_idR\rsmart_home_id\x12h\n" +
-	"\rBackendStatus\x18\x02 \x01(\x0e2-.NAlice.NAliceApi.TSubscriptionStatus.EStatusB\x12\xaa\xdd\x1b\x0ebackend_statusR\x0ebackend_status\x12o\n" +
-	"\fCapabilities\x18\x03 \x03(\v29.NAlice.NAliceApi.TSubscriptionResponse.TCapabilityStatusB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x12d\n" +
-	"\x1aDirectiveHandlerEndpointId\x18\x05 \x01(\tB!\xaa\xdd\x1b\x1ddirective_handler_endpoint_idR\x1ddirective_handler_endpoint_id\".\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12 \n" +
+	"\vSmartHomeId\x18\x04 \x01(\tR\vSmartHomeId\x12S\n" +
+	"\rBackendStatus\x18\x02 \x01(\x0e2-.NAlice.NAliceApi.TSubscriptionStatus.EStatusR\rBackendStatus\x12]\n" +
+	"\fCapabilities\x18\x03 \x03(\v29.NAlice.NAliceApi.TSubscriptionResponse.TCapabilityStatusR\fCapabilities\x12>\n" +
+	"\x1aDirectiveHandlerEndpointId\x18\x05 \x01(\tR\x1aDirectiveHandlerEndpointId\".\n" +
 	"\rEClientStatus\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\x06\n" +
 	"\x02OK\x10\x01\x12\b\n" +
-	"\x04FAIL\x10\x02:\x04\xa8\xdd\x1b\x04B\xaa\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.iot.endpoint_protocolB\x16EndpointsProtocolProtoP\x01ZSa.yandex-team.ru/alice/protos/api/alicekit/iot/endpoint_protocol;endpointprotocolpbb\x06proto3"
+	"\x04FAIL\x10\x02B\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x15EndpointProtocolProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/iot/endpoint_protocol\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_iot_endpoint_protocol_endpoint_protocol_proto_rawDescOnce sync.Once

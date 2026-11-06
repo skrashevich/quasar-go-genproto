@@ -24,7 +24,7 @@ const (
 
 type TAnalyticsMetaInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     *string                `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3,oneof" json:"RequestId,omitempty"`
+	RequestId     *string                `protobuf:"bytes,1,opt,name=RequestId,proto3,oneof" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,14 +70,12 @@ var File_alice_protos_api_matrix_common_analytics_meta_info_proto protoreflect.F
 
 const file_alice_protos_api_matrix_common_analytics_meta_info_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/api/matrix/common/analytics_meta_info.proto\x12\fNMatrix.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"V\n" +
-	"\x12TAnalyticsMetaInfo\x122\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idH\x00R\n" +
-	"request_id\x88\x01\x01B\f\n" +
+	"8alice/protos/api/matrix/common/analytics_meta_info.proto\x12\fNMatrix.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"E\n" +
+	"\x12TAnalyticsMetaInfo\x12!\n" +
+	"\tRequestId\x18\x01 \x01(\tH\x00R\tRequestId\x88\x01\x01B\f\n" +
 	"\n" +
-	"_RequestIdB]\n" +
-	"(ru.yandex.alice.protos.api.matrix.commonP\x01Z/a.yandex-team.ru/alice/protos/api/matrix/commonb\x06proto3"
+	"_RequestIdB\xcb\x01\n" +
+	"\x10com.NMatrix.NApiB\x16AnalyticsMetaInfoProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/matrix/common\xa2\x02\x03NNX\xaa\x02\fNMatrix.NApi\xca\x02\fNMatrix\\NApi\xe2\x02\x18NMatrix\\NApi\\GPBMetadata\xea\x02\rNMatrix::NApib\x06proto3"
 
 var (
 	file_alice_protos_api_matrix_common_analytics_meta_info_proto_rawDescOnce sync.Once

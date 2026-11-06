@@ -71,10 +71,10 @@ var File_alice_protos_api_alicekit_events_translate_input_translate_input_proto 
 
 const file_alice_protos_api_alicekit_events_translate_input_translate_input_proto_rawDesc = "" +
 	"\n" +
-	"Falice/protos/api/alicekit/events/translate_input/translate_input.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"e\n" +
-	"\x0fTTranslateInput\x12L\n" +
-	"\vExperiments\x18\x01 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vExperiments:\x04\xa8\xdd\x1b\x04B\x91\x01\n" +
-	":ru.yandex.alice.protos.api.alicekit.events.translate_inputB\x0eTranslateInputP\x01ZAa.yandex-team.ru/alice/protos/api/alicekit/events/translate_inputb\x06proto3"
+	"Falice/protos/api/alicekit/events/translate_input/translate_input.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"N\n" +
+	"\x0fTTranslateInput\x12;\n" +
+	"\vExperiments\x18\x01 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperimentsB\xee\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13TranslateInputProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/translate_input\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_translate_input_translate_input_proto_rawDescOnce sync.Once

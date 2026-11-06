@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/cradle/capability.proto
 
-package cradlepb
+package cradle
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -227,8 +227,8 @@ const file_alice_protos_endpoint_capabilities_cradle_capability_proto_rawDesc = 
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x19.NAlice.TCradleCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cG:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cvB\x80\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\vCradleProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/cradle;cradlepbb\x06proto3"
+	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cG:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cvB\x96\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\vCradleProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/cradleb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_cradle_capability_proto_rawDescOnce sync.Once

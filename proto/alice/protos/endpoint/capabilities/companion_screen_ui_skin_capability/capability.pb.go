@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/companion_screen_ui_skin_capability/capability.proto
 
-package companionscreenuiskinpb
+package companion_screen_ui_skin_capability
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -625,8 +625,8 @@ const file_alice_protos_endpoint_capabilities_companion_screen_ui_skin_capabilit
 	"\vESkinTarget\x12\v\n" +
 	"\aUnknown\x10\x00\x12\t\n" +
 	"\x05Clock\x10\x01\x12\x0f\n" +
-	"\vMusicPlayer\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfc\x01B\xc5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB$CompanionScreenUISkinCapabilityProtoZoa.yandex-team.ru/alice/protos/endpoint/capabilities/companion_screen_ui_skin_capability;companionscreenuiskinpbb\x06proto3"
+	"\vMusicPlayer\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfc\x01B\xcc\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB$CompanionScreenUISkinCapabilityProtoZvgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/companion_screen_ui_skin_capabilityb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_companion_screen_ui_skin_capability_capability_proto_rawDescOnce sync.Once

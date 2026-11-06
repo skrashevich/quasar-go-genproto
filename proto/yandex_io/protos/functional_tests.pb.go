@@ -79,7 +79,7 @@ func (x *TestpointProxyEvent_EType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use TestpointProxyEvent_EType.Descriptor instead.
 func (TestpointProxyEvent_EType) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{9, 0}
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{10, 0}
 }
 
 type TestpointLogRecord_ELevel int32
@@ -144,7 +144,7 @@ func (x *TestpointLogRecord_ELevel) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use TestpointLogRecord_ELevel.Descriptor instead.
 func (TestpointLogRecord_ELevel) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{12, 0}
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{13, 0}
 }
 
 type EmulatedButton struct {
@@ -479,458 +479,6 @@ func (x *AsrResult) GetJsonPayload() string {
 	return ""
 }
 
-type SetSetupMode struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       *bool                  `protobuf:"varint,1,opt,name=enabled" json:"enabled,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *SetSetupMode) Reset() {
-	*x = SetSetupMode{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *SetSetupMode) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SetSetupMode) ProtoMessage() {}
-
-func (x *SetSetupMode) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SetSetupMode.ProtoReflect.Descriptor instead.
-func (*SetSetupMode) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *SetSetupMode) GetEnabled() bool {
-	if x != nil && x.Enabled != nil {
-		return *x.Enabled
-	}
-	return false
-}
-
-type TestpointProxyOpen struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ServiceName   *string                `protobuf:"bytes,1,opt,name=service_name,json=serviceName" json:"service_name,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointProxyOpen) Reset() {
-	*x = TestpointProxyOpen{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointProxyOpen) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointProxyOpen) ProtoMessage() {}
-
-func (x *TestpointProxyOpen) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointProxyOpen.ProtoReflect.Descriptor instead.
-func (*TestpointProxyOpen) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *TestpointProxyOpen) GetServiceName() string {
-	if x != nil && x.ServiceName != nil {
-		return *x.ServiceName
-	}
-	return ""
-}
-
-type TestpointProxyClose struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Reason        *string                `protobuf:"bytes,1,opt,name=reason" json:"reason,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointProxyClose) Reset() {
-	*x = TestpointProxyClose{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointProxyClose) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointProxyClose) ProtoMessage() {}
-
-func (x *TestpointProxyClose) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointProxyClose.ProtoReflect.Descriptor instead.
-func (*TestpointProxyClose) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *TestpointProxyClose) GetReason() string {
-	if x != nil && x.Reason != nil {
-		return *x.Reason
-	}
-	return ""
-}
-
-type TestpointProxyData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Payload       []byte                 `protobuf:"bytes,1,opt,name=payload" json:"payload,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointProxyData) Reset() {
-	*x = TestpointProxyData{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointProxyData) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointProxyData) ProtoMessage() {}
-
-func (x *TestpointProxyData) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointProxyData.ProtoReflect.Descriptor instead.
-func (*TestpointProxyData) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *TestpointProxyData) GetPayload() []byte {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
-type TestpointProxyEvent struct {
-	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Type          *TestpointProxyEvent_EType `protobuf:"varint,1,opt,name=type,enum=quasar.proto.TestpointProxyEvent_EType" json:"type,omitempty"`
-	Message       *string                    `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointProxyEvent) Reset() {
-	*x = TestpointProxyEvent{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[9]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointProxyEvent) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointProxyEvent) ProtoMessage() {}
-
-func (x *TestpointProxyEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[9]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointProxyEvent.ProtoReflect.Descriptor instead.
-func (*TestpointProxyEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *TestpointProxyEvent) GetType() TestpointProxyEvent_EType {
-	if x != nil && x.Type != nil {
-		return *x.Type
-	}
-	return TestpointProxyEvent_CONNECTED
-}
-
-func (x *TestpointProxyEvent) GetMessage() string {
-	if x != nil && x.Message != nil {
-		return *x.Message
-	}
-	return ""
-}
-
-type TestpointProxyEnvelope struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChannelId     *uint32                `protobuf:"varint,1,opt,name=channel_id,json=channelId" json:"channel_id,omitempty"`
-	Open          *TestpointProxyOpen    `protobuf:"bytes,2,opt,name=open" json:"open,omitempty"`
-	Close         *TestpointProxyClose   `protobuf:"bytes,3,opt,name=close" json:"close,omitempty"`
-	Data          *TestpointProxyData    `protobuf:"bytes,4,opt,name=data" json:"data,omitempty"`
-	Event         *TestpointProxyEvent   `protobuf:"bytes,5,opt,name=event" json:"event,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointProxyEnvelope) Reset() {
-	*x = TestpointProxyEnvelope{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[10]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointProxyEnvelope) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointProxyEnvelope) ProtoMessage() {}
-
-func (x *TestpointProxyEnvelope) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[10]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointProxyEnvelope.ProtoReflect.Descriptor instead.
-func (*TestpointProxyEnvelope) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *TestpointProxyEnvelope) GetChannelId() uint32 {
-	if x != nil && x.ChannelId != nil {
-		return *x.ChannelId
-	}
-	return 0
-}
-
-func (x *TestpointProxyEnvelope) GetOpen() *TestpointProxyOpen {
-	if x != nil {
-		return x.Open
-	}
-	return nil
-}
-
-func (x *TestpointProxyEnvelope) GetClose() *TestpointProxyClose {
-	if x != nil {
-		return x.Close
-	}
-	return nil
-}
-
-func (x *TestpointProxyEnvelope) GetData() *TestpointProxyData {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
-func (x *TestpointProxyEnvelope) GetEvent() *TestpointProxyEvent {
-	if x != nil {
-		return x.Event
-	}
-	return nil
-}
-
-type TestpointLogSubscription struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       *bool                  `protobuf:"varint,1,opt,name=enabled" json:"enabled,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointLogSubscription) Reset() {
-	*x = TestpointLogSubscription{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointLogSubscription) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointLogSubscription) ProtoMessage() {}
-
-func (x *TestpointLogSubscription) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointLogSubscription.ProtoReflect.Descriptor instead.
-func (*TestpointLogSubscription) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *TestpointLogSubscription) GetEnabled() bool {
-	if x != nil && x.Enabled != nil {
-		return *x.Enabled
-	}
-	return false
-}
-
-type TestpointLogRecord struct {
-	state         protoimpl.MessageState     `protogen:"open.v1"`
-	TimestampMs   *int64                     `protobuf:"varint,1,opt,name=timestamp_ms,json=timestampMs" json:"timestamp_ms,omitempty"`
-	Level         *TestpointLogRecord_ELevel `protobuf:"varint,2,opt,name=level,enum=quasar.proto.TestpointLogRecord_ELevel" json:"level,omitempty"`
-	Message       *string                    `protobuf:"bytes,3,opt,name=message" json:"message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointLogRecord) Reset() {
-	*x = TestpointLogRecord{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointLogRecord) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointLogRecord) ProtoMessage() {}
-
-func (x *TestpointLogRecord) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointLogRecord.ProtoReflect.Descriptor instead.
-func (*TestpointLogRecord) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *TestpointLogRecord) GetTimestampMs() int64 {
-	if x != nil && x.TimestampMs != nil {
-		return *x.TimestampMs
-	}
-	return 0
-}
-
-func (x *TestpointLogRecord) GetLevel() TestpointLogRecord_ELevel {
-	if x != nil && x.Level != nil {
-		return *x.Level
-	}
-	return TestpointLogRecord_TRACE
-}
-
-func (x *TestpointLogRecord) GetMessage() string {
-	if x != nil && x.Message != nil {
-		return *x.Message
-	}
-	return ""
-}
-
-type TestpointLogMarker struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            *uint64                `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestpointLogMarker) Reset() {
-	*x = TestpointLogMarker{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[13]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestpointLogMarker) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestpointLogMarker) ProtoMessage() {}
-
-func (x *TestpointLogMarker) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[13]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestpointLogMarker.ProtoReflect.Descriptor instead.
-func (*TestpointLogMarker) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{13}
-}
-
-func (x *TestpointLogMarker) GetId() uint64 {
-	if x != nil && x.Id != nil {
-		return *x.Id
-	}
-	return 0
-}
-
 type TestpointMessage struct {
 	state                 protoimpl.MessageState    `protogen:"open.v1"`
 	EmulatedButton        *EmulatedButton           `protobuf:"bytes,1,opt,name=emulated_button,json=emulatedButton" json:"emulated_button,omitempty"`
@@ -952,7 +500,7 @@ type TestpointMessage struct {
 
 func (x *TestpointMessage) Reset() {
 	*x = TestpointMessage{}
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[14]
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -964,7 +512,7 @@ func (x *TestpointMessage) String() string {
 func (*TestpointMessage) ProtoMessage() {}
 
 func (x *TestpointMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[14]
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -977,7 +525,7 @@ func (x *TestpointMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TestpointMessage.ProtoReflect.Descriptor instead.
 func (*TestpointMessage) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{14}
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TestpointMessage) GetEmulatedButton() *EmulatedButton {
@@ -1071,6 +619,458 @@ func (x *TestpointMessage) GetLogMarker() *TestpointLogMarker {
 	return nil
 }
 
+type SetSetupMode struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Enabled       *bool                  `protobuf:"varint,1,opt,name=enabled" json:"enabled,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetSetupMode) Reset() {
+	*x = SetSetupMode{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetSetupMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetSetupMode) ProtoMessage() {}
+
+func (x *SetSetupMode) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetSetupMode.ProtoReflect.Descriptor instead.
+func (*SetSetupMode) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *SetSetupMode) GetEnabled() bool {
+	if x != nil && x.Enabled != nil {
+		return *x.Enabled
+	}
+	return false
+}
+
+type TestpointProxyOpen struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ServiceName   *string                `protobuf:"bytes,1,opt,name=service_name,json=serviceName" json:"service_name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointProxyOpen) Reset() {
+	*x = TestpointProxyOpen{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointProxyOpen) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointProxyOpen) ProtoMessage() {}
+
+func (x *TestpointProxyOpen) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointProxyOpen.ProtoReflect.Descriptor instead.
+func (*TestpointProxyOpen) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *TestpointProxyOpen) GetServiceName() string {
+	if x != nil && x.ServiceName != nil {
+		return *x.ServiceName
+	}
+	return ""
+}
+
+type TestpointProxyClose struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Reason        *string                `protobuf:"bytes,1,opt,name=reason" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointProxyClose) Reset() {
+	*x = TestpointProxyClose{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointProxyClose) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointProxyClose) ProtoMessage() {}
+
+func (x *TestpointProxyClose) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointProxyClose.ProtoReflect.Descriptor instead.
+func (*TestpointProxyClose) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *TestpointProxyClose) GetReason() string {
+	if x != nil && x.Reason != nil {
+		return *x.Reason
+	}
+	return ""
+}
+
+type TestpointProxyData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Payload       []byte                 `protobuf:"bytes,1,opt,name=payload" json:"payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointProxyData) Reset() {
+	*x = TestpointProxyData{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointProxyData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointProxyData) ProtoMessage() {}
+
+func (x *TestpointProxyData) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointProxyData.ProtoReflect.Descriptor instead.
+func (*TestpointProxyData) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *TestpointProxyData) GetPayload() []byte {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
+type TestpointProxyEvent struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Type          *TestpointProxyEvent_EType `protobuf:"varint,1,opt,name=type,enum=quasar.proto.TestpointProxyEvent_EType" json:"type,omitempty"`
+	Message       *string                    `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointProxyEvent) Reset() {
+	*x = TestpointProxyEvent{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointProxyEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointProxyEvent) ProtoMessage() {}
+
+func (x *TestpointProxyEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointProxyEvent.ProtoReflect.Descriptor instead.
+func (*TestpointProxyEvent) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *TestpointProxyEvent) GetType() TestpointProxyEvent_EType {
+	if x != nil && x.Type != nil {
+		return *x.Type
+	}
+	return TestpointProxyEvent_CONNECTED
+}
+
+func (x *TestpointProxyEvent) GetMessage() string {
+	if x != nil && x.Message != nil {
+		return *x.Message
+	}
+	return ""
+}
+
+type TestpointProxyEnvelope struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChannelId     *uint32                `protobuf:"varint,1,opt,name=channel_id,json=channelId" json:"channel_id,omitempty"`
+	Open          *TestpointProxyOpen    `protobuf:"bytes,2,opt,name=open" json:"open,omitempty"`
+	Close         *TestpointProxyClose   `protobuf:"bytes,3,opt,name=close" json:"close,omitempty"`
+	Data          *TestpointProxyData    `protobuf:"bytes,4,opt,name=data" json:"data,omitempty"`
+	Event         *TestpointProxyEvent   `protobuf:"bytes,5,opt,name=event" json:"event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointProxyEnvelope) Reset() {
+	*x = TestpointProxyEnvelope{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointProxyEnvelope) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointProxyEnvelope) ProtoMessage() {}
+
+func (x *TestpointProxyEnvelope) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointProxyEnvelope.ProtoReflect.Descriptor instead.
+func (*TestpointProxyEnvelope) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *TestpointProxyEnvelope) GetChannelId() uint32 {
+	if x != nil && x.ChannelId != nil {
+		return *x.ChannelId
+	}
+	return 0
+}
+
+func (x *TestpointProxyEnvelope) GetOpen() *TestpointProxyOpen {
+	if x != nil {
+		return x.Open
+	}
+	return nil
+}
+
+func (x *TestpointProxyEnvelope) GetClose() *TestpointProxyClose {
+	if x != nil {
+		return x.Close
+	}
+	return nil
+}
+
+func (x *TestpointProxyEnvelope) GetData() *TestpointProxyData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *TestpointProxyEnvelope) GetEvent() *TestpointProxyEvent {
+	if x != nil {
+		return x.Event
+	}
+	return nil
+}
+
+type TestpointLogSubscription struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Enabled       *bool                  `protobuf:"varint,1,opt,name=enabled" json:"enabled,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointLogSubscription) Reset() {
+	*x = TestpointLogSubscription{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointLogSubscription) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointLogSubscription) ProtoMessage() {}
+
+func (x *TestpointLogSubscription) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointLogSubscription.ProtoReflect.Descriptor instead.
+func (*TestpointLogSubscription) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *TestpointLogSubscription) GetEnabled() bool {
+	if x != nil && x.Enabled != nil {
+		return *x.Enabled
+	}
+	return false
+}
+
+type TestpointLogRecord struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	TimestampMs   *int64                     `protobuf:"varint,1,opt,name=timestamp_ms,json=timestampMs" json:"timestamp_ms,omitempty"`
+	Level         *TestpointLogRecord_ELevel `protobuf:"varint,2,opt,name=level,enum=quasar.proto.TestpointLogRecord_ELevel" json:"level,omitempty"`
+	Message       *string                    `protobuf:"bytes,3,opt,name=message" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointLogRecord) Reset() {
+	*x = TestpointLogRecord{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointLogRecord) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointLogRecord) ProtoMessage() {}
+
+func (x *TestpointLogRecord) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointLogRecord.ProtoReflect.Descriptor instead.
+func (*TestpointLogRecord) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *TestpointLogRecord) GetTimestampMs() int64 {
+	if x != nil && x.TimestampMs != nil {
+		return *x.TimestampMs
+	}
+	return 0
+}
+
+func (x *TestpointLogRecord) GetLevel() TestpointLogRecord_ELevel {
+	if x != nil && x.Level != nil {
+		return *x.Level
+	}
+	return TestpointLogRecord_TRACE
+}
+
+func (x *TestpointLogRecord) GetMessage() string {
+	if x != nil && x.Message != nil {
+		return *x.Message
+	}
+	return ""
+}
+
+type TestpointLogMarker struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            *uint64                `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TestpointLogMarker) Reset() {
+	*x = TestpointLogMarker{}
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TestpointLogMarker) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TestpointLogMarker) ProtoMessage() {}
+
+func (x *TestpointLogMarker) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_functional_tests_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TestpointLogMarker.ProtoReflect.Descriptor instead.
+func (*TestpointLogMarker) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_functional_tests_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *TestpointLogMarker) GetId() uint64 {
+	if x != nil && x.Id != nil {
+		return *x.Id
+	}
+	return 0
+}
+
 var File_yandex_io_protos_functional_tests_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_functional_tests_proto_rawDesc = "" +
@@ -1105,7 +1105,27 @@ const file_yandex_io_protos_functional_tests_proto_rawDesc = "" +
 	"\x0fAudioSenderMode\x12\x18\n" +
 	"\aenabled\x18\x01 \x01(\bR\aenabled\".\n" +
 	"\tAsrResult\x12!\n" +
-	"\fjson_payload\x18\x01 \x01(\tR\vjsonPayload\"(\n" +
+	"\fjson_payload\x18\x01 \x01(\tR\vjsonPayload\"\xe2\b\n" +
+	"\x10TestpointMessage\x12E\n" +
+	"\x0femulated_button\x18\x01 \x01(\v2\x1c.quasar.proto.EmulatedButtonR\x0eemulatedButton\x12F\n" +
+	"\x12incoming_directive\x18\x04 \x03(\v2\x17.quasar.proto.DirectiveR\x11incomingDirective\x12M\n" +
+	"\x12emulated_bluetooth\x18\x05 \x01(\v2\x1e.quasar.proto.EmulateBluetoothR\x11emulatedBluetooth\x12T\n" +
+	"\x14authenticate_request\x18\x06 \x01(\v2!.quasar.proto.AuthenticateRequestR\x13authenticateRequest\x12H\n" +
+	"\x10audiosender_mode\x18\n" +
+	" \x01(\v2\x1d.quasar.proto.AudioSenderModeR\x0faudiosenderMode\x126\n" +
+	"\n" +
+	"asr_result\x18\v \x01(\v2\x17.quasar.proto.AsrResultR\tasrResult\x12N\n" +
+	"\x15request_config_update\x18\f \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13requestConfigUpdate\x12S\n" +
+	"\x18revoke_user_account_info\x18\x0e \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15revokeUserAccountInfo\x12@\n" +
+	"\x0eset_setup_mode\x18\x0f \x01(\v2\x1a.quasar.proto.SetSetupModeR\fsetSetupMode\x12:\n" +
+	"\x05proxy\x18\x10 \x01(\v2$.quasar.proto.TestpointProxyEnvelopeR\x05proxy\x12Q\n" +
+	"\x10log_subscription\x18\x11 \x01(\v2&.quasar.proto.TestpointLogSubscriptionR\x0flogSubscription\x12?\n" +
+	"\n" +
+	"log_record\x18\x12 \x01(\v2 .quasar.proto.TestpointLogRecordR\tlogRecord\x12?\n" +
+	"\n" +
+	"log_marker\x18\x13 \x01(\v2 .quasar.proto.TestpointLogMarkerR\tlogMarkerJ\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
+	"J\x04\b\r\x10\x0eR\x18start_configuration_modeR\x15platform_volume_stateR\n" +
+	"test_eventR\x12alice_volume_stateR\x15start_enrollment_pushR\x14percent_volume_state\"(\n" +
 	"\fSetSetupMode\x12\x18\n" +
 	"\aenabled\x18\x01 \x01(\bR\aenabled\"7\n" +
 	"\x12TestpointProxyOpen\x12!\n" +
@@ -1141,28 +1161,8 @@ const file_yandex_io_protos_functional_tests_proto_rawDesc = "" +
 	"\x04WARN\x10\x04\x12\t\n" +
 	"\x05ERROR\x10\x05\"$\n" +
 	"\x12TestpointLogMarker\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x04R\x02id\"\xe2\b\n" +
-	"\x10TestpointMessage\x12E\n" +
-	"\x0femulated_button\x18\x01 \x01(\v2\x1c.quasar.proto.EmulatedButtonR\x0eemulatedButton\x12F\n" +
-	"\x12incoming_directive\x18\x04 \x03(\v2\x17.quasar.proto.DirectiveR\x11incomingDirective\x12M\n" +
-	"\x12emulated_bluetooth\x18\x05 \x01(\v2\x1e.quasar.proto.EmulateBluetoothR\x11emulatedBluetooth\x12T\n" +
-	"\x14authenticate_request\x18\x06 \x01(\v2!.quasar.proto.AuthenticateRequestR\x13authenticateRequest\x12H\n" +
-	"\x10audiosender_mode\x18\n" +
-	" \x01(\v2\x1d.quasar.proto.AudioSenderModeR\x0faudiosenderMode\x126\n" +
-	"\n" +
-	"asr_result\x18\v \x01(\v2\x17.quasar.proto.AsrResultR\tasrResult\x12N\n" +
-	"\x15request_config_update\x18\f \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13requestConfigUpdate\x12S\n" +
-	"\x18revoke_user_account_info\x18\x0e \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15revokeUserAccountInfo\x12@\n" +
-	"\x0eset_setup_mode\x18\x0f \x01(\v2\x1a.quasar.proto.SetSetupModeR\fsetSetupMode\x12:\n" +
-	"\x05proxy\x18\x10 \x01(\v2$.quasar.proto.TestpointProxyEnvelopeR\x05proxy\x12Q\n" +
-	"\x10log_subscription\x18\x11 \x01(\v2&.quasar.proto.TestpointLogSubscriptionR\x0flogSubscription\x12?\n" +
-	"\n" +
-	"log_record\x18\x12 \x01(\v2 .quasar.proto.TestpointLogRecordR\tlogRecord\x12?\n" +
-	"\n" +
-	"log_marker\x18\x13 \x01(\v2 .quasar.proto.TestpointLogMarkerR\tlogMarkerJ\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
-	"J\x04\b\r\x10\x0eR\x18start_configuration_modeR\x15platform_volume_stateR\n" +
-	"test_eventR\x12alice_volume_stateR\x15start_enrollment_pushR\x14percent_volume_stateB,\n" +
-	"\x19ru.yandex.quasar.protobufB\x0fFunctionalTests"
+	"\x02id\x18\x01 \x01(\x04R\x02idB\xbb\x01\n" +
+	"\x10com.quasar.protoB\x14FunctionalTestsProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_functional_tests_proto_rawDescOnce sync.Once
@@ -1186,16 +1186,16 @@ var file_yandex_io_protos_functional_tests_proto_goTypes = []any{
 	(*AuthenticateRequest)(nil),      // 4: quasar.proto.AuthenticateRequest
 	(*AudioSenderMode)(nil),          // 5: quasar.proto.AudioSenderMode
 	(*AsrResult)(nil),                // 6: quasar.proto.AsrResult
-	(*SetSetupMode)(nil),             // 7: quasar.proto.SetSetupMode
-	(*TestpointProxyOpen)(nil),       // 8: quasar.proto.TestpointProxyOpen
-	(*TestpointProxyClose)(nil),      // 9: quasar.proto.TestpointProxyClose
-	(*TestpointProxyData)(nil),       // 10: quasar.proto.TestpointProxyData
-	(*TestpointProxyEvent)(nil),      // 11: quasar.proto.TestpointProxyEvent
-	(*TestpointProxyEnvelope)(nil),   // 12: quasar.proto.TestpointProxyEnvelope
-	(*TestpointLogSubscription)(nil), // 13: quasar.proto.TestpointLogSubscription
-	(*TestpointLogRecord)(nil),       // 14: quasar.proto.TestpointLogRecord
-	(*TestpointLogMarker)(nil),       // 15: quasar.proto.TestpointLogMarker
-	(*TestpointMessage)(nil),         // 16: quasar.proto.TestpointMessage
+	(*TestpointMessage)(nil),         // 7: quasar.proto.TestpointMessage
+	(*SetSetupMode)(nil),             // 8: quasar.proto.SetSetupMode
+	(*TestpointProxyOpen)(nil),       // 9: quasar.proto.TestpointProxyOpen
+	(*TestpointProxyClose)(nil),      // 10: quasar.proto.TestpointProxyClose
+	(*TestpointProxyData)(nil),       // 11: quasar.proto.TestpointProxyData
+	(*TestpointProxyEvent)(nil),      // 12: quasar.proto.TestpointProxyEvent
+	(*TestpointProxyEnvelope)(nil),   // 13: quasar.proto.TestpointProxyEnvelope
+	(*TestpointLogSubscription)(nil), // 14: quasar.proto.TestpointLogSubscription
+	(*TestpointLogRecord)(nil),       // 15: quasar.proto.TestpointLogRecord
+	(*TestpointLogMarker)(nil),       // 16: quasar.proto.TestpointLogMarker
 	(*EmptyMessage)(nil),             // 17: quasar.proto.EmptyMessage
 	(*protos.Directive)(nil),         // 18: quasar.proto.Directive
 }
@@ -1216,25 +1216,25 @@ var file_yandex_io_protos_functional_tests_proto_depIdxs = []int32{
 	17, // 13: quasar.proto.EmulateBluetooth.disconnect:type_name -> quasar.proto.EmptyMessage
 	17, // 14: quasar.proto.EmulateBluetooth.play:type_name -> quasar.proto.EmptyMessage
 	17, // 15: quasar.proto.EmulateBluetooth.pause:type_name -> quasar.proto.EmptyMessage
-	0,  // 16: quasar.proto.TestpointProxyEvent.type:type_name -> quasar.proto.TestpointProxyEvent.EType
-	8,  // 17: quasar.proto.TestpointProxyEnvelope.open:type_name -> quasar.proto.TestpointProxyOpen
-	9,  // 18: quasar.proto.TestpointProxyEnvelope.close:type_name -> quasar.proto.TestpointProxyClose
-	10, // 19: quasar.proto.TestpointProxyEnvelope.data:type_name -> quasar.proto.TestpointProxyData
-	11, // 20: quasar.proto.TestpointProxyEnvelope.event:type_name -> quasar.proto.TestpointProxyEvent
-	1,  // 21: quasar.proto.TestpointLogRecord.level:type_name -> quasar.proto.TestpointLogRecord.ELevel
-	2,  // 22: quasar.proto.TestpointMessage.emulated_button:type_name -> quasar.proto.EmulatedButton
-	18, // 23: quasar.proto.TestpointMessage.incoming_directive:type_name -> quasar.proto.Directive
-	3,  // 24: quasar.proto.TestpointMessage.emulated_bluetooth:type_name -> quasar.proto.EmulateBluetooth
-	4,  // 25: quasar.proto.TestpointMessage.authenticate_request:type_name -> quasar.proto.AuthenticateRequest
-	5,  // 26: quasar.proto.TestpointMessage.audiosender_mode:type_name -> quasar.proto.AudioSenderMode
-	6,  // 27: quasar.proto.TestpointMessage.asr_result:type_name -> quasar.proto.AsrResult
-	17, // 28: quasar.proto.TestpointMessage.request_config_update:type_name -> quasar.proto.EmptyMessage
-	17, // 29: quasar.proto.TestpointMessage.revoke_user_account_info:type_name -> quasar.proto.EmptyMessage
-	7,  // 30: quasar.proto.TestpointMessage.set_setup_mode:type_name -> quasar.proto.SetSetupMode
-	12, // 31: quasar.proto.TestpointMessage.proxy:type_name -> quasar.proto.TestpointProxyEnvelope
-	13, // 32: quasar.proto.TestpointMessage.log_subscription:type_name -> quasar.proto.TestpointLogSubscription
-	14, // 33: quasar.proto.TestpointMessage.log_record:type_name -> quasar.proto.TestpointLogRecord
-	15, // 34: quasar.proto.TestpointMessage.log_marker:type_name -> quasar.proto.TestpointLogMarker
+	2,  // 16: quasar.proto.TestpointMessage.emulated_button:type_name -> quasar.proto.EmulatedButton
+	18, // 17: quasar.proto.TestpointMessage.incoming_directive:type_name -> quasar.proto.Directive
+	3,  // 18: quasar.proto.TestpointMessage.emulated_bluetooth:type_name -> quasar.proto.EmulateBluetooth
+	4,  // 19: quasar.proto.TestpointMessage.authenticate_request:type_name -> quasar.proto.AuthenticateRequest
+	5,  // 20: quasar.proto.TestpointMessage.audiosender_mode:type_name -> quasar.proto.AudioSenderMode
+	6,  // 21: quasar.proto.TestpointMessage.asr_result:type_name -> quasar.proto.AsrResult
+	17, // 22: quasar.proto.TestpointMessage.request_config_update:type_name -> quasar.proto.EmptyMessage
+	17, // 23: quasar.proto.TestpointMessage.revoke_user_account_info:type_name -> quasar.proto.EmptyMessage
+	8,  // 24: quasar.proto.TestpointMessage.set_setup_mode:type_name -> quasar.proto.SetSetupMode
+	13, // 25: quasar.proto.TestpointMessage.proxy:type_name -> quasar.proto.TestpointProxyEnvelope
+	14, // 26: quasar.proto.TestpointMessage.log_subscription:type_name -> quasar.proto.TestpointLogSubscription
+	15, // 27: quasar.proto.TestpointMessage.log_record:type_name -> quasar.proto.TestpointLogRecord
+	16, // 28: quasar.proto.TestpointMessage.log_marker:type_name -> quasar.proto.TestpointLogMarker
+	0,  // 29: quasar.proto.TestpointProxyEvent.type:type_name -> quasar.proto.TestpointProxyEvent.EType
+	9,  // 30: quasar.proto.TestpointProxyEnvelope.open:type_name -> quasar.proto.TestpointProxyOpen
+	10, // 31: quasar.proto.TestpointProxyEnvelope.close:type_name -> quasar.proto.TestpointProxyClose
+	11, // 32: quasar.proto.TestpointProxyEnvelope.data:type_name -> quasar.proto.TestpointProxyData
+	12, // 33: quasar.proto.TestpointProxyEnvelope.event:type_name -> quasar.proto.TestpointProxyEvent
+	1,  // 34: quasar.proto.TestpointLogRecord.level:type_name -> quasar.proto.TestpointLogRecord.ELevel
 	35, // [35:35] is the sub-list for method output_type
 	35, // [35:35] is the sub-list for method input_type
 	35, // [35:35] is the sub-list for extension type_name

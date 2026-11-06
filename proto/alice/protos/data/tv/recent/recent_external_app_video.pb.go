@@ -125,20 +125,20 @@ func (TRecentExternalAppVideoItem_ERecentType) EnumDescriptor() ([]byte, []int) 
 
 type TRecentExternalAppVideoItem struct {
 	state             protoimpl.MessageState                   `protogen:"open.v1"`
-	Id                string                                   `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	PackageName       string                                   `protobuf:"bytes,2,opt,name=PackageName,json=package_name,proto3" json:"PackageName,omitempty"`
-	Title             string                                   `protobuf:"bytes,3,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	AppIconUri        string                                   `protobuf:"bytes,7,opt,name=AppIconUri,json=app_icon_uri,proto3" json:"AppIconUri,omitempty"`
-	IntentUri         string                                   `protobuf:"bytes,8,opt,name=IntentUri,json=intent_uri,proto3" json:"IntentUri,omitempty"`
-	IsLive            bool                                     `protobuf:"varint,9,opt,name=IsLive,json=is_live,proto3" json:"IsLive,omitempty"`
-	DurationMs        int64                                    `protobuf:"varint,10,opt,name=DurationMs,json=duration_ms,proto3" json:"DurationMs,omitempty"`
-	PositionMs        int64                                    `protobuf:"varint,11,opt,name=PositionMs,json=position_ms,proto3" json:"PositionMs,omitempty"`
-	PosterAspectRatio TRecentExternalAppVideoItem_EAspectRatio `protobuf:"varint,12,opt,name=PosterAspectRatio,json=poster_aspect_ratio,proto3,enum=NAlice.NTv.TRecentExternalAppVideoItem_EAspectRatio" json:"PosterAspectRatio,omitempty"`
-	ItemRecentType    TRecentExternalAppVideoItem_ERecentType  `protobuf:"varint,13,opt,name=ItemRecentType,json=recent_type,proto3,enum=NAlice.NTv.TRecentExternalAppVideoItem_ERecentType" json:"ItemRecentType,omitempty"`
-	AppName           string                                   `protobuf:"bytes,14,opt,name=AppName,json=app_name,proto3" json:"AppName,omitempty"`
-	PosterUri         *string                                  `protobuf:"bytes,4,opt,name=PosterUri,json=poster_uri,proto3,oneof" json:"PosterUri,omitempty"`
-	ThumbnailUri      *string                                  `protobuf:"bytes,5,opt,name=ThumbnailUri,json=thumbnail_uri,proto3,oneof" json:"ThumbnailUri,omitempty"`
-	PreviewVideoUri   *string                                  `protobuf:"bytes,6,opt,name=PreviewVideoUri,json=preview_video_uri,proto3,oneof" json:"PreviewVideoUri,omitempty"`
+	Id                string                                   `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	PackageName       string                                   `protobuf:"bytes,2,opt,name=PackageName,proto3" json:"PackageName,omitempty"`
+	Title             string                                   `protobuf:"bytes,3,opt,name=Title,proto3" json:"Title,omitempty"`
+	AppIconUri        string                                   `protobuf:"bytes,7,opt,name=AppIconUri,proto3" json:"AppIconUri,omitempty"`
+	IntentUri         string                                   `protobuf:"bytes,8,opt,name=IntentUri,proto3" json:"IntentUri,omitempty"`
+	IsLive            bool                                     `protobuf:"varint,9,opt,name=IsLive,proto3" json:"IsLive,omitempty"`
+	DurationMs        int64                                    `protobuf:"varint,10,opt,name=DurationMs,proto3" json:"DurationMs,omitempty"`
+	PositionMs        int64                                    `protobuf:"varint,11,opt,name=PositionMs,proto3" json:"PositionMs,omitempty"`
+	PosterAspectRatio TRecentExternalAppVideoItem_EAspectRatio `protobuf:"varint,12,opt,name=PosterAspectRatio,proto3,enum=NAlice.NTv.TRecentExternalAppVideoItem_EAspectRatio" json:"PosterAspectRatio,omitempty"`
+	ItemRecentType    TRecentExternalAppVideoItem_ERecentType  `protobuf:"varint,13,opt,name=ItemRecentType,proto3,enum=NAlice.NTv.TRecentExternalAppVideoItem_ERecentType" json:"ItemRecentType,omitempty"`
+	AppName           string                                   `protobuf:"bytes,14,opt,name=AppName,proto3" json:"AppName,omitempty"`
+	PosterUri         *string                                  `protobuf:"bytes,4,opt,name=PosterUri,proto3,oneof" json:"PosterUri,omitempty"`
+	ThumbnailUri      *string                                  `protobuf:"bytes,5,opt,name=ThumbnailUri,proto3,oneof" json:"ThumbnailUri,omitempty"`
+	PreviewVideoUri   *string                                  `protobuf:"bytes,6,opt,name=PreviewVideoUri,proto3,oneof" json:"PreviewVideoUri,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -276,30 +276,29 @@ var File_alice_protos_data_tv_recent_recent_external_app_video_proto protoreflec
 const file_alice_protos_data_tv_recent_recent_external_app_video_proto_rawDesc = "" +
 	"\n" +
 	";alice/protos/data/tv/recent/recent_external_app_video.proto\x12\n" +
-	"NAlice.NTv\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\b\n" +
-	"\x1bTRecentExternalAppVideoItem\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x123\n" +
-	"\vPackageName\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name\x12\x1f\n" +
-	"\x05Title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x122\n" +
+	"NAlice.NTv\x1a&yt/yt_proto/yt/formats/extension.proto\"\x97\x06\n" +
+	"\x1bTRecentExternalAppVideoItem\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12 \n" +
+	"\vPackageName\x18\x02 \x01(\tR\vPackageName\x12\x14\n" +
+	"\x05Title\x18\x03 \x01(\tR\x05Title\x12\x1e\n" +
 	"\n" +
-	"AppIconUri\x18\a \x01(\tB\x10\xaa\xdd\x1b\fapp_icon_uriR\fapp_icon_uri\x12-\n" +
-	"\tIntentUri\x18\b \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"intent_uriR\n" +
-	"intent_uri\x12$\n" +
-	"\x06IsLive\x18\t \x01(\bB\v\xaa\xdd\x1b\ais_liveR\ais_live\x120\n" +
+	"AppIconUri\x18\a \x01(\tR\n" +
+	"AppIconUri\x12\x1c\n" +
+	"\tIntentUri\x18\b \x01(\tR\tIntentUri\x12\x16\n" +
+	"\x06IsLive\x18\t \x01(\bR\x06IsLive\x12\x1e\n" +
 	"\n" +
 	"DurationMs\x18\n" +
-	" \x01(\x03B\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x120\n" +
+	" \x01(\x03R\n" +
+	"DurationMs\x12\x1e\n" +
 	"\n" +
-	"PositionMs\x18\v \x01(\x03B\x0f\xaa\xdd\x1b\vposition_msR\vposition_ms\x12}\n" +
-	"\x11PosterAspectRatio\x18\f \x01(\x0e24.NAlice.NTv.TRecentExternalAppVideoItem.EAspectRatioB\x17\xaa\xdd\x1b\x13poster_aspect_ratioR\x13poster_aspect_ratio\x12i\n" +
-	"\x0eItemRecentType\x18\r \x01(\x0e23.NAlice.NTv.TRecentExternalAppVideoItem.ERecentTypeB\x0f\xaa\xdd\x1b\vrecent_typeR\vrecent_type\x12'\n" +
-	"\aAppName\x18\x0e \x01(\tB\f\xaa\xdd\x1b\bapp_nameR\bapp_name\x122\n" +
-	"\tPosterUri\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"poster_uriH\x00R\n" +
-	"poster_uri\x88\x01\x01\x12;\n" +
-	"\fThumbnailUri\x18\x05 \x01(\tB\x11\xaa\xdd\x1b\rthumbnail_uriH\x01R\rthumbnail_uri\x88\x01\x01\x12F\n" +
-	"\x0fPreviewVideoUri\x18\x06 \x01(\tB\x15\xaa\xdd\x1b\x11preview_video_uriH\x02R\x11preview_video_uri\x88\x01\x01\"8\n" +
+	"PositionMs\x18\v \x01(\x03R\n" +
+	"PositionMs\x12b\n" +
+	"\x11PosterAspectRatio\x18\f \x01(\x0e24.NAlice.NTv.TRecentExternalAppVideoItem.EAspectRatioR\x11PosterAspectRatio\x12[\n" +
+	"\x0eItemRecentType\x18\r \x01(\x0e23.NAlice.NTv.TRecentExternalAppVideoItem.ERecentTypeR\x0eItemRecentType\x12\x18\n" +
+	"\aAppName\x18\x0e \x01(\tR\aAppName\x12!\n" +
+	"\tPosterUri\x18\x04 \x01(\tH\x00R\tPosterUri\x88\x01\x01\x12'\n" +
+	"\fThumbnailUri\x18\x05 \x01(\tH\x01R\fThumbnailUri\x88\x01\x01\x12-\n" +
+	"\x0fPreviewVideoUri\x18\x06 \x01(\tH\x02R\x0fPreviewVideoUri\x88\x01\x01\"8\n" +
 	"\fEAspectRatio\x12\x0e\n" +
 	"\n" +
 	"HORIZONTAL\x10\x00\x12\n" +
@@ -311,12 +310,14 @@ const file_alice_protos_data_tv_recent_recent_external_app_video_proto_rawDesc =
 	"\fNEXT_EPISODE\x10\x01\x12\x0f\n" +
 	"\vNEW_EPISODE\x10\x02\x12\x0e\n" +
 	"\n" +
-	"WILL_WATCH\x10\x03:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"WILL_WATCH\x10\x03B\f\n" +
 	"\n" +
 	"_PosterUriB\x0f\n" +
 	"\r_ThumbnailUriB\x12\n" +
-	"\x10_PreviewVideoUriBm\n" +
-	"%ru.yandex.alice.protos.data.tv.recentB\x16RecentExternalAppVideoZ,a.yandex-team.ru/alice/protos/data/tv/recentb\x06proto3"
+	"\x10_PreviewVideoUriB\xc3\x01\n" +
+	"\x0ecom.NAlice.NTvB\x1bRecentExternalAppVideoProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/recent\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_recent_recent_external_app_video_proto_rawDescOnce sync.Once

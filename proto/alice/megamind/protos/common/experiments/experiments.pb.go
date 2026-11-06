@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/common/experiments/experiments.proto
 
-package experimentspb
+package experiments
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -23,8 +23,8 @@ const (
 )
 
 type TExperimentsProto struct {
-	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Storage       map[string]*TExperimentsProto_TValue `protobuf:"bytes,1,rep,name=Storage,proto3" json:"Storage,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Storage       []*TExperimentsProto_StorageEntry `protobuf:"bytes,1,rep,name=Storage" json:"Storage,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,7 +59,7 @@ func (*TExperimentsProto) Descriptor() ([]byte, []int) {
 	return file_alice_megamind_protos_common_experiments_experiments_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TExperimentsProto) GetStorage() map[string]*TExperimentsProto_TValue {
+func (x *TExperimentsProto) GetStorage() []*TExperimentsProto_StorageEntry {
 	if x != nil {
 		return x.Storage
 	}
@@ -157,19 +157,19 @@ type isTExperimentsProto_TValue_Value interface {
 }
 
 type TExperimentsProto_TValue_String_ struct {
-	String_ string `protobuf:"bytes,1,opt,name=String,proto3,oneof"`
+	String_ string `protobuf:"bytes,1,opt,name=String,oneof"`
 }
 
 type TExperimentsProto_TValue_Number struct {
-	Number float64 `protobuf:"fixed64,2,opt,name=Number,proto3,oneof"`
+	Number float64 `protobuf:"fixed64,2,opt,name=Number,oneof"`
 }
 
 type TExperimentsProto_TValue_Boolean struct {
-	Boolean bool `protobuf:"varint,3,opt,name=Boolean,proto3,oneof"`
+	Boolean bool `protobuf:"varint,3,opt,name=Boolean,oneof"`
 }
 
 type TExperimentsProto_TValue_Integer struct {
-	Integer int32 `protobuf:"varint,4,opt,name=Integer,proto3,oneof"`
+	Integer int32 `protobuf:"varint,4,opt,name=Integer,oneof"`
 }
 
 func (*TExperimentsProto_TValue_String_) isTExperimentsProto_TValue_Value() {}
@@ -180,26 +180,76 @@ func (*TExperimentsProto_TValue_Boolean) isTExperimentsProto_TValue_Value() {}
 
 func (*TExperimentsProto_TValue_Integer) isTExperimentsProto_TValue_Value() {}
 
+type TExperimentsProto_StorageEntry struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Key           *string                   `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *TExperimentsProto_TValue `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TExperimentsProto_StorageEntry) Reset() {
+	*x = TExperimentsProto_StorageEntry{}
+	mi := &file_alice_megamind_protos_common_experiments_experiments_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TExperimentsProto_StorageEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TExperimentsProto_StorageEntry) ProtoMessage() {}
+
+func (x *TExperimentsProto_StorageEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_megamind_protos_common_experiments_experiments_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TExperimentsProto_StorageEntry.ProtoReflect.Descriptor instead.
+func (*TExperimentsProto_StorageEntry) Descriptor() ([]byte, []int) {
+	return file_alice_megamind_protos_common_experiments_experiments_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *TExperimentsProto_StorageEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *TExperimentsProto_StorageEntry) GetValue() *TExperimentsProto_TValue {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_megamind_protos_common_experiments_experiments_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_common_experiments_experiments_proto_rawDesc = "" +
 	"\n" +
-	":alice/megamind/protos/common/experiments/experiments.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c\x03\n" +
-	"\x11TExperimentsProto\x12Q\n" +
-	"\aStorage\x18\x01 \x03(\v2&.NAlice.TExperimentsProto.StorageEntryB\x0f\xa0\xdd\x1b\n" +
-	"\xaa\xdd\x1b\astorageR\aStorage\x1a\xb5\x01\n" +
-	"\x06TValue\x12$\n" +
-	"\x06String\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06stringH\x00R\x06String\x12$\n" +
-	"\x06Number\x18\x02 \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06numberH\x00R\x06Number\x12'\n" +
-	"\aBoolean\x18\x03 \x01(\bB\v\xaa\xdd\x1b\abooleanH\x00R\aBoolean\x12'\n" +
-	"\aInteger\x18\x04 \x01(\x05B\v\xaa\xdd\x1b\aintegerH\x00R\aInteger:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05Value\x1a\\\n" +
+	":alice/megamind/protos/common/experiments/experiments.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb8\x02\n" +
+	"\x11TExperimentsProto\x12@\n" +
+	"\aStorage\x18\x01 \x03(\v2&.NAlice.TExperimentsProto.StorageEntryR\aStorage\x1a}\n" +
+	"\x06TValue\x12\x18\n" +
+	"\x06String\x18\x01 \x01(\tH\x00R\x06String\x12\x18\n" +
+	"\x06Number\x18\x02 \x01(\x01H\x00R\x06Number\x12\x1a\n" +
+	"\aBoolean\x18\x03 \x01(\bH\x00R\aBoolean\x12\x1a\n" +
+	"\aInteger\x18\x04 \x01(\x05H\x00R\aIntegerB\a\n" +
+	"\x05Value\x1aX\n" +
 	"\fStorageEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x126\n" +
-	"\x05value\x18\x02 \x01(\v2 .NAlice.TExperimentsProto.TValueR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04J\b\bԻ\x03\x10ջ\x03B\x8f\x01\n" +
-	"2ru.yandex.alice.megamind.protos.common.experimentsB\x10ExperimentsProtoZGa.yandex-team.ru/alice/megamind/protos/common/experiments;experimentspbb\x06proto3"
+	"\x05value\x18\x02 \x01(\v2 .NAlice.TExperimentsProto.TValueR\x05valueJ\b\bԻ\x03\x10ջ\x03B\xb0\x01\n" +
+	"\n" +
+	"com.NAliceB\x10ExperimentsProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common/experiments\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_megamind_protos_common_experiments_experiments_proto_rawDescOnce sync.Once
@@ -215,9 +265,9 @@ func file_alice_megamind_protos_common_experiments_experiments_proto_rawDescGZIP
 
 var file_alice_megamind_protos_common_experiments_experiments_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_megamind_protos_common_experiments_experiments_proto_goTypes = []any{
-	(*TExperimentsProto)(nil),        // 0: NAlice.TExperimentsProto
-	(*TExperimentsProto_TValue)(nil), // 1: NAlice.TExperimentsProto.TValue
-	nil,                              // 2: NAlice.TExperimentsProto.StorageEntry
+	(*TExperimentsProto)(nil),              // 0: NAlice.TExperimentsProto
+	(*TExperimentsProto_TValue)(nil),       // 1: NAlice.TExperimentsProto.TValue
+	(*TExperimentsProto_StorageEntry)(nil), // 2: NAlice.TExperimentsProto.StorageEntry
 }
 var file_alice_megamind_protos_common_experiments_experiments_proto_depIdxs = []int32{
 	2, // 0: NAlice.TExperimentsProto.Storage:type_name -> NAlice.TExperimentsProto.StorageEntry

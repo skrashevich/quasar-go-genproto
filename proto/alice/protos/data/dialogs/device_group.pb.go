@@ -82,8 +82,8 @@ const file_alice_protos_data_dialogs_device_group_proto_rawDesc = "" +
 	"\fUnknownGroup\x10\x00\x12\b\n" +
 	"\x04None\x10\x01\x12\b\n" +
 	"\x04Beta\x10\x02\x12\v\n" +
-	"\aNightly\x10\x03BS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\aNightly\x10\x03Br\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_device_group_proto_rawDescOnce sync.Once

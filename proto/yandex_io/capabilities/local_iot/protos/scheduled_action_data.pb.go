@@ -83,8 +83,8 @@ const file_yandex_io_capabilities_local_iot_protos_scheduled_action_data_proto_r
 	"Cyandex_io/capabilities/local_iot/protos/scheduled_action_data.proto\x12\x06NAlice\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a=alice/protos/endpoint/capabilities/local_iot/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c\x02\n" +
 	"\x14TScheduledActionData\x12m\n" +
 	"\x0fScheduledAction\x18\x01 \x01(\v2,.NAlice.TLocalIoTCapability.TScheduledActionB\x14\xaa\xdd\x1b\x10scheduled_actionR\x10scheduled_action\x12\x7f\n" +
-	"\x19OnScheduledActionCallback\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB \xaa\xdd\x1b\x1con_scheduled_action_callbackR\x1con_scheduled_action_callback:\x04\xa8\xdd\x1b\x04Bo\n" +
-	"Xru.yandex.yandex_io.capabilities.local_iot.actions_database.protos.scheduled_action_dataB\x13ScheduledActionDatab\x06proto3"
+	"\x19OnScheduledActionCallback\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB \xaa\xdd\x1b\x1con_scheduled_action_callbackR\x1con_scheduled_action_callback:\x04\xa8\xdd\x1b\x04B\xc8\x01\n" +
+	"Xru.yandex.yandex_io.capabilities.local_iot.actions_database.protos.scheduled_action_dataB\x13ScheduledActionDataZWgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/local_iot/protosb\x06proto3"
 
 var (
 	file_yandex_io_capabilities_local_iot_protos_scheduled_action_data_proto_rawDescOnce sync.Once

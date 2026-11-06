@@ -23,15 +23,12 @@ const (
 )
 
 type TTimeInterval struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
-	StartTime *TLocalTime `protobuf:"bytes,1,opt,name=StartTime,json=start_time,proto3" json:"StartTime,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
-	EndTime *TLocalTime `protobuf:"bytes,2,opt,name=EndTime,json=end_time,proto3" json:"EndTime,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
-	DayOfWeek     *TDayOfWeek              `protobuf:"bytes,3,opt,name=DayOfWeek,json=day_of_week,proto3" json:"DayOfWeek,omitempty"`
-	Start         *TTimeInterval_TBoundary `protobuf:"bytes,4,opt,name=Start,json=start,proto3" json:"Start,omitempty"`
-	End           *TTimeInterval_TBoundary `protobuf:"bytes,5,opt,name=End,json=end,proto3" json:"End,omitempty"`
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	StartTime     *TLocalTime              `protobuf:"bytes,1,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
+	EndTime       *TLocalTime              `protobuf:"bytes,2,opt,name=EndTime,proto3" json:"EndTime,omitempty"`
+	DayOfWeek     *TDayOfWeek              `protobuf:"bytes,3,opt,name=DayOfWeek,proto3" json:"DayOfWeek,omitempty"`
+	Start         *TTimeInterval_TBoundary `protobuf:"bytes,4,opt,name=Start,proto3" json:"Start,omitempty"`
+	End           *TTimeInterval_TBoundary `protobuf:"bytes,5,opt,name=End,proto3" json:"End,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,7 +63,6 @@ func (*TTimeInterval) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_device_control_panel_time_interval_proto_rawDescGZIP(), []int{0}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
 func (x *TTimeInterval) GetStartTime() *TLocalTime {
 	if x != nil {
 		return x.StartTime
@@ -74,7 +70,6 @@ func (x *TTimeInterval) GetStartTime() *TLocalTime {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
 func (x *TTimeInterval) GetEndTime() *TLocalTime {
 	if x != nil {
 		return x.EndTime
@@ -82,7 +77,6 @@ func (x *TTimeInterval) GetEndTime() *TLocalTime {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/time_interval.proto.
 func (x *TTimeInterval) GetDayOfWeek() *TDayOfWeek {
 	if x != nil {
 		return x.DayOfWeek
@@ -106,8 +100,8 @@ func (x *TTimeInterval) GetEnd() *TTimeInterval_TBoundary {
 
 type TTimeInterval_TBoundary struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Time          *TLocalTime            `protobuf:"bytes,1,opt,name=Time,json=time,proto3" json:"Time,omitempty"`
-	DayOfWeek     *TDayOfWeek            `protobuf:"bytes,2,opt,name=DayOfWeek,json=day_of_week,proto3" json:"DayOfWeek,omitempty"`
+	Time          *TLocalTime            `protobuf:"bytes,1,opt,name=Time,proto3" json:"Time,omitempty"`
+	DayOfWeek     *TDayOfWeek            `protobuf:"bytes,2,opt,name=DayOfWeek,proto3" json:"DayOfWeek,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -160,19 +154,18 @@ var File_alice_protos_data_device_control_panel_time_interval_proto protoreflect
 
 const file_alice_protos_data_device_control_panel_time_interval_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/data/device_control_panel/time_interval.proto\x12\x06NAlice\x1a7alice/protos/data/device_control_panel/local_time.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe3\x03\n" +
-	"\rTTimeInterval\x12C\n" +
-	"\tStartTime\x18\x01 \x01(\v2\x12.NAlice.TLocalTimeB\x10\xaa\xdd\x1b\n" +
-	"start_time\x18\x01R\n" +
-	"start_time\x12=\n" +
-	"\aEndTime\x18\x02 \x01(\v2\x12.NAlice.TLocalTimeB\x0e\xaa\xdd\x1b\bend_time\x18\x01R\bend_time\x12E\n" +
-	"\tDayOfWeek\x18\x03 \x01(\v2\x12.NAlice.TDayOfWeekB\x11\xaa\xdd\x1b\vday_of_week\x18\x01R\vday_of_week\x12@\n" +
-	"\x05Start\x18\x04 \x01(\v2\x1f.NAlice.TTimeInterval.TBoundaryB\t\xaa\xdd\x1b\x05startR\x05start\x12:\n" +
-	"\x03End\x18\x05 \x01(\v2\x1f.NAlice.TTimeInterval.TBoundaryB\a\xaa\xdd\x1b\x03endR\x03end\x1a\x82\x01\n" +
-	"\tTBoundary\x120\n" +
-	"\x04Time\x18\x01 \x01(\v2\x12.NAlice.TLocalTimeB\b\xaa\xdd\x1b\x04timeR\x04time\x12C\n" +
-	"\tDayOfWeek\x18\x02 \x01(\v2\x12.NAlice.TDayOfWeekB\x0f\xaa\xdd\x1b\vday_of_weekR\vday_of_week:\x04\xa8\xdd\x1b\x04B~\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x11TimeIntervalProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	":alice/protos/data/device_control_panel/time_interval.proto\x12\x06NAlice\x1a7alice/protos/data/device_control_panel/local_time.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf2\x02\n" +
+	"\rTTimeInterval\x120\n" +
+	"\tStartTime\x18\x01 \x01(\v2\x12.NAlice.TLocalTimeR\tStartTime\x12,\n" +
+	"\aEndTime\x18\x02 \x01(\v2\x12.NAlice.TLocalTimeR\aEndTime\x120\n" +
+	"\tDayOfWeek\x18\x03 \x01(\v2\x12.NAlice.TDayOfWeekR\tDayOfWeek\x125\n" +
+	"\x05Start\x18\x04 \x01(\v2\x1f.NAlice.TTimeInterval.TBoundaryR\x05Start\x121\n" +
+	"\x03End\x18\x05 \x01(\v2\x1f.NAlice.TTimeInterval.TBoundaryR\x03End\x1ae\n" +
+	"\tTBoundary\x12&\n" +
+	"\x04Time\x18\x01 \x01(\v2\x12.NAlice.TLocalTimeR\x04Time\x120\n" +
+	"\tDayOfWeek\x18\x02 \x01(\v2\x12.NAlice.TDayOfWeekR\tDayOfWeekB\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x11TimeIntervalProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_time_interval_proto_rawDescOnce sync.Once

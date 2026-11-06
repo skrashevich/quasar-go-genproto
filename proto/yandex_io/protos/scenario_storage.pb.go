@@ -294,8 +294,9 @@ const file_yandex_io_protos_scenario_storage_proto_rawDesc = "" +
 	"\fInputControl\x18\x06 \x01(\v2\x1d.NAlice.TInputControlScenarioH\x00R\fInputControl\x12@\n" +
 	"\vExternalApp\x18\a \x01(\v2\x1c.NAlice.TExternalAppScenarioH\x00R\vExternalAppB\n" +
 	"\n" +
-	"\bScenarioBH\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x14ScenarioStorageProtob\x06proto3"
+	"\bScenarioB\x9c\x01\n" +
+	"\n" +
+	"com.NAliceB\x14ScenarioStorageProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_yandex_io_protos_scenario_storage_proto_rawDescOnce sync.Once

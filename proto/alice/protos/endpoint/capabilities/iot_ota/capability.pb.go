@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_ota/capability.proto
 
-package iototapb
+package iot_ota
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -192,9 +192,9 @@ func (TOtaCapability_EUpdateLevel) EnumDescriptor() ([]byte, []int) {
 
 type TOtaCapability struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TOtaCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TOtaCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TOtaCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TOtaCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -252,7 +252,7 @@ func (x *TOtaCapability) GetState() *TOtaCapability_TState {
 
 type TOtaCapability_TParameters struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	DeviceInfo    *TOtaCapability_TDeviceInfo `protobuf:"bytes,1,opt,name=DeviceInfo,json=device_info,proto3" json:"DeviceInfo,omitempty"`
+	DeviceInfo    *TOtaCapability_TDeviceInfo `protobuf:"bytes,1,opt,name=DeviceInfo,proto3" json:"DeviceInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -296,9 +296,9 @@ func (x *TOtaCapability_TParameters) GetDeviceInfo() *TOtaCapability_TDeviceInfo
 
 type TOtaCapability_TState struct {
 	state           protoimpl.MessageState       `protogen:"open.v1"`
-	SoftwareVersion uint32                       `protobuf:"varint,1,opt,name=SoftwareVersion,json=software_version,proto3" json:"SoftwareVersion,omitempty"`
-	UpdateStatus    TOtaCapability_EUpdateStatus `protobuf:"varint,2,opt,name=UpdateStatus,json=update_status,proto3,enum=NAlice.TOtaCapability_EUpdateStatus" json:"UpdateStatus,omitempty"`
-	UpdateProgress  *uint32                      `protobuf:"varint,3,opt,name=UpdateProgress,json=update_progress,proto3,oneof" json:"UpdateProgress,omitempty"`
+	SoftwareVersion uint32                       `protobuf:"varint,1,opt,name=SoftwareVersion,proto3" json:"SoftwareVersion,omitempty"`
+	UpdateStatus    TOtaCapability_EUpdateStatus `protobuf:"varint,2,opt,name=UpdateStatus,proto3,enum=NAlice.TOtaCapability_EUpdateStatus" json:"UpdateStatus,omitempty"`
+	UpdateProgress  *uint32                      `protobuf:"varint,3,opt,name=UpdateProgress,proto3,oneof" json:"UpdateProgress,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -356,9 +356,9 @@ func (x *TOtaCapability_TState) GetUpdateProgress() uint32 {
 
 type TOtaCapability_TDeviceInfo struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	VendorId      uint32                   `protobuf:"varint,1,opt,name=VendorId,json=vendor_id,proto3" json:"VendorId,omitempty"`
-	ProductId     uint32                   `protobuf:"varint,2,opt,name=ProductId,json=product_id,proto3" json:"ProductId,omitempty"`
-	Protocol      TOtaCapability_EProtocol `protobuf:"varint,3,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TOtaCapability_EProtocol" json:"Protocol,omitempty"`
+	VendorId      uint32                   `protobuf:"varint,1,opt,name=VendorId,proto3" json:"VendorId,omitempty"`
+	ProductId     uint32                   `protobuf:"varint,2,opt,name=ProductId,proto3" json:"ProductId,omitempty"`
+	Protocol      TOtaCapability_EProtocol `protobuf:"varint,3,opt,name=Protocol,proto3,enum=NAlice.TOtaCapability_EProtocol" json:"Protocol,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -416,10 +416,10 @@ func (x *TOtaCapability_TDeviceInfo) GetProtocol() TOtaCapability_EProtocol {
 
 type TOtaCapability_TOtaApplyDirective struct {
 	state           protoimpl.MessageState      `protogen:"open.v1"`
-	Name            string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SoftwareVersion uint32                      `protobuf:"varint,1,opt,name=SoftwareVersion,json=software_version,proto3" json:"SoftwareVersion,omitempty"`
-	DownloadUrl     string                      `protobuf:"bytes,2,opt,name=DownloadUrl,json=download_url,proto3" json:"DownloadUrl,omitempty"`
-	UpdateLevel     TOtaCapability_EUpdateLevel `protobuf:"varint,3,opt,name=UpdateLevel,json=update_level,proto3,enum=NAlice.TOtaCapability_EUpdateLevel" json:"UpdateLevel,omitempty"`
+	Name            string                      `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SoftwareVersion uint32                      `protobuf:"varint,1,opt,name=SoftwareVersion,proto3" json:"SoftwareVersion,omitempty"`
+	DownloadUrl     string                      `protobuf:"bytes,2,opt,name=DownloadUrl,proto3" json:"DownloadUrl,omitempty"`
+	UpdateLevel     TOtaCapability_EUpdateLevel `protobuf:"varint,3,opt,name=UpdateLevel,proto3,enum=NAlice.TOtaCapability_EUpdateLevel" json:"UpdateLevel,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -484,8 +484,8 @@ func (x *TOtaCapability_TOtaApplyDirective) GetUpdateLevel() TOtaCapability_EUpd
 
 type TOtaCapability_TForceOtaRequestDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimeoutSeconds uint32                 `protobuf:"varint,1,opt,name=TimeoutSeconds,json=timeout_seconds,proto3" json:"TimeoutSeconds,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimeoutSeconds uint32                 `protobuf:"varint,1,opt,name=TimeoutSeconds,proto3" json:"TimeoutSeconds,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -536,8 +536,8 @@ func (x *TOtaCapability_TForceOtaRequestDirective) GetTimeoutSeconds() uint32 {
 
 type TOtaCapability_TOtaRequestEvent struct {
 	state           protoimpl.MessageState      `protogen:"open.v1"`
-	DeviceInfo      *TOtaCapability_TDeviceInfo `protobuf:"bytes,1,opt,name=DeviceInfo,json=device_info,proto3" json:"DeviceInfo,omitempty"`
-	SoftwareVersion uint32                      `protobuf:"varint,2,opt,name=SoftwareVersion,json=software_version,proto3" json:"SoftwareVersion,omitempty"`
+	DeviceInfo      *TOtaCapability_TDeviceInfo `protobuf:"bytes,1,opt,name=DeviceInfo,proto3" json:"DeviceInfo,omitempty"`
+	SoftwareVersion uint32                      `protobuf:"varint,2,opt,name=SoftwareVersion,proto3" json:"SoftwareVersion,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -588,7 +588,7 @@ func (x *TOtaCapability_TOtaRequestEvent) GetSoftwareVersion() uint32 {
 
 type TOtaCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TOtaCapability        `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TOtaCapability        `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -634,45 +634,43 @@ var File_alice_protos_endpoint_capabilities_iot_ota_capability_proto protoreflec
 
 const file_alice_protos_endpoint_capabilities_iot_ota_capability_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/endpoint/capabilities/iot_ota/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8a\x0f\n" +
-	"\x0eTOtaCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12R\n" +
+	";alice/protos/endpoint/capabilities/iot_ota/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcc\v\n" +
+	"\x0eTOtaCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12B\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2\".NAlice.TOtaCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12>\n" +
-	"\x05State\x18\x03 \x01(\v2\x1d.NAlice.TOtaCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1ai\n" +
-	"\vTParameters\x12T\n" +
+	"Parameters\x18\x02 \x01(\v2\".NAlice.TOtaCapability.TParametersR\n" +
+	"Parameters\x123\n" +
+	"\x05State\x18\x03 \x01(\v2\x1d.NAlice.TOtaCapability.TStateR\x05State\x1aQ\n" +
+	"\vTParameters\x12B\n" +
 	"\n" +
-	"DeviceInfo\x18\x01 \x01(\v2\".NAlice.TOtaCapability.TDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info:\x04\xa8\xdd\x1b\x04\x1a\x83\x02\n" +
-	"\x06TState\x12?\n" +
-	"\x0fSoftwareVersion\x18\x01 \x01(\rB\x14\xaa\xdd\x1b\x10software_versionR\x10software_version\x12\\\n" +
-	"\fUpdateStatus\x18\x02 \x01(\x0e2$.NAlice.TOtaCapability.EUpdateStatusB\x11\xaa\xdd\x1b\rupdate_statusR\rupdate_status\x12A\n" +
-	"\x0eUpdateProgress\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0fupdate_progressH\x00R\x0fupdate_progress\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
-	"\x0f_UpdateProgress\x1a\xb4\x01\n" +
-	"\vTDeviceInfo\x12*\n" +
-	"\bVendorId\x18\x01 \x01(\rB\r\xaa\xdd\x1b\tvendor_idR\tvendor_id\x12-\n" +
-	"\tProductId\x18\x02 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"product_idR\n" +
-	"product_id\x12J\n" +
-	"\bProtocol\x18\x03 \x01(\x0e2 .NAlice.TOtaCapability.EProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x1a\xa5\x02\n" +
-	"\x12TOtaApplyDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12?\n" +
-	"\x0fSoftwareVersion\x18\x01 \x01(\rB\x14\xaa\xdd\x1b\x10software_versionR\x10software_version\x123\n" +
-	"\vDownloadUrl\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fdownload_urlR\fdownload_url\x12X\n" +
-	"\vUpdateLevel\x18\x03 \x01(\x0e2#.NAlice.TOtaCapability.EUpdateLevelB\x10\xaa\xdd\x1b\fupdate_levelR\fupdate_level: \x92\x82\x19\x13ota_apply_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xae\x01\x1a\xa2\x01\n" +
-	"\x19TForceOtaRequestDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12<\n" +
-	"\x0eTimeoutSeconds\x18\x01 \x01(\rB\x13\xaa\xdd\x1b\x0ftimeout_secondsR\x0ftimeout_seconds:(\x92\x82\x19\x1bforce_ota_request_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xca\x01\x1a\xb3\x01\n" +
-	"\x10TOtaRequestEvent\x12T\n" +
+	"DeviceInfo\x18\x01 \x01(\v2\".NAlice.TOtaCapability.TDeviceInfoR\n" +
+	"DeviceInfo\x1a\xbc\x01\n" +
+	"\x06TState\x12(\n" +
+	"\x0fSoftwareVersion\x18\x01 \x01(\rR\x0fSoftwareVersion\x12H\n" +
+	"\fUpdateStatus\x18\x02 \x01(\x0e2$.NAlice.TOtaCapability.EUpdateStatusR\fUpdateStatus\x12+\n" +
+	"\x0eUpdateProgress\x18\x03 \x01(\rH\x00R\x0eUpdateProgress\x88\x01\x01B\x11\n" +
+	"\x0f_UpdateProgress\x1a\x85\x01\n" +
+	"\vTDeviceInfo\x12\x1a\n" +
+	"\bVendorId\x18\x01 \x01(\rR\bVendorId\x12\x1c\n" +
+	"\tProductId\x18\x02 \x01(\rR\tProductId\x12<\n" +
+	"\bProtocol\x18\x03 \x01(\x0e2 .NAlice.TOtaCapability.EProtocolR\bProtocol\x1a\xbc\x01\n" +
+	"\x12TOtaApplyDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12(\n" +
+	"\x0fSoftwareVersion\x18\x01 \x01(\rR\x0fSoftwareVersion\x12 \n" +
+	"\vDownloadUrl\x18\x02 \x01(\tR\vDownloadUrl\x12E\n" +
+	"\vUpdateLevel\x18\x03 \x01(\x0e2#.NAlice.TOtaCapability.EUpdateLevelR\vUpdateLevel\x1aX\n" +
+	"\x19TForceOtaRequestDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12&\n" +
+	"\x0eTimeoutSeconds\x18\x01 \x01(\rR\x0eTimeoutSeconds\x1a\x80\x01\n" +
+	"\x10TOtaRequestEvent\x12B\n" +
 	"\n" +
-	"DeviceInfo\x18\x01 \x01(\v2\".NAlice.TOtaCapability.TDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info\x12?\n" +
-	"\x0fSoftwareVersion\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10software_versionR\x10software_version:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c-\x1ae\n" +
-	"\x11TUpdateStateEvent\x12F\n" +
+	"DeviceInfo\x18\x01 \x01(\v2\".NAlice.TOtaCapability.TDeviceInfoR\n" +
+	"DeviceInfo\x12(\n" +
+	"\x0fSoftwareVersion\x18\x02 \x01(\rR\x0fSoftwareVersion\x1aK\n" +
+	"\x11TUpdateStateEvent\x126\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x16.NAlice.TOtaCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c.\";\n" +
+	"Capability\x18\x01 \x01(\v2\x16.NAlice.TOtaCapabilityR\n" +
+	"Capability\";\n" +
 	"\tEProtocol\x12\n" +
 	"\n" +
 	"\x06Zigbee\x10\x00\x12\n" +
@@ -694,8 +692,9 @@ const file_alice_protos_endpoint_capabilities_iot_ota_capability_proto_rawDesc =
 	"\fEUpdateLevel\x12\x18\n" +
 	"\x14UPDATE_LEVEL_UNKNOWN\x10\x00\x12\x17\n" +
 	"\x13UPDATE_LEVEL_NORMAL\x10\x01\x12\x15\n" +
-	"\x11UPDATE_LEVEL_CRIT\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c<B\x8b\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15IotOtaCapabilityProtoZDa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_ota;iototapbb\x06proto3"
+	"\x11UPDATE_LEVEL_CRIT\x10\x02B\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_ota\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_ota_capability_proto_rawDescOnce sync.Once

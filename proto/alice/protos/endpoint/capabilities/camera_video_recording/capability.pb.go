@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/camera_video_recording/capability.proto
 
-package camera_video_recordingpb
+package camera_video_recording
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -224,8 +224,8 @@ const file_alice_protos_endpoint_capabilities_camera_video_recording_capability_
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xb8\x01\n" +
 	"\x1dTStartVideoRecordingDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
-	"\vDurationSec\x18\x01 \x01(\rB\x10\xaa\xdd\x1b\fduration_secR\fduration_sec:C\x92\x82\x196camera_video_recording_start_video_recording_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x89\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcb\x01B\xba\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB#CameraVideoRecordingCapabilityProtoP\x01Zca.yandex-team.ru/alice/protos/endpoint/capabilities/camera_video_recording;camera_video_recordingpbb\x06proto3"
+	"\vDurationSec\x18\x01 \x01(\rB\x10\xaa\xdd\x1b\fduration_secR\fduration_sec:C\x92\x82\x196camera_video_recording_start_video_recording_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x89\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcb\x01B\xc0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB#CameraVideoRecordingCapabilityProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/camera_video_recordingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_camera_video_recording_capability_proto_rawDescOnce sync.Once

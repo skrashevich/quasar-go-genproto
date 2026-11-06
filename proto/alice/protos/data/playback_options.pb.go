@@ -24,8 +24,8 @@ const (
 
 type TPlaybackOptions struct {
 	state                 protoimpl.MessageState          `protogen:"open.v1"`
-	PlaybackStarterUserId string                          `protobuf:"bytes,1,opt,name=PlaybackStarterUserId,json=playback_starter_user_id,proto3" json:"PlaybackStarterUserId,omitempty"`
-	SpeedOptions          *TPlaybackOptions_TSpeedOptions `protobuf:"bytes,2,opt,name=SpeedOptions,json=speed_options,proto3" json:"SpeedOptions,omitempty"`
+	PlaybackStarterUserId string                          `protobuf:"bytes,1,opt,name=PlaybackStarterUserId,proto3" json:"PlaybackStarterUserId,omitempty"`
+	SpeedOptions          *TPlaybackOptions_TSpeedOptions `protobuf:"bytes,2,opt,name=SpeedOptions,proto3" json:"SpeedOptions,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -76,7 +76,7 @@ func (x *TPlaybackOptions) GetSpeedOptions() *TPlaybackOptions_TSpeedOptions {
 
 type TPlaybackOptions_TSpeedOptions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChangeSupport bool                   `protobuf:"varint,1,opt,name=ChangeSupport,json=change_support,proto3" json:"ChangeSupport,omitempty"`
+	ChangeSupport bool                   `protobuf:"varint,1,opt,name=ChangeSupport,proto3" json:"ChangeSupport,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -122,13 +122,13 @@ var File_alice_protos_data_playback_options_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_playback_options_proto_rawDesc = "" +
 	"\n" +
-	"(alice/protos/data/playback_options.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa7\x02\n" +
-	"\x10TPlaybackOptions\x12U\n" +
-	"\x15PlaybackStarterUserId\x18\x01 \x01(\tB\x1c\xaa\xdd\x1b\x18playback_starter_user_idR\x18playback_starter_user_id\x12d\n" +
-	"\fSpeedOptions\x18\x02 \x01(\v2,.NAlice.NData.TPlaybackOptions.TSpeedOptionsB\x11\xaa\xdd\x1b\rspeed_optionsR\rspeed_options\x1aP\n" +
-	"\rTSpeedOptions\x129\n" +
-	"\rChangeSupport\x18\x01 \x01(\bB\x12\xaa\xdd\x1b\x0echange_supportR\x0echange_support:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"(alice/protos/data/playback_options.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x01\n" +
+	"\x10TPlaybackOptions\x124\n" +
+	"\x15PlaybackStarterUserId\x18\x01 \x01(\tR\x15PlaybackStarterUserId\x12P\n" +
+	"\fSpeedOptions\x18\x02 \x01(\v2,.NAlice.NData.TPlaybackOptions.TSpeedOptionsR\fSpeedOptions\x1a5\n" +
+	"\rTSpeedOptions\x12$\n" +
+	"\rChangeSupport\x18\x01 \x01(\bR\rChangeSupportB\xbc\x01\n" +
+	"\x10com.NAlice.NDataB\x14PlaybackOptionsProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_playback_options_proto_rawDescOnce sync.Once

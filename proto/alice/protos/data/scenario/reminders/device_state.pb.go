@@ -24,8 +24,8 @@ const (
 
 type TDeviceRemindersState struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	List          []*TDeviceRemindersState_TItem `protobuf:"bytes,1,rep,name=List,json=list,proto3" json:"List,omitempty"`
-	SyncState     ERemindersSyncState            `protobuf:"varint,3,opt,name=SyncState,json=sync_state,proto3,enum=NAlice.NData.NReminders.ERemindersSyncState" json:"SyncState,omitempty"`
+	List          []*TDeviceRemindersState_TItem `protobuf:"bytes,1,rep,name=List,proto3" json:"List,omitempty"`
+	SyncState     ERemindersSyncState            `protobuf:"varint,3,opt,name=SyncState,proto3,enum=NAlice.NData.NReminders.ERemindersSyncState" json:"SyncState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,12 +76,12 @@ func (x *TDeviceRemindersState) GetSyncState() ERemindersSyncState {
 
 type TDeviceRemindersState_TItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Text          string                 `protobuf:"bytes,2,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	Epoch         string                 `protobuf:"bytes,3,opt,name=Epoch,json=epoch,proto3" json:"Epoch,omitempty"`
-	TimeZone      string                 `protobuf:"bytes,4,opt,name=TimeZone,json=timezone,proto3" json:"TimeZone,omitempty"`
-	Origin        string                 `protobuf:"bytes,5,opt,name=Origin,json=origin,proto3" json:"Origin,omitempty"`
-	Extensions    *TReminderExtensions   `protobuf:"bytes,7,opt,name=Extensions,json=opaque,proto3" json:"Extensions,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Text          string                 `protobuf:"bytes,2,opt,name=Text,proto3" json:"Text,omitempty"`
+	Epoch         string                 `protobuf:"bytes,3,opt,name=Epoch,proto3" json:"Epoch,omitempty"`
+	TimeZone      string                 `protobuf:"bytes,4,opt,name=TimeZone,proto3" json:"TimeZone,omitempty"`
+	Origin        string                 `protobuf:"bytes,5,opt,name=Origin,proto3" json:"Origin,omitempty"`
+	Extensions    *TReminderExtensions   `protobuf:"bytes,7,opt,name=Extensions,proto3" json:"Extensions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -162,23 +162,20 @@ var File_alice_protos_data_scenario_reminders_device_state_proto protoreflect.Fi
 
 const file_alice_protos_data_scenario_reminders_device_state_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/data/scenario/reminders/device_state.proto\x12\x17NAlice.NData.NReminders\x1a5alice/protos/data/scenario/reminders/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfc\x03\n" +
-	"\x15TDeviceRemindersState\x12R\n" +
-	"\x04List\x18\x01 \x03(\v24.NAlice.NData.NReminders.TDeviceRemindersState.TItemB\b\xaa\xdd\x1b\x04listR\x04list\x12[\n" +
-	"\tSyncState\x18\x03 \x01(\x0e2,.NAlice.NData.NReminders.ERemindersSyncStateB\x0e\xaa\xdd\x1b\n" +
-	"sync_stateR\n" +
-	"sync_state\x1a\x9a\x02\n" +
-	"\x05TItem\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12\x1f\n" +
-	"\x05Epoch\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05epochR\x05epoch\x12(\n" +
-	"\bTimeZone\x18\x04 \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12\"\n" +
-	"\x06Origin\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12X\n" +
+	"7alice/protos/data/scenario/reminders/device_state.proto\x12\x17NAlice.NData.NReminders\x1a5alice/protos/data/scenario/reminders/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\x03\n" +
+	"\x15TDeviceRemindersState\x12H\n" +
+	"\x04List\x18\x01 \x03(\v24.NAlice.NData.NReminders.TDeviceRemindersState.TItemR\x04List\x12J\n" +
+	"\tSyncState\x18\x03 \x01(\x0e2,.NAlice.NData.NReminders.ERemindersSyncStateR\tSyncState\x1a\xd1\x01\n" +
+	"\x05TItem\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Text\x18\x02 \x01(\tR\x04Text\x12\x14\n" +
+	"\x05Epoch\x18\x03 \x01(\tR\x05Epoch\x12\x1a\n" +
+	"\bTimeZone\x18\x04 \x01(\tR\bTimeZone\x12\x16\n" +
+	"\x06Origin\x18\x05 \x01(\tR\x06Origin\x12L\n" +
 	"\n" +
-	"Extensions\x18\a \x01(\v2,.NAlice.NData.NReminders.TReminderExtensionsB\x0e\xaa\xdd\x1b\n" +
-	"extensionsR\x06opaque:\x04\xa8\xdd\x1b\x04J\x04\b\x06\x10\aR\x06Opaque:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\tCancelledBg\n" +
-	".ru.yandex.alice.protos.data.scenario.remindersZ5a.yandex-team.ru/alice/protos/data/scenario/remindersb\x06proto3"
+	"Extensions\x18\a \x01(\v2,.NAlice.NData.NReminders.TReminderExtensionsR\n" +
+	"ExtensionsJ\x04\b\x06\x10\aR\x06OpaqueJ\x04\b\x02\x10\x03R\tCancelledB\x83\x02\n" +
+	"\x1bcom.NAlice.NData.NRemindersB\x10DeviceStateProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/reminders\xa2\x02\x03NNN\xaa\x02\x17NAlice.NData.NReminders\xca\x02\x17NAlice\\NData\\NReminders\xe2\x02#NAlice\\NData\\NReminders\\GPBMetadata\xea\x02\x19NAlice::NData::NRemindersb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_reminders_device_state_proto_rawDescOnce sync.Once

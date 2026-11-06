@@ -357,7 +357,7 @@ const file_alice_protos_api_rpc_file_service_is_job_finished_proto_rawDesc = "" 
 	"\x13_VideoCacheUploadIdB\b\n" +
 	"\x06_TitleB\r\n" +
 	"\v_PreviewUrl:\x04\xa8\xdd\x1b\x04B\x1d\n" +
-	"\x1b_NextRetryMillisecondsDelayB4Z2a.yandex-team.ru/alice/protos/api/rpc/file_serviceb\x06proto3"
+	"\x1b_NextRetryMillisecondsDelayBSZQgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/file_serviceb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_file_service_is_job_finished_proto_rawDescOnce sync.Once

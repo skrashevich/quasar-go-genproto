@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_switch_mode/capability.proto
 
-package iotswitchmodepb
+package iot_switch_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -82,9 +82,9 @@ func (TIotSwitchModeCapability_EMode) EnumDescriptor() ([]byte, []int) {
 
 type TIotSwitchModeCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotSwitchModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotSwitchModeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotSwitchModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotSwitchModeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -142,7 +142,7 @@ func (x *TIotSwitchModeCapability) GetState() *TIotSwitchModeCapability_TState {
 
 type TIotSwitchModeCapability_TParameters struct {
 	state          protoimpl.MessageState           `protogen:"open.v1"`
-	SupportedModes []TIotSwitchModeCapability_EMode `protobuf:"varint,1,rep,packed,name=SupportedModes,json=supported_modes,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"SupportedModes,omitempty"`
+	SupportedModes []TIotSwitchModeCapability_EMode `protobuf:"varint,1,rep,packed,name=SupportedModes,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"SupportedModes,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -186,7 +186,7 @@ func (x *TIotSwitchModeCapability_TParameters) GetSupportedModes() []TIotSwitchM
 
 type TIotSwitchModeCapability_TState struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Mode          TIotSwitchModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"Mode,omitempty"`
+	Mode          TIotSwitchModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -230,8 +230,8 @@ func (x *TIotSwitchModeCapability_TState) GetMode() TIotSwitchModeCapability_EMo
 
 type TIotSwitchModeCapability_TSetModeDirective struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Name          string                         `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Mode          TIotSwitchModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"Mode,omitempty"`
+	Name          string                         `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Mode          TIotSwitchModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TIotSwitchModeCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -282,7 +282,7 @@ func (x *TIotSwitchModeCapability_TSetModeDirective) GetMode() TIotSwitchModeCap
 
 type TIotSwitchModeCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Capability    *TIotSwitchModeCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotSwitchModeCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -328,34 +328,33 @@ var File_alice_protos_endpoint_capabilities_iot_switch_mode_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_iot_switch_mode_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/iot_switch_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe0\x06\n" +
-	"\x18TIotSwitchModeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Calice/protos/endpoint/capabilities/iot_switch_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaa\x05\n" +
+	"\x18TIotSwitchModeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotSwitchModeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotSwitchModeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1ay\n" +
-	"\vTParameters\x12d\n" +
-	"\x0eSupportedModes\x18\x01 \x03(\x0e2&.NAlice.TIotSwitchModeCapability.EModeB\x13\xaa\xdd\x1b\x0fsupported_modesR\x0fsupported_modes:\x04\xa8\xdd\x1b\x04\x1aT\n" +
-	"\x06TState\x12D\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2&.NAlice.TIotSwitchModeCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:\x04\xa8\xdd\x1b\x04\x1a\xa4\x01\n" +
-	"\x11TSetModeDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12D\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2&.NAlice.TIotSwitchModeCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:*\x92\x82\x19\x1diot_set_switch_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8a\x02\x1ao\n" +
-	"\x11TUpdateStateEvent\x12P\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotSwitchModeCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotSwitchModeCapability.TStateR\x05State\x1a]\n" +
+	"\vTParameters\x12N\n" +
+	"\x0eSupportedModes\x18\x01 \x03(\x0e2&.NAlice.TIotSwitchModeCapability.EModeR\x0eSupportedModes\x1aD\n" +
+	"\x06TState\x12:\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2&.NAlice.TIotSwitchModeCapability.EModeR\x04Mode\x1ad\n" +
+	"\x11TSetModeDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12:\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2&.NAlice.TIotSwitchModeCapability.EModeR\x04Mode\x1aU\n" +
+	"\x11TUpdateStateEvent\x12@\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2 .NAlice.TIotSwitchModeCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c?\"p\n" +
+	"Capability\x18\x01 \x01(\v2 .NAlice.TIotSwitchModeCapabilityR\n" +
+	"Capability\"p\n" +
 	"\x05EMode\x12\r\n" +
 	"\tUndefined\x10\x00\x12\n" +
 	"\n" +
 	"\x06Native\x10\x01\x12\x17\n" +
 	"\x13TopRowMultifunction\x10\x02\x12\x17\n" +
 	"\x13AllRowMultifunction\x10\x03\x12\x1a\n" +
-	"\x16BottomRowMultifunction\x10\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c`B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cIotSwitchModeCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_switch_mode;iotswitchmodepbb\x06proto3"
+	"\x16BottomRowMultifunction\x10\x04B\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_switch_mode\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_switch_mode_capability_proto_rawDescOnce sync.Once

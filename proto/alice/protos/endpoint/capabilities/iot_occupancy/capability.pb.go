@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_occupancy/capability.proto
 
-package occupancypb
+package iot_occupancy
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotOccupancyCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotOccupancyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotOccupancyCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotOccupancyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotOccupancyCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TIotOccupancyCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotOccupancyCapability_TSonarDetection struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DistanceMeters float64                `protobuf:"fixed64,1,opt,name=DistanceMeters,json=distance_meters,proto3" json:"DistanceMeters,omitempty"`
+	DistanceMeters float64                `protobuf:"fixed64,1,opt,name=DistanceMeters,proto3" json:"DistanceMeters,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -167,7 +167,7 @@ func (x *TIotOccupancyCapability_TSonarDetection) GetDistanceMeters() float64 {
 
 type TIotOccupancyCapability_TRadarDetection struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            uint32                 `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
+	ID            uint32                 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -280,11 +280,11 @@ type isTIotOccupancyCapability_TDetection_Detection interface {
 }
 
 type TIotOccupancyCapability_TDetection_SonarDetection struct {
-	SonarDetection *TIotOccupancyCapability_TSonarDetection `protobuf:"bytes,1,opt,name=SonarDetection,json=sonar_detection,proto3,oneof"`
+	SonarDetection *TIotOccupancyCapability_TSonarDetection `protobuf:"bytes,1,opt,name=SonarDetection,proto3,oneof"`
 }
 
 type TIotOccupancyCapability_TDetection_RadarDetection struct {
-	RadarDetection *TIotOccupancyCapability_TRadarDetection `protobuf:"bytes,2,opt,name=RadarDetection,json=radar_detection,proto3,oneof"`
+	RadarDetection *TIotOccupancyCapability_TRadarDetection `protobuf:"bytes,2,opt,name=RadarDetection,proto3,oneof"`
 }
 
 func (*TIotOccupancyCapability_TDetection_SonarDetection) isTIotOccupancyCapability_TDetection_Detection() {
@@ -295,7 +295,7 @@ func (*TIotOccupancyCapability_TDetection_RadarDetection) isTIotOccupancyCapabil
 
 type TIotOccupancyCapability_TObject struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Detection     *TIotOccupancyCapability_TDetection `protobuf:"bytes,1,opt,name=Detection,json=detection,proto3" json:"Detection,omitempty"`
+	Detection     *TIotOccupancyCapability_TDetection `protobuf:"bytes,1,opt,name=Detection,proto3" json:"Detection,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -339,7 +339,7 @@ func (x *TIotOccupancyCapability_TObject) GetDetection() *TIotOccupancyCapabilit
 
 type TIotOccupancyCapability_TState struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Objects       []*TIotOccupancyCapability_TObject `protobuf:"bytes,1,rep,name=Objects,json=objects,proto3" json:"Objects,omitempty"`
+	Objects       []*TIotOccupancyCapability_TObject `protobuf:"bytes,1,rep,name=Objects,proto3" json:"Objects,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -383,7 +383,7 @@ func (x *TIotOccupancyCapability_TState) GetObjects() []*TIotOccupancyCapability
 
 type TIotOccupancyCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Capability    *TIotOccupancyCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotOccupancyCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -578,15 +578,15 @@ type isTIotOccupancyCapability_TCondition_Condition interface {
 }
 
 type TIotOccupancyCapability_TCondition_LowerBound struct {
-	LowerBound *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=LowerBound,json=lower_bound,proto3,oneof"`
+	LowerBound *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=LowerBound,proto3,oneof"`
 }
 
 type TIotOccupancyCapability_TCondition_UpperBound struct {
-	UpperBound *wrapperspb.DoubleValue `protobuf:"bytes,3,opt,name=UpperBound,json=upper_bound,proto3,oneof"`
+	UpperBound *wrapperspb.DoubleValue `protobuf:"bytes,3,opt,name=UpperBound,proto3,oneof"`
 }
 
 type TIotOccupancyCapability_TCondition_Delta struct {
-	Delta *wrapperspb.DoubleValue `protobuf:"bytes,4,opt,name=Delta,json=delta,proto3,oneof"`
+	Delta *wrapperspb.DoubleValue `protobuf:"bytes,4,opt,name=Delta,proto3,oneof"`
 }
 
 func (*TIotOccupancyCapability_TCondition_LowerBound) isTIotOccupancyCapability_TCondition_Condition() {
@@ -601,45 +601,45 @@ var File_alice_protos_endpoint_capabilities_iot_occupancy_capability_proto proto
 
 const file_alice_protos_endpoint_capabilities_iot_occupancy_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/iot_occupancy/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\n" +
+	"Aalice/protos/endpoint/capabilities/iot_occupancy/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa0\b\n" +
+	"\x17TIotOccupancyCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"\x17TIotOccupancyCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotOccupancyCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotOccupancyCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a9\n" +
+	"\x0fTSonarDetection\x12&\n" +
+	"\x0eDistanceMeters\x18\x01 \x01(\x01R\x0eDistanceMeters\x1a!\n" +
+	"\x0fTRadarDetection\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x1a\xcf\x01\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotOccupancyCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotOccupancyCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aU\n" +
-	"\x0fTSonarDetection\x12<\n" +
-	"\x0eDistanceMeters\x18\x01 \x01(\x01B\x13\xaa\xdd\x1b\x0fdistance_metersR\x0fdistance_meters:\x04\xa8\xdd\x1b\x04\x1a/\n" +
-	"\x0fTRadarDetection\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id:\x04\xa8\xdd\x1b\x04\x1a\x81\x02\n" +
+	"TDetection\x12Y\n" +
+	"\x0eSonarDetection\x18\x01 \x01(\v2/.NAlice.TIotOccupancyCapability.TSonarDetectionH\x00R\x0eSonarDetection\x12Y\n" +
+	"\x0eRadarDetection\x18\x02 \x01(\v2/.NAlice.TIotOccupancyCapability.TRadarDetectionH\x00R\x0eRadarDetectionB\v\n" +
+	"\tDetection\x1aS\n" +
+	"\aTObject\x12H\n" +
+	"\tDetection\x18\x01 \x01(\v2*.NAlice.TIotOccupancyCapability.TDetectionR\tDetection\x1aK\n" +
+	"\x06TState\x12A\n" +
+	"\aObjects\x18\x01 \x03(\v2'.NAlice.TIotOccupancyCapability.TObjectR\aObjects\x1aT\n" +
+	"\x11TUpdateStateEvent\x12?\n" +
 	"\n" +
-	"TDetection\x12o\n" +
-	"\x0eSonarDetection\x18\x01 \x01(\v2/.NAlice.TIotOccupancyCapability.TSonarDetectionB\x13\xaa\xdd\x1b\x0fsonar_detectionH\x00R\x0fsonar_detection\x12o\n" +
-	"\x0eRadarDetection\x18\x02 \x01(\v2/.NAlice.TIotOccupancyCapability.TRadarDetectionB\x13\xaa\xdd\x1b\x0fradar_detectionH\x00R\x0fradar_detection:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\tDetection\x1ah\n" +
-	"\aTObject\x12W\n" +
-	"\tDetection\x18\x01 \x01(\v2*.NAlice.TIotOccupancyCapability.TDetectionB\r\xaa\xdd\x1b\tdetectionR\tdetection:\x04\xa8\xdd\x1b\x04\x1a^\n" +
-	"\x06TState\x12N\n" +
-	"\aObjects\x18\x01 \x03(\v2'.NAlice.TIotOccupancyCapability.TObjectB\v\xaa\xdd\x1b\aobjectsR\aobjects:\x04\xa8\xdd\x1b\x04\x1an\n" +
-	"\x11TUpdateStateEvent\x12O\n" +
+	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotOccupancyCapabilityR\n" +
+	"Capability\x1a\x19\n" +
+	"\x17TIotOccupancyEnterEvent\x1a\x19\n" +
+	"\x17TIotOccupancyLeaveEvent\x1a\xdd\x01\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotOccupancyCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c]\x1a#\n" +
-	"\x17TIotOccupancyEnterEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cY\x1a#\n" +
-	"\x17TIotOccupancyLeaveEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cZ\x1a\xe5\x01\n" +
+	"TCondition\x12>\n" +
 	"\n" +
-	"TCondition\x12?\n" +
+	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\n" +
+	"LowerBound\x12>\n" +
 	"\n" +
-	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\vlower_bound\x12?\n" +
+	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\n" +
+	"UpperBound\x124\n" +
+	"\x05Delta\x18\x04 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\x05DeltaB\v\n" +
+	"\tConditionJ\x04\b\x01\x10\x02R\x06EventsB\xb7\x01\n" +
 	"\n" +
-	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\vupper_bound\x124\n" +
-	"\x05Delta\x18\x04 \x01(\v2\x1c.google.protobuf.DoubleValueH\x00R\x05delta:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\tConditionJ\x04\b\x01\x10\x02R\x06Events:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x97\x01B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cTIotOccupancyCapabilityProtoP\x01ZMa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_occupancy;occupancypbb\x06proto3"
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_occupancy\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_occupancy_capability_proto_rawDescOnce sync.Once

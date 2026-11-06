@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lifelog/capability.proto
 
-package lifelogpb
+package lifelog
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -181,8 +181,8 @@ const file_alice_protos_endpoint_capabilities_lifelog_capability_proto_rawDesc =
 	"meeting_idH\x00R\n" +
 	"meeting_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
 	"\n" +
-	"_MeetingId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc5\x02B\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16LifelogCapabilityProtoZEa.yandex-team.ru/alice/protos/endpoint/capabilities/lifelog;lifelogpbb\x06proto3"
+	"_MeetingId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc5\x02B\xa2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16LifelogCapabilityProtoZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lifelogb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lifelog_capability_proto_rawDescOnce sync.Once

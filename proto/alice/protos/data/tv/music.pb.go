@@ -419,8 +419,8 @@ const file_alice_protos_data_tv_music_proto_rawDesc = "" +
 	"\t_SubtitleB\v\n" +
 	"\t_ProgressB\x16\n" +
 	"\x14_LastInteractionTimeB\r\n" +
-	"\v_LikesCountBN\n" +
-	"\x1eru.yandex.alice.protos.data.tvB\x05MusicZ%a.yandex-team.ru/alice/protos/data/tvb\x06proto3"
+	"\v_LikesCountBm\n" +
+	"\x1eru.yandex.alice.protos.data.tvB\x05MusicZDgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_music_proto_rawDescOnce sync.Once

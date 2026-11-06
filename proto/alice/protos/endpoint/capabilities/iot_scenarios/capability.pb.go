@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_scenarios/capability.proto
 
-package iotscenariospb
+package iot_scenarios
 
 import (
 	iot "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot"
@@ -225,9 +225,9 @@ func (TIotScenariosCapability_TEffectiveTimeFilter_ETriggerPolicy) EnumDescripto
 
 type TIotScenariosCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotScenariosCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotScenariosCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotScenariosCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotScenariosCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -285,8 +285,8 @@ func (x *TIotScenariosCapability) GetState() *TIotScenariosCapability_TState {
 
 type TIotScenariosCapability_TParameters struct {
 	state                              protoimpl.MessageState                       `protogen:"open.v1"`
-	SupportedConditionTypes            []iot.TLocalScenarioCondition_EConditionType `protobuf:"varint,1,rep,packed,name=SupportedConditionTypes,json=supported_condition_types,proto3,enum=NAlice.NIot.TLocalScenarioCondition_EConditionType" json:"SupportedConditionTypes,omitempty"`
-	SupportedCapabilityEventConditions []endpoint.TCapability_EEventType            `protobuf:"varint,2,rep,packed,name=SupportedCapabilityEventConditions,json=supported_capability_event_conditions,proto3,enum=NAlice.TCapability_EEventType" json:"SupportedCapabilityEventConditions,omitempty"`
+	SupportedConditionTypes            []iot.TLocalScenarioCondition_EConditionType `protobuf:"varint,1,rep,packed,name=SupportedConditionTypes,proto3,enum=NAlice.NIot.TLocalScenarioCondition_EConditionType" json:"SupportedConditionTypes,omitempty"`
+	SupportedCapabilityEventConditions []endpoint.TCapability_EEventType            `protobuf:"varint,2,rep,packed,name=SupportedCapabilityEventConditions,proto3,enum=NAlice.TCapability_EEventType" json:"SupportedCapabilityEventConditions,omitempty"`
 	unknownFields                      protoimpl.UnknownFields
 	sizeCache                          protoimpl.SizeCache
 }
@@ -337,7 +337,7 @@ func (x *TIotScenariosCapability_TParameters) GetSupportedCapabilityEventConditi
 
 type TIotScenariosCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,json=scenarios,proto3" json:"Scenarios,omitempty"`
+	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,proto3" json:"Scenarios,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -380,14 +380,14 @@ func (x *TIotScenariosCapability_TState) GetScenarios() []*iot.TLocalScenario {
 }
 
 type TIotScenariosCapability_TLocalStepsFinishedEvent struct {
-	state                  protoimpl.MessageState                     `protogen:"open.v1"`
-	LaunchID               string                                     `protobuf:"bytes,1,opt,name=LaunchID,json=launch_id,proto3" json:"LaunchID,omitempty"`
-	LaunchTimestampSeconds uint64                                     `protobuf:"varint,7,opt,name=LaunchTimestampSeconds,json=launch_timestamp_seconds,proto3" json:"LaunchTimestampSeconds,omitempty"`
-	ScenarioID             string                                     `protobuf:"bytes,2,opt,name=ScenarioID,json=scenario_id,proto3" json:"ScenarioID,omitempty"`
-	StepResults            map[uint32]*iot.TLocalScenario_TStepResult `protobuf:"bytes,3,rep,name=StepResults,json=step_results,proto3" json:"StepResults,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	StepIndex              uint32                                     `protobuf:"varint,4,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
-	StepStatus             TIotScenariosCapability_EStepStatus        `protobuf:"varint,5,opt,name=StepStatus,json=step_status,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"StepStatus,omitempty"`
-	TriggeredCondition     *iot.TLocalScenarioCondition               `protobuf:"bytes,6,opt,name=TriggeredCondition,json=triggered_condition,proto3" json:"TriggeredCondition,omitempty"`
+	state                  protoimpl.MessageState                                               `protogen:"open.v1"`
+	LaunchID               string                                                               `protobuf:"bytes,1,opt,name=LaunchID,proto3" json:"LaunchID,omitempty"`
+	LaunchTimestampSeconds uint64                                                               `protobuf:"varint,7,opt,name=LaunchTimestampSeconds,proto3" json:"LaunchTimestampSeconds,omitempty"`
+	ScenarioID             string                                                               `protobuf:"bytes,2,opt,name=ScenarioID,proto3" json:"ScenarioID,omitempty"`
+	StepResults            []*TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry `protobuf:"bytes,3,rep,name=StepResults,proto3" json:"StepResults,omitempty"`
+	StepIndex              uint32                                                               `protobuf:"varint,4,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
+	StepStatus             TIotScenariosCapability_EStepStatus                                  `protobuf:"varint,5,opt,name=StepStatus,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"StepStatus,omitempty"`
+	TriggeredCondition     *iot.TLocalScenarioCondition                                         `protobuf:"bytes,6,opt,name=TriggeredCondition,proto3" json:"TriggeredCondition,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -443,7 +443,7 @@ func (x *TIotScenariosCapability_TLocalStepsFinishedEvent) GetScenarioID() strin
 	return ""
 }
 
-func (x *TIotScenariosCapability_TLocalStepsFinishedEvent) GetStepResults() map[uint32]*iot.TLocalScenario_TStepResult {
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent) GetStepResults() []*TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry {
 	if x != nil {
 		return x.StepResults
 	}
@@ -472,13 +472,13 @@ func (x *TIotScenariosCapability_TLocalStepsFinishedEvent) GetTriggeredCondition
 }
 
 type TIotScenariosCapability_TExecuteNonLocalStepEvent struct {
-	state                  protoimpl.MessageState                     `protogen:"open.v1"`
-	LaunchID               string                                     `protobuf:"bytes,1,opt,name=LaunchID,json=launch_id,proto3" json:"LaunchID,omitempty"`
-	LaunchTimestampSeconds uint64                                     `protobuf:"varint,6,opt,name=LaunchTimestampSeconds,json=launch_timestamp_seconds,proto3" json:"LaunchTimestampSeconds,omitempty"`
-	ScenarioID             string                                     `protobuf:"bytes,2,opt,name=ScenarioID,json=scenario_id,proto3" json:"ScenarioID,omitempty"`
-	StepResults            map[uint32]*iot.TLocalScenario_TStepResult `protobuf:"bytes,3,rep,name=StepResults,json=step_results,proto3" json:"StepResults,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	StepIndex              uint32                                     `protobuf:"varint,4,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
-	TriggeredCondition     *iot.TLocalScenarioCondition               `protobuf:"bytes,5,opt,name=TriggeredCondition,json=triggered_condition,proto3" json:"TriggeredCondition,omitempty"`
+	state                  protoimpl.MessageState                                                `protogen:"open.v1"`
+	LaunchID               string                                                                `protobuf:"bytes,1,opt,name=LaunchID,proto3" json:"LaunchID,omitempty"`
+	LaunchTimestampSeconds uint64                                                                `protobuf:"varint,6,opt,name=LaunchTimestampSeconds,proto3" json:"LaunchTimestampSeconds,omitempty"`
+	ScenarioID             string                                                                `protobuf:"bytes,2,opt,name=ScenarioID,proto3" json:"ScenarioID,omitempty"`
+	StepResults            []*TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry `protobuf:"bytes,3,rep,name=StepResults,proto3" json:"StepResults,omitempty"`
+	StepIndex              uint32                                                                `protobuf:"varint,4,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
+	TriggeredCondition     *iot.TLocalScenarioCondition                                          `protobuf:"bytes,5,opt,name=TriggeredCondition,proto3" json:"TriggeredCondition,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -534,7 +534,7 @@ func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent) GetScenarioID() stri
 	return ""
 }
 
-func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent) GetStepResults() map[uint32]*iot.TLocalScenario_TStepResult {
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent) GetStepResults() []*TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry {
 	if x != nil {
 		return x.StepResults
 	}
@@ -557,8 +557,8 @@ func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent) GetTriggeredConditio
 
 type TIotScenariosCapability_TConfirmLocalScenariosEvent struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	LocalScenarioIDs    []string               `protobuf:"bytes,1,rep,name=LocalScenarioIDs,json=local_scenario_ids,proto3" json:"LocalScenarioIDs,omitempty"`
-	NonLocalScenarioIDs []string               `protobuf:"bytes,2,rep,name=NonLocalScenarioIDs,json=non_local_scenario_ids,proto3" json:"NonLocalScenarioIDs,omitempty"`
+	LocalScenarioIDs    []string               `protobuf:"bytes,1,rep,name=LocalScenarioIDs,proto3" json:"LocalScenarioIDs,omitempty"`
+	NonLocalScenarioIDs []string               `protobuf:"bytes,2,rep,name=NonLocalScenarioIDs,proto3" json:"NonLocalScenarioIDs,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -645,8 +645,8 @@ func (*TIotScenariosCapability_TRestoreLocalScenariosEvent) Descriptor() ([]byte
 
 type TIotScenariosCapability_TConfirmLocalScenariosActivityEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ActiveIDs     []string               `protobuf:"bytes,1,rep,name=ActiveIDs,json=active_ids,proto3" json:"ActiveIDs,omitempty"`
-	InactiveIDs   []string               `protobuf:"bytes,2,rep,name=InactiveIDs,json=inactive_ids,proto3" json:"InactiveIDs,omitempty"`
+	ActiveIDs     []string               `protobuf:"bytes,1,rep,name=ActiveIDs,proto3" json:"ActiveIDs,omitempty"`
+	InactiveIDs   []string               `protobuf:"bytes,2,rep,name=InactiveIDs,proto3" json:"InactiveIDs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -697,8 +697,8 @@ func (x *TIotScenariosCapability_TConfirmLocalScenariosActivityEvent) GetInactiv
 
 type TIotScenariosCapability_TAddIotScenariosDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,json=scenarios,proto3" json:"Scenarios,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,proto3" json:"Scenarios,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -749,8 +749,8 @@ func (x *TIotScenariosCapability_TAddIotScenariosDirective) GetScenarios() []*io
 
 type TIotScenariosCapability_TRemoveIotScenariosDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IDs           []string               `protobuf:"bytes,1,rep,name=IDs,json=ids,proto3" json:"IDs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	IDs           []string               `protobuf:"bytes,1,rep,name=IDs,proto3" json:"IDs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -801,8 +801,8 @@ func (x *TIotScenariosCapability_TRemoveIotScenariosDirective) GetIDs() []string
 
 type TIotScenariosCapability_TSyncIotScenariosDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,json=scenarios,proto3" json:"Scenarios,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Scenarios     []*iot.TLocalScenario  `protobuf:"bytes,1,rep,name=Scenarios,proto3" json:"Scenarios,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -853,9 +853,9 @@ func (x *TIotScenariosCapability_TSyncIotScenariosDirective) GetScenarios() []*i
 
 type TIotScenariosCapability_TContinueScenarioLaunchDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	LaunchID      string                 `protobuf:"bytes,1,opt,name=LaunchID,json=launch_id,proto3" json:"LaunchID,omitempty"`
-	StepIndex     uint32                 `protobuf:"varint,3,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	LaunchID      string                 `protobuf:"bytes,1,opt,name=LaunchID,proto3" json:"LaunchID,omitempty"`
+	StepIndex     uint32                 `protobuf:"varint,3,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -913,9 +913,9 @@ func (x *TIotScenariosCapability_TContinueScenarioLaunchDirective) GetStepIndex(
 
 type TIotScenariosCapability_TSetIotScenariosActivityDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ActiveIDs     []string               `protobuf:"bytes,1,rep,name=ActiveIDs,json=active_ids,proto3" json:"ActiveIDs,omitempty"`
-	InactiveIDs   []string               `protobuf:"bytes,2,rep,name=InactiveIDs,json=inactive_ids,proto3" json:"InactiveIDs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	ActiveIDs     []string               `protobuf:"bytes,1,rep,name=ActiveIDs,proto3" json:"ActiveIDs,omitempty"`
+	InactiveIDs   []string               `protobuf:"bytes,2,rep,name=InactiveIDs,proto3" json:"InactiveIDs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -973,8 +973,8 @@ func (x *TIotScenariosCapability_TSetIotScenariosActivityDirective) GetInactiveI
 
 type TIotScenariosCapability_TSendExecuteNonLocalStepEventDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StepIndex     uint32                 `protobuf:"varint,1,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	StepIndex     uint32                 `protobuf:"varint,1,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1025,9 +1025,9 @@ func (x *TIotScenariosCapability_TSendExecuteNonLocalStepEventDirective) GetStep
 
 type TIotScenariosCapability_TSendLocalStepsFinishedEventDirective struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Name          string                              `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StepIndex     uint32                              `protobuf:"varint,1,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
-	StepStatus    TIotScenariosCapability_EStepStatus `protobuf:"varint,2,opt,name=StepStatus,json=step_status,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"StepStatus,omitempty"`
+	Name          string                              `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	StepIndex     uint32                              `protobuf:"varint,1,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
+	StepStatus    TIotScenariosCapability_EStepStatus `protobuf:"varint,2,opt,name=StepStatus,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"StepStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1085,10 +1085,10 @@ func (x *TIotScenariosCapability_TSendLocalStepsFinishedEventDirective) GetStepS
 
 type TIotScenariosCapability_TWaitScenarioDelayDirective struct {
 	state               protoimpl.MessageState                                                   `protogen:"open.v1"`
-	Name                string                                                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	DelaySeconds        uint32                                                                   `protobuf:"varint,1,opt,name=DelaySeconds,json=delay_seconds,proto3" json:"DelaySeconds,omitempty"`
-	DelayFinishedPolicy TIotScenariosCapability_TWaitScenarioDelayDirective_EDelayFinishedPolicy `protobuf:"varint,2,opt,name=DelayFinishedPolicy,json=delay_finished_policy,proto3,enum=NAlice.TIotScenariosCapability_TWaitScenarioDelayDirective_EDelayFinishedPolicy" json:"DelayFinishedPolicy,omitempty"`
-	StartTimestamp      *timestamppb.Timestamp                                                   `protobuf:"bytes,3,opt,name=StartTimestamp,json=start_timestamp,proto3,oneof" json:"StartTimestamp,omitempty"`
+	Name                string                                                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	DelaySeconds        uint32                                                                   `protobuf:"varint,1,opt,name=DelaySeconds,proto3" json:"DelaySeconds,omitempty"`
+	DelayFinishedPolicy TIotScenariosCapability_TWaitScenarioDelayDirective_EDelayFinishedPolicy `protobuf:"varint,2,opt,name=DelayFinishedPolicy,proto3,enum=NAlice.TIotScenariosCapability_TWaitScenarioDelayDirective_EDelayFinishedPolicy" json:"DelayFinishedPolicy,omitempty"`
+	StartTimestamp      *timestamppb.Timestamp                                                   `protobuf:"bytes,3,opt,name=StartTimestamp,proto3,oneof" json:"StartTimestamp,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -1153,9 +1153,9 @@ func (x *TIotScenariosCapability_TWaitScenarioDelayDirective) GetStartTimestamp(
 
 type TIotScenariosCapability_TOptionalDirective struct {
 	state         protoimpl.MessageState                                `protogen:"open.v1"`
-	Name          string                                                `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	RunPolicy     TIotScenariosCapability_TOptionalDirective_ERunPolicy `protobuf:"varint,1,opt,name=RunPolicy,json=run_policy,proto3,enum=NAlice.TIotScenariosCapability_TOptionalDirective_ERunPolicy" json:"RunPolicy,omitempty"`
-	Directives    []*anypb.Any                                          `protobuf:"bytes,2,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
+	Name          string                                                `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	RunPolicy     TIotScenariosCapability_TOptionalDirective_ERunPolicy `protobuf:"varint,1,opt,name=RunPolicy,proto3,enum=NAlice.TIotScenariosCapability_TOptionalDirective_ERunPolicy" json:"RunPolicy,omitempty"`
+	Directives    []*anypb.Any                                          `protobuf:"bytes,2,rep,name=Directives,proto3" json:"Directives,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1213,11 +1213,11 @@ func (x *TIotScenariosCapability_TOptionalDirective) GetDirectives() []*anypb.An
 
 type TIotScenariosCapability_TEffectiveTimeFilter struct {
 	state            protoimpl.MessageState                                      `protogen:"open.v1"`
-	StartTimeSeconds uint32                                                      `protobuf:"varint,1,opt,name=StartTimeSeconds,json=start_time_seconds,proto3" json:"StartTimeSeconds,omitempty"`
-	DurationSeconds  uint32                                                      `protobuf:"varint,5,opt,name=DurationSeconds,json=duration_seconds,proto3" json:"DurationSeconds,omitempty"`
-	EndTimeSeconds   uint32                                                      `protobuf:"varint,2,opt,name=EndTimeSeconds,json=end_time_seconds,proto3" json:"EndTimeSeconds,omitempty"`
-	DaysOfWeek       []string                                                    `protobuf:"bytes,3,rep,name=DaysOfWeek,json=days_of_week,proto3" json:"DaysOfWeek,omitempty"`
-	TriggerPolicy    TIotScenariosCapability_TEffectiveTimeFilter_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,json=trigger_policy,proto3,enum=NAlice.TIotScenariosCapability_TEffectiveTimeFilter_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
+	StartTimeSeconds uint32                                                      `protobuf:"varint,1,opt,name=StartTimeSeconds,proto3" json:"StartTimeSeconds,omitempty"`
+	DurationSeconds  uint32                                                      `protobuf:"varint,5,opt,name=DurationSeconds,proto3" json:"DurationSeconds,omitempty"`
+	EndTimeSeconds   uint32                                                      `protobuf:"varint,2,opt,name=EndTimeSeconds,proto3" json:"EndTimeSeconds,omitempty"`
+	DaysOfWeek       []string                                                    `protobuf:"bytes,3,rep,name=DaysOfWeek,proto3" json:"DaysOfWeek,omitempty"`
+	TriggerPolicy    TIotScenariosCapability_TEffectiveTimeFilter_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,proto3,enum=NAlice.TIotScenariosCapability_TEffectiveTimeFilter_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1287,134 +1287,226 @@ func (x *TIotScenariosCapability_TEffectiveTimeFilter) GetTriggerPolicy() TIotSc
 	return TIotScenariosCapability_TEffectiveTimeFilter_Unknown
 }
 
+type TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Key           uint32                          `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *iot.TLocalScenario_TStepResult `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) Reset() {
+	*x = TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) ProtoMessage() {}
+
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry.ProtoReflect.Descriptor instead.
+func (*TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_rawDescGZIP(), []int{0, 2, 0}
+}
+
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry) GetValue() *iot.TLocalScenario_TStepResult {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Key           uint32                          `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *iot.TLocalScenario_TStepResult `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) Reset() {
+	*x = TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) ProtoMessage() {}
+
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry.ProtoReflect.Descriptor instead.
+func (*TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_rawDescGZIP(), []int{0, 3, 0}
+}
+
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry) GetValue() *iot.TLocalScenario_TStepResult {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/iot_scenarios/capability.proto\x12\x06NAlice\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x19google/protobuf/any.proto\x1a&alice/protos/endpoint/capability.proto\x1a$alice/protos/data/iot/scenario.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8f(\n" +
-	"\x17TIotScenariosCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Aalice/protos/endpoint/capabilities/iot_scenarios/capability.proto\x12\x06NAlice\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x19google/protobuf/any.proto\x1a&alice/protos/endpoint/capability.proto\x1a$alice/protos/data/iot/scenario.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcc\x1c\n" +
+	"\x17TIotScenariosCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotScenariosCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotScenariosCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xc3\x02\n" +
-	"\vTParameters\x12\x8e\x01\n" +
-	"\x17SupportedConditionTypes\x18\x01 \x03(\x0e23.NAlice.NIot.TLocalScenarioCondition.EConditionTypeB\x1d\xaa\xdd\x1b\x19supported_condition_typesR\x19supported_condition_types\x12\x9c\x01\n" +
-	"\"SupportedCapabilityEventConditions\x18\x02 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB)\xaa\xdd\x1b%supported_capability_event_conditionsR%supported_capability_event_conditions:\x04\xa8\xdd\x1b\x04\x1aX\n" +
-	"\x06TState\x12H\n" +
-	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioB\r\xaa\xdd\x1b\tscenariosR\tscenarios:\x04\xa8\xdd\x1b\x04\x1a\xc1\x05\n" +
-	"\x18TLocalStepsFinishedEvent\x12*\n" +
-	"\bLaunchID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tlaunch_idR\tlaunch_id\x12V\n" +
-	"\x16LaunchTimestampSeconds\x18\a \x01(\x04B\x1c\xaa\xdd\x1b\x18launch_timestamp_secondsR\x18launch_timestamp_seconds\x120\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotScenariosCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotScenariosCapability.TStateR\x05State\x1a\xec\x01\n" +
+	"\vTParameters\x12m\n" +
+	"\x17SupportedConditionTypes\x18\x01 \x03(\x0e23.NAlice.NIot.TLocalScenarioCondition.EConditionTypeR\x17SupportedConditionTypes\x12n\n" +
+	"\"SupportedCapabilityEventConditions\x18\x02 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\"SupportedCapabilityEventConditions\x1aC\n" +
+	"\x06TState\x129\n" +
+	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioR\tScenarios\x1a\xa1\x04\n" +
+	"\x18TLocalStepsFinishedEvent\x12\x1a\n" +
+	"\bLaunchID\x18\x01 \x01(\tR\bLaunchID\x126\n" +
+	"\x16LaunchTimestampSeconds\x18\a \x01(\x04R\x16LaunchTimestampSeconds\x12\x1e\n" +
 	"\n" +
-	"ScenarioID\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vscenario_idR\vscenario_id\x12~\n" +
-	"\vStepResults\x18\x03 \x03(\v2I.NAlice.TIotScenariosCapability.TLocalStepsFinishedEvent.StepResultsEntryB\x10\xaa\xdd\x1b\fstep_resultsR\fstep_results\x12-\n" +
-	"\tStepIndex\x18\x04 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index\x12]\n" +
+	"ScenarioID\x18\x02 \x01(\tR\n" +
+	"ScenarioID\x12k\n" +
+	"\vStepResults\x18\x03 \x03(\v2I.NAlice.TIotScenariosCapability.TLocalStepsFinishedEvent.StepResultsEntryR\vStepResults\x12\x1c\n" +
+	"\tStepIndex\x18\x04 \x01(\rR\tStepIndex\x12K\n" +
 	"\n" +
-	"StepStatus\x18\x05 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusB\x0f\xaa\xdd\x1b\vstep_statusR\vstep_status\x12n\n" +
-	"\x12TriggeredCondition\x18\x06 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionB\x17\xaa\xdd\x1b\x13triggered_conditionR\x13triggered_condition\x1ag\n" +
+	"StepStatus\x18\x05 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusR\n" +
+	"StepStatus\x12T\n" +
+	"\x12TriggeredCondition\x18\x06 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x12TriggeredCondition\x1ac\n" +
 	"\x10StepResultsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12=\n" +
-	"\x05value\x18\x02 \x01(\v2'.NAlice.NIot.TLocalScenario.TStepResultR\x05value:\x028\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x14\x1a\xe4\x04\n" +
-	"\x19TExecuteNonLocalStepEvent\x12*\n" +
-	"\bLaunchID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tlaunch_idR\tlaunch_id\x12V\n" +
-	"\x16LaunchTimestampSeconds\x18\x06 \x01(\x04B\x1c\xaa\xdd\x1b\x18launch_timestamp_secondsR\x18launch_timestamp_seconds\x120\n" +
+	"\x05value\x18\x02 \x01(\v2'.NAlice.NIot.TLocalScenario.TStepResultR\x05value\x1a\xd6\x03\n" +
+	"\x19TExecuteNonLocalStepEvent\x12\x1a\n" +
+	"\bLaunchID\x18\x01 \x01(\tR\bLaunchID\x126\n" +
+	"\x16LaunchTimestampSeconds\x18\x06 \x01(\x04R\x16LaunchTimestampSeconds\x12\x1e\n" +
 	"\n" +
-	"ScenarioID\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vscenario_idR\vscenario_id\x12\x7f\n" +
-	"\vStepResults\x18\x03 \x03(\v2J.NAlice.TIotScenariosCapability.TExecuteNonLocalStepEvent.StepResultsEntryB\x10\xaa\xdd\x1b\fstep_resultsR\fstep_results\x12-\n" +
-	"\tStepIndex\x18\x04 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index\x12n\n" +
-	"\x12TriggeredCondition\x18\x05 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionB\x17\xaa\xdd\x1b\x13triggered_conditionR\x13triggered_condition\x1ag\n" +
+	"ScenarioID\x18\x02 \x01(\tR\n" +
+	"ScenarioID\x12l\n" +
+	"\vStepResults\x18\x03 \x03(\v2J.NAlice.TIotScenariosCapability.TExecuteNonLocalStepEvent.StepResultsEntryR\vStepResults\x12\x1c\n" +
+	"\tStepIndex\x18\x04 \x01(\rR\tStepIndex\x12T\n" +
+	"\x12TriggeredCondition\x18\x05 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x12TriggeredCondition\x1ac\n" +
 	"\x10StepResultsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12=\n" +
-	"\x05value\x18\x02 \x01(\v2'.NAlice.NIot.TLocalScenario.TStepResultR\x05value:\x028\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c!\x1a\xbe\x01\n" +
-	"\x1bTConfirmLocalScenariosEvent\x12D\n" +
-	"\x10LocalScenarioIDs\x18\x01 \x03(\tB\x16\xaa\xdd\x1b\x12local_scenario_idsR\x12local_scenario_ids\x12O\n" +
-	"\x13NonLocalScenarioIDs\x18\x02 \x03(\tB\x1a\xaa\xdd\x1b\x16non_local_scenario_idsR\x16non_local_scenario_ids:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x16\x1a'\n" +
-	"\x1bTRestoreLocalScenariosEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x17\x1a\x93\x01\n" +
-	"#TConfirmLocalScenariosActivityEvent\x12-\n" +
-	"\tActiveIDs\x18\x01 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"active_idsR\n" +
-	"active_ids\x123\n" +
-	"\vInactiveIDs\x18\x02 \x03(\tB\x10\xaa\xdd\x1b\finactive_idsR\finactive_ids:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cF\x1a\xad\x01\n" +
-	"\x19TAddIotScenariosDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
-	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioB\r\xaa\xdd\x1b\tscenariosR\tscenarios:'\x92\x82\x19\x1badd_iot_scenarios_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c#\x1a\x84\x01\n" +
-	"\x1cTRemoveIotScenariosDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03IDs\x18\x01 \x03(\tB\a\xaa\xdd\x1b\x03idsR\x03ids:*\x92\x82\x19\x1eremove_iot_scenarios_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c$\x1a\xaf\x01\n" +
-	"\x1aTSyncIotScenariosDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
-	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioB\r\xaa\xdd\x1b\tscenariosR\tscenarios:(\x92\x82\x19\x1csync_iot_scenarios_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c%\x1a\xde\x01\n" +
-	" TContinueScenarioLaunchDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bLaunchID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tlaunch_idR\tlaunch_id\x12-\n" +
-	"\tStepIndex\x18\x03 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index:.\x92\x82\x19\"continue_scenario_launch_directive\xa8\xdd\x1b\x04\xa8\xc8\x1clJ\x04\b\x02\x10\x03R\n" +
-	"ScenarioID\x1a\xd9\x01\n" +
-	"!TSetIotScenariosActivityDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tActiveIDs\x18\x01 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"active_idsR\n" +
-	"active_ids\x123\n" +
-	"\vInactiveIDs\x18\x02 \x03(\tB\x10\xaa\xdd\x1b\finactive_idsR\finactive_ids:1\x92\x82\x19$set_iot_scenarios_activity_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd5\x02\x1a\xaf\x01\n" +
-	"&TSendExecuteNonLocalStepEventDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tStepIndex\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index:7\x92\x82\x19+send_execute_non_local_step_event_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cn\x1a\x8b\x02\n" +
-	"%TSendLocalStepsFinishedEventDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tStepIndex\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index\x12]\n" +
+	"\x05value\x18\x02 \x01(\v2'.NAlice.NIot.TLocalScenario.TStepResultR\x05value\x1a{\n" +
+	"\x1bTConfirmLocalScenariosEvent\x12*\n" +
+	"\x10LocalScenarioIDs\x18\x01 \x03(\tR\x10LocalScenarioIDs\x120\n" +
+	"\x13NonLocalScenarioIDs\x18\x02 \x03(\tR\x13NonLocalScenarioIDs\x1a\x1d\n" +
+	"\x1bTRestoreLocalScenariosEvent\x1ae\n" +
+	"#TConfirmLocalScenariosActivityEvent\x12\x1c\n" +
+	"\tActiveIDs\x18\x01 \x03(\tR\tActiveIDs\x12 \n" +
+	"\vInactiveIDs\x18\x02 \x03(\tR\vInactiveIDs\x1ak\n" +
+	"\x19TAddIotScenariosDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x129\n" +
+	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioR\tScenarios\x1aE\n" +
+	"\x1cTRemoveIotScenariosDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x10\n" +
+	"\x03IDs\x18\x01 \x03(\tR\x03IDs\x1al\n" +
+	"\x1aTSyncIotScenariosDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x129\n" +
+	"\tScenarios\x18\x01 \x03(\v2\x1b.NAlice.NIot.TLocalScenarioR\tScenarios\x1a\x83\x01\n" +
+	" TContinueScenarioLaunchDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1a\n" +
+	"\bLaunchID\x18\x01 \x01(\tR\bLaunchID\x12\x1c\n" +
+	"\tStepIndex\x18\x03 \x01(\rR\tStepIndexJ\x04\b\x02\x10\x03R\n" +
+	"ScenarioID\x1ax\n" +
+	"!TSetIotScenariosActivityDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tActiveIDs\x18\x01 \x03(\tR\tActiveIDs\x12 \n" +
+	"\vInactiveIDs\x18\x02 \x03(\tR\vInactiveIDs\x1a[\n" +
+	"&TSendExecuteNonLocalStepEventDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tStepIndex\x18\x01 \x01(\rR\tStepIndex\x1a\xa7\x01\n" +
+	"%TSendLocalStepsFinishedEventDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tStepIndex\x18\x01 \x01(\rR\tStepIndex\x12K\n" +
 	"\n" +
-	"StepStatus\x18\x02 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusB\x0f\xaa\xdd\x1b\vstep_statusR\vstep_status:5\x92\x82\x19)send_local_steps_finished_event_directive\xa8\xdd\x1b\x04\xa8\xc8\x1co\x1a\x80\x04\n" +
-	"\x1bTWaitScenarioDelayDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x126\n" +
-	"\fDelaySeconds\x18\x01 \x01(\rB\x11\xaa\xdd\x1b\rdelay_secondsR\rdelay_seconds\x12\x9f\x01\n" +
-	"\x13DelayFinishedPolicy\x18\x02 \x01(\x0e2P.NAlice.TIotScenariosCapability.TWaitScenarioDelayDirective.EDelayFinishedPolicyB\x19\xaa\xdd\x1b\x15delay_finished_policyR\x15delay_finished_policy\x12]\n" +
-	"\x0eStartTimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampB\x13\xaa\xdd\x1b\x0fstart_timestampH\x00R\x0fstart_timestamp\x88\x01\x01\"K\n" +
+	"StepStatus\x18\x02 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusR\n" +
+	"StepStatus\x1a\x84\x03\n" +
+	"\x1bTWaitScenarioDelayDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\"\n" +
+	"\fDelaySeconds\x18\x01 \x01(\rR\fDelaySeconds\x12\x82\x01\n" +
+	"\x13DelayFinishedPolicy\x18\x02 \x01(\x0e2P.NAlice.TIotScenariosCapability.TWaitScenarioDelayDirective.EDelayFinishedPolicyR\x13DelayFinishedPolicy\x12G\n" +
+	"\x0eStartTimestamp\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\x0eStartTimestamp\x88\x01\x01\"K\n" +
 	"\x14EDelayFinishedPolicy\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x10\n" +
 	"\fFailScenario\x10\x01\x12\x14\n" +
-	"\x10ContinueScenario\x10\x02:)\x92\x82\x19\x1dwait_scenario_delay_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cmB\x11\n" +
-	"\x0f_StartTimestamp\x1a\xbe\x02\n" +
-	"\x12TOptionalDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12l\n" +
-	"\tRunPolicy\x18\x01 \x01(\x0e2=.NAlice.TIotScenariosCapability.TOptionalDirective.ERunPolicyB\x0e\xaa\xdd\x1b\n" +
-	"run_policyR\n" +
-	"run_policy\x12D\n" +
+	"\x10ContinueScenario\x10\x02B\x11\n" +
+	"\x0f_StartTimestamp\x1a\xf2\x01\n" +
+	"\x12TOptionalDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12[\n" +
+	"\tRunPolicy\x18\x01 \x01(\x0e2=.NAlice.TIotScenariosCapability.TOptionalDirective.ERunPolicyR\tRunPolicy\x124\n" +
 	"\n" +
-	"Directives\x18\x02 \x03(\v2\x14.google.protobuf.AnyB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\"4\n" +
+	"Directives\x18\x02 \x03(\v2\x14.google.protobuf.AnyR\n" +
+	"Directives\"4\n" +
 	"\n" +
 	"ERunPolicy\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x19\n" +
-	"\x15SomeDeviceUnreachable\x10\x01:\x1f\x92\x82\x19\x12optional_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb7\x01\x1a\xcf\x03\n" +
-	"\x14TEffectiveTimeFilter\x12D\n" +
-	"\x10StartTimeSeconds\x18\x01 \x01(\rB\x16\xaa\xdd\x1b\x12start_time_secondsR\x12start_time_seconds\x12?\n" +
-	"\x0fDurationSeconds\x18\x05 \x01(\rB\x14\xaa\xdd\x1b\x10duration_secondsR\x10duration_seconds\x12>\n" +
-	"\x0eEndTimeSeconds\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10end_time_secondsR\x10end_time_seconds\x122\n" +
+	"\x15SomeDeviceUnreachable\x10\x01\x1a\xd7\x02\n" +
+	"\x14TEffectiveTimeFilter\x12*\n" +
+	"\x10StartTimeSeconds\x18\x01 \x01(\rR\x10StartTimeSeconds\x12(\n" +
+	"\x0fDurationSeconds\x18\x05 \x01(\rR\x0fDurationSeconds\x12&\n" +
+	"\x0eEndTimeSeconds\x18\x02 \x01(\rR\x0eEndTimeSeconds\x12\x1e\n" +
 	"\n" +
-	"DaysOfWeek\x18\x03 \x03(\tB\x10\xaa\xdd\x1b\fdays_of_weekR\fdays_of_week\x12~\n" +
-	"\rTriggerPolicy\x18\x04 \x01(\x0e2C.NAlice.TIotScenariosCapability.TEffectiveTimeFilter.ETriggerPolicyB\x12\xaa\xdd\x1b\x0etrigger_policyR\x0etrigger_policy\"6\n" +
+	"DaysOfWeek\x18\x03 \x03(\tR\n" +
+	"DaysOfWeek\x12i\n" +
+	"\rTriggerPolicy\x18\x04 \x01(\x0e2C.NAlice.TIotScenariosCapability.TEffectiveTimeFilter.ETriggerPolicyR\rTriggerPolicy\"6\n" +
 	"\x0eETriggerPolicy\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04Once\x10\x01\x12\r\n" +
-	"\tUnlimited\x10\x02:\x04\xa8\xdd\x1b\x04\"D\n" +
+	"\tUnlimited\x10\x02\"D\n" +
 	"\vEStepStatus\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aRunning\x10\x01\x12\r\n" +
 	"\tScheduled\x10\x02\x12\f\n" +
-	"\bFinished\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x16B\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11IotScenariosProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_scenarios;iotscenariospbb\x06proto3"
+	"\bFinished\x10\x03B\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_scenarios\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_rawDescOnce sync.Once
@@ -1453,16 +1545,16 @@ var file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_goTyp
 	(*TIotScenariosCapability_TWaitScenarioDelayDirective)(nil),                   // 19: NAlice.TIotScenariosCapability.TWaitScenarioDelayDirective
 	(*TIotScenariosCapability_TOptionalDirective)(nil),                            // 20: NAlice.TIotScenariosCapability.TOptionalDirective
 	(*TIotScenariosCapability_TEffectiveTimeFilter)(nil),                          // 21: NAlice.TIotScenariosCapability.TEffectiveTimeFilter
-	nil,                                // 22: NAlice.TIotScenariosCapability.TLocalStepsFinishedEvent.StepResultsEntry
-	nil,                                // 23: NAlice.TIotScenariosCapability.TExecuteNonLocalStepEvent.StepResultsEntry
-	(*endpoint.TCapability_TMeta)(nil), // 24: NAlice.TCapability.TMeta
-	(iot.TLocalScenarioCondition_EConditionType)(0), // 25: NAlice.NIot.TLocalScenarioCondition.EConditionType
-	(endpoint.TCapability_EEventType)(0),            // 26: NAlice.TCapability.EEventType
-	(*iot.TLocalScenario)(nil),                      // 27: NAlice.NIot.TLocalScenario
-	(*iot.TLocalScenarioCondition)(nil),             // 28: NAlice.NIot.TLocalScenarioCondition
-	(*timestamppb.Timestamp)(nil),                   // 29: google.protobuf.Timestamp
-	(*anypb.Any)(nil),                               // 30: google.protobuf.Any
-	(*iot.TLocalScenario_TStepResult)(nil),          // 31: NAlice.NIot.TLocalScenario.TStepResult
+	(*TIotScenariosCapability_TLocalStepsFinishedEvent_StepResultsEntry)(nil),     // 22: NAlice.TIotScenariosCapability.TLocalStepsFinishedEvent.StepResultsEntry
+	(*TIotScenariosCapability_TExecuteNonLocalStepEvent_StepResultsEntry)(nil),    // 23: NAlice.TIotScenariosCapability.TExecuteNonLocalStepEvent.StepResultsEntry
+	(*endpoint.TCapability_TMeta)(nil),                                            // 24: NAlice.TCapability.TMeta
+	(iot.TLocalScenarioCondition_EConditionType)(0),                               // 25: NAlice.NIot.TLocalScenarioCondition.EConditionType
+	(endpoint.TCapability_EEventType)(0),                                          // 26: NAlice.TCapability.EEventType
+	(*iot.TLocalScenario)(nil),                                                    // 27: NAlice.NIot.TLocalScenario
+	(*iot.TLocalScenarioCondition)(nil),                                           // 28: NAlice.NIot.TLocalScenarioCondition
+	(*timestamppb.Timestamp)(nil),                                                 // 29: google.protobuf.Timestamp
+	(*anypb.Any)(nil),                                                             // 30: google.protobuf.Any
+	(*iot.TLocalScenario_TStepResult)(nil),                                        // 31: NAlice.NIot.TLocalScenario.TStepResult
 }
 var file_alice_protos_endpoint_capabilities_iot_scenarios_capability_proto_depIdxs = []int32{
 	24, // 0: NAlice.TIotScenariosCapability.Meta:type_name -> NAlice.TCapability.TMeta

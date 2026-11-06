@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/layered_div_ui/capability.proto
 
-package layereddivuipb
+package layered_div_ui
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -378,9 +378,9 @@ func (TLayeredDivUICapability_TDivUICallActionsGroupsDirective_ActionsGroup) Enu
 
 type TLayeredDivUICapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLayeredDivUICapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLayeredDivUICapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLayeredDivUICapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLayeredDivUICapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -438,7 +438,7 @@ func (x *TLayeredDivUICapability) GetState() *TLayeredDivUICapability_TState {
 
 type TLayeredDivUICapability_TAsset struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ResourceName  string                 `protobuf:"bytes,1,opt,name=ResourceName,json=resource_name,proto3" json:"ResourceName,omitempty"`
+	ResourceName  string                 `protobuf:"bytes,1,opt,name=ResourceName,proto3" json:"ResourceName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -482,14 +482,14 @@ func (x *TLayeredDivUICapability_TAsset) GetResourceName() string {
 
 type TLayeredDivUICapability_TParameters struct {
 	state                      protoimpl.MessageState            `protogen:"open.v1"`
-	SupportsCardStashing       bool                              `protobuf:"varint,1,opt,name=SupportsCardStashing,json=supports_card_stashing,proto3" json:"SupportsCardStashing,omitempty"`
-	SupportedDivActions        *div.TDivActions                  `protobuf:"bytes,2,opt,name=SupportedDivActions,json=supported_div_actions,proto3" json:"SupportedDivActions,omitempty"`
-	SupportedDivCustoms        *div.TDivCustoms                  `protobuf:"bytes,3,opt,name=SupportedDivCustoms,json=supported_div_customs,proto3" json:"SupportedDivCustoms,omitempty"`
-	SupportedDivExtensions     *div.TDivExtensions               `protobuf:"bytes,4,opt,name=SupportedDivExtensions,json=supported_div_extensions,proto3" json:"SupportedDivExtensions,omitempty"`
-	SupportedDivVariables      *div.TDivVariables                `protobuf:"bytes,5,opt,name=SupportedDivVariables,json=supported_div_variables,proto3" json:"SupportedDivVariables,omitempty"`
-	AvailableAssets            []*TLayeredDivUICapability_TAsset `protobuf:"bytes,6,rep,name=AvailableAssets,json=available_assets,proto3" json:"AvailableAssets,omitempty"`
-	SupportsGoLeftDirective    bool                              `protobuf:"varint,7,opt,name=SupportsGoLeftDirective,json=supports_go_left_directive,proto3" json:"SupportsGoLeftDirective,omitempty"`
-	SupportsMusicMyWaveSunIcon bool                              `protobuf:"varint,8,opt,name=SupportsMusicMyWaveSunIcon,json=supports_music_my_wave_sun_icon,proto3" json:"SupportsMusicMyWaveSunIcon,omitempty"`
+	SupportsCardStashing       bool                              `protobuf:"varint,1,opt,name=SupportsCardStashing,proto3" json:"SupportsCardStashing,omitempty"`
+	SupportedDivActions        *div.TDivActions                  `protobuf:"bytes,2,opt,name=SupportedDivActions,proto3" json:"SupportedDivActions,omitempty"`
+	SupportedDivCustoms        *div.TDivCustoms                  `protobuf:"bytes,3,opt,name=SupportedDivCustoms,proto3" json:"SupportedDivCustoms,omitempty"`
+	SupportedDivExtensions     *div.TDivExtensions               `protobuf:"bytes,4,opt,name=SupportedDivExtensions,proto3" json:"SupportedDivExtensions,omitempty"`
+	SupportedDivVariables      *div.TDivVariables                `protobuf:"bytes,5,opt,name=SupportedDivVariables,proto3" json:"SupportedDivVariables,omitempty"`
+	AvailableAssets            []*TLayeredDivUICapability_TAsset `protobuf:"bytes,6,rep,name=AvailableAssets,proto3" json:"AvailableAssets,omitempty"`
+	SupportsGoLeftDirective    bool                              `protobuf:"varint,7,opt,name=SupportsGoLeftDirective,proto3" json:"SupportsGoLeftDirective,omitempty"`
+	SupportsMusicMyWaveSunIcon bool                              `protobuf:"varint,8,opt,name=SupportsMusicMyWaveSunIcon,proto3" json:"SupportsMusicMyWaveSunIcon,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -582,11 +582,11 @@ func (x *TLayeredDivUICapability_TParameters) GetSupportsMusicMyWaveSunIcon() bo
 
 type TLayeredDivUICapability_TState struct {
 	state                           protoimpl.MessageState                    `protogen:"open.v1"`
-	AvailableSize                   *div.TDiv2Size                            `protobuf:"bytes,1,opt,name=availableSize,json=available_size,proto3" json:"availableSize,omitempty"`
-	StashedCards                    []*div.TDiv2Id                            `protobuf:"bytes,2,rep,name=StashedCards,json=stashed_cards,proto3" json:"StashedCards,omitempty"`
-	ScreeenDPI                      uint32                                    `protobuf:"varint,3,opt,name=ScreeenDPI,json=screen_dpi,proto3" json:"ScreeenDPI,omitempty"`
-	CurrentCardAvaliableNavigations []TLayeredDivUICapability_ENavigationType `protobuf:"varint,4,rep,packed,name=CurrentCardAvaliableNavigations,json=current_card_avaliable_navigations,proto3,enum=NAlice.TLayeredDivUICapability_ENavigationType" json:"CurrentCardAvaliableNavigations,omitempty"`
-	StatusBarSize                   uint32                                    `protobuf:"varint,5,opt,name=StatusBarSize,json=status_bar_size,proto3" json:"StatusBarSize,omitempty"`
+	AvailableSize                   *div.TDiv2Size                            `protobuf:"bytes,1,opt,name=availableSize,proto3" json:"availableSize,omitempty"`
+	StashedCards                    []*div.TDiv2Id                            `protobuf:"bytes,2,rep,name=StashedCards,proto3" json:"StashedCards,omitempty"`
+	ScreeenDPI                      uint32                                    `protobuf:"varint,3,opt,name=ScreeenDPI,proto3" json:"ScreeenDPI,omitempty"`
+	CurrentCardAvaliableNavigations []TLayeredDivUICapability_ENavigationType `protobuf:"varint,4,rep,packed,name=CurrentCardAvaliableNavigations,proto3,enum=NAlice.TLayeredDivUICapability_ENavigationType" json:"CurrentCardAvaliableNavigations,omitempty"`
+	StatusBarSize                   uint32                                    `protobuf:"varint,5,opt,name=StatusBarSize,proto3" json:"StatusBarSize,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
 	sizeCache                       protoimpl.SizeCache
 }
@@ -657,18 +657,16 @@ func (x *TLayeredDivUICapability_TState) GetStatusBarSize() uint32 {
 }
 
 type TLayeredDivUICapability_TDivUIShowViewDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
-	Layer             *data.TLayer                                                       `protobuf:"bytes,3,opt,name=Layer,json=layer,proto3" json:"Layer,omitempty"`
-	InactivityTimeout TLayeredDivUICapability_TDivUIShowViewDirective_EInactivityTimeout `protobuf:"varint,4,opt,name=InactivityTimeout,json=inactivity_timeout,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EInactivityTimeout" json:"InactivityTimeout,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
-	ActionSpaceId      string                                                                `protobuf:"bytes,5,opt,name=ActionSpaceId,json=action_space_id,proto3" json:"ActionSpaceId,omitempty"`
-	StashInteraction   TLayeredDivUICapability_TDivUIShowViewDirective_EStashInteraction     `protobuf:"varint,6,opt,name=StashInteraction,json=stash_interaction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EStashInteraction" json:"StashInteraction,omitempty"`
-	OverlayBehaviour   TLayeredDivUICapability_TDivUIShowViewDirective_EOverlayBehaviour     `protobuf:"varint,8,opt,name=OverlayBehaviour,json=overlay_behaviour,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EOverlayBehaviour" json:"OverlayBehaviour,omitempty"`
-	GestureInteraction []TLayeredDivUICapability_TDivUIShowViewDirective_EGestureInteraction `protobuf:"varint,9,rep,packed,name=GestureInteraction,json=gesture_interaction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EGestureInteraction" json:"GestureInteraction,omitempty"`
-	TerminateActions   []string                                                              `protobuf:"bytes,10,rep,name=TerminateActions,json=terminate_actions,proto3" json:"TerminateActions,omitempty"`
-	StackInteraction   TLayeredDivUICapability_TDivUIShowViewDirective_EStackInteraction     `protobuf:"varint,11,opt,name=StackInteraction,json=stack_interaction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EStackInteraction" json:"StackInteraction,omitempty"`
+	state              protoimpl.MessageState                                                `protogen:"open.v1"`
+	Name               string                                                                `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Layer              *data.TLayer                                                          `protobuf:"bytes,3,opt,name=Layer,proto3" json:"Layer,omitempty"`
+	InactivityTimeout  TLayeredDivUICapability_TDivUIShowViewDirective_EInactivityTimeout    `protobuf:"varint,4,opt,name=InactivityTimeout,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EInactivityTimeout" json:"InactivityTimeout,omitempty"`
+	ActionSpaceId      string                                                                `protobuf:"bytes,5,opt,name=ActionSpaceId,proto3" json:"ActionSpaceId,omitempty"`
+	StashInteraction   TLayeredDivUICapability_TDivUIShowViewDirective_EStashInteraction     `protobuf:"varint,6,opt,name=StashInteraction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EStashInteraction" json:"StashInteraction,omitempty"`
+	OverlayBehaviour   TLayeredDivUICapability_TDivUIShowViewDirective_EOverlayBehaviour     `protobuf:"varint,8,opt,name=OverlayBehaviour,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EOverlayBehaviour" json:"OverlayBehaviour,omitempty"`
+	GestureInteraction []TLayeredDivUICapability_TDivUIShowViewDirective_EGestureInteraction `protobuf:"varint,9,rep,packed,name=GestureInteraction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EGestureInteraction" json:"GestureInteraction,omitempty"`
+	TerminateActions   []string                                                              `protobuf:"bytes,10,rep,name=TerminateActions,proto3" json:"TerminateActions,omitempty"`
+	StackInteraction   TLayeredDivUICapability_TDivUIShowViewDirective_EStackInteraction     `protobuf:"varint,11,opt,name=StackInteraction,proto3,enum=NAlice.TLayeredDivUICapability_TDivUIShowViewDirective_EStackInteraction" json:"StackInteraction,omitempty"`
 	// Types that are valid to be assigned to DivCard:
 	//
 	//	*TLayeredDivUICapability_TDivUIShowViewDirective_Div2Card
@@ -715,7 +713,6 @@ func (x *TLayeredDivUICapability_TDivUIShowViewDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
 func (x *TLayeredDivUICapability_TDivUIShowViewDirective) GetLayer() *data.TLayer {
 	if x != nil {
 		return x.Layer
@@ -730,7 +727,6 @@ func (x *TLayeredDivUICapability_TDivUIShowViewDirective) GetInactivityTimeout()
 	return TLayeredDivUICapability_TDivUIShowViewDirective_Short
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
 func (x *TLayeredDivUICapability_TDivUIShowViewDirective) GetActionSpaceId() string {
 	if x != nil {
 		return x.ActionSpaceId
@@ -803,11 +799,11 @@ type isTLayeredDivUICapability_TDivUIShowViewDirective_DivCard interface {
 }
 
 type TLayeredDivUICapability_TDivUIShowViewDirective_Div2Card struct {
-	Div2Card *div.TDiv2Card `protobuf:"bytes,2,opt,name=Div2Card,json=div2_card,proto3,oneof"`
+	Div2Card *div.TDiv2Card `protobuf:"bytes,2,opt,name=Div2Card,proto3,oneof"`
 }
 
 type TLayeredDivUICapability_TDivUIShowViewDirective_RenderRequestParams struct {
-	RenderRequestParams *TLayeredDivUICapability_TDivUIShowViewDirective_TRenderRequestParams `protobuf:"bytes,7,opt,name=RenderRequestParams,json=render_request_params,proto3,oneof"`
+	RenderRequestParams *TLayeredDivUICapability_TDivUIShowViewDirective_TRenderRequestParams `protobuf:"bytes,7,opt,name=RenderRequestParams,proto3,oneof"`
 }
 
 func (*TLayeredDivUICapability_TDivUIShowViewDirective_Div2Card) isTLayeredDivUICapability_TDivUIShowViewDirective_DivCard() {
@@ -818,9 +814,9 @@ func (*TLayeredDivUICapability_TDivUIShowViewDirective_RenderRequestParams) isTL
 
 type TLayeredDivUICapability_TDivUIPatchViewDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Div2Patch     *div.TDiv2Patch        `protobuf:"bytes,2,opt,name=Div2Patch,json=div2_patch,proto3" json:"Div2Patch,omitempty"`
-	ApplyTo       *div.TDiv2Id           `protobuf:"bytes,3,opt,name=ApplyTo,json=apply_to,proto3" json:"ApplyTo,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Div2Patch     *div.TDiv2Patch        `protobuf:"bytes,2,opt,name=Div2Patch,proto3" json:"Div2Patch,omitempty"`
+	ApplyTo       *div.TDiv2Id           `protobuf:"bytes,3,opt,name=ApplyTo,proto3" json:"ApplyTo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -877,11 +873,10 @@ func (x *TLayeredDivUICapability_TDivUIPatchViewDirective) GetApplyTo() *div.TDi
 }
 
 type TLayeredDivUICapability_TDivUIHideViewDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
-	Layer         *data.TLayer `protobuf:"bytes,2,opt,name=Layer,json=layer,proto3" json:"Layer,omitempty"`
-	Identifier    *div.TDiv2Id `protobuf:"bytes,3,opt,name=Identifier,json=identifier,proto3" json:"Identifier,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Layer         *data.TLayer           `protobuf:"bytes,2,opt,name=Layer,proto3" json:"Layer,omitempty"`
+	Identifier    *div.TDiv2Id           `protobuf:"bytes,3,opt,name=Identifier,proto3" json:"Identifier,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -923,7 +918,6 @@ func (x *TLayeredDivUICapability_TDivUIHideViewDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/layered_div_ui/capability.proto.
 func (x *TLayeredDivUICapability_TDivUIHideViewDirective) GetLayer() *data.TLayer {
 	if x != nil {
 		return x.Layer
@@ -940,7 +934,7 @@ func (x *TLayeredDivUICapability_TDivUIHideViewDirective) GetIdentifier() *div.T
 
 type TLayeredDivUICapability_TDivUIHideAllViewsDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -984,8 +978,8 @@ func (x *TLayeredDivUICapability_TDivUIHideAllViewsDirective) GetName() string {
 
 type TLayeredDivUICapability_TDivUIStashViewDirective struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Name               string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
+	Name               string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1036,8 +1030,8 @@ func (x *TLayeredDivUICapability_TDivUIStashViewDirective) GetCardSearchCriteria
 
 type TLayeredDivUICapability_TDivUIUnstashViewDirective struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Name               string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
+	Name               string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1088,8 +1082,8 @@ func (x *TLayeredDivUICapability_TDivUIUnstashViewDirective) GetCardSearchCriter
 
 type TLayeredDivUICapability_TDivUICallTerminateActionsDirective struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Name               string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
+	Name               string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1140,9 +1134,9 @@ func (x *TLayeredDivUICapability_TDivUICallTerminateActionsDirective) GetCardSea
 
 type TLayeredDivUICapability_TDivUICallActionsGroupsDirective struct {
 	state              protoimpl.MessageState                                                  `protogen:"open.v1"`
-	Name               string                                                                  `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id                                                            `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
-	ActionsGroups      []TLayeredDivUICapability_TDivUICallActionsGroupsDirective_ActionsGroup `protobuf:"varint,3,rep,packed,name=ActionsGroups,json=actions_groups,proto3,enum=NAlice.TLayeredDivUICapability_TDivUICallActionsGroupsDirective_ActionsGroup" json:"ActionsGroups,omitempty"`
+	Name               string                                                                  `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id                                                            `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
+	ActionsGroups      []TLayeredDivUICapability_TDivUICallActionsGroupsDirective_ActionsGroup `protobuf:"varint,3,rep,packed,name=ActionsGroups,proto3,enum=NAlice.TLayeredDivUICapability_TDivUICallActionsGroupsDirective_ActionsGroup" json:"ActionsGroups,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1200,7 +1194,7 @@ func (x *TLayeredDivUICapability_TDivUICallActionsGroupsDirective) GetActionsGro
 
 type TLayeredDivUICapability_TDivUIShowViewDirective_TRenderRequestParams struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CardId        string                 `protobuf:"bytes,1,opt,name=CardId,json=card_id,proto3" json:"CardId,omitempty"`
+	CardId        string                 `protobuf:"bytes,1,opt,name=CardId,proto3" json:"CardId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1246,49 +1240,47 @@ var File_alice_protos_endpoint_capabilities_layered_div_ui_capability_proto prot
 
 const file_alice_protos_endpoint_capabilities_layered_div_ui_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/layered_div_ui/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1dalice/protos/data/layer.proto\x1a\x1falice/protos/div/div2card.proto\x1a\x1dalice/protos/div/div2id.proto\x1a alice/protos/div/div2patch.proto\x1a\x1falice/protos/div/div2size.proto\x1a\"alice/protos/div/div_actions.proto\x1a\"alice/protos/div/div_customs.proto\x1a%alice/protos/div/div_extensions.proto\x1a$alice/protos/div/div_variables.proto\"\x83&\n" +
-	"\x17TLayeredDivUICapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Balice/protos/endpoint/capabilities/layered_div_ui/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1dalice/protos/data/layer.proto\x1a\x1falice/protos/div/div2card.proto\x1a\x1dalice/protos/div/div2id.proto\x1a alice/protos/div/div2patch.proto\x1a\x1falice/protos/div/div2size.proto\x1a\"alice/protos/div/div_actions.proto\x1a\"alice/protos/div/div_customs.proto\x1a%alice/protos/div/div_extensions.proto\x1a$alice/protos/div/div_variables.proto\"\x87\x1c\n" +
+	"\x17TLayeredDivUICapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TLayeredDivUICapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TLayeredDivUICapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1aF\n" +
-	"\x06TAsset\x126\n" +
-	"\fResourceName\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rresource_nameR\rresource_name:\x04\xa8\xdd\x1b\x04\x1a\xb9\x06\n" +
-	"\vTParameters\x12P\n" +
-	"\x14SupportsCardStashing\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16supports_card_stashingR\x16supports_card_stashing\x12b\n" +
-	"\x13SupportedDivActions\x18\x02 \x01(\v2\x13.NAlice.TDivActionsB\x19\xaa\xdd\x1b\x15supported_div_actionsR\x15supported_div_actions\x12b\n" +
-	"\x13SupportedDivCustoms\x18\x03 \x01(\v2\x13.NAlice.TDivCustomsB\x19\xaa\xdd\x1b\x15supported_div_customsR\x15supported_div_customs\x12n\n" +
-	"\x16SupportedDivExtensions\x18\x04 \x01(\v2\x16.NAlice.TDivExtensionsB\x1c\xaa\xdd\x1b\x18supported_div_extensionsR\x18supported_div_extensions\x12j\n" +
-	"\x15SupportedDivVariables\x18\x05 \x01(\v2\x15.NAlice.TDivVariablesB\x1b\xaa\xdd\x1b\x17supported_div_variablesR\x17supported_div_variables\x12g\n" +
-	"\x0fAvailableAssets\x18\x06 \x03(\v2&.NAlice.TLayeredDivUICapability.TAssetB\x14\xaa\xdd\x1b\x10available_assetsR\x10available_assets\x12[\n" +
-	"\x17SupportsGoLeftDirective\x18\a \x01(\bB\x1e\xaa\xdd\x1b\x1asupports_go_left_directiveR\x1asupports_go_left_directive\x12h\n" +
-	"\x1aSupportsMusicMyWaveSunIcon\x18\b \x01(\bB#\xaa\xdd\x1b\x1fsupports_music_my_wave_sun_iconR\x1fsupports_music_my_wave_sun_icon:\x04\xa8\xdd\x1b\x04\x1a\xb9\x03\n" +
-	"\x06TState\x12L\n" +
-	"\ravailableSize\x18\x01 \x01(\v2\x11.NAlice.TDiv2SizeB\x12\xaa\xdd\x1b\x0eavailable_sizeR\x0eavailable_size\x12G\n" +
-	"\fStashedCards\x18\x02 \x03(\v2\x0f.NAlice.TDiv2IdB\x11\xaa\xdd\x1b\rstashed_cardsR\rstashed_cards\x12.\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TLayeredDivUICapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TLayeredDivUICapability.TStateR\x05State\x1a,\n" +
+	"\x06TAsset\x12\"\n" +
+	"\fResourceName\x18\x01 \x01(\tR\fResourceName\x1a\xb8\x04\n" +
+	"\vTParameters\x122\n" +
+	"\x14SupportsCardStashing\x18\x01 \x01(\bR\x14SupportsCardStashing\x12E\n" +
+	"\x13SupportedDivActions\x18\x02 \x01(\v2\x13.NAlice.TDivActionsR\x13SupportedDivActions\x12E\n" +
+	"\x13SupportedDivCustoms\x18\x03 \x01(\v2\x13.NAlice.TDivCustomsR\x13SupportedDivCustoms\x12N\n" +
+	"\x16SupportedDivExtensions\x18\x04 \x01(\v2\x16.NAlice.TDivExtensionsR\x16SupportedDivExtensions\x12K\n" +
+	"\x15SupportedDivVariables\x18\x05 \x01(\v2\x15.NAlice.TDivVariablesR\x15SupportedDivVariables\x12P\n" +
+	"\x0fAvailableAssets\x18\x06 \x03(\v2&.NAlice.TLayeredDivUICapability.TAssetR\x0fAvailableAssets\x128\n" +
+	"\x17SupportsGoLeftDirective\x18\a \x01(\bR\x17SupportsGoLeftDirective\x12>\n" +
+	"\x1aSupportsMusicMyWaveSunIcon\x18\b \x01(\bR\x1aSupportsMusicMyWaveSunIcon\x1a\xb7\x02\n" +
+	"\x06TState\x127\n" +
+	"\ravailableSize\x18\x01 \x01(\v2\x11.NAlice.TDiv2SizeR\ravailableSize\x123\n" +
+	"\fStashedCards\x18\x02 \x03(\v2\x0f.NAlice.TDiv2IdR\fStashedCards\x12\x1e\n" +
 	"\n" +
-	"ScreeenDPI\x18\x03 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"screen_dpiR\n" +
-	"screen_dpi\x12\xa4\x01\n" +
-	"\x1fCurrentCardAvaliableNavigations\x18\x04 \x03(\x0e2/.NAlice.TLayeredDivUICapability.ENavigationTypeB&\xaa\xdd\x1b\"current_card_avaliable_navigationsR\"current_card_avaliable_navigations\x12;\n" +
-	"\rStatusBarSize\x18\x05 \x01(\rB\x13\xaa\xdd\x1b\x0fstatus_bar_sizeR\x0fstatus_bar_size:\x04\xa8\xdd\x1b\x04\x1a\xc5\r\n" +
-	"\x17TDivUIShowViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x127\n" +
-	"\x05Layer\x18\x03 \x01(\v2\x14.NAlice.NData.TLayerB\v\xaa\xdd\x1b\x05layer\x18\x01R\x05layer\x12\x91\x01\n" +
-	"\x11InactivityTimeout\x18\x04 \x01(\x0e2J.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EInactivityTimeoutB\x16\xaa\xdd\x1b\x12inactivity_timeoutR\x12inactivity_timeout\x12=\n" +
-	"\rActionSpaceId\x18\x05 \x01(\tB\x15\xaa\xdd\x1b\x0faction_space_id\x18\x01R\x0faction_space_id\x12\x8d\x01\n" +
-	"\x10StashInteraction\x18\x06 \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EStashInteractionB\x15\xaa\xdd\x1b\x11stash_interactionR\x11stash_interaction\x12\x8d\x01\n" +
-	"\x10OverlayBehaviour\x18\b \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EOverlayBehaviourB\x15\xaa\xdd\x1b\x11overlay_behaviourR\x11overlay_behaviour\x12\x95\x01\n" +
-	"\x12GestureInteraction\x18\t \x03(\x0e2K.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EGestureInteractionB\x17\xaa\xdd\x1b\x13gesture_interactionR\x13gesture_interaction\x12B\n" +
+	"ScreeenDPI\x18\x03 \x01(\rR\n" +
+	"ScreeenDPI\x12y\n" +
+	"\x1fCurrentCardAvaliableNavigations\x18\x04 \x03(\x0e2/.NAlice.TLayeredDivUICapability.ENavigationTypeR\x1fCurrentCardAvaliableNavigations\x12$\n" +
+	"\rStatusBarSize\x18\x05 \x01(\rR\rStatusBarSize\x1a\x93\v\n" +
+	"\x17TDivUIShowViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12*\n" +
+	"\x05Layer\x18\x03 \x01(\v2\x14.NAlice.NData.TLayerR\x05Layer\x12x\n" +
+	"\x11InactivityTimeout\x18\x04 \x01(\x0e2J.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EInactivityTimeoutR\x11InactivityTimeout\x12$\n" +
+	"\rActionSpaceId\x18\x05 \x01(\tR\rActionSpaceId\x12u\n" +
+	"\x10StashInteraction\x18\x06 \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EStashInteractionR\x10StashInteraction\x12u\n" +
+	"\x10OverlayBehaviour\x18\b \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EOverlayBehaviourR\x10OverlayBehaviour\x12{\n" +
+	"\x12GestureInteraction\x18\t \x03(\x0e2K.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EGestureInteractionR\x12GestureInteraction\x12*\n" +
 	"\x10TerminateActions\x18\n" +
-	" \x03(\tB\x15\xaa\xdd\x1b\x11terminate_actionsR\x11terminate_actions\x12\x8d\x01\n" +
-	"\x10StackInteraction\x18\v \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EStackInteractionB\x15\xaa\xdd\x1b\x11stack_interactionR\x11stack_interaction\x12?\n" +
-	"\bDiv2Card\x18\x02 \x01(\v2\x11.NAlice.TDiv2CardB\r\xaa\xdd\x1b\tdiv2_cardH\x00R\tdiv2_card\x12\x9d\x01\n" +
-	"\x13RenderRequestParams\x18\a \x01(\v2L.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.TRenderRequestParamsB\x19\xaa\xdd\x1b\x15render_request_paramsH\x00R\x15render_request_params\x1a<\n" +
-	"\x14TRenderRequestParams\x12$\n" +
-	"\x06CardId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acard_idR\acard_id\"n\n" +
+	" \x03(\tR\x10TerminateActions\x12u\n" +
+	"\x10StackInteraction\x18\v \x01(\x0e2I.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.EStackInteractionR\x10StackInteraction\x12/\n" +
+	"\bDiv2Card\x18\x02 \x01(\v2\x11.NAlice.TDiv2CardH\x00R\bDiv2Card\x12\x80\x01\n" +
+	"\x13RenderRequestParams\x18\a \x01(\v2L.NAlice.TLayeredDivUICapability.TDivUIShowViewDirective.TRenderRequestParamsH\x00R\x13RenderRequestParams\x1a.\n" +
+	"\x14TRenderRequestParams\x12\x16\n" +
+	"\x06CardId\x18\x01 \x01(\tR\x06CardId\"n\n" +
 	"\x12EInactivityTimeout\x12\t\n" +
 	"\x05Short\x10\x00\x12\n" +
 	"\n" +
@@ -1316,44 +1308,42 @@ const file_alice_protos_endpoint_capabilities_layered_div_ui_capability_proto_ra
 	"\x11EStackInteraction\x12\x10\n" +
 	"\fBringToFront\x10\x00\x12\x0f\n" +
 	"\vKeepInStack\x10\x01\x12\x14\n" +
-	"\x10DeflatesAllAbove\x10\x02:\x1f\x92\x82\x19\x0fdivui_show_view\xa8\xdd\x1b\x04\xc0\xff\x1b\x01\xa8\xc8\x1c1B\x17\n" +
-	"\aDivCard\x12\f\xaa\xdd\x1b\bdiv_card\x1a\xd7\x01\n" +
-	"\x18TDivUIPatchViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12A\n" +
-	"\tDiv2Patch\x18\x02 \x01(\v2\x12.NAlice.TDiv2PatchB\x0e\xaa\xdd\x1b\n" +
-	"div2_patchR\n" +
-	"div2_patch\x128\n" +
-	"\aApplyTo\x18\x03 \x01(\v2\x0f.NAlice.TDiv2IdB\f\xaa\xdd\x1b\bapply_toR\bapply_to: \x92\x82\x19\x10divui_patch_view\xa8\xdd\x1b\x04\xc0\xff\x1b\x01\xa8\xc8\x1c2\x1a\xce\x01\n" +
-	"\x17TDivUIHideViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x127\n" +
-	"\x05Layer\x18\x02 \x01(\v2\x14.NAlice.NData.TLayerB\v\xaa\xdd\x1b\x05layer\x18\x01R\x05layer\x12?\n" +
+	"\x10DeflatesAllAbove\x10\x02B\t\n" +
+	"\aDivCard\x1a\x8b\x01\n" +
+	"\x18TDivUIPatchViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x120\n" +
+	"\tDiv2Patch\x18\x02 \x01(\v2\x12.NAlice.TDiv2PatchR\tDiv2Patch\x12)\n" +
+	"\aApplyTo\x18\x03 \x01(\v2\x0f.NAlice.TDiv2IdR\aApplyTo\x1a\x8a\x01\n" +
+	"\x17TDivUIHideViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12*\n" +
+	"\x05Layer\x18\x02 \x01(\v2\x14.NAlice.NData.TLayerR\x05Layer\x12/\n" +
 	"\n" +
-	"Identifier\x18\x03 \x01(\v2\x0f.NAlice.TDiv2IdB\x0e\xaa\xdd\x1b\n" +
-	"identifierR\n" +
-	"identifier:\x1b\x92\x82\x19\x0fdivui_hide_view\xa8\xdd\x1b\x04\xa8\xc8\x1c3\x1a]\n" +
-	"\x1bTDivUIHideAllViewsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name: \x92\x82\x19\x14divui_hide_all_views\xa8\xdd\x1b\x04\xa8\xc8\x1cO\x1a\xb3\x01\n" +
-	"\x18TDivUIStashViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria:\x1c\x92\x82\x19\x10divui_stash_view\xa8\xdd\x1b\x04\xa8\xc8\x1c4\x1a\xb7\x01\n" +
-	"\x1aTDivUIUnstashViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria:\x1e\x92\x82\x19\x12divui_unstash_view\xa8\xdd\x1b\x04\xa8\xc8\x1c5\x1a\xcb\x01\n" +
-	"#TDivUICallTerminateActionsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria:)\x92\x82\x19\x1cdivui_call_terminate_actions\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc5\x01\x1a\xef\x02\n" +
-	" TDivUICallActionsGroupsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria\x12\x88\x01\n" +
-	"\rActionsGroups\x18\x03 \x03(\x0e2M.NAlice.TLayeredDivUICapability.TDivUICallActionsGroupsDirective.ActionsGroupB\x12\xaa\xdd\x1b\x0eactions_groupsR\x0eactions_groups\"\x1d\n" +
+	"Identifier\x18\x03 \x01(\v2\x0f.NAlice.TDiv2IdR\n" +
+	"Identifier\x1a1\n" +
+	"\x1bTDivUIHideAllViewsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1ao\n" +
+	"\x18TDivUIStashViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x1aq\n" +
+	"\x1aTDivUIUnstashViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x1az\n" +
+	"#TDivUICallTerminateActionsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x1a\x8b\x02\n" +
+	" TDivUICallActionsGroupsDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x12s\n" +
+	"\rActionsGroups\x18\x03 \x03(\x0e2M.NAlice.TLayeredDivUICapability.TDivUICallActionsGroupsDirective.ActionsGroupR\rActionsGroups\"\x1d\n" +
 	"\fActionsGroup\x12\r\n" +
-	"\tTerminate\x10\x00:&\x92\x82\x19\x19divui_call_actions_groups\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcf\x01\"=\n" +
+	"\tTerminate\x10\x00\"=\n" +
 	"\x0fENavigationType\x12\f\n" +
 	"\bVertical\x10\x00\x12\x0e\n" +
 	"\n" +
 	"Horizontal\x10\x01\x12\f\n" +
-	"\bBackward\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x19B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11LayeredDivUIProtoZQa.yandex-team.ru/alice/protos/endpoint/capabilities/layered_div_ui;layereddivuipbb\x06proto3"
+	"\bBackward\x10\x02B\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/layered_div_ui\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_layered_div_ui_capability_proto_rawDescOnce sync.Once

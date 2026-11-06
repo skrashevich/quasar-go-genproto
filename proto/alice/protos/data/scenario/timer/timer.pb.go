@@ -70,17 +70,17 @@ func (TTimerDescription_ETimerType) EnumDescriptor() ([]byte, []int) {
 
 type TTimerDescription struct {
 	state            protoimpl.MessageState            `protogen:"open.v1"`
-	TimerId          string                            `protobuf:"bytes,1,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
-	UpdateTimestamp  uint64                            `protobuf:"varint,9,opt,name=UpdateTimestamp,json=update_timestamp,proto3" json:"UpdateTimestamp,omitempty"`
-	StartTimestamp   uint64                            `protobuf:"varint,2,opt,name=StartTimestamp,json=start_timestamp,proto3" json:"StartTimestamp,omitempty"`
-	Duration         uint32                            `protobuf:"varint,3,opt,name=Duration,json=duration,proto3" json:"Duration,omitempty"`
-	Remaining        uint32                            `protobuf:"varint,4,opt,name=Remaining,json=remaining,proto3" json:"Remaining,omitempty"`
-	CurrentlyPlaying bool                              `protobuf:"varint,5,opt,name=CurrentlyPlaying,json=currently_playing,proto3" json:"CurrentlyPlaying,omitempty"`
-	Paused           bool                              `protobuf:"varint,6,opt,name=Paused,json=paused,proto3" json:"Paused,omitempty"`
-	TimerType        TTimerDescription_ETimerType      `protobuf:"varint,7,opt,name=TimerType,json=timer_type,proto3,enum=NAlice.NData.TTimerDescription_ETimerType" json:"TimerType,omitempty"`
-	TimerActions     []*TTimerDescription_TTimerAction `protobuf:"bytes,8,rep,name=TimerActions,json=timer_actions,proto3" json:"TimerActions,omitempty"`
-	Title            string                            `protobuf:"bytes,10,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Disabled         bool                              `protobuf:"varint,11,opt,name=Disabled,json=disabled,proto3" json:"Disabled,omitempty"`
+	TimerId          string                            `protobuf:"bytes,1,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
+	UpdateTimestamp  uint64                            `protobuf:"varint,9,opt,name=UpdateTimestamp,proto3" json:"UpdateTimestamp,omitempty"`
+	StartTimestamp   uint64                            `protobuf:"varint,2,opt,name=StartTimestamp,proto3" json:"StartTimestamp,omitempty"`
+	Duration         uint32                            `protobuf:"varint,3,opt,name=Duration,proto3" json:"Duration,omitempty"`
+	Remaining        uint32                            `protobuf:"varint,4,opt,name=Remaining,proto3" json:"Remaining,omitempty"`
+	CurrentlyPlaying bool                              `protobuf:"varint,5,opt,name=CurrentlyPlaying,proto3" json:"CurrentlyPlaying,omitempty"`
+	Paused           bool                              `protobuf:"varint,6,opt,name=Paused,proto3" json:"Paused,omitempty"`
+	TimerType        TTimerDescription_ETimerType      `protobuf:"varint,7,opt,name=TimerType,proto3,enum=NAlice.NData.TTimerDescription_ETimerType" json:"TimerType,omitempty"`
+	TimerActions     []*TTimerDescription_TTimerAction `protobuf:"bytes,8,rep,name=TimerActions,proto3" json:"TimerActions,omitempty"`
+	Title            string                            `protobuf:"bytes,10,opt,name=Title,proto3" json:"Title,omitempty"`
+	Disabled         bool                              `protobuf:"varint,11,opt,name=Disabled,proto3" json:"Disabled,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -194,7 +194,7 @@ func (x *TTimerDescription) GetDisabled() bool {
 
 type TTimerDescription_TTimerAction struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	SerializedAction string                 `protobuf:"bytes,1,opt,name=SerializedAction,json=serialized_action,proto3" json:"SerializedAction,omitempty"`
+	SerializedAction string                 `protobuf:"bytes,1,opt,name=SerializedAction,proto3" json:"SerializedAction,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -240,30 +240,28 @@ var File_alice_protos_data_scenario_timer_timer_proto protoreflect.FileDescripto
 
 const file_alice_protos_data_scenario_timer_timer_proto_rawDesc = "" +
 	"\n" +
-	",alice/protos/data/scenario/timer/timer.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8e\x06\n" +
-	"\x11TTimerDescription\x12'\n" +
-	"\aTimerId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id\x12?\n" +
-	"\x0fUpdateTimestamp\x18\t \x01(\x04B\x14\xaa\xdd\x1b\x10update_timestampR\x10update_timestamp\x12<\n" +
-	"\x0eStartTimestamp\x18\x02 \x01(\x04B\x13\xaa\xdd\x1b\x0fstart_timestampR\x0fstart_timestamp\x12(\n" +
-	"\bDuration\x18\x03 \x01(\rB\f\xaa\xdd\x1b\bdurationR\bduration\x12+\n" +
-	"\tRemaining\x18\x04 \x01(\rB\r\xaa\xdd\x1b\tremainingR\tremaining\x12B\n" +
-	"\x10CurrentlyPlaying\x18\x05 \x01(\bB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12\"\n" +
-	"\x06Paused\x18\x06 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06pausedR\x06paused\x12Y\n" +
-	"\tTimerType\x18\a \x01(\x0e2*.NAlice.NData.TTimerDescription.ETimerTypeB\x0e\xaa\xdd\x1b\n" +
-	"timer_typeR\n" +
-	"timer_type\x12d\n" +
-	"\fTimerActions\x18\b \x03(\v2,.NAlice.NData.TTimerDescription.TTimerActionB\x11\xaa\xdd\x1b\rtimer_actionsR\rtimer_actions\x12\x1f\n" +
+	",alice/protos/data/scenario/timer/timer.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaf\x04\n" +
+	"\x11TTimerDescription\x12\x18\n" +
+	"\aTimerId\x18\x01 \x01(\tR\aTimerId\x12(\n" +
+	"\x0fUpdateTimestamp\x18\t \x01(\x04R\x0fUpdateTimestamp\x12&\n" +
+	"\x0eStartTimestamp\x18\x02 \x01(\x04R\x0eStartTimestamp\x12\x1a\n" +
+	"\bDuration\x18\x03 \x01(\rR\bDuration\x12\x1c\n" +
+	"\tRemaining\x18\x04 \x01(\rR\tRemaining\x12*\n" +
+	"\x10CurrentlyPlaying\x18\x05 \x01(\bR\x10CurrentlyPlaying\x12\x16\n" +
+	"\x06Paused\x18\x06 \x01(\bR\x06Paused\x12H\n" +
+	"\tTimerType\x18\a \x01(\x0e2*.NAlice.NData.TTimerDescription.ETimerTypeR\tTimerType\x12P\n" +
+	"\fTimerActions\x18\b \x03(\v2,.NAlice.NData.TTimerDescription.TTimerActionR\fTimerActions\x12\x14\n" +
 	"\x05Title\x18\n" +
-	" \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bDisabled\x18\v \x01(\bB\f\xaa\xdd\x1b\bdisabledR\bdisabled\x1aX\n" +
-	"\fTTimerAction\x12B\n" +
-	"\x10SerializedAction\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\x11serialized_actionR\x11serialized_action:\x04\xa8\xdd\x1b\x04\"&\n" +
+	" \x01(\tR\x05Title\x12\x1a\n" +
+	"\bDisabled\x18\v \x01(\bR\bDisabled\x1a:\n" +
+	"\fTTimerAction\x12*\n" +
+	"\x10SerializedAction\x18\x01 \x01(\tR\x10SerializedAction\"&\n" +
 	"\n" +
 	"ETimerType\x12\v\n" +
 	"\aDEFAULT\x10\x00\x12\v\n" +
-	"\aCOMMAND\x10\x01:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.timerZ1a.yandex-team.ru/alice/protos/data/scenario/timerb\x06proto3"
+	"\aCOMMAND\x10\x01B\xc1\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"TimerProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/timer\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_timer_timer_proto_rawDescOnce sync.Once

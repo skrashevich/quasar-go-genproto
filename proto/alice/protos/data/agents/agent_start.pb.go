@@ -26,8 +26,8 @@ const (
 
 type TAgentStartRequest struct {
 	state             protoimpl.MessageState            `protogen:"open.v1"`
-	Body              *anypb.Any                        `protobuf:"bytes,1,opt,name=Body,json=body,proto3" json:"Body,omitempty"`
-	AdditionalHeaders []*TAgentStartRequest_THttpHeader `protobuf:"bytes,2,rep,name=AdditionalHeaders,json=additional_headers,proto3" json:"AdditionalHeaders,omitempty"`
+	Body              *anypb.Any                        `protobuf:"bytes,1,opt,name=Body,proto3" json:"Body,omitempty"`
+	AdditionalHeaders []*TAgentStartRequest_THttpHeader `protobuf:"bytes,2,rep,name=AdditionalHeaders,proto3" json:"AdditionalHeaders,omitempty"`
 	UseAtsV2          bool                              `protobuf:"varint,3,opt,name=UseAtsV2,json=use_ats_v2,proto3" json:"UseAtsV2,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -86,8 +86,8 @@ func (x *TAgentStartRequest) GetUseAtsV2() bool {
 
 type TAgentStartRequest_THttpHeader struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Value         string                 `protobuf:"bytes,2,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=Value,proto3" json:"Value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -140,17 +140,18 @@ var File_alice_protos_data_agents_agent_start_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_agents_agent_start_proto_rawDesc = "" +
 	"\n" +
-	"*alice/protos/data/agents/agent_start.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\"\xcb\x02\n" +
-	"\x12TAgentStartRequest\x122\n" +
-	"\x04Body\x18\x01 \x01(\v2\x14.google.protobuf.AnyB\b\xaa\xdd\x1b\x04bodyR\x04body\x12y\n" +
-	"\x11AdditionalHeaders\x18\x02 \x03(\v2&.NAlice.TAgentStartRequest.THttpHeaderB\"\xaa\xdd\x1b\x12additional_headers\xa8\x8d'\x01\xa8\x8d'\x04\xa8\x8d'\x02R\x12additional_headers\x12,\n" +
+	"*alice/protos/data/agents/agent_start.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\"\xfb\x01\n" +
+	"\x12TAgentStartRequest\x12(\n" +
+	"\x04Body\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\x04Body\x12T\n" +
+	"\x11AdditionalHeaders\x18\x02 \x03(\v2&.NAlice.TAgentStartRequest.THttpHeaderR\x11AdditionalHeaders\x12,\n" +
 	"\bUseAtsV2\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
 	"use_ats_v2R\n" +
-	"use_ats_v2\x1aR\n" +
-	"\vTHttpHeader\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Value\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05valueR\x05value:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bb\n" +
-	"\"ru.yandex.alice.protos.data.agentsB\x11AgentStartRequestZ)a.yandex-team.ru/alice/protos/data/agentsb\x06proto3"
+	"use_ats_v2\x1a7\n" +
+	"\vTHttpHeader\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Value\x18\x02 \x01(\tR\x05ValueB\x9f\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fAgentStartProtoP\x01ZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/agents\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_agents_agent_start_proto_rawDescOnce sync.Once

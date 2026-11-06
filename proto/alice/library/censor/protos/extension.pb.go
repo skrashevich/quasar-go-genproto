@@ -126,7 +126,9 @@ const file_alice_library_censor_protos_extension_proto_rawDesc = "" +
 	"\x12A_PRIVATE_RESPONSE\x10\x02\x12\x16\n" +
 	"\x12A_PRIVATE_EVENTLOG\x10\x04:R\n" +
 	"\vFieldAccess\x12\x1d.google.protobuf.FieldOptions\x18\xd5\xf1\x04 \x03(\x0e2\x0f.NAlice.EAccessR\vFieldAccess:X\n" +
-	"\rMessageAccess\x12\x1f.google.protobuf.MessageOptions\x18\xd5\xf1\x04 \x03(\x0e2\x0f.NAlice.EAccessR\rMessageAccessB.Z,a.yandex-team.ru/alice/library/censor/protos"
+	"\rMessageAccess\x12\x1f.google.protobuf.MessageOptions\x18\xd5\xf1\x04 \x03(\x0e2\x0f.NAlice.EAccessR\rMessageAccessB\xa1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eExtensionProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_library_censor_protos_extension_proto_rawDescOnce sync.Once

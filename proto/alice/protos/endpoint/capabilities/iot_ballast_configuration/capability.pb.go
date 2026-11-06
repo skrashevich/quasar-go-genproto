@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_ballast_configuration/capability.proto
 
-package iotballastconfigurationpb
+package iot_ballast_configuration
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotBallastConfigurationCapability struct {
 	state         protoimpl.MessageState                          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotBallastConfigurationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotBallastConfigurationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotBallastConfigurationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotBallastConfigurationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,7 +87,7 @@ func (x *TIotBallastConfigurationCapability) GetState() *TIotBallastConfiguratio
 
 type TIotBallastConfigurationCapability_TParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PhysicalRange *endpoint.TRange       `protobuf:"bytes,1,opt,name=PhysicalRange,json=physical_range,proto3" json:"PhysicalRange,omitempty"`
+	PhysicalRange *endpoint.TRange       `protobuf:"bytes,1,opt,name=PhysicalRange,proto3" json:"PhysicalRange,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -131,8 +131,8 @@ func (x *TIotBallastConfigurationCapability_TParameters) GetPhysicalRange() *end
 
 type TIotBallastConfigurationCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           float64                `protobuf:"fixed64,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           float64                `protobuf:"fixed64,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -183,8 +183,8 @@ func (x *TIotBallastConfigurationCapability_TState) GetMax() float64 {
 
 type TIotBallastConfigurationCapability_TSetIotBallastMinDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=Min,proto3" json:"Min,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -235,8 +235,8 @@ func (x *TIotBallastConfigurationCapability_TSetIotBallastMinDirective) GetMin()
 
 type TIotBallastConfigurationCapability_TSetIotBallastMaxDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Max           float64                `protobuf:"fixed64,1,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Max           float64                `protobuf:"fixed64,1,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -287,9 +287,9 @@ func (x *TIotBallastConfigurationCapability_TSetIotBallastMaxDirective) GetMax()
 
 type TIotBallastConfigurationCapability_TSetIotBallastMinMaxDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Min           float64                `protobuf:"fixed64,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           float64                `protobuf:"fixed64,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Min           float64                `protobuf:"fixed64,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           float64                `protobuf:"fixed64,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -347,7 +347,7 @@ func (x *TIotBallastConfigurationCapability_TSetIotBallastMinMaxDirective) GetMa
 
 type TIotBallastConfigurationCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Capability    *TIotBallastConfigurationCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotBallastConfigurationCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -393,35 +393,34 @@ var File_alice_protos_endpoint_capabilities_iot_ballast_configuration_capability
 
 const file_alice_protos_endpoint_capabilities_iot_ballast_configuration_capability_proto_rawDesc = "" +
 	"\n" +
-	"Malice/protos/endpoint/capabilities/iot_ballast_configuration/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf6\a\n" +
-	"\"TIotBallastConfigurationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12f\n" +
+	"Malice/protos/endpoint/capabilities/iot_ballast_configuration/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xac\x05\n" +
+	"\"TIotBallastConfigurationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12V\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v26.NAlice.TIotBallastConfigurationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12R\n" +
-	"\x05State\x18\x03 \x01(\v21.NAlice.TIotBallastConfigurationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a^\n" +
-	"\vTParameters\x12I\n" +
-	"\rPhysicalRange\x18\x01 \x01(\v2\x0e.NAlice.TRangeB\x12\xaa\xdd\x1b\x0ephysical_rangeR\x0ephysical_range:\x04\xa8\xdd\x1b\x04\x1aD\n" +
-	"\x06TState\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x01B\a\xaa\xdd\x1b\x03maxR\x03max:\x04\xa8\xdd\x1b\x04\x1a\x82\x01\n" +
-	"\x1aTSetIotBallastMinDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03minR\x03min:*\x92\x82\x19\x1dset_iot_ballast_min_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xec\x02\x1a\x82\x01\n" +
-	"\x1aTSetIotBallastMaxDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03Max\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03maxR\x03max:*\x92\x82\x19\x1dset_iot_ballast_max_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xed\x02\x1a\xa4\x01\n" +
-	"\x1dTSetIotBallastMinMaxDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x01B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x01B\a\xaa\xdd\x1b\x03maxR\x03max:.\x92\x82\x19!set_iot_ballast_min_max_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xee\x02\x1ay\n" +
-	"\x11TUpdateStateEvent\x12Z\n" +
+	"Parameters\x18\x02 \x01(\v26.NAlice.TIotBallastConfigurationCapability.TParametersR\n" +
+	"Parameters\x12G\n" +
+	"\x05State\x18\x03 \x01(\v21.NAlice.TIotBallastConfigurationCapability.TStateR\x05State\x1aC\n" +
+	"\vTParameters\x124\n" +
+	"\rPhysicalRange\x18\x01 \x01(\v2\x0e.NAlice.TRangeR\rPhysicalRange\x1a,\n" +
+	"\x06TState\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x01R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x01R\x03Max\x1aC\n" +
+	"\x1aTSetIotBallastMinDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x01R\x03Min\x1aC\n" +
+	"\x1aTSetIotBallastMaxDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x10\n" +
+	"\x03Max\x18\x01 \x01(\x01R\x03Max\x1aX\n" +
+	"\x1dTSetIotBallastMinMaxDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x01R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x01R\x03Max\x1a_\n" +
+	"\x11TUpdateStateEvent\x12J\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2*.NAlice.TIotBallastConfigurationCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cM:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x81\x01B\xbf\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB&IotBallastConfigurationCapabilityProtoZga.yandex-team.ru/alice/protos/endpoint/capabilities/iot_ballast_configuration;iotballastconfigurationpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2*.NAlice.TIotBallastConfigurationCapabilityR\n" +
+	"CapabilityB\xc3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_ballast_configuration\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_ballast_configuration_capability_proto_rawDescOnce sync.Once

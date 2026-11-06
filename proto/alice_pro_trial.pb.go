@@ -81,8 +81,8 @@ const file_alice_pro_trial_proto_rawDesc = "" +
 	"\x12AliceProTrialState\x12\x1d\n" +
 	"\n" +
 	"left_count\x18\x01 \x01(\x04R\tleftCount\x12\x14\n" +
-	"\x05limit\x18\x02 \x01(\x04R\x05limitB0\n" +
-	"\x19ru.yandex.quasar.protobufB\x13AliceProTrialProtos"
+	"\x05limit\x18\x02 \x01(\x04R\x05limitBa\n" +
+	"\x19ru.yandex.quasar.protobufB\x13AliceProTrialProtosZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_alice_pro_trial_proto_rawDescOnce sync.Once

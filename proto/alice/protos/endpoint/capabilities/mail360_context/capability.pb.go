@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/mail360_context/capability.proto
 
-package mail360contextpb
+package mail360_context
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -178,8 +178,8 @@ const file_alice_protos_endpoint_capabilities_mail360_context_capability_proto_r
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1an\n" +
 	"\x06TState\x12I\n" +
 	"\x10CurrentMessageId\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12current_message_idH\x00R\x12current_message_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x13\n" +
-	"\x11_CurrentMessageId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbf\x02B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dMail360ContextCapabilityProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/mail360_context;mail360contextpbb\x06proto3"
+	"\x11_CurrentMessageId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbf\x02B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dMail360ContextCapabilityProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/mail360_contextb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_mail360_context_capability_proto_rawDescOnce sync.Once

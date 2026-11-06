@@ -22,7 +22,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Deprecated: Marked as deprecated in alice/protos/data/layer.proto.
 type TLayer struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Types that are valid to be assigned to Layer:
@@ -104,15 +103,15 @@ type isTLayer_Layer interface {
 }
 
 type TLayer_Content struct {
-	Content *TLayer_TContentLayer `protobuf:"bytes,1,opt,name=Content,json=content,proto3,oneof"`
+	Content *TLayer_TContentLayer `protobuf:"bytes,1,opt,name=Content,proto3,oneof"`
 }
 
 type TLayer_Dialog struct {
-	Dialog *TLayer_TDialogLayer `protobuf:"bytes,2,opt,name=Dialog,json=dialog,proto3,oneof"`
+	Dialog *TLayer_TDialogLayer `protobuf:"bytes,2,opt,name=Dialog,proto3,oneof"`
 }
 
 type TLayer_Alarm struct {
-	Alarm *TLayer_TAlarmLayer `protobuf:"bytes,3,opt,name=Alarm,json=alarm,proto3,oneof"`
+	Alarm *TLayer_TAlarmLayer `protobuf:"bytes,3,opt,name=Alarm,proto3,oneof"`
 }
 
 func (*TLayer_Content) isTLayer_Layer() {}
@@ -233,17 +232,17 @@ var File_alice_protos_data_layer_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_layer_proto_rawDesc = "" +
 	"\n" +
-	"\x1dalice/protos/data/layer.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc1\x02\n" +
-	"\x06TLayer\x12K\n" +
-	"\aContent\x18\x01 \x01(\v2\".NAlice.NData.TLayer.TContentLayerB\v\xaa\xdd\x1b\acontentH\x00R\acontent\x12G\n" +
-	"\x06Dialog\x18\x02 \x01(\v2!.NAlice.NData.TLayer.TDialogLayerB\n" +
-	"\xaa\xdd\x1b\x06dialogH\x00R\x06dialog\x12C\n" +
-	"\x05Alarm\x18\x03 \x01(\v2 .NAlice.NData.TLayer.TAlarmLayerB\t\xaa\xdd\x1b\x05alarmH\x00R\x05alarm\x1a\x15\n" +
-	"\rTContentLayer:\x04\xa8\xdd\x1b\x04\x1a\x13\n" +
-	"\vTAlarmLayer:\x04\xa8\xdd\x1b\x04\x1a\x14\n" +
-	"\fTDialogLayer:\x04\xa8\xdd\x1b\x04:\x06\xa8\xdd\x1b\x04\x18\x01B\x12\n" +
-	"\x05Layer\x12\t\xaa\xdd\x1b\x05layerBA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\x1dalice/protos/data/layer.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf8\x01\n" +
+	"\x06TLayer\x12>\n" +
+	"\aContent\x18\x01 \x01(\v2\".NAlice.NData.TLayer.TContentLayerH\x00R\aContent\x12;\n" +
+	"\x06Dialog\x18\x02 \x01(\v2!.NAlice.NData.TLayer.TDialogLayerH\x00R\x06Dialog\x128\n" +
+	"\x05Alarm\x18\x03 \x01(\v2 .NAlice.NData.TLayer.TAlarmLayerH\x00R\x05Alarm\x1a\x0f\n" +
+	"\rTContentLayer\x1a\r\n" +
+	"\vTAlarmLayer\x1a\x0e\n" +
+	"\fTDialogLayerB\a\n" +
+	"\x05LayerB\xb2\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"LayerProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_layer_proto_rawDescOnce sync.Once

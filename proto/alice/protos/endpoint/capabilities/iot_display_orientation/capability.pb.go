@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_display_orientation/capability.proto
 
-package iotdisplayorientationpb
+package iot_display_orientation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -73,9 +73,9 @@ func (TIotDisplayOrientationCapability_EOrientation) EnumDescriptor() ([]byte, [
 
 type TIotDisplayOrientationCapability struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotDisplayOrientationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotDisplayOrientationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotDisplayOrientationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotDisplayOrientationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -169,7 +169,7 @@ func (*TIotDisplayOrientationCapability_TParameters) Descriptor() ([]byte, []int
 
 type TIotDisplayOrientationCapability_TState struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Orientation   TIotDisplayOrientationCapability_EOrientation `protobuf:"varint,1,opt,name=Orientation,json=orientation,proto3,enum=NAlice.TIotDisplayOrientationCapability_EOrientation" json:"Orientation,omitempty"`
+	Orientation   TIotDisplayOrientationCapability_EOrientation `protobuf:"varint,1,opt,name=Orientation,proto3,enum=NAlice.TIotDisplayOrientationCapability_EOrientation" json:"Orientation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -213,8 +213,8 @@ func (x *TIotDisplayOrientationCapability_TState) GetOrientation() TIotDisplayOr
 
 type TIotDisplayOrientationCapability_TSetIotDisplayOrientationDirective struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Name          string                                        `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Orientation   TIotDisplayOrientationCapability_EOrientation `protobuf:"varint,1,opt,name=Orientation,json=orientation,proto3,enum=NAlice.TIotDisplayOrientationCapability_EOrientation" json:"Orientation,omitempty"`
+	Name          string                                        `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Orientation   TIotDisplayOrientationCapability_EOrientation `protobuf:"varint,1,opt,name=Orientation,proto3,enum=NAlice.TIotDisplayOrientationCapability_EOrientation" json:"Orientation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -265,7 +265,7 @@ func (x *TIotDisplayOrientationCapability_TSetIotDisplayOrientationDirective) Ge
 
 type TIotDisplayOrientationCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Capability    *TIotDisplayOrientationCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotDisplayOrientationCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -311,29 +311,28 @@ var File_alice_protos_endpoint_capabilities_iot_display_orientation_capability_p
 
 const file_alice_protos_endpoint_capabilities_iot_display_orientation_capability_proto_rawDesc = "" +
 	"\n" +
-	"Kalice/protos/endpoint/capabilities/iot_display_orientation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbe\x06\n" +
-	" TIotDisplayOrientationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12d\n" +
+	"Kalice/protos/endpoint/capabilities/iot_display_orientation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x88\x05\n" +
+	" TIotDisplayOrientationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12T\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v24.NAlice.TIotDisplayOrientationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12P\n" +
-	"\x05State\x18\x03 \x01(\v2/.NAlice.TIotDisplayOrientationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1ax\n" +
-	"\x06TState\x12h\n" +
-	"\vOrientation\x18\x01 \x01(\x0e25.NAlice.TIotDisplayOrientationCapability.EOrientationB\x0f\xaa\xdd\x1b\vorientationR\vorientation:\x04\xa8\xdd\x1b\x04\x1a\xe1\x01\n" +
-	"\"TSetIotDisplayOrientationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12h\n" +
-	"\vOrientation\x18\x01 \x01(\x0e25.NAlice.TIotDisplayOrientationCapability.EOrientationB\x0f\xaa\xdd\x1b\vorientationR\vorientation:2\x92\x82\x19%set_iot_display_orientation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc1\x03\x1aw\n" +
-	"\x11TUpdateStateEvent\x12X\n" +
+	"Parameters\x18\x02 \x01(\v24.NAlice.TIotDisplayOrientationCapability.TParametersR\n" +
+	"Parameters\x12E\n" +
+	"\x05State\x18\x03 \x01(\v2/.NAlice.TIotDisplayOrientationCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aa\n" +
+	"\x06TState\x12W\n" +
+	"\vOrientation\x18\x01 \x01(\x0e25.NAlice.TIotDisplayOrientationCapability.EOrientationR\vOrientation\x1a\x92\x01\n" +
+	"\"TSetIotDisplayOrientationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12W\n" +
+	"\vOrientation\x18\x01 \x01(\x0e25.NAlice.TIotDisplayOrientationCapability.EOrientationR\vOrientation\x1a]\n" +
+	"\x11TUpdateStateEvent\x12H\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2(.NAlice.TIotDisplayOrientationCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c^\"2\n" +
+	"Capability\x18\x01 \x01(\v2(.NAlice.TIotDisplayOrientationCapabilityR\n" +
+	"Capability\"2\n" +
 	"\fEOrientation\x12\f\n" +
 	"\bVERTICAL\x10\x00\x12\x14\n" +
-	"\x10VERTICAL_REVERSE\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9f\x01B\xb9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB$IotDisplayOrientationCapabilityProtoZca.yandex-team.ru/alice/protos/endpoint/capabilities/iot_display_orientation;iotdisplayorientationpbb\x06proto3"
+	"\x10VERTICAL_REVERSE\x10\x01B\xc1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_display_orientation\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_display_orientation_capability_proto_rawDescOnce sync.Once

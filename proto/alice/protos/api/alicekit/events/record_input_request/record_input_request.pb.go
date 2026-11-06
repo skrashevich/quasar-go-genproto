@@ -83,7 +83,7 @@ type isTRecordInputRequest_Request interface {
 }
 
 type TRecordInputRequest_StartRequest struct {
-	StartRequest *TRecordInputRequest_TStartRequest `protobuf:"bytes,1,opt,name=StartRequest,json=start_request,proto3,oneof"`
+	StartRequest *TRecordInputRequest_TStartRequest `protobuf:"bytes,1,opt,name=StartRequest,proto3,oneof"`
 }
 
 func (*TRecordInputRequest_StartRequest) isTRecordInputRequest_Request() {}
@@ -128,12 +128,12 @@ var File_alice_protos_api_alicekit_events_record_input_request_record_input_requ
 
 const file_alice_protos_api_alicekit_events_record_input_request_record_input_request_proto_rawDesc = "" +
 	"\n" +
-	"Palice/protos/api/alicekit/events/record_input_request/record_input_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb9\x01\n" +
-	"\x13TRecordInputRequest\x12m\n" +
-	"\fStartRequest\x18\x01 \x01(\v23.NAlice.NAliceApi.TRecordInputRequest.TStartRequestB\x11\xaa\xdd\x1b\rstart_requestH\x00R\rstart_request\x1a\x15\n" +
-	"\rTStartRequest:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aRequest\x12\v\xaa\xdd\x1b\arequestB\x9f\x01\n" +
-	"?ru.yandex.alice.protos.api.alicekit.events.record_input_requestB\x12RecordInputRequestP\x01ZFa.yandex-team.ru/alice/protos/api/alicekit/events/record_input_requestb\x06proto3"
+	"Palice/protos/api/alicekit/events/record_input_request/record_input_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c\x01\n" +
+	"\x13TRecordInputRequest\x12Y\n" +
+	"\fStartRequest\x18\x01 \x01(\v23.NAlice.NAliceApi.TRecordInputRequest.TStartRequestH\x00R\fStartRequest\x1a\x0f\n" +
+	"\rTStartRequestB\t\n" +
+	"\aRequestB\xf7\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x17RecordInputRequestProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/record_input_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_record_input_request_record_input_request_proto_rawDescOnce sync.Once

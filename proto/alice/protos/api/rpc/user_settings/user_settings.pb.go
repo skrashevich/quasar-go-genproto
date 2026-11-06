@@ -742,8 +742,8 @@ const file_alice_protos_api_rpc_user_settings_user_settings_proto_rawDesc = "" +
 	"\x0eResponseStatus\x18\x03 \x01(\x0e25.NAlice.NRpc.TGetUserSettingsResponse.EResponseStatusB\x13\xaa\xdd\x1b\x0fresponse_statusR\x06status\"$\n" +
 	"\x0fEResponseStatus\x12\x06\n" +
 	"\x02ok\x10\x00\x12\t\n" +
-	"\x05error\x10\x01:\x04\xa8\xdd\x1b\x04Bw\n" +
-	",ru.yandex.alice.protos.api.rpc.user_settingsB\x12UserSettingsRpcApiZ3a.yandex-team.ru/alice/protos/api/rpc/user_settingsb\x06proto3"
+	"\x05error\x10\x01:\x04\xa8\xdd\x1b\x04B\x96\x01\n" +
+	",ru.yandex.alice.protos.api.rpc.user_settingsB\x12UserSettingsRpcApiZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/user_settingsb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_user_settings_user_settings_proto_rawDescOnce sync.Once

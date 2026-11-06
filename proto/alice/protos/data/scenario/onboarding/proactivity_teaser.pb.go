@@ -111,8 +111,8 @@ const file_alice_protos_data_scenario_onboarding_proactivity_teaser_proto_rawDes
 	"\vDescription\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\taction_id\x18\x01R\taction_id\x12B\n" +
 	"\x10SkillDescription\x18\x05 \x01(\tB\x15\xaa\xdd\x1b\x11skill_descriptionR\x11skill_description\x12J\n" +
 	"\x12BackgroundImageUrl\x18\x03 \x01(\tB\x18\xaa\xdd\x1b\x14background_image_urlR\x14background_image_url\x12I\n" +
-	"\vTypedAction\x18\x04 \x01(\v2\x14.google.protobuf.AnyB\x10\xaa\xdd\x1b\ftyped_actionR\ftyped_action:\x04\xa8\xdd\x1b\x04Bi\n" +
-	"/ru.yandex.alice.protos.data.scenario.onboardingZ6a.yandex-team.ru/alice/protos/data/scenario/onboardingb\x06proto3"
+	"\vTypedAction\x18\x04 \x01(\v2\x14.google.protobuf.AnyB\x10\xaa\xdd\x1b\ftyped_actionR\ftyped_action:\x04\xa8\xdd\x1b\x04B\x88\x01\n" +
+	"/ru.yandex.alice.protos.data.scenario.onboardingZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/onboardingb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_onboarding_proactivity_teaser_proto_rawDescOnce sync.Once

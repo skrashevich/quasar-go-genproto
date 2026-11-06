@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_watch/capability.proto
 
-package alicewatchpb
+package alice_watch
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -304,8 +304,8 @@ const file_alice_protos_endpoint_capabilities_alice_watch_capability_proto_rawDe
 	"\rEResponseMode\x12\x17\n" +
 	"\x13UnknownResponseMode\x10\x00\x12\f\n" +
 	"\bTextOnly\x10\x01\x12\x10\n" +
-	"\fVoiceAndText\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc9\x02B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AliceWatchCapabilityProtoP\x01ZLa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_watch;alicewatchpbb\x06proto3"
+	"\fVoiceAndText\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc9\x02B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AliceWatchCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_watchb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_watch_capability_proto_rawDescOnce sync.Once

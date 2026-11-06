@@ -25,15 +25,15 @@ const (
 
 type TAsrRecognize struct {
 	state              protoimpl.MessageState             `protogen:"open.v1"`
-	Experiments        *experiments.TExperimentsProto     `protobuf:"bytes,6,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
-	AdvancedAsrOptions *TAsrRecognize_TAdvancedAsrOptions `protobuf:"bytes,7,opt,name=AdvancedAsrOptions,json=advancedASROptions,proto3" json:"AdvancedAsrOptions,omitempty"`
-	MusicRequest       *TAsrRecognize_TMusicRequest       `protobuf:"bytes,8,opt,name=MusicRequest,json=music_request2,proto3" json:"MusicRequest,omitempty"`
-	Lang               *string                            `protobuf:"bytes,1,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
-	Topic              *string                            `protobuf:"bytes,2,opt,name=Topic,json=topic,proto3,oneof" json:"Topic,omitempty"`
-	Format             *string                            `protobuf:"bytes,3,opt,name=Format,json=format,proto3,oneof" json:"Format,omitempty"`
-	DisableAntimat     *bool                              `protobuf:"varint,4,opt,name=DisableAntimat,json=disableAntimatNormalizer,proto3,oneof" json:"DisableAntimat,omitempty"`
-	Punctuation        *bool                              `protobuf:"varint,5,opt,name=Punctuation,json=punctuation,proto3,oneof" json:"Punctuation,omitempty"`
-	RecognizeMusicOnly *bool                              `protobuf:"varint,9,opt,name=RecognizeMusicOnly,json=recognize_music_only,proto3,oneof" json:"RecognizeMusicOnly,omitempty"`
+	Experiments        *experiments.TExperimentsProto     `protobuf:"bytes,6,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
+	AdvancedAsrOptions *TAsrRecognize_TAdvancedAsrOptions `protobuf:"bytes,7,opt,name=AdvancedAsrOptions,proto3" json:"AdvancedAsrOptions,omitempty"`
+	MusicRequest       *TAsrRecognize_TMusicRequest       `protobuf:"bytes,8,opt,name=MusicRequest,proto3" json:"MusicRequest,omitempty"`
+	Lang               *string                            `protobuf:"bytes,1,opt,name=Lang,proto3,oneof" json:"Lang,omitempty"`
+	Topic              *string                            `protobuf:"bytes,2,opt,name=Topic,proto3,oneof" json:"Topic,omitempty"`
+	Format             *string                            `protobuf:"bytes,3,opt,name=Format,proto3,oneof" json:"Format,omitempty"`
+	DisableAntimat     *bool                              `protobuf:"varint,4,opt,name=DisableAntimat,proto3,oneof" json:"DisableAntimat,omitempty"`
+	Punctuation        *bool                              `protobuf:"varint,5,opt,name=Punctuation,proto3,oneof" json:"Punctuation,omitempty"`
+	RecognizeMusicOnly *bool                              `protobuf:"varint,9,opt,name=RecognizeMusicOnly,proto3,oneof" json:"RecognizeMusicOnly,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -133,11 +133,11 @@ func (x *TAsrRecognize) GetRecognizeMusicOnly() bool {
 
 type TAsrRecognize_TAdvancedAsrOptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	PartialResults    *bool                  `protobuf:"varint,1,opt,name=PartialResults,json=partial_results,proto3,oneof" json:"PartialResults,omitempty"`
-	ManualPunctuation *bool                  `protobuf:"varint,2,opt,name=ManualPunctuation,json=manual_punctuation,proto3,oneof" json:"ManualPunctuation,omitempty"`
-	Capitalize        *bool                  `protobuf:"varint,3,opt,name=Capitalize,json=capitalize,proto3,oneof" json:"Capitalize,omitempty"`
-	EnableE2EEou      *bool                  `protobuf:"varint,4,opt,name=EnableE2eEou,json=enable_e2e_eou,proto3,oneof" json:"EnableE2eEou,omitempty"`
-	AllowMultiUtt     *bool                  `protobuf:"varint,5,opt,name=AllowMultiUtt,json=allow_multi_utt,proto3,oneof" json:"AllowMultiUtt,omitempty"`
+	PartialResults    *bool                  `protobuf:"varint,1,opt,name=PartialResults,proto3,oneof" json:"PartialResults,omitempty"`
+	ManualPunctuation *bool                  `protobuf:"varint,2,opt,name=ManualPunctuation,proto3,oneof" json:"ManualPunctuation,omitempty"`
+	Capitalize        *bool                  `protobuf:"varint,3,opt,name=Capitalize,proto3,oneof" json:"Capitalize,omitempty"`
+	EnableE2EEou      *bool                  `protobuf:"varint,4,opt,name=EnableE2eEou,proto3,oneof" json:"EnableE2eEou,omitempty"`
+	AllowMultiUtt     *bool                  `protobuf:"varint,5,opt,name=AllowMultiUtt,proto3,oneof" json:"AllowMultiUtt,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -208,8 +208,8 @@ func (x *TAsrRecognize_TAdvancedAsrOptions) GetAllowMultiUtt() bool {
 }
 
 type TAsrRecognize_TMusicRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Headers       map[string]string      `protobuf:"bytes,1,rep,name=Headers,json=headers,proto3" json:"Headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                      `protogen:"open.v1"`
+	Headers       []*TAsrRecognize_TMusicRequest_HeadersEntry `protobuf:"bytes,1,rep,name=Headers,proto3" json:"Headers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -244,56 +244,105 @@ func (*TAsrRecognize_TMusicRequest) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *TAsrRecognize_TMusicRequest) GetHeaders() map[string]string {
+func (x *TAsrRecognize_TMusicRequest) GetHeaders() []*TAsrRecognize_TMusicRequest_HeadersEntry {
 	if x != nil {
 		return x.Headers
 	}
 	return nil
 }
 
+type TAsrRecognize_TMusicRequest_HeadersEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAsrRecognize_TMusicRequest_HeadersEntry) Reset() {
+	*x = TAsrRecognize_TMusicRequest_HeadersEntry{}
+	mi := &file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAsrRecognize_TMusicRequest_HeadersEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAsrRecognize_TMusicRequest_HeadersEntry) ProtoMessage() {}
+
+func (x *TAsrRecognize_TMusicRequest_HeadersEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAsrRecognize_TMusicRequest_HeadersEntry.ProtoReflect.Descriptor instead.
+func (*TAsrRecognize_TMusicRequest_HeadersEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_rawDescGZIP(), []int{0, 1, 0}
+}
+
+func (x *TAsrRecognize_TMusicRequest_HeadersEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TAsrRecognize_TMusicRequest_HeadersEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/api/alicekit/events/asr_recognize/asr_recognize.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe4\n" +
+	"Balice/protos/api/alicekit/events/asr_recognize/asr_recognize.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\b\n" +
+	"\rTAsrRecognize\x12;\n" +
+	"\vExperiments\x18\x06 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12c\n" +
+	"\x12AdvancedAsrOptions\x18\a \x01(\v23.NAlice.NAliceApi.TAsrRecognize.TAdvancedAsrOptionsR\x12AdvancedAsrOptions\x12Q\n" +
+	"\fMusicRequest\x18\b \x01(\v2-.NAlice.NAliceApi.TAsrRecognize.TMusicRequestR\fMusicRequest\x12\x17\n" +
+	"\x04Lang\x18\x01 \x01(\tH\x00R\x04Lang\x88\x01\x01\x12\x19\n" +
+	"\x05Topic\x18\x02 \x01(\tH\x01R\x05Topic\x88\x01\x01\x12\x1b\n" +
+	"\x06Format\x18\x03 \x01(\tH\x02R\x06Format\x88\x01\x01\x12+\n" +
+	"\x0eDisableAntimat\x18\x04 \x01(\bH\x03R\x0eDisableAntimat\x88\x01\x01\x12%\n" +
+	"\vPunctuation\x18\x05 \x01(\bH\x04R\vPunctuation\x88\x01\x01\x123\n" +
+	"\x12RecognizeMusicOnly\x18\t \x01(\bH\x05R\x12RecognizeMusicOnly\x88\x01\x01\x1a\xc9\x02\n" +
+	"\x13TAdvancedAsrOptions\x12+\n" +
+	"\x0ePartialResults\x18\x01 \x01(\bH\x00R\x0ePartialResults\x88\x01\x01\x121\n" +
+	"\x11ManualPunctuation\x18\x02 \x01(\bH\x01R\x11ManualPunctuation\x88\x01\x01\x12#\n" +
 	"\n" +
-	"\rTAsrRecognize\x12L\n" +
-	"\vExperiments\x18\x06 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12}\n" +
-	"\x12AdvancedAsrOptions\x18\a \x01(\v23.NAlice.NAliceApi.TAsrRecognize.TAdvancedAsrOptionsB\x18\xaa\xdd\x1b\x14advanced_asr_optionsR\x12advancedASROptions\x12g\n" +
-	"\fMusicRequest\x18\b \x01(\v2-.NAlice.NAliceApi.TAsrRecognize.TMusicRequestB\x12\xaa\xdd\x1b\x0emusic_request2R\x0emusic_request2\x12!\n" +
-	"\x04Lang\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04langH\x00R\x04lang\x88\x01\x01\x12$\n" +
-	"\x05Topic\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05topicH\x01R\x05topic\x88\x01\x01\x12'\n" +
-	"\x06Format\x18\x03 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06formatH\x02R\x06format\x88\x01\x01\x12U\n" +
-	"\x0eDisableAntimat\x18\x04 \x01(\bB\x1e\xaa\xdd\x1b\x1adisable_antimat_normalizerH\x03R\x18disableAntimatNormalizer\x88\x01\x01\x126\n" +
-	"\vPunctuation\x18\x05 \x01(\bB\x0f\xaa\xdd\x1b\vpunctuationH\x04R\vpunctuation\x88\x01\x01\x12O\n" +
-	"\x12RecognizeMusicOnly\x18\t \x01(\bB\x18\xaa\xdd\x1b\x14recognize_music_onlyH\x05R\x14recognize_music_only\x88\x01\x01\x1a\xbb\x03\n" +
-	"\x13TAdvancedAsrOptions\x12A\n" +
-	"\x0ePartialResults\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fpartial_resultsH\x00R\x0fpartial_results\x88\x01\x01\x12J\n" +
-	"\x11ManualPunctuation\x18\x02 \x01(\bB\x16\xaa\xdd\x1b\x12manual_punctuationH\x01R\x12manual_punctuation\x88\x01\x01\x123\n" +
-	"\n" +
-	"Capitalize\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"capitalizeH\x02R\n" +
-	"capitalize\x88\x01\x01\x12=\n" +
-	"\fEnableE2eEou\x18\x04 \x01(\bB\x12\xaa\xdd\x1b\x0eenable_e2e_eouH\x03R\x0eenable_e2e_eou\x88\x01\x01\x12@\n" +
-	"\rAllowMultiUtt\x18\x05 \x01(\bB\x13\xaa\xdd\x1b\x0fallow_multi_uttH\x04R\x0fallow_multi_utt\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
+	"Capitalize\x18\x03 \x01(\bH\x02R\n" +
+	"Capitalize\x88\x01\x01\x12'\n" +
+	"\fEnableE2eEou\x18\x04 \x01(\bH\x03R\fEnableE2eEou\x88\x01\x01\x12)\n" +
+	"\rAllowMultiUtt\x18\x05 \x01(\bH\x04R\rAllowMultiUtt\x88\x01\x01B\x11\n" +
 	"\x0f_PartialResultsB\x14\n" +
 	"\x12_ManualPunctuationB\r\n" +
 	"\v_CapitalizeB\x0f\n" +
 	"\r_EnableE2eEouB\x10\n" +
-	"\x0e_AllowMultiUtt\x1a\xae\x01\n" +
-	"\rTMusicRequest\x12a\n" +
-	"\aHeaders\x18\x01 \x03(\v2:.NAlice.NAliceApi.TAsrRecognize.TMusicRequest.HeadersEntryB\v\xaa\xdd\x1b\aheadersR\aheaders\x1a:\n" +
+	"\x0e_AllowMultiUtt\x1a\x9d\x01\n" +
+	"\rTMusicRequest\x12T\n" +
+	"\aHeaders\x18\x01 \x03(\v2:.NAlice.NAliceApi.TAsrRecognize.TMusicRequest.HeadersEntryR\aHeaders\x1a6\n" +
 	"\fHeadersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\x05value\x18\x02 \x01(\tR\x05valueB\a\n" +
 	"\x05_LangB\b\n" +
 	"\x06_TopicB\t\n" +
 	"\a_FormatB\x11\n" +
 	"\x0f_DisableAntimatB\x0e\n" +
 	"\f_PunctuationB\x15\n" +
-	"\x13_RecognizeMusicOnlyB\x8b\x01\n" +
-	"8ru.yandex.alice.protos.api.alicekit.events.asr_recognizeB\fAsrRecognizeP\x01Z?a.yandex-team.ru/alice/protos/api/alicekit/events/asr_recognizeb\x06proto3"
+	"\x13_RecognizeMusicOnlyB\xea\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x11AsrRecognizeProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/asr_recognize\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_rawDescOnce sync.Once
@@ -309,11 +358,11 @@ func file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_raw
 
 var file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_goTypes = []any{
-	(*TAsrRecognize)(nil),                     // 0: NAlice.NAliceApi.TAsrRecognize
-	(*TAsrRecognize_TAdvancedAsrOptions)(nil), // 1: NAlice.NAliceApi.TAsrRecognize.TAdvancedAsrOptions
-	(*TAsrRecognize_TMusicRequest)(nil),       // 2: NAlice.NAliceApi.TAsrRecognize.TMusicRequest
-	nil,                                       // 3: NAlice.NAliceApi.TAsrRecognize.TMusicRequest.HeadersEntry
-	(*experiments.TExperimentsProto)(nil),     // 4: NAlice.TExperimentsProto
+	(*TAsrRecognize)(nil),                            // 0: NAlice.NAliceApi.TAsrRecognize
+	(*TAsrRecognize_TAdvancedAsrOptions)(nil),        // 1: NAlice.NAliceApi.TAsrRecognize.TAdvancedAsrOptions
+	(*TAsrRecognize_TMusicRequest)(nil),              // 2: NAlice.NAliceApi.TAsrRecognize.TMusicRequest
+	(*TAsrRecognize_TMusicRequest_HeadersEntry)(nil), // 3: NAlice.NAliceApi.TAsrRecognize.TMusicRequest.HeadersEntry
+	(*experiments.TExperimentsProto)(nil),            // 4: NAlice.TExperimentsProto
 }
 var file_alice_protos_api_alicekit_events_asr_recognize_asr_recognize_proto_depIdxs = []int32{
 	4, // 0: NAlice.NAliceApi.TAsrRecognize.Experiments:type_name -> NAlice.TExperimentsProto

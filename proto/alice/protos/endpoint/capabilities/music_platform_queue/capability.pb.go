@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/music_platform_queue/capability.proto
 
-package musicplatformqueuepb
+package music_platform_queue
 
 import (
 	music "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music"
@@ -225,8 +225,8 @@ const file_alice_protos_endpoint_capabilities_music_platform_queue_capability_pr
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xec\x01\n" +
 	"!TApplyMusicPlatformQueueDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12t\n" +
-	"\x12MusicPlatformQueue\x18\x01 \x01(\v2(.NAlice.NData.NMusic.TMusicPlatformQueueB\x18\xaa\xdd\x1b\x14music_platform_queueR\x14music_platform_queue:2\x92\x82\x19%apply_player_playback_queue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x83\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\\B\xb2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB#MusicPlatformQueueCapabilitiesProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/music_platform_queue;musicplatformqueuepbb\x06proto3"
+	"\x12MusicPlatformQueue\x18\x01 \x01(\v2(.NAlice.NData.NMusic.TMusicPlatformQueueB\x18\xaa\xdd\x1b\x14music_platform_queueR\x14music_platform_queue:2\x92\x82\x19%apply_player_playback_queue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x83\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\\B\xbc\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB#MusicPlatformQueueCapabilitiesProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/music_platform_queueb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_music_platform_queue_capability_proto_rawDescOnce sync.Once

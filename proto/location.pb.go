@@ -108,8 +108,8 @@ const file_location_proto_rawDesc = "" +
 	"\n" +
 	"recency_ms\x18\x03 \x01(\x01R\trecencyMs\x12\x1a\n" +
 	"\baccuracy\x18\x04 \x01(\x01R\baccuracy\x12\x14\n" +
-	"\x05speed\x18\x05 \x01(\x01R\x05speedB'\n" +
-	"\x16com.yandex.quark.protoB\rLocationProto"
+	"\x05speed\x18\x05 \x01(\x01R\x05speedBX\n" +
+	"\x16com.yandex.quark.protoB\rLocationProtoZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_location_proto_rawDescOnce sync.Once

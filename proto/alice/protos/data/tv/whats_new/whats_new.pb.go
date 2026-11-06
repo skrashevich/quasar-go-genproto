@@ -465,8 +465,8 @@ const file_alice_protos_data_tv_whats_new_whats_new_proto_rawDesc = "" +
 	"\n" +
 	"Background\x18\x05 \x01(\v2\x17.NAlice.TAvatarMdsImageB\x0e\xaa\xdd\x1b\n" +
 	"backgroundR\n" +
-	"background:\x04\xa8\xdd\x1b\x04Bj\n" +
-	"(ru.yandex.alice.protos.data.tv.whats_newB\rWhatsNewProtoZ/a.yandex-team.ru/alice/protos/data/tv/whats_newb\x06proto3"
+	"background:\x04\xa8\xdd\x1b\x04B\x89\x01\n" +
+	"(ru.yandex.alice.protos.data.tv.whats_newB\rWhatsNewProtoZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/whats_newb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_whats_new_whats_new_proto_rawDescOnce sync.Once

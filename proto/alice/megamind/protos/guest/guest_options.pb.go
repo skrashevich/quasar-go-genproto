@@ -205,17 +205,17 @@ func (TGuestOptions_EMatchConfidence) EnumDescriptor() ([]byte, []int) {
 
 type TGuestOptions struct {
 	state             protoimpl.MessageState                 `protogen:"open.v1"`
-	OAuthToken        *string                                `protobuf:"bytes,1,opt,name=OAuthToken,json=oauth_token" json:"OAuthToken,omitempty"`
-	YandexUID         *string                                `protobuf:"bytes,2,opt,name=YandexUID,json=yandex_uid" json:"YandexUID,omitempty"`
-	PersId            *string                                `protobuf:"bytes,3,opt,name=PersId,json=pers_id" json:"PersId,omitempty"`
-	GuestOrigin       *TGuestOptions_EGuestOrigin            `protobuf:"varint,4,opt,name=GuestOrigin,json=guest_origin,enum=NAlice.TGuestOptions_EGuestOrigin" json:"GuestOrigin,omitempty"`
-	Status            *TGuestOptions_EStatus                 `protobuf:"varint,5,opt,name=Status,json=status,enum=NAlice.TGuestOptions_EStatus" json:"Status,omitempty"`
-	IsOwnerEnrolled   *bool                                  `protobuf:"varint,6,opt,name=IsOwnerEnrolled,json=is_owner_enrolled" json:"IsOwnerEnrolled,omitempty"`
-	EnrollmentHeaders *enrollment_headers.TEnrollmentHeaders `protobuf:"bytes,7,opt,name=EnrollmentHeaders,json=enrollment_headers" json:"EnrollmentHeaders,omitempty"`
-	RefMessageId      *string                                `protobuf:"bytes,8,opt,name=RefMessageId,json=ref_message_id" json:"RefMessageId,omitempty"`
-	HashPuids         *common.THashPuids                     `protobuf:"bytes,9,opt,name=HashPuids,json=hash_puids" json:"HashPuids,omitempty"`
-	MatchConfidence   *TGuestOptions_EMatchConfidence        `protobuf:"varint,10,opt,name=MatchConfidence,json=match_confidence,enum=NAlice.TGuestOptions_EMatchConfidence" json:"MatchConfidence,omitempty"`
-	ConfidenceLevel10 *uint32                                `protobuf:"varint,11,opt,name=ConfidenceLevel10,json=confidence_level_10" json:"ConfidenceLevel10,omitempty"`
+	OAuthToken        *string                                `protobuf:"bytes,1,opt,name=OAuthToken" json:"OAuthToken,omitempty"`
+	YandexUID         *string                                `protobuf:"bytes,2,opt,name=YandexUID" json:"YandexUID,omitempty"`
+	PersId            *string                                `protobuf:"bytes,3,opt,name=PersId" json:"PersId,omitempty"`
+	GuestOrigin       *TGuestOptions_EGuestOrigin            `protobuf:"varint,4,opt,name=GuestOrigin,enum=NAlice.TGuestOptions_EGuestOrigin" json:"GuestOrigin,omitempty"`
+	Status            *TGuestOptions_EStatus                 `protobuf:"varint,5,opt,name=Status,enum=NAlice.TGuestOptions_EStatus" json:"Status,omitempty"`
+	IsOwnerEnrolled   *bool                                  `protobuf:"varint,6,opt,name=IsOwnerEnrolled" json:"IsOwnerEnrolled,omitempty"`
+	EnrollmentHeaders *enrollment_headers.TEnrollmentHeaders `protobuf:"bytes,7,opt,name=EnrollmentHeaders" json:"EnrollmentHeaders,omitempty"`
+	RefMessageId      *string                                `protobuf:"bytes,8,opt,name=RefMessageId" json:"RefMessageId,omitempty"`
+	HashPuids         *common.THashPuids                     `protobuf:"bytes,9,opt,name=HashPuids" json:"HashPuids,omitempty"`
+	MatchConfidence   *TGuestOptions_EMatchConfidence        `protobuf:"varint,10,opt,name=MatchConfidence,enum=NAlice.TGuestOptions_EMatchConfidence" json:"MatchConfidence,omitempty"`
+	ConfidenceLevel10 *uint32                                `protobuf:"varint,11,opt,name=ConfidenceLevel10" json:"ConfidenceLevel10,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -331,26 +331,22 @@ var File_alice_megamind_protos_guest_guest_options_proto protoreflect.FileDescri
 
 const file_alice_megamind_protos_guest_guest_options_proto_rawDesc = "" +
 	"\n" +
-	"/alice/megamind/protos/guest/guest_options.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a-alice/megamind/protos/common/hash_puids.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc8\a\n" +
-	"\rTGuestOptions\x128\n" +
+	"/alice/megamind/protos/guest/guest_options.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a-alice/megamind/protos/common/hash_puids.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdb\x05\n" +
+	"\rTGuestOptions\x12\x1e\n" +
 	"\n" +
-	"OAuthToken\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\voauth_token\xa8\x8d'\x04\xf8\x91*\x02R\voauth_token\x121\n" +
-	"\tYandexUID\x18\x02 \x01(\tB\x12\xaa\xdd\x1b\n" +
-	"yandex_uid\xf8\x91*\x01R\n" +
-	"yandex_uid\x12$\n" +
-	"\x06PersId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12W\n" +
-	"\vGuestOrigin\x18\x04 \x01(\x0e2\".NAlice.TGuestOptions.EGuestOriginB\x10\xaa\xdd\x1b\fguest_originR\fguest_origin\x12A\n" +
-	"\x06Status\x18\x05 \x01(\x0e2\x1d.NAlice.TGuestOptions.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12A\n" +
-	"\x0fIsOwnerEnrolled\x18\x06 \x01(\bB\x15\xaa\xdd\x1b\x11is_owner_enrolledR\x11is_owner_enrolled\x12a\n" +
-	"\x11EnrollmentHeaders\x18\a \x01(\v2\x1a.NAlice.TEnrollmentHeadersB\x16\xaa\xdd\x1b\x12enrollment_headersR\x12enrollment_headers\x128\n" +
-	"\fRefMessageId\x18\b \x01(\tB\x12\xaa\xdd\x1b\x0eref_message_idR\x0eref_message_id\x12A\n" +
-	"\tHashPuids\x18\t \x01(\v2\x12.NAlice.THashPuidsB\x0e\xaa\xdd\x1b\n" +
-	"hash_puidsR\n" +
-	"hash_puids\x12g\n" +
+	"OAuthToken\x18\x01 \x01(\tR\n" +
+	"OAuthToken\x12\x1c\n" +
+	"\tYandexUID\x18\x02 \x01(\tR\tYandexUID\x12\x16\n" +
+	"\x06PersId\x18\x03 \x01(\tR\x06PersId\x12D\n" +
+	"\vGuestOrigin\x18\x04 \x01(\x0e2\".NAlice.TGuestOptions.EGuestOriginR\vGuestOrigin\x125\n" +
+	"\x06Status\x18\x05 \x01(\x0e2\x1d.NAlice.TGuestOptions.EStatusR\x06Status\x12(\n" +
+	"\x0fIsOwnerEnrolled\x18\x06 \x01(\bR\x0fIsOwnerEnrolled\x12H\n" +
+	"\x11EnrollmentHeaders\x18\a \x01(\v2\x1a.NAlice.TEnrollmentHeadersR\x11EnrollmentHeaders\x12\"\n" +
+	"\fRefMessageId\x18\b \x01(\tR\fRefMessageId\x120\n" +
+	"\tHashPuids\x18\t \x01(\v2\x12.NAlice.THashPuidsR\tHashPuids\x12P\n" +
 	"\x0fMatchConfidence\x18\n" +
-	" \x01(\x0e2&.NAlice.TGuestOptions.EMatchConfidenceB\x14\xaa\xdd\x1b\x10match_confidenceR\x10match_confidence\x12G\n" +
-	"\x11ConfidenceLevel10\x18\v \x01(\rB\x17\xaa\xdd\x1b\x13confidence_level_10R\x13confidence_level_10\"T\n" +
+	" \x01(\x0e2&.NAlice.TGuestOptions.EMatchConfidenceR\x0fMatchConfidence\x12,\n" +
+	"\x11ConfidenceLevel10\x18\v \x01(\rR\x11ConfidenceLevel10\"T\n" +
 	"\fEGuestOrigin\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x11\n" +
 	"\rRemoteControl\x10\x01\x12\x11\n" +
@@ -362,8 +358,9 @@ const file_alice_megamind_protos_guest_guest_options_proto_rawDesc = "" +
 	"\x10EMatchConfidence\x12\r\n" +
 	"\tUndefined\x10\x00\x12\a\n" +
 	"\x03Low\x10\x01\x12\b\n" +
-	"\x04High\x10\x02:\x04\xa8\xdd\x1b\x04Bc\n" +
-	"%ru.yandex.alice.megamind.protos.guestB\fGuestOptionsZ,a.yandex-team.ru/alice/megamind/protos/guest"
+	"\x04High\x10\x02B\xa4\x01\n" +
+	"\n" +
+	"com.NAliceB\x11GuestOptionsProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/guest\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_megamind_protos_guest_guest_options_proto_rawDescOnce sync.Once

@@ -126,7 +126,7 @@ const file_yandex_io_interfaces_glagol_protos_glagol_quasar_message_proto_rawDes
 	"\x0fmultiroom_state\x18\x98\x01 \x01(\fR\x0emultiroomState\x12/\n" +
 	"\x13stereo_pair_message\x18\xc6\x01 \x01(\fR\x11stereoPairMessage\x12$\n" +
 	"\ralice_message\x18\xcc\x01 \x01(\fR\faliceMessage\x12/\n" +
-	"\x13glagol_cluster_sign\x18\xb6\x01 \x01(\fR\x11glagolClusterSign"
+	"\x13glagol_cluster_sign\x18\xb6\x01 \x01(\fR\x11glagolClusterSignBTZRgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/interfaces/glagol/protos"
 
 var (
 	file_yandex_io_interfaces_glagol_protos_glagol_quasar_message_proto_rawDescOnce sync.Once

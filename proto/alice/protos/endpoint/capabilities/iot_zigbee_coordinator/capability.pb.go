@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto
 
-package iotzigbeecoordinatorpb
+package iot_zigbee_coordinator
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -24,58 +24,6 @@ const (
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
-
-type TIotZigbeeCoordinatorCapability_ERadioInterface int32
-
-const (
-	TIotZigbeeCoordinatorCapability_RadioInterfaceUnknown     TIotZigbeeCoordinatorCapability_ERadioInterface = 0
-	TIotZigbeeCoordinatorCapability_RadioInterfaceSilabsEfr32 TIotZigbeeCoordinatorCapability_ERadioInterface = 1
-	TIotZigbeeCoordinatorCapability_RadioInterfaceW2l         TIotZigbeeCoordinatorCapability_ERadioInterface = 2
-	TIotZigbeeCoordinatorCapability_RadioInterfaceTelinkB91   TIotZigbeeCoordinatorCapability_ERadioInterface = 3
-)
-
-// Enum value maps for TIotZigbeeCoordinatorCapability_ERadioInterface.
-var (
-	TIotZigbeeCoordinatorCapability_ERadioInterface_name = map[int32]string{
-		0: "RadioInterfaceUnknown",
-		1: "RadioInterfaceSilabsEfr32",
-		2: "RadioInterfaceW2l",
-		3: "RadioInterfaceTelinkB91",
-	}
-	TIotZigbeeCoordinatorCapability_ERadioInterface_value = map[string]int32{
-		"RadioInterfaceUnknown":     0,
-		"RadioInterfaceSilabsEfr32": 1,
-		"RadioInterfaceW2l":         2,
-		"RadioInterfaceTelinkB91":   3,
-	}
-)
-
-func (x TIotZigbeeCoordinatorCapability_ERadioInterface) Enum() *TIotZigbeeCoordinatorCapability_ERadioInterface {
-	p := new(TIotZigbeeCoordinatorCapability_ERadioInterface)
-	*p = x
-	return p
-}
-
-func (x TIotZigbeeCoordinatorCapability_ERadioInterface) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (TIotZigbeeCoordinatorCapability_ERadioInterface) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[0].Descriptor()
-}
-
-func (TIotZigbeeCoordinatorCapability_ERadioInterface) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[0]
-}
-
-func (x TIotZigbeeCoordinatorCapability_ERadioInterface) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use TIotZigbeeCoordinatorCapability_ERadioInterface.Descriptor instead.
-func (TIotZigbeeCoordinatorCapability_ERadioInterface) EnumDescriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDescGZIP(), []int{0, 0}
-}
 
 type TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel int32
 
@@ -116,11 +64,11 @@ func (x TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) String() stri
 }
 
 func (TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[1].Descriptor()
+	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[0].Descriptor()
 }
 
 func (TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[1]
+	return &file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[0]
 }
 
 func (x TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) Number() protoreflect.EnumNumber {
@@ -129,14 +77,66 @@ func (x TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) Number() prot
 
 // Deprecated: Use TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel.Descriptor instead.
 func (TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel) EnumDescriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDescGZIP(), []int{0, 0}
+}
+
+type TIotZigbeeCoordinatorCapability_ERadioInterface int32
+
+const (
+	TIotZigbeeCoordinatorCapability_RadioInterfaceUnknown     TIotZigbeeCoordinatorCapability_ERadioInterface = 0
+	TIotZigbeeCoordinatorCapability_RadioInterfaceSilabsEfr32 TIotZigbeeCoordinatorCapability_ERadioInterface = 1
+	TIotZigbeeCoordinatorCapability_RadioInterfaceW2l         TIotZigbeeCoordinatorCapability_ERadioInterface = 2
+	TIotZigbeeCoordinatorCapability_RadioInterfaceTelinkB91   TIotZigbeeCoordinatorCapability_ERadioInterface = 3
+)
+
+// Enum value maps for TIotZigbeeCoordinatorCapability_ERadioInterface.
+var (
+	TIotZigbeeCoordinatorCapability_ERadioInterface_name = map[int32]string{
+		0: "RadioInterfaceUnknown",
+		1: "RadioInterfaceSilabsEfr32",
+		2: "RadioInterfaceW2l",
+		3: "RadioInterfaceTelinkB91",
+	}
+	TIotZigbeeCoordinatorCapability_ERadioInterface_value = map[string]int32{
+		"RadioInterfaceUnknown":     0,
+		"RadioInterfaceSilabsEfr32": 1,
+		"RadioInterfaceW2l":         2,
+		"RadioInterfaceTelinkB91":   3,
+	}
+)
+
+func (x TIotZigbeeCoordinatorCapability_ERadioInterface) Enum() *TIotZigbeeCoordinatorCapability_ERadioInterface {
+	p := new(TIotZigbeeCoordinatorCapability_ERadioInterface)
+	*p = x
+	return p
+}
+
+func (x TIotZigbeeCoordinatorCapability_ERadioInterface) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TIotZigbeeCoordinatorCapability_ERadioInterface) Descriptor() protoreflect.EnumDescriptor {
+	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[1].Descriptor()
+}
+
+func (TIotZigbeeCoordinatorCapability_ERadioInterface) Type() protoreflect.EnumType {
+	return &file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes[1]
+}
+
+func (x TIotZigbeeCoordinatorCapability_ERadioInterface) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TIotZigbeeCoordinatorCapability_ERadioInterface.Descriptor instead.
+func (TIotZigbeeCoordinatorCapability_ERadioInterface) EnumDescriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDescGZIP(), []int{0, 1}
 }
 
 type TIotZigbeeCoordinatorCapability struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                  `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotZigbeeCoordinatorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotZigbeeCoordinatorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                  `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotZigbeeCoordinatorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotZigbeeCoordinatorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -238,8 +238,8 @@ func (x *TIotZigbeeCoordinatorCapability_TParameters) GetRadioInterface() TIotZi
 
 type TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	Level         TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel `protobuf:"varint,1,opt,name=Level,json=level,proto3,enum=NAlice.TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel" json:"Level,omitempty"`
-	CcaRssi       int32                                                     `protobuf:"varint,2,opt,name=CcaRssi,json=cca_rssi,proto3" json:"CcaRssi,omitempty"`
+	Level         TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel `protobuf:"varint,1,opt,name=Level,proto3,enum=NAlice.TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel" json:"Level,omitempty"`
+	CcaRssi       int32                                                     `protobuf:"varint,2,opt,name=CcaRssi,proto3" json:"CcaRssi,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -289,10 +289,9 @@ func (x *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel) GetCcaRssi()
 }
 
 type TIotZigbeeCoordinatorCapability_TState struct {
-	state   protoimpl.MessageState `protogen:"open.v1"`
-	Channel uint32                 `protobuf:"varint,1,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
-	Interference               *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel `protobuf:"bytes,2,opt,name=Interference,json=interference,proto3" json:"Interference,omitempty"`
+	state                      protoimpl.MessageState                                     `protogen:"open.v1"`
+	Channel                    uint32                                                     `protobuf:"varint,1,opt,name=Channel,proto3" json:"Channel,omitempty"`
+	Interference               *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel `protobuf:"bytes,2,opt,name=Interference,proto3" json:"Interference,omitempty"`
 	ChannelMigrationInProgress bool                                                       `protobuf:"varint,3,opt,name=ChannelMigrationInProgress,json=channel_migration_in_progress,proto3" json:"ChannelMigrationInProgress,omitempty"`
 	CcaRssi                    int32                                                      `protobuf:"varint,4,opt,name=CcaRssi,json=cca_rssi,proto3" json:"CcaRssi,omitempty"`
 	unknownFields              protoimpl.UnknownFields
@@ -336,7 +335,6 @@ func (x *TIotZigbeeCoordinatorCapability_TState) GetChannel() uint32 {
 	return 0
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
 func (x *TIotZigbeeCoordinatorCapability_TState) GetInterference() *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel {
 	if x != nil {
 		return x.Interference
@@ -360,8 +358,8 @@ func (x *TIotZigbeeCoordinatorCapability_TState) GetCcaRssi() int32 {
 
 type TIotZigbeeCoordinatorCapability_TSetChannelDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Channel       uint32                 `protobuf:"varint,1,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Channel       uint32                 `protobuf:"varint,1,opt,name=Channel,proto3" json:"Channel,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -412,9 +410,9 @@ func (x *TIotZigbeeCoordinatorCapability_TSetChannelDirective) GetChannel() uint
 
 type TIotZigbeeCoordinatorCapability_TStartEnergyScanDirective struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	Name                 string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimeScanPerChannelMs uint32                 `protobuf:"varint,1,opt,name=TimeScanPerChannelMs,json=time_scan_per_channel_ms,proto3" json:"TimeScanPerChannelMs,omitempty"`
-	ChannelMask          uint32                 `protobuf:"varint,2,opt,name=ChannelMask,json=channel_mask,proto3" json:"ChannelMask,omitempty"`
+	Name                 string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimeScanPerChannelMs uint32                 `protobuf:"varint,1,opt,name=TimeScanPerChannelMs,proto3" json:"TimeScanPerChannelMs,omitempty"`
+	ChannelMask          uint32                 `protobuf:"varint,2,opt,name=ChannelMask,proto3" json:"ChannelMask,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -472,7 +470,7 @@ func (x *TIotZigbeeCoordinatorCapability_TStartEnergyScanDirective) GetChannelMa
 
 type TIotZigbeeCoordinatorCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Capability    *TIotZigbeeCoordinatorCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotZigbeeCoordinatorCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -515,10 +513,9 @@ func (x *TIotZigbeeCoordinatorCapability_TUpdateStateEvent) GetCapability() *TIo
 }
 
 type TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
-	Rssis              []int32                                                                      `protobuf:"varint,1,rep,packed,name=Rssis,json=rssis,proto3" json:"Rssis,omitempty"`
-	ChannelScanResults []*TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResult `protobuf:"bytes,2,rep,name=ChannelScanResults,json=channel_scan_results,proto3" json:"ChannelScanResults,omitempty"`
+	state              protoimpl.MessageState                                                       `protogen:"open.v1"`
+	Rssis              []int32                                                                      `protobuf:"varint,1,rep,packed,name=Rssis,proto3" json:"Rssis,omitempty"`
+	ChannelScanResults []*TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResult `protobuf:"bytes,2,rep,name=ChannelScanResults,proto3" json:"ChannelScanResults,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -553,7 +550,6 @@ func (*TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent) Descriptor() ([]b
 	return file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDescGZIP(), []int{0, 6}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
 func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent) GetRssis() []int32 {
 	if x != nil {
 		return x.Rssis
@@ -569,12 +565,10 @@ func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent) GetChannelScanR
 }
 
 type TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResult struct {
-	state   protoimpl.MessageState `protogen:"open.v1"`
-	Channel uint32                 `protobuf:"varint,1,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
-	Rssi int32 `protobuf:"varint,2,opt,name=Rssi,json=rssi,proto3" json:"Rssi,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
-	Interference  *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel `protobuf:"bytes,3,opt,name=Interference,json=interference,proto3" json:"Interference,omitempty"`
+	state         protoimpl.MessageState                                     `protogen:"open.v1"`
+	Channel       uint32                                                     `protobuf:"varint,1,opt,name=Channel,proto3" json:"Channel,omitempty"`
+	Rssi          int32                                                      `protobuf:"varint,2,opt,name=Rssi,proto3" json:"Rssi,omitempty"`
+	Interference  *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel `protobuf:"bytes,3,opt,name=Interference,proto3" json:"Interference,omitempty"`
 	CcaRssi       int32                                                      `protobuf:"varint,4,opt,name=CcaRssi,json=cca_rssi,proto3" json:"CcaRssi,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -617,7 +611,6 @@ func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResu
 	return 0
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
 func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResult) GetRssi() int32 {
 	if x != nil {
 		return x.Rssi
@@ -625,7 +618,6 @@ func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResu
 	return 0
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto.
 func (x *TIotZigbeeCoordinatorCapability_TEnergyScanResultEvent_TChannelScanResult) GetInterference() *TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel {
 	if x != nil {
 		return x.Interference
@@ -644,57 +636,55 @@ var File_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_pr
 
 const file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDesc = "" +
 	"\n" +
-	"Jalice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc2\x11\n" +
-	"\x1fTIotZigbeeCoordinatorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12c\n" +
+	"Jalice/protos/endpoint/capabilities/iot_zigbee_coordinator/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaa\x0e\n" +
+	"\x1fTIotZigbeeCoordinatorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12S\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v23.NAlice.TIotZigbeeCoordinatorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12O\n" +
-	"\x05State\x18\x03 \x01(\v2..NAlice.TIotZigbeeCoordinatorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x8a\x01\n" +
+	"Parameters\x18\x02 \x01(\v23.NAlice.TIotZigbeeCoordinatorCapability.TParametersR\n" +
+	"Parameters\x12D\n" +
+	"\x05State\x18\x03 \x01(\v2..NAlice.TIotZigbeeCoordinatorCapability.TStateR\x05State\x1a\x84\x01\n" +
 	"\vTParameters\x12u\n" +
-	"\x0eRadioInterface\x18\x01 \x01(\x0e27.NAlice.TIotZigbeeCoordinatorCapability.ERadioInterfaceB\x13\xaa\xdd\x1b\x0fradio_interfaceR\x0fradio_interface:\x04\xa8\xdd\x1b\x04\x1a\xae\x01\n" +
-	"\x19TChannelInterferenceLevel\x12b\n" +
-	"\x05Level\x18\x01 \x01(\x0e2A.NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevelB\t\xaa\xdd\x1b\x05levelR\x05level\x12'\n" +
-	"\aCcaRssi\x18\x02 \x01(\x05B\f\xaa\xdd\x1b\bcca_rssiR\bcca_rssi:\x04\xa8\xdd\x1b\x04\x1a\xbf\x02\n" +
-	"\x06TState\x12%\n" +
-	"\aChannel\x18\x01 \x01(\rB\v\xaa\xdd\x1b\achannelR\achannel\x12y\n" +
-	"\fInterference\x18\x02 \x01(\v2A.NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevelB\x12\xaa\xdd\x1b\finterference\x18\x01R\finterference\x12d\n" +
+	"\x0eRadioInterface\x18\x01 \x01(\x0e27.NAlice.TIotZigbeeCoordinatorCapability.ERadioInterfaceB\x13\xaa\xdd\x1b\x0fradio_interfaceR\x0fradio_interface\x1a\x8e\x01\n" +
+	"\x19TChannelInterferenceLevel\x12W\n" +
+	"\x05Level\x18\x01 \x01(\x0e2A.NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevelR\x05Level\x12\x18\n" +
+	"\aCcaRssi\x18\x02 \x01(\x05R\aCcaRssi\x1a\x98\x02\n" +
+	"\x06TState\x12\x18\n" +
+	"\aChannel\x18\x01 \x01(\rR\aChannel\x12e\n" +
+	"\fInterference\x18\x02 \x01(\v2A.NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevelR\fInterference\x12d\n" +
 	"\x1aChannelMigrationInProgress\x18\x03 \x01(\bB!\xaa\xdd\x1b\x1dchannel_migration_in_progressR\x1dchannel_migration_in_progress\x12'\n" +
-	"\aCcaRssi\x18\x04 \x01(\x05B\f\xaa\xdd\x1b\bcca_rssiR\bcca_rssi:\x04\xa8\xdd\x1b\x04\x1a\x80\x01\n" +
-	"\x14TSetChannelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aChannel\x18\x01 \x01(\rB\v\xaa\xdd\x1b\achannelR\achannel:\"\x92\x82\x19\x15set_channel_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xec\x03\x1a\xe5\x01\n" +
-	"\x19TStartEnergyScanDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12T\n" +
-	"\x14TimeScanPerChannelMs\x18\x01 \x01(\rB\x1c\xaa\xdd\x1b\x18time_scan_per_channel_msR\x18time_scan_per_channel_ms\x123\n" +
-	"\vChannelMask\x18\x02 \x01(\rB\x10\xaa\xdd\x1b\fchannel_maskR\fchannel_mask:\x1e\x92\x82\x19\x11start_energy_scan\xa8\xdd\x1b\x04\xa8\xc8\x1c\xed\x03\x1av\n" +
-	"\x11TUpdateStateEvent\x12W\n" +
+	"\aCcaRssi\x18\x04 \x01(\x05B\f\xaa\xdd\x1b\bcca_rssiR\bcca_rssi\x1aE\n" +
+	"\x14TSetChannelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x18\n" +
+	"\aChannel\x18\x01 \x01(\rR\aChannel\x1a\x86\x01\n" +
+	"\x19TStartEnergyScanDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x122\n" +
+	"\x14TimeScanPerChannelMs\x18\x01 \x01(\rR\x14TimeScanPerChannelMs\x12 \n" +
+	"\vChannelMask\x18\x02 \x01(\rR\vChannelMask\x1a\\\n" +
+	"\x11TUpdateStateEvent\x12G\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2'.NAlice.TIotZigbeeCoordinatorCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c}\x1a\xed\x03\n" +
-	"\x16TEnergyScanResultEvent\x12!\n" +
-	"\x05Rssis\x18\x01 \x03(\x05B\v\xaa\xdd\x1b\x05rssis\x18\x01R\x05rssis\x12\x9d\x01\n" +
-	"\x12ChannelScanResults\x18\x02 \x03(\v2Q.NAlice.TIotZigbeeCoordinatorCapability.TEnergyScanResultEvent.TChannelScanResultB\x18\xaa\xdd\x1b\x14channel_scan_resultsR\x14channel_scan_results\x1a\x85\x02\n" +
-	"\x12TChannelScanResult\x12%\n" +
-	"\aChannel\x18\x01 \x01(\rB\v\xaa\xdd\x1b\achannelR\achannel\x12\x1e\n" +
-	"\x04Rssi\x18\x02 \x01(\x05B\n" +
-	"\xaa\xdd\x1b\x04rssi\x18\x01R\x04rssi\x12y\n" +
-	"\fInterference\x18\x03 \x01(\v2A.NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevelB\x12\xaa\xdd\x1b\finterference\x18\x01R\finterference\x12'\n" +
-	"\aCcaRssi\x18\x04 \x01(\x05B\f\xaa\xdd\x1b\bcca_rssiR\bcca_rssi:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c~\"\x7f\n" +
-	"\x0fERadioInterface\x12\x19\n" +
-	"\x15RadioInterfaceUnknown\x10\x00\x12\x1d\n" +
-	"\x19RadioInterfaceSilabsEfr32\x10\x01\x12\x15\n" +
-	"\x11RadioInterfaceW2l\x10\x02\x12\x1b\n" +
-	"\x17RadioInterfaceTelinkB91\x10\x03\"\xd0\x01\n" +
+	"Capability\x18\x01 \x01(\v2'.NAlice.TIotZigbeeCoordinatorCapabilityR\n" +
+	"Capability\x1a\x87\x03\n" +
+	"\x16TEnergyScanResultEvent\x12\x14\n" +
+	"\x05Rssis\x18\x01 \x03(\x05R\x05Rssis\x12\x81\x01\n" +
+	"\x12ChannelScanResults\x18\x02 \x03(\v2Q.NAlice.TIotZigbeeCoordinatorCapability.TEnergyScanResultEvent.TChannelScanResultR\x12ChannelScanResults\x1a\xd2\x01\n" +
+	"\x12TChannelScanResult\x12\x18\n" +
+	"\aChannel\x18\x01 \x01(\rR\aChannel\x12\x12\n" +
+	"\x04Rssi\x18\x02 \x01(\x05R\x04Rssi\x12e\n" +
+	"\fInterference\x18\x03 \x01(\v2A.NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevelR\fInterference\x12'\n" +
+	"\aCcaRssi\x18\x04 \x01(\x05B\f\xaa\xdd\x1b\bcca_rssiR\bcca_rssi\"\xd0\x01\n" +
 	"\x19EChannelInterferenceLevel\x12#\n" +
 	"\x1fChannelInterferenceLevelUnknown\x10\x00\x12\x1f\n" +
 	"\x1bChannelInterferenceLevelLow\x10\x01\x12$\n" +
 	" ChannelInterferenceLevelModerate\x10\x02\x12 \n" +
 	"\x1cChannelInterferenceLevelHigh\x10\x03\x12%\n" +
-	"!ChannelInterferenceLevelCongested\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbe\x01B\xb6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB#IotZigbeeCoordinatorCapabilityProtoZaa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_zigbee_coordinator;iotzigbeecoordinatorpbb\x06proto3"
+	"!ChannelInterferenceLevelCongested\x10\x04\"\x7f\n" +
+	"\x0fERadioInterface\x12\x19\n" +
+	"\x15RadioInterfaceUnknown\x10\x00\x12\x1d\n" +
+	"\x19RadioInterfaceSilabsEfr32\x10\x01\x12\x15\n" +
+	"\x11RadioInterfaceW2l\x10\x02\x12\x1b\n" +
+	"\x17RadioInterfaceTelinkB91\x10\x03B\xc0\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_zigbee_coordinator\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_rawDescOnce sync.Once
@@ -711,8 +701,8 @@ func file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_p
 var file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_proto_goTypes = []any{
-	(TIotZigbeeCoordinatorCapability_ERadioInterface)(0),                              // 0: NAlice.TIotZigbeeCoordinatorCapability.ERadioInterface
-	(TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel)(0),                    // 1: NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevel
+	(TIotZigbeeCoordinatorCapability_EChannelInterferenceLevel)(0),                    // 0: NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevel
+	(TIotZigbeeCoordinatorCapability_ERadioInterface)(0),                              // 1: NAlice.TIotZigbeeCoordinatorCapability.ERadioInterface
 	(*TIotZigbeeCoordinatorCapability)(nil),                                           // 2: NAlice.TIotZigbeeCoordinatorCapability
 	(*TIotZigbeeCoordinatorCapability_TParameters)(nil),                               // 3: NAlice.TIotZigbeeCoordinatorCapability.TParameters
 	(*TIotZigbeeCoordinatorCapability_TChannelInterferenceLevel)(nil),                 // 4: NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevel
@@ -728,8 +718,8 @@ var file_alice_protos_endpoint_capabilities_iot_zigbee_coordinator_capability_pr
 	11, // 0: NAlice.TIotZigbeeCoordinatorCapability.Meta:type_name -> NAlice.TCapability.TMeta
 	3,  // 1: NAlice.TIotZigbeeCoordinatorCapability.Parameters:type_name -> NAlice.TIotZigbeeCoordinatorCapability.TParameters
 	5,  // 2: NAlice.TIotZigbeeCoordinatorCapability.State:type_name -> NAlice.TIotZigbeeCoordinatorCapability.TState
-	0,  // 3: NAlice.TIotZigbeeCoordinatorCapability.TParameters.RadioInterface:type_name -> NAlice.TIotZigbeeCoordinatorCapability.ERadioInterface
-	1,  // 4: NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevel.Level:type_name -> NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevel
+	1,  // 3: NAlice.TIotZigbeeCoordinatorCapability.TParameters.RadioInterface:type_name -> NAlice.TIotZigbeeCoordinatorCapability.ERadioInterface
+	0,  // 4: NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevel.Level:type_name -> NAlice.TIotZigbeeCoordinatorCapability.EChannelInterferenceLevel
 	4,  // 5: NAlice.TIotZigbeeCoordinatorCapability.TState.Interference:type_name -> NAlice.TIotZigbeeCoordinatorCapability.TChannelInterferenceLevel
 	2,  // 6: NAlice.TIotZigbeeCoordinatorCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TIotZigbeeCoordinatorCapability
 	10, // 7: NAlice.TIotZigbeeCoordinatorCapability.TEnergyScanResultEvent.ChannelScanResults:type_name -> NAlice.TIotZigbeeCoordinatorCapability.TEnergyScanResultEvent.TChannelScanResult

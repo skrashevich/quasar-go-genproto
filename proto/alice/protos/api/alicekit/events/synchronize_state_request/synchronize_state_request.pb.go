@@ -29,20 +29,20 @@ const (
 
 type TSynchronizeStateRequest struct {
 	state                 protoimpl.MessageState            `protogen:"open.v1"`
-	OAuthToken            string                            `protobuf:"bytes,1,opt,name=OAuthToken,json=oauth_token,proto3" json:"OAuthToken,omitempty"`
-	ApiKey                string                            `protobuf:"bytes,2,opt,name=ApiKey,json=api_key,proto3" json:"ApiKey,omitempty"`
-	Application           *protos.TClientInfoProto          `protobuf:"bytes,3,opt,name=Application,json=application,proto3" json:"Application,omitempty"`
-	SupportedFeatures     []string                          `protobuf:"bytes,4,rep,name=SupportedFeatures,json=supported_features,proto3" json:"SupportedFeatures,omitempty"`
-	SoundLogging          bool                              `protobuf:"varint,5,opt,name=SoundLogging,json=sound_logging,proto3" json:"SoundLogging,omitempty"`
-	Experiments           *experiments.TExperimentsProto    `protobuf:"bytes,6,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
-	SupportedServerEvents []event_type.EEventType           `protobuf:"varint,7,rep,packed,name=SupportedServerEvents,json=supported_server_events,proto3,enum=NAlice.NAliceApi.EEventType" json:"SupportedServerEvents,omitempty"`
-	UsersOptions          []*user.TUserOptions              `protobuf:"bytes,8,rep,name=UsersOptions,json=users_options,proto3" json:"UsersOptions,omitempty"`
-	ClientAnalyticsInfo   *protos.TClientAnalyticsInfoProto `protobuf:"bytes,12,opt,name=ClientAnalyticsInfo,json=client_analytics_info,proto3" json:"ClientAnalyticsInfo,omitempty"`
-	ICookie               *string                           `protobuf:"bytes,9,opt,name=ICookie,json=icookie,proto3,oneof" json:"ICookie,omitempty"`
-	YexpCookie            *string                           `protobuf:"bytes,10,opt,name=YexpCookie,json=yexp_cookie,proto3,oneof" json:"YexpCookie,omitempty"`
-	SaeCookie             *string                           `protobuf:"bytes,11,opt,name=SaeCookie,json=sae_cookie,proto3,oneof" json:"SaeCookie,omitempty"`
-	YBrowserExperiments   *string                           `protobuf:"bytes,13,opt,name=YBrowserExperiments,json=y_browser_experiments,proto3,oneof" json:"YBrowserExperiments,omitempty"`
-	XYBrowserExperiments_ *string                           `protobuf:"bytes,14,opt,name=XYBrowserExperiments,json=x_y_browser_experiments,proto3,oneof" json:"XYBrowserExperiments,omitempty"`
+	OAuthToken            string                            `protobuf:"bytes,1,opt,name=OAuthToken,proto3" json:"OAuthToken,omitempty"`
+	ApiKey                string                            `protobuf:"bytes,2,opt,name=ApiKey,proto3" json:"ApiKey,omitempty"`
+	Application           *protos.TClientInfoProto          `protobuf:"bytes,3,opt,name=Application,proto3" json:"Application,omitempty"`
+	SupportedFeatures     []string                          `protobuf:"bytes,4,rep,name=SupportedFeatures,proto3" json:"SupportedFeatures,omitempty"`
+	SoundLogging          bool                              `protobuf:"varint,5,opt,name=SoundLogging,proto3" json:"SoundLogging,omitempty"`
+	Experiments           *experiments.TExperimentsProto    `protobuf:"bytes,6,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
+	SupportedServerEvents []event_type.EEventType           `protobuf:"varint,7,rep,packed,name=SupportedServerEvents,proto3,enum=NAlice.NAliceApi.EEventType" json:"SupportedServerEvents,omitempty"`
+	UsersOptions          []*user.TUserOptions              `protobuf:"bytes,8,rep,name=UsersOptions,proto3" json:"UsersOptions,omitempty"`
+	ClientAnalyticsInfo   *protos.TClientAnalyticsInfoProto `protobuf:"bytes,12,opt,name=ClientAnalyticsInfo,proto3" json:"ClientAnalyticsInfo,omitempty"`
+	ICookie               *string                           `protobuf:"bytes,9,opt,name=ICookie,proto3,oneof" json:"ICookie,omitempty"`
+	YexpCookie            *string                           `protobuf:"bytes,10,opt,name=YexpCookie,proto3,oneof" json:"YexpCookie,omitempty"`
+	SaeCookie             *string                           `protobuf:"bytes,11,opt,name=SaeCookie,proto3,oneof" json:"SaeCookie,omitempty"`
+	YBrowserExperiments   *string                           `protobuf:"bytes,13,opt,name=YBrowserExperiments,proto3,oneof" json:"YBrowserExperiments,omitempty"`
+	XYBrowserExperiments_ *string                           `protobuf:"bytes,14,opt,name=XYBrowserExperiments,proto3,oneof" json:"XYBrowserExperiments,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -179,35 +179,35 @@ var File_alice_protos_api_alicekit_events_synchronize_state_request_synchronize_
 
 const file_alice_protos_api_alicekit_events_synchronize_state_request_synchronize_state_request_proto_rawDesc = "" +
 	"\n" +
-	"Zalice/protos/api/alicekit/events/synchronize_state_request/synchronize_state_request.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a7alice/library/client/protos/client_analytics_info.proto\x1a-alice/library/client/protos/client_info.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a(alice/megamind/protos/user/options.proto\x1aCalice/protos/api/alicekit/events/common/event_type/event_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xeb\b\n" +
-	"\x18TSynchronizeStateRequest\x128\n" +
+	"Zalice/protos/api/alicekit/events/synchronize_state_request/synchronize_state_request.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a7alice/library/client/protos/client_analytics_info.proto\x1a-alice/library/client/protos/client_info.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a(alice/megamind/protos/user/options.proto\x1aCalice/protos/api/alicekit/events/common/event_type/event_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x06\n" +
+	"\x18TSynchronizeStateRequest\x12\x1e\n" +
 	"\n" +
-	"OAuthToken\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\voauth_token\xa8\x8d'\x01\xa8\x8d'\x04R\voauth_token\x12$\n" +
-	"\x06ApiKey\x18\x02 \x01(\tB\v\xaa\xdd\x1b\aapi_keyR\aapi_key\x12K\n" +
-	"\vApplication\x18\x03 \x01(\v2\x18.NAlice.TClientInfoProtoB\x0f\xaa\xdd\x1b\vapplicationR\vapplication\x12E\n" +
-	"\x11SupportedFeatures\x18\x04 \x03(\tB\x16\xaa\xdd\x1b\x12supported_featuresR\x12supported_features\x126\n" +
-	"\fSoundLogging\x18\x05 \x01(\bB\x11\xaa\xdd\x1b\rsound_loggingR\rsound_logging\x12L\n" +
-	"\vExperiments\x18\x06 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12q\n" +
-	"\x15SupportedServerEvents\x18\a \x03(\x0e2\x1c.NAlice.NAliceApi.EEventTypeB\x1b\xaa\xdd\x1b\x17supported_server_eventsR\x17supported_server_events\x12L\n" +
-	"\fUsersOptions\x18\b \x03(\v2\x14.NAlice.TUserOptionsB\x11\xaa\xdd\x1b\rusers_optionsR\rusers_options\x12p\n" +
-	"\x13ClientAnalyticsInfo\x18\f \x01(\v2!.NAlice.TClientAnalyticsInfoProtoB\x19\xaa\xdd\x1b\x15client_analytics_infoR\x15client_analytics_info\x12*\n" +
-	"\aICookie\x18\t \x01(\tB\v\xaa\xdd\x1b\aicookieH\x00R\aicookie\x88\x01\x01\x125\n" +
+	"OAuthToken\x18\x01 \x01(\tR\n" +
+	"OAuthToken\x12\x16\n" +
+	"\x06ApiKey\x18\x02 \x01(\tR\x06ApiKey\x12:\n" +
+	"\vApplication\x18\x03 \x01(\v2\x18.NAlice.TClientInfoProtoR\vApplication\x12,\n" +
+	"\x11SupportedFeatures\x18\x04 \x03(\tR\x11SupportedFeatures\x12\"\n" +
+	"\fSoundLogging\x18\x05 \x01(\bR\fSoundLogging\x12;\n" +
+	"\vExperiments\x18\x06 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12R\n" +
+	"\x15SupportedServerEvents\x18\a \x03(\x0e2\x1c.NAlice.NAliceApi.EEventTypeR\x15SupportedServerEvents\x128\n" +
+	"\fUsersOptions\x18\b \x03(\v2\x14.NAlice.TUserOptionsR\fUsersOptions\x12S\n" +
+	"\x13ClientAnalyticsInfo\x18\f \x01(\v2!.NAlice.TClientAnalyticsInfoProtoR\x13ClientAnalyticsInfo\x12\x1d\n" +
+	"\aICookie\x18\t \x01(\tH\x00R\aICookie\x88\x01\x01\x12#\n" +
 	"\n" +
 	"YexpCookie\x18\n" +
-	" \x01(\tB\x0f\xaa\xdd\x1b\vyexp_cookieH\x01R\vyexp_cookie\x88\x01\x01\x122\n" +
-	"\tSaeCookie\x18\v \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"sae_cookieH\x02R\n" +
-	"sae_cookie\x88\x01\x01\x12R\n" +
-	"\x13YBrowserExperiments\x18\r \x01(\tB\x19\xaa\xdd\x1b\x15y_browser_experimentsH\x03R\x15y_browser_experiments\x88\x01\x01\x12W\n" +
-	"\x14XYBrowserExperiments\x18\x0e \x01(\tB\x1b\xaa\xdd\x1b\x17x_y_browser_experimentsH\x04R\x17x_y_browser_experiments\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\n" +
+	" \x01(\tH\x01R\n" +
+	"YexpCookie\x88\x01\x01\x12!\n" +
+	"\tSaeCookie\x18\v \x01(\tH\x02R\tSaeCookie\x88\x01\x01\x125\n" +
+	"\x13YBrowserExperiments\x18\r \x01(\tH\x03R\x13YBrowserExperiments\x88\x01\x01\x127\n" +
+	"\x14XYBrowserExperiments\x18\x0e \x01(\tH\x04R\x14XYBrowserExperiments\x88\x01\x01B\n" +
 	"\n" +
 	"\b_ICookieB\r\n" +
 	"\v_YexpCookieB\f\n" +
 	"\n" +
 	"_SaeCookieB\x16\n" +
 	"\x14_YBrowserExperimentsB\x17\n" +
-	"\x15_XYBrowserExperimentsB\xae\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.synchronize_state_requestB\x17SynchronizeStateRequestP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/synchronize_state_requestb\x06proto3"
+	"\x15_XYBrowserExperimentsB\x81\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1cSynchronizeStateRequestProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/synchronize_state_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_synchronize_state_request_synchronize_state_request_proto_rawDescOnce sync.Once

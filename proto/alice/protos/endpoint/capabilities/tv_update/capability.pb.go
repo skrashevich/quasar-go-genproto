@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tv_update/capability.proto
 
-package tvupdatepb
+package tv_update
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -354,8 +354,8 @@ const file_alice_protos_endpoint_capabilities_tv_update_capability_proto_rawDesc
 	"\x16THideTvUpdateDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:%\x92\x82\x19\x18hide_tv_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbd\x01\x1a_\n" +
 	"\x17TRetryTvUpdateDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:&\x92\x82\x19\x19retry_tv_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbe\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c>B\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17TvUpdateCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/tv_update;tvupdatepbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:&\x92\x82\x19\x19retry_tv_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbe\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c>B\xa5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17TvUpdateCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tv_updateb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tv_update_capability_proto_rawDescOnce sync.Once

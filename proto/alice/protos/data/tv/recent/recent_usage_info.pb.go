@@ -24,7 +24,7 @@ const (
 
 type TRecentUsageInfo struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	LastUsageTimestamp int64                  `protobuf:"varint,1,opt,name=LastUsageTimestamp,json=last_usage_timestamp,proto3" json:"LastUsageTimestamp,omitempty"`
+	LastUsageTimestamp int64                  `protobuf:"varint,1,opt,name=LastUsageTimestamp,proto3" json:"LastUsageTimestamp,omitempty"`
 	// Types that are valid to be assigned to Item:
 	//
 	//	*TRecentUsageInfo_RecentApplicationItem
@@ -32,8 +32,8 @@ type TRecentUsageInfo struct {
 	//	*TRecentUsageInfo_RecentSourceItem
 	//	*TRecentUsageInfo_RecentExternalAppVideoItem
 	Item               isTRecentUsageInfo_Item `protobuf_oneof:"Item"`
-	PinnedPosition     *int32                  `protobuf:"varint,2,opt,name=PinnedPosition,json=pinned_position,proto3,oneof" json:"PinnedPosition,omitempty"`
-	ColdPinnedPosition *int32                  `protobuf:"varint,3,opt,name=ColdPinnedPosition,json=cold_pinned_position,proto3,oneof" json:"ColdPinnedPosition,omitempty"`
+	PinnedPosition     *int32                  `protobuf:"varint,2,opt,name=PinnedPosition,proto3,oneof" json:"PinnedPosition,omitempty"`
+	ColdPinnedPosition *int32                  `protobuf:"varint,3,opt,name=ColdPinnedPosition,proto3,oneof" json:"ColdPinnedPosition,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -137,19 +137,19 @@ type isTRecentUsageInfo_Item interface {
 }
 
 type TRecentUsageInfo_RecentApplicationItem struct {
-	RecentApplicationItem *TRecentApplicationItem `protobuf:"bytes,101,opt,name=RecentApplicationItem,json=recent_application_item,proto3,oneof"`
+	RecentApplicationItem *TRecentApplicationItem `protobuf:"bytes,101,opt,name=RecentApplicationItem,proto3,oneof"`
 }
 
 type TRecentUsageInfo_RecentChannelItem struct {
-	RecentChannelItem *TRecentChannelItem `protobuf:"bytes,102,opt,name=RecentChannelItem,json=recent_channel_item,proto3,oneof"`
+	RecentChannelItem *TRecentChannelItem `protobuf:"bytes,102,opt,name=RecentChannelItem,proto3,oneof"`
 }
 
 type TRecentUsageInfo_RecentSourceItem struct {
-	RecentSourceItem *TRecentSourceItem `protobuf:"bytes,103,opt,name=RecentSourceItem,json=recent_source_item,proto3,oneof"`
+	RecentSourceItem *TRecentSourceItem `protobuf:"bytes,103,opt,name=RecentSourceItem,proto3,oneof"`
 }
 
 type TRecentUsageInfo_RecentExternalAppVideoItem struct {
-	RecentExternalAppVideoItem *TRecentExternalAppVideoItem `protobuf:"bytes,104,opt,name=RecentExternalAppVideoItem,json=recent_external_app_video_item,proto3,oneof"`
+	RecentExternalAppVideoItem *TRecentExternalAppVideoItem `protobuf:"bytes,104,opt,name=RecentExternalAppVideoItem,proto3,oneof"`
 }
 
 func (*TRecentUsageInfo_RecentApplicationItem) isTRecentUsageInfo_Item() {}
@@ -165,19 +165,21 @@ var File_alice_protos_data_tv_recent_recent_usage_info_proto protoreflect.FileDe
 const file_alice_protos_data_tv_recent_recent_usage_info_proto_rawDesc = "" +
 	"\n" +
 	"3alice/protos/data/tv/recent/recent_usage_info.proto\x12\n" +
-	"NAlice.NTv\x1a-alice/protos/data/tv/recent/application.proto\x1a)alice/protos/data/tv/recent/channel.proto\x1a(alice/protos/data/tv/recent/source.proto\x1a;alice/protos/data/tv/recent/recent_external_app_video.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\x06\n" +
-	"\x10TRecentUsageInfo\x12J\n" +
-	"\x12LastUsageTimestamp\x18\x01 \x01(\x03B\x18\xaa\xdd\x1b\x14last_usage_timestampR\x14last_usage_timestamp\x12y\n" +
-	"\x15RecentApplicationItem\x18e \x01(\v2\".NAlice.NTv.TRecentApplicationItemB\x1b\xaa\xdd\x1b\x17recent_application_itemH\x00R\x17recent_application_item\x12i\n" +
-	"\x11RecentChannelItem\x18f \x01(\v2\x1e.NAlice.NTv.TRecentChannelItemB\x17\xaa\xdd\x1b\x13recent_channel_itemH\x00R\x13recent_channel_item\x12e\n" +
-	"\x10RecentSourceItem\x18g \x01(\v2\x1d.NAlice.NTv.TRecentSourceItemB\x16\xaa\xdd\x1b\x12recent_source_itemH\x00R\x12recent_source_item\x12\x91\x01\n" +
-	"\x1aRecentExternalAppVideoItem\x18h \x01(\v2'.NAlice.NTv.TRecentExternalAppVideoItemB\"\xaa\xdd\x1b\x1erecent_external_app_video_itemH\x00R\x1erecent_external_app_video_item\x12A\n" +
-	"\x0ePinnedPosition\x18\x02 \x01(\x05B\x13\xaa\xdd\x1b\x0fpinned_positionH\x01R\x0fpinned_position\x88\x01\x01\x12O\n" +
-	"\x12ColdPinnedPosition\x18\x03 \x01(\x05B\x18\xaa\xdd\x1b\x14cold_pinned_positionH\x02R\x14cold_pinned_position\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x14\n" +
-	"\x04Item\x12\f\xa0\xdd\x1b\r\xaa\xdd\x1b\x04itemB\x11\n" +
+	"NAlice.NTv\x1a-alice/protos/data/tv/recent/application.proto\x1a)alice/protos/data/tv/recent/channel.proto\x1a(alice/protos/data/tv/recent/source.proto\x1a;alice/protos/data/tv/recent/recent_external_app_video.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xba\x04\n" +
+	"\x10TRecentUsageInfo\x12.\n" +
+	"\x12LastUsageTimestamp\x18\x01 \x01(\x03R\x12LastUsageTimestamp\x12Z\n" +
+	"\x15RecentApplicationItem\x18e \x01(\v2\".NAlice.NTv.TRecentApplicationItemH\x00R\x15RecentApplicationItem\x12N\n" +
+	"\x11RecentChannelItem\x18f \x01(\v2\x1e.NAlice.NTv.TRecentChannelItemH\x00R\x11RecentChannelItem\x12K\n" +
+	"\x10RecentSourceItem\x18g \x01(\v2\x1d.NAlice.NTv.TRecentSourceItemH\x00R\x10RecentSourceItem\x12i\n" +
+	"\x1aRecentExternalAppVideoItem\x18h \x01(\v2'.NAlice.NTv.TRecentExternalAppVideoItemH\x00R\x1aRecentExternalAppVideoItem\x12+\n" +
+	"\x0ePinnedPosition\x18\x02 \x01(\x05H\x01R\x0ePinnedPosition\x88\x01\x01\x123\n" +
+	"\x12ColdPinnedPosition\x18\x03 \x01(\x05H\x02R\x12ColdPinnedPosition\x88\x01\x01B\x06\n" +
+	"\x04ItemB\x11\n" +
 	"\x0f_PinnedPositionB\x15\n" +
-	"\x13_ColdPinnedPositionBf\n" +
-	"%ru.yandex.alice.protos.data.tv.recentB\x0fRecentUsageInfoZ,a.yandex-team.ru/alice/protos/data/tv/recentb\x06proto3"
+	"\x13_ColdPinnedPositionB\xbc\x01\n" +
+	"\x0ecom.NAlice.NTvB\x14RecentUsageInfoProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/recent\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_recent_recent_usage_info_proto_rawDescOnce sync.Once

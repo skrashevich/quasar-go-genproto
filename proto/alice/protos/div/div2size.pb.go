@@ -24,8 +24,8 @@ const (
 
 type TDiv2Size struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Width         float64                `protobuf:"fixed64,1,opt,name=Width,json=width,proto3" json:"Width,omitempty"`
-	Height        float64                `protobuf:"fixed64,2,opt,name=Height,json=height,proto3" json:"Height,omitempty"`
+	Width         float64                `protobuf:"fixed64,1,opt,name=Width,proto3" json:"Width,omitempty"`
+	Height        float64                `protobuf:"fixed64,2,opt,name=Height,proto3" json:"Height,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,12 +78,12 @@ var File_alice_protos_div_div2size_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div2size_proto_rawDesc = "" +
 	"\n" +
-	"\x1falice/protos/div/div2size.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"V\n" +
-	"\tTDiv2Size\x12\x1f\n" +
-	"\x05Width\x18\x01 \x01(\x01B\t\xaa\xdd\x1b\x05widthR\x05width\x12\"\n" +
-	"\x06Height\x18\x02 \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06heightR\x06height:\x04\xa8\xdd\x1b\x04BN\n" +
-	"\x1aru.yandex.alice.protos.divB\rDiv2SizeProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\x1falice/protos/div/div2size.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"9\n" +
+	"\tTDiv2Size\x12\x14\n" +
+	"\x05Width\x18\x01 \x01(\x01R\x05Width\x12\x16\n" +
+	"\x06Height\x18\x02 \x01(\x01R\x06HeightB\x95\x01\n" +
+	"\n" +
+	"com.NAliceB\rDiv2sizeProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div2size_proto_rawDescOnce sync.Once

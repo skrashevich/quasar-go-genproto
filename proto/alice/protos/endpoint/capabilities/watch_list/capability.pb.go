@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/watch_list/capability.proto
 
-package watchlistpb
+package watch_list
 
 import (
 	client_analytics "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/analytics/client_analytics"
@@ -341,8 +341,8 @@ const file_alice_protos_endpoint_capabilities_watch_list_capability_proto_rawDes
 	"content_id\x12n\n" +
 	"\x0fClientAnalytics\x18\x04 \x01(\v2-.NAlice.NAnalytics.TTvClientCarouselAnalyticsB\x14\xaa\xdd\x1b\x10client_analyticsR\x10client_analytics\x12$\n" +
 	"\x05Title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01:-\x92\x82\x19 remove_from_watch_list_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8d\x01B\b\n" +
-	"\x06_Title:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c5B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18WatchListCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/watch_list;watchlistpbb\x06proto3"
+	"\x06_Title:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c5B\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18WatchListCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/watch_listb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_watch_list_capability_proto_rawDescOnce sync.Once

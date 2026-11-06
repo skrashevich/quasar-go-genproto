@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/music_vertical/capability.proto
 
-package musicverticalpb
+package music_vertical
 
 import (
 	music1 "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/music"
@@ -612,8 +612,8 @@ const file_alice_protos_endpoint_capabilities_music_vertical_capability_proto_ra
 	"\x14MusicArtistPlaylists\x18\x02 \x01(\v25.NAlice.NMusic.NArpc.TGetMusicArtistPlaylistsResponseB\x1a\xaa\xdd\x1b\x16music_artist_playlistsR\x16music_artist_playlists:2\x92\x82\x19%show_music_artist_playlists_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe6\x04\x1a\xa1\x02\n" +
 	"'TShowMusicArtistSimilarArtistsDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x9d\x01\n" +
-	"\x19MusicArtistSimilarArtists\x18\x02 \x01(\v2:.NAlice.NMusic.NArpc.TGetMusicArtistSimilarArtistsResponseB \xaa\xdd\x1b\x1cmusic_artist_similar_artistsR\x1cmusic_artist_similar_artists:8\x92\x82\x19+show_music_artist_similar_artists_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe7\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x82\x01B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cMusicVerticalCapabilityProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/music_vertical;musicverticalpbb\x06proto3"
+	"\x19MusicArtistSimilarArtists\x18\x02 \x01(\v2:.NAlice.NMusic.NArpc.TGetMusicArtistSimilarArtistsResponseB \xaa\xdd\x1b\x1cmusic_artist_similar_artistsR\x1cmusic_artist_similar_artists:8\x92\x82\x19+show_music_artist_similar_artists_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe7\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x82\x01B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cMusicVerticalCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/music_verticalb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_music_vertical_capability_proto_rawDescOnce sync.Once

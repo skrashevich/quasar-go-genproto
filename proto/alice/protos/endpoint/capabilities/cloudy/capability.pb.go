@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/cloudy/capability.proto
 
-package cloudypb
+package cloudy
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -207,8 +207,8 @@ const file_alice_protos_endpoint_capabilities_cloudy_capability_proto_rawDesc = 
 	"\x05State\x18\x03 \x01(\v2 .NAlice.TCloudyCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aB\n" +
-	"\x18TShowOnboardingDirective:&\x92\x82\x19\x19show_onboarding_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf4\x04:\x0e\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe9\x01\xa8\xc8\x1c\xf4\x04B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15CloudyCapabilityProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/cloudy;cloudypbb\x06proto3"
+	"\x18TShowOnboardingDirective:&\x92\x82\x19\x19show_onboarding_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf4\x04:\x0e\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe9\x01\xa8\xc8\x1c\xf4\x04B\xa0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15CloudyCapabilityProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/cloudyb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_cloudy_capability_proto_rawDescOnce sync.Once

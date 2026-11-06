@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_zigbee_node/capability.proto
 
-package iotzigbeenodepb
+package iot_zigbee_node
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -133,9 +133,9 @@ func (TIotZigbeeNodeCapability_ESignalQualityStatus) EnumDescriptor() ([]byte, [
 
 type TIotZigbeeNodeCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotZigbeeNodeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotZigbeeNodeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotZigbeeNodeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotZigbeeNodeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -193,7 +193,7 @@ func (x *TIotZigbeeNodeCapability) GetState() *TIotZigbeeNodeCapability_TState {
 
 type TIotZigbeeNodeCapability_TParameters struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Type          TIotZigbeeNodeCapability_TType `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TIotZigbeeNodeCapability_TType" json:"Type,omitempty"`
+	Type          TIotZigbeeNodeCapability_TType `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TIotZigbeeNodeCapability_TType" json:"Type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -237,9 +237,9 @@ func (x *TIotZigbeeNodeCapability_TParameters) GetType() TIotZigbeeNodeCapabilit
 
 type TIotZigbeeNodeCapability_TSignalQuality struct {
 	state               protoimpl.MessageState                        `protogen:"open.v1"`
-	SignalQualityStatus TIotZigbeeNodeCapability_ESignalQualityStatus `protobuf:"varint,1,opt,name=SignalQualityStatus,json=signal_quality_status,proto3,enum=NAlice.TIotZigbeeNodeCapability_ESignalQualityStatus" json:"SignalQualityStatus,omitempty"`
-	Lqi                 uint32                                        `protobuf:"varint,2,opt,name=Lqi,json=lqi,proto3" json:"Lqi,omitempty"`
-	Rssi                int32                                         `protobuf:"varint,3,opt,name=Rssi,json=rssi,proto3" json:"Rssi,omitempty"`
+	SignalQualityStatus TIotZigbeeNodeCapability_ESignalQualityStatus `protobuf:"varint,1,opt,name=SignalQualityStatus,proto3,enum=NAlice.TIotZigbeeNodeCapability_ESignalQualityStatus" json:"SignalQualityStatus,omitempty"`
+	Lqi                 uint32                                        `protobuf:"varint,2,opt,name=Lqi,proto3" json:"Lqi,omitempty"`
+	Rssi                int32                                         `protobuf:"varint,3,opt,name=Rssi,proto3" json:"Rssi,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -297,7 +297,7 @@ func (x *TIotZigbeeNodeCapability_TSignalQuality) GetRssi() int32 {
 
 type TIotZigbeeNodeCapability_TState struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	SignalQuality *TIotZigbeeNodeCapability_TSignalQuality `protobuf:"bytes,1,opt,name=SignalQuality,json=signal_quality,proto3" json:"SignalQuality,omitempty"`
+	SignalQuality *TIotZigbeeNodeCapability_TSignalQuality `protobuf:"bytes,1,opt,name=SignalQuality,proto3" json:"SignalQuality,omitempty"`
 	Channel       uint32                                   `protobuf:"varint,2,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
 	IsActive      bool                                     `protobuf:"varint,3,opt,name=IsActive,json=is_active,proto3" json:"IsActive,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -357,7 +357,7 @@ func (x *TIotZigbeeNodeCapability_TState) GetIsActive() bool {
 
 type TIotZigbeeNodeCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Capability    *TIotZigbeeNodeCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotZigbeeNodeCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -403,29 +403,27 @@ var File_alice_protos_endpoint_capabilities_iot_zigbee_node_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_iot_zigbee_node_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/iot_zigbee_node/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x86\b\n" +
-	"\x18TIotZigbeeNodeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Calice/protos/endpoint/capabilities/iot_zigbee_node/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xda\x06\n" +
+	"\x18TIotZigbeeNodeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotZigbeeNodeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotZigbeeNodeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1aY\n" +
-	"\vTParameters\x12D\n" +
-	"\x04Type\x18\x01 \x01(\x0e2&.NAlice.TIotZigbeeNodeCapability.TTypeB\b\xaa\xdd\x1b\x04typeR\x04type:\x04\xa8\xdd\x1b\x04\x1a\xd6\x01\n" +
-	"\x0eTSignalQuality\x12\x84\x01\n" +
-	"\x13SignalQualityStatus\x18\x01 \x01(\x0e25.NAlice.TIotZigbeeNodeCapability.ESignalQualityStatusB\x19\xaa\xdd\x1b\x15signal_quality_statusR\x15signal_quality_status\x12\x19\n" +
-	"\x03Lqi\x18\x02 \x01(\rB\a\xaa\xdd\x1b\x03lqiR\x03lqi\x12\x1c\n" +
-	"\x04Rssi\x18\x03 \x01(\x05B\b\xaa\xdd\x1b\x04rssiR\x04rssi:\x04\xa8\xdd\x1b\x04\x1a\xcd\x01\n" +
-	"\x06TState\x12j\n" +
-	"\rSignalQuality\x18\x01 \x01(\v2/.NAlice.TIotZigbeeNodeCapability.TSignalQualityB\x12\xaa\xdd\x1b\x0esignal_qualityR\x0esignal_quality\x12%\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotZigbeeNodeCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotZigbeeNodeCapability.TStateR\x05State\x1aI\n" +
+	"\vTParameters\x12:\n" +
+	"\x04Type\x18\x01 \x01(\x0e2&.NAlice.TIotZigbeeNodeCapability.TTypeR\x04Type\x1a\x9f\x01\n" +
+	"\x0eTSignalQuality\x12g\n" +
+	"\x13SignalQualityStatus\x18\x01 \x01(\x0e25.NAlice.TIotZigbeeNodeCapability.ESignalQualityStatusR\x13SignalQualityStatus\x12\x10\n" +
+	"\x03Lqi\x18\x02 \x01(\rR\x03Lqi\x12\x12\n" +
+	"\x04Rssi\x18\x03 \x01(\x05R\x04Rssi\x1a\xb2\x01\n" +
+	"\x06TState\x12U\n" +
+	"\rSignalQuality\x18\x01 \x01(\v2/.NAlice.TIotZigbeeNodeCapability.TSignalQualityR\rSignalQuality\x12%\n" +
 	"\aChannel\x18\x02 \x01(\rB\v\xaa\xdd\x1b\achannelR\achannel\x12*\n" +
-	"\bIsActive\x18\x03 \x01(\bB\r\xaa\xdd\x1b\tis_activeR\tis_active:\x04\xa8\xdd\x1b\x04\x1ao\n" +
-	"\x11TUpdateStateEvent\x12P\n" +
+	"\bIsActive\x18\x03 \x01(\bB\r\xaa\xdd\x1b\tis_activeR\tis_active\x1aU\n" +
+	"\x11TUpdateStateEvent\x12@\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2 .NAlice.TIotZigbeeNodeCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cV\"0\n" +
+	"Capability\x18\x01 \x01(\v2 .NAlice.TIotZigbeeNodeCapabilityR\n" +
+	"Capability\"0\n" +
 	"\x05TType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\n" +
 	"\n" +
@@ -438,8 +436,9 @@ const file_alice_protos_endpoint_capabilities_iot_zigbee_node_capability_proto_r
 	"\x04Weak\x10\x02\x12\x06\n" +
 	"\x02Ok\x10\x03\x12\b\n" +
 	"\x04Good\x10\x04\x12\r\n" +
-	"\tExcellent\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x93\x01B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cIotZigbeeNodeCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_zigbee_node;iotzigbeenodepbb\x06proto3"
+	"\tExcellent\x10\x05B\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_zigbee_node\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_zigbee_node_capability_proto_rawDescOnce sync.Once

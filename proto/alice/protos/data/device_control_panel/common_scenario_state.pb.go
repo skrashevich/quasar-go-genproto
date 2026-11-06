@@ -77,10 +77,10 @@ func (TCommonScenarioState_EDisabledReason) EnumDescriptor() ([]byte, []int) {
 
 type TCommonScenarioState struct {
 	state               protoimpl.MessageState               `protogen:"open.v1"`
-	Disabled            bool                                 `protobuf:"varint,1,opt,name=Disabled,json=disabled,proto3" json:"Disabled,omitempty"`
-	DisabledReason      TCommonScenarioState_EDisabledReason `protobuf:"varint,2,opt,name=DisabledReason,json=disabled_reason,proto3,enum=NAlice.TCommonScenarioState_EDisabledReason" json:"DisabledReason,omitempty"`
-	DailyUsage          *durationpb.Duration                 `protobuf:"bytes,3,opt,name=DailyUsage,json=daily_usage,proto3" json:"DailyUsage,omitempty"`
-	CurrentTimeInterval *TTimeInterval                       `protobuf:"bytes,4,opt,name=CurrentTimeInterval,json=current_time_interval,proto3" json:"CurrentTimeInterval,omitempty"`
+	Disabled            bool                                 `protobuf:"varint,1,opt,name=Disabled,proto3" json:"Disabled,omitempty"`
+	DisabledReason      TCommonScenarioState_EDisabledReason `protobuf:"varint,2,opt,name=DisabledReason,proto3,enum=NAlice.TCommonScenarioState_EDisabledReason" json:"DisabledReason,omitempty"`
+	DailyUsage          *durationpb.Duration                 `protobuf:"bytes,3,opt,name=DailyUsage,proto3" json:"DailyUsage,omitempty"`
+	CurrentTimeInterval *TTimeInterval                       `protobuf:"bytes,4,opt,name=CurrentTimeInterval,proto3" json:"CurrentTimeInterval,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -147,19 +147,21 @@ var File_alice_protos_data_device_control_panel_common_scenario_state_proto prot
 
 const file_alice_protos_data_device_control_panel_common_scenario_state_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/data/device_control_panel/common_scenario_state.proto\x12\x06NAlice\x1a\x1egoogle/protobuf/duration.proto\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7\x03\n" +
-	"\x14TCommonScenarioState\x12(\n" +
-	"\bDisabled\x18\x01 \x01(\bB\f\xaa\xdd\x1b\bdisabledR\bdisabled\x12j\n" +
-	"\x0eDisabledReason\x18\x02 \x01(\x0e2,.NAlice.TCommonScenarioState.EDisabledReasonB\x13\xaa\xdd\x1b\x0fdisabled_reasonR\x0fdisabled_reason\x12K\n" +
+	"Balice/protos/data/device_control_panel/common_scenario_state.proto\x12\x06NAlice\x1a\x1egoogle/protobuf/duration.proto\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe4\x02\n" +
+	"\x14TCommonScenarioState\x12\x1a\n" +
+	"\bDisabled\x18\x01 \x01(\bR\bDisabled\x12T\n" +
+	"\x0eDisabledReason\x18\x02 \x01(\x0e2,.NAlice.TCommonScenarioState.EDisabledReasonR\x0eDisabledReason\x129\n" +
 	"\n" +
-	"DailyUsage\x18\x03 \x01(\v2\x19.google.protobuf.DurationB\x0f\xaa\xdd\x1b\vdaily_usageR\vdaily_usage\x12d\n" +
-	"\x13CurrentTimeInterval\x18\x04 \x01(\v2\x15.NAlice.TTimeIntervalB\x19\xaa\xdd\x1b\x15current_time_intervalR\x15current_time_interval\"V\n" +
+	"DailyUsage\x18\x03 \x01(\v2\x19.google.protobuf.DurationR\n" +
+	"DailyUsage\x12G\n" +
+	"\x13CurrentTimeInterval\x18\x04 \x01(\v2\x15.NAlice.TTimeIntervalR\x13CurrentTimeInterval\"V\n" +
 	"\x0fEDisabledReason\x12\r\n" +
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04User\x10\x01\x12\x16\n" +
 	"\x12DailyLimitExceeded\x10\x02\x12\x12\n" +
-	"\x0eDisabledPeriod\x10\x03B\x85\x01\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x18CommonScenarioStateProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	"\x0eDisabledPeriod\x10\x03B\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x18CommonScenarioStateProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_common_scenario_state_proto_rawDescOnce sync.Once

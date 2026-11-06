@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_agent/capability.proto
 
-package iotagentpb
+package iot_agent
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -224,8 +224,8 @@ const file_alice_protos_endpoint_capabilities_iot_agent_capability_proto_rawDesc
 	"\x06TState\x128\n" +
 	"\fInAppContext\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0ein_app_contextR\x0ein_app_context:\x04\xa8\xdd\x1b\x04\x1ad\n" +
 	"\x1eTClearIotAgentContextDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17clear_iot_agent_context\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfa\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc6\x02B\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17IotAgentCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_agent;iotagentpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17clear_iot_agent_context\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfa\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc6\x02B\xa5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17IotAgentCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_agentb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_agent_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/data/telecom/providers.proto
 
-package telecompb
+package telecom
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -179,7 +179,7 @@ func (TCallInfo_ECallerDeviceType) EnumDescriptor() ([]byte, []int) {
 
 type TProviderContact struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderId:
 	//
 	//	*TProviderContact_TelephoneId
@@ -266,15 +266,15 @@ type isTProviderContact_ProviderId interface {
 }
 
 type TProviderContact_TelephoneId struct {
-	TelephoneId *TProviderContact_TTelephoneId `protobuf:"bytes,2,opt,name=TelephoneId,json=telephone_id,proto3,oneof"`
+	TelephoneId *TProviderContact_TTelephoneId `protobuf:"bytes,2,opt,name=TelephoneId,proto3,oneof"`
 }
 
 type TProviderContact_MessengerId struct {
-	MessengerId *TProviderContact_TMessengerId `protobuf:"bytes,3,opt,name=MessengerId,json=messenger_id,proto3,oneof"`
+	MessengerId *TProviderContact_TMessengerId `protobuf:"bytes,3,opt,name=MessengerId,proto3,oneof"`
 }
 
 type TProviderContact_AtsId struct {
-	AtsId *TProviderContact_TAtsId `protobuf:"bytes,4,opt,name=AtsId,json=ats_id,proto3,oneof"`
+	AtsId *TProviderContact_TAtsId `protobuf:"bytes,4,opt,name=AtsId,proto3,oneof"`
 }
 
 func (*TProviderContact_TelephoneId) isTProviderContact_ProviderId() {}
@@ -285,9 +285,9 @@ func (*TProviderContact_AtsId) isTProviderContact_ProviderId() {}
 
 type TProviderContactInfo struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	ProviderContact *TProviderContact      `protobuf:"bytes,1,opt,name=ProviderContact,json=provider_contact,proto3" json:"ProviderContact,omitempty"`
-	CanBeTexted     bool                   `protobuf:"varint,2,opt,name=CanBeTexted,json=can_be_texted,proto3" json:"CanBeTexted,omitempty"`
-	CanBeCalled     bool                   `protobuf:"varint,3,opt,name=CanBeCalled,json=can_be_called,proto3" json:"CanBeCalled,omitempty"`
+	ProviderContact *TProviderContact      `protobuf:"bytes,1,opt,name=ProviderContact,proto3" json:"ProviderContact,omitempty"`
+	CanBeTexted     bool                   `protobuf:"varint,2,opt,name=CanBeTexted,proto3" json:"CanBeTexted,omitempty"`
+	CanBeCalled     bool                   `protobuf:"varint,3,opt,name=CanBeCalled,proto3" json:"CanBeCalled,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -344,9 +344,8 @@ func (x *TProviderContactInfo) GetCanBeCalled() bool {
 }
 
 type TCallInfo struct {
-	state            protoimpl.MessageState      `protogen:"open.v1"`
-	CallType         TCallInfo_ECallType         `protobuf:"varint,1,opt,name=CallType,json=call_type,proto3,enum=NAlice.NTelecom.TCallInfo_ECallType" json:"CallType,omitempty"`
-	CallerDeviceType TCallInfo_ECallerDeviceType `protobuf:"varint,107,opt,name=CallerDeviceType,json=caller_device_type,proto3,enum=NAlice.NTelecom.TCallInfo_ECallerDeviceType" json:"CallerDeviceType,omitempty"`
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	CallType TCallInfo_ECallType    `protobuf:"varint,1,opt,name=CallType,proto3,enum=NAlice.NTelecom.TCallInfo_ECallType" json:"CallType,omitempty"`
 	// Types that are valid to be assigned to Call:
 	//
 	//	*TCallInfo_Device
@@ -361,9 +360,10 @@ type TCallInfo struct {
 	//
 	//	*TCallInfo_CalleeDevice
 	//	*TCallInfo_CalleeUser
-	Callee        isTCallInfo_Callee `protobuf_oneof:"Callee"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Callee           isTCallInfo_Callee          `protobuf_oneof:"Callee"`
+	CallerDeviceType TCallInfo_ECallerDeviceType `protobuf:"varint,107,opt,name=CallerDeviceType,json=caller_device_type,proto3,enum=NAlice.NTelecom.TCallInfo_ECallerDeviceType" json:"CallerDeviceType,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *TCallInfo) Reset() {
@@ -403,13 +403,6 @@ func (x *TCallInfo) GetCallType() TCallInfo_ECallType {
 	return TCallInfo_CT_Default
 }
 
-func (x *TCallInfo) GetCallerDeviceType() TCallInfo_ECallerDeviceType {
-	if x != nil {
-		return x.CallerDeviceType
-	}
-	return TCallInfo_CDT_Unknown
-}
-
 func (x *TCallInfo) GetCall() isTCallInfo_Call {
 	if x != nil {
 		return x.Call
@@ -417,7 +410,6 @@ func (x *TCallInfo) GetCall() isTCallInfo_Call {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
 func (x *TCallInfo) GetDevice() *TCallInfo_TDevice {
 	if x != nil {
 		if x, ok := x.Call.(*TCallInfo_Device); ok {
@@ -427,7 +419,6 @@ func (x *TCallInfo) GetDevice() *TCallInfo_TDevice {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
 func (x *TCallInfo) GetUser() *TCallInfo_TUser {
 	if x != nil {
 		if x, ok := x.Call.(*TCallInfo_User); ok {
@@ -487,18 +478,23 @@ func (x *TCallInfo) GetCalleeUser() *TCallInfo_TUser {
 	return nil
 }
 
+func (x *TCallInfo) GetCallerDeviceType() TCallInfo_ECallerDeviceType {
+	if x != nil {
+		return x.CallerDeviceType
+	}
+	return TCallInfo_CDT_Unknown
+}
+
 type isTCallInfo_Call interface {
 	isTCallInfo_Call()
 }
 
 type TCallInfo_Device struct {
-	// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
-	Device *TCallInfo_TDevice `protobuf:"bytes,101,opt,name=Device,json=device,proto3,oneof"`
+	Device *TCallInfo_TDevice `protobuf:"bytes,101,opt,name=Device,proto3,oneof"`
 }
 
 type TCallInfo_User struct {
-	// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
-	User *TCallInfo_TUser `protobuf:"bytes,102,opt,name=User,json=user,proto3,oneof"`
+	User *TCallInfo_TUser `protobuf:"bytes,102,opt,name=User,proto3,oneof"`
 }
 
 func (*TCallInfo_Device) isTCallInfo_Call() {}
@@ -510,11 +506,11 @@ type isTCallInfo_Caller interface {
 }
 
 type TCallInfo_CallerDevice struct {
-	CallerDevice *TCallInfo_TDevice `protobuf:"bytes,103,opt,name=CallerDevice,json=caller_device,proto3,oneof"`
+	CallerDevice *TCallInfo_TDevice `protobuf:"bytes,103,opt,name=CallerDevice,proto3,oneof"`
 }
 
 type TCallInfo_CallerUser struct {
-	CallerUser *TCallInfo_TUser `protobuf:"bytes,104,opt,name=CallerUser,json=caller_user,proto3,oneof"`
+	CallerUser *TCallInfo_TUser `protobuf:"bytes,104,opt,name=CallerUser,proto3,oneof"`
 }
 
 func (*TCallInfo_CallerDevice) isTCallInfo_Caller() {}
@@ -526,11 +522,11 @@ type isTCallInfo_Callee interface {
 }
 
 type TCallInfo_CalleeDevice struct {
-	CalleeDevice *TCallInfo_TDevice `protobuf:"bytes,105,opt,name=CalleeDevice,json=callee_device,proto3,oneof"`
+	CalleeDevice *TCallInfo_TDevice `protobuf:"bytes,105,opt,name=CalleeDevice,proto3,oneof"`
 }
 
 type TCallInfo_CalleeUser struct {
-	CalleeUser *TCallInfo_TUser `protobuf:"bytes,106,opt,name=CalleeUser,json=callee_user,proto3,oneof"`
+	CalleeUser *TCallInfo_TUser `protobuf:"bytes,106,opt,name=CalleeUser,proto3,oneof"`
 }
 
 func (*TCallInfo_CalleeDevice) isTCallInfo_Callee() {}
@@ -539,7 +535,7 @@ func (*TCallInfo_CalleeUser) isTCallInfo_Callee() {}
 
 type TProviderContact_TTelephoneId struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Phone         string                 `protobuf:"bytes,1,opt,name=Phone,json=phone,proto3" json:"Phone,omitempty"`
+	Phone         string                 `protobuf:"bytes,1,opt,name=Phone,proto3" json:"Phone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -583,8 +579,8 @@ func (x *TProviderContact_TTelephoneId) GetPhone() string {
 
 type TProviderContact_TMessengerId struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,json=guid,proto3" json:"Guid,omitempty"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,proto3" json:"Guid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -635,9 +631,9 @@ func (x *TProviderContact_TMessengerId) GetGuid() string {
 
 type TProviderContact_TAtsId struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Login         string                 `protobuf:"bytes,1,opt,name=Login,json=login,proto3" json:"Login,omitempty"`
-	CallId        string                 `protobuf:"bytes,2,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	Domain        string                 `protobuf:"bytes,3,opt,name=Domain,json=domain,proto3" json:"Domain,omitempty"`
+	Login         string                 `protobuf:"bytes,1,opt,name=Login,proto3" json:"Login,omitempty"`
+	CallId        string                 `protobuf:"bytes,2,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	Domain        string                 `protobuf:"bytes,3,opt,name=Domain,proto3" json:"Domain,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -695,18 +691,17 @@ func (x *TProviderContact_TAtsId) GetDomain() string {
 
 type TCallInfo_TDevice struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DeviceName     string                 `protobuf:"bytes,1,opt,name=DeviceName,json=device_name,proto3" json:"DeviceName,omitempty"`
-	DevicePlatform string                 `protobuf:"bytes,2,opt,name=DevicePlatform,json=device_platform,proto3" json:"DevicePlatform,omitempty"`
-	Color          color.EColor           `protobuf:"varint,6,opt,name=Color,json=color,proto3,enum=NAlice.NData.EColor" json:"Color,omitempty"`
-	DeviceIconUrl  string                 `protobuf:"bytes,7,opt,name=DeviceIconUrl,json=device_icon_url,proto3" json:"DeviceIconUrl,omitempty"`
-	IotPlatform    string                 `protobuf:"bytes,8,opt,name=IotPlatform,json=iot_platform,proto3" json:"IotPlatform,omitempty"`
+	DeviceName     string                 `protobuf:"bytes,1,opt,name=DeviceName,proto3" json:"DeviceName,omitempty"`
+	DevicePlatform string                 `protobuf:"bytes,2,opt,name=DevicePlatform,proto3" json:"DevicePlatform,omitempty"`
+	Color          color.EColor           `protobuf:"varint,6,opt,name=Color,proto3,enum=NAlice.NData.EColor" json:"Color,omitempty"`
+	DeviceIconUrl  string                 `protobuf:"bytes,7,opt,name=DeviceIconUrl,proto3" json:"DeviceIconUrl,omitempty"`
+	IotPlatform    string                 `protobuf:"bytes,8,opt,name=IotPlatform,proto3" json:"IotPlatform,omitempty"`
+	DeviceColor    *string                `protobuf:"bytes,3,opt,name=DeviceColor,proto3,oneof" json:"DeviceColor,omitempty"`
+	RoomName       *string                `protobuf:"bytes,4,opt,name=RoomName,proto3,oneof" json:"RoomName,omitempty"`
+	HouseholdName  *string                `protobuf:"bytes,5,opt,name=HouseholdName,proto3,oneof" json:"HouseholdName,omitempty"`
 	DeviceId       string                 `protobuf:"bytes,9,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
-	DeviceColor   *string `protobuf:"bytes,3,opt,name=DeviceColor,json=device_color,proto3,oneof" json:"DeviceColor,omitempty"`
-	RoomName      *string `protobuf:"bytes,4,opt,name=RoomName,json=room_name,proto3,oneof" json:"RoomName,omitempty"`
-	HouseholdName *string `protobuf:"bytes,5,opt,name=HouseholdName,json=household_name,proto3,oneof" json:"HouseholdName,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *TCallInfo_TDevice) Reset() {
@@ -774,14 +769,6 @@ func (x *TCallInfo_TDevice) GetIotPlatform() string {
 	return ""
 }
 
-func (x *TCallInfo_TDevice) GetDeviceId() string {
-	if x != nil {
-		return x.DeviceId
-	}
-	return ""
-}
-
-// Deprecated: Marked as deprecated in alice/protos/data/telecom/providers.proto.
 func (x *TCallInfo_TDevice) GetDeviceColor() string {
 	if x != nil && x.DeviceColor != nil {
 		return *x.DeviceColor
@@ -803,9 +790,16 @@ func (x *TCallInfo_TDevice) GetHouseholdName() string {
 	return ""
 }
 
+func (x *TCallInfo_TDevice) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
 type TCallInfo_TUser struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserName      string                 `protobuf:"bytes,1,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
+	UserName      string                 `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -851,57 +845,57 @@ var File_alice_protos_data_telecom_providers_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_telecom_providers_proto_rawDesc = "" +
 	"\n" +
-	")alice/protos/data/telecom/providers.proto\x12\x0fNAlice.NTelecom\x1a&yt/yt_proto/yt/formats/extension.proto\x1a#alice/protos/data/color/color.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\x88\x05\n" +
-	"\x10TProviderContact\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12e\n" +
-	"\vTelephoneId\x18\x02 \x01(\v2..NAlice.NTelecom.TProviderContact.TTelephoneIdB\x10\xaa\xdd\x1b\ftelephone_idH\x00R\ftelephone_id\x12e\n" +
-	"\vMessengerId\x18\x03 \x01(\v2..NAlice.NTelecom.TProviderContact.TMessengerIdB\x10\xaa\xdd\x1b\fmessenger_idH\x00R\fmessenger_id\x12M\n" +
-	"\x05AtsId\x18\x04 \x01(\v2(.NAlice.NTelecom.TProviderContact.TAtsIdB\n" +
-	"\xaa\xdd\x1b\x06ats_idH\x00R\x06ats_id\x1a5\n" +
-	"\fTTelephoneId\x12\x1f\n" +
-	"\x05Phone\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05phoneR\x05phone:\x04\xa8\xdd\x1b\x04\x1ab\n" +
-	"\fTMessengerId\x12.\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x12\x1c\n" +
-	"\x04Guid\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid:\x04\xa8\xdd\x1b\x04\x1ay\n" +
-	"\x06TAtsId\x12\x1f\n" +
-	"\x05Login\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05loginR\x05login\x12$\n" +
-	"\x06CallId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12\"\n" +
-	"\x06Domain\x18\x03 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06domainR\x06domain:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x1d\n" +
+	")alice/protos/data/telecom/providers.proto\x12\x0fNAlice.NTelecom\x1a&yt/yt_proto/yt/formats/extension.proto\x1a#alice/protos/data/color/color.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xd4\x03\n" +
+	"\x10TProviderContact\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12R\n" +
+	"\vTelephoneId\x18\x02 \x01(\v2..NAlice.NTelecom.TProviderContact.TTelephoneIdH\x00R\vTelephoneId\x12R\n" +
+	"\vMessengerId\x18\x03 \x01(\v2..NAlice.NTelecom.TProviderContact.TMessengerIdH\x00R\vMessengerId\x12@\n" +
+	"\x05AtsId\x18\x04 \x01(\v2(.NAlice.NTelecom.TProviderContact.TAtsIdH\x00R\x05AtsId\x1a$\n" +
+	"\fTTelephoneId\x12\x14\n" +
+	"\x05Phone\x18\x01 \x01(\tR\x05Phone\x1a>\n" +
+	"\fTMessengerId\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x12\n" +
+	"\x04Guid\x18\x02 \x01(\tR\x04Guid\x1aN\n" +
+	"\x06TAtsId\x12\x14\n" +
+	"\x05Login\x18\x01 \x01(\tR\x05Login\x12\x16\n" +
+	"\x06CallId\x18\x02 \x01(\tR\x06CallId\x12\x16\n" +
+	"\x06Domain\x18\x03 \x01(\tR\x06DomainB\f\n" +
 	"\n" +
-	"ProviderId\x12\x0f\xaa\xdd\x1b\vprovider_id\"\xee\x01\n" +
-	"\x14TProviderContactInfo\x12b\n" +
-	"\x0fProviderContact\x18\x01 \x01(\v2!.NAlice.NTelecom.TProviderContactB\x14\xaa\xdd\x1b\x10provider_contactR\x10provider_contact\x125\n" +
-	"\vCanBeTexted\x18\x02 \x01(\bB\x11\xaa\xdd\x1b\rcan_be_textedR\rcan_be_texted\x125\n" +
-	"\vCanBeCalled\x18\x03 \x01(\bB\x11\xaa\xdd\x1b\rcan_be_calledR\rcan_be_called:\x04\xa8\xdd\x1b\x04\"\xff\v\n" +
-	"\tTCallInfo\x12P\n" +
-	"\bCallType\x18\x01 \x01(\x0e2$.NAlice.NTelecom.TCallInfo.ECallTypeB\r\xaa\xdd\x1b\tcall_typeR\tcall_type\x12r\n" +
-	"\x10CallerDeviceType\x18k \x01(\x0e2,.NAlice.NTelecom.TCallInfo.ECallerDeviceTypeB\x16\xaa\xdd\x1b\x12caller_device_typeR\x12caller_device_type\x12J\n" +
-	"\x06Device\x18e \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceB\f\xaa\xdd\x1b\x06device\x18\x01H\x00R\x06device\x12B\n" +
-	"\x04User\x18f \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserB\n" +
-	"\xaa\xdd\x1b\x04user\x18\x01H\x00R\x04user\x12\\\n" +
-	"\fCallerDevice\x18g \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceB\x11\xaa\xdd\x1b\rcaller_deviceH\x01R\rcaller_device\x12T\n" +
+	"ProviderId\"\xa7\x01\n" +
+	"\x14TProviderContactInfo\x12K\n" +
+	"\x0fProviderContact\x18\x01 \x01(\v2!.NAlice.NTelecom.TProviderContactR\x0fProviderContact\x12 \n" +
+	"\vCanBeTexted\x18\x02 \x01(\bR\vCanBeTexted\x12 \n" +
+	"\vCanBeCalled\x18\x03 \x01(\bR\vCanBeCalled\"\xc0\t\n" +
+	"\tTCallInfo\x12@\n" +
+	"\bCallType\x18\x01 \x01(\x0e2$.NAlice.NTelecom.TCallInfo.ECallTypeR\bCallType\x12<\n" +
+	"\x06Device\x18e \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceH\x00R\x06Device\x126\n" +
+	"\x04User\x18f \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserH\x00R\x04User\x12H\n" +
+	"\fCallerDevice\x18g \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceH\x01R\fCallerDevice\x12B\n" +
 	"\n" +
-	"CallerUser\x18h \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserB\x0f\xaa\xdd\x1b\vcaller_userH\x01R\vcaller_user\x12\\\n" +
-	"\fCalleeDevice\x18i \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceB\x11\xaa\xdd\x1b\rcallee_deviceH\x02R\rcallee_device\x12T\n" +
+	"CallerUser\x18h \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserH\x01R\n" +
+	"CallerUser\x12H\n" +
+	"\fCalleeDevice\x18i \x01(\v2\".NAlice.NTelecom.TCallInfo.TDeviceH\x02R\fCalleeDevice\x12B\n" +
 	"\n" +
-	"CalleeUser\x18j \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserB\x0f\xaa\xdd\x1b\vcallee_userH\x02R\vcallee_user\x1a\xaa\x04\n" +
-	"\aTDevice\x120\n" +
+	"CalleeUser\x18j \x01(\v2 .NAlice.NTelecom.TCallInfo.TUserH\x02R\n" +
+	"CalleeUser\x12r\n" +
+	"\x10CallerDeviceType\x18k \x01(\x0e2,.NAlice.NTelecom.TCallInfo.ECallerDeviceTypeB\x16\xaa\xdd\x1b\x12caller_device_typeR\x12caller_device_type\x1a\x93\x03\n" +
+	"\aTDevice\x12\x1e\n" +
 	"\n" +
-	"DeviceName\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vdevice_nameR\vdevice_name\x12<\n" +
-	"\x0eDevicePlatform\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_platformR\x0fdevice_platform\x125\n" +
-	"\x05Color\x18\x06 \x01(\x0e2\x14.NAlice.NData.EColorB\t\xaa\xdd\x1b\x05colorR\x05color\x12;\n" +
-	"\rDeviceIconUrl\x18\a \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_icon_urlR\x0fdevice_icon_url\x123\n" +
-	"\vIotPlatform\x18\b \x01(\tB\x10\xaa\xdd\x1b\fiot_platformR\fiot_platform\x12*\n" +
-	"\bDeviceId\x18\t \x01(\tB\r\xaa\xdd\x1b\tdevice_idR\tdevice_id\x12:\n" +
-	"\vDeviceColor\x18\x03 \x01(\tB\x12\xaa\xdd\x1b\fdevice_color\x18\x01H\x00R\fdevice_color\x88\x01\x01\x12/\n" +
-	"\bRoomName\x18\x04 \x01(\tB\r\xaa\xdd\x1b\troom_nameH\x01R\troom_name\x88\x01\x01\x12>\n" +
-	"\rHouseholdName\x18\x05 \x01(\tB\x12\xaa\xdd\x1b\x0ehousehold_nameH\x02R\x0ehousehold_name\x88\x01\x01B\x0e\n" +
+	"DeviceName\x18\x01 \x01(\tR\n" +
+	"DeviceName\x12&\n" +
+	"\x0eDevicePlatform\x18\x02 \x01(\tR\x0eDevicePlatform\x12*\n" +
+	"\x05Color\x18\x06 \x01(\x0e2\x14.NAlice.NData.EColorR\x05Color\x12$\n" +
+	"\rDeviceIconUrl\x18\a \x01(\tR\rDeviceIconUrl\x12 \n" +
+	"\vIotPlatform\x18\b \x01(\tR\vIotPlatform\x12%\n" +
+	"\vDeviceColor\x18\x03 \x01(\tH\x00R\vDeviceColor\x88\x01\x01\x12\x1f\n" +
+	"\bRoomName\x18\x04 \x01(\tH\x01R\bRoomName\x88\x01\x01\x12)\n" +
+	"\rHouseholdName\x18\x05 \x01(\tH\x02R\rHouseholdName\x88\x01\x01\x12*\n" +
+	"\bDeviceId\x18\t \x01(\tB\r\xaa\xdd\x1b\tdevice_idR\tdevice_idB\x0e\n" +
 	"\f_DeviceColorB\v\n" +
 	"\t_RoomNameB\x10\n" +
-	"\x0e_HouseholdName\x1a3\n" +
-	"\x05TUser\x12*\n" +
-	"\bUserName\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tuser_nameR\tuser_name\"=\n" +
+	"\x0e_HouseholdName\x1a#\n" +
+	"\x05TUser\x12\x1a\n" +
+	"\bUserName\x18\x01 \x01(\tR\bUserName\"=\n" +
 	"\tECallType\x12\x0e\n" +
 	"\n" +
 	"CT_Default\x10\x00\x12\r\n" +
@@ -911,18 +905,16 @@ const file_alice_protos_data_telecom_providers_proto_rawDesc = "" +
 	"\vCDT_Unknown\x10\x00\x12\x0f\n" +
 	"\vCDT_Station\x10\x01\x12\f\n" +
 	"\bCDT_User\x10\x02\x12\x10\n" +
-	"\fCDT_Intercom\x10\x03B\x10\n" +
-	"\x04Call\x12\b\xaa\xdd\x1b\x04callB\x14\n" +
-	"\x06Caller\x12\n" +
-	"\xaa\xdd\x1b\x06callerB\x14\n" +
-	"\x06Callee\x12\n" +
-	"\xaa\xdd\x1b\x06callee*H\n" +
+	"\fCDT_Intercom\x10\x03B\x06\n" +
+	"\x04CallB\b\n" +
+	"\x06CallerB\b\n" +
+	"\x06Callee*H\n" +
 	"\tEProvider\x12\x14\n" +
 	"\x10UNKNOWN_PROVIDER\x10\x00\x12\r\n" +
 	"\tTELEPHONE\x10\x01\x12\r\n" +
 	"\tMESSENGER\x10\x02\x12\a\n" +
-	"\x03ATS\x10\x03Bk\n" +
-	"#ru.yandex.alice.protos.data.telecomB\x0eProvidersProtoZ4a.yandex-team.ru/alice/protos/data/telecom;telecompbb\x06proto3"
+	"\x03ATS\x10\x03B\xcd\x01\n" +
+	"\x13com.NAlice.NTelecomB\x0eProvidersProtoP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/telecom\xa2\x02\x03NNX\xaa\x02\x0fNAlice.NTelecom\xca\x02\x0fNAlice\\NTelecom\xe2\x02\x1bNAlice\\NTelecom\\GPBMetadata\xea\x02\x10NAlice::NTelecomb\x06proto3"
 
 var (
 	file_alice_protos_data_telecom_providers_proto_rawDescOnce sync.Once
@@ -958,13 +950,13 @@ var file_alice_protos_data_telecom_providers_proto_depIdxs = []int32{
 	8,  // 2: NAlice.NTelecom.TProviderContact.AtsId:type_name -> NAlice.NTelecom.TProviderContact.TAtsId
 	3,  // 3: NAlice.NTelecom.TProviderContactInfo.ProviderContact:type_name -> NAlice.NTelecom.TProviderContact
 	1,  // 4: NAlice.NTelecom.TCallInfo.CallType:type_name -> NAlice.NTelecom.TCallInfo.ECallType
-	2,  // 5: NAlice.NTelecom.TCallInfo.CallerDeviceType:type_name -> NAlice.NTelecom.TCallInfo.ECallerDeviceType
-	9,  // 6: NAlice.NTelecom.TCallInfo.Device:type_name -> NAlice.NTelecom.TCallInfo.TDevice
-	10, // 7: NAlice.NTelecom.TCallInfo.User:type_name -> NAlice.NTelecom.TCallInfo.TUser
-	9,  // 8: NAlice.NTelecom.TCallInfo.CallerDevice:type_name -> NAlice.NTelecom.TCallInfo.TDevice
-	10, // 9: NAlice.NTelecom.TCallInfo.CallerUser:type_name -> NAlice.NTelecom.TCallInfo.TUser
-	9,  // 10: NAlice.NTelecom.TCallInfo.CalleeDevice:type_name -> NAlice.NTelecom.TCallInfo.TDevice
-	10, // 11: NAlice.NTelecom.TCallInfo.CalleeUser:type_name -> NAlice.NTelecom.TCallInfo.TUser
+	9,  // 5: NAlice.NTelecom.TCallInfo.Device:type_name -> NAlice.NTelecom.TCallInfo.TDevice
+	10, // 6: NAlice.NTelecom.TCallInfo.User:type_name -> NAlice.NTelecom.TCallInfo.TUser
+	9,  // 7: NAlice.NTelecom.TCallInfo.CallerDevice:type_name -> NAlice.NTelecom.TCallInfo.TDevice
+	10, // 8: NAlice.NTelecom.TCallInfo.CallerUser:type_name -> NAlice.NTelecom.TCallInfo.TUser
+	9,  // 9: NAlice.NTelecom.TCallInfo.CalleeDevice:type_name -> NAlice.NTelecom.TCallInfo.TDevice
+	10, // 10: NAlice.NTelecom.TCallInfo.CalleeUser:type_name -> NAlice.NTelecom.TCallInfo.TUser
+	2,  // 11: NAlice.NTelecom.TCallInfo.CallerDeviceType:type_name -> NAlice.NTelecom.TCallInfo.ECallerDeviceType
 	11, // 12: NAlice.NTelecom.TCallInfo.TDevice.Color:type_name -> NAlice.NData.EColor
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type

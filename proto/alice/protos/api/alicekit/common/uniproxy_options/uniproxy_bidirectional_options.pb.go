@@ -570,8 +570,8 @@ const file_alice_protos_api_alicekit_common_uniproxy_options_uniproxy_bidirectio
 	"\x0e_AliceEventRaw\x1aa\n" +
 	"\vTStartEvent\x12@\n" +
 	"\rAliceEventRaw\x18\x01 \x01(\fB\x13\xaa\xdd\x1b\x0falice_event_rawH\x00R\x0falice_event_raw\x88\x01\x01B\x10\n" +
-	"\x0e_AliceEventRawB\xa6\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.common.uniproxy_optionsB!UniproxyBidirectionalOptionsProtoP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/common/uniproxy_optionsb\x06proto3"
+	"\x0e_AliceEventRawB\xc5\x01\n" +
+	";ru.yandex.alice.protos.api.alicekit.common.uniproxy_optionsB!UniproxyBidirectionalOptionsProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/uniproxy_optionsb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_common_uniproxy_options_uniproxy_bidirectional_options_proto_rawDescOnce sync.Once

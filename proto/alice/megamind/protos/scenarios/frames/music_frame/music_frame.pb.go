@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto
 
-package musicframe
+package music_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -365,7 +365,6 @@ func (x *TMusicSlot) GetPersonalityValue() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
 func (x *TMusicSlot) GetOrderValue() string {
 	if x != nil {
 		if x, ok := x.Value.(*TMusicSlot_OrderValue); ok {
@@ -375,7 +374,6 @@ func (x *TMusicSlot) GetOrderValue() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
 func (x *TMusicSlot) GetRepeatValue() string {
 	if x != nil {
 		if x, ok := x.Value.(*TMusicSlot_RepeatValue); ok {
@@ -412,7 +410,6 @@ func (x *TMusicSlot) GetGenerativeStationValue() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
 func (x *TMusicSlot) GetNeedSimilarValue() string {
 	if x != nil {
 		if x, ok := x.Value.(*TMusicSlot_NeedSimilarValue); ok {
@@ -445,62 +442,59 @@ type isTMusicSlot_Value interface {
 }
 
 type TMusicSlot_GenreValue struct {
-	GenreValue string `protobuf:"bytes,1,opt,name=GenreValue,json=genre_value,proto3,oneof"`
+	GenreValue string `protobuf:"bytes,1,opt,name=GenreValue,proto3,oneof"`
 }
 
 type TMusicSlot_MoodValue struct {
-	MoodValue string `protobuf:"bytes,2,opt,name=MoodValue,json=mood_value,proto3,oneof"`
+	MoodValue string `protobuf:"bytes,2,opt,name=MoodValue,proto3,oneof"`
 }
 
 type TMusicSlot_ActivityValue struct {
-	ActivityValue string `protobuf:"bytes,3,opt,name=ActivityValue,json=activity_value,proto3,oneof"`
+	ActivityValue string `protobuf:"bytes,3,opt,name=ActivityValue,proto3,oneof"`
 }
 
 type TMusicSlot_VocalValue struct {
-	VocalValue string `protobuf:"bytes,4,opt,name=VocalValue,json=vocal_value,proto3,oneof"`
+	VocalValue string `protobuf:"bytes,4,opt,name=VocalValue,proto3,oneof"`
 }
 
 type TMusicSlot_NoveltyValue struct {
-	NoveltyValue string `protobuf:"bytes,5,opt,name=NoveltyValue,json=novelty_value,proto3,oneof"`
+	NoveltyValue string `protobuf:"bytes,5,opt,name=NoveltyValue,proto3,oneof"`
 }
 
 type TMusicSlot_PersonalityValue struct {
-	PersonalityValue string `protobuf:"bytes,6,opt,name=PersonalityValue,json=personality_value,proto3,oneof"`
+	PersonalityValue string `protobuf:"bytes,6,opt,name=PersonalityValue,proto3,oneof"`
 }
 
 type TMusicSlot_OrderValue struct {
-	// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
-	OrderValue string `protobuf:"bytes,7,opt,name=OrderValue,json=order_value,proto3,oneof"`
+	OrderValue string `protobuf:"bytes,7,opt,name=OrderValue,proto3,oneof"`
 }
 
 type TMusicSlot_RepeatValue struct {
-	// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
-	RepeatValue string `protobuf:"bytes,8,opt,name=RepeatValue,json=repeat_value,proto3,oneof"`
+	RepeatValue string `protobuf:"bytes,8,opt,name=RepeatValue,proto3,oneof"`
 }
 
 type TMusicSlot_RoomValue struct {
-	RoomValue string `protobuf:"bytes,9,opt,name=RoomValue,json=room_value,proto3,oneof"`
+	RoomValue string `protobuf:"bytes,9,opt,name=RoomValue,proto3,oneof"`
 }
 
 type TMusicSlot_StreamValue struct {
-	StreamValue string `protobuf:"bytes,10,opt,name=StreamValue,json=stream_value,proto3,oneof"`
+	StreamValue string `protobuf:"bytes,10,opt,name=StreamValue,proto3,oneof"`
 }
 
 type TMusicSlot_GenerativeStationValue struct {
-	GenerativeStationValue string `protobuf:"bytes,11,opt,name=GenerativeStationValue,json=generative_station_value,proto3,oneof"`
+	GenerativeStationValue string `protobuf:"bytes,11,opt,name=GenerativeStationValue,proto3,oneof"`
 }
 
 type TMusicSlot_NeedSimilarValue struct {
-	// Deprecated: Marked as deprecated in alice/megamind/protos/scenarios/frames/music_frame/music_frame.proto.
-	NeedSimilarValue string `protobuf:"bytes,12,opt,name=NeedSimilarValue,json=need_similar_value,proto3,oneof"`
+	NeedSimilarValue string `protobuf:"bytes,12,opt,name=NeedSimilarValue,proto3,oneof"`
 }
 
 type TMusicSlot_OffsetValue struct {
-	OffsetValue string `protobuf:"bytes,13,opt,name=OffsetValue,json=offset_value,proto3,oneof"`
+	OffsetValue string `protobuf:"bytes,13,opt,name=OffsetValue,proto3,oneof"`
 }
 
 type TMusicSlot_ProviderValue struct {
-	ProviderValue string `protobuf:"bytes,14,opt,name=ProviderValue,json=provider_value,proto3,oneof"`
+	ProviderValue string `protobuf:"bytes,14,opt,name=ProviderValue,proto3,oneof"`
 }
 
 func (*TMusicSlot_GenreValue) isTMusicSlot_Value() {}
@@ -592,7 +586,7 @@ type isTMusicPlayObjectTypeSlot_Value interface {
 }
 
 type TMusicPlayObjectTypeSlot_EnumValue struct {
-	EnumValue TMusicPlayObjectTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TMusicPlayObjectTypeSlot_EValue,oneof"`
+	EnumValue TMusicPlayObjectTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TMusicPlayObjectTypeSlot_EValue,oneof"`
 }
 
 func (*TMusicPlayObjectTypeSlot_EnumValue) isTMusicPlayObjectTypeSlot_Value() {}
@@ -658,7 +652,7 @@ type isTMusicContentTypeSlot_Value interface {
 }
 
 type TMusicContentTypeSlot_EnumValue struct {
-	EnumValue TMusicContentTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TMusicContentTypeSlot_EValue,oneof"`
+	EnumValue TMusicContentTypeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TMusicContentTypeSlot_EValue,oneof"`
 }
 
 func (*TMusicContentTypeSlot_EnumValue) isTMusicContentTypeSlot_Value() {}
@@ -724,7 +718,7 @@ type isTAmbientSoundSlot_Value interface {
 }
 
 type TAmbientSoundSlot_AmbientSoundValue struct {
-	AmbientSoundValue string `protobuf:"bytes,1,opt,name=AmbientSoundValue,json=ambient_sound_value,proto3,oneof"`
+	AmbientSoundValue string `protobuf:"bytes,1,opt,name=AmbientSoundValue,proto3,oneof"`
 }
 
 func (*TAmbientSoundSlot_AmbientSoundValue) isTAmbientSoundSlot_Value() {}
@@ -790,7 +784,7 @@ type isTAliceShowConfigSlot_Value interface {
 }
 
 type TAliceShowConfigSlot_ShowConfigValue struct {
-	ShowConfigValue *music.TAliceShowConfig `protobuf:"bytes,1,opt,name=ShowConfigValue,json=show_config_value,proto3,oneof"`
+	ShowConfigValue *music.TAliceShowConfig `protobuf:"bytes,1,opt,name=ShowConfigValue,proto3,oneof"`
 }
 
 func (*TAliceShowConfigSlot_ShowConfigValue) isTAliceShowConfigSlot_Value() {}
@@ -856,7 +850,7 @@ type isTAliceShowTypeSlot_Value interface {
 }
 
 type TAliceShowTypeSlot_ShowTypeValue struct {
-	ShowTypeValue *music.TAliceShowType `protobuf:"bytes,1,opt,name=ShowTypeValue,json=show_type_value,proto3,oneof"`
+	ShowTypeValue *music.TAliceShowType `protobuf:"bytes,1,opt,name=ShowTypeValue,proto3,oneof"`
 }
 
 func (*TAliceShowTypeSlot_ShowTypeValue) isTAliceShowTypeSlot_Value() {}
@@ -922,7 +916,7 @@ type isTMusicPlaybackSourceSlot_Value interface {
 }
 
 type TMusicPlaybackSourceSlot_EnumValue struct {
-	EnumValue TMusicPlaybackSourceSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TMusicPlaybackSourceSlot_EValue,oneof"`
+	EnumValue TMusicPlaybackSourceSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TMusicPlaybackSourceSlot_EValue,oneof"`
 }
 
 func (*TMusicPlaybackSourceSlot_EnumValue) isTMusicPlaybackSourceSlot_Value() {}
@@ -988,58 +982,58 @@ type isTFiltrationModeSlot_Value interface {
 }
 
 type TFiltrationModeSlot_EnumValue struct {
-	EnumValue TFiltrationModeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TFiltrationModeSlot_EValue,oneof"`
+	EnumValue TFiltrationModeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TFiltrationModeSlot_EValue,oneof"`
 }
 
 func (*TFiltrationModeSlot_EnumValue) isTFiltrationModeSlot_Value() {}
 
 type TMusicPlaySemanticFrame struct {
 	state                 protoimpl.MessageState    `protogen:"open.v1"`
-	SpecialPlaylist       *common.TStringSlot       `protobuf:"bytes,1,opt,name=SpecialPlaylist,json=special_playlist,proto3" json:"SpecialPlaylist,omitempty"`
-	SpecialAnswerInfo     *common.TStringSlot       `protobuf:"bytes,3,opt,name=SpecialAnswerInfo,json=special_answer_info,proto3" json:"SpecialAnswerInfo,omitempty"`
-	ActionRequest         *common.TStringSlot       `protobuf:"bytes,4,opt,name=ActionRequest,json=action_request,proto3" json:"ActionRequest,omitempty"`
-	Epoch                 *common.TStringSlot       `protobuf:"bytes,5,opt,name=Epoch,json=epoch,proto3" json:"Epoch,omitempty"`
-	SearchText            *common.TStringSlot       `protobuf:"bytes,6,opt,name=SearchText,json=search_text,proto3" json:"SearchText,omitempty"`
-	Genre                 *TMusicSlot               `protobuf:"bytes,7,opt,name=Genre,json=genre,proto3" json:"Genre,omitempty"`
-	Mood                  *TMusicSlot               `protobuf:"bytes,8,opt,name=Mood,json=mood,proto3" json:"Mood,omitempty"`
-	Activity              *TMusicSlot               `protobuf:"bytes,9,opt,name=Activity,json=activity,proto3" json:"Activity,omitempty"`
-	Language              *common.TLanguageSlot     `protobuf:"bytes,10,opt,name=Language,json=language,proto3" json:"Language,omitempty"`
-	Vocal                 *TMusicSlot               `protobuf:"bytes,11,opt,name=Vocal,json=vocal,proto3" json:"Vocal,omitempty"`
-	Novelty               *TMusicSlot               `protobuf:"bytes,12,opt,name=Novelty,json=novelty,proto3" json:"Novelty,omitempty"`
-	Personality           *TMusicSlot               `protobuf:"bytes,13,opt,name=Personality,json=personality,proto3" json:"Personality,omitempty"`
-	Order                 *TMusicSlot               `protobuf:"bytes,14,opt,name=Order,json=order,proto3" json:"Order,omitempty"`
-	Repeat                *TMusicSlot               `protobuf:"bytes,15,opt,name=Repeat,json=repeat,proto3" json:"Repeat,omitempty"`
-	DisableAutoflow       *common.TBoolSlot         `protobuf:"bytes,16,opt,name=DisableAutoflow,json=disable_autoflow,proto3" json:"DisableAutoflow,omitempty"`
-	DisableNlg            *common.TBoolSlot         `protobuf:"bytes,17,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
-	PlaySingleTrack       *common.TBoolSlot         `protobuf:"bytes,18,opt,name=PlaySingleTrack,json=play_single_track,proto3" json:"PlaySingleTrack,omitempty"`
-	TrackOffsetIndex      *common.TNumSlot          `protobuf:"bytes,19,opt,name=TrackOffsetIndex,json=track_offset_index,proto3" json:"TrackOffsetIndex,omitempty"`
-	Playlist              *common.TStringSlot       `protobuf:"bytes,20,opt,name=Playlist,json=playlist,proto3" json:"Playlist,omitempty"`
-	ObjectId              *common.TStringSlot       `protobuf:"bytes,21,opt,name=ObjectId,json=object_id,proto3" json:"ObjectId,omitempty"`
-	ObjectType            *TMusicPlayObjectTypeSlot `protobuf:"bytes,22,opt,name=ObjectType,json=object_type,proto3" json:"ObjectType,omitempty"`
-	StartFromTrackId      *common.TStringSlot       `protobuf:"bytes,23,opt,name=StartFromTrackId,json=start_from_track_id,proto3" json:"StartFromTrackId,omitempty"`
-	OffsetSec             *common.TDoubleSlot       `protobuf:"bytes,24,opt,name=OffsetSec,json=offset_sec,proto3" json:"OffsetSec,omitempty"`
-	AlarmId               *common.TStringSlot       `protobuf:"bytes,25,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
-	From                  *common.TStringSlot       `protobuf:"bytes,26,opt,name=From,json=from,proto3" json:"From,omitempty"`
-	DisableHistory        *common.TBoolSlot         `protobuf:"bytes,27,opt,name=DisableHistory,json=disable_history,proto3" json:"DisableHistory,omitempty"`
-	Room                  *TMusicSlot               `protobuf:"bytes,28,opt,name=Room,json=room,proto3" json:"Room,omitempty"`
-	Stream                *TMusicSlot               `protobuf:"bytes,29,opt,name=Stream,json=stream,proto3" json:"Stream,omitempty"`
-	GenerativeStation     *TMusicSlot               `protobuf:"bytes,30,opt,name=GenerativeStation,json=generative_station,proto3" json:"GenerativeStation,omitempty"`
-	NeedSimilar           *TMusicSlot               `protobuf:"bytes,31,opt,name=NeedSimilar,json=need_similar,proto3" json:"NeedSimilar,omitempty"`
-	Location              *common.TLocationSlot     `protobuf:"bytes,32,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
-	Offset                *TMusicSlot               `protobuf:"bytes,33,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
-	DisableMultiroom      *common.TBoolSlot         `protobuf:"bytes,34,opt,name=DisableMultiroom,json=disable_multiroom,proto3" json:"DisableMultiroom,omitempty"`
-	ContentType           *TMusicContentTypeSlot    `protobuf:"bytes,35,opt,name=ContentType,json=content_type,proto3" json:"ContentType,omitempty"`
-	AmbientSound          *TAmbientSoundSlot        `protobuf:"bytes,36,opt,name=AmbientSound,json=ambient_sound,proto3" json:"AmbientSound,omitempty"`
-	ShowTailConfig        *TAliceShowConfigSlot     `protobuf:"bytes,37,opt,name=ShowTailConfig,json=show_tail_config,proto3" json:"ShowTailConfig,omitempty"`
-	ShowType              *TAliceShowTypeSlot       `protobuf:"bytes,38,opt,name=ShowType,json=show_type,proto3" json:"ShowType,omitempty"`
-	PlaybackSource        *TMusicPlaybackSourceSlot `protobuf:"bytes,39,opt,name=PlaybackSource,json=playback_source,proto3" json:"PlaybackSource,omitempty"`
-	Provider              *TMusicSlot               `protobuf:"bytes,40,opt,name=Provider,json=provider,proto3" json:"Provider,omitempty"`
-	LocationGroup         []*common.TLocationSlot   `protobuf:"bytes,41,rep,name=LocationGroup,json=location_group,proto3" json:"LocationGroup,omitempty"`
-	SessionStartTimestamp *common.TInt64Slot        `protobuf:"bytes,42,opt,name=SessionStartTimestamp,json=session_start_timestamp,proto3" json:"SessionStartTimestamp,omitempty"`
-	DisableAutoflowSoft   *common.TBoolSlot         `protobuf:"bytes,43,opt,name=DisableAutoflowSoft,json=disable_autoflow_soft,proto3" json:"DisableAutoflowSoft,omitempty"`
-	Karaoke               *common.TBoolSlot         `protobuf:"bytes,44,opt,name=Karaoke,json=karaoke,proto3" json:"Karaoke,omitempty"`
-	FiltrationMode        *TFiltrationModeSlot      `protobuf:"bytes,45,opt,name=FiltrationMode,json=filtration_mode,proto3" json:"FiltrationMode,omitempty"`
-	AnnounceTrack         *common.TBoolSlot         `protobuf:"bytes,46,opt,name=AnnounceTrack,json=announce_track,proto3" json:"AnnounceTrack,omitempty"`
+	SpecialPlaylist       *common.TStringSlot       `protobuf:"bytes,1,opt,name=SpecialPlaylist,proto3" json:"SpecialPlaylist,omitempty"`
+	SpecialAnswerInfo     *common.TStringSlot       `protobuf:"bytes,3,opt,name=SpecialAnswerInfo,proto3" json:"SpecialAnswerInfo,omitempty"`
+	ActionRequest         *common.TStringSlot       `protobuf:"bytes,4,opt,name=ActionRequest,proto3" json:"ActionRequest,omitempty"`
+	Epoch                 *common.TStringSlot       `protobuf:"bytes,5,opt,name=Epoch,proto3" json:"Epoch,omitempty"`
+	SearchText            *common.TStringSlot       `protobuf:"bytes,6,opt,name=SearchText,proto3" json:"SearchText,omitempty"`
+	Genre                 *TMusicSlot               `protobuf:"bytes,7,opt,name=Genre,proto3" json:"Genre,omitempty"`
+	Mood                  *TMusicSlot               `protobuf:"bytes,8,opt,name=Mood,proto3" json:"Mood,omitempty"`
+	Activity              *TMusicSlot               `protobuf:"bytes,9,opt,name=Activity,proto3" json:"Activity,omitempty"`
+	Language              *common.TLanguageSlot     `protobuf:"bytes,10,opt,name=Language,proto3" json:"Language,omitempty"`
+	Vocal                 *TMusicSlot               `protobuf:"bytes,11,opt,name=Vocal,proto3" json:"Vocal,omitempty"`
+	Novelty               *TMusicSlot               `protobuf:"bytes,12,opt,name=Novelty,proto3" json:"Novelty,omitempty"`
+	Personality           *TMusicSlot               `protobuf:"bytes,13,opt,name=Personality,proto3" json:"Personality,omitempty"`
+	Order                 *TMusicSlot               `protobuf:"bytes,14,opt,name=Order,proto3" json:"Order,omitempty"`
+	Repeat                *TMusicSlot               `protobuf:"bytes,15,opt,name=Repeat,proto3" json:"Repeat,omitempty"`
+	DisableAutoflow       *common.TBoolSlot         `protobuf:"bytes,16,opt,name=DisableAutoflow,proto3" json:"DisableAutoflow,omitempty"`
+	DisableNlg            *common.TBoolSlot         `protobuf:"bytes,17,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
+	PlaySingleTrack       *common.TBoolSlot         `protobuf:"bytes,18,opt,name=PlaySingleTrack,proto3" json:"PlaySingleTrack,omitempty"`
+	TrackOffsetIndex      *common.TNumSlot          `protobuf:"bytes,19,opt,name=TrackOffsetIndex,proto3" json:"TrackOffsetIndex,omitempty"`
+	Playlist              *common.TStringSlot       `protobuf:"bytes,20,opt,name=Playlist,proto3" json:"Playlist,omitempty"`
+	ObjectId              *common.TStringSlot       `protobuf:"bytes,21,opt,name=ObjectId,proto3" json:"ObjectId,omitempty"`
+	ObjectType            *TMusicPlayObjectTypeSlot `protobuf:"bytes,22,opt,name=ObjectType,proto3" json:"ObjectType,omitempty"`
+	StartFromTrackId      *common.TStringSlot       `protobuf:"bytes,23,opt,name=StartFromTrackId,proto3" json:"StartFromTrackId,omitempty"`
+	OffsetSec             *common.TDoubleSlot       `protobuf:"bytes,24,opt,name=OffsetSec,proto3" json:"OffsetSec,omitempty"`
+	AlarmId               *common.TStringSlot       `protobuf:"bytes,25,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
+	From                  *common.TStringSlot       `protobuf:"bytes,26,opt,name=From,proto3" json:"From,omitempty"`
+	DisableHistory        *common.TBoolSlot         `protobuf:"bytes,27,opt,name=DisableHistory,proto3" json:"DisableHistory,omitempty"`
+	Room                  *TMusicSlot               `protobuf:"bytes,28,opt,name=Room,proto3" json:"Room,omitempty"`
+	Stream                *TMusicSlot               `protobuf:"bytes,29,opt,name=Stream,proto3" json:"Stream,omitempty"`
+	GenerativeStation     *TMusicSlot               `protobuf:"bytes,30,opt,name=GenerativeStation,proto3" json:"GenerativeStation,omitempty"`
+	NeedSimilar           *TMusicSlot               `protobuf:"bytes,31,opt,name=NeedSimilar,proto3" json:"NeedSimilar,omitempty"`
+	Location              *common.TLocationSlot     `protobuf:"bytes,32,opt,name=Location,proto3" json:"Location,omitempty"`
+	Offset                *TMusicSlot               `protobuf:"bytes,33,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	DisableMultiroom      *common.TBoolSlot         `protobuf:"bytes,34,opt,name=DisableMultiroom,proto3" json:"DisableMultiroom,omitempty"`
+	ContentType           *TMusicContentTypeSlot    `protobuf:"bytes,35,opt,name=ContentType,proto3" json:"ContentType,omitempty"`
+	AmbientSound          *TAmbientSoundSlot        `protobuf:"bytes,36,opt,name=AmbientSound,proto3" json:"AmbientSound,omitempty"`
+	ShowTailConfig        *TAliceShowConfigSlot     `protobuf:"bytes,37,opt,name=ShowTailConfig,proto3" json:"ShowTailConfig,omitempty"`
+	ShowType              *TAliceShowTypeSlot       `protobuf:"bytes,38,opt,name=ShowType,proto3" json:"ShowType,omitempty"`
+	PlaybackSource        *TMusicPlaybackSourceSlot `protobuf:"bytes,39,opt,name=PlaybackSource,proto3" json:"PlaybackSource,omitempty"`
+	Provider              *TMusicSlot               `protobuf:"bytes,40,opt,name=Provider,proto3" json:"Provider,omitempty"`
+	LocationGroup         []*common.TLocationSlot   `protobuf:"bytes,41,rep,name=LocationGroup,proto3" json:"LocationGroup,omitempty"`
+	SessionStartTimestamp *common.TInt64Slot        `protobuf:"bytes,42,opt,name=SessionStartTimestamp,proto3" json:"SessionStartTimestamp,omitempty"`
+	DisableAutoflowSoft   *common.TBoolSlot         `protobuf:"bytes,43,opt,name=DisableAutoflowSoft,proto3" json:"DisableAutoflowSoft,omitempty"`
+	Karaoke               *common.TBoolSlot         `protobuf:"bytes,44,opt,name=Karaoke,proto3" json:"Karaoke,omitempty"`
+	FiltrationMode        *TFiltrationModeSlot      `protobuf:"bytes,45,opt,name=FiltrationMode,proto3" json:"FiltrationMode,omitempty"`
+	AnnounceTrack         *common.TBoolSlot         `protobuf:"bytes,46,opt,name=AnnounceTrack,proto3" json:"AnnounceTrack,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -1465,37 +1459,33 @@ var File_alice_megamind_protos_scenarios_frames_music_frame_music_frame_proto pr
 
 const file_alice_megamind_protos_scenarios_frames_music_frame_music_frame_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/megamind/protos/scenarios/frames/music_frame/music_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a2alice/protos/data/scenario/music/show_config.proto\x1a0alice/protos/data/scenario/music/show_type.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\b\n" +
+	"Dalice/megamind/protos/scenarios/frames/music_frame/music_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a2alice/protos/data/scenario/music/show_config.proto\x1a0alice/protos/data/scenario/music/show_type.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbd\x04\n" +
 	"\n" +
-	"TMusicSlot\x12;\n" +
+	"TMusicSlot\x12 \n" +
 	"\n" +
-	"GenreValue\x18\x01 \x01(\tB\x18\xaa\xdd\x1b\vgenre_value\u0085\x1c\x05genreH\x00R\vgenre_value\x127\n" +
-	"\tMoodValue\x18\x02 \x01(\tB\x16\xaa\xdd\x1b\n" +
-	"mood_value\u0085\x1c\x04moodH\x00R\n" +
-	"mood_value\x12G\n" +
-	"\rActivityValue\x18\x03 \x01(\tB\x1e\xaa\xdd\x1b\x0eactivity_value\u0085\x1c\bactivityH\x00R\x0eactivity_value\x12;\n" +
+	"GenreValue\x18\x01 \x01(\tH\x00R\n" +
+	"GenreValue\x12\x1e\n" +
+	"\tMoodValue\x18\x02 \x01(\tH\x00R\tMoodValue\x12&\n" +
+	"\rActivityValue\x18\x03 \x01(\tH\x00R\rActivityValue\x12 \n" +
 	"\n" +
-	"VocalValue\x18\x04 \x01(\tB\x18\xaa\xdd\x1b\vvocal_value\u0085\x1c\x05vocalH\x00R\vvocal_value\x12C\n" +
-	"\fNoveltyValue\x18\x05 \x01(\tB\x1c\xaa\xdd\x1b\rnovelty_value\u0085\x1c\anoveltyH\x00R\rnovelty_value\x12S\n" +
-	"\x10PersonalityValue\x18\x06 \x01(\tB$\xaa\xdd\x1b\x11personality_value\u0085\x1c\vpersonalityH\x00R\x11personality_value\x12=\n" +
+	"VocalValue\x18\x04 \x01(\tH\x00R\n" +
+	"VocalValue\x12$\n" +
+	"\fNoveltyValue\x18\x05 \x01(\tH\x00R\fNoveltyValue\x12,\n" +
+	"\x10PersonalityValue\x18\x06 \x01(\tH\x00R\x10PersonalityValue\x12 \n" +
 	"\n" +
-	"OrderValue\x18\a \x01(\tB\x1a\xaa\xdd\x1b\vorder_value\u0085\x1c\x05order\x18\x01H\x00R\vorder_value\x12A\n" +
-	"\vRepeatValue\x18\b \x01(\tB\x1c\xaa\xdd\x1b\frepeat_value\u0085\x1c\x06repeat\x18\x01H\x00R\frepeat_value\x127\n" +
-	"\tRoomValue\x18\t \x01(\tB\x16\xaa\xdd\x1b\n" +
-	"room_value\u0085\x1c\x04roomH\x00R\n" +
-	"room_value\x12?\n" +
+	"OrderValue\x18\a \x01(\tH\x00R\n" +
+	"OrderValue\x12\"\n" +
+	"\vRepeatValue\x18\b \x01(\tH\x00R\vRepeatValue\x12\x1e\n" +
+	"\tRoomValue\x18\t \x01(\tH\x00R\tRoomValue\x12\"\n" +
 	"\vStreamValue\x18\n" +
-	" \x01(\tB\x1a\xaa\xdd\x1b\fstream_value\u0085\x1c\x06streamH\x00R\fstream_value\x12{\n" +
-	"\x16GenerativeStationValue\x18\v \x01(\tB?\xaa\xdd\x1b\x18generative_station_value\u0085\x1c\x1fcustom.music.generative_stationH\x00R\x18generative_station_value\x12X\n" +
-	"\x10NeedSimilarValue\x18\f \x01(\tB(\xaa\xdd\x1b\x12need_similar_value\u0085\x1c\fneed_similar\x18\x01H\x00R\x12need_similar_value\x12E\n" +
-	"\vOffsetValue\x18\r \x01(\tB \xaa\xdd\x1b\foffset_value\u0085\x1c\foffset_valueH\x00R\foffset_value\x12N\n" +
-	"\rProviderValue\x18\x0e \x01(\tB%\xaa\xdd\x1b\x0eprovider_value\u0085\x1c\x0fcustom.providerH\x00R\x0eprovider_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"\xa0\x02\n" +
-	"\x18TMusicPlayObjectTypeSlot\x12f\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2'.NAlice.TMusicPlayObjectTypeSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"\x81\x01\n" +
+	" \x01(\tH\x00R\vStreamValue\x128\n" +
+	"\x16GenerativeStationValue\x18\v \x01(\tH\x00R\x16GenerativeStationValue\x12,\n" +
+	"\x10NeedSimilarValue\x18\f \x01(\tH\x00R\x10NeedSimilarValue\x12\"\n" +
+	"\vOffsetValue\x18\r \x01(\tH\x00R\vOffsetValue\x12&\n" +
+	"\rProviderValue\x18\x0e \x01(\tH\x00R\rProviderValueB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\"\xf0\x01\n" +
+	"\x18TMusicPlayObjectTypeSlot\x12G\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2'.NAlice.TMusicPlayObjectTypeSlot.EValueH\x00R\tEnumValue\"\x81\x01\n" +
 	"\x06EValue\x12\t\n" +
 	"\x05Track\x10\x00\x12\t\n" +
 	"\x05Album\x10\x01\x12\n" +
@@ -1507,108 +1497,100 @@ const file_alice_megamind_protos_scenarios_frames_music_frame_music_frame_proto_
 	"Generative\x10\x05\x12\v\n" +
 	"\aFmRadio\x10\x06\x12\f\n" +
 	"\bShowTail\x10\a\x12\x11\n" +
-	"\rGeneratedRecs\x10\b:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xd8\x01\n" +
-	"\x15TMusicContentTypeSlot\x12c\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2$.NAlice.TMusicContentTypeSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"@\n" +
+	"\rGeneratedRecs\x10\bB\a\n" +
+	"\x05Value\"\xa8\x01\n" +
+	"\x15TMusicContentTypeSlot\x12D\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2$.NAlice.TMusicContentTypeSlot.EValueH\x00R\tEnumValue\"@\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aPodcast\x10\x01\x12\r\n" +
 	"\tAudiobook\x10\x02\x12\r\n" +
-	"\tFairyTale\x10\x03:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\x90\x01\n" +
-	"\x11TAmbientSoundSlot\x12a\n" +
-	"\x11AmbientSoundValue\x18\x01 \x01(\tB/\xaa\xdd\x1b\x13ambient_sound_value\u0085\x1c\x14custom.ambient_soundH\x00R\x13ambient_sound_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xc3\x01\n" +
-	"\x14TAliceShowConfigSlot\x12\x90\x01\n" +
-	"\x0fShowConfigValue\x18\x01 \x01(\v2%.NAlice.NData.NMusic.TAliceShowConfigB;\xa0\xdd\x1b\x05\xaa\xdd\x1b\x11show_config_value\u0085\x1c\x1ecustom.music.show_config_valueH\x00R\x11show_config_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xb3\x01\n" +
-	"\x12TAliceShowTypeSlot\x12\x82\x01\n" +
-	"\rShowTypeValue\x18\x01 \x01(\v2#.NAlice.NData.NMusic.TAliceShowTypeB3\xaa\xdd\x1b\x0fshow_type_value\u0085\x1c\x1ccustom.music.show_type_valueH\x00R\x0fshow_type_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xec\x01\n" +
-	"\x18TMusicPlaybackSourceSlot\x12f\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2'.NAlice.TMusicPlaybackSourceSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"N\n" +
+	"\tFairyTale\x10\x03B\a\n" +
+	"\x05Value\"L\n" +
+	"\x11TAmbientSoundSlot\x12.\n" +
+	"\x11AmbientSoundValue\x18\x01 \x01(\tH\x00R\x11AmbientSoundValueB\a\n" +
+	"\x05Value\"r\n" +
+	"\x14TAliceShowConfigSlot\x12Q\n" +
+	"\x0fShowConfigValue\x18\x01 \x01(\v2%.NAlice.NData.NMusic.TAliceShowConfigH\x00R\x0fShowConfigValueB\a\n" +
+	"\x05Value\"j\n" +
+	"\x12TAliceShowTypeSlot\x12K\n" +
+	"\rShowTypeValue\x18\x01 \x01(\v2#.NAlice.NData.NMusic.TAliceShowTypeH\x00R\rShowTypeValueB\a\n" +
+	"\x05Value\"\xbc\x01\n" +
+	"\x18TMusicPlaybackSourceSlot\x12G\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2'.NAlice.TMusicPlaybackSourceSlot.EValueH\x00R\tEnumValue\"N\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\r\n" +
 	"\tAliceShow\x10\x01\x12\x0e\n" +
 	"\n" +
 	"Meditation\x10\x02\x12\x18\n" +
-	"\x14SpecialAlicePlaylist\x10\x03:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xf3\x01\n" +
-	"\x13TFiltrationModeSlot\x12s\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2\".NAlice.TFiltrationModeSlot.EValueB.\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\x1ccustom.filtration_mode_valueH\x00R\n" +
-	"enum_value\"M\n" +
+	"\x14SpecialAlicePlaylist\x10\x03B\a\n" +
+	"\x05Value\"\xb1\x01\n" +
+	"\x13TFiltrationModeSlot\x12B\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2\".NAlice.TFiltrationModeSlot.EValueH\x00R\tEnumValue\"M\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\f\n" +
 	"\bNoFilter\x10\x01\x12\f\n" +
 	"\bModerate\x10\x02\x12\x10\n" +
 	"\fFamilySearch\x10\x03\x12\b\n" +
-	"\x04Safe\x10\x04:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xe0\x1f\n" +
-	"\x17TMusicPlaySemanticFrame\x12h\n" +
-	"\x0fSpecialPlaylist\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB(\xaa\xdd\x1b\x10special_playlist\xba\x85\x1c\x10special_playlistR\x10special_playlist\x12s\n" +
-	"\x11SpecialAnswerInfo\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB.\xaa\xdd\x1b\x13special_answer_info\xba\x85\x1c\x13special_answer_infoR\x13special_answer_info\x12`\n" +
-	"\rActionRequest\x18\x04 \x01(\v2\x13.NAlice.TStringSlotB$\xaa\xdd\x1b\x0eaction_request\xba\x85\x1c\x0eaction_requestR\x0eaction_request\x12=\n" +
-	"\x05Epoch\x18\x05 \x01(\v2\x13.NAlice.TStringSlotB\x12\xaa\xdd\x1b\x05epoch\xba\x85\x1c\x05epochR\x05epoch\x12T\n" +
+	"\x04Safe\x10\x04B\a\n" +
+	"\x05Value\"\xd1\x13\n" +
+	"\x17TMusicPlaySemanticFrame\x12=\n" +
+	"\x0fSpecialPlaylist\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x0fSpecialPlaylist\x12A\n" +
+	"\x11SpecialAnswerInfo\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\x11SpecialAnswerInfo\x129\n" +
+	"\rActionRequest\x18\x04 \x01(\v2\x13.NAlice.TStringSlotR\rActionRequest\x12)\n" +
+	"\x05Epoch\x18\x05 \x01(\v2\x13.NAlice.TStringSlotR\x05Epoch\x123\n" +
 	"\n" +
-	"SearchText\x18\x06 \x01(\v2\x13.NAlice.TStringSlotB\x1e\xaa\xdd\x1b\vsearch_text\xba\x85\x1c\vsearch_textR\vsearch_text\x12<\n" +
-	"\x05Genre\x18\a \x01(\v2\x12.NAlice.TMusicSlotB\x12\xaa\xdd\x1b\x05genre\xba\x85\x1c\x05genreR\x05genre\x128\n" +
-	"\x04Mood\x18\b \x01(\v2\x12.NAlice.TMusicSlotB\x10\xaa\xdd\x1b\x04mood\xba\x85\x1c\x04moodR\x04mood\x12H\n" +
-	"\bActivity\x18\t \x01(\v2\x12.NAlice.TMusicSlotB\x18\xaa\xdd\x1b\bactivity\xba\x85\x1c\bactivityR\bactivity\x12K\n" +
+	"SearchText\x18\x06 \x01(\v2\x13.NAlice.TStringSlotR\n" +
+	"SearchText\x12(\n" +
+	"\x05Genre\x18\a \x01(\v2\x12.NAlice.TMusicSlotR\x05Genre\x12&\n" +
+	"\x04Mood\x18\b \x01(\v2\x12.NAlice.TMusicSlotR\x04Mood\x12.\n" +
+	"\bActivity\x18\t \x01(\v2\x12.NAlice.TMusicSlotR\bActivity\x121\n" +
 	"\bLanguage\x18\n" +
-	" \x01(\v2\x15.NAlice.TLanguageSlotB\x18\xaa\xdd\x1b\blanguage\xba\x85\x1c\blanguageR\blanguage\x12<\n" +
-	"\x05Vocal\x18\v \x01(\v2\x12.NAlice.TMusicSlotB\x12\xaa\xdd\x1b\x05vocal\xba\x85\x1c\x05vocalR\x05vocal\x12D\n" +
-	"\aNovelty\x18\f \x01(\v2\x12.NAlice.TMusicSlotB\x16\xaa\xdd\x1b\anovelty\xba\x85\x1c\anoveltyR\anovelty\x12T\n" +
-	"\vPersonality\x18\r \x01(\v2\x12.NAlice.TMusicSlotB\x1e\xaa\xdd\x1b\vpersonality\xba\x85\x1c\vpersonalityR\vpersonality\x12<\n" +
-	"\x05Order\x18\x0e \x01(\v2\x12.NAlice.TMusicSlotB\x12\xaa\xdd\x1b\x05order\xba\x85\x1c\x05orderR\x05order\x12@\n" +
-	"\x06Repeat\x18\x0f \x01(\v2\x12.NAlice.TMusicSlotB\x14\xaa\xdd\x1b\x06repeat\xba\x85\x1c\x06repeatR\x06repeat\x12f\n" +
-	"\x0fDisableAutoflow\x18\x10 \x01(\v2\x11.NAlice.TBoolSlotB(\xaa\xdd\x1b\x10disable_autoflow\xba\x85\x1c\x10disable_autoflowR\x10disable_autoflow\x12R\n" +
+	" \x01(\v2\x15.NAlice.TLanguageSlotR\bLanguage\x12(\n" +
+	"\x05Vocal\x18\v \x01(\v2\x12.NAlice.TMusicSlotR\x05Vocal\x12,\n" +
+	"\aNovelty\x18\f \x01(\v2\x12.NAlice.TMusicSlotR\aNovelty\x124\n" +
+	"\vPersonality\x18\r \x01(\v2\x12.NAlice.TMusicSlotR\vPersonality\x12(\n" +
+	"\x05Order\x18\x0e \x01(\v2\x12.NAlice.TMusicSlotR\x05Order\x12*\n" +
+	"\x06Repeat\x18\x0f \x01(\v2\x12.NAlice.TMusicSlotR\x06Repeat\x12;\n" +
+	"\x0fDisableAutoflow\x18\x10 \x01(\v2\x11.NAlice.TBoolSlotR\x0fDisableAutoflow\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x11 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg\x12i\n" +
-	"\x0fPlaySingleTrack\x18\x12 \x01(\v2\x11.NAlice.TBoolSlotB*\xaa\xdd\x1b\x11play_single_track\xba\x85\x1c\x11play_single_trackR\x11play_single_track\x12l\n" +
-	"\x10TrackOffsetIndex\x18\x13 \x01(\v2\x10.NAlice.TNumSlotB,\xaa\xdd\x1b\x12track_offset_index\xba\x85\x1c\x12track_offset_indexR\x12track_offset_index\x12I\n" +
-	"\bPlaylist\x18\x14 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\bplaylist\xba\x85\x1c\bplaylistR\bplaylist\x12L\n" +
-	"\bObjectId\x18\x15 \x01(\v2\x13.NAlice.TStringSlotB\x1a\xaa\xdd\x1b\tobject_id\xba\x85\x1c\tobject_idR\tobject_id\x12a\n" +
+	"DisableNlg\x18\x11 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\x12;\n" +
+	"\x0fPlaySingleTrack\x18\x12 \x01(\v2\x11.NAlice.TBoolSlotR\x0fPlaySingleTrack\x12<\n" +
+	"\x10TrackOffsetIndex\x18\x13 \x01(\v2\x10.NAlice.TNumSlotR\x10TrackOffsetIndex\x12/\n" +
+	"\bPlaylist\x18\x14 \x01(\v2\x13.NAlice.TStringSlotR\bPlaylist\x12/\n" +
+	"\bObjectId\x18\x15 \x01(\v2\x13.NAlice.TStringSlotR\bObjectId\x12@\n" +
 	"\n" +
-	"ObjectType\x18\x16 \x01(\v2 .NAlice.TMusicPlayObjectTypeSlotB\x1e\xaa\xdd\x1b\vobject_type\xba\x85\x1c\vobject_typeR\vobject_type\x12r\n" +
-	"\x10StartFromTrackId\x18\x17 \x01(\v2\x13.NAlice.TStringSlotB.\xaa\xdd\x1b\x13start_from_track_id\xba\x85\x1c\x13start_from_track_idR\x13start_from_track_id\x12P\n" +
-	"\tOffsetSec\x18\x18 \x01(\v2\x13.NAlice.TDoubleSlotB\x1c\xaa\xdd\x1b\n" +
-	"offset_sec\xba\x85\x1c\n" +
-	"offset_secR\n" +
-	"offset_sec\x12H\n" +
-	"\aAlarmId\x18\x19 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\balarm_id\xba\x85\x1c\balarm_idR\balarm_id\x129\n" +
-	"\x04From\x18\x1a \x01(\v2\x13.NAlice.TStringSlotB\x10\xaa\xdd\x1b\x04from\xba\x85\x1c\x04fromR\x04from\x12b\n" +
-	"\x0eDisableHistory\x18\x1b \x01(\v2\x11.NAlice.TBoolSlotB&\xaa\xdd\x1b\x0fdisable_history\xba\x85\x1c\x0fdisable_historyR\x0fdisable_history\x128\n" +
-	"\x04Room\x18\x1c \x01(\v2\x12.NAlice.TMusicSlotB\x10\xaa\xdd\x1b\x04room\xba\x85\x1c\x04roomR\x04room\x12@\n" +
-	"\x06Stream\x18\x1d \x01(\v2\x12.NAlice.TMusicSlotB\x14\xaa\xdd\x1b\x06stream\xba\x85\x1c\x06streamR\x06stream\x12o\n" +
-	"\x11GenerativeStation\x18\x1e \x01(\v2\x12.NAlice.TMusicSlotB,\xaa\xdd\x1b\x12generative_station\xba\x85\x1c\x12generative_stationR\x12generative_station\x12W\n" +
-	"\vNeedSimilar\x18\x1f \x01(\v2\x12.NAlice.TMusicSlotB \xaa\xdd\x1b\fneed_similar\xba\x85\x1c\fneed_similarR\fneed_similar\x12K\n" +
-	"\bLocation\x18  \x01(\v2\x15.NAlice.TLocationSlotB\x18\xaa\xdd\x1b\blocation\xba\x85\x1c\blocationR\blocation\x12@\n" +
-	"\x06Offset\x18! \x01(\v2\x12.NAlice.TMusicSlotB\x14\xaa\xdd\x1b\x06offset\xba\x85\x1c\x06offsetR\x06offset\x12j\n" +
-	"\x10DisableMultiroom\x18\" \x01(\v2\x11.NAlice.TBoolSlotB*\xaa\xdd\x1b\x11disable_multiroom\xba\x85\x1c\x11disable_multiroomR\x11disable_multiroom\x12b\n" +
-	"\vContentType\x18# \x01(\v2\x1d.NAlice.TMusicContentTypeSlotB \xaa\xdd\x1b\fcontent_type\xba\x85\x1c\fcontent_typeR\fcontent_type\x12b\n" +
-	"\fAmbientSound\x18$ \x01(\v2\x19.NAlice.TAmbientSoundSlotB\"\xaa\xdd\x1b\rambient_sound\xba\x85\x1c\rambient_soundR\rambient_sound\x12p\n" +
-	"\x0eShowTailConfig\x18% \x01(\v2\x1c.NAlice.TAliceShowConfigSlotB(\xaa\xdd\x1b\x10show_tail_config\xba\x85\x1c\x10show_tail_configR\x10show_tail_config\x12S\n" +
-	"\bShowType\x18& \x01(\v2\x1a.NAlice.TAliceShowTypeSlotB\x1a\xaa\xdd\x1b\tshow_type\xba\x85\x1c\tshow_typeR\tshow_type\x12q\n" +
-	"\x0ePlaybackSource\x18' \x01(\v2 .NAlice.TMusicPlaybackSourceSlotB&\xaa\xdd\x1b\x0fplayback_source\xba\x85\x1c\x0fplayback_sourceR\x0fplayback_source\x12H\n" +
-	"\bProvider\x18( \x01(\v2\x12.NAlice.TMusicSlotB\x18\xaa\xdd\x1b\bprovider\xba\x85\x1c\bproviderR\bprovider\x12b\n" +
-	"\rLocationGroup\x18) \x03(\v2\x15.NAlice.TLocationSlotB$\xaa\xdd\x1b\x0elocation_group\xba\x85\x1c\x0elocation_groupR\x0elocation_group\x12\x82\x01\n" +
-	"\x15SessionStartTimestamp\x18* \x01(\v2\x12.NAlice.TInt64SlotB6\xaa\xdd\x1b\x17session_start_timestamp\xba\x85\x1c\x17session_start_timestampR\x17session_start_timestamp\x12y\n" +
-	"\x13DisableAutoflowSoft\x18+ \x01(\v2\x11.NAlice.TBoolSlotB2\xaa\xdd\x1b\x15disable_autoflow_soft\xba\x85\x1c\x15disable_autoflow_softR\x15disable_autoflow_soft\x12C\n" +
-	"\aKaraoke\x18, \x01(\v2\x11.NAlice.TBoolSlotB\x16\xaa\xdd\x1b\akaraoke\xba\x85\x1c\akaraokeR\akaraoke\x12l\n" +
-	"\x0eFiltrationMode\x18- \x01(\v2\x1b.NAlice.TFiltrationModeSlotB&\xaa\xdd\x1b\x0ffiltration_mode\xba\x85\x1c\x0ffiltration_modeR\x0ffiltration_mode\x12^\n" +
-	"\rAnnounceTrack\x18. \x01(\v2\x11.NAlice.TBoolSlotB$\xaa\xdd\x1b\x0eannounce_track\xba\x85\x1c\x0eannounce_trackR\x0eannounce_track:/\xa8\xdd\x1b\x04\x9a\xff\x1b'personal_assistant.scenarios.music_playJ\x04\b\x02\x10\x03R\vShowPodcast\"J\n" +
-	"\"TGetEqualizerSettingsSemanticFrame:$\xa8\xdd\x1b\x04\x9a\xff\x1b\x1calice.get_equalizer_settings\"D\n" +
-	"\x1cTTurnOnBookmateSemanticFrame:$\xa8\xdd\x1b\x04\x9a\xff\x1b\x1calice.music.turn_on_bookmateB\x9c\x01\n" +
-	"<ru.yandex.alice.megamind.protos.scenarios.frames.music_frameB\n" +
-	"FrameMusicP\x01ZNa.yandex-team.ru/alice/megamind/protos/scenarios/frames/music_frame;musicframeb\x06proto3"
+	"ObjectType\x18\x16 \x01(\v2 .NAlice.TMusicPlayObjectTypeSlotR\n" +
+	"ObjectType\x12?\n" +
+	"\x10StartFromTrackId\x18\x17 \x01(\v2\x13.NAlice.TStringSlotR\x10StartFromTrackId\x121\n" +
+	"\tOffsetSec\x18\x18 \x01(\v2\x13.NAlice.TDoubleSlotR\tOffsetSec\x12-\n" +
+	"\aAlarmId\x18\x19 \x01(\v2\x13.NAlice.TStringSlotR\aAlarmId\x12'\n" +
+	"\x04From\x18\x1a \x01(\v2\x13.NAlice.TStringSlotR\x04From\x129\n" +
+	"\x0eDisableHistory\x18\x1b \x01(\v2\x11.NAlice.TBoolSlotR\x0eDisableHistory\x12&\n" +
+	"\x04Room\x18\x1c \x01(\v2\x12.NAlice.TMusicSlotR\x04Room\x12*\n" +
+	"\x06Stream\x18\x1d \x01(\v2\x12.NAlice.TMusicSlotR\x06Stream\x12@\n" +
+	"\x11GenerativeStation\x18\x1e \x01(\v2\x12.NAlice.TMusicSlotR\x11GenerativeStation\x124\n" +
+	"\vNeedSimilar\x18\x1f \x01(\v2\x12.NAlice.TMusicSlotR\vNeedSimilar\x121\n" +
+	"\bLocation\x18  \x01(\v2\x15.NAlice.TLocationSlotR\bLocation\x12*\n" +
+	"\x06Offset\x18! \x01(\v2\x12.NAlice.TMusicSlotR\x06Offset\x12=\n" +
+	"\x10DisableMultiroom\x18\" \x01(\v2\x11.NAlice.TBoolSlotR\x10DisableMultiroom\x12?\n" +
+	"\vContentType\x18# \x01(\v2\x1d.NAlice.TMusicContentTypeSlotR\vContentType\x12=\n" +
+	"\fAmbientSound\x18$ \x01(\v2\x19.NAlice.TAmbientSoundSlotR\fAmbientSound\x12D\n" +
+	"\x0eShowTailConfig\x18% \x01(\v2\x1c.NAlice.TAliceShowConfigSlotR\x0eShowTailConfig\x126\n" +
+	"\bShowType\x18& \x01(\v2\x1a.NAlice.TAliceShowTypeSlotR\bShowType\x12H\n" +
+	"\x0ePlaybackSource\x18' \x01(\v2 .NAlice.TMusicPlaybackSourceSlotR\x0ePlaybackSource\x12.\n" +
+	"\bProvider\x18( \x01(\v2\x12.NAlice.TMusicSlotR\bProvider\x12;\n" +
+	"\rLocationGroup\x18) \x03(\v2\x15.NAlice.TLocationSlotR\rLocationGroup\x12H\n" +
+	"\x15SessionStartTimestamp\x18* \x01(\v2\x12.NAlice.TInt64SlotR\x15SessionStartTimestamp\x12C\n" +
+	"\x13DisableAutoflowSoft\x18+ \x01(\v2\x11.NAlice.TBoolSlotR\x13DisableAutoflowSoft\x12+\n" +
+	"\aKaraoke\x18, \x01(\v2\x11.NAlice.TBoolSlotR\aKaraoke\x12C\n" +
+	"\x0eFiltrationMode\x18- \x01(\v2\x1b.NAlice.TFiltrationModeSlotR\x0eFiltrationMode\x127\n" +
+	"\rAnnounceTrack\x18. \x01(\v2\x11.NAlice.TBoolSlotR\rAnnounceTrackJ\x04\b\x02\x10\x03R\vShowPodcast\"$\n" +
+	"\"TGetEqualizerSettingsSemanticFrame\"\x1e\n" +
+	"\x1cTTurnOnBookmateSemanticFrameB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fMusicFrameProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/music_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_music_frame_music_frame_proto_rawDescOnce sync.Once

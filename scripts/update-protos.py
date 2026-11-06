@@ -156,23 +156,37 @@ def generate(schemas, temporary, protoc_name, plugin_name):
         path = source / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-    command = [
-        str(protoc), f"--proto_path={source}", f"--proto_path={includes}",
-        f"--plugin=protoc-gen-go={plugin}", f"--go_out={generated}", f"--go_opt=module={GO_IMPORT}",
-    ]
-    command.extend(
-        f"--go_opt=M{name}={pathlib.PurePosixPath(GO_IMPORT) / go_directory(name)}"
-        for name in schemas
-    )
-    # An argument file avoids platform command-line length limits. Every path
-    # here is relative to the snapshot, so generated headers contain no temp paths.
+    from google.protobuf import descriptor_pb2
+
+    current = temporary / "current.pb"
+    merged = temporary / "merged.pb"
     arguments = temporary / "protoc.args"
-    arguments.write_text("\n".join(command[1:] + list(schemas)) + "\n")
+    arguments.write_text("\n".join([
+        f"--proto_path={source}", f"--proto_path={includes}",
+        f"--descriptor_set_out={current}", "--include_imports", *schemas,
+    ]) + "\n")
+    subprocess.run([str(protoc), "@" + str(arguments)], check=True)
+    subprocess.run([
+        sys.executable, str(ROOT / "scripts" / "merge-descriptors.py"),
+        str(ROOT / "compatibility" / "freequasar.pb"), str(current), str(merged),
+    ], check=True)
+    descriptors = descriptor_pb2.FileDescriptorSet.FromString(merged.read_bytes())
+    names = [file.name for file in descriptors.file if not file.name.startswith("google/protobuf/")]
+    for file in descriptors.file:
+        if not file.name.startswith("google/protobuf/"):
+            file.options.go_package = (pathlib.PurePosixPath(GO_IMPORT) / go_directory(file.name)).as_posix()
+    merged.write_bytes(descriptors.SerializeToString(deterministic=True))
+    arguments.write_text("\n".join([
+        f"--descriptor_set_in={merged}", f"--plugin=protoc-gen-go={plugin}",
+        f"--go_out={generated}", f"--go_opt=module={GO_IMPORT}",
+        *(f"--go_opt=M{name}={pathlib.PurePosixPath(GO_IMPORT) / go_directory(name)}" for name in names),
+        *names,
+    ]) + "\n")
     subprocess.run([str(protoc), "@" + str(arguments)], check=True)
     bindings = {path.relative_to(generated).as_posix(): path.read_bytes() for path in generated.rglob("*.pb.go")}
     expected = {
         (go_directory(name) / (pathlib.PurePosixPath(name).stem + ".pb.go")).as_posix()
-        for name in schemas
+        for name in names
     }
     if set(bindings) != expected:
         raise ValueError("generated output does not cover the schema snapshot")

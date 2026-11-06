@@ -75,11 +75,10 @@ func (DeviceStatus_EStatus) EnumDescriptor() ([]byte, []int) {
 }
 
 type DeviceStatus struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	Timestamp *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
-	// Deprecated: Marked as deprecated in smart_devices/libs/iot/common/models/proto/device_status.proto.
-	IsOnline      bool                 `protobuf:"varint,2,opt,name=IsOnline,proto3" json:"IsOnline,omitempty"`
-	Status        DeviceStatus_EStatus `protobuf:"varint,3,opt,name=Status,proto3,enum=proto.DeviceStatus_EStatus" json:"Status,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
+	IsOnline      bool                   `protobuf:"varint,2,opt,name=IsOnline,proto3" json:"IsOnline,omitempty"`
+	Status        DeviceStatus_EStatus   `protobuf:"varint,3,opt,name=Status,proto3,enum=proto.DeviceStatus_EStatus" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -121,7 +120,6 @@ func (x *DeviceStatus) GetTimestamp() *timestamppb.Timestamp {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in smart_devices/libs/iot/common/models/proto/device_status.proto.
 func (x *DeviceStatus) GetIsOnline() bool {
 	if x != nil {
 		return x.IsOnline
@@ -140,17 +138,18 @@ var File_smart_devices_libs_iot_common_models_proto_device_status_proto protoref
 
 const file_smart_devices_libs_iot_common_models_proto_device_status_proto_rawDesc = "" +
 	"\n" +
-	">smart_devices/libs/iot/common/models/proto/device_status.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe2\x01\n" +
+	">smart_devices/libs/iot/common/models/proto/device_status.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xde\x01\n" +
 	"\fDeviceStatus\x128\n" +
-	"\tTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tTimestamp\x12\x1e\n" +
-	"\bIsOnline\x18\x02 \x01(\bB\x02\x18\x01R\bIsOnline\x123\n" +
+	"\tTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tTimestamp\x12\x1a\n" +
+	"\bIsOnline\x18\x02 \x01(\bR\bIsOnline\x123\n" +
 	"\x06Status\x18\x03 \x01(\x0e2\x1b.proto.DeviceStatus.EStatusR\x06Status\"C\n" +
 	"\aEStatus\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\n" +
 	"\n" +
 	"\x06ONLINE\x10\x01\x12\v\n" +
 	"\aOFFLINE\x10\x02\x12\x12\n" +
-	"\x0eHOST_POWER_OFF\x10\x03b\x06proto3"
+	"\x0eHOST_POWER_OFF\x10\x03B\xae\x01\n" +
+	"\tcom.protoB\x11DeviceStatusProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/iot/common/models/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_iot_common_models_proto_device_status_proto_rawDescOnce sync.Once

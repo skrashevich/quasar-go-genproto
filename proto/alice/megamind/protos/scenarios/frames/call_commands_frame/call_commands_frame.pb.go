@@ -27,9 +27,9 @@ const (
 
 type TGetCallerNameSemanticFrame struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	CallerDeviceID *common.TStringSlot    `protobuf:"bytes,1,opt,name=CallerDeviceID,json=caller_device_id,proto3" json:"CallerDeviceID,omitempty"`
-	CallerPayload  *common.TStringSlot    `protobuf:"bytes,2,opt,name=CallerPayload,json=caller_payload,proto3" json:"CallerPayload,omitempty"`
-	ChatId         *common.TStringSlot    `protobuf:"bytes,3,opt,name=ChatId,json=chat_id,proto3" json:"ChatId,omitempty"`
+	CallerDeviceID *common.TStringSlot    `protobuf:"bytes,1,opt,name=CallerDeviceID,proto3" json:"CallerDeviceID,omitempty"`
+	CallerPayload  *common.TStringSlot    `protobuf:"bytes,2,opt,name=CallerPayload,proto3" json:"CallerPayload,omitempty"`
+	ChatId         *common.TStringSlot    `protobuf:"bytes,3,opt,name=ChatId,proto3" json:"ChatId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -89,12 +89,13 @@ var File_alice_megamind_protos_scenarios_frames_call_commands_frame_call_command
 
 const file_alice_megamind_protos_scenarios_frames_call_commands_frame_call_commands_frame_proto_rawDesc = "" +
 	"\n" +
-	"Talice/megamind/protos/scenarios/frames/call_commands_frame/call_commands_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe0\x02\n" +
-	"\x1bTGetCallerNameSemanticFrame\x12k\n" +
-	"\x0eCallerDeviceID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB,\xaa\xdd\x1b\x10caller_device_id\xba\x85\x1c\x10caller_device_id\xf8\x91*\x03R\x10caller_device_id\x12`\n" +
-	"\rCallerPayload\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB$\xaa\xdd\x1b\x0ecaller_payload\xba\x85\x1c\x0ecaller_payloadR\x0ecaller_payload\x12D\n" +
-	"\x06ChatId\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB\x16\xaa\xdd\x1b\achat_id\xba\x85\x1c\achat_idR\achat_id:,\xa8\xdd\x1b\x04\x9a\xff\x1b$alice.messenger_call.get_caller_nameB\xa8\x01\n" +
-	"Dru.yandex.alice.megamind.protos.scenarios.frames.call_commands_frameB\x11FrameCallCommandsP\x01ZKa.yandex-team.ru/alice/megamind/protos/scenarios/frames/call_commands_frameb\x06proto3"
+	"Talice/megamind/protos/scenarios/frames/call_commands_frame/call_commands_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc2\x01\n" +
+	"\x1bTGetCallerNameSemanticFrame\x12;\n" +
+	"\x0eCallerDeviceID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x0eCallerDeviceID\x129\n" +
+	"\rCallerPayload\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\rCallerPayload\x12+\n" +
+	"\x06ChatId\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\x06ChatIdB\xc8\x01\n" +
+	"\n" +
+	"com.NAliceB\x16CallCommandsFrameProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/call_commands_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_call_commands_frame_call_commands_frame_proto_rawDescOnce sync.Once

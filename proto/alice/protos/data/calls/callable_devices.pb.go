@@ -388,8 +388,8 @@ const file_alice_protos_data_calls_callable_devices_proto_rawDesc = "" +
 	"Households\x18\x02 \x03(\v2\x12.NAlice.THouseholdB\x0e\xaa\xdd\x1b\n" +
 	"householdsR\n" +
 	"households\x12.\n" +
-	"\x05Rooms\x18\x03 \x03(\v2\r.NAlice.TRoomB\t\xaa\xdd\x1b\x05roomsR\x05rooms:\x04\xa8\xdd\x1b\x04B^\n" +
-	"!ru.yandex.alice.protos.data.callsB\x0fCallableDevicesZ(a.yandex-team.ru/alice/protos/data/callsb\x06proto3"
+	"\x05Rooms\x18\x03 \x03(\v2\r.NAlice.TRoomB\t\xaa\xdd\x1b\x05roomsR\x05rooms:\x04\xa8\xdd\x1b\x04B}\n" +
+	"!ru.yandex.alice.protos.data.callsB\x0fCallableDevicesZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/callsb\x06proto3"
 
 var (
 	file_alice_protos_data_calls_callable_devices_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/data/ir/ir.proto
 
-package irpb
+package ir
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -286,9 +286,9 @@ func (EAcSpeed) EnumDescriptor() ([]byte, []int) {
 
 type TAcInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Modes         []*TAcInfo_TMode       `protobuf:"bytes,1,rep,name=Modes,json=modes,proto3" json:"Modes,omitempty"`
-	SwingMin      *uint32                `protobuf:"varint,2,opt,name=SwingMin,json=swing_min,proto3,oneof" json:"SwingMin,omitempty"`
-	SwingMax      *uint32                `protobuf:"varint,3,opt,name=SwingMax,json=swing_max,proto3,oneof" json:"SwingMax,omitempty"`
+	Modes         []*TAcInfo_TMode       `protobuf:"bytes,1,rep,name=Modes,proto3" json:"Modes,omitempty"`
+	SwingMin      *uint32                `protobuf:"varint,2,opt,name=SwingMin,proto3,oneof" json:"SwingMin,omitempty"`
+	SwingMax      *uint32                `protobuf:"varint,3,opt,name=SwingMax,proto3,oneof" json:"SwingMax,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -346,11 +346,11 @@ func (x *TAcInfo) GetSwingMax() uint32 {
 
 type TAcState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Power         bool                   `protobuf:"varint,1,opt,name=Power,json=power,proto3" json:"Power,omitempty"`
-	Mode          EAcMode                `protobuf:"varint,2,opt,name=Mode,json=mode,proto3,enum=NAlice.NIr.EAcMode" json:"Mode,omitempty"`
-	Temperature   *uint32                `protobuf:"varint,3,opt,name=Temperature,json=temperature,proto3,oneof" json:"Temperature,omitempty"`
-	Speed         *EAcSpeed              `protobuf:"varint,4,opt,name=Speed,json=speed,proto3,enum=NAlice.NIr.EAcSpeed,oneof" json:"Speed,omitempty"`
-	Swing         *uint32                `protobuf:"varint,5,opt,name=Swing,json=swing,proto3,oneof" json:"Swing,omitempty"`
+	Power         bool                   `protobuf:"varint,1,opt,name=Power,proto3" json:"Power,omitempty"`
+	Mode          EAcMode                `protobuf:"varint,2,opt,name=Mode,proto3,enum=NAlice.NIr.EAcMode" json:"Mode,omitempty"`
+	Temperature   *uint32                `protobuf:"varint,3,opt,name=Temperature,proto3,oneof" json:"Temperature,omitempty"`
+	Speed         *EAcSpeed              `protobuf:"varint,4,opt,name=Speed,proto3,enum=NAlice.NIr.EAcSpeed,oneof" json:"Speed,omitempty"`
+	Swing         *uint32                `protobuf:"varint,5,opt,name=Swing,proto3,oneof" json:"Swing,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -421,10 +421,10 @@ func (x *TAcState) GetSwing() uint32 {
 }
 
 type TRemoteData struct {
-	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Frequency     uint32                         `protobuf:"varint,1,opt,name=Frequency,json=frequency,proto3" json:"Frequency,omitempty"`
-	Keys          map[uint32]*TRemoteData_TPulse `protobuf:"bytes,2,rep,name=Keys,json=keys,proto3" json:"Keys,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	AcData        []byte                         `protobuf:"bytes,3,opt,name=AcData,json=ac_data,proto3" json:"AcData,omitempty"`
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Frequency     uint32                   `protobuf:"varint,1,opt,name=Frequency,proto3" json:"Frequency,omitempty"`
+	Keys          []*TRemoteData_KeysEntry `protobuf:"bytes,2,rep,name=Keys,proto3" json:"Keys,omitempty"`
+	AcData        []byte                   `protobuf:"bytes,3,opt,name=AcData,proto3" json:"AcData,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -466,7 +466,7 @@ func (x *TRemoteData) GetFrequency() uint32 {
 	return 0
 }
 
-func (x *TRemoteData) GetKeys() map[uint32]*TRemoteData_TPulse {
+func (x *TRemoteData) GetKeys() []*TRemoteData_KeysEntry {
 	if x != nil {
 		return x.Keys
 	}
@@ -482,8 +482,8 @@ func (x *TRemoteData) GetAcData() []byte {
 
 type TRemote struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          EDeviceType            `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.NIr.EDeviceType" json:"Type,omitempty"`
-	Data          *TRemoteData           `protobuf:"bytes,2,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
+	Type          EDeviceType            `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.NIr.EDeviceType" json:"Type,omitempty"`
+	Data          *TRemoteData           `protobuf:"bytes,2,opt,name=Data,proto3" json:"Data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -534,10 +534,10 @@ func (x *TRemote) GetData() *TRemoteData {
 
 type TAcInfo_TMode struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Mode           EAcMode                `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.NIr.EAcMode" json:"Mode,omitempty"`
-	Speeds         []EAcSpeed             `protobuf:"varint,4,rep,packed,name=Speeds,json=speed,proto3,enum=NAlice.NIr.EAcSpeed" json:"Speeds,omitempty"`
-	TemperatureMin *uint32                `protobuf:"varint,2,opt,name=TemperatureMin,json=temperature_min,proto3,oneof" json:"TemperatureMin,omitempty"`
-	TemperatureMax *uint32                `protobuf:"varint,3,opt,name=TemperatureMax,json=temperature_max,proto3,oneof" json:"TemperatureMax,omitempty"`
+	Mode           EAcMode                `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.NIr.EAcMode" json:"Mode,omitempty"`
+	Speeds         []EAcSpeed             `protobuf:"varint,4,rep,packed,name=Speeds,proto3,enum=NAlice.NIr.EAcSpeed" json:"Speeds,omitempty"`
+	TemperatureMin *uint32                `protobuf:"varint,2,opt,name=TemperatureMin,proto3,oneof" json:"TemperatureMin,omitempty"`
+	TemperatureMax *uint32                `protobuf:"varint,3,opt,name=TemperatureMax,proto3,oneof" json:"TemperatureMax,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -602,8 +602,8 @@ func (x *TAcInfo_TMode) GetTemperatureMax() uint32 {
 
 type TRemoteData_TPulse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	A             []uint32               `protobuf:"varint,1,rep,packed,name=A,json=a,proto3" json:"A,omitempty"`
-	B             []uint32               `protobuf:"varint,2,rep,packed,name=B,json=b,proto3" json:"B,omitempty"`
+	A             []uint32               `protobuf:"varint,1,rep,packed,name=A,proto3" json:"A,omitempty"`
+	B             []uint32               `protobuf:"varint,2,rep,packed,name=B,proto3" json:"B,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -652,47 +652,99 @@ func (x *TRemoteData_TPulse) GetB() []uint32 {
 	return nil
 }
 
+type TRemoteData_KeysEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TRemoteData_TPulse    `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TRemoteData_KeysEntry) Reset() {
+	*x = TRemoteData_KeysEntry{}
+	mi := &file_alice_protos_data_ir_ir_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TRemoteData_KeysEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TRemoteData_KeysEntry) ProtoMessage() {}
+
+func (x *TRemoteData_KeysEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_ir_ir_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TRemoteData_KeysEntry.ProtoReflect.Descriptor instead.
+func (*TRemoteData_KeysEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_ir_ir_proto_rawDescGZIP(), []int{2, 1}
+}
+
+func (x *TRemoteData_KeysEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TRemoteData_KeysEntry) GetValue() *TRemoteData_TPulse {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_data_ir_ir_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_ir_ir_proto_rawDesc = "" +
 	"\n" +
 	"\x1dalice/protos/data/ir/ir.proto\x12\n" +
-	"NAlice.NIr\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe2\x03\n" +
-	"\aTAcInfo\x12:\n" +
-	"\x05Modes\x18\x01 \x03(\v2\x19.NAlice.NIr.TAcInfo.TModeB\t\xaa\xdd\x1b\x05modesR\x05modes\x12/\n" +
-	"\bSwingMin\x18\x02 \x01(\rB\r\xaa\xdd\x1b\tswing_minH\x00R\tswing_min\x88\x01\x01\x12/\n" +
-	"\bSwingMax\x18\x03 \x01(\rB\r\xaa\xdd\x1b\tswing_maxH\x01R\tswing_max\x88\x01\x01\x1a\x9e\x02\n" +
-	"\x05TMode\x121\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2\x13.NAlice.NIr.EAcModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x126\n" +
-	"\x06Speeds\x18\x04 \x03(\x0e2\x14.NAlice.NIr.EAcSpeedB\t\xaa\xdd\x1b\x05speedR\x05speed\x12A\n" +
-	"\x0eTemperatureMin\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0ftemperature_minH\x00R\x0ftemperature_min\x88\x01\x01\x12A\n" +
-	"\x0eTemperatureMax\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0ftemperature_maxH\x01R\x0ftemperature_max\x88\x01\x01B\x11\n" +
+	"NAlice.NIr\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\x02\n" +
+	"\aTAcInfo\x12/\n" +
+	"\x05Modes\x18\x01 \x03(\v2\x19.NAlice.NIr.TAcInfo.TModeR\x05Modes\x12\x1f\n" +
+	"\bSwingMin\x18\x02 \x01(\rH\x00R\bSwingMin\x88\x01\x01\x12\x1f\n" +
+	"\bSwingMax\x18\x03 \x01(\rH\x01R\bSwingMax\x88\x01\x01\x1a\xde\x01\n" +
+	"\x05TMode\x12'\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2\x13.NAlice.NIr.EAcModeR\x04Mode\x12,\n" +
+	"\x06Speeds\x18\x04 \x03(\x0e2\x14.NAlice.NIr.EAcSpeedR\x06Speeds\x12+\n" +
+	"\x0eTemperatureMin\x18\x02 \x01(\rH\x00R\x0eTemperatureMin\x88\x01\x01\x12+\n" +
+	"\x0eTemperatureMax\x18\x03 \x01(\rH\x01R\x0eTemperatureMax\x88\x01\x01B\x11\n" +
 	"\x0f_TemperatureMinB\x11\n" +
 	"\x0f_TemperatureMaxB\v\n" +
 	"\t_SwingMinB\v\n" +
-	"\t_SwingMax\"\x9c\x02\n" +
-	"\bTAcState\x12\x1f\n" +
-	"\x05Power\x18\x01 \x01(\bB\t\xaa\xdd\x1b\x05powerR\x05power\x121\n" +
-	"\x04Mode\x18\x02 \x01(\x0e2\x13.NAlice.NIr.EAcModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x126\n" +
-	"\vTemperature\x18\x03 \x01(\rB\x0f\xaa\xdd\x1b\vtemperatureH\x00R\vtemperature\x88\x01\x01\x12:\n" +
-	"\x05Speed\x18\x04 \x01(\x0e2\x14.NAlice.NIr.EAcSpeedB\t\xaa\xdd\x1b\x05speedH\x01R\x05speed\x88\x01\x01\x12$\n" +
-	"\x05Swing\x18\x05 \x01(\rB\t\xaa\xdd\x1b\x05swingH\x02R\x05swing\x88\x01\x01B\x0e\n" +
+	"\t_SwingMax\"\xe0\x01\n" +
+	"\bTAcState\x12\x14\n" +
+	"\x05Power\x18\x01 \x01(\bR\x05Power\x12'\n" +
+	"\x04Mode\x18\x02 \x01(\x0e2\x13.NAlice.NIr.EAcModeR\x04Mode\x12%\n" +
+	"\vTemperature\x18\x03 \x01(\rH\x00R\vTemperature\x88\x01\x01\x12/\n" +
+	"\x05Speed\x18\x04 \x01(\x0e2\x14.NAlice.NIr.EAcSpeedH\x01R\x05Speed\x88\x01\x01\x12\x19\n" +
+	"\x05Swing\x18\x05 \x01(\rH\x02R\x05Swing\x88\x01\x01B\x0e\n" +
 	"\f_TemperatureB\b\n" +
 	"\x06_SpeedB\b\n" +
-	"\x06_Swing\"\xae\x02\n" +
-	"\vTRemoteData\x12+\n" +
-	"\tFrequency\x18\x01 \x01(\rB\r\xaa\xdd\x1b\tfrequencyR\tfrequency\x12?\n" +
-	"\x04Keys\x18\x02 \x03(\v2!.NAlice.NIr.TRemoteData.KeysEntryB\b\xaa\xdd\x1b\x04keysR\x04keys\x12$\n" +
-	"\x06AcData\x18\x03 \x01(\fB\v\xaa\xdd\x1b\aac_dataR\aac_data\x1a2\n" +
-	"\x06TPulse\x12\x13\n" +
-	"\x01A\x18\x01 \x03(\rB\x05\xaa\xdd\x1b\x01aR\x01a\x12\x13\n" +
-	"\x01B\x18\x02 \x03(\rB\x05\xaa\xdd\x1b\x01bR\x01b\x1aW\n" +
+	"\x06_Swing\"\xf5\x01\n" +
+	"\vTRemoteData\x12\x1c\n" +
+	"\tFrequency\x18\x01 \x01(\rR\tFrequency\x125\n" +
+	"\x04Keys\x18\x02 \x03(\v2!.NAlice.NIr.TRemoteData.KeysEntryR\x04Keys\x12\x16\n" +
+	"\x06AcData\x18\x03 \x01(\fR\x06AcData\x1a$\n" +
+	"\x06TPulse\x12\f\n" +
+	"\x01A\x18\x01 \x03(\rR\x01A\x12\f\n" +
+	"\x01B\x18\x02 \x03(\rR\x01B\x1aS\n" +
 	"\tKeysEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x124\n" +
-	"\x05value\x18\x02 \x01(\v2\x1e.NAlice.NIr.TRemoteData.TPulseR\x05value:\x028\x01\"w\n" +
-	"\aTRemote\x125\n" +
-	"\x04Type\x18\x01 \x01(\x0e2\x17.NAlice.NIr.EDeviceTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x125\n" +
-	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataB\b\xaa\xdd\x1b\x04dataR\x04data*\xa2\x03\n" +
+	"\x05value\x18\x02 \x01(\v2\x1e.NAlice.NIr.TRemoteData.TPulseR\x05value\"c\n" +
+	"\aTRemote\x12+\n" +
+	"\x04Type\x18\x01 \x01(\x0e2\x17.NAlice.NIr.EDeviceTypeR\x04Type\x12+\n" +
+	"\x04Data\x18\x02 \x01(\v2\x17.NAlice.NIr.TRemoteDataR\x04Data*\xa2\x03\n" +
 	"\vEDeviceType\x12\x17\n" +
 	"\x13DEVICE_TYPE_UNKNOWN\x10\x00\x12\x13\n" +
 	"\x0fDEVICE_TYPE_STB\x10\x01\x12\x12\n" +
@@ -731,8 +783,10 @@ const file_alice_protos_data_ir_ir_proto_rawDesc = "" +
 	"\rAC_SPEED_AUTO\x10\x00\x12\x10\n" +
 	"\fAC_SPEED_LOW\x10\x01\x12\x13\n" +
 	"\x0fAC_SPEED_MEDIUM\x10\x02\x12\x11\n" +
-	"\rAC_SPEED_HIGH\x10\x03BU\n" +
-	"\x1eru.yandex.alice.protos.data.irB\aIrProtoZ*a.yandex-team.ru/alice/protos/data/ir;irpbb\x06proto3"
+	"\rAC_SPEED_HIGH\x10\x03B\xa8\x01\n" +
+	"\x0ecom.NAlice.NIrB\aIrProtoP\x01ZDgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/ir\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NIr\xca\x02\n" +
+	"NAlice\\NIr\xe2\x02\x16NAlice\\NIr\\GPBMetadata\xea\x02\vNAlice::NIrb\x06proto3"
 
 var (
 	file_alice_protos_data_ir_ir_proto_rawDescOnce sync.Once
@@ -749,17 +803,17 @@ func file_alice_protos_data_ir_ir_proto_rawDescGZIP() []byte {
 var file_alice_protos_data_ir_ir_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
 var file_alice_protos_data_ir_ir_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_alice_protos_data_ir_ir_proto_goTypes = []any{
-	(EDeviceType)(0),           // 0: NAlice.NIr.EDeviceType
-	(EAcKey)(0),                // 1: NAlice.NIr.EAcKey
-	(EAcMode)(0),               // 2: NAlice.NIr.EAcMode
-	(EAcSpeed)(0),              // 3: NAlice.NIr.EAcSpeed
-	(*TAcInfo)(nil),            // 4: NAlice.NIr.TAcInfo
-	(*TAcState)(nil),           // 5: NAlice.NIr.TAcState
-	(*TRemoteData)(nil),        // 6: NAlice.NIr.TRemoteData
-	(*TRemote)(nil),            // 7: NAlice.NIr.TRemote
-	(*TAcInfo_TMode)(nil),      // 8: NAlice.NIr.TAcInfo.TMode
-	(*TRemoteData_TPulse)(nil), // 9: NAlice.NIr.TRemoteData.TPulse
-	nil,                        // 10: NAlice.NIr.TRemoteData.KeysEntry
+	(EDeviceType)(0),              // 0: NAlice.NIr.EDeviceType
+	(EAcKey)(0),                   // 1: NAlice.NIr.EAcKey
+	(EAcMode)(0),                  // 2: NAlice.NIr.EAcMode
+	(EAcSpeed)(0),                 // 3: NAlice.NIr.EAcSpeed
+	(*TAcInfo)(nil),               // 4: NAlice.NIr.TAcInfo
+	(*TAcState)(nil),              // 5: NAlice.NIr.TAcState
+	(*TRemoteData)(nil),           // 6: NAlice.NIr.TRemoteData
+	(*TRemote)(nil),               // 7: NAlice.NIr.TRemote
+	(*TAcInfo_TMode)(nil),         // 8: NAlice.NIr.TAcInfo.TMode
+	(*TRemoteData_TPulse)(nil),    // 9: NAlice.NIr.TRemoteData.TPulse
+	(*TRemoteData_KeysEntry)(nil), // 10: NAlice.NIr.TRemoteData.KeysEntry
 }
 var file_alice_protos_data_ir_ir_proto_depIdxs = []int32{
 	8,  // 0: NAlice.NIr.TAcInfo.Modes:type_name -> NAlice.NIr.TAcInfo.TMode

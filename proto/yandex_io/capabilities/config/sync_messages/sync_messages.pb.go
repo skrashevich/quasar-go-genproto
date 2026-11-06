@@ -80,7 +80,7 @@ func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status) UnmarshalJSON(b
 
 // Deprecated: Use ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status.Descriptor instead.
 func (ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 2, 0}
+	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 1, 0}
 }
 
 type ConfigCapabilityEvents struct {
@@ -88,17 +88,17 @@ type ConfigCapabilityEvents struct {
 	SystemConfigs            []*ConfigCapabilityEvents_BackendConfig           `protobuf:"bytes,1,rep,name=system_configs,json=systemConfigs" json:"system_configs,omitempty"`
 	DeviceConfigs            []*ConfigCapabilityEvents_BackendConfig           `protobuf:"bytes,2,rep,name=device_configs,json=deviceConfigs" json:"device_configs,omitempty"`
 	AccountConfigs           []*ConfigCapabilityEvents_BackendConfig           `protobuf:"bytes,3,rep,name=account_configs,json=accountConfigs" json:"account_configs,omitempty"`
-	PeripheralSystemConfigs  []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,12,rep,name=peripheral_system_configs,json=peripheralSystemConfigs" json:"peripheral_system_configs,omitempty"`
-	PeripheralDeviceConfigs  []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,13,rep,name=peripheral_device_configs,json=peripheralDeviceConfigs" json:"peripheral_device_configs,omitempty"`
-	PeripheralAccountConfigs []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,14,rep,name=peripheral_account_configs,json=peripheralAccountConfigs" json:"peripheral_account_configs,omitempty"`
 	GetSyncInfoStatus        *ConfigCapabilityEvents_GetSyncInfoRequestStatus  `protobuf:"bytes,4,opt,name=get_sync_info_status,json=getSyncInfoStatus" json:"get_sync_info_status,omitempty"`
 	SubscriptionInfo         *string                                           `protobuf:"bytes,5,opt,name=subscription_info,json=subscriptionInfo" json:"subscription_info,omitempty"`
 	AliceProSubscriptionInfo *string                                           `protobuf:"bytes,6,opt,name=alice_pro_subscription_info,json=aliceProSubscriptionInfo" json:"alice_pro_subscription_info,omitempty"`
 	AuxiliaryConfig          *string                                           `protobuf:"bytes,7,opt,name=auxiliary_config,json=auxiliaryConfig" json:"auxiliary_config,omitempty"`
 	GroupConfig              *string                                           `protobuf:"bytes,8,opt,name=group_config,json=groupConfig" json:"group_config,omitempty"`
 	CameraSubscriptionInfo   *string                                           `protobuf:"bytes,10,opt,name=camera_subscription_info,json=cameraSubscriptionInfo" json:"camera_subscription_info,omitempty"`
-	PrefetchedConfigs        *string                                           `protobuf:"bytes,11,opt,name=prefetched_configs,json=prefetchedConfigs" json:"prefetched_configs,omitempty"`
 	AccountDevicesList       *ConfigCapabilityEvents_AccountDevicesList        `protobuf:"bytes,9,opt,name=account_devices_list,json=accountDevicesList" json:"account_devices_list,omitempty"`
+	PeripheralSystemConfigs  []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,12,rep,name=peripheral_system_configs,json=peripheralSystemConfigs" json:"peripheral_system_configs,omitempty"`
+	PeripheralDeviceConfigs  []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,13,rep,name=peripheral_device_configs,json=peripheralDeviceConfigs" json:"peripheral_device_configs,omitempty"`
+	PeripheralAccountConfigs []*ConfigCapabilityEvents_PeripheralBackendConfig `protobuf:"bytes,14,rep,name=peripheral_account_configs,json=peripheralAccountConfigs" json:"peripheral_account_configs,omitempty"`
+	PrefetchedConfigs        *string                                           `protobuf:"bytes,11,opt,name=prefetched_configs,json=prefetchedConfigs" json:"prefetched_configs,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -154,27 +154,6 @@ func (x *ConfigCapabilityEvents) GetAccountConfigs() []*ConfigCapabilityEvents_B
 	return nil
 }
 
-func (x *ConfigCapabilityEvents) GetPeripheralSystemConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
-	if x != nil {
-		return x.PeripheralSystemConfigs
-	}
-	return nil
-}
-
-func (x *ConfigCapabilityEvents) GetPeripheralDeviceConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
-	if x != nil {
-		return x.PeripheralDeviceConfigs
-	}
-	return nil
-}
-
-func (x *ConfigCapabilityEvents) GetPeripheralAccountConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
-	if x != nil {
-		return x.PeripheralAccountConfigs
-	}
-	return nil
-}
-
 func (x *ConfigCapabilityEvents) GetGetSyncInfoStatus() *ConfigCapabilityEvents_GetSyncInfoRequestStatus {
 	if x != nil {
 		return x.GetSyncInfoStatus
@@ -217,18 +196,39 @@ func (x *ConfigCapabilityEvents) GetCameraSubscriptionInfo() string {
 	return ""
 }
 
-func (x *ConfigCapabilityEvents) GetPrefetchedConfigs() string {
-	if x != nil && x.PrefetchedConfigs != nil {
-		return *x.PrefetchedConfigs
-	}
-	return ""
-}
-
 func (x *ConfigCapabilityEvents) GetAccountDevicesList() *ConfigCapabilityEvents_AccountDevicesList {
 	if x != nil {
 		return x.AccountDevicesList
 	}
 	return nil
+}
+
+func (x *ConfigCapabilityEvents) GetPeripheralSystemConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
+	if x != nil {
+		return x.PeripheralSystemConfigs
+	}
+	return nil
+}
+
+func (x *ConfigCapabilityEvents) GetPeripheralDeviceConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
+	if x != nil {
+		return x.PeripheralDeviceConfigs
+	}
+	return nil
+}
+
+func (x *ConfigCapabilityEvents) GetPeripheralAccountConfigs() []*ConfigCapabilityEvents_PeripheralBackendConfig {
+	if x != nil {
+		return x.PeripheralAccountConfigs
+	}
+	return nil
+}
+
+func (x *ConfigCapabilityEvents) GetPrefetchedConfigs() string {
+	if x != nil && x.PrefetchedConfigs != nil {
+		return *x.PrefetchedConfigs
+	}
+	return ""
 }
 
 type ConfigCapabilitySubscriptions struct {
@@ -559,74 +559,6 @@ func (x *ConfigCapabilityEvents_BackendConfig) GetValue() string {
 	return ""
 }
 
-type ConfigCapabilityEvents_PeripheralBackendConfig struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	Value         *string                `protobuf:"bytes,2,req,name=value" json:"value,omitempty"`
-	DeviceId      *string                `protobuf:"bytes,3,opt,name=device_id,json=deviceId" json:"device_id,omitempty"`
-	Platform      *string                `protobuf:"bytes,4,opt,name=platform" json:"platform,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) Reset() {
-	*x = ConfigCapabilityEvents_PeripheralBackendConfig{}
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConfigCapabilityEvents_PeripheralBackendConfig) ProtoMessage() {}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConfigCapabilityEvents_PeripheralBackendConfig.ProtoReflect.Descriptor instead.
-func (*ConfigCapabilityEvents_PeripheralBackendConfig) Descriptor() ([]byte, []int) {
-	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 1}
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetName() string {
-	if x != nil && x.Name != nil {
-		return *x.Name
-	}
-	return ""
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetValue() string {
-	if x != nil && x.Value != nil {
-		return *x.Value
-	}
-	return ""
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetDeviceId() string {
-	if x != nil && x.DeviceId != nil {
-		return *x.DeviceId
-	}
-	return ""
-}
-
-func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetPlatform() string {
-	if x != nil && x.Platform != nil {
-		return *x.Platform
-	}
-	return ""
-}
-
 type ConfigCapabilityEvents_GetSyncInfoRequestStatus struct {
 	state         protoimpl.MessageState                                  `protogen:"open.v1"`
 	Status        *ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status `protobuf:"varint,1,req,name=status,enum=quasar.proto.ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status" json:"status,omitempty"`
@@ -636,7 +568,7 @@ type ConfigCapabilityEvents_GetSyncInfoRequestStatus struct {
 
 func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus) Reset() {
 	*x = ConfigCapabilityEvents_GetSyncInfoRequestStatus{}
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[4]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -648,7 +580,7 @@ func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus) String() string {
 func (*ConfigCapabilityEvents_GetSyncInfoRequestStatus) ProtoMessage() {}
 
 func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[4]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -661,7 +593,7 @@ func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus) ProtoReflect() protore
 
 // Deprecated: Use ConfigCapabilityEvents_GetSyncInfoRequestStatus.ProtoReflect.Descriptor instead.
 func (*ConfigCapabilityEvents_GetSyncInfoRequestStatus) Descriptor() ([]byte, []int) {
-	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 2}
+	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *ConfigCapabilityEvents_GetSyncInfoRequestStatus) GetStatus() ConfigCapabilityEvents_GetSyncInfoRequestStatus_Status {
@@ -689,7 +621,7 @@ type ConfigCapabilityEvents_AccountDevice struct {
 
 func (x *ConfigCapabilityEvents_AccountDevice) Reset() {
 	*x = ConfigCapabilityEvents_AccountDevice{}
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[5]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -701,7 +633,7 @@ func (x *ConfigCapabilityEvents_AccountDevice) String() string {
 func (*ConfigCapabilityEvents_AccountDevice) ProtoMessage() {}
 
 func (x *ConfigCapabilityEvents_AccountDevice) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[5]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -714,7 +646,7 @@ func (x *ConfigCapabilityEvents_AccountDevice) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ConfigCapabilityEvents_AccountDevice.ProtoReflect.Descriptor instead.
 func (*ConfigCapabilityEvents_AccountDevice) Descriptor() ([]byte, []int) {
-	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 3}
+	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *ConfigCapabilityEvents_AccountDevice) GetId() string {
@@ -796,7 +728,7 @@ type ConfigCapabilityEvents_AccountDevicesList struct {
 
 func (x *ConfigCapabilityEvents_AccountDevicesList) Reset() {
 	*x = ConfigCapabilityEvents_AccountDevicesList{}
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[6]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -808,7 +740,7 @@ func (x *ConfigCapabilityEvents_AccountDevicesList) String() string {
 func (*ConfigCapabilityEvents_AccountDevicesList) ProtoMessage() {}
 
 func (x *ConfigCapabilityEvents_AccountDevicesList) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[6]
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -821,7 +753,7 @@ func (x *ConfigCapabilityEvents_AccountDevicesList) ProtoReflect() protoreflect.
 
 // Deprecated: Use ConfigCapabilityEvents_AccountDevicesList.ProtoReflect.Descriptor instead.
 func (*ConfigCapabilityEvents_AccountDevicesList) Descriptor() ([]byte, []int) {
-	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 4}
+	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 3}
 }
 
 func (x *ConfigCapabilityEvents_AccountDevicesList) GetAccountDevices() []*ConfigCapabilityEvents_AccountDevice {
@@ -829,6 +761,74 @@ func (x *ConfigCapabilityEvents_AccountDevicesList) GetAccountDevices() []*Confi
 		return x.AccountDevices
 	}
 	return nil
+}
+
+type ConfigCapabilityEvents_PeripheralBackendConfig struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          *string                `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	Value         *string                `protobuf:"bytes,2,req,name=value" json:"value,omitempty"`
+	DeviceId      *string                `protobuf:"bytes,3,opt,name=device_id,json=deviceId" json:"device_id,omitempty"`
+	Platform      *string                `protobuf:"bytes,4,opt,name=platform" json:"platform,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) Reset() {
+	*x = ConfigCapabilityEvents_PeripheralBackendConfig{}
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigCapabilityEvents_PeripheralBackendConfig) ProtoMessage() {}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigCapabilityEvents_PeripheralBackendConfig.ProtoReflect.Descriptor instead.
+func (*ConfigCapabilityEvents_PeripheralBackendConfig) Descriptor() ([]byte, []int) {
+	return file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescGZIP(), []int{0, 4}
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetName() string {
+	if x != nil && x.Name != nil {
+		return *x.Name
+	}
+	return ""
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetValue() string {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return ""
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetDeviceId() string {
+	if x != nil && x.DeviceId != nil {
+		return *x.DeviceId
+	}
+	return ""
+}
+
+func (x *ConfigCapabilityEvents_PeripheralBackendConfig) GetPlatform() string {
+	if x != nil && x.Platform != nil {
+		return *x.Platform
+	}
+	return ""
 }
 
 type ConfigCapabilitySubscriptions_EmptyMessage struct {
@@ -979,27 +979,22 @@ const file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDe
 	"\x16ConfigCapabilityEvents\x12Y\n" +
 	"\x0esystem_configs\x18\x01 \x03(\v22.quasar.proto.ConfigCapabilityEvents.BackendConfigR\rsystemConfigs\x12Y\n" +
 	"\x0edevice_configs\x18\x02 \x03(\v22.quasar.proto.ConfigCapabilityEvents.BackendConfigR\rdeviceConfigs\x12[\n" +
-	"\x0faccount_configs\x18\x03 \x03(\v22.quasar.proto.ConfigCapabilityEvents.BackendConfigR\x0eaccountConfigs\x12x\n" +
-	"\x19peripheral_system_configs\x18\f \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x17peripheralSystemConfigs\x12x\n" +
-	"\x19peripheral_device_configs\x18\r \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x17peripheralDeviceConfigs\x12z\n" +
-	"\x1aperipheral_account_configs\x18\x0e \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x18peripheralAccountConfigs\x12n\n" +
+	"\x0faccount_configs\x18\x03 \x03(\v22.quasar.proto.ConfigCapabilityEvents.BackendConfigR\x0eaccountConfigs\x12n\n" +
 	"\x14get_sync_info_status\x18\x04 \x01(\v2=.quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatusR\x11getSyncInfoStatus\x12+\n" +
 	"\x11subscription_info\x18\x05 \x01(\tR\x10subscriptionInfo\x12=\n" +
 	"\x1balice_pro_subscription_info\x18\x06 \x01(\tR\x18aliceProSubscriptionInfo\x12)\n" +
 	"\x10auxiliary_config\x18\a \x01(\tR\x0fauxiliaryConfig\x12!\n" +
 	"\fgroup_config\x18\b \x01(\tR\vgroupConfig\x128\n" +
 	"\x18camera_subscription_info\x18\n" +
-	" \x01(\tR\x16cameraSubscriptionInfo\x12-\n" +
-	"\x12prefetched_configs\x18\v \x01(\tR\x11prefetchedConfigs\x12i\n" +
-	"\x14account_devices_list\x18\t \x01(\v27.quasar.proto.ConfigCapabilityEvents.AccountDevicesListR\x12accountDevicesList\x1a9\n" +
+	" \x01(\tR\x16cameraSubscriptionInfo\x12i\n" +
+	"\x14account_devices_list\x18\t \x01(\v27.quasar.proto.ConfigCapabilityEvents.AccountDevicesListR\x12accountDevicesList\x12x\n" +
+	"\x19peripheral_system_configs\x18\f \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x17peripheralSystemConfigs\x12x\n" +
+	"\x19peripheral_device_configs\x18\r \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x17peripheralDeviceConfigs\x12z\n" +
+	"\x1aperipheral_account_configs\x18\x0e \x03(\v2<.quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfigR\x18peripheralAccountConfigs\x12-\n" +
+	"\x12prefetched_configs\x18\v \x01(\tR\x11prefetchedConfigs\x1a9\n" +
 	"\rBackendConfig\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
-	"\x05value\x18\x02 \x02(\tR\x05value\x1a|\n" +
-	"\x17PeripheralBackendConfig\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
-	"\x05value\x18\x02 \x02(\tR\x05value\x12\x1b\n" +
-	"\tdevice_id\x18\x03 \x01(\tR\bdeviceId\x12\x1a\n" +
-	"\bplatform\x18\x04 \x01(\tR\bplatform\x1a\xc1\x01\n" +
+	"\x05value\x18\x02 \x02(\tR\x05value\x1a\xc1\x01\n" +
 	"\x18GetSyncInfoRequestStatus\x12\\\n" +
 	"\x06status\x18\x01 \x02(\x0e2D.quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus.StatusR\x06status\"G\n" +
 	"\x06Status\x12\x06\n" +
@@ -1021,7 +1016,12 @@ const file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDe
 	"\x06family\x18\n" +
 	" \x01(\bR\x06family\x1aq\n" +
 	"\x12AccountDevicesList\x12[\n" +
-	"\x0faccount_devices\x18\x01 \x03(\v22.quasar.proto.ConfigCapabilityEvents.AccountDeviceR\x0eaccountDevices\"\xbe!\n" +
+	"\x0faccount_devices\x18\x01 \x03(\v22.quasar.proto.ConfigCapabilityEvents.AccountDeviceR\x0eaccountDevices\x1a|\n" +
+	"\x17PeripheralBackendConfig\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
+	"\x05value\x18\x02 \x02(\tR\x05value\x12\x1b\n" +
+	"\tdevice_id\x18\x03 \x01(\tR\bdeviceId\x12\x1a\n" +
+	"\bplatform\x18\x04 \x01(\tR\bplatform\"\xbe!\n" +
 	"\x1dConfigCapabilitySubscriptions\x12\x82\x01\n" +
 	"\x1asubscribe_to_device_config\x18\x01 \x01(\v2E.quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessageR\x17subscribeToDeviceConfig\x12\x8a\x01\n" +
 	"\x1eunsubscribe_from_device_config\x18\x02 \x01(\v2E.quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessageR\x1bunsubscribeFromDeviceConfig\x12\x82\x01\n" +
@@ -1062,7 +1062,8 @@ const file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDe
 	"\vconfig_name\x18\x01 \x01(\tR\n" +
 	"configName\x12\x1b\n" +
 	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId\x12\x1a\n" +
-	"\bplatform\x18\x03 \x01(\tR\bplatform"
+	"\bplatform\x18\x03 \x01(\tR\bplatformB\xd3\x01\n" +
+	"\x10com.quasar.protoB\x11SyncMessagesProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/config/sync_messages\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_rawDescOnce sync.Once
@@ -1083,10 +1084,10 @@ var file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_goTypes
 	(*ConfigCapabilityEvents)(nil),                                      // 1: quasar.proto.ConfigCapabilityEvents
 	(*ConfigCapabilitySubscriptions)(nil),                               // 2: quasar.proto.ConfigCapabilitySubscriptions
 	(*ConfigCapabilityEvents_BackendConfig)(nil),                        // 3: quasar.proto.ConfigCapabilityEvents.BackendConfig
-	(*ConfigCapabilityEvents_PeripheralBackendConfig)(nil),              // 4: quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
-	(*ConfigCapabilityEvents_GetSyncInfoRequestStatus)(nil),             // 5: quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus
-	(*ConfigCapabilityEvents_AccountDevice)(nil),                        // 6: quasar.proto.ConfigCapabilityEvents.AccountDevice
-	(*ConfigCapabilityEvents_AccountDevicesList)(nil),                   // 7: quasar.proto.ConfigCapabilityEvents.AccountDevicesList
+	(*ConfigCapabilityEvents_GetSyncInfoRequestStatus)(nil),             // 4: quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus
+	(*ConfigCapabilityEvents_AccountDevice)(nil),                        // 5: quasar.proto.ConfigCapabilityEvents.AccountDevice
+	(*ConfigCapabilityEvents_AccountDevicesList)(nil),                   // 6: quasar.proto.ConfigCapabilityEvents.AccountDevicesList
+	(*ConfigCapabilityEvents_PeripheralBackendConfig)(nil),              // 7: quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
 	(*ConfigCapabilitySubscriptions_EmptyMessage)(nil),                  // 8: quasar.proto.ConfigCapabilitySubscriptions.EmptyMessage
 	(*ConfigCapabilitySubscriptions_ConfigSubscriptionMessage)(nil),     // 9: quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessage
 	(*ConfigCapabilitySubscriptions_PeripheralSubscriptionMessage)(nil), // 10: quasar.proto.ConfigCapabilitySubscriptions.PeripheralSubscriptionMessage
@@ -1095,11 +1096,11 @@ var file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_depIdxs
 	3,  // 0: quasar.proto.ConfigCapabilityEvents.system_configs:type_name -> quasar.proto.ConfigCapabilityEvents.BackendConfig
 	3,  // 1: quasar.proto.ConfigCapabilityEvents.device_configs:type_name -> quasar.proto.ConfigCapabilityEvents.BackendConfig
 	3,  // 2: quasar.proto.ConfigCapabilityEvents.account_configs:type_name -> quasar.proto.ConfigCapabilityEvents.BackendConfig
-	4,  // 3: quasar.proto.ConfigCapabilityEvents.peripheral_system_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
-	4,  // 4: quasar.proto.ConfigCapabilityEvents.peripheral_device_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
-	4,  // 5: quasar.proto.ConfigCapabilityEvents.peripheral_account_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
-	5,  // 6: quasar.proto.ConfigCapabilityEvents.get_sync_info_status:type_name -> quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus
-	7,  // 7: quasar.proto.ConfigCapabilityEvents.account_devices_list:type_name -> quasar.proto.ConfigCapabilityEvents.AccountDevicesList
+	4,  // 3: quasar.proto.ConfigCapabilityEvents.get_sync_info_status:type_name -> quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus
+	6,  // 4: quasar.proto.ConfigCapabilityEvents.account_devices_list:type_name -> quasar.proto.ConfigCapabilityEvents.AccountDevicesList
+	7,  // 5: quasar.proto.ConfigCapabilityEvents.peripheral_system_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
+	7,  // 6: quasar.proto.ConfigCapabilityEvents.peripheral_device_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
+	7,  // 7: quasar.proto.ConfigCapabilityEvents.peripheral_account_configs:type_name -> quasar.proto.ConfigCapabilityEvents.PeripheralBackendConfig
 	9,  // 8: quasar.proto.ConfigCapabilitySubscriptions.subscribe_to_device_config:type_name -> quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessage
 	9,  // 9: quasar.proto.ConfigCapabilitySubscriptions.unsubscribe_from_device_config:type_name -> quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessage
 	9,  // 10: quasar.proto.ConfigCapabilitySubscriptions.subscribe_to_system_config:type_name -> quasar.proto.ConfigCapabilitySubscriptions.ConfigSubscriptionMessage
@@ -1129,7 +1130,7 @@ var file_yandex_io_capabilities_config_sync_messages_sync_messages_proto_depIdxs
 	10, // 34: quasar.proto.ConfigCapabilitySubscriptions.subscribe_to_peripheral_account_config:type_name -> quasar.proto.ConfigCapabilitySubscriptions.PeripheralSubscriptionMessage
 	10, // 35: quasar.proto.ConfigCapabilitySubscriptions.unsubscribe_from_peripheral_account_config:type_name -> quasar.proto.ConfigCapabilitySubscriptions.PeripheralSubscriptionMessage
 	0,  // 36: quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus.status:type_name -> quasar.proto.ConfigCapabilityEvents.GetSyncInfoRequestStatus.Status
-	6,  // 37: quasar.proto.ConfigCapabilityEvents.AccountDevicesList.account_devices:type_name -> quasar.proto.ConfigCapabilityEvents.AccountDevice
+	5,  // 37: quasar.proto.ConfigCapabilityEvents.AccountDevicesList.account_devices:type_name -> quasar.proto.ConfigCapabilityEvents.AccountDevice
 	38, // [38:38] is the sub-list for method output_type
 	38, // [38:38] is the sub-list for method input_type
 	38, // [38:38] is the sub-list for extension type_name

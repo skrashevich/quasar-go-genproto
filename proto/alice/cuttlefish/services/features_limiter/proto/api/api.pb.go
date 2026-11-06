@@ -3175,8 +3175,8 @@ const file_alice_cuttlefish_services_features_limiter_proto_api_api_proto_rawDes
 	"\x15BVT_REQUESTS_LEFT_NUM\x10\x02\x12\x19\n" +
 	"\x15BVT_REQUESTS_USED_NUM\x10\x03\x12\x1f\n" +
 	"\x1bBVT_ADDON_REQUESTS_LEFT_NUM\x10\x04\x12\x1f\n" +
-	"\x1bBVT_ADDON_REQUESTS_USED_NUM\x10\x05B\x87\x01\n" +
-	">ru.yandex.alice.cuttlefish.services.features_limiter.proto.apiZEa.yandex-team.ru/alice/cuttlefish/services/features_limiter/proto/apib\x06proto3"
+	"\x1bBVT_ADDON_REQUESTS_USED_NUM\x10\x05B\xa6\x01\n" +
+	">ru.yandex.alice.cuttlefish.services.features_limiter.proto.apiZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/cuttlefish/services/features_limiter/proto/apib\x06proto3"
 
 var (
 	file_alice_cuttlefish_services_features_limiter_proto_api_api_proto_rawDescOnce sync.Once

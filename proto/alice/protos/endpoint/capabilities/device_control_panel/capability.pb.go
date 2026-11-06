@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/device_control_panel/capability.proto
 
-package device_control_panelpb
+package device_control_panel
 
 import (
 	device_control_panel "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel"
@@ -28,9 +28,9 @@ const (
 
 type TDeviceControlPanelCapability struct {
 	state         protoimpl.MessageState                     `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TDeviceControlPanelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TDeviceControlPanelCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TDeviceControlPanelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TDeviceControlPanelCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,11 +124,11 @@ func (*TDeviceControlPanelCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TDeviceControlPanelCapability_TState struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	Total         *device_control_panel.TTotalScenario        `protobuf:"bytes,1,opt,name=Total,json=total,proto3" json:"Total,omitempty"`
-	Video         *device_control_panel.TVideoScenario        `protobuf:"bytes,2,opt,name=Video,json=video,proto3" json:"Video,omitempty"`
-	TvChannels    *device_control_panel.TTvChannelsScenario   `protobuf:"bytes,3,opt,name=TvChannels,json=tv_channels,proto3" json:"TvChannels,omitempty"`
-	InputControl  *device_control_panel.TInputControlScenario `protobuf:"bytes,4,opt,name=InputControl,json=input_control,proto3" json:"InputControl,omitempty"`
-	ExternalApp   *device_control_panel.TExternalAppScenario  `protobuf:"bytes,5,opt,name=ExternalApp,json=external_app,proto3" json:"ExternalApp,omitempty"`
+	Total         *device_control_panel.TTotalScenario        `protobuf:"bytes,1,opt,name=Total,proto3" json:"Total,omitempty"`
+	Video         *device_control_panel.TVideoScenario        `protobuf:"bytes,2,opt,name=Video,proto3" json:"Video,omitempty"`
+	TvChannels    *device_control_panel.TTvChannelsScenario   `protobuf:"bytes,3,opt,name=TvChannels,proto3" json:"TvChannels,omitempty"`
+	InputControl  *device_control_panel.TInputControlScenario `protobuf:"bytes,4,opt,name=InputControl,proto3" json:"InputControl,omitempty"`
+	ExternalApp   *device_control_panel.TExternalAppScenario  `protobuf:"bytes,5,opt,name=ExternalApp,proto3" json:"ExternalApp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -200,9 +200,9 @@ func (x *TDeviceControlPanelCapability_TState) GetExternalApp() *device_control_
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	ChildPersonId   string                 `protobuf:"bytes,1,opt,name=ChildPersonId,json=child_person_id,proto3" json:"ChildPersonId,omitempty"`
-	RequestDeclined bool                   `protobuf:"varint,2,opt,name=RequestDeclined,json=request_declined,proto3" json:"RequestDeclined,omitempty"`
-	Name            string                 `protobuf:"bytes,6,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	ChildPersonId   string                 `protobuf:"bytes,1,opt,name=ChildPersonId,proto3" json:"ChildPersonId,omitempty"`
+	RequestDeclined bool                   `protobuf:"varint,2,opt,name=RequestDeclined,proto3" json:"RequestDeclined,omitempty"`
+	Name            string                 `protobuf:"bytes,6,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to Action:
 	//
 	//	*TDeviceControlPanelCapability_TChildModeUnblockDirective_SwitchAccount
@@ -303,15 +303,15 @@ type isTDeviceControlPanelCapability_TChildModeUnblockDirective_Action interface
 }
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_SwitchAccount struct {
-	SwitchAccount *TDeviceControlPanelCapability_TChildModeUnblockDirective_TSwitchAccount `protobuf:"bytes,3,opt,name=SwitchAccount,json=switch_account,proto3,oneof"`
+	SwitchAccount *TDeviceControlPanelCapability_TChildModeUnblockDirective_TSwitchAccount `protobuf:"bytes,3,opt,name=SwitchAccount,proto3,oneof"`
 }
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_LaunchApp struct {
-	LaunchApp *TDeviceControlPanelCapability_TChildModeUnblockDirective_TLaunchApp `protobuf:"bytes,4,opt,name=LaunchApp,json=launch_app,proto3,oneof"`
+	LaunchApp *TDeviceControlPanelCapability_TChildModeUnblockDirective_TLaunchApp `protobuf:"bytes,4,opt,name=LaunchApp,proto3,oneof"`
 }
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_Prolongation struct {
-	Prolongation *TDeviceControlPanelCapability_TChildModeUnblockDirective_TProlongation `protobuf:"bytes,5,opt,name=Prolongation,json=prolongation,proto3,oneof"`
+	Prolongation *TDeviceControlPanelCapability_TChildModeUnblockDirective_TProlongation `protobuf:"bytes,5,opt,name=Prolongation,proto3,oneof"`
 }
 
 func (*TDeviceControlPanelCapability_TChildModeUnblockDirective_SwitchAccount) isTDeviceControlPanelCapability_TChildModeUnblockDirective_Action() {
@@ -325,8 +325,8 @@ func (*TDeviceControlPanelCapability_TChildModeUnblockDirective_Prolongation) is
 
 type TDeviceControlPanelCapability_TOpenProlongationScreenDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IsAdultRequest bool                   `protobuf:"varint,2,opt,name=IsAdultRequest,json=is_adult_request,proto3" json:"IsAdultRequest,omitempty"`
+	Name           string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	IsAdultRequest bool                   `protobuf:"varint,2,opt,name=IsAdultRequest,proto3" json:"IsAdultRequest,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -377,7 +377,7 @@ func (x *TDeviceControlPanelCapability_TOpenProlongationScreenDirective) GetIsAd
 
 type TDeviceControlPanelCapability_TSendUnblockRequestDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -421,8 +421,8 @@ func (x *TDeviceControlPanelCapability_TSendUnblockRequestDirective) GetName() s
 
 type TDeviceControlPanelCapability_TProlongTimeLimitDirective struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	ProlongationSeconds uint32                 `protobuf:"varint,1,opt,name=ProlongationSeconds,json=prolongation_seconds,proto3" json:"ProlongationSeconds,omitempty"`
-	Name                string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	ProlongationSeconds uint32                 `protobuf:"varint,1,opt,name=ProlongationSeconds,proto3" json:"ProlongationSeconds,omitempty"`
+	Name                string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -473,7 +473,7 @@ func (x *TDeviceControlPanelCapability_TProlongTimeLimitDirective) GetName() str
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_TSwitchAccount struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	TargetPersonId string                 `protobuf:"bytes,1,opt,name=TargetPersonId,json=target_person_id,proto3" json:"TargetPersonId,omitempty"`
+	TargetPersonId string                 `protobuf:"bytes,1,opt,name=TargetPersonId,proto3" json:"TargetPersonId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -517,7 +517,7 @@ func (x *TDeviceControlPanelCapability_TChildModeUnblockDirective_TSwitchAccount
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_TLaunchApp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PackageName   string                 `protobuf:"bytes,2,opt,name=PackageName,json=package_name,proto3" json:"PackageName,omitempty"`
+	PackageName   string                 `protobuf:"bytes,2,opt,name=PackageName,proto3" json:"PackageName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -561,7 +561,7 @@ func (x *TDeviceControlPanelCapability_TChildModeUnblockDirective_TLaunchApp) Ge
 
 type TDeviceControlPanelCapability_TChildModeUnblockDirective_TProlongation struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	ProlongationSeconds uint32                 `protobuf:"varint,1,opt,name=ProlongationSeconds,json=prolongation_seconds,proto3" json:"ProlongationSeconds,omitempty"`
+	ProlongationSeconds uint32                 `protobuf:"varint,1,opt,name=ProlongationSeconds,proto3" json:"ProlongationSeconds,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -607,49 +607,47 @@ var File_alice_protos_endpoint_capabilities_device_control_panel_capability_prot
 
 const file_alice_protos_endpoint_capabilities_device_control_panel_capability_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/endpoint/capabilities/device_control_panel/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a6alice/protos/data/device_control_panel/scenarios.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfe\x0f\n" +
-	"\x1dTDeviceControlPanelCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12a\n" +
+	"Halice/protos/endpoint/capabilities/device_control_panel/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a6alice/protos/data/device_control_panel/scenarios.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\v\n" +
+	"\x1dTDeviceControlPanelCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12Q\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v21.NAlice.TDeviceControlPanelCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12M\n" +
-	"\x05State\x18\x03 \x01(\v2,.NAlice.TDeviceControlPanelCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xf9\x02\n" +
-	"\x06TState\x127\n" +
-	"\x05Total\x18\x01 \x01(\v2\x16.NAlice.TTotalScenarioB\t\xaa\xdd\x1b\x05totalR\x05total\x127\n" +
-	"\x05Video\x18\x02 \x01(\v2\x16.NAlice.TVideoScenarioB\t\xaa\xdd\x1b\x05videoR\x05video\x12M\n" +
+	"Parameters\x18\x02 \x01(\v21.NAlice.TDeviceControlPanelCapability.TParametersR\n" +
+	"Parameters\x12B\n" +
+	"\x05State\x18\x03 \x01(\v2,.NAlice.TDeviceControlPanelCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xa4\x02\n" +
+	"\x06TState\x12,\n" +
+	"\x05Total\x18\x01 \x01(\v2\x16.NAlice.TTotalScenarioR\x05Total\x12,\n" +
+	"\x05Video\x18\x02 \x01(\v2\x16.NAlice.TVideoScenarioR\x05Video\x12;\n" +
 	"\n" +
-	"TvChannels\x18\x03 \x01(\v2\x1b.NAlice.TTvChannelsScenarioB\x0f\xaa\xdd\x1b\vtv_channelsR\vtv_channels\x12U\n" +
-	"\fInputControl\x18\x04 \x01(\v2\x1d.NAlice.TInputControlScenarioB\x11\xaa\xdd\x1b\rinput_controlR\rinput_control\x12Q\n" +
-	"\vExternalApp\x18\x05 \x01(\v2\x1c.NAlice.TExternalAppScenarioB\x10\xaa\xdd\x1b\fexternal_appR\fexternal_app:\x04\xa8\xdd\x1b\x04\x1a\x82\a\n" +
-	"\x1aTChildModeUnblockDirective\x12;\n" +
-	"\rChildPersonId\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\x0fchild_person_idR\x0fchild_person_id\x12?\n" +
-	"\x0fRequestDeclined\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10request_declinedR\x10request_declined\x12\x1c\n" +
-	"\x04Name\x18\x06 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x8c\x01\n" +
-	"\rSwitchAccount\x18\x03 \x01(\v2O.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TSwitchAccountB\x12\xaa\xdd\x1b\x0eswitch_accountH\x00R\x0eswitch_account\x12|\n" +
-	"\tLaunchApp\x18\x04 \x01(\v2K.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TLaunchAppB\x0e\xaa\xdd\x1b\n" +
-	"launch_appH\x00R\n" +
-	"launch_app\x12\x86\x01\n" +
-	"\fProlongation\x18\x05 \x01(\v2N.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TProlongationB\x10\xaa\xdd\x1b\fprolongationH\x00R\fprolongation\x1aP\n" +
-	"\x0eTSwitchAccount\x12>\n" +
-	"\x0eTargetPersonId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10target_person_idR\x10target_person_id\x1aA\n" +
+	"TvChannels\x18\x03 \x01(\v2\x1b.NAlice.TTvChannelsScenarioR\n" +
+	"TvChannels\x12A\n" +
+	"\fInputControl\x18\x04 \x01(\v2\x1d.NAlice.TInputControlScenarioR\fInputControl\x12>\n" +
+	"\vExternalApp\x18\x05 \x01(\v2\x1c.NAlice.TExternalAppScenarioR\vExternalApp\x1a\x93\x05\n" +
+	"\x1aTChildModeUnblockDirective\x12$\n" +
+	"\rChildPersonId\x18\x01 \x01(\tR\rChildPersonId\x12(\n" +
+	"\x0fRequestDeclined\x18\x02 \x01(\bR\x0fRequestDeclined\x12\x12\n" +
+	"\x04Name\x18\x06 \x01(\tR\x04Name\x12w\n" +
+	"\rSwitchAccount\x18\x03 \x01(\v2O.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TSwitchAccountH\x00R\rSwitchAccount\x12k\n" +
+	"\tLaunchApp\x18\x04 \x01(\v2K.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TLaunchAppH\x00R\tLaunchApp\x12t\n" +
+	"\fProlongation\x18\x05 \x01(\v2N.NAlice.TDeviceControlPanelCapability.TChildModeUnblockDirective.TProlongationH\x00R\fProlongation\x1a8\n" +
+	"\x0eTSwitchAccount\x12&\n" +
+	"\x0eTargetPersonId\x18\x01 \x01(\tR\x0eTargetPersonId\x1a.\n" +
 	"\n" +
-	"TLaunchApp\x123\n" +
-	"\vPackageName\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name\x1a\\\n" +
-	"\rTProlongation\x12K\n" +
-	"\x13ProlongationSeconds\x18\x01 \x01(\rB\x18\xaa\xdd\x1b\x14prolongation_secondsR\x14prolongation_seconds:)\x92\x82\x19\x1cchild_mode_unblock_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdd\x02B\x14\n" +
-	"\x06Action\x12\n" +
-	"\xaa\xdd\x1b\x06action\x1a\xb1\x01\n" +
-	" TOpenProlongationScreenDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eIsAdultRequest\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10is_adult_requestR\x10is_adult_request:/\x92\x82\x19\"open_prolongation_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf1\x02\x1ai\n" +
-	"\x1cTSendUnblockRequestDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:+\x92\x82\x19\x1esend_unblock_request_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf2\x02\x1a\xb2\x01\n" +
-	"\x1aTProlongTimeLimitDirective\x12K\n" +
-	"\x13ProlongationSeconds\x18\x01 \x01(\rB\x18\xaa\xdd\x1b\x14prolongation_secondsR\x14prolongation_seconds\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:)\x92\x82\x19\x1cprolong_time_limit_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c8B\xa8\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17DeviceControlPanelProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/device_control_panel;device_control_panelpbb\x06proto3"
+	"TLaunchApp\x12 \n" +
+	"\vPackageName\x18\x02 \x01(\tR\vPackageName\x1aA\n" +
+	"\rTProlongation\x120\n" +
+	"\x13ProlongationSeconds\x18\x01 \x01(\rR\x13ProlongationSecondsB\b\n" +
+	"\x06Action\x1a^\n" +
+	" TOpenProlongationScreenDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12&\n" +
+	"\x0eIsAdultRequest\x18\x02 \x01(\bR\x0eIsAdultRequest\x1a2\n" +
+	"\x1cTSendUnblockRequestDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1ab\n" +
+	"\x1aTProlongTimeLimitDirective\x120\n" +
+	"\x13ProlongationSeconds\x18\x01 \x01(\rR\x13ProlongationSeconds\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04NameB\xbe\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_device_control_panel_capability_proto_rawDescOnce sync.Once

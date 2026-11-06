@@ -28,13 +28,13 @@ const (
 
 type TUserOptions struct {
 	state              protoimpl.MessageState             `protogen:"open.v1"`
-	OAuthToken         string                             `protobuf:"bytes,1,opt,name=OAuthToken,json=oauth_token,proto3" json:"OAuthToken,omitempty"`
-	Puid               string                             `protobuf:"bytes,2,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	PersId             string                             `protobuf:"bytes,3,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
-	HashPuids          *common.THashPuids                 `protobuf:"bytes,4,opt,name=HashPuids,json=hash_puids,proto3" json:"HashPuids,omitempty"`
-	Data               *TUserData                         `protobuf:"bytes,5,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
-	Tags               *TUserTags                         `protobuf:"bytes,6,opt,name=Tags,json=tags,proto3" json:"Tags,omitempty"`
-	ContextLoadOptions *request_parts.TContextLoadOptions `protobuf:"bytes,7,opt,name=ContextLoadOptions,json=context_load_options,proto3" json:"ContextLoadOptions,omitempty"`
+	OAuthToken         string                             `protobuf:"bytes,1,opt,name=OAuthToken,proto3" json:"OAuthToken,omitempty"`
+	Puid               string                             `protobuf:"bytes,2,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	PersId             string                             `protobuf:"bytes,3,opt,name=PersId,proto3" json:"PersId,omitempty"`
+	HashPuids          *common.THashPuids                 `protobuf:"bytes,4,opt,name=HashPuids,proto3" json:"HashPuids,omitempty"`
+	Data               *TUserData                         `protobuf:"bytes,5,opt,name=Data,proto3" json:"Data,omitempty"`
+	Tags               *TUserTags                         `protobuf:"bytes,6,opt,name=Tags,proto3" json:"Tags,omitempty"`
+	ContextLoadOptions *request_parts.TContextLoadOptions `protobuf:"bytes,7,opt,name=ContextLoadOptions,proto3" json:"ContextLoadOptions,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -122,19 +122,19 @@ var File_alice_megamind_protos_user_options_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_user_options_proto_rawDesc = "" +
 	"\n" +
-	"(alice/megamind/protos/user/options.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a-alice/megamind/protos/common/hash_puids.proto\x1a%alice/megamind/protos/user/data.proto\x1a%alice/megamind/protos/user/tags.proto\x1a9alice/protos/api/request_parts/context_load_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xac\x03\n" +
-	"\fTUserOptions\x128\n" +
+	"(alice/megamind/protos/user/options.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a-alice/megamind/protos/common/hash_puids.proto\x1a%alice/megamind/protos/user/data.proto\x1a%alice/megamind/protos/user/tags.proto\x1a9alice/protos/api/request_parts/context_load_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa7\x02\n" +
+	"\fTUserOptions\x12\x1e\n" +
 	"\n" +
-	"OAuthToken\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\voauth_token\xa8\x8d'\x04\xf8\x91*\x02R\voauth_token\x12 \n" +
-	"\x04Puid\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x12$\n" +
-	"\x06PersId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12A\n" +
-	"\tHashPuids\x18\x04 \x01(\v2\x12.NAlice.THashPuidsB\x0e\xaa\xdd\x1b\n" +
-	"hash_puidsR\n" +
-	"hash_puids\x127\n" +
-	"\x04Data\x18\x05 \x01(\v2\x11.NAlice.TUserDataB\x10\xaa\xdd\x1b\x04data\xa8\x8d'\x01\xf8\x91*\x03R\x04data\x12/\n" +
-	"\x04Tags\x18\x06 \x01(\v2\x11.NAlice.TUserTagsB\b\xaa\xdd\x1b\x04tagsR\x04tags\x12g\n" +
-	"\x12ContextLoadOptions\x18\a \x01(\v2\x1b.NAlice.TContextLoadOptionsB\x18\xaa\xdd\x1b\x14context_load_optionsR\x14context_load_options:\x04\xa8\xdd\x1b\x04B`\n" +
-	"$ru.yandex.alice.megamind.protos.userB\vUserOptionsZ+a.yandex-team.ru/alice/megamind/protos/userb\x06proto3"
+	"OAuthToken\x18\x01 \x01(\tR\n" +
+	"OAuthToken\x12\x12\n" +
+	"\x04Puid\x18\x02 \x01(\tR\x04Puid\x12\x16\n" +
+	"\x06PersId\x18\x03 \x01(\tR\x06PersId\x120\n" +
+	"\tHashPuids\x18\x04 \x01(\v2\x12.NAlice.THashPuidsR\tHashPuids\x12%\n" +
+	"\x04Data\x18\x05 \x01(\v2\x11.NAlice.TUserDataR\x04Data\x12%\n" +
+	"\x04Tags\x18\x06 \x01(\v2\x11.NAlice.TUserTagsR\x04Tags\x12K\n" +
+	"\x12ContextLoadOptions\x18\a \x01(\v2\x1b.NAlice.TContextLoadOptionsR\x12ContextLoadOptionsB\x9e\x01\n" +
+	"\n" +
+	"com.NAliceB\fOptionsProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/user\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_user_options_proto_rawDescOnce sync.Once

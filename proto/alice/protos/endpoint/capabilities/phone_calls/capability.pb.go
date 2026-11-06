@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/phone_calls/capability.proto
 
-package phonecallspb
+package phone_calls
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -590,9 +590,9 @@ func (TPhoneCallsCapability_TPhoneCallsCallFailedEvent_EReason) EnumDescriptor()
 
 type TPhoneCallsCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TPhoneCallsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TPhoneCallsCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TPhoneCallsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TPhoneCallsCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -719,11 +719,11 @@ type isTPhoneCallsCapability_TCredentials_Credentials interface {
 }
 
 type TPhoneCallsCapability_TCredentials_SipCredentials struct {
-	SipCredentials *TPhoneCallsCapability_TSipCredentials `protobuf:"bytes,1,opt,name=SipCredentials,json=sip_credentials,proto3,oneof"`
+	SipCredentials *TPhoneCallsCapability_TSipCredentials `protobuf:"bytes,1,opt,name=SipCredentials,proto3,oneof"`
 }
 
 type TPhoneCallsCapability_TCredentials_MtsCredentials struct {
-	MtsCredentials *TPhoneCallsCapability_TMtsCredentials `protobuf:"bytes,2,opt,name=MtsCredentials,json=mts_credentials,proto3,oneof"`
+	MtsCredentials *TPhoneCallsCapability_TMtsCredentials `protobuf:"bytes,2,opt,name=MtsCredentials,proto3,oneof"`
 }
 
 func (*TPhoneCallsCapability_TCredentials_SipCredentials) isTPhoneCallsCapability_TCredentials_Credentials() {
@@ -734,11 +734,11 @@ func (*TPhoneCallsCapability_TCredentials_MtsCredentials) isTPhoneCallsCapabilit
 
 type TPhoneCallsCapability_TSupportedProtocol struct {
 	state              protoimpl.MessageState                          `protogen:"open.v1"`
-	Provider           TPhoneCallsCapability_ETelephoneServiceProvider `protobuf:"varint,1,opt,name=Provider,json=provider,proto3,enum=NAlice.TPhoneCallsCapability_ETelephoneServiceProvider" json:"Provider,omitempty"`
-	Protocol           TPhoneCallsCapability_EProtocol                 `protobuf:"varint,2,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TPhoneCallsCapability_EProtocol" json:"Protocol,omitempty"`
-	TelecomProvider    telecom.EProvider                               `protobuf:"varint,3,opt,name=TelecomProvider,json=telecom_provider,proto3,enum=NAlice.NTelecom.EProvider" json:"TelecomProvider,omitempty"`
-	OnDemandConnection bool                                            `protobuf:"varint,4,opt,name=OnDemandConnection,json=require_connection,proto3" json:"OnDemandConnection,omitempty"`
-	SupportedMedia     []TPhoneCallsCapability_EMediaType              `protobuf:"varint,5,rep,packed,name=SupportedMedia,json=supported_media,proto3,enum=NAlice.TPhoneCallsCapability_EMediaType" json:"SupportedMedia,omitempty"`
+	Provider           TPhoneCallsCapability_ETelephoneServiceProvider `protobuf:"varint,1,opt,name=Provider,proto3,enum=NAlice.TPhoneCallsCapability_ETelephoneServiceProvider" json:"Provider,omitempty"`
+	Protocol           TPhoneCallsCapability_EProtocol                 `protobuf:"varint,2,opt,name=Protocol,proto3,enum=NAlice.TPhoneCallsCapability_EProtocol" json:"Protocol,omitempty"`
+	TelecomProvider    telecom.EProvider                               `protobuf:"varint,3,opt,name=TelecomProvider,proto3,enum=NAlice.NTelecom.EProvider" json:"TelecomProvider,omitempty"`
+	OnDemandConnection bool                                            `protobuf:"varint,4,opt,name=OnDemandConnection,proto3" json:"OnDemandConnection,omitempty"`
+	SupportedMedia     []TPhoneCallsCapability_EMediaType              `protobuf:"varint,5,rep,packed,name=SupportedMedia,proto3,enum=NAlice.TPhoneCallsCapability_EMediaType" json:"SupportedMedia,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -810,7 +810,7 @@ func (x *TPhoneCallsCapability_TSupportedProtocol) GetSupportedMedia() []TPhoneC
 
 type TPhoneCallsCapability_TParameters struct {
 	state              protoimpl.MessageState                      `protogen:"open.v1"`
-	SupportedProtocols []*TPhoneCallsCapability_TSupportedProtocol `protobuf:"bytes,1,rep,name=SupportedProtocols,json=supported_protocols,proto3" json:"SupportedProtocols,omitempty"`
+	SupportedProtocols []*TPhoneCallsCapability_TSupportedProtocol `protobuf:"bytes,1,rep,name=SupportedProtocols,proto3" json:"SupportedProtocols,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -854,8 +854,8 @@ func (x *TPhoneCallsCapability_TParameters) GetSupportedProtocols() []*TPhoneCal
 
 type TPhoneCallsCapability_TMediaState struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	IsMicMuted    bool                                          `protobuf:"varint,1,opt,name=IsMicMuted,json=is_mic_muted,proto3" json:"IsMicMuted,omitempty"`
-	MuteSource    TPhoneCallsCapability_TMediaState_EMuteSource `protobuf:"varint,2,opt,name=MuteSource,json=mute_source,proto3,enum=NAlice.TPhoneCallsCapability_TMediaState_EMuteSource" json:"MuteSource,omitempty"`
+	IsMicMuted    bool                                          `protobuf:"varint,1,opt,name=IsMicMuted,proto3" json:"IsMicMuted,omitempty"`
+	MuteSource    TPhoneCallsCapability_TMediaState_EMuteSource `protobuf:"varint,2,opt,name=MuteSource,proto3,enum=NAlice.TPhoneCallsCapability_TMediaState_EMuteSource" json:"MuteSource,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -906,7 +906,7 @@ func (x *TPhoneCallsCapability_TMediaState) GetMuteSource() TPhoneCallsCapabilit
 
 type TPhoneCallsCapability_TCallParams struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	MediaTypes    []TPhoneCallsCapability_EMediaType `protobuf:"varint,1,rep,packed,name=MediaTypes,json=media_type,proto3,enum=NAlice.TPhoneCallsCapability_EMediaType" json:"MediaTypes,omitempty"`
+	MediaTypes    []TPhoneCallsCapability_EMediaType `protobuf:"varint,1,rep,packed,name=MediaTypes,proto3,enum=NAlice.TPhoneCallsCapability_EMediaType" json:"MediaTypes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -950,13 +950,13 @@ func (x *TPhoneCallsCapability_TCallParams) GetMediaTypes() []TPhoneCallsCapabil
 
 type TPhoneCallsCapability_TCall struct {
 	state               protoimpl.MessageState             `protogen:"open.v1"`
-	Id                  string                             `protobuf:"bytes,1,opt,name=Id,json=call_id,proto3" json:"Id,omitempty"`
-	ProviderContactInfo *telecom.TProviderContactInfo      `protobuf:"bytes,3,opt,name=ProviderContactInfo,json=provider_contact_info,proto3" json:"ProviderContactInfo,omitempty"`
-	IsConfirmed         bool                               `protobuf:"varint,4,opt,name=IsConfirmed,json=is_confirmed,proto3" json:"IsConfirmed,omitempty"`
-	AccountId           string                             `protobuf:"bytes,5,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	CallInfo            *telecom.TCallInfo                 `protobuf:"bytes,6,opt,name=CallInfo,json=call_info,proto3" json:"CallInfo,omitempty"`
-	MediaState          *TPhoneCallsCapability_TMediaState `protobuf:"bytes,7,opt,name=MediaState,json=media_state,proto3" json:"MediaState,omitempty"`
-	CallParams          *TPhoneCallsCapability_TCallParams `protobuf:"bytes,8,opt,name=CallParams,json=call_params,proto3" json:"CallParams,omitempty"`
+	Id                  string                             `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	ProviderContactInfo *telecom.TProviderContactInfo      `protobuf:"bytes,3,opt,name=ProviderContactInfo,proto3" json:"ProviderContactInfo,omitempty"`
+	IsConfirmed         bool                               `protobuf:"varint,4,opt,name=IsConfirmed,proto3" json:"IsConfirmed,omitempty"`
+	AccountId           string                             `protobuf:"bytes,5,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	CallInfo            *telecom.TCallInfo                 `protobuf:"bytes,6,opt,name=CallInfo,proto3" json:"CallInfo,omitempty"`
+	MediaState          *TPhoneCallsCapability_TMediaState `protobuf:"bytes,7,opt,name=MediaState,proto3" json:"MediaState,omitempty"`
+	CallParams          *TPhoneCallsCapability_TCallParams `protobuf:"bytes,8,opt,name=CallParams,proto3" json:"CallParams,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -1041,14 +1041,13 @@ func (x *TPhoneCallsCapability_TCall) GetCallParams() *TPhoneCallsCapability_TCa
 }
 
 type TPhoneCallsCapability_TAccount struct {
-	state    protoimpl.MessageState                    `protogen:"open.v1"`
-	Protocol *TPhoneCallsCapability_TSupportedProtocol `protobuf:"bytes,2,opt,name=Protocol,json=protocol,proto3" json:"Protocol,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
-	IsConnected         bool                                             `protobuf:"varint,3,opt,name=IsConnected,json=is_connected,proto3" json:"IsConnected,omitempty"`
-	ConnectStatus       TPhoneCallsCapability_TAccount_EConnectStatus    `protobuf:"varint,6,opt,name=ConnectStatus,json=connect_status,proto3,enum=NAlice.TPhoneCallsCapability_TAccount_EConnectStatus" json:"ConnectStatus,omitempty"`
-	DisconnectReason    TPhoneCallsCapability_TAccount_EDisconnectReason `protobuf:"varint,7,opt,name=DisconnectReason,json=disconnect_reason,proto3,enum=NAlice.TPhoneCallsCapability_TAccount_EDisconnectReason" json:"DisconnectReason,omitempty"`
-	ProviderContactInfo *telecom.TProviderContactInfo                    `protobuf:"bytes,4,opt,name=ProviderContactInfo,json=provider_contact_info,proto3" json:"ProviderContactInfo,omitempty"`
-	Id                  string                                           `protobuf:"bytes,5,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	state               protoimpl.MessageState                           `protogen:"open.v1"`
+	Protocol            *TPhoneCallsCapability_TSupportedProtocol        `protobuf:"bytes,2,opt,name=Protocol,proto3" json:"Protocol,omitempty"`
+	IsConnected         bool                                             `protobuf:"varint,3,opt,name=IsConnected,proto3" json:"IsConnected,omitempty"`
+	ConnectStatus       TPhoneCallsCapability_TAccount_EConnectStatus    `protobuf:"varint,6,opt,name=ConnectStatus,proto3,enum=NAlice.TPhoneCallsCapability_TAccount_EConnectStatus" json:"ConnectStatus,omitempty"`
+	DisconnectReason    TPhoneCallsCapability_TAccount_EDisconnectReason `protobuf:"varint,7,opt,name=DisconnectReason,proto3,enum=NAlice.TPhoneCallsCapability_TAccount_EDisconnectReason" json:"DisconnectReason,omitempty"`
+	ProviderContactInfo *telecom.TProviderContactInfo                    `protobuf:"bytes,4,opt,name=ProviderContactInfo,proto3" json:"ProviderContactInfo,omitempty"`
+	Id                  string                                           `protobuf:"bytes,5,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -1090,7 +1089,6 @@ func (x *TPhoneCallsCapability_TAccount) GetProtocol() *TPhoneCallsCapability_TS
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
 func (x *TPhoneCallsCapability_TAccount) GetIsConnected() bool {
 	if x != nil {
 		return x.IsConnected
@@ -1127,13 +1125,12 @@ func (x *TPhoneCallsCapability_TAccount) GetId() string {
 }
 
 type TPhoneCallsCapability_TState struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
-	Account       *TPhoneCallsCapability_TAccount   `protobuf:"bytes,1,opt,name=Account,json=account,proto3" json:"Account,omitempty"`
-	CurrentCall   *TPhoneCallsCapability_TCall      `protobuf:"bytes,2,opt,name=CurrentCall,json=current_call,proto3" json:"CurrentCall,omitempty"`
-	IncomingCall  *TPhoneCallsCapability_TCall      `protobuf:"bytes,3,opt,name=IncomingCall,json=incoming_call,proto3" json:"IncomingCall,omitempty"`
-	OutgoingCall  *TPhoneCallsCapability_TCall      `protobuf:"bytes,4,opt,name=OutgoingCall,json=outgoing_call,proto3" json:"OutgoingCall,omitempty"`
-	Accounts      []*TPhoneCallsCapability_TAccount `protobuf:"bytes,5,rep,name=Accounts,json=accounts,proto3" json:"Accounts,omitempty"`
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Account       *TPhoneCallsCapability_TAccount   `protobuf:"bytes,1,opt,name=Account,proto3" json:"Account,omitempty"`
+	CurrentCall   *TPhoneCallsCapability_TCall      `protobuf:"bytes,2,opt,name=CurrentCall,proto3" json:"CurrentCall,omitempty"`
+	IncomingCall  *TPhoneCallsCapability_TCall      `protobuf:"bytes,3,opt,name=IncomingCall,proto3" json:"IncomingCall,omitempty"`
+	OutgoingCall  *TPhoneCallsCapability_TCall      `protobuf:"bytes,4,opt,name=OutgoingCall,proto3" json:"OutgoingCall,omitempty"`
+	Accounts      []*TPhoneCallsCapability_TAccount `protobuf:"bytes,5,rep,name=Accounts,proto3" json:"Accounts,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1168,7 +1165,6 @@ func (*TPhoneCallsCapability_TState) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDescGZIP(), []int{0, 7}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
 func (x *TPhoneCallsCapability_TState) GetAccount() *TPhoneCallsCapability_TAccount {
 	if x != nil {
 		return x.Account
@@ -1206,12 +1202,12 @@ func (x *TPhoneCallsCapability_TState) GetAccounts() []*TPhoneCallsCapability_TA
 
 type TPhoneCallsCapability_TSipCredentials struct {
 	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Number        string                                           `protobuf:"bytes,1,opt,name=Number,json=number,proto3" json:"Number,omitempty"`
-	Password      string                                           `protobuf:"bytes,2,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
-	Realm         string                                           `protobuf:"bytes,3,opt,name=Realm,json=realm,proto3" json:"Realm,omitempty"`
-	RegistrarIP   string                                           `protobuf:"bytes,4,opt,name=RegistrarIP,json=registrar_ip,proto3" json:"RegistrarIP,omitempty"`
-	AppID         string                                           `protobuf:"bytes,5,opt,name=AppID,json=app_id,proto3" json:"AppID,omitempty"`
-	SipHeaders    []*TPhoneCallsCapability_TSipCredentials_THeader `protobuf:"bytes,7,rep,name=SipHeaders,json=sip_headers,proto3" json:"SipHeaders,omitempty"`
+	Number        string                                           `protobuf:"bytes,1,opt,name=Number,proto3" json:"Number,omitempty"`
+	Password      string                                           `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
+	Realm         string                                           `protobuf:"bytes,3,opt,name=Realm,proto3" json:"Realm,omitempty"`
+	RegistrarIP   string                                           `protobuf:"bytes,4,opt,name=RegistrarIP,proto3" json:"RegistrarIP,omitempty"`
+	AppID         string                                           `protobuf:"bytes,5,opt,name=AppID,proto3" json:"AppID,omitempty"`
+	SipHeaders    []*TPhoneCallsCapability_TSipCredentials_THeader `protobuf:"bytes,7,rep,name=SipHeaders,proto3" json:"SipHeaders,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1290,13 +1286,13 @@ func (x *TPhoneCallsCapability_TSipCredentials) GetSipHeaders() []*TPhoneCallsCa
 
 type TPhoneCallsCapability_TMtsCredentials struct {
 	state            protoimpl.MessageState                                `protogen:"open.v1"`
-	Authorization    *TPhoneCallsCapability_TMtsCredentials_TAuthorization `protobuf:"bytes,1,opt,name=Authorization,json=authorization,proto3" json:"Authorization,omitempty"`
-	UserAgent        string                                                `protobuf:"bytes,2,opt,name=UserAgent,json=user_agent,proto3" json:"UserAgent,omitempty"`
-	DeviceId         string                                                `protobuf:"bytes,3,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	Location         *TPhoneCallsCapability_TMtsCredentials_TLocation      `protobuf:"bytes,4,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
-	Server           string                                                `protobuf:"bytes,5,opt,name=Server,json=server,proto3" json:"Server,omitempty"`
-	LaasRealLocation *data.TLatLon                                         `protobuf:"bytes,7,opt,name=LaasRealLocation,json=laas_real_location,proto3" json:"LaasRealLocation,omitempty"`
-	WssUrl           *string                                               `protobuf:"bytes,6,opt,name=WssUrl,json=wss_url,proto3,oneof" json:"WssUrl,omitempty"`
+	Authorization    *TPhoneCallsCapability_TMtsCredentials_TAuthorization `protobuf:"bytes,1,opt,name=Authorization,proto3" json:"Authorization,omitempty"`
+	UserAgent        string                                                `protobuf:"bytes,2,opt,name=UserAgent,proto3" json:"UserAgent,omitempty"`
+	DeviceId         string                                                `protobuf:"bytes,3,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	Location         *TPhoneCallsCapability_TMtsCredentials_TLocation      `protobuf:"bytes,4,opt,name=Location,proto3" json:"Location,omitempty"`
+	Server           string                                                `protobuf:"bytes,5,opt,name=Server,proto3" json:"Server,omitempty"`
+	LaasRealLocation *data.TLatLon                                         `protobuf:"bytes,7,opt,name=LaasRealLocation,proto3" json:"LaasRealLocation,omitempty"`
+	WssUrl           *string                                               `protobuf:"bytes,6,opt,name=WssUrl,proto3,oneof" json:"WssUrl,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1381,13 +1377,12 @@ func (x *TPhoneCallsCapability_TMtsCredentials) GetWssUrl() string {
 }
 
 type TPhoneCallsCapability_TAddAccountDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
-	CredentialsKey string                                    `protobuf:"bytes,3,opt,name=CredentialsKey,json=credentials_key,proto3" json:"CredentialsKey,omitempty"`
-	AccountId      string                                    `protobuf:"bytes,4,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	Protocol       *TPhoneCallsCapability_TSupportedProtocol `protobuf:"bytes,6,opt,name=Protocol,json=protocol,proto3" json:"Protocol,omitempty"`
-	LifetimePolicy TPhoneCallsCapability_ELifetimePolicy     `protobuf:"varint,7,opt,name=LifetimePolicy,json=lifetime_policy,proto3,enum=NAlice.TPhoneCallsCapability_ELifetimePolicy" json:"LifetimePolicy,omitempty"`
+	state          protoimpl.MessageState                    `protogen:"open.v1"`
+	Name           string                                    `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CredentialsKey string                                    `protobuf:"bytes,3,opt,name=CredentialsKey,proto3" json:"CredentialsKey,omitempty"`
+	AccountId      string                                    `protobuf:"bytes,4,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Protocol       *TPhoneCallsCapability_TSupportedProtocol `protobuf:"bytes,6,opt,name=Protocol,proto3" json:"Protocol,omitempty"`
+	LifetimePolicy TPhoneCallsCapability_ELifetimePolicy     `protobuf:"varint,7,opt,name=LifetimePolicy,proto3,enum=NAlice.TPhoneCallsCapability_ELifetimePolicy" json:"LifetimePolicy,omitempty"`
 	// Types that are valid to be assigned to Credentials:
 	//
 	//	*TPhoneCallsCapability_TAddAccountDirective_SipCredentials
@@ -1434,7 +1429,6 @@ func (x *TPhoneCallsCapability_TAddAccountDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
 func (x *TPhoneCallsCapability_TAddAccountDirective) GetCredentialsKey() string {
 	if x != nil {
 		return x.CredentialsKey
@@ -1493,11 +1487,11 @@ type isTPhoneCallsCapability_TAddAccountDirective_Credentials interface {
 }
 
 type TPhoneCallsCapability_TAddAccountDirective_SipCredentials struct {
-	SipCredentials *TPhoneCallsCapability_TSipCredentials `protobuf:"bytes,2,opt,name=SipCredentials,json=sip_credentials,proto3,oneof"`
+	SipCredentials *TPhoneCallsCapability_TSipCredentials `protobuf:"bytes,2,opt,name=SipCredentials,proto3,oneof"`
 }
 
 type TPhoneCallsCapability_TAddAccountDirective_MtsCredentials struct {
-	MtsCredentials *TPhoneCallsCapability_TMtsCredentials `protobuf:"bytes,5,opt,name=MtsCredentials,json=mts_credentials,proto3,oneof"`
+	MtsCredentials *TPhoneCallsCapability_TMtsCredentials `protobuf:"bytes,5,opt,name=MtsCredentials,proto3,oneof"`
 }
 
 func (*TPhoneCallsCapability_TAddAccountDirective_SipCredentials) isTPhoneCallsCapability_TAddAccountDirective_Credentials() {
@@ -1508,9 +1502,9 @@ func (*TPhoneCallsCapability_TAddAccountDirective_MtsCredentials) isTPhoneCallsC
 
 type TPhoneCallsCapability_TConnectDirective struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Name             string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AccountId        string                 `protobuf:"bytes,2,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	ForcedTerminalId string                 `protobuf:"bytes,3,opt,name=ForcedTerminalId,json=forced_terminal_id,proto3" json:"ForcedTerminalId,omitempty"`
+	Name             string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AccountId        string                 `protobuf:"bytes,2,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	ForcedTerminalId string                 `protobuf:"bytes,3,opt,name=ForcedTerminalId,proto3" json:"ForcedTerminalId,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1568,8 +1562,8 @@ func (x *TPhoneCallsCapability_TConnectDirective) GetForcedTerminalId() string {
 
 type TPhoneCallsCapability_TDeleteAccountDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AccountId     string                 `protobuf:"bytes,2,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AccountId     string                 `protobuf:"bytes,2,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1620,8 +1614,8 @@ func (x *TPhoneCallsCapability_TDeleteAccountDirective) GetAccountId() string {
 
 type TPhoneCallsCapability_TRefreshAccountDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AccountId     string                 `protobuf:"bytes,2,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AccountId     string                 `protobuf:"bytes,2,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1671,18 +1665,17 @@ func (x *TPhoneCallsCapability_TRefreshAccountDirective) GetAccountId() string {
 }
 
 type TPhoneCallsCapability_TMakeCallDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
-	Number          string                             `protobuf:"bytes,2,opt,name=Number,json=number,proto3" json:"Number,omitempty"`
-	ProviderContact *telecom.TProviderContact          `protobuf:"bytes,3,opt,name=ProviderContact,json=provider_contact,proto3" json:"ProviderContact,omitempty"`
-	CallId          string                             `protobuf:"bytes,4,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	AccountId       string                             `protobuf:"bytes,5,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	CallInfo        *telecom.TCallInfo                 `protobuf:"bytes,6,opt,name=CallInfo,json=call_info,proto3" json:"CallInfo,omitempty"`
-	CallParams      *TPhoneCallsCapability_TCallParams `protobuf:"bytes,10,opt,name=CallParams,json=call_params,proto3" json:"CallParams,omitempty"`
-	OnAccepted      []*directives.TDirective           `protobuf:"bytes,7,rep,name=OnAccepted,json=on_accepted,proto3" json:"OnAccepted,omitempty"`
-	OnDeclined      []*directives.TDirective           `protobuf:"bytes,8,rep,name=OnDeclined,json=on_declined,proto3" json:"OnDeclined,omitempty"`
-	OnEnded         []*directives.TDirective           `protobuf:"bytes,9,rep,name=OnEnded,json=on_ended,proto3" json:"OnEnded,omitempty"`
+	state           protoimpl.MessageState             `protogen:"open.v1"`
+	Name            string                             `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Number          string                             `protobuf:"bytes,2,opt,name=Number,proto3" json:"Number,omitempty"`
+	ProviderContact *telecom.TProviderContact          `protobuf:"bytes,3,opt,name=ProviderContact,proto3" json:"ProviderContact,omitempty"`
+	CallId          string                             `protobuf:"bytes,4,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	AccountId       string                             `protobuf:"bytes,5,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	CallInfo        *telecom.TCallInfo                 `protobuf:"bytes,6,opt,name=CallInfo,proto3" json:"CallInfo,omitempty"`
+	CallParams      *TPhoneCallsCapability_TCallParams `protobuf:"bytes,10,opt,name=CallParams,proto3" json:"CallParams,omitempty"`
+	OnAccepted      []*directives.TDirective           `protobuf:"bytes,7,rep,name=OnAccepted,proto3" json:"OnAccepted,omitempty"`
+	OnDeclined      []*directives.TDirective           `protobuf:"bytes,8,rep,name=OnDeclined,proto3" json:"OnDeclined,omitempty"`
+	OnEnded         []*directives.TDirective           `protobuf:"bytes,9,rep,name=OnEnded,proto3" json:"OnEnded,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1724,7 +1717,6 @@ func (x *TPhoneCallsCapability_TMakeCallDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
 func (x *TPhoneCallsCapability_TMakeCallDirective) GetNumber() string {
 	if x != nil {
 		return x.Number
@@ -1790,10 +1782,10 @@ func (x *TPhoneCallsCapability_TMakeCallDirective) GetOnEnded() []*directives.TD
 
 type TPhoneCallsCapability_TAcceptCallDirective struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Name          string                   `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CallId        string                   `protobuf:"bytes,3,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	CallInfo      *telecom.TCallInfo       `protobuf:"bytes,4,opt,name=CallInfo,json=call_info,proto3" json:"CallInfo,omitempty"`
-	OnEnded       []*directives.TDirective `protobuf:"bytes,5,rep,name=OnEnded,json=on_ended,proto3" json:"OnEnded,omitempty"`
+	Name          string                   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CallId        string                   `protobuf:"bytes,3,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	CallInfo      *telecom.TCallInfo       `protobuf:"bytes,4,opt,name=CallInfo,proto3" json:"CallInfo,omitempty"`
+	OnEnded       []*directives.TDirective `protobuf:"bytes,5,rep,name=OnEnded,proto3" json:"OnEnded,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1858,8 +1850,8 @@ func (x *TPhoneCallsCapability_TAcceptCallDirective) GetOnEnded() []*directives.
 
 type TPhoneCallsCapability_THangUpCallDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CallId        string                 `protobuf:"bytes,3,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CallId        string                 `protobuf:"bytes,3,opt,name=CallId,proto3" json:"CallId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1910,11 +1902,11 @@ func (x *TPhoneCallsCapability_THangUpCallDirective) GetCallId() string {
 
 type TPhoneCallsCapability_TProcessIncomingCallDirective struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Name          string                   `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CallId        string                   `protobuf:"bytes,2,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	CallInfo      *telecom.TCallInfo       `protobuf:"bytes,3,opt,name=CallInfo,json=call_info,proto3" json:"CallInfo,omitempty"`
-	OnEnded       []*directives.TDirective `protobuf:"bytes,5,rep,name=OnEnded,json=on_ended,proto3" json:"OnEnded,omitempty"`
-	OnAccepted    []*directives.TDirective `protobuf:"bytes,6,rep,name=OnAccepted,json=on_accepted,proto3" json:"OnAccepted,omitempty"`
+	Name          string                   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CallId        string                   `protobuf:"bytes,2,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	CallInfo      *telecom.TCallInfo       `protobuf:"bytes,3,opt,name=CallInfo,proto3" json:"CallInfo,omitempty"`
+	OnEnded       []*directives.TDirective `protobuf:"bytes,5,rep,name=OnEnded,proto3" json:"OnEnded,omitempty"`
+	OnAccepted    []*directives.TDirective `protobuf:"bytes,6,rep,name=OnAccepted,proto3" json:"OnAccepted,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1986,8 +1978,8 @@ func (x *TPhoneCallsCapability_TProcessIncomingCallDirective) GetOnAccepted() []
 
 type TPhoneCallsCapability_TIgnoreIncomingCallDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CallId        string                 `protobuf:"bytes,2,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CallId        string                 `protobuf:"bytes,2,opt,name=CallId,proto3" json:"CallId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2038,8 +2030,8 @@ func (x *TPhoneCallsCapability_TIgnoreIncomingCallDirective) GetCallId() string 
 
 type TPhoneCallsCapability_TOpenDeviceCallUiDirective struct {
 	state         protoimpl.MessageState                                                `protogen:"open.v1"`
-	Name          string                                                                `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	DeviceInfo    *TPhoneCallsCapability_TOpenDeviceCallUiDirective_TCallableDeviceInfo `protobuf:"bytes,2,opt,name=DeviceInfo,json=device_info,proto3" json:"DeviceInfo,omitempty"`
+	Name          string                                                                `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	DeviceInfo    *TPhoneCallsCapability_TOpenDeviceCallUiDirective_TCallableDeviceInfo `protobuf:"bytes,2,opt,name=DeviceInfo,proto3" json:"DeviceInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2090,10 +2082,10 @@ func (x *TPhoneCallsCapability_TOpenDeviceCallUiDirective) GetDeviceInfo() *TPho
 
 type TPhoneCallsCapability_TSetMicMuteDirective struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Name          string                                        `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IsMicMuted    bool                                          `protobuf:"varint,2,opt,name=IsMicMuted,json=is_mic_muted,proto3" json:"IsMicMuted,omitempty"`
-	MuteSource    TPhoneCallsCapability_TMediaState_EMuteSource `protobuf:"varint,3,opt,name=MuteSource,json=mute_source,proto3,enum=NAlice.TPhoneCallsCapability_TMediaState_EMuteSource" json:"MuteSource,omitempty"`
-	CallId        string                                        `protobuf:"bytes,4,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
+	Name          string                                        `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	IsMicMuted    bool                                          `protobuf:"varint,2,opt,name=IsMicMuted,proto3" json:"IsMicMuted,omitempty"`
+	MuteSource    TPhoneCallsCapability_TMediaState_EMuteSource `protobuf:"varint,3,opt,name=MuteSource,proto3,enum=NAlice.TPhoneCallsCapability_TMediaState_EMuteSource" json:"MuteSource,omitempty"`
+	CallId        string                                        `protobuf:"bytes,4,opt,name=CallId,proto3" json:"CallId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2157,12 +2149,11 @@ func (x *TPhoneCallsCapability_TSetMicMuteDirective) GetCallId() string {
 }
 
 type TPhoneCallsCapability_TPhoneCallsAddAccountEvent struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
-	CredentialsKey string                                                   `protobuf:"bytes,1,opt,name=CredentialsKey,json=credentials_key,proto3" json:"CredentialsKey,omitempty"`
-	Status         TPhoneCallsCapability_TPhoneCallsAddAccountEvent_EStatus `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsAddAccountEvent_EStatus" json:"Status,omitempty"`
-	AccountId      string                                                   `protobuf:"bytes,3,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	Message        string                                                   `protobuf:"bytes,4,opt,name=Message,json=message,proto3" json:"Message,omitempty"`
+	state          protoimpl.MessageState                                   `protogen:"open.v1"`
+	CredentialsKey string                                                   `protobuf:"bytes,1,opt,name=CredentialsKey,proto3" json:"CredentialsKey,omitempty"`
+	Status         TPhoneCallsCapability_TPhoneCallsAddAccountEvent_EStatus `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsAddAccountEvent_EStatus" json:"Status,omitempty"`
+	AccountId      string                                                   `protobuf:"bytes,3,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Message        string                                                   `protobuf:"bytes,4,opt,name=Message,proto3" json:"Message,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -2197,7 +2188,6 @@ func (*TPhoneCallsCapability_TPhoneCallsAddAccountEvent) Descriptor() ([]byte, [
 	return file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDescGZIP(), []int{0, 21}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/phone_calls/capability.proto.
 func (x *TPhoneCallsCapability_TPhoneCallsAddAccountEvent) GetCredentialsKey() string {
 	if x != nil {
 		return x.CredentialsKey
@@ -2228,9 +2218,9 @@ func (x *TPhoneCallsCapability_TPhoneCallsAddAccountEvent) GetMessage() string {
 
 type TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent struct {
 	state         protoimpl.MessageState                                      `protogen:"open.v1"`
-	Status        TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent_EStatus `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent_EStatus" json:"Status,omitempty"`
-	AccountId     string                                                      `protobuf:"bytes,2,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	Message       string                                                      `protobuf:"bytes,3,opt,name=Message,json=message,proto3" json:"Message,omitempty"`
+	Status        TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent_EStatus `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent_EStatus" json:"Status,omitempty"`
+	AccountId     string                                                      `protobuf:"bytes,2,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Message       string                                                      `protobuf:"bytes,3,opt,name=Message,proto3" json:"Message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2288,8 +2278,8 @@ func (x *TPhoneCallsCapability_TPhoneCallsDeleteAccountEvent) GetMessage() strin
 
 type TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent struct {
 	state         protoimpl.MessageState                                          `protogen:"open.v1"`
-	AccountId     string                                                          `protobuf:"bytes,1,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	Reason        TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent_EReason `protobuf:"varint,3,opt,name=Reason,json=reason,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent_EReason" json:"Reason,omitempty"`
+	AccountId     string                                                          `protobuf:"bytes,1,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Reason        TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent_EReason `protobuf:"varint,3,opt,name=Reason,proto3,enum=NAlice.TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent_EReason" json:"Reason,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2340,8 +2330,8 @@ func (x *TPhoneCallsCapability_TPhoneCallsAccountInvalidateEvent) GetReason() TP
 
 type TPhoneCallsCapability_TPhoneCallsRegStateChangedEvent struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Account       *TPhoneCallsCapability_TAccount `protobuf:"bytes,1,opt,name=Account,json=account,proto3" json:"Account,omitempty"`
-	StatusCode    int32                           `protobuf:"varint,2,opt,name=StatusCode,json=status_code,proto3" json:"StatusCode,omitempty"`
+	Account       *TPhoneCallsCapability_TAccount `protobuf:"bytes,1,opt,name=Account,proto3" json:"Account,omitempty"`
+	StatusCode    int32                           `protobuf:"varint,2,opt,name=StatusCode,proto3" json:"StatusCode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2444,8 +2434,8 @@ func (x *TPhoneCallsCapability_TPhoneCallsCallFailedEvent) GetCallId() string {
 
 type TPhoneCallsCapability_TPhoneCallsCallEndedEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CallId        string                 `protobuf:"bytes,1,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	StatusCode    int32                  `protobuf:"varint,2,opt,name=StatusCode,json=status_code,proto3" json:"StatusCode,omitempty"`
+	CallId        string                 `protobuf:"bytes,1,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	StatusCode    int32                  `protobuf:"varint,2,opt,name=StatusCode,proto3" json:"StatusCode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2496,8 +2486,8 @@ func (x *TPhoneCallsCapability_TPhoneCallsCallEndedEvent) GetStatusCode() int32 
 
 type TPhoneCallsCapability_TSipCredentials_THeader struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Value         string                 `protobuf:"bytes,2,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=Value,proto3" json:"Value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2617,11 +2607,11 @@ type isTPhoneCallsCapability_TMtsCredentials_TAuthorization_Authorization interf
 }
 
 type TPhoneCallsCapability_TMtsCredentials_TAuthorization_OttToken struct {
-	OttToken string `protobuf:"bytes,1,opt,name=OttToken,json=ott_token,proto3,oneof"`
+	OttToken string `protobuf:"bytes,1,opt,name=OttToken,proto3,oneof"`
 }
 
 type TPhoneCallsCapability_TMtsCredentials_TAuthorization_PermanentCredentials struct {
-	PermanentCredentials *TPhoneCallsCapability_TMtsCredentials_TAuthorization_TPermanentCredentials `protobuf:"bytes,2,opt,name=PermanentCredentials,json=permanent_credentials,proto3,oneof"`
+	PermanentCredentials *TPhoneCallsCapability_TMtsCredentials_TAuthorization_TPermanentCredentials `protobuf:"bytes,2,opt,name=PermanentCredentials,proto3,oneof"`
 }
 
 func (*TPhoneCallsCapability_TMtsCredentials_TAuthorization_OttToken) isTPhoneCallsCapability_TMtsCredentials_TAuthorization_Authorization() {
@@ -2632,8 +2622,8 @@ func (*TPhoneCallsCapability_TMtsCredentials_TAuthorization_PermanentCredentials
 
 type TPhoneCallsCapability_TMtsCredentials_TLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	LatLon        *data.TLatLon          `protobuf:"bytes,1,opt,name=LatLon,json=lat_lon,proto3" json:"LatLon,omitempty"`
-	TimestampSec  uint64                 `protobuf:"varint,2,opt,name=TimestampSec,json=timestamp_sec,proto3" json:"TimestampSec,omitempty"`
+	LatLon        *data.TLatLon          `protobuf:"bytes,1,opt,name=LatLon,proto3" json:"LatLon,omitempty"`
+	TimestampSec  uint64                 `protobuf:"varint,2,opt,name=TimestampSec,proto3" json:"TimestampSec,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2684,12 +2674,12 @@ func (x *TPhoneCallsCapability_TMtsCredentials_TLocation) GetTimestampSec() uint
 
 type TPhoneCallsCapability_TMtsCredentials_TAuthorization_TPermanentCredentials struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	InstanceId             string                 `protobuf:"bytes,1,opt,name=InstanceId,json=instance_id,proto3" json:"InstanceId,omitempty"`
-	MyConnectToken         string                 `protobuf:"bytes,2,opt,name=MyConnectToken,json=my_connect_token,proto3" json:"MyConnectToken,omitempty"`
-	AcsToken               string                 `protobuf:"bytes,3,opt,name=AcsToken,json=acs_token,proto3" json:"AcsToken,omitempty"`
-	Msisdn                 string                 `protobuf:"bytes,4,opt,name=Msisdn,json=msisdn,proto3" json:"Msisdn,omitempty"`
-	PartnerId              string                 `protobuf:"bytes,5,opt,name=PartnerId,json=partner_id,proto3" json:"PartnerId,omitempty"`
-	ExpirationTimestampSec uint64                 `protobuf:"varint,6,opt,name=ExpirationTimestampSec,json=expiration_timestamp_sec,proto3" json:"ExpirationTimestampSec,omitempty"`
+	InstanceId             string                 `protobuf:"bytes,1,opt,name=InstanceId,proto3" json:"InstanceId,omitempty"`
+	MyConnectToken         string                 `protobuf:"bytes,2,opt,name=MyConnectToken,proto3" json:"MyConnectToken,omitempty"`
+	AcsToken               string                 `protobuf:"bytes,3,opt,name=AcsToken,proto3" json:"AcsToken,omitempty"`
+	Msisdn                 string                 `protobuf:"bytes,4,opt,name=Msisdn,proto3" json:"Msisdn,omitempty"`
+	PartnerId              string                 `protobuf:"bytes,5,opt,name=PartnerId,proto3" json:"PartnerId,omitempty"`
+	ExpirationTimestampSec uint64                 `protobuf:"varint,6,opt,name=ExpirationTimestampSec,proto3" json:"ExpirationTimestampSec,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -2768,14 +2758,14 @@ func (x *TPhoneCallsCapability_TMtsCredentials_TAuthorization_TPermanentCredenti
 
 type TPhoneCallsCapability_TOpenDeviceCallUiDirective_TCallableDeviceInfo struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	DeviceId          string                 `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	DeviceName        string                 `protobuf:"bytes,2,opt,name=DeviceName,json=device_name,proto3" json:"DeviceName,omitempty"`
-	DevicePlatform    string                 `protobuf:"bytes,3,opt,name=DevicePlatform,json=device_platform,proto3" json:"DevicePlatform,omitempty"`
-	RoomName          string                 `protobuf:"bytes,4,opt,name=RoomName,json=room_name,proto3" json:"RoomName,omitempty"`
-	HouseholdName     string                 `protobuf:"bytes,5,opt,name=HouseholdName,json=household_name,proto3" json:"HouseholdName,omitempty"`
-	DeviceIconUrl     string                 `protobuf:"bytes,6,opt,name=DeviceIconUrl,json=device_icon_url,proto3" json:"DeviceIconUrl,omitempty"`
-	RadioNannyEnabled bool                   `protobuf:"varint,7,opt,name=RadioNannyEnabled,json=radio_nanny_enabled,proto3" json:"RadioNannyEnabled,omitempty"`
-	DropInEnabled     bool                   `protobuf:"varint,8,opt,name=DropInEnabled,json=drop_in_enabled,proto3" json:"DropInEnabled,omitempty"`
+	DeviceId          string                 `protobuf:"bytes,1,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	DeviceName        string                 `protobuf:"bytes,2,opt,name=DeviceName,proto3" json:"DeviceName,omitempty"`
+	DevicePlatform    string                 `protobuf:"bytes,3,opt,name=DevicePlatform,proto3" json:"DevicePlatform,omitempty"`
+	RoomName          string                 `protobuf:"bytes,4,opt,name=RoomName,proto3" json:"RoomName,omitempty"`
+	HouseholdName     string                 `protobuf:"bytes,5,opt,name=HouseholdName,proto3" json:"HouseholdName,omitempty"`
+	DeviceIconUrl     string                 `protobuf:"bytes,6,opt,name=DeviceIconUrl,proto3" json:"DeviceIconUrl,omitempty"`
+	RadioNannyEnabled bool                   `protobuf:"varint,7,opt,name=RadioNannyEnabled,proto3" json:"RadioNannyEnabled,omitempty"`
+	DropInEnabled     bool                   `protobuf:"varint,8,opt,name=DropInEnabled,proto3" json:"DropInEnabled,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2870,59 +2860,59 @@ var File_alice_protos_endpoint_capabilities_phone_calls_capability_proto protore
 
 const file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/phone_calls/capability.proto\x12\x06NAlice\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a\x1falice/protos/data/lat_lon.proto\x1a)alice/protos/data/telecom/providers.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xecR\n" +
-	"\x15TPhoneCallsCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
+	"?alice/protos/endpoint/capabilities/phone_calls/capability.proto\x12\x06NAlice\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a\x1falice/protos/data/lat_lon.proto\x1a)alice/protos/data/telecom/providers.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd0=\n" +
+	"\x15TPhoneCallsCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.TPhoneCallsCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.TPhoneCallsCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x8c\x02\n" +
-	"\fTCredentials\x12m\n" +
-	"\x0eSipCredentials\x18\x01 \x01(\v2-.NAlice.TPhoneCallsCapability.TSipCredentialsB\x13\xaa\xdd\x1b\x0fsip_credentialsH\x00R\x0fsip_credentials\x12m\n" +
-	"\x0eMtsCredentials\x18\x02 \x01(\v2-.NAlice.TPhoneCallsCapability.TMtsCredentialsB\x13\xaa\xdd\x1b\x0fmts_credentialsH\x00R\x0fmts_credentialsB\x1e\n" +
-	"\vCredentials\x12\x0f\xaa\xdd\x1b\vcredentials\x1a\xdd\x03\n" +
-	"\x12TSupportedProtocol\x12a\n" +
-	"\bProvider\x18\x01 \x01(\x0e27.NAlice.TPhoneCallsCapability.ETelephoneServiceProviderB\f\xaa\xdd\x1b\bproviderR\bprovider\x12Q\n" +
-	"\bProtocol\x18\x02 \x01(\x0e2'.NAlice.TPhoneCallsCapability.EProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12[\n" +
-	"\x0fTelecomProvider\x18\x03 \x01(\x0e2\x1a.NAlice.NTelecom.EProviderB\x14\xaa\xdd\x1b\x10telecom_providerR\x10telecom_provider\x12F\n" +
-	"\x12OnDemandConnection\x18\x04 \x01(\bB\x16\xaa\xdd\x1b\x12require_connectionR\x12require_connection\x12f\n" +
-	"\x0eSupportedMedia\x18\x05 \x03(\x0e2(.NAlice.TPhoneCallsCapability.EMediaTypeB\x13\xaa\xdd\x1b\x0fsupported_mediaR\x0fsupported_media:\x04\xa8\xdd\x1b\x04\x1a\x8f\x01\n" +
-	"\vTParameters\x12z\n" +
-	"\x12SupportedProtocols\x18\x01 \x03(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolB\x17\xaa\xdd\x1b\x13supported_protocolsR\x13supported_protocols:\x04\xa8\xdd\x1b\x04\x1a\xfa\x01\n" +
-	"\vTMediaState\x122\n" +
+	"Parameters\x18\x02 \x01(\v2).NAlice.TPhoneCallsCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.TPhoneCallsCapability.TStateR\x05State\x1a\xcf\x01\n" +
+	"\fTCredentials\x12W\n" +
+	"\x0eSipCredentials\x18\x01 \x01(\v2-.NAlice.TPhoneCallsCapability.TSipCredentialsH\x00R\x0eSipCredentials\x12W\n" +
+	"\x0eMtsCredentials\x18\x02 \x01(\v2-.NAlice.TPhoneCallsCapability.TMtsCredentialsH\x00R\x0eMtsCredentialsB\r\n" +
+	"\vCredentials\x1a\xf6\x02\n" +
+	"\x12TSupportedProtocol\x12S\n" +
+	"\bProvider\x18\x01 \x01(\x0e27.NAlice.TPhoneCallsCapability.ETelephoneServiceProviderR\bProvider\x12C\n" +
+	"\bProtocol\x18\x02 \x01(\x0e2'.NAlice.TPhoneCallsCapability.EProtocolR\bProtocol\x12D\n" +
+	"\x0fTelecomProvider\x18\x03 \x01(\x0e2\x1a.NAlice.NTelecom.EProviderR\x0fTelecomProvider\x12.\n" +
+	"\x12OnDemandConnection\x18\x04 \x01(\bR\x12OnDemandConnection\x12P\n" +
+	"\x0eSupportedMedia\x18\x05 \x03(\x0e2(.NAlice.TPhoneCallsCapability.EMediaTypeR\x0eSupportedMedia\x1ao\n" +
+	"\vTParameters\x12`\n" +
+	"\x12SupportedProtocols\x18\x01 \x03(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolR\x12SupportedProtocols\x1a\xce\x01\n" +
+	"\vTMediaState\x12\x1e\n" +
 	"\n" +
-	"IsMicMuted\x18\x01 \x01(\bB\x10\xaa\xdd\x1b\fis_mic_mutedR\fis_mic_muted\x12g\n" +
+	"IsMicMuted\x18\x01 \x01(\bR\n" +
+	"IsMicMuted\x12U\n" +
 	"\n" +
-	"MuteSource\x18\x02 \x01(\x0e25.NAlice.TPhoneCallsCapability.TMediaState.EMuteSourceB\x0f\xaa\xdd\x1b\vmute_sourceR\vmute_source\"H\n" +
+	"MuteSource\x18\x02 \x01(\x0e25.NAlice.TPhoneCallsCapability.TMediaState.EMuteSourceR\n" +
+	"MuteSource\"H\n" +
 	"\vEMuteSource\x12\x15\n" +
 	"\x11UnknownMuteSource\x10\x00\x12\x10\n" +
 	"\fHardwareMute\x10\x01\x12\x10\n" +
-	"\fSoftwareMute\x10\x02:\x04\xa8\xdd\x1b\x04\x1am\n" +
-	"\vTCallParams\x12X\n" +
+	"\fSoftwareMute\x10\x02\x1aW\n" +
+	"\vTCallParams\x12H\n" +
 	"\n" +
-	"MediaTypes\x18\x01 \x03(\x0e2(.NAlice.TPhoneCallsCapability.EMediaTypeB\x0e\xaa\xdd\x1b\n" +
-	"media_typeR\n" +
-	"media_type:\x04\xa8\xdd\x1b\x04\x1a\x9e\x04\n" +
-	"\x05TCall\x12 \n" +
-	"\x02Id\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12t\n" +
-	"\x13ProviderContactInfo\x18\x03 \x01(\v2%.NAlice.NTelecom.TProviderContactInfoB\x19\xaa\xdd\x1b\x15provider_contact_infoR\x15provider_contact_info\x123\n" +
-	"\vIsConfirmed\x18\x04 \x01(\bB\x10\xaa\xdd\x1b\fis_confirmedR\fis_confirmed\x12-\n" +
-	"\tAccountId\x18\x05 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12F\n" +
-	"\bCallInfo\x18\x06 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoB\r\xaa\xdd\x1b\tcall_infoR\tcall_info\x12[\n" +
+	"MediaTypes\x18\x01 \x03(\x0e2(.NAlice.TPhoneCallsCapability.EMediaTypeR\n" +
+	"MediaTypes\x1a\x91\x03\n" +
+	"\x05TCall\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12W\n" +
+	"\x13ProviderContactInfo\x18\x03 \x01(\v2%.NAlice.NTelecom.TProviderContactInfoR\x13ProviderContactInfo\x12 \n" +
+	"\vIsConfirmed\x18\x04 \x01(\bR\vIsConfirmed\x12\x1c\n" +
+	"\tAccountId\x18\x05 \x01(\tR\tAccountId\x126\n" +
+	"\bCallInfo\x18\x06 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoR\bCallInfo\x12I\n" +
 	"\n" +
-	"MediaState\x18\a \x01(\v2).NAlice.TPhoneCallsCapability.TMediaStateB\x0f\xaa\xdd\x1b\vmedia_stateR\vmedia_state\x12[\n" +
+	"MediaState\x18\a \x01(\v2).NAlice.TPhoneCallsCapability.TMediaStateR\n" +
+	"MediaState\x12I\n" +
 	"\n" +
-	"CallParams\x18\b \x01(\v2).NAlice.TPhoneCallsCapability.TCallParamsB\x0f\xaa\xdd\x1b\vcall_paramsR\vcall_params:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\vPhoneNumber\x1a\xfa\x05\n" +
-	"\bTAccount\x12Z\n" +
-	"\bProtocol\x18\x02 \x01(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x125\n" +
-	"\vIsConnected\x18\x03 \x01(\bB\x12\xaa\xdd\x1b\fis_connected\x18\x01R\fis_connected\x12p\n" +
-	"\rConnectStatus\x18\x06 \x01(\x0e25.NAlice.TPhoneCallsCapability.TAccount.EConnectStatusB\x12\xaa\xdd\x1b\x0econnect_statusR\x0econnect_status\x12|\n" +
-	"\x10DisconnectReason\x18\a \x01(\x0e28.NAlice.TPhoneCallsCapability.TAccount.EDisconnectReasonB\x15\xaa\xdd\x1b\x11disconnect_reasonR\x11disconnect_reason\x12t\n" +
-	"\x13ProviderContactInfo\x18\x04 \x01(\v2%.NAlice.NTelecom.TProviderContactInfoB\x19\xaa\xdd\x1b\x15provider_contact_infoR\x15provider_contact_info\x12\x16\n" +
-	"\x02Id\x18\x05 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\"[\n" +
+	"CallParams\x18\b \x01(\v2).NAlice.TPhoneCallsCapability.TCallParamsR\n" +
+	"CallParamsJ\x04\b\x02\x10\x03R\vPhoneNumber\x1a\xff\x04\n" +
+	"\bTAccount\x12L\n" +
+	"\bProtocol\x18\x02 \x01(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolR\bProtocol\x12 \n" +
+	"\vIsConnected\x18\x03 \x01(\bR\vIsConnected\x12[\n" +
+	"\rConnectStatus\x18\x06 \x01(\x0e25.NAlice.TPhoneCallsCapability.TAccount.EConnectStatusR\rConnectStatus\x12d\n" +
+	"\x10DisconnectReason\x18\a \x01(\x0e28.NAlice.TPhoneCallsCapability.TAccount.EDisconnectReasonR\x10DisconnectReason\x12W\n" +
+	"\x13ProviderContactInfo\x18\x04 \x01(\v2%.NAlice.NTelecom.TProviderContactInfoR\x13ProviderContactInfo\x12\x0e\n" +
+	"\x02Id\x18\x05 \x01(\tR\x02Id\"[\n" +
 	"\x0eEConnectStatus\x12\x18\n" +
 	"\x14UnknownConnectStatus\x10\x00\x12\x10\n" +
 	"\fDisconnected\x10\x01\x12\x0e\n" +
@@ -2933,179 +2923,163 @@ const file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDe
 	"\x17UnknownDisconnectReason\x10\x00\x12\x10\n" +
 	"\fBackendError\x10\x01\x12\x12\n" +
 	"\x0eAccountExpired\x10\x02\x12\x14\n" +
-	"\x10ValidationFailed\x10\x03:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x06Number\x1a\xc5\x03\n" +
-	"\x06TState\x12O\n" +
-	"\aAccount\x18\x01 \x01(\v2&.NAlice.TPhoneCallsCapability.TAccountB\r\xaa\xdd\x1b\aaccount\x18\x01R\aaccount\x12X\n" +
-	"\vCurrentCall\x18\x02 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallB\x10\xaa\xdd\x1b\fcurrent_callR\fcurrent_call\x12[\n" +
-	"\fIncomingCall\x18\x03 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallB\x11\xaa\xdd\x1b\rincoming_callR\rincoming_call\x12[\n" +
-	"\fOutgoingCall\x18\x04 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallB\x11\xaa\xdd\x1b\routgoing_callR\routgoing_call\x12P\n" +
-	"\bAccounts\x18\x05 \x03(\v2&.NAlice.TPhoneCallsCapability.TAccountB\f\xaa\xdd\x1b\baccountsR\baccounts:\x04\xa8\xdd\x1b\x04\x1a\x9d\x03\n" +
-	"\x0fTSipCredentials\x12\"\n" +
-	"\x06Number\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06numberR\x06number\x12(\n" +
-	"\bPassword\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bpasswordR\bpassword\x12\x1f\n" +
-	"\x05Realm\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05realmR\x05realm\x123\n" +
-	"\vRegistrarIP\x18\x04 \x01(\tB\x10\xaa\xdd\x1b\fregistrar_ipR\fregistrar_ip\x12!\n" +
-	"\x05AppID\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06app_idR\x06app_id\x12g\n" +
+	"\x10ValidationFailed\x10\x03J\x04\b\x01\x10\x02R\x06Number\x1a\xe7\x02\n" +
+	"\x06TState\x12@\n" +
+	"\aAccount\x18\x01 \x01(\v2&.NAlice.TPhoneCallsCapability.TAccountR\aAccount\x12E\n" +
+	"\vCurrentCall\x18\x02 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallR\vCurrentCall\x12G\n" +
+	"\fIncomingCall\x18\x03 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallR\fIncomingCall\x12G\n" +
+	"\fOutgoingCall\x18\x04 \x01(\v2#.NAlice.TPhoneCallsCapability.TCallR\fOutgoingCall\x12B\n" +
+	"\bAccounts\x18\x05 \x03(\v2&.NAlice.TPhoneCallsCapability.TAccountR\bAccounts\x1a\xb1\x02\n" +
+	"\x0fTSipCredentials\x12\x16\n" +
+	"\x06Number\x18\x01 \x01(\tR\x06Number\x12\x1a\n" +
+	"\bPassword\x18\x02 \x01(\tR\bPassword\x12\x14\n" +
+	"\x05Realm\x18\x03 \x01(\tR\x05Realm\x12 \n" +
+	"\vRegistrarIP\x18\x04 \x01(\tR\vRegistrarIP\x12\x14\n" +
+	"\x05AppID\x18\x05 \x01(\tR\x05AppID\x12U\n" +
 	"\n" +
-	"SipHeaders\x18\a \x03(\v25.NAlice.TPhoneCallsCapability.TSipCredentials.THeaderB\x0f\xaa\xdd\x1b\vsip_headersR\vsip_headers\x1aH\n" +
-	"\aTHeader\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Value\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05valueR\x05valueJ\x04\b\x06\x10\aR\n" +
-	"OAuthToken\x1a\xf3\t\n" +
-	"\x0fTMtsCredentials\x12u\n" +
-	"\rAuthorization\x18\x01 \x01(\v2<.NAlice.TPhoneCallsCapability.TMtsCredentials.TAuthorizationB\x11\xaa\xdd\x1b\rauthorizationR\rauthorization\x12-\n" +
-	"\tUserAgent\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"user_agentR\n" +
-	"user_agent\x12.\n" +
-	"\bDeviceId\x18\x03 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x12a\n" +
-	"\bLocation\x18\x04 \x01(\v27.NAlice.TPhoneCallsCapability.TMtsCredentials.TLocationB\f\xaa\xdd\x1b\blocationR\blocation\x12\"\n" +
-	"\x06Server\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06serverR\x06server\x12[\n" +
-	"\x10LaasRealLocation\x18\a \x01(\v2\x15.NAlice.NData.TLatLonB\x16\xaa\xdd\x1b\x12laas_real_locationR\x12laas_real_location\x12)\n" +
-	"\x06WssUrl\x18\x06 \x01(\tB\v\xaa\xdd\x1b\awss_urlH\x00R\awss_url\x88\x01\x01\x1a\xec\x04\n" +
-	"\x0eTAuthorization\x12,\n" +
-	"\bOttToken\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tott_tokenH\x00R\tott_token\x12\xa4\x01\n" +
-	"\x14PermanentCredentials\x18\x02 \x01(\v2R.NAlice.TPhoneCallsCapability.TMtsCredentials.TAuthorization.TPermanentCredentialsB\x19\xaa\xdd\x1b\x15permanent_credentialsH\x00R\x15permanent_credentials\x1a\xe0\x02\n" +
-	"\x15TPermanentCredentials\x120\n" +
+	"SipHeaders\x18\a \x03(\v25.NAlice.TPhoneCallsCapability.TSipCredentials.THeaderR\n" +
+	"SipHeaders\x1a3\n" +
+	"\aTHeader\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Value\x18\x02 \x01(\tR\x05ValueJ\x04\b\x06\x10\aR\n" +
+	"OAuthToken\x1a\xa0\a\n" +
+	"\x0fTMtsCredentials\x12b\n" +
+	"\rAuthorization\x18\x01 \x01(\v2<.NAlice.TPhoneCallsCapability.TMtsCredentials.TAuthorizationR\rAuthorization\x12\x1c\n" +
+	"\tUserAgent\x18\x02 \x01(\tR\tUserAgent\x12\x1a\n" +
+	"\bDeviceId\x18\x03 \x01(\tR\bDeviceId\x12S\n" +
+	"\bLocation\x18\x04 \x01(\v27.NAlice.TPhoneCallsCapability.TMtsCredentials.TLocationR\bLocation\x12\x16\n" +
+	"\x06Server\x18\x05 \x01(\tR\x06Server\x12A\n" +
+	"\x10LaasRealLocation\x18\a \x01(\v2\x15.NAlice.NData.TLatLonR\x10LaasRealLocation\x12\x1b\n" +
+	"\x06WssUrl\x18\x06 \x01(\tH\x00R\x06WssUrl\x88\x01\x01\x1a\xb6\x03\n" +
+	"\x0eTAuthorization\x12\x1c\n" +
+	"\bOttToken\x18\x01 \x01(\tH\x00R\bOttToken\x12\x88\x01\n" +
+	"\x14PermanentCredentials\x18\x02 \x01(\v2R.NAlice.TPhoneCallsCapability.TMtsCredentials.TAuthorization.TPermanentCredentialsH\x00R\x14PermanentCredentials\x1a\xe9\x01\n" +
+	"\x15TPermanentCredentials\x12\x1e\n" +
 	"\n" +
-	"InstanceId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vinstance_idR\vinstance_id\x12>\n" +
-	"\x0eMyConnectToken\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10my_connect_tokenR\x10my_connect_token\x12*\n" +
-	"\bAcsToken\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tacs_tokenR\tacs_token\x12\"\n" +
-	"\x06Msisdn\x18\x04 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06msisdnR\x06msisdn\x12-\n" +
-	"\tPartnerId\x18\x05 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"partner_idR\n" +
-	"partner_id\x12V\n" +
-	"\x16ExpirationTimestampSec\x18\x06 \x01(\x04B\x1c\xaa\xdd\x1b\x18expiration_timestamp_secR\x18expiration_timestamp_secB\"\n" +
-	"\rAuthorization\x12\x11\xaa\xdd\x1b\rauthorization\x1a\x80\x01\n" +
-	"\tTLocation\x12;\n" +
-	"\x06LatLon\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonB\v\xaa\xdd\x1b\alat_lonR\alat_lon\x126\n" +
-	"\fTimestampSec\x18\x02 \x01(\x04B\x11\xaa\xdd\x1b\rtimestamp_secR\rtimestamp_secB\t\n" +
-	"\a_WssUrl\x1a\x8f\x05\n" +
-	"\x14TAddAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eCredentialsKey\x18\x03 \x01(\tB\x15\xaa\xdd\x1b\x0fcredentials_key\x18\x01R\x0fcredentials_key\x12-\n" +
-	"\tAccountId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12Z\n" +
-	"\bProtocol\x18\x06 \x01(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12k\n" +
-	"\x0eLifetimePolicy\x18\a \x01(\x0e2-.NAlice.TPhoneCallsCapability.ELifetimePolicyB\x13\xaa\xdd\x1b\x0flifetime_policyR\x0flifetime_policy\x12m\n" +
-	"\x0eSipCredentials\x18\x02 \x01(\v2-.NAlice.TPhoneCallsCapability.TSipCredentialsB\x13\xaa\xdd\x1b\x0fsip_credentialsH\x00R\x0fsip_credentials\x12m\n" +
-	"\x0eMtsCredentials\x18\x05 \x01(\v2-.NAlice.TPhoneCallsCapability.TMtsCredentialsB\x13\xaa\xdd\x1b\x0fmts_credentialsH\x00R\x0fmts_credentials:#\x92\x82\x19\x17phone_calls_add_account\xa8\xdd\x1b\x04\xa8\xc8\x1c_B\x1e\n" +
-	"\vCredentials\x12\x0f\xaa\xdd\x1b\vcredentials\x1a\xcf\x01\n" +
-	"\x11TConnectDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tAccountId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12D\n" +
-	"\x10ForcedTerminalId\x18\x03 \x01(\tB\x16\xaa\xdd\x1b\x12forced_terminal_idR\x12forced_terminal_id:'\x92\x82\x19\x1bphone_calls_connect_account\xa8\xdd\x1b\x04\xa8\xc8\x1ca\x1a\x8e\x01\n" +
-	"\x17TDeleteAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tAccountId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id:&\x92\x82\x19\x1aphone_calls_delete_account\xa8\xdd\x1b\x04\xa8\xc8\x1c`\x1a\x91\x01\n" +
-	"\x18TRefreshAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tAccountId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id:(\x92\x82\x19\x1bphone_calls_refresh_account\xa8\xdd\x1b\x04\xa8\xc8\x1c\x95\x02\x1a\xcc\x05\n" +
-	"\x12TMakeCallDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06Number\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x06number\x18\x01R\x06number\x12b\n" +
-	"\x0fProviderContact\x18\x03 \x01(\v2!.NAlice.NTelecom.TProviderContactB\x14\xaa\xdd\x1b\x10provider_contactR\x10provider_contact\x12$\n" +
-	"\x06CallId\x18\x04 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12-\n" +
-	"\tAccountId\x18\x05 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12F\n" +
-	"\bCallInfo\x18\x06 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoB\r\xaa\xdd\x1b\tcall_infoR\tcall_info\x12[\n" +
+	"InstanceId\x18\x01 \x01(\tR\n" +
+	"InstanceId\x12&\n" +
+	"\x0eMyConnectToken\x18\x02 \x01(\tR\x0eMyConnectToken\x12\x1a\n" +
+	"\bAcsToken\x18\x03 \x01(\tR\bAcsToken\x12\x16\n" +
+	"\x06Msisdn\x18\x04 \x01(\tR\x06Msisdn\x12\x1c\n" +
+	"\tPartnerId\x18\x05 \x01(\tR\tPartnerId\x126\n" +
+	"\x16ExpirationTimestampSec\x18\x06 \x01(\x04R\x16ExpirationTimestampSecB\x0f\n" +
+	"\rAuthorization\x1a^\n" +
+	"\tTLocation\x12-\n" +
+	"\x06LatLon\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonR\x06LatLon\x12\"\n" +
+	"\fTimestampSec\x18\x02 \x01(\x04R\fTimestampSecB\t\n" +
+	"\a_WssUrl\x1a\xd6\x03\n" +
+	"\x14TAddAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12&\n" +
+	"\x0eCredentialsKey\x18\x03 \x01(\tR\x0eCredentialsKey\x12\x1c\n" +
+	"\tAccountId\x18\x04 \x01(\tR\tAccountId\x12L\n" +
+	"\bProtocol\x18\x06 \x01(\v20.NAlice.TPhoneCallsCapability.TSupportedProtocolR\bProtocol\x12U\n" +
+	"\x0eLifetimePolicy\x18\a \x01(\x0e2-.NAlice.TPhoneCallsCapability.ELifetimePolicyR\x0eLifetimePolicy\x12W\n" +
+	"\x0eSipCredentials\x18\x02 \x01(\v2-.NAlice.TPhoneCallsCapability.TSipCredentialsH\x00R\x0eSipCredentials\x12W\n" +
+	"\x0eMtsCredentials\x18\x05 \x01(\v2-.NAlice.TPhoneCallsCapability.TMtsCredentialsH\x00R\x0eMtsCredentialsB\r\n" +
+	"\vCredentials\x1aq\n" +
+	"\x11TConnectDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1c\n" +
+	"\tAccountId\x18\x02 \x01(\tR\tAccountId\x12*\n" +
+	"\x10ForcedTerminalId\x18\x03 \x01(\tR\x10ForcedTerminalId\x1aK\n" +
+	"\x17TDeleteAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1c\n" +
+	"\tAccountId\x18\x02 \x01(\tR\tAccountId\x1aL\n" +
+	"\x18TRefreshAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1c\n" +
+	"\tAccountId\x18\x02 \x01(\tR\tAccountId\x1a\xfa\x03\n" +
+	"\x12TMakeCallDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06Number\x18\x02 \x01(\tR\x06Number\x12K\n" +
+	"\x0fProviderContact\x18\x03 \x01(\v2!.NAlice.NTelecom.TProviderContactR\x0fProviderContact\x12\x16\n" +
+	"\x06CallId\x18\x04 \x01(\tR\x06CallId\x12\x1c\n" +
+	"\tAccountId\x18\x05 \x01(\tR\tAccountId\x126\n" +
+	"\bCallInfo\x18\x06 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoR\bCallInfo\x12I\n" +
 	"\n" +
 	"CallParams\x18\n" +
-	" \x01(\v2).NAlice.TPhoneCallsCapability.TCallParamsB\x0f\xaa\xdd\x1b\vcall_paramsR\vcall_params\x12R\n" +
+	" \x01(\v2).NAlice.TPhoneCallsCapability.TCallParamsR\n" +
+	"CallParams\x12<\n" +
 	"\n" +
-	"OnAccepted\x18\a \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\von_acceptedR\von_accepted\x12R\n" +
+	"OnAccepted\x18\a \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"OnAccepted\x12<\n" +
 	"\n" +
-	"OnDeclined\x18\b \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\von_declinedR\von_declined\x12I\n" +
-	"\aOnEnded\x18\t \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x10\xa0\xdd\x1b\x05\xaa\xdd\x1b\bon_endedR\bon_ended:!\x92\x82\x19\x15phone_calls_make_call\xa8\xdd\x1b\x04\xa8\xc8\x1cb\x1a\x9e\x02\n" +
-	"\x14TAcceptCallDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06CallId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12F\n" +
-	"\bCallInfo\x18\x04 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoB\r\xaa\xdd\x1b\tcall_infoR\tcall_info\x12I\n" +
-	"\aOnEnded\x18\x05 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x10\xa0\xdd\x1b\x05\xaa\xdd\x1b\bon_endedR\bon_ended:#\x92\x82\x19\x17phone_calls_accept_call\xa8\xdd\x1b\x04\xa8\xc8\x1ccJ\x04\b\x02\x10\x03R\x04Call\x1a\x8c\x01\n" +
-	"\x14THangUpCallDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06CallId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id:$\x92\x82\x19\x18phone_calls_hang_up_call\xa8\xdd\x1b\x04\xa8\xc8\x1cdJ\x04\b\x02\x10\x03R\x04Call\x1a\x80\x03\n" +
-	"\x1dTProcessIncomingCallDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06CallId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12F\n" +
-	"\bCallInfo\x18\x03 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoB\r\xaa\xdd\x1b\tcall_infoR\tcall_info\x12I\n" +
-	"\aOnEnded\x18\x05 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x10\xa0\xdd\x1b\x05\xaa\xdd\x1b\bon_endedR\bon_ended\x12R\n" +
+	"OnDeclined\x18\b \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"OnDeclined\x126\n" +
+	"\aOnEnded\x18\t \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\aOnEnded\x1a\xbe\x01\n" +
+	"\x14TAcceptCallDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06CallId\x18\x03 \x01(\tR\x06CallId\x126\n" +
+	"\bCallInfo\x18\x04 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoR\bCallInfo\x126\n" +
+	"\aOnEnded\x18\x05 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\aOnEndedJ\x04\b\x02\x10\x03R\x04Call\x1aN\n" +
+	"\x14THangUpCallDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06CallId\x18\x03 \x01(\tR\x06CallIdJ\x04\b\x02\x10\x03R\x04Call\x1a\xff\x01\n" +
+	"\x1dTProcessIncomingCallDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06CallId\x18\x02 \x01(\tR\x06CallId\x126\n" +
+	"\bCallInfo\x18\x03 \x01(\v2\x1a.NAlice.NTelecom.TCallInfoR\bCallInfo\x126\n" +
+	"\aOnEnded\x18\x05 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\aOnEnded\x12<\n" +
 	"\n" +
-	"OnAccepted\x18\x06 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\von_acceptedR\von_accepted:.\x92\x82\x19!phone_calls_process_incoming_call\xa8\xdd\x1b\x04\xa8\xc8\x1c\x81\x01J\x04\b\x04\x10\x05\x1a\x91\x01\n" +
-	"\x1cTIgnoreIncomingCallDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06CallId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id:-\x92\x82\x19 phone_calls_ignore_incoming_call\xa8\xdd\x1b\x04\xa8\xc8\x1c\x87\x01\x1a\xd0\x05\n" +
-	"\x1aTOpenDeviceCallUiDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12~\n" +
+	"OnAccepted\x18\x06 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"OnAcceptedJ\x04\b\x04\x10\x05\x1aJ\n" +
+	"\x1cTIgnoreIncomingCallDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06CallId\x18\x02 \x01(\tR\x06CallId\x1a\xd6\x03\n" +
+	"\x1aTOpenDeviceCallUiDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12l\n" +
 	"\n" +
-	"DeviceInfo\x18\x02 \x01(\v2L.NAlice.TPhoneCallsCapability.TOpenDeviceCallUiDirective.TCallableDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info\x1a\xe5\x03\n" +
-	"\x13TCallableDeviceInfo\x12.\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x120\n" +
+	"DeviceInfo\x18\x02 \x01(\v2L.NAlice.TPhoneCallsCapability.TOpenDeviceCallUiDirective.TCallableDeviceInfoR\n" +
+	"DeviceInfo\x1a\xb5\x02\n" +
+	"\x13TCallableDeviceInfo\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x1e\n" +
 	"\n" +
-	"DeviceName\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vdevice_nameR\vdevice_name\x12<\n" +
-	"\x0eDevicePlatform\x18\x03 \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_platformR\x0fdevice_platform\x12*\n" +
-	"\bRoomName\x18\x04 \x01(\tB\r\xaa\xdd\x1b\troom_nameR\troom_name\x129\n" +
-	"\rHouseholdName\x18\x05 \x01(\tB\x12\xaa\xdd\x1b\x0ehousehold_nameR\x0ehousehold_name\x12;\n" +
-	"\rDeviceIconUrl\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_icon_urlR\x0fdevice_icon_url\x12G\n" +
-	"\x11RadioNannyEnabled\x18\a \x01(\bB\x17\xaa\xdd\x1b\x13radio_nanny_enabledR\x13radio_nanny_enabled\x12;\n" +
-	"\rDropInEnabled\x18\b \x01(\bB\x13\xaa\xdd\x1b\x0fdrop_in_enabledR\x0fdrop_in_enabled:\x04\xa8\xdd\x1b\x04:,\x92\x82\x19\x1fphone_calls_open_device_call_ui\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9c\x02\x1a\x9e\x02\n" +
-	"\x14TSetMicMuteDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x122\n" +
+	"DeviceName\x18\x02 \x01(\tR\n" +
+	"DeviceName\x12&\n" +
+	"\x0eDevicePlatform\x18\x03 \x01(\tR\x0eDevicePlatform\x12\x1a\n" +
+	"\bRoomName\x18\x04 \x01(\tR\bRoomName\x12$\n" +
+	"\rHouseholdName\x18\x05 \x01(\tR\rHouseholdName\x12$\n" +
+	"\rDeviceIconUrl\x18\x06 \x01(\tR\rDeviceIconUrl\x12,\n" +
+	"\x11RadioNannyEnabled\x18\a \x01(\bR\x11RadioNannyEnabled\x12$\n" +
+	"\rDropInEnabled\x18\b \x01(\bR\rDropInEnabled\x1a\xb9\x01\n" +
+	"\x14TSetMicMuteDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"IsMicMuted\x18\x02 \x01(\bB\x10\xaa\xdd\x1b\fis_mic_mutedR\fis_mic_muted\x12g\n" +
+	"IsMicMuted\x18\x02 \x01(\bR\n" +
+	"IsMicMuted\x12U\n" +
 	"\n" +
-	"MuteSource\x18\x03 \x01(\x0e25.NAlice.TPhoneCallsCapability.TMediaState.EMuteSourceB\x0f\xaa\xdd\x1b\vmute_sourceR\vmute_source\x12$\n" +
-	"\x06CallId\x18\x04 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id:%\x92\x82\x19\x18phone_calls_set_mic_mute\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9e\x02\x1a\xc1\x02\n" +
-	"\x1aTPhoneCallsAddAccountEvent\x12>\n" +
-	"\x0eCredentialsKey\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\x0fcredentials_key\x18\x01R\x0fcredentials_key\x12d\n" +
-	"\x06Status\x18\x02 \x01(\x0e2@.NAlice.TPhoneCallsCapability.TPhoneCallsAddAccountEvent.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12-\n" +
-	"\tAccountId\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12%\n" +
-	"\aMessage\x18\x04 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage\"\x1d\n" +
+	"MuteSource\x18\x03 \x01(\x0e25.NAlice.TPhoneCallsCapability.TMediaState.EMuteSourceR\n" +
+	"MuteSource\x12\x16\n" +
+	"\x06CallId\x18\x04 \x01(\tR\x06CallId\x1a\xf5\x01\n" +
+	"\x1aTPhoneCallsAddAccountEvent\x12&\n" +
+	"\x0eCredentialsKey\x18\x01 \x01(\tR\x0eCredentialsKey\x12X\n" +
+	"\x06Status\x18\x02 \x01(\x0e2@.NAlice.TPhoneCallsCapability.TPhoneCallsAddAccountEvent.EStatusR\x06Status\x12\x1c\n" +
+	"\tAccountId\x18\x03 \x01(\tR\tAccountId\x12\x18\n" +
+	"\aMessage\x18\x04 \x01(\tR\aMessage\"\x1d\n" +
 	"\aEStatus\x12\x06\n" +
 	"\x02OK\x10\x00\x12\n" +
 	"\n" +
-	"\x06Failed\x10\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c%\x1a\x88\x02\n" +
-	"\x1dTPhoneCallsDeleteAccountEvent\x12g\n" +
-	"\x06Status\x18\x01 \x01(\x0e2C.NAlice.TPhoneCallsCapability.TPhoneCallsDeleteAccountEvent.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12-\n" +
-	"\tAccountId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12%\n" +
-	"\aMessage\x18\x03 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage\"\x1d\n" +
+	"\x06Failed\x10\x01\x1a\xd3\x01\n" +
+	"\x1dTPhoneCallsDeleteAccountEvent\x12[\n" +
+	"\x06Status\x18\x01 \x01(\x0e2C.NAlice.TPhoneCallsCapability.TPhoneCallsDeleteAccountEvent.EStatusR\x06Status\x12\x1c\n" +
+	"\tAccountId\x18\x02 \x01(\tR\tAccountId\x12\x18\n" +
+	"\aMessage\x18\x03 \x01(\tR\aMessage\"\x1d\n" +
 	"\aEStatus\x12\x06\n" +
 	"\x02OK\x10\x00\x12\n" +
 	"\n" +
-	"\x06Failed\x10\x01:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x8d\x03\x1a\x9d\x02\n" +
-	"!TPhoneCallsAccountInvalidateEvent\x12-\n" +
-	"\tAccountId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12k\n" +
-	"\x06Reason\x18\x03 \x01(\x0e2G.NAlice.TPhoneCallsCapability.TPhoneCallsAccountInvalidateEvent.EReasonB\n" +
-	"\xaa\xdd\x1b\x06reasonR\x06reason\"Q\n" +
+	"\x06Failed\x10\x01\x1a\xf5\x01\n" +
+	"!TPhoneCallsAccountInvalidateEvent\x12\x1c\n" +
+	"\tAccountId\x18\x01 \x01(\tR\tAccountId\x12_\n" +
+	"\x06Reason\x18\x03 \x01(\x0e2G.NAlice.TPhoneCallsCapability.TPhoneCallsAccountInvalidateEvent.EReasonR\x06Reason\"Q\n" +
 	"\aEReason\x12\x11\n" +
 	"\rUnknownReason\x10\x00\x12\v\n" +
 	"\aExpired\x10\x01\x12\x16\n" +
 	"\x12OutOfRangeLocation\x10\x02\x12\x0e\n" +
 	"\n" +
-	"WifiChange\x10\x03:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xe1\x02\x1a\xac\x01\n" +
-	"\x1fTPhoneCallsRegStateChangedEvent\x12M\n" +
-	"\aAccount\x18\x01 \x01(\v2&.NAlice.TPhoneCallsCapability.TAccountB\v\xaa\xdd\x1b\aaccountR\aaccount\x120\n" +
+	"WifiChange\x10\x03\x1a\x83\x01\n" +
+	"\x1fTPhoneCallsRegStateChangedEvent\x12@\n" +
+	"\aAccount\x18\x01 \x01(\v2&.NAlice.TPhoneCallsCapability.TAccountR\aAccount\x12\x1e\n" +
 	"\n" +
-	"StatusCode\x18\x02 \x01(\x05B\x0f\xaa\xdd\x1b\vstatus_codeR\vstatus_code:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c,\x1a\xe2\x02\n" +
+	"StatusCode\x18\x02 \x01(\x05R\n" +
+	"StatusCode\x1a\xd8\x02\n" +
 	"\x1aTPhoneCallsCallFailedEvent\x12d\n" +
 	"\x06Reason\x18\x01 \x01(\x0e2@.NAlice.TPhoneCallsCapability.TPhoneCallsCallFailedEvent.EReasonB\n" +
 	"\xaa\xdd\x1b\x06reasonR\x06reason\x12$\n" +
@@ -3118,11 +3092,12 @@ const file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDe
 	"\x13AccountNotConnected\x10\x04\x12\x11\n" +
 	"\rNotRegistered\x10\x05\x12\x10\n" +
 	"\fCallNotFound\x10\x06\x12\x11\n" +
-	"\rInternalError\x10\a:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cD\x1a}\n" +
-	"\x19TPhoneCallsCallEndedEvent\x12$\n" +
-	"\x06CallId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x120\n" +
+	"\rInternalError\x10\a\x1aS\n" +
+	"\x19TPhoneCallsCallEndedEvent\x12\x16\n" +
+	"\x06CallId\x18\x01 \x01(\tR\x06CallId\x12\x1e\n" +
 	"\n" +
-	"StatusCode\x18\x02 \x01(\x05B\x0f\xaa\xdd\x1b\vstatus_codeR\vstatus_code:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cT\"5\n" +
+	"StatusCode\x18\x02 \x01(\x05R\n" +
+	"StatusCode\"5\n" +
 	"\tEProtocol\x12\x13\n" +
 	"\x0fUnknownProtocol\x10\x00\x12\a\n" +
 	"\x03Sip\x10\x01\x12\n" +
@@ -3144,8 +3119,9 @@ const file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDe
 	"EMediaType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\t\n" +
 	"\x05Audio\x10\x01\x12\t\n" +
-	"\x05Video\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c!B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bPhoneCallsCapabilitiesProtoZLa.yandex-team.ru/alice/protos/endpoint/capabilities/phone_calls;phonecallspbb\x06proto3"
+	"\x05Video\x10\x02B\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/phone_calls\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_phone_calls_capability_proto_rawDescOnce sync.Once

@@ -92,7 +92,8 @@ const file_smart_devices_libs_iot_common_models_proto_available_update_proto_raw
 	"\rtargetVersion\x18\x01 \x01(\rH\x00R\rtargetVersion\x88\x01\x01\x12\x15\n" +
 	"\x03tag\x18\x03 \x01(\tH\x01R\x03tag\x88\x01\x01B\x10\n" +
 	"\x0e_targetVersionB\x06\n" +
-	"\x04_tagb\x06proto3"
+	"\x04_tagB\xb1\x01\n" +
+	"\tcom.protoB\x14AvailableUpdateProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/iot/common/models/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_iot_common_models_proto_available_update_proto_rawDescOnce sync.Once

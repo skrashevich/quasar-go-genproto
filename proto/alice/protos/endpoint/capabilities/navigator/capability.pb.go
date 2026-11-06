@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/navigator/capability.proto
 
-package navigatorspb
+package navigator
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -27,9 +27,9 @@ const (
 
 type TNavigatorCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNavigatorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNavigatorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNavigatorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNavigatorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,15 +123,15 @@ func (*TNavigatorCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNavigatorCapability_TState struct {
 	state              protoimpl.MessageState                           `protogen:"open.v1"`
-	UserFavorites      []*TNavigatorCapability_TState_TFavorite         `protobuf:"bytes,1,rep,name=UserFavorites,json=user_favorites,proto3" json:"UserFavorites,omitempty"`
-	AvailableVoiceIds  []string                                         `protobuf:"bytes,5,rep,name=AvailableVoiceIds,json=available_voice_ids,proto3" json:"AvailableVoiceIds,omitempty"`
-	States             []string                                         `protobuf:"bytes,8,rep,name=States,json=states,proto3" json:"States,omitempty"`
-	HomeLocation       *TNavigatorCapability_TState_TLocation           `protobuf:"bytes,2,opt,name=HomeLocation,json=home,proto3,oneof" json:"HomeLocation,omitempty"`
-	WorkLocation       *TNavigatorCapability_TState_TLocation           `protobuf:"bytes,3,opt,name=WorkLocation,json=work,proto3,oneof" json:"WorkLocation,omitempty"`
-	MapView            *TNavigatorCapability_TState_TMapView            `protobuf:"bytes,4,opt,name=MapView,json=map_view,proto3,oneof" json:"MapView,omitempty"`
-	ProjectedMode      *bool                                            `protobuf:"varint,6,opt,name=ProjectedMode,json=projected_mode,proto3,oneof" json:"ProjectedMode,omitempty"`
-	CurrentRoute       *TNavigatorCapability_TState_TRoute              `protobuf:"bytes,7,opt,name=CurrentRoute,json=current_route,proto3,oneof" json:"CurrentRoute,omitempty"`
-	SearchOptions      *TNavigatorCapability_TState_TSearchOptions      `protobuf:"bytes,9,opt,name=SearchOptions,json=search_options,proto3,oneof" json:"SearchOptions,omitempty"`
+	UserFavorites      []*TNavigatorCapability_TState_TFavorite         `protobuf:"bytes,1,rep,name=UserFavorites,proto3" json:"UserFavorites,omitempty"`
+	AvailableVoiceIds  []string                                         `protobuf:"bytes,5,rep,name=AvailableVoiceIds,proto3" json:"AvailableVoiceIds,omitempty"`
+	States             []string                                         `protobuf:"bytes,8,rep,name=States,proto3" json:"States,omitempty"`
+	HomeLocation       *TNavigatorCapability_TState_TLocation           `protobuf:"bytes,2,opt,name=HomeLocation,proto3,oneof" json:"HomeLocation,omitempty"`
+	WorkLocation       *TNavigatorCapability_TState_TLocation           `protobuf:"bytes,3,opt,name=WorkLocation,proto3,oneof" json:"WorkLocation,omitempty"`
+	MapView            *TNavigatorCapability_TState_TMapView            `protobuf:"bytes,4,opt,name=MapView,proto3,oneof" json:"MapView,omitempty"`
+	ProjectedMode      *bool                                            `protobuf:"varint,6,opt,name=ProjectedMode,proto3,oneof" json:"ProjectedMode,omitempty"`
+	CurrentRoute       *TNavigatorCapability_TState_TRoute              `protobuf:"bytes,7,opt,name=CurrentRoute,proto3,oneof" json:"CurrentRoute,omitempty"`
+	SearchOptions      *TNavigatorCapability_TState_TSearchOptions      `protobuf:"bytes,9,opt,name=SearchOptions,proto3,oneof" json:"SearchOptions,omitempty"`
 	CameraSettings     *TNavigatorCapability_TState_TCameraSettings     `protobuf:"bytes,10,opt,name=CameraSettings,json=camera_settings,proto3,oneof" json:"CameraSettings,omitempty"`
 	NavigationSettings *TNavigatorCapability_TState_TNavigationSettings `protobuf:"bytes,11,opt,name=NavigationSettings,json=navigation_settings,proto3,oneof" json:"NavigationSettings,omitempty"`
 	MapLayerSettings   *TNavigatorCapability_TState_TMapLayerSettings   `protobuf:"bytes,12,opt,name=MapLayerSettings,json=map_layer_settings,proto3,oneof" json:"MapLayerSettings,omitempty"`
@@ -271,8 +271,8 @@ func (x *TNavigatorCapability_TState) GetSpeedLimit() float32 {
 
 type TNavigatorCapability_TState_TPoint struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat,json=lat,proto3,oneof" json:"Lat,omitempty"`
-	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon,json=lon,proto3,oneof" json:"Lon,omitempty"`
+	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat,proto3,oneof" json:"Lat,omitempty"`
+	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon,proto3,oneof" json:"Lon,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -323,10 +323,10 @@ func (x *TNavigatorCapability_TState_TPoint) GetLon() float32 {
 
 type TNavigatorCapability_TState_TFavorite struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	ArrivalPoints []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,4,rep,name=ArrivalPoints,json=arrival_points,proto3" json:"ArrivalPoints,omitempty"`
-	Name          *string                               `protobuf:"bytes,1,opt,name=Name,json=name,proto3,oneof" json:"Name,omitempty"`
-	Lat           *float32                              `protobuf:"fixed32,2,opt,name=Lat,json=lat,proto3,oneof" json:"Lat,omitempty"`
-	Lon           *float32                              `protobuf:"fixed32,3,opt,name=Lon,json=lon,proto3,oneof" json:"Lon,omitempty"`
+	ArrivalPoints []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,4,rep,name=ArrivalPoints,proto3" json:"ArrivalPoints,omitempty"`
+	Name          *string                               `protobuf:"bytes,1,opt,name=Name,proto3,oneof" json:"Name,omitempty"`
+	Lat           *float32                              `protobuf:"fixed32,2,opt,name=Lat,proto3,oneof" json:"Lat,omitempty"`
+	Lon           *float32                              `protobuf:"fixed32,3,opt,name=Lon,proto3,oneof" json:"Lon,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -391,9 +391,9 @@ func (x *TNavigatorCapability_TState_TFavorite) GetLon() float32 {
 
 type TNavigatorCapability_TState_TLocation struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	ArrivalPoints []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,3,rep,name=ArrivalPoints,json=arrival_points,proto3" json:"ArrivalPoints,omitempty"`
-	Lat           *float32                              `protobuf:"fixed32,1,opt,name=Lat,json=lat,proto3,oneof" json:"Lat,omitempty"`
-	Lon           *float32                              `protobuf:"fixed32,2,opt,name=Lon,json=lon,proto3,oneof" json:"Lon,omitempty"`
+	ArrivalPoints []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,3,rep,name=ArrivalPoints,proto3" json:"ArrivalPoints,omitempty"`
+	Lat           *float32                              `protobuf:"fixed32,1,opt,name=Lat,proto3,oneof" json:"Lat,omitempty"`
+	Lon           *float32                              `protobuf:"fixed32,2,opt,name=Lon,proto3,oneof" json:"Lon,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -451,14 +451,14 @@ func (x *TNavigatorCapability_TState_TLocation) GetLon() float32 {
 
 type TNavigatorCapability_TState_TMapView struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	BottomRightLon *float32               `protobuf:"fixed32,1,opt,name=BottomRightLon,json=br_lon,proto3,oneof" json:"BottomRightLon,omitempty"`
-	TopRightLon    *float32               `protobuf:"fixed32,2,opt,name=TopRightLon,json=tr_lon,proto3,oneof" json:"TopRightLon,omitempty"`
-	TopLeftLon     *float32               `protobuf:"fixed32,3,opt,name=TopLeftLon,json=tl_lon,proto3,oneof" json:"TopLeftLon,omitempty"`
-	BottomLeftLon  *float32               `protobuf:"fixed32,4,opt,name=BottomLeftLon,json=bl_lon,proto3,oneof" json:"BottomLeftLon,omitempty"`
-	TopLeftLat     *float32               `protobuf:"fixed32,5,opt,name=TopLeftLat,json=tl_lat,proto3,oneof" json:"TopLeftLat,omitempty"`
-	BottomLeftLat  *float32               `protobuf:"fixed32,6,opt,name=BottomLeftLat,json=bl_lat,proto3,oneof" json:"BottomLeftLat,omitempty"`
-	BottomRightLat *float32               `protobuf:"fixed32,7,opt,name=BottomRightLat,json=br_lat,proto3,oneof" json:"BottomRightLat,omitempty"`
-	TopRightLat    *float32               `protobuf:"fixed32,8,opt,name=TopRightLat,json=tr_lat,proto3,oneof" json:"TopRightLat,omitempty"`
+	BottomRightLon *float32               `protobuf:"fixed32,1,opt,name=BottomRightLon,proto3,oneof" json:"BottomRightLon,omitempty"`
+	TopRightLon    *float32               `protobuf:"fixed32,2,opt,name=TopRightLon,proto3,oneof" json:"TopRightLon,omitempty"`
+	TopLeftLon     *float32               `protobuf:"fixed32,3,opt,name=TopLeftLon,proto3,oneof" json:"TopLeftLon,omitempty"`
+	BottomLeftLon  *float32               `protobuf:"fixed32,4,opt,name=BottomLeftLon,proto3,oneof" json:"BottomLeftLon,omitempty"`
+	TopLeftLat     *float32               `protobuf:"fixed32,5,opt,name=TopLeftLat,proto3,oneof" json:"TopLeftLat,omitempty"`
+	BottomLeftLat  *float32               `protobuf:"fixed32,6,opt,name=BottomLeftLat,proto3,oneof" json:"BottomLeftLat,omitempty"`
+	BottomRightLat *float32               `protobuf:"fixed32,7,opt,name=BottomRightLat,proto3,oneof" json:"BottomRightLat,omitempty"`
+	TopRightLat    *float32               `protobuf:"fixed32,8,opt,name=TopRightLat,proto3,oneof" json:"TopRightLat,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -551,13 +551,13 @@ func (x *TNavigatorCapability_TState_TMapView) GetTopRightLat() float32 {
 
 type TNavigatorCapability_TState_TRoute struct {
 	state                 protoimpl.MessageState                `protogen:"open.v1"`
-	Points                []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,1,rep,name=Points,json=points,proto3" json:"Points,omitempty"`
-	DistanceToDestination *float32                              `protobuf:"fixed32,2,opt,name=DistanceToDestination,json=distance_to_destination,proto3,oneof" json:"DistanceToDestination,omitempty"`
-	RawTimeToDestination  *int64                                `protobuf:"varint,3,opt,name=RawTimeToDestination,json=raw_time_to_destination,proto3,oneof" json:"RawTimeToDestination,omitempty"`
-	ArrivalTimestamp      *int64                                `protobuf:"varint,4,opt,name=ArrivalTimestamp,json=arrival_timestamp,proto3,oneof" json:"ArrivalTimestamp,omitempty"`
-	TimeToDestination     *int64                                `protobuf:"varint,5,opt,name=TimeToDestination,json=time_to_destination,proto3,oneof" json:"TimeToDestination,omitempty"`
-	TimeInTrafficJam      *int64                                `protobuf:"varint,6,opt,name=TimeInTrafficJam,json=time_in_traffic_jam,proto3,oneof" json:"TimeInTrafficJam,omitempty"`
-	DistanceInTrafficJam  *float32                              `protobuf:"fixed32,7,opt,name=DistanceInTrafficJam,json=distance_in_traffic_jam,proto3,oneof" json:"DistanceInTrafficJam,omitempty"`
+	Points                []*TNavigatorCapability_TState_TPoint `protobuf:"bytes,1,rep,name=Points,proto3" json:"Points,omitempty"`
+	DistanceToDestination *float32                              `protobuf:"fixed32,2,opt,name=DistanceToDestination,proto3,oneof" json:"DistanceToDestination,omitempty"`
+	RawTimeToDestination  *int64                                `protobuf:"varint,3,opt,name=RawTimeToDestination,proto3,oneof" json:"RawTimeToDestination,omitempty"`
+	ArrivalTimestamp      *int64                                `protobuf:"varint,4,opt,name=ArrivalTimestamp,proto3,oneof" json:"ArrivalTimestamp,omitempty"`
+	TimeToDestination     *int64                                `protobuf:"varint,5,opt,name=TimeToDestination,proto3,oneof" json:"TimeToDestination,omitempty"`
+	TimeInTrafficJam      *int64                                `protobuf:"varint,6,opt,name=TimeInTrafficJam,proto3,oneof" json:"TimeInTrafficJam,omitempty"`
+	DistanceInTrafficJam  *float32                              `protobuf:"fixed32,7,opt,name=DistanceInTrafficJam,proto3,oneof" json:"DistanceInTrafficJam,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -643,8 +643,8 @@ func (x *TNavigatorCapability_TState_TRoute) GetDistanceInTrafficJam() float32 {
 
 type TNavigatorCapability_TState_TSpan struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	SouthWest     *TNavigatorCapability_TState_TPoint `protobuf:"bytes,1,opt,name=SouthWest,json=south_west,proto3,oneof" json:"SouthWest,omitempty"`
-	NorthEast     *TNavigatorCapability_TState_TPoint `protobuf:"bytes,2,opt,name=NorthEast,json=north_east,proto3,oneof" json:"NorthEast,omitempty"`
+	SouthWest     *TNavigatorCapability_TState_TPoint `protobuf:"bytes,1,opt,name=SouthWest,proto3,oneof" json:"SouthWest,omitempty"`
+	NorthEast     *TNavigatorCapability_TState_TPoint `protobuf:"bytes,2,opt,name=NorthEast,proto3,oneof" json:"NorthEast,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -695,7 +695,7 @@ func (x *TNavigatorCapability_TState_TSpan) GetNorthEast() *TNavigatorCapability
 
 type TNavigatorCapability_TState_TSearchOptions struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Span          *TNavigatorCapability_TState_TSpan `protobuf:"bytes,1,opt,name=Span,json=span,proto3,oneof" json:"Span,omitempty"`
+	Span          *TNavigatorCapability_TState_TSpan `protobuf:"bytes,1,opt,name=Span,proto3,oneof" json:"Span,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1751,26 +1751,24 @@ var File_alice_protos_endpoint_capabilities_navigator_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/navigator/capability.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92:\n" +
-	"\x14TNavigatorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/navigator/capability.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x835\n" +
+	"\x14TNavigatorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TNavigatorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TNavigatorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x808\n" +
-	"\x06TState\x12p\n" +
-	"\rUserFavorites\x18\x01 \x03(\v2-.NAlice.TNavigatorCapability.TState.TFavoriteB\x1a\xaa\xdd\x1b\x0euser_favorites\xa8\x8d'\x01\xf8\x91*\x03R\x0euser_favorites\x12G\n" +
-	"\x11AvailableVoiceIds\x18\x05 \x03(\tB\x17\xaa\xdd\x1b\x13available_voice_idsR\x13available_voice_ids\x12\"\n" +
-	"\x06States\x18\b \x03(\tB\n" +
-	"\xaa\xdd\x1b\x06statesR\x06states\x12`\n" +
-	"\fHomeLocation\x18\x02 \x01(\v2-.NAlice.TNavigatorCapability.TState.TLocationB\x10\xaa\xdd\x1b\x04home\xa8\x8d'\x01\xf8\x91*\x03H\x00R\x04home\x88\x01\x01\x12`\n" +
-	"\fWorkLocation\x18\x03 \x01(\v2-.NAlice.TNavigatorCapability.TState.TLocationB\x10\xaa\xdd\x1b\x04work\xa8\x8d'\x01\xf8\x91*\x03H\x01R\x04work\x88\x01\x01\x12Z\n" +
-	"\aMapView\x18\x04 \x01(\v2,.NAlice.TNavigatorCapability.TState.TMapViewB\f\xaa\xdd\x1b\bmap_viewH\x02R\bmap_view\x88\x01\x01\x12>\n" +
-	"\rProjectedMode\x18\x06 \x01(\bB\x12\xaa\xdd\x1b\x0eprojected_modeH\x03R\x0eprojected_mode\x88\x01\x01\x12g\n" +
-	"\fCurrentRoute\x18\a \x01(\v2*.NAlice.TNavigatorCapability.TState.TRouteB\x11\xaa\xdd\x1b\rcurrent_routeH\x04R\rcurrent_route\x88\x01\x01\x12r\n" +
-	"\rSearchOptions\x18\t \x01(\v22.NAlice.TNavigatorCapability.TState.TSearchOptionsB\x12\xaa\xdd\x1b\x0esearch_optionsH\x05R\x0esearch_options\x88\x01\x01\x12v\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TNavigatorCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TNavigatorCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xa73\n" +
+	"\x06TState\x12S\n" +
+	"\rUserFavorites\x18\x01 \x03(\v2-.NAlice.TNavigatorCapability.TState.TFavoriteR\rUserFavorites\x12,\n" +
+	"\x11AvailableVoiceIds\x18\x05 \x03(\tR\x11AvailableVoiceIds\x12\x16\n" +
+	"\x06States\x18\b \x03(\tR\x06States\x12V\n" +
+	"\fHomeLocation\x18\x02 \x01(\v2-.NAlice.TNavigatorCapability.TState.TLocationH\x00R\fHomeLocation\x88\x01\x01\x12V\n" +
+	"\fWorkLocation\x18\x03 \x01(\v2-.NAlice.TNavigatorCapability.TState.TLocationH\x01R\fWorkLocation\x88\x01\x01\x12K\n" +
+	"\aMapView\x18\x04 \x01(\v2,.NAlice.TNavigatorCapability.TState.TMapViewH\x02R\aMapView\x88\x01\x01\x12)\n" +
+	"\rProjectedMode\x18\x06 \x01(\bH\x03R\rProjectedMode\x88\x01\x01\x12S\n" +
+	"\fCurrentRoute\x18\a \x01(\v2*.NAlice.TNavigatorCapability.TState.TRouteH\x04R\fCurrentRoute\x88\x01\x01\x12]\n" +
+	"\rSearchOptions\x18\t \x01(\v22.NAlice.TNavigatorCapability.TState.TSearchOptionsH\x05R\rSearchOptions\x88\x01\x01\x12v\n" +
 	"\x0eCameraSettings\x18\n" +
 	" \x01(\v23.NAlice.TNavigatorCapability.TState.TCameraSettingsB\x13\xaa\xdd\x1b\x0fcamera_settingsH\x06R\x0fcamera_settings\x88\x01\x01\x12\x86\x01\n" +
 	"\x12NavigationSettings\x18\v \x01(\v27.NAlice.TNavigatorCapability.TState.TNavigationSettingsB\x17\xaa\xdd\x1b\x13navigation_settingsH\aR\x13navigation_settings\x88\x01\x01\x12\x80\x01\n" +
@@ -1778,45 +1776,39 @@ const file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDesc
 	"\vScreenState\x18\r \x01(\v20.NAlice.TNavigatorCapability.TState.TScreenStateB\x10\xaa\xdd\x1b\fscreen_stateH\tR\fscreen_state\x88\x01\x01\x125\n" +
 	"\n" +
 	"SpeedLimit\x18\x0e \x01(\x02B\x0f\xaa\xdd\x1b\vspeed_limitH\n" +
-	"R\vspeed_limit\x88\x01\x01\x1a^\n" +
-	"\x06TPoint\x12\x1e\n" +
-	"\x03Lat\x18\x01 \x01(\x02B\a\xaa\xdd\x1b\x03latH\x00R\x03lat\x88\x01\x01\x12\x1e\n" +
-	"\x03Lon\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03lonH\x01R\x03lon\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x06\n" +
+	"R\vspeed_limit\x88\x01\x01\x1aF\n" +
+	"\x06TPoint\x12\x15\n" +
+	"\x03Lat\x18\x01 \x01(\x02H\x00R\x03Lat\x88\x01\x01\x12\x15\n" +
+	"\x03Lon\x18\x02 \x01(\x02H\x01R\x03Lon\x88\x01\x01B\x06\n" +
 	"\x04_LatB\x06\n" +
-	"\x04_Lon\x1a\xf4\x01\n" +
-	"\tTFavorite\x12e\n" +
-	"\rArrivalPoints\x18\x04 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointB\x12\xaa\xdd\x1b\x0earrival_pointsR\x0earrival_points\x12!\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameH\x00R\x04name\x88\x01\x01\x12\x1e\n" +
-	"\x03Lat\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03latH\x01R\x03lat\x88\x01\x01\x12\x1e\n" +
-	"\x03Lon\x18\x03 \x01(\x02B\a\xaa\xdd\x1b\x03lonH\x02R\x03lon\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\x04_Lon\x1a\xbd\x01\n" +
+	"\tTFavorite\x12P\n" +
+	"\rArrivalPoints\x18\x04 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointR\rArrivalPoints\x12\x17\n" +
+	"\x04Name\x18\x01 \x01(\tH\x00R\x04Name\x88\x01\x01\x12\x15\n" +
+	"\x03Lat\x18\x02 \x01(\x02H\x01R\x03Lat\x88\x01\x01\x12\x15\n" +
+	"\x03Lon\x18\x03 \x01(\x02H\x02R\x03Lon\x88\x01\x01B\a\n" +
 	"\x05_NameB\x06\n" +
 	"\x04_LatB\x06\n" +
-	"\x04_Lon\x1a\xc8\x01\n" +
-	"\tTLocation\x12e\n" +
-	"\rArrivalPoints\x18\x03 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointB\x12\xaa\xdd\x1b\x0earrival_pointsR\x0earrival_points\x12\x1e\n" +
-	"\x03Lat\x18\x01 \x01(\x02B\a\xaa\xdd\x1b\x03latH\x00R\x03lat\x88\x01\x01\x12\x1e\n" +
-	"\x03Lon\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03lonH\x01R\x03lon\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x06\n" +
+	"\x04_Lon\x1a\x9b\x01\n" +
+	"\tTLocation\x12P\n" +
+	"\rArrivalPoints\x18\x03 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointR\rArrivalPoints\x12\x15\n" +
+	"\x03Lat\x18\x01 \x01(\x02H\x00R\x03Lat\x88\x01\x01\x12\x15\n" +
+	"\x03Lon\x18\x02 \x01(\x02H\x01R\x03Lon\x88\x01\x01B\x06\n" +
 	"\x04_LatB\x06\n" +
-	"\x04_Lon\x1a\x90\x04\n" +
-	"\bTMapView\x12/\n" +
-	"\x0eBottomRightLon\x18\x01 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06br_lonH\x00R\x06br_lon\x88\x01\x01\x12,\n" +
-	"\vTopRightLon\x18\x02 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tr_lonH\x01R\x06tr_lon\x88\x01\x01\x12+\n" +
+	"\x04_Lon\x1a\xda\x03\n" +
+	"\bTMapView\x12+\n" +
+	"\x0eBottomRightLon\x18\x01 \x01(\x02H\x00R\x0eBottomRightLon\x88\x01\x01\x12%\n" +
+	"\vTopRightLon\x18\x02 \x01(\x02H\x01R\vTopRightLon\x88\x01\x01\x12#\n" +
 	"\n" +
-	"TopLeftLon\x18\x03 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tl_lonH\x02R\x06tl_lon\x88\x01\x01\x12.\n" +
-	"\rBottomLeftLon\x18\x04 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06bl_lonH\x03R\x06bl_lon\x88\x01\x01\x12+\n" +
+	"TopLeftLon\x18\x03 \x01(\x02H\x02R\n" +
+	"TopLeftLon\x88\x01\x01\x12)\n" +
+	"\rBottomLeftLon\x18\x04 \x01(\x02H\x03R\rBottomLeftLon\x88\x01\x01\x12#\n" +
 	"\n" +
-	"TopLeftLat\x18\x05 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tl_latH\x04R\x06tl_lat\x88\x01\x01\x12.\n" +
-	"\rBottomLeftLat\x18\x06 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06bl_latH\x05R\x06bl_lat\x88\x01\x01\x12/\n" +
-	"\x0eBottomRightLat\x18\a \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06br_latH\x06R\x06br_lat\x88\x01\x01\x12,\n" +
-	"\vTopRightLat\x18\b \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tr_latH\aR\x06tr_lat\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
+	"TopLeftLat\x18\x05 \x01(\x02H\x04R\n" +
+	"TopLeftLat\x88\x01\x01\x12)\n" +
+	"\rBottomLeftLat\x18\x06 \x01(\x02H\x05R\rBottomLeftLat\x88\x01\x01\x12+\n" +
+	"\x0eBottomRightLat\x18\a \x01(\x02H\x06R\x0eBottomRightLat\x88\x01\x01\x12%\n" +
+	"\vTopRightLat\x18\b \x01(\x02H\aR\vTopRightLat\x88\x01\x01B\x11\n" +
 	"\x0f_BottomRightLonB\x0e\n" +
 	"\f_TopRightLonB\r\n" +
 	"\v_TopLeftLonB\x10\n" +
@@ -1824,34 +1816,30 @@ const file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDesc
 	"\v_TopLeftLatB\x10\n" +
 	"\x0e_BottomLeftLatB\x11\n" +
 	"\x0f_BottomRightLatB\x0e\n" +
-	"\f_TopRightLat\x1a\xde\x05\n" +
-	"\x06TRoute\x12R\n" +
-	"\x06Points\x18\x01 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointB\x0e\xaa\xdd\x1b\x06points\xa8\x8d'\x01R\x06points\x12X\n" +
-	"\x15DistanceToDestination\x18\x02 \x01(\x02B\x1b\xaa\xdd\x1b\x17distance_to_destinationH\x00R\x17distance_to_destination\x88\x01\x01\x12W\n" +
-	"\x14RawTimeToDestination\x18\x03 \x01(\x03B\x1b\xaa\xdd\x1b\x17raw_time_to_destinationH\x01R\x17raw_time_to_destination\x88\x01\x01\x12G\n" +
-	"\x10ArrivalTimestamp\x18\x04 \x01(\x03B\x15\xaa\xdd\x1b\x11arrival_timestampH\x02R\x11arrival_timestamp\x88\x01\x01\x12L\n" +
-	"\x11TimeToDestination\x18\x05 \x01(\x03B\x17\xaa\xdd\x1b\x13time_to_destinationH\x03R\x13time_to_destination\x88\x01\x01\x12K\n" +
-	"\x10TimeInTrafficJam\x18\x06 \x01(\x03B\x17\xaa\xdd\x1b\x13time_in_traffic_jamH\x04R\x13time_in_traffic_jam\x88\x01\x01\x12W\n" +
-	"\x14DistanceInTrafficJam\x18\a \x01(\x02B\x1b\xaa\xdd\x1b\x17distance_in_traffic_jamH\x05R\x17distance_in_traffic_jam\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x18\n" +
+	"\f_TopRightLat\x1a\x9a\x04\n" +
+	"\x06TRoute\x12B\n" +
+	"\x06Points\x18\x01 \x03(\v2*.NAlice.TNavigatorCapability.TState.TPointR\x06Points\x129\n" +
+	"\x15DistanceToDestination\x18\x02 \x01(\x02H\x00R\x15DistanceToDestination\x88\x01\x01\x127\n" +
+	"\x14RawTimeToDestination\x18\x03 \x01(\x03H\x01R\x14RawTimeToDestination\x88\x01\x01\x12/\n" +
+	"\x10ArrivalTimestamp\x18\x04 \x01(\x03H\x02R\x10ArrivalTimestamp\x88\x01\x01\x121\n" +
+	"\x11TimeToDestination\x18\x05 \x01(\x03H\x03R\x11TimeToDestination\x88\x01\x01\x12/\n" +
+	"\x10TimeInTrafficJam\x18\x06 \x01(\x03H\x04R\x10TimeInTrafficJam\x88\x01\x01\x127\n" +
+	"\x14DistanceInTrafficJam\x18\a \x01(\x02H\x05R\x14DistanceInTrafficJam\x88\x01\x01B\x18\n" +
 	"\x16_DistanceToDestinationB\x17\n" +
 	"\x15_RawTimeToDestinationB\x13\n" +
 	"\x11_ArrivalTimestampB\x14\n" +
 	"\x12_TimeToDestinationB\x13\n" +
 	"\x11_TimeInTrafficJamB\x17\n" +
-	"\x15_DistanceInTrafficJam\x1a\xe9\x01\n" +
-	"\x05TSpan\x12^\n" +
-	"\tSouthWest\x18\x01 \x01(\v2*.NAlice.TNavigatorCapability.TState.TPointB\x0e\xaa\xdd\x1b\n" +
-	"south_westH\x00R\n" +
-	"south_west\x88\x01\x01\x12^\n" +
-	"\tNorthEast\x18\x02 \x01(\v2*.NAlice.TNavigatorCapability.TState.TPointB\x0e\xaa\xdd\x1b\n" +
-	"north_eastH\x01R\n" +
-	"north_east\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"\x15_DistanceInTrafficJam\x1a\xc1\x01\n" +
+	"\x05TSpan\x12M\n" +
+	"\tSouthWest\x18\x01 \x01(\v2*.NAlice.TNavigatorCapability.TState.TPointH\x00R\tSouthWest\x88\x01\x01\x12M\n" +
+	"\tNorthEast\x18\x02 \x01(\v2*.NAlice.TNavigatorCapability.TState.TPointH\x01R\tNorthEast\x88\x01\x01B\f\n" +
 	"\n" +
 	"_SouthWestB\f\n" +
 	"\n" +
-	"_NorthEast\x1am\n" +
-	"\x0eTSearchOptions\x12L\n" +
-	"\x04Span\x18\x01 \x01(\v2).NAlice.TNavigatorCapability.TState.TSpanB\b\xaa\xdd\x1b\x04spanH\x00R\x04span\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"_NorthEast\x1a]\n" +
+	"\x0eTSearchOptions\x12B\n" +
+	"\x04Span\x18\x01 \x01(\v2).NAlice.TNavigatorCapability.TState.TSpanH\x00R\x04Span\x88\x01\x01B\a\n" +
 	"\x05_Span\x1a\xd9\x02\n" +
 	"\x0fTCameraSettings\x128\n" +
 	"\vCurrentZoom\x18\x01 \x01(\x02B\x10\xaa\xdd\x1b\fcurrent_zoomH\x00R\fcurrent_zoom\x88\x01\x01\x121\n" +
@@ -1947,7 +1935,7 @@ const file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDesc
 	"TBookmarks\x12/\n" +
 	"\bFolderId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tfolder_idH\x00R\tfolder_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
 	"\t_FolderId:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06screen:\x04\xa8\xdd\x1b\x04B\x0f\n" +
+	"\x06screenB\x0f\n" +
 	"\r_HomeLocationB\x0f\n" +
 	"\r_WorkLocationB\n" +
 	"\n" +
@@ -1959,8 +1947,9 @@ const file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDesc
 	"\x13_NavigationSettingsB\x13\n" +
 	"\x11_MapLayerSettingsB\x0e\n" +
 	"\f_ScreenStateB\r\n" +
-	"\v_SpeedLimit:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf4\x01B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eNavigatorProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/navigator;navigatorspbb\x06proto3"
+	"\v_SpeedLimitB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/navigator\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_navigator_capability_proto_rawDescOnce sync.Once

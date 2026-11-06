@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/power_supply/capability.proto
 
-package powersupplypb
+package power_supply
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -223,8 +223,8 @@ const file_alice_protos_endpoint_capabilities_power_supply_capability_proto_rawD
 	"\fTLimitations\x12U\n" +
 	"\x15MaxVolumeLevelPercent\x18\x01 \x01(\rB\x1c\xaa\xdd\x1b\x18max_volume_level_percentR\x18max_volume_level_percent:\x04\xa8\xdd\x1b\x04\x1an\n" +
 	"\x06TState\x12^\n" +
-	"\vLimitations\x18\x01 \x01(\v2+.NAlice.TPowerSupplyCapability.TLimitationsB\x0f\xaa\xdd\x1b\vlimitationsR\vlimitations:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcf\x02B\x90\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10PowerSupplyProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/power_supply;powersupplypbb\x06proto3"
+	"\vLimitations\x18\x01 \x01(\v2+.NAlice.TPowerSupplyCapability.TLimitationsB\x0f\xaa\xdd\x1b\vlimitationsR\vlimitations:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcf\x02B\xa1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10PowerSupplyProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/power_supplyb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_power_supply_capability_proto_rawDescOnce sync.Once

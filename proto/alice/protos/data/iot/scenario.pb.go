@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/data/iot/scenario.proto
 
-package iotpb
+package iot
 
 import (
 	date "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/date"
@@ -286,7 +286,7 @@ func (TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDir
 
 type TLocalScenarioCondition struct {
 	state   protoimpl.MessageState                      `protogen:"open.v1"`
-	Filters []*TLocalScenarioCondition_TConditionFilter `protobuf:"bytes,6,rep,name=Filters,json=filters,proto3" json:"Filters,omitempty"`
+	Filters []*TLocalScenarioCondition_TConditionFilter `protobuf:"bytes,6,rep,name=Filters,proto3" json:"Filters,omitempty"`
 	// Types that are valid to be assigned to Condition:
 	//
 	//	*TLocalScenarioCondition_CapabilityEventCondition
@@ -296,7 +296,7 @@ type TLocalScenarioCondition struct {
 	//	*TLocalScenarioCondition_AllOfCondition
 	//	*TLocalScenarioCondition_EffectiveTimeCondition
 	Condition     isTLocalScenarioCondition_Condition `protobuf_oneof:"Condition"`
-	ID            *string                             `protobuf:"bytes,5,opt,name=ID,json=id,proto3,oneof" json:"ID,omitempty"`
+	ID            *string                             `protobuf:"bytes,5,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -411,27 +411,27 @@ type isTLocalScenarioCondition_Condition interface {
 }
 
 type TLocalScenarioCondition_CapabilityEventCondition struct {
-	CapabilityEventCondition *TLocalScenarioCondition_TCapabilityEventCondition `protobuf:"bytes,1,opt,name=CapabilityEventCondition,json=capability_event_condition,proto3,oneof"`
+	CapabilityEventCondition *TLocalScenarioCondition_TCapabilityEventCondition `protobuf:"bytes,1,opt,name=CapabilityEventCondition,proto3,oneof"`
 }
 
 type TLocalScenarioCondition_AnyOfCondition struct {
-	AnyOfCondition *TLocalScenarioCondition_TAnyOfCondition `protobuf:"bytes,2,opt,name=AnyOfCondition,json=any_of_condition,proto3,oneof"`
+	AnyOfCondition *TLocalScenarioCondition_TAnyOfCondition `protobuf:"bytes,2,opt,name=AnyOfCondition,proto3,oneof"`
 }
 
 type TLocalScenarioCondition_ActiveForCondition struct {
-	ActiveForCondition *TLocalScenarioCondition_TActiveForCondition `protobuf:"bytes,3,opt,name=ActiveForCondition,json=active_for_condition,proto3,oneof"`
+	ActiveForCondition *TLocalScenarioCondition_TActiveForCondition `protobuf:"bytes,3,opt,name=ActiveForCondition,proto3,oneof"`
 }
 
 type TLocalScenarioCondition_ScheduleCondition struct {
-	ScheduleCondition *TLocalScenarioCondition_TScheduleCondition `protobuf:"bytes,4,opt,name=ScheduleCondition,json=schedule_condition,proto3,oneof"`
+	ScheduleCondition *TLocalScenarioCondition_TScheduleCondition `protobuf:"bytes,4,opt,name=ScheduleCondition,proto3,oneof"`
 }
 
 type TLocalScenarioCondition_AllOfCondition struct {
-	AllOfCondition *TLocalScenarioCondition_TAllOfCondition `protobuf:"bytes,7,opt,name=AllOfCondition,json=all_of_condition,proto3,oneof"`
+	AllOfCondition *TLocalScenarioCondition_TAllOfCondition `protobuf:"bytes,7,opt,name=AllOfCondition,proto3,oneof"`
 }
 
 type TLocalScenarioCondition_EffectiveTimeCondition struct {
-	EffectiveTimeCondition *TLocalScenarioCondition_TEffectiveTimeCondition `protobuf:"bytes,8,opt,name=EffectiveTimeCondition,json=effective_time_condition,proto3,oneof"`
+	EffectiveTimeCondition *TLocalScenarioCondition_TEffectiveTimeCondition `protobuf:"bytes,8,opt,name=EffectiveTimeCondition,proto3,oneof"`
 }
 
 func (*TLocalScenarioCondition_CapabilityEventCondition) isTLocalScenarioCondition_Condition() {}
@@ -448,12 +448,12 @@ func (*TLocalScenarioCondition_EffectiveTimeCondition) isTLocalScenarioCondition
 
 type TLocalScenario struct {
 	state                       protoimpl.MessageState         `protogen:"open.v1"`
-	ID                          string                         `protobuf:"bytes,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Condition                   *TLocalScenarioCondition       `protobuf:"bytes,2,opt,name=Condition,json=condition,proto3" json:"Condition,omitempty"`
-	Steps                       []*TLocalScenario_TStep        `protobuf:"bytes,3,rep,name=Steps,json=steps,proto3" json:"Steps,omitempty"`
-	EffectiveTime               *TLocalScenario_TEffectiveTime `protobuf:"bytes,4,opt,name=EffectiveTime,json=effective_time,proto3" json:"EffectiveTime,omitempty"`
-	ContinueExecutionAfterError bool                           `protobuf:"varint,5,opt,name=ContinueExecutionAfterError,json=continue_execution_after_error,proto3" json:"ContinueExecutionAfterError,omitempty"`
-	IsActive                    *bool                          `protobuf:"varint,6,opt,name=IsActive,json=is_active,proto3,oneof" json:"IsActive,omitempty"`
+	ID                          string                         `protobuf:"bytes,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Condition                   *TLocalScenarioCondition       `protobuf:"bytes,2,opt,name=Condition,proto3" json:"Condition,omitempty"`
+	Steps                       []*TLocalScenario_TStep        `protobuf:"bytes,3,rep,name=Steps,proto3" json:"Steps,omitempty"`
+	EffectiveTime               *TLocalScenario_TEffectiveTime `protobuf:"bytes,4,opt,name=EffectiveTime,proto3" json:"EffectiveTime,omitempty"`
+	ContinueExecutionAfterError bool                           `protobuf:"varint,5,opt,name=ContinueExecutionAfterError,proto3" json:"ContinueExecutionAfterError,omitempty"`
+	IsActive                    *bool                          `protobuf:"varint,6,opt,name=IsActive,proto3,oneof" json:"IsActive,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -532,7 +532,7 @@ func (x *TLocalScenario) GetIsActive() bool {
 
 type TLocalScenarioCondition_TAnyOfCondition struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Conditions    []*TLocalScenarioCondition `protobuf:"bytes,1,rep,name=Conditions,json=conditions,proto3" json:"Conditions,omitempty"`
+	Conditions    []*TLocalScenarioCondition `protobuf:"bytes,1,rep,name=Conditions,proto3" json:"Conditions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -576,7 +576,7 @@ func (x *TLocalScenarioCondition_TAnyOfCondition) GetConditions() []*TLocalScena
 
 type TLocalScenarioCondition_TAllOfCondition struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Conditions    []*TLocalScenarioCondition `protobuf:"bytes,1,rep,name=Conditions,json=conditions,proto3" json:"Conditions,omitempty"`
+	Conditions    []*TLocalScenarioCondition `protobuf:"bytes,1,rep,name=Conditions,proto3" json:"Conditions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -620,9 +620,9 @@ func (x *TLocalScenarioCondition_TAllOfCondition) GetConditions() []*TLocalScena
 
 type TLocalScenarioCondition_TCapabilityEventCondition struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	EndpointID     string                 `protobuf:"bytes,1,opt,name=EndpointID,json=endpoint_id,proto3" json:"EndpointID,omitempty"`
-	EventCondition *anypb.Any             `protobuf:"bytes,2,opt,name=EventCondition,json=event_condition,proto3" json:"EventCondition,omitempty"`
-	TriggeredEvent *anypb.Any             `protobuf:"bytes,3,opt,name=TriggeredEvent,json=triggered_event,proto3" json:"TriggeredEvent,omitempty"`
+	EndpointID     string                 `protobuf:"bytes,1,opt,name=EndpointID,proto3" json:"EndpointID,omitempty"`
+	EventCondition *anypb.Any             `protobuf:"bytes,2,opt,name=EventCondition,proto3" json:"EventCondition,omitempty"`
+	TriggeredEvent *anypb.Any             `protobuf:"bytes,3,opt,name=TriggeredEvent,proto3" json:"TriggeredEvent,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -680,8 +680,8 @@ func (x *TLocalScenarioCondition_TCapabilityEventCondition) GetTriggeredEvent() 
 
 type TLocalScenarioCondition_TActiveForCondition struct {
 	state           protoimpl.MessageState   `protogen:"open.v1"`
-	Condition       *TLocalScenarioCondition `protobuf:"bytes,1,opt,name=Condition,json=condition,proto3" json:"Condition,omitempty"`
-	DurationSeconds uint32                   `protobuf:"varint,2,opt,name=DurationSeconds,json=duration_seconds,proto3" json:"DurationSeconds,omitempty"`
+	Condition       *TLocalScenarioCondition `protobuf:"bytes,1,opt,name=Condition,proto3" json:"Condition,omitempty"`
+	DurationSeconds uint32                   `protobuf:"varint,2,opt,name=DurationSeconds,proto3" json:"DurationSeconds,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -732,9 +732,9 @@ func (x *TLocalScenarioCondition_TActiveForCondition) GetDurationSeconds() uint3
 
 type TLocalScenarioCondition_TScheduleCondition struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	TimeOfDaySeconds uint32                 `protobuf:"varint,1,opt,name=TimeOfDaySeconds,json=time_of_day_seconds,proto3" json:"TimeOfDaySeconds,omitempty"`
-	DaysOfWeek       []string               `protobuf:"bytes,2,rep,name=DaysOfWeek,json=days_of_week,proto3" json:"DaysOfWeek,omitempty"`
-	StartTimeSeconds *uint64                `protobuf:"varint,3,opt,name=StartTimeSeconds,json=start_time_seconds,proto3,oneof" json:"StartTimeSeconds,omitempty"`
+	TimeOfDaySeconds uint32                 `protobuf:"varint,1,opt,name=TimeOfDaySeconds,proto3" json:"TimeOfDaySeconds,omitempty"`
+	DaysOfWeek       []string               `protobuf:"bytes,2,rep,name=DaysOfWeek,proto3" json:"DaysOfWeek,omitempty"`
+	StartTimeSeconds *uint64                `protobuf:"varint,3,opt,name=StartTimeSeconds,proto3,oneof" json:"StartTimeSeconds,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -792,12 +792,12 @@ func (x *TLocalScenarioCondition_TScheduleCondition) GetStartTimeSeconds() uint6
 
 type TLocalScenarioCondition_TEffectiveTimeCondition struct {
 	state            protoimpl.MessageState                                         `protogen:"open.v1"`
-	StartTimeSeconds uint32                                                         `protobuf:"varint,1,opt,name=StartTimeSeconds,json=start_time_seconds,proto3" json:"StartTimeSeconds,omitempty"`
-	DurationSeconds  uint32                                                         `protobuf:"varint,2,opt,name=DurationSeconds,json=duration_seconds,proto3" json:"DurationSeconds,omitempty"`
-	Weekdays         []*date.TDayOfWeek                                             `protobuf:"bytes,3,rep,name=Weekdays,json=weekdays,proto3" json:"Weekdays,omitempty"`
-	TriggerPolicy    TLocalScenarioCondition_TEffectiveTimeCondition_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,json=trigger_policy,proto3,enum=NAlice.NIot.TLocalScenarioCondition_TEffectiveTimeCondition_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
-	Condition        *TLocalScenarioCondition                                       `protobuf:"bytes,5,opt,name=Condition,json=condition,proto3" json:"Condition,omitempty"`
-	AsTrigger        bool                                                           `protobuf:"varint,6,opt,name=AsTrigger,json=as_trigger,proto3" json:"AsTrigger,omitempty"`
+	StartTimeSeconds uint32                                                         `protobuf:"varint,1,opt,name=StartTimeSeconds,proto3" json:"StartTimeSeconds,omitempty"`
+	DurationSeconds  uint32                                                         `protobuf:"varint,2,opt,name=DurationSeconds,proto3" json:"DurationSeconds,omitempty"`
+	Weekdays         []*date.TDayOfWeek                                             `protobuf:"bytes,3,rep,name=Weekdays,proto3" json:"Weekdays,omitempty"`
+	TriggerPolicy    TLocalScenarioCondition_TEffectiveTimeCondition_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,proto3,enum=NAlice.NIot.TLocalScenarioCondition_TEffectiveTimeCondition_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
+	Condition        *TLocalScenarioCondition                                       `protobuf:"bytes,5,opt,name=Condition,proto3" json:"Condition,omitempty"`
+	AsTrigger        bool                                                           `protobuf:"varint,6,opt,name=AsTrigger,proto3" json:"AsTrigger,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -876,9 +876,9 @@ func (x *TLocalScenarioCondition_TEffectiveTimeCondition) GetAsTrigger() bool {
 
 type TLocalScenarioCondition_TConditionFilter struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointID    string                 `protobuf:"bytes,1,opt,name=EndpointID,json=endpoint_id,proto3" json:"EndpointID,omitempty"`
-	Filter        *anypb.Any             `protobuf:"bytes,2,opt,name=Filter,json=filter,proto3" json:"Filter,omitempty"`
-	ID            *string                `protobuf:"bytes,3,opt,name=ID,json=id,proto3,oneof" json:"ID,omitempty"`
+	EndpointID    string                 `protobuf:"bytes,1,opt,name=EndpointID,proto3" json:"EndpointID,omitempty"`
+	Filter        *anypb.Any             `protobuf:"bytes,2,opt,name=Filter,proto3" json:"Filter,omitempty"`
+	ID            *string                `protobuf:"bytes,3,opt,name=ID,proto3,oneof" json:"ID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -936,11 +936,11 @@ func (x *TLocalScenarioCondition_TConditionFilter) GetID() string {
 
 type TLocalScenario_TEffectiveTime struct {
 	state            protoimpl.MessageState                       `protogen:"open.v1"`
-	StartTimeSeconds uint32                                       `protobuf:"varint,1,opt,name=StartTimeSeconds,json=start_time_seconds,proto3" json:"StartTimeSeconds,omitempty"`
-	EndTimeSeconds   uint32                                       `protobuf:"varint,2,opt,name=EndTimeSeconds,json=end_time_seconds,proto3" json:"EndTimeSeconds,omitempty"`
-	DaysOfWeek       []string                                     `protobuf:"bytes,3,rep,name=DaysOfWeek,json=days_of_week,proto3" json:"DaysOfWeek,omitempty"`
-	TriggerPolicy    TLocalScenario_TEffectiveTime_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,json=trigger_policy,proto3,enum=NAlice.NIot.TLocalScenario_TEffectiveTime_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
-	DurationSeconds  uint32                                       `protobuf:"varint,5,opt,name=DurationSeconds,json=duration_seconds,proto3" json:"DurationSeconds,omitempty"`
+	StartTimeSeconds uint32                                       `protobuf:"varint,1,opt,name=StartTimeSeconds,proto3" json:"StartTimeSeconds,omitempty"`
+	EndTimeSeconds   uint32                                       `protobuf:"varint,2,opt,name=EndTimeSeconds,proto3" json:"EndTimeSeconds,omitempty"`
+	DaysOfWeek       []string                                     `protobuf:"bytes,3,rep,name=DaysOfWeek,proto3" json:"DaysOfWeek,omitempty"`
+	TriggerPolicy    TLocalScenario_TEffectiveTime_ETriggerPolicy `protobuf:"varint,4,opt,name=TriggerPolicy,proto3,enum=NAlice.NIot.TLocalScenario_TEffectiveTime_ETriggerPolicy" json:"TriggerPolicy,omitempty"`
+	DurationSeconds  uint32                                       `protobuf:"varint,5,opt,name=DurationSeconds,proto3" json:"DurationSeconds,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1071,7 +1071,7 @@ type isTLocalScenario_TStep_Step interface {
 }
 
 type TLocalScenario_TStep_DirectivesStep struct {
-	DirectivesStep *TLocalScenario_TStep_TDirectivesStep `protobuf:"bytes,1,opt,name=DirectivesStep,json=directives_step,proto3,oneof"`
+	DirectivesStep *TLocalScenario_TStep_TDirectivesStep `protobuf:"bytes,1,opt,name=DirectivesStep,proto3,oneof"`
 }
 
 func (*TLocalScenario_TStep_DirectivesStep) isTLocalScenario_TStep_Step() {}
@@ -1137,14 +1137,14 @@ type isTLocalScenario_TStepResult_Step interface {
 }
 
 type TLocalScenario_TStepResult_DirectivesStepResult struct {
-	DirectivesStepResult *TLocalScenario_TStepResult_TDirectivesStepResult `protobuf:"bytes,1,opt,name=DirectivesStepResult,json=directives_step_result,proto3,oneof"`
+	DirectivesStepResult *TLocalScenario_TStepResult_TDirectivesStepResult `protobuf:"bytes,1,opt,name=DirectivesStepResult,proto3,oneof"`
 }
 
 func (*TLocalScenario_TStepResult_DirectivesStepResult) isTLocalScenario_TStepResult_Step() {}
 
 type TLocalScenario_TStep_TDirectivesStep struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Directives    []*anypb.Any           `protobuf:"bytes,1,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
+	Directives    []*anypb.Any           `protobuf:"bytes,1,rep,name=Directives,proto3" json:"Directives,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1188,8 +1188,8 @@ func (x *TLocalScenario_TStep_TDirectivesStep) GetDirectives() []*anypb.Any {
 
 type TLocalScenario_TStepResult_TDirectivesStepResult struct {
 	state                 protoimpl.MessageState                                                   `protogen:"open.v1"`
-	Status                TLocalScenario_TStepResult_TDirectivesStepResult_EStatus                 `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_EStatus" json:"Status,omitempty"`
-	DirectivesExecResults []*TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult `protobuf:"bytes,2,rep,name=DirectivesExecResults,json=directives_exec_results,proto3" json:"DirectivesExecResults,omitempty"`
+	Status                TLocalScenario_TStepResult_TDirectivesStepResult_EStatus                 `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_EStatus" json:"Status,omitempty"`
+	DirectivesExecResults []*TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult `protobuf:"bytes,2,rep,name=DirectivesExecResults,proto3" json:"DirectivesExecResults,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -1240,8 +1240,8 @@ func (x *TLocalScenario_TStepResult_TDirectivesStepResult) GetDirectivesExecResu
 
 type TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult struct {
 	state         protoimpl.MessageState                                                                     `protogen:"open.v1"`
-	Status        TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus" json:"Status,omitempty"`
-	EndpointId    *string                                                                                    `protobuf:"bytes,2,opt,name=EndpointId,json=endpoint_id,proto3,oneof" json:"EndpointId,omitempty"`
+	Status        TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus" json:"Status,omitempty"`
+	EndpointId    *string                                                                                    `protobuf:"bytes,2,opt,name=EndpointId,proto3,oneof" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1294,59 +1294,57 @@ var File_alice_protos_data_iot_scenario_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_iot_scenario_proto_rawDesc = "" +
 	"\n" +
-	"$alice/protos/data/iot/scenario.proto\x12\vNAlice.NIot\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a(alice/protos/data/date/day_of_week.proto\"\x9f\x15\n" +
-	"\x17TLocalScenarioCondition\x12\\\n" +
-	"\aFilters\x18\x06 \x03(\v25.NAlice.NIot.TLocalScenarioCondition.TConditionFilterB\v\xaa\xdd\x1b\afiltersR\afilters\x12\x9e\x01\n" +
-	"\x18CapabilityEventCondition\x18\x01 \x01(\v2>.NAlice.NIot.TLocalScenarioCondition.TCapabilityEventConditionB\x1e\xaa\xdd\x1b\x1acapability_event_conditionH\x00R\x1acapability_event_condition\x12v\n" +
-	"\x0eAnyOfCondition\x18\x02 \x01(\v24.NAlice.NIot.TLocalScenarioCondition.TAnyOfConditionB\x14\xaa\xdd\x1b\x10any_of_conditionH\x00R\x10any_of_condition\x12\x86\x01\n" +
-	"\x12ActiveForCondition\x18\x03 \x01(\v28.NAlice.NIot.TLocalScenarioCondition.TActiveForConditionB\x18\xaa\xdd\x1b\x14active_for_conditionH\x00R\x14active_for_condition\x12\x80\x01\n" +
-	"\x11ScheduleCondition\x18\x04 \x01(\v27.NAlice.NIot.TLocalScenarioCondition.TScheduleConditionB\x16\xaa\xdd\x1b\x12schedule_conditionH\x00R\x12schedule_condition\x12v\n" +
-	"\x0eAllOfCondition\x18\a \x01(\v24.NAlice.NIot.TLocalScenarioCondition.TAllOfConditionB\x14\xaa\xdd\x1b\x10all_of_conditionH\x00R\x10all_of_condition\x12\x96\x01\n" +
-	"\x16EffectiveTimeCondition\x18\b \x01(\v2<.NAlice.NIot.TLocalScenarioCondition.TEffectiveTimeConditionB\x1c\xaa\xdd\x1b\x18effective_time_conditionH\x00R\x18effective_time_condition\x12\x1b\n" +
-	"\x02ID\x18\x05 \x01(\tB\x06\xaa\xdd\x1b\x02idH\x01R\x02id\x88\x01\x01\x1ag\n" +
-	"\x0fTAnyOfCondition\x12T\n" +
+	"$alice/protos/data/iot/scenario.proto\x12\vNAlice.NIot\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a(alice/protos/data/date/day_of_week.proto\"\xe6\x10\n" +
+	"\x17TLocalScenarioCondition\x12O\n" +
+	"\aFilters\x18\x06 \x03(\v25.NAlice.NIot.TLocalScenarioCondition.TConditionFilterR\aFilters\x12|\n" +
+	"\x18CapabilityEventCondition\x18\x01 \x01(\v2>.NAlice.NIot.TLocalScenarioCondition.TCapabilityEventConditionH\x00R\x18CapabilityEventCondition\x12^\n" +
+	"\x0eAnyOfCondition\x18\x02 \x01(\v24.NAlice.NIot.TLocalScenarioCondition.TAnyOfConditionH\x00R\x0eAnyOfCondition\x12j\n" +
+	"\x12ActiveForCondition\x18\x03 \x01(\v28.NAlice.NIot.TLocalScenarioCondition.TActiveForConditionH\x00R\x12ActiveForCondition\x12g\n" +
+	"\x11ScheduleCondition\x18\x04 \x01(\v27.NAlice.NIot.TLocalScenarioCondition.TScheduleConditionH\x00R\x11ScheduleCondition\x12^\n" +
+	"\x0eAllOfCondition\x18\a \x01(\v24.NAlice.NIot.TLocalScenarioCondition.TAllOfConditionH\x00R\x0eAllOfCondition\x12v\n" +
+	"\x16EffectiveTimeCondition\x18\b \x01(\v2<.NAlice.NIot.TLocalScenarioCondition.TEffectiveTimeConditionH\x00R\x16EffectiveTimeCondition\x12\x13\n" +
+	"\x02ID\x18\x05 \x01(\tH\x01R\x02ID\x88\x01\x01\x1aW\n" +
+	"\x0fTAnyOfCondition\x12D\n" +
 	"\n" +
-	"Conditions\x18\x01 \x03(\v2$.NAlice.NIot.TLocalScenarioConditionB\x0e\xaa\xdd\x1b\n" +
-	"conditionsR\n" +
-	"conditions\x1ag\n" +
-	"\x0fTAllOfCondition\x12T\n" +
+	"Conditions\x18\x01 \x03(\v2$.NAlice.NIot.TLocalScenarioConditionR\n" +
+	"Conditions\x1aW\n" +
+	"\x0fTAllOfCondition\x12D\n" +
 	"\n" +
-	"Conditions\x18\x01 \x03(\v2$.NAlice.NIot.TLocalScenarioConditionB\x0e\xaa\xdd\x1b\n" +
-	"conditionsR\n" +
-	"conditions\x1a\xf5\x01\n" +
-	"\x19TCapabilityEventCondition\x120\n" +
+	"Conditions\x18\x01 \x03(\v2$.NAlice.NIot.TLocalScenarioConditionR\n" +
+	"Conditions\x1a\xb7\x01\n" +
+	"\x19TCapabilityEventCondition\x12\x1e\n" +
 	"\n" +
-	"EndpointID\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12R\n" +
-	"\x0eEventCondition\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\x13\xaa\xdd\x1b\x0fevent_conditionR\x0fevent_condition\x12R\n" +
-	"\x0eTriggeredEvent\x18\x03 \x01(\v2\x14.google.protobuf.AnyB\x13\xaa\xdd\x1b\x0ftriggered_eventR\x0ftriggered_event\x1a\xa9\x01\n" +
-	"\x13TActiveForCondition\x12Q\n" +
-	"\tCondition\x18\x01 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionB\r\xaa\xdd\x1b\tconditionR\tcondition\x12?\n" +
-	"\x0fDurationSeconds\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10duration_secondsR\x10duration_seconds\x1a\xf0\x01\n" +
-	"\x12TScheduleCondition\x12F\n" +
-	"\x10TimeOfDaySeconds\x18\x01 \x01(\rB\x17\xaa\xdd\x1b\x13time_of_day_secondsR\x13time_of_day_seconds\x122\n" +
+	"EndpointID\x18\x01 \x01(\tR\n" +
+	"EndpointID\x12<\n" +
+	"\x0eEventCondition\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x0eEventCondition\x12<\n" +
+	"\x0eTriggeredEvent\x18\x03 \x01(\v2\x14.google.protobuf.AnyR\x0eTriggeredEvent\x1a\x83\x01\n" +
+	"\x13TActiveForCondition\x12B\n" +
+	"\tCondition\x18\x01 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\tCondition\x12(\n" +
+	"\x0fDurationSeconds\x18\x02 \x01(\rR\x0fDurationSeconds\x1a\xa6\x01\n" +
+	"\x12TScheduleCondition\x12*\n" +
+	"\x10TimeOfDaySeconds\x18\x01 \x01(\rR\x10TimeOfDaySeconds\x12\x1e\n" +
 	"\n" +
-	"DaysOfWeek\x18\x02 \x03(\tB\x10\xaa\xdd\x1b\fdays_of_weekR\fdays_of_week\x12I\n" +
-	"\x10StartTimeSeconds\x18\x03 \x01(\x04B\x16\xaa\xdd\x1b\x12start_time_secondsH\x00R\x12start_time_seconds\x88\x01\x01B\x13\n" +
-	"\x11_StartTimeSeconds\x1a\xa7\x04\n" +
-	"\x17TEffectiveTimeCondition\x12D\n" +
-	"\x10StartTimeSeconds\x18\x01 \x01(\rB\x16\xaa\xdd\x1b\x12start_time_secondsR\x12start_time_seconds\x12?\n" +
-	"\x0fDurationSeconds\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10duration_secondsR\x10duration_seconds\x12B\n" +
-	"\bWeekdays\x18\x03 \x03(\v2\x18.NAlice.NData.TDayOfWeekB\f\xaa\xdd\x1b\bweekdaysR\bweekdays\x12\x86\x01\n" +
-	"\rTriggerPolicy\x18\x04 \x01(\x0e2K.NAlice.NIot.TLocalScenarioCondition.TEffectiveTimeCondition.ETriggerPolicyB\x12\xaa\xdd\x1b\x0etrigger_policyR\x0etrigger_policy\x12Q\n" +
-	"\tCondition\x18\x05 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionB\r\xaa\xdd\x1b\tconditionR\tcondition\x12-\n" +
-	"\tAsTrigger\x18\x06 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"as_triggerR\n" +
-	"as_trigger\"6\n" +
+	"DaysOfWeek\x18\x02 \x03(\tR\n" +
+	"DaysOfWeek\x12/\n" +
+	"\x10StartTimeSeconds\x18\x03 \x01(\x04H\x00R\x10StartTimeSeconds\x88\x01\x01B\x13\n" +
+	"\x11_StartTimeSeconds\x1a\xb2\x03\n" +
+	"\x17TEffectiveTimeCondition\x12*\n" +
+	"\x10StartTimeSeconds\x18\x01 \x01(\rR\x10StartTimeSeconds\x12(\n" +
+	"\x0fDurationSeconds\x18\x02 \x01(\rR\x0fDurationSeconds\x124\n" +
+	"\bWeekdays\x18\x03 \x03(\v2\x18.NAlice.NData.TDayOfWeekR\bWeekdays\x12q\n" +
+	"\rTriggerPolicy\x18\x04 \x01(\x0e2K.NAlice.NIot.TLocalScenarioCondition.TEffectiveTimeCondition.ETriggerPolicyR\rTriggerPolicy\x12B\n" +
+	"\tCondition\x18\x05 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\tCondition\x12\x1c\n" +
+	"\tAsTrigger\x18\x06 \x01(\bR\tAsTrigger\"6\n" +
 	"\x0eETriggerPolicy\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04Once\x10\x01\x12\r\n" +
-	"\tUnlimited\x10\x02\x1a\xa2\x01\n" +
-	"\x10TConditionFilter\x120\n" +
+	"\tUnlimited\x10\x02\x1a|\n" +
+	"\x10TConditionFilter\x12\x1e\n" +
 	"\n" +
-	"EndpointID\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x128\n" +
-	"\x06Filter\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\n" +
-	"\xaa\xdd\x1b\x06filterR\x06filter\x12\x1b\n" +
-	"\x02ID\x18\x03 \x01(\tB\x06\xaa\xdd\x1b\x02idH\x00R\x02id\x88\x01\x01B\x05\n" +
+	"EndpointID\x18\x01 \x01(\tR\n" +
+	"EndpointID\x12,\n" +
+	"\x06Filter\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x06Filter\x12\x13\n" +
+	"\x02ID\x18\x03 \x01(\tH\x00R\x02ID\x88\x01\x01B\x05\n" +
 	"\x03_ID\"x\n" +
 	"\x0eEConditionType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x13\n" +
@@ -1355,46 +1353,45 @@ const file_alice_protos_data_iot_scenario_proto_rawDesc = "" +
 	"\tActiveFor\x10\x03\x12\f\n" +
 	"\bSchedule\x10\x04\x12\t\n" +
 	"\x05AllOf\x10\x05\x12\x11\n" +
-	"\rEffectiveTime\x10\x06B\x1a\n" +
-	"\tCondition\x12\r\xaa\xdd\x1b\tconditionB\x05\n" +
-	"\x03_ID\"\xcb\x0f\n" +
-	"\x0eTLocalScenario\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12Q\n" +
-	"\tCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionB\r\xaa\xdd\x1b\tconditionR\tcondition\x12B\n" +
-	"\x05Steps\x18\x03 \x03(\v2!.NAlice.NIot.TLocalScenario.TStepB\t\xaa\xdd\x1b\x05stepsR\x05steps\x12e\n" +
-	"\rEffectiveTime\x18\x04 \x01(\v2*.NAlice.NIot.TLocalScenario.TEffectiveTimeB\x12\xaa\xdd\x1b\x0eeffective_timeR\x0eeffective_time\x12g\n" +
-	"\x1bContinueExecutionAfterError\x18\x05 \x01(\bB\"\xaa\xdd\x1b\x1econtinue_execution_after_errorR\x1econtinue_execution_after_error\x12/\n" +
-	"\bIsActive\x18\x06 \x01(\bB\r\xaa\xdd\x1b\tis_activeH\x00R\tis_active\x88\x01\x01\x1a\xb9\x03\n" +
-	"\x0eTEffectiveTime\x12D\n" +
-	"\x10StartTimeSeconds\x18\x01 \x01(\rB\x16\xaa\xdd\x1b\x12start_time_secondsR\x12start_time_seconds\x12>\n" +
-	"\x0eEndTimeSeconds\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10end_time_secondsR\x10end_time_seconds\x122\n" +
+	"\rEffectiveTime\x10\x06B\v\n" +
+	"\tConditionB\x05\n" +
+	"\x03_ID\"\xc8\f\n" +
+	"\x0eTLocalScenario\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\tR\x02ID\x12B\n" +
+	"\tCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\tCondition\x127\n" +
+	"\x05Steps\x18\x03 \x03(\v2!.NAlice.NIot.TLocalScenario.TStepR\x05Steps\x12P\n" +
+	"\rEffectiveTime\x18\x04 \x01(\v2*.NAlice.NIot.TLocalScenario.TEffectiveTimeR\rEffectiveTime\x12@\n" +
+	"\x1bContinueExecutionAfterError\x18\x05 \x01(\bR\x1bContinueExecutionAfterError\x12\x1f\n" +
+	"\bIsActive\x18\x06 \x01(\bH\x00R\bIsActive\x88\x01\x01\x1a\xc7\x02\n" +
+	"\x0eTEffectiveTime\x12*\n" +
+	"\x10StartTimeSeconds\x18\x01 \x01(\rR\x10StartTimeSeconds\x12&\n" +
+	"\x0eEndTimeSeconds\x18\x02 \x01(\rR\x0eEndTimeSeconds\x12\x1e\n" +
 	"\n" +
-	"DaysOfWeek\x18\x03 \x03(\tB\x10\xaa\xdd\x1b\fdays_of_weekR\fdays_of_week\x12t\n" +
-	"\rTriggerPolicy\x18\x04 \x01(\x0e29.NAlice.NIot.TLocalScenario.TEffectiveTime.ETriggerPolicyB\x12\xaa\xdd\x1b\x0etrigger_policyR\x0etrigger_policy\x12?\n" +
-	"\x0fDurationSeconds\x18\x05 \x01(\rB\x14\xaa\xdd\x1b\x10duration_secondsR\x10duration_seconds\"6\n" +
+	"DaysOfWeek\x18\x03 \x03(\tR\n" +
+	"DaysOfWeek\x12_\n" +
+	"\rTriggerPolicy\x18\x04 \x01(\x0e29.NAlice.NIot.TLocalScenario.TEffectiveTime.ETriggerPolicyR\rTriggerPolicy\x12(\n" +
+	"\x0fDurationSeconds\x18\x05 \x01(\rR\x0fDurationSeconds\"6\n" +
 	"\x0eETriggerPolicy\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04Once\x10\x01\x12\r\n" +
-	"\tUnlimited\x10\x02\x1a\xe5\x01\n" +
-	"\x05TStep\x12q\n" +
-	"\x0eDirectivesStep\x18\x01 \x01(\v21.NAlice.NIot.TLocalScenario.TStep.TDirectivesStepB\x13\xaa\xdd\x1b\x0fdirectives_stepH\x00R\x0fdirectives_step\x1aW\n" +
-	"\x0fTDirectivesStep\x12D\n" +
+	"\tUnlimited\x10\x02\x1a\xb5\x01\n" +
+	"\x05TStep\x12[\n" +
+	"\x0eDirectivesStep\x18\x01 \x01(\v21.NAlice.NIot.TLocalScenario.TStep.TDirectivesStepH\x00R\x0eDirectivesStep\x1aG\n" +
+	"\x0fTDirectivesStep\x124\n" +
 	"\n" +
-	"Directives\x18\x01 \x03(\v2\x14.google.protobuf.AnyB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directivesB\x10\n" +
-	"\x04Step\x12\b\xaa\xdd\x1b\x04step\x1a\xd7\x06\n" +
-	"\vTStepResult\x12\x91\x01\n" +
-	"\x14DirectivesStepResult\x18\x01 \x01(\v2=.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResultB\x1a\xaa\xdd\x1b\x16directives_step_resultH\x00R\x16directives_step_result\x1a\xa1\x05\n" +
-	"\x15TDirectivesStepResult\x12i\n" +
-	"\x06Status\x18\x01 \x01(\x0e2E.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12\xa7\x01\n" +
-	"\x15DirectivesExecResults\x18\x02 \x03(\v2R.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResultB\x1b\xaa\xdd\x1b\x17directives_exec_resultsR\x17directives_exec_results\x1a\xc0\x02\n" +
-	"\x14TDirectiveExecResult\x12\x8b\x01\n" +
-	"\x06Status\x18\x01 \x01(\x0e2g.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x125\n" +
+	"Directives\x18\x01 \x03(\v2\x14.google.protobuf.AnyR\n" +
+	"DirectivesB\x06\n" +
+	"\x04Step\x1a\xe4\x05\n" +
+	"\vTStepResult\x12s\n" +
+	"\x14DirectivesStepResult\x18\x01 \x01(\v2=.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResultH\x00R\x14DirectivesStepResult\x1a\xd7\x04\n" +
+	"\x15TDirectivesStepResult\x12]\n" +
+	"\x06Status\x18\x01 \x01(\x0e2E.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.EStatusR\x06Status\x12\x88\x01\n" +
+	"\x15DirectivesExecResults\x18\x02 \x03(\v2R.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResultR\x15DirectivesExecResults\x1a\xa1\x02\n" +
+	"\x14TDirectiveExecResult\x12\x7f\n" +
+	"\x06Status\x18\x01 \x01(\x0e2g.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatusR\x06Status\x12#\n" +
 	"\n" +
-	"EndpointId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idH\x00R\vendpoint_id\x88\x01\x01\"T\n" +
+	"EndpointId\x18\x02 \x01(\tH\x00R\n" +
+	"EndpointId\x88\x01\x01\"T\n" +
 	"\x14EDirectiveExecStatus\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aSuccess\x10\x01\x12\x15\n" +
@@ -1404,10 +1401,10 @@ const file_alice_protos_data_iot_scenario_proto_rawDesc = "" +
 	"\aEStatus\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aSuccess\x10\x01\x12\v\n" +
-	"\aFailure\x10\x02B\x10\n" +
-	"\x04Step\x12\b\xaa\xdd\x1b\x04stepB\v\n" +
-	"\t_IsActiveB`\n" +
-	"\x1fru.yandex.alice.protos.data.iotB\rScenarioProtoP\x01Z,a.yandex-team.ru/alice/protos/data/iot;iotpbb\x06proto3"
+	"\aFailure\x10\x02B\x06\n" +
+	"\x04StepB\v\n" +
+	"\t_IsActiveB\xb4\x01\n" +
+	"\x0fcom.NAlice.NIotB\rScenarioProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot\xa2\x02\x03NNX\xaa\x02\vNAlice.NIot\xca\x02\vNAlice\\NIot\xe2\x02\x17NAlice\\NIot\\GPBMetadata\xea\x02\fNAlice::NIotb\x06proto3"
 
 var (
 	file_alice_protos_data_iot_scenario_proto_rawDescOnce sync.Once

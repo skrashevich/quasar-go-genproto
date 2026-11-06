@@ -734,8 +734,8 @@ const file_alice_protos_data_entities_datetime_proto_rawDesc = "" +
 	"\bWeekdays\x18\x01 \x03(\rB\f\xaa\xdd\x1b\bweekdaysR\bweekdays\x12'\n" +
 	"\x06Repeat\x18\x02 \x01(\bB\n" +
 	"\xaa\xdd\x1b\x06repeatH\x00R\x06repeat\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\a_RepeatB]\n" +
-	"\x1fru.yandex.alice.protos.entitiesB\rEntitiesProtoZ+a.yandex-team.ru/alice/protos/data/entitiesb\x06proto3"
+	"\a_RepeatB|\n" +
+	"\x1fru.yandex.alice.protos.entitiesB\rEntitiesProtoZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/entitiesb\x06proto3"
 
 var (
 	file_alice_protos_data_entities_datetime_proto_rawDescOnce sync.Once

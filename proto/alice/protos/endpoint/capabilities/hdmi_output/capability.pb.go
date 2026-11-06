@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/hdmi_output/capability.proto
 
-package hdmi_outputpb
+package hdmi_output
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type THdmiOutputCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *THdmiOutputCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *THdmiOutputCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *THdmiOutputCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *THdmiOutputCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,8 +123,8 @@ func (*THdmiOutputCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type THdmiOutputCapability_TState struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	IsHdmiConnected bool                   `protobuf:"varint,1,opt,name=IsHdmiConnected,json=is_hdmi_connected,proto3" json:"IsHdmiConnected,omitempty"`
-	IsHdmiAudioOn   bool                   `protobuf:"varint,2,opt,name=IsHdmiAudioOn,json=is_hdmi_audio_on,proto3" json:"IsHdmiAudioOn,omitempty"`
+	IsHdmiConnected bool                   `protobuf:"varint,1,opt,name=IsHdmiConnected,proto3" json:"IsHdmiConnected,omitempty"`
+	IsHdmiAudioOn   bool                   `protobuf:"varint,2,opt,name=IsHdmiAudioOn,proto3" json:"IsHdmiAudioOn,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -175,7 +175,7 @@ func (x *THdmiOutputCapability_TState) GetIsHdmiAudioOn() bool {
 
 type THdmiOutputCapability_TCecVolumeUpDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (x *THdmiOutputCapability_TCecVolumeUpDirective) GetName() string {
 
 type THdmiOutputCapability_TCecVolumeDownDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,7 +263,7 @@ func (x *THdmiOutputCapability_TCecVolumeDownDirective) GetName() string {
 
 type THdmiOutputCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *THdmiOutputCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *THdmiOutputCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -309,28 +309,27 @@ var File_alice_protos_endpoint_capabilities_hdmi_output_capability_proto protore
 
 const file_alice_protos_endpoint_capabilities_hdmi_output_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/hdmi_output/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcc\x05\n" +
-	"\x15THdmiOutputCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
+	"?alice/protos/endpoint/capabilities/hdmi_output/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe8\x03\n" +
+	"\x15THdmiOutputCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.THdmiOutputCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.THdmiOutputCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x8a\x01\n" +
-	"\x06TState\x12>\n" +
-	"\x0fIsHdmiConnected\x18\x01 \x01(\bB\x12\xaa\xdd\x1b\x0ehdmi_connectedR\x11is_hdmi_connected\x12:\n" +
-	"\rIsHdmiAudioOn\x18\x02 \x01(\bB\x11\xaa\xdd\x1b\rhdmi_audio_onR\x10is_hdmi_audio_on:\x04\xa8\xdd\x1b\x04\x1a\\\n" +
-	"\x15TCecVolumeUpDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17cec_volume_up_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcf\x02\x1a`\n" +
-	"\x17TCecVolumeDownDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:&\x92\x82\x19\x19cec_volume_down_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x02\x1al\n" +
-	"\x11TUpdateStateEvent\x12M\n" +
+	"Parameters\x18\x02 \x01(\v2).NAlice.THdmiOutputCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.THdmiOutputCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aX\n" +
+	"\x06TState\x12(\n" +
+	"\x0fIsHdmiConnected\x18\x01 \x01(\bR\x0fIsHdmiConnected\x12$\n" +
+	"\rIsHdmiAudioOn\x18\x02 \x01(\bR\rIsHdmiAudioOn\x1a,\n" +
+	"\x15TCecVolumeUpDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a.\n" +
+	"\x17TCecVolumeDownDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1aR\n" +
+	"\x11TUpdateStateEvent\x12=\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1d.NAlice.THdmiOutputCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cE:\b\xa8\xdd\x1b\x04\xa0\xc8\x1csB\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19HdmiOutputCapabilityProtoP\x01ZMa.yandex-team.ru/alice/protos/endpoint/capabilities/hdmi_output;hdmi_outputpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x1d.NAlice.THdmiOutputCapabilityR\n" +
+	"CapabilityB\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/hdmi_output\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_hdmi_output_capability_proto_rawDescOnce sync.Once

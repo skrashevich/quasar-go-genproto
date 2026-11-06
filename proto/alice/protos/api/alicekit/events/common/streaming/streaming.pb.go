@@ -79,8 +79,8 @@ func (EStreamingSource) EnumDescriptor() ([]byte, []int) {
 
 type TStreaming struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Routing       *TStreaming_TRouting   `protobuf:"bytes,1,opt,name=Routing,json=routing,proto3" json:"Routing,omitempty"`
-	Source        EStreamingSource       `protobuf:"varint,2,opt,name=Source,json=source,proto3,enum=NAlice.NAliceApi.EStreamingSource" json:"Source,omitempty"`
+	Routing       *TStreaming_TRouting   `protobuf:"bytes,1,opt,name=Routing,proto3" json:"Routing,omitempty"`
+	Source        EStreamingSource       `protobuf:"varint,2,opt,name=Source,proto3,enum=NAlice.NAliceApi.EStreamingSource" json:"Source,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -131,7 +131,7 @@ func (x *TStreaming) GetSource() EStreamingSource {
 
 type TStreaming_TRouting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DialogId      string                 `protobuf:"bytes,1,opt,name=DialogId,json=dialog_id,proto3" json:"DialogId,omitempty"`
+	DialogId      string                 `protobuf:"bytes,1,opt,name=DialogId,proto3" json:"DialogId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -177,22 +177,21 @@ var File_alice_protos_api_alicekit_events_common_streaming_streaming_proto proto
 
 const file_alice_protos_api_alicekit_events_common_streaming_streaming_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/api/alicekit/events/common/streaming/streaming.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe6\x01\n" +
+	"Aalice/protos/api/alicekit/events/common/streaming/streaming.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x01\n" +
 	"\n" +
-	"TStreaming\x12L\n" +
-	"\aRouting\x18\x01 \x01(\v2%.NAlice.NAliceApi.TStreaming.TRoutingB\v\xaa\xdd\x1b\aroutingR\arouting\x12F\n" +
-	"\x06Source\x18\x02 \x01(\x0e2\".NAlice.NAliceApi.EStreamingSourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\x1a<\n" +
-	"\bTRouting\x12*\n" +
-	"\bDialogId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tdialog_idR\tdialog_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04*{\n" +
+	"TStreaming\x12?\n" +
+	"\aRouting\x18\x01 \x01(\v2%.NAlice.NAliceApi.TStreaming.TRoutingR\aRouting\x12:\n" +
+	"\x06Source\x18\x02 \x01(\x0e2\".NAlice.NAliceApi.EStreamingSourceR\x06Source\x1a&\n" +
+	"\bTRouting\x12\x1a\n" +
+	"\bDialogId\x18\x01 \x01(\tR\bDialogId*{\n" +
 	"\x10EStreamingSource\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x12\n" +
 	"\x0eInitialRequest\x10\x01\x12\x1f\n" +
 	"\x1bBackgroundResponseStreaming\x10\x02\x12\x15\n" +
 	"\x11SubscriptionState\x10\x03\x12\x0e\n" +
 	"\n" +
-	"ReadDialog\x10\x04B\x8e\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.common.streamingB\tStreamingP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/common/streamingb\x06proto3"
+	"ReadDialog\x10\x04B\xea\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0eStreamingProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/streaming\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_streaming_streaming_proto_rawDescOnce sync.Once

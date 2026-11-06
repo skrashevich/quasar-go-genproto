@@ -24,7 +24,7 @@ const (
 
 type TAsrMusicResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Raw           string                 `protobuf:"bytes,1,opt,name=Raw,json=raw,proto3" json:"Raw,omitempty"`
+	Raw           string                 `protobuf:"bytes,1,opt,name=Raw,proto3" json:"Raw,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,10 +70,10 @@ var File_alice_protos_api_alicekit_events_asr_music_result_asr_music_result_prot
 
 const file_alice_protos_api_alicekit_events_asr_music_result_asr_music_result_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/alicekit/events/asr_music_result/asr_music_result.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"2\n" +
-	"\x0fTAsrMusicResult\x12\x19\n" +
-	"\x03Raw\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03rawR\x03raw:\x04\xa8\xdd\x1b\x04B\x93\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.asr_music_resultB\x0eAsrMusicResultP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/asr_music_resultb\x06proto3"
+	"Halice/protos/api/alicekit/events/asr_music_result/asr_music_result.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"#\n" +
+	"\x0fTAsrMusicResult\x12\x10\n" +
+	"\x03Raw\x18\x01 \x01(\tR\x03RawB\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13AsrMusicResultProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/asr_music_result\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_asr_music_result_asr_music_result_proto_rawDescOnce sync.Once

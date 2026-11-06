@@ -72,8 +72,8 @@ const file_alice_protos_api_incognito_mode_incognito_options_proto_rawDesc = "" 
 	"\n" +
 	"7alice/protos/api/incognito_mode/incognito_options.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"@\n" +
 	"\x11TIncognitoOptions\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04Bo\n" +
-	")ru.yandex.alice.protos.api.incognito_modeB\x10IncognitoOptionsZ0a.yandex-team.ru/alice/protos/api/incognito_modeb\x06proto3"
+	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04B\x8e\x01\n" +
+	")ru.yandex.alice.protos.api.incognito_modeB\x10IncognitoOptionsZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/incognito_modeb\x06proto3"
 
 var (
 	file_alice_protos_api_incognito_mode_incognito_options_proto_rawDescOnce sync.Once

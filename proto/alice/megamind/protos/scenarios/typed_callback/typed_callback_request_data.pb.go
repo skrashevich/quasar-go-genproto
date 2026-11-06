@@ -102,8 +102,8 @@ const file_alice_megamind_protos_scenarios_typed_callback_typed_callback_request
 	"\tAnalytics\x18\x02 \x01(\v2 .NAlice.TAnalyticsTrackingModuleB\r\xaa\xdd\x1b\tanalyticsR\tanalytics\x123\n" +
 	"\x06Origin\x18\x03 \x01(\v2\x0f.NAlice.TOriginB\n" +
 	"\xaa\xdd\x1b\x06originR\x06origin\x12Q\n" +
-	"\rRequestParams\x18\x04 \x01(\v2\x16.NAlice.TRequestParamsB\x12\xaa\xdd\x1b\x0erequest_paramsR\x0erequest_params:\x04\xa8\xdd\x1b\x04B\x9a\x01\n" +
-	"8ru.yandex.alice.megamind.protos.scenarios.typed_callbackB\x1dTypedCallbackRequestDataProtoZ?a.yandex-team.ru/alice/megamind/protos/scenarios/typed_callbackb\x06proto3"
+	"\rRequestParams\x18\x04 \x01(\v2\x16.NAlice.TRequestParamsB\x12\xaa\xdd\x1b\x0erequest_paramsR\x0erequest_params:\x04\xa8\xdd\x1b\x04B\xb9\x01\n" +
+	"8ru.yandex.alice.megamind.protos.scenarios.typed_callbackB\x1dTypedCallbackRequestDataProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/typed_callbackb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_typed_callback_typed_callback_request_data_proto_rawDescOnce sync.Once

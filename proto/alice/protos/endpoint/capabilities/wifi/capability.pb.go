@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/wifi/capability.proto
 
-package wifipb
+package wifi
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -128,9 +128,9 @@ func (TWifiCapability_EWifiType) EnumDescriptor() ([]byte, []int) {
 
 type TWifiCapability struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta  `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TWifiCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TWifiCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta  `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TWifiCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TWifiCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -224,7 +224,7 @@ func (*TWifiCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TWifiCapability_TState struct {
 	state          protoimpl.MessageState           `protogen:"open.v1"`
-	CurrentNetwork *TWifiCapability_TState_TNetwork `protobuf:"bytes,1,opt,name=CurrentNetwork,json=current_network,proto3" json:"CurrentNetwork,omitempty"`
+	CurrentNetwork *TWifiCapability_TState_TNetwork `protobuf:"bytes,1,opt,name=CurrentNetwork,proto3" json:"CurrentNetwork,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -268,11 +268,11 @@ func (x *TWifiCapability_TState) GetCurrentNetwork() *TWifiCapability_TState_TNe
 
 type TWifiCapability_TNetworkInfo struct {
 	state            protoimpl.MessageState     `protogen:"open.v1"`
-	Ssid             string                     `protobuf:"bytes,1,opt,name=Ssid,json=ssid,proto3" json:"Ssid,omitempty"`
-	Psk              string                     `protobuf:"bytes,2,opt,name=Psk,json=psk,proto3" json:"Psk,omitempty"`
-	AllowAutoConnect bool                       `protobuf:"varint,3,opt,name=AllowAutoConnect,json=allow_auto_connect,proto3" json:"AllowAutoConnect,omitempty"`
-	Hidden           bool                       `protobuf:"varint,4,opt,name=Hidden,json=hidden,proto3" json:"Hidden,omitempty"`
-	SecurityProtocol *TWifiCapability_EWifiType `protobuf:"varint,5,opt,name=SecurityProtocol,json=security_protocol,proto3,enum=NAlice.TWifiCapability_EWifiType,oneof" json:"SecurityProtocol,omitempty"`
+	Ssid             string                     `protobuf:"bytes,1,opt,name=Ssid,proto3" json:"Ssid,omitempty"`
+	Psk              string                     `protobuf:"bytes,2,opt,name=Psk,proto3" json:"Psk,omitempty"`
+	AllowAutoConnect bool                       `protobuf:"varint,3,opt,name=AllowAutoConnect,proto3" json:"AllowAutoConnect,omitempty"`
+	Hidden           bool                       `protobuf:"varint,4,opt,name=Hidden,proto3" json:"Hidden,omitempty"`
+	SecurityProtocol *TWifiCapability_EWifiType `protobuf:"varint,5,opt,name=SecurityProtocol,proto3,enum=NAlice.TWifiCapability_EWifiType,oneof" json:"SecurityProtocol,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -344,7 +344,7 @@ func (x *TWifiCapability_TNetworkInfo) GetSecurityProtocol() TWifiCapability_EWi
 
 type TWifiCapability_TConnectToNetworkDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,json=ssid,proto3" json:"Ssid,omitempty"`
+	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,proto3" json:"Ssid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -388,8 +388,8 @@ func (x *TWifiCapability_TConnectToNetworkDirective) GetSsid() string {
 
 type TWifiCapability_TSetWifiConfigurationDirective struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Networks      []*TWifiCapability_TNetworkInfo `protobuf:"bytes,1,rep,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
-	WifiHash      string                          `protobuf:"bytes,2,opt,name=WifiHash,json=wifi_hash,proto3" json:"WifiHash,omitempty"`
+	Networks      []*TWifiCapability_TNetworkInfo `protobuf:"bytes,1,rep,name=Networks,proto3" json:"Networks,omitempty"`
+	WifiHash      string                          `protobuf:"bytes,2,opt,name=WifiHash,proto3" json:"WifiHash,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -476,7 +476,7 @@ func (*TWifiCapability_TForceSyncWifiConfigurationDirective) Descriptor() ([]byt
 
 type TWifiCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TWifiCapability       `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TWifiCapability       `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -520,7 +520,7 @@ func (x *TWifiCapability_TUpdateStateEvent) GetCapability() *TWifiCapability {
 
 type TWifiCapability_TSyncWifiConfigurationEvent struct {
 	state         protoimpl.MessageState                                      `protogen:"open.v1"`
-	FirstSyncInfo *TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo `protobuf:"bytes,1,opt,name=FirstSyncInfo,json=first_sync_info,proto3" json:"FirstSyncInfo,omitempty"`
+	FirstSyncInfo *TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo `protobuf:"bytes,1,opt,name=FirstSyncInfo,proto3" json:"FirstSyncInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -564,8 +564,8 @@ func (x *TWifiCapability_TSyncWifiConfigurationEvent) GetFirstSyncInfo() *TWifiC
 
 type TWifiCapability_TConnectionFailureEvent struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Ssid          string                                  `protobuf:"bytes,1,opt,name=Ssid,json=ssid,proto3" json:"Ssid,omitempty"`
-	Cause         TWifiCapability_EConnectionFailureCause `protobuf:"varint,2,opt,name=Cause,json=cause,proto3,enum=NAlice.TWifiCapability_EConnectionFailureCause" json:"Cause,omitempty"`
+	Ssid          string                                  `protobuf:"bytes,1,opt,name=Ssid,proto3" json:"Ssid,omitempty"`
+	Cause         TWifiCapability_EConnectionFailureCause `protobuf:"varint,2,opt,name=Cause,proto3,enum=NAlice.TWifiCapability_EConnectionFailureCause" json:"Cause,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -616,7 +616,7 @@ func (x *TWifiCapability_TConnectionFailureEvent) GetCause() TWifiCapability_ECo
 
 type TWifiCapability_TState_TNetwork struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,json=ssid,proto3" json:"Ssid,omitempty"`
+	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,proto3" json:"Ssid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -660,7 +660,7 @@ func (x *TWifiCapability_TState_TNetwork) GetSsid() string {
 
 type TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo struct {
 	state          protoimpl.MessageState                                               `protogen:"open.v1"`
-	CurrentNetwork *TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo_TNetwork `protobuf:"bytes,1,opt,name=CurrentNetwork,json=current_network,proto3" json:"CurrentNetwork,omitempty"`
+	CurrentNetwork *TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo_TNetwork `protobuf:"bytes,1,opt,name=CurrentNetwork,proto3" json:"CurrentNetwork,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -704,7 +704,7 @@ func (x *TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo) GetCurrentN
 
 type TWifiCapability_TSyncWifiConfigurationEvent_TFirstSyncInfo_TNetwork struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,json=ssid,proto3" json:"Ssid,omitempty"`
+	Ssid          string                 `protobuf:"bytes,1,opt,name=Ssid,proto3" json:"Ssid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -750,47 +750,45 @@ var File_alice_protos_endpoint_capabilities_wifi_capability_proto protoreflect.F
 
 const file_alice_protos_endpoint_capabilities_wifi_capability_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/endpoint/capabilities/wifi/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xee\x0e\n" +
-	"\x0fTWifiCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12S\n" +
+	"8alice/protos/endpoint/capabilities/wifi/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfa\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2#.NAlice.TWifiCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12?\n" +
-	"\x05State\x18\x03 \x01(\v2\x1e.NAlice.TWifiCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xa5\x01\n" +
-	"\x06TState\x12e\n" +
-	"\x0eCurrentNetwork\x18\x01 \x01(\v2'.NAlice.TWifiCapability.TState.TNetworkB\x13\xaa\xdd\x1b\x0fcurrent_networkR\x0fcurrent_network\x1a.\n" +
-	"\bTNetwork\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\xb8\x02\n" +
-	"\fTNetworkInfo\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x12\x19\n" +
-	"\x03Psk\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03pskR\x03psk\x12D\n" +
-	"\x10AllowAutoConnect\x18\x03 \x01(\bB\x16\xaa\xdd\x1b\x12allow_auto_connectR\x12allow_auto_connect\x12\"\n" +
-	"\x06Hidden\x18\x04 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06hiddenR\x06hidden\x12j\n" +
-	"\x10SecurityProtocol\x18\x05 \x01(\x0e2!.NAlice.TWifiCapability.EWifiTypeB\x15\xaa\xdd\x1b\x11security_protocolH\x00R\x11security_protocol\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x13\n" +
-	"\x11_SecurityProtocol\x1ae\n" +
-	"\x1aTConnectToNetworkDirective\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid:)\x92\x82\x19\x1cconnect_to_network_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf0\x01\x1a\xcb\x01\n" +
-	"\x1eTSetWifiConfigurationDirective\x12N\n" +
-	"\bNetworks\x18\x01 \x03(\v2$.NAlice.TWifiCapability.TNetworkInfoB\f\xaa\xdd\x1b\bnetworksR\bnetworks\x12*\n" +
-	"\bWifiHash\x18\x02 \x01(\tB\r\xaa\xdd\x1b\twifi_hashR\twifi_hash:-\x92\x82\x19 set_wifi_configuration_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf1\x01\x1a\\\n" +
-	"$TForceSyncWifiConfigurationDirective:4\x92\x82\x19'force_sync_wifi_configuration_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf4\x01\x1af\n" +
-	"\x11TUpdateStateEvent\x12G\n" +
+	"\x0fTWifiCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12C\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x17.NAlice.TWifiCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c;\x1a\xf7\x02\n" +
-	"\x1bTSyncWifiConfigurationEvent\x12\x7f\n" +
-	"\rFirstSyncInfo\x18\x01 \x01(\v2B.NAlice.TWifiCapability.TSyncWifiConfigurationEvent.TFirstSyncInfoB\x13\xaa\xdd\x1b\x0ffirst_sync_infoR\x0ffirst_sync_info\x1a\xcc\x01\n" +
-	"\x0eTFirstSyncInfo\x12\x89\x01\n" +
-	"\x0eCurrentNetwork\x18\x01 \x01(\v2K.NAlice.TWifiCapability.TSyncWifiConfigurationEvent.TFirstSyncInfo.TNetworkB\x13\xaa\xdd\x1b\x0fcurrent_networkR\x0fcurrent_network\x1a.\n" +
-	"\bTNetwork\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c9\x1a\x93\x01\n" +
-	"\x17TConnectionFailureEvent\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x12P\n" +
-	"\x05Cause\x18\x02 \x01(\x0e2/.NAlice.TWifiCapability.EConnectionFailureCauseB\t\xaa\xdd\x1b\x05causeR\x05cause:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c:\"V\n" +
+	"Parameters\x18\x02 \x01(\v2#.NAlice.TWifiCapability.TParametersR\n" +
+	"Parameters\x124\n" +
+	"\x05State\x18\x03 \x01(\v2\x1e.NAlice.TWifiCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1ay\n" +
+	"\x06TState\x12O\n" +
+	"\x0eCurrentNetwork\x18\x01 \x01(\v2'.NAlice.TWifiCapability.TState.TNetworkR\x0eCurrentNetwork\x1a\x1e\n" +
+	"\bTNetwork\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x1a\xe1\x01\n" +
+	"\fTNetworkInfo\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x12\x10\n" +
+	"\x03Psk\x18\x02 \x01(\tR\x03Psk\x12*\n" +
+	"\x10AllowAutoConnect\x18\x03 \x01(\bR\x10AllowAutoConnect\x12\x16\n" +
+	"\x06Hidden\x18\x04 \x01(\bR\x06Hidden\x12R\n" +
+	"\x10SecurityProtocol\x18\x05 \x01(\x0e2!.NAlice.TWifiCapability.EWifiTypeH\x00R\x10SecurityProtocol\x88\x01\x01B\x13\n" +
+	"\x11_SecurityProtocol\x1a0\n" +
+	"\x1aTConnectToNetworkDirective\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x1a~\n" +
+	"\x1eTSetWifiConfigurationDirective\x12@\n" +
+	"\bNetworks\x18\x01 \x03(\v2$.NAlice.TWifiCapability.TNetworkInfoR\bNetworks\x12\x1a\n" +
+	"\bWifiHash\x18\x02 \x01(\tR\bWifiHash\x1a&\n" +
+	"$TForceSyncWifiConfigurationDirective\x1aL\n" +
+	"\x11TUpdateStateEvent\x127\n" +
+	"\n" +
+	"Capability\x18\x01 \x01(\v2\x17.NAlice.TWifiCapabilityR\n" +
+	"Capability\x1a\xaf\x02\n" +
+	"\x1bTSyncWifiConfigurationEvent\x12h\n" +
+	"\rFirstSyncInfo\x18\x01 \x01(\v2B.NAlice.TWifiCapability.TSyncWifiConfigurationEvent.TFirstSyncInfoR\rFirstSyncInfo\x1a\xa5\x01\n" +
+	"\x0eTFirstSyncInfo\x12s\n" +
+	"\x0eCurrentNetwork\x18\x01 \x01(\v2K.NAlice.TWifiCapability.TSyncWifiConfigurationEvent.TFirstSyncInfo.TNetworkR\x0eCurrentNetwork\x1a\x1e\n" +
+	"\bTNetwork\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x1at\n" +
+	"\x17TConnectionFailureEvent\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x12E\n" +
+	"\x05Cause\x18\x02 \x01(\x0e2/.NAlice.TWifiCapability.EConnectionFailureCauseR\x05Cause\"V\n" +
 	"\x17EConnectionFailureCause\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x10\n" +
 	"\fSsidNotFound\x10\x01\x12\f\n" +
@@ -800,8 +798,9 @@ const file_alice_protos_endpoint_capabilities_wifi_capability_proto_rawDesc = ""
 	"\tEWifiType\x12\a\n" +
 	"\x03WEP\x10\x00\x12\a\n" +
 	"\x03WPA\x10\x01\x12\b\n" +
-	"\x04OPEN\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cTBz\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\tWifiProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/wifi;wifipbb\x06proto3"
+	"\x04OPEN\x10\x02B\xae\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/wifi\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_wifi_capability_proto_rawDescOnce sync.Once

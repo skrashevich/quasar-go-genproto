@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_show/capability.proto
 
-package aliceshowpb
+package alice_show
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -261,8 +261,8 @@ const file_alice_protos_endpoint_capabilities_alice_show_capability_proto_rawDes
 	"\x18TAliceShowStartDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1d\x92\x82\x19\x10alice_show_start\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa4\x02\x1aV\n" +
 	"\x17TAliceShowStopDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1c\x92\x82\x19\x0falice_show_stop\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa6\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ckB\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aAliceShowCapabilitiesProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_show;aliceshowpbb\x06proto3"
+	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1c\x92\x82\x19\x0falice_show_stop\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa6\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ckB\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aAliceShowCapabilitiesProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_showb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_show_capability_proto_rawDescOnce sync.Once

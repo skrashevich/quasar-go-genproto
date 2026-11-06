@@ -117,8 +117,8 @@ const file_request_annotation_proto_rawDesc = "" +
 	"\x0eBaseAnnotation\x12,\n" +
 	"\x05cards\x18\x01 \x03(\v2\x16.quark.core.proto.CardR\x05cards\"I\n" +
 	"\x11RequestAnnotation\x124\n" +
-	"\x04base\x18\x01 \x01(\v2 .quark.core.proto.BaseAnnotationR\x04baseB3\n" +
-	"\x19ru.yandex.quasar.protobufB\x16RequestAnnotationProto"
+	"\x04base\x18\x01 \x01(\v2 .quark.core.proto.BaseAnnotationR\x04baseBd\n" +
+	"\x19ru.yandex.quasar.protobufB\x16RequestAnnotationProtoZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_request_annotation_proto_rawDescOnce sync.Once

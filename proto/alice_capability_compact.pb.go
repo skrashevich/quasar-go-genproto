@@ -422,8 +422,8 @@ const file_alice_capability_compact_proto_rawDesc = "" +
 	"\x05TIdleB\a\n" +
 	"\x05State\x1ab\n" +
 	"\x06TState\x12X\n" +
-	"\vSpeechState\x18\x06 \x01(\v26.quark.core.proto.TAliceCapabilityCompact.TSpeechStateR\vSpeechStateB6\n" +
-	"\x17com.yandex.quark.protosB\x1bAliceCapabilityCompactProtob\x06proto3"
+	"\vSpeechState\x18\x06 \x01(\v26.quark.core.proto.TAliceCapabilityCompact.TSpeechStateR\vSpeechStateBg\n" +
+	"\x17com.yandex.quark.protosB\x1bAliceCapabilityCompactProtoZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_alice_capability_compact_proto_rawDescOnce sync.Once

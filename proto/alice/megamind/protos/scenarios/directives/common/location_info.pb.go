@@ -133,8 +133,8 @@ const file_alice_megamind_protos_scenarios_directives_common_location_info_proto
 	"everywhere\x12c\n" +
 	"\x12SmartSpeakerModels\x18\x06 \x03(\x0e2\x17.NAlice.EUserDeviceTypeB\x18\xaa\xdd\x1b\x14smart_speaker_modelsR\x14smart_speaker_models\x12X\n" +
 	"\x16IncludeCurrentDeviceId\x18\a \x01(\bB\x1d\xaa\xdd\x1b\x19include_current_device_idR\x19include_current_device_id\x126\n" +
-	"\fCurrentGroup\x18\x05 \x01(\bB\x11\xaa\xdd\x1b\rcurrent_groupR\rcurrent_group:\x04\xa8\xdd\x1b\x04B\x98\x01\n" +
-	";ru.yandex.alice.megamind.protos.scenarios.directives.commonB\x13SoundDirectiveProtoP\x01ZBa.yandex-team.ru/alice/megamind/protos/scenarios/directives/commonb\x06proto3"
+	"\fCurrentGroup\x18\x05 \x01(\bB\x11\xaa\xdd\x1b\rcurrent_groupR\rcurrent_group:\x04\xa8\xdd\x1b\x04B\xb7\x01\n" +
+	";ru.yandex.alice.megamind.protos.scenarios.directives.commonB\x13SoundDirectiveProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/directives/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_directives_common_location_info_proto_rawDescOnce sync.Once

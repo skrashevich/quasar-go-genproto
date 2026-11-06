@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/health/capability.proto
 
-package healthpb
+package health
 
 import (
 	health_data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/health_data"
@@ -201,8 +201,8 @@ const file_alice_protos_endpoint_capabilities_health_capability_proto_rawDesc = 
 	"\bActivity\x18\x03 \x01(\v2#.NAlice.NData.NHealthData.TActivityB\f\xaa\xdd\x1b\bactivityH\x02R\bactivity\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
 	"\a_VitalsB\b\n" +
 	"\x06_SleepB\v\n" +
-	"\t_Activity:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x99\x02B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15HealthCapabilityProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/health;healthpbb\x06proto3"
+	"\t_Activity:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x99\x02B\xa0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15HealthCapabilityProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/healthb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_health_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: yandex_io/modules/capability_registrar/proto/capability_shape.proto
 
-package capabilityregistrarpb
+package proto
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -92,8 +92,8 @@ const file_yandex_io_modules_capability_registrar_proto_capability_shape_proto_r
 	"\n" +
 	"Parameters\x18\x02 \x01(\fR\n" +
 	"Parameters\x12.\n" +
-	"\x12ParametersAtField3\x18\x03 \x01(\fR\x12ParametersAtField3B\xab\x01\n" +
-	">ru.yandex.arcadia.yandex_io.modules.capability_registrar.protoB\x14CapabilityShapeProtoZSa.yandex-team.ru/yandex_io/modules/capability_registrar/proto;capabilityregistrarpbb\x06proto3"
+	"\x12ParametersAtField3\x18\x03 \x01(\fR\x12ParametersAtField3B\xb4\x01\n" +
+	">ru.yandex.arcadia.yandex_io.modules.capability_registrar.protoB\x14CapabilityShapeProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/yandex_io/modules/capability_registrar/protob\x06proto3"
 
 var (
 	file_yandex_io_modules_capability_registrar_proto_capability_shape_proto_rawDescOnce sync.Once

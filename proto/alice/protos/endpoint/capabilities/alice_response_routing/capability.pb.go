@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_response_routing/capability.proto
 
-package aliceresponseroutingpb
+package alice_response_routing
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -225,8 +225,8 @@ const file_alice_protos_endpoint_capabilities_alice_response_routing_capability_
 	"\x06TState\x12A\n" +
 	"\x0fIsWebChatOpened\x18\x01 \x01(\bB\x15\xaa\xdd\x1b\x11is_webchat_openedR\x11is_webchat_opened:\x04\xa8\xdd\x1b\x04\x1a[\n" +
 	"\x15TOpenWebChatDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17open_web_chat_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa8\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9a\x02B\xb7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AliceResponseRouterCapabilityProtoP\x01Zaa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_response_routing;aliceresponseroutingpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x17open_web_chat_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa8\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9a\x02B\xbf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AliceResponseRouterCapabilityProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_response_routingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_response_routing_capability_proto_rawDescOnce sync.Once

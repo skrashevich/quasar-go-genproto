@@ -78,8 +78,8 @@ const file_alice_protos_data_music_entities_repeat_mode_proto_rawDesc = "" +
 	"\vERepeatMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\t\n" +
 	"\x05TRACK\x10\x01\x12\a\n" +
-	"\x03ALL\x10\x02B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/music_entitiesb\x06proto3"
+	"\x03ALL\x10\x02B\xc6\x01\n" +
+	"\x10com.NAlice.NDataB\x0fRepeatModeProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/music_entities\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_music_entities_repeat_mode_proto_rawDescOnce sync.Once

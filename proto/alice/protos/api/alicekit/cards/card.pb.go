@@ -120,8 +120,8 @@ func (TModeCard_TRequestMode_EMode) EnumDescriptor() ([]byte, []int) {
 
 type TTextCard struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	Text                string                 `protobuf:"bytes,1,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	ProgressivePrinting bool                   `protobuf:"varint,2,opt,name=ProgressivePrinting,json=progressive_printing,proto3" json:"ProgressivePrinting,omitempty"`
+	Text                string                 `protobuf:"bytes,1,opt,name=Text,proto3" json:"Text,omitempty"`
+	ProgressivePrinting bool                   `protobuf:"varint,2,opt,name=ProgressivePrinting,proto3" json:"ProgressivePrinting,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -172,8 +172,8 @@ func (x *TTextCard) GetProgressivePrinting() bool {
 
 type TDivCard struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Text          string                 `protobuf:"bytes,2,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	Body          *structpb.Struct       `protobuf:"bytes,3,opt,name=Body,json=body,proto3" json:"Body,omitempty"`
+	Text          string                 `protobuf:"bytes,2,opt,name=Text,proto3" json:"Text,omitempty"`
+	Body          *structpb.Struct       `protobuf:"bytes,3,opt,name=Body,proto3" json:"Body,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -224,7 +224,7 @@ func (x *TDivCard) GetBody() *structpb.Struct {
 
 type TTextWithButtonsCard struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Text          string                          `protobuf:"bytes,1,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
+	Text          string                          `protobuf:"bytes,1,opt,name=Text,proto3" json:"Text,omitempty"`
 	Buttons       []*TTextWithButtonsCard_TButton `protobuf:"bytes,2,rep,name=buttons,proto3" json:"buttons,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -276,8 +276,8 @@ func (x *TTextWithButtonsCard) GetButtons() []*TTextWithButtonsCard_TButton {
 
 type TRichJsonCard struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Body          string                 `protobuf:"bytes,1,opt,name=Body,json=body,proto3" json:"Body,omitempty"`
-	HideBorders   bool                   `protobuf:"varint,3,opt,name=HideBorders,json=hide_borders,proto3" json:"HideBorders,omitempty"`
+	Body          string                 `protobuf:"bytes,1,opt,name=Body,proto3" json:"Body,omitempty"`
+	HideBorders   bool                   `protobuf:"varint,3,opt,name=HideBorders,proto3" json:"HideBorders,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -328,10 +328,10 @@ func (x *TRichJsonCard) GetHideBorders() bool {
 
 type TNeuroStructuredBlocksCard struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	PlainText            string                 `protobuf:"bytes,2,opt,name=PlainText,json=plain_text,proto3" json:"PlainText,omitempty"`
-	JsonStructuredData   string                 `protobuf:"bytes,3,opt,name=JsonStructuredData,json=json_structured_data,proto3" json:"JsonStructuredData,omitempty"`
-	JsonRephraseItems    string                 `protobuf:"bytes,4,opt,name=JsonRephraseItems,json=json_rephrase_items,proto3" json:"JsonRephraseItems,omitempty"`
-	JsonSourceData       string                 `protobuf:"bytes,5,opt,name=JsonSourceData,json=json_source_data,proto3" json:"JsonSourceData,omitempty"`
+	PlainText            string                 `protobuf:"bytes,2,opt,name=PlainText,proto3" json:"PlainText,omitempty"`
+	JsonStructuredData   string                 `protobuf:"bytes,3,opt,name=JsonStructuredData,proto3" json:"JsonStructuredData,omitempty"`
+	JsonRephraseItems    string                 `protobuf:"bytes,4,opt,name=JsonRephraseItems,proto3" json:"JsonRephraseItems,omitempty"`
+	JsonSourceData       string                 `protobuf:"bytes,5,opt,name=JsonSourceData,proto3" json:"JsonSourceData,omitempty"`
 	RenderEnableFlush    bool                   `protobuf:"varint,6,opt,name=RenderEnableFlush,json=render_enable_flush,proto3" json:"RenderEnableFlush,omitempty"`
 	RenderItemsPerSecond string                 `protobuf:"bytes,7,opt,name=RenderItemsPerSecond,json=render_items_per_second,proto3" json:"RenderItemsPerSecond,omitempty"`
 	unknownFields        protoimpl.UnknownFields
@@ -412,8 +412,8 @@ func (x *TNeuroStructuredBlocksCard) GetRenderItemsPerSecond() string {
 
 type TSourcesCard struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Sources        []string               `protobuf:"bytes,1,rep,name=Sources,json=sources,proto3" json:"Sources,omitempty"`
-	JsonSourceData *string                `protobuf:"bytes,2,opt,name=JsonSourceData,json=json_source_data,proto3,oneof" json:"JsonSourceData,omitempty"`
+	Sources        []string               `protobuf:"bytes,1,rep,name=Sources,proto3" json:"Sources,omitempty"`
+	JsonSourceData *string                `protobuf:"bytes,2,opt,name=JsonSourceData,proto3,oneof" json:"JsonSourceData,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -523,16 +523,16 @@ type isTModeCard_Mode interface {
 }
 
 type TModeCard_RequestMode struct {
-	RequestMode *TModeCard_TRequestMode `protobuf:"bytes,1,opt,name=RequestMode,json=request_mode,proto3,oneof"`
+	RequestMode *TModeCard_TRequestMode `protobuf:"bytes,1,opt,name=RequestMode,proto3,oneof"`
 }
 
 func (*TModeCard_RequestMode) isTModeCard_Mode() {}
 
 type TRichUICard struct {
 	state           protoimpl.MessageState   `protogen:"open.v1"`
-	UIComponentName string                   `protobuf:"bytes,1,opt,name=UIComponentName,json=uicomponent_name,proto3" json:"UIComponentName,omitempty"`
-	Data            *TRichUICard_TRenderData `protobuf:"bytes,2,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
-	State           *TRichUICard_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	UIComponentName string                   `protobuf:"bytes,1,opt,name=UIComponentName,proto3" json:"UIComponentName,omitempty"`
+	Data            *TRichUICard_TRenderData `protobuf:"bytes,2,opt,name=Data,proto3" json:"Data,omitempty"`
+	State           *TRichUICard_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -590,7 +590,7 @@ func (x *TRichUICard) GetState() *TRichUICard_TState {
 
 type TCard struct {
 	state  protoimpl.MessageState `protogen:"open.v1"`
-	CardId string                 `protobuf:"bytes,1,opt,name=CardId,json=card_id,proto3" json:"CardId,omitempty"`
+	CardId string                 `protobuf:"bytes,1,opt,name=CardId,proto3" json:"CardId,omitempty"`
 	// Types that are valid to be assigned to Card:
 	//
 	//	*TCard_TextCard
@@ -603,7 +603,7 @@ type TCard struct {
 	//	*TCard_NeuroStructuredBlocksCard
 	//	*TCard_RichUICard
 	Card                 isTCard_Card `protobuf_oneof:"Card"`
-	DontAddToChatHistory *bool        `protobuf:"varint,8,opt,name=DontAddToChatHistory,json=dont_add_to_chat_history,proto3,oneof" json:"DontAddToChatHistory,omitempty"`
+	DontAddToChatHistory *bool        `protobuf:"varint,8,opt,name=DontAddToChatHistory,proto3,oneof" json:"DontAddToChatHistory,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -688,7 +688,6 @@ func (x *TCard) GetTextWithButtonsCard() *TTextWithButtonsCard {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/cards/card.proto.
 func (x *TCard) GetRichJsonCard() *TRichJsonCard {
 	if x != nil {
 		if x, ok := x.Card.(*TCard_RichJsonCard); ok {
@@ -746,40 +745,39 @@ type isTCard_Card interface {
 }
 
 type TCard_TextCard struct {
-	TextCard *TTextCard `protobuf:"bytes,2,opt,name=TextCard,json=text_card,proto3,oneof"`
+	TextCard *TTextCard `protobuf:"bytes,2,opt,name=TextCard,proto3,oneof"`
 }
 
 type TCard_Div2Card struct {
-	Div2Card *div.TDiv2Card `protobuf:"bytes,3,opt,name=Div2Card,json=div2_card,proto3,oneof"`
+	Div2Card *div.TDiv2Card `protobuf:"bytes,3,opt,name=Div2Card,proto3,oneof"`
 }
 
 type TCard_DivCard struct {
-	DivCard *TDivCard `protobuf:"bytes,4,opt,name=DivCard,json=div_card,proto3,oneof"`
+	DivCard *TDivCard `protobuf:"bytes,4,opt,name=DivCard,proto3,oneof"`
 }
 
 type TCard_TextWithButtonsCard struct {
-	TextWithButtonsCard *TTextWithButtonsCard `protobuf:"bytes,5,opt,name=TextWithButtonsCard,json=text_with_buttons_card,proto3,oneof"`
+	TextWithButtonsCard *TTextWithButtonsCard `protobuf:"bytes,5,opt,name=TextWithButtonsCard,proto3,oneof"`
 }
 
 type TCard_RichJsonCard struct {
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/cards/card.proto.
-	RichJsonCard *TRichJsonCard `protobuf:"bytes,6,opt,name=RichJsonCard,json=rich_json_card,proto3,oneof"`
+	RichJsonCard *TRichJsonCard `protobuf:"bytes,6,opt,name=RichJsonCard,proto3,oneof"`
 }
 
 type TCard_SourcesCard struct {
-	SourcesCard *TSourcesCard `protobuf:"bytes,7,opt,name=SourcesCard,json=sources_card,proto3,oneof"`
+	SourcesCard *TSourcesCard `protobuf:"bytes,7,opt,name=SourcesCard,proto3,oneof"`
 }
 
 type TCard_ModeCard struct {
-	ModeCard *TModeCard `protobuf:"bytes,9,opt,name=ModeCard,json=mode_card,proto3,oneof"`
+	ModeCard *TModeCard `protobuf:"bytes,9,opt,name=ModeCard,proto3,oneof"`
 }
 
 type TCard_NeuroStructuredBlocksCard struct {
-	NeuroStructuredBlocksCard *TNeuroStructuredBlocksCard `protobuf:"bytes,10,opt,name=NeuroStructuredBlocksCard,json=neuro_structured_blocks_card,proto3,oneof"`
+	NeuroStructuredBlocksCard *TNeuroStructuredBlocksCard `protobuf:"bytes,10,opt,name=NeuroStructuredBlocksCard,proto3,oneof"`
 }
 
 type TCard_RichUICard struct {
-	RichUICard *TRichUICard `protobuf:"bytes,11,opt,name=RichUICard,json=rich_uicard,proto3,oneof"`
+	RichUICard *TRichUICard `protobuf:"bytes,11,opt,name=RichUICard,proto3,oneof"`
 }
 
 func (*TCard_TextCard) isTCard_Card() {}
@@ -802,11 +800,11 @@ func (*TCard_RichUICard) isTCard_Card() {}
 
 type TTextWithButtonsCard_TButton struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Type          string                               `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Title         string                               `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Directives    []*directives.TDirective             `protobuf:"bytes,3,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	Text          string                               `protobuf:"bytes,4,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	Theme         *TTextWithButtonsCard_TButton_TTheme `protobuf:"bytes,5,opt,name=Theme,json=theme,proto3" json:"Theme,omitempty"`
+	Type          string                               `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Title         string                               `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Directives    []*directives.TDirective             `protobuf:"bytes,3,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	Text          string                               `protobuf:"bytes,4,opt,name=Text,proto3" json:"Text,omitempty"`
+	Theme         *TTextWithButtonsCard_TButton_TTheme `protobuf:"bytes,5,opt,name=Theme,proto3" json:"Theme,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -878,8 +876,8 @@ func (x *TTextWithButtonsCard_TButton) GetTheme() *TTextWithButtonsCard_TButton_
 
 type TTextWithButtonsCard_TButton_TTheme struct {
 	state         protoimpl.MessageState                         `protogen:"open.v1"`
-	ImageUrl      string                                         `protobuf:"bytes,1,opt,name=ImageUrl,json=image_url,proto3" json:"ImageUrl,omitempty"`
-	Placement     TTextWithButtonsCard_TButton_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,json=placement,proto3,enum=NAlice.NAliceApi.TTextWithButtonsCard_TButton_TTheme_EPlacement" json:"Placement,omitempty"`
+	ImageUrl      string                                         `protobuf:"bytes,1,opt,name=ImageUrl,proto3" json:"ImageUrl,omitempty"`
+	Placement     TTextWithButtonsCard_TButton_TTheme_EPlacement `protobuf:"varint,2,opt,name=Placement,proto3,enum=NAlice.NAliceApi.TTextWithButtonsCard_TButton_TTheme_EPlacement" json:"Placement,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -930,7 +928,7 @@ func (x *TTextWithButtonsCard_TButton_TTheme) GetPlacement() TTextWithButtonsCar
 
 type TModeCard_TRequestMode struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Mode          TModeCard_TRequestMode_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.NAliceApi.TModeCard_TRequestMode_EMode" json:"Mode,omitempty"`
+	Mode          TModeCard_TRequestMode_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.NAliceApi.TModeCard_TRequestMode_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -974,7 +972,7 @@ func (x *TModeCard_TRequestMode) GetMode() TModeCard_TRequestMode_EMode {
 
 type TRichUICard_TRenderData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	JsonData      string                 `protobuf:"bytes,1,opt,name=JsonData,json=json_data,proto3" json:"JsonData,omitempty"`
+	JsonData      string                 `protobuf:"bytes,1,opt,name=JsonData,proto3" json:"JsonData,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1018,7 +1016,7 @@ func (x *TRichUICard_TRenderData) GetJsonData() string {
 
 type TRichUICard_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	JsonData      string                 `protobuf:"bytes,1,opt,name=JsonData,json=json_data,proto3" json:"JsonData,omitempty"`
+	JsonData      string                 `protobuf:"bytes,1,opt,name=JsonData,proto3" json:"JsonData,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1064,82 +1062,80 @@ var File_alice_protos_api_alicekit_cards_card_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_alicekit_cards_card_proto_rawDesc = "" +
 	"\n" +
-	"*alice/protos/api/alicekit/cards/card.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a\x1falice/protos/div/div2card.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"|\n" +
-	"\tTTextCard\x12\x1c\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12K\n" +
-	"\x13ProgressivePrinting\x18\x02 \x01(\bB\x18\xaa\xdd\x1b\x14progressive_printingR\x14progressive_printing:\x04\xa8\xdd\x1b\x04\"w\n" +
-	"\bTDivCard\x12\x1c\n" +
-	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x125\n" +
-	"\x04Body\x18\x03 \x01(\v2\x17.google.protobuf.StructB\b\xaa\xdd\x1b\x04bodyR\x04body:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\n" +
-	"StringBody\"\x93\x05\n" +
-	"\x14TTextWithButtonsCard\x12 \n" +
-	"\x04Text\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02R\x04text\x12U\n" +
-	"\abuttons\x18\x02 \x03(\v2..NAlice.NAliceApi.TTextWithButtonsCard.TButtonB\v\xaa\xdd\x1b\abuttonsR\abuttons\x1a\xfb\x03\n" +
-	"\aTButton\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12#\n" +
-	"\x05Title\x18\x02 \x01(\tB\r\xaa\xdd\x1b\x05title\xa8\x8d'\x02R\x05title\x12L\n" +
+	"*alice/protos/api/alicekit/cards/card.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a\x1falice/protos/div/div2card.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"Q\n" +
+	"\tTTextCard\x12\x12\n" +
+	"\x04Text\x18\x01 \x01(\tR\x04Text\x120\n" +
+	"\x13ProgressivePrinting\x18\x02 \x01(\bR\x13ProgressivePrinting\"]\n" +
+	"\bTDivCard\x12\x12\n" +
+	"\x04Text\x18\x02 \x01(\tR\x04Text\x12+\n" +
+	"\x04Body\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x04BodyJ\x04\b\x01\x10\x02R\n" +
+	"StringBody\"\x81\x04\n" +
+	"\x14TTextWithButtonsCard\x12\x12\n" +
+	"\x04Text\x18\x01 \x01(\tR\x04Text\x12H\n" +
+	"\abuttons\x18\x02 \x03(\v2..NAlice.NAliceApi.TTextWithButtonsCard.TButtonR\abuttons\x1a\x8a\x03\n" +
+	"\aTButton\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12<\n" +
 	"\n" +
-	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12 \n" +
-	"\x04Text\x18\x04 \x01(\tB\f\xaa\xdd\x1b\x04text\xa8\x8d'\x02R\x04text\x12Z\n" +
-	"\x05Theme\x18\x05 \x01(\v25.NAlice.NAliceApi.TTextWithButtonsCard.TButton.TThemeB\r\xa0\xdd\x1b\x05\xaa\xdd\x1b\x05themeR\x05theme\x1a\xda\x01\n" +
-	"\x06TTheme\x12*\n" +
-	"\bImageUrl\x18\x01 \x01(\tB\r\xaa\xdd\x1b\timage_urlR\timage_url\x12m\n" +
-	"\tPlacement\x18\x02 \x01(\x0e2@.NAlice.NAliceApi.TTextWithButtonsCard.TButton.TTheme.EPlacementB\r\xaa\xdd\x1b\tplacementR\tplacement\"/\n" +
+	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12\x12\n" +
+	"\x04Text\x18\x04 \x01(\tR\x04Text\x12K\n" +
+	"\x05Theme\x18\x05 \x01(\v25.NAlice.NAliceApi.TTextWithButtonsCard.TButton.TThemeR\x05Theme\x1a\xb5\x01\n" +
+	"\x06TTheme\x12\x1a\n" +
+	"\bImageUrl\x18\x01 \x01(\tR\bImageUrl\x12^\n" +
+	"\tPlacement\x18\x02 \x01(\x0e2@.NAlice.NAliceApi.TTextWithButtonsCard.TButton.TTheme.EPlacementR\tPlacement\"/\n" +
 	"\n" +
 	"EPlacement\x12\x14\n" +
 	"\x10UnknownPlacement\x10\x00\x12\v\n" +
-	"\aNewLine\x10\x01:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"t\n" +
-	"\rTRichJsonCard\x12\x1c\n" +
-	"\x04Body\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04bodyR\x04body\x123\n" +
-	"\vHideBorders\x18\x03 \x01(\bB\x10\xaa\xdd\x1b\fhide_bordersR\fhide_borders:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\x04View\"\xd9\x03\n" +
-	"\x1aTNeuroStructuredBlocksCard\x12-\n" +
-	"\tPlainText\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"plain_textR\n" +
-	"plain_text\x12J\n" +
-	"\x12JsonStructuredData\x18\x03 \x01(\tB\x18\xaa\xdd\x1b\x14json_structured_dataR\x14json_structured_data\x12G\n" +
-	"\x11JsonRephraseItems\x18\x04 \x01(\tB\x17\xaa\xdd\x1b\x13json_rephrase_itemsR\x13json_rephrase_items\x12>\n" +
-	"\x0eJsonSourceData\x18\x05 \x01(\tB\x14\xaa\xdd\x1b\x10json_source_dataR\x10json_source_data\x12G\n" +
+	"\aNewLine\x10\x01\"Q\n" +
+	"\rTRichJsonCard\x12\x12\n" +
+	"\x04Body\x18\x01 \x01(\tR\x04Body\x12 \n" +
+	"\vHideBorders\x18\x03 \x01(\bR\vHideBordersJ\x04\b\x02\x10\x03R\x04View\"\xf3\x02\n" +
+	"\x1aTNeuroStructuredBlocksCard\x12\x1c\n" +
+	"\tPlainText\x18\x02 \x01(\tR\tPlainText\x12.\n" +
+	"\x12JsonStructuredData\x18\x03 \x01(\tR\x12JsonStructuredData\x12,\n" +
+	"\x11JsonRephraseItems\x18\x04 \x01(\tR\x11JsonRephraseItems\x12&\n" +
+	"\x0eJsonSourceData\x18\x05 \x01(\tR\x0eJsonSourceData\x12G\n" +
 	"\x11RenderEnableFlush\x18\x06 \x01(\bB\x17\xaa\xdd\x1b\x13render_enable_flushR\x13render_enable_flush\x12R\n" +
-	"\x14RenderItemsPerSecond\x18\a \x01(\tB\x1b\xaa\xdd\x1b\x17render_items_per_secondR\x17render_items_per_second:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x0eStructuredData\"\x93\x01\n" +
-	"\fTSourcesCard\x12%\n" +
-	"\aSources\x18\x01 \x03(\tB\v\xaa\xdd\x1b\asourcesR\asources\x12C\n" +
-	"\x0eJsonSourceData\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10json_source_dataH\x00R\x10json_source_data\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
-	"\x0f_JsonSourceData\"\x82\x02\n" +
-	"\tTModeCard\x12_\n" +
-	"\vRequestMode\x18\x01 \x01(\v2(.NAlice.NAliceApi.TModeCard.TRequestModeB\x10\xaa\xdd\x1b\frequest_modeH\x00R\frequest_mode\x1a|\n" +
-	"\fTRequestMode\x12L\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2..NAlice.NAliceApi.TModeCard.TRequestMode.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode\"\x1e\n" +
+	"\x14RenderItemsPerSecond\x18\a \x01(\tB\x1b\xaa\xdd\x1b\x17render_items_per_secondR\x17render_items_per_secondJ\x04\b\x01\x10\x02R\x0eStructuredData\"h\n" +
+	"\fTSourcesCard\x12\x18\n" +
+	"\aSources\x18\x01 \x03(\tR\aSources\x12+\n" +
+	"\x0eJsonSourceData\x18\x02 \x01(\tH\x00R\x0eJsonSourceData\x88\x01\x01B\x11\n" +
+	"\x0f_JsonSourceData\"\xd5\x01\n" +
+	"\tTModeCard\x12L\n" +
+	"\vRequestMode\x18\x01 \x01(\v2(.NAlice.NAliceApi.TModeCard.TRequestModeH\x00R\vRequestMode\x1ar\n" +
+	"\fTRequestMode\x12B\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2..NAlice.NAliceApi.TModeCard.TRequestMode.EModeR\x04Mode\"\x1e\n" +
 	"\x05EMode\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\b\n" +
-	"\x04LIVE\x10\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Mode\x12\b\xaa\xdd\x1b\x04mode\"\xcf\x02\n" +
-	"\vTRichUICard\x12?\n" +
-	"\x0fUIComponentName\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10uicomponent_nameR\x10uicomponent_name\x12G\n" +
-	"\x04Data\x18\x02 \x01(\v2).NAlice.NAliceApi.TRichUICard.TRenderDataB\b\xaa\xdd\x1b\x04dataR\x04data\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.NAliceApi.TRichUICard.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a9\n" +
-	"\vTRenderData\x12*\n" +
-	"\bJsonData\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tjson_dataR\tjson_data\x1a4\n" +
-	"\x06TState\x12*\n" +
-	"\bJsonData\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tjson_dataR\tjson_data\"\xf7\a\n" +
-	"\x05TCard\x12$\n" +
-	"\x06CardId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acard_idR\acard_id\x12I\n" +
-	"\bTextCard\x18\x02 \x01(\v2\x1b.NAlice.NAliceApi.TTextCardB\r\xaa\xdd\x1b\ttext_cardH\x00R\ttext_card\x12C\n" +
-	"\bDiv2Card\x18\x03 \x01(\v2\x11.NAlice.TDiv2CardB\x11\xa0\xdd\x1b\x05\xaa\xdd\x1b\tdiv2_cardH\x00R\tdiv2_card\x12I\n" +
-	"\aDivCard\x18\x04 \x01(\v2\x1a.NAlice.NAliceApi.TDivCardB\x10\xa0\xdd\x1b\x05\xaa\xdd\x1b\bdiv_cardH\x00R\bdiv_card\x12y\n" +
-	"\x13TextWithButtonsCard\x18\x05 \x01(\v2&.NAlice.NAliceApi.TTextWithButtonsCardB\x1a\xaa\xdd\x1b\x16text_with_buttons_cardH\x00R\x16text_with_buttons_card\x12]\n" +
-	"\fRichJsonCard\x18\x06 \x01(\v2\x1f.NAlice.NAliceApi.TRichJsonCardB\x14\xaa\xdd\x1b\x0erich_json_card\x18\x01H\x00R\x0erich_json_card\x12U\n" +
-	"\vSourcesCard\x18\a \x01(\v2\x1e.NAlice.NAliceApi.TSourcesCardB\x10\xaa\xdd\x1b\fsources_cardH\x00R\fsources_card\x12I\n" +
-	"\bModeCard\x18\t \x01(\v2\x1b.NAlice.NAliceApi.TModeCardB\r\xaa\xdd\x1b\tmode_cardH\x00R\tmode_card\x12\x91\x01\n" +
+	"\x04LIVE\x10\x01B\x06\n" +
+	"\x04Mode\"\x83\x02\n" +
+	"\vTRichUICard\x12(\n" +
+	"\x0fUIComponentName\x18\x01 \x01(\tR\x0fUIComponentName\x12=\n" +
+	"\x04Data\x18\x02 \x01(\v2).NAlice.NAliceApi.TRichUICard.TRenderDataR\x04Data\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.NAliceApi.TRichUICard.TStateR\x05State\x1a)\n" +
+	"\vTRenderData\x12\x1a\n" +
+	"\bJsonData\x18\x01 \x01(\tR\bJsonData\x1a$\n" +
+	"\x06TState\x12\x1a\n" +
+	"\bJsonData\x18\x01 \x01(\tR\bJsonData\"\xee\x05\n" +
+	"\x05TCard\x12\x16\n" +
+	"\x06CardId\x18\x01 \x01(\tR\x06CardId\x129\n" +
+	"\bTextCard\x18\x02 \x01(\v2\x1b.NAlice.NAliceApi.TTextCardH\x00R\bTextCard\x12/\n" +
+	"\bDiv2Card\x18\x03 \x01(\v2\x11.NAlice.TDiv2CardH\x00R\bDiv2Card\x126\n" +
+	"\aDivCard\x18\x04 \x01(\v2\x1a.NAlice.NAliceApi.TDivCardH\x00R\aDivCard\x12Z\n" +
+	"\x13TextWithButtonsCard\x18\x05 \x01(\v2&.NAlice.NAliceApi.TTextWithButtonsCardH\x00R\x13TextWithButtonsCard\x12E\n" +
+	"\fRichJsonCard\x18\x06 \x01(\v2\x1f.NAlice.NAliceApi.TRichJsonCardH\x00R\fRichJsonCard\x12B\n" +
+	"\vSourcesCard\x18\a \x01(\v2\x1e.NAlice.NAliceApi.TSourcesCardH\x00R\vSourcesCard\x129\n" +
+	"\bModeCard\x18\t \x01(\v2\x1b.NAlice.NAliceApi.TModeCardH\x00R\bModeCard\x12l\n" +
 	"\x19NeuroStructuredBlocksCard\x18\n" +
-	" \x01(\v2,.NAlice.NAliceApi.TNeuroStructuredBlocksCardB \xaa\xdd\x1b\x1cneuro_structured_blocks_cardH\x00R\x1cneuro_structured_blocks_card\x12Q\n" +
+	" \x01(\v2,.NAlice.NAliceApi.TNeuroStructuredBlocksCardH\x00R\x19NeuroStructuredBlocksCard\x12?\n" +
 	"\n" +
-	"RichUICard\x18\v \x01(\v2\x1d.NAlice.NAliceApi.TRichUICardB\x0f\xaa\xdd\x1b\vrich_uicardH\x00R\vrich_uicard\x12Y\n" +
-	"\x14DontAddToChatHistory\x18\b \x01(\bB\x1c\xaa\xdd\x1b\x18dont_add_to_chat_historyH\x01R\x18dont_add_to_chat_history\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Card\x12\b\xaa\xdd\x1b\x04cardB\x17\n" +
-	"\x15_DontAddToChatHistoryBj\n" +
-	")ru.yandex.alice.protos.api.alicekit.cardsB\tCardProtoP\x01Z0a.yandex-team.ru/alice/protos/api/alicekit/cardsb\x06proto3"
+	"RichUICard\x18\v \x01(\v2\x1d.NAlice.NAliceApi.TRichUICardH\x00R\n" +
+	"RichUICard\x127\n" +
+	"\x14DontAddToChatHistory\x18\b \x01(\bH\x01R\x14DontAddToChatHistory\x88\x01\x01B\x06\n" +
+	"\x04CardB\x17\n" +
+	"\x15_DontAddToChatHistoryB\xd3\x01\n" +
+	"\x14com.NAlice.NAliceApiB\tCardProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/cards\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_cards_card_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/informers/capability.proto
 
-package informerspb
+package informers
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -492,8 +492,8 @@ const file_alice_protos_endpoint_capabilities_informers_capability_proto_rawDesc
 	"\x04Icon\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04iconR\x04icon\x121\n" +
 	"\vTemperature\x18\x03 \x01(\x01B\x0f\xaa\xdd\x1b\vtemperatureR\vtemperature\x12*\n" +
 	"\bIconType\x18\x05 \x01(\tB\r\xaa\xdd\x1b\ticon_typeR\ticon_type\x12L\n" +
-	"\tCondition\x18\x06 \x01(\v2\x1f.NAlice.NData.TWeatherConditionB\r\xaa\xdd\x1b\tconditionR\tcondition:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c4B\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18InformersCapabilityProtoP\x01ZIa.yandex-team.ru/alice/protos/endpoint/capabilities/informers;informerspbb\x06proto3"
+	"\tCondition\x18\x06 \x01(\v2\x1f.NAlice.NData.TWeatherConditionB\r\xaa\xdd\x1b\tconditionR\tcondition:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c4B\xa8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18InformersCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/informersb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_informers_capability_proto_rawDescOnce sync.Once

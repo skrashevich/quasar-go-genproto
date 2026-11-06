@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/library/yt/extensions/alice_options.proto
 
-package alice_options_proto
+package extensions
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -260,7 +260,7 @@ var File_alice_library_yt_extensions_alice_options_proto protoreflect.FileDescri
 
 const file_alice_library_yt_extensions_alice_options_proto_rawDesc = "" +
 	"\n" +
-	"/alice/library/yt/extensions/alice_options.proto\x12\bNAliceYT\x1a google/protobuf/descriptor.proto*\x89\x02\n" +
+	"/alice/library/yt/extensions/alice_options.proto\x12\bNAliceYT\x1a google/protobuf/descriptor.proto*\xd3\x01\n" +
 	"\rEOutputFormat\x12\x17\n" +
 	"\x13OutputFormatDefault\x10\x00\x12\x16\n" +
 	"\x12OutputFormatAsYson\x10\x01\x12\x19\n" +
@@ -268,7 +268,7 @@ const file_alice_library_yt_extensions_alice_options_proto_rawDesc = "" +
 	"\x18OutputFormatSaveAsNumber\x10\x05\x12\x1f\n" +
 	"\x1bOutputFormatStringTimestamp\x10\x06\x12\x1c\n" +
 	"\x18OutputFormatNativeStruct\x10\a\x12\x19\n" +
-	"\x15OutputFormatAsRealMap\x10\b\"\x04\b\x02\x10\x02\"\x04\b\x04\x10\x04*\x14OutputFormatAsBinary*\x12OutputFormatAsDict*\xa5\x01\n" +
+	"\x15OutputFormatAsRealMap\x10\b*\xa5\x01\n" +
 	"\rEPrivateGroup\x12\x17\n" +
 	"\x13PrivateGroupNothing\x10\x00\x12\x14\n" +
 	"\x10PrivateGroupPuid\x10\x01\x12\x15\n" +
@@ -283,8 +283,8 @@ const file_alice_library_yt_extensions_alice_options_proto_rawDesc = "" +
 	"\fOutputFormat\x12\x1d.google.protobuf.FieldOptions\x18\x9e\xa2\x05 \x01(\x0e2\x17.NAliceYT.EOutputFormatR\fOutputFormat:\\\n" +
 	"\fPrivateGroup\x12\x1d.google.protobuf.FieldOptions\x18\x9f\xa2\x05 \x01(\x0e2\x17.NAliceYT.EPrivateGroupR\fPrivateGroup:C\n" +
 	"\fAlwaysExport\x12\x1d.google.protobuf.FieldOptions\x18\xa0\xa2\x05 \x01(\bR\fAlwaysExport:a\n" +
-	"\x1bUseJsonNamesAsYtColumnNames\x12\x1d.google.protobuf.FieldOptions\x18\xa1\xa2\x05 \x01(\bR\x1bUseJsonNamesAsYtColumnNamesBw\n" +
-	"3ru.yandex.alice.library.yt.extensions.alice_optionsZ@a.yandex-team.ru/alice/library/yt/extensions;alice_options_proto"
+	"\x1bUseJsonNamesAsYtColumnNames\x12\x1d.google.protobuf.FieldOptions\x18\xa1\xa2\x05 \x01(\bR\x1bUseJsonNamesAsYtColumnNamesB\xae\x01\n" +
+	"\fcom.NAliceYTB\x11AliceOptionsProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions\xa2\x02\x03NXX\xaa\x02\bNAliceYT\xca\x02\bNAliceYT\xe2\x02\x14NAliceYT\\GPBMetadata\xea\x02\bNAliceYT"
 
 var (
 	file_alice_library_yt_extensions_alice_options_proto_rawDescOnce sync.Once

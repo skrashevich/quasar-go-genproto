@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_satellite_ota/capability.proto
 
-package alicesatelliteotapb
+package alice_satellite_ota
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -656,8 +656,8 @@ const file_alice_protos_endpoint_capabilities_alice_satellite_ota_capability_pro
 	"\x12\x15\n" +
 	"\x11LOW_BATTERY_ERROR\x10\v\x12\x15\n" +
 	"\x11DOWNLOADING_ERROR\x10\f\x12\x1a\n" +
-	"\x16DEVICE_NOT_FOUND_ERROR\x10\r:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe1\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceSatelliteOtaProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/alice_satellite_ota;alicesatelliteotapbb\x06proto3"
+	"\x16DEVICE_NOT_FOUND_ERROR\x10\r:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe1\x01B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceSatelliteOtaProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_satellite_otab\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_satellite_ota_capability_proto_rawDescOnce sync.Once

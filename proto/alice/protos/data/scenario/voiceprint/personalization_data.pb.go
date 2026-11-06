@@ -79,8 +79,8 @@ const file_alice_protos_data_scenario_voiceprint_personalization_data_proto_rawD
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04Male\x10\x01\x12\n" +
 	"\n" +
-	"\x06Female\x10\x02Bi\n" +
-	"/ru.yandex.alice.protos.data.scenario.voiceprintZ6a.yandex-team.ru/alice/protos/data/scenario/voiceprintb\x06proto3"
+	"\x06Female\x10\x02B\x91\x02\n" +
+	"\x1ccom.NAlice.NData.NVoiceprintB\x18PersonalizationDataProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/voiceprint\xa2\x02\x03NNN\xaa\x02\x18NAlice.NData.NVoiceprint\xca\x02\x18NAlice\\NData\\NVoiceprint\xe2\x02$NAlice\\NData\\NVoiceprint\\GPBMetadata\xea\x02\x1aNAlice::NData::NVoiceprintb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_voiceprint_personalization_data_proto_rawDescOnce sync.Once

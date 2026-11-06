@@ -25,7 +25,7 @@ const (
 
 type TAck struct {
 	state          protoimpl.MessageState     `protogen:"open.v1"`
-	ReceivedHeader *event_header.TEventHeader `protobuf:"bytes,1,opt,name=ReceivedHeader,json=header,proto3" json:"ReceivedHeader,omitempty"`
+	ReceivedHeader *event_header.TEventHeader `protobuf:"bytes,1,opt,name=ReceivedHeader,proto3" json:"ReceivedHeader,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -71,11 +71,10 @@ var File_alice_protos_api_alicekit_events_ack_ack_proto protoreflect.FileDescrip
 
 const file_alice_protos_api_alicekit_events_ack_ack_proto_rawDesc = "" +
 	"\n" +
-	".alice/protos/api/alicekit/events/ack/ack.proto\x12\x10NAlice.NAliceApi\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"X\n" +
-	"\x04TAck\x12J\n" +
-	"\x0eReceivedHeader\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header:\x04\xa8\xdd\x1b\x04Bn\n" +
-	".ru.yandex.alice.protos.api.alicekit.events.ackB\x03AckP\x01Z5a.yandex-team.ru/alice/protos/api/alicekit/events/ackb\x06proto3"
+	".alice/protos/api/alicekit/events/ack/ack.proto\x12\x10NAlice.NAliceApi\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"N\n" +
+	"\x04TAck\x12F\n" +
+	"\x0eReceivedHeader\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderR\x0eReceivedHeaderB\xd7\x01\n" +
+	"\x14com.NAlice.NAliceApiB\bAckProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/ack\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_ack_ack_proto_rawDescOnce sync.Once

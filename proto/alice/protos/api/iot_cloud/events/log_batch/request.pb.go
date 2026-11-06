@@ -83,7 +83,7 @@ func (TIotCloudLogMessage_ELogLevel) EnumDescriptor() ([]byte, []int) {
 
 type TIotCloudLogBatchRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	LogBatch      *TIotCloudLogBatch     `protobuf:"bytes,1,opt,name=LogBatch,json=log_batch,proto3" json:"LogBatch,omitempty"`
+	LogBatch      *TIotCloudLogBatch     `protobuf:"bytes,1,opt,name=LogBatch,proto3" json:"LogBatch,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -127,10 +127,10 @@ func (x *TIotCloudLogBatchRequest) GetLogBatch() *TIotCloudLogBatch {
 
 type TIotCloudLogMessage struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Level         TIotCloudLogMessage_ELogLevel `protobuf:"varint,1,opt,name=Level,json=level,proto3,enum=NAlice.NIotCloud.TIotCloudLogMessage_ELogLevel" json:"Level,omitempty"`
-	Message       string                        `protobuf:"bytes,2,opt,name=Message,json=message,proto3" json:"Message,omitempty"`
-	Fields        []*TIotCloudLogMessage_TField `protobuf:"bytes,3,rep,name=Fields,json=fields,proto3" json:"Fields,omitempty"`
-	Timestamp     *timestamppb.Timestamp        `protobuf:"bytes,4,opt,name=Timestamp,json=timestamp,proto3,oneof" json:"Timestamp,omitempty"`
+	Level         TIotCloudLogMessage_ELogLevel `protobuf:"varint,1,opt,name=Level,proto3,enum=NAlice.NIotCloud.TIotCloudLogMessage_ELogLevel" json:"Level,omitempty"`
+	Message       string                        `protobuf:"bytes,2,opt,name=Message,proto3" json:"Message,omitempty"`
+	Fields        []*TIotCloudLogMessage_TField `protobuf:"bytes,3,rep,name=Fields,proto3" json:"Fields,omitempty"`
+	Timestamp     *timestamppb.Timestamp        `protobuf:"bytes,4,opt,name=Timestamp,proto3,oneof" json:"Timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,7 +195,7 @@ func (x *TIotCloudLogMessage) GetTimestamp() *timestamppb.Timestamp {
 
 type TIotCloudLogBatch struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Messages      []*TIotCloudLogMessage `protobuf:"bytes,1,rep,name=Messages,json=messages,proto3" json:"Messages,omitempty"`
+	Messages      []*TIotCloudLogMessage `protobuf:"bytes,1,rep,name=Messages,proto3" json:"Messages,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -239,7 +239,7 @@ func (x *TIotCloudLogBatch) GetMessages() []*TIotCloudLogMessage {
 
 type TIotCloudLogMessage_TField struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Key   string                 `protobuf:"bytes,1,opt,name=Key,json=key,proto3" json:"Key,omitempty"`
+	Key   string                 `protobuf:"bytes,1,opt,name=Key,proto3" json:"Key,omitempty"`
 	// Types that are valid to be assigned to Value:
 	//
 	//	*TIotCloudLogMessage_TField_StringValue
@@ -306,7 +306,7 @@ type isTIotCloudLogMessage_TField_Value interface {
 }
 
 type TIotCloudLogMessage_TField_StringValue struct {
-	StringValue string `protobuf:"bytes,2,opt,name=StringValue,json=string_value,proto3,oneof"`
+	StringValue string `protobuf:"bytes,2,opt,name=StringValue,proto3,oneof"`
 }
 
 func (*TIotCloudLogMessage_TField_StringValue) isTIotCloudLogMessage_TField_Value() {}
@@ -315,18 +315,17 @@ var File_alice_protos_api_iot_cloud_events_log_batch_request_proto protoreflect.
 
 const file_alice_protos_api_iot_cloud_events_log_batch_request_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/api/iot_cloud/events/log_batch/request.proto\x12\x10NAlice.NIotCloud\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"q\n" +
-	"\x18TIotCloudLogBatchRequest\x12O\n" +
-	"\bLogBatch\x18\x01 \x01(\v2#.NAlice.NIotCloud.TIotCloudLogBatchB\r\xaa\xdd\x1b\tlog_batchR\tlog_batch:\x04\xa8\xdd\x1b\x04\"\xf6\x03\n" +
-	"\x13TIotCloudLogMessage\x12P\n" +
-	"\x05Level\x18\x01 \x01(\x0e2/.NAlice.NIotCloud.TIotCloudLogMessage.ELogLevelB\t\xaa\xdd\x1b\x05levelR\x05level\x12%\n" +
-	"\aMessage\x18\x02 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage\x12P\n" +
-	"\x06Fields\x18\x03 \x03(\v2,.NAlice.NIotCloud.TIotCloudLogMessage.TFieldB\n" +
-	"\xaa\xdd\x1b\x06fieldsR\x06fields\x12L\n" +
-	"\tTimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\r\xaa\xdd\x1b\ttimestampH\x00R\ttimestamp\x88\x01\x01\x1ac\n" +
-	"\x06TField\x12\x19\n" +
-	"\x03Key\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03keyR\x03key\x125\n" +
-	"\vStringValue\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fstring_valueH\x00R\fstring_valueB\a\n" +
+	"9alice/protos/api/iot_cloud/events/log_batch/request.proto\x12\x10NAlice.NIotCloud\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"[\n" +
+	"\x18TIotCloudLogBatchRequest\x12?\n" +
+	"\bLogBatch\x18\x01 \x01(\v2#.NAlice.NIotCloud.TIotCloudLogBatchR\bLogBatch\"\xa1\x03\n" +
+	"\x13TIotCloudLogMessage\x12E\n" +
+	"\x05Level\x18\x01 \x01(\x0e2/.NAlice.NIotCloud.TIotCloudLogMessage.ELogLevelR\x05Level\x12\x18\n" +
+	"\aMessage\x18\x02 \x01(\tR\aMessage\x12D\n" +
+	"\x06Fields\x18\x03 \x03(\v2,.NAlice.NIotCloud.TIotCloudLogMessage.TFieldR\x06Fields\x12=\n" +
+	"\tTimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\tTimestamp\x88\x01\x01\x1aG\n" +
+	"\x06TField\x12\x10\n" +
+	"\x03Key\x18\x01 \x01(\tR\x03Key\x12\"\n" +
+	"\vStringValue\x18\x02 \x01(\tH\x00R\vStringValueB\a\n" +
 	"\x05Value\"M\n" +
 	"\tELogLevel\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\t\n" +
@@ -334,12 +333,12 @@ const file_alice_protos_api_iot_cloud_events_log_batch_request_proto_rawDesc = "
 	"\x04INFO\x10\x02\x12\b\n" +
 	"\x04WARN\x10\x03\x12\t\n" +
 	"\x05ERROR\x10\x04\x12\t\n" +
-	"\x05FATAL\x10\x05:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"\x05FATAL\x10\x05B\f\n" +
 	"\n" +
-	"_Timestamp\"d\n" +
-	"\x11TIotCloudLogBatch\x12O\n" +
-	"\bMessages\x18\x01 \x03(\v2%.NAlice.NIotCloud.TIotCloudLogMessageB\f\xaa\xdd\x1b\bmessagesR\bmessagesB\x90\x01\n" +
-	"5ru.yandex.alice.protos.api.iot_cloud.events.log_batchB\x17IotCloudLogBatchRequestP\x01Z<a.yandex-team.ru/alice/protos/api/iot_cloud/events/log_batchb\x06proto3"
+	"_Timestamp\"V\n" +
+	"\x11TIotCloudLogBatch\x12A\n" +
+	"\bMessages\x18\x01 \x03(\v2%.NAlice.NIotCloud.TIotCloudLogMessageR\bMessagesB\xe2\x01\n" +
+	"\x14com.NAlice.NIotCloudB\fRequestProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_cloud/events/log_batch\xa2\x02\x03NNX\xaa\x02\x10NAlice.NIotCloud\xca\x02\x10NAlice\\NIotCloud\xe2\x02\x1cNAlice\\NIotCloud\\GPBMetadata\xea\x02\x11NAlice::NIotCloudb\x06proto3"
 
 var (
 	file_alice_protos_api_iot_cloud_events_log_batch_request_proto_rawDescOnce sync.Once

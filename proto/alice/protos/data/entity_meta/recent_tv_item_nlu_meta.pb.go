@@ -25,8 +25,8 @@ const (
 
 type TRecentTvItemMeta struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	UsageInfo     *recent.TRecentUsageInfo `protobuf:"bytes,1,opt,name=UsageInfo,json=usage_info,proto3" json:"UsageInfo,omitempty"`
-	Position      uint32                   `protobuf:"varint,2,opt,name=Position,json=position,proto3" json:"Position,omitempty"`
+	UsageInfo     *recent.TRecentUsageInfo `protobuf:"bytes,1,opt,name=UsageInfo,proto3" json:"UsageInfo,omitempty"`
+	Position      uint32                   `protobuf:"varint,2,opt,name=Position,proto3" json:"Position,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,13 +79,12 @@ var File_alice_protos_data_entity_meta_recent_tv_item_nlu_meta_proto protoreflec
 
 const file_alice_protos_data_entity_meta_recent_tv_item_nlu_meta_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/data/entity_meta/recent_tv_item_nlu_meta.proto\x12\x06NAlice\x1a3alice/protos/data/tv/recent/recent_usage_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x01\n" +
-	"\x11TRecentTvItemMeta\x12K\n" +
-	"\tUsageInfo\x18\x01 \x01(\v2\x1c.NAlice.NTv.TRecentUsageInfoB\x0e\xaa\xdd\x1b\n" +
-	"usage_infoR\n" +
-	"usage_info\x12(\n" +
-	"\bPosition\x18\x02 \x01(\rB\f\xaa\xdd\x1b\bpositionR\bposition:\x04\xa8\xdd\x1b\x05BY\n" +
-	"'ru.yandex.alice.protos.data.entity_metaZ.a.yandex-team.ru/alice/protos/data/entity_metab\x06proto3"
+	";alice/protos/data/entity_meta/recent_tv_item_nlu_meta.proto\x12\x06NAlice\x1a3alice/protos/data/tv/recent/recent_usage_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"k\n" +
+	"\x11TRecentTvItemMeta\x12:\n" +
+	"\tUsageInfo\x18\x01 \x01(\v2\x1c.NAlice.NTv.TRecentUsageInfoR\tUsageInfo\x12\x1a\n" +
+	"\bPosition\x18\x02 \x01(\rR\bPositionB\xad\x01\n" +
+	"\n" +
+	"com.NAliceB\x18RecentTvItemNluMetaProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/entity_meta\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_entity_meta_recent_tv_item_nlu_meta_proto_rawDescOnce sync.Once

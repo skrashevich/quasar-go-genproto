@@ -382,8 +382,8 @@ const file_alice_cuttlefish_services_features_limiter_proto_api_dynamic_quota_pr
 	"\n" +
 	"DQA_STATIC\x10\x01\x12\v\n" +
 	"\aDQA_PID\x10\x02\x12\r\n" +
-	"\tDQA_PLAIN\x10\x03B\x87\x01\n" +
-	">ru.yandex.alice.cuttlefish.services.features_limiter.proto.apiZEa.yandex-team.ru/alice/cuttlefish/services/features_limiter/proto/apib\x06proto3"
+	"\tDQA_PLAIN\x10\x03B\xa6\x01\n" +
+	">ru.yandex.alice.cuttlefish.services.features_limiter.proto.apiZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/cuttlefish/services/features_limiter/proto/apib\x06proto3"
 
 var (
 	file_alice_cuttlefish_services_features_limiter_proto_api_dynamic_quota_proto_rawDescOnce sync.Once

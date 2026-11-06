@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/network/capability.proto
 
-package networkpb
+package network
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -72,9 +72,9 @@ func (TNetworkCapability_TInternetConnectionCondition_EState) EnumDescriptor() (
 
 type TNetworkCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNetworkCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNetworkCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNetworkCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNetworkCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -168,7 +168,7 @@ func (*TNetworkCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNetworkCapability_TState struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	IsInternetReachable bool                   `protobuf:"varint,1,opt,name=IsInternetReachable,json=is_internet_reachable,proto3" json:"IsInternetReachable,omitempty"`
+	IsInternetReachable bool                   `protobuf:"varint,1,opt,name=IsInternetReachable,proto3" json:"IsInternetReachable,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -212,7 +212,7 @@ func (x *TNetworkCapability_TState) GetIsInternetReachable() bool {
 
 type TNetworkCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TNetworkCapability    `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TNetworkCapability    `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -256,7 +256,7 @@ func (x *TNetworkCapability_TUpdateStateEvent) GetCapability() *TNetworkCapabili
 
 type TNetworkCapability_TInternetConnectionCondition struct {
 	state         protoimpl.MessageState                                 `protogen:"open.v1"`
-	State         TNetworkCapability_TInternetConnectionCondition_EState `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.TNetworkCapability_TInternetConnectionCondition_EState" json:"State,omitempty"`
+	State         TNetworkCapability_TInternetConnectionCondition_EState `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.TNetworkCapability_TInternetConnectionCondition_EState" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -302,28 +302,27 @@ var File_alice_protos_endpoint_capabilities_network_capability_proto protoreflec
 
 const file_alice_protos_endpoint_capabilities_network_capability_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/endpoint/capabilities/network/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\x05\n" +
-	"\x12TNetworkCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	";alice/protos/endpoint/capabilities/network/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x94\x04\n" +
+	"\x12TNetworkCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TNetworkCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TNetworkCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a]\n" +
-	"\x06TState\x12M\n" +
-	"\x13IsInternetReachable\x18\x01 \x01(\bB\x19\xaa\xdd\x1b\x15is_internet_reachableR\x15is_internet_reachable:\x04\xa8\xdd\x1b\x04\x1aj\n" +
-	"\x11TUpdateStateEvent\x12J\n" +
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TNetworkCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TNetworkCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a:\n" +
+	"\x06TState\x120\n" +
+	"\x13IsInternetReachable\x18\x01 \x01(\bR\x13IsInternetReachable\x1aO\n" +
+	"\x11TUpdateStateEvent\x12:\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TNetworkCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x87\x01\x1a\xc2\x01\n" +
-	"\x1cTInternetConnectionCondition\x12_\n" +
-	"\x05State\x18\x01 \x01(\x0e2>.NAlice.TNetworkCapability.TInternetConnectionCondition.EStateB\t\xaa\xdd\x1b\x05stateR\x05state\";\n" +
+	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TNetworkCapabilityR\n" +
+	"Capability\x1a\xb1\x01\n" +
+	"\x1cTInternetConnectionCondition\x12T\n" +
+	"\x05State\x18\x01 \x01(\x0e2>.NAlice.TNetworkCapability.TInternetConnectionCondition.EStateR\x05State\";\n" +
 	"\x06EState\x12\x16\n" +
 	"\x12ConnectedCondition\x10\x00\x12\x19\n" +
-	"\x15NotConnectedCondition\x10\x01:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xce\x01B\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16NetworkCapabilityProtoZEa.yandex-team.ru/alice/protos/endpoint/capabilities/network;networkpbb\x06proto3"
+	"\x15NotConnectedCondition\x10\x01B\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/network\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_network_capability_proto_rawDescOnce sync.Once

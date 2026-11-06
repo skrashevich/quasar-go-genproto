@@ -78,8 +78,8 @@ const file_alice_megamind_protos_common_directive_importance_proto_rawDesc = "" 
 	"\x14EDirectiveImportance\x12\v\n" +
 	"\aDEFAULT\x10\x00\x12\x11\n" +
 	"\rNOT_IMPORTANT\x10\x01\x12\r\n" +
-	"\tIMPORTANT\x10\x02Bl\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x13DirectiveImportanceZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\tIMPORTANT\x10\x02B\x92\x01\n" +
+	"&ru.yandex.alice.megamind.protos.commonB\x18DirectiveImportanceProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_directive_importance_proto_rawDescOnce sync.Once

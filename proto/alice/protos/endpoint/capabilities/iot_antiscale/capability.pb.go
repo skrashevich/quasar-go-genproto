@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_antiscale/capability.proto
 
-package iotantiscalepb
+package iot_antiscale
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotAntiscaleCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotAntiscaleCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotAntiscaleCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotAntiscaleCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotAntiscaleCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TIotAntiscaleCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotAntiscaleCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,8 +167,8 @@ func (x *TIotAntiscaleCapability_TState) GetEnabled() bool {
 
 type TIotAntiscaleCapability_TSetIotAntiscaleDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (x *TIotAntiscaleCapability_TSetIotAntiscaleDirective) GetEnabled() bool {
 
 type TIotAntiscaleCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Capability    *TIotAntiscaleCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotAntiscaleCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -265,26 +265,25 @@ var File_alice_protos_endpoint_capabilities_iot_antiscale_capability_proto proto
 
 const file_alice_protos_endpoint_capabilities_iot_antiscale_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/iot_antiscale/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcd\x04\n" +
-	"\x17TIotAntiscaleCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Aalice/protos/endpoint/capabilities/iot_antiscale/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa8\x03\n" +
+	"\x17TIotAntiscaleCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotAntiscaleCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotAntiscaleCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a5\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a\x8b\x01\n" +
-	"\x19TSetIotAntiscaleDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:(\x92\x82\x19\x1bset_iot_antiscale_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd2\x03\x1an\n" +
-	"\x11TUpdateStateEvent\x12O\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotAntiscaleCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotAntiscaleCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\"\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1aJ\n" +
+	"\x19TSetIotAntiscaleDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1aT\n" +
+	"\x11TUpdateStateEvent\x12?\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotAntiscaleCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cq:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xac\x01B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bIotAntiscaleCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_antiscale;iotantiscalepbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotAntiscaleCapabilityR\n" +
+	"CapabilityB\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_antiscale\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_antiscale_capability_proto_rawDescOnce sync.Once

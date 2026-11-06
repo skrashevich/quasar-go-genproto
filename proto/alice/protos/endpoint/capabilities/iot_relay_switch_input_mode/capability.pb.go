@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_relay_switch_input_mode/capability.proto
 
-package iotrelayswitchinputmodepb
+package iot_relay_switch_input_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -79,9 +79,9 @@ func (TIotRelaySwitchInputModeCapability_EMode) EnumDescriptor() ([]byte, []int)
 
 type TIotRelaySwitchInputModeCapability struct {
 	state         protoimpl.MessageState                          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotRelaySwitchInputModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotRelaySwitchInputModeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotRelaySwitchInputModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotRelaySwitchInputModeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,7 +175,7 @@ func (*TIotRelaySwitchInputModeCapability_TParameters) Descriptor() ([]byte, []i
 
 type TIotRelaySwitchInputModeCapability_TState struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Mode          TIotRelaySwitchInputModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotRelaySwitchInputModeCapability_EMode" json:"Mode,omitempty"`
+	Mode          TIotRelaySwitchInputModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TIotRelaySwitchInputModeCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,8 +219,8 @@ func (x *TIotRelaySwitchInputModeCapability_TState) GetMode() TIotRelaySwitchInp
 
 type TIotRelaySwitchInputModeCapability_TSetModeDirective struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Name          string                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Mode          TIotRelaySwitchInputModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotRelaySwitchInputModeCapability_EMode" json:"Mode,omitempty"`
+	Name          string                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Mode          TIotRelaySwitchInputModeCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TIotRelaySwitchInputModeCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -271,7 +271,7 @@ func (x *TIotRelaySwitchInputModeCapability_TSetModeDirective) GetMode() TIotRel
 
 type TIotRelaySwitchInputModeCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Capability    *TIotRelaySwitchInputModeCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotRelaySwitchInputModeCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,32 +317,31 @@ var File_alice_protos_endpoint_capabilities_iot_relay_switch_input_mode_capabili
 
 const file_alice_protos_endpoint_capabilities_iot_relay_switch_input_mode_capability_proto_rawDesc = "" +
 	"\n" +
-	"Oalice/protos/endpoint/capabilities/iot_relay_switch_input_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\x06\n" +
-	"\"TIotRelaySwitchInputModeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12f\n" +
+	"Oalice/protos/endpoint/capabilities/iot_relay_switch_input_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe6\x04\n" +
+	"\"TIotRelaySwitchInputModeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12V\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v26.NAlice.TIotRelaySwitchInputModeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12R\n" +
-	"\x05State\x18\x03 \x01(\v21.NAlice.TIotRelaySwitchInputModeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a^\n" +
-	"\x06TState\x12N\n" +
-	"\x04Mode\x18\x01 \x01(\x0e20.NAlice.TIotRelaySwitchInputModeCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:\x04\xa8\xdd\x1b\x04\x1a\xba\x01\n" +
-	"\x11TSetModeDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12N\n" +
-	"\x04Mode\x18\x01 \x01(\x0e20.NAlice.TIotRelaySwitchInputModeCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:6\x92\x82\x19)iot_set_relay_switch_input_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x88\x02\x1ay\n" +
-	"\x11TUpdateStateEvent\x12Z\n" +
+	"Parameters\x18\x02 \x01(\v26.NAlice.TIotRelaySwitchInputModeCapability.TParametersR\n" +
+	"Parameters\x12G\n" +
+	"\x05State\x18\x03 \x01(\v21.NAlice.TIotRelaySwitchInputModeCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aN\n" +
+	"\x06TState\x12D\n" +
+	"\x04Mode\x18\x01 \x01(\x0e20.NAlice.TIotRelaySwitchInputModeCapability.EModeR\x04Mode\x1an\n" +
+	"\x11TSetModeDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12D\n" +
+	"\x04Mode\x18\x01 \x01(\x0e20.NAlice.TIotRelaySwitchInputModeCapability.EModeR\x04Mode\x1a_\n" +
+	"\x11TUpdateStateEvent\x12J\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2*.NAlice.TIotRelaySwitchInputModeCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c<\"@\n" +
+	"Capability\x18\x01 \x01(\v2*.NAlice.TIotRelaySwitchInputModeCapabilityR\n" +
+	"Capability\"@\n" +
 	"\x05EMode\x12\r\n" +
 	"\tUndefined\x10\x00\x12\n" +
 	"\n" +
 	"\x06Native\x10\x01\x12\t\n" +
 	"\x05Pulse\x10\x02\x12\x11\n" +
-	"\rPulseWireless\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c^B\xc1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB&IotRelaySwitchInputModeCapabilityProtoZia.yandex-team.ru/alice/protos/endpoint/capabilities/iot_relay_switch_input_mode;iotrelayswitchinputmodepbb\x06proto3"
+	"\rPulseWireless\x10\x03B\xc5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zngithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_relay_switch_input_mode\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_relay_switch_input_mode_capability_proto_rawDescOnce sync.Once

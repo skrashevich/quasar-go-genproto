@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ya_disk/capability.proto
 
-package yadiskpb
+package ya_disk
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -375,8 +375,8 @@ const file_alice_protos_endpoint_capabilities_ya_disk_capability_proto_rawDesc =
 	"\x0eTImageMetadata\x12\x1f\n" +
 	"\x05Width\x18\x01 \x01(\x05B\t\xaa\xdd\x1b\x05widthR\x05width\x12\"\n" +
 	"\x06Height\x18\x02 \x01(\x05B\n" +
-	"\xaa\xdd\x1b\x06heightR\x06height:/\x92\x82\x19\"ya_disk_album_items_data_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cKB\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15YaDiskCapabilityProtoP\x01ZDa.yandex-team.ru/alice/protos/endpoint/capabilities/ya_disk;yadiskpbb\x06proto3"
+	"\xaa\xdd\x1b\x06heightR\x06height:/\x92\x82\x19\"ya_disk_album_items_data_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cKB\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15YaDiskCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ya_diskb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ya_disk_capability_proto_rawDescOnce sync.Once

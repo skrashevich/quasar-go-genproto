@@ -132,8 +132,8 @@ const file_alice_protos_data_common_search_feature_proto_rawDesc = "" +
 	"\r_SourceOntoId*:\n" +
 	"\x0fESearchFeatures\x12\x12\n" +
 	"\x0eUnknownFeature\x10\x00\x12\x13\n" +
-	"\x0fNoVoiceControls\x10\x01B]\n" +
-	")ru.yandex.alice.protos.data.common_searchZ0a.yandex-team.ru/alice/protos/data/common_searchb\x06proto3"
+	"\x0fNoVoiceControls\x10\x01B|\n" +
+	")ru.yandex.alice.protos.data.common_searchZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/common_searchb\x06proto3"
 
 var (
 	file_alice_protos_data_common_search_feature_proto_rawDescOnce sync.Once

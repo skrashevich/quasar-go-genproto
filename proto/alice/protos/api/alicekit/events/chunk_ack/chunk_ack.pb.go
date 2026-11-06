@@ -142,8 +142,8 @@ const file_alice_protos_api_alicekit_events_chunk_ack_chunk_ack_proto_rawDesc = 
 	"\x0eTChunkIdPolicy\x122\n" +
 	"\n" +
 	"MaxChunkId\x18\x01 \x01(\x04B\x10\xaa\xdd\x1b\fmax_chunk_idR\fmax_chunk_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\tAckPolicyB\x7f\n" +
-	"4ru.yandex.alice.protos.api.alicekit.events.chunk_ackB\bChunkAckP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/events/chunk_ackb\x06proto3"
+	"\tAckPolicyB\x9e\x01\n" +
+	"4ru.yandex.alice.protos.api.alicekit.events.chunk_ackB\bChunkAckP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/chunk_ackb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_chunk_ack_chunk_ack_proto_rawDescOnce sync.Once

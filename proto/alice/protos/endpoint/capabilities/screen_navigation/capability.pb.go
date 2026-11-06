@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screen_navigation/capability.proto
 
-package screen_navigationpb
+package screen_navigation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -216,8 +216,8 @@ const file_alice_protos_endpoint_capabilities_screen_navigation_capability_proto
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aV\n" +
 	"\x13TCloseCardDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14close_card_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ctB\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15ScreenNavigationProtoZYa.yandex-team.ru/alice/protos/endpoint/capabilities/screen_navigation;screen_navigationpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14close_card_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ctB\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15ScreenNavigationProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screen_navigationb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screen_navigation_capability_proto_rawDescOnce sync.Once

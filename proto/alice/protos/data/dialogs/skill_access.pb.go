@@ -79,8 +79,8 @@ const file_alice_protos_data_dialogs_skill_access_proto_rawDesc = "" +
 	"\rUnknownAccess\x10\x00\x12\n" +
 	"\n" +
 	"\x06Public\x10\x01\x12\v\n" +
-	"\aPrivate\x10\x02BS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\aPrivate\x10\x02Br\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_skill_access_proto_rawDescOnce sync.Once

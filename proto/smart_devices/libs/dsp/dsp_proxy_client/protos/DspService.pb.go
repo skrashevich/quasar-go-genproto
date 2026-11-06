@@ -1583,7 +1583,10 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_DspService_proto_rawDe
 	"\x10get_reg_response\x18\x04 \x01(\v2\x1a.yandex.dsp.GetRegResponseH\x00R\x0egetRegResponse\x12U\n" +
 	"\x15battery_info_response\x18\x05 \x01(\v2\x1f.yandex.dsp.BatteryInfoResponseH\x00R\x13batteryInfoResponseB\n" +
 	"\n" +
-	"\bresponseb\x06proto3"
+	"\bresponseB\xca\x01\n" +
+	"\x0ecom.yandex.dspB\x0fDspServiceProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos\xa2\x02\x03YDX\xaa\x02\n" +
+	"Yandex.Dsp\xca\x02\n" +
+	"Yandex\\Dsp\xe2\x02\x16Yandex\\Dsp\\GPBMetadata\xea\x02\vYandex::Dspb\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_DspService_proto_rawDescOnce sync.Once

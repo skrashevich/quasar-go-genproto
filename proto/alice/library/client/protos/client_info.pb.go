@@ -29,8 +29,7 @@ const (
 	TClientInfoProto_Undefined  TClientInfoProto_EClientType = 0
 	TClientInfoProto_IOSDK      TClientInfoProto_EClientType = 1
 	TClientInfoProto_AliceKitJs TClientInfoProto_EClientType = 2
-	// Deprecated: Marked as deprecated in alice/library/client/protos/client_info.proto.
-	TClientInfoProto_SpeechKit TClientInfoProto_EClientType = 3
+	TClientInfoProto_SpeechKit  TClientInfoProto_EClientType = 3
 )
 
 // Enum value maps for TClientInfoProto_EClientType.
@@ -83,88 +82,36 @@ func (x *TClientInfoProto_EClientType) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use TClientInfoProto_EClientType.Descriptor instead.
 func (TClientInfoProto_EClientType) EnumDescriptor() ([]byte, []int) {
-	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{1, 0}
-}
-
-type TExperimentSurface struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	BrowserName   *string                `protobuf:"bytes,1,opt,name=BrowserName,json=browser_name" json:"BrowserName,omitempty"`
-	DeviceModel   *string                `protobuf:"bytes,2,opt,name=DeviceModel,json=device_model" json:"DeviceModel,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TExperimentSurface) Reset() {
-	*x = TExperimentSurface{}
-	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TExperimentSurface) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TExperimentSurface) ProtoMessage() {}
-
-func (x *TExperimentSurface) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TExperimentSurface.ProtoReflect.Descriptor instead.
-func (*TExperimentSurface) Descriptor() ([]byte, []int) {
-	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *TExperimentSurface) GetBrowserName() string {
-	if x != nil && x.BrowserName != nil {
-		return *x.BrowserName
-	}
-	return ""
-}
-
-func (x *TExperimentSurface) GetDeviceModel() string {
-	if x != nil && x.DeviceModel != nil {
-		return *x.DeviceModel
-	}
-	return ""
+	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{0, 0}
 }
 
 type TClientInfoProto struct {
 	state                 protoimpl.MessageState                   `protogen:"open.v1"`
-	AppId                 *string                                  `protobuf:"bytes,1,opt,name=AppId,json=app_id" json:"AppId,omitempty"`
-	AppVersion            *string                                  `protobuf:"bytes,2,opt,name=AppVersion,json=app_version" json:"AppVersion,omitempty"`
-	OsVersion             *string                                  `protobuf:"bytes,3,opt,name=OsVersion,json=os_version" json:"OsVersion,omitempty"`
-	Platform              *string                                  `protobuf:"bytes,4,opt,name=Platform,json=platform" json:"Platform,omitempty"`
-	Uuid                  *string                                  `protobuf:"bytes,5,opt,name=Uuid,json=uuid" json:"Uuid,omitempty"`
-	DeviceId              *string                                  `protobuf:"bytes,6,opt,name=DeviceId,json=device_id" json:"DeviceId,omitempty"`
-	Lang                  *string                                  `protobuf:"bytes,7,opt,name=Lang,json=lang" json:"Lang,omitempty"`
-	ClientTime            *string                                  `protobuf:"bytes,8,opt,name=ClientTime,json=client_time" json:"ClientTime,omitempty"`
-	Timezone              *string                                  `protobuf:"bytes,9,opt,name=Timezone,json=timezone" json:"Timezone,omitempty"`
-	Epoch                 *string                                  `protobuf:"bytes,10,opt,name=Epoch,json=timestamp" json:"Epoch,omitempty"`
-	DeviceModel           *string                                  `protobuf:"bytes,11,opt,name=DeviceModel,json=device_model" json:"DeviceModel,omitempty"`
-	DeviceManufacturer    *string                                  `protobuf:"bytes,12,opt,name=DeviceManufacturer,json=device_manufacturer" json:"DeviceManufacturer,omitempty"`
-	DeviceColor           *string                                  `protobuf:"bytes,14,opt,name=DeviceColor,json=device_color" json:"DeviceColor,omitempty"`
-	DeviceRevision        *string                                  `protobuf:"bytes,15,opt,name=DeviceRevision,json=device_revision" json:"DeviceRevision,omitempty"`
-	QuasmodromGroup       *string                                  `protobuf:"bytes,16,opt,name=QuasmodromGroup,json=quasmodrom_group" json:"QuasmodromGroup,omitempty"`
-	QuasmodromSubgroup    *string                                  `protobuf:"bytes,17,opt,name=QuasmodromSubgroup,json=quasmodrom_subgroup" json:"QuasmodromSubgroup,omitempty"`
-	MediaDeviceIdentifier *TClientInfoProto_TMediaDeviceIdentifier `protobuf:"bytes,18,opt,name=MediaDeviceIdentifier,json=media_device_identifier" json:"MediaDeviceIdentifier,omitempty"`
-	DeviceFirmware        *string                                  `protobuf:"bytes,19,opt,name=DeviceFirmware,json=device_firmware" json:"DeviceFirmware,omitempty"`
-	MetricaDeviceId       *string                                  `protobuf:"bytes,20,opt,name=MetricaDeviceId,json=metrica_device_id" json:"MetricaDeviceId,omitempty"`
-	WifiModel             *string                                  `protobuf:"bytes,21,opt,name=WifiModel,json=wifi_model" json:"WifiModel,omitempty"`
-	IntegrationType       *string                                  `protobuf:"bytes,22,opt,name=IntegrationType,json=integration_type" json:"IntegrationType,omitempty"`
-	ClientType            *TClientInfoProto_EClientType            `protobuf:"varint,23,opt,name=ClientType,json=client_type,enum=NAlice.TClientInfoProto_EClientType" json:"ClientType,omitempty"`
-	Vid                   *string                                  `protobuf:"bytes,24,opt,name=Vid,json=vid" json:"Vid,omitempty"`
-	Pid                   *string                                  `protobuf:"bytes,25,opt,name=Pid,json=pid" json:"Pid,omitempty"`
-	FirmwareVersion       *string                                  `protobuf:"bytes,26,opt,name=FirmwareVersion,json=firmware_version" json:"FirmwareVersion,omitempty"`
+	AppId                 *string                                  `protobuf:"bytes,1,opt,name=AppId" json:"AppId,omitempty"`
+	AppVersion            *string                                  `protobuf:"bytes,2,opt,name=AppVersion" json:"AppVersion,omitempty"`
+	OsVersion             *string                                  `protobuf:"bytes,3,opt,name=OsVersion" json:"OsVersion,omitempty"`
+	Platform              *string                                  `protobuf:"bytes,4,opt,name=Platform" json:"Platform,omitempty"`
+	Uuid                  *string                                  `protobuf:"bytes,5,opt,name=Uuid" json:"Uuid,omitempty"`
+	DeviceId              *string                                  `protobuf:"bytes,6,opt,name=DeviceId" json:"DeviceId,omitempty"`
+	Lang                  *string                                  `protobuf:"bytes,7,opt,name=Lang" json:"Lang,omitempty"`
+	ClientTime            *string                                  `protobuf:"bytes,8,opt,name=ClientTime" json:"ClientTime,omitempty"`
+	Timezone              *string                                  `protobuf:"bytes,9,opt,name=Timezone" json:"Timezone,omitempty"`
+	Epoch                 *string                                  `protobuf:"bytes,10,opt,name=Epoch" json:"Epoch,omitempty"`
+	DeviceModel           *string                                  `protobuf:"bytes,11,opt,name=DeviceModel" json:"DeviceModel,omitempty"`
+	DeviceManufacturer    *string                                  `protobuf:"bytes,12,opt,name=DeviceManufacturer" json:"DeviceManufacturer,omitempty"`
+	DeviceColor           *string                                  `protobuf:"bytes,14,opt,name=DeviceColor" json:"DeviceColor,omitempty"`
+	DeviceRevision        *string                                  `protobuf:"bytes,15,opt,name=DeviceRevision" json:"DeviceRevision,omitempty"`
+	QuasmodromGroup       *string                                  `protobuf:"bytes,16,opt,name=QuasmodromGroup" json:"QuasmodromGroup,omitempty"`
+	QuasmodromSubgroup    *string                                  `protobuf:"bytes,17,opt,name=QuasmodromSubgroup" json:"QuasmodromSubgroup,omitempty"`
+	MediaDeviceIdentifier *TClientInfoProto_TMediaDeviceIdentifier `protobuf:"bytes,18,opt,name=MediaDeviceIdentifier" json:"MediaDeviceIdentifier,omitempty"`
+	DeviceFirmware        *string                                  `protobuf:"bytes,19,opt,name=DeviceFirmware" json:"DeviceFirmware,omitempty"`
+	MetricaDeviceId       *string                                  `protobuf:"bytes,20,opt,name=MetricaDeviceId" json:"MetricaDeviceId,omitempty"`
+	WifiModel             *string                                  `protobuf:"bytes,21,opt,name=WifiModel" json:"WifiModel,omitempty"`
+	IntegrationType       *string                                  `protobuf:"bytes,22,opt,name=IntegrationType" json:"IntegrationType,omitempty"`
+	ClientType            *TClientInfoProto_EClientType            `protobuf:"varint,23,opt,name=ClientType,enum=NAlice.TClientInfoProto_EClientType" json:"ClientType,omitempty"`
+	Vid                   *string                                  `protobuf:"bytes,24,opt,name=Vid" json:"Vid,omitempty"`
+	Pid                   *string                                  `protobuf:"bytes,25,opt,name=Pid" json:"Pid,omitempty"`
+	FirmwareVersion       *string                                  `protobuf:"bytes,26,opt,name=FirmwareVersion" json:"FirmwareVersion,omitempty"`
 	ExperimentSurface     *TExperimentSurface                      `protobuf:"bytes,27,opt,name=ExperimentSurface,json=experiment_surface" json:"ExperimentSurface,omitempty"`
 	DeviceModelName       *string                                  `protobuf:"bytes,28,opt,name=DeviceModelName,json=device_model_name" json:"DeviceModelName,omitempty"`
 	DeviceBrand           *string                                  `protobuf:"bytes,29,opt,name=DeviceBrand,json=device_brand" json:"DeviceBrand,omitempty"`
@@ -174,7 +121,7 @@ type TClientInfoProto struct {
 
 func (x *TClientInfoProto) Reset() {
 	*x = TClientInfoProto{}
-	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[1]
+	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -186,7 +133,7 @@ func (x *TClientInfoProto) String() string {
 func (*TClientInfoProto) ProtoMessage() {}
 
 func (x *TClientInfoProto) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[1]
+	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -199,7 +146,7 @@ func (x *TClientInfoProto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TClientInfoProto.ProtoReflect.Descriptor instead.
 func (*TClientInfoProto) Descriptor() ([]byte, []int) {
-	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{1}
+	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TClientInfoProto) GetAppId() string {
@@ -398,13 +345,65 @@ func (x *TClientInfoProto) GetDeviceBrand() string {
 	return ""
 }
 
+type TExperimentSurface struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BrowserName   *string                `protobuf:"bytes,1,opt,name=BrowserName,json=browser_name" json:"BrowserName,omitempty"`
+	DeviceModel   *string                `protobuf:"bytes,2,opt,name=DeviceModel,json=device_model" json:"DeviceModel,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TExperimentSurface) Reset() {
+	*x = TExperimentSurface{}
+	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TExperimentSurface) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TExperimentSurface) ProtoMessage() {}
+
+func (x *TExperimentSurface) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_library_client_protos_client_info_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TExperimentSurface.ProtoReflect.Descriptor instead.
+func (*TExperimentSurface) Descriptor() ([]byte, []int) {
+	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *TExperimentSurface) GetBrowserName() string {
+	if x != nil && x.BrowserName != nil {
+		return *x.BrowserName
+	}
+	return ""
+}
+
+func (x *TExperimentSurface) GetDeviceModel() string {
+	if x != nil && x.DeviceModel != nil {
+		return *x.DeviceModel
+	}
+	return ""
+}
+
 type TClientInfoProto_TMediaDeviceIdentifier struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	OttServiceId         *string                `protobuf:"bytes,1,opt,name=OttServiceId,json=ott_service_id" json:"OttServiceId,omitempty"`
-	OttServiceName       *string                `protobuf:"bytes,2,opt,name=OttServiceName,json=ott_service_name" json:"OttServiceName,omitempty"`
-	StrmFrom             *string                `protobuf:"bytes,3,opt,name=StrmFrom,json=strm_from" json:"StrmFrom,omitempty"`
-	VideoSearchClient    *string                `protobuf:"bytes,4,opt,name=VideoSearchClient,json=video_search_client" json:"VideoSearchClient,omitempty"`
-	ObjectResponseClient *string                `protobuf:"bytes,5,opt,name=ObjectResponseClient,json=object_response_client" json:"ObjectResponseClient,omitempty"`
+	OttServiceId         *string                `protobuf:"bytes,1,opt,name=OttServiceId" json:"OttServiceId,omitempty"`
+	OttServiceName       *string                `protobuf:"bytes,2,opt,name=OttServiceName" json:"OttServiceName,omitempty"`
+	StrmFrom             *string                `protobuf:"bytes,3,opt,name=StrmFrom" json:"StrmFrom,omitempty"`
+	VideoSearchClient    *string                `protobuf:"bytes,4,opt,name=VideoSearchClient" json:"VideoSearchClient,omitempty"`
+	ObjectResponseClient *string                `protobuf:"bytes,5,opt,name=ObjectResponseClient" json:"ObjectResponseClient,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -436,7 +435,7 @@ func (x *TClientInfoProto_TMediaDeviceIdentifier) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use TClientInfoProto_TMediaDeviceIdentifier.ProtoReflect.Descriptor instead.
 func (*TClientInfoProto_TMediaDeviceIdentifier) Descriptor() ([]byte, []int) {
-	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{1, 0}
+	return file_alice_library_client_protos_client_info_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *TClientInfoProto_TMediaDeviceIdentifier) GetOttServiceId() string {
@@ -478,61 +477,60 @@ var File_alice_library_client_protos_client_info_proto protoreflect.FileDescript
 
 const file_alice_library_client_protos_client_info_proto_rawDesc = "" +
 	"\n" +
-	"-alice/library/client/protos/client_info.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\x84\x01\n" +
-	"\x12TExperimentSurface\x123\n" +
-	"\vBrowserName\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fbrowser_nameR\fbrowser_name\x123\n" +
-	"\vDeviceModel\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fdevice_modelR\fdevice_model:\x04\xa8\xdd\x1b\x04\"\x99\x10\n" +
-	"\x10TClientInfoProto\x12!\n" +
-	"\x05AppId\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06app_idR\x06app_id\x120\n" +
+	"-alice/library/client/protos/client_info.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xbc\v\n" +
+	"\x10TClientInfoProto\x12\x14\n" +
+	"\x05AppId\x18\x01 \x01(\tR\x05AppId\x12\x1e\n" +
 	"\n" +
-	"AppVersion\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vapp_versionR\vapp_version\x12-\n" +
-	"\tOsVersion\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"os_versionR\n" +
-	"os_version\x12(\n" +
-	"\bPlatform\x18\x04 \x01(\tB\f\xaa\xdd\x1b\bplatformR\bplatform\x12 \n" +
-	"\x04Uuid\x18\x05 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03R\x04uuid\x12.\n" +
-	"\bDeviceId\x18\x06 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x12\x1c\n" +
-	"\x04Lang\x18\a \x01(\tB\b\xaa\xdd\x1b\x04langR\x04lang\x120\n" +
+	"AppVersion\x18\x02 \x01(\tR\n" +
+	"AppVersion\x12\x1c\n" +
+	"\tOsVersion\x18\x03 \x01(\tR\tOsVersion\x12\x1a\n" +
+	"\bPlatform\x18\x04 \x01(\tR\bPlatform\x12\x12\n" +
+	"\x04Uuid\x18\x05 \x01(\tR\x04Uuid\x12\x1a\n" +
+	"\bDeviceId\x18\x06 \x01(\tR\bDeviceId\x12\x12\n" +
+	"\x04Lang\x18\a \x01(\tR\x04Lang\x12\x1e\n" +
 	"\n" +
-	"ClientTime\x18\b \x01(\tB\x0f\xaa\xdd\x1b\vclient_timeR\vclient_time\x12(\n" +
-	"\bTimezone\x18\t \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12'\n" +
+	"ClientTime\x18\b \x01(\tR\n" +
+	"ClientTime\x12\x1a\n" +
+	"\bTimezone\x18\t \x01(\tR\bTimezone\x12\x14\n" +
 	"\x05Epoch\x18\n" +
-	" \x01(\tB\r\xaa\xdd\x1b\ttimestampR\ttimestamp\x123\n" +
-	"\vDeviceModel\x18\v \x01(\tB\x10\xaa\xdd\x1b\fdevice_modelR\fdevice_model\x12H\n" +
-	"\x12DeviceManufacturer\x18\f \x01(\tB\x17\xaa\xdd\x1b\x13device_manufacturerR\x13device_manufacturer\x123\n" +
-	"\vDeviceColor\x18\x0e \x01(\tB\x10\xaa\xdd\x1b\fdevice_colorR\fdevice_color\x12<\n" +
-	"\x0eDeviceRevision\x18\x0f \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_revisionR\x0fdevice_revision\x12?\n" +
-	"\x0fQuasmodromGroup\x18\x10 \x01(\tB\x14\xaa\xdd\x1b\x10quasmodrom_groupR\x10quasmodrom_group\x12H\n" +
-	"\x12QuasmodromSubgroup\x18\x11 \x01(\tB\x17\xaa\xdd\x1b\x13quasmodrom_subgroupR\x13quasmodrom_subgroup\x12\x84\x01\n" +
-	"\x15MediaDeviceIdentifier\x18\x12 \x01(\v2/.NAlice.TClientInfoProto.TMediaDeviceIdentifierB\x1b\xaa\xdd\x1b\x17media_device_identifierR\x17media_device_identifier\x12<\n" +
-	"\x0eDeviceFirmware\x18\x13 \x01(\tB\x13\xaa\xdd\x1b\x0fdevice_firmwareR\x0fdevice_firmware\x12A\n" +
-	"\x0fMetricaDeviceId\x18\x14 \x01(\tB\x15\xaa\xdd\x1b\x11metrica_device_idR\x11metrica_device_id\x12-\n" +
-	"\tWifiModel\x18\x15 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"wifi_modelR\n" +
-	"wifi_model\x12?\n" +
-	"\x0fIntegrationType\x18\x16 \x01(\tB\x14\xaa\xdd\x1b\x10integration_typeR\x10integration_type\x12V\n" +
+	" \x01(\tR\x05Epoch\x12 \n" +
+	"\vDeviceModel\x18\v \x01(\tR\vDeviceModel\x12.\n" +
+	"\x12DeviceManufacturer\x18\f \x01(\tR\x12DeviceManufacturer\x12 \n" +
+	"\vDeviceColor\x18\x0e \x01(\tR\vDeviceColor\x12&\n" +
+	"\x0eDeviceRevision\x18\x0f \x01(\tR\x0eDeviceRevision\x12(\n" +
+	"\x0fQuasmodromGroup\x18\x10 \x01(\tR\x0fQuasmodromGroup\x12.\n" +
+	"\x12QuasmodromSubgroup\x18\x11 \x01(\tR\x12QuasmodromSubgroup\x12e\n" +
+	"\x15MediaDeviceIdentifier\x18\x12 \x01(\v2/.NAlice.TClientInfoProto.TMediaDeviceIdentifierR\x15MediaDeviceIdentifier\x12&\n" +
+	"\x0eDeviceFirmware\x18\x13 \x01(\tR\x0eDeviceFirmware\x12(\n" +
+	"\x0fMetricaDeviceId\x18\x14 \x01(\tR\x0fMetricaDeviceId\x12\x1c\n" +
+	"\tWifiModel\x18\x15 \x01(\tR\tWifiModel\x12(\n" +
+	"\x0fIntegrationType\x18\x16 \x01(\tR\x0fIntegrationType\x12D\n" +
 	"\n" +
-	"ClientType\x18\x17 \x01(\x0e2$.NAlice.TClientInfoProto.EClientTypeB\x0f\xaa\xdd\x1b\vclient_typeR\vclient_type\x12\x19\n" +
-	"\x03Vid\x18\x18 \x01(\tB\a\xaa\xdd\x1b\x03vidR\x03vid\x12\x19\n" +
-	"\x03Pid\x18\x19 \x01(\tB\a\xaa\xdd\x1b\x03pidR\x03pid\x12?\n" +
-	"\x0fFirmwareVersion\x18\x1a \x01(\tB\x14\xaa\xdd\x1b\x10firmware_versionR\x10firmware_version\x12a\n" +
+	"ClientType\x18\x17 \x01(\x0e2$.NAlice.TClientInfoProto.EClientTypeR\n" +
+	"ClientType\x12\x10\n" +
+	"\x03Vid\x18\x18 \x01(\tR\x03Vid\x12\x10\n" +
+	"\x03Pid\x18\x19 \x01(\tR\x03Pid\x12(\n" +
+	"\x0fFirmwareVersion\x18\x1a \x01(\tR\x0fFirmwareVersion\x12a\n" +
 	"\x11ExperimentSurface\x18\x1b \x01(\v2\x1a.NAlice.TExperimentSurfaceB\x16\xaa\xdd\x1b\x12experiment_surfaceR\x12experiment_surface\x12A\n" +
 	"\x0fDeviceModelName\x18\x1c \x01(\tB\x15\xaa\xdd\x1b\x11device_model_nameR\x11device_model_name\x123\n" +
-	"\vDeviceBrand\x18\x1d \x01(\tB\x10\xaa\xdd\x1b\fdevice_brandR\fdevice_brand\x1a\xdf\x02\n" +
-	"\x16TMediaDeviceIdentifier\x128\n" +
-	"\fOttServiceId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0eott_service_idR\x0eott_service_id\x12>\n" +
-	"\x0eOttServiceName\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10ott_service_nameR\x10ott_service_name\x12*\n" +
-	"\bStrmFrom\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tstrm_fromR\tstrm_from\x12G\n" +
-	"\x11VideoSearchClient\x18\x04 \x01(\tB\x17\xaa\xdd\x1b\x13video_search_clientR\x13video_search_client\x12P\n" +
-	"\x14ObjectResponseClient\x18\x05 \x01(\tB\x1a\xaa\xdd\x1b\x16object_response_clientR\x16object_response_client:\x04\xa8\xdd\x1b\x04\"J\n" +
+	"\vDeviceBrand\x18\x1d \x01(\tB\x10\xaa\xdd\x1b\fdevice_brandR\fdevice_brand\x1a\xe2\x01\n" +
+	"\x16TMediaDeviceIdentifier\x12\"\n" +
+	"\fOttServiceId\x18\x01 \x01(\tR\fOttServiceId\x12&\n" +
+	"\x0eOttServiceName\x18\x02 \x01(\tR\x0eOttServiceName\x12\x1a\n" +
+	"\bStrmFrom\x18\x03 \x01(\tR\bStrmFrom\x12,\n" +
+	"\x11VideoSearchClient\x18\x04 \x01(\tR\x11VideoSearchClient\x122\n" +
+	"\x14ObjectResponseClient\x18\x05 \x01(\tR\x14ObjectResponseClient\"F\n" +
 	"\vEClientType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\t\n" +
 	"\x05IOSDK\x10\x01\x12\x0e\n" +
 	"\n" +
-	"AliceKitJs\x10\x02\x12\x11\n" +
-	"\tSpeechKit\x10\x03\x1a\x02\b\x01:\x04\xa8\xdd\x1b\x04J\x04\b\r\x10\x0eR\tAuthTokenBf\n" +
-	"%ru.yandex.alice.library.client.protosB\x0fClientInfoProtoZ,a.yandex-team.ru/alice/library/client/protos"
+	"AliceKitJs\x10\x02\x12\r\n" +
+	"\tSpeechKit\x10\x03J\x04\b\r\x10\x0eR\tAuthToken\"\x84\x01\n" +
+	"\x12TExperimentSurface\x123\n" +
+	"\vBrowserName\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fbrowser_nameR\fbrowser_name\x123\n" +
+	"\vDeviceModel\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fdevice_modelR\fdevice_model:\x04\xa8\xdd\x1b\x04B\xa2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fClientInfoProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_library_client_protos_client_info_proto_rawDescOnce sync.Once
@@ -550,14 +548,14 @@ var file_alice_library_client_protos_client_info_proto_enumTypes = make([]protoi
 var file_alice_library_client_protos_client_info_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_library_client_protos_client_info_proto_goTypes = []any{
 	(TClientInfoProto_EClientType)(0),               // 0: NAlice.TClientInfoProto.EClientType
-	(*TExperimentSurface)(nil),                      // 1: NAlice.TExperimentSurface
-	(*TClientInfoProto)(nil),                        // 2: NAlice.TClientInfoProto
+	(*TClientInfoProto)(nil),                        // 1: NAlice.TClientInfoProto
+	(*TExperimentSurface)(nil),                      // 2: NAlice.TExperimentSurface
 	(*TClientInfoProto_TMediaDeviceIdentifier)(nil), // 3: NAlice.TClientInfoProto.TMediaDeviceIdentifier
 }
 var file_alice_library_client_protos_client_info_proto_depIdxs = []int32{
 	3, // 0: NAlice.TClientInfoProto.MediaDeviceIdentifier:type_name -> NAlice.TClientInfoProto.TMediaDeviceIdentifier
 	0, // 1: NAlice.TClientInfoProto.ClientType:type_name -> NAlice.TClientInfoProto.EClientType
-	1, // 2: NAlice.TClientInfoProto.ExperimentSurface:type_name -> NAlice.TExperimentSurface
+	2, // 2: NAlice.TClientInfoProto.ExperimentSurface:type_name -> NAlice.TExperimentSurface
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

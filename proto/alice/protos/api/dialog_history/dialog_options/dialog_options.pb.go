@@ -294,8 +294,8 @@ const file_alice_protos_api_dialog_history_dialog_options_dialog_options_proto_r
 	"\f_EditOptionsB\x17\n" +
 	"\x15_ResponseIsAlwaysReadB\x10\n" +
 	"\x0e_CustomOptionsB\x10\n" +
-	"\x0e_FolderOptionsB{\n" +
-	"8ru.yandex.alice.protos.api.dialog_history.dialog_optionsZ?a.yandex-team.ru/alice/protos/api/dialog_history/dialog_optionsb\x06proto3"
+	"\x0e_FolderOptionsB\x9a\x01\n" +
+	"8ru.yandex.alice.protos.api.dialog_history.dialog_optionsZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/dialog_history/dialog_optionsb\x06proto3"
 
 var (
 	file_alice_protos_api_dialog_history_dialog_options_dialog_options_proto_rawDescOnce sync.Once

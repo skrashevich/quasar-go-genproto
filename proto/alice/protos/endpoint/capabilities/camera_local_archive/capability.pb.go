@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/camera_local_archive/capability.proto
 
-package camera_local_archivepb
+package camera_local_archive
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -1351,8 +1351,8 @@ const file_alice_protos_endpoint_capabilities_camera_local_archive_capability_pr
 	"\vEFileSystem\x12\x17\n" +
 	"\x13FILE_SYSTEM_UNKNOWN\x10\x00\x12\x15\n" +
 	"\x11FILE_SYSTEM_FAT32\x10\x01\x12\x15\n" +
-	"\x11FILE_SYSTEM_EXFAT\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8a\x01B\xb4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!CameraLocalArchiveCapabilityProtoP\x01Z_a.yandex-team.ru/alice/protos/endpoint/capabilities/camera_local_archive;camera_local_archivepbb\x06proto3"
+	"\x11FILE_SYSTEM_EXFAT\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8a\x01B\xbc\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!CameraLocalArchiveCapabilityProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/camera_local_archiveb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_camera_local_archive_capability_proto_rawDescOnce sync.Once

@@ -62,8 +62,8 @@ var File_alice_protos_api_alicekit_events_request_stat_ack_request_stat_ack_prot
 const file_alice_protos_api_alicekit_events_request_stat_ack_request_stat_ack_proto_rawDesc = "" +
 	"\n" +
 	"Halice/protos/api/alicekit/events/request_stat_ack/request_stat_ack.proto\x12\x10NAlice.NAliceApi\"\x11\n" +
-	"\x0fTRequestStatAckB\x93\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.request_stat_ackB\x0eRequestStatAckP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/request_stat_ackb\x06proto3"
+	"\x0fTRequestStatAckB\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13RequestStatAckProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/request_stat_ack\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_request_stat_ack_request_stat_ack_proto_rawDescOnce sync.Once

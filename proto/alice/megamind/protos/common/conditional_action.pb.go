@@ -9,7 +9,6 @@ package common
 import (
 	typed_callback "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/typed_callback"
 	typed_callbacks "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks"
-	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -150,16 +149,17 @@ var File_alice_megamind_protos_common_conditional_action_proto protoreflect.File
 
 const file_alice_megamind_protos_common_conditional_action_proto_rawDesc = "" +
 	"\n" +
-	"5alice/megamind/protos/common/conditional_action.proto\x12\x06NAlice\x1a(alice/megamind/protos/common/frame.proto\x1aPalice/megamind/protos/scenarios/typed_callback/typed_callback_request_data.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa0\x05\n" +
+	"5alice/megamind/protos/common/conditional_action.proto\x12\x06NAlice\x1a(alice/megamind/protos/common/frame.proto\x1aPalice/megamind/protos/scenarios/typed_callback/typed_callback_request_data.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\"\x9a\x05\n" +
 	"\x12TConditionalAction\x12y\n" +
 	"\x18ConditionalSemanticFrame\x18\x01 \x01(\v2\x1b.NAlice.TTypedSemanticFrameB\x1e\xaa\xdd\x1b\x1aconditional_semantic_frameR\x1aconditional_semantic_frame\x12}\n" +
 	"\x16EffectFrameRequestData\x18\x02 \x01(\v2!.NAlice.TSemanticFrameRequestDataB\x1d\xaa\xdd\x1b\x19effect_frame_request_dataH\x00R\x19effect_frame_request_data\x12i\n" +
 	"\rTypedCallback\x18\x03 \x01(\v2,.NAlice.NScenarios.TTypedCallbackRequestDataB\x12\xaa\xdd\x1b\x0etyped_callbackH\x00R\x0etyped_callback\x12z\n" +
 	"\x17TypedCallbackSerialized\x18\x04 \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\x1d\xaa\xdd\x1b\x19typed_callback_serializedH\x00R\x19typed_callback_serialized\x12\x8c\x01\n" +
-	"\x1bConditionalFrameRequestData\x18\x05 \x01(\v2!.NAlice.TSemanticFrameRequestDataB\"\xaa\xdd\x1b\x1econditional_frame_request_dataH\x00R\x1econditional_frame_request_data:\x04\xa8\xdd\x1b\x04B\x14\n" +
+	"\x1bConditionalFrameRequestData\x18\x05 \x01(\v2!.NAlice.TSemanticFrameRequestDataB\"\xaa\xdd\x1b\x1econditional_frame_request_dataH\x00R\x1econditional_frame_request_dataB\x14\n" +
 	"\x06Effect\x12\n" +
-	"\xaa\xdd\x1b\x06effectBo\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x16ConditionalActionProtoZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\xaa\xdd\x1b\x06effectB\xaa\x01\n" +
+	"\n" +
+	"com.NAliceB\x16ConditionalActionProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_conditional_action_proto_rawDescOnce sync.Once

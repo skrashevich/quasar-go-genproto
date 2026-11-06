@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_door_lock_partial_lock_enabled/capability.proto
 
-package doorlockpartiallockenabled_fwpb
+package iot_door_lock_partial_lock_enabled
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -283,8 +283,8 @@ const file_alice_protos_endpoint_capabilities_iot_door_lock_partial_lock_enabled
 	"\n" +
 	"Capability\x18\x01 \x01(\v2-.NAlice.TDoorLockPartialLockEnabledCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xbe\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x90\x02B\xd3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB)DoorLockPartialLockEnabledCapabilityProtoP\x01Zva.yandex-team.ru/alice/protos/endpoint/capabilities/iot_door_lock_partial_lock_enabled;doorlockpartiallockenabled_fwpbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xbe\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x90\x02B\xd2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB)DoorLockPartialLockEnabledCapabilityProtoP\x01Zugithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_door_lock_partial_lock_enabledb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_door_lock_partial_lock_enabled_capability_proto_rawDescOnce sync.Once

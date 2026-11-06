@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/extensions/agents_platform.proto
 
-package extensionspb
+package extensions
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -56,8 +56,8 @@ const file_alice_protos_extensions_agents_platform_proto_rawDesc = "" +
 	"\bArtifact\x12\x1f.google.protobuf.MessageOptions\x18\xfd\xbf\x03 \x01(\tR\bArtifact:A\n" +
 	"\n" +
 	"Datasource\x12\x1f.google.protobuf.MessageOptions\x18\xfe\xbf\x03 \x01(\tR\n" +
-	"DatasourceBo\n" +
-	"!ru.yandex.alice.protos.extensionsB\x13AgentsPlatformProtoZ5a.yandex-team.ru/alice/protos/extensions;extensionspbb\x06proto3"
+	"DatasourceB\xca\x01\n" +
+	"\x12com.AgentsPlatformB\x13AgentsPlatformProtoP\x01ZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/extensions\xa2\x02\x03AXX\xaa\x02\x0eAgentsPlatform\xca\x02\x0eAgentsPlatform\xe2\x02\x1aAgentsPlatform\\GPBMetadata\xea\x02\x0eAgentsPlatformb\x06proto3"
 
 var file_alice_protos_extensions_agents_platform_proto_goTypes = []any{
 	(*descriptorpb.MessageOptions)(nil), // 0: google.protobuf.MessageOptions

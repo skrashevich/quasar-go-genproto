@@ -1540,8 +1540,8 @@ const file_alice_protos_data_scenario_order_make_order_proto_rawDesc = "" +
 	"\n" +
 	"IS_UNKNOWN\x10\x00\x12\r\n" +
 	"\tIS_RECENT\x10\x02\x12\x10\n" +
-	"\fIS_FAVOURITE\x10\x03\"\x04\b\x01\x10\x01*\rIS_FAVOURITESB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.orderZ1a.yandex-team.ru/alice/protos/data/scenario/orderb\x06proto3"
+	"\fIS_FAVOURITE\x10\x03\"\x04\b\x01\x10\x01*\rIS_FAVOURITESB~\n" +
+	"*ru.yandex.alice.protos.data.scenario.orderZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/orderb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_order_make_order_proto_rawDescOnce sync.Once

@@ -24,9 +24,9 @@ const (
 
 type TOndeviceBiometryOptions struct {
 	state                  protoimpl.MessageState                    `protogen:"open.v1"`
-	Scoring                *TOndeviceBiometryOptions_TScoring        `protobuf:"bytes,1,opt,name=Scoring,json=scoring,proto3" json:"Scoring,omitempty"`
-	IgnoreVoiceprintUpdate bool                                      `protobuf:"varint,2,opt,name=IgnoreVoiceprintUpdate,json=ignore_voiceprint_update,proto3" json:"IgnoreVoiceprintUpdate,omitempty"`
-	Classification         *TOndeviceBiometryOptions_TClassification `protobuf:"bytes,3,opt,name=Classification,json=classification,proto3" json:"Classification,omitempty"`
+	Scoring                *TOndeviceBiometryOptions_TScoring        `protobuf:"bytes,1,opt,name=Scoring,proto3" json:"Scoring,omitempty"`
+	IgnoreVoiceprintUpdate bool                                      `protobuf:"varint,2,opt,name=IgnoreVoiceprintUpdate,proto3" json:"IgnoreVoiceprintUpdate,omitempty"`
+	Classification         *TOndeviceBiometryOptions_TClassification `protobuf:"bytes,3,opt,name=Classification,proto3" json:"Classification,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -84,7 +84,7 @@ func (x *TOndeviceBiometryOptions) GetClassification() *TOndeviceBiometryOptions
 
 type TOndeviceBiometryOptions_TScoring struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,7 +128,7 @@ func (x *TOndeviceBiometryOptions_TScoring) GetEnabled() bool {
 
 type TOndeviceBiometryOptions_TClassification struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -174,16 +174,17 @@ var File_alice_protos_api_biometry_options_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_biometry_options_proto_rawDesc = "" +
 	"\n" +
-	"'alice/protos/api/biometry/options.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x03\n" +
-	"\x18TOndeviceBiometryOptions\x12P\n" +
-	"\aScoring\x18\x01 \x01(\v2).NAlice.TOndeviceBiometryOptions.TScoringB\v\xaa\xdd\x1b\ascoringR\ascoring\x12V\n" +
-	"\x16IgnoreVoiceprintUpdate\x18\x02 \x01(\bB\x1c\xaa\xdd\x1b\x18ignore_voiceprint_updateR\x18ignore_voiceprint_update\x12l\n" +
-	"\x0eClassification\x18\x03 \x01(\v20.NAlice.TOndeviceBiometryOptions.TClassificationB\x12\xaa\xdd\x1b\x0eclassificationR\x0eclassification\x1a7\n" +
-	"\bTScoring\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a>\n" +
-	"\x0fTClassification\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bj\n" +
-	"#ru.yandex.alice.protos.api.biometryB\x17OndeviceBiometryOptionsZ*a.yandex-team.ru/alice/protos/api/biometryb\x06proto3"
+	"'alice/protos/api/biometry/options.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc4\x02\n" +
+	"\x18TOndeviceBiometryOptions\x12C\n" +
+	"\aScoring\x18\x01 \x01(\v2).NAlice.TOndeviceBiometryOptions.TScoringR\aScoring\x126\n" +
+	"\x16IgnoreVoiceprintUpdate\x18\x02 \x01(\bR\x16IgnoreVoiceprintUpdate\x12X\n" +
+	"\x0eClassification\x18\x03 \x01(\v20.NAlice.TOndeviceBiometryOptions.TClassificationR\x0eClassification\x1a$\n" +
+	"\bTScoring\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a+\n" +
+	"\x0fTClassification\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabledB\x9d\x01\n" +
+	"\n" +
+	"com.NAliceB\fOptionsProtoP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/biometry\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_biometry_options_proto_rawDescOnce sync.Once

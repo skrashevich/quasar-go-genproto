@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_bind/capability.proto
 
-package iotbindpb
+package iot_bind
 
 import (
 	iot_bind "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot_bind"
@@ -533,8 +533,8 @@ const file_alice_protos_endpoint_capabilities_iot_bind_capability_proto_rawDesc 
 	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cb\"=\n" +
 	"\vEConstraint\x12\x11\n" +
 	"\rNO_CONSTRAINT\x10\x00\x12\x1b\n" +
-	"\x17CONSTANT_EXCLUSIVE_LOCK\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa5\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16IotBindCapabilityProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_bind;iotbindpbb\x06proto3"
+	"\x17CONSTANT_EXCLUSIVE_LOCK\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa5\x01B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16IotBindCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_bindb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_bind_capability_proto_rawDescOnce sync.Once

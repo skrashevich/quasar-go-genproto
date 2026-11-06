@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/android_settings/capability.proto
 
-package androidsettingspb
+package android_settings
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -334,8 +334,8 @@ const file_alice_protos_endpoint_capabilities_android_settings_capability_proto_
 	"\aSUPPORT\x10\t\x12\x12\n" +
 	"\x0ePARENT_CONTROL\x10\n" +
 	"\x12\x0f\n" +
-	"\vAPPLICATION\x10\v:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1aB\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAndroidSettingsCapabilityProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/android_settings;androidsettingspbb\x06proto3"
+	"\vAPPLICATION\x10\v:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1aB\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAndroidSettingsCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/android_settingsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_android_settings_capability_proto_rawDescOnce sync.Once

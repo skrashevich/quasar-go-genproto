@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/noise_cancellation/capability.proto
 
-package noisecancellationpb
+package noise_cancellation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -345,8 +345,8 @@ const file_alice_protos_endpoint_capabilities_noise_cancellation_capability_prot
 	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cs\x1a\xc8\x01\n" +
 	"\"TSetNoiseCancellationModeDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12O\n" +
-	"\x04mode\x18\x01 \x01(\x0e21.NAlice.TNoiseCancellationCapability.TState.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:2\x92\x82\x19%set_noise_cancellation_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd9\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xaf\x01B\xa9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bNoiseCancellationCapabilityP\x01ZZa.yandex-team.ru/alice/protos/endpoint/capabilities/noise_cancellation;noisecancellationpbb\x06proto3"
+	"\x04mode\x18\x01 \x01(\x0e21.NAlice.TNoiseCancellationCapability.TState.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:2\x92\x82\x19%set_noise_cancellation_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd9\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xaf\x01B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bNoiseCancellationCapabilityP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/noise_cancellationb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_noise_cancellation_capability_proto_rawDescOnce sync.Once

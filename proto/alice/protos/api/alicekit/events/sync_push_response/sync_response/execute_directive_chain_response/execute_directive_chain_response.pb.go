@@ -27,7 +27,7 @@ const (
 
 type TExecuteDirectiveChainResponse struct {
 	state                    protoimpl.MessageState                           `protogen:"open.v1"`
-	ExecutionResult          *TExecuteDirectiveChainResponse_TExecutionResult `protobuf:"bytes,1,opt,name=ExecutionResult,json=execution_result,proto3" json:"ExecutionResult,omitempty"`
+	ExecutionResult          *TExecuteDirectiveChainResponse_TExecutionResult `protobuf:"bytes,1,opt,name=ExecutionResult,proto3" json:"ExecutionResult,omitempty"`
 	AffectedEnvironmentState *environment_state.TEnvironmentState             `protobuf:"bytes,2,opt,name=AffectedEnvironmentState,json=affected_environment_state,proto3" json:"AffectedEnvironmentState,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
@@ -79,8 +79,8 @@ func (x *TExecuteDirectiveChainResponse) GetAffectedEnvironmentState() *environm
 
 type DirectiveTimings struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	StartedTimestamp   *uint64                `protobuf:"varint,1,opt,name=StartedTimestamp,json=started_timestamp,proto3,oneof" json:"StartedTimestamp,omitempty"`
-	CompletedTimestamp *uint64                `protobuf:"varint,2,opt,name=CompletedTimestamp,json=completed_timestamp,proto3,oneof" json:"CompletedTimestamp,omitempty"`
+	StartedTimestamp   *uint64                `protobuf:"varint,1,opt,name=StartedTimestamp,proto3,oneof" json:"StartedTimestamp,omitempty"`
+	CompletedTimestamp *uint64                `protobuf:"varint,2,opt,name=CompletedTimestamp,proto3,oneof" json:"CompletedTimestamp,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -131,8 +131,8 @@ func (x *DirectiveTimings) GetCompletedTimestamp() uint64 {
 
 type ExecutionTimings struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	StartedTimestamp   *uint64                `protobuf:"varint,1,opt,name=StartedTimestamp,json=started_timestamp,proto3,oneof" json:"StartedTimestamp,omitempty"`
-	CompletedTimestamp *uint64                `protobuf:"varint,2,opt,name=CompletedTimestamp,json=completed_timestamp,proto3,oneof" json:"CompletedTimestamp,omitempty"`
+	StartedTimestamp   *uint64                `protobuf:"varint,1,opt,name=StartedTimestamp,proto3,oneof" json:"StartedTimestamp,omitempty"`
+	CompletedTimestamp *uint64                `protobuf:"varint,2,opt,name=CompletedTimestamp,proto3,oneof" json:"CompletedTimestamp,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -183,7 +183,7 @@ func (x *ExecutionTimings) GetCompletedTimestamp() uint64 {
 
 type TExecuteDirectiveChainResponse_TExecutionResult struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	ExecutionTimings *ExecutionTimings      `protobuf:"bytes,3,opt,name=ExecutionTimings,json=execution_timings,proto3" json:"ExecutionTimings,omitempty"`
+	ExecutionTimings *ExecutionTimings      `protobuf:"bytes,3,opt,name=ExecutionTimings,proto3" json:"ExecutionTimings,omitempty"`
 	// Types that are valid to be assigned to Result:
 	//
 	//	*TExecuteDirectiveChainResponse_TExecutionResult_ExecutionStarted
@@ -260,11 +260,11 @@ type isTExecuteDirectiveChainResponse_TExecutionResult_Result interface {
 }
 
 type TExecuteDirectiveChainResponse_TExecutionResult_ExecutionStarted struct {
-	ExecutionStarted *TExecuteDirectiveChainResponse_TExecutionResult_TReceivedChain `protobuf:"bytes,1,opt,name=ExecutionStarted,json=execution_started,proto3,oneof"`
+	ExecutionStarted *TExecuteDirectiveChainResponse_TExecutionResult_TReceivedChain `protobuf:"bytes,1,opt,name=ExecutionStarted,proto3,oneof"`
 }
 
 type TExecuteDirectiveChainResponse_TExecutionResult_ExecutionCompleted struct {
-	ExecutionCompleted *TExecuteDirectiveChainResponse_TExecutionResult_TCompletedChain `protobuf:"bytes,2,opt,name=ExecutionCompleted,json=execution_completed,proto3,oneof"`
+	ExecutionCompleted *TExecuteDirectiveChainResponse_TExecutionResult_TCompletedChain `protobuf:"bytes,2,opt,name=ExecutionCompleted,proto3,oneof"`
 }
 
 func (*TExecuteDirectiveChainResponse_TExecutionResult_ExecutionStarted) isTExecuteDirectiveChainResponse_TExecutionResult_Result() {
@@ -311,14 +311,14 @@ func (*TExecuteDirectiveChainResponse_TExecutionResult_TReceivedChain) Descripto
 
 type TExecuteDirectiveChainResponse_TExecutionResult_TCompleted struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	DirectiveId      string                 `protobuf:"bytes,3,opt,name=DirectiveId,json=directive_id,proto3" json:"DirectiveId,omitempty"`
-	DirectiveTimings *DirectiveTimings      `protobuf:"bytes,4,opt,name=DirectiveTimings,json=directive_timings,proto3" json:"DirectiveTimings,omitempty"`
+	DirectiveId      string                 `protobuf:"bytes,3,opt,name=DirectiveId,proto3" json:"DirectiveId,omitempty"`
+	DirectiveTimings *DirectiveTimings      `protobuf:"bytes,4,opt,name=DirectiveTimings,proto3" json:"DirectiveTimings,omitempty"`
 	// Types that are valid to be assigned to Status:
 	//
 	//	*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Succeed
 	//	*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Failed
 	Status        isTExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Status `protobuf_oneof:"Status"`
-	AnyCapability *endpoint.TAnyCapabilityHolder                                      `protobuf:"bytes,5,opt,name=AnyCapability,json=any_capability,proto3,oneof" json:"AnyCapability,omitempty"`
+	AnyCapability *endpoint.TAnyCapabilityHolder                                      `protobuf:"bytes,5,opt,name=AnyCapability,proto3,oneof" json:"AnyCapability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -404,11 +404,11 @@ type isTExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Status interfa
 }
 
 type TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Succeed struct {
-	Succeed *TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TSucceed `protobuf:"bytes,1,opt,name=Succeed,json=succeed,proto3,oneof"`
+	Succeed *TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TSucceed `protobuf:"bytes,1,opt,name=Succeed,proto3,oneof"`
 }
 
 type TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Failed struct {
-	Failed *TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TFailed `protobuf:"bytes,2,opt,name=Failed,json=failed,proto3,oneof"`
+	Failed *TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TFailed `protobuf:"bytes,2,opt,name=Failed,proto3,oneof"`
 }
 
 func (*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Succeed) isTExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Status() {
@@ -419,7 +419,7 @@ func (*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_Failed) isTExe
 
 type TExecuteDirectiveChainResponse_TExecutionResult_TCompletedChain struct {
 	state         protoimpl.MessageState                                        `protogen:"open.v1"`
-	Completed     []*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted `protobuf:"bytes,1,rep,name=Completed,json=completed,proto3" json:"Completed,omitempty"`
+	Completed     []*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted `protobuf:"bytes,1,rep,name=Completed,proto3" json:"Completed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -499,8 +499,8 @@ func (*TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TSucceed) Desc
 
 type TExecuteDirectiveChainResponse_TExecutionResult_TCompleted_TFailed struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	Error         string                                                    `protobuf:"bytes,1,opt,name=Error,json=error,proto3" json:"Error,omitempty"`
-	Code          execute_directive_error.TExecuteDirectiveError_EErrorCode `protobuf:"varint,2,opt,name=Code,json=code,proto3,enum=NAlice.NAliceApi.TExecuteDirectiveError_EErrorCode" json:"Code,omitempty"`
+	Error         string                                                    `protobuf:"bytes,1,opt,name=Error,proto3" json:"Error,omitempty"`
+	Code          execute_directive_error.TExecuteDirectiveError_EErrorCode `protobuf:"varint,2,opt,name=Code,proto3,enum=NAlice.NAliceApi.TExecuteDirectiveError_EErrorCode" json:"Code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -553,45 +553,44 @@ var File_alice_protos_api_alicekit_events_sync_push_response_sync_response_execu
 
 const file_alice_protos_api_alicekit_events_sync_push_response_sync_response_execute_directive_chain_response_execute_directive_chain_response_proto_rawDesc = "" +
 	"\n" +
-	"\x89\x01alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_chain_response/execute_directive_chain_response.proto\x12\x10NAlice.NAliceApi\x1awalice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_error/execute_directive_error.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a*alice/protos/endpoint/any_capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3\f\n" +
-	"\x1eTExecuteDirectiveChainResponse\x12\x82\x01\n" +
-	"\x0fExecutionResult\x18\x01 \x01(\v2A.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResultB\x14\xaa\xdd\x1b\x10execution_resultR\x10execution_result\x12\x81\x01\n" +
-	"\x18AffectedEnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x1e\xaa\xdd\x1b\x1aaffected_environment_stateR\x1aaffected_environment_state\x1a\x91\n" +
+	"\x89\x01alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_chain_response/execute_directive_chain_response.proto\x12\x10NAlice.NAliceApi\x1awalice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_error/execute_directive_error.proto\x1a*alice/protos/endpoint/any_capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\"\xd6\n" +
 	"\n" +
-	"\x10TExecutionResult\x12f\n" +
-	"\x10ExecutionTimings\x18\x03 \x01(\v2\".NAlice.NAliceApi.ExecutionTimingsB\x15\xaa\xdd\x1b\x11execution_timingsR\x11execution_timings\x12\x96\x01\n" +
-	"\x10ExecutionStarted\x18\x01 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TReceivedChainB\x15\xaa\xdd\x1b\x11execution_startedH\x00R\x11execution_started\x12\x9d\x01\n" +
-	"\x12ExecutionCompleted\x18\x02 \x01(\v2Q.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompletedChainB\x17\xaa\xdd\x1b\x13execution_completedH\x00R\x13execution_completed\x1a\x10\n" +
-	"\x0eTReceivedChain\x1a\xaa\x05\n" +
+	"\x1eTExecuteDirectiveChainResponse\x12k\n" +
+	"\x0fExecutionResult\x18\x01 \x01(\v2A.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResultR\x0fExecutionResult\x12\x81\x01\n" +
+	"\x18AffectedEnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x1e\xaa\xdd\x1b\x1aaffected_environment_stateR\x1aaffected_environment_state\x1a\xc2\b\n" +
+	"\x10TExecutionResult\x12N\n" +
+	"\x10ExecutionTimings\x18\x03 \x01(\v2\".NAlice.NAliceApi.ExecutionTimingsR\x10ExecutionTimings\x12~\n" +
+	"\x10ExecutionStarted\x18\x01 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TReceivedChainH\x00R\x10ExecutionStarted\x12\x83\x01\n" +
+	"\x12ExecutionCompleted\x18\x02 \x01(\v2Q.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompletedChainH\x00R\x12ExecutionCompleted\x1a\x10\n" +
+	"\x0eTReceivedChain\x1a\xbc\x04\n" +
 	"\n" +
-	"TCompleted\x123\n" +
-	"\vDirectiveId\x18\x03 \x01(\tB\x10\xaa\xdd\x1b\fdirective_idR\fdirective_id\x12f\n" +
-	"\x10DirectiveTimings\x18\x04 \x01(\v2\".NAlice.NAliceApi.DirectiveTimingsB\x15\xaa\xdd\x1b\x11directive_timingsR\x11directive_timings\x12~\n" +
-	"\aSucceed\x18\x01 \x01(\v2U.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompleted.TSucceedB\v\xaa\xdd\x1b\asucceedH\x00R\asucceed\x12z\n" +
-	"\x06Failed\x18\x02 \x01(\v2T.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompleted.TFailedB\n" +
-	"\xaa\xdd\x1b\x06failedH\x00R\x06failed\x12\\\n" +
-	"\rAnyCapability\x18\x05 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderB\x12\xaa\xdd\x1b\x0eany_capabilityH\x01R\x0eany_capability\x88\x01\x01\x1a\n" +
+	"TCompleted\x12 \n" +
+	"\vDirectiveId\x18\x03 \x01(\tR\vDirectiveId\x12N\n" +
+	"\x10DirectiveTimings\x18\x04 \x01(\v2\".NAlice.NAliceApi.DirectiveTimingsR\x10DirectiveTimings\x12q\n" +
+	"\aSucceed\x18\x01 \x01(\v2U.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompleted.TSucceedH\x00R\aSucceed\x12n\n" +
+	"\x06Failed\x18\x02 \x01(\v2T.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompleted.TFailedH\x00R\x06Failed\x12G\n" +
+	"\rAnyCapability\x18\x05 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderH\x01R\rAnyCapability\x88\x01\x01\x1a\n" +
 	"\n" +
-	"\bTSucceed\x1a}\n" +
-	"\aTFailed\x12\x1f\n" +
-	"\x05Error\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05errorR\x05error\x12Q\n" +
-	"\x04Code\x18\x02 \x01(\x0e23.NAlice.NAliceApi.TExecuteDirectiveError.EErrorCodeB\b\xaa\xdd\x1b\x04codeR\x04codeB\b\n" +
+	"\bTSucceed\x1ah\n" +
+	"\aTFailed\x12\x14\n" +
+	"\x05Error\x18\x01 \x01(\tR\x05Error\x12G\n" +
+	"\x04Code\x18\x02 \x01(\x0e23.NAlice.NAliceApi.TExecuteDirectiveError.EErrorCodeR\x04CodeB\b\n" +
 	"\x06StatusB\x10\n" +
-	"\x0e_AnyCapability\x1a\x8c\x01\n" +
-	"\x0fTCompletedChain\x12y\n" +
-	"\tCompleted\x18\x01 \x03(\v2L.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompletedB\r\xaa\xdd\x1b\tcompletedR\tcompleted:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06Result:\x04\xa8\xdd\x1b\x04\"\xdc\x01\n" +
-	"\x10DirectiveTimings\x12G\n" +
-	"\x10StartedTimestamp\x18\x01 \x01(\x04B\x15\xaa\xdd\x1b\x11started_timestampH\x00R\x11started_timestamp\x88\x01\x01\x12M\n" +
-	"\x12CompletedTimestamp\x18\x02 \x01(\x04B\x17\xaa\xdd\x1b\x13completed_timestampH\x01R\x13completed_timestamp\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x13\n" +
+	"\x0e_AnyCapability\x1a}\n" +
+	"\x0fTCompletedChain\x12j\n" +
+	"\tCompleted\x18\x01 \x03(\v2L.NAlice.NAliceApi.TExecuteDirectiveChainResponse.TExecutionResult.TCompletedR\tCompletedB\b\n" +
+	"\x06Result\"\xa4\x01\n" +
+	"\x10DirectiveTimings\x12/\n" +
+	"\x10StartedTimestamp\x18\x01 \x01(\x04H\x00R\x10StartedTimestamp\x88\x01\x01\x123\n" +
+	"\x12CompletedTimestamp\x18\x02 \x01(\x04H\x01R\x12CompletedTimestamp\x88\x01\x01B\x13\n" +
 	"\x11_StartedTimestampB\x15\n" +
-	"\x13_CompletedTimestamp\"\xdc\x01\n" +
-	"\x10ExecutionTimings\x12G\n" +
-	"\x10StartedTimestamp\x18\x01 \x01(\x04B\x15\xaa\xdd\x1b\x11started_timestampH\x00R\x11started_timestamp\x88\x01\x01\x12M\n" +
-	"\x12CompletedTimestamp\x18\x02 \x01(\x04B\x17\xaa\xdd\x1b\x13completed_timestampH\x01R\x13completed_timestamp\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x13\n" +
+	"\x13_CompletedTimestamp\"\xa4\x01\n" +
+	"\x10ExecutionTimings\x12/\n" +
+	"\x10StartedTimestamp\x18\x01 \x01(\x04H\x00R\x10StartedTimestamp\x88\x01\x01\x123\n" +
+	"\x12CompletedTimestamp\x18\x02 \x01(\x04H\x01R\x12CompletedTimestamp\x88\x01\x01B\x13\n" +
 	"\x11_StartedTimestampB\x15\n" +
-	"\x13_CompletedTimestampB\x84\x02\n" +
-	"lru.yandex.alice.protos.api.alicekit.events.sync_push_response.sync_response.execute_directive_chain_responseB\x1dExecuteDirectiveChainResponseP\x01Zsa.yandex-team.ru/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_chain_responseb\x06proto3"
+	"\x13_CompletedTimestampB\xb0\x02\n" +
+	"\x14com.NAlice.NAliceApiB\"ExecuteDirectiveChainResponseProtoP\x01Z\x92\x01github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_chain_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_response_sync_response_execute_directive_chain_response_execute_directive_chain_response_proto_rawDescOnce sync.Once

@@ -25,11 +25,11 @@ const (
 )
 
 type TResponseAnalyticsInfo struct {
-	state           protoimpl.MessageState                               `protogen:"open.v1"`
-	AnalyticsInfo   map[string]*alice_analytics_info.TAliceAnalyticsInfo `protobuf:"bytes,1,rep,name=AnalyticsInfo,json=analytics_info,proto3" json:"AnalyticsInfo,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	WinnerScenario  *TResponseAnalyticsInfo_TWinnerScenario              `protobuf:"bytes,10,opt,name=WinnerScenario,json=winner_scenario,proto3" json:"WinnerScenario,omitempty"`
-	IoTUserInfo     *iot_user_info.TIoTUserInfo                          `protobuf:"bytes,15,opt,name=IoTUserInfo,json=iot_user_info,proto3" json:"IoTUserInfo,omitempty"`
-	ChosenUtterance string                                               `protobuf:"bytes,20,opt,name=ChosenUtterance,json=chosen_utterance,proto3" json:"ChosenUtterance,omitempty"`
+	state           protoimpl.MessageState                       `protogen:"open.v1"`
+	AnalyticsInfo   []*TResponseAnalyticsInfo_AnalyticsInfoEntry `protobuf:"bytes,1,rep,name=AnalyticsInfo,proto3" json:"AnalyticsInfo,omitempty"`
+	WinnerScenario  *TResponseAnalyticsInfo_TWinnerScenario      `protobuf:"bytes,10,opt,name=WinnerScenario,proto3" json:"WinnerScenario,omitempty"`
+	IoTUserInfo     *iot_user_info.TIoTUserInfo                  `protobuf:"bytes,15,opt,name=IoTUserInfo,proto3" json:"IoTUserInfo,omitempty"`
+	ChosenUtterance string                                       `protobuf:"bytes,20,opt,name=ChosenUtterance,proto3" json:"ChosenUtterance,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -64,7 +64,7 @@ func (*TResponseAnalyticsInfo) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TResponseAnalyticsInfo) GetAnalyticsInfo() map[string]*alice_analytics_info.TAliceAnalyticsInfo {
+func (x *TResponseAnalyticsInfo) GetAnalyticsInfo() []*TResponseAnalyticsInfo_AnalyticsInfoEntry {
 	if x != nil {
 		return x.AnalyticsInfo
 	}
@@ -92,16 +92,68 @@ func (x *TResponseAnalyticsInfo) GetChosenUtterance() string {
 	return ""
 }
 
+type TResponseAnalyticsInfo_AnalyticsInfoEntry struct {
+	state         protoimpl.MessageState                    `protogen:"open.v1"`
+	Key           string                                    `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *alice_analytics_info.TAliceAnalyticsInfo `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TResponseAnalyticsInfo_AnalyticsInfoEntry) Reset() {
+	*x = TResponseAnalyticsInfo_AnalyticsInfoEntry{}
+	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TResponseAnalyticsInfo_AnalyticsInfoEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TResponseAnalyticsInfo_AnalyticsInfoEntry) ProtoMessage() {}
+
+func (x *TResponseAnalyticsInfo_AnalyticsInfoEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TResponseAnalyticsInfo_AnalyticsInfoEntry.ProtoReflect.Descriptor instead.
+func (*TResponseAnalyticsInfo_AnalyticsInfoEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *TResponseAnalyticsInfo_AnalyticsInfoEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TResponseAnalyticsInfo_AnalyticsInfoEntry) GetValue() *alice_analytics_info.TAliceAnalyticsInfo {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 type TResponseAnalyticsInfo_TWinnerScenario struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TResponseAnalyticsInfo_TWinnerScenario) Reset() {
 	*x = TResponseAnalyticsInfo_TWinnerScenario{}
-	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[1]
+	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -113,7 +165,7 @@ func (x *TResponseAnalyticsInfo_TWinnerScenario) String() string {
 func (*TResponseAnalyticsInfo_TWinnerScenario) ProtoMessage() {}
 
 func (x *TResponseAnalyticsInfo_TWinnerScenario) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[1]
+	mi := &file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -126,7 +178,7 @@ func (x *TResponseAnalyticsInfo_TWinnerScenario) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use TResponseAnalyticsInfo_TWinnerScenario.ProtoReflect.Descriptor instead.
 func (*TResponseAnalyticsInfo_TWinnerScenario) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDescGZIP(), []int{0, 0}
+	return file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *TResponseAnalyticsInfo_TWinnerScenario) GetName() string {
@@ -140,22 +192,22 @@ var File_alice_protos_api_alicekit_analytics_response_analytics_info_response_an
 
 const file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDesc = "" +
 	"\n" +
-	"Yalice/protos/api/alicekit/analytics/response_analytics_info/response_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aSalice/protos/api/alicekit/analytics/alice_analytics_info/alice_analytics_info.proto\x1a?alice/protos/api/alicekit/iot/iot_user_info/iot_user_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfd\v\n" +
-	"\x16TResponseAnalyticsInfo\x12v\n" +
-	"\rAnalyticsInfo\x18\x01 \x03(\v2;.NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntryB\x12\xaa\xdd\x1b\x0eanalytics_infoR\x0eanalytics_info\x12v\n" +
+	"Yalice/protos/api/alicekit/analytics/response_analytics_info/response_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aSalice/protos/api/alicekit/analytics/alice_analytics_info/alice_analytics_info.proto\x1a?alice/protos/api/alicekit/iot/iot_user_info/iot_user_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\v\n" +
+	"\x16TResponseAnalyticsInfo\x12a\n" +
+	"\rAnalyticsInfo\x18\x01 \x03(\v2;.NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntryR\rAnalyticsInfo\x12`\n" +
 	"\x0eWinnerScenario\x18\n" +
-	" \x01(\v28.NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenarioB\x13\xaa\xdd\x1b\x0fwinner_scenarioR\x0fwinner_scenario\x12U\n" +
-	"\vIoTUserInfo\x18\x0f \x01(\v2\x1e.NAlice.NAliceApi.TIoTUserInfoB\x11\xaa\xdd\x1b\riot_user_infoR\riot_user_info\x12?\n" +
-	"\x0fChosenUtterance\x18\x14 \x01(\tB\x14\xaa\xdd\x1b\x10chosen_utteranceR\x10chosen_utterance\x1a5\n" +
-	"\x0fTWinnerScenario\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x04\xa8\xdd\x1b\x04\x1ag\n" +
+	" \x01(\v28.NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenarioR\x0eWinnerScenario\x12@\n" +
+	"\vIoTUserInfo\x18\x0f \x01(\v2\x1e.NAlice.NAliceApi.TIoTUserInfoR\vIoTUserInfo\x12(\n" +
+	"\x0fChosenUtterance\x18\x14 \x01(\tR\x0fChosenUtterance\x1ac\n" +
 	"\x12AnalyticsInfoEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12;\n" +
-	"\x05value\x18\x02 \x01(\v2%.NAlice.NAliceApi.TAliceAnalyticsInfoR\x05value:\x028\x01J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\x17\x10\x18J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\x15\x10\x16J\x04\b\t\x10\n" +
+	"\x05value\x18\x02 \x01(\v2%.NAlice.NAliceApi.TAliceAnalyticsInfoR\x05value\x1a%\n" +
+	"\x0fTWinnerScenario\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04NameJ\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\x17\x10\x18J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\x15\x10\x16J\x04\b\t\x10\n" +
 	"J\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x16\x10\x17J\x04\b\x18\x10\x19J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b \x10!J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b$\x10%J\x04\b%\x10&J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b*\x10+R\rModifiersInfoR\x17CombinatorAnalyticsInfoR\tUsersInfoR\x11OriginalUtteranceR\x15TunnellerRawResponsesR\x12DeviceStateActionsR\x10RecognizedActionR\x11RecognizedActionsR\x0fScenarioTimingsR\x13PreClassifyDurationR\x14PostClassifyDurationR\x14ServiceSourceTimingsR\x0eShownUtteranceR\x19ParentProductScenarioNameR\vUserProfileR\bLocationR\x15ModifierAnalyticsInfoR\x16ModifiersAnalyticsInfoR\x18CombinatorsAnalyticsInfoR\x12UserClassificationR\x12ClassificationInfoR\x0eActualTimezoneR\x17SummarizerAnalyticsInfoR\x16RephraserAnalyticsInfoR\x12FiltrationSettingsR\x1fWebSearchRephraserAnalyticsInfoR\fNluDebugInfoR\n" +
 	"InAliceTwoR\x12InAliceTwoWaitListR\x11EffectiveAliceTwoR\rWebSearchInfoR\n" +
-	"Alice2ModeR\x0fActualTimestampR\x15LaunchedScenariosInfoR\x16TerramindAnalyticsInfoR\x11MegamindDebugInfoR\x17OnboardingAnalyticsInfoB\xb3\x01\n" +
-	"Eru.yandex.alice.protos.api.alicekit.analytics.response_analytics_infoB\x1aResponseAnalyticsInfoProtoP\x01ZLa.yandex-team.ru/alice/protos/api/alicekit/analytics/response_analytics_infob\x06proto3"
+	"Alice2ModeR\x0fActualTimestampR\x15LaunchedScenariosInfoR\x16TerramindAnalyticsInfoR\x11MegamindDebugInfoR\x17OnboardingAnalyticsInfoB\x80\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1aResponseAnalyticsInfoProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/analytics/response_analytics_info\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_rawDescOnce sync.Once
@@ -171,15 +223,15 @@ func file_alice_protos_api_alicekit_analytics_response_analytics_info_response_a
 
 var file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_goTypes = []any{
-	(*TResponseAnalyticsInfo)(nil),                 // 0: NAlice.NAliceApi.TResponseAnalyticsInfo
-	(*TResponseAnalyticsInfo_TWinnerScenario)(nil), // 1: NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenario
-	nil,                                // 2: NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntry
-	(*iot_user_info.TIoTUserInfo)(nil), // 3: NAlice.NAliceApi.TIoTUserInfo
-	(*alice_analytics_info.TAliceAnalyticsInfo)(nil), // 4: NAlice.NAliceApi.TAliceAnalyticsInfo
+	(*TResponseAnalyticsInfo)(nil),                    // 0: NAlice.NAliceApi.TResponseAnalyticsInfo
+	(*TResponseAnalyticsInfo_AnalyticsInfoEntry)(nil), // 1: NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntry
+	(*TResponseAnalyticsInfo_TWinnerScenario)(nil),    // 2: NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenario
+	(*iot_user_info.TIoTUserInfo)(nil),                // 3: NAlice.NAliceApi.TIoTUserInfo
+	(*alice_analytics_info.TAliceAnalyticsInfo)(nil),  // 4: NAlice.NAliceApi.TAliceAnalyticsInfo
 }
 var file_alice_protos_api_alicekit_analytics_response_analytics_info_response_analytics_info_proto_depIdxs = []int32{
-	2, // 0: NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfo:type_name -> NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntry
-	1, // 1: NAlice.NAliceApi.TResponseAnalyticsInfo.WinnerScenario:type_name -> NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenario
+	1, // 0: NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfo:type_name -> NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntry
+	2, // 1: NAlice.NAliceApi.TResponseAnalyticsInfo.WinnerScenario:type_name -> NAlice.NAliceApi.TResponseAnalyticsInfo.TWinnerScenario
 	3, // 2: NAlice.NAliceApi.TResponseAnalyticsInfo.IoTUserInfo:type_name -> NAlice.NAliceApi.TIoTUserInfo
 	4, // 3: NAlice.NAliceApi.TResponseAnalyticsInfo.AnalyticsInfoEntry.value:type_name -> NAlice.NAliceApi.TAliceAnalyticsInfo
 	4, // [4:4] is the sub-list for method output_type

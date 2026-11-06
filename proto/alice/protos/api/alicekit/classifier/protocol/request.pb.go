@@ -137,8 +137,8 @@ const file_alice_protos_api_alicekit_classifier_protocol_request_proto_rawDesc =
 	"\x04Text\x18\x02 \x01(\tR\x04text\x12^\n" +
 	"\x0fRuntimeSettings\x18\x03 \x01(\v23.NAlice.NAliceApi.TClassifyRequest.TRuntimeSettingsR\x10runtime_settings\x1aE\n" +
 	"\x10TRuntimeSettings\x121\n" +
-	"\aPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructR\apayloadB\x93\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.classifier.protocolB\x16ClassifierRequestProtoP\x01Z>a.yandex-team.ru/alice/protos/api/alicekit/classifier/protocolb\x06proto3"
+	"\aPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructR\apayloadB\xb2\x01\n" +
+	"7ru.yandex.alice.protos.api.alicekit.classifier.protocolB\x16ClassifierRequestProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/classifier/protocolb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_classifier_protocol_request_proto_rawDescOnce sync.Once

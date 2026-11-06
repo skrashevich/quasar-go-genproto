@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_position/capability.proto
 
-package iotpositionpb
+package iot_position
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -394,8 +394,8 @@ const file_alice_protos_endpoint_capabilities_iot_position_capability_proto_rawD
 	"capabilityR\n" +
 	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xb2\x01\x1af\n" +
 	"\x18TIotPositionChangedEvent\x12?\n" +
-	"\x0fPositionChanged\x18\x01 \x01(\bB\x14\xaa\xdd\x1b\x10position_changedR\x10position_changed:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xb3\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8d\x02B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bTIotPositionCapabilityProtoP\x01ZNa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_position;iotpositionpbb\x06proto3"
+	"\x0fPositionChanged\x18\x01 \x01(\bB\x14\xaa\xdd\x1b\x10position_changedR\x10position_changed:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xb3\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8d\x02B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bTIotPositionCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_positionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_position_capability_proto_rawDescOnce sync.Once

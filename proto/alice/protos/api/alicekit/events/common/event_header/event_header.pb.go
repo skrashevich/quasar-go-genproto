@@ -24,15 +24,14 @@ const (
 
 type TEventHeader struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	MessageId     string                       `protobuf:"bytes,1,opt,name=MessageId,json=messageId,proto3" json:"MessageId,omitempty"`
-	RefMessageId  string                       `protobuf:"bytes,2,opt,name=RefMessageId,json=refMessageId,proto3" json:"RefMessageId,omitempty"`
-	SubRequestRef *TEventHeader_TSubRequestRef `protobuf:"bytes,13,opt,name=SubRequestRef,json=sub_request_ref,proto3" json:"SubRequestRef,omitempty"`
-	StreamId      *int64                       `protobuf:"varint,4,opt,name=StreamId,json=streamId,proto3,oneof" json:"StreamId,omitempty"`
-	Ack           *int64                       `protobuf:"varint,5,opt,name=Ack,json=ack,proto3,oneof" json:"Ack,omitempty"`
-	RtLogId       *string                      `protobuf:"bytes,8,opt,name=RtLogId,json=rtLogId,proto3,oneof" json:"RtLogId,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/common/event_header/event_header.proto.
-	SubRequestId  *string `protobuf:"bytes,11,opt,name=SubRequestId,json=sub_request_id,proto3,oneof" json:"SubRequestId,omitempty"`
-	RetryNumber   *uint32 `protobuf:"varint,12,opt,name=RetryNumber,json=retry_number,proto3,oneof" json:"RetryNumber,omitempty"`
+	MessageId     string                       `protobuf:"bytes,1,opt,name=MessageId,proto3" json:"MessageId,omitempty"`
+	RefMessageId  string                       `protobuf:"bytes,2,opt,name=RefMessageId,proto3" json:"RefMessageId,omitempty"`
+	SubRequestRef *TEventHeader_TSubRequestRef `protobuf:"bytes,13,opt,name=SubRequestRef,proto3" json:"SubRequestRef,omitempty"`
+	StreamId      *int64                       `protobuf:"varint,4,opt,name=StreamId,proto3,oneof" json:"StreamId,omitempty"`
+	Ack           *int64                       `protobuf:"varint,5,opt,name=Ack,proto3,oneof" json:"Ack,omitempty"`
+	RtLogId       *string                      `protobuf:"bytes,8,opt,name=RtLogId,proto3,oneof" json:"RtLogId,omitempty"`
+	SubRequestId  *string                      `protobuf:"bytes,11,opt,name=SubRequestId,proto3,oneof" json:"SubRequestId,omitempty"`
+	RetryNumber   *uint32                      `protobuf:"varint,12,opt,name=RetryNumber,proto3,oneof" json:"RetryNumber,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -109,7 +108,6 @@ func (x *TEventHeader) GetRtLogId() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/common/event_header/event_header.proto.
 func (x *TEventHeader) GetSubRequestId() string {
 	if x != nil && x.SubRequestId != nil {
 		return *x.SubRequestId
@@ -126,8 +124,8 @@ func (x *TEventHeader) GetRetryNumber() uint32 {
 
 type TEventHeader_TSubRequestRef struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MessageId     string                 `protobuf:"bytes,1,opt,name=MessageId,json=message_id,proto3" json:"MessageId,omitempty"`
-	RequestId     string                 `protobuf:"bytes,2,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	MessageId     string                 `protobuf:"bytes,1,opt,name=MessageId,proto3" json:"MessageId,omitempty"`
+	RequestId     string                 `protobuf:"bytes,2,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -180,23 +178,19 @@ var File_alice_protos_api_alicekit_events_common_event_header_event_header_proto
 
 const file_alice_protos_api_alicekit_events_common_event_header_event_header_proto_rawDesc = "" +
 	"\n" +
-	"Galice/protos/api/alicekit/events/common/event_header/event_header.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe0\x05\n" +
-	"\fTEventHeader\x12+\n" +
-	"\tMessageId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tmessageIdR\tmessageId\x124\n" +
-	"\fRefMessageId\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\frefMessageIdR\frefMessageId\x12j\n" +
-	"\rSubRequestRef\x18\r \x01(\v2-.NAlice.NAliceApi.TEventHeader.TSubRequestRefB\x13\xaa\xdd\x1b\x0fsub_request_refR\x0fsub_request_ref\x12-\n" +
-	"\bStreamId\x18\x04 \x01(\x03B\f\xaa\xdd\x1b\bstreamIdH\x00R\bstreamId\x88\x01\x01\x12\x1e\n" +
-	"\x03Ack\x18\x05 \x01(\x03B\a\xaa\xdd\x1b\x03ackH\x01R\x03ack\x88\x01\x01\x12*\n" +
-	"\aRtLogId\x18\b \x01(\tB\v\xaa\xdd\x1b\artLogIdH\x02R\artLogId\x88\x01\x01\x12?\n" +
-	"\fSubRequestId\x18\v \x01(\tB\x14\xaa\xdd\x1b\x0esub_request_id\x18\x01H\x03R\x0esub_request_id\x88\x01\x01\x128\n" +
-	"\vRetryNumber\x18\f \x01(\rB\x10\xaa\xdd\x1b\fretry_numberH\x04R\fretry_number\x88\x01\x01\x1at\n" +
-	"\x0eTSubRequestRef\x12-\n" +
-	"\tMessageId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"message_idR\n" +
-	"message_id\x12-\n" +
-	"\tRequestId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"Galice/protos/api/alicekit/events/common/event_header/event_header.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x04\n" +
+	"\fTEventHeader\x12\x1c\n" +
+	"\tMessageId\x18\x01 \x01(\tR\tMessageId\x12\"\n" +
+	"\fRefMessageId\x18\x02 \x01(\tR\fRefMessageId\x12S\n" +
+	"\rSubRequestRef\x18\r \x01(\v2-.NAlice.NAliceApi.TEventHeader.TSubRequestRefR\rSubRequestRef\x12\x1f\n" +
+	"\bStreamId\x18\x04 \x01(\x03H\x00R\bStreamId\x88\x01\x01\x12\x15\n" +
+	"\x03Ack\x18\x05 \x01(\x03H\x01R\x03Ack\x88\x01\x01\x12\x1d\n" +
+	"\aRtLogId\x18\b \x01(\tH\x02R\aRtLogId\x88\x01\x01\x12'\n" +
+	"\fSubRequestId\x18\v \x01(\tH\x03R\fSubRequestId\x88\x01\x01\x12%\n" +
+	"\vRetryNumber\x18\f \x01(\rH\x04R\vRetryNumber\x88\x01\x01\x1aL\n" +
+	"\x0eTSubRequestRef\x12\x1c\n" +
+	"\tMessageId\x18\x01 \x01(\tR\tMessageId\x12\x1c\n" +
+	"\tRequestId\x18\x02 \x01(\tR\tRequestIdB\v\n" +
 	"\t_StreamIdB\x06\n" +
 	"\x04_AckB\n" +
 	"\n" +
@@ -204,8 +198,8 @@ const file_alice_protos_api_alicekit_events_common_event_header_event_header_pro
 	"\r_SubRequestIdB\x0e\n" +
 	"\f_RetryNumberJ\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vR\aEventIdR\x0eSequenceNumberR\vRefStreamIdR\tNamespaceR\x04NameB\x96\x01\n" +
-	">ru.yandex.alice.protos.api.alicekit.events.common.event_headerB\vEventHeaderP\x01ZEa.yandex-team.ru/alice/protos/api/alicekit/events/common/event_headerb\x06proto3"
+	"\x10\vR\aEventIdR\x0eSequenceNumberR\vRefStreamIdR\tNamespaceR\x04NameB\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10EventHeaderProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/event_header\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_event_header_event_header_proto_rawDescOnce sync.Once

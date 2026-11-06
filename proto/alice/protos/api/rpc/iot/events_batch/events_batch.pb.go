@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/rpc/iot/events_batch/events_batch.proto
 
-package eventsbatchpb
+package events_batch
 
 import (
 	environment_state "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/environment_state"
@@ -26,8 +26,8 @@ const (
 
 type TIoTEventsBatchRequest struct {
 	state            protoimpl.MessageState               `protogen:"open.v1"`
-	Batch            []*events.TEndpointEvents            `protobuf:"bytes,1,rep,name=Batch,json=batch,proto3" json:"Batch,omitempty"`
-	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,2,opt,name=EnvironmentState,json=environment_state,proto3" json:"EnvironmentState,omitempty"`
+	Batch            []*events.TEndpointEvents            `protobuf:"bytes,1,rep,name=Batch,proto3" json:"Batch,omitempty"`
+	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,2,opt,name=EnvironmentState,proto3" json:"EnvironmentState,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -116,12 +116,13 @@ var File_alice_protos_api_rpc_iot_events_batch_events_batch_proto protoreflect.F
 
 const file_alice_protos_api_rpc_iot_events_batch_events_batch_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/api/rpc/iot/events_batch/events_batch.proto\x12\x06NAlice\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc1\x01\n" +
-	"\x16TIoTEventsBatchRequest\x128\n" +
-	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsB\t\xaa\xdd\x1b\x05batchR\x05batch\x12g\n" +
-	"\x10EnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x15\xaa\xdd\x1b\x11environment_stateR\x11environment_state:\x04\xa8\xdd\x1b\x04\"\x1f\n" +
-	"\x17TIoTEventsBatchResponse:\x04\xa8\xdd\x1b\x04B\x80\x01\n" +
-	"+ru.yandex.alice.protos.api.rpc.events_batchB\vEventsBatchZDa.yandex-team.ru/alice/protos/api/rpc/iot/events_batch;eventsbatchpbb\x06proto3"
+	"8alice/protos/api/rpc/iot/events_batch/events_batch.proto\x12\x06NAlice\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x98\x01\n" +
+	"\x16TIoTEventsBatchRequest\x12-\n" +
+	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsR\x05Batch\x12O\n" +
+	"\x10EnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateR\x10EnvironmentState\"\x19\n" +
+	"\x17TIoTEventsBatchResponseB\xad\x01\n" +
+	"\n" +
+	"com.NAliceB\x10EventsBatchProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/iot/events_batch\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_iot_events_batch_events_batch_proto_rawDescOnce sync.Once

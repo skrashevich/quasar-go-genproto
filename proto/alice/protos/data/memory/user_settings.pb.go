@@ -83,8 +83,8 @@ const file_alice_protos_data_memory_user_settings_proto_rawDesc = "" +
 	"\x12UseBirthDateFromId\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16use_birth_date_from_idH\x00R\x16use_birth_date_from_id\x88\x01\x01\x12P\n" +
 	"\x13OnboardingCompleted\x18\x02 \x01(\bB\x18\xaa\xdd\x1b\x14onboarding_completedH\x01R\x14onboarding_completed\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x15\n" +
 	"\x13_UseBirthDateFromIdB\x16\n" +
-	"\x14_OnboardingCompletedBO\n" +
-	"\"ru.yandex.alice.protos.data.memoryZ)a.yandex-team.ru/alice/protos/data/memoryb\x06proto3"
+	"\x14_OnboardingCompletedBn\n" +
+	"\"ru.yandex.alice.protos.data.memoryZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/memoryb\x06proto3"
 
 var (
 	file_alice_protos_data_memory_user_settings_proto_rawDescOnce sync.Once

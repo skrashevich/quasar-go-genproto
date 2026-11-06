@@ -65,8 +65,8 @@ const file_quasar_apphost_libs_cgi_parser_proto_extensions_extension_proto_rawDe
 	"?quasar/apphost/libs/cgi_parser/proto/extensions/extension.proto\x12\x1eNQuasar.NCgiParser.NExtensions\x1a google/protobuf/descriptor.proto::\n" +
 	"\bcgi_name\x12\x1d.google.protobuf.FieldOptions\x18\x87\xcd\x0e \x03(\tR\acgiName:K\n" +
 	"\x11cgi_default_value\x12\x1d.google.protobuf.FieldOptions\x18\x88\xcd\x0e \x03(\tR\x0fcgiDefaultValue:U\n" +
-	"\x16cgi_repeated_delimiter\x12\x1d.google.protobuf.FieldOptions\x18\x89\xcd\x0e \x01(\tR\x14cgiRepeatedDelimiterB\x88\x01\n" +
-	"9ru.yandex.quasar.apphost.libs.cgi_parser.proto.extensionsB\tCgiParserZ@a.yandex-team.ru/quasar/apphost/libs/cgi_parser/proto/extensionsb\x06proto3"
+	"\x16cgi_repeated_delimiter\x12\x1d.google.protobuf.FieldOptions\x18\x89\xcd\x0e \x01(\tR\x14cgiRepeatedDelimiterB\xa7\x01\n" +
+	"9ru.yandex.quasar.apphost.libs.cgi_parser.proto.extensionsB\tCgiParserZ_github.com/skrashevich/quasar-go-genproto/proto/quasar/apphost/libs/cgi_parser/proto/extensionsb\x06proto3"
 
 var file_quasar_apphost_libs_cgi_parser_proto_extensions_extension_proto_goTypes = []any{
 	(*descriptorpb.FieldOptions)(nil), // 0: google.protobuf.FieldOptions

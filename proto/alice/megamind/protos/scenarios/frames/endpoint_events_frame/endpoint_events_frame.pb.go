@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/endpoint_events_frame/endpoint_events_frame.proto
 
-package endpointeventsframe
+package endpoint_events_frame
 
 import (
 	events "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/events"
@@ -85,14 +85,14 @@ type isTEndpointEventsBatchSlot_Value interface {
 }
 
 type TEndpointEventsBatchSlot_BatchValue struct {
-	BatchValue *events.TEndpointEventsBatch `protobuf:"bytes,1,opt,name=BatchValue,json=batch_value,proto3,oneof"`
+	BatchValue *events.TEndpointEventsBatch `protobuf:"bytes,1,opt,name=BatchValue,proto3,oneof"`
 }
 
 func (*TEndpointEventsBatchSlot_BatchValue) isTEndpointEventsBatchSlot_Value() {}
 
 type TEndpointEventsBatchSemanticFrame struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Batch         *TEndpointEventsBatchSlot `protobuf:"bytes,1,opt,name=Batch,json=batch,proto3" json:"Batch,omitempty"`
+	Batch         *TEndpointEventsBatchSlot `protobuf:"bytes,1,opt,name=Batch,proto3" json:"Batch,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -138,14 +138,16 @@ var File_alice_megamind_protos_scenarios_frames_endpoint_events_frame_endpoint_e
 
 const file_alice_megamind_protos_scenarios_frames_endpoint_events_frame_endpoint_events_frame_proto_rawDesc = "" +
 	"\n" +
-	"Xalice/megamind/protos/scenarios/frames/endpoint_events_frame/endpoint_events_frame.proto\x12\x06NAlice\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaa\x01\n" +
-	"\x18TEndpointEventsBatchSlot\x12t\n" +
+	"Xalice/megamind/protos/scenarios/frames/endpoint_events_frame/endpoint_events_frame.proto\x12\x06NAlice\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"c\n" +
+	"\x18TEndpointEventsBatchSlot\x12>\n" +
 	"\n" +
-	"BatchValue\x18\x01 \x01(\v2\x1c.NAlice.TEndpointEventsBatchB3\xa0\xdd\x1b\x05\xaa\xdd\x1b\vbatch_value\u0085\x1c\x1ccustom.endpoint.events.batchH\x00R\vbatch_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\x94\x01\n" +
-	"!TEndpointEventsBatchSemanticFrame\x12J\n" +
-	"\x05Batch\x18\x01 \x01(\v2 .NAlice.TEndpointEventsBatchSlotB\x12\xaa\xdd\x1b\x05batch\xba\x85\x1c\x05batchR\x05batch:#\xa8\xdd\x1b\x04\x9a\xff\x1b\x1balice.endpoint.events.batchB\xc2\x01\n" +
-	"Fru.yandex.alice.megamind.protos.scenarios.frames.endpoint_events_frameB\x13FrameEndpointEventsP\x01Zaa.yandex-team.ru/alice/megamind/protos/scenarios/frames/endpoint_events_frame;endpointeventsframeb\x06proto3"
+	"BatchValue\x18\x01 \x01(\v2\x1c.NAlice.TEndpointEventsBatchH\x00R\n" +
+	"BatchValueB\a\n" +
+	"\x05Value\"[\n" +
+	"!TEndpointEventsBatchSemanticFrame\x126\n" +
+	"\x05Batch\x18\x01 \x01(\v2 .NAlice.TEndpointEventsBatchSlotR\x05BatchB\xcc\x01\n" +
+	"\n" +
+	"com.NAliceB\x18EndpointEventsFrameProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/endpoint_events_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_endpoint_events_frame_endpoint_events_frame_proto_rawDescOnce sync.Once

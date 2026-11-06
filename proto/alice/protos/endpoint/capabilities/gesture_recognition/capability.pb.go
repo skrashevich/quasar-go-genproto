@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/gesture_recognition/capability.proto
 
-package gesture_recognitionpb
+package gesture_recognition
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -340,8 +340,8 @@ const file_alice_protos_endpoint_capabilities_gesture_recognition_capability_pro
 	"\n" +
 	"\x06Resume\x10\x01\x12\f\n" +
 	"\bPrevious\x10\x02\x12\b\n" +
-	"\x04Next\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cnB\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cGestureRecognitionCapabilityP\x01Z]a.yandex-team.ru/alice/protos/endpoint/capabilities/gesture_recognition;gesture_recognitionpbb\x06proto3"
+	"\x04Next\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cnB\xb6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cGestureRecognitionCapabilityP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/gesture_recognitionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_gesture_recognition_capability_proto_rawDescOnce sync.Once

@@ -122,7 +122,7 @@ const file_alice_protos_data_video_centaur_film_details_proto_rawDesc = "" +
 	"\fRelatedFilms\x18\x05 \x03(\v2\x15.NAlice.TOttVideoItemB\x11\xaa\xdd\x1b\rrelated_filmsR\rrelated_films\x129\n" +
 	"\rThumbnailLogo\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0ethumbnail_logoR\x0ethumbnail_logo\x12B\n" +
 	"\x10ShortDescription\x18\a \x01(\tB\x15\xaa\xdd\x1b\x11short_descriptionR\x11short_description\x12P\n" +
-	"\rVoiceControls\x18\x04 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04J\x04\b\x03\x10\x04R\fRelatedItemsB2Z0a.yandex-team.ru/alice/protos/data/video/centaurb\x06proto3"
+	"\rVoiceControls\x18\x04 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04J\x04\b\x03\x10\x04R\fRelatedItemsBQZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/video/centaurb\x06proto3"
 
 var (
 	file_alice_protos_data_video_centaur_film_details_proto_rawDescOnce sync.Once

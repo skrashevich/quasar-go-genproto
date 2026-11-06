@@ -932,8 +932,8 @@ const file_alice_protos_data_tv_carousel_proto_rawDesc = "" +
 	"\tContentId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"content_idR\n" +
 	"content_id\x123\n" +
-	"\vContentType\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fcontent_typeR\fcontent_type:\x04\xa8\xdd\x1b\x04BQ\n" +
-	"\x1eru.yandex.alice.protos.data.tvB\bCarouselZ%a.yandex-team.ru/alice/protos/data/tvb\x06proto3"
+	"\vContentType\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fcontent_typeR\fcontent_type:\x04\xa8\xdd\x1b\x04Bp\n" +
+	"\x1eru.yandex.alice.protos.data.tvB\bCarouselZDgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_carousel_proto_rawDescOnce sync.Once

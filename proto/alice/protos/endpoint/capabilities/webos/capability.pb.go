@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/webos/capability.proto
 
-package onoffpb
+package webos
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -433,8 +433,8 @@ const file_alice_protos_endpoint_capabilities_webos_capability_proto_rawDesc = "
 	"\x05AppId\x18\x01 \x01(\tB\n" +
 	"\xaa\xdd\x1b\x06app_idR\x06app_id\x120\n" +
 	"\n" +
-	"ParamsJson\x18\x02 \x01(\fB\x0f\xaa\xdd\x1b\vparams_jsonR\vparams_json:(\x92\x82\x19\x1bweb_os_manage_app_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x05Bs\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesP\x01ZAa.yandex-team.ru/alice/protos/endpoint/capabilities/webos;onoffpbb\x06proto3"
+	"ParamsJson\x18\x02 \x01(\fB\x0f\xaa\xdd\x1b\vparams_jsonR\vparams_json:(\x92\x82\x19\x1bweb_os_manage_app_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb8\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x05B\x8a\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/webosb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_webos_capability_proto_rawDescOnce sync.Once

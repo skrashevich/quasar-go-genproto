@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_window_open_detection/capability.proto
 
-package iotwindowopendetectionpb
+package iot_window_open_detection
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -73,9 +73,9 @@ func (TIotWindowOpenDetectionCapability_TCondition_EState) EnumDescriptor() ([]b
 
 type TIotWindowOpenDetectionCapability struct {
 	state         protoimpl.MessageState                         `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                    `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotWindowOpenDetectionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotWindowOpenDetectionCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                    `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotWindowOpenDetectionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotWindowOpenDetectionCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -169,8 +169,8 @@ func (*TIotWindowOpenDetectionCapability_TParameters) Descriptor() ([]byte, []in
 
 type TIotWindowOpenDetectionCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enable        bool                   `protobuf:"varint,1,opt,name=Enable,json=enable,proto3" json:"Enable,omitempty"`
-	IsOpen        bool                   `protobuf:"varint,2,opt,name=IsOpen,json=is_open,proto3" json:"IsOpen,omitempty"`
+	Enable        bool                   `protobuf:"varint,1,opt,name=Enable,proto3" json:"Enable,omitempty"`
+	IsOpen        bool                   `protobuf:"varint,2,opt,name=IsOpen,proto3" json:"IsOpen,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -221,8 +221,8 @@ func (x *TIotWindowOpenDetectionCapability_TState) GetIsOpen() bool {
 
 type TIotWindowOpenDetectionCapability_TSetIotWindowOpenDetectionDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Enable        bool                   `protobuf:"varint,1,opt,name=Enable,json=enable,proto3" json:"Enable,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Enable        bool                   `protobuf:"varint,1,opt,name=Enable,proto3" json:"Enable,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -273,7 +273,7 @@ func (x *TIotWindowOpenDetectionCapability_TSetIotWindowOpenDetectionDirective) 
 
 type TIotWindowOpenDetectionCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Capability    *TIotWindowOpenDetectionCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotWindowOpenDetectionCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,7 +317,7 @@ func (x *TIotWindowOpenDetectionCapability_TUpdateStateEvent) GetCapability() *T
 
 type TIotWindowOpenDetectionCapability_TCondition struct {
 	state         protoimpl.MessageState                              `protogen:"open.v1"`
-	State         TIotWindowOpenDetectionCapability_TCondition_EState `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.TIotWindowOpenDetectionCapability_TCondition_EState" json:"State,omitempty"`
+	State         TIotWindowOpenDetectionCapability_TCondition_EState `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.TIotWindowOpenDetectionCapability_TCondition_EState" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -363,35 +363,32 @@ var File_alice_protos_endpoint_capabilities_iot_window_open_detection_capability
 
 const file_alice_protos_endpoint_capabilities_iot_window_open_detection_capability_proto_rawDesc = "" +
 	"\n" +
-	"Malice/protos/endpoint/capabilities/iot_window_open_detection/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcf\x06\n" +
-	"!TIotWindowOpenDetectionCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12e\n" +
+	"Malice/protos/endpoint/capabilities/iot_window_open_detection/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x81\x05\n" +
+	"!TIotWindowOpenDetectionCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12U\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v25.NAlice.TIotWindowOpenDetectionCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12Q\n" +
-	"\x05State\x18\x03 \x01(\v20.NAlice.TIotWindowOpenDetectionCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aX\n" +
-	"\x06TState\x12\"\n" +
-	"\x06Enable\x18\x01 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06enableR\x06enable\x12$\n" +
-	"\x06IsOpen\x18\x02 \x01(\bB\v\xaa\xdd\x1b\ais_openR\ais_open:\x04\xa8\xdd\x1b\x04\x1a\x9e\x01\n" +
-	"#TSetIotWindowOpenDetectionDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\"\n" +
-	"\x06Enable\x18\x01 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06enableR\x06enable:4\x92\x82\x19'set_iot_window_open_detection_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc4\x03\x1ax\n" +
-	"\x11TUpdateStateEvent\x12Y\n" +
+	"Parameters\x18\x02 \x01(\v25.NAlice.TIotWindowOpenDetectionCapability.TParametersR\n" +
+	"Parameters\x12F\n" +
+	"\x05State\x18\x03 \x01(\v20.NAlice.TIotWindowOpenDetectionCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a8\n" +
+	"\x06TState\x12\x16\n" +
+	"\x06Enable\x18\x01 \x01(\bR\x06Enable\x12\x16\n" +
+	"\x06IsOpen\x18\x02 \x01(\bR\x06IsOpen\x1aR\n" +
+	"#TSetIotWindowOpenDetectionDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x16\n" +
+	"\x06Enable\x18\x01 \x01(\bR\x06Enable\x1a^\n" +
+	"\x11TUpdateStateEvent\x12I\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2).NAlice.TIotWindowOpenDetectionCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c`\x1a\xa1\x01\n" +
+	"Capability\x18\x01 \x01(\v2).NAlice.TIotWindowOpenDetectionCapabilityR\n" +
+	"Capability\x1a\x90\x01\n" +
 	"\n" +
-	"TCondition\x12\\\n" +
-	"\x05State\x18\x01 \x01(\x0e2;.NAlice.TIotWindowOpenDetectionCapability.TCondition.EStateB\t\xaa\xdd\x1b\x05stateR\x05state\"/\n" +
+	"TCondition\x12Q\n" +
+	"\x05State\x18\x01 \x01(\x0e2;.NAlice.TIotWindowOpenDetectionCapability.TCondition.EStateR\x05State\"/\n" +
 	"\x06EState\x12\x11\n" +
 	"\rOpenCondition\x10\x00\x12\x12\n" +
-	"\x0eCloseCondition\x10\x01:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa2\x01B\xbd\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB%IotWindowOpenDetectionCapabilityProtoZfa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_window_open_detection;iotwindowopendetectionpbb\x06proto3"
+	"\x0eCloseCondition\x10\x01B\xc3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_window_open_detection\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_window_open_detection_capability_proto_rawDescOnce sync.Once

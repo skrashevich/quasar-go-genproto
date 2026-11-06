@@ -24,13 +24,12 @@ const (
 )
 
 type TCommonScenarioSettings struct {
-	state    protoimpl.MessageState `protogen:"open.v1"`
-	Disabled bool                   `protobuf:"varint,1,opt,name=Disabled,json=disabled,proto3" json:"Disabled,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/common_scenario_settings.proto.
-	DailyLimit        *durationpb.Duration `protobuf:"bytes,2,opt,name=DailyLimit,json=daily_limit,proto3" json:"DailyLimit,omitempty"`
-	DailyLimits       []*TDailyLimit       `protobuf:"bytes,5,rep,name=DailyLimits,json=daily_limits,proto3" json:"DailyLimits,omitempty"`
-	DisabledPeriods   []*TTimeInterval     `protobuf:"bytes,3,rep,name=DisabledPeriods,json=disabled_periods,proto3" json:"DisabledPeriods,omitempty"`
-	ShouldKeepSilence bool                 `protobuf:"varint,4,opt,name=ShouldKeepSilence,json=should_keep_silence,proto3" json:"ShouldKeepSilence,omitempty"`
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Disabled          bool                   `protobuf:"varint,1,opt,name=Disabled,proto3" json:"Disabled,omitempty"`
+	DailyLimit        *durationpb.Duration   `protobuf:"bytes,2,opt,name=DailyLimit,proto3" json:"DailyLimit,omitempty"`
+	DailyLimits       []*TDailyLimit         `protobuf:"bytes,5,rep,name=DailyLimits,proto3" json:"DailyLimits,omitempty"`
+	DisabledPeriods   []*TTimeInterval       `protobuf:"bytes,3,rep,name=DisabledPeriods,proto3" json:"DisabledPeriods,omitempty"`
+	ShouldKeepSilence bool                   `protobuf:"varint,4,opt,name=ShouldKeepSilence,proto3" json:"ShouldKeepSilence,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -72,7 +71,6 @@ func (x *TCommonScenarioSettings) GetDisabled() bool {
 	return false
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/device_control_panel/common_scenario_settings.proto.
 func (x *TCommonScenarioSettings) GetDailyLimit() *durationpb.Duration {
 	if x != nil {
 		return x.DailyLimit
@@ -105,15 +103,17 @@ var File_alice_protos_data_device_control_panel_common_scenario_settings_proto p
 
 const file_alice_protos_data_device_control_panel_common_scenario_settings_proto_rawDesc = "" +
 	"\n" +
-	"Ealice/protos/data/device_control_panel/common_scenario_settings.proto\x12\x06NAlice\x1a\x1egoogle/protobuf/duration.proto\x1a8alice/protos/data/device_control_panel/daily_limit.proto\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfd\x02\n" +
-	"\x17TCommonScenarioSettings\x12(\n" +
-	"\bDisabled\x18\x01 \x01(\bB\f\xaa\xdd\x1b\bdisabledR\bdisabled\x12M\n" +
+	"Ealice/protos/data/device_control_panel/common_scenario_settings.proto\x12\x06NAlice\x1a\x1egoogle/protobuf/duration.proto\x1a8alice/protos/data/device_control_panel/daily_limit.proto\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x02\n" +
+	"\x17TCommonScenarioSettings\x12\x1a\n" +
+	"\bDisabled\x18\x01 \x01(\bR\bDisabled\x129\n" +
 	"\n" +
-	"DailyLimit\x18\x02 \x01(\v2\x19.google.protobuf.DurationB\x11\xaa\xdd\x1b\vdaily_limit\x18\x01R\vdaily_limit\x12H\n" +
-	"\vDailyLimits\x18\x05 \x03(\v2\x13.NAlice.TDailyLimitB\x10\xaa\xdd\x1b\fdaily_limitsR\fdaily_limits\x12V\n" +
-	"\x0fDisabledPeriods\x18\x03 \x03(\v2\x15.NAlice.TTimeIntervalB\x14\xaa\xdd\x1b\x10disabled_periodsR\x10disabled_periods\x12G\n" +
-	"\x11ShouldKeepSilence\x18\x04 \x01(\bB\x17\xaa\xdd\x1b\x13should_keep_silenceR\x13should_keep_silenceB\x88\x01\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x1bCommonScenarioSettingsProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	"DailyLimit\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\n" +
+	"DailyLimit\x125\n" +
+	"\vDailyLimits\x18\x05 \x03(\v2\x13.NAlice.TDailyLimitR\vDailyLimits\x12?\n" +
+	"\x0fDisabledPeriods\x18\x03 \x03(\v2\x15.NAlice.TTimeIntervalR\x0fDisabledPeriods\x12,\n" +
+	"\x11ShouldKeepSilence\x18\x04 \x01(\bR\x11ShouldKeepSilenceB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x1bCommonScenarioSettingsProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_common_scenario_settings_proto_rawDescOnce sync.Once

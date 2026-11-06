@@ -25,8 +25,8 @@ const (
 
 type TExecuteDirectiveChain struct {
 	state          protoimpl.MessageState                  `protogen:"open.v1"`
-	Directives     []*directives.TDirective                `protobuf:"bytes,1,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	ResponsePolicy *TExecuteDirectiveChain_TResponsePolicy `protobuf:"bytes,2,opt,name=ResponsePolicy,json=response_policy,proto3" json:"ResponsePolicy,omitempty"`
+	Directives     []*directives.TDirective                `protobuf:"bytes,1,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	ResponsePolicy *TExecuteDirectiveChain_TResponsePolicy `protobuf:"bytes,2,opt,name=ResponsePolicy,proto3" json:"ResponsePolicy,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -146,11 +146,11 @@ type isTExecuteDirectiveChain_TResponsePolicy_Policy interface {
 }
 
 type TExecuteDirectiveChain_TResponsePolicy_OnChainReceivedPolicy struct {
-	OnChainReceivedPolicy *TExecuteDirectiveChain_TResponsePolicy_TOnChainReceivedPolicy `protobuf:"bytes,1,opt,name=OnChainReceivedPolicy,json=on_chain_received_policy,proto3,oneof"`
+	OnChainReceivedPolicy *TExecuteDirectiveChain_TResponsePolicy_TOnChainReceivedPolicy `protobuf:"bytes,1,opt,name=OnChainReceivedPolicy,proto3,oneof"`
 }
 
 type TExecuteDirectiveChain_TResponsePolicy_OnChainCompletedPolicy struct {
-	OnChainCompletedPolicy *TExecuteDirectiveChain_TResponsePolicy_TOnChainCompletedPolicy `protobuf:"bytes,2,opt,name=OnChainCompletedPolicy,json=on_chain_completed_policy,proto3,oneof"`
+	OnChainCompletedPolicy *TExecuteDirectiveChain_TResponsePolicy_TOnChainCompletedPolicy `protobuf:"bytes,2,opt,name=OnChainCompletedPolicy,proto3,oneof"`
 }
 
 func (*TExecuteDirectiveChain_TResponsePolicy_OnChainReceivedPolicy) isTExecuteDirectiveChain_TResponsePolicy_Policy() {
@@ -235,20 +235,19 @@ var File_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directi
 
 const file_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directive_chain_execute_directive_chain_proto_rawDesc = "" +
 	"\n" +
-	"malice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chain/execute_directive_chain.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8a\x05\n" +
-	"\x16TExecuteDirectiveChain\x12L\n" +
+	"malice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chain/execute_directive_chain.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x04\n" +
+	"\x16TExecuteDirectiveChain\x12<\n" +
 	"\n" +
-	"Directives\x18\x01 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12v\n" +
-	"\x0eResponsePolicy\x18\x02 \x01(\v28.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicyB\x13\xaa\xdd\x1b\x0fresponse_policyR\x0fresponse_policy\x1a\xa3\x03\n" +
-	"\x0fTResponsePolicy\x12\xa1\x01\n" +
-	"\x15OnChainReceivedPolicy\x18\x01 \x01(\v2O.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicy.TOnChainReceivedPolicyB\x15\xaa\xdd\x1b\x11on_started_policyH\x00R\x18on_chain_received_policy\x12\xa6\x01\n" +
-	"\x16OnChainCompletedPolicy\x18\x02 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicy.TOnChainCompletedPolicyB\x17\xaa\xdd\x1b\x13on_completed_policyH\x00R\x19on_chain_completed_policy\x1a\x18\n" +
+	"Directives\x18\x01 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12`\n" +
+	"\x0eResponsePolicy\x18\x02 \x01(\v28.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicyR\x0eResponsePolicy\x1a\xe7\x02\n" +
+	"\x0fTResponsePolicy\x12\x87\x01\n" +
+	"\x15OnChainReceivedPolicy\x18\x01 \x01(\v2O.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicy.TOnChainReceivedPolicyH\x00R\x15OnChainReceivedPolicy\x12\x8a\x01\n" +
+	"\x16OnChainCompletedPolicy\x18\x02 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveChain.TResponsePolicy.TOnChainCompletedPolicyH\x00R\x16OnChainCompletedPolicy\x1a\x18\n" +
 	"\x16TOnChainReceivedPolicy\x1a\x19\n" +
-	"\x17TOnChainCompletedPolicy:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06Policy:\x04\xa8\xdd\x1b\x04B\xd6\x01\n" +
-	"Yru.yandex.alice.protos.api.alicekit.events.sync_push.sync_request.execute_directive_chainB\x15ExecuteDirectiveChainP\x01Z`a.yandex-team.ru/alice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chainb\x06proto3"
+	"\x17TOnChainCompletedPolicyB\b\n" +
+	"\x06PolicyB\x94\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1aExecuteDirectiveChainProtoP\x01Z\x7fgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push/sync_request/execute_directive_chain\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directive_chain_execute_directive_chain_proto_rawDescOnce sync.Once

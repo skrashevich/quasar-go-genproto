@@ -1055,8 +1055,8 @@ const file_alice_protos_data_health_data_enums_proto_rawDesc = "" +
 	"\vWEIGHT_LOSS\x10\t\x12\r\n" +
 	"\tNUTRITION\x10\n" +
 	"\x12\x16\n" +
-	"\x12HEALTH_IMPROVEMENT\x10\vBZ\n" +
-	"&ru.yandex.alice.protos.data.healthdataP\x01Z.a.yandex-team.ru/alice/protos/data/health_datab\x06proto3"
+	"\x12HEALTH_IMPROVEMENT\x10\vBy\n" +
+	"&ru.yandex.alice.protos.data.healthdataP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/health_datab\x06proto3"
 
 var (
 	file_alice_protos_data_health_data_enums_proto_rawDescOnce sync.Once

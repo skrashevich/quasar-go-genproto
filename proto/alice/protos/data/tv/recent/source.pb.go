@@ -25,9 +25,9 @@ const (
 
 type TRecentSourceItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InputId       string                 `protobuf:"bytes,1,opt,name=InputId,json=input_id,proto3" json:"InputId,omitempty"`
-	SourceType    sources.ESourceType    `protobuf:"varint,2,opt,name=SourceType,json=source_type,proto3,enum=NAlice.NTv.ESourceType" json:"SourceType,omitempty"`
-	InputName     string                 `protobuf:"bytes,3,opt,name=InputName,json=input_name,proto3" json:"InputName,omitempty"`
+	InputId       string                 `protobuf:"bytes,1,opt,name=InputId,proto3" json:"InputId,omitempty"`
+	SourceType    sources.ESourceType    `protobuf:"varint,2,opt,name=SourceType,proto3,enum=NAlice.NTv.ESourceType" json:"SourceType,omitempty"`
+	InputName     string                 `protobuf:"bytes,3,opt,name=InputName,proto3" json:"InputName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -88,15 +88,16 @@ var File_alice_protos_data_tv_recent_source_proto protoreflect.FileDescriptor
 const file_alice_protos_data_tv_recent_source_proto_rawDesc = "" +
 	"\n" +
 	"(alice/protos/data/tv/recent/source.proto\x12\n" +
-	"NAlice.NTv\x1a.alice/protos/data/tv/sources/source_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbc\x01\n" +
-	"\x11TRecentSourceItem\x12'\n" +
-	"\aInputId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\binput_idR\binput_id\x12I\n" +
+	"NAlice.NTv\x1a.alice/protos/data/tv/sources/source_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x84\x01\n" +
+	"\x11TRecentSourceItem\x12\x18\n" +
+	"\aInputId\x18\x01 \x01(\tR\aInputId\x127\n" +
 	"\n" +
-	"SourceType\x18\x02 \x01(\x0e2\x17.NAlice.NTv.ESourceTypeB\x0f\xaa\xdd\x1b\vsource_typeR\vsource_type\x12-\n" +
-	"\tInputName\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"input_nameR\n" +
-	"input_name:\x04\xa8\xdd\x1b\x04Bc\n" +
-	"%ru.yandex.alice.protos.data.tv.recentB\fRecentSourceZ,a.yandex-team.ru/alice/protos/data/tv/recentb\x06proto3"
+	"SourceType\x18\x02 \x01(\x0e2\x17.NAlice.NTv.ESourceTypeR\n" +
+	"SourceType\x12\x1c\n" +
+	"\tInputName\x18\x03 \x01(\tR\tInputNameB\xb3\x01\n" +
+	"\x0ecom.NAlice.NTvB\vSourceProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/recent\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_recent_source_proto_rawDescOnce sync.Once

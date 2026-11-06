@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/color/capability.proto
 
-package colorpb
+package color
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -142,9 +142,9 @@ func (TColorCapability_EColorScene) EnumDescriptor() ([]byte, []int) {
 
 type TColorCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TColorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TColorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TColorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TColorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -202,8 +202,8 @@ func (x *TColorCapability) GetState() *TColorCapability_TState {
 
 type TColorCapability_TParameters struct {
 	state                  protoimpl.MessageState                                `protogen:"open.v1"`
-	ColorSceneParameters   *TColorCapability_TParameters_TColorSceneParameters   `protobuf:"bytes,1,opt,name=ColorSceneParameters,json=color_scene_parameters,proto3" json:"ColorSceneParameters,omitempty"`
-	TemperatureKParameters *TColorCapability_TParameters_TTemperatureKParameters `protobuf:"bytes,2,opt,name=TemperatureKParameters,json=temperature_k_parameters,proto3" json:"TemperatureKParameters,omitempty"`
+	ColorSceneParameters   *TColorCapability_TParameters_TColorSceneParameters   `protobuf:"bytes,1,opt,name=ColorSceneParameters,proto3" json:"ColorSceneParameters,omitempty"`
+	TemperatureKParameters *TColorCapability_TParameters_TTemperatureKParameters `protobuf:"bytes,2,opt,name=TemperatureKParameters,proto3" json:"TemperatureKParameters,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -333,15 +333,15 @@ type isTColorCapability_TState_Value interface {
 }
 
 type TColorCapability_TState_ColorScene struct {
-	ColorScene TColorCapability_EColorScene `protobuf:"varint,1,opt,name=ColorScene,json=color_scene,proto3,enum=NAlice.TColorCapability_EColorScene,oneof"`
+	ColorScene TColorCapability_EColorScene `protobuf:"varint,1,opt,name=ColorScene,proto3,enum=NAlice.TColorCapability_EColorScene,oneof"`
 }
 
 type TColorCapability_TState_TemperatureK struct {
-	TemperatureK uint64 `protobuf:"varint,2,opt,name=TemperatureK,json=temperature_k,proto3,oneof"`
+	TemperatureK uint64 `protobuf:"varint,2,opt,name=TemperatureK,proto3,oneof"`
 }
 
 type TColorCapability_TState_HueSaturation struct {
-	HueSaturation *endpoint.THueAndSaturation `protobuf:"bytes,3,opt,name=HueSaturation,json=hue_saturation,proto3,oneof"`
+	HueSaturation *endpoint.THueAndSaturation `protobuf:"bytes,3,opt,name=HueSaturation,proto3,oneof"`
 }
 
 func (*TColorCapability_TState_ColorScene) isTColorCapability_TState_Value() {}
@@ -352,8 +352,8 @@ func (*TColorCapability_TState_HueSaturation) isTColorCapability_TState_Value() 
 
 type TColorCapability_TSetColorSceneDirective struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Name          string                       `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ColorScene    TColorCapability_EColorScene `protobuf:"varint,1,opt,name=ColorScene,json=color_scene,proto3,enum=NAlice.TColorCapability_EColorScene" json:"ColorScene,omitempty"`
+	Name          string                       `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	ColorScene    TColorCapability_EColorScene `protobuf:"varint,1,opt,name=ColorScene,proto3,enum=NAlice.TColorCapability_EColorScene" json:"ColorScene,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -404,8 +404,8 @@ func (x *TColorCapability_TSetColorSceneDirective) GetColorScene() TColorCapabil
 
 type TColorCapability_TSetTemperatureKDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TargetValue   uint64                 `protobuf:"varint,1,opt,name=TargetValue,json=target_value,proto3" json:"TargetValue,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TargetValue   uint64                 `protobuf:"varint,1,opt,name=TargetValue,proto3" json:"TargetValue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -456,9 +456,9 @@ func (x *TColorCapability_TSetTemperatureKDirective) GetTargetValue() uint64 {
 
 type TColorCapability_TSetHueAndSaturationDirective struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
-	Name                  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	HueTargetValue        float64                `protobuf:"fixed64,1,opt,name=HueTargetValue,json=hue_target_value,proto3" json:"HueTargetValue,omitempty"`
-	SaturationTargetValue float64                `protobuf:"fixed64,2,opt,name=SaturationTargetValue,json=saturation_target_value,proto3" json:"SaturationTargetValue,omitempty"`
+	Name                  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	HueTargetValue        float64                `protobuf:"fixed64,1,opt,name=HueTargetValue,proto3" json:"HueTargetValue,omitempty"`
+	SaturationTargetValue float64                `protobuf:"fixed64,2,opt,name=SaturationTargetValue,proto3" json:"SaturationTargetValue,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -516,8 +516,8 @@ func (x *TColorCapability_TSetHueAndSaturationDirective) GetSaturationTargetValu
 
 type TColorCapability_TSetHueDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	HueTargetValue float64                `protobuf:"fixed64,1,opt,name=HueTargetValue,json=hue_target_value,proto3" json:"HueTargetValue,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	HueTargetValue float64                `protobuf:"fixed64,1,opt,name=HueTargetValue,proto3" json:"HueTargetValue,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -568,8 +568,8 @@ func (x *TColorCapability_TSetHueDirective) GetHueTargetValue() float64 {
 
 type TColorCapability_TSetSaturationDirective struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
-	Name                  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SaturationTargetValue float64                `protobuf:"fixed64,1,opt,name=SaturationTargetValue,json=saturation_target_value,proto3" json:"SaturationTargetValue,omitempty"`
+	Name                  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SaturationTargetValue float64                `protobuf:"fixed64,1,opt,name=SaturationTargetValue,proto3" json:"SaturationTargetValue,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -620,7 +620,7 @@ func (x *TColorCapability_TSetSaturationDirective) GetSaturationTargetValue() fl
 
 type TColorCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TColorCapability      `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TColorCapability      `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -664,7 +664,7 @@ func (x *TColorCapability_TUpdateStateEvent) GetCapability() *TColorCapability {
 
 type TColorCapability_TParameters_TTemperatureKParameters struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Range         *endpoint.TPositiveIntegerRange `protobuf:"bytes,1,opt,name=Range,json=range,proto3" json:"Range,omitempty"`
+	Range         *endpoint.TPositiveIntegerRange `protobuf:"bytes,1,opt,name=Range,proto3" json:"Range,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -708,7 +708,7 @@ func (x *TColorCapability_TParameters_TTemperatureKParameters) GetRange() *endpo
 
 type TColorCapability_TParameters_TColorSceneParameters struct {
 	state           protoimpl.MessageState         `protogen:"open.v1"`
-	SupportedScenes []TColorCapability_EColorScene `protobuf:"varint,1,rep,packed,name=SupportedScenes,json=supported_scenes,proto3,enum=NAlice.TColorCapability_EColorScene" json:"SupportedScenes,omitempty"`
+	SupportedScenes []TColorCapability_EColorScene `protobuf:"varint,1,rep,packed,name=SupportedScenes,proto3,enum=NAlice.TColorCapability_EColorScene" json:"SupportedScenes,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -754,49 +754,49 @@ var File_alice_protos_endpoint_capabilities_color_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_color_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/color/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfe\x13\n" +
-	"\x10TColorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/color/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe8\x0e\n" +
+	"\x10TColorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TColorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TColorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xa1\x04\n" +
-	"\vTParameters\x12\x8c\x01\n" +
-	"\x14ColorSceneParameters\x18\x01 \x01(\v2:.NAlice.TColorCapability.TParameters.TColorSceneParametersB\x1a\xaa\xdd\x1b\x16color_scene_parametersR\x16color_scene_parameters\x12\x94\x01\n" +
-	"\x16TemperatureKParameters\x18\x02 \x01(\v2<.NAlice.TColorCapability.TParameters.TTemperatureKParametersB\x1c\xaa\xdd\x1b\x18temperature_k_parametersR\x18temperature_k_parameters\x1a_\n" +
-	"\x17TTemperatureKParameters\x12>\n" +
-	"\x05Range\x18\x01 \x01(\v2\x1d.NAlice.TPositiveIntegerRangeB\t\xaa\xdd\x1b\x05rangeR\x05range:\x04\xa8\xdd\x1b\x04\x1a\x84\x01\n" +
-	"\x15TColorSceneParameters\x12e\n" +
-	"\x0fSupportedScenes\x18\x01 \x03(\x0e2$.NAlice.TColorCapability.EColorSceneB\x14\xaa\xdd\x1b\x10supported_scenesR\x10supported_scenes:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\x8e\x02\n" +
-	"\x06TState\x12X\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TColorCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TColorCapability.TStateR\x05State\x1a\xac\x03\n" +
+	"\vTParameters\x12n\n" +
+	"\x14ColorSceneParameters\x18\x01 \x01(\v2:.NAlice.TColorCapability.TParameters.TColorSceneParametersR\x14ColorSceneParameters\x12t\n" +
+	"\x16TemperatureKParameters\x18\x02 \x01(\v2<.NAlice.TColorCapability.TParameters.TTemperatureKParametersR\x16TemperatureKParameters\x1aN\n" +
+	"\x17TTemperatureKParameters\x123\n" +
+	"\x05Range\x18\x01 \x01(\v2\x1d.NAlice.TPositiveIntegerRangeR\x05Range\x1ag\n" +
+	"\x15TColorSceneParameters\x12N\n" +
+	"\x0fSupportedScenes\x18\x01 \x03(\x0e2$.NAlice.TColorCapability.EColorSceneR\x0fSupportedScenes\x1a\xc2\x01\n" +
+	"\x06TState\x12F\n" +
 	"\n" +
-	"ColorScene\x18\x01 \x01(\x0e2$.NAlice.TColorCapability.EColorSceneB\x0f\xaa\xdd\x1b\vcolor_sceneH\x00R\vcolor_scene\x128\n" +
-	"\fTemperatureK\x18\x02 \x01(\x04B\x11\xaa\xdd\x1b\rtemperature_kH\x00R\rtemperature_k\x12V\n" +
-	"\rHueSaturation\x18\x03 \x01(\v2\x19.NAlice.THueAndSaturationB\x12\xaa\xdd\x1b\x0ehue_saturationH\x00R\x0ehue_saturation:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\x1a\xb7\x01\n" +
-	"\x17TSetColorSceneDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12V\n" +
+	"ColorScene\x18\x01 \x01(\x0e2$.NAlice.TColorCapability.EColorSceneH\x00R\n" +
+	"ColorScene\x12$\n" +
+	"\fTemperatureK\x18\x02 \x01(\x04H\x00R\fTemperatureK\x12A\n" +
+	"\rHueSaturation\x18\x03 \x01(\v2\x19.NAlice.THueAndSaturationH\x00R\rHueSaturationB\a\n" +
+	"\x05Value\x1at\n" +
+	"\x17TSetColorSceneDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12D\n" +
 	"\n" +
-	"ColorScene\x18\x01 \x01(\x0e2$.NAlice.TColorCapability.EColorSceneB\x0f\xaa\xdd\x1b\vcolor_sceneR\vcolor_scene:%\x92\x82\x19\x19set_color_scene_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\t\x1a\x98\x01\n" +
-	"\x19TSetTemperatureKDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
-	"\vTargetValue\x18\x01 \x01(\x04B\x10\xaa\xdd\x1b\ftarget_valueR\ftarget_value:'\x92\x82\x19\x1bset_temperature_k_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x13\x1a\x81\x02\n" +
-	"\x1dTSetHueAndSaturationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eHueTargetValue\x18\x01 \x01(\x01B\x14\xaa\xdd\x1b\x10hue_target_valueR\x10hue_target_value\x12S\n" +
-	"\x15SaturationTargetValue\x18\x02 \x01(\x01B\x1b\xaa\xdd\x1b\x17saturation_target_valueR\x17saturation_target_value:,\x92\x82\x19 set_hue_and_saturation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c|\x1a\x90\x01\n" +
-	"\x10TSetHueDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eHueTargetValue\x18\x01 \x01(\x01B\x14\xaa\xdd\x1b\x10hue_target_valueR\x10hue_target_value:\x1d\x92\x82\x19\x11set_hue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c}\x1a\xb3\x01\n" +
-	"\x17TSetSaturationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\x15SaturationTargetValue\x18\x01 \x01(\x01B\x1b\xaa\xdd\x1b\x17saturation_target_valueR\x17saturation_target_value:$\x92\x82\x19\x18set_saturation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c~\x1ag\n" +
-	"\x11TUpdateStateEvent\x12H\n" +
+	"ColorScene\x18\x01 \x01(\x0e2$.NAlice.TColorCapability.EColorSceneR\n" +
+	"ColorScene\x1aR\n" +
+	"\x19TSetTemperatureKDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vTargetValue\x18\x01 \x01(\x04R\vTargetValue\x1a\x92\x01\n" +
+	"\x1dTSetHueAndSaturationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12&\n" +
+	"\x0eHueTargetValue\x18\x01 \x01(\x01R\x0eHueTargetValue\x124\n" +
+	"\x15SaturationTargetValue\x18\x02 \x01(\x01R\x15SaturationTargetValue\x1aO\n" +
+	"\x10TSetHueDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12&\n" +
+	"\x0eHueTargetValue\x18\x01 \x01(\x01R\x0eHueTargetValue\x1ad\n" +
+	"\x17TSetSaturationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x124\n" +
+	"\x15SaturationTargetValue\x18\x01 \x01(\x01R\x15SaturationTargetValue\x1aM\n" +
+	"\x11TUpdateStateEvent\x128\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x18.NAlice.TColorCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x11\"\xce\x03\n" +
+	"Capability\x18\x01 \x01(\v2\x18.NAlice.TColorCapabilityR\n" +
+	"Capability\"\xce\x03\n" +
 	"\vEColorScene\x12\f\n" +
 	"\bInactive\x10\x00\x12\x11\n" +
 	"\rLavaLampScene\x10\x01\x12\x0f\n" +
@@ -827,8 +827,9 @@ const file_alice_protos_endpoint_capabilities_color_capability_proto_rawDesc = "
 	"\x12ChristmasTreeScene\x10\x15\x12\x10\n" +
 	"\fMiracleScene\x10\x16\x12\x14\n" +
 	"\x10FairyLightsScene\x10\x17\x12\x12\n" +
-	"\x0eChristmasScene\x10\x18:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x04B\x89\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14ColorCapabilityProtoP\x01ZAa.yandex-team.ru/alice/protos/endpoint/capabilities/color;colorpbb\x06proto3"
+	"\x0eChristmasScene\x10\x18B\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/color\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_color_capability_proto_rawDescOnce sync.Once

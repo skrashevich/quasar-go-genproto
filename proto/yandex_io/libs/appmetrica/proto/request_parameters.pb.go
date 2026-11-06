@@ -80,7 +80,7 @@ const file_yandex_io_libs_appmetrica_proto_request_parameters_proto_rawDesc = ""
 	"8yandex_io/libs/appmetrica/proto/request_parameters.proto\"D\n" +
 	"\x11RequestParameters\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1b\n" +
-	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId"
+	"\tdevice_id\x18\x02 \x01(\tR\bdeviceIdBkB\x16RequestParametersProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/appmetrica/proto"
 
 var (
 	file_yandex_io_libs_appmetrica_proto_request_parameters_proto_rawDescOnce sync.Once

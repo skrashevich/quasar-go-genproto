@@ -24,11 +24,11 @@ const (
 
 type TRecentApplicationItem struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	PackageName     string                 `protobuf:"bytes,1,opt,name=PackageName,json=package_name,proto3" json:"PackageName,omitempty"`
-	ActivityName    string                 `protobuf:"bytes,2,opt,name=ActivityName,json=activity_name,proto3" json:"ActivityName,omitempty"`
-	AppName         string                 `protobuf:"bytes,3,opt,name=AppName,json=app_name,proto3" json:"AppName,omitempty"`
-	LaunchIntentUri string                 `protobuf:"bytes,4,opt,name=LaunchIntentUri,json=launch_intent_uri,proto3" json:"LaunchIntentUri,omitempty"`
-	IconUri         string                 `protobuf:"bytes,5,opt,name=IconUri,json=icon_uri,proto3" json:"IconUri,omitempty"`
+	PackageName     string                 `protobuf:"bytes,1,opt,name=PackageName,proto3" json:"PackageName,omitempty"`
+	ActivityName    string                 `protobuf:"bytes,2,opt,name=ActivityName,proto3" json:"ActivityName,omitempty"`
+	AppName         string                 `protobuf:"bytes,3,opt,name=AppName,proto3" json:"AppName,omitempty"`
+	LaunchIntentUri string                 `protobuf:"bytes,4,opt,name=LaunchIntentUri,proto3" json:"LaunchIntentUri,omitempty"`
+	IconUri         string                 `protobuf:"bytes,5,opt,name=IconUri,proto3" json:"IconUri,omitempty"`
 	CustomDeeplink  *string                `protobuf:"bytes,6,opt,name=CustomDeeplink,json=custom_deeplink,proto3,oneof" json:"CustomDeeplink,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -111,16 +111,18 @@ var File_alice_protos_data_tv_recent_application_proto protoreflect.FileDescript
 const file_alice_protos_data_tv_recent_application_proto_rawDesc = "" +
 	"\n" +
 	"-alice/protos/data/tv/recent/application.proto\x12\n" +
-	"NAlice.NTv\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf6\x02\n" +
-	"\x16TRecentApplicationItem\x123\n" +
-	"\vPackageName\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name\x126\n" +
-	"\fActivityName\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\ractivity_nameR\ractivity_name\x12'\n" +
-	"\aAppName\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bapp_nameR\bapp_name\x12A\n" +
-	"\x0fLaunchIntentUri\x18\x04 \x01(\tB\x15\xaa\xdd\x1b\x11launch_intent_uriR\x11launch_intent_uri\x12'\n" +
-	"\aIconUri\x18\x05 \x01(\tB\f\xaa\xdd\x1b\bicon_uriR\bicon_uri\x12A\n" +
-	"\x0eCustomDeeplink\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\x0fcustom_deeplinkH\x00R\x0fcustom_deeplink\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
-	"\x0f_CustomDeeplinkBh\n" +
-	"%ru.yandex.alice.protos.data.tv.recentB\x11RecentApplicationZ,a.yandex-team.ru/alice/protos/data/tv/recentb\x06proto3"
+	"NAlice.NTv\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\x02\n" +
+	"\x16TRecentApplicationItem\x12 \n" +
+	"\vPackageName\x18\x01 \x01(\tR\vPackageName\x12\"\n" +
+	"\fActivityName\x18\x02 \x01(\tR\fActivityName\x12\x18\n" +
+	"\aAppName\x18\x03 \x01(\tR\aAppName\x12(\n" +
+	"\x0fLaunchIntentUri\x18\x04 \x01(\tR\x0fLaunchIntentUri\x12\x18\n" +
+	"\aIconUri\x18\x05 \x01(\tR\aIconUri\x12A\n" +
+	"\x0eCustomDeeplink\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\x0fcustom_deeplinkH\x00R\x0fcustom_deeplink\x88\x01\x01B\x11\n" +
+	"\x0f_CustomDeeplinkB\xb8\x01\n" +
+	"\x0ecom.NAlice.NTvB\x10ApplicationProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/recent\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_recent_application_proto_rawDescOnce sync.Once

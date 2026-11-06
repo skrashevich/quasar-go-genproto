@@ -115,8 +115,8 @@ const file_channel_types_proto_rawDesc = "" +
 	"\x12VQE_OMNI_WITH_GAIN\x10\t\x12\r\n" +
 	"\tVQE_STATE\x10\n" +
 	"\x12\f\n" +
-	"\bVQE_ZONE\x10\vB\x16\n" +
-	"\x14com.yandex.voicetechb\x06proto3"
+	"\bVQE_ZONE\x10\vBG\n" +
+	"\x14com.yandex.voicetechZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_channel_types_proto_rawDescOnce sync.Once

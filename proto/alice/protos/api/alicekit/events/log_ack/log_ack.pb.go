@@ -62,8 +62,8 @@ var File_alice_protos_api_alicekit_events_log_ack_log_ack_proto protoreflect.Fil
 const file_alice_protos_api_alicekit_events_log_ack_log_ack_proto_rawDesc = "" +
 	"\n" +
 	"6alice/protos/api/alicekit/events/log_ack/log_ack.proto\x12\x10NAlice.NAliceApi\"\t\n" +
-	"\aTLogAckBy\n" +
-	"2ru.yandex.alice.protos.api.alicekit.events.log_ackB\x06LogAckP\x01Z9a.yandex-team.ru/alice/protos/api/alicekit/events/log_ackb\x06proto3"
+	"\aTLogAckB\xde\x01\n" +
+	"\x14com.NAlice.NAliceApiB\vLogAckProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/log_ack\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_log_ack_log_ack_proto_rawDescOnce sync.Once

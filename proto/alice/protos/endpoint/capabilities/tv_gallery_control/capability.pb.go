@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tv_gallery_control/capability.proto
 
-package tvgallerycontrolpb
+package tv_gallery_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -388,8 +388,8 @@ const file_alice_protos_endpoint_capabilities_tv_gallery_control_capability_prot
 	"\aMusicId\x18\b \x01(\tB\f\xaa\xdd\x1b\bmusic_idH\x00R\bmusic_id\x12F\n" +
 	"\x10ChannelContentId\x18\t \x01(\tB\x16\xaa\xdd\x1b\x12channel_content_idH\x00R\x12channel_content_id:(\x92\x82\x19\x1bhide_from_delayed_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc2\x03B\f\n" +
 	"\n" +
-	"HideTarget:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa1\x01B\xaa\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fTvGalleryControlCapabilityProtoZYa.yandex-team.ru/alice/protos/endpoint/capabilities/tv_gallery_control;tvgallerycontrolpbb\x06proto3"
+	"HideTarget:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa1\x01B\xb6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fTvGalleryControlCapabilityProtoZegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tv_gallery_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tv_gallery_control_capability_proto_rawDescOnce sync.Once

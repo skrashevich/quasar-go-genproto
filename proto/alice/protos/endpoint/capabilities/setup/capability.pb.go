@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/setup/capability.proto
 
-package setuppb
+package setup
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -79,9 +79,9 @@ func (TSetupCapability_TStartSetupDirective_EMode) EnumDescriptor() ([]byte, []i
 
 type TSetupCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSetupCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSetupCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSetupCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSetupCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -211,7 +211,7 @@ func (*TSetupCapability_TState) Descriptor() ([]byte, []int) {
 
 type TSetupCapability_TStartSetupDirective struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	SetupMode     TSetupCapability_TStartSetupDirective_EMode `protobuf:"varint,1,opt,name=SetupMode,json=setup_mode,proto3,enum=NAlice.TSetupCapability_TStartSetupDirective_EMode" json:"SetupMode,omitempty"`
+	SetupMode     TSetupCapability_TStartSetupDirective_EMode `protobuf:"varint,1,opt,name=SetupMode,proto3,enum=NAlice.TSetupCapability_TStartSetupDirective_EMode" json:"SetupMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,29 +257,26 @@ var File_alice_protos_endpoint_capabilities_setup_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_setup_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/setup/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf4\x03\n" +
-	"\x10TSetupCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/setup/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x84\x03\n" +
+	"\x10TSetupCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TSetupCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TSetupCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xdf\x01\n" +
-	"\x14TStartSetupDirective\x12b\n" +
-	"\tSetupMode\x18\x01 \x01(\x0e23.NAlice.TSetupCapability.TStartSetupDirective.EModeB\x0e\xaa\xdd\x1b\n" +
-	"setup_modeR\n" +
-	"setup_mode\"?\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TSetupCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TSetupCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\b\n" +
+	"\x06TState\x1a\xaa\x01\n" +
+	"\x14TStartSetupDirective\x12Q\n" +
+	"\tSetupMode\x18\x01 \x01(\x0e23.NAlice.TSetupCapability.TStartSetupDirective.EModeR\tSetupMode\"?\n" +
 	"\x05EMode\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x0e\n" +
 	"\n" +
 	"FirstSetup\x10\x01\x12\t\n" +
 	"\x05Setup\x10\x02\x12\x0e\n" +
 	"\n" +
-	"AddNetwork\x10\x03:\"\x92\x82\x19\x15start_setup_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb7\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cpB}\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"SetupProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/setup;setuppbb\x06proto3"
+	"AddNetwork\x10\x03B\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/setup\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_setup_capability_proto_rawDescOnce sync.Once

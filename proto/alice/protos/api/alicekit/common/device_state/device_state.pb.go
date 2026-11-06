@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/alicekit/common/device_state/device_state.proto
 
-package devicestatepb
+package device_state
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -1004,11 +1004,11 @@ func (TDeviceState_TStereoPair_EStereoPlayerStatus) EnumDescriptor() ([]byte, []
 
 type TUntypedDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=Name,json=name" json:"Name,omitempty"`
-	Type          *string                `protobuf:"bytes,2,opt,name=Type,json=type" json:"Type,omitempty"`
-	AnalyticsType *string                `protobuf:"bytes,3,opt,name=AnalyticsType,json=sub_name" json:"AnalyticsType,omitempty"`
-	IgnoreAnswer  *bool                  `protobuf:"varint,4,opt,name=IgnoreAnswer,json=ignore_answer" json:"IgnoreAnswer,omitempty"`
-	Payload       *structpb.Struct       `protobuf:"bytes,5,opt,name=Payload,json=payload" json:"Payload,omitempty"`
+	Name          *string                `protobuf:"bytes,1,opt,name=Name" json:"Name,omitempty"`
+	Type          *string                `protobuf:"bytes,2,opt,name=Type" json:"Type,omitempty"`
+	AnalyticsType *string                `protobuf:"bytes,3,opt,name=AnalyticsType" json:"AnalyticsType,omitempty"`
+	IgnoreAnswer  *bool                  `protobuf:"varint,4,opt,name=IgnoreAnswer" json:"IgnoreAnswer,omitempty"`
+	Payload       *structpb.Struct       `protobuf:"bytes,5,opt,name=Payload" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1080,15 +1080,15 @@ func (x *TUntypedDirective) GetPayload() *structpb.Struct {
 
 type TNavigator struct {
 	state             protoimpl.MessageState     `protogen:"open.v1"`
-	UserFavorites     []*TNavigator_TFavorite    `protobuf:"bytes,1,rep,name=UserFavorites,json=user_favorites" json:"UserFavorites,omitempty"`
-	HomeLocation      *TNavigator_TLocation      `protobuf:"bytes,2,opt,name=HomeLocation,json=home" json:"HomeLocation,omitempty"`
-	WorkLocation      *TNavigator_TLocation      `protobuf:"bytes,3,opt,name=WorkLocation,json=work" json:"WorkLocation,omitempty"`
-	MapView           *TNavigator_TMapView       `protobuf:"bytes,4,opt,name=MapView,json=map_view" json:"MapView,omitempty"`
-	AvailableVoiceIds []string                   `protobuf:"bytes,5,rep,name=AvailableVoiceIds,json=available_voice_ids" json:"AvailableVoiceIds,omitempty"`
-	ProjectedMode     *bool                      `protobuf:"varint,6,opt,name=ProjectedMode,json=projected_mode" json:"ProjectedMode,omitempty"`
-	CurrentRoute      *TNavigator_TRoute         `protobuf:"bytes,7,opt,name=CurrentRoute,json=current_route" json:"CurrentRoute,omitempty"`
-	States            []string                   `protobuf:"bytes,8,rep,name=States,json=states" json:"States,omitempty"`
-	SearchOptions     *TNavigator_TSearchOptions `protobuf:"bytes,9,opt,name=SearchOptions,json=search_options" json:"SearchOptions,omitempty"`
+	UserFavorites     []*TNavigator_TFavorite    `protobuf:"bytes,1,rep,name=UserFavorites" json:"UserFavorites,omitempty"`
+	HomeLocation      *TNavigator_TLocation      `protobuf:"bytes,2,opt,name=HomeLocation" json:"HomeLocation,omitempty"`
+	WorkLocation      *TNavigator_TLocation      `protobuf:"bytes,3,opt,name=WorkLocation" json:"WorkLocation,omitempty"`
+	MapView           *TNavigator_TMapView       `protobuf:"bytes,4,opt,name=MapView" json:"MapView,omitempty"`
+	AvailableVoiceIds []string                   `protobuf:"bytes,5,rep,name=AvailableVoiceIds" json:"AvailableVoiceIds,omitempty"`
+	ProjectedMode     *bool                      `protobuf:"varint,6,opt,name=ProjectedMode" json:"ProjectedMode,omitempty"`
+	CurrentRoute      *TNavigator_TRoute         `protobuf:"bytes,7,opt,name=CurrentRoute" json:"CurrentRoute,omitempty"`
+	States            []string                   `protobuf:"bytes,8,rep,name=States" json:"States,omitempty"`
+	SearchOptions     *TNavigator_TSearchOptions `protobuf:"bytes,9,opt,name=SearchOptions" json:"SearchOptions,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1188,43 +1188,42 @@ func (x *TNavigator) GetSearchOptions() *TNavigator_TSearchOptions {
 
 type TDeviceState struct {
 	state                       protoimpl.MessageState                 `protogen:"open.v1"`
-	DeviceId                    *string                                `protobuf:"bytes,1,opt,name=DeviceId,json=device_id" json:"DeviceId,omitempty"`
-	SoundLevel                  *uint32                                `protobuf:"varint,2,opt,name=SoundLevel,json=sound_level" json:"SoundLevel,omitempty"`
-	SoundMuted                  *bool                                  `protobuf:"varint,3,opt,name=SoundMuted,json=sound_muted" json:"SoundMuted,omitempty"`
-	IsTvPluggedIn               *bool                                  `protobuf:"varint,4,opt,name=IsTvPluggedIn,json=is_tv_plugged_in" json:"IsTvPluggedIn,omitempty"`
-	Music                       *TDeviceState_TMusic                   `protobuf:"bytes,5,opt,name=Music,json=music" json:"Music,omitempty"`
-	Video                       *TDeviceState_TVideo                   `protobuf:"bytes,6,opt,name=Video,json=video" json:"Video,omitempty"`
-	AlarmsState                 *string                                `protobuf:"bytes,7,opt,name=AlarmsState,json=alarms_state" json:"AlarmsState,omitempty"`
-	AlarmState                  *TDeviceState_TAlarmState              `protobuf:"bytes,8,opt,name=AlarmState,json=alarm_state" json:"AlarmState,omitempty"`
-	DeviceConfig                *TDeviceState_TDeviceConfig            `protobuf:"bytes,9,opt,name=DeviceConfig,json=device_config" json:"DeviceConfig,omitempty"`
-	Timers                      *TDeviceState_TTimers                  `protobuf:"bytes,10,opt,name=Timers,json=timers" json:"Timers,omitempty"`
-	Radio                       *structpb.Struct                       `protobuf:"bytes,11,opt,name=Radio,json=radio" json:"Radio,omitempty"`
-	Navigator                   *TNavigator                            `protobuf:"bytes,12,opt,name=Navigator,json=navigator" json:"Navigator,omitempty"`
-	LastWatched                 *TDeviceState_TLastWatched             `protobuf:"bytes,14,opt,name=LastWatched,json=last_watched" json:"LastWatched,omitempty"`
-	Battery                     *TDeviceState_TBattery                 `protobuf:"bytes,17,opt,name=Battery,json=battery" json:"Battery,omitempty"`
-	Tanker                      *TDeviceState_TTanker                  `protobuf:"bytes,19,opt,name=Tanker,json=tanker" json:"Tanker,omitempty"`
-	AudioPlayer                 *TDeviceState_TAudioPlayer             `protobuf:"bytes,22,opt,name=AudioPlayer,json=audio_player" json:"AudioPlayer,omitempty"`
-	Multiroom                   *TDeviceState_TMultiroom               `protobuf:"bytes,23,opt,name=Multiroom,json=multiroom" json:"Multiroom,omitempty"`
-	Bluetooth                   *TDeviceState_TBluetooth               `protobuf:"bytes,24,opt,name=Bluetooth,json=bluetooth" json:"Bluetooth,omitempty"`
-	InternetConnection          *TDeviceState_TInternetConnection      `protobuf:"bytes,25,opt,name=InternetConnection,json=internet_connection" json:"InternetConnection,omitempty"`
-	MicsMuted                   *bool                                  `protobuf:"varint,26,opt,name=MicsMuted,json=mics_muted" json:"MicsMuted,omitempty"`
-	Screen                      *TDeviceState_TScreen                  `protobuf:"bytes,27,opt,name=Screen,json=screen" json:"Screen,omitempty"`
-	RcuState                    *TDeviceState_TRcuState                `protobuf:"bytes,28,opt,name=RcuState,json=rcu" json:"RcuState,omitempty"`
-	IsDefaultAssistant          *bool                                  `protobuf:"varint,30,opt,name=IsDefaultAssistant,json=is_default_assistant" json:"IsDefaultAssistant,omitempty"`
-	SoundMaxLevel               *uint32                                `protobuf:"varint,32,opt,name=SoundMaxLevel,json=sound_max_level" json:"SoundMaxLevel,omitempty"`
-	ActiveActions               *TDeviceState_TActiveActions           `protobuf:"bytes,33,opt,name=ActiveActions,json=active_actions" json:"ActiveActions,omitempty"`
-	TandemState                 *tandem_state.TTandemState             `protobuf:"bytes,35,opt,name=TandemState,json=tandem_state" json:"TandemState,omitempty"`
-	DeviceSubscriptionState     *subscription_state.TSubscriptionState `protobuf:"bytes,36,opt,name=DeviceSubscriptionState,json=subscription_state" json:"DeviceSubscriptionState,omitempty"`
-	DeviceReminders             *reminders.TDeviceRemindersState       `protobuf:"bytes,37,opt,name=DeviceReminders,json=device_reminders" json:"DeviceReminders,omitempty"`
-	PackagesState               *TDeviceState_TPackagesState           `protobuf:"bytes,38,opt,name=PackagesState,json=packages" json:"PackagesState,omitempty"`
-	ExternalEntitiesDescription []*data.TExternalEntityDescription     `protobuf:"bytes,42,rep,name=ExternalEntitiesDescription,json=external_entities_description" json:"ExternalEntitiesDescription,omitempty"`
-	ClockDisplayState           *TDeviceState_TClockDisplayState       `protobuf:"bytes,44,opt,name=ClockDisplayState,json=clock_display_state" json:"ClockDisplayState,omitempty"`
-	AppScreenInfo               *TDeviceState_TAppScreenInfo           `protobuf:"bytes,46,opt,name=AppScreenInfo,json=app_screen_info" json:"AppScreenInfo,omitempty"`
-	StereoPair                  *TDeviceState_TStereoPair              `protobuf:"bytes,47,opt,name=StereoPair,json=stereo_pair" json:"StereoPair,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	DNDEnabled    *bool `protobuf:"varint,48,opt,name=DNDEnabled,json=dnd_enabled" json:"DNDEnabled,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	DeviceId                    *string                                `protobuf:"bytes,1,opt,name=DeviceId" json:"DeviceId,omitempty"`
+	SoundLevel                  *uint32                                `protobuf:"varint,2,opt,name=SoundLevel" json:"SoundLevel,omitempty"`
+	SoundMuted                  *bool                                  `protobuf:"varint,3,opt,name=SoundMuted" json:"SoundMuted,omitempty"`
+	IsTvPluggedIn               *bool                                  `protobuf:"varint,4,opt,name=IsTvPluggedIn" json:"IsTvPluggedIn,omitempty"`
+	Music                       *TDeviceState_TMusic                   `protobuf:"bytes,5,opt,name=Music" json:"Music,omitempty"`
+	Video                       *TDeviceState_TVideo                   `protobuf:"bytes,6,opt,name=Video" json:"Video,omitempty"`
+	AlarmsState                 *string                                `protobuf:"bytes,7,opt,name=AlarmsState" json:"AlarmsState,omitempty"`
+	AlarmState                  *TDeviceState_TAlarmState              `protobuf:"bytes,8,opt,name=AlarmState" json:"AlarmState,omitempty"`
+	DeviceConfig                *TDeviceState_TDeviceConfig            `protobuf:"bytes,9,opt,name=DeviceConfig" json:"DeviceConfig,omitempty"`
+	Timers                      *TDeviceState_TTimers                  `protobuf:"bytes,10,opt,name=Timers" json:"Timers,omitempty"`
+	Radio                       *structpb.Struct                       `protobuf:"bytes,11,opt,name=Radio" json:"Radio,omitempty"`
+	Navigator                   *TNavigator                            `protobuf:"bytes,12,opt,name=Navigator" json:"Navigator,omitempty"`
+	LastWatched                 *TDeviceState_TLastWatched             `protobuf:"bytes,14,opt,name=LastWatched" json:"LastWatched,omitempty"`
+	Battery                     *TDeviceState_TBattery                 `protobuf:"bytes,17,opt,name=Battery" json:"Battery,omitempty"`
+	Tanker                      *TDeviceState_TTanker                  `protobuf:"bytes,19,opt,name=Tanker" json:"Tanker,omitempty"`
+	AudioPlayer                 *TDeviceState_TAudioPlayer             `protobuf:"bytes,22,opt,name=AudioPlayer" json:"AudioPlayer,omitempty"`
+	Multiroom                   *TDeviceState_TMultiroom               `protobuf:"bytes,23,opt,name=Multiroom" json:"Multiroom,omitempty"`
+	Bluetooth                   *TDeviceState_TBluetooth               `protobuf:"bytes,24,opt,name=Bluetooth" json:"Bluetooth,omitempty"`
+	InternetConnection          *TDeviceState_TInternetConnection      `protobuf:"bytes,25,opt,name=InternetConnection" json:"InternetConnection,omitempty"`
+	MicsMuted                   *bool                                  `protobuf:"varint,26,opt,name=MicsMuted" json:"MicsMuted,omitempty"`
+	Screen                      *TDeviceState_TScreen                  `protobuf:"bytes,27,opt,name=Screen" json:"Screen,omitempty"`
+	RcuState                    *TDeviceState_TRcuState                `protobuf:"bytes,28,opt,name=RcuState" json:"RcuState,omitempty"`
+	IsDefaultAssistant          *bool                                  `protobuf:"varint,30,opt,name=IsDefaultAssistant" json:"IsDefaultAssistant,omitempty"`
+	SoundMaxLevel               *uint32                                `protobuf:"varint,32,opt,name=SoundMaxLevel" json:"SoundMaxLevel,omitempty"`
+	ActiveActions               *TDeviceState_TActiveActions           `protobuf:"bytes,33,opt,name=ActiveActions" json:"ActiveActions,omitempty"`
+	TandemState                 *tandem_state.TTandemState             `protobuf:"bytes,35,opt,name=TandemState" json:"TandemState,omitempty"`
+	DeviceSubscriptionState     *subscription_state.TSubscriptionState `protobuf:"bytes,36,opt,name=DeviceSubscriptionState" json:"DeviceSubscriptionState,omitempty"`
+	DeviceReminders             *reminders.TDeviceRemindersState       `protobuf:"bytes,37,opt,name=DeviceReminders" json:"DeviceReminders,omitempty"`
+	PackagesState               *TDeviceState_TPackagesState           `protobuf:"bytes,38,opt,name=PackagesState" json:"PackagesState,omitempty"`
+	ExternalEntitiesDescription []*data.TExternalEntityDescription     `protobuf:"bytes,42,rep,name=ExternalEntitiesDescription" json:"ExternalEntitiesDescription,omitempty"`
+	ClockDisplayState           *TDeviceState_TClockDisplayState       `protobuf:"bytes,44,opt,name=ClockDisplayState" json:"ClockDisplayState,omitempty"`
+	AppScreenInfo               *TDeviceState_TAppScreenInfo           `protobuf:"bytes,46,opt,name=AppScreenInfo" json:"AppScreenInfo,omitempty"`
+	StereoPair                  *TDeviceState_TStereoPair              `protobuf:"bytes,47,opt,name=StereoPair" json:"StereoPair,omitempty"`
+	DNDEnabled                  *bool                                  `protobuf:"varint,48,opt,name=DNDEnabled" json:"DNDEnabled,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
 }
 
 func (x *TDeviceState) Reset() {
@@ -1488,7 +1487,6 @@ func (x *TDeviceState) GetStereoPair() *TDeviceState_TStereoPair {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState) GetDNDEnabled() bool {
 	if x != nil && x.DNDEnabled != nil {
 		return *x.DNDEnabled
@@ -1595,11 +1593,11 @@ type TDeviceStatePart_Packages struct {
 }
 
 type TDeviceStatePart_LastWatched struct {
-	LastWatched *TDeviceState_TLastWatched `protobuf:"bytes,4,opt,name=last_watched,oneof"`
+	LastWatched *TDeviceState_TLastWatched `protobuf:"bytes,4,opt,name=last_watched,json=lastWatched,oneof"`
 }
 
 type TDeviceStatePart_VideoState struct {
-	VideoState *TDeviceState_TVideo `protobuf:"bytes,5,opt,name=video_state,oneof"`
+	VideoState *TDeviceState_TVideo `protobuf:"bytes,5,opt,name=video_state,json=videoState,oneof"`
 }
 
 func (*TDeviceStatePart_Rcu) isTDeviceStatePart_Part() {}
@@ -1612,8 +1610,8 @@ func (*TDeviceStatePart_VideoState) isTDeviceStatePart_Part() {}
 
 type TNavigator_TPoint struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat,json=lat" json:"Lat,omitempty"`
-	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon,json=lon" json:"Lon,omitempty"`
+	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat" json:"Lat,omitempty"`
+	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon" json:"Lon,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1664,10 +1662,10 @@ func (x *TNavigator_TPoint) GetLon() float32 {
 
 type TNavigator_TFavorite struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=Name,json=name" json:"Name,omitempty"`
-	Lat           *float32               `protobuf:"fixed32,2,opt,name=Lat,json=lat" json:"Lat,omitempty"`
-	Lon           *float32               `protobuf:"fixed32,3,opt,name=Lon,json=lon" json:"Lon,omitempty"`
-	ArrivalPoints []*TNavigator_TPoint   `protobuf:"bytes,4,rep,name=ArrivalPoints,json=arrival_points" json:"ArrivalPoints,omitempty"`
+	Name          *string                `protobuf:"bytes,1,opt,name=Name" json:"Name,omitempty"`
+	Lat           *float32               `protobuf:"fixed32,2,opt,name=Lat" json:"Lat,omitempty"`
+	Lon           *float32               `protobuf:"fixed32,3,opt,name=Lon" json:"Lon,omitempty"`
+	ArrivalPoints []*TNavigator_TPoint   `protobuf:"bytes,4,rep,name=ArrivalPoints" json:"ArrivalPoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1732,9 +1730,9 @@ func (x *TNavigator_TFavorite) GetArrivalPoints() []*TNavigator_TPoint {
 
 type TNavigator_TLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat,json=lat" json:"Lat,omitempty"`
-	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon,json=lon" json:"Lon,omitempty"`
-	ArrivalPoints []*TNavigator_TPoint   `protobuf:"bytes,3,rep,name=ArrivalPoints,json=arrival_points" json:"ArrivalPoints,omitempty"`
+	Lat           *float32               `protobuf:"fixed32,1,opt,name=Lat" json:"Lat,omitempty"`
+	Lon           *float32               `protobuf:"fixed32,2,opt,name=Lon" json:"Lon,omitempty"`
+	ArrivalPoints []*TNavigator_TPoint   `protobuf:"bytes,3,rep,name=ArrivalPoints" json:"ArrivalPoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1792,14 +1790,14 @@ func (x *TNavigator_TLocation) GetArrivalPoints() []*TNavigator_TPoint {
 
 type TNavigator_TMapView struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	BottomRightLon *float32               `protobuf:"fixed32,1,opt,name=BottomRightLon,json=br_lon" json:"BottomRightLon,omitempty"`
-	TopRightLon    *float32               `protobuf:"fixed32,2,opt,name=TopRightLon,json=tr_lon" json:"TopRightLon,omitempty"`
-	TopLeftLon     *float32               `protobuf:"fixed32,3,opt,name=TopLeftLon,json=tl_lon" json:"TopLeftLon,omitempty"`
-	BottomLeftLon  *float32               `protobuf:"fixed32,4,opt,name=BottomLeftLon,json=bl_lon" json:"BottomLeftLon,omitempty"`
-	TopLeftLat     *float32               `protobuf:"fixed32,5,opt,name=TopLeftLat,json=tl_lat" json:"TopLeftLat,omitempty"`
-	BottomLeftLat  *float32               `protobuf:"fixed32,6,opt,name=BottomLeftLat,json=bl_lat" json:"BottomLeftLat,omitempty"`
-	BottomRightLat *float32               `protobuf:"fixed32,7,opt,name=BottomRightLat,json=br_lat" json:"BottomRightLat,omitempty"`
-	TopRightLat    *float32               `protobuf:"fixed32,8,opt,name=TopRightLat,json=tr_lat" json:"TopRightLat,omitempty"`
+	BottomRightLon *float32               `protobuf:"fixed32,1,opt,name=BottomRightLon" json:"BottomRightLon,omitempty"`
+	TopRightLon    *float32               `protobuf:"fixed32,2,opt,name=TopRightLon" json:"TopRightLon,omitempty"`
+	TopLeftLon     *float32               `protobuf:"fixed32,3,opt,name=TopLeftLon" json:"TopLeftLon,omitempty"`
+	BottomLeftLon  *float32               `protobuf:"fixed32,4,opt,name=BottomLeftLon" json:"BottomLeftLon,omitempty"`
+	TopLeftLat     *float32               `protobuf:"fixed32,5,opt,name=TopLeftLat" json:"TopLeftLat,omitempty"`
+	BottomLeftLat  *float32               `protobuf:"fixed32,6,opt,name=BottomLeftLat" json:"BottomLeftLat,omitempty"`
+	BottomRightLat *float32               `protobuf:"fixed32,7,opt,name=BottomRightLat" json:"BottomRightLat,omitempty"`
+	TopRightLat    *float32               `protobuf:"fixed32,8,opt,name=TopRightLat" json:"TopRightLat,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1892,13 +1890,13 @@ func (x *TNavigator_TMapView) GetTopRightLat() float32 {
 
 type TNavigator_TRoute struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
-	Points                []*TNavigator_TPoint   `protobuf:"bytes,1,rep,name=Points,json=points" json:"Points,omitempty"`
-	DistanceToDestination *float32               `protobuf:"fixed32,2,opt,name=DistanceToDestination,json=distance_to_destination" json:"DistanceToDestination,omitempty"`
-	RawTimeToDestination  *int64                 `protobuf:"varint,3,opt,name=RawTimeToDestination,json=raw_time_to_destination" json:"RawTimeToDestination,omitempty"`
-	ArrivalTimestamp      *int64                 `protobuf:"varint,4,opt,name=ArrivalTimestamp,json=arrival_timestamp" json:"ArrivalTimestamp,omitempty"`
-	TimeToDestination     *int64                 `protobuf:"varint,5,opt,name=TimeToDestination,json=time_to_destination" json:"TimeToDestination,omitempty"`
-	TimeInTrafficJam      *int64                 `protobuf:"varint,6,opt,name=TimeInTrafficJam,json=time_in_traffic_jam" json:"TimeInTrafficJam,omitempty"`
-	DistanceInTrafficJam  *float32               `protobuf:"fixed32,7,opt,name=DistanceInTrafficJam,json=distance_in_traffic_jam" json:"DistanceInTrafficJam,omitempty"`
+	Points                []*TNavigator_TPoint   `protobuf:"bytes,1,rep,name=Points" json:"Points,omitempty"`
+	DistanceToDestination *float32               `protobuf:"fixed32,2,opt,name=DistanceToDestination" json:"DistanceToDestination,omitempty"`
+	RawTimeToDestination  *int64                 `protobuf:"varint,3,opt,name=RawTimeToDestination" json:"RawTimeToDestination,omitempty"`
+	ArrivalTimestamp      *int64                 `protobuf:"varint,4,opt,name=ArrivalTimestamp" json:"ArrivalTimestamp,omitempty"`
+	TimeToDestination     *int64                 `protobuf:"varint,5,opt,name=TimeToDestination" json:"TimeToDestination,omitempty"`
+	TimeInTrafficJam      *int64                 `protobuf:"varint,6,opt,name=TimeInTrafficJam" json:"TimeInTrafficJam,omitempty"`
+	DistanceInTrafficJam  *float32               `protobuf:"fixed32,7,opt,name=DistanceInTrafficJam" json:"DistanceInTrafficJam,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -1984,8 +1982,8 @@ func (x *TNavigator_TRoute) GetDistanceInTrafficJam() float32 {
 
 type TNavigator_TSpan struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SouthWest     *TNavigator_TPoint     `protobuf:"bytes,1,opt,name=SouthWest,json=south_west" json:"SouthWest,omitempty"`
-	NorthEast     *TNavigator_TPoint     `protobuf:"bytes,2,opt,name=NorthEast,json=north_east" json:"NorthEast,omitempty"`
+	SouthWest     *TNavigator_TPoint     `protobuf:"bytes,1,opt,name=SouthWest" json:"SouthWest,omitempty"`
+	NorthEast     *TNavigator_TPoint     `protobuf:"bytes,2,opt,name=NorthEast" json:"NorthEast,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2036,7 +2034,7 @@ func (x *TNavigator_TSpan) GetNorthEast() *TNavigator_TPoint {
 
 type TNavigator_TSearchOptions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Span          *TNavigator_TSpan      `protobuf:"bytes,1,opt,name=Span,json=span" json:"Span,omitempty"`
+	Span          *TNavigator_TSpan      `protobuf:"bytes,1,opt,name=Span" json:"Span,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2079,15 +2077,15 @@ func (x *TNavigator_TSearchOptions) GetSpan() *TNavigator_TSpan {
 }
 
 type TDeviceState_TAudioPlayer struct {
-	state             protoimpl.MessageState                       `protogen:"open.v1"`
-	PlayerState       *TDeviceState_TAudioPlayer_TPlayerState      `protobuf:"varint,1,opt,name=PlayerState,json=player_state,enum=NAlice.NAliceApi.TDeviceState_TAudioPlayer_TPlayerState" json:"PlayerState,omitempty"`
-	OffsetMs          *int32                                       `protobuf:"varint,2,opt,name=OffsetMs,json=offset_ms" json:"OffsetMs,omitempty"`
-	CurrentlyPlaying  *TDeviceState_TAudioPlayer_TCurrentlyPlaying `protobuf:"bytes,3,opt,name=CurrentlyPlaying,json=current_stream" json:"CurrentlyPlaying,omitempty"`
-	ScenarioMeta      map[string]string                            `protobuf:"bytes,4,rep,name=ScenarioMeta,json=scenario_meta" json:"ScenarioMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	LastPlayTimestamp *float64                                     `protobuf:"fixed64,5,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
-	DurationMs        *int32                                       `protobuf:"varint,6,opt,name=DurationMs,json=duration_ms" json:"DurationMs,omitempty"`
-	LastStopTimestamp *float64                                     `protobuf:"fixed64,7,opt,name=LastStopTimestamp,json=last_stop_timestamp" json:"LastStopTimestamp,omitempty"`
-	PlayedMs          *int32                                       `protobuf:"varint,8,opt,name=PlayedMs,json=played_ms" json:"PlayedMs,omitempty"`
+	state             protoimpl.MessageState                         `protogen:"open.v1"`
+	PlayerState       *TDeviceState_TAudioPlayer_TPlayerState        `protobuf:"varint,1,opt,name=PlayerState,enum=NAlice.NAliceApi.TDeviceState_TAudioPlayer_TPlayerState" json:"PlayerState,omitempty"`
+	OffsetMs          *int32                                         `protobuf:"varint,2,opt,name=OffsetMs" json:"OffsetMs,omitempty"`
+	CurrentlyPlaying  *TDeviceState_TAudioPlayer_TCurrentlyPlaying   `protobuf:"bytes,3,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	ScenarioMeta      []*TDeviceState_TAudioPlayer_ScenarioMetaEntry `protobuf:"bytes,4,rep,name=ScenarioMeta" json:"ScenarioMeta,omitempty"`
+	LastPlayTimestamp *float64                                       `protobuf:"fixed64,5,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
+	DurationMs        *int32                                         `protobuf:"varint,6,opt,name=DurationMs" json:"DurationMs,omitempty"`
+	LastStopTimestamp *float64                                       `protobuf:"fixed64,7,opt,name=LastStopTimestamp" json:"LastStopTimestamp,omitempty"`
+	PlayedMs          *int32                                         `protobuf:"varint,8,opt,name=PlayedMs" json:"PlayedMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2143,7 +2141,7 @@ func (x *TDeviceState_TAudioPlayer) GetCurrentlyPlaying() *TDeviceState_TAudioPl
 	return nil
 }
 
-func (x *TDeviceState_TAudioPlayer) GetScenarioMeta() map[string]string {
+func (x *TDeviceState_TAudioPlayer) GetScenarioMeta() []*TDeviceState_TAudioPlayer_ScenarioMetaEntry {
 	if x != nil {
 		return x.ScenarioMeta
 	}
@@ -2180,15 +2178,15 @@ func (x *TDeviceState_TAudioPlayer) GetPlayedMs() int32 {
 
 type TDeviceState_TMusic struct {
 	state             protoimpl.MessageState                 `protogen:"open.v1"`
-	CurrentlyPlaying  *TDeviceState_TMusic_TCurrentlyPlaying `protobuf:"bytes,1,opt,name=CurrentlyPlaying,json=currently_playing" json:"CurrentlyPlaying,omitempty"`
-	Uid               *string                                `protobuf:"bytes,2,opt,name=Uid,json=uid" json:"Uid,omitempty"`
-	PlaylistOwner     *string                                `protobuf:"bytes,3,opt,name=PlaylistOwner,json=playlist_owner" json:"PlaylistOwner,omitempty"`
-	Player            *TDeviceState_TMusic_TPlayer           `protobuf:"bytes,4,opt,name=Player,json=player" json:"Player,omitempty"`
-	SoundLevel        *uint32                                `protobuf:"varint,5,opt,name=SoundLevel,json=sound_level" json:"SoundLevel,omitempty"`
-	SoundMuted        *bool                                  `protobuf:"varint,6,opt,name=SoundMuted,json=sound_muted" json:"SoundMuted,omitempty"`
-	SessionId         *string                                `protobuf:"bytes,7,opt,name=SessionId,json=session_id" json:"SessionId,omitempty"`
-	LastPlayTimestamp *float64                               `protobuf:"fixed64,8,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
-	LastStopTimestamp *float64                               `protobuf:"fixed64,9,opt,name=LastStopTimestamp,json=last_stop_timestamp" json:"LastStopTimestamp,omitempty"`
+	CurrentlyPlaying  *TDeviceState_TMusic_TCurrentlyPlaying `protobuf:"bytes,1,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	Uid               *string                                `protobuf:"bytes,2,opt,name=Uid" json:"Uid,omitempty"`
+	PlaylistOwner     *string                                `protobuf:"bytes,3,opt,name=PlaylistOwner" json:"PlaylistOwner,omitempty"`
+	Player            *TDeviceState_TMusic_TPlayer           `protobuf:"bytes,4,opt,name=Player" json:"Player,omitempty"`
+	SoundLevel        *uint32                                `protobuf:"varint,5,opt,name=SoundLevel" json:"SoundLevel,omitempty"`
+	SoundMuted        *bool                                  `protobuf:"varint,6,opt,name=SoundMuted" json:"SoundMuted,omitempty"`
+	SessionId         *string                                `protobuf:"bytes,7,opt,name=SessionId" json:"SessionId,omitempty"`
+	LastPlayTimestamp *float64                               `protobuf:"fixed64,8,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
+	LastStopTimestamp *float64                               `protobuf:"fixed64,9,opt,name=LastStopTimestamp" json:"LastStopTimestamp,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2288,9 +2286,9 @@ func (x *TDeviceState_TMusic) GetLastStopTimestamp() float64 {
 
 type TDeviceState_TScreen struct {
 	state                      protoimpl.MessageState                   `protogen:"open.v1"`
-	SupportedScreenResolutions []TDeviceState_TScreen_EScreenResolution `protobuf:"varint,1,rep,name=SupportedScreenResolutions,json=supported_screen_resolutions,enum=NAlice.NAliceApi.TDeviceState_TScreen_EScreenResolution" json:"SupportedScreenResolutions,omitempty"`
-	HdcpLevel                  *TDeviceState_TScreen_EHdcpLevel         `protobuf:"varint,2,opt,name=HdcpLevel,json=hdcp_level,enum=NAlice.NAliceApi.TDeviceState_TScreen_EHdcpLevel" json:"HdcpLevel,omitempty"`
-	DynamicRanges              []TDeviceState_TScreen_EDynamicRange     `protobuf:"varint,3,rep,name=DynamicRanges,json=dynamic_ranges,enum=NAlice.NAliceApi.TDeviceState_TScreen_EDynamicRange" json:"DynamicRanges,omitempty"`
+	SupportedScreenResolutions []TDeviceState_TScreen_EScreenResolution `protobuf:"varint,1,rep,name=SupportedScreenResolutions,enum=NAlice.NAliceApi.TDeviceState_TScreen_EScreenResolution" json:"SupportedScreenResolutions,omitempty"`
+	HdcpLevel                  *TDeviceState_TScreen_EHdcpLevel         `protobuf:"varint,2,opt,name=HdcpLevel,enum=NAlice.NAliceApi.TDeviceState_TScreen_EHdcpLevel" json:"HdcpLevel,omitempty"`
+	DynamicRanges              []TDeviceState_TScreen_EDynamicRange     `protobuf:"varint,3,rep,name=DynamicRanges,enum=NAlice.NAliceApi.TDeviceState_TScreen_EDynamicRange" json:"DynamicRanges,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -2348,17 +2346,17 @@ func (x *TDeviceState_TScreen) GetDynamicRanges() []TDeviceState_TScreen_EDynami
 
 type TDeviceState_TVideo struct {
 	state              protoimpl.MessageState                  `protogen:"open.v1"`
-	CurrentScreen      *string                                 `protobuf:"bytes,1,opt,name=CurrentScreen,json=current_screen" json:"CurrentScreen,omitempty"`
-	ScreenState        *TDeviceState_TVideo_TScreenState       `protobuf:"bytes,2,opt,name=ScreenState,json=screen_state" json:"ScreenState,omitempty"`
-	CurrentlyPlaying   *TDeviceState_TVideo_TCurrentlyPlaying  `protobuf:"bytes,3,opt,name=CurrentlyPlaying,json=currently_playing" json:"CurrentlyPlaying,omitempty"`
-	ViewState          *structpb.Struct                        `protobuf:"bytes,5,opt,name=ViewState,json=view_state" json:"ViewState,omitempty"`
-	PageState          *structpb.Struct                        `protobuf:"bytes,8,opt,name=PageState,json=page_state" json:"PageState,omitempty"`
-	LastPlayTimestamp  *float64                                `protobuf:"fixed64,9,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
-	LastStopTimestamp  *float64                                `protobuf:"fixed64,10,opt,name=LastStopTimestamp,json=last_stop_timestamp" json:"LastStopTimestamp,omitempty"`
-	Player             *TDeviceState_TVideo_TPlayer            `protobuf:"bytes,11,opt,name=Player,json=player" json:"Player,omitempty"`
-	TvInterfaceState   *TDeviceState_TVideo_TTvInterfaceState  `protobuf:"bytes,13,opt,name=TvInterfaceState,json=tv_interface_state" json:"TvInterfaceState,omitempty"`
-	PlayerCapabilities []TDeviceState_TVideo_EPlayerCapability `protobuf:"varint,14,rep,name=PlayerCapabilities,json=player_capabilities,enum=NAlice.NAliceApi.TDeviceState_TVideo_EPlayerCapability" json:"PlayerCapabilities,omitempty"`
-	PlayerName         *string                                 `protobuf:"bytes,15,opt,name=PlayerName,json=player_name" json:"PlayerName,omitempty"`
+	CurrentScreen      *string                                 `protobuf:"bytes,1,opt,name=CurrentScreen" json:"CurrentScreen,omitempty"`
+	ScreenState        *TDeviceState_TVideo_TScreenState       `protobuf:"bytes,2,opt,name=ScreenState" json:"ScreenState,omitempty"`
+	CurrentlyPlaying   *TDeviceState_TVideo_TCurrentlyPlaying  `protobuf:"bytes,3,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	ViewState          *structpb.Struct                        `protobuf:"bytes,5,opt,name=ViewState" json:"ViewState,omitempty"`
+	PageState          *structpb.Struct                        `protobuf:"bytes,8,opt,name=PageState" json:"PageState,omitempty"`
+	LastPlayTimestamp  *float64                                `protobuf:"fixed64,9,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
+	LastStopTimestamp  *float64                                `protobuf:"fixed64,10,opt,name=LastStopTimestamp" json:"LastStopTimestamp,omitempty"`
+	Player             *TDeviceState_TVideo_TPlayer            `protobuf:"bytes,11,opt,name=Player" json:"Player,omitempty"`
+	TvInterfaceState   *TDeviceState_TVideo_TTvInterfaceState  `protobuf:"bytes,13,opt,name=TvInterfaceState" json:"TvInterfaceState,omitempty"`
+	PlayerCapabilities []TDeviceState_TVideo_EPlayerCapability `protobuf:"varint,14,rep,name=PlayerCapabilities,enum=NAlice.NAliceApi.TDeviceState_TVideo_EPlayerCapability" json:"PlayerCapabilities,omitempty"`
+	PlayerName         *string                                 `protobuf:"bytes,15,opt,name=PlayerName" json:"PlayerName,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -2472,9 +2470,9 @@ func (x *TDeviceState_TVideo) GetPlayerName() string {
 
 type TDeviceState_TLastWatched struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	RawMovies     []*video.TWatchedVideoItem  `protobuf:"bytes,4,rep,name=RawMovies,json=movies" json:"RawMovies,omitempty"`
-	RawTvShows    []*video.TWatchedTvShowItem `protobuf:"bytes,5,rep,name=RawTvShows,json=tv_shows" json:"RawTvShows,omitempty"`
-	RawVideos     []*video.TWatchedVideoItem  `protobuf:"bytes,6,rep,name=RawVideos,json=videos" json:"RawVideos,omitempty"`
+	RawMovies     []*video.TWatchedVideoItem  `protobuf:"bytes,4,rep,name=RawMovies" json:"RawMovies,omitempty"`
+	RawTvShows    []*video.TWatchedTvShowItem `protobuf:"bytes,5,rep,name=RawTvShows" json:"RawTvShows,omitempty"`
+	RawVideos     []*video.TWatchedVideoItem  `protobuf:"bytes,6,rep,name=RawVideos" json:"RawVideos,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2532,7 +2530,7 @@ func (x *TDeviceState_TLastWatched) GetRawVideos() []*video.TWatchedVideoItem {
 
 type TDeviceState_TTimers struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	ActiveTimers  []*TDeviceState_TTimers_TTimer `protobuf:"bytes,1,rep,name=ActiveTimers,json=active_timers" json:"ActiveTimers,omitempty"`
+	ActiveTimers  []*TDeviceState_TTimers_TTimer `protobuf:"bytes,1,rep,name=ActiveTimers" json:"ActiveTimers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2576,12 +2574,12 @@ func (x *TDeviceState_TTimers) GetActiveTimers() []*TDeviceState_TTimers_TTimer 
 
 type TDeviceState_TAlarmState struct {
 	state                 protoimpl.MessageState                       `protogen:"open.v1"`
-	ICalendar             *string                                      `protobuf:"bytes,1,opt,name=ICalendar,json=icalendar" json:"ICalendar,omitempty"`
-	CurrentlyPlaying      *bool                                        `protobuf:"varint,2,opt,name=CurrentlyPlaying,json=currently_playing" json:"CurrentlyPlaying,omitempty"`
-	SoundAlarmSetting     *TDeviceState_TAlarmState_TSoundAlarmSetting `protobuf:"bytes,3,opt,name=SoundAlarmSetting,json=sound_alarm_setting" json:"SoundAlarmSetting,omitempty"`
-	MaxSoundLevel         *uint32                                      `protobuf:"varint,4,opt,name=MaxSoundLevel,json=max_sound_level" json:"MaxSoundLevel,omitempty"`
-	MinSoundLevel         *uint32                                      `protobuf:"varint,5,opt,name=MinSoundLevel,json=min_sound_level" json:"MinSoundLevel,omitempty"`
-	MediaCurrentlyPlaying *bool                                        `protobuf:"varint,6,opt,name=MediaCurrentlyPlaying,json=media_currently_playing" json:"MediaCurrentlyPlaying,omitempty"`
+	ICalendar             *string                                      `protobuf:"bytes,1,opt,name=ICalendar" json:"ICalendar,omitempty"`
+	CurrentlyPlaying      *bool                                        `protobuf:"varint,2,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	SoundAlarmSetting     *TDeviceState_TAlarmState_TSoundAlarmSetting `protobuf:"bytes,3,opt,name=SoundAlarmSetting" json:"SoundAlarmSetting,omitempty"`
+	MaxSoundLevel         *uint32                                      `protobuf:"varint,4,opt,name=MaxSoundLevel" json:"MaxSoundLevel,omitempty"`
+	MinSoundLevel         *uint32                                      `protobuf:"varint,5,opt,name=MinSoundLevel" json:"MinSoundLevel,omitempty"`
+	MediaCurrentlyPlaying *bool                                        `protobuf:"varint,6,opt,name=MediaCurrentlyPlaying" json:"MediaCurrentlyPlaying,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -2660,12 +2658,12 @@ func (x *TDeviceState_TAlarmState) GetMediaCurrentlyPlaying() bool {
 
 type TDeviceState_TDeviceConfig struct {
 	state                protoimpl.MessageState   `protogen:"open.v1"`
-	ContentSettings      *protos.EContentSettings `protobuf:"varint,1,opt,name=ContentSettings,json=content_settings,enum=NAlice.EContentSettings" json:"ContentSettings,omitempty"`
-	Spotter              *string                  `protobuf:"bytes,2,opt,name=Spotter,json=spotter" json:"Spotter,omitempty"`
-	ChildContentSettings *protos.EContentSettings `protobuf:"varint,3,opt,name=ChildContentSettings,json=child_content_settings,enum=NAlice.EContentSettings" json:"ChildContentSettings,omitempty"`
-	RadioNannyEnabled    *bool                    `protobuf:"varint,4,opt,name=RadioNannyEnabled,json=radio_nanny_enabled" json:"RadioNannyEnabled,omitempty"`
-	SmartActivation      *bool                    `protobuf:"varint,5,opt,name=SmartActivation,json=smart_activation" json:"SmartActivation,omitempty"`
-	SmartVolumeEnabled   *bool                    `protobuf:"varint,6,opt,name=SmartVolumeEnabled,json=smart_volume_enabled" json:"SmartVolumeEnabled,omitempty"`
+	ContentSettings      *protos.EContentSettings `protobuf:"varint,1,opt,name=ContentSettings,enum=NAlice.EContentSettings" json:"ContentSettings,omitempty"`
+	Spotter              *string                  `protobuf:"bytes,2,opt,name=Spotter" json:"Spotter,omitempty"`
+	ChildContentSettings *protos.EContentSettings `protobuf:"varint,3,opt,name=ChildContentSettings,enum=NAlice.EContentSettings" json:"ChildContentSettings,omitempty"`
+	RadioNannyEnabled    *bool                    `protobuf:"varint,4,opt,name=RadioNannyEnabled" json:"RadioNannyEnabled,omitempty"`
+	SmartActivation      *bool                    `protobuf:"varint,5,opt,name=SmartActivation" json:"SmartActivation,omitempty"`
+	SmartVolumeEnabled   *bool                    `protobuf:"varint,6,opt,name=SmartVolumeEnabled" json:"SmartVolumeEnabled,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -2744,7 +2742,7 @@ func (x *TDeviceState_TDeviceConfig) GetSmartVolumeEnabled() bool {
 
 type TDeviceState_TBattery struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Percent       *int32                 `protobuf:"varint,1,opt,name=Percent,json=percent" json:"Percent,omitempty"`
+	Percent       *int32                 `protobuf:"varint,1,opt,name=Percent" json:"Percent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2788,13 +2786,13 @@ func (x *TDeviceState_TBattery) GetPercent() int32 {
 
 type TDeviceState_TMultiroom struct {
 	state                protoimpl.MessageState                  `protogen:"open.v1"`
-	Mode                 *TDeviceState_TMultiroom_EMultiroomMode `protobuf:"varint,1,opt,name=Mode,json=mode,enum=NAlice.NAliceApi.TDeviceState_TMultiroom_EMultiroomMode" json:"Mode,omitempty"`
-	MultiroomSessionId   *string                                 `protobuf:"bytes,2,opt,name=MultiroomSessionId,json=multiroom_session_id" json:"MultiroomSessionId,omitempty"`
-	Music                *TDeviceState_TMusic                    `protobuf:"bytes,3,opt,name=Music,json=music" json:"Music,omitempty"`
-	MasterDeviceId       *string                                 `protobuf:"bytes,4,opt,name=MasterDeviceId,json=master_device_id" json:"MasterDeviceId,omitempty"`
-	VisiblePeerDeviceIds []string                                `protobuf:"bytes,5,rep,name=VisiblePeerDeviceIds,json=visible_peers" json:"VisiblePeerDeviceIds,omitempty"`
-	MultiroomToken       *string                                 `protobuf:"bytes,6,opt,name=MultiroomToken,json=multiroom_token" json:"MultiroomToken,omitempty"`
-	RoomDeviceIds        []string                                `protobuf:"bytes,7,rep,name=RoomDeviceIds,json=room_device_ids" json:"RoomDeviceIds,omitempty"`
+	Mode                 *TDeviceState_TMultiroom_EMultiroomMode `protobuf:"varint,1,opt,name=Mode,enum=NAlice.NAliceApi.TDeviceState_TMultiroom_EMultiroomMode" json:"Mode,omitempty"`
+	MultiroomSessionId   *string                                 `protobuf:"bytes,2,opt,name=MultiroomSessionId" json:"MultiroomSessionId,omitempty"`
+	Music                *TDeviceState_TMusic                    `protobuf:"bytes,3,opt,name=Music" json:"Music,omitempty"`
+	MasterDeviceId       *string                                 `protobuf:"bytes,4,opt,name=MasterDeviceId" json:"MasterDeviceId,omitempty"`
+	VisiblePeerDeviceIds []string                                `protobuf:"bytes,5,rep,name=VisiblePeerDeviceIds" json:"VisiblePeerDeviceIds,omitempty"`
+	MultiroomToken       *string                                 `protobuf:"bytes,6,opt,name=MultiroomToken" json:"MultiroomToken,omitempty"`
+	RoomDeviceIds        []string                                `protobuf:"bytes,7,rep,name=RoomDeviceIds" json:"RoomDeviceIds,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -2880,10 +2878,10 @@ func (x *TDeviceState_TMultiroom) GetRoomDeviceIds() []string {
 
 type TDeviceState_TBluetooth struct {
 	state              protoimpl.MessageState                     `protogen:"open.v1"`
-	Player             *TDeviceState_TBluetooth_TPlayer           `protobuf:"bytes,1,opt,name=Player,json=player" json:"Player,omitempty"`
-	CurrentConnections []*TDeviceState_TBluetooth_TConnection     `protobuf:"bytes,2,rep,name=CurrentConnections,json=current_connections" json:"CurrentConnections,omitempty"`
-	CurrentlyPlaying   *TDeviceState_TBluetooth_TCurrentlyPlaying `protobuf:"bytes,3,opt,name=CurrentlyPlaying,json=currently_playing" json:"CurrentlyPlaying,omitempty"`
-	LastPlayTimestamp  *float64                                   `protobuf:"fixed64,4,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
+	Player             *TDeviceState_TBluetooth_TPlayer           `protobuf:"bytes,1,opt,name=Player" json:"Player,omitempty"`
+	CurrentConnections []*TDeviceState_TBluetooth_TConnection     `protobuf:"bytes,2,rep,name=CurrentConnections" json:"CurrentConnections,omitempty"`
+	CurrentlyPlaying   *TDeviceState_TBluetooth_TCurrentlyPlaying `protobuf:"bytes,3,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	LastPlayTimestamp  *float64                                   `protobuf:"fixed64,4,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -2948,10 +2946,10 @@ func (x *TDeviceState_TBluetooth) GetLastPlayTimestamp() float64 {
 
 type TDeviceState_TInternetConnection struct {
 	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Type          *TDeviceState_TInternetConnection_EType          `protobuf:"varint,1,opt,name=Type,json=type,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_EType" json:"Type,omitempty"`
-	Current       *TDeviceState_TInternetConnection_TWifiNetwork   `protobuf:"bytes,2,opt,name=Current,json=current" json:"Current,omitempty"`
-	Neighbours    []*TDeviceState_TInternetConnection_TWifiNetwork `protobuf:"bytes,3,rep,name=Neighbours,json=neighbours" json:"Neighbours,omitempty"`
-	Status        *TDeviceState_TInternetConnection_EStatus        `protobuf:"varint,4,opt,name=Status,json=status,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_EStatus" json:"Status,omitempty"`
+	Type          *TDeviceState_TInternetConnection_EType          `protobuf:"varint,1,opt,name=Type,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_EType" json:"Type,omitempty"`
+	Current       *TDeviceState_TInternetConnection_TWifiNetwork   `protobuf:"bytes,2,opt,name=Current" json:"Current,omitempty"`
+	Neighbours    []*TDeviceState_TInternetConnection_TWifiNetwork `protobuf:"bytes,3,rep,name=Neighbours" json:"Neighbours,omitempty"`
+	Status        *TDeviceState_TInternetConnection_EStatus        `protobuf:"varint,4,opt,name=Status,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_EStatus" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3016,10 +3014,10 @@ func (x *TDeviceState_TInternetConnection) GetStatus() TDeviceState_TInternetCon
 
 type TDeviceState_TRcuState struct {
 	state           protoimpl.MessageState                   `protogen:"open.v1"`
-	IsRcuConnected  *bool                                    `protobuf:"varint,1,opt,name=IsRcuConnected,json=is_rcu_connected" json:"IsRcuConnected,omitempty"`
-	SetupState      *TDeviceState_TRcuState_ESetupState      `protobuf:"varint,2,opt,name=SetupState,json=setup_state,enum=NAlice.NAliceApi.TDeviceState_TRcuState_ESetupState" json:"SetupState,omitempty"`
-	TotalCodesets   *int32                                   `protobuf:"varint,3,opt,name=TotalCodesets,json=total_codesets" json:"TotalCodesets,omitempty"`
-	RcuCapabilities *TDeviceState_TRcuState_TRcuCapabilities `protobuf:"bytes,4,opt,name=RcuCapabilities,json=rcu_capabilities" json:"RcuCapabilities,omitempty"`
+	IsRcuConnected  *bool                                    `protobuf:"varint,1,opt,name=IsRcuConnected" json:"IsRcuConnected,omitempty"`
+	SetupState      *TDeviceState_TRcuState_ESetupState      `protobuf:"varint,2,opt,name=SetupState,enum=NAlice.NAliceApi.TDeviceState_TRcuState_ESetupState" json:"SetupState,omitempty"`
+	TotalCodesets   *int32                                   `protobuf:"varint,3,opt,name=TotalCodesets" json:"TotalCodesets,omitempty"`
+	RcuCapabilities *TDeviceState_TRcuState_TRcuCapabilities `protobuf:"bytes,4,opt,name=RcuCapabilities" json:"RcuCapabilities,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -3084,7 +3082,7 @@ func (x *TDeviceState_TRcuState) GetRcuCapabilities() *TDeviceState_TRcuState_TR
 
 type TDeviceState_TPackagesState struct {
 	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Installed     []*TDeviceState_TPackagesState_TInstalledPackage `protobuf:"bytes,1,rep,name=Installed,json=installed" json:"Installed,omitempty"`
+	Installed     []*TDeviceState_TPackagesState_TInstalledPackage `protobuf:"bytes,1,rep,name=Installed" json:"Installed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3128,7 +3126,7 @@ func (x *TDeviceState_TPackagesState) GetInstalled() []*TDeviceState_TPackagesSt
 
 type TDeviceState_TClockDisplayState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ClockEnabled  *bool                  `protobuf:"varint,1,opt,name=ClockEnabled,json=clock_enabled" json:"ClockEnabled,omitempty"`
+	ClockEnabled  *bool                  `protobuf:"varint,1,opt,name=ClockEnabled" json:"ClockEnabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3216,7 +3214,7 @@ func (x *TDeviceState_TActiveActions) GetScreenConditionalActions() map[string]*
 
 type TDeviceState_TAppScreenInfo struct {
 	state          protoimpl.MessageState                       `protogen:"open.v1"`
-	SourceScreenId *TDeviceState_TAppScreenInfo_ESourceScreenId `protobuf:"varint,3,opt,name=SourceScreenId,json=source_screen_id,enum=NAlice.NAliceApi.TDeviceState_TAppScreenInfo_ESourceScreenId" json:"SourceScreenId,omitempty"`
+	SourceScreenId *TDeviceState_TAppScreenInfo_ESourceScreenId `protobuf:"varint,3,opt,name=SourceScreenId,enum=NAlice.NAliceApi.TDeviceState_TAppScreenInfo_ESourceScreenId" json:"SourceScreenId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -3260,11 +3258,11 @@ func (x *TDeviceState_TAppScreenInfo) GetSourceScreenId() TDeviceState_TAppScree
 
 type TDeviceState_TStereoPair struct {
 	state              protoimpl.MessageState                        `protogen:"open.v1"`
-	Channel            *TDeviceState_TStereoPair_EChannel            `protobuf:"varint,1,opt,name=Channel,json=channel,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EChannel" json:"Channel,omitempty"`
-	Connected          *TDeviceState_TStereoPair_EConnected          `protobuf:"varint,2,opt,name=Connected,json=connected,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EConnected" json:"Connected,omitempty"`
-	Role               *TDeviceState_TStereoPair_ERole               `protobuf:"varint,3,opt,name=Role,json=role,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_ERole" json:"Role,omitempty"`
-	StereoPlayerStatus *TDeviceState_TStereoPair_EStereoPlayerStatus `protobuf:"varint,4,opt,name=StereoPlayerStatus,json=stereo_player_status,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EStereoPlayerStatus" json:"StereoPlayerStatus,omitempty"`
-	PartnerDeviceId    *string                                       `protobuf:"bytes,5,opt,name=PartnerDeviceId,json=partner_device_id" json:"PartnerDeviceId,omitempty"`
+	Channel            *TDeviceState_TStereoPair_EChannel            `protobuf:"varint,1,opt,name=Channel,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EChannel" json:"Channel,omitempty"`
+	Connected          *TDeviceState_TStereoPair_EConnected          `protobuf:"varint,2,opt,name=Connected,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EConnected" json:"Connected,omitempty"`
+	Role               *TDeviceState_TStereoPair_ERole               `protobuf:"varint,3,opt,name=Role,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_ERole" json:"Role,omitempty"`
+	StereoPlayerStatus *TDeviceState_TStereoPair_EStereoPlayerStatus `protobuf:"varint,4,opt,name=StereoPlayerStatus,enum=NAlice.NAliceApi.TDeviceState_TStereoPair_EStereoPlayerStatus" json:"StereoPlayerStatus,omitempty"`
+	PartnerDeviceId    *string                                       `protobuf:"bytes,5,opt,name=PartnerDeviceId" json:"PartnerDeviceId,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -3336,10 +3334,10 @@ func (x *TDeviceState_TStereoPair) GetPartnerDeviceId() string {
 
 type TDeviceState_TTanker struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	GasStationId  *string                `protobuf:"bytes,1,opt,name=GasStationId,json=gas_station_id" json:"GasStationId,omitempty"`
-	FuelType      *string                `protobuf:"bytes,2,opt,name=FuelType,json=fuel_type" json:"FuelType,omitempty"`
-	CreditCard    *bool                  `protobuf:"varint,3,opt,name=CreditCard,json=credit_card" json:"CreditCard,omitempty"`
-	XPayment      *string                `protobuf:"bytes,4,opt,name=XPayment,json=xPayment" json:"XPayment,omitempty"`
+	GasStationId  *string                `protobuf:"bytes,1,opt,name=GasStationId" json:"GasStationId,omitempty"`
+	FuelType      *string                `protobuf:"bytes,2,opt,name=FuelType" json:"FuelType,omitempty"`
+	CreditCard    *bool                  `protobuf:"varint,3,opt,name=CreditCard" json:"CreditCard,omitempty"`
+	XPayment      *string                `protobuf:"bytes,4,opt,name=XPayment" json:"XPayment,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3404,11 +3402,11 @@ func (x *TDeviceState_TTanker) GetXPayment() string {
 
 type TDeviceState_TAudioPlayer_TCurrentlyPlaying struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	StreamId          *string                `protobuf:"bytes,1,opt,name=StreamId,json=stream_id" json:"StreamId,omitempty"`
-	LastPlayTimestamp *float64               `protobuf:"fixed64,2,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
-	Title             *string                `protobuf:"bytes,3,opt,name=Title,json=title" json:"Title,omitempty"`
-	SubTitle          *string                `protobuf:"bytes,4,opt,name=SubTitle,json=subtitle" json:"SubTitle,omitempty"`
-	StreamType        *string                `protobuf:"bytes,5,opt,name=StreamType,json=stream_type" json:"StreamType,omitempty"`
+	StreamId          *string                `protobuf:"bytes,1,opt,name=StreamId" json:"StreamId,omitempty"`
+	LastPlayTimestamp *float64               `protobuf:"fixed64,2,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
+	Title             *string                `protobuf:"bytes,3,opt,name=Title" json:"Title,omitempty"`
+	SubTitle          *string                `protobuf:"bytes,4,opt,name=SubTitle" json:"SubTitle,omitempty"`
+	StreamType        *string                `protobuf:"bytes,5,opt,name=StreamType" json:"StreamType,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -3478,11 +3476,63 @@ func (x *TDeviceState_TAudioPlayer_TCurrentlyPlaying) GetStreamType() string {
 	return ""
 }
 
+type TDeviceState_TAudioPlayer_ScenarioMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *string                `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDeviceState_TAudioPlayer_ScenarioMetaEntry) Reset() {
+	*x = TDeviceState_TAudioPlayer_ScenarioMetaEntry{}
+	mi := &file_alice_protos_api_alicekit_common_device_state_device_state_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDeviceState_TAudioPlayer_ScenarioMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDeviceState_TAudioPlayer_ScenarioMetaEntry) ProtoMessage() {}
+
+func (x *TDeviceState_TAudioPlayer_ScenarioMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_common_device_state_device_state_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDeviceState_TAudioPlayer_ScenarioMetaEntry.ProtoReflect.Descriptor instead.
+func (*TDeviceState_TAudioPlayer_ScenarioMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawDescGZIP(), []int{2, 0, 1}
+}
+
+func (x *TDeviceState_TAudioPlayer_ScenarioMetaEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *TDeviceState_TAudioPlayer_ScenarioMetaEntry) GetValue() string {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return ""
+}
+
 type TDeviceState_TMusic_TCurrentlyPlaying struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	TrackId           *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id" json:"TrackId,omitempty"`
-	RawTrackInfo      *structpb.Struct       `protobuf:"bytes,2,opt,name=RawTrackInfo,json=track_info" json:"RawTrackInfo,omitempty"`
-	LastPlayTimestamp *float64               `protobuf:"fixed64,3,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
+	TrackId           *string                `protobuf:"bytes,1,opt,name=TrackId" json:"TrackId,omitempty"`
+	RawTrackInfo      *structpb.Struct       `protobuf:"bytes,2,opt,name=RawTrackInfo" json:"RawTrackInfo,omitempty"`
+	LastPlayTimestamp *float64               `protobuf:"fixed64,3,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -3539,11 +3589,10 @@ func (x *TDeviceState_TMusic_TCurrentlyPlaying) GetLastPlayTimestamp() float64 {
 }
 
 type TDeviceState_TMusic_TPlayer struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Pause *bool                  `protobuf:"varint,1,opt,name=Pause,json=pause" json:"Pause,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	TimestampDeprecated *uint64  `protobuf:"varint,2,opt,name=TimestampDeprecated" json:"TimestampDeprecated,omitempty"`
-	Timestamp           *float64 `protobuf:"fixed64,3,opt,name=Timestamp,json=timestamp" json:"Timestamp,omitempty"`
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Pause               *bool                  `protobuf:"varint,1,opt,name=Pause" json:"Pause,omitempty"`
+	TimestampDeprecated *uint64                `protobuf:"varint,2,opt,name=TimestampDeprecated" json:"TimestampDeprecated,omitempty"`
+	Timestamp           *float64               `protobuf:"fixed64,3,opt,name=Timestamp" json:"Timestamp,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -3585,7 +3634,6 @@ func (x *TDeviceState_TMusic_TPlayer) GetPause() bool {
 	return false
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState_TMusic_TPlayer) GetTimestampDeprecated() uint64 {
 	if x != nil && x.TimestampDeprecated != nil {
 		return *x.TimestampDeprecated
@@ -3601,16 +3649,15 @@ func (x *TDeviceState_TMusic_TPlayer) GetTimestamp() float64 {
 }
 
 type TDeviceState_TVideo_TScreenState struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	VisibleItems []uint32               `protobuf:"varint,2,rep,name=VisibleItems,json=visible_items" json:"VisibleItems,omitempty"`
-	Season       *uint32                `protobuf:"varint,5,opt,name=Season,json=season" json:"Season,omitempty"`
-	RawItems     []*video.TVideoItem    `protobuf:"bytes,6,rep,name=RawItems,json=items" json:"RawItems,omitempty"`
-	RawItem      *video.TVideoItem      `protobuf:"bytes,7,opt,name=RawItem,json=item" json:"RawItem,omitempty"`
-	TvShowItem   *video.TVideoItem      `protobuf:"bytes,8,opt,name=TvShowItem,json=tv_show_item" json:"TvShowItem,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	Scenario      *string `protobuf:"bytes,9,opt,name=Scenario,json=scenario" json:"Scenario,omitempty"`
-	ViewKey       *string `protobuf:"bytes,10,opt,name=ViewKey,json=view_key" json:"ViewKey,omitempty"`
-	ScenarioName  *string `protobuf:"bytes,11,opt,name=ScenarioName,json=scenario_name" json:"ScenarioName,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	VisibleItems  []uint32               `protobuf:"varint,2,rep,name=VisibleItems" json:"VisibleItems,omitempty"`
+	Season        *uint32                `protobuf:"varint,5,opt,name=Season" json:"Season,omitempty"`
+	RawItems      []*video.TVideoItem    `protobuf:"bytes,6,rep,name=RawItems" json:"RawItems,omitempty"`
+	RawItem       *video.TVideoItem      `protobuf:"bytes,7,opt,name=RawItem" json:"RawItem,omitempty"`
+	TvShowItem    *video.TVideoItem      `protobuf:"bytes,8,opt,name=TvShowItem" json:"TvShowItem,omitempty"`
+	Scenario      *string                `protobuf:"bytes,9,opt,name=Scenario" json:"Scenario,omitempty"`
+	ViewKey       *string                `protobuf:"bytes,10,opt,name=ViewKey" json:"ViewKey,omitempty"`
+	ScenarioName  *string                `protobuf:"bytes,11,opt,name=ScenarioName" json:"ScenarioName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3680,7 +3727,6 @@ func (x *TDeviceState_TVideo_TScreenState) GetTvShowItem() *video.TVideoItem {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState_TVideo_TScreenState) GetScenario() string {
 	if x != nil && x.Scenario != nil {
 		return *x.Scenario
@@ -3703,16 +3749,15 @@ func (x *TDeviceState_TVideo_TScreenState) GetScenarioName() string {
 }
 
 type TDeviceState_TVideo_TCurrentlyPlaying struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	Paused            *bool                                            `protobuf:"varint,1,opt,name=Paused,json=paused" json:"Paused,omitempty"`
-	Progress          *TDeviceState_TVideo_TCurrentlyPlaying_TProgress `protobuf:"bytes,2,opt,name=Progress,json=progress" json:"Progress,omitempty"`
-	RawItem           *video.TVideoItem                                `protobuf:"bytes,8,opt,name=RawItem,json=item" json:"RawItem,omitempty"`
-	RawNextItem       *video.TVideoItem                                `protobuf:"bytes,9,opt,name=RawNextItem,json=next_item" json:"RawNextItem,omitempty"`
-	RawTvShowItem     *video.TVideoItem                                `protobuf:"bytes,10,opt,name=RawTvShowItem,json=tv_show_item" json:"RawTvShowItem,omitempty"`
-	AudioLanguage     *string                                          `protobuf:"bytes,11,opt,name=AudioLanguage,json=audio_language" json:"AudioLanguage,omitempty"`
-	SubtitlesLanguage *string                                          `protobuf:"bytes,12,opt,name=SubtitlesLanguage,json=subtitles_language" json:"SubtitlesLanguage,omitempty"`
-	LastPlayTimestamp *float64                                         `protobuf:"fixed64,13,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
+	state             protoimpl.MessageState                           `protogen:"open.v1"`
+	Paused            *bool                                            `protobuf:"varint,1,opt,name=Paused" json:"Paused,omitempty"`
+	Progress          *TDeviceState_TVideo_TCurrentlyPlaying_TProgress `protobuf:"bytes,2,opt,name=Progress" json:"Progress,omitempty"`
+	RawItem           *video.TVideoItem                                `protobuf:"bytes,8,opt,name=RawItem" json:"RawItem,omitempty"`
+	RawNextItem       *video.TVideoItem                                `protobuf:"bytes,9,opt,name=RawNextItem" json:"RawNextItem,omitempty"`
+	RawTvShowItem     *video.TVideoItem                                `protobuf:"bytes,10,opt,name=RawTvShowItem" json:"RawTvShowItem,omitempty"`
+	AudioLanguage     *string                                          `protobuf:"bytes,11,opt,name=AudioLanguage" json:"AudioLanguage,omitempty"`
+	SubtitlesLanguage *string                                          `protobuf:"bytes,12,opt,name=SubtitlesLanguage" json:"SubtitlesLanguage,omitempty"`
+	LastPlayTimestamp *float64                                         `protobuf:"fixed64,13,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -3747,7 +3792,6 @@ func (*TDeviceState_TVideo_TCurrentlyPlaying) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawDescGZIP(), []int{2, 3, 1}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState_TVideo_TCurrentlyPlaying) GetPaused() bool {
 	if x != nil && x.Paused != nil {
 		return *x.Paused
@@ -3806,7 +3850,7 @@ func (x *TDeviceState_TVideo_TCurrentlyPlaying) GetLastPlayTimestamp() float64 {
 
 type TDeviceState_TVideo_TPlayer struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Pause         *bool                  `protobuf:"varint,1,opt,name=Pause,json=pause" json:"Pause,omitempty"`
+	Pause         *bool                  `protobuf:"varint,1,opt,name=Pause" json:"Pause,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3850,7 +3894,7 @@ func (x *TDeviceState_TVideo_TPlayer) GetPause() bool {
 
 type TDeviceState_TVideo_TTvInterfaceState struct {
 	state        protoimpl.MessageState `protogen:"open.v1"`
-	InitialReqId *string                `protobuf:"bytes,1,opt,name=InitialReqId,json=initial_reqid" json:"InitialReqId,omitempty"`
+	InitialReqId *string                `protobuf:"bytes,1,opt,name=InitialReqId" json:"InitialReqId,omitempty"`
 	// Types that are valid to be assigned to Screen:
 	//
 	//	*TDeviceState_TVideo_TTvInterfaceState_SearchResultsScreen
@@ -3917,7 +3961,7 @@ type isTDeviceState_TVideo_TTvInterfaceState_Screen interface {
 }
 
 type TDeviceState_TVideo_TTvInterfaceState_SearchResultsScreen struct {
-	SearchResultsScreen *TDeviceState_TVideo_TTvInterfaceState_TSearchResultsScreen `protobuf:"bytes,21,opt,name=SearchResultsScreen,json=search_results_screen,oneof"`
+	SearchResultsScreen *TDeviceState_TVideo_TTvInterfaceState_TSearchResultsScreen `protobuf:"bytes,21,opt,name=SearchResultsScreen,oneof"`
 }
 
 func (*TDeviceState_TVideo_TTvInterfaceState_SearchResultsScreen) isTDeviceState_TVideo_TTvInterfaceState_Screen() {
@@ -3925,8 +3969,8 @@ func (*TDeviceState_TVideo_TTvInterfaceState_SearchResultsScreen) isTDeviceState
 
 type TDeviceState_TVideo_TCurrentlyPlaying_TProgress struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Played        *float64               `protobuf:"fixed64,1,opt,name=Played,json=played" json:"Played,omitempty"`
-	Duration      *float64               `protobuf:"fixed64,2,opt,name=Duration,json=duration" json:"Duration,omitempty"`
+	Played        *float64               `protobuf:"fixed64,1,opt,name=Played" json:"Played,omitempty"`
+	Duration      *float64               `protobuf:"fixed64,2,opt,name=Duration" json:"Duration,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3977,9 +4021,9 @@ func (x *TDeviceState_TVideo_TCurrentlyPlaying_TProgress) GetDuration() float64 
 
 type TDeviceState_TVideo_TTvInterfaceState_TSearchResultsScreen struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Galleries     []*search_result.TSearchResultGallery `protobuf:"bytes,1,rep,name=Galleries,json=galleries" json:"Galleries,omitempty"`
-	SearchQuery   *string                               `protobuf:"bytes,2,opt,name=SearchQuery,json=search_query" json:"SearchQuery,omitempty"`
-	Suggests      []string                              `protobuf:"bytes,3,rep,name=Suggests,json=suggests" json:"Suggests,omitempty"`
+	Galleries     []*search_result.TSearchResultGallery `protobuf:"bytes,1,rep,name=Galleries" json:"Galleries,omitempty"`
+	SearchQuery   *string                               `protobuf:"bytes,2,opt,name=SearchQuery" json:"SearchQuery,omitempty"`
+	Suggests      []string                              `protobuf:"bytes,3,rep,name=Suggests" json:"Suggests,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4037,14 +4081,14 @@ func (x *TDeviceState_TVideo_TTvInterfaceState_TSearchResultsScreen) GetSuggests
 
 type TDeviceState_TTimers_TTimer struct {
 	state            protoimpl.MessageState   `protogen:"open.v1"`
-	TimerId          *string                  `protobuf:"bytes,1,opt,name=TimerId,json=timer_id" json:"TimerId,omitempty"`
-	StartTimestamp   *uint64                  `protobuf:"varint,2,opt,name=StartTimestamp,json=start_timestamp" json:"StartTimestamp,omitempty"`
-	Duration         *uint32                  `protobuf:"varint,3,opt,name=Duration,json=duration" json:"Duration,omitempty"`
-	Remaining        *uint32                  `protobuf:"varint,4,opt,name=Remaining,json=remaining" json:"Remaining,omitempty"`
-	CurrentlyPlaying *bool                    `protobuf:"varint,5,opt,name=CurrentlyPlaying,json=currently_playing" json:"CurrentlyPlaying,omitempty"`
-	Paused           *bool                    `protobuf:"varint,6,opt,name=Paused,json=paused" json:"Paused,omitempty"`
-	Directives       []*TUntypedDirective     `protobuf:"bytes,7,rep,name=Directives,json=directives" json:"Directives,omitempty"`
-	TimerDescription *timer.TTimerDescription `protobuf:"bytes,8,opt,name=TimerDescription,json=timer_descripion" json:"TimerDescription,omitempty"`
+	TimerId          *string                  `protobuf:"bytes,1,opt,name=TimerId" json:"TimerId,omitempty"`
+	StartTimestamp   *uint64                  `protobuf:"varint,2,opt,name=StartTimestamp" json:"StartTimestamp,omitempty"`
+	Duration         *uint32                  `protobuf:"varint,3,opt,name=Duration" json:"Duration,omitempty"`
+	Remaining        *uint32                  `protobuf:"varint,4,opt,name=Remaining" json:"Remaining,omitempty"`
+	CurrentlyPlaying *bool                    `protobuf:"varint,5,opt,name=CurrentlyPlaying" json:"CurrentlyPlaying,omitempty"`
+	Paused           *bool                    `protobuf:"varint,6,opt,name=Paused" json:"Paused,omitempty"`
+	Directives       []*TUntypedDirective     `protobuf:"bytes,7,rep,name=Directives" json:"Directives,omitempty"`
+	TimerDescription *timer.TTimerDescription `protobuf:"bytes,8,opt,name=TimerDescription" json:"TimerDescription,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -4137,8 +4181,8 @@ func (x *TDeviceState_TTimers_TTimer) GetTimerDescription() *timer.TTimerDescrip
 
 type TDeviceState_TAlarmState_TSoundAlarmSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          *string                `protobuf:"bytes,1,opt,name=Type,json=type" json:"Type,omitempty"`
-	RawInfo       *structpb.Struct       `protobuf:"bytes,2,opt,name=RawInfo,json=info" json:"RawInfo,omitempty"`
+	Type          *string                `protobuf:"bytes,1,opt,name=Type" json:"Type,omitempty"`
+	RawInfo       *structpb.Struct       `protobuf:"bytes,2,opt,name=RawInfo" json:"RawInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4189,7 +4233,7 @@ func (x *TDeviceState_TAlarmState_TSoundAlarmSetting) GetRawInfo() *structpb.Str
 
 type TDeviceState_TBluetooth_TConnection struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *string                `protobuf:"bytes,1,opt,name=Name,json=name" json:"Name,omitempty"`
+	Name          *string                `protobuf:"bytes,1,opt,name=Name" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4232,11 +4276,10 @@ func (x *TDeviceState_TBluetooth_TConnection) GetName() string {
 }
 
 type TDeviceState_TBluetooth_TCurrentlyPlaying struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	TrackId      *string                `protobuf:"bytes,1,opt,name=TrackId,json=track_id" json:"TrackId,omitempty"`
-	RawTrackInfo *structpb.Struct       `protobuf:"bytes,2,opt,name=RawTrackInfo,json=track_info" json:"RawTrackInfo,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	LastPlayTimestamp *float64 `protobuf:"fixed64,3,opt,name=LastPlayTimestamp,json=last_play_timestamp" json:"LastPlayTimestamp,omitempty"`
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	TrackId           *string                `protobuf:"bytes,1,opt,name=TrackId" json:"TrackId,omitempty"`
+	RawTrackInfo      *structpb.Struct       `protobuf:"bytes,2,opt,name=RawTrackInfo" json:"RawTrackInfo,omitempty"`
+	LastPlayTimestamp *float64               `protobuf:"fixed64,3,opt,name=LastPlayTimestamp" json:"LastPlayTimestamp,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -4285,7 +4328,6 @@ func (x *TDeviceState_TBluetooth_TCurrentlyPlaying) GetRawTrackInfo() *structpb.
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState_TBluetooth_TCurrentlyPlaying) GetLastPlayTimestamp() float64 {
 	if x != nil && x.LastPlayTimestamp != nil {
 		return *x.LastPlayTimestamp
@@ -4294,10 +4336,9 @@ func (x *TDeviceState_TBluetooth_TCurrentlyPlaying) GetLastPlayTimestamp() float
 }
 
 type TDeviceState_TBluetooth_TPlayer struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Pause *bool                  `protobuf:"varint,1,opt,name=Pause,json=pause" json:"Pause,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
-	Timestamp     *float64 `protobuf:"fixed64,2,opt,name=Timestamp,json=timestamp" json:"Timestamp,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Pause         *bool                  `protobuf:"varint,1,opt,name=Pause" json:"Pause,omitempty"`
+	Timestamp     *float64               `protobuf:"fixed64,2,opt,name=Timestamp" json:"Timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4339,7 +4380,6 @@ func (x *TDeviceState_TBluetooth_TPlayer) GetPause() bool {
 	return false
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/common/device_state/device_state.proto.
 func (x *TDeviceState_TBluetooth_TPlayer) GetTimestamp() float64 {
 	if x != nil && x.Timestamp != nil {
 		return *x.Timestamp
@@ -4349,13 +4389,13 @@ func (x *TDeviceState_TBluetooth_TPlayer) GetTimestamp() float64 {
 
 type TDeviceState_TInternetConnection_TWifiNetwork struct {
 	state               protoimpl.MessageState                                 `protogen:"open.v1"`
-	Ssid                *string                                                `protobuf:"bytes,1,opt,name=Ssid,json=ssid" json:"Ssid,omitempty"`
-	Bssid               *string                                                `protobuf:"bytes,2,opt,name=Bssid,json=bssid" json:"Bssid,omitempty"`
-	Channel             *int32                                                 `protobuf:"varint,3,opt,name=Channel,json=channel" json:"Channel,omitempty"`
-	Rssi                *int32                                                 `protobuf:"varint,4,opt,name=Rssi,json=signal_strength" json:"Rssi,omitempty"`
-	Flags               *string                                                `protobuf:"bytes,5,opt,name=Flags,json=flags" json:"Flags,omitempty"`
-	NetworkSecurityType *TDeviceState_TInternetConnection_ENetworkSecurityType `protobuf:"varint,6,opt,name=NetworkSecurityType,json=network_security_type,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_ENetworkSecurityType" json:"NetworkSecurityType,omitempty"`
-	IsCorporate         *bool                                                  `protobuf:"varint,7,opt,name=IsCorporate,json=is_corporate" json:"IsCorporate,omitempty"`
+	Ssid                *string                                                `protobuf:"bytes,1,opt,name=Ssid" json:"Ssid,omitempty"`
+	Bssid               *string                                                `protobuf:"bytes,2,opt,name=Bssid" json:"Bssid,omitempty"`
+	Channel             *int32                                                 `protobuf:"varint,3,opt,name=Channel" json:"Channel,omitempty"`
+	Rssi                *int32                                                 `protobuf:"varint,4,opt,name=Rssi" json:"Rssi,omitempty"`
+	Flags               *string                                                `protobuf:"bytes,5,opt,name=Flags" json:"Flags,omitempty"`
+	NetworkSecurityType *TDeviceState_TInternetConnection_ENetworkSecurityType `protobuf:"varint,6,opt,name=NetworkSecurityType,enum=NAlice.NAliceApi.TDeviceState_TInternetConnection_ENetworkSecurityType" json:"NetworkSecurityType,omitempty"`
+	IsCorporate         *bool                                                  `protobuf:"varint,7,opt,name=IsCorporate" json:"IsCorporate,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -4441,7 +4481,7 @@ func (x *TDeviceState_TInternetConnection_TWifiNetwork) GetIsCorporate() bool {
 
 type TDeviceState_TRcuState_TRcuCapabilities struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CanMakeSounds *bool                  `protobuf:"varint,1,opt,name=CanMakeSounds,json=can_make_sounds" json:"CanMakeSounds,omitempty"`
+	CanMakeSounds *bool                  `protobuf:"varint,1,opt,name=CanMakeSounds" json:"CanMakeSounds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4485,8 +4525,8 @@ func (x *TDeviceState_TRcuState_TRcuCapabilities) GetCanMakeSounds() bool {
 
 type TDeviceState_TPackagesState_TPackage struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Name              *string                `protobuf:"bytes,1,opt,name=Name,json=name" json:"Name,omitempty"`
-	HumanReadableName *string                `protobuf:"bytes,2,opt,name=HumanReadableName,json=human_readable_name" json:"HumanReadableName,omitempty"`
+	Name              *string                `protobuf:"bytes,1,opt,name=Name" json:"Name,omitempty"`
+	HumanReadableName *string                `protobuf:"bytes,2,opt,name=HumanReadableName" json:"HumanReadableName,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -4537,8 +4577,8 @@ func (x *TDeviceState_TPackagesState_TPackage) GetHumanReadableName() string {
 
 type TDeviceState_TPackagesState_TInstalledPackage struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	PackageInfo   *TDeviceState_TPackagesState_TPackage `protobuf:"bytes,1,opt,name=PackageInfo,json=package_info" json:"PackageInfo,omitempty"`
-	MainActivity  *string                               `protobuf:"bytes,2,opt,name=MainActivity,json=main_activity" json:"MainActivity,omitempty"`
+	PackageInfo   *TDeviceState_TPackagesState_TPackage `protobuf:"bytes,1,opt,name=PackageInfo" json:"PackageInfo,omitempty"`
+	MainActivity  *string                               `protobuf:"bytes,2,opt,name=MainActivity" json:"MainActivity,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4671,140 +4711,130 @@ var File_alice_protos_api_alicekit_common_device_state_device_state_proto protor
 
 const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/api/alicekit/common/device_state/device_state.proto\x12\x10NAlice.NAliceApi\x1a\x1cgoogle/protobuf/struct.proto\x1a+alice/library/censor/protos/extension.proto\x1a=alice/library/restriction_level/protos/content_settings.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1aHalice/megamind/protos/common/subscription_state/subscription_state.proto\x1a<alice/megamind/protos/common/tandem_state/tandem_state.proto\x1a3alice/protos/data/external_entity_description.proto\x1a3alice/protos/data/search_result/search_result.proto\x1a7alice/protos/data/scenario/reminders/device_state.proto\x1a,alice/protos/data/scenario/timer/timer.proto\x1a#alice/protos/data/video/video.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x80\x02\n" +
-	"\x11TUntypedDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12-\n" +
-	"\rAnalyticsType\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bsub_nameR\bsub_name\x126\n" +
-	"\fIgnoreAnswer\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rignore_answerR\rignore_answer\x12B\n" +
-	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructB\x0f\xa0\xdd\x1b\x05\xaa\xdd\x1b\apayloadR\apayload:\x04\xa8\xdd\x1b\x04\"\xc3\x12\n" +
+	"@alice/protos/api/alicekit/common/device_state/device_state.proto\x12\x10NAlice.NAliceApi\x1a\x1cgoogle/protobuf/struct.proto\x1a+alice/library/censor/protos/extension.proto\x1a=alice/library/restriction_level/protos/content_settings.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1aHalice/megamind/protos/common/subscription_state/subscription_state.proto\x1a<alice/megamind/protos/common/tandem_state/tandem_state.proto\x1a3alice/protos/data/external_entity_description.proto\x1a3alice/protos/data/search_result/search_result.proto\x1a7alice/protos/data/scenario/reminders/device_state.proto\x1a,alice/protos/data/scenario/timer/timer.proto\x1a#alice/protos/data/video/video.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb8\x01\n" +
+	"\x11TUntypedDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x12$\n" +
+	"\rAnalyticsType\x18\x03 \x01(\tR\rAnalyticsType\x12\"\n" +
+	"\fIgnoreAnswer\x18\x04 \x01(\bR\fIgnoreAnswer\x121\n" +
+	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructR\aPayload\"\xe9\r\n" +
 	"\n" +
-	"TNavigator\x12i\n" +
-	"\rUserFavorites\x18\x01 \x03(\v2&.NAlice.NAliceApi.TNavigator.TFavoriteB\x1a\xaa\xdd\x1b\x0euser_favorites\xa8\x8d'\x01\xf8\x91*\x03R\x0euser_favorites\x12T\n" +
-	"\fHomeLocation\x18\x02 \x01(\v2&.NAlice.NAliceApi.TNavigator.TLocationB\x10\xaa\xdd\x1b\x04home\xa8\x8d'\x01\xf8\x91*\x03R\x04home\x12T\n" +
-	"\fWorkLocation\x18\x03 \x01(\v2&.NAlice.NAliceApi.TNavigator.TLocationB\x10\xaa\xdd\x1b\x04work\xa8\x8d'\x01\xf8\x91*\x03R\x04work\x12N\n" +
-	"\aMapView\x18\x04 \x01(\v2%.NAlice.NAliceApi.TNavigator.TMapViewB\f\xaa\xdd\x1b\bmap_viewR\bmap_view\x12G\n" +
-	"\x11AvailableVoiceIds\x18\x05 \x03(\tB\x17\xaa\xdd\x1b\x13available_voice_idsR\x13available_voice_ids\x129\n" +
-	"\rProjectedMode\x18\x06 \x01(\bB\x12\xaa\xdd\x1b\x0eprojected_modeR\x0eprojected_mode\x12[\n" +
-	"\fCurrentRoute\x18\a \x01(\v2#.NAlice.NAliceApi.TNavigator.TRouteB\x11\xaa\xdd\x1b\rcurrent_routeR\rcurrent_route\x12\"\n" +
-	"\x06States\x18\b \x03(\tB\n" +
-	"\xaa\xdd\x1b\x06statesR\x06states\x12f\n" +
-	"\rSearchOptions\x18\t \x01(\v2+.NAlice.NAliceApi.TNavigator.TSearchOptionsB\x12\xaa\xdd\x1b\x0esearch_optionsR\x0esearch_options\x1aD\n" +
-	"\x06TPoint\x12\x19\n" +
-	"\x03Lat\x18\x01 \x01(\x02B\a\xaa\xdd\x1b\x03latR\x03lat\x12\x19\n" +
-	"\x03Lon\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03lonR\x03lon:\x04\xa8\xdd\x1b\x04\x1a\xc5\x01\n" +
-	"\tTFavorite\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03Lat\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03latR\x03lat\x12\x19\n" +
-	"\x03Lon\x18\x03 \x01(\x02B\a\xaa\xdd\x1b\x03lonR\x03lon\x12^\n" +
-	"\rArrivalPoints\x18\x04 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointB\x12\xaa\xdd\x1b\x0earrival_pointsR\x0earrival_points:\x04\xa8\xdd\x1b\x04\x1a\xa7\x01\n" +
-	"\tTLocation\x12\x19\n" +
-	"\x03Lat\x18\x01 \x01(\x02B\a\xaa\xdd\x1b\x03latR\x03lat\x12\x19\n" +
-	"\x03Lon\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03lonR\x03lon\x12^\n" +
-	"\rArrivalPoints\x18\x03 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointB\x12\xaa\xdd\x1b\x0earrival_pointsR\x0earrival_points:\x04\xa8\xdd\x1b\x04\x1a\xe0\x02\n" +
-	"\bTMapView\x12*\n" +
-	"\x0eBottomRightLon\x18\x01 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06br_lonR\x06br_lon\x12'\n" +
-	"\vTopRightLon\x18\x02 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tr_lonR\x06tr_lon\x12&\n" +
+	"TNavigator\x12L\n" +
+	"\rUserFavorites\x18\x01 \x03(\v2&.NAlice.NAliceApi.TNavigator.TFavoriteR\rUserFavorites\x12J\n" +
+	"\fHomeLocation\x18\x02 \x01(\v2&.NAlice.NAliceApi.TNavigator.TLocationR\fHomeLocation\x12J\n" +
+	"\fWorkLocation\x18\x03 \x01(\v2&.NAlice.NAliceApi.TNavigator.TLocationR\fWorkLocation\x12?\n" +
+	"\aMapView\x18\x04 \x01(\v2%.NAlice.NAliceApi.TNavigator.TMapViewR\aMapView\x12,\n" +
+	"\x11AvailableVoiceIds\x18\x05 \x03(\tR\x11AvailableVoiceIds\x12$\n" +
+	"\rProjectedMode\x18\x06 \x01(\bR\rProjectedMode\x12G\n" +
+	"\fCurrentRoute\x18\a \x01(\v2#.NAlice.NAliceApi.TNavigator.TRouteR\fCurrentRoute\x12\x16\n" +
+	"\x06States\x18\b \x03(\tR\x06States\x12Q\n" +
+	"\rSearchOptions\x18\t \x01(\v2+.NAlice.NAliceApi.TNavigator.TSearchOptionsR\rSearchOptions\x1a,\n" +
+	"\x06TPoint\x12\x10\n" +
+	"\x03Lat\x18\x01 \x01(\x02R\x03Lat\x12\x10\n" +
+	"\x03Lon\x18\x02 \x01(\x02R\x03Lon\x1a\x8e\x01\n" +
+	"\tTFavorite\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x10\n" +
+	"\x03Lat\x18\x02 \x01(\x02R\x03Lat\x12\x10\n" +
+	"\x03Lon\x18\x03 \x01(\x02R\x03Lon\x12I\n" +
+	"\rArrivalPoints\x18\x04 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointR\rArrivalPoints\x1az\n" +
+	"\tTLocation\x12\x10\n" +
+	"\x03Lat\x18\x01 \x01(\x02R\x03Lat\x12\x10\n" +
+	"\x03Lon\x18\x02 \x01(\x02R\x03Lon\x12I\n" +
+	"\rArrivalPoints\x18\x03 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointR\rArrivalPoints\x1a\xaa\x02\n" +
+	"\bTMapView\x12&\n" +
+	"\x0eBottomRightLon\x18\x01 \x01(\x02R\x0eBottomRightLon\x12 \n" +
+	"\vTopRightLon\x18\x02 \x01(\x02R\vTopRightLon\x12\x1e\n" +
 	"\n" +
-	"TopLeftLon\x18\x03 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tl_lonR\x06tl_lon\x12)\n" +
-	"\rBottomLeftLon\x18\x04 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06bl_lonR\x06bl_lon\x12&\n" +
+	"TopLeftLon\x18\x03 \x01(\x02R\n" +
+	"TopLeftLon\x12$\n" +
+	"\rBottomLeftLon\x18\x04 \x01(\x02R\rBottomLeftLon\x12\x1e\n" +
 	"\n" +
-	"TopLeftLat\x18\x05 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tl_latR\x06tl_lat\x12)\n" +
-	"\rBottomLeftLat\x18\x06 \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06bl_latR\x06bl_lat\x12*\n" +
-	"\x0eBottomRightLat\x18\a \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06br_latR\x06br_lat\x12'\n" +
-	"\vTopRightLat\x18\b \x01(\x02B\n" +
-	"\xaa\xdd\x1b\x06tr_latR\x06tr_lat:\x04\xa8\xdd\x1b\x04\x1a\xad\x04\n" +
-	"\x06TRoute\x12K\n" +
-	"\x06Points\x18\x01 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointB\x0e\xaa\xdd\x1b\x06points\xa8\x8d'\x01R\x06points\x12S\n" +
-	"\x15DistanceToDestination\x18\x02 \x01(\x02B\x1b\xaa\xdd\x1b\x17distance_to_destinationR\x17distance_to_destination\x12R\n" +
-	"\x14RawTimeToDestination\x18\x03 \x01(\x03B\x1b\xaa\xdd\x1b\x17raw_time_to_destinationR\x17raw_time_to_destination\x12B\n" +
-	"\x10ArrivalTimestamp\x18\x04 \x01(\x03B\x15\xaa\xdd\x1b\x11arrival_timestampR\x11arrival_timestamp\x12G\n" +
-	"\x11TimeToDestination\x18\x05 \x01(\x03B\x17\xaa\xdd\x1b\x13time_to_destinationR\x13time_to_destination\x12F\n" +
-	"\x10TimeInTrafficJam\x18\x06 \x01(\x03B\x17\xaa\xdd\x1b\x13time_in_traffic_jamR\x13time_in_traffic_jam\x12R\n" +
-	"\x14DistanceInTrafficJam\x18\a \x01(\x02B\x1b\xaa\xdd\x1b\x17distance_in_traffic_jamR\x17distance_in_traffic_jam:\x04\xa8\xdd\x1b\x04\x1a\xb5\x01\n" +
-	"\x05TSpan\x12R\n" +
-	"\tSouthWest\x18\x01 \x01(\v2#.NAlice.NAliceApi.TNavigator.TPointB\x0e\xaa\xdd\x1b\n" +
-	"south_westR\n" +
-	"south_west\x12R\n" +
-	"\tNorthEast\x18\x02 \x01(\v2#.NAlice.NAliceApi.TNavigator.TPointB\x0e\xaa\xdd\x1b\n" +
-	"north_eastR\n" +
-	"north_east:\x04\xa8\xdd\x1b\x04\x1aX\n" +
-	"\x0eTSearchOptions\x12@\n" +
-	"\x04Span\x18\x01 \x01(\v2\".NAlice.NAliceApi.TNavigator.TSpanB\b\xaa\xdd\x1b\x04spanR\x04span:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\u0600\x01\n" +
-	"\fTDeviceState\x12*\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tdevice_idR\tdevice_id\x120\n" +
+	"TopLeftLat\x18\x05 \x01(\x02R\n" +
+	"TopLeftLat\x12$\n" +
+	"\rBottomLeftLat\x18\x06 \x01(\x02R\rBottomLeftLat\x12&\n" +
+	"\x0eBottomRightLat\x18\a \x01(\x02R\x0eBottomRightLat\x12 \n" +
+	"\vTopRightLat\x18\b \x01(\x02R\vTopRightLat\x1a\xe9\x02\n" +
+	"\x06TRoute\x12;\n" +
+	"\x06Points\x18\x01 \x03(\v2#.NAlice.NAliceApi.TNavigator.TPointR\x06Points\x124\n" +
+	"\x15DistanceToDestination\x18\x02 \x01(\x02R\x15DistanceToDestination\x122\n" +
+	"\x14RawTimeToDestination\x18\x03 \x01(\x03R\x14RawTimeToDestination\x12*\n" +
+	"\x10ArrivalTimestamp\x18\x04 \x01(\x03R\x10ArrivalTimestamp\x12,\n" +
+	"\x11TimeToDestination\x18\x05 \x01(\x03R\x11TimeToDestination\x12*\n" +
+	"\x10TimeInTrafficJam\x18\x06 \x01(\x03R\x10TimeInTrafficJam\x122\n" +
+	"\x14DistanceInTrafficJam\x18\a \x01(\x02R\x14DistanceInTrafficJam\x1a\x8d\x01\n" +
+	"\x05TSpan\x12A\n" +
+	"\tSouthWest\x18\x01 \x01(\v2#.NAlice.NAliceApi.TNavigator.TPointR\tSouthWest\x12A\n" +
+	"\tNorthEast\x18\x02 \x01(\v2#.NAlice.NAliceApi.TNavigator.TPointR\tNorthEast\x1aH\n" +
+	"\x0eTSearchOptions\x126\n" +
+	"\x04Span\x18\x01 \x01(\v2\".NAlice.NAliceApi.TNavigator.TSpanR\x04Span\"\xa4e\n" +
+	"\fTDeviceState\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x1e\n" +
 	"\n" +
-	"SoundLevel\x18\x02 \x01(\rB\x0f\xaa\xdd\x1b\vsound_levelR\vsound_level\x120\n" +
+	"SoundLevel\x18\x02 \x01(\rR\n" +
+	"SoundLevel\x12\x1e\n" +
 	"\n" +
-	"SoundMuted\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vsound_mutedR\vsound_muted\x12=\n" +
-	"\rIsTvPluggedIn\x18\x04 \x01(\bB\x14\xaa\xdd\x1b\x10is_tv_plugged_inR\x10is_tv_plugged_in\x12F\n" +
-	"\x05Music\x18\x05 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TMusicB\t\xaa\xdd\x1b\x05musicR\x05music\x12F\n" +
-	"\x05Video\x18\x06 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoB\t\xaa\xdd\x1b\x05videoR\x05video\x123\n" +
-	"\vAlarmsState\x18\a \x01(\tB\x10\xaa\xdd\x1b\falarms_stateR\falarms_state\x12\\\n" +
+	"SoundMuted\x18\x03 \x01(\bR\n" +
+	"SoundMuted\x12$\n" +
+	"\rIsTvPluggedIn\x18\x04 \x01(\bR\rIsTvPluggedIn\x12;\n" +
+	"\x05Music\x18\x05 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TMusicR\x05Music\x12;\n" +
+	"\x05Video\x18\x06 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoR\x05Video\x12 \n" +
+	"\vAlarmsState\x18\a \x01(\tR\vAlarmsState\x12J\n" +
 	"\n" +
-	"AlarmState\x18\b \x01(\v2*.NAlice.NAliceApi.TDeviceState.TAlarmStateB\x0f\xaa\xdd\x1b\valarm_stateR\valarm_state\x12d\n" +
-	"\fDeviceConfig\x18\t \x01(\v2,.NAlice.NAliceApi.TDeviceState.TDeviceConfigB\x11\xaa\xdd\x1b\rdevice_configR\rdevice_config\x12J\n" +
+	"AlarmState\x18\b \x01(\v2*.NAlice.NAliceApi.TDeviceState.TAlarmStateR\n" +
+	"AlarmState\x12P\n" +
+	"\fDeviceConfig\x18\t \x01(\v2,.NAlice.NAliceApi.TDeviceState.TDeviceConfigR\fDeviceConfig\x12>\n" +
 	"\x06Timers\x18\n" +
-	" \x01(\v2&.NAlice.NAliceApi.TDeviceState.TTimersB\n" +
-	"\xaa\xdd\x1b\x06timersR\x06timers\x12<\n" +
-	"\x05Radio\x18\v \x01(\v2\x17.google.protobuf.StructB\r\xa0\xdd\x1b\x05\xaa\xdd\x1b\x05radioR\x05radio\x12I\n" +
-	"\tNavigator\x18\f \x01(\v2\x1c.NAlice.NAliceApi.TNavigatorB\r\xaa\xdd\x1b\tnavigatorR\tnavigator\x12d\n" +
-	"\vLastWatched\x18\x0e \x01(\v2+.NAlice.NAliceApi.TDeviceState.TLastWatchedB\x14\xaa\xdd\x1b\flast_watched\xa8\x8d'\x01R\flast_watched\x12N\n" +
-	"\aBattery\x18\x11 \x01(\v2'.NAlice.NAliceApi.TDeviceState.TBatteryB\v\xaa\xdd\x1b\abatteryR\abattery\x12J\n" +
-	"\x06Tanker\x18\x13 \x01(\v2&.NAlice.NAliceApi.TDeviceState.TTankerB\n" +
-	"\xaa\xdd\x1b\x06tankerR\x06tanker\x12`\n" +
-	"\vAudioPlayer\x18\x16 \x01(\v2+.NAlice.NAliceApi.TDeviceState.TAudioPlayerB\x10\xaa\xdd\x1b\faudio_playerR\faudio_player\x12V\n" +
-	"\tMultiroom\x18\x17 \x01(\v2).NAlice.NAliceApi.TDeviceState.TMultiroomB\r\xaa\xdd\x1b\tmultiroomR\tmultiroom\x12V\n" +
-	"\tBluetooth\x18\x18 \x01(\v2).NAlice.NAliceApi.TDeviceState.TBluetoothB\r\xaa\xdd\x1b\tbluetoothR\tbluetooth\x12|\n" +
-	"\x12InternetConnection\x18\x19 \x01(\v22.NAlice.NAliceApi.TDeviceState.TInternetConnectionB\x17\xaa\xdd\x1b\x13internet_connectionR\x13internet_connection\x12-\n" +
-	"\tMicsMuted\x18\x1a \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"mics_mutedR\n" +
-	"mics_muted\x12J\n" +
-	"\x06Screen\x18\x1b \x01(\v2&.NAlice.NAliceApi.TDeviceState.TScreenB\n" +
-	"\xaa\xdd\x1b\x06screenR\x06screen\x12H\n" +
-	"\bRcuState\x18\x1c \x01(\v2(.NAlice.NAliceApi.TDeviceState.TRcuStateB\a\xaa\xdd\x1b\x03rcuR\x03rcu\x12J\n" +
-	"\x12IsDefaultAssistant\x18\x1e \x01(\bB\x18\xaa\xdd\x1b\x14is_default_assistantR\x14is_default_assistant\x12;\n" +
-	"\rSoundMaxLevel\x18  \x01(\rB\x13\xaa\xdd\x1b\x0fsound_max_levelR\x0fsound_max_level\x12h\n" +
-	"\rActiveActions\x18! \x01(\v2-.NAlice.NAliceApi.TDeviceState.TActiveActionsB\x12\xaa\xdd\x1b\x0eactive_actionsR\x0eactive_actions\x12I\n" +
-	"\vTandemState\x18# \x01(\v2\x14.NAlice.TTandemStateB\x10\xaa\xdd\x1b\ftandem_stateR\ftandem_state\x12g\n" +
-	"\x17DeviceSubscriptionState\x18$ \x01(\v2\x1a.NAlice.TSubscriptionStateB\x16\xaa\xdd\x1b\x12subscription_stateR\x12subscription_state\x12o\n" +
-	"\x0fDeviceReminders\x18% \x01(\v2..NAlice.NData.NReminders.TDeviceRemindersStateB\x14\xaa\xdd\x1b\x10device_remindersR\x10device_reminders\x12\\\n" +
-	"\rPackagesState\x18& \x01(\v2-.NAlice.NAliceApi.TDeviceState.TPackagesStateB\f\xaa\xdd\x1b\bpackagesR\bpackages\x12\x8f\x01\n" +
-	"\x1bExternalEntitiesDescription\x18* \x03(\v2(.NAlice.NData.TExternalEntityDescriptionB!\xaa\xdd\x1b\x1dexternal_entities_descriptionR\x1dexternal_entities_description\x12z\n" +
-	"\x11ClockDisplayState\x18, \x01(\v21.NAlice.NAliceApi.TDeviceState.TClockDisplayStateB\x17\xaa\xdd\x1b\x13clock_display_stateR\x13clock_display_state\x12j\n" +
-	"\rAppScreenInfo\x18. \x01(\v2-.NAlice.NAliceApi.TDeviceState.TAppScreenInfoB\x13\xaa\xdd\x1b\x0fapp_screen_infoR\x0fapp_screen_info\x12\\\n" +
+	" \x01(\v2&.NAlice.NAliceApi.TDeviceState.TTimersR\x06Timers\x12-\n" +
+	"\x05Radio\x18\v \x01(\v2\x17.google.protobuf.StructR\x05Radio\x12:\n" +
+	"\tNavigator\x18\f \x01(\v2\x1c.NAlice.NAliceApi.TNavigatorR\tNavigator\x12M\n" +
+	"\vLastWatched\x18\x0e \x01(\v2+.NAlice.NAliceApi.TDeviceState.TLastWatchedR\vLastWatched\x12A\n" +
+	"\aBattery\x18\x11 \x01(\v2'.NAlice.NAliceApi.TDeviceState.TBatteryR\aBattery\x12>\n" +
+	"\x06Tanker\x18\x13 \x01(\v2&.NAlice.NAliceApi.TDeviceState.TTankerR\x06Tanker\x12M\n" +
+	"\vAudioPlayer\x18\x16 \x01(\v2+.NAlice.NAliceApi.TDeviceState.TAudioPlayerR\vAudioPlayer\x12G\n" +
+	"\tMultiroom\x18\x17 \x01(\v2).NAlice.NAliceApi.TDeviceState.TMultiroomR\tMultiroom\x12G\n" +
+	"\tBluetooth\x18\x18 \x01(\v2).NAlice.NAliceApi.TDeviceState.TBluetoothR\tBluetooth\x12b\n" +
+	"\x12InternetConnection\x18\x19 \x01(\v22.NAlice.NAliceApi.TDeviceState.TInternetConnectionR\x12InternetConnection\x12\x1c\n" +
+	"\tMicsMuted\x18\x1a \x01(\bR\tMicsMuted\x12>\n" +
+	"\x06Screen\x18\x1b \x01(\v2&.NAlice.NAliceApi.TDeviceState.TScreenR\x06Screen\x12D\n" +
+	"\bRcuState\x18\x1c \x01(\v2(.NAlice.NAliceApi.TDeviceState.TRcuStateR\bRcuState\x12.\n" +
+	"\x12IsDefaultAssistant\x18\x1e \x01(\bR\x12IsDefaultAssistant\x12$\n" +
+	"\rSoundMaxLevel\x18  \x01(\rR\rSoundMaxLevel\x12S\n" +
+	"\rActiveActions\x18! \x01(\v2-.NAlice.NAliceApi.TDeviceState.TActiveActionsR\rActiveActions\x126\n" +
+	"\vTandemState\x18# \x01(\v2\x14.NAlice.TTandemStateR\vTandemState\x12T\n" +
+	"\x17DeviceSubscriptionState\x18$ \x01(\v2\x1a.NAlice.TSubscriptionStateR\x17DeviceSubscriptionState\x12X\n" +
+	"\x0fDeviceReminders\x18% \x01(\v2..NAlice.NData.NReminders.TDeviceRemindersStateR\x0fDeviceReminders\x12S\n" +
+	"\rPackagesState\x18& \x01(\v2-.NAlice.NAliceApi.TDeviceState.TPackagesStateR\rPackagesState\x12j\n" +
+	"\x1bExternalEntitiesDescription\x18* \x03(\v2(.NAlice.NData.TExternalEntityDescriptionR\x1bExternalEntitiesDescription\x12_\n" +
+	"\x11ClockDisplayState\x18, \x01(\v21.NAlice.NAliceApi.TDeviceState.TClockDisplayStateR\x11ClockDisplayState\x12S\n" +
+	"\rAppScreenInfo\x18. \x01(\v2-.NAlice.NAliceApi.TDeviceState.TAppScreenInfoR\rAppScreenInfo\x12J\n" +
 	"\n" +
-	"StereoPair\x18/ \x01(\v2*.NAlice.NAliceApi.TDeviceState.TStereoPairB\x0f\xaa\xdd\x1b\vstereo_pairR\vstereo_pair\x122\n" +
+	"StereoPair\x18/ \x01(\v2*.NAlice.NAliceApi.TDeviceState.TStereoPairR\n" +
+	"StereoPair\x12\x1e\n" +
 	"\n" +
-	"DNDEnabled\x180 \x01(\bB\x11\xaa\xdd\x1b\vdnd_enabled\x18\x01R\vdnd_enabled\x1a\xd0\b\n" +
-	"\fTAudioPlayer\x12m\n" +
-	"\vPlayerState\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TAudioPlayer.TPlayerStateB\x10\xaa\xdd\x1b\fplayer_stateR\fplayer_state\x12*\n" +
-	"\bOffsetMs\x18\x02 \x01(\x05B\r\xaa\xdd\x1b\toffset_msR\toffset_ms\x12{\n" +
-	"\x10CurrentlyPlaying\x18\x03 \x01(\v2=.NAlice.NAliceApi.TDeviceState.TAudioPlayer.TCurrentlyPlayingB\x12\xaa\xdd\x1b\x0ecurrent_streamR\x0ecurrent_stream\x12y\n" +
-	"\fScenarioMeta\x18\x04 \x03(\v2=.NAlice.NAliceApi.TDeviceState.TAudioPlayer.ScenarioMetaEntryB\x15\xa0\xdd\x1b\n" +
-	"\xaa\xdd\x1b\rscenario_metaR\rscenario_meta\x12G\n" +
-	"\x11LastPlayTimestamp\x18\x05 \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x120\n" +
+	"DNDEnabled\x180 \x01(\bR\n" +
+	"DNDEnabled\x1a\xc5\x06\n" +
+	"\fTAudioPlayer\x12Z\n" +
+	"\vPlayerState\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TAudioPlayer.TPlayerStateR\vPlayerState\x12\x1a\n" +
+	"\bOffsetMs\x18\x02 \x01(\x05R\bOffsetMs\x12i\n" +
+	"\x10CurrentlyPlaying\x18\x03 \x01(\v2=.NAlice.NAliceApi.TDeviceState.TAudioPlayer.TCurrentlyPlayingR\x10CurrentlyPlaying\x12a\n" +
+	"\fScenarioMeta\x18\x04 \x03(\v2=.NAlice.NAliceApi.TDeviceState.TAudioPlayer.ScenarioMetaEntryR\fScenarioMeta\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x05 \x01(\x01R\x11LastPlayTimestamp\x12\x1e\n" +
 	"\n" +
-	"DurationMs\x18\x06 \x01(\x05B\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12G\n" +
-	"\x11LastStopTimestamp\x18\a \x01(\x01B\x17\xaa\xdd\x1b\x13last_stop_timestampR\x13last_stop_timestamp\x12*\n" +
-	"\bPlayedMs\x18\b \x01(\x05B\r\xaa\xdd\x1b\tplayed_msR\tplayed_ms\x1a\x8b\x02\n" +
-	"\x11TCurrentlyPlaying\x12*\n" +
-	"\bStreamId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tstream_idR\tstream_id\x12G\n" +
-	"\x11LastPlayTimestamp\x18\x02 \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x12\x1f\n" +
-	"\x05Title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubTitle\x18\x04 \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle\x120\n" +
+	"DurationMs\x18\x06 \x01(\x05R\n" +
+	"DurationMs\x12,\n" +
+	"\x11LastStopTimestamp\x18\a \x01(\x01R\x11LastStopTimestamp\x12\x1a\n" +
+	"\bPlayedMs\x18\b \x01(\x05R\bPlayedMs\x1a\xaf\x01\n" +
+	"\x11TCurrentlyPlaying\x12\x1a\n" +
+	"\bStreamId\x18\x01 \x01(\tR\bStreamId\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x02 \x01(\x01R\x11LastPlayTimestamp\x12\x14\n" +
+	"\x05Title\x18\x03 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubTitle\x18\x04 \x01(\tR\bSubTitle\x12\x1e\n" +
 	"\n" +
-	"StreamType\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vstream_typeR\vstream_type:\x04\xa8\xdd\x1b\x04\x1a?\n" +
+	"StreamType\x18\x05 \x01(\tR\n" +
+	"StreamType\x1a;\n" +
 	"\x11ScenarioMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"h\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"h\n" +
 	"\fTPlayerState\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04Idle\x10\x01\x12\v\n" +
@@ -4813,38 +4843,33 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\x06Paused\x10\x03\x12\r\n" +
 	"\tBuffering\x10\x04\x12\v\n" +
 	"\aStopped\x10\x05\x12\f\n" +
-	"\bFinished\x10\x06:\x04\xa8\xdd\x1b\x04\x1a\xe4\a\n" +
-	"\x06TMusic\x12{\n" +
-	"\x10CurrentlyPlaying\x18\x01 \x01(\v27.NAlice.NAliceApi.TDeviceState.TMusic.TCurrentlyPlayingB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12\x19\n" +
-	"\x03Uid\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03uidR\x03uid\x129\n" +
-	"\rPlaylistOwner\x18\x03 \x01(\tB\x12\xaa\xdd\x1b\x0eplaylist_ownerR\x0eplaylist_owner\x12Q\n" +
-	"\x06Player\x18\x04 \x01(\v2-.NAlice.NAliceApi.TDeviceState.TMusic.TPlayerB\n" +
-	"\xaa\xdd\x1b\x06playerR\x06player\x120\n" +
+	"\bFinished\x10\x06\x1a\xb2\x05\n" +
+	"\x06TMusic\x12c\n" +
+	"\x10CurrentlyPlaying\x18\x01 \x01(\v27.NAlice.NAliceApi.TDeviceState.TMusic.TCurrentlyPlayingR\x10CurrentlyPlaying\x12\x10\n" +
+	"\x03Uid\x18\x02 \x01(\tR\x03Uid\x12$\n" +
+	"\rPlaylistOwner\x18\x03 \x01(\tR\rPlaylistOwner\x12E\n" +
+	"\x06Player\x18\x04 \x01(\v2-.NAlice.NAliceApi.TDeviceState.TMusic.TPlayerR\x06Player\x12\x1e\n" +
 	"\n" +
-	"SoundLevel\x18\x05 \x01(\rB\x0f\xaa\xdd\x1b\vsound_levelR\vsound_level\x120\n" +
+	"SoundLevel\x18\x05 \x01(\rR\n" +
+	"SoundLevel\x12\x1e\n" +
 	"\n" +
-	"SoundMuted\x18\x06 \x01(\bB\x0f\xaa\xdd\x1b\vsound_mutedR\vsound_muted\x12-\n" +
-	"\tSessionId\x18\a \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12G\n" +
-	"\x11LastPlayTimestamp\x18\b \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x12G\n" +
-	"\x11LastStopTimestamp\x18\t \x01(\x01B\x17\xaa\xdd\x1b\x13last_stop_timestampR\x13last_stop_timestamp\x1a\xda\x01\n" +
-	"\x11TCurrentlyPlaying\x12'\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id\x12M\n" +
-	"\fRawTrackInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x12\xa0\xdd\x1b\x05\xaa\xdd\x1b\n" +
-	"track_infoR\n" +
-	"track_info\x12G\n" +
-	"\x11LastPlayTimestamp\x18\x03 \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp:\x04\xa8\xdd\x1b\x04\x1a\xab\x01\n" +
-	"\aTPlayer\x12\x1f\n" +
-	"\x05Pause\x18\x01 \x01(\bB\t\xaa\xdd\x1b\x05pauseR\x05pause\x12L\n" +
-	"\x13TimestampDeprecated\x18\x02 \x01(\x04B\x1a\xaa\xdd\x1b\x14timestamp_deprecated\x18\x01R\x13TimestampDeprecated\x12+\n" +
-	"\tTimestamp\x18\x03 \x01(\x01B\r\xaa\xdd\x1b\ttimestampR\ttimestamp:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\x98\x06\n" +
-	"\aTScreen\x12\x9c\x01\n" +
-	"\x1aSupportedScreenResolutions\x18\x01 \x03(\x0e28.NAlice.NAliceApi.TDeviceState.TScreen.EScreenResolutionB \xaa\xdd\x1b\x1csupported_screen_resolutionsR\x1csupported_screen_resolutions\x12`\n" +
-	"\tHdcpLevel\x18\x02 \x01(\x0e21.NAlice.NAliceApi.TDeviceState.TScreen.EHdcpLevelB\x0e\xaa\xdd\x1b\n" +
-	"hdcp_levelR\n" +
-	"hdcp_level\x12o\n" +
-	"\rDynamicRanges\x18\x03 \x03(\x0e24.NAlice.NAliceApi.TDeviceState.TScreen.EDynamicRangeB\x12\xaa\xdd\x1b\x0edynamic_rangesR\x0edynamic_ranges\"m\n" +
+	"SoundMuted\x18\x06 \x01(\bR\n" +
+	"SoundMuted\x12\x1c\n" +
+	"\tSessionId\x18\a \x01(\tR\tSessionId\x12,\n" +
+	"\x11LastPlayTimestamp\x18\b \x01(\x01R\x11LastPlayTimestamp\x12,\n" +
+	"\x11LastStopTimestamp\x18\t \x01(\x01R\x11LastStopTimestamp\x1a\x98\x01\n" +
+	"\x11TCurrentlyPlaying\x12\x18\n" +
+	"\aTrackId\x18\x01 \x01(\tR\aTrackId\x12;\n" +
+	"\fRawTrackInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructR\fRawTrackInfo\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x03 \x01(\x01R\x11LastPlayTimestamp\x1ao\n" +
+	"\aTPlayer\x12\x14\n" +
+	"\x05Pause\x18\x01 \x01(\bR\x05Pause\x120\n" +
+	"\x13TimestampDeprecated\x18\x02 \x01(\x04R\x13TimestampDeprecated\x12\x1c\n" +
+	"\tTimestamp\x18\x03 \x01(\x01R\tTimestamp\x1a\xc7\x05\n" +
+	"\aTScreen\x12x\n" +
+	"\x1aSupportedScreenResolutions\x18\x01 \x03(\x0e28.NAlice.NAliceApi.TDeviceState.TScreen.EScreenResolutionR\x1aSupportedScreenResolutions\x12O\n" +
+	"\tHdcpLevel\x18\x02 \x01(\x0e21.NAlice.NAliceApi.TDeviceState.TScreen.EHdcpLevelR\tHdcpLevel\x12Z\n" +
+	"\rDynamicRanges\x18\x03 \x03(\x0e24.NAlice.NAliceApi.TDeviceState.TScreen.EDynamicRangeR\rDynamicRanges\"m\n" +
 	"\x11EScreenResolution\x12\x18\n" +
 	"\x14video_format_unknown\x10\x00\x12\x13\n" +
 	"\x0fvideo_format_SD\x10\x01\x12\x13\n" +
@@ -4862,61 +4887,56 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\x13dynamic_range_HDR10\x10\x02\x12\x1b\n" +
 	"\x17dynamic_range_HDR10Plus\x10\x03\x12\x14\n" +
 	"\x10dynamic_range_DV\x10\x04\x12\x15\n" +
-	"\x11dynamic_range_HLG\x10\x05:\x04\xa8\xdd\x1b\x04\x1a\xe9\x16\n" +
-	"\x06TVideo\x129\n" +
-	"\rCurrentScreen\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0ecurrent_screenR\x0ecurrent_screen\x12g\n" +
-	"\vScreenState\x18\x02 \x01(\v22.NAlice.NAliceApi.TDeviceState.TVideo.TScreenStateB\x10\xaa\xdd\x1b\fscreen_stateR\fscreen_state\x12{\n" +
-	"\x10CurrentlyPlaying\x18\x03 \x01(\v27.NAlice.NAliceApi.TDeviceState.TVideo.TCurrentlyPlayingB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12J\n" +
-	"\tViewState\x18\x05 \x01(\v2\x17.google.protobuf.StructB\x12\xa0\xdd\x1b\x05\xaa\xdd\x1b\n" +
-	"view_stateR\n" +
-	"view_state\x12N\n" +
-	"\tPageState\x18\b \x01(\v2\x17.google.protobuf.StructB\x16\xa0\xdd\x1b\x05\xaa\xdd\x1b\n" +
-	"page_state\xa8\x8d'\x01R\n" +
-	"page_state\x12G\n" +
-	"\x11LastPlayTimestamp\x18\t \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x12G\n" +
+	"\x11dynamic_range_HLG\x10\x05\x1a\xb0\x11\n" +
+	"\x06TVideo\x12$\n" +
+	"\rCurrentScreen\x18\x01 \x01(\tR\rCurrentScreen\x12T\n" +
+	"\vScreenState\x18\x02 \x01(\v22.NAlice.NAliceApi.TDeviceState.TVideo.TScreenStateR\vScreenState\x12c\n" +
+	"\x10CurrentlyPlaying\x18\x03 \x01(\v27.NAlice.NAliceApi.TDeviceState.TVideo.TCurrentlyPlayingR\x10CurrentlyPlaying\x125\n" +
+	"\tViewState\x18\x05 \x01(\v2\x17.google.protobuf.StructR\tViewState\x125\n" +
+	"\tPageState\x18\b \x01(\v2\x17.google.protobuf.StructR\tPageState\x12,\n" +
+	"\x11LastPlayTimestamp\x18\t \x01(\x01R\x11LastPlayTimestamp\x12,\n" +
 	"\x11LastStopTimestamp\x18\n" +
-	" \x01(\x01B\x17\xaa\xdd\x1b\x13last_stop_timestampR\x13last_stop_timestamp\x12Q\n" +
-	"\x06Player\x18\v \x01(\v2-.NAlice.NAliceApi.TDeviceState.TVideo.TPlayerB\n" +
-	"\xaa\xdd\x1b\x06playerR\x06player\x12}\n" +
-	"\x10TvInterfaceState\x18\r \x01(\v27.NAlice.NAliceApi.TDeviceState.TVideo.TTvInterfaceStateB\x16\xaa\xdd\x1b\x12tv_interface_stateR\x12tv_interface_state\x12\x81\x01\n" +
-	"\x12PlayerCapabilities\x18\x0e \x03(\x0e27.NAlice.NAliceApi.TDeviceState.TVideo.EPlayerCapabilityB\x17\xaa\xdd\x1b\x13player_capabilitiesR\x13player_capabilities\x120\n" +
+	" \x01(\x01R\x11LastStopTimestamp\x12E\n" +
+	"\x06Player\x18\v \x01(\v2-.NAlice.NAliceApi.TDeviceState.TVideo.TPlayerR\x06Player\x12c\n" +
+	"\x10TvInterfaceState\x18\r \x01(\v27.NAlice.NAliceApi.TDeviceState.TVideo.TTvInterfaceStateR\x10TvInterfaceState\x12g\n" +
+	"\x12PlayerCapabilities\x18\x0e \x03(\x0e27.NAlice.NAliceApi.TDeviceState.TVideo.EPlayerCapabilityR\x12PlayerCapabilities\x12\x1e\n" +
 	"\n" +
-	"PlayerName\x18\x0f \x01(\tB\x0f\xaa\xdd\x1b\vplayer_nameR\vplayer_name\x1a\xd0\x03\n" +
-	"\fTScreenState\x126\n" +
-	"\fVisibleItems\x18\x02 \x03(\rB\x11\xaa\xdd\x1b\rvisible_itemsR\rvisible_items\x12\"\n" +
-	"\x06Season\x18\x05 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06seasonR\x06season\x12:\n" +
-	"\bRawItems\x18\x06 \x03(\v2\x12.NAlice.TVideoItemB\r\xaa\xdd\x1b\x05items\xa8\x8d'\x01R\x05items\x127\n" +
-	"\aRawItem\x18\a \x01(\v2\x12.NAlice.TVideoItemB\f\xaa\xdd\x1b\x04item\xa8\x8d'\x01R\x04item\x12J\n" +
+	"PlayerName\x18\x0f \x01(\tR\n" +
+	"PlayerName\x1a\xc8\x02\n" +
+	"\fTScreenState\x12\"\n" +
+	"\fVisibleItems\x18\x02 \x03(\rR\fVisibleItems\x12\x16\n" +
+	"\x06Season\x18\x05 \x01(\rR\x06Season\x12.\n" +
+	"\bRawItems\x18\x06 \x03(\v2\x12.NAlice.TVideoItemR\bRawItems\x12,\n" +
+	"\aRawItem\x18\a \x01(\v2\x12.NAlice.TVideoItemR\aRawItem\x122\n" +
 	"\n" +
-	"TvShowItem\x18\b \x01(\v2\x12.NAlice.TVideoItemB\x14\xaa\xdd\x1b\ftv_show_item\xa8\x8d'\x01R\ftv_show_item\x12*\n" +
-	"\bScenario\x18\t \x01(\tB\x0e\xaa\xdd\x1b\bscenario\x18\x01R\bscenario\x12'\n" +
+	"TvShowItem\x18\b \x01(\v2\x12.NAlice.TVideoItemR\n" +
+	"TvShowItem\x12\x1a\n" +
+	"\bScenario\x18\t \x01(\tR\bScenario\x12\x18\n" +
 	"\aViewKey\x18\n" +
-	" \x01(\tB\f\xaa\xdd\x1b\bview_keyR\bview_key\x126\n" +
-	"\fScenarioName\x18\v \x01(\tB\x11\xaa\xdd\x1b\rscenario_nameR\rscenario_name:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05\x1a\xef\x05\n" +
-	"\x11TCurrentlyPlaying\x12$\n" +
-	"\x06Paused\x18\x01 \x01(\bB\f\xaa\xdd\x1b\x06paused\x18\x01R\x06paused\x12k\n" +
-	"\bProgress\x18\x02 \x01(\v2A.NAlice.NAliceApi.TDeviceState.TVideo.TCurrentlyPlaying.TProgressB\f\xaa\xdd\x1b\bprogressR\bprogress\x127\n" +
-	"\aRawItem\x18\b \x01(\v2\x12.NAlice.TVideoItemB\f\xaa\xdd\x1b\x04item\xa8\x8d'\x01R\x04item\x12E\n" +
-	"\vRawNextItem\x18\t \x01(\v2\x12.NAlice.TVideoItemB\x11\xaa\xdd\x1b\tnext_item\xa8\x8d'\x01R\tnext_item\x12M\n" +
+	" \x01(\tR\aViewKey\x12\"\n" +
+	"\fScenarioName\x18\v \x01(\tR\fScenarioNameJ\x04\b\x01\x10\x02J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05\x1a\xb3\x04\n" +
+	"\x11TCurrentlyPlaying\x12\x16\n" +
+	"\x06Paused\x18\x01 \x01(\bR\x06Paused\x12]\n" +
+	"\bProgress\x18\x02 \x01(\v2A.NAlice.NAliceApi.TDeviceState.TVideo.TCurrentlyPlaying.TProgressR\bProgress\x12,\n" +
+	"\aRawItem\x18\b \x01(\v2\x12.NAlice.TVideoItemR\aRawItem\x124\n" +
+	"\vRawNextItem\x18\t \x01(\v2\x12.NAlice.TVideoItemR\vRawNextItem\x128\n" +
 	"\rRawTvShowItem\x18\n" +
-	" \x01(\v2\x12.NAlice.TVideoItemB\x14\xaa\xdd\x1b\ftv_show_item\xa8\x8d'\x01R\ftv_show_item\x129\n" +
-	"\rAudioLanguage\x18\v \x01(\tB\x12\xaa\xdd\x1b\x0eaudio_languageR\x0eaudio_language\x12E\n" +
-	"\x11SubtitlesLanguage\x18\f \x01(\tB\x16\xaa\xdd\x1b\x12subtitles_languageR\x12subtitles_language\x12G\n" +
-	"\x11LastPlayTimestamp\x18\r \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x1a_\n" +
-	"\tTProgress\x12\"\n" +
-	"\x06Played\x18\x01 \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06playedR\x06played\x12(\n" +
-	"\bDuration\x18\x02 \x01(\x01B\f\xaa\xdd\x1b\bdurationR\bduration:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05R\x11RawItemDeprecatedR\x15RawNextItemDeprecated\x1a0\n" +
-	"\aTPlayer\x12\x1f\n" +
-	"\x05Pause\x18\x01 \x01(\bB\t\xaa\xdd\x1b\x05pauseR\x05pause:\x04\xa8\xdd\x1b\x04\x1a\xbe\x03\n" +
-	"\x11TTvInterfaceState\x126\n" +
-	"\fInitialReqId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rinitial_reqidR\rinitial_reqid\x12\x9d\x01\n" +
-	"\x13SearchResultsScreen\x18\x15 \x01(\v2L.NAlice.NAliceApi.TDeviceState.TVideo.TTvInterfaceState.TSearchResultsScreenB\x19\xaa\xdd\x1b\x15search_results_screenH\x00R\x15search_results_screen\x1a\xc6\x01\n" +
-	"\x14TSearchResultsScreen\x12I\n" +
-	"\tGalleries\x18\x01 \x03(\v2\x1c.NAlice.TSearchResultGalleryB\r\xaa\xdd\x1b\tgalleriesR\tgalleries\x123\n" +
-	"\vSearchQuery\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fsearch_queryR\fsearch_query\x12(\n" +
-	"\bSuggests\x18\x03 \x03(\tB\f\xaa\xdd\x1b\bsuggestsR\bsuggests:\x04\xa8\xdd\x1b\x04B\b\n" +
+	" \x01(\v2\x12.NAlice.TVideoItemR\rRawTvShowItem\x12$\n" +
+	"\rAudioLanguage\x18\v \x01(\tR\rAudioLanguage\x12,\n" +
+	"\x11SubtitlesLanguage\x18\f \x01(\tR\x11SubtitlesLanguage\x12,\n" +
+	"\x11LastPlayTimestamp\x18\r \x01(\x01R\x11LastPlayTimestamp\x1a?\n" +
+	"\tTProgress\x12\x16\n" +
+	"\x06Played\x18\x01 \x01(\x01R\x06Played\x12\x1a\n" +
+	"\bDuration\x18\x02 \x01(\x01R\bDurationJ\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05R\x11RawItemDeprecatedR\x15RawNextItemDeprecated\x1a\x1f\n" +
+	"\aTPlayer\x12\x14\n" +
+	"\x05Pause\x18\x01 \x01(\bR\x05Pause\x1a\xd7\x02\n" +
+	"\x11TTvInterfaceState\x12\"\n" +
+	"\fInitialReqId\x18\x01 \x01(\tR\fInitialReqId\x12\x80\x01\n" +
+	"\x13SearchResultsScreen\x18\x15 \x01(\v2L.NAlice.NAliceApi.TDeviceState.TVideo.TTvInterfaceState.TSearchResultsScreenH\x00R\x13SearchResultsScreen\x1a\x90\x01\n" +
+	"\x14TSearchResultsScreen\x12:\n" +
+	"\tGalleries\x18\x01 \x03(\v2\x1c.NAlice.TSearchResultGalleryR\tGalleries\x12 \n" +
+	"\vSearchQuery\x18\x02 \x01(\tR\vSearchQuery\x12\x1a\n" +
+	"\bSuggests\x18\x03 \x03(\tR\bSuggestsB\b\n" +
 	"\x06Screen\"\xa2\x01\n" +
 	"\x11EPlayerCapability\x12\v\n" +
 	"\anothing\x10\x00\x12\b\n" +
@@ -4930,98 +4950,90 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\ffast_forward\x10\a\x12\v\n" +
 	"\aseek_to\x10\b\x12\x0e\n" +
 	"\n" +
-	"play_pause\x10\t:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\f\x10\rR\rTvScreenState\x1a\xf2\x01\n" +
-	"\fTLastWatched\x12@\n" +
-	"\tRawMovies\x18\x04 \x03(\v2\x19.NAlice.TWatchedVideoItemB\n" +
-	"\xaa\xdd\x1b\x06moviesR\x06movies\x12F\n" +
+	"play_pause\x10\tJ\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\f\x10\rR\rTvScreenState\x1a\xce\x01\n" +
+	"\fTLastWatched\x127\n" +
+	"\tRawMovies\x18\x04 \x03(\v2\x19.NAlice.TWatchedVideoItemR\tRawMovies\x12:\n" +
 	"\n" +
-	"RawTvShows\x18\x05 \x03(\v2\x1a.NAlice.TWatchedTvShowItemB\f\xaa\xdd\x1b\btv_showsR\btv_shows\x12@\n" +
-	"\tRawVideos\x18\x06 \x03(\v2\x19.NAlice.TWatchedVideoItemB\n" +
-	"\xaa\xdd\x1b\x06videosR\x06videos:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04\x1a\xf8\x04\n" +
-	"\aTTimers\x12e\n" +
-	"\fActiveTimers\x18\x01 \x03(\v2-.NAlice.NAliceApi.TDeviceState.TTimers.TTimerB\x11\xaa\xdd\x1b\ractive_timersR\ractive_timers\x1a\xed\x03\n" +
-	"\x06TTimer\x12'\n" +
-	"\aTimerId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id\x12<\n" +
-	"\x0eStartTimestamp\x18\x02 \x01(\x04B\x13\xaa\xdd\x1b\x0fstart_timestampR\x0fstart_timestamp\x12(\n" +
-	"\bDuration\x18\x03 \x01(\rB\f\xaa\xdd\x1b\bdurationR\bduration\x12+\n" +
-	"\tRemaining\x18\x04 \x01(\rB\r\xaa\xdd\x1b\tremainingR\tremaining\x12B\n" +
-	"\x10CurrentlyPlaying\x18\x05 \x01(\bB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12\"\n" +
-	"\x06Paused\x18\x06 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06pausedR\x06paused\x12S\n" +
+	"RawTvShows\x18\x05 \x03(\v2\x1a.NAlice.TWatchedTvShowItemR\n" +
+	"RawTvShows\x127\n" +
+	"\tRawVideos\x18\x06 \x03(\v2\x19.NAlice.TWatchedVideoItemR\tRawVideosJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04\x1a\xcb\x03\n" +
+	"\aTTimers\x12Q\n" +
+	"\fActiveTimers\x18\x01 \x03(\v2-.NAlice.NAliceApi.TDeviceState.TTimers.TTimerR\fActiveTimers\x1a\xda\x02\n" +
+	"\x06TTimer\x12\x18\n" +
+	"\aTimerId\x18\x01 \x01(\tR\aTimerId\x12&\n" +
+	"\x0eStartTimestamp\x18\x02 \x01(\x04R\x0eStartTimestamp\x12\x1a\n" +
+	"\bDuration\x18\x03 \x01(\rR\bDuration\x12\x1c\n" +
+	"\tRemaining\x18\x04 \x01(\rR\tRemaining\x12*\n" +
+	"\x10CurrentlyPlaying\x18\x05 \x01(\bR\x10CurrentlyPlaying\x12\x16\n" +
+	"\x06Paused\x18\x06 \x01(\bR\x06Paused\x12C\n" +
 	"\n" +
-	"Directives\x18\a \x03(\v2#.NAlice.NAliceApi.TUntypedDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12b\n" +
-	"\x10TimerDescription\x18\b \x01(\v2\x1f.NAlice.NData.TTimerDescriptionB\x15\xaa\xdd\x1b\x11timer_descriptionR\x10timer_descripion:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\n" +
-	"AlarmState\x1a\xd4\x04\n" +
-	"\vTAlarmState\x12+\n" +
-	"\tICalendar\x18\x01 \x01(\tB\r\xaa\xdd\x1b\ticalendarR\ticalendar\x12B\n" +
-	"\x10CurrentlyPlaying\x18\x02 \x01(\bB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12\x86\x01\n" +
-	"\x11SoundAlarmSetting\x18\x03 \x01(\v2=.NAlice.NAliceApi.TDeviceState.TAlarmState.TSoundAlarmSettingB\x17\xaa\xdd\x1b\x13sound_alarm_settingR\x13sound_alarm_setting\x12;\n" +
-	"\rMaxSoundLevel\x18\x04 \x01(\rB\x13\xaa\xdd\x1b\x0fmax_sound_levelR\x0fmax_sound_level\x12;\n" +
-	"\rMinSoundLevel\x18\x05 \x01(\rB\x13\xaa\xdd\x1b\x0fmin_sound_levelR\x0fmin_sound_level\x12S\n" +
-	"\x15MediaCurrentlyPlaying\x18\x06 \x01(\bB\x1b\xaa\xdd\x1b\x17media_currently_playingR\x17media_currently_playing\x1av\n" +
-	"\x12TSoundAlarmSetting\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12<\n" +
-	"\aRawInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructB\f\xa0\xdd\x1b\x05\xaa\xdd\x1b\x04infoR\x04info:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\xd9\x03\n" +
-	"\rTDeviceConfig\x12Y\n" +
-	"\x0fContentSettings\x18\x01 \x01(\x0e2\x18.NAlice.EContentSettingsB\x14\xaa\xdd\x1b\x10content_settingsR\x10content_settings\x12%\n" +
-	"\aSpotter\x18\x02 \x01(\tB\v\xaa\xdd\x1b\aspotterR\aspotter\x12j\n" +
-	"\x14ChildContentSettings\x18\x03 \x01(\x0e2\x18.NAlice.EContentSettingsB\x1a\xaa\xdd\x1b\x16child_content_settingsR\x16child_content_settings\x12G\n" +
-	"\x11RadioNannyEnabled\x18\x04 \x01(\bB\x17\xaa\xdd\x1b\x13radio_nanny_enabledR\x13radio_nanny_enabled\x12?\n" +
-	"\x0fSmartActivation\x18\x05 \x01(\bB\x14\xaa\xdd\x1b\x10smart_activationR\x10smart_activation\x12J\n" +
-	"\x12SmartVolumeEnabled\x18\x06 \x01(\bB\x18\xaa\xdd\x1b\x14smart_volume_enabledR\x14smart_volume_enabled:\x04\xa8\xdd\x1b\x04\x1a7\n" +
-	"\bTBattery\x12%\n" +
-	"\aPercent\x18\x01 \x01(\x05B\v\xaa\xdd\x1b\apercentR\apercent:\x04\xa8\xdd\x1b\x04\x1a\xaf\x04\n" +
+	"Directives\x18\a \x03(\v2#.NAlice.NAliceApi.TUntypedDirectiveR\n" +
+	"Directives\x12K\n" +
+	"\x10TimerDescription\x18\b \x01(\v2\x1f.NAlice.NData.TTimerDescriptionR\x10TimerDescriptionJ\x04\b\x02\x10\x03R\n" +
+	"AlarmState\x1a\xa3\x03\n" +
+	"\vTAlarmState\x12\x1c\n" +
+	"\tICalendar\x18\x01 \x01(\tR\tICalendar\x12*\n" +
+	"\x10CurrentlyPlaying\x18\x02 \x01(\bR\x10CurrentlyPlaying\x12k\n" +
+	"\x11SoundAlarmSetting\x18\x03 \x01(\v2=.NAlice.NAliceApi.TDeviceState.TAlarmState.TSoundAlarmSettingR\x11SoundAlarmSetting\x12$\n" +
+	"\rMaxSoundLevel\x18\x04 \x01(\rR\rMaxSoundLevel\x12$\n" +
+	"\rMinSoundLevel\x18\x05 \x01(\rR\rMinSoundLevel\x124\n" +
+	"\x15MediaCurrentlyPlaying\x18\x06 \x01(\bR\x15MediaCurrentlyPlaying\x1a[\n" +
+	"\x12TSoundAlarmSetting\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x121\n" +
+	"\aRawInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructR\aRawInfo\x1a\xc3\x02\n" +
+	"\rTDeviceConfig\x12B\n" +
+	"\x0fContentSettings\x18\x01 \x01(\x0e2\x18.NAlice.EContentSettingsR\x0fContentSettings\x12\x18\n" +
+	"\aSpotter\x18\x02 \x01(\tR\aSpotter\x12L\n" +
+	"\x14ChildContentSettings\x18\x03 \x01(\x0e2\x18.NAlice.EContentSettingsR\x14ChildContentSettings\x12,\n" +
+	"\x11RadioNannyEnabled\x18\x04 \x01(\bR\x11RadioNannyEnabled\x12(\n" +
+	"\x0fSmartActivation\x18\x05 \x01(\bR\x0fSmartActivation\x12.\n" +
+	"\x12SmartVolumeEnabled\x18\x06 \x01(\bR\x12SmartVolumeEnabled\x1a$\n" +
+	"\bTBattery\x12\x18\n" +
+	"\aPercent\x18\x01 \x01(\x05R\aPercent\x1a\xa7\x03\n" +
 	"\n" +
-	"TMultiroom\x12V\n" +
-	"\x04Mode\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TMultiroom.EMultiroomModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x12J\n" +
-	"\x12MultiroomSessionId\x18\x02 \x01(\tB\x18\xaa\xdd\x1b\x14multiroom_session_idR\x14multiroom_session_id\x12F\n" +
-	"\x05Music\x18\x03 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TMusicB\t\xaa\xdd\x1b\x05musicR\x05music\x12>\n" +
-	"\x0eMasterDeviceId\x18\x04 \x01(\tB\x14\xaa\xdd\x1b\x10master_device_idR\x10master_device_id\x12>\n" +
-	"\x14VisiblePeerDeviceIds\x18\x05 \x03(\tB\x11\xaa\xdd\x1b\rvisible_peersR\rvisible_peers\x12<\n" +
-	"\x0eMultiroomToken\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\x0fmultiroom_tokenR\x0fmultiroom_token\x12;\n" +
-	"\rRoomDeviceIds\x18\a \x03(\tB\x13\xaa\xdd\x1b\x0froom_device_idsR\x0froom_device_ids\"4\n" +
+	"TMultiroom\x12L\n" +
+	"\x04Mode\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TMultiroom.EMultiroomModeR\x04Mode\x12.\n" +
+	"\x12MultiroomSessionId\x18\x02 \x01(\tR\x12MultiroomSessionId\x12;\n" +
+	"\x05Music\x18\x03 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TMusicR\x05Music\x12&\n" +
+	"\x0eMasterDeviceId\x18\x04 \x01(\tR\x0eMasterDeviceId\x122\n" +
+	"\x14VisiblePeerDeviceIds\x18\x05 \x03(\tR\x14VisiblePeerDeviceIds\x12&\n" +
+	"\x0eMultiroomToken\x18\x06 \x01(\tR\x0eMultiroomToken\x12$\n" +
+	"\rRoomDeviceIds\x18\a \x03(\tR\rRoomDeviceIds\"4\n" +
 	"\x0eEMultiroomMode\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
 	"\n" +
 	"\x06Master\x10\x01\x12\t\n" +
-	"\x05Slave\x10\x02:\x04\xa8\xdd\x1b\x04\x1a\xa7\x06\n" +
+	"\x05Slave\x10\x02\x1a\xd2\x04\n" +
 	"\n" +
-	"TBluetooth\x12U\n" +
-	"\x06Player\x18\x01 \x01(\v21.NAlice.NAliceApi.TDeviceState.TBluetooth.TPlayerB\n" +
-	"\xaa\xdd\x1b\x06playerR\x06player\x12\x7f\n" +
-	"\x12CurrentConnections\x18\x02 \x03(\v25.NAlice.NAliceApi.TDeviceState.TBluetooth.TConnectionB\x17\xaa\xdd\x1b\x13current_connectionsR\x13current_connections\x12\x7f\n" +
-	"\x10CurrentlyPlaying\x18\x03 \x01(\v2;.NAlice.NAliceApi.TDeviceState.TBluetooth.TCurrentlyPlayingB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12G\n" +
-	"\x11LastPlayTimestamp\x18\x04 \x01(\x01B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x1a1\n" +
-	"\vTConnection\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x04\xa8\xdd\x1b\x04\x1a\xdc\x01\n" +
-	"\x11TCurrentlyPlaying\x12'\n" +
-	"\aTrackId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id\x12M\n" +
-	"\fRawTrackInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x12\xa0\xdd\x1b\x05\xaa\xdd\x1b\n" +
-	"track_infoR\n" +
-	"track_info\x12I\n" +
-	"\x11LastPlayTimestamp\x18\x03 \x01(\x01B\x19\xaa\xdd\x1b\x13last_play_timestamp\x18\x01R\x13last_play_timestamp:\x04\xa8\xdd\x1b\x04\x1a_\n" +
-	"\aTPlayer\x12\x1f\n" +
-	"\x05Pause\x18\x01 \x01(\bB\t\xaa\xdd\x1b\x05pauseR\x05pause\x12-\n" +
-	"\tTimestamp\x18\x02 \x01(\x01B\x0f\xaa\xdd\x1b\ttimestamp\x18\x01R\ttimestamp:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\x8c\t\n" +
-	"\x13TInternetConnection\x12V\n" +
-	"\x04Type\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TInternetConnection.ETypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12f\n" +
-	"\aCurrent\x18\x02 \x01(\v2?.NAlice.NAliceApi.TDeviceState.TInternetConnection.TWifiNetworkB\v\xaa\xdd\x1b\acurrentR\acurrent\x12s\n" +
+	"TBluetooth\x12I\n" +
+	"\x06Player\x18\x01 \x01(\v21.NAlice.NAliceApi.TDeviceState.TBluetooth.TPlayerR\x06Player\x12e\n" +
+	"\x12CurrentConnections\x18\x02 \x03(\v25.NAlice.NAliceApi.TDeviceState.TBluetooth.TConnectionR\x12CurrentConnections\x12g\n" +
+	"\x10CurrentlyPlaying\x18\x03 \x01(\v2;.NAlice.NAliceApi.TDeviceState.TBluetooth.TCurrentlyPlayingR\x10CurrentlyPlaying\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x04 \x01(\x01R\x11LastPlayTimestamp\x1a!\n" +
+	"\vTConnection\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a\x98\x01\n" +
+	"\x11TCurrentlyPlaying\x12\x18\n" +
+	"\aTrackId\x18\x01 \x01(\tR\aTrackId\x12;\n" +
+	"\fRawTrackInfo\x18\x02 \x01(\v2\x17.google.protobuf.StructR\fRawTrackInfo\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x03 \x01(\x01R\x11LastPlayTimestamp\x1a=\n" +
+	"\aTPlayer\x12\x14\n" +
+	"\x05Pause\x18\x01 \x01(\bR\x05Pause\x12\x1c\n" +
+	"\tTimestamp\x18\x02 \x01(\x01R\tTimestamp\x1a\xe2\a\n" +
+	"\x13TInternetConnection\x12L\n" +
+	"\x04Type\x18\x01 \x01(\x0e28.NAlice.NAliceApi.TDeviceState.TInternetConnection.ETypeR\x04Type\x12Y\n" +
+	"\aCurrent\x18\x02 \x01(\v2?.NAlice.NAliceApi.TDeviceState.TInternetConnection.TWifiNetworkR\aCurrent\x12_\n" +
 	"\n" +
-	"Neighbours\x18\x03 \x03(\v2?.NAlice.NAliceApi.TDeviceState.TInternetConnection.TWifiNetworkB\x12\xa0\xdd\x1b\x04\xaa\xdd\x1b\n" +
-	"neighboursR\n" +
-	"neighbours\x12^\n" +
-	"\x06Status\x18\x04 \x01(\x0e2:.NAlice.NAliceApi.TDeviceState.TInternetConnection.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x1a\x8c\x03\n" +
-	"\fTWifiNetwork\x12\x1c\n" +
-	"\x04Ssid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x12\x1f\n" +
-	"\x05Bssid\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05bssidR\x05bssid\x12%\n" +
-	"\aChannel\x18\x03 \x01(\x05B\v\xaa\xdd\x1b\achannelR\achannel\x12'\n" +
-	"\x04Rssi\x18\x04 \x01(\x05B\b\xaa\xdd\x1b\x04rssiR\x0fsignal_strength\x12\x1f\n" +
-	"\x05Flags\x18\x05 \x01(\tB\t\xaa\xdd\x1b\x05flagsR\x05flags\x12\x96\x01\n" +
-	"\x13NetworkSecurityType\x18\x06 \x01(\x0e2G.NAlice.NAliceApi.TDeviceState.TInternetConnection.ENetworkSecurityTypeB\x19\xaa\xdd\x1b\x15network_security_typeR\x15network_security_type\x123\n" +
-	"\vIsCorporate\x18\a \x01(\bB\x10\xaa\xdd\x1b\fis_corporateR\fis_corporate\"B\n" +
+	"Neighbours\x18\x03 \x03(\v2?.NAlice.NAliceApi.TDeviceState.TInternetConnection.TWifiNetworkR\n" +
+	"Neighbours\x12R\n" +
+	"\x06Status\x18\x04 \x01(\x0e2:.NAlice.NAliceApi.TDeviceState.TInternetConnection.EStatusR\x06Status\x1a\x99\x02\n" +
+	"\fTWifiNetwork\x12\x12\n" +
+	"\x04Ssid\x18\x01 \x01(\tR\x04Ssid\x12\x14\n" +
+	"\x05Bssid\x18\x02 \x01(\tR\x05Bssid\x12\x18\n" +
+	"\aChannel\x18\x03 \x01(\x05R\aChannel\x12\x12\n" +
+	"\x04Rssi\x18\x04 \x01(\x05R\x04Rssi\x12\x14\n" +
+	"\x05Flags\x18\x05 \x01(\tR\x05Flags\x12y\n" +
+	"\x13NetworkSecurityType\x18\x06 \x01(\x0e2G.NAlice.NAliceApi.TDeviceState.TInternetConnection.ENetworkSecurityTypeR\x13NetworkSecurityType\x12 \n" +
+	"\vIsCorporate\x18\a \x01(\bR\vIsCorporate\"B\n" +
 	"\x05EType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x0f\n" +
 	"\vWifi_2_4GHz\x10\x01\x12\r\n" +
@@ -5039,15 +5051,16 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"Connecting\x10\x01\x12\x17\n" +
 	"\x13ConnectedNoInternet\x10\x02\x12\r\n" +
 	"\tConnected\x10\x03\x12\r\n" +
-	"\tNotChosen\x10\x04\x1a\x93\x04\n" +
-	"\tTRcuState\x12>\n" +
-	"\x0eIsRcuConnected\x18\x01 \x01(\bB\x14\xaa\xdd\x1b\x10is_rcu_connectedR\x10is_rcu_connected\x12f\n" +
+	"\tNotChosen\x10\x04\x1a\xa0\x03\n" +
+	"\tTRcuState\x12&\n" +
+	"\x0eIsRcuConnected\x18\x01 \x01(\bR\x0eIsRcuConnected\x12T\n" +
 	"\n" +
-	"SetupState\x18\x02 \x01(\x0e24.NAlice.NAliceApi.TDeviceState.TRcuState.ESetupStateB\x0f\xaa\xdd\x1b\vsetup_stateR\vsetup_state\x129\n" +
-	"\rTotalCodesets\x18\x03 \x01(\x05B\x12\xaa\xdd\x1b\x0etotal_codesetsR\x0etotal_codesets\x12z\n" +
-	"\x0fRcuCapabilities\x18\x04 \x01(\v29.NAlice.NAliceApi.TDeviceState.TRcuState.TRcuCapabilitiesB\x14\xaa\xdd\x1b\x10rcu_capabilitiesR\x10rcu_capabilities\x1aO\n" +
-	"\x10TRcuCapabilities\x12;\n" +
-	"\rCanMakeSounds\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fcan_make_soundsR\x0fcan_make_sounds\"P\n" +
+	"SetupState\x18\x02 \x01(\x0e24.NAlice.NAliceApi.TDeviceState.TRcuState.ESetupStateR\n" +
+	"SetupState\x12$\n" +
+	"\rTotalCodesets\x18\x03 \x01(\x05R\rTotalCodesets\x12c\n" +
+	"\x0fRcuCapabilities\x18\x04 \x01(\v29.NAlice.NAliceApi.TDeviceState.TRcuState.TRcuCapabilitiesR\x0fRcuCapabilities\x1a8\n" +
+	"\x10TRcuCapabilities\x12$\n" +
+	"\rCanMakeSounds\x18\x01 \x01(\bR\rCanMakeSounds\"P\n" +
 	"\vESetupState\x12\b\n" +
 	"\x04None\x10\x00\x12\b\n" +
 	"\x04Link\x10\x01\x12\b\n" +
@@ -5055,17 +5068,17 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\x05Check\x10\x03\x12\f\n" +
 	"\bAdvanced\x10\x04\x12\n" +
 	"\n" +
-	"\x06Manual\x10\x05:\x04\xa8\xdd\x1b\x04\x1a\xbe\x03\n" +
-	"\x0eTPackagesState\x12l\n" +
-	"\tInstalled\x18\x01 \x03(\v2?.NAlice.NAliceApi.TDeviceState.TPackagesState.TInstalledPackageB\r\xaa\xdd\x1b\tinstalledR\tinstalled\x1aw\n" +
-	"\bTPackage\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12G\n" +
-	"\x11HumanReadableName\x18\x02 \x01(\tB\x17\xaa\xdd\x1b\x13human_readable_nameR\x13human_readable_name:\x04\xa8\xdd\x1b\x04\x1a\xbe\x01\n" +
-	"\x11TInstalledPackage\x12k\n" +
-	"\vPackageInfo\x18\x01 \x01(\v26.NAlice.NAliceApi.TDeviceState.TPackagesState.TPackageB\x10\xaa\xdd\x1b\fpackage_infoR\fpackage_info\x126\n" +
-	"\fMainActivity\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rmain_activityR\rmain_activity:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1aR\n" +
-	"\x12TClockDisplayState\x126\n" +
-	"\fClockEnabled\x18\x01 \x01(\bB\x11\xaa\xdd\x1b\rclock_enabledR\rclock_enabled:\x04\xa8\xdd\x1b\x04\x1a\x86\x05\n" +
+	"\x06Manual\x10\x05\x1a\xd1\x02\n" +
+	"\x0eTPackagesState\x12]\n" +
+	"\tInstalled\x18\x01 \x03(\v2?.NAlice.NAliceApi.TDeviceState.TPackagesState.TInstalledPackageR\tInstalled\x1aL\n" +
+	"\bTPackage\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12,\n" +
+	"\x11HumanReadableName\x18\x02 \x01(\tR\x11HumanReadableName\x1a\x91\x01\n" +
+	"\x11TInstalledPackage\x12X\n" +
+	"\vPackageInfo\x18\x01 \x01(\v26.NAlice.NAliceApi.TDeviceState.TPackagesState.TPackageR\vPackageInfo\x12\"\n" +
+	"\fMainActivity\x18\x02 \x01(\tR\fMainActivity\x1a8\n" +
+	"\x12TClockDisplayState\x12\"\n" +
+	"\fClockEnabled\x18\x01 \x01(\bR\fClockEnabled\x1a\x80\x05\n" +
 	"\x0eTActiveActions\x12\xa7\x01\n" +
 	"\x18ScreenConditionalActions\x18\x03 \x03(\v2K.NAlice.NAliceApi.TDeviceState.TActiveActions.ScreenConditionalActionsEntryB\x1d\xaa\xdd\x1b\x19screen_conditional_actionR\x19screen_conditional_action\x1a\xfc\x01\n" +
 	"\x19TScreenConditionalActions\x12\xa4\x01\n" +
@@ -5073,9 +5086,9 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\x12TConditionalActionJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06:\x04\xa8\xdd\x1b\x04\x1a\x94\x01\n" +
 	"\x1dScreenConditionalActionsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12]\n" +
-	"\x05value\x18\x02 \x01(\v2G.NAlice.NAliceApi.TDeviceState.TActiveActions.TScreenConditionalActionsR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\x0eSemanticFramesR\x12ConditionalActions\x1a\x8b\x02\n" +
-	"\x0eTAppScreenInfo\x12}\n" +
-	"\x0eSourceScreenId\x18\x03 \x01(\x0e2=.NAlice.NAliceApi.TDeviceState.TAppScreenInfo.ESourceScreenIdB\x14\xaa\xdd\x1b\x10source_screen_idR\x10source_screen_id\"n\n" +
+	"\x05value\x18\x02 \x01(\v2G.NAlice.NAliceApi.TDeviceState.TActiveActions.TScreenConditionalActionsR\x05value:\x028\x01J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\x0eSemanticFramesR\x12ConditionalActions\x1a\xf3\x01\n" +
+	"\x0eTAppScreenInfo\x12e\n" +
+	"\x0eSourceScreenId\x18\x03 \x01(\x0e2=.NAlice.NAliceApi.TDeviceState.TAppScreenInfo.ESourceScreenIdR\x0eSourceScreenId\"n\n" +
 	"\x0fESourceScreenId\x12\x17\n" +
 	"\x13undefined_screen_id\x10\x00\x12\f\n" +
 	"\bcloud_ui\x10\x01\x12\v\n" +
@@ -5083,13 +5096,13 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\n" +
 	"cloud_2_ui\x10\x03\x12\x17\n" +
 	"\x13cloud_2_ui_keyboard\x10\x04R\n" +
-	"ScreenInfo\x1a\x90\x06\n" +
-	"\vTStereoPair\x12Z\n" +
-	"\aChannel\x18\x01 \x01(\x0e23.NAlice.NAliceApi.TDeviceState.TStereoPair.EChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12b\n" +
-	"\tConnected\x18\x02 \x01(\x0e25.NAlice.NAliceApi.TDeviceState.TStereoPair.EConnectedB\r\xaa\xdd\x1b\tconnectedR\tconnected\x12N\n" +
-	"\x04Role\x18\x03 \x01(\x0e20.NAlice.NAliceApi.TDeviceState.TStereoPair.ERoleB\b\xaa\xdd\x1b\x04roleR\x04role\x12\x8a\x01\n" +
-	"\x12StereoPlayerStatus\x18\x04 \x01(\x0e2>.NAlice.NAliceApi.TDeviceState.TStereoPair.EStereoPlayerStatusB\x18\xaa\xdd\x1b\x14stereo_player_statusR\x14stereo_player_status\x12A\n" +
-	"\x0fPartnerDeviceId\x18\x05 \x01(\tB\x15\xaa\xdd\x1b\x11partner_device_idR\x11partner_device_id\"6\n" +
+	"ScreenInfo\x1a\xae\x05\n" +
+	"\vTStereoPair\x12M\n" +
+	"\aChannel\x18\x01 \x01(\x0e23.NAlice.NAliceApi.TDeviceState.TStereoPair.EChannelR\aChannel\x12S\n" +
+	"\tConnected\x18\x02 \x01(\x0e25.NAlice.NAliceApi.TDeviceState.TStereoPair.EConnectedR\tConnected\x12D\n" +
+	"\x04Role\x18\x03 \x01(\x0e20.NAlice.NAliceApi.TDeviceState.TStereoPair.ERoleR\x04Role\x12n\n" +
+	"\x12StereoPlayerStatus\x18\x04 \x01(\x0e2>.NAlice.NAliceApi.TDeviceState.TStereoPair.EStereoPlayerStatusR\x12StereoPlayerStatus\x12(\n" +
+	"\x0fPartnerDeviceId\x18\x05 \x01(\tR\x0fPartnerDeviceId\"6\n" +
 	"\bEChannel\x12\x15\n" +
 	"\x11undefined_channel\x10\x00\x12\b\n" +
 	"\x04left\x10\x01\x12\t\n" +
@@ -5111,22 +5124,24 @@ const file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawD
 	"\x10UNDEFINED_STATUS\x10\x00\x12\v\n" +
 	"\aNO_SYNC\x10\x01\x12\x15\n" +
 	"\x11PARTNER_NOT_READY\x10\x02\x12\t\n" +
-	"\x05READY\x10\x03:\x04\xa8\xdd\x1b\x04\x1a\xd2\x01\n" +
-	"\aTTanker\x128\n" +
-	"\fGasStationId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0egas_station_idR\x0egas_station_id\x12*\n" +
-	"\bFuelType\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tfuel_typeR\tfuel_type\x120\n" +
+	"\x05READY\x10\x03\x1a\x85\x01\n" +
+	"\aTTanker\x12\"\n" +
+	"\fGasStationId\x18\x01 \x01(\tR\fGasStationId\x12\x1a\n" +
+	"\bFuelType\x18\x02 \x01(\tR\bFuelType\x12\x1e\n" +
 	"\n" +
-	"CreditCard\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vcredit_cardR\vcredit_card\x12)\n" +
-	"\bXPayment\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tx_paymentR\bxPayment:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04J\x04\b\r\x10\x0eJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x1d\x10\x1eJ\x04\b\x1f\x10 J\x04\b\"\x10#J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b+\x10,J\x04\b-\x10.J\x04\b1\x102R\aActionsR\x05TvSetR\n" +
+	"CreditCard\x18\x03 \x01(\bR\n" +
+	"CreditCard\x12\x1a\n" +
+	"\bXPayment\x18\x04 \x01(\tR\bXPaymentJ\x04\b\r\x10\x0eJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x1d\x10\x1eJ\x04\b\x1f\x10 J\x04\b\"\x10#J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b+\x10,J\x04\b-\x10.J\x04\b1\x102R\aActionsR\x05TvSetR\n" +
 	"CarOptionsR\aBrowserR\rInstalledAppsR\rMessengerCallR\x11UniversalMediaAppR\x11SubscriptionStateR\n" +
-	"EndpointIdR\fCapabilitiesR\bEndpointR\x11RouteManagerStateR\x10DigitalAssistant\"\xd0\x02\n" +
+	"EndpointIdR\fCapabilitiesR\bEndpointR\x11RouteManagerStateR\x10DigitalAssistant\"\xce\x02\n" +
 	"\x10TDeviceStatePart\x12<\n" +
 	"\x03rcu\x18\x02 \x01(\v2(.NAlice.NAliceApi.TDeviceState.TRcuStateH\x00R\x03rcu\x12K\n" +
-	"\bpackages\x18\x03 \x01(\v2-.NAlice.NAliceApi.TDeviceState.TPackagesStateH\x00R\bpackages\x12Q\n" +
-	"\flast_watched\x18\x04 \x01(\v2+.NAlice.NAliceApi.TDeviceState.TLastWatchedH\x00R\flast_watched\x12I\n" +
-	"\vvideo_state\x18\x05 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoH\x00R\vvideo_stateB\x06\n" +
-	"\x04PartJ\x04\b\x01\x10\x02R\x05videoB\x99\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.common.device_stateB\x10DeviceStateProtoZLa.yandex-team.ru/alice/protos/api/alicekit/common/device_state;devicestatepb"
+	"\bpackages\x18\x03 \x01(\v2-.NAlice.NAliceApi.TDeviceState.TPackagesStateH\x00R\bpackages\x12P\n" +
+	"\flast_watched\x18\x04 \x01(\v2+.NAlice.NAliceApi.TDeviceState.TLastWatchedH\x00R\vlastWatched\x12H\n" +
+	"\vvideo_state\x18\x05 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoH\x00R\n" +
+	"videoStateB\x06\n" +
+	"\x04PartJ\x04\b\x01\x10\x02R\x05videoB\xe8\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10DeviceStateProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/device_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApi"
 
 var (
 	file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawDescOnce sync.Once
@@ -5143,53 +5158,53 @@ func file_alice_protos_api_alicekit_common_device_state_device_state_proto_rawDe
 var file_alice_protos_api_alicekit_common_device_state_device_state_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
 var file_alice_protos_api_alicekit_common_device_state_device_state_proto_msgTypes = make([]protoimpl.MessageInfo, 52)
 var file_alice_protos_api_alicekit_common_device_state_device_state_proto_goTypes = []any{
-	(TDeviceState_TAudioPlayer_TPlayerState)(0),                // 0: NAlice.NAliceApi.TDeviceState.TAudioPlayer.TPlayerState
-	(TDeviceState_TScreen_EScreenResolution)(0),                // 1: NAlice.NAliceApi.TDeviceState.TScreen.EScreenResolution
-	(TDeviceState_TScreen_EHdcpLevel)(0),                       // 2: NAlice.NAliceApi.TDeviceState.TScreen.EHdcpLevel
-	(TDeviceState_TScreen_EDynamicRange)(0),                    // 3: NAlice.NAliceApi.TDeviceState.TScreen.EDynamicRange
-	(TDeviceState_TVideo_EPlayerCapability)(0),                 // 4: NAlice.NAliceApi.TDeviceState.TVideo.EPlayerCapability
-	(TDeviceState_TMultiroom_EMultiroomMode)(0),                // 5: NAlice.NAliceApi.TDeviceState.TMultiroom.EMultiroomMode
-	(TDeviceState_TInternetConnection_EType)(0),                // 6: NAlice.NAliceApi.TDeviceState.TInternetConnection.EType
-	(TDeviceState_TInternetConnection_ENetworkSecurityType)(0), // 7: NAlice.NAliceApi.TDeviceState.TInternetConnection.ENetworkSecurityType
-	(TDeviceState_TInternetConnection_EStatus)(0),              // 8: NAlice.NAliceApi.TDeviceState.TInternetConnection.EStatus
-	(TDeviceState_TRcuState_ESetupState)(0),                    // 9: NAlice.NAliceApi.TDeviceState.TRcuState.ESetupState
-	(TDeviceState_TAppScreenInfo_ESourceScreenId)(0),           // 10: NAlice.NAliceApi.TDeviceState.TAppScreenInfo.ESourceScreenId
-	(TDeviceState_TStereoPair_EChannel)(0),                     // 11: NAlice.NAliceApi.TDeviceState.TStereoPair.EChannel
-	(TDeviceState_TStereoPair_EConnected)(0),                   // 12: NAlice.NAliceApi.TDeviceState.TStereoPair.EConnected
-	(TDeviceState_TStereoPair_ERole)(0),                        // 13: NAlice.NAliceApi.TDeviceState.TStereoPair.ERole
-	(TDeviceState_TStereoPair_EStereoPlayerStatus)(0),          // 14: NAlice.NAliceApi.TDeviceState.TStereoPair.EStereoPlayerStatus
-	(*TUntypedDirective)(nil),                                  // 15: NAlice.NAliceApi.TUntypedDirective
-	(*TNavigator)(nil),                                         // 16: NAlice.NAliceApi.TNavigator
-	(*TDeviceState)(nil),                                       // 17: NAlice.NAliceApi.TDeviceState
-	(*TDeviceStatePart)(nil),                                   // 18: NAlice.NAliceApi.TDeviceStatePart
-	(*TNavigator_TPoint)(nil),                                  // 19: NAlice.NAliceApi.TNavigator.TPoint
-	(*TNavigator_TFavorite)(nil),                               // 20: NAlice.NAliceApi.TNavigator.TFavorite
-	(*TNavigator_TLocation)(nil),                               // 21: NAlice.NAliceApi.TNavigator.TLocation
-	(*TNavigator_TMapView)(nil),                                // 22: NAlice.NAliceApi.TNavigator.TMapView
-	(*TNavigator_TRoute)(nil),                                  // 23: NAlice.NAliceApi.TNavigator.TRoute
-	(*TNavigator_TSpan)(nil),                                   // 24: NAlice.NAliceApi.TNavigator.TSpan
-	(*TNavigator_TSearchOptions)(nil),                          // 25: NAlice.NAliceApi.TNavigator.TSearchOptions
-	(*TDeviceState_TAudioPlayer)(nil),                          // 26: NAlice.NAliceApi.TDeviceState.TAudioPlayer
-	(*TDeviceState_TMusic)(nil),                                // 27: NAlice.NAliceApi.TDeviceState.TMusic
-	(*TDeviceState_TScreen)(nil),                               // 28: NAlice.NAliceApi.TDeviceState.TScreen
-	(*TDeviceState_TVideo)(nil),                                // 29: NAlice.NAliceApi.TDeviceState.TVideo
-	(*TDeviceState_TLastWatched)(nil),                          // 30: NAlice.NAliceApi.TDeviceState.TLastWatched
-	(*TDeviceState_TTimers)(nil),                               // 31: NAlice.NAliceApi.TDeviceState.TTimers
-	(*TDeviceState_TAlarmState)(nil),                           // 32: NAlice.NAliceApi.TDeviceState.TAlarmState
-	(*TDeviceState_TDeviceConfig)(nil),                         // 33: NAlice.NAliceApi.TDeviceState.TDeviceConfig
-	(*TDeviceState_TBattery)(nil),                              // 34: NAlice.NAliceApi.TDeviceState.TBattery
-	(*TDeviceState_TMultiroom)(nil),                            // 35: NAlice.NAliceApi.TDeviceState.TMultiroom
-	(*TDeviceState_TBluetooth)(nil),                            // 36: NAlice.NAliceApi.TDeviceState.TBluetooth
-	(*TDeviceState_TInternetConnection)(nil),                   // 37: NAlice.NAliceApi.TDeviceState.TInternetConnection
-	(*TDeviceState_TRcuState)(nil),                             // 38: NAlice.NAliceApi.TDeviceState.TRcuState
-	(*TDeviceState_TPackagesState)(nil),                        // 39: NAlice.NAliceApi.TDeviceState.TPackagesState
-	(*TDeviceState_TClockDisplayState)(nil),                    // 40: NAlice.NAliceApi.TDeviceState.TClockDisplayState
-	(*TDeviceState_TActiveActions)(nil),                        // 41: NAlice.NAliceApi.TDeviceState.TActiveActions
-	(*TDeviceState_TAppScreenInfo)(nil),                        // 42: NAlice.NAliceApi.TDeviceState.TAppScreenInfo
-	(*TDeviceState_TStereoPair)(nil),                           // 43: NAlice.NAliceApi.TDeviceState.TStereoPair
-	(*TDeviceState_TTanker)(nil),                               // 44: NAlice.NAliceApi.TDeviceState.TTanker
-	(*TDeviceState_TAudioPlayer_TCurrentlyPlaying)(nil),        // 45: NAlice.NAliceApi.TDeviceState.TAudioPlayer.TCurrentlyPlaying
-	nil, // 46: NAlice.NAliceApi.TDeviceState.TAudioPlayer.ScenarioMetaEntry
+	(TDeviceState_TAudioPlayer_TPlayerState)(0),                        // 0: NAlice.NAliceApi.TDeviceState.TAudioPlayer.TPlayerState
+	(TDeviceState_TScreen_EScreenResolution)(0),                        // 1: NAlice.NAliceApi.TDeviceState.TScreen.EScreenResolution
+	(TDeviceState_TScreen_EHdcpLevel)(0),                               // 2: NAlice.NAliceApi.TDeviceState.TScreen.EHdcpLevel
+	(TDeviceState_TScreen_EDynamicRange)(0),                            // 3: NAlice.NAliceApi.TDeviceState.TScreen.EDynamicRange
+	(TDeviceState_TVideo_EPlayerCapability)(0),                         // 4: NAlice.NAliceApi.TDeviceState.TVideo.EPlayerCapability
+	(TDeviceState_TMultiroom_EMultiroomMode)(0),                        // 5: NAlice.NAliceApi.TDeviceState.TMultiroom.EMultiroomMode
+	(TDeviceState_TInternetConnection_EType)(0),                        // 6: NAlice.NAliceApi.TDeviceState.TInternetConnection.EType
+	(TDeviceState_TInternetConnection_ENetworkSecurityType)(0),         // 7: NAlice.NAliceApi.TDeviceState.TInternetConnection.ENetworkSecurityType
+	(TDeviceState_TInternetConnection_EStatus)(0),                      // 8: NAlice.NAliceApi.TDeviceState.TInternetConnection.EStatus
+	(TDeviceState_TRcuState_ESetupState)(0),                            // 9: NAlice.NAliceApi.TDeviceState.TRcuState.ESetupState
+	(TDeviceState_TAppScreenInfo_ESourceScreenId)(0),                   // 10: NAlice.NAliceApi.TDeviceState.TAppScreenInfo.ESourceScreenId
+	(TDeviceState_TStereoPair_EChannel)(0),                             // 11: NAlice.NAliceApi.TDeviceState.TStereoPair.EChannel
+	(TDeviceState_TStereoPair_EConnected)(0),                           // 12: NAlice.NAliceApi.TDeviceState.TStereoPair.EConnected
+	(TDeviceState_TStereoPair_ERole)(0),                                // 13: NAlice.NAliceApi.TDeviceState.TStereoPair.ERole
+	(TDeviceState_TStereoPair_EStereoPlayerStatus)(0),                  // 14: NAlice.NAliceApi.TDeviceState.TStereoPair.EStereoPlayerStatus
+	(*TUntypedDirective)(nil),                                          // 15: NAlice.NAliceApi.TUntypedDirective
+	(*TNavigator)(nil),                                                 // 16: NAlice.NAliceApi.TNavigator
+	(*TDeviceState)(nil),                                               // 17: NAlice.NAliceApi.TDeviceState
+	(*TDeviceStatePart)(nil),                                           // 18: NAlice.NAliceApi.TDeviceStatePart
+	(*TNavigator_TPoint)(nil),                                          // 19: NAlice.NAliceApi.TNavigator.TPoint
+	(*TNavigator_TFavorite)(nil),                                       // 20: NAlice.NAliceApi.TNavigator.TFavorite
+	(*TNavigator_TLocation)(nil),                                       // 21: NAlice.NAliceApi.TNavigator.TLocation
+	(*TNavigator_TMapView)(nil),                                        // 22: NAlice.NAliceApi.TNavigator.TMapView
+	(*TNavigator_TRoute)(nil),                                          // 23: NAlice.NAliceApi.TNavigator.TRoute
+	(*TNavigator_TSpan)(nil),                                           // 24: NAlice.NAliceApi.TNavigator.TSpan
+	(*TNavigator_TSearchOptions)(nil),                                  // 25: NAlice.NAliceApi.TNavigator.TSearchOptions
+	(*TDeviceState_TAudioPlayer)(nil),                                  // 26: NAlice.NAliceApi.TDeviceState.TAudioPlayer
+	(*TDeviceState_TMusic)(nil),                                        // 27: NAlice.NAliceApi.TDeviceState.TMusic
+	(*TDeviceState_TScreen)(nil),                                       // 28: NAlice.NAliceApi.TDeviceState.TScreen
+	(*TDeviceState_TVideo)(nil),                                        // 29: NAlice.NAliceApi.TDeviceState.TVideo
+	(*TDeviceState_TLastWatched)(nil),                                  // 30: NAlice.NAliceApi.TDeviceState.TLastWatched
+	(*TDeviceState_TTimers)(nil),                                       // 31: NAlice.NAliceApi.TDeviceState.TTimers
+	(*TDeviceState_TAlarmState)(nil),                                   // 32: NAlice.NAliceApi.TDeviceState.TAlarmState
+	(*TDeviceState_TDeviceConfig)(nil),                                 // 33: NAlice.NAliceApi.TDeviceState.TDeviceConfig
+	(*TDeviceState_TBattery)(nil),                                      // 34: NAlice.NAliceApi.TDeviceState.TBattery
+	(*TDeviceState_TMultiroom)(nil),                                    // 35: NAlice.NAliceApi.TDeviceState.TMultiroom
+	(*TDeviceState_TBluetooth)(nil),                                    // 36: NAlice.NAliceApi.TDeviceState.TBluetooth
+	(*TDeviceState_TInternetConnection)(nil),                           // 37: NAlice.NAliceApi.TDeviceState.TInternetConnection
+	(*TDeviceState_TRcuState)(nil),                                     // 38: NAlice.NAliceApi.TDeviceState.TRcuState
+	(*TDeviceState_TPackagesState)(nil),                                // 39: NAlice.NAliceApi.TDeviceState.TPackagesState
+	(*TDeviceState_TClockDisplayState)(nil),                            // 40: NAlice.NAliceApi.TDeviceState.TClockDisplayState
+	(*TDeviceState_TActiveActions)(nil),                                // 41: NAlice.NAliceApi.TDeviceState.TActiveActions
+	(*TDeviceState_TAppScreenInfo)(nil),                                // 42: NAlice.NAliceApi.TDeviceState.TAppScreenInfo
+	(*TDeviceState_TStereoPair)(nil),                                   // 43: NAlice.NAliceApi.TDeviceState.TStereoPair
+	(*TDeviceState_TTanker)(nil),                                       // 44: NAlice.NAliceApi.TDeviceState.TTanker
+	(*TDeviceState_TAudioPlayer_TCurrentlyPlaying)(nil),                // 45: NAlice.NAliceApi.TDeviceState.TAudioPlayer.TCurrentlyPlaying
+	(*TDeviceState_TAudioPlayer_ScenarioMetaEntry)(nil),                // 46: NAlice.NAliceApi.TDeviceState.TAudioPlayer.ScenarioMetaEntry
 	(*TDeviceState_TMusic_TCurrentlyPlaying)(nil),                      // 47: NAlice.NAliceApi.TDeviceState.TMusic.TCurrentlyPlaying
 	(*TDeviceState_TMusic_TPlayer)(nil),                                // 48: NAlice.NAliceApi.TDeviceState.TMusic.TPlayer
 	(*TDeviceState_TVideo_TScreenState)(nil),                           // 49: NAlice.NAliceApi.TDeviceState.TVideo.TScreenState

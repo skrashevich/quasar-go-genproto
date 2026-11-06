@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/app_state/capability.proto
 
-package appstatepb
+package app_state
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -232,8 +232,8 @@ const file_alice_protos_endpoint_capabilities_app_state_capability_proto_rawDesc
 	"\n" +
 	"Background\x10\x01\x12\x0e\n" +
 	"\n" +
-	"Foreground\x10\x02:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe7\x01B\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17AppStateCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/app_state;appstatepbb\x06proto3"
+	"Foreground\x10\x02:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe7\x01B\xa5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17AppStateCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/app_stateb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_app_state_capability_proto_rawDescOnce sync.Once

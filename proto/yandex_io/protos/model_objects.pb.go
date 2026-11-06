@@ -3780,7 +3780,7 @@ func (x *StereoPair_Role) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use StereoPair_Role.Descriptor instead.
 func (StereoPair_Role) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 0}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 0}
 }
 
 type StereoPair_Connectivity int32
@@ -3842,7 +3842,7 @@ func (x *StereoPair_Connectivity) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use StereoPair_Connectivity.Descriptor instead.
 func (StereoPair_Connectivity) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 1}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 1}
 }
 
 type StereoPair_Channel int32
@@ -3904,7 +3904,7 @@ func (x *StereoPair_Channel) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use StereoPair_Channel.Descriptor instead.
 func (StereoPair_Channel) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 2}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 2}
 }
 
 type StereoPair_StereoPlayerStatus int32
@@ -3966,81 +3966,7 @@ func (x *StereoPair_StereoPlayerStatus) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use StereoPair_StereoPlayerStatus.Descriptor instead.
 func (StereoPair_StereoPlayerStatus) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 3}
-}
-
-type Leds_ScreenType int32
-
-const (
-	Leds_NONE              Leds_ScreenType = 0
-	Leds_TOP_PANEL         Leds_ScreenType = 1
-	Leds_FRONT_PANEL       Leds_ScreenType = 2
-	Leds_AMBIENT_LIGHT     Leds_ScreenType = 3
-	Leds_BATTERY_INDICATOR Leds_ScreenType = 4
-	Leds_OKNIX             Leds_ScreenType = 5
-	Leds_RING              Leds_ScreenType = 6
-	Leds_SEGMENT_LED       Leds_ScreenType = 7
-)
-
-// Enum value maps for Leds_ScreenType.
-var (
-	Leds_ScreenType_name = map[int32]string{
-		0: "NONE",
-		1: "TOP_PANEL",
-		2: "FRONT_PANEL",
-		3: "AMBIENT_LIGHT",
-		4: "BATTERY_INDICATOR",
-		5: "OKNIX",
-		6: "RING",
-		7: "SEGMENT_LED",
-	}
-	Leds_ScreenType_value = map[string]int32{
-		"NONE":              0,
-		"TOP_PANEL":         1,
-		"FRONT_PANEL":       2,
-		"AMBIENT_LIGHT":     3,
-		"BATTERY_INDICATOR": 4,
-		"OKNIX":             5,
-		"RING":              6,
-		"SEGMENT_LED":       7,
-	}
-)
-
-func (x Leds_ScreenType) Enum() *Leds_ScreenType {
-	p := new(Leds_ScreenType)
-	*p = x
-	return p
-}
-
-func (x Leds_ScreenType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Leds_ScreenType) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[61].Descriptor()
-}
-
-func (Leds_ScreenType) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[61]
-}
-
-func (x Leds_ScreenType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Leds_ScreenType) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Leds_ScreenType(num)
-	return nil
-}
-
-// Deprecated: Use Leds_ScreenType.Descriptor instead.
-func (Leds_ScreenType) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{107, 0}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 3}
 }
 
 type SpectrogramAnimation_State_Source int32
@@ -4073,11 +3999,11 @@ func (x SpectrogramAnimation_State_Source) String() string {
 }
 
 func (SpectrogramAnimation_State_Source) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[62].Descriptor()
+	return file_yandex_io_protos_model_objects_proto_enumTypes[61].Descriptor()
 }
 
 func (SpectrogramAnimation_State_Source) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[62]
+	return &file_yandex_io_protos_model_objects_proto_enumTypes[61]
 }
 
 func (x SpectrogramAnimation_State_Source) Number() protoreflect.EnumNumber {
@@ -4129,11 +4055,11 @@ func (x BleDecryptCredentialsStatus_Status) String() string {
 }
 
 func (BleDecryptCredentialsStatus_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[63].Descriptor()
+	return file_yandex_io_protos_model_objects_proto_enumTypes[62].Descriptor()
 }
 
 func (BleDecryptCredentialsStatus_Status) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[63]
+	return &file_yandex_io_protos_model_objects_proto_enumTypes[62]
 }
 
 func (x BleDecryptCredentialsStatus_Status) Number() protoreflect.EnumNumber {
@@ -4185,11 +4111,11 @@ func (x BackendRequest_Method) String() string {
 }
 
 func (BackendRequest_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[64].Descriptor()
+	return file_yandex_io_protos_model_objects_proto_enumTypes[63].Descriptor()
 }
 
 func (BackendRequest_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[64]
+	return &file_yandex_io_protos_model_objects_proto_enumTypes[63]
 }
 
 func (x BackendRequest_Method) Number() protoreflect.EnumNumber {
@@ -4244,11 +4170,11 @@ func (x DirectiveEvent_Result) String() string {
 }
 
 func (DirectiveEvent_Result) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[65].Descriptor()
+	return file_yandex_io_protos_model_objects_proto_enumTypes[64].Descriptor()
 }
 
 func (DirectiveEvent_Result) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[65]
+	return &file_yandex_io_protos_model_objects_proto_enumTypes[64]
 }
 
 func (x DirectiveEvent_Result) Number() protoreflect.EnumNumber {
@@ -4270,74 +4196,77 @@ func (DirectiveEvent_Result) EnumDescriptor() ([]byte, []int) {
 	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{117, 0}
 }
 
-type SoundFormat_Type int32
+type Leds_ScreenType int32
 
 const (
-	SoundFormat_UNKNOWN                          SoundFormat_Type = 0
-	SoundFormat_PCM                              SoundFormat_Type = 1
-	SoundFormat_OPUS                             SoundFormat_Type = 2
-	SoundFormat_RAW                              SoundFormat_Type = 3
-	SoundFormat_HEADERLESS_OPUS_STREAM           SoundFormat_Type = 4
-	SoundFormat_HEADERLESS_OPUS_STREAM_BYTE_SIZE SoundFormat_Type = 5
-	SoundFormat_AAC_LC                           SoundFormat_Type = 6
+	Leds_NONE              Leds_ScreenType = 0
+	Leds_TOP_PANEL         Leds_ScreenType = 1
+	Leds_FRONT_PANEL       Leds_ScreenType = 2
+	Leds_AMBIENT_LIGHT     Leds_ScreenType = 3
+	Leds_BATTERY_INDICATOR Leds_ScreenType = 4
+	Leds_OKNIX             Leds_ScreenType = 5
+	Leds_RING              Leds_ScreenType = 6
+	Leds_SEGMENT_LED       Leds_ScreenType = 7
 )
 
-// Enum value maps for SoundFormat_Type.
+// Enum value maps for Leds_ScreenType.
 var (
-	SoundFormat_Type_name = map[int32]string{
-		0: "UNKNOWN",
-		1: "PCM",
-		2: "OPUS",
-		3: "RAW",
-		4: "HEADERLESS_OPUS_STREAM",
-		5: "HEADERLESS_OPUS_STREAM_BYTE_SIZE",
-		6: "AAC_LC",
+	Leds_ScreenType_name = map[int32]string{
+		0: "NONE",
+		1: "TOP_PANEL",
+		2: "FRONT_PANEL",
+		3: "AMBIENT_LIGHT",
+		4: "BATTERY_INDICATOR",
+		5: "OKNIX",
+		6: "RING",
+		7: "SEGMENT_LED",
 	}
-	SoundFormat_Type_value = map[string]int32{
-		"UNKNOWN":                          0,
-		"PCM":                              1,
-		"OPUS":                             2,
-		"RAW":                              3,
-		"HEADERLESS_OPUS_STREAM":           4,
-		"HEADERLESS_OPUS_STREAM_BYTE_SIZE": 5,
-		"AAC_LC":                           6,
+	Leds_ScreenType_value = map[string]int32{
+		"NONE":              0,
+		"TOP_PANEL":         1,
+		"FRONT_PANEL":       2,
+		"AMBIENT_LIGHT":     3,
+		"BATTERY_INDICATOR": 4,
+		"OKNIX":             5,
+		"RING":              6,
+		"SEGMENT_LED":       7,
 	}
 )
 
-func (x SoundFormat_Type) Enum() *SoundFormat_Type {
-	p := new(SoundFormat_Type)
+func (x Leds_ScreenType) Enum() *Leds_ScreenType {
+	p := new(Leds_ScreenType)
 	*p = x
 	return p
 }
 
-func (x SoundFormat_Type) String() string {
+func (x Leds_ScreenType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (SoundFormat_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_model_objects_proto_enumTypes[66].Descriptor()
+func (Leds_ScreenType) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_model_objects_proto_enumTypes[65].Descriptor()
 }
 
-func (SoundFormat_Type) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_model_objects_proto_enumTypes[66]
+func (Leds_ScreenType) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_model_objects_proto_enumTypes[65]
 }
 
-func (x SoundFormat_Type) Number() protoreflect.EnumNumber {
+func (x Leds_ScreenType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
 // Deprecated: Do not use.
-func (x *SoundFormat_Type) UnmarshalJSON(b []byte) error {
+func (x *Leds_ScreenType) UnmarshalJSON(b []byte) error {
 	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
 	if err != nil {
 		return err
 	}
-	*x = SoundFormat_Type(num)
+	*x = Leds_ScreenType(num)
 	return nil
 }
 
-// Deprecated: Use SoundFormat_Type.Descriptor instead.
-func (SoundFormat_Type) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use Leds_ScreenType.Descriptor instead.
+func (Leds_ScreenType) EnumDescriptor() ([]byte, []int) {
 	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{119, 0}
 }
 
@@ -5692,7 +5621,7 @@ type AppState struct {
 	RadioState           *AppState_RadioState              `protobuf:"bytes,4,opt,name=radio_state,json=radioState" json:"radio_state,omitempty"`
 	BluetoothPlayerState *BluetoothPlayerState             `protobuf:"bytes,5,opt,name=bluetooth_player_state,json=bluetoothPlayerState" json:"bluetooth_player_state,omitempty"`
 	AudioPlayerState     *AudioClientEvent                 `protobuf:"bytes,6,opt,name=audio_player_state,json=audioPlayerState" json:"audio_player_state,omitempty"`
-	MediaInfo            []byte                            `protobuf:"bytes,7,opt,name=media_info,json=mediaInfo" json:"media_info,omitempty"`
+	MediaInfo            *AppState_MediaInfo               `protobuf:"bytes,7,opt,name=media_info,json=mediaInfo" json:"media_info,omitempty"`
 	RcuState             *RcuState                         `protobuf:"bytes,9,opt,name=rcu_state,json=rcuState" json:"rcu_state,omitempty"`
 	PackagesState        *PackagesState                    `protobuf:"bytes,13,opt,name=packages_state,json=packagesState" json:"packages_state,omitempty"`
 	AliceVideoState      *device_state.TDeviceState_TVideo `protobuf:"bytes,14,opt,name=alice_video_state,json=aliceVideoState" json:"alice_video_state,omitempty"`
@@ -5772,7 +5701,7 @@ func (x *AppState) GetAudioPlayerState() *AudioClientEvent {
 	return nil
 }
 
-func (x *AppState) GetMediaInfo() []byte {
+func (x *AppState) GetMediaInfo() *AppState_MediaInfo {
 	if x != nil {
 		return x.MediaInfo
 	}
@@ -6417,8 +6346,8 @@ func (x *Progress) GetDuration() int32 {
 }
 
 type CompleteVideoState struct {
-	state         protoimpl.MessageState            `protogen:"open.v1"`
-	State         map[string]*UserWatchedVideoState `protobuf:"bytes,1,rep,name=state" json:"state,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	State         []*CompleteVideoState_StateEntry `protobuf:"bytes,1,rep,name=state" json:"state,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6453,7 +6382,7 @@ func (*CompleteVideoState) Descriptor() ([]byte, []int) {
 	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{27}
 }
 
-func (x *CompleteVideoState) GetState() map[string]*UserWatchedVideoState {
+func (x *CompleteVideoState) GetState() []*CompleteVideoState_StateEntry {
 	if x != nil {
 		return x.State
 	}
@@ -6461,8 +6390,8 @@ func (x *CompleteVideoState) GetState() map[string]*UserWatchedVideoState {
 }
 
 type UserWatchedVideoState struct {
-	state         protoimpl.MessageState        `protogen:"open.v1"`
-	UserState     map[string]*WatchedVideoState `protobuf:"bytes,1,rep,name=user_state,json=userState" json:"user_state,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	UserState     []*UserWatchedVideoState_UserStateEntry `protobuf:"bytes,1,rep,name=user_state,json=userState" json:"user_state,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6497,7 +6426,7 @@ func (*UserWatchedVideoState) Descriptor() ([]byte, []int) {
 	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{28}
 }
 
-func (x *UserWatchedVideoState) GetUserState() map[string]*WatchedVideoState {
+func (x *UserWatchedVideoState) GetUserState() []*UserWatchedVideoState_UserStateEntry {
 	if x != nil {
 		return x.UserState
 	}
@@ -12123,7 +12052,6 @@ func (x *EqualizerConfig) GetPreventClipping() bool {
 type MediaRequest struct {
 	state                  protoimpl.MessageState            `protogen:"open.v1"`
 	PlayerDescriptor       *AudioPlayerDescriptor            `protobuf:"bytes,22,opt,name=player_descriptor,json=playerDescriptor" json:"player_descriptor,omitempty"`
-	ReasonMessage          *string                           `protobuf:"bytes,52,opt,name=reason_message,json=reasonMessage" json:"reason_message,omitempty"`
 	PlayAudio              *Audio                            `protobuf:"bytes,1,opt,name=play_audio,json=playAudio" json:"play_audio,omitempty"`
 	RecreatePlayers        *EmptyMessage                     `protobuf:"bytes,45,opt,name=recreate_players,json=recreatePlayers" json:"recreate_players,omitempty"`
 	StartPrefetch          *AudioClientEvent_PrefetchContext `protobuf:"bytes,48,opt,name=start_prefetch,json=startPrefetch" json:"start_prefetch,omitempty"`
@@ -12146,8 +12074,6 @@ type MediaRequest struct {
 	Metadata               *AudioMetadata                    `protobuf:"bytes,37,opt,name=metadata" json:"metadata,omitempty"`
 	PlaybackSpeed          *float64                          `protobuf:"fixed64,44,opt,name=playback_speed,json=playbackSpeed,def=1" json:"playback_speed,omitempty"`
 	UpdateFadeOut          *MediaRequest_FadeOut             `protobuf:"bytes,50,opt,name=update_fade_out,json=updateFadeOut" json:"update_fade_out,omitempty"`
-	JogWheel               *MediaRequest_JogWheel            `protobuf:"bytes,53,opt,name=jog_wheel,json=jogWheel" json:"jog_wheel,omitempty"`
-	ResumeAnalyticsContext *AudioAnalyticsContext            `protobuf:"bytes,54,opt,name=resume_analytics_context,json=resumeAnalyticsContext" json:"resume_analytics_context,omitempty"`
 	PlayRadio              *Radio                            `protobuf:"bytes,16,opt,name=play_radio,json=playRadio" json:"play_radio,omitempty"`
 	FreeAudioFocus         *EmptyMessage                     `protobuf:"bytes,7,opt,name=free_audio_focus,json=freeAudioFocus" json:"free_audio_focus,omitempty"`
 	TakeAudioFocus         *EmptyMessage                     `protobuf:"bytes,8,opt,name=take_audio_focus,json=takeAudioFocus" json:"take_audio_focus,omitempty"`
@@ -12162,6 +12088,9 @@ type MediaRequest struct {
 	ChangeAudio            *AudioTrack                       `protobuf:"bytes,20,opt,name=change_audio,json=changeAudio" json:"change_audio,omitempty"`
 	ChangeSubtitles        *Subtitles                        `protobuf:"bytes,21,opt,name=change_subtitles,json=changeSubtitles" json:"change_subtitles,omitempty"`
 	ShowVideoSettings      *EmptyMessage                     `protobuf:"bytes,23,opt,name=show_video_settings,json=showVideoSettings" json:"show_video_settings,omitempty"`
+	ReasonMessage          *string                           `protobuf:"bytes,52,opt,name=reason_message,json=reasonMessage" json:"reason_message,omitempty"`
+	JogWheel               *MediaRequest_JogWheel            `protobuf:"bytes,53,opt,name=jog_wheel,json=jogWheel" json:"jog_wheel,omitempty"`
+	ResumeAnalyticsContext *AudioAnalyticsContext            `protobuf:"bytes,54,opt,name=resume_analytics_context,json=resumeAnalyticsContext" json:"resume_analytics_context,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -12208,13 +12137,6 @@ func (x *MediaRequest) GetPlayerDescriptor() *AudioPlayerDescriptor {
 		return x.PlayerDescriptor
 	}
 	return nil
-}
-
-func (x *MediaRequest) GetReasonMessage() string {
-	if x != nil && x.ReasonMessage != nil {
-		return *x.ReasonMessage
-	}
-	return ""
 }
 
 func (x *MediaRequest) GetPlayAudio() *Audio {
@@ -12371,20 +12293,6 @@ func (x *MediaRequest) GetUpdateFadeOut() *MediaRequest_FadeOut {
 	return nil
 }
 
-func (x *MediaRequest) GetJogWheel() *MediaRequest_JogWheel {
-	if x != nil {
-		return x.JogWheel
-	}
-	return nil
-}
-
-func (x *MediaRequest) GetResumeAnalyticsContext() *AudioAnalyticsContext {
-	if x != nil {
-		return x.ResumeAnalyticsContext
-	}
-	return nil
-}
-
 func (x *MediaRequest) GetPlayRadio() *Radio {
 	if x != nil {
 		return x.PlayRadio
@@ -12479,6 +12387,27 @@ func (x *MediaRequest) GetChangeSubtitles() *Subtitles {
 func (x *MediaRequest) GetShowVideoSettings() *EmptyMessage {
 	if x != nil {
 		return x.ShowVideoSettings
+	}
+	return nil
+}
+
+func (x *MediaRequest) GetReasonMessage() string {
+	if x != nil && x.ReasonMessage != nil {
+		return *x.ReasonMessage
+	}
+	return ""
+}
+
+func (x *MediaRequest) GetJogWheel() *MediaRequest_JogWheel {
+	if x != nil {
+		return x.JogWheel
+	}
+	return nil
+}
+
+func (x *MediaRequest) GetResumeAnalyticsContext() *AudioAnalyticsContext {
+	if x != nil {
+		return x.ResumeAnalyticsContext
 	}
 	return nil
 }
@@ -13084,6 +13013,58 @@ func (x *GlagolDiscoveryResult) GetIsFullResult() *EmptyMessage {
 	return nil
 }
 
+type PushNotification struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Operation     *string                `protobuf:"bytes,1,opt,name=operation" json:"operation,omitempty"`
+	Message       *string                `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PushNotification) Reset() {
+	*x = PushNotification{}
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PushNotification) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PushNotification) ProtoMessage() {}
+
+func (x *PushNotification) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PushNotification.ProtoReflect.Descriptor instead.
+func (*PushNotification) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *PushNotification) GetOperation() string {
+	if x != nil && x.Operation != nil {
+		return *x.Operation
+	}
+	return ""
+}
+
+func (x *PushNotification) GetMessage() string {
+	if x != nil && x.Message != nil {
+		return *x.Message
+	}
+	return ""
+}
+
 type RegistrationResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IsSuccess     *bool                  `protobuf:"varint,1,opt,name=is_success,json=isSuccess" json:"is_success,omitempty"`
@@ -13095,7 +13076,7 @@ type RegistrationResult struct {
 
 func (x *RegistrationResult) Reset() {
 	*x = RegistrationResult{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[104]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13107,7 +13088,7 @@ func (x *RegistrationResult) String() string {
 func (*RegistrationResult) ProtoMessage() {}
 
 func (x *RegistrationResult) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[104]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13120,7 +13101,7 @@ func (x *RegistrationResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegistrationResult.ProtoReflect.Descriptor instead.
 func (*RegistrationResult) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{104}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *RegistrationResult) GetIsSuccess() bool {
@@ -13164,7 +13145,7 @@ type StereoPair struct {
 
 func (x *StereoPair) Reset() {
 	*x = StereoPair{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[105]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13176,7 +13157,7 @@ func (x *StereoPair) String() string {
 func (*StereoPair) ProtoMessage() {}
 
 func (x *StereoPair) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[105]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13189,7 +13170,7 @@ func (x *StereoPair) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair.ProtoReflect.Descriptor instead.
 func (*StereoPair) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *StereoPair) GetState() *StereoPair_State {
@@ -13286,7 +13267,7 @@ type VolumeManager struct {
 
 func (x *VolumeManager) Reset() {
 	*x = VolumeManager{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[106]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13298,7 +13279,7 @@ func (x *VolumeManager) String() string {
 func (*VolumeManager) ProtoMessage() {}
 
 func (x *VolumeManager) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[106]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13311,7 +13292,7 @@ func (x *VolumeManager) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VolumeManager.ProtoReflect.Descriptor instead.
 func (*VolumeManager) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *VolumeManager) GetState() *VolumeManager_State {
@@ -13326,42 +13307,6 @@ func (x *VolumeManager) GetSetVolumeSignal() *VolumeManager_SetVolumeSignal {
 		return x.SetVolumeSignal
 	}
 	return nil
-}
-
-type Leds struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *Leds) Reset() {
-	*x = Leds{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[107]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *Leds) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Leds) ProtoMessage() {}
-
-func (x *Leds) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[107]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Leds.ProtoReflect.Descriptor instead.
-func (*Leds) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{107}
 }
 
 type SpectrogramAnimation struct {
@@ -14090,7 +14035,7 @@ func (*DirectiveEvent_CompletedEvent) isDirectiveEvent_Event() {}
 
 type DirectivesProcessorConfig struct {
 	state           protoimpl.MessageState                          `protogen:"open.v1"`
-	DirectivesToAdd []*DirectivesProcessorConfig_AddDirectiveConfig `protobuf:"bytes,1,rep,name=DirectivesToAdd,json=directives_to_add" json:"DirectivesToAdd,omitempty"`
+	DirectivesToAdd []*DirectivesProcessorConfig_AddDirectiveConfig `protobuf:"bytes,1,rep,name=DirectivesToAdd" json:"DirectivesToAdd,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -14132,26 +14077,26 @@ func (x *DirectivesProcessorConfig) GetDirectivesToAdd() []*DirectivesProcessorC
 	return nil
 }
 
-type SoundFormat struct {
+type Leds struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *SoundFormat) Reset() {
-	*x = SoundFormat{}
+func (x *Leds) Reset() {
+	*x = Leds{}
 	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[119]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SoundFormat) String() string {
+func (x *Leds) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SoundFormat) ProtoMessage() {}
+func (*Leds) ProtoMessage() {}
 
-func (x *SoundFormat) ProtoReflect() protoreflect.Message {
+func (x *Leds) ProtoReflect() protoreflect.Message {
 	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[119]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -14163,77 +14108,9 @@ func (x *SoundFormat) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SoundFormat.ProtoReflect.Descriptor instead.
-func (*SoundFormat) Descriptor() ([]byte, []int) {
+// Deprecated: Use Leds.ProtoReflect.Descriptor instead.
+func (*Leds) Descriptor() ([]byte, []int) {
 	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{119}
-}
-
-type SoundInfo struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChannelCount  *int64                 `protobuf:"varint,1,opt,name=channel_count,json=channelCount" json:"channel_count,omitempty"`
-	SampleRate    *int64                 `protobuf:"varint,2,opt,name=sample_rate,json=sampleRate" json:"sample_rate,omitempty"`
-	SampleSize    *int64                 `protobuf:"varint,3,opt,name=sample_size,json=sampleSize" json:"sample_size,omitempty"`
-	Type          *SoundFormat_Type      `protobuf:"varint,4,opt,name=type,enum=quasar.proto.SoundFormat_Type" json:"type,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *SoundInfo) Reset() {
-	*x = SoundInfo{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[120]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *SoundInfo) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SoundInfo) ProtoMessage() {}
-
-func (x *SoundInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[120]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SoundInfo.ProtoReflect.Descriptor instead.
-func (*SoundInfo) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{120}
-}
-
-func (x *SoundInfo) GetChannelCount() int64 {
-	if x != nil && x.ChannelCount != nil {
-		return *x.ChannelCount
-	}
-	return 0
-}
-
-func (x *SoundInfo) GetSampleRate() int64 {
-	if x != nil && x.SampleRate != nil {
-		return *x.SampleRate
-	}
-	return 0
-}
-
-func (x *SoundInfo) GetSampleSize() int64 {
-	if x != nil && x.SampleSize != nil {
-		return *x.SampleSize
-	}
-	return 0
-}
-
-func (x *SoundInfo) GetType() SoundFormat_Type {
-	if x != nil && x.Type != nil {
-		return *x.Type
-	}
-	return SoundFormat_UNKNOWN
 }
 
 type WebViewState_History struct {
@@ -14245,7 +14122,7 @@ type WebViewState_History struct {
 
 func (x *WebViewState_History) Reset() {
 	*x = WebViewState_History{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[121]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[120]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14257,7 +14134,7 @@ func (x *WebViewState_History) String() string {
 func (*WebViewState_History) ProtoMessage() {}
 
 func (x *WebViewState_History) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[121]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[120]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14299,7 +14176,7 @@ const (
 
 func (x *MultiroomParams_MusicParams) Reset() {
 	*x = MultiroomParams_MusicParams{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[122]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[121]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14311,7 +14188,7 @@ func (x *MultiroomParams_MusicParams) String() string {
 func (*MultiroomParams_MusicParams) ProtoMessage() {}
 
 func (x *MultiroomParams_MusicParams) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[122]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[121]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14380,7 +14257,7 @@ type MultiroomBroadcast_MasterHints struct {
 
 func (x *MultiroomBroadcast_MasterHints) Reset() {
 	*x = MultiroomBroadcast_MasterHints{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[123]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[122]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14392,7 +14269,7 @@ func (x *MultiroomBroadcast_MasterHints) String() string {
 func (*MultiroomBroadcast_MasterHints) ProtoMessage() {}
 
 func (x *MultiroomBroadcast_MasterHints) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[123]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[122]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14438,7 +14315,7 @@ type MultiroomDirective_Stop struct {
 
 func (x *MultiroomDirective_Stop) Reset() {
 	*x = MultiroomDirective_Stop{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[124]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[123]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14450,7 +14327,7 @@ func (x *MultiroomDirective_Stop) String() string {
 func (*MultiroomDirective_Stop) ProtoMessage() {}
 
 func (x *MultiroomDirective_Stop) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[124]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[123]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14484,7 +14361,7 @@ type MultiroomDirective_StartBroadcast struct {
 
 func (x *MultiroomDirective_StartBroadcast) Reset() {
 	*x = MultiroomDirective_StartBroadcast{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[125]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[124]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14496,7 +14373,7 @@ func (x *MultiroomDirective_StartBroadcast) String() string {
 func (*MultiroomDirective_StartBroadcast) ProtoMessage() {}
 
 func (x *MultiroomDirective_StartBroadcast) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[125]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[124]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14542,7 +14419,7 @@ type MultiroomDirective_StopBroadcast struct {
 
 func (x *MultiroomDirective_StopBroadcast) Reset() {
 	*x = MultiroomDirective_StopBroadcast{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[126]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[125]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14554,7 +14431,7 @@ func (x *MultiroomDirective_StopBroadcast) String() string {
 func (*MultiroomDirective_StopBroadcast) ProtoMessage() {}
 
 func (x *MultiroomDirective_StopBroadcast) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[126]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[125]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14586,7 +14463,7 @@ type MultiroomDirective_ResumeBroadcast struct {
 
 func (x *MultiroomDirective_ResumeBroadcast) Reset() {
 	*x = MultiroomDirective_ResumeBroadcast{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[127]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[126]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14598,7 +14475,7 @@ func (x *MultiroomDirective_ResumeBroadcast) String() string {
 func (*MultiroomDirective_ResumeBroadcast) ProtoMessage() {}
 
 func (x *MultiroomDirective_ResumeBroadcast) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[127]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[126]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14631,7 +14508,7 @@ type MultiroomDirective_Command struct {
 
 func (x *MultiroomDirective_Command) Reset() {
 	*x = MultiroomDirective_Command{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[128]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[127]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14643,7 +14520,7 @@ func (x *MultiroomDirective_Command) String() string {
 func (*MultiroomDirective_Command) ProtoMessage() {}
 
 func (x *MultiroomDirective_Command) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[128]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[127]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14683,7 +14560,7 @@ type MultiroomDirective_AudioFocus struct {
 
 func (x *MultiroomDirective_AudioFocus) Reset() {
 	*x = MultiroomDirective_AudioFocus{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[129]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[128]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14695,7 +14572,7 @@ func (x *MultiroomDirective_AudioFocus) String() string {
 func (*MultiroomDirective_AudioFocus) ProtoMessage() {}
 
 func (x *MultiroomDirective_AudioFocus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[129]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[128]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14734,7 +14611,7 @@ type MultiroomDirective_StateRequest struct {
 
 func (x *MultiroomDirective_StateRequest) Reset() {
 	*x = MultiroomDirective_StateRequest{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[130]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[129]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14746,7 +14623,7 @@ func (x *MultiroomDirective_StateRequest) String() string {
 func (*MultiroomDirective_StateRequest) ProtoMessage() {}
 
 func (x *MultiroomDirective_StateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[130]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[129]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14778,7 +14655,7 @@ type MultiroomDirective_PlayerPause struct {
 
 func (x *MultiroomDirective_PlayerPause) Reset() {
 	*x = MultiroomDirective_PlayerPause{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[131]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[130]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14790,7 +14667,7 @@ func (x *MultiroomDirective_PlayerPause) String() string {
 func (*MultiroomDirective_PlayerPause) ProtoMessage() {}
 
 func (x *MultiroomDirective_PlayerPause) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[131]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[130]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14823,7 +14700,7 @@ type MultiroomState_Peer struct {
 
 func (x *MultiroomState_Peer) Reset() {
 	*x = MultiroomState_Peer{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[132]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[131]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14835,7 +14712,7 @@ func (x *MultiroomState_Peer) String() string {
 func (*MultiroomState_Peer) ProtoMessage() {}
 
 func (x *MultiroomState_Peer) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[132]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[131]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14889,7 +14766,7 @@ const (
 
 func (x *AppState_ScreenState) Reset() {
 	*x = AppState_ScreenState{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[133]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[132]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14901,7 +14778,7 @@ func (x *AppState_ScreenState) String() string {
 func (*AppState_ScreenState) ProtoMessage() {}
 
 func (x *AppState_ScreenState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[133]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[132]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15027,7 +14904,7 @@ const (
 
 func (x *AppState_MusicState) Reset() {
 	*x = AppState_MusicState{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[134]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[133]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15039,7 +14916,7 @@ func (x *AppState_MusicState) String() string {
 func (*AppState_MusicState) ProtoMessage() {}
 
 func (x *AppState_MusicState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[134]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[133]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15215,7 +15092,7 @@ const (
 
 func (x *AppState_RadioState) Reset() {
 	*x = AppState_RadioState{}
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[135]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[134]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -15227,7 +15104,7 @@ func (x *AppState_RadioState) String() string {
 func (*AppState_RadioState) ProtoMessage() {}
 
 func (x *AppState_RadioState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[135]
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[134]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -15290,6 +15167,66 @@ func (x *AppState_RadioState) GetColor() string {
 		return *x.Color
 	}
 	return ""
+}
+
+type AppState_MediaInfo struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	SupportedScreenResolutions []string               `protobuf:"bytes,1,rep,name=supported_screen_resolutions,json=supportedScreenResolutions" json:"supported_screen_resolutions,omitempty"`
+	HdcpLevel                  *string                `protobuf:"bytes,2,opt,name=hdcp_level,json=hdcpLevel" json:"hdcp_level,omitempty"`
+	DynamicRanges              []string               `protobuf:"bytes,3,rep,name=dynamic_ranges,json=dynamicRanges" json:"dynamic_ranges,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AppState_MediaInfo) Reset() {
+	*x = AppState_MediaInfo{}
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AppState_MediaInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AppState_MediaInfo) ProtoMessage() {}
+
+func (x *AppState_MediaInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AppState_MediaInfo.ProtoReflect.Descriptor instead.
+func (*AppState_MediaInfo) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{17, 3}
+}
+
+func (x *AppState_MediaInfo) GetSupportedScreenResolutions() []string {
+	if x != nil {
+		return x.SupportedScreenResolutions
+	}
+	return nil
+}
+
+func (x *AppState_MediaInfo) GetHdcpLevel() string {
+	if x != nil && x.HdcpLevel != nil {
+		return *x.HdcpLevel
+	}
+	return ""
+}
+
+func (x *AppState_MediaInfo) GetDynamicRanges() []string {
+	if x != nil {
+		return x.DynamicRanges
+	}
+	return nil
 }
 
 type RcuState_RcuCapabilities struct {
@@ -15490,6 +15427,110 @@ func (x *WifiStatus_TimeOverHttp) GetSystemClockUs() int64 {
 		return *x.SystemClockUs
 	}
 	return 0
+}
+
+type CompleteVideoState_StateEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *UserWatchedVideoState `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteVideoState_StateEntry) Reset() {
+	*x = CompleteVideoState_StateEntry{}
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteVideoState_StateEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteVideoState_StateEntry) ProtoMessage() {}
+
+func (x *CompleteVideoState_StateEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteVideoState_StateEntry.ProtoReflect.Descriptor instead.
+func (*CompleteVideoState_StateEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{27, 0}
+}
+
+func (x *CompleteVideoState_StateEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *CompleteVideoState_StateEntry) GetValue() *UserWatchedVideoState {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type UserWatchedVideoState_UserStateEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *WatchedVideoState     `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserWatchedVideoState_UserStateEntry) Reset() {
+	*x = UserWatchedVideoState_UserStateEntry{}
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserWatchedVideoState_UserStateEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserWatchedVideoState_UserStateEntry) ProtoMessage() {}
+
+func (x *UserWatchedVideoState_UserStateEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_model_objects_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserWatchedVideoState_UserStateEntry.ProtoReflect.Descriptor instead.
+func (*UserWatchedVideoState_UserStateEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{28, 0}
+}
+
+func (x *UserWatchedVideoState_UserStateEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *UserWatchedVideoState_UserStateEntry) GetValue() *WatchedVideoState {
+	if x != nil {
+		return x.Value
+	}
+	return nil
 }
 
 type BluetoothSinkRequest_VisibilityRequest struct {
@@ -17052,7 +17093,7 @@ func (x *StereoPair_State) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_State.ProtoReflect.Descriptor instead.
 func (*StereoPair_State) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 0}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 0}
 }
 
 func (x *StereoPair_State) GetDeviceId() string {
@@ -17173,7 +17214,7 @@ func (x *StereoPair_RequestState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_RequestState.ProtoReflect.Descriptor instead.
 func (*StereoPair_RequestState) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 1}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 1}
 }
 
 func (x *StereoPair_RequestState) GetRequester() string {
@@ -17218,7 +17259,7 @@ func (x *StereoPair_ConversationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_ConversationRequest.ProtoReflect.Descriptor instead.
 func (*StereoPair_ConversationRequest) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 2}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 2}
 }
 
 func (x *StereoPair_ConversationRequest) GetRequester() string {
@@ -17271,7 +17312,7 @@ func (x *StereoPair_InitialPairingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_InitialPairingRequest.ProtoReflect.Descriptor instead.
 func (*StereoPair_InitialPairingRequest) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 3}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 3}
 }
 
 func (x *StereoPair_InitialPairingRequest) GetLeaderDeviceId() string {
@@ -17330,7 +17371,7 @@ func (x *StereoPair_InitialPairingAnswer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_InitialPairingAnswer.ProtoReflect.Descriptor instead.
 func (*StereoPair_InitialPairingAnswer) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 4}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 4}
 }
 
 func (x *StereoPair_InitialPairingAnswer) GetFollowerDeviceId() string {
@@ -17382,7 +17423,7 @@ func (x *StereoPair_UserEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_UserEvent.ProtoReflect.Descriptor instead.
 func (*StereoPair_UserEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 5}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 5}
 }
 
 func (x *StereoPair_UserEvent) GetEventId() string {
@@ -17433,7 +17474,7 @@ func (x *StereoPair_DumpClockObservations) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_DumpClockObservations.ProtoReflect.Descriptor instead.
 func (*StereoPair_DumpClockObservations) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 6}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 6}
 }
 
 func (x *StereoPair_DumpClockObservations) GetClockId() string {
@@ -17478,7 +17519,7 @@ func (x *StereoPair_Syn) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_Syn.ProtoReflect.Descriptor instead.
 func (*StereoPair_Syn) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 7}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 7}
 }
 
 func (x *StereoPair_Syn) GetSession() string {
@@ -17530,7 +17571,7 @@ func (x *StereoPair_Ack) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StereoPair_Ack.ProtoReflect.Descriptor instead.
 func (*StereoPair_Ack) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{105, 8}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 8}
 }
 
 func (x *StereoPair_Ack) GetSession() string {
@@ -17583,7 +17624,7 @@ func (x *VolumeManager_State) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VolumeManager_State.ProtoReflect.Descriptor instead.
 func (*VolumeManager_State) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 0}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{107, 0}
 }
 
 func (x *VolumeManager_State) GetIsMuted() bool {
@@ -17643,7 +17684,7 @@ func (x *VolumeManager_SetVolumeSignal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VolumeManager_SetVolumeSignal.ProtoReflect.Descriptor instead.
 func (*VolumeManager_SetVolumeSignal) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{106, 1}
+	return file_yandex_io_protos_model_objects_proto_rawDescGZIP(), []int{107, 1}
 }
 
 func (x *VolumeManager_SetVolumeSignal) GetPlatformVolume() int32 {
@@ -18137,9 +18178,9 @@ func (x *DirectiveSequencerState_Channel) GetDirectives() []*protos1.Directive {
 
 type DirectivesProcessorConfig_AddDirectiveConfig struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	Directive           *directives.TDirective `protobuf:"bytes,1,req,name=Directive,json=directive" json:"Directive,omitempty"`
-	WhitelistDirectives []string               `protobuf:"bytes,2,rep,name=WhitelistDirectives,json=whitelist_directives" json:"WhitelistDirectives,omitempty"`
-	BlacklistDirectives []string               `protobuf:"bytes,3,rep,name=BlacklistDirectives,json=blacklist_directives" json:"BlacklistDirectives,omitempty"`
+	Directive           *directives.TDirective `protobuf:"bytes,1,req,name=Directive" json:"Directive,omitempty"`
+	WhitelistDirectives []string               `protobuf:"bytes,2,rep,name=WhitelistDirectives" json:"WhitelistDirectives,omitempty"`
+	BlacklistDirectives []string               `protobuf:"bytes,3,rep,name=BlacklistDirectives" json:"BlacklistDirectives,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -18297,7 +18338,7 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\ftimestamp_ms\x18\x06 \x01(\x03R\vtimestampMs\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\a \x01(\tR\tsessionId\x12!\n" +
-	"\tis_paused\x18\x03 \x01(\b:\x04trueR\bisPaused\"\x85\a\n" +
+	"\tis_paused\x18\x03 \x01(\b:\x04trueR\bisPaused\"\xed\x06\n" +
 	"\x12MultiroomBroadcast\x12\x1b\n" +
 	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12'\n" +
 	"\x0fmultiroom_token\x18\x03 \x01(\tR\x0emultiroomToken\x120\n" +
@@ -18313,14 +18354,14 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	" \x01(\v2\x1d.quasar.proto.MultiroomParamsR\x0fmultiroomParams\x12\x18\n" +
 	"\aversion\x18d \x01(\rR\aversion\x12\x1a\n" +
 	"\bfirmware\x18e \x01(\tR\bfirmware\x12\x16\n" +
-	"\x06seqnum\x18f \x01(\rR\x06seqnum\x1a\xbe\x01\n" +
+	"\x06seqnum\x18f \x01(\rR\x06seqnum\x1a\xa6\x01\n" +
 	"\vMasterHints\x12*\n" +
 	"\x11quiet_audio_focus\x18\x01 \x01(\bR\x0fquietAudioFocus\x127\n" +
 	"\n" +
 	"directives\x18\x02 \x03(\v2\x17.quasar.proto.DirectiveR\n" +
 	"directives\x122\n" +
 	"\n" +
-	"next_audio\x18\x03 \x01(\v2\x13.quasar.proto.AudioR\tnextAudioJ\x04\b\x04\x10\x05R\x10user_session_end\"*\n" +
+	"next_audio\x18\x03 \x01(\v2\x13.quasar.proto.AudioR\tnextAudio\"*\n" +
 	"\x05State\x12\b\n" +
 	"\x04NONE\x10\x00\x12\n" +
 	"\n" +
@@ -18409,7 +18450,7 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\x06NOSYNC\x10\x00\x12\b\n" +
 	"\x04WEAK\x10\x01\x12\n" +
 	"\n" +
-	"\x06STRONG\x10\x02\"\xcb\x16\n" +
+	"\x06STRONG\x10\x02\"\x83\x18\n" +
 	"\bAppState\x12E\n" +
 	"\fscreen_state\x18\x01 \x01(\v2\".quasar.proto.AppState.ScreenStateR\vscreenState\x12B\n" +
 	"\vmusic_state\x18\x02 \x01(\v2!.quasar.proto.AppState.MusicStateR\n" +
@@ -18419,9 +18460,9 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\vradio_state\x18\x04 \x01(\v2!.quasar.proto.AppState.RadioStateR\n" +
 	"radioState\x12X\n" +
 	"\x16bluetooth_player_state\x18\x05 \x01(\v2\".quasar.proto.BluetoothPlayerStateR\x14bluetoothPlayerState\x12L\n" +
-	"\x12audio_player_state\x18\x06 \x01(\v2\x1e.quasar.proto.AudioClientEventR\x10audioPlayerState\x12\x1d\n" +
+	"\x12audio_player_state\x18\x06 \x01(\v2\x1e.quasar.proto.AudioClientEventR\x10audioPlayerState\x12?\n" +
 	"\n" +
-	"media_info\x18\a \x01(\fR\tmediaInfo\x123\n" +
+	"media_info\x18\a \x01(\v2 .quasar.proto.AppState.MediaInfoR\tmediaInfo\x123\n" +
 	"\trcu_state\x18\t \x01(\v2\x16.quasar.proto.RcuStateR\brcuState\x12B\n" +
 	"\x0epackages_state\x18\r \x01(\v2\x1b.quasar.proto.PackagesStateR\rpackagesState\x12Q\n" +
 	"\x11alice_video_state\x18\x0e \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoR\x0faliceVideoState\x1a\xef\x04\n" +
@@ -18482,7 +18523,12 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\vradio_title\x18\x05 \x01(\tR\n" +
 	"radioTitle\x12\x1b\n" +
 	"\tcover_uri\x18\x06 \x01(\tR\bcoverUri\x12\x14\n" +
-	"\x05color\x18\a \x01(\tR\x05color\"\xee\x03\n" +
+	"\x05color\x18\a \x01(\tR\x05color\x1a\x93\x01\n" +
+	"\tMediaInfo\x12@\n" +
+	"\x1csupported_screen_resolutions\x18\x01 \x03(\tR\x1asupportedScreenResolutions\x12\x1d\n" +
+	"\n" +
+	"hdcp_level\x18\x02 \x01(\tR\thdcpLevel\x12%\n" +
+	"\x0edynamic_ranges\x18\x03 \x03(\tR\rdynamicRanges\"\xee\x03\n" +
 	"\n" +
 	"ScreenType\x12\b\n" +
 	"\x04MAIN\x10\x00\x12\v\n" +
@@ -18612,19 +18658,19 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\tEXCELLENT\x10\x03J\x04\b\x02\x10\x03\">\n" +
 	"\bProgress\x12\x16\n" +
 	"\x06played\x18\x01 \x01(\x05R\x06played\x12\x1a\n" +
-	"\bduration\x18\x02 \x01(\x05R\bduration\"\xb6\x01\n" +
+	"\bduration\x18\x02 \x01(\x05R\bduration\"\xb2\x01\n" +
 	"\x12CompleteVideoState\x12A\n" +
-	"\x05state\x18\x01 \x03(\v2+.quasar.proto.CompleteVideoState.StateEntryR\x05state\x1a]\n" +
+	"\x05state\x18\x01 \x03(\v2+.quasar.proto.CompleteVideoState.StateEntryR\x05state\x1aY\n" +
 	"\n" +
 	"StateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x129\n" +
-	"\x05value\x18\x02 \x01(\v2#.quasar.proto.UserWatchedVideoStateR\x05value:\x028\x01\"\xc9\x01\n" +
+	"\x05value\x18\x02 \x01(\v2#.quasar.proto.UserWatchedVideoStateR\x05value\"\xc5\x01\n" +
 	"\x15UserWatchedVideoState\x12Q\n" +
 	"\n" +
-	"user_state\x18\x01 \x03(\v22.quasar.proto.UserWatchedVideoState.UserStateEntryR\tuserState\x1a]\n" +
+	"user_state\x18\x01 \x03(\v22.quasar.proto.UserWatchedVideoState.UserStateEntryR\tuserState\x1aY\n" +
 	"\x0eUserStateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x125\n" +
-	"\x05value\x18\x02 \x01(\v2\x1f.quasar.proto.WatchedVideoStateR\x05value:\x028\x01\"\xab\x01\n" +
+	"\x05value\x18\x02 \x01(\v2\x1f.quasar.proto.WatchedVideoStateR\x05value\"\xab\x01\n" +
 	"\x11WatchedVideoState\x120\n" +
 	"\x06movies\x18\x01 \x03(\v2\x18.quasar.proto.VideoStateR\x06movies\x124\n" +
 	"\bepisodes\x18\x02 \x03(\v2\x18.quasar.proto.VideoStateR\bepisodes\x12.\n" +
@@ -19367,8 +19413,7 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\n" +
 	"HIGH_SHELF\x10\x02J\x04\b\x03\x10\x04\"\x8e\x19\n" +
 	"\fMediaRequest\x12P\n" +
-	"\x11player_descriptor\x18\x16 \x01(\v2#.quasar.proto.AudioPlayerDescriptorR\x10playerDescriptor\x12%\n" +
-	"\x0ereason_message\x184 \x01(\tR\rreasonMessage\x122\n" +
+	"\x11player_descriptor\x18\x16 \x01(\v2#.quasar.proto.AudioPlayerDescriptorR\x10playerDescriptor\x122\n" +
 	"\n" +
 	"play_audio\x18\x01 \x01(\v2\x13.quasar.proto.AudioR\tplayAudio\x12E\n" +
 	"\x10recreate_players\x18- \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0frecreatePlayers\x12U\n" +
@@ -19395,9 +19440,7 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\x0fstream_data_end\x18\x1e \x01(\v2\x1a.quasar.proto.EmptyMessageR\rstreamDataEnd\x127\n" +
 	"\bmetadata\x18% \x01(\v2\x1b.quasar.proto.AudioMetadataR\bmetadata\x12(\n" +
 	"\x0eplayback_speed\x18, \x01(\x01:\x011R\rplaybackSpeed\x12J\n" +
-	"\x0fupdate_fade_out\x182 \x01(\v2\".quasar.proto.MediaRequest.FadeOutR\rupdateFadeOut\x12@\n" +
-	"\tjog_wheel\x185 \x01(\v2#.quasar.proto.MediaRequest.JogWheelR\bjogWheel\x12]\n" +
-	"\x18resume_analytics_context\x186 \x01(\v2#.quasar.proto.AudioAnalyticsContextR\x16resumeAnalyticsContext\x122\n" +
+	"\x0fupdate_fade_out\x182 \x01(\v2\".quasar.proto.MediaRequest.FadeOutR\rupdateFadeOut\x122\n" +
 	"\n" +
 	"play_radio\x18\x10 \x01(\v2\x13.quasar.proto.RadioR\tplayRadio\x12D\n" +
 	"\x10free_audio_focus\x18\a \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0efreeAudioFocus\x12D\n" +
@@ -19413,7 +19456,10 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"play_video\x18\x02 \x01(\v2\x13.quasar.proto.VideoR\tplayVideo\x12;\n" +
 	"\fchange_audio\x18\x14 \x01(\v2\x18.quasar.proto.AudioTrackR\vchangeAudio\x12B\n" +
 	"\x10change_subtitles\x18\x15 \x01(\v2\x17.quasar.proto.SubtitlesR\x0fchangeSubtitles\x12J\n" +
-	"\x13show_video_settings\x18\x17 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x11showVideoSettings\x1aI\n" +
+	"\x13show_video_settings\x18\x17 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x11showVideoSettings\x12%\n" +
+	"\x0ereason_message\x184 \x01(\tR\rreasonMessage\x12@\n" +
+	"\tjog_wheel\x185 \x01(\v2#.quasar.proto.MediaRequest.JogWheelR\bjogWheel\x12]\n" +
+	"\x18resume_analytics_context\x186 \x01(\v2#.quasar.proto.AudioAnalyticsContextR\x16resumeAnalyticsContext\x1aI\n" +
 	"\vPauseConfig\x12\x16\n" +
 	"\x06smooth\x18\x01 \x01(\bR\x06smooth\x12\"\n" +
 	"\rwait_fade_out\x18\x02 \x01(\bR\vwaitFadeOut\x1as\n" +
@@ -19540,7 +19586,10 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\x05items\x18\x01 \x03(\v2!.quasar.proto.GlagolDiscoveryItemR\x05items\x126\n" +
 	"\vother_items\x18\x02 \x03(\v2\x15.quasar.proto.NsdInfoR\n" +
 	"otherItems\x12@\n" +
-	"\x0eis_full_result\x18\x03 \x01(\v2\x1a.quasar.proto.EmptyMessageR\fisFullResult\"}\n" +
+	"\x0eis_full_result\x18\x03 \x01(\v2\x1a.quasar.proto.EmptyMessageR\fisFullResult\"J\n" +
+	"\x10PushNotification\x12\x1c\n" +
+	"\toperation\x18\x01 \x01(\tR\toperation\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"}\n" +
 	"\x12RegistrationResult\x12\x1d\n" +
 	"\n" +
 	"is_success\x18\x01 \x01(\bR\tisSuccess\x12#\n" +
@@ -19633,18 +19682,7 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\x0fSetVolumeSignal\x12'\n" +
 	"\x0fplatform_volume\x18\x01 \x01(\x05R\x0eplatformVolume\x12\x19\n" +
 	"\bis_muted\x18\x03 \x01(\bR\aisMuted\x12\x16\n" +
-	"\x06source\x18\x04 \x01(\tR\x06source\"\x8f\x01\n" +
-	"\x04Leds\"\x86\x01\n" +
-	"\n" +
-	"ScreenType\x12\b\n" +
-	"\x04NONE\x10\x00\x12\r\n" +
-	"\tTOP_PANEL\x10\x01\x12\x0f\n" +
-	"\vFRONT_PANEL\x10\x02\x12\x11\n" +
-	"\rAMBIENT_LIGHT\x10\x03\x12\x15\n" +
-	"\x11BATTERY_INDICATOR\x10\x04\x12\t\n" +
-	"\x05OKNIX\x10\x05\x12\b\n" +
-	"\x04RING\x10\x06\x12\x0f\n" +
-	"\vSEGMENT_LED\x10\a\"\xcb\x06\n" +
+	"\x06source\x18\x04 \x01(\tR\x06source\"\xcb\x06\n" +
 	"\x14SpectrogramAnimation\x12>\n" +
 	"\x05state\x18\x01 \x01(\v2(.quasar.proto.SpectrogramAnimation.StateR\x05state\x12z\n" +
 	"\x1bset_external_presets_signal\x18\x02 \x01(\v2;.quasar.proto.SpectrogramAnimation.SetExternalPresetsSignalR\x18setExternalPresetsSignal\x12@\n" +
@@ -19744,30 +19782,24 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\aSUCCESS\x10\x00\x12\b\n" +
 	"\x04FAIL\x10\x01\x12\f\n" +
 	"\bCANCELED\x10\x02B\a\n" +
-	"\x05event\"\xbc\x02\n" +
-	"\x19DirectivesProcessorConfig\x12f\n" +
-	"\x0fDirectivesToAdd\x18\x01 \x03(\v2:.quasar.proto.DirectivesProcessorConfig.AddDirectiveConfigR\x11directives_to_add\x1a\xb6\x01\n" +
+	"\x05event\"\xb8\x02\n" +
+	"\x19DirectivesProcessorConfig\x12d\n" +
+	"\x0fDirectivesToAdd\x18\x01 \x03(\v2:.quasar.proto.DirectivesProcessorConfig.AddDirectiveConfigR\x0fDirectivesToAdd\x1a\xb4\x01\n" +
 	"\x12AddDirectiveConfig\x12:\n" +
-	"\tDirective\x18\x01 \x02(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tdirective\x121\n" +
-	"\x13WhitelistDirectives\x18\x02 \x03(\tR\x14whitelist_directives\x121\n" +
-	"\x13BlacklistDirectives\x18\x03 \x03(\tR\x14blacklist_directives\"\x8c\x01\n" +
-	"\vSoundFormat\"}\n" +
-	"\x04Type\x12\v\n" +
-	"\aUNKNOWN\x10\x00\x12\a\n" +
-	"\x03PCM\x10\x01\x12\b\n" +
-	"\x04OPUS\x10\x02\x12\a\n" +
-	"\x03RAW\x10\x03\x12\x1a\n" +
-	"\x16HEADERLESS_OPUS_STREAM\x10\x04\x12$\n" +
-	" HEADERLESS_OPUS_STREAM_BYTE_SIZE\x10\x05\x12\n" +
+	"\tDirective\x18\x01 \x02(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tDirective\x120\n" +
+	"\x13WhitelistDirectives\x18\x02 \x03(\tR\x13WhitelistDirectives\x120\n" +
+	"\x13BlacklistDirectives\x18\x03 \x03(\tR\x13BlacklistDirectives\"\x8f\x01\n" +
+	"\x04Leds\"\x86\x01\n" +
 	"\n" +
-	"\x06AAC_LC\x10\x06\"\xa6\x01\n" +
-	"\tSoundInfo\x12#\n" +
-	"\rchannel_count\x18\x01 \x01(\x03R\fchannelCount\x12\x1f\n" +
-	"\vsample_rate\x18\x02 \x01(\x03R\n" +
-	"sampleRate\x12\x1f\n" +
-	"\vsample_size\x18\x03 \x01(\x03R\n" +
-	"sampleSize\x122\n" +
-	"\x04type\x18\x04 \x01(\x0e2\x1e.quasar.proto.SoundFormat.TypeR\x04type*!\n" +
+	"ScreenType\x12\b\n" +
+	"\x04NONE\x10\x00\x12\r\n" +
+	"\tTOP_PANEL\x10\x01\x12\x0f\n" +
+	"\vFRONT_PANEL\x10\x02\x12\x11\n" +
+	"\rAMBIENT_LIGHT\x10\x03\x12\x15\n" +
+	"\x11BATTERY_INDICATOR\x10\x04\x12\t\n" +
+	"\x05OKNIX\x10\x05\x12\b\n" +
+	"\x04RING\x10\x06\x12\x0f\n" +
+	"\vSEGMENT_LED\x10\a*!\n" +
 	"\vSetupSource\x12\t\n" +
 	"\x05SOUND\x10\x00\x12\a\n" +
 	"\x03BLE\x10\x01*(\n" +
@@ -19840,8 +19872,8 @@ const file_yandex_io_protos_model_objects_proto_rawDesc = "" +
 	"\aSTOPPED\x10\x05\x12\f\n" +
 	"\bFINISHED\x10\x06\x12\n" +
 	"\n" +
-	"\x06FAILED\x10\aB)\n" +
-	"\x19ru.yandex.quasar.protobufB\fModelObjects"
+	"\x06FAILED\x10\aB\xb8\x01\n" +
+	"\x10com.quasar.protoB\x11ModelObjectsProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_model_objects_proto_rawDescOnce sync.Once
@@ -19855,7 +19887,7 @@ func file_yandex_io_protos_model_objects_proto_rawDescGZIP() []byte {
 	return file_yandex_io_protos_model_objects_proto_rawDescData
 }
 
-var file_yandex_io_protos_model_objects_proto_enumTypes = make([]protoimpl.EnumInfo, 67)
+var file_yandex_io_protos_model_objects_proto_enumTypes = make([]protoimpl.EnumInfo, 66)
 var file_yandex_io_protos_model_objects_proto_msgTypes = make([]protoimpl.MessageInfo, 189)
 var file_yandex_io_protos_model_objects_proto_goTypes = []any{
 	(SetupSource)(0),                    // 0: quasar.proto.SetupSource
@@ -19919,540 +19951,539 @@ var file_yandex_io_protos_model_objects_proto_goTypes = []any{
 	(StereoPair_Connectivity)(0),                                  // 58: quasar.proto.StereoPair.Connectivity
 	(StereoPair_Channel)(0),                                       // 59: quasar.proto.StereoPair.Channel
 	(StereoPair_StereoPlayerStatus)(0),                            // 60: quasar.proto.StereoPair.StereoPlayerStatus
-	(Leds_ScreenType)(0),                                          // 61: quasar.proto.Leds.ScreenType
-	(SpectrogramAnimation_State_Source)(0),                        // 62: quasar.proto.SpectrogramAnimation.State.Source
-	(BleDecryptCredentialsStatus_Status)(0),                       // 63: quasar.proto.BleDecryptCredentialsStatus.Status
-	(BackendRequest_Method)(0),                                    // 64: quasar.proto.BackendRequest.Method
-	(DirectiveEvent_Result)(0),                                    // 65: quasar.proto.DirectiveEvent.Result
-	(SoundFormat_Type)(0),                                         // 66: quasar.proto.SoundFormat.Type
-	(*EmptyMessage)(nil),                                          // 67: quasar.proto.EmptyMessage
-	(*AudioInput)(nil),                                            // 68: quasar.proto.AudioInput
-	(*SetupCredentialsMessage)(nil),                               // 69: quasar.proto.SetupCredentialsMessage
-	(*EncryptedSetupCredentialsMessage)(nil),                      // 70: quasar.proto.EncryptedSetupCredentialsMessage
-	(*SetupStatusMessage)(nil),                                    // 71: quasar.proto.SetupStatusMessage
-	(*BrokenMicInfo)(nil),                                         // 72: quasar.proto.BrokenMicInfo
-	(*GroupAliceState)(nil),                                       // 73: quasar.proto.GroupAliceState
-	(*AllStartupSettings)(nil),                                    // 74: quasar.proto.AllStartupSettings
-	(*WebViewState)(nil),                                          // 75: quasar.proto.WebViewState
-	(*ControlState)(nil),                                          // 76: quasar.proto.ControlState
-	(*AudioOutputDeviceState)(nil),                                // 77: quasar.proto.AudioOutputDeviceState
-	(*SoundNormalization)(nil),                                    // 78: quasar.proto.SoundNormalization
-	(*MultiroomParams)(nil),                                       // 79: quasar.proto.MultiroomParams
-	(*MultiroomBroadcast)(nil),                                    // 80: quasar.proto.MultiroomBroadcast
-	(*MultiroomDirective)(nil),                                    // 81: quasar.proto.MultiroomDirective
-	(*MultiroomState)(nil),                                        // 82: quasar.proto.MultiroomState
-	(*Clock)(nil),                                                 // 83: quasar.proto.Clock
-	(*AppState)(nil),                                              // 84: quasar.proto.AppState
-	(*VideoState)(nil),                                            // 85: quasar.proto.VideoState
-	(*RcuState)(nil),                                              // 86: quasar.proto.RcuState
-	(*PackagesState)(nil),                                         // 87: quasar.proto.PackagesState
-	(*WifiInfo)(nil),                                              // 88: quasar.proto.WifiInfo
-	(*WifiList)(nil),                                              // 89: quasar.proto.WifiList
-	(*NetworkStatus)(nil),                                         // 90: quasar.proto.NetworkStatus
-	(*EthernetStatus)(nil),                                        // 91: quasar.proto.EthernetStatus
-	(*WifiStatus)(nil),                                            // 92: quasar.proto.WifiStatus
-	(*Progress)(nil),                                              // 93: quasar.proto.Progress
-	(*CompleteVideoState)(nil),                                    // 94: quasar.proto.CompleteVideoState
-	(*UserWatchedVideoState)(nil),                                 // 95: quasar.proto.UserWatchedVideoState
-	(*WatchedVideoState)(nil),                                     // 96: quasar.proto.WatchedVideoState
-	(*Video)(nil),                                                 // 97: quasar.proto.Video
-	(*AudioTrack)(nil),                                            // 98: quasar.proto.AudioTrack
-	(*Subtitles)(nil),                                             // 99: quasar.proto.Subtitles
-	(*Radio)(nil),                                                 // 100: quasar.proto.Radio
-	(*Weather)(nil),                                               // 101: quasar.proto.Weather
-	(*Location)(nil),                                              // 102: quasar.proto.Location
-	(*VolumeState)(nil),                                           // 103: quasar.proto.VolumeState
-	(*VolumeSetMessage)(nil),                                      // 104: quasar.proto.VolumeSetMessage
-	(*SearchResult)(nil),                                          // 105: quasar.proto.SearchResult
-	(*DescriptionItem)(nil),                                       // 106: quasar.proto.DescriptionItem
-	(*PaymentItem)(nil),                                           // 107: quasar.proto.PaymentItem
-	(*TvAnnounce)(nil),                                            // 108: quasar.proto.TvAnnounce
-	(*MediaItem)(nil),                                             // 109: quasar.proto.MediaItem
-	(*SkippableFragments)(nil),                                    // 110: quasar.proto.SkippableFragments
-	(*Season)(nil),                                                // 111: quasar.proto.Season
-	(*ProviderInfo)(nil),                                          // 112: quasar.proto.ProviderInfo
-	(*Alarm)(nil),                                                 // 113: quasar.proto.Alarm
-	(*TimersState)(nil),                                           // 114: quasar.proto.TimersState
-	(*AlarmsState)(nil),                                           // 115: quasar.proto.AlarmsState
-	(*AlarmsSettings)(nil),                                        // 116: quasar.proto.AlarmsSettings
-	(*BluetoothPrevRequest)(nil),                                  // 117: quasar.proto.BluetoothPrevRequest
-	(*BluetoothSinkRequest)(nil),                                  // 118: quasar.proto.BluetoothSinkRequest
-	(*BluetoothNetwork)(nil),                                      // 119: quasar.proto.BluetoothNetwork
-	(*BtConnectionEvent)(nil),                                     // 120: quasar.proto.BtConnectionEvent
-	(*BluetoothTrackMetaInfo)(nil),                                // 121: quasar.proto.BluetoothTrackMetaInfo
-	(*BluetoothPlayerState)(nil),                                  // 122: quasar.proto.BluetoothPlayerState
-	(*BluetoothSinkEvent)(nil),                                    // 123: quasar.proto.BluetoothSinkEvent
-	(*BluetoothSourceEvent)(nil),                                  // 124: quasar.proto.BluetoothSourceEvent
-	(*BluetoothRequest)(nil),                                      // 125: quasar.proto.BluetoothRequest
-	(*UserConfig)(nil),                                            // 126: quasar.proto.UserConfig
-	(*SubscriptionState)(nil),                                     // 127: quasar.proto.SubscriptionState
-	(*ConfigStorage)(nil),                                         // 128: quasar.proto.ConfigStorage
-	(*BrickInfo)(nil),                                             // 129: quasar.proto.BrickInfo
-	(*Timezone)(nil),                                              // 130: quasar.proto.Timezone
-	(*DeviceGroupState)(nil),                                      // 131: quasar.proto.DeviceGroupState
-	(*ExternalCommandMessage)(nil),                                // 132: quasar.proto.ExternalCommandMessage
-	(*GlagoldState)(nil),                                          // 133: quasar.proto.GlagoldState
-	(*GlagolClusterSign)(nil),                                     // 134: quasar.proto.GlagolClusterSign
-	(*GlagolClusterMessage)(nil),                                  // 135: quasar.proto.GlagolClusterMessage
-	(*GlagolDiscoveryRequest)(nil),                                // 136: quasar.proto.GlagolDiscoveryRequest
-	(*NavigationScrollExact)(nil),                                 // 137: quasar.proto.NavigationScrollExact
-	(*NavigationScrollAmount)(nil),                                // 138: quasar.proto.NavigationScrollAmount
-	(*NavigationMessage)(nil),                                     // 139: quasar.proto.NavigationMessage
-	(*NavigationRequest)(nil),                                     // 140: quasar.proto.NavigationRequest
-	(*ControlRequest)(nil),                                        // 141: quasar.proto.ControlRequest
-	(*OnboardingRequest)(nil),                                     // 142: quasar.proto.OnboardingRequest
-	(*UpdateState)(nil),                                           // 143: quasar.proto.UpdateState
-	(*UpdateApplyTimeout)(nil),                                    // 144: quasar.proto.UpdateApplyTimeout
-	(*Audio)(nil),                                                 // 145: quasar.proto.Audio
-	(*AudioAnalyticsContext)(nil),                                 // 146: quasar.proto.AudioAnalyticsContext
-	(*AudioMetadata)(nil),                                         // 147: quasar.proto.AudioMetadata
-	(*AudioPlayerDescriptor)(nil),                                 // 148: quasar.proto.AudioPlayerDescriptor
-	(*AudioClientEvent)(nil),                                      // 149: quasar.proto.AudioClientEvent
-	(*AudioStorageEvent)(nil),                                     // 150: quasar.proto.AudioStorageEvent
-	(*LegacyPlayerStateChanged)(nil),                              // 151: quasar.proto.LegacyPlayerStateChanged
-	(*NotificationUpdateEvent)(nil),                               // 152: quasar.proto.NotificationUpdateEvent
-	(*NtpSyncEvent)(nil),                                          // 153: quasar.proto.NtpSyncEvent
-	(*CallError)(nil),                                             // 154: quasar.proto.CallError
-	(*CalldSessionState)(nil),                                     // 155: quasar.proto.CalldSessionState
-	(*IotDiscoveryInfo)(nil),                                      // 156: quasar.proto.IotDiscoveryInfo
-	(*IotDiscoveryResult)(nil),                                    // 157: quasar.proto.IotDiscoveryResult
-	(*IotRequest)(nil),                                            // 158: quasar.proto.IotRequest
-	(*IotState)(nil),                                              // 159: quasar.proto.IotState
-	(*ButtonEvent)(nil),                                           // 160: quasar.proto.ButtonEvent
-	(*RcuEvent)(nil),                                              // 161: quasar.proto.RcuEvent
-	(*RcuVoiceEvent)(nil),                                         // 162: quasar.proto.RcuVoiceEvent
-	(*LedScreenCommand)(nil),                                      // 163: quasar.proto.LedScreenCommand
-	(*EqualizerConfig)(nil),                                       // 164: quasar.proto.EqualizerConfig
-	(*MediaRequest)(nil),                                          // 165: quasar.proto.MediaRequest
-	(*VinsRequest)(nil),                                           // 166: quasar.proto.VinsRequest
-	(*NsdInfo)(nil),                                               // 167: quasar.proto.NsdInfo
-	(*NsdInfoList)(nil),                                           // 168: quasar.proto.NsdInfoList
-	(*GlagolDiscoveryItem)(nil),                                   // 169: quasar.proto.GlagolDiscoveryItem
-	(*GlagolDiscoveryResult)(nil),                                 // 170: quasar.proto.GlagolDiscoveryResult
+	(SpectrogramAnimation_State_Source)(0),                        // 61: quasar.proto.SpectrogramAnimation.State.Source
+	(BleDecryptCredentialsStatus_Status)(0),                       // 62: quasar.proto.BleDecryptCredentialsStatus.Status
+	(BackendRequest_Method)(0),                                    // 63: quasar.proto.BackendRequest.Method
+	(DirectiveEvent_Result)(0),                                    // 64: quasar.proto.DirectiveEvent.Result
+	(Leds_ScreenType)(0),                                          // 65: quasar.proto.Leds.ScreenType
+	(*EmptyMessage)(nil),                                          // 66: quasar.proto.EmptyMessage
+	(*AudioInput)(nil),                                            // 67: quasar.proto.AudioInput
+	(*SetupCredentialsMessage)(nil),                               // 68: quasar.proto.SetupCredentialsMessage
+	(*EncryptedSetupCredentialsMessage)(nil),                      // 69: quasar.proto.EncryptedSetupCredentialsMessage
+	(*SetupStatusMessage)(nil),                                    // 70: quasar.proto.SetupStatusMessage
+	(*BrokenMicInfo)(nil),                                         // 71: quasar.proto.BrokenMicInfo
+	(*GroupAliceState)(nil),                                       // 72: quasar.proto.GroupAliceState
+	(*AllStartupSettings)(nil),                                    // 73: quasar.proto.AllStartupSettings
+	(*WebViewState)(nil),                                          // 74: quasar.proto.WebViewState
+	(*ControlState)(nil),                                          // 75: quasar.proto.ControlState
+	(*AudioOutputDeviceState)(nil),                                // 76: quasar.proto.AudioOutputDeviceState
+	(*SoundNormalization)(nil),                                    // 77: quasar.proto.SoundNormalization
+	(*MultiroomParams)(nil),                                       // 78: quasar.proto.MultiroomParams
+	(*MultiroomBroadcast)(nil),                                    // 79: quasar.proto.MultiroomBroadcast
+	(*MultiroomDirective)(nil),                                    // 80: quasar.proto.MultiroomDirective
+	(*MultiroomState)(nil),                                        // 81: quasar.proto.MultiroomState
+	(*Clock)(nil),                                                 // 82: quasar.proto.Clock
+	(*AppState)(nil),                                              // 83: quasar.proto.AppState
+	(*VideoState)(nil),                                            // 84: quasar.proto.VideoState
+	(*RcuState)(nil),                                              // 85: quasar.proto.RcuState
+	(*PackagesState)(nil),                                         // 86: quasar.proto.PackagesState
+	(*WifiInfo)(nil),                                              // 87: quasar.proto.WifiInfo
+	(*WifiList)(nil),                                              // 88: quasar.proto.WifiList
+	(*NetworkStatus)(nil),                                         // 89: quasar.proto.NetworkStatus
+	(*EthernetStatus)(nil),                                        // 90: quasar.proto.EthernetStatus
+	(*WifiStatus)(nil),                                            // 91: quasar.proto.WifiStatus
+	(*Progress)(nil),                                              // 92: quasar.proto.Progress
+	(*CompleteVideoState)(nil),                                    // 93: quasar.proto.CompleteVideoState
+	(*UserWatchedVideoState)(nil),                                 // 94: quasar.proto.UserWatchedVideoState
+	(*WatchedVideoState)(nil),                                     // 95: quasar.proto.WatchedVideoState
+	(*Video)(nil),                                                 // 96: quasar.proto.Video
+	(*AudioTrack)(nil),                                            // 97: quasar.proto.AudioTrack
+	(*Subtitles)(nil),                                             // 98: quasar.proto.Subtitles
+	(*Radio)(nil),                                                 // 99: quasar.proto.Radio
+	(*Weather)(nil),                                               // 100: quasar.proto.Weather
+	(*Location)(nil),                                              // 101: quasar.proto.Location
+	(*VolumeState)(nil),                                           // 102: quasar.proto.VolumeState
+	(*VolumeSetMessage)(nil),                                      // 103: quasar.proto.VolumeSetMessage
+	(*SearchResult)(nil),                                          // 104: quasar.proto.SearchResult
+	(*DescriptionItem)(nil),                                       // 105: quasar.proto.DescriptionItem
+	(*PaymentItem)(nil),                                           // 106: quasar.proto.PaymentItem
+	(*TvAnnounce)(nil),                                            // 107: quasar.proto.TvAnnounce
+	(*MediaItem)(nil),                                             // 108: quasar.proto.MediaItem
+	(*SkippableFragments)(nil),                                    // 109: quasar.proto.SkippableFragments
+	(*Season)(nil),                                                // 110: quasar.proto.Season
+	(*ProviderInfo)(nil),                                          // 111: quasar.proto.ProviderInfo
+	(*Alarm)(nil),                                                 // 112: quasar.proto.Alarm
+	(*TimersState)(nil),                                           // 113: quasar.proto.TimersState
+	(*AlarmsState)(nil),                                           // 114: quasar.proto.AlarmsState
+	(*AlarmsSettings)(nil),                                        // 115: quasar.proto.AlarmsSettings
+	(*BluetoothPrevRequest)(nil),                                  // 116: quasar.proto.BluetoothPrevRequest
+	(*BluetoothSinkRequest)(nil),                                  // 117: quasar.proto.BluetoothSinkRequest
+	(*BluetoothNetwork)(nil),                                      // 118: quasar.proto.BluetoothNetwork
+	(*BtConnectionEvent)(nil),                                     // 119: quasar.proto.BtConnectionEvent
+	(*BluetoothTrackMetaInfo)(nil),                                // 120: quasar.proto.BluetoothTrackMetaInfo
+	(*BluetoothPlayerState)(nil),                                  // 121: quasar.proto.BluetoothPlayerState
+	(*BluetoothSinkEvent)(nil),                                    // 122: quasar.proto.BluetoothSinkEvent
+	(*BluetoothSourceEvent)(nil),                                  // 123: quasar.proto.BluetoothSourceEvent
+	(*BluetoothRequest)(nil),                                      // 124: quasar.proto.BluetoothRequest
+	(*UserConfig)(nil),                                            // 125: quasar.proto.UserConfig
+	(*SubscriptionState)(nil),                                     // 126: quasar.proto.SubscriptionState
+	(*ConfigStorage)(nil),                                         // 127: quasar.proto.ConfigStorage
+	(*BrickInfo)(nil),                                             // 128: quasar.proto.BrickInfo
+	(*Timezone)(nil),                                              // 129: quasar.proto.Timezone
+	(*DeviceGroupState)(nil),                                      // 130: quasar.proto.DeviceGroupState
+	(*ExternalCommandMessage)(nil),                                // 131: quasar.proto.ExternalCommandMessage
+	(*GlagoldState)(nil),                                          // 132: quasar.proto.GlagoldState
+	(*GlagolClusterSign)(nil),                                     // 133: quasar.proto.GlagolClusterSign
+	(*GlagolClusterMessage)(nil),                                  // 134: quasar.proto.GlagolClusterMessage
+	(*GlagolDiscoveryRequest)(nil),                                // 135: quasar.proto.GlagolDiscoveryRequest
+	(*NavigationScrollExact)(nil),                                 // 136: quasar.proto.NavigationScrollExact
+	(*NavigationScrollAmount)(nil),                                // 137: quasar.proto.NavigationScrollAmount
+	(*NavigationMessage)(nil),                                     // 138: quasar.proto.NavigationMessage
+	(*NavigationRequest)(nil),                                     // 139: quasar.proto.NavigationRequest
+	(*ControlRequest)(nil),                                        // 140: quasar.proto.ControlRequest
+	(*OnboardingRequest)(nil),                                     // 141: quasar.proto.OnboardingRequest
+	(*UpdateState)(nil),                                           // 142: quasar.proto.UpdateState
+	(*UpdateApplyTimeout)(nil),                                    // 143: quasar.proto.UpdateApplyTimeout
+	(*Audio)(nil),                                                 // 144: quasar.proto.Audio
+	(*AudioAnalyticsContext)(nil),                                 // 145: quasar.proto.AudioAnalyticsContext
+	(*AudioMetadata)(nil),                                         // 146: quasar.proto.AudioMetadata
+	(*AudioPlayerDescriptor)(nil),                                 // 147: quasar.proto.AudioPlayerDescriptor
+	(*AudioClientEvent)(nil),                                      // 148: quasar.proto.AudioClientEvent
+	(*AudioStorageEvent)(nil),                                     // 149: quasar.proto.AudioStorageEvent
+	(*LegacyPlayerStateChanged)(nil),                              // 150: quasar.proto.LegacyPlayerStateChanged
+	(*NotificationUpdateEvent)(nil),                               // 151: quasar.proto.NotificationUpdateEvent
+	(*NtpSyncEvent)(nil),                                          // 152: quasar.proto.NtpSyncEvent
+	(*CallError)(nil),                                             // 153: quasar.proto.CallError
+	(*CalldSessionState)(nil),                                     // 154: quasar.proto.CalldSessionState
+	(*IotDiscoveryInfo)(nil),                                      // 155: quasar.proto.IotDiscoveryInfo
+	(*IotDiscoveryResult)(nil),                                    // 156: quasar.proto.IotDiscoveryResult
+	(*IotRequest)(nil),                                            // 157: quasar.proto.IotRequest
+	(*IotState)(nil),                                              // 158: quasar.proto.IotState
+	(*ButtonEvent)(nil),                                           // 159: quasar.proto.ButtonEvent
+	(*RcuEvent)(nil),                                              // 160: quasar.proto.RcuEvent
+	(*RcuVoiceEvent)(nil),                                         // 161: quasar.proto.RcuVoiceEvent
+	(*LedScreenCommand)(nil),                                      // 162: quasar.proto.LedScreenCommand
+	(*EqualizerConfig)(nil),                                       // 163: quasar.proto.EqualizerConfig
+	(*MediaRequest)(nil),                                          // 164: quasar.proto.MediaRequest
+	(*VinsRequest)(nil),                                           // 165: quasar.proto.VinsRequest
+	(*NsdInfo)(nil),                                               // 166: quasar.proto.NsdInfo
+	(*NsdInfoList)(nil),                                           // 167: quasar.proto.NsdInfoList
+	(*GlagolDiscoveryItem)(nil),                                   // 168: quasar.proto.GlagolDiscoveryItem
+	(*GlagolDiscoveryResult)(nil),                                 // 169: quasar.proto.GlagolDiscoveryResult
+	(*PushNotification)(nil),                                      // 170: quasar.proto.PushNotification
 	(*RegistrationResult)(nil),                                    // 171: quasar.proto.RegistrationResult
 	(*StereoPair)(nil),                                            // 172: quasar.proto.StereoPair
 	(*VolumeManager)(nil),                                         // 173: quasar.proto.VolumeManager
-	(*Leds)(nil),                                                  // 174: quasar.proto.Leds
-	(*SpectrogramAnimation)(nil),                                  // 175: quasar.proto.SpectrogramAnimation
-	(*Alice)(nil),                                                 // 176: quasar.proto.Alice
-	(*EnvironmentMessage)(nil),                                    // 177: quasar.proto.EnvironmentMessage
-	(*BleCredentials)(nil),                                        // 178: quasar.proto.BleCredentials
-	(*BleDecryptCredentialsStatus)(nil),                           // 179: quasar.proto.BleDecryptCredentialsStatus
-	(*BackendRequest)(nil),                                        // 180: quasar.proto.BackendRequest
-	(*BackendResponse)(nil),                                       // 181: quasar.proto.BackendResponse
-	(*DirectiveSequencerState)(nil),                               // 182: quasar.proto.DirectiveSequencerState
-	(*CapabilityEvents)(nil),                                      // 183: quasar.proto.CapabilityEvents
-	(*DirectiveEvent)(nil),                                        // 184: quasar.proto.DirectiveEvent
-	(*DirectivesProcessorConfig)(nil),                             // 185: quasar.proto.DirectivesProcessorConfig
-	(*SoundFormat)(nil),                                           // 186: quasar.proto.SoundFormat
-	(*SoundInfo)(nil),                                             // 187: quasar.proto.SoundInfo
-	(*WebViewState_History)(nil),                                  // 188: quasar.proto.WebViewState.History
-	(*MultiroomParams_MusicParams)(nil),                           // 189: quasar.proto.MultiroomParams.MusicParams
-	(*MultiroomBroadcast_MasterHints)(nil),                        // 190: quasar.proto.MultiroomBroadcast.MasterHints
-	(*MultiroomDirective_Stop)(nil),                               // 191: quasar.proto.MultiroomDirective.Stop
-	(*MultiroomDirective_StartBroadcast)(nil),                     // 192: quasar.proto.MultiroomDirective.StartBroadcast
-	(*MultiroomDirective_StopBroadcast)(nil),                      // 193: quasar.proto.MultiroomDirective.StopBroadcast
-	(*MultiroomDirective_ResumeBroadcast)(nil),                    // 194: quasar.proto.MultiroomDirective.ResumeBroadcast
-	(*MultiroomDirective_Command)(nil),                            // 195: quasar.proto.MultiroomDirective.Command
-	(*MultiroomDirective_AudioFocus)(nil),                         // 196: quasar.proto.MultiroomDirective.AudioFocus
-	(*MultiroomDirective_StateRequest)(nil),                       // 197: quasar.proto.MultiroomDirective.StateRequest
-	(*MultiroomDirective_PlayerPause)(nil),                        // 198: quasar.proto.MultiroomDirective.PlayerPause
-	(*MultiroomState_Peer)(nil),                                   // 199: quasar.proto.MultiroomState.Peer
-	(*AppState_ScreenState)(nil),                                  // 200: quasar.proto.AppState.ScreenState
-	(*AppState_MusicState)(nil),                                   // 201: quasar.proto.AppState.MusicState
-	(*AppState_RadioState)(nil),                                   // 202: quasar.proto.AppState.RadioState
-	(*RcuState_RcuCapabilities)(nil),                              // 203: quasar.proto.RcuState.RcuCapabilities
-	(*PackagesState_Package)(nil),                                 // 204: quasar.proto.PackagesState.Package
-	(*PackagesState_InstalledPackage)(nil),                        // 205: quasar.proto.PackagesState.InstalledPackage
-	(*WifiStatus_TimeOverHttp)(nil),                               // 206: quasar.proto.WifiStatus.TimeOverHttp
-	nil,                                                           // 207: quasar.proto.CompleteVideoState.StateEntry
-	nil,                                                           // 208: quasar.proto.UserWatchedVideoState.UserStateEntry
-	(*BluetoothSinkRequest_VisibilityRequest)(nil),                // 209: quasar.proto.BluetoothSinkRequest.VisibilityRequest
-	(*BluetoothRequest_ScanRequest)(nil),                          // 210: quasar.proto.BluetoothRequest.ScanRequest
-	(*DeviceGroupState_Follower)(nil),                             // 211: quasar.proto.DeviceGroupState.Follower
-	(*DeviceGroupState_Leader)(nil),                               // 212: quasar.proto.DeviceGroupState.Leader
-	(*DeviceGroupState_GlagolApp)(nil),                            // 213: quasar.proto.DeviceGroupState.GlagolApp
-	(*GlagoldState_Connection)(nil),                               // 214: quasar.proto.GlagoldState.Connection
-	(*NavigationMessage_HistoricalMode)(nil),                      // 215: quasar.proto.NavigationMessage.HistoricalMode
-	(*Audio_MultiroomContext)(nil),                                // 216: quasar.proto.Audio.MultiroomContext
-	(*AudioMetadata_MusicMeta)(nil),                               // 217: quasar.proto.AudioMetadata.MusicMeta
-	(*AudioMetadata_MusicMeta_TrackInfo)(nil),                     // 218: quasar.proto.AudioMetadata.MusicMeta.TrackInfo
-	(*AudioClientEvent_DiagnisticItem)(nil),                       // 219: quasar.proto.AudioClientEvent.DiagnisticItem
-	(*AudioClientEvent_PrefetchContext)(nil),                      // 220: quasar.proto.AudioClientEvent.PrefetchContext
-	(*AudioClientEvent_AltUrlChanged)(nil),                        // 221: quasar.proto.AudioClientEvent.AltUrlChanged
-	(*AudioStorageEvent_DownloadResult)(nil),                      // 222: quasar.proto.AudioStorageEvent.DownloadResult
-	(*IotRequest_StartDiscovery)(nil),                             // 223: quasar.proto.IotRequest.StartDiscovery
-	(*IotRequest_StopDiscovery)(nil),                              // 224: quasar.proto.IotRequest.StopDiscovery
-	(*IotRequest_Credentials)(nil),                                // 225: quasar.proto.IotRequest.Credentials
-	(*EqualizerConfig_Band)(nil),                                  // 226: quasar.proto.EqualizerConfig.Band
-	(*MediaRequest_PauseConfig)(nil),                              // 227: quasar.proto.MediaRequest.PauseConfig
-	(*MediaRequest_FadeOut)(nil),                                  // 228: quasar.proto.MediaRequest.FadeOut
-	(*MediaRequest_Rewind)(nil),                                   // 229: quasar.proto.MediaRequest.Rewind
-	(*MediaRequest_Next)(nil),                                     // 230: quasar.proto.MediaRequest.Next
-	(*MediaRequest_Previous)(nil),                                 // 231: quasar.proto.MediaRequest.Previous
-	(*MediaRequest_CleanPlayers)(nil),                             // 232: quasar.proto.MediaRequest.CleanPlayers
-	(*MediaRequest_JogWheel)(nil),                                 // 233: quasar.proto.MediaRequest.JogWheel
-	(*NsdInfo_Attribute)(nil),                                     // 234: quasar.proto.NsdInfo.Attribute
-	(*StereoPair_State)(nil),                                      // 235: quasar.proto.StereoPair.State
-	(*StereoPair_RequestState)(nil),                               // 236: quasar.proto.StereoPair.RequestState
-	(*StereoPair_ConversationRequest)(nil),                        // 237: quasar.proto.StereoPair.ConversationRequest
-	(*StereoPair_InitialPairingRequest)(nil),                      // 238: quasar.proto.StereoPair.InitialPairingRequest
-	(*StereoPair_InitialPairingAnswer)(nil),                       // 239: quasar.proto.StereoPair.InitialPairingAnswer
-	(*StereoPair_UserEvent)(nil),                                  // 240: quasar.proto.StereoPair.UserEvent
-	(*StereoPair_DumpClockObservations)(nil),                      // 241: quasar.proto.StereoPair.DumpClockObservations
-	(*StereoPair_Syn)(nil),                                        // 242: quasar.proto.StereoPair.Syn
-	(*StereoPair_Ack)(nil),                                        // 243: quasar.proto.StereoPair.Ack
-	(*VolumeManager_State)(nil),                                   // 244: quasar.proto.VolumeManager.State
-	(*VolumeManager_SetVolumeSignal)(nil),                         // 245: quasar.proto.VolumeManager.SetVolumeSignal
-	(*SpectrogramAnimation_State)(nil),                            // 246: quasar.proto.SpectrogramAnimation.State
-	(*SpectrogramAnimation_SetExternalPresetsSignal)(nil),         // 247: quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
-	(*Alice_StartConversationSignal)(nil),                         // 248: quasar.proto.Alice.StartConversationSignal
-	(*Alice_StopConversationSignal)(nil),                          // 249: quasar.proto.Alice.StopConversationSignal
-	(*Alice_ToggleConversationSignal)(nil),                        // 250: quasar.proto.Alice.ToggleConversationSignal
-	(*Alice_FinishConversationSignal)(nil),                        // 251: quasar.proto.Alice.FinishConversationSignal
-	(*BackendRequest_Header)(nil),                                 // 252: quasar.proto.BackendRequest.Header
-	(*BackendResponse_Error)(nil),                                 // 253: quasar.proto.BackendResponse.Error
-	(*DirectiveSequencerState_Channel)(nil),                       // 254: quasar.proto.DirectiveSequencerState.Channel
-	(*DirectivesProcessorConfig_AddDirectiveConfig)(nil),          // 255: quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig
-	(*device_state.TDeviceState_TVideo)(nil),                      // 256: NAlice.NAliceApi.TDeviceState.TVideo
-	(connection_type.ConnectionType)(0),                           // 257: quasar.proto.ConnectionType
-	(*event_source.TEventSource)(nil),                             // 258: NAlice.TEventSource
-	(*music.TSwitchingStreamsMetadata)(nil),                       // 259: NAlice.NData.NMusic.TSwitchingStreamsMetadata
-	(music.EKaraokeMode)(0),                                       // 260: NAlice.NData.NMusic.EKaraokeMode
-	(audio_player.TAudioPlayerCapability_TParameters_EQuality)(0), // 261: NAlice.TAudioPlayerCapability.TParameters.EQuality
-	(audio_player.TAudioPlayerCapability_TParameters_ECodec)(0),   // 262: NAlice.TAudioPlayerCapability.TParameters.ECodec
-	(protos.AudioChannel)(0),                                      // 263: quasar.proto.AudioChannel
-	(*data.TPlaybackOptions)(nil),                                 // 264: NAlice.NData.TPlaybackOptions
-	(*device_state.TDeviceState_TMusic)(nil),                      // 265: NAlice.NAliceApi.TDeviceState.TMusic
-	(*structpb.Struct)(nil),                                       // 266: google.protobuf.Struct
-	(*guest.TGuestOptions)(nil),                                   // 267: NAlice.TGuestOptions
-	(*uniproxy_options.TUniproxyOptions)(nil),                     // 268: NAlice.NAliceApi.TUniproxyOptions
-	(dialog_type.EDialogType)(0),                                  // 269: NAlice.NData.EDialogType
-	(*alice_mode_info.TAlice2ModeInfo)(nil),                       // 270: NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
-	(*common.TBiometryClassification)(nil),                        // 271: NAlice.TBiometryClassification
-	(*environment_state.TEnvironmentDeviceInfo)(nil),              // 272: NAlice.NAliceApi.TEnvironmentDeviceInfo
-	(*events.TCapabilityEvent)(nil),                               // 273: NAlice.TCapabilityEvent
-	(*protos1.Directive)(nil),                                     // 274: quasar.proto.Directive
-	(volume.TVolumeCapability_ESource)(0),                         // 275: NAlice.TVolumeCapability.ESource
-	(*directives.TDirective)(nil),                                 // 276: NAlice.NAliceApi.TDirective
+	(*SpectrogramAnimation)(nil),                                  // 174: quasar.proto.SpectrogramAnimation
+	(*Alice)(nil),                                                 // 175: quasar.proto.Alice
+	(*EnvironmentMessage)(nil),                                    // 176: quasar.proto.EnvironmentMessage
+	(*BleCredentials)(nil),                                        // 177: quasar.proto.BleCredentials
+	(*BleDecryptCredentialsStatus)(nil),                           // 178: quasar.proto.BleDecryptCredentialsStatus
+	(*BackendRequest)(nil),                                        // 179: quasar.proto.BackendRequest
+	(*BackendResponse)(nil),                                       // 180: quasar.proto.BackendResponse
+	(*DirectiveSequencerState)(nil),                               // 181: quasar.proto.DirectiveSequencerState
+	(*CapabilityEvents)(nil),                                      // 182: quasar.proto.CapabilityEvents
+	(*DirectiveEvent)(nil),                                        // 183: quasar.proto.DirectiveEvent
+	(*DirectivesProcessorConfig)(nil),                             // 184: quasar.proto.DirectivesProcessorConfig
+	(*Leds)(nil),                                                  // 185: quasar.proto.Leds
+	(*WebViewState_History)(nil),                                  // 186: quasar.proto.WebViewState.History
+	(*MultiroomParams_MusicParams)(nil),                           // 187: quasar.proto.MultiroomParams.MusicParams
+	(*MultiroomBroadcast_MasterHints)(nil),                        // 188: quasar.proto.MultiroomBroadcast.MasterHints
+	(*MultiroomDirective_Stop)(nil),                               // 189: quasar.proto.MultiroomDirective.Stop
+	(*MultiroomDirective_StartBroadcast)(nil),                     // 190: quasar.proto.MultiroomDirective.StartBroadcast
+	(*MultiroomDirective_StopBroadcast)(nil),                      // 191: quasar.proto.MultiroomDirective.StopBroadcast
+	(*MultiroomDirective_ResumeBroadcast)(nil),                    // 192: quasar.proto.MultiroomDirective.ResumeBroadcast
+	(*MultiroomDirective_Command)(nil),                            // 193: quasar.proto.MultiroomDirective.Command
+	(*MultiroomDirective_AudioFocus)(nil),                         // 194: quasar.proto.MultiroomDirective.AudioFocus
+	(*MultiroomDirective_StateRequest)(nil),                       // 195: quasar.proto.MultiroomDirective.StateRequest
+	(*MultiroomDirective_PlayerPause)(nil),                        // 196: quasar.proto.MultiroomDirective.PlayerPause
+	(*MultiroomState_Peer)(nil),                                   // 197: quasar.proto.MultiroomState.Peer
+	(*AppState_ScreenState)(nil),                                  // 198: quasar.proto.AppState.ScreenState
+	(*AppState_MusicState)(nil),                                   // 199: quasar.proto.AppState.MusicState
+	(*AppState_RadioState)(nil),                                   // 200: quasar.proto.AppState.RadioState
+	(*AppState_MediaInfo)(nil),                                    // 201: quasar.proto.AppState.MediaInfo
+	(*RcuState_RcuCapabilities)(nil),                              // 202: quasar.proto.RcuState.RcuCapabilities
+	(*PackagesState_Package)(nil),                                 // 203: quasar.proto.PackagesState.Package
+	(*PackagesState_InstalledPackage)(nil),                        // 204: quasar.proto.PackagesState.InstalledPackage
+	(*WifiStatus_TimeOverHttp)(nil),                               // 205: quasar.proto.WifiStatus.TimeOverHttp
+	(*CompleteVideoState_StateEntry)(nil),                         // 206: quasar.proto.CompleteVideoState.StateEntry
+	(*UserWatchedVideoState_UserStateEntry)(nil),                  // 207: quasar.proto.UserWatchedVideoState.UserStateEntry
+	(*BluetoothSinkRequest_VisibilityRequest)(nil),                // 208: quasar.proto.BluetoothSinkRequest.VisibilityRequest
+	(*BluetoothRequest_ScanRequest)(nil),                          // 209: quasar.proto.BluetoothRequest.ScanRequest
+	(*DeviceGroupState_Follower)(nil),                             // 210: quasar.proto.DeviceGroupState.Follower
+	(*DeviceGroupState_Leader)(nil),                               // 211: quasar.proto.DeviceGroupState.Leader
+	(*DeviceGroupState_GlagolApp)(nil),                            // 212: quasar.proto.DeviceGroupState.GlagolApp
+	(*GlagoldState_Connection)(nil),                               // 213: quasar.proto.GlagoldState.Connection
+	(*NavigationMessage_HistoricalMode)(nil),                      // 214: quasar.proto.NavigationMessage.HistoricalMode
+	(*Audio_MultiroomContext)(nil),                                // 215: quasar.proto.Audio.MultiroomContext
+	(*AudioMetadata_MusicMeta)(nil),                               // 216: quasar.proto.AudioMetadata.MusicMeta
+	(*AudioMetadata_MusicMeta_TrackInfo)(nil),                     // 217: quasar.proto.AudioMetadata.MusicMeta.TrackInfo
+	(*AudioClientEvent_DiagnisticItem)(nil),                       // 218: quasar.proto.AudioClientEvent.DiagnisticItem
+	(*AudioClientEvent_PrefetchContext)(nil),                      // 219: quasar.proto.AudioClientEvent.PrefetchContext
+	(*AudioClientEvent_AltUrlChanged)(nil),                        // 220: quasar.proto.AudioClientEvent.AltUrlChanged
+	(*AudioStorageEvent_DownloadResult)(nil),                      // 221: quasar.proto.AudioStorageEvent.DownloadResult
+	(*IotRequest_StartDiscovery)(nil),                             // 222: quasar.proto.IotRequest.StartDiscovery
+	(*IotRequest_StopDiscovery)(nil),                              // 223: quasar.proto.IotRequest.StopDiscovery
+	(*IotRequest_Credentials)(nil),                                // 224: quasar.proto.IotRequest.Credentials
+	(*EqualizerConfig_Band)(nil),                                  // 225: quasar.proto.EqualizerConfig.Band
+	(*MediaRequest_PauseConfig)(nil),                              // 226: quasar.proto.MediaRequest.PauseConfig
+	(*MediaRequest_FadeOut)(nil),                                  // 227: quasar.proto.MediaRequest.FadeOut
+	(*MediaRequest_Rewind)(nil),                                   // 228: quasar.proto.MediaRequest.Rewind
+	(*MediaRequest_Next)(nil),                                     // 229: quasar.proto.MediaRequest.Next
+	(*MediaRequest_Previous)(nil),                                 // 230: quasar.proto.MediaRequest.Previous
+	(*MediaRequest_CleanPlayers)(nil),                             // 231: quasar.proto.MediaRequest.CleanPlayers
+	(*MediaRequest_JogWheel)(nil),                                 // 232: quasar.proto.MediaRequest.JogWheel
+	(*NsdInfo_Attribute)(nil),                                     // 233: quasar.proto.NsdInfo.Attribute
+	(*StereoPair_State)(nil),                                      // 234: quasar.proto.StereoPair.State
+	(*StereoPair_RequestState)(nil),                               // 235: quasar.proto.StereoPair.RequestState
+	(*StereoPair_ConversationRequest)(nil),                        // 236: quasar.proto.StereoPair.ConversationRequest
+	(*StereoPair_InitialPairingRequest)(nil),                      // 237: quasar.proto.StereoPair.InitialPairingRequest
+	(*StereoPair_InitialPairingAnswer)(nil),                       // 238: quasar.proto.StereoPair.InitialPairingAnswer
+	(*StereoPair_UserEvent)(nil),                                  // 239: quasar.proto.StereoPair.UserEvent
+	(*StereoPair_DumpClockObservations)(nil),                      // 240: quasar.proto.StereoPair.DumpClockObservations
+	(*StereoPair_Syn)(nil),                                        // 241: quasar.proto.StereoPair.Syn
+	(*StereoPair_Ack)(nil),                                        // 242: quasar.proto.StereoPair.Ack
+	(*VolumeManager_State)(nil),                                   // 243: quasar.proto.VolumeManager.State
+	(*VolumeManager_SetVolumeSignal)(nil),                         // 244: quasar.proto.VolumeManager.SetVolumeSignal
+	(*SpectrogramAnimation_State)(nil),                            // 245: quasar.proto.SpectrogramAnimation.State
+	(*SpectrogramAnimation_SetExternalPresetsSignal)(nil),         // 246: quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
+	(*Alice_StartConversationSignal)(nil),                         // 247: quasar.proto.Alice.StartConversationSignal
+	(*Alice_StopConversationSignal)(nil),                          // 248: quasar.proto.Alice.StopConversationSignal
+	(*Alice_ToggleConversationSignal)(nil),                        // 249: quasar.proto.Alice.ToggleConversationSignal
+	(*Alice_FinishConversationSignal)(nil),                        // 250: quasar.proto.Alice.FinishConversationSignal
+	(*BackendRequest_Header)(nil),                                 // 251: quasar.proto.BackendRequest.Header
+	(*BackendResponse_Error)(nil),                                 // 252: quasar.proto.BackendResponse.Error
+	(*DirectiveSequencerState_Channel)(nil),                       // 253: quasar.proto.DirectiveSequencerState.Channel
+	(*DirectivesProcessorConfig_AddDirectiveConfig)(nil),          // 254: quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig
+	(*device_state.TDeviceState_TVideo)(nil),                      // 255: NAlice.NAliceApi.TDeviceState.TVideo
+	(connection_type.ConnectionType)(0),                           // 256: quasar.proto.ConnectionType
+	(*event_source.TEventSource)(nil),                             // 257: NAlice.TEventSource
+	(*music.TSwitchingStreamsMetadata)(nil),                       // 258: NAlice.NData.NMusic.TSwitchingStreamsMetadata
+	(music.EKaraokeMode)(0),                                       // 259: NAlice.NData.NMusic.EKaraokeMode
+	(audio_player.TAudioPlayerCapability_TParameters_EQuality)(0), // 260: NAlice.TAudioPlayerCapability.TParameters.EQuality
+	(audio_player.TAudioPlayerCapability_TParameters_ECodec)(0),   // 261: NAlice.TAudioPlayerCapability.TParameters.ECodec
+	(protos.AudioChannel)(0),                                      // 262: quasar.proto.AudioChannel
+	(*data.TPlaybackOptions)(nil),                                 // 263: NAlice.NData.TPlaybackOptions
+	(*device_state.TDeviceState_TMusic)(nil),                      // 264: NAlice.NAliceApi.TDeviceState.TMusic
+	(*structpb.Struct)(nil),                                       // 265: google.protobuf.Struct
+	(*guest.TGuestOptions)(nil),                                   // 266: NAlice.TGuestOptions
+	(*uniproxy_options.TUniproxyOptions)(nil),                     // 267: NAlice.NAliceApi.TUniproxyOptions
+	(dialog_type.EDialogType)(0),                                  // 268: NAlice.NData.EDialogType
+	(*alice_mode_info.TAlice2ModeInfo)(nil),                       // 269: NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
+	(*common.TBiometryClassification)(nil),                        // 270: NAlice.TBiometryClassification
+	(*environment_state.TEnvironmentDeviceInfo)(nil),              // 271: NAlice.NAliceApi.TEnvironmentDeviceInfo
+	(*events.TCapabilityEvent)(nil),                               // 272: NAlice.TCapabilityEvent
+	(*protos1.Directive)(nil),                                     // 273: quasar.proto.Directive
+	(volume.TVolumeCapability_ESource)(0),                         // 274: NAlice.TVolumeCapability.ESource
+	(*directives.TDirective)(nil),                                 // 275: NAlice.NAliceApi.TDirective
 }
 var file_yandex_io_protos_model_objects_proto_depIdxs = []int32{
 	0,   // 0: quasar.proto.SetupCredentialsMessage.source:type_name -> quasar.proto.SetupSource
 	0,   // 1: quasar.proto.EncryptedSetupCredentialsMessage.source:type_name -> quasar.proto.SetupSource
 	12,  // 2: quasar.proto.SetupStatusMessage.status:type_name -> quasar.proto.SetupStatusMessage.SetupStatus
-	68,  // 3: quasar.proto.BrokenMicInfo.audio_inputs:type_name -> quasar.proto.AudioInput
+	67,  // 3: quasar.proto.BrokenMicInfo.audio_inputs:type_name -> quasar.proto.AudioInput
 	9,   // 4: quasar.proto.GroupAliceState.microphone_group_state:type_name -> quasar.proto.GroupSpotterMicrophoneState
-	188, // 5: quasar.proto.WebViewState.history:type_name -> quasar.proto.WebViewState.History
+	186, // 5: quasar.proto.WebViewState.history:type_name -> quasar.proto.WebViewState.History
 	13,  // 6: quasar.proto.AudioOutputDeviceState.current_device:type_name -> quasar.proto.AudioOutputDeviceState.AudioOutputDeviceType
 	13,  // 7: quasar.proto.AudioOutputDeviceState.switching_to:type_name -> quasar.proto.AudioOutputDeviceState.AudioOutputDeviceType
-	78,  // 8: quasar.proto.MultiroomParams.normalization:type_name -> quasar.proto.SoundNormalization
-	189, // 9: quasar.proto.MultiroomParams.music_params:type_name -> quasar.proto.MultiroomParams.MusicParams
-	149, // 10: quasar.proto.MultiroomParams.audio_params:type_name -> quasar.proto.AudioClientEvent
+	77,  // 8: quasar.proto.MultiroomParams.normalization:type_name -> quasar.proto.SoundNormalization
+	187, // 9: quasar.proto.MultiroomParams.music_params:type_name -> quasar.proto.MultiroomParams.MusicParams
+	148, // 10: quasar.proto.MultiroomParams.audio_params:type_name -> quasar.proto.AudioClientEvent
 	14,  // 11: quasar.proto.MultiroomBroadcast.state:type_name -> quasar.proto.MultiroomBroadcast.State
-	190, // 12: quasar.proto.MultiroomBroadcast.master_hints:type_name -> quasar.proto.MultiroomBroadcast.MasterHints
-	79,  // 13: quasar.proto.MultiroomBroadcast.multiroom_params:type_name -> quasar.proto.MultiroomParams
-	191, // 14: quasar.proto.MultiroomDirective.stop:type_name -> quasar.proto.MultiroomDirective.Stop
-	194, // 15: quasar.proto.MultiroomDirective.resume_broadcast:type_name -> quasar.proto.MultiroomDirective.ResumeBroadcast
-	195, // 16: quasar.proto.MultiroomDirective.command:type_name -> quasar.proto.MultiroomDirective.Command
-	196, // 17: quasar.proto.MultiroomDirective.audio_focus:type_name -> quasar.proto.MultiroomDirective.AudioFocus
-	197, // 18: quasar.proto.MultiroomDirective.state_request:type_name -> quasar.proto.MultiroomDirective.StateRequest
-	198, // 19: quasar.proto.MultiroomDirective.player_pause:type_name -> quasar.proto.MultiroomDirective.PlayerPause
-	132, // 20: quasar.proto.MultiroomDirective.master_external_command:type_name -> quasar.proto.ExternalCommandMessage
-	132, // 21: quasar.proto.MultiroomDirective.execute_external_command:type_name -> quasar.proto.ExternalCommandMessage
-	132, // 22: quasar.proto.MultiroomDirective.cluster_external_command:type_name -> quasar.proto.ExternalCommandMessage
+	188, // 12: quasar.proto.MultiroomBroadcast.master_hints:type_name -> quasar.proto.MultiroomBroadcast.MasterHints
+	78,  // 13: quasar.proto.MultiroomBroadcast.multiroom_params:type_name -> quasar.proto.MultiroomParams
+	189, // 14: quasar.proto.MultiroomDirective.stop:type_name -> quasar.proto.MultiroomDirective.Stop
+	192, // 15: quasar.proto.MultiroomDirective.resume_broadcast:type_name -> quasar.proto.MultiroomDirective.ResumeBroadcast
+	193, // 16: quasar.proto.MultiroomDirective.command:type_name -> quasar.proto.MultiroomDirective.Command
+	194, // 17: quasar.proto.MultiroomDirective.audio_focus:type_name -> quasar.proto.MultiroomDirective.AudioFocus
+	195, // 18: quasar.proto.MultiroomDirective.state_request:type_name -> quasar.proto.MultiroomDirective.StateRequest
+	196, // 19: quasar.proto.MultiroomDirective.player_pause:type_name -> quasar.proto.MultiroomDirective.PlayerPause
+	131, // 20: quasar.proto.MultiroomDirective.master_external_command:type_name -> quasar.proto.ExternalCommandMessage
+	131, // 21: quasar.proto.MultiroomDirective.execute_external_command:type_name -> quasar.proto.ExternalCommandMessage
+	131, // 22: quasar.proto.MultiroomDirective.cluster_external_command:type_name -> quasar.proto.ExternalCommandMessage
 	15,  // 23: quasar.proto.MultiroomState.mode:type_name -> quasar.proto.MultiroomState.Mode
-	80,  // 24: quasar.proto.MultiroomState.multiroom_broadcast:type_name -> quasar.proto.MultiroomBroadcast
+	79,  // 24: quasar.proto.MultiroomState.multiroom_broadcast:type_name -> quasar.proto.MultiroomBroadcast
 	16,  // 25: quasar.proto.MultiroomState.slave_sync_level:type_name -> quasar.proto.MultiroomState.SlaveSyncLevel
-	199, // 26: quasar.proto.MultiroomState.peers:type_name -> quasar.proto.MultiroomState.Peer
+	197, // 26: quasar.proto.MultiroomState.peers:type_name -> quasar.proto.MultiroomState.Peer
 	17,  // 27: quasar.proto.Clock.sync_level:type_name -> quasar.proto.Clock.SyncLevel
-	200, // 28: quasar.proto.AppState.screen_state:type_name -> quasar.proto.AppState.ScreenState
-	201, // 29: quasar.proto.AppState.music_state:type_name -> quasar.proto.AppState.MusicState
-	85,  // 30: quasar.proto.AppState.video_state:type_name -> quasar.proto.VideoState
-	202, // 31: quasar.proto.AppState.radio_state:type_name -> quasar.proto.AppState.RadioState
-	122, // 32: quasar.proto.AppState.bluetooth_player_state:type_name -> quasar.proto.BluetoothPlayerState
-	149, // 33: quasar.proto.AppState.audio_player_state:type_name -> quasar.proto.AudioClientEvent
-	86,  // 34: quasar.proto.AppState.rcu_state:type_name -> quasar.proto.RcuState
-	87,  // 35: quasar.proto.AppState.packages_state:type_name -> quasar.proto.PackagesState
-	256, // 36: quasar.proto.AppState.alice_video_state:type_name -> NAlice.NAliceApi.TDeviceState.TVideo
-	97,  // 37: quasar.proto.VideoState.video:type_name -> quasar.proto.Video
-	93,  // 38: quasar.proto.VideoState.progress:type_name -> quasar.proto.Progress
-	20,  // 39: quasar.proto.RcuState.setup_state:type_name -> quasar.proto.RcuState.SetupState
-	203, // 40: quasar.proto.RcuState.rcu_capabilities:type_name -> quasar.proto.RcuState.RcuCapabilities
-	205, // 41: quasar.proto.PackagesState.installed:type_name -> quasar.proto.PackagesState.InstalledPackage
-	2,   // 42: quasar.proto.WifiInfo.wifi_type:type_name -> quasar.proto.WifiType
-	88,  // 43: quasar.proto.WifiList.hotspots:type_name -> quasar.proto.WifiInfo
-	21,  // 44: quasar.proto.NetworkStatus.status:type_name -> quasar.proto.NetworkStatus.Status
-	257, // 45: quasar.proto.NetworkStatus.type:type_name -> quasar.proto.ConnectionType
-	92,  // 46: quasar.proto.NetworkStatus.wifi_status:type_name -> quasar.proto.WifiStatus
-	91,  // 47: quasar.proto.NetworkStatus.ethernet_status:type_name -> quasar.proto.EthernetStatus
-	22,  // 48: quasar.proto.WifiStatus.status:type_name -> quasar.proto.WifiStatus.Status
-	24,  // 49: quasar.proto.WifiStatus.signal:type_name -> quasar.proto.WifiStatus.Signal
-	88,  // 50: quasar.proto.WifiStatus.current_network:type_name -> quasar.proto.WifiInfo
-	206, // 51: quasar.proto.WifiStatus.time_over_http:type_name -> quasar.proto.WifiStatus.TimeOverHttp
-	207, // 52: quasar.proto.CompleteVideoState.state:type_name -> quasar.proto.CompleteVideoState.StateEntry
-	208, // 53: quasar.proto.UserWatchedVideoState.user_state:type_name -> quasar.proto.UserWatchedVideoState.UserStateEntry
-	85,  // 54: quasar.proto.WatchedVideoState.movies:type_name -> quasar.proto.VideoState
-	85,  // 55: quasar.proto.WatchedVideoState.episodes:type_name -> quasar.proto.VideoState
-	85,  // 56: quasar.proto.WatchedVideoState.video:type_name -> quasar.proto.VideoState
-	109, // 57: quasar.proto.Video.item:type_name -> quasar.proto.MediaItem
-	109, // 58: quasar.proto.Video.next_item:type_name -> quasar.proto.MediaItem
-	109, // 59: quasar.proto.Video.tv_show_item:type_name -> quasar.proto.MediaItem
-	109, // 60: quasar.proto.SearchResult.items:type_name -> quasar.proto.MediaItem
-	8,   // 61: quasar.proto.SearchResult.gallery_type:type_name -> quasar.proto.GalleryType
-	109, // 62: quasar.proto.SearchResult.tv_show_item:type_name -> quasar.proto.MediaItem
-	109, // 63: quasar.proto.DescriptionItem.media_item:type_name -> quasar.proto.MediaItem
-	109, // 64: quasar.proto.PaymentItem.item:type_name -> quasar.proto.MediaItem
-	109, // 65: quasar.proto.PaymentItem.tvShowItem:type_name -> quasar.proto.MediaItem
-	25,  // 66: quasar.proto.MediaItem.type:type_name -> quasar.proto.MediaItem.Type
-	112, // 67: quasar.proto.MediaItem.provider_info:type_name -> quasar.proto.ProviderInfo
-	3,   // 68: quasar.proto.MediaItem.provider:type_name -> quasar.proto.Provider
-	111, // 69: quasar.proto.MediaItem.season_numbers:type_name -> quasar.proto.Season
-	98,  // 70: quasar.proto.MediaItem.audio_streams:type_name -> quasar.proto.AudioTrack
-	99,  // 71: quasar.proto.MediaItem.subtitles:type_name -> quasar.proto.Subtitles
-	110, // 72: quasar.proto.MediaItem.skippable_fragments:type_name -> quasar.proto.SkippableFragments
-	26,  // 73: quasar.proto.MediaItem.camera_stream_type:type_name -> quasar.proto.MediaItem.StreamType
-	27,  // 74: quasar.proto.SkippableFragments.type:type_name -> quasar.proto.SkippableFragments.Type
-	3,   // 75: quasar.proto.ProviderInfo.provider:type_name -> quasar.proto.Provider
-	28,  // 76: quasar.proto.Alarm.alarm_type:type_name -> quasar.proto.Alarm.AlarmType
-	132, // 77: quasar.proto.Alarm.command_list:type_name -> quasar.proto.ExternalCommandMessage
-	165, // 78: quasar.proto.Alarm.media_request:type_name -> quasar.proto.MediaRequest
-	113, // 79: quasar.proto.TimersState.timers:type_name -> quasar.proto.Alarm
-	116, // 80: quasar.proto.AlarmsState.alarms_settings:type_name -> quasar.proto.AlarmsSettings
-	67,  // 81: quasar.proto.BluetoothSinkRequest.pause:type_name -> quasar.proto.EmptyMessage
-	67,  // 82: quasar.proto.BluetoothSinkRequest.play:type_name -> quasar.proto.EmptyMessage
-	67,  // 83: quasar.proto.BluetoothSinkRequest.next:type_name -> quasar.proto.EmptyMessage
-	117, // 84: quasar.proto.BluetoothSinkRequest.prev:type_name -> quasar.proto.BluetoothPrevRequest
-	209, // 85: quasar.proto.BluetoothSinkRequest.set_visibility:type_name -> quasar.proto.BluetoothSinkRequest.VisibilityRequest
-	29,  // 86: quasar.proto.BluetoothNetwork.role:type_name -> quasar.proto.BluetoothNetwork.BluetoothRole
-	4,   // 87: quasar.proto.BtConnectionEvent.connection_event:type_name -> quasar.proto.BtConnection
-	119, // 88: quasar.proto.BtConnectionEvent.network:type_name -> quasar.proto.BluetoothNetwork
-	121, // 89: quasar.proto.BluetoothPlayerState.track_meta_info:type_name -> quasar.proto.BluetoothTrackMetaInfo
-	120, // 90: quasar.proto.BluetoothSinkEvent.connection_event:type_name -> quasar.proto.BtConnectionEvent
-	6,   // 91: quasar.proto.BluetoothSinkEvent.visibility:type_name -> quasar.proto.BluetoothVisibility
-	30,  // 92: quasar.proto.BluetoothSinkEvent.audio_event:type_name -> quasar.proto.BluetoothSinkEvent.BtSinkAudioEvent
-	5,   // 93: quasar.proto.BluetoothSinkEvent.avrcp_event:type_name -> quasar.proto.AVRCP
-	121, // 94: quasar.proto.BluetoothSinkEvent.bluetooth_track_meta_info:type_name -> quasar.proto.BluetoothTrackMetaInfo
-	120, // 95: quasar.proto.BluetoothSourceEvent.connection_event:type_name -> quasar.proto.BtConnectionEvent
-	5,   // 96: quasar.proto.BluetoothSourceEvent.avrcp_event:type_name -> quasar.proto.AVRCP
-	210, // 97: quasar.proto.BluetoothRequest.scan_networks:type_name -> quasar.proto.BluetoothRequest.ScanRequest
-	67,  // 98: quasar.proto.BluetoothRequest.disconnect_all:type_name -> quasar.proto.EmptyMessage
-	67,  // 99: quasar.proto.BluetoothRequest.power_on:type_name -> quasar.proto.EmptyMessage
-	67,  // 100: quasar.proto.BluetoothRequest.power_off:type_name -> quasar.proto.EmptyMessage
-	118, // 101: quasar.proto.BluetoothRequest.sink_request:type_name -> quasar.proto.BluetoothSinkRequest
-	67,  // 102: quasar.proto.BluetoothRequest.run_all:type_name -> quasar.proto.EmptyMessage
-	67,  // 103: quasar.proto.BluetoothRequest.stop_all:type_name -> quasar.proto.EmptyMessage
-	67,  // 104: quasar.proto.BluetoothRequest.unlock_bricked_bt:type_name -> quasar.proto.EmptyMessage
-	67,  // 105: quasar.proto.BluetoothRequest.take_audio_focus:type_name -> quasar.proto.EmptyMessage
-	67,  // 106: quasar.proto.BluetoothRequest.free_audio_focus:type_name -> quasar.proto.EmptyMessage
-	126, // 107: quasar.proto.ConfigStorage.user_config:type_name -> quasar.proto.UserConfig
-	127, // 108: quasar.proto.ConfigStorage.subscription_state:type_name -> quasar.proto.SubscriptionState
-	7,   // 109: quasar.proto.BrickInfo.brick_status:type_name -> quasar.proto.BrickStatus
-	31,  // 110: quasar.proto.DeviceGroupState.local_role:type_name -> quasar.proto.DeviceGroupState.Role
-	212, // 111: quasar.proto.DeviceGroupState.leader:type_name -> quasar.proto.DeviceGroupState.Leader
-	211, // 112: quasar.proto.DeviceGroupState.follower:type_name -> quasar.proto.DeviceGroupState.Follower
-	32,  // 113: quasar.proto.DeviceGroupState.media_state:type_name -> quasar.proto.DeviceGroupState.MediaState
-	213, // 114: quasar.proto.DeviceGroupState.glagol_apps:type_name -> quasar.proto.DeviceGroupState.GlagolApp
-	73,  // 115: quasar.proto.DeviceGroupState.group_alice_state:type_name -> quasar.proto.GroupAliceState
-	258, // 116: quasar.proto.ExternalCommandMessage.event_source:type_name -> NAlice.TEventSource
-	214, // 117: quasar.proto.GlagoldState.connections:type_name -> quasar.proto.GlagoldState.Connection
-	9,   // 118: quasar.proto.GlagoldState.microphone_group_state:type_name -> quasar.proto.GroupSpotterMicrophoneState
-	67,  // 119: quasar.proto.GlagolClusterMessage.target_device_all:type_name -> quasar.proto.EmptyMessage
-	67,  // 120: quasar.proto.GlagolClusterMessage.target_device_remote:type_name -> quasar.proto.EmptyMessage
-	67,  // 121: quasar.proto.GlagolDiscoveryRequest.non_yio_devices:type_name -> quasar.proto.EmptyMessage
-	167, // 122: quasar.proto.GlagolDiscoveryRequest.add_announce:type_name -> quasar.proto.NsdInfo
-	167, // 123: quasar.proto.GlagolDiscoveryRequest.remove_announce:type_name -> quasar.proto.NsdInfo
-	67,  // 124: quasar.proto.GlagolDiscoveryRequest.debug_connections:type_name -> quasar.proto.EmptyMessage
-	67,  // 125: quasar.proto.NavigationScrollAmount.few:type_name -> quasar.proto.EmptyMessage
-	67,  // 126: quasar.proto.NavigationScrollAmount.many:type_name -> quasar.proto.EmptyMessage
-	137, // 127: quasar.proto.NavigationScrollAmount.exact:type_name -> quasar.proto.NavigationScrollExact
-	67,  // 128: quasar.proto.NavigationScrollAmount.till_end:type_name -> quasar.proto.EmptyMessage
-	138, // 129: quasar.proto.NavigationMessage.scroll_amount:type_name -> quasar.proto.NavigationScrollAmount
-	67,  // 130: quasar.proto.NavigationMessage.visual_mode:type_name -> quasar.proto.EmptyMessage
-	215, // 131: quasar.proto.NavigationMessage.historical_mode:type_name -> quasar.proto.NavigationMessage.HistoricalMode
-	67,  // 132: quasar.proto.NavigationMessage.native_mode:type_name -> quasar.proto.EmptyMessage
-	139, // 133: quasar.proto.NavigationRequest.go_up:type_name -> quasar.proto.NavigationMessage
-	139, // 134: quasar.proto.NavigationRequest.go_down:type_name -> quasar.proto.NavigationMessage
-	139, // 135: quasar.proto.NavigationRequest.go_left:type_name -> quasar.proto.NavigationMessage
-	139, // 136: quasar.proto.NavigationRequest.go_right:type_name -> quasar.proto.NavigationMessage
-	139, // 137: quasar.proto.NavigationRequest.rewind_right:type_name -> quasar.proto.NavigationMessage
-	139, // 138: quasar.proto.NavigationRequest.rewind_left:type_name -> quasar.proto.NavigationMessage
-	140, // 139: quasar.proto.ControlRequest.navigation_request:type_name -> quasar.proto.NavigationRequest
-	67,  // 140: quasar.proto.ControlRequest.action_request:type_name -> quasar.proto.EmptyMessage
-	35,  // 141: quasar.proto.ControlRequest.origin:type_name -> quasar.proto.ControlRequest.Origin
-	67,  // 142: quasar.proto.ControlRequest.action_play_pause:type_name -> quasar.proto.EmptyMessage
-	67,  // 143: quasar.proto.OnboardingRequest.skip_onboarding:type_name -> quasar.proto.EmptyMessage
-	67,  // 144: quasar.proto.OnboardingRequest.play_onboarding:type_name -> quasar.proto.EmptyMessage
-	36,  // 145: quasar.proto.UpdateState.state:type_name -> quasar.proto.UpdateState.State
-	37,  // 146: quasar.proto.Audio.format:type_name -> quasar.proto.Audio.Format
-	146, // 147: quasar.proto.Audio.analytics_context:type_name -> quasar.proto.AudioAnalyticsContext
-	147, // 148: quasar.proto.Audio.metadata:type_name -> quasar.proto.AudioMetadata
-	38,  // 149: quasar.proto.Audio.screen_type:type_name -> quasar.proto.Audio.Screen
-	78,  // 150: quasar.proto.Audio.normalization:type_name -> quasar.proto.SoundNormalization
-	216, // 151: quasar.proto.Audio.multiroom_context:type_name -> quasar.proto.Audio.MultiroomContext
-	59,  // 152: quasar.proto.Audio.channel:type_name -> quasar.proto.StereoPair.Channel
-	259, // 153: quasar.proto.Audio.switching_streams_metadata:type_name -> NAlice.NData.NMusic.TSwitchingStreamsMetadata
-	260, // 154: quasar.proto.Audio.karaoke_mode:type_name -> NAlice.NData.NMusic.EKaraokeMode
-	261, // 155: quasar.proto.Audio.quality:type_name -> NAlice.TAudioPlayerCapability.TParameters.EQuality
-	262, // 156: quasar.proto.Audio.codec:type_name -> NAlice.TAudioPlayerCapability.TParameters.ECodec
-	217, // 157: quasar.proto.AudioMetadata.music_metadata:type_name -> quasar.proto.AudioMetadata.MusicMeta
-	39,  // 158: quasar.proto.AudioPlayerDescriptor.type:type_name -> quasar.proto.AudioPlayerDescriptor.PlayerType
-	263, // 159: quasar.proto.AudioPlayerDescriptor.audio_channel:type_name -> quasar.proto.AudioChannel
-	40,  // 160: quasar.proto.AudioClientEvent.event:type_name -> quasar.proto.AudioClientEvent.Event
-	11,  // 161: quasar.proto.AudioClientEvent.state:type_name -> quasar.proto.AudioClientState
-	145, // 162: quasar.proto.AudioClientEvent.audio:type_name -> quasar.proto.Audio
-	148, // 163: quasar.proto.AudioClientEvent.player_descriptor:type_name -> quasar.proto.AudioPlayerDescriptor
-	164, // 164: quasar.proto.AudioClientEvent.equalizer_config:type_name -> quasar.proto.EqualizerConfig
-	219, // 165: quasar.proto.AudioClientEvent.diagnostics:type_name -> quasar.proto.AudioClientEvent.DiagnisticItem
-	264, // 166: quasar.proto.AudioClientEvent.playback_options:type_name -> NAlice.NData.TPlaybackOptions
-	220, // 167: quasar.proto.AudioClientEvent.prefetch_contex:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
-	221, // 168: quasar.proto.AudioClientEvent.alt_url_changed:type_name -> quasar.proto.AudioClientEvent.AltUrlChanged
-	222, // 169: quasar.proto.AudioStorageEvent.download_result:type_name -> quasar.proto.AudioStorageEvent.DownloadResult
-	42,  // 170: quasar.proto.LegacyPlayerStateChanged.state:type_name -> quasar.proto.LegacyPlayerStateChanged.State
-	43,  // 171: quasar.proto.LegacyPlayerStateChanged.player_type:type_name -> quasar.proto.LegacyPlayerStateChanged.PlayerType
-	265, // 172: quasar.proto.LegacyPlayerStateChanged.music:type_name -> NAlice.NAliceApi.TDeviceState.TMusic
-	266, // 173: quasar.proto.LegacyPlayerStateChanged.radio:type_name -> google.protobuf.Struct
-	44,  // 174: quasar.proto.NotificationUpdateEvent.notification_mode:type_name -> quasar.proto.NotificationUpdateEvent.NotificationMode
-	45,  // 175: quasar.proto.CallError.code:type_name -> quasar.proto.CallError.Code
-	46,  // 176: quasar.proto.CalldSessionState.status:type_name -> quasar.proto.CalldSessionState.Status
-	47,  // 177: quasar.proto.CalldSessionState.direction:type_name -> quasar.proto.CalldSessionState.Direction
-	154, // 178: quasar.proto.CalldSessionState.ended_with_error:type_name -> quasar.proto.CallError
-	48,  // 179: quasar.proto.IotDiscoveryResult.code:type_name -> quasar.proto.IotDiscoveryResult.ResultCode
-	223, // 180: quasar.proto.IotRequest.start_discovery:type_name -> quasar.proto.IotRequest.StartDiscovery
-	224, // 181: quasar.proto.IotRequest.stop_discovery:type_name -> quasar.proto.IotRequest.StopDiscovery
-	225, // 182: quasar.proto.IotRequest.credentials:type_name -> quasar.proto.IotRequest.Credentials
-	49,  // 183: quasar.proto.IotState.current_state:type_name -> quasar.proto.IotState.State
-	49,  // 184: quasar.proto.IotState.prev_state:type_name -> quasar.proto.IotState.State
-	157, // 185: quasar.proto.IotState.result:type_name -> quasar.proto.IotDiscoveryResult
-	156, // 186: quasar.proto.IotState.current_discovery_info:type_name -> quasar.proto.IotDiscoveryInfo
-	50,  // 187: quasar.proto.ButtonEvent.action:type_name -> quasar.proto.ButtonEvent.Action
-	160, // 188: quasar.proto.RcuEvent.button_event:type_name -> quasar.proto.ButtonEvent
-	67,  // 189: quasar.proto.RcuVoiceEvent.start_streaming:type_name -> quasar.proto.EmptyMessage
-	67,  // 190: quasar.proto.RcuVoiceEvent.stop_streaming:type_name -> quasar.proto.EmptyMessage
-	67,  // 191: quasar.proto.LedScreenCommand.capture_start:type_name -> quasar.proto.EmptyMessage
-	67,  // 192: quasar.proto.LedScreenCommand.capture_stop:type_name -> quasar.proto.EmptyMessage
-	226, // 193: quasar.proto.EqualizerConfig.bands:type_name -> quasar.proto.EqualizerConfig.Band
-	148, // 194: quasar.proto.MediaRequest.player_descriptor:type_name -> quasar.proto.AudioPlayerDescriptor
-	145, // 195: quasar.proto.MediaRequest.play_audio:type_name -> quasar.proto.Audio
-	67,  // 196: quasar.proto.MediaRequest.recreate_players:type_name -> quasar.proto.EmptyMessage
-	220, // 197: quasar.proto.MediaRequest.start_prefetch:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
-	220, // 198: quasar.proto.MediaRequest.stop_prefetch:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
-	232, // 199: quasar.proto.MediaRequest.clean_players:type_name -> quasar.proto.MediaRequest.CleanPlayers
-	263, // 200: quasar.proto.MediaRequest.current_focused_channel:type_name -> quasar.proto.AudioChannel
-	164, // 201: quasar.proto.MediaRequest.equalizer_config:type_name -> quasar.proto.EqualizerConfig
-	264, // 202: quasar.proto.MediaRequest.playback_options:type_name -> NAlice.NData.TPlaybackOptions
-	227, // 203: quasar.proto.MediaRequest.pause:type_name -> quasar.proto.MediaRequest.PauseConfig
-	53,  // 204: quasar.proto.MediaRequest.resume:type_name -> quasar.proto.MediaRequest.PlayerType
-	67,  // 205: quasar.proto.MediaRequest.replay:type_name -> quasar.proto.EmptyMessage
-	229, // 206: quasar.proto.MediaRequest.rewind:type_name -> quasar.proto.MediaRequest.Rewind
-	67,  // 207: quasar.proto.MediaRequest.stream_data_end:type_name -> quasar.proto.EmptyMessage
-	147, // 208: quasar.proto.MediaRequest.metadata:type_name -> quasar.proto.AudioMetadata
-	228, // 209: quasar.proto.MediaRequest.update_fade_out:type_name -> quasar.proto.MediaRequest.FadeOut
-	233, // 210: quasar.proto.MediaRequest.jog_wheel:type_name -> quasar.proto.MediaRequest.JogWheel
-	146, // 211: quasar.proto.MediaRequest.resume_analytics_context:type_name -> quasar.proto.AudioAnalyticsContext
-	100, // 212: quasar.proto.MediaRequest.play_radio:type_name -> quasar.proto.Radio
-	67,  // 213: quasar.proto.MediaRequest.free_audio_focus:type_name -> quasar.proto.EmptyMessage
-	67,  // 214: quasar.proto.MediaRequest.take_audio_focus:type_name -> quasar.proto.EmptyMessage
-	230, // 215: quasar.proto.MediaRequest.next:type_name -> quasar.proto.MediaRequest.Next
-	231, // 216: quasar.proto.MediaRequest.previous:type_name -> quasar.proto.MediaRequest.Previous
-	67,  // 217: quasar.proto.MediaRequest.like:type_name -> quasar.proto.EmptyMessage
-	67,  // 218: quasar.proto.MediaRequest.dislike:type_name -> quasar.proto.EmptyMessage
-	97,  // 219: quasar.proto.MediaRequest.play_video:type_name -> quasar.proto.Video
-	98,  // 220: quasar.proto.MediaRequest.change_audio:type_name -> quasar.proto.AudioTrack
-	99,  // 221: quasar.proto.MediaRequest.change_subtitles:type_name -> quasar.proto.Subtitles
-	67,  // 222: quasar.proto.MediaRequest.show_video_settings:type_name -> quasar.proto.EmptyMessage
-	258, // 223: quasar.proto.VinsRequest.event_source:type_name -> NAlice.TEventSource
-	267, // 224: quasar.proto.VinsRequest.guest_options:type_name -> NAlice.TGuestOptions
-	268, // 225: quasar.proto.VinsRequest.uniproxy_options:type_name -> NAlice.NAliceApi.TUniproxyOptions
-	54,  // 226: quasar.proto.VinsRequest.request_type:type_name -> quasar.proto.VinsRequest.RequestType
-	269, // 227: quasar.proto.VinsRequest.dialog_type:type_name -> NAlice.NData.EDialogType
-	270, // 228: quasar.proto.VinsRequest.alice_2_settings:type_name -> NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
-	271, // 229: quasar.proto.VinsRequest.bio_classification:type_name -> NAlice.TBiometryClassification
-	234, // 230: quasar.proto.NsdInfo.attrs:type_name -> quasar.proto.NsdInfo.Attribute
-	167, // 231: quasar.proto.NsdInfoList.items:type_name -> quasar.proto.NsdInfo
-	55,  // 232: quasar.proto.GlagolDiscoveryItem.protocol:type_name -> quasar.proto.GlagolDiscoveryItem.ProtocolType
-	56,  // 233: quasar.proto.GlagolDiscoveryItem.tandem_role:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
-	56,  // 234: quasar.proto.GlagolDiscoveryItem.stereopair_role:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
-	169, // 235: quasar.proto.GlagolDiscoveryResult.items:type_name -> quasar.proto.GlagolDiscoveryItem
-	167, // 236: quasar.proto.GlagolDiscoveryResult.other_items:type_name -> quasar.proto.NsdInfo
-	67,  // 237: quasar.proto.GlagolDiscoveryResult.is_full_result:type_name -> quasar.proto.EmptyMessage
-	235, // 238: quasar.proto.StereoPair.state:type_name -> quasar.proto.StereoPair.State
-	236, // 239: quasar.proto.StereoPair.request_state:type_name -> quasar.proto.StereoPair.RequestState
-	238, // 240: quasar.proto.StereoPair.initial_pairing_request:type_name -> quasar.proto.StereoPair.InitialPairingRequest
-	239, // 241: quasar.proto.StereoPair.initial_pairing_answer:type_name -> quasar.proto.StereoPair.InitialPairingAnswer
-	237, // 242: quasar.proto.StereoPair.start_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
-	237, // 243: quasar.proto.StereoPair.stop_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
-	237, // 244: quasar.proto.StereoPair.toggle_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
-	237, // 245: quasar.proto.StereoPair.finish_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
-	240, // 246: quasar.proto.StereoPair.user_event_signal:type_name -> quasar.proto.StereoPair.UserEvent
-	241, // 247: quasar.proto.StereoPair.dump_clock_observations:type_name -> quasar.proto.StereoPair.DumpClockObservations
-	242, // 248: quasar.proto.StereoPair.syn:type_name -> quasar.proto.StereoPair.Syn
-	243, // 249: quasar.proto.StereoPair.ack:type_name -> quasar.proto.StereoPair.Ack
-	244, // 250: quasar.proto.VolumeManager.state:type_name -> quasar.proto.VolumeManager.State
-	245, // 251: quasar.proto.VolumeManager.set_volume_signal:type_name -> quasar.proto.VolumeManager.SetVolumeSignal
-	246, // 252: quasar.proto.SpectrogramAnimation.state:type_name -> quasar.proto.SpectrogramAnimation.State
-	247, // 253: quasar.proto.SpectrogramAnimation.set_external_presets_signal:type_name -> quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
-	246, // 254: quasar.proto.SpectrogramAnimation.states:type_name -> quasar.proto.SpectrogramAnimation.State
-	247, // 255: quasar.proto.SpectrogramAnimation.set_external_presets_signals:type_name -> quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
-	248, // 256: quasar.proto.Alice.start_conversation_signal:type_name -> quasar.proto.Alice.StartConversationSignal
-	249, // 257: quasar.proto.Alice.stop_conversation_signal:type_name -> quasar.proto.Alice.StopConversationSignal
-	250, // 258: quasar.proto.Alice.toggle_conversation_signal:type_name -> quasar.proto.Alice.ToggleConversationSignal
-	251, // 259: quasar.proto.Alice.finish_conversation_signal:type_name -> quasar.proto.Alice.FinishConversationSignal
-	272, // 260: quasar.proto.EnvironmentMessage.device_info:type_name -> NAlice.NAliceApi.TEnvironmentDeviceInfo
-	63,  // 261: quasar.proto.BleDecryptCredentialsStatus.status:type_name -> quasar.proto.BleDecryptCredentialsStatus.Status
-	178, // 262: quasar.proto.BleDecryptCredentialsStatus.ble_credentials:type_name -> quasar.proto.BleCredentials
-	64,  // 263: quasar.proto.BackendRequest.method:type_name -> quasar.proto.BackendRequest.Method
-	252, // 264: quasar.proto.BackendRequest.headers:type_name -> quasar.proto.BackendRequest.Header
-	252, // 265: quasar.proto.BackendResponse.extra_headers:type_name -> quasar.proto.BackendRequest.Header
-	253, // 266: quasar.proto.BackendResponse.error:type_name -> quasar.proto.BackendResponse.Error
-	254, // 267: quasar.proto.DirectiveSequencerState.channels:type_name -> quasar.proto.DirectiveSequencerState.Channel
-	273, // 268: quasar.proto.CapabilityEvents.events:type_name -> NAlice.TCapabilityEvent
-	274, // 269: quasar.proto.DirectiveEvent.directive:type_name -> quasar.proto.Directive
-	67,  // 270: quasar.proto.DirectiveEvent.handled_event:type_name -> quasar.proto.EmptyMessage
-	67,  // 271: quasar.proto.DirectiveEvent.started_event:type_name -> quasar.proto.EmptyMessage
-	65,  // 272: quasar.proto.DirectiveEvent.completed_event:type_name -> quasar.proto.DirectiveEvent.Result
-	255, // 273: quasar.proto.DirectivesProcessorConfig.DirectivesToAdd:type_name -> quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig
-	66,  // 274: quasar.proto.SoundInfo.type:type_name -> quasar.proto.SoundFormat.Type
-	274, // 275: quasar.proto.MultiroomBroadcast.MasterHints.directives:type_name -> quasar.proto.Directive
-	145, // 276: quasar.proto.MultiroomBroadcast.MasterHints.next_audio:type_name -> quasar.proto.Audio
-	80,  // 277: quasar.proto.MultiroomDirective.ResumeBroadcast.multiroom_broadcast:type_name -> quasar.proto.MultiroomBroadcast
+	198, // 28: quasar.proto.AppState.screen_state:type_name -> quasar.proto.AppState.ScreenState
+	199, // 29: quasar.proto.AppState.music_state:type_name -> quasar.proto.AppState.MusicState
+	84,  // 30: quasar.proto.AppState.video_state:type_name -> quasar.proto.VideoState
+	200, // 31: quasar.proto.AppState.radio_state:type_name -> quasar.proto.AppState.RadioState
+	121, // 32: quasar.proto.AppState.bluetooth_player_state:type_name -> quasar.proto.BluetoothPlayerState
+	148, // 33: quasar.proto.AppState.audio_player_state:type_name -> quasar.proto.AudioClientEvent
+	201, // 34: quasar.proto.AppState.media_info:type_name -> quasar.proto.AppState.MediaInfo
+	85,  // 35: quasar.proto.AppState.rcu_state:type_name -> quasar.proto.RcuState
+	86,  // 36: quasar.proto.AppState.packages_state:type_name -> quasar.proto.PackagesState
+	255, // 37: quasar.proto.AppState.alice_video_state:type_name -> NAlice.NAliceApi.TDeviceState.TVideo
+	96,  // 38: quasar.proto.VideoState.video:type_name -> quasar.proto.Video
+	92,  // 39: quasar.proto.VideoState.progress:type_name -> quasar.proto.Progress
+	20,  // 40: quasar.proto.RcuState.setup_state:type_name -> quasar.proto.RcuState.SetupState
+	202, // 41: quasar.proto.RcuState.rcu_capabilities:type_name -> quasar.proto.RcuState.RcuCapabilities
+	204, // 42: quasar.proto.PackagesState.installed:type_name -> quasar.proto.PackagesState.InstalledPackage
+	2,   // 43: quasar.proto.WifiInfo.wifi_type:type_name -> quasar.proto.WifiType
+	87,  // 44: quasar.proto.WifiList.hotspots:type_name -> quasar.proto.WifiInfo
+	21,  // 45: quasar.proto.NetworkStatus.status:type_name -> quasar.proto.NetworkStatus.Status
+	256, // 46: quasar.proto.NetworkStatus.type:type_name -> quasar.proto.ConnectionType
+	91,  // 47: quasar.proto.NetworkStatus.wifi_status:type_name -> quasar.proto.WifiStatus
+	90,  // 48: quasar.proto.NetworkStatus.ethernet_status:type_name -> quasar.proto.EthernetStatus
+	22,  // 49: quasar.proto.WifiStatus.status:type_name -> quasar.proto.WifiStatus.Status
+	24,  // 50: quasar.proto.WifiStatus.signal:type_name -> quasar.proto.WifiStatus.Signal
+	87,  // 51: quasar.proto.WifiStatus.current_network:type_name -> quasar.proto.WifiInfo
+	205, // 52: quasar.proto.WifiStatus.time_over_http:type_name -> quasar.proto.WifiStatus.TimeOverHttp
+	206, // 53: quasar.proto.CompleteVideoState.state:type_name -> quasar.proto.CompleteVideoState.StateEntry
+	207, // 54: quasar.proto.UserWatchedVideoState.user_state:type_name -> quasar.proto.UserWatchedVideoState.UserStateEntry
+	84,  // 55: quasar.proto.WatchedVideoState.movies:type_name -> quasar.proto.VideoState
+	84,  // 56: quasar.proto.WatchedVideoState.episodes:type_name -> quasar.proto.VideoState
+	84,  // 57: quasar.proto.WatchedVideoState.video:type_name -> quasar.proto.VideoState
+	108, // 58: quasar.proto.Video.item:type_name -> quasar.proto.MediaItem
+	108, // 59: quasar.proto.Video.next_item:type_name -> quasar.proto.MediaItem
+	108, // 60: quasar.proto.Video.tv_show_item:type_name -> quasar.proto.MediaItem
+	108, // 61: quasar.proto.SearchResult.items:type_name -> quasar.proto.MediaItem
+	8,   // 62: quasar.proto.SearchResult.gallery_type:type_name -> quasar.proto.GalleryType
+	108, // 63: quasar.proto.SearchResult.tv_show_item:type_name -> quasar.proto.MediaItem
+	108, // 64: quasar.proto.DescriptionItem.media_item:type_name -> quasar.proto.MediaItem
+	108, // 65: quasar.proto.PaymentItem.item:type_name -> quasar.proto.MediaItem
+	108, // 66: quasar.proto.PaymentItem.tvShowItem:type_name -> quasar.proto.MediaItem
+	25,  // 67: quasar.proto.MediaItem.type:type_name -> quasar.proto.MediaItem.Type
+	111, // 68: quasar.proto.MediaItem.provider_info:type_name -> quasar.proto.ProviderInfo
+	3,   // 69: quasar.proto.MediaItem.provider:type_name -> quasar.proto.Provider
+	110, // 70: quasar.proto.MediaItem.season_numbers:type_name -> quasar.proto.Season
+	97,  // 71: quasar.proto.MediaItem.audio_streams:type_name -> quasar.proto.AudioTrack
+	98,  // 72: quasar.proto.MediaItem.subtitles:type_name -> quasar.proto.Subtitles
+	109, // 73: quasar.proto.MediaItem.skippable_fragments:type_name -> quasar.proto.SkippableFragments
+	26,  // 74: quasar.proto.MediaItem.camera_stream_type:type_name -> quasar.proto.MediaItem.StreamType
+	27,  // 75: quasar.proto.SkippableFragments.type:type_name -> quasar.proto.SkippableFragments.Type
+	3,   // 76: quasar.proto.ProviderInfo.provider:type_name -> quasar.proto.Provider
+	28,  // 77: quasar.proto.Alarm.alarm_type:type_name -> quasar.proto.Alarm.AlarmType
+	131, // 78: quasar.proto.Alarm.command_list:type_name -> quasar.proto.ExternalCommandMessage
+	164, // 79: quasar.proto.Alarm.media_request:type_name -> quasar.proto.MediaRequest
+	112, // 80: quasar.proto.TimersState.timers:type_name -> quasar.proto.Alarm
+	115, // 81: quasar.proto.AlarmsState.alarms_settings:type_name -> quasar.proto.AlarmsSettings
+	66,  // 82: quasar.proto.BluetoothSinkRequest.pause:type_name -> quasar.proto.EmptyMessage
+	66,  // 83: quasar.proto.BluetoothSinkRequest.play:type_name -> quasar.proto.EmptyMessage
+	66,  // 84: quasar.proto.BluetoothSinkRequest.next:type_name -> quasar.proto.EmptyMessage
+	116, // 85: quasar.proto.BluetoothSinkRequest.prev:type_name -> quasar.proto.BluetoothPrevRequest
+	208, // 86: quasar.proto.BluetoothSinkRequest.set_visibility:type_name -> quasar.proto.BluetoothSinkRequest.VisibilityRequest
+	29,  // 87: quasar.proto.BluetoothNetwork.role:type_name -> quasar.proto.BluetoothNetwork.BluetoothRole
+	4,   // 88: quasar.proto.BtConnectionEvent.connection_event:type_name -> quasar.proto.BtConnection
+	118, // 89: quasar.proto.BtConnectionEvent.network:type_name -> quasar.proto.BluetoothNetwork
+	120, // 90: quasar.proto.BluetoothPlayerState.track_meta_info:type_name -> quasar.proto.BluetoothTrackMetaInfo
+	119, // 91: quasar.proto.BluetoothSinkEvent.connection_event:type_name -> quasar.proto.BtConnectionEvent
+	6,   // 92: quasar.proto.BluetoothSinkEvent.visibility:type_name -> quasar.proto.BluetoothVisibility
+	30,  // 93: quasar.proto.BluetoothSinkEvent.audio_event:type_name -> quasar.proto.BluetoothSinkEvent.BtSinkAudioEvent
+	5,   // 94: quasar.proto.BluetoothSinkEvent.avrcp_event:type_name -> quasar.proto.AVRCP
+	120, // 95: quasar.proto.BluetoothSinkEvent.bluetooth_track_meta_info:type_name -> quasar.proto.BluetoothTrackMetaInfo
+	119, // 96: quasar.proto.BluetoothSourceEvent.connection_event:type_name -> quasar.proto.BtConnectionEvent
+	5,   // 97: quasar.proto.BluetoothSourceEvent.avrcp_event:type_name -> quasar.proto.AVRCP
+	209, // 98: quasar.proto.BluetoothRequest.scan_networks:type_name -> quasar.proto.BluetoothRequest.ScanRequest
+	66,  // 99: quasar.proto.BluetoothRequest.disconnect_all:type_name -> quasar.proto.EmptyMessage
+	66,  // 100: quasar.proto.BluetoothRequest.power_on:type_name -> quasar.proto.EmptyMessage
+	66,  // 101: quasar.proto.BluetoothRequest.power_off:type_name -> quasar.proto.EmptyMessage
+	117, // 102: quasar.proto.BluetoothRequest.sink_request:type_name -> quasar.proto.BluetoothSinkRequest
+	66,  // 103: quasar.proto.BluetoothRequest.run_all:type_name -> quasar.proto.EmptyMessage
+	66,  // 104: quasar.proto.BluetoothRequest.stop_all:type_name -> quasar.proto.EmptyMessage
+	66,  // 105: quasar.proto.BluetoothRequest.unlock_bricked_bt:type_name -> quasar.proto.EmptyMessage
+	66,  // 106: quasar.proto.BluetoothRequest.take_audio_focus:type_name -> quasar.proto.EmptyMessage
+	66,  // 107: quasar.proto.BluetoothRequest.free_audio_focus:type_name -> quasar.proto.EmptyMessage
+	125, // 108: quasar.proto.ConfigStorage.user_config:type_name -> quasar.proto.UserConfig
+	126, // 109: quasar.proto.ConfigStorage.subscription_state:type_name -> quasar.proto.SubscriptionState
+	7,   // 110: quasar.proto.BrickInfo.brick_status:type_name -> quasar.proto.BrickStatus
+	31,  // 111: quasar.proto.DeviceGroupState.local_role:type_name -> quasar.proto.DeviceGroupState.Role
+	211, // 112: quasar.proto.DeviceGroupState.leader:type_name -> quasar.proto.DeviceGroupState.Leader
+	210, // 113: quasar.proto.DeviceGroupState.follower:type_name -> quasar.proto.DeviceGroupState.Follower
+	32,  // 114: quasar.proto.DeviceGroupState.media_state:type_name -> quasar.proto.DeviceGroupState.MediaState
+	212, // 115: quasar.proto.DeviceGroupState.glagol_apps:type_name -> quasar.proto.DeviceGroupState.GlagolApp
+	72,  // 116: quasar.proto.DeviceGroupState.group_alice_state:type_name -> quasar.proto.GroupAliceState
+	257, // 117: quasar.proto.ExternalCommandMessage.event_source:type_name -> NAlice.TEventSource
+	213, // 118: quasar.proto.GlagoldState.connections:type_name -> quasar.proto.GlagoldState.Connection
+	9,   // 119: quasar.proto.GlagoldState.microphone_group_state:type_name -> quasar.proto.GroupSpotterMicrophoneState
+	66,  // 120: quasar.proto.GlagolClusterMessage.target_device_all:type_name -> quasar.proto.EmptyMessage
+	66,  // 121: quasar.proto.GlagolClusterMessage.target_device_remote:type_name -> quasar.proto.EmptyMessage
+	66,  // 122: quasar.proto.GlagolDiscoveryRequest.non_yio_devices:type_name -> quasar.proto.EmptyMessage
+	166, // 123: quasar.proto.GlagolDiscoveryRequest.add_announce:type_name -> quasar.proto.NsdInfo
+	166, // 124: quasar.proto.GlagolDiscoveryRequest.remove_announce:type_name -> quasar.proto.NsdInfo
+	66,  // 125: quasar.proto.GlagolDiscoveryRequest.debug_connections:type_name -> quasar.proto.EmptyMessage
+	66,  // 126: quasar.proto.NavigationScrollAmount.few:type_name -> quasar.proto.EmptyMessage
+	66,  // 127: quasar.proto.NavigationScrollAmount.many:type_name -> quasar.proto.EmptyMessage
+	136, // 128: quasar.proto.NavigationScrollAmount.exact:type_name -> quasar.proto.NavigationScrollExact
+	66,  // 129: quasar.proto.NavigationScrollAmount.till_end:type_name -> quasar.proto.EmptyMessage
+	137, // 130: quasar.proto.NavigationMessage.scroll_amount:type_name -> quasar.proto.NavigationScrollAmount
+	66,  // 131: quasar.proto.NavigationMessage.visual_mode:type_name -> quasar.proto.EmptyMessage
+	214, // 132: quasar.proto.NavigationMessage.historical_mode:type_name -> quasar.proto.NavigationMessage.HistoricalMode
+	66,  // 133: quasar.proto.NavigationMessage.native_mode:type_name -> quasar.proto.EmptyMessage
+	138, // 134: quasar.proto.NavigationRequest.go_up:type_name -> quasar.proto.NavigationMessage
+	138, // 135: quasar.proto.NavigationRequest.go_down:type_name -> quasar.proto.NavigationMessage
+	138, // 136: quasar.proto.NavigationRequest.go_left:type_name -> quasar.proto.NavigationMessage
+	138, // 137: quasar.proto.NavigationRequest.go_right:type_name -> quasar.proto.NavigationMessage
+	138, // 138: quasar.proto.NavigationRequest.rewind_right:type_name -> quasar.proto.NavigationMessage
+	138, // 139: quasar.proto.NavigationRequest.rewind_left:type_name -> quasar.proto.NavigationMessage
+	139, // 140: quasar.proto.ControlRequest.navigation_request:type_name -> quasar.proto.NavigationRequest
+	66,  // 141: quasar.proto.ControlRequest.action_request:type_name -> quasar.proto.EmptyMessage
+	35,  // 142: quasar.proto.ControlRequest.origin:type_name -> quasar.proto.ControlRequest.Origin
+	66,  // 143: quasar.proto.ControlRequest.action_play_pause:type_name -> quasar.proto.EmptyMessage
+	66,  // 144: quasar.proto.OnboardingRequest.skip_onboarding:type_name -> quasar.proto.EmptyMessage
+	66,  // 145: quasar.proto.OnboardingRequest.play_onboarding:type_name -> quasar.proto.EmptyMessage
+	36,  // 146: quasar.proto.UpdateState.state:type_name -> quasar.proto.UpdateState.State
+	37,  // 147: quasar.proto.Audio.format:type_name -> quasar.proto.Audio.Format
+	145, // 148: quasar.proto.Audio.analytics_context:type_name -> quasar.proto.AudioAnalyticsContext
+	146, // 149: quasar.proto.Audio.metadata:type_name -> quasar.proto.AudioMetadata
+	38,  // 150: quasar.proto.Audio.screen_type:type_name -> quasar.proto.Audio.Screen
+	77,  // 151: quasar.proto.Audio.normalization:type_name -> quasar.proto.SoundNormalization
+	215, // 152: quasar.proto.Audio.multiroom_context:type_name -> quasar.proto.Audio.MultiroomContext
+	59,  // 153: quasar.proto.Audio.channel:type_name -> quasar.proto.StereoPair.Channel
+	258, // 154: quasar.proto.Audio.switching_streams_metadata:type_name -> NAlice.NData.NMusic.TSwitchingStreamsMetadata
+	259, // 155: quasar.proto.Audio.karaoke_mode:type_name -> NAlice.NData.NMusic.EKaraokeMode
+	260, // 156: quasar.proto.Audio.quality:type_name -> NAlice.TAudioPlayerCapability.TParameters.EQuality
+	261, // 157: quasar.proto.Audio.codec:type_name -> NAlice.TAudioPlayerCapability.TParameters.ECodec
+	216, // 158: quasar.proto.AudioMetadata.music_metadata:type_name -> quasar.proto.AudioMetadata.MusicMeta
+	39,  // 159: quasar.proto.AudioPlayerDescriptor.type:type_name -> quasar.proto.AudioPlayerDescriptor.PlayerType
+	262, // 160: quasar.proto.AudioPlayerDescriptor.audio_channel:type_name -> quasar.proto.AudioChannel
+	40,  // 161: quasar.proto.AudioClientEvent.event:type_name -> quasar.proto.AudioClientEvent.Event
+	11,  // 162: quasar.proto.AudioClientEvent.state:type_name -> quasar.proto.AudioClientState
+	144, // 163: quasar.proto.AudioClientEvent.audio:type_name -> quasar.proto.Audio
+	147, // 164: quasar.proto.AudioClientEvent.player_descriptor:type_name -> quasar.proto.AudioPlayerDescriptor
+	163, // 165: quasar.proto.AudioClientEvent.equalizer_config:type_name -> quasar.proto.EqualizerConfig
+	218, // 166: quasar.proto.AudioClientEvent.diagnostics:type_name -> quasar.proto.AudioClientEvent.DiagnisticItem
+	263, // 167: quasar.proto.AudioClientEvent.playback_options:type_name -> NAlice.NData.TPlaybackOptions
+	219, // 168: quasar.proto.AudioClientEvent.prefetch_contex:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
+	220, // 169: quasar.proto.AudioClientEvent.alt_url_changed:type_name -> quasar.proto.AudioClientEvent.AltUrlChanged
+	221, // 170: quasar.proto.AudioStorageEvent.download_result:type_name -> quasar.proto.AudioStorageEvent.DownloadResult
+	42,  // 171: quasar.proto.LegacyPlayerStateChanged.state:type_name -> quasar.proto.LegacyPlayerStateChanged.State
+	43,  // 172: quasar.proto.LegacyPlayerStateChanged.player_type:type_name -> quasar.proto.LegacyPlayerStateChanged.PlayerType
+	264, // 173: quasar.proto.LegacyPlayerStateChanged.music:type_name -> NAlice.NAliceApi.TDeviceState.TMusic
+	265, // 174: quasar.proto.LegacyPlayerStateChanged.radio:type_name -> google.protobuf.Struct
+	44,  // 175: quasar.proto.NotificationUpdateEvent.notification_mode:type_name -> quasar.proto.NotificationUpdateEvent.NotificationMode
+	45,  // 176: quasar.proto.CallError.code:type_name -> quasar.proto.CallError.Code
+	46,  // 177: quasar.proto.CalldSessionState.status:type_name -> quasar.proto.CalldSessionState.Status
+	47,  // 178: quasar.proto.CalldSessionState.direction:type_name -> quasar.proto.CalldSessionState.Direction
+	153, // 179: quasar.proto.CalldSessionState.ended_with_error:type_name -> quasar.proto.CallError
+	48,  // 180: quasar.proto.IotDiscoveryResult.code:type_name -> quasar.proto.IotDiscoveryResult.ResultCode
+	222, // 181: quasar.proto.IotRequest.start_discovery:type_name -> quasar.proto.IotRequest.StartDiscovery
+	223, // 182: quasar.proto.IotRequest.stop_discovery:type_name -> quasar.proto.IotRequest.StopDiscovery
+	224, // 183: quasar.proto.IotRequest.credentials:type_name -> quasar.proto.IotRequest.Credentials
+	49,  // 184: quasar.proto.IotState.current_state:type_name -> quasar.proto.IotState.State
+	49,  // 185: quasar.proto.IotState.prev_state:type_name -> quasar.proto.IotState.State
+	156, // 186: quasar.proto.IotState.result:type_name -> quasar.proto.IotDiscoveryResult
+	155, // 187: quasar.proto.IotState.current_discovery_info:type_name -> quasar.proto.IotDiscoveryInfo
+	50,  // 188: quasar.proto.ButtonEvent.action:type_name -> quasar.proto.ButtonEvent.Action
+	159, // 189: quasar.proto.RcuEvent.button_event:type_name -> quasar.proto.ButtonEvent
+	66,  // 190: quasar.proto.RcuVoiceEvent.start_streaming:type_name -> quasar.proto.EmptyMessage
+	66,  // 191: quasar.proto.RcuVoiceEvent.stop_streaming:type_name -> quasar.proto.EmptyMessage
+	66,  // 192: quasar.proto.LedScreenCommand.capture_start:type_name -> quasar.proto.EmptyMessage
+	66,  // 193: quasar.proto.LedScreenCommand.capture_stop:type_name -> quasar.proto.EmptyMessage
+	225, // 194: quasar.proto.EqualizerConfig.bands:type_name -> quasar.proto.EqualizerConfig.Band
+	147, // 195: quasar.proto.MediaRequest.player_descriptor:type_name -> quasar.proto.AudioPlayerDescriptor
+	144, // 196: quasar.proto.MediaRequest.play_audio:type_name -> quasar.proto.Audio
+	66,  // 197: quasar.proto.MediaRequest.recreate_players:type_name -> quasar.proto.EmptyMessage
+	219, // 198: quasar.proto.MediaRequest.start_prefetch:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
+	219, // 199: quasar.proto.MediaRequest.stop_prefetch:type_name -> quasar.proto.AudioClientEvent.PrefetchContext
+	231, // 200: quasar.proto.MediaRequest.clean_players:type_name -> quasar.proto.MediaRequest.CleanPlayers
+	262, // 201: quasar.proto.MediaRequest.current_focused_channel:type_name -> quasar.proto.AudioChannel
+	163, // 202: quasar.proto.MediaRequest.equalizer_config:type_name -> quasar.proto.EqualizerConfig
+	263, // 203: quasar.proto.MediaRequest.playback_options:type_name -> NAlice.NData.TPlaybackOptions
+	226, // 204: quasar.proto.MediaRequest.pause:type_name -> quasar.proto.MediaRequest.PauseConfig
+	53,  // 205: quasar.proto.MediaRequest.resume:type_name -> quasar.proto.MediaRequest.PlayerType
+	66,  // 206: quasar.proto.MediaRequest.replay:type_name -> quasar.proto.EmptyMessage
+	228, // 207: quasar.proto.MediaRequest.rewind:type_name -> quasar.proto.MediaRequest.Rewind
+	66,  // 208: quasar.proto.MediaRequest.stream_data_end:type_name -> quasar.proto.EmptyMessage
+	146, // 209: quasar.proto.MediaRequest.metadata:type_name -> quasar.proto.AudioMetadata
+	227, // 210: quasar.proto.MediaRequest.update_fade_out:type_name -> quasar.proto.MediaRequest.FadeOut
+	99,  // 211: quasar.proto.MediaRequest.play_radio:type_name -> quasar.proto.Radio
+	66,  // 212: quasar.proto.MediaRequest.free_audio_focus:type_name -> quasar.proto.EmptyMessage
+	66,  // 213: quasar.proto.MediaRequest.take_audio_focus:type_name -> quasar.proto.EmptyMessage
+	229, // 214: quasar.proto.MediaRequest.next:type_name -> quasar.proto.MediaRequest.Next
+	230, // 215: quasar.proto.MediaRequest.previous:type_name -> quasar.proto.MediaRequest.Previous
+	66,  // 216: quasar.proto.MediaRequest.like:type_name -> quasar.proto.EmptyMessage
+	66,  // 217: quasar.proto.MediaRequest.dislike:type_name -> quasar.proto.EmptyMessage
+	96,  // 218: quasar.proto.MediaRequest.play_video:type_name -> quasar.proto.Video
+	97,  // 219: quasar.proto.MediaRequest.change_audio:type_name -> quasar.proto.AudioTrack
+	98,  // 220: quasar.proto.MediaRequest.change_subtitles:type_name -> quasar.proto.Subtitles
+	66,  // 221: quasar.proto.MediaRequest.show_video_settings:type_name -> quasar.proto.EmptyMessage
+	232, // 222: quasar.proto.MediaRequest.jog_wheel:type_name -> quasar.proto.MediaRequest.JogWheel
+	145, // 223: quasar.proto.MediaRequest.resume_analytics_context:type_name -> quasar.proto.AudioAnalyticsContext
+	257, // 224: quasar.proto.VinsRequest.event_source:type_name -> NAlice.TEventSource
+	266, // 225: quasar.proto.VinsRequest.guest_options:type_name -> NAlice.TGuestOptions
+	267, // 226: quasar.proto.VinsRequest.uniproxy_options:type_name -> NAlice.NAliceApi.TUniproxyOptions
+	54,  // 227: quasar.proto.VinsRequest.request_type:type_name -> quasar.proto.VinsRequest.RequestType
+	268, // 228: quasar.proto.VinsRequest.dialog_type:type_name -> NAlice.NData.EDialogType
+	269, // 229: quasar.proto.VinsRequest.alice_2_settings:type_name -> NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
+	270, // 230: quasar.proto.VinsRequest.bio_classification:type_name -> NAlice.TBiometryClassification
+	233, // 231: quasar.proto.NsdInfo.attrs:type_name -> quasar.proto.NsdInfo.Attribute
+	166, // 232: quasar.proto.NsdInfoList.items:type_name -> quasar.proto.NsdInfo
+	55,  // 233: quasar.proto.GlagolDiscoveryItem.protocol:type_name -> quasar.proto.GlagolDiscoveryItem.ProtocolType
+	56,  // 234: quasar.proto.GlagolDiscoveryItem.tandem_role:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
+	56,  // 235: quasar.proto.GlagolDiscoveryItem.stereopair_role:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
+	168, // 236: quasar.proto.GlagolDiscoveryResult.items:type_name -> quasar.proto.GlagolDiscoveryItem
+	166, // 237: quasar.proto.GlagolDiscoveryResult.other_items:type_name -> quasar.proto.NsdInfo
+	66,  // 238: quasar.proto.GlagolDiscoveryResult.is_full_result:type_name -> quasar.proto.EmptyMessage
+	234, // 239: quasar.proto.StereoPair.state:type_name -> quasar.proto.StereoPair.State
+	235, // 240: quasar.proto.StereoPair.request_state:type_name -> quasar.proto.StereoPair.RequestState
+	237, // 241: quasar.proto.StereoPair.initial_pairing_request:type_name -> quasar.proto.StereoPair.InitialPairingRequest
+	238, // 242: quasar.proto.StereoPair.initial_pairing_answer:type_name -> quasar.proto.StereoPair.InitialPairingAnswer
+	236, // 243: quasar.proto.StereoPair.start_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
+	236, // 244: quasar.proto.StereoPair.stop_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
+	236, // 245: quasar.proto.StereoPair.toggle_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
+	236, // 246: quasar.proto.StereoPair.finish_conversation_request:type_name -> quasar.proto.StereoPair.ConversationRequest
+	239, // 247: quasar.proto.StereoPair.user_event_signal:type_name -> quasar.proto.StereoPair.UserEvent
+	240, // 248: quasar.proto.StereoPair.dump_clock_observations:type_name -> quasar.proto.StereoPair.DumpClockObservations
+	241, // 249: quasar.proto.StereoPair.syn:type_name -> quasar.proto.StereoPair.Syn
+	242, // 250: quasar.proto.StereoPair.ack:type_name -> quasar.proto.StereoPair.Ack
+	243, // 251: quasar.proto.VolumeManager.state:type_name -> quasar.proto.VolumeManager.State
+	244, // 252: quasar.proto.VolumeManager.set_volume_signal:type_name -> quasar.proto.VolumeManager.SetVolumeSignal
+	245, // 253: quasar.proto.SpectrogramAnimation.state:type_name -> quasar.proto.SpectrogramAnimation.State
+	246, // 254: quasar.proto.SpectrogramAnimation.set_external_presets_signal:type_name -> quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
+	245, // 255: quasar.proto.SpectrogramAnimation.states:type_name -> quasar.proto.SpectrogramAnimation.State
+	246, // 256: quasar.proto.SpectrogramAnimation.set_external_presets_signals:type_name -> quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal
+	247, // 257: quasar.proto.Alice.start_conversation_signal:type_name -> quasar.proto.Alice.StartConversationSignal
+	248, // 258: quasar.proto.Alice.stop_conversation_signal:type_name -> quasar.proto.Alice.StopConversationSignal
+	249, // 259: quasar.proto.Alice.toggle_conversation_signal:type_name -> quasar.proto.Alice.ToggleConversationSignal
+	250, // 260: quasar.proto.Alice.finish_conversation_signal:type_name -> quasar.proto.Alice.FinishConversationSignal
+	271, // 261: quasar.proto.EnvironmentMessage.device_info:type_name -> NAlice.NAliceApi.TEnvironmentDeviceInfo
+	62,  // 262: quasar.proto.BleDecryptCredentialsStatus.status:type_name -> quasar.proto.BleDecryptCredentialsStatus.Status
+	177, // 263: quasar.proto.BleDecryptCredentialsStatus.ble_credentials:type_name -> quasar.proto.BleCredentials
+	63,  // 264: quasar.proto.BackendRequest.method:type_name -> quasar.proto.BackendRequest.Method
+	251, // 265: quasar.proto.BackendRequest.headers:type_name -> quasar.proto.BackendRequest.Header
+	251, // 266: quasar.proto.BackendResponse.extra_headers:type_name -> quasar.proto.BackendRequest.Header
+	252, // 267: quasar.proto.BackendResponse.error:type_name -> quasar.proto.BackendResponse.Error
+	253, // 268: quasar.proto.DirectiveSequencerState.channels:type_name -> quasar.proto.DirectiveSequencerState.Channel
+	272, // 269: quasar.proto.CapabilityEvents.events:type_name -> NAlice.TCapabilityEvent
+	273, // 270: quasar.proto.DirectiveEvent.directive:type_name -> quasar.proto.Directive
+	66,  // 271: quasar.proto.DirectiveEvent.handled_event:type_name -> quasar.proto.EmptyMessage
+	66,  // 272: quasar.proto.DirectiveEvent.started_event:type_name -> quasar.proto.EmptyMessage
+	64,  // 273: quasar.proto.DirectiveEvent.completed_event:type_name -> quasar.proto.DirectiveEvent.Result
+	254, // 274: quasar.proto.DirectivesProcessorConfig.DirectivesToAdd:type_name -> quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig
+	273, // 275: quasar.proto.MultiroomBroadcast.MasterHints.directives:type_name -> quasar.proto.Directive
+	144, // 276: quasar.proto.MultiroomBroadcast.MasterHints.next_audio:type_name -> quasar.proto.Audio
+	79,  // 277: quasar.proto.MultiroomDirective.ResumeBroadcast.multiroom_broadcast:type_name -> quasar.proto.MultiroomBroadcast
 	18,  // 278: quasar.proto.AppState.ScreenState.screen_type:type_name -> quasar.proto.AppState.ScreenType
-	105, // 279: quasar.proto.AppState.ScreenState.search_result:type_name -> quasar.proto.SearchResult
-	107, // 280: quasar.proto.AppState.ScreenState.payment_item:type_name -> quasar.proto.PaymentItem
-	106, // 281: quasar.proto.AppState.ScreenState.description_item:type_name -> quasar.proto.DescriptionItem
-	75,  // 282: quasar.proto.AppState.ScreenState.web_view_state:type_name -> quasar.proto.WebViewState
-	76,  // 283: quasar.proto.AppState.ScreenState.available_directions:type_name -> quasar.proto.ControlState
+	104, // 279: quasar.proto.AppState.ScreenState.search_result:type_name -> quasar.proto.SearchResult
+	106, // 280: quasar.proto.AppState.ScreenState.payment_item:type_name -> quasar.proto.PaymentItem
+	105, // 281: quasar.proto.AppState.ScreenState.description_item:type_name -> quasar.proto.DescriptionItem
+	74,  // 282: quasar.proto.AppState.ScreenState.web_view_state:type_name -> quasar.proto.WebViewState
+	75,  // 283: quasar.proto.AppState.ScreenState.available_directions:type_name -> quasar.proto.ControlState
 	19,  // 284: quasar.proto.AppState.MusicState.next_track_type:type_name -> quasar.proto.AppState.MusicState.TrackType
-	78,  // 285: quasar.proto.AppState.MusicState.normalization:type_name -> quasar.proto.SoundNormalization
-	204, // 286: quasar.proto.PackagesState.InstalledPackage.package_info:type_name -> quasar.proto.PackagesState.Package
-	95,  // 287: quasar.proto.CompleteVideoState.StateEntry.value:type_name -> quasar.proto.UserWatchedVideoState
-	96,  // 288: quasar.proto.UserWatchedVideoState.UserStateEntry.value:type_name -> quasar.proto.WatchedVideoState
+	77,  // 285: quasar.proto.AppState.MusicState.normalization:type_name -> quasar.proto.SoundNormalization
+	203, // 286: quasar.proto.PackagesState.InstalledPackage.package_info:type_name -> quasar.proto.PackagesState.Package
+	94,  // 287: quasar.proto.CompleteVideoState.StateEntry.value:type_name -> quasar.proto.UserWatchedVideoState
+	95,  // 288: quasar.proto.UserWatchedVideoState.UserStateEntry.value:type_name -> quasar.proto.WatchedVideoState
 	6,   // 289: quasar.proto.BluetoothSinkRequest.VisibilityRequest.visibility:type_name -> quasar.proto.BluetoothVisibility
 	33,  // 290: quasar.proto.DeviceGroupState.Follower.connection_state:type_name -> quasar.proto.DeviceGroupState.ConnectionState
-	84,  // 291: quasar.proto.DeviceGroupState.Follower.app_state:type_name -> quasar.proto.AppState
+	83,  // 291: quasar.proto.DeviceGroupState.Follower.app_state:type_name -> quasar.proto.AppState
 	33,  // 292: quasar.proto.DeviceGroupState.Leader.connection_state:type_name -> quasar.proto.DeviceGroupState.ConnectionState
 	34,  // 293: quasar.proto.GlagoldState.Connection.type:type_name -> quasar.proto.GlagoldState.ConnectionType
-	218, // 294: quasar.proto.AudioMetadata.MusicMeta.prev:type_name -> quasar.proto.AudioMetadata.MusicMeta.TrackInfo
-	218, // 295: quasar.proto.AudioMetadata.MusicMeta.next:type_name -> quasar.proto.AudioMetadata.MusicMeta.TrackInfo
-	260, // 296: quasar.proto.AudioClientEvent.PrefetchContext.karaoke_mode:type_name -> NAlice.NData.NMusic.EKaraokeMode
+	217, // 294: quasar.proto.AudioMetadata.MusicMeta.prev:type_name -> quasar.proto.AudioMetadata.MusicMeta.TrackInfo
+	217, // 295: quasar.proto.AudioMetadata.MusicMeta.next:type_name -> quasar.proto.AudioMetadata.MusicMeta.TrackInfo
+	259, // 296: quasar.proto.AudioClientEvent.PrefetchContext.karaoke_mode:type_name -> NAlice.NData.NMusic.EKaraokeMode
 	41,  // 297: quasar.proto.AudioStorageEvent.DownloadResult.track_status:type_name -> quasar.proto.AudioStorageEvent.DownloadTrackStatus
-	157, // 298: quasar.proto.IotRequest.StopDiscovery.result:type_name -> quasar.proto.IotDiscoveryResult
+	156, // 298: quasar.proto.IotRequest.StopDiscovery.result:type_name -> quasar.proto.IotDiscoveryResult
 	51,  // 299: quasar.proto.EqualizerConfig.Band.type:type_name -> quasar.proto.EqualizerConfig.BandType
 	52,  // 300: quasar.proto.MediaRequest.Rewind.type:type_name -> quasar.proto.MediaRequest.RewindType
-	228, // 301: quasar.proto.MediaRequest.Rewind.fade_out:type_name -> quasar.proto.MediaRequest.FadeOut
+	227, // 301: quasar.proto.MediaRequest.Rewind.fade_out:type_name -> quasar.proto.MediaRequest.FadeOut
 	57,  // 302: quasar.proto.StereoPair.State.role:type_name -> quasar.proto.StereoPair.Role
 	59,  // 303: quasar.proto.StereoPair.State.channel:type_name -> quasar.proto.StereoPair.Channel
 	58,  // 304: quasar.proto.StereoPair.State.connectivity:type_name -> quasar.proto.StereoPair.Connectivity
 	60,  // 305: quasar.proto.StereoPair.State.stereo_player_status:type_name -> quasar.proto.StereoPair.StereoPlayerStatus
-	244, // 306: quasar.proto.StereoPair.State.volume:type_name -> quasar.proto.VolumeManager.State
-	246, // 307: quasar.proto.StereoPair.State.spectrogram:type_name -> quasar.proto.SpectrogramAnimation.State
-	246, // 308: quasar.proto.StereoPair.State.spectrograms:type_name -> quasar.proto.SpectrogramAnimation.State
-	275, // 309: quasar.proto.VolumeManager.State.change_source:type_name -> NAlice.TVolumeCapability.ESource
-	62,  // 310: quasar.proto.SpectrogramAnimation.State.source:type_name -> quasar.proto.SpectrogramAnimation.State.Source
-	61,  // 311: quasar.proto.SpectrogramAnimation.State.screen_type:type_name -> quasar.proto.Leds.ScreenType
-	61,  // 312: quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal.screen_type:type_name -> quasar.proto.Leds.ScreenType
-	263, // 313: quasar.proto.DirectiveSequencerState.Channel.channel:type_name -> quasar.proto.AudioChannel
-	274, // 314: quasar.proto.DirectiveSequencerState.Channel.directives:type_name -> quasar.proto.Directive
-	276, // 315: quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig.Directive:type_name -> NAlice.NAliceApi.TDirective
+	243, // 306: quasar.proto.StereoPair.State.volume:type_name -> quasar.proto.VolumeManager.State
+	245, // 307: quasar.proto.StereoPair.State.spectrogram:type_name -> quasar.proto.SpectrogramAnimation.State
+	245, // 308: quasar.proto.StereoPair.State.spectrograms:type_name -> quasar.proto.SpectrogramAnimation.State
+	274, // 309: quasar.proto.VolumeManager.State.change_source:type_name -> NAlice.TVolumeCapability.ESource
+	61,  // 310: quasar.proto.SpectrogramAnimation.State.source:type_name -> quasar.proto.SpectrogramAnimation.State.Source
+	65,  // 311: quasar.proto.SpectrogramAnimation.State.screen_type:type_name -> quasar.proto.Leds.ScreenType
+	65,  // 312: quasar.proto.SpectrogramAnimation.SetExternalPresetsSignal.screen_type:type_name -> quasar.proto.Leds.ScreenType
+	262, // 313: quasar.proto.DirectiveSequencerState.Channel.channel:type_name -> quasar.proto.AudioChannel
+	273, // 314: quasar.proto.DirectiveSequencerState.Channel.directives:type_name -> quasar.proto.Directive
+	275, // 315: quasar.proto.DirectivesProcessorConfig.AddDirectiveConfig.Directive:type_name -> NAlice.NAliceApi.TDirective
 	316, // [316:316] is the sub-list for method output_type
 	316, // [316:316] is the sub-list for method input_type
 	316, // [316:316] is the sub-list for extension type_name
@@ -20496,7 +20527,7 @@ func file_yandex_io_protos_model_objects_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_yandex_io_protos_model_objects_proto_rawDesc), len(file_yandex_io_protos_model_objects_proto_rawDesc)),
-			NumEnums:      67,
+			NumEnums:      66,
 			NumMessages:   189,
 			NumExtensions: 0,
 			NumServices:   0,

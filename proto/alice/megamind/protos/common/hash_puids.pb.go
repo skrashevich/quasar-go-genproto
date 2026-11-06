@@ -24,7 +24,7 @@ const (
 
 type THashPuids struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Alice         *string                `protobuf:"bytes,1,opt,name=Alice,json=alice,proto3,oneof" json:"Alice,omitempty"`
+	Alice         *string                `protobuf:"bytes,1,opt,name=Alice,proto3,oneof" json:"Alice,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,12 +70,13 @@ var File_alice_megamind_protos_common_hash_puids_proto protoreflect.FileDescript
 
 const file_alice_megamind_protos_common_hash_puids_proto_rawDesc = "" +
 	"\n" +
-	"-alice/megamind/protos/common/hash_puids.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"B\n" +
+	"-alice/megamind/protos/common/hash_puids.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"1\n" +
 	"\n" +
-	"THashPuids\x12$\n" +
-	"\x05Alice\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05aliceH\x00R\x05alice\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06_AliceBW\n" +
-	"&ru.yandex.alice.megamind.protos.commonZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"THashPuids\x12\x19\n" +
+	"\x05Alice\x18\x01 \x01(\tH\x00R\x05Alice\x88\x01\x01B\b\n" +
+	"\x06_AliceB\xa2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eHashPuidsProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_hash_puids_proto_rawDescOnce sync.Once

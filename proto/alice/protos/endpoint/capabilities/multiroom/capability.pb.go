@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/multiroom/capability.proto
 
-package multiroompb
+package multiroom
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -74,9 +74,9 @@ func (TMultiroomCapability_ERole) EnumDescriptor() ([]byte, []int) {
 
 type TMultiroomCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TMultiroomCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TMultiroomCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TMultiroomCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TMultiroomCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -134,7 +134,7 @@ func (x *TMultiroomCapability) GetState() *TMultiroomCapability_TState {
 
 type TMultiroomCapability_TParameters struct {
 	state                        protoimpl.MessageState `protogen:"open.v1"`
-	SupportsDirectivesAttachment bool                   `protobuf:"varint,1,opt,name=SupportsDirectivesAttachment,json=supports_directives_attachment,proto3" json:"SupportsDirectivesAttachment,omitempty"`
+	SupportsDirectivesAttachment bool                   `protobuf:"varint,1,opt,name=SupportsDirectivesAttachment,proto3" json:"SupportsDirectivesAttachment,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -178,9 +178,9 @@ func (x *TMultiroomCapability_TParameters) GetSupportsDirectivesAttachment() boo
 
 type TMultiroomCapability_TSessionDescriptor struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	MasterDeviceId   *string                `protobuf:"bytes,1,opt,name=MasterDeviceId,json=master_device_id,proto3,oneof" json:"MasterDeviceId,omitempty"`
-	MultiroomToken   *string                `protobuf:"bytes,2,opt,name=MultiroomToken,json=multiroom_token,proto3,oneof" json:"MultiroomToken,omitempty"`
-	StartTimestampMs *int64                 `protobuf:"varint,3,opt,name=StartTimestampMs,json=start_timestamp_ms,proto3,oneof" json:"StartTimestampMs,omitempty"`
+	MasterDeviceId   *string                `protobuf:"bytes,1,opt,name=MasterDeviceId,proto3,oneof" json:"MasterDeviceId,omitempty"`
+	MultiroomToken   *string                `protobuf:"bytes,2,opt,name=MultiroomToken,proto3,oneof" json:"MultiroomToken,omitempty"`
+	StartTimestampMs *int64                 `protobuf:"varint,3,opt,name=StartTimestampMs,proto3,oneof" json:"StartTimestampMs,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -238,8 +238,8 @@ func (x *TMultiroomCapability_TSessionDescriptor) GetStartTimestampMs() int64 {
 
 type TMultiroomCapability_TState struct {
 	state          protoimpl.MessageState                   `protogen:"open.v1"`
-	Role           *TMultiroomCapability_ERole              `protobuf:"varint,1,opt,name=Role,json=role,proto3,enum=NAlice.TMultiroomCapability_ERole,oneof" json:"Role,omitempty"`
-	CurrentSession *TMultiroomCapability_TSessionDescriptor `protobuf:"bytes,2,opt,name=CurrentSession,json=current_session,proto3,oneof" json:"CurrentSession,omitempty"`
+	Role           *TMultiroomCapability_ERole              `protobuf:"varint,1,opt,name=Role,proto3,enum=NAlice.TMultiroomCapability_ERole,oneof" json:"Role,omitempty"`
+	CurrentSession *TMultiroomCapability_TSessionDescriptor `protobuf:"bytes,2,opt,name=CurrentSession,proto3,oneof" json:"CurrentSession,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -292,34 +292,34 @@ var File_alice_protos_endpoint_capabilities_multiroom_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_multiroom_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/multiroom/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbe\a\n" +
-	"\x14TMultiroomCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/multiroom/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf5\x05\n" +
+	"\x14TMultiroomCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TMultiroomCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TMultiroomCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a}\n" +
-	"\vTParameters\x12h\n" +
-	"\x1cSupportsDirectivesAttachment\x18\x01 \x01(\bB\"\xaa\xdd\x1b\x1esupports_directives_attachmentR\x1esupports_directives_attachment:\x04\xa8\xdd\x1b\x04\x1a\xa2\x02\n" +
-	"\x12TSessionDescriptor\x12C\n" +
-	"\x0eMasterDeviceId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10master_device_idH\x00R\x10master_device_id\x88\x01\x01\x12A\n" +
-	"\x0eMultiroomToken\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fmultiroom_tokenH\x01R\x0fmultiroom_token\x88\x01\x01\x12I\n" +
-	"\x10StartTimestampMs\x18\x03 \x01(\x03B\x16\xaa\xdd\x1b\x12start_timestamp_msH\x02R\x12start_timestamp_ms\x88\x01\x01B\x11\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TMultiroomCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TMultiroomCapability.TStateR\x05State\x1aQ\n" +
+	"\vTParameters\x12B\n" +
+	"\x1cSupportsDirectivesAttachment\x18\x01 \x01(\bR\x1cSupportsDirectivesAttachment\x1a\xda\x01\n" +
+	"\x12TSessionDescriptor\x12+\n" +
+	"\x0eMasterDeviceId\x18\x01 \x01(\tH\x00R\x0eMasterDeviceId\x88\x01\x01\x12+\n" +
+	"\x0eMultiroomToken\x18\x02 \x01(\tH\x01R\x0eMultiroomToken\x88\x01\x01\x12/\n" +
+	"\x10StartTimestampMs\x18\x03 \x01(\x03H\x02R\x10StartTimestampMs\x88\x01\x01B\x11\n" +
 	"\x0f_MasterDeviceIdB\x11\n" +
 	"\x0f_MultiroomTokenB\x13\n" +
-	"\x11_StartTimestampMs\x1a\xe5\x01\n" +
-	"\x06TState\x12E\n" +
-	"\x04Role\x18\x01 \x01(\x0e2\".NAlice.TMultiroomCapability.ERoleB\b\xaa\xdd\x1b\x04roleH\x00R\x04role\x88\x01\x01\x12r\n" +
-	"\x0eCurrentSession\x18\x02 \x01(\v2/.NAlice.TMultiroomCapability.TSessionDescriptorB\x13\xaa\xdd\x1b\x0fcurrent_sessionH\x01R\x0fcurrent_session\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\x11_StartTimestampMs\x1a\xbf\x01\n" +
+	"\x06TState\x12;\n" +
+	"\x04Role\x18\x01 \x01(\x0e2\".NAlice.TMultiroomCapability.ERoleH\x00R\x04Role\x88\x01\x01\x12\\\n" +
+	"\x0eCurrentSession\x18\x02 \x01(\v2/.NAlice.TMultiroomCapability.TSessionDescriptorH\x01R\x0eCurrentSession\x88\x01\x01B\a\n" +
 	"\x05_RoleB\x11\n" +
 	"\x0f_CurrentSession\"7\n" +
 	"\x05ERole\x12\r\n" +
 	"\tROLE_NONE\x10\x00\x12\x0f\n" +
 	"\vROLE_MASTER\x10\x01\x12\x0e\n" +
 	"\n" +
-	"ROLE_SLAVE\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c{B\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18MultiroomCapabilityProtoP\x01ZIa.yandex-team.ru/alice/protos/endpoint/capabilities/multiroom;multiroompbb\x06proto3"
+	"ROLE_SLAVE\x10\x02B\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/multiroom\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_multiroom_capability_proto_rawDescOnce sync.Once

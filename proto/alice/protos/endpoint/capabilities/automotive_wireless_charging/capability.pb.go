@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_wireless_charging/capability.proto
 
-package automotive_wireless_chargingpb
+package automotive_wireless_charging
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -391,7 +391,7 @@ const file_alice_protos_endpoint_capabilities_automotive_wireless_charging_capab
 	"\x0fSEAT_ROW_3_LEFT\x10\a\x12\x15\n" +
 	"\x11SEAT_ROW_3_CENTER\x10\b\x12\x14\n" +
 	"\x10SEAT_ROW_3_RIGHT\x10\t:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9b\x02B\xca\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB)AutomotiveWirelessChargingCapabilityProtoZoa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_wireless_charging;automotive_wireless_chargingpbb\x06proto3"
+	",ru.yandex.alice.protos.endpoint.capabilitiesB)AutomotiveWirelessChargingCapabilityProtoZogithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_wireless_chargingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_wireless_charging_capability_proto_rawDescOnce sync.Once

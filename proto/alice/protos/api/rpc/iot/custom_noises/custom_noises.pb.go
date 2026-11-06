@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/rpc/iot/custom_noises/custom_noises.proto
 
-package customnoisespb
+package custom_noises
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -415,8 +415,8 @@ const file_alice_protos_api_rpc_iot_custom_noises_custom_noises_proto_rawDesc = 
 	"session_idR\n" +
 	"session_id\x12 \n" +
 	"\x04Data\x18\x02 \x01(\fB\f\xa0\xdd\x1b\x05\xaa\xdd\x1b\x04dataR\x04data:\x04\xa8\xdd\x1b\x04\".\n" +
-	"&TIoTUploadCustomNoiseRecordingResponse:\x04\xa8\xdd\x1b\x04B\x88\x01\n" +
-	"0ru.yandex.alice.protos.api.rpc.iot.custom_noisesB\fCustomNoisesZFa.yandex-team.ru/alice/protos/api/rpc/iot/custom_noises;customnoisespbb\x06proto3"
+	"&TIoTUploadCustomNoiseRecordingResponse:\x04\xa8\xdd\x1b\x04B\x98\x01\n" +
+	"0ru.yandex.alice.protos.api.rpc.iot.custom_noisesB\fCustomNoisesZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/iot/custom_noisesb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_iot_custom_noises_custom_noises_proto_rawDescOnce sync.Once

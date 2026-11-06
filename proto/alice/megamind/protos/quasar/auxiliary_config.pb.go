@@ -25,7 +25,7 @@ const (
 
 type TAuxiliaryConfig struct {
 	state          protoimpl.MessageState                  `protogen:"open.v1"`
-	Alice4Business *TAuxiliaryConfig_TAlice4BusinessConfig `protobuf:"bytes,1,opt,name=Alice4Business,json=alice4business,proto3" json:"Alice4Business,omitempty"`
+	Alice4Business *TAuxiliaryConfig_TAlice4BusinessConfig `protobuf:"bytes,1,opt,name=Alice4Business,proto3" json:"Alice4Business,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -69,13 +69,13 @@ func (x *TAuxiliaryConfig) GetAlice4Business() *TAuxiliaryConfig_TAlice4Business
 
 type TAuxiliaryConfig_TAlice4BusinessConfig struct {
 	state                protoimpl.MessageState                                       `protogen:"open.v1"`
-	MaxVolume            int32                                                        `protobuf:"varint,1,opt,name=MaxVolume,json=max_volume,proto3" json:"MaxVolume,omitempty"`
-	SmartHomeUid         uint64                                                       `protobuf:"varint,2,opt,name=SmartHomeUid,json=smart_home_uid,proto3" json:"SmartHomeUid,omitempty"`
-	PreactivatedSkillIds []string                                                     `protobuf:"bytes,3,rep,name=PreactivatedSkillIds,json=preactivated_skill_ids,proto3" json:"PreactivatedSkillIds,omitempty"`
-	Unlocked             bool                                                         `protobuf:"varint,4,opt,name=Unlocked,json=unlocked,proto3" json:"Unlocked,omitempty"`
-	InfoConcierge        *TAuxiliaryConfig_TAlice4BusinessConfig_TInfoConciergeConfig `protobuf:"bytes,5,opt,name=InfoConcierge,json=info_concierge,proto3" json:"InfoConcierge,omitempty"`
-	Household            *TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdConfig     `protobuf:"bytes,6,opt,name=Household,json=household,proto3" json:"Household,omitempty"`
-	OrganizationId       string                                                       `protobuf:"bytes,7,opt,name=OrganizationId,json=organization_id,proto3" json:"OrganizationId,omitempty"`
+	MaxVolume            int32                                                        `protobuf:"varint,1,opt,name=MaxVolume,proto3" json:"MaxVolume,omitempty"`
+	SmartHomeUid         uint64                                                       `protobuf:"varint,2,opt,name=SmartHomeUid,proto3" json:"SmartHomeUid,omitempty"`
+	PreactivatedSkillIds []string                                                     `protobuf:"bytes,3,rep,name=PreactivatedSkillIds,proto3" json:"PreactivatedSkillIds,omitempty"`
+	Unlocked             bool                                                         `protobuf:"varint,4,opt,name=Unlocked,proto3" json:"Unlocked,omitempty"`
+	InfoConcierge        *TAuxiliaryConfig_TAlice4BusinessConfig_TInfoConciergeConfig `protobuf:"bytes,5,opt,name=InfoConcierge,proto3" json:"InfoConcierge,omitempty"`
+	Household            *TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdConfig     `protobuf:"bytes,6,opt,name=Household,proto3" json:"Household,omitempty"`
+	OrganizationId       string                                                       `protobuf:"bytes,7,opt,name=OrganizationId,proto3" json:"OrganizationId,omitempty"`
 	OrganizationName     string                                                       `protobuf:"bytes,8,opt,name=OrganizationName,json=organization_name,proto3" json:"OrganizationName,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
@@ -169,12 +169,12 @@ func (x *TAuxiliaryConfig_TAlice4BusinessConfig) GetOrganizationName() string {
 
 type TAuxiliaryConfig_TAlice4BusinessConfig_TInfoConciergeConfig struct {
 	state                                  protoimpl.MessageState `protogen:"open.v1"`
-	InfoConciergeEnabled                   bool                   `protobuf:"varint,1,opt,name=InfoConciergeEnabled,json=info_concierge_enabled,proto3" json:"InfoConciergeEnabled,omitempty"`
-	ConnectWifiIntentEnabled               bool                   `protobuf:"varint,2,opt,name=ConnectWifiIntentEnabled,json=connect_wifi_intent_enabled,proto3" json:"ConnectWifiIntentEnabled,omitempty"`
-	InformationAboutBreakfastIntentEnabled bool                   `protobuf:"varint,3,opt,name=InformationAboutBreakfastIntentEnabled,json=information_about_breakfast_intent_enabled,proto3" json:"InformationAboutBreakfastIntentEnabled,omitempty"`
-	InformationAboutHotelIntentEnabled     bool                   `protobuf:"varint,4,opt,name=InformationAboutHotelIntentEnabled,json=information_about_hotel_intent_enabled,proto3" json:"InformationAboutHotelIntentEnabled,omitempty"`
-	RequestAmenitiesIntentEnabled          bool                   `protobuf:"varint,5,opt,name=RequestAmenitiesIntentEnabled,json=request_amenities_intent_enabled,proto3" json:"RequestAmenitiesIntentEnabled,omitempty"`
-	CallReceptionIntentEnabled             bool                   `protobuf:"varint,6,opt,name=CallReceptionIntentEnabled,json=call_reception_intent_enabled,proto3" json:"CallReceptionIntentEnabled,omitempty"`
+	InfoConciergeEnabled                   bool                   `protobuf:"varint,1,opt,name=InfoConciergeEnabled,proto3" json:"InfoConciergeEnabled,omitempty"`
+	ConnectWifiIntentEnabled               bool                   `protobuf:"varint,2,opt,name=ConnectWifiIntentEnabled,proto3" json:"ConnectWifiIntentEnabled,omitempty"`
+	InformationAboutBreakfastIntentEnabled bool                   `protobuf:"varint,3,opt,name=InformationAboutBreakfastIntentEnabled,proto3" json:"InformationAboutBreakfastIntentEnabled,omitempty"`
+	InformationAboutHotelIntentEnabled     bool                   `protobuf:"varint,4,opt,name=InformationAboutHotelIntentEnabled,proto3" json:"InformationAboutHotelIntentEnabled,omitempty"`
+	RequestAmenitiesIntentEnabled          bool                   `protobuf:"varint,5,opt,name=RequestAmenitiesIntentEnabled,proto3" json:"RequestAmenitiesIntentEnabled,omitempty"`
+	CallReceptionIntentEnabled             bool                   `protobuf:"varint,6,opt,name=CallReceptionIntentEnabled,proto3" json:"CallReceptionIntentEnabled,omitempty"`
 	unknownFields                          protoimpl.UnknownFields
 	sizeCache                              protoimpl.SizeCache
 }
@@ -253,10 +253,10 @@ func (x *TAuxiliaryConfig_TAlice4BusinessConfig_TInfoConciergeConfig) GetCallRec
 
 type TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdLocationConfig struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Latitude      float64                `protobuf:"fixed64,1,opt,name=Latitude,json=latitude,proto3" json:"Latitude,omitempty"`
-	Longitude     float64                `protobuf:"fixed64,2,opt,name=Longitude,json=longitude,proto3" json:"Longitude,omitempty"`
-	Address       string                 `protobuf:"bytes,3,opt,name=Address,json=address,proto3" json:"Address,omitempty"`
-	ShortAddress  string                 `protobuf:"bytes,4,opt,name=ShortAddress,json=short_address,proto3" json:"ShortAddress,omitempty"`
+	Latitude      float64                `protobuf:"fixed64,1,opt,name=Latitude,proto3" json:"Latitude,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,2,opt,name=Longitude,proto3" json:"Longitude,omitempty"`
+	Address       string                 `protobuf:"bytes,3,opt,name=Address,proto3" json:"Address,omitempty"`
+	ShortAddress  string                 `protobuf:"bytes,4,opt,name=ShortAddress,proto3" json:"ShortAddress,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -321,9 +321,9 @@ func (x *TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdLocationConfig) GetSho
 
 type TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdConfig struct {
 	state         protoimpl.MessageState                                           `protogen:"open.v1"`
-	Name          string                                                           `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Type          string                                                           `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Location      *TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdLocationConfig `protobuf:"bytes,3,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
+	Name          string                                                           `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Type          string                                                           `protobuf:"bytes,2,opt,name=Type,proto3" json:"Type,omitempty"`
+	Location      *TAuxiliaryConfig_TAlice4BusinessConfig_THouseholdLocationConfig `protobuf:"bytes,3,opt,name=Location,proto3" json:"Location,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -383,37 +383,36 @@ var File_alice_megamind_protos_quasar_auxiliary_config_proto protoreflect.FileDe
 
 const file_alice_megamind_protos_quasar_auxiliary_config_proto_rawDesc = "" +
 	"\n" +
-	"3alice/megamind/protos/quasar/auxiliary_config.proto\x12\x1dNAlice.NQuasarAuxiliaryConfig\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x0f\n" +
-	"\x10TAuxiliaryConfig\x12\x81\x01\n" +
-	"\x0eAlice4Business\x18\x01 \x01(\v2E.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfigB\x12\xaa\xdd\x1b\x0ealice4businessR\x0ealice4business\x1a\x86\x0e\n" +
-	"\x15TAlice4BusinessConfig\x12-\n" +
-	"\tMaxVolume\x18\x01 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"max_volumeR\n" +
-	"max_volume\x128\n" +
-	"\fSmartHomeUid\x18\x02 \x01(\x04B\x12\xaa\xdd\x1b\x0esmart_home_uidR\x0esmart_home_uid\x12P\n" +
-	"\x14PreactivatedSkillIds\x18\x03 \x03(\tB\x1a\xaa\xdd\x1b\x16preactivated_skill_idsR\x16preactivated_skill_ids\x12(\n" +
-	"\bUnlocked\x18\x04 \x01(\bB\f\xaa\xdd\x1b\bunlockedR\bunlocked\x12\x95\x01\n" +
-	"\rInfoConcierge\x18\x05 \x01(\v2Z.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.TInfoConciergeConfigB\x12\xaa\xdd\x1b\x0einfo_conciergeR\x0einfo_concierge\x12\x83\x01\n" +
-	"\tHousehold\x18\x06 \x01(\v2V.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.THouseholdConfigB\r\xaa\xdd\x1b\thouseholdR\thousehold\x12<\n" +
-	"\x0eOrganizationId\x18\a \x01(\tB\x13\xaa\xdd\x1b\x0forganization_idR\x0forganization_id\x12B\n" +
-	"\x10OrganizationName\x18\b \x01(\tB\x15\xaa\xdd\x1b\x11organization_nameR\x11organization_name\x1a\xaa\x05\n" +
-	"\x14TInfoConciergeConfig\x12P\n" +
-	"\x14InfoConciergeEnabled\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16info_concierge_enabledR\x16info_concierge_enabled\x12^\n" +
-	"\x18ConnectWifiIntentEnabled\x18\x02 \x01(\bB\x1f\xaa\xdd\x1b\x1bconnect_wifi_intent_enabledR\x1bconnect_wifi_intent_enabled\x12\x8a\x01\n" +
-	"&InformationAboutBreakfastIntentEnabled\x18\x03 \x01(\bB.\xaa\xdd\x1b*information_about_breakfast_intent_enabledR*information_about_breakfast_intent_enabled\x12~\n" +
-	"\"InformationAboutHotelIntentEnabled\x18\x04 \x01(\bB*\xaa\xdd\x1b&information_about_hotel_intent_enabledR&information_about_hotel_intent_enabled\x12m\n" +
-	"\x1dRequestAmenitiesIntentEnabled\x18\x05 \x01(\bB$\xaa\xdd\x1b request_amenities_intent_enabledR request_amenities_intent_enabled\x12d\n" +
-	"\x1aCallReceptionIntentEnabled\x18\x06 \x01(\bB!\xaa\xdd\x1b\x1dcall_reception_intent_enabledR\x1dcall_reception_intent_enabled\x1a\xd8\x01\n" +
-	"\x18THouseholdLocationConfig\x12(\n" +
-	"\bLatitude\x18\x01 \x01(\x01B\f\xaa\xdd\x1b\blatitudeR\blatitude\x12+\n" +
-	"\tLongitude\x18\x02 \x01(\x01B\r\xaa\xdd\x1b\tlongitudeR\tlongitude\x12)\n" +
-	"\aAddress\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\aaddress\xf8\x91*\x03R\aaddress\x12:\n" +
-	"\fShortAddress\x18\x04 \x01(\tB\x15\xaa\xdd\x1b\rshort_address\xf8\x91*\x03R\rshort_address\x1a\xd9\x01\n" +
-	"\x10THouseholdConfig\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x88\x01\n" +
-	"\bLocation\x18\x03 \x01(\v2^.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.THouseholdLocationConfigB\f\xaa\xdd\x1b\blocationR\blocation:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bh\n" +
-	"&ru.yandex.alice.megamind.protos.quasarB\x0fAuxiliaryConfigZ-a.yandex-team.ru/alice/megamind/protos/quasarb\x06proto3"
+	"3alice/megamind/protos/quasar/auxiliary_config.proto\x12\x1dNAlice.NQuasarAuxiliaryConfig\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x97\v\n" +
+	"\x10TAuxiliaryConfig\x12m\n" +
+	"\x0eAlice4Business\x18\x01 \x01(\v2E.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfigR\x0eAlice4Business\x1a\x93\n" +
+	"\n" +
+	"\x15TAlice4BusinessConfig\x12\x1c\n" +
+	"\tMaxVolume\x18\x01 \x01(\x05R\tMaxVolume\x12\"\n" +
+	"\fSmartHomeUid\x18\x02 \x01(\x04R\fSmartHomeUid\x122\n" +
+	"\x14PreactivatedSkillIds\x18\x03 \x03(\tR\x14PreactivatedSkillIds\x12\x1a\n" +
+	"\bUnlocked\x18\x04 \x01(\bR\bUnlocked\x12\x80\x01\n" +
+	"\rInfoConcierge\x18\x05 \x01(\v2Z.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.TInfoConciergeConfigR\rInfoConcierge\x12t\n" +
+	"\tHousehold\x18\x06 \x01(\v2V.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.THouseholdConfigR\tHousehold\x12&\n" +
+	"\x0eOrganizationId\x18\a \x01(\tR\x0eOrganizationId\x12B\n" +
+	"\x10OrganizationName\x18\b \x01(\tB\x15\xaa\xdd\x1b\x11organization_nameR\x11organization_name\x1a\xb4\x03\n" +
+	"\x14TInfoConciergeConfig\x122\n" +
+	"\x14InfoConciergeEnabled\x18\x01 \x01(\bR\x14InfoConciergeEnabled\x12:\n" +
+	"\x18ConnectWifiIntentEnabled\x18\x02 \x01(\bR\x18ConnectWifiIntentEnabled\x12V\n" +
+	"&InformationAboutBreakfastIntentEnabled\x18\x03 \x01(\bR&InformationAboutBreakfastIntentEnabled\x12N\n" +
+	"\"InformationAboutHotelIntentEnabled\x18\x04 \x01(\bR\"InformationAboutHotelIntentEnabled\x12D\n" +
+	"\x1dRequestAmenitiesIntentEnabled\x18\x05 \x01(\bR\x1dRequestAmenitiesIntentEnabled\x12>\n" +
+	"\x1aCallReceptionIntentEnabled\x18\x06 \x01(\bR\x1aCallReceptionIntentEnabled\x1a\x92\x01\n" +
+	"\x18THouseholdLocationConfig\x12\x1a\n" +
+	"\bLatitude\x18\x01 \x01(\x01R\bLatitude\x12\x1c\n" +
+	"\tLongitude\x18\x02 \x01(\x01R\tLongitude\x12\x18\n" +
+	"\aAddress\x18\x03 \x01(\tR\aAddress\x12\"\n" +
+	"\fShortAddress\x18\x04 \x01(\tR\fShortAddress\x1a\xb6\x01\n" +
+	"\x10THouseholdConfig\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x12z\n" +
+	"\bLocation\x18\x03 \x01(\v2^.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfig.TAlice4BusinessConfig.THouseholdLocationConfigR\bLocationB\x9c\x02\n" +
+	"!com.NAlice.NQuasarAuxiliaryConfigB\x14AuxiliaryConfigProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/quasar\xa2\x02\x03NNX\xaa\x02\x1dNAlice.NQuasarAuxiliaryConfig\xca\x02\x1dNAlice\\NQuasarAuxiliaryConfig\xe2\x02)NAlice\\NQuasarAuxiliaryConfig\\GPBMetadata\xea\x02\x1eNAlice::NQuasarAuxiliaryConfigb\x06proto3"
 
 var (
 	file_alice_megamind_protos_quasar_auxiliary_config_proto_rawDescOnce sync.Once

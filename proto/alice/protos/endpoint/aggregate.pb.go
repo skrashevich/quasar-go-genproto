@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/aggregate.proto
 
-package endpointpb
+package endpoint
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -24,8 +24,8 @@ const (
 
 type TAggregate struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	MainEndpointId string                 `protobuf:"bytes,1,opt,name=MainEndpointId,json=main_endpoint_id,proto3" json:"MainEndpointId,omitempty"`
-	EndpointIDs    []string               `protobuf:"bytes,2,rep,name=EndpointIDs,json=endpoint_ids,proto3" json:"EndpointIDs,omitempty"`
+	MainEndpointId string                 `protobuf:"bytes,1,opt,name=MainEndpointId,proto3" json:"MainEndpointId,omitempty"`
+	EndpointIDs    []string               `protobuf:"bytes,2,rep,name=EndpointIDs,proto3" json:"EndpointIDs,omitempty"`
 	// Types that are valid to be assigned to Meta:
 	//
 	//	*TAggregate_CompositeMeta
@@ -119,11 +119,11 @@ type isTAggregate_Meta interface {
 }
 
 type TAggregate_CompositeMeta struct {
-	CompositeMeta *TAggregate_TCompositeMeta `protobuf:"bytes,3,opt,name=CompositeMeta,json=composite_meta,proto3,oneof"`
+	CompositeMeta *TAggregate_TCompositeMeta `protobuf:"bytes,3,opt,name=CompositeMeta,proto3,oneof"`
 }
 
 type TAggregate_HubMeta struct {
-	HubMeta *TAggregate_THubMeta `protobuf:"bytes,4,opt,name=HubMeta,json=hub_meta,proto3,oneof"`
+	HubMeta *TAggregate_THubMeta `protobuf:"bytes,4,opt,name=HubMeta,proto3,oneof"`
 }
 
 type TAggregate_TandemMeta struct {
@@ -248,20 +248,22 @@ var File_alice_protos_endpoint_aggregate_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_aggregate_proto_rawDesc = "" +
 	"\n" +
-	"%alice/protos/endpoint/aggregate.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd4\x03\n" +
+	"%alice/protos/endpoint/aggregate.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe9\x02\n" +
 	"\n" +
-	"TAggregate\x12>\n" +
-	"\x0eMainEndpointId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10main_endpoint_idR\x10main_endpoint_id\x123\n" +
-	"\vEndpointIDs\x18\x02 \x03(\tB\x10\xaa\xdd\x1b\fendpoint_idsR\fendpoint_ids\x12^\n" +
-	"\rCompositeMeta\x18\x03 \x01(\v2!.NAlice.TAggregate.TCompositeMetaB\x12\xaa\xdd\x1b\x0ecomposite_metaH\x00R\x0ecomposite_meta\x12F\n" +
-	"\aHubMeta\x18\x04 \x01(\v2\x1b.NAlice.TAggregate.THubMetaB\f\xaa\xdd\x1b\bhub_metaH\x00R\bhub_meta\x12R\n" +
+	"TAggregate\x12&\n" +
+	"\x0eMainEndpointId\x18\x01 \x01(\tR\x0eMainEndpointId\x12 \n" +
+	"\vEndpointIDs\x18\x02 \x03(\tR\vEndpointIDs\x12I\n" +
+	"\rCompositeMeta\x18\x03 \x01(\v2!.NAlice.TAggregate.TCompositeMetaH\x00R\rCompositeMeta\x127\n" +
+	"\aHubMeta\x18\x04 \x01(\v2\x1b.NAlice.TAggregate.THubMetaH\x00R\aHubMeta\x12R\n" +
 	"\n" +
-	"TandemMeta\x18\x05 \x01(\v2\x1e.NAlice.TAggregate.TTandemMetaB\x0f\xaa\xdd\x1b\vtandem_metaH\x00R\vtandem_meta\x1a\x16\n" +
-	"\x0eTCompositeMeta:\x04\xa8\xdd\x1b\x04\x1a\x10\n" +
-	"\bTHubMeta:\x04\xa8\xdd\x1b\x04\x1a\x13\n" +
-	"\vTTandemMeta:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Meta\x12\b\xaa\xdd\x1b\x04metaBf\n" +
-	"\x1fru.yandex.alice.protos.endpointB\x0eAggregateProtoP\x01Z1a.yandex-team.ru/alice/protos/endpoint;endpointpbb\x06proto3"
+	"TandemMeta\x18\x05 \x01(\v2\x1e.NAlice.TAggregate.TTandemMetaB\x0f\xaa\xdd\x1b\vtandem_metaH\x00R\vtandem_meta\x1a\x10\n" +
+	"\x0eTCompositeMeta\x1a\n" +
+	"\n" +
+	"\bTHubMeta\x1a\x13\n" +
+	"\vTTandemMeta:\x04\xa8\xdd\x1b\x04B\x06\n" +
+	"\x04MetaB\x9b\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eAggregateProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_aggregate_proto_rawDescOnce sync.Once

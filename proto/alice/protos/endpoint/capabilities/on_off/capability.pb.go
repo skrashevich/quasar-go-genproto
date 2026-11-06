@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/on_off/capability.proto
 
-package onoffpb
+package on_off
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -174,9 +174,9 @@ func (TOnOffCapability_EOnOffConditionState) EnumDescriptor() ([]byte, []int) {
 
 type TOnOffCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TOnOffCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TOnOffCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TOnOffCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TOnOffCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -234,8 +234,8 @@ func (x *TOnOffCapability) GetState() *TOnOffCapability_TState {
 
 type TOnOffCapability_TParameters struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Split         bool                       `protobuf:"varint,1,opt,name=Split,json=split,proto3" json:"Split,omitempty"`
-	Instance      TOnOffCapability_EInstance `protobuf:"varint,2,opt,name=Instance,json=instance,proto3,enum=NAlice.TOnOffCapability_EInstance" json:"Instance,omitempty"`
+	Split         bool                       `protobuf:"varint,1,opt,name=Split,proto3" json:"Split,omitempty"`
+	Instance      TOnOffCapability_EInstance `protobuf:"varint,2,opt,name=Instance,proto3,enum=NAlice.TOnOffCapability_EInstance" json:"Instance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -286,8 +286,8 @@ func (x *TOnOffCapability_TParameters) GetInstance() TOnOffCapability_EInstance 
 
 type TOnOffCapability_TState struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	On            bool                          `protobuf:"varint,1,opt,name=On,json=on,proto3" json:"On,omitempty"`
-	StartupMode   TOnOffCapability_EStartupMode `protobuf:"varint,2,opt,name=StartupMode,json=startup_mode,proto3,enum=NAlice.TOnOffCapability_EStartupMode" json:"StartupMode,omitempty"`
+	On            bool                          `protobuf:"varint,1,opt,name=On,proto3" json:"On,omitempty"`
+	StartupMode   TOnOffCapability_EStartupMode `protobuf:"varint,2,opt,name=StartupMode,proto3,enum=NAlice.TOnOffCapability_EStartupMode" json:"StartupMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -338,8 +338,8 @@ func (x *TOnOffCapability_TState) GetStartupMode() TOnOffCapability_EStartupMode
 
 type TOnOffCapability_TOnOffDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	On            bool                   `protobuf:"varint,1,opt,name=On,json=on,proto3" json:"On,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	On            bool                   `protobuf:"varint,1,opt,name=On,proto3" json:"On,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -390,7 +390,7 @@ func (x *TOnOffCapability_TOnOffDirective) GetOn() bool {
 
 type TOnOffCapability_TToggleDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -434,8 +434,8 @@ func (x *TOnOffCapability_TToggleDirective) GetName() string {
 
 type TOnOffCapability_TSetStartupModeDirective struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Name          string                        `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StartupMode   TOnOffCapability_EStartupMode `protobuf:"varint,1,opt,name=StartupMode,json=startup_mode,proto3,enum=NAlice.TOnOffCapability_EStartupMode" json:"StartupMode,omitempty"`
+	Name          string                        `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	StartupMode   TOnOffCapability_EStartupMode `protobuf:"varint,1,opt,name=StartupMode,proto3,enum=NAlice.TOnOffCapability_EStartupMode" json:"StartupMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -486,7 +486,7 @@ func (x *TOnOffCapability_TSetStartupModeDirective) GetStartupMode() TOnOffCapab
 
 type TOnOffCapability_TScreenOffDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -530,8 +530,8 @@ func (x *TOnOffCapability_TScreenOffDirective) GetName() string {
 
 type TOnOffCapability_TOnWithTimedOffDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	OnTimeMs      uint32                 `protobuf:"varint,1,opt,name=OnTimeMs,json=on_time_ms,proto3" json:"OnTimeMs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	OnTimeMs      uint32                 `protobuf:"varint,1,opt,name=OnTimeMs,proto3" json:"OnTimeMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -582,7 +582,7 @@ func (x *TOnOffCapability_TOnWithTimedOffDirective) GetOnTimeMs() uint32 {
 
 type TOnOffCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TOnOffCapability      `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TOnOffCapability      `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -626,7 +626,7 @@ func (x *TOnOffCapability_TUpdateStateEvent) GetCapability() *TOnOffCapability {
 
 type TOnOffCapability_TCondition struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	OnOffState    TOnOffCapability_EOnOffConditionState `protobuf:"varint,1,opt,name=OnOffState,json=on_off_state,proto3,enum=NAlice.TOnOffCapability_EOnOffConditionState" json:"OnOffState,omitempty"`
+	OnOffState    TOnOffCapability_EOnOffConditionState `protobuf:"varint,1,opt,name=OnOffState,proto3,enum=NAlice.TOnOffCapability_EOnOffConditionState" json:"OnOffState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -670,7 +670,7 @@ func (x *TOnOffCapability_TCondition) GetOnOffState() TOnOffCapability_EOnOffCon
 
 type TOnOffCapability_TOnOffFilter struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	OnOffState    TOnOffCapability_EOnOffConditionState `protobuf:"varint,1,opt,name=OnOffState,json=on_off_state,proto3,enum=NAlice.TOnOffCapability_EOnOffConditionState" json:"OnOffState,omitempty"`
+	OnOffState    TOnOffCapability_EOnOffConditionState `protobuf:"varint,1,opt,name=OnOffState,proto3,enum=NAlice.TOnOffCapability_EOnOffConditionState" json:"OnOffState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -716,47 +716,45 @@ var File_alice_protos_endpoint_capabilities_on_off_capability_proto protoreflect
 
 const file_alice_protos_endpoint_capabilities_on_off_capability_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/endpoint/capabilities/on_off/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x89\r\n" +
-	"\x10TOnOffCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	":alice/protos/endpoint/capabilities/on_off/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa6\t\n" +
+	"\x10TOnOffCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TOnOffCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TOnOffCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x82\x01\n" +
-	"\vTParameters\x12\x1f\n" +
-	"\x05Split\x18\x01 \x01(\bB\t\xaa\xdd\x1b\x05splitR\x05split\x12L\n" +
-	"\bInstance\x18\x02 \x01(\x0e2\".NAlice.TOnOffCapability.EInstanceB\f\xaa\xdd\x1b\binstanceR\binstance:\x04\xa8\xdd\x1b\x04\x1a\x82\x01\n" +
-	"\x06TState\x12\x16\n" +
-	"\x02On\x18\x01 \x01(\bB\x06\xaa\xdd\x1b\x02onR\x02on\x12Z\n" +
-	"\vStartupMode\x18\x02 \x01(\x0e2%.NAlice.TOnOffCapability.EStartupModeB\x10\xaa\xdd\x1b\fstartup_modeR\fstartup_mode:\x04\xa8\xdd\x1b\x04\x1af\n" +
-	"\x0fTOnOffDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x16\n" +
-	"\x02On\x18\x01 \x01(\bB\x06\xaa\xdd\x1b\x02onR\x02on:\x1c\x92\x82\x19\x10on_off_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x01\x1aV\n" +
-	"\x10TToggleDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x17toggle_on_off_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c6\x1a\xbe\x01\n" +
-	"\x18TSetStartupModeDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12Z\n" +
-	"\vStartupMode\x18\x01 \x01(\x0e2%.NAlice.TOnOffCapability.EStartupModeB\x10\xaa\xdd\x1b\fstartup_modeR\fstartup_mode:'\x92\x82\x19\x1aset_startup_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc0\x01\x1aW\n" +
-	"\x13TScreenOffDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14screen_off_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8b\x02\x1a\x91\x01\n" +
-	"\x18TOnWithTimedOffDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12,\n" +
-	"\bOnTimeMs\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"on_time_msR\n" +
-	"on_time_ms:(\x92\x82\x19\x1bon_with_timed_off_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb4\x02\x1ag\n" +
-	"\x11TUpdateStateEvent\x12H\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TOnOffCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TOnOffCapability.TStateR\x05State\x1ac\n" +
+	"\vTParameters\x12\x14\n" +
+	"\x05Split\x18\x01 \x01(\bR\x05Split\x12>\n" +
+	"\bInstance\x18\x02 \x01(\x0e2\".NAlice.TOnOffCapability.EInstanceR\bInstance\x1aa\n" +
+	"\x06TState\x12\x0e\n" +
+	"\x02On\x18\x01 \x01(\bR\x02On\x12G\n" +
+	"\vStartupMode\x18\x02 \x01(\x0e2%.NAlice.TOnOffCapability.EStartupModeR\vStartupMode\x1a6\n" +
+	"\x0fTOnOffDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x0e\n" +
+	"\x02On\x18\x01 \x01(\bR\x02On\x1a'\n" +
+	"\x10TToggleDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1ax\n" +
+	"\x18TSetStartupModeDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12G\n" +
+	"\vStartupMode\x18\x01 \x01(\x0e2%.NAlice.TOnOffCapability.EStartupModeR\vStartupMode\x1a*\n" +
+	"\x13TScreenOffDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1aK\n" +
+	"\x18TOnWithTimedOffDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1a\n" +
+	"\bOnTimeMs\x18\x01 \x01(\rR\bOnTimeMs\x1aM\n" +
+	"\x11TUpdateStateEvent\x128\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x18.NAlice.TOnOffCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x10\x1az\n" +
+	"Capability\x18\x01 \x01(\v2\x18.NAlice.TOnOffCapabilityR\n" +
+	"Capability\x1a[\n" +
 	"\n" +
-	"TCondition\x12a\n" +
+	"TCondition\x12M\n" +
 	"\n" +
-	"OnOffState\x18\x01 \x01(\x0e2-.NAlice.TOnOffCapability.EOnOffConditionStateB\x10\xaa\xdd\x1b\fon_off_stateR\fon_off_state:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x10\x1a|\n" +
-	"\fTOnOffFilter\x12a\n" +
+	"OnOffState\x18\x01 \x01(\x0e2-.NAlice.TOnOffCapability.EOnOffConditionStateR\n" +
+	"OnOffState\x1a]\n" +
+	"\fTOnOffFilter\x12M\n" +
 	"\n" +
-	"OnOffState\x18\x01 \x01(\x0e2-.NAlice.TOnOffCapability.EOnOffConditionStateB\x10\xaa\xdd\x1b\fon_off_stateR\fon_off_state:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x10\"7\n" +
+	"OnOffState\x18\x01 \x01(\x0e2-.NAlice.TOnOffCapability.EOnOffConditionStateR\n" +
+	"OnOffState\"7\n" +
 	"\tEInstance\x12\x13\n" +
 	"\x0fUnknownInstance\x10\x00\x12\x15\n" +
 	"\x11BacklightInstance\x10\x01\"6\n" +
@@ -768,8 +766,9 @@ const file_alice_protos_endpoint_capabilities_on_off_capability_proto_rawDesc = 
 	"\x14EOnOffConditionState\x12\x0f\n" +
 	"\vOnCondition\x10\x00\x12\x10\n" +
 	"\fOffCondition\x10\x01\x12\x13\n" +
-	"\x0fToggleCondition\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x01B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14OnOffCapabilityProtoP\x01ZBa.yandex-team.ru/alice/protos/endpoint/capabilities/on_off;onoffpbb\x06proto3"
+	"\x0fToggleCondition\x10\x02B\xb0\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/on_off\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_on_off_capability_proto_rawDescOnce sync.Once

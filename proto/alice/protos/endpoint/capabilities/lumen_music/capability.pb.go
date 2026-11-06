@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lumen_music/capability.proto
 
-package lumen_musicpb
+package lumen_music
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -267,8 +267,8 @@ const file_alice_protos_endpoint_capabilities_lumen_music_capability_proto_rawDe
 	"\x06TState\x12B\n" +
 	"\aReplica\x18\x01 \x01(\v2&.NAlice.TLumenMusicCapability.TReplicaH\x00R\aReplica:\x04\xa8\xdd\x1b\x04B\n" +
 	"\n" +
-	"\bscenario:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xca\x02B\x98\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19LumenMusicCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/lumen_music;lumen_musicpbb\x06proto3"
+	"\bscenario:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xca\x02B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19LumenMusicCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lumen_musicb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lumen_music_capability_proto_rawDescOnce sync.Once

@@ -595,8 +595,8 @@ const file_alice_megamind_protos_common_data_source_type_proto_rawDesc = "" +
 	"\x1cRPC_IOT_USER_INFO_HOUSEHOLDS\x10\x0e\x12*\n" +
 	"&RPC_IOT_USER_INFO_HOUSEHOLD_GUESTS_MAP\x10\x0f\x12!\n" +
 	"\x1dRPC_IOT_USER_INFO_STEREOPAIRS\x10\x10\x12*\n" +
-	"&RPC_IOT_USER_INFO_CURRENT_HOUSEHOLD_ID\x10\x11BW\n" +
-	"&ru.yandex.alice.megamind.protos.commonZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"&RPC_IOT_USER_INFO_CURRENT_HOUSEHOLD_ID\x10\x11Bv\n" +
+	"&ru.yandex.alice.megamind.protos.commonZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_data_source_type_proto_rawDescOnce sync.Once

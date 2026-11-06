@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/common/subscription_state/subscription_state.proto
 
-package subscriptionstatepb
+package subscription_state
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -73,7 +73,7 @@ func (TSubscriptionState_ESubscriptionType) EnumDescriptor() ([]byte, []int) {
 
 type TSubscriptionState struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Subscription  TSubscriptionState_ESubscriptionType `protobuf:"varint,1,opt,name=Subscription,json=subscription,proto3,enum=NAlice.TSubscriptionState_ESubscriptionType" json:"Subscription,omitempty"`
+	Subscription  TSubscriptionState_ESubscriptionType `protobuf:"varint,1,opt,name=Subscription,proto3,enum=NAlice.TSubscriptionState_ESubscriptionType" json:"Subscription,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,14 +119,15 @@ var File_alice_megamind_protos_common_subscription_state_subscription_state_prot
 
 const file_alice_megamind_protos_common_subscription_state_subscription_state_proto_rawDesc = "" +
 	"\n" +
-	"Halice/megamind/protos/common/subscription_state/subscription_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3\x01\n" +
-	"\x12TSubscriptionState\x12b\n" +
-	"\fSubscription\x18\x01 \x01(\x0e2,.NAlice.TSubscriptionState.ESubscriptionTypeB\x10\xaa\xdd\x1b\fsubscriptionR\fsubscription\"C\n" +
+	"Halice/megamind/protos/common/subscription_state/subscription_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xab\x01\n" +
+	"\x12TSubscriptionState\x12P\n" +
+	"\fSubscription\x18\x01 \x01(\x0e2,.NAlice.TSubscriptionState.ESubscriptionTypeR\fSubscription\"C\n" +
 	"\x11ESubscriptionType\x12\v\n" +
 	"\aunknown\x10\x00\x12\b\n" +
 	"\x04none\x10\x01\x12\x17\n" +
-	"\x13yandex_subscription\x10\x02:\x04\xa8\xdd\x1b\x04B\xa9\x01\n" +
-	"9ru.yandex.alice.megamind.protos.common.subscription_stateB\x16SubscriptionStateProtoZTa.yandex-team.ru/alice/megamind/protos/common/subscription_state;subscriptionstatepbb\x06proto3"
+	"\x13yandex_subscription\x10\x02B\xbd\x01\n" +
+	"\n" +
+	"com.NAliceB\x16SubscriptionStateProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common/subscription_state\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_subscription_state_subscription_state_proto_rawDescOnce sync.Once

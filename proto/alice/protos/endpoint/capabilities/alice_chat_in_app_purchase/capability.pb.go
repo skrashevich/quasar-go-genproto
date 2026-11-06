@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_in_app_purchase/capability.proto
 
-package alicechatinapppurchasepb
+package alice_chat_in_app_purchase
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -575,8 +575,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_in_app_purchase_capabil
 	"\x17PURCHASE_STATUS_UNKNOWN\x10\x00\x12\x1d\n" +
 	"\x19PURCHASE_STATUS_SUCCEEDED\x10\x01\x12\x1d\n" +
 	"\x19PURCHASE_STATUS_CANCELLED\x10\x02\x12\x1a\n" +
-	"\x16PURCHASE_STATUS_FAILED\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x97\x02B\xb4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAliceChatInAppPurchaseProtoZga.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_in_app_purchase;alicechatinapppurchasepbb\x06proto3"
+	"\x16PURCHASE_STATUS_FAILED\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x97\x02B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAliceChatInAppPurchaseProtoZmgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_in_app_purchaseb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_in_app_purchase_capability_proto_rawDescOnce sync.Once

@@ -75,8 +75,8 @@ const file_alice_protos_data_common_multisearch_multisearch_proto_rawDesc = "" +
 	"\x13EMultiSearchContent\x12\v\n" +
 	"\aDefault\x10\x00\x12\x0e\n" +
 	"\n" +
-	"TvChannels\x10\x01Bg\n" +
-	".ru.yandex.alice.protos.data.common_multisearchZ5a.yandex-team.ru/alice/protos/data/common_multisearchb\x06proto3"
+	"TvChannels\x10\x01B\x86\x01\n" +
+	".ru.yandex.alice.protos.data.common_multisearchZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/common_multisearchb\x06proto3"
 
 var (
 	file_alice_protos_data_common_multisearch_multisearch_proto_rawDescOnce sync.Once

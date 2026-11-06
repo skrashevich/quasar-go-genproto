@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/long_polling/capability.proto
 
-package longpollingpb
+package long_polling
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -341,8 +341,8 @@ const file_alice_protos_endpoint_capabilities_long_polling_capability_proto_rawD
 	"\x05Files\x18\x01 \x03(\v2K.NAlice.TLongPollingCapability.TLongPollingJobDirective.TFilesPolling.TFileB\t\xaa\xdd\x1b\x05filesR\x05files\x1a+\n" +
 	"\x05TFile\x12\x1c\n" +
 	"\x04Guid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:'\x92\x82\x19\x1along_polling_job_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa4\x03B&\n" +
-	"\x0eLongPollingJob\x12\x14\xaa\xdd\x1b\x10long_polling_job:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x95\x01B\x90\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10LongPollingProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/long_polling;longpollingpbb\x06proto3"
+	"\x0eLongPollingJob\x12\x14\xaa\xdd\x1b\x10long_polling_job:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x95\x01B\xa1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10LongPollingProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/long_pollingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_long_polling_capability_proto_rawDescOnce sync.Once

@@ -70,8 +70,8 @@ func (TSpotterValidation_EResult) EnumDescriptor() ([]byte, []int) {
 
 type TSpotterValidation struct {
 	state                          protoimpl.MessageState     `protogen:"open.v1"`
-	Result                         TSpotterValidation_EResult `protobuf:"varint,1,opt,name=Result,json=result,proto3,enum=NAlice.NAliceApi.TSpotterValidation_EResult" json:"Result,omitempty"`
-	CanceledCauseOfMultiactivation *bool                      `protobuf:"varint,3,opt,name=CanceledCauseOfMultiactivation,json=canceled_cause_of_multiactivation,proto3,oneof" json:"CanceledCauseOfMultiactivation,omitempty"`
+	Result                         TSpotterValidation_EResult `protobuf:"varint,1,opt,name=Result,proto3,enum=NAlice.NAliceApi.TSpotterValidation_EResult" json:"Result,omitempty"`
+	CanceledCauseOfMultiactivation *bool                      `protobuf:"varint,3,opt,name=CanceledCauseOfMultiactivation,proto3,oneof" json:"CanceledCauseOfMultiactivation,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -124,16 +124,15 @@ var File_alice_protos_api_alicekit_events_spotter_validation_spotter_validation_
 
 const file_alice_protos_api_alicekit_events_spotter_validation_spotter_validation_proto_rawDesc = "" +
 	"\n" +
-	"Lalice/protos/api/alicekit/events/spotter_validation/spotter_validation.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd5\x02\n" +
-	"\x12TSpotterValidation\x12P\n" +
-	"\x06Result\x18\x01 \x01(\x0e2,.NAlice.NAliceApi.TSpotterValidation.EResultB\n" +
-	"\xaa\xdd\x1b\x06resultR\x06result\x12u\n" +
-	"\x1eCanceledCauseOfMultiactivation\x18\x03 \x01(\bB%\xaa\xdd\x1b!canceled_cause_of_multiactivationH\x00R!canceled_cause_of_multiactivation\x88\x01\x01\"'\n" +
+	"Lalice/protos/api/alicekit/events/spotter_validation/spotter_validation.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\x02\n" +
+	"\x12TSpotterValidation\x12D\n" +
+	"\x06Result\x18\x01 \x01(\x0e2,.NAlice.NAliceApi.TSpotterValidation.EResultR\x06Result\x12K\n" +
+	"\x1eCanceledCauseOfMultiactivation\x18\x03 \x01(\bH\x00R\x1eCanceledCauseOfMultiactivation\x88\x01\x01\"'\n" +
 	"\aEResult\x12\x14\n" +
 	"\x10SpottingRejected\x10\x00\x12\x06\n" +
-	"\x02Ok\x10\x01:\x04\xa8\xdd\x1b\x04B!\n" +
-	"\x1f_CanceledCauseOfMultiactivationJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05R\x05ValidR\x11MultiactivationIdB\x9a\x01\n" +
-	"=ru.yandex.alice.protos.api.alicekit.events.spotter_validationB\x11SpotterValidationP\x01ZDa.yandex-team.ru/alice/protos/api/alicekit/events/spotter_validationb\x06proto3"
+	"\x02Ok\x10\x01B!\n" +
+	"\x1f_CanceledCauseOfMultiactivationJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05R\x05ValidR\x11MultiactivationIdB\xf4\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x16SpotterValidationProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/spotter_validation\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_spotter_validation_spotter_validation_proto_rawDescOnce sync.Once

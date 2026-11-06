@@ -68,8 +68,8 @@ func (TBaseAnnotation_EBoundType) EnumDescriptor() ([]byte, []int) {
 
 type TBaseAnnotation struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Cards         []*cards.TCard             `protobuf:"bytes,1,rep,name=Cards,json=cards,proto3" json:"Cards,omitempty"`
-	BoundType     TBaseAnnotation_EBoundType `protobuf:"varint,2,opt,name=BoundType,json=bound_type,proto3,enum=NAlice.NAliceApi.TBaseAnnotation_EBoundType" json:"BoundType,omitempty"`
+	Cards         []*cards.TCard             `protobuf:"bytes,1,rep,name=Cards,proto3" json:"Cards,omitempty"`
+	BoundType     TBaseAnnotation_EBoundType `protobuf:"varint,2,opt,name=BoundType,proto3,enum=NAlice.NAliceApi.TBaseAnnotation_EBoundType" json:"BoundType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,10 +119,9 @@ func (x *TBaseAnnotation) GetBoundType() TBaseAnnotation_EBoundType {
 }
 
 type TRequestAnnotation struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/annotations/annotations.proto.
-	Base            *TBaseAnnotation                     `protobuf:"bytes,1,opt,name=Base,json=base,proto3" json:"Base,omitempty"`
-	AnnotationsList *TRequestAnnotation_TAnnotationsList `protobuf:"bytes,2,opt,name=AnnotationsList,json=annotations_list,proto3" json:"AnnotationsList,omitempty"`
+	state           protoimpl.MessageState               `protogen:"open.v1"`
+	Base            *TBaseAnnotation                     `protobuf:"bytes,1,opt,name=Base,proto3" json:"Base,omitempty"`
+	AnnotationsList *TRequestAnnotation_TAnnotationsList `protobuf:"bytes,2,opt,name=AnnotationsList,proto3" json:"AnnotationsList,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -157,7 +156,6 @@ func (*TRequestAnnotation) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_alicekit_annotations_annotations_proto_rawDescGZIP(), []int{1}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/annotations/annotations.proto.
 func (x *TRequestAnnotation) GetBase() *TBaseAnnotation {
 	if x != nil {
 		return x.Base
@@ -174,7 +172,7 @@ func (x *TRequestAnnotation) GetAnnotationsList() *TRequestAnnotation_TAnnotatio
 
 type TRequestAnnotation_TAnnotationsList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Annotations   []*TBaseAnnotation     `protobuf:"bytes,1,rep,name=Annotations,json=annotations,proto3" json:"Annotations,omitempty"`
+	Annotations   []*TBaseAnnotation     `protobuf:"bytes,1,rep,name=Annotations,proto3" json:"Annotations,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -220,22 +218,19 @@ var File_alice_protos_api_alicekit_annotations_annotations_proto protoreflect.Fi
 
 const file_alice_protos_api_alicekit_annotations_annotations_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/api/alicekit/annotations/annotations.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/api/alicekit/cards/card.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc5\x01\n" +
-	"\x0fTBaseAnnotation\x128\n" +
-	"\x05Cards\x18\x01 \x03(\v2\x17.NAlice.NAliceApi.TCardB\t\xaa\xdd\x1b\x05cardsR\x05cards\x12[\n" +
-	"\tBoundType\x18\x02 \x01(\x0e2,.NAlice.NAliceApi.TBaseAnnotation.EBoundTypeB\x0e\xaa\xdd\x1b\n" +
-	"bound_typeR\n" +
-	"bound_type\"\x1b\n" +
+	"7alice/protos/api/alicekit/annotations/annotations.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/api/alicekit/cards/card.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\x01\n" +
+	"\x0fTBaseAnnotation\x12-\n" +
+	"\x05Cards\x18\x01 \x03(\v2\x17.NAlice.NAliceApi.TCardR\x05Cards\x12J\n" +
+	"\tBoundType\x18\x02 \x01(\x0e2,.NAlice.NAliceApi.TBaseAnnotation.EBoundTypeR\tBoundType\"\x1b\n" +
 	"\n" +
 	"EBoundType\x12\r\n" +
-	"\tUndefined\x10\x00\"\xbf\x02\n" +
-	"\x12TRequestAnnotation\x12A\n" +
-	"\x04Base\x18\x01 \x01(\v2!.NAlice.NAliceApi.TBaseAnnotationB\n" +
-	"\xaa\xdd\x1b\x04base\x18\x01R\x04base\x12v\n" +
-	"\x0fAnnotationsList\x18\x02 \x01(\v25.NAlice.NAliceApi.TRequestAnnotation.TAnnotationsListB\x14\xaa\xdd\x1b\x10annotations_listR\x10annotations_list\x1an\n" +
-	"\x10TAnnotationsList\x12T\n" +
-	"\vAnnotations\x18\x01 \x03(\v2!.NAlice.NAliceApi.TBaseAnnotationB\x0f\xaa\xdd\x1b\vannotationsR\vannotations:\x04\xa8\xdd\x1b\x05B\x83\x01\n" +
-	"/ru.yandex.alice.protos.api.alicekit.annotationsB\x16RequestAnnotationProtoP\x01Z6a.yandex-team.ru/alice/protos/api/alicekit/annotationsb\x06proto3"
+	"\tUndefined\x10\x00\"\x85\x02\n" +
+	"\x12TRequestAnnotation\x125\n" +
+	"\x04Base\x18\x01 \x01(\v2!.NAlice.NAliceApi.TBaseAnnotationR\x04Base\x12_\n" +
+	"\x0fAnnotationsList\x18\x02 \x01(\v25.NAlice.NAliceApi.TRequestAnnotation.TAnnotationsListR\x0fAnnotationsList\x1aW\n" +
+	"\x10TAnnotationsList\x12C\n" +
+	"\vAnnotations\x18\x01 \x03(\v2!.NAlice.NAliceApi.TBaseAnnotationR\vAnnotationsB\xe0\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10AnnotationsProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/annotations\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_annotations_annotations_proto_rawDescOnce sync.Once

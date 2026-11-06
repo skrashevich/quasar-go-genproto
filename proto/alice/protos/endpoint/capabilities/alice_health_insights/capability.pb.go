@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_health_insights/capability.proto
 
-package alicehealthinsightspb
+package alice_health_insights
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -268,8 +268,8 @@ const file_alice_protos_endpoint_capabilities_alice_health_insights_capability_p
 	"\n" +
 	"\x06Medium\x10\x02\x12\b\n" +
 	"\x04Good\x10\x03\x12\r\n" +
-	"\tExcellent\x10\x04:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9d\x02B\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceHealthInsightsCapabilityP\x01Z_a.yandex-team.ru/alice/protos/endpoint/capabilities/alice_health_insights;alicehealthinsightspbb\x06proto3"
+	"\tExcellent\x10\x04:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9d\x02B\xb9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceHealthInsightsCapabilityP\x01Zhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_health_insightsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_health_insights_capability_proto_rawDescOnce sync.Once

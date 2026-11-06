@@ -29,7 +29,7 @@ const (
 
 type TUserData struct {
 	state    protoimpl.MessageState      `protogen:"open.v1"`
-	UserInfo *blackbox.TBlackBoxUserInfo `protobuf:"bytes,1,opt,name=UserInfo,json=user_info,proto3" json:"UserInfo,omitempty"`
+	UserInfo *blackbox.TBlackBoxUserInfo `protobuf:"bytes,1,opt,name=UserInfo,proto3" json:"UserInfo,omitempty"`
 	// Types that are valid to be assigned to OptionalRawPersonalData:
 	//
 	//	*TUserData_RawPersonalData
@@ -38,10 +38,10 @@ type TUserData struct {
 	//
 	//	*TUserData_MementoData
 	OptionalMementoData  isTUserData_OptionalMementoData   `protobuf_oneof:"OptionalMementoData"`
+	BlackboxStatus       *blackbox.ECredentialStatus       `protobuf:"varint,4,opt,name=BlackboxStatus,proto3,enum=NAlice.ECredentialStatus,oneof" json:"BlackboxStatus,omitempty"`
+	BlackboxStatusReason *string                           `protobuf:"bytes,5,opt,name=BlackboxStatusReason,proto3,oneof" json:"BlackboxStatusReason,omitempty"`
+	DatumPersonalData    *datum.TDatumPersonalData         `protobuf:"bytes,6,opt,name=DatumPersonalData,proto3,oneof" json:"DatumPersonalData,omitempty"`
 	FullUserInfo         *proto.TBlackBoxFullUserInfoProto `protobuf:"bytes,7,opt,name=FullUserInfo,json=full_user_info,proto3,oneof" json:"FullUserInfo,omitempty"`
-	BlackboxStatus       *proto.ECredentialStatus          `protobuf:"varint,4,opt,name=BlackboxStatus,json=blackbox_status,proto3,enum=NAlice.ECredentialStatus,oneof" json:"BlackboxStatus,omitempty"`
-	BlackboxStatusReason *string                           `protobuf:"bytes,5,opt,name=BlackboxStatusReason,json=blackbox_status_reason,proto3,oneof" json:"BlackboxStatusReason,omitempty"`
-	DatumPersonalData    *datum.TDatumPersonalData         `protobuf:"bytes,6,opt,name=DatumPersonalData,json=datum_personal_data,proto3,oneof" json:"DatumPersonalData,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -115,18 +115,11 @@ func (x *TUserData) GetMementoData() string {
 	return ""
 }
 
-func (x *TUserData) GetFullUserInfo() *proto.TBlackBoxFullUserInfoProto {
-	if x != nil {
-		return x.FullUserInfo
-	}
-	return nil
-}
-
-func (x *TUserData) GetBlackboxStatus() proto.ECredentialStatus {
+func (x *TUserData) GetBlackboxStatus() blackbox.ECredentialStatus {
 	if x != nil && x.BlackboxStatus != nil {
 		return *x.BlackboxStatus
 	}
-	return proto.ECredentialStatus(0)
+	return blackbox.ECredentialStatus(0)
 }
 
 func (x *TUserData) GetBlackboxStatusReason() string {
@@ -143,12 +136,19 @@ func (x *TUserData) GetDatumPersonalData() *datum.TDatumPersonalData {
 	return nil
 }
 
+func (x *TUserData) GetFullUserInfo() *proto.TBlackBoxFullUserInfoProto {
+	if x != nil {
+		return x.FullUserInfo
+	}
+	return nil
+}
+
 type isTUserData_OptionalRawPersonalData interface {
 	isTUserData_OptionalRawPersonalData()
 }
 
 type TUserData_RawPersonalData struct {
-	RawPersonalData string `protobuf:"bytes,2,opt,name=RawPersonalData,json=raw_personal_data,proto3,oneof"`
+	RawPersonalData string `protobuf:"bytes,2,opt,name=RawPersonalData,proto3,oneof"`
 }
 
 func (*TUserData_RawPersonalData) isTUserData_OptionalRawPersonalData() {}
@@ -158,7 +158,7 @@ type isTUserData_OptionalMementoData interface {
 }
 
 type TUserData_MementoData struct {
-	MementoData string `protobuf:"bytes,3,opt,name=MementoData,json=memento,proto3,oneof"`
+	MementoData string `protobuf:"bytes,3,opt,name=MementoData,proto3,oneof"`
 }
 
 func (*TUserData_MementoData) isTUserData_OptionalMementoData() {}
@@ -167,22 +167,23 @@ var File_alice_megamind_protos_user_data_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_user_data_proto_rawDesc = "" +
 	"\n" +
-	"%alice/megamind/protos/user/data.proto\x12\x06NAlice\x1a+alice/library/blackbox/proto/blackbox.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a-alice/megamind/protos/blackbox/blackbox.proto\x1a*alice/protos/api/datum/personal_data.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x06\n" +
-	"\tTUserData\x12E\n" +
-	"\bUserInfo\x18\x01 \x01(\v2\x19.NAlice.TBlackBoxUserInfoB\r\xaa\xdd\x1b\tuser_infoR\tuser_info\x12G\n" +
-	"\x0fRawPersonalData\x18\x02 \x01(\tB\x19\xaa\xdd\x1b\x11raw_personal_data\xf8\x91*\x02H\x00R\x11raw_personal_data\x123\n" +
-	"\vMementoData\x18\x03 \x01(\tB\x13\xaa\xdd\x1b\amemento\xa8\x8d'\x01\xf8\x91*\x03H\x01R\amemento\x12a\n" +
-	"\fFullUserInfo\x18\a \x01(\v2\".NAlice.TBlackBoxFullUserInfoProtoB\x12\xaa\xdd\x1b\x0efull_user_infoH\x02R\x0efull_user_info\x88\x01\x01\x12\\\n" +
-	"\x0eBlackboxStatus\x18\x04 \x01(\x0e2\x19.NAlice.ECredentialStatusB\x13\xaa\xdd\x1b\x0fblackbox_statusH\x03R\x0fblackbox_status\x88\x01\x01\x12U\n" +
-	"\x14BlackboxStatusReason\x18\x05 \x01(\tB\x1a\xaa\xdd\x1b\x16blackbox_status_reasonH\x04R\x16blackbox_status_reason\x88\x01\x01\x12r\n" +
-	"\x11DatumPersonalData\x18\x06 \x01(\v2$.NAlice.NDatumApi.TDatumPersonalDataB\x17\xaa\xdd\x1b\x13datum_personal_dataH\x05R\x13datum_personal_data\x88\x01\x01:\x04\xa8\xdd\x1b\x04B9\n" +
-	"\x17OptionalRawPersonalData\x12\x1e\xaa\xdd\x1b\x1aoptional_raw_personal_dataB0\n" +
-	"\x13OptionalMementoData\x12\x19\xaa\xdd\x1b\x15optional_memento_dataB\x0f\n" +
-	"\r_FullUserInfoB\x11\n" +
+	"%alice/megamind/protos/user/data.proto\x12\x06NAlice\x1a-alice/megamind/protos/blackbox/blackbox.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a*alice/protos/api/datum/personal_data.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a+alice/library/blackbox/proto/blackbox.proto\"\xd4\x04\n" +
+	"\tTUserData\x125\n" +
+	"\bUserInfo\x18\x01 \x01(\v2\x19.NAlice.TBlackBoxUserInfoR\bUserInfo\x12*\n" +
+	"\x0fRawPersonalData\x18\x02 \x01(\tH\x00R\x0fRawPersonalData\x12\"\n" +
+	"\vMementoData\x18\x03 \x01(\tH\x01R\vMementoData\x12F\n" +
+	"\x0eBlackboxStatus\x18\x04 \x01(\x0e2\x19.NAlice.ECredentialStatusH\x02R\x0eBlackboxStatus\x88\x01\x01\x127\n" +
+	"\x14BlackboxStatusReason\x18\x05 \x01(\tH\x03R\x14BlackboxStatusReason\x88\x01\x01\x12W\n" +
+	"\x11DatumPersonalData\x18\x06 \x01(\v2$.NAlice.NDatumApi.TDatumPersonalDataH\x04R\x11DatumPersonalData\x88\x01\x01\x12a\n" +
+	"\fFullUserInfo\x18\a \x01(\v2\".NAlice.TBlackBoxFullUserInfoProtoB\x12\xaa\xdd\x1b\x0efull_user_infoH\x05R\x0efull_user_info\x88\x01\x01B\x19\n" +
+	"\x17OptionalRawPersonalDataB\x15\n" +
+	"\x13OptionalMementoDataB\x11\n" +
 	"\x0f_BlackboxStatusB\x17\n" +
 	"\x15_BlackboxStatusReasonB\x14\n" +
-	"\x12_DatumPersonalDataB]\n" +
-	"$ru.yandex.alice.megamind.protos.userB\bUserDataZ+a.yandex-team.ru/alice/megamind/protos/userb\x06proto3"
+	"\x12_DatumPersonalDataB\x0f\n" +
+	"\r_FullUserInfoB\x9b\x01\n" +
+	"\n" +
+	"com.NAliceB\tDataProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/user\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_user_data_proto_rawDescOnce sync.Once
@@ -200,15 +201,15 @@ var file_alice_megamind_protos_user_data_proto_msgTypes = make([]protoimpl.Messa
 var file_alice_megamind_protos_user_data_proto_goTypes = []any{
 	(*TUserData)(nil),                        // 0: NAlice.TUserData
 	(*blackbox.TBlackBoxUserInfo)(nil),       // 1: NAlice.TBlackBoxUserInfo
-	(*proto.TBlackBoxFullUserInfoProto)(nil), // 2: NAlice.TBlackBoxFullUserInfoProto
-	(proto.ECredentialStatus)(0),             // 3: NAlice.ECredentialStatus
-	(*datum.TDatumPersonalData)(nil),         // 4: NAlice.NDatumApi.TDatumPersonalData
+	(blackbox.ECredentialStatus)(0),          // 2: NAlice.ECredentialStatus
+	(*datum.TDatumPersonalData)(nil),         // 3: NAlice.NDatumApi.TDatumPersonalData
+	(*proto.TBlackBoxFullUserInfoProto)(nil), // 4: NAlice.TBlackBoxFullUserInfoProto
 }
 var file_alice_megamind_protos_user_data_proto_depIdxs = []int32{
 	1, // 0: NAlice.TUserData.UserInfo:type_name -> NAlice.TBlackBoxUserInfo
-	2, // 1: NAlice.TUserData.FullUserInfo:type_name -> NAlice.TBlackBoxFullUserInfoProto
-	3, // 2: NAlice.TUserData.BlackboxStatus:type_name -> NAlice.ECredentialStatus
-	4, // 3: NAlice.TUserData.DatumPersonalData:type_name -> NAlice.NDatumApi.TDatumPersonalData
+	2, // 1: NAlice.TUserData.BlackboxStatus:type_name -> NAlice.ECredentialStatus
+	3, // 2: NAlice.TUserData.DatumPersonalData:type_name -> NAlice.NDatumApi.TDatumPersonalData
+	4, // 3: NAlice.TUserData.FullUserInfo:type_name -> NAlice.TBlackBoxFullUserInfoProto
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

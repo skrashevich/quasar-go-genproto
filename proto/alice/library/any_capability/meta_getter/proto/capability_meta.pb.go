@@ -72,7 +72,7 @@ const file_alice_library_any_capability_meta_getter_proto_capability_meta_proto_
 	"\n" +
 	"Dalice/library/any_capability/meta_getter/proto/capability_meta.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\"D\n" +
 	"\x13TCapabilityWithMeta\x12-\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Metab\x06proto3"
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04MetaB`Z^github.com/skrashevich/quasar-go-genproto/proto/alice/library/any_capability/meta_getter/protob\x06proto3"
 
 var (
 	file_alice_library_any_capability_meta_getter_proto_capability_meta_proto_rawDescOnce sync.Once

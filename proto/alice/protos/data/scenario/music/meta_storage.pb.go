@@ -24,15 +24,15 @@ const (
 )
 
 type TMetaStorage struct {
-	state                       protoimpl.MessageState                   `protogen:"open.v1"`
-	ProviderAlbumMeta           map[string]*TProviderAlbumMeta           `protobuf:"bytes,1,rep,name=ProviderAlbumMeta,json=provider_album_meta,proto3" json:"ProviderAlbumMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderArtistMeta          map[string]*TProviderArtistMeta          `protobuf:"bytes,2,rep,name=ProviderArtistMeta,json=provider_artist_meta,proto3" json:"ProviderArtistMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderPlaylistMeta        map[string]*TProviderPlaylistMeta        `protobuf:"bytes,3,rep,name=ProviderPlaylistMeta,json=provider_playlist_meta,proto3" json:"ProviderPlaylistMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderTrackMeta           map[string]*TProviderTrackMeta           `protobuf:"bytes,4,rep,name=ProviderTrackMeta,json=provider_track_meta,proto3" json:"ProviderTrackMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderRecommendationsMeta map[string]*TProviderRecommendationsMeta `protobuf:"bytes,5,rep,name=ProviderRecommendationsMeta,json=provider_recommendation_meta,proto3" json:"ProviderRecommendationsMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderGenerativeMeta      map[string]*TProviderGenerativeMeta      `protobuf:"bytes,6,rep,name=ProviderGenerativeMeta,json=provider_generative_meta,proto3" json:"ProviderGenerativeMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderFmRadioMeta         map[string]*TProviderFmRadioMeta         `protobuf:"bytes,7,rep,name=ProviderFmRadioMeta,json=provider_fm_radio_meta,proto3" json:"ProviderFmRadioMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ProviderInfo                map[string]*TProviderInfo                `protobuf:"bytes,8,rep,name=ProviderInfo,json=provider_info,proto3" json:"ProviderInfo,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state                       protoimpl.MessageState                           `protogen:"open.v1"`
+	ProviderAlbumMeta           []*TMetaStorage_ProviderAlbumMetaEntry           `protobuf:"bytes,1,rep,name=ProviderAlbumMeta,proto3" json:"ProviderAlbumMeta,omitempty"`
+	ProviderArtistMeta          []*TMetaStorage_ProviderArtistMetaEntry          `protobuf:"bytes,2,rep,name=ProviderArtistMeta,proto3" json:"ProviderArtistMeta,omitempty"`
+	ProviderPlaylistMeta        []*TMetaStorage_ProviderPlaylistMetaEntry        `protobuf:"bytes,3,rep,name=ProviderPlaylistMeta,proto3" json:"ProviderPlaylistMeta,omitempty"`
+	ProviderTrackMeta           []*TMetaStorage_ProviderTrackMetaEntry           `protobuf:"bytes,4,rep,name=ProviderTrackMeta,proto3" json:"ProviderTrackMeta,omitempty"`
+	ProviderRecommendationsMeta []*TMetaStorage_ProviderRecommendationsMetaEntry `protobuf:"bytes,5,rep,name=ProviderRecommendationsMeta,proto3" json:"ProviderRecommendationsMeta,omitempty"`
+	ProviderGenerativeMeta      []*TMetaStorage_ProviderGenerativeMetaEntry      `protobuf:"bytes,6,rep,name=ProviderGenerativeMeta,proto3" json:"ProviderGenerativeMeta,omitempty"`
+	ProviderFmRadioMeta         []*TMetaStorage_ProviderFmRadioMetaEntry         `protobuf:"bytes,7,rep,name=ProviderFmRadioMeta,proto3" json:"ProviderFmRadioMeta,omitempty"`
+	ProviderInfo                []*TMetaStorage_ProviderInfoEntry                `protobuf:"bytes,8,rep,name=ProviderInfo,proto3" json:"ProviderInfo,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -67,56 +67,56 @@ func (*TMetaStorage) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TMetaStorage) GetProviderAlbumMeta() map[string]*TProviderAlbumMeta {
+func (x *TMetaStorage) GetProviderAlbumMeta() []*TMetaStorage_ProviderAlbumMetaEntry {
 	if x != nil {
 		return x.ProviderAlbumMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderArtistMeta() map[string]*TProviderArtistMeta {
+func (x *TMetaStorage) GetProviderArtistMeta() []*TMetaStorage_ProviderArtistMetaEntry {
 	if x != nil {
 		return x.ProviderArtistMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderPlaylistMeta() map[string]*TProviderPlaylistMeta {
+func (x *TMetaStorage) GetProviderPlaylistMeta() []*TMetaStorage_ProviderPlaylistMetaEntry {
 	if x != nil {
 		return x.ProviderPlaylistMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderTrackMeta() map[string]*TProviderTrackMeta {
+func (x *TMetaStorage) GetProviderTrackMeta() []*TMetaStorage_ProviderTrackMetaEntry {
 	if x != nil {
 		return x.ProviderTrackMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderRecommendationsMeta() map[string]*TProviderRecommendationsMeta {
+func (x *TMetaStorage) GetProviderRecommendationsMeta() []*TMetaStorage_ProviderRecommendationsMetaEntry {
 	if x != nil {
 		return x.ProviderRecommendationsMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderGenerativeMeta() map[string]*TProviderGenerativeMeta {
+func (x *TMetaStorage) GetProviderGenerativeMeta() []*TMetaStorage_ProviderGenerativeMetaEntry {
 	if x != nil {
 		return x.ProviderGenerativeMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderFmRadioMeta() map[string]*TProviderFmRadioMeta {
+func (x *TMetaStorage) GetProviderFmRadioMeta() []*TMetaStorage_ProviderFmRadioMetaEntry {
 	if x != nil {
 		return x.ProviderFmRadioMeta
 	}
 	return nil
 }
 
-func (x *TMetaStorage) GetProviderInfo() map[string]*TProviderInfo {
+func (x *TMetaStorage) GetProviderInfo() []*TMetaStorage_ProviderInfoEntry {
 	if x != nil {
 		return x.ProviderInfo
 	}
@@ -125,9 +125,9 @@ func (x *TMetaStorage) GetProviderInfo() map[string]*TProviderInfo {
 
 type TProviderInfo struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
-	TvImageUrl            string                 `protobuf:"bytes,1,opt,name=TvImageUrl,json=tv_image_url,proto3" json:"TvImageUrl,omitempty"`
-	ScreenDevicesImageUrl string                 `protobuf:"bytes,2,opt,name=ScreenDevicesImageUrl,json=screen_devices_image_url,proto3" json:"ScreenDevicesImageUrl,omitempty"`
-	ProviderHumanReadable string                 `protobuf:"bytes,3,opt,name=ProviderHumanReadable,json=provider_human_readable,proto3" json:"ProviderHumanReadable,omitempty"`
+	TvImageUrl            string                 `protobuf:"bytes,1,opt,name=TvImageUrl,proto3" json:"TvImageUrl,omitempty"`
+	ScreenDevicesImageUrl string                 `protobuf:"bytes,2,opt,name=ScreenDevicesImageUrl,proto3" json:"ScreenDevicesImageUrl,omitempty"`
+	ProviderHumanReadable string                 `protobuf:"bytes,3,opt,name=ProviderHumanReadable,proto3" json:"ProviderHumanReadable,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -185,7 +185,7 @@ func (x *TProviderInfo) GetProviderHumanReadable() string {
 
 type TProviderTrackMeta struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	TrackMeta     map[string]*music_provider.TrackMeta `protobuf:"bytes,1,rep,name=TrackMeta,json=track_meta,proto3" json:"TrackMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	TrackMeta     []*TProviderTrackMeta_TrackMetaEntry `protobuf:"bytes,1,rep,name=TrackMeta,proto3" json:"TrackMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -220,7 +220,7 @@ func (*TProviderTrackMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *TProviderTrackMeta) GetTrackMeta() map[string]*music_provider.TrackMeta {
+func (x *TProviderTrackMeta) GetTrackMeta() []*TProviderTrackMeta_TrackMetaEntry {
 	if x != nil {
 		return x.TrackMeta
 	}
@@ -229,7 +229,7 @@ func (x *TProviderTrackMeta) GetTrackMeta() map[string]*music_provider.TrackMeta
 
 type TProviderAlbumMeta struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	AlbumMeta     map[string]*music_provider.AlbumMeta `protobuf:"bytes,1,rep,name=AlbumMeta,json=album_meta,proto3" json:"AlbumMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	AlbumMeta     []*TProviderAlbumMeta_AlbumMetaEntry `protobuf:"bytes,1,rep,name=AlbumMeta,proto3" json:"AlbumMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -264,7 +264,7 @@ func (*TProviderAlbumMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *TProviderAlbumMeta) GetAlbumMeta() map[string]*music_provider.AlbumMeta {
+func (x *TProviderAlbumMeta) GetAlbumMeta() []*TProviderAlbumMeta_AlbumMetaEntry {
 	if x != nil {
 		return x.AlbumMeta
 	}
@@ -272,8 +272,8 @@ func (x *TProviderAlbumMeta) GetAlbumMeta() map[string]*music_provider.AlbumMeta
 }
 
 type TProviderArtistMeta struct {
-	state         protoimpl.MessageState                `protogen:"open.v1"`
-	ArtistMeta    map[string]*music_provider.ArtistMeta `protobuf:"bytes,1,rep,name=ArtistMeta,json=artist_meta,proto3" json:"ArtistMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	ArtistMeta    []*TProviderArtistMeta_ArtistMetaEntry `protobuf:"bytes,1,rep,name=ArtistMeta,proto3" json:"ArtistMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -308,7 +308,7 @@ func (*TProviderArtistMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *TProviderArtistMeta) GetArtistMeta() map[string]*music_provider.ArtistMeta {
+func (x *TProviderArtistMeta) GetArtistMeta() []*TProviderArtistMeta_ArtistMetaEntry {
 	if x != nil {
 		return x.ArtistMeta
 	}
@@ -316,8 +316,8 @@ func (x *TProviderArtistMeta) GetArtistMeta() map[string]*music_provider.ArtistM
 }
 
 type TProviderPlaylistMeta struct {
-	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	PlaylistMeta  map[string]*music_provider.PlaylistMeta `protobuf:"bytes,1,rep,name=PlaylistMeta,json=playlist_meta,proto3" json:"PlaylistMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                     `protogen:"open.v1"`
+	PlaylistMeta  []*TProviderPlaylistMeta_PlaylistMetaEntry `protobuf:"bytes,1,rep,name=PlaylistMeta,proto3" json:"PlaylistMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -352,7 +352,7 @@ func (*TProviderPlaylistMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *TProviderPlaylistMeta) GetPlaylistMeta() map[string]*music_provider.PlaylistMeta {
+func (x *TProviderPlaylistMeta) GetPlaylistMeta() []*TProviderPlaylistMeta_PlaylistMetaEntry {
 	if x != nil {
 		return x.PlaylistMeta
 	}
@@ -360,8 +360,8 @@ func (x *TProviderPlaylistMeta) GetPlaylistMeta() map[string]*music_provider.Pla
 }
 
 type TProviderRecommendationsMeta struct {
-	state               protoimpl.MessageState                         `protogen:"open.v1"`
-	RecommendationsMeta map[string]*music_provider.RecommendationsMeta `protobuf:"bytes,1,rep,name=RecommendationsMeta,json=recommendations_meta,proto3" json:"RecommendationsMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state               protoimpl.MessageState                                   `protogen:"open.v1"`
+	RecommendationsMeta []*TProviderRecommendationsMeta_RecommendationsMetaEntry `protobuf:"bytes,1,rep,name=RecommendationsMeta,proto3" json:"RecommendationsMeta,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -396,7 +396,7 @@ func (*TProviderRecommendationsMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *TProviderRecommendationsMeta) GetRecommendationsMeta() map[string]*music_provider.RecommendationsMeta {
+func (x *TProviderRecommendationsMeta) GetRecommendationsMeta() []*TProviderRecommendationsMeta_RecommendationsMetaEntry {
 	if x != nil {
 		return x.RecommendationsMeta
 	}
@@ -404,8 +404,8 @@ func (x *TProviderRecommendationsMeta) GetRecommendationsMeta() map[string]*musi
 }
 
 type TProviderGenerativeMeta struct {
-	state          protoimpl.MessageState                    `protogen:"open.v1"`
-	GenerativeMeta map[string]*music_provider.GenerativeMeta `protobuf:"bytes,1,rep,name=GenerativeMeta,json=generative_meta,proto3" json:"GenerativeMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state          protoimpl.MessageState                         `protogen:"open.v1"`
+	GenerativeMeta []*TProviderGenerativeMeta_GenerativeMetaEntry `protobuf:"bytes,1,rep,name=GenerativeMeta,proto3" json:"GenerativeMeta,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -440,7 +440,7 @@ func (*TProviderGenerativeMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *TProviderGenerativeMeta) GetGenerativeMeta() map[string]*music_provider.GenerativeMeta {
+func (x *TProviderGenerativeMeta) GetGenerativeMeta() []*TProviderGenerativeMeta_GenerativeMetaEntry {
 	if x != nil {
 		return x.GenerativeMeta
 	}
@@ -448,8 +448,8 @@ func (x *TProviderGenerativeMeta) GetGenerativeMeta() map[string]*music_provider
 }
 
 type TProviderFmRadioMeta struct {
-	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	FmRadioMeta   map[string]*music_provider.FmRadioMeta `protobuf:"bytes,1,rep,name=FmRadioMeta,json=fm_radio_meta,proto3" json:"FmRadioMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                   `protogen:"open.v1"`
+	FmRadioMeta   []*TProviderFmRadioMeta_FmRadioMetaEntry `protobuf:"bytes,1,rep,name=FmRadioMeta,proto3" json:"FmRadioMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -484,7 +484,7 @@ func (*TProviderFmRadioMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *TProviderFmRadioMeta) GetFmRadioMeta() map[string]*music_provider.FmRadioMeta {
+func (x *TProviderFmRadioMeta) GetFmRadioMeta() []*TProviderFmRadioMeta_FmRadioMetaEntry {
 	if x != nil {
 		return x.FmRadioMeta
 	}
@@ -492,8 +492,8 @@ func (x *TProviderFmRadioMeta) GetFmRadioMeta() map[string]*music_provider.FmRad
 }
 
 type TMusicPlatformMetaStorage struct {
-	state         protoimpl.MessageState    `protogen:"open.v1"`
-	ProviderMeta  map[string]*TProviderMeta `protobuf:"bytes,1,rep,name=ProviderMeta,json=provider_meta,proto3" json:"ProviderMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                         `protogen:"open.v1"`
+	ProviderMeta  []*TMusicPlatformMetaStorage_ProviderMetaEntry `protobuf:"bytes,1,rep,name=ProviderMeta,proto3" json:"ProviderMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -528,7 +528,7 @@ func (*TMusicPlatformMetaStorage) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *TMusicPlatformMetaStorage) GetProviderMeta() map[string]*TProviderMeta {
+func (x *TMusicPlatformMetaStorage) GetProviderMeta() []*TMusicPlatformMetaStorage_ProviderMetaEntry {
 	if x != nil {
 		return x.ProviderMeta
 	}
@@ -536,14 +536,14 @@ func (x *TMusicPlatformMetaStorage) GetProviderMeta() map[string]*TProviderMeta 
 }
 
 type TProviderMeta struct {
-	state                      protoimpl.MessageState                 `protogen:"open.v1"`
-	TrackMetaRecords           map[string]*TTrackMetaRecord           `protobuf:"bytes,1,rep,name=TrackMetaRecords,json=track_meta_records,proto3" json:"TrackMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	AlbumMetaRecords           map[string]*TAlbumMetaRecord           `protobuf:"bytes,2,rep,name=AlbumMetaRecords,json=album_meta_records,proto3" json:"AlbumMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ArtistMetaRecords          map[string]*TArtistMetaRecord          `protobuf:"bytes,3,rep,name=ArtistMetaRecords,json=artist_meta_records,proto3" json:"ArtistMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	PlaylistMetaRecords        map[string]*TPlaylistMetaRecord        `protobuf:"bytes,4,rep,name=PlaylistMetaRecords,json=playlist_meta_records,proto3" json:"PlaylistMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	RecommendationsMetaRecords map[string]*TRecommendationsMetaRecord `protobuf:"bytes,5,rep,name=RecommendationsMetaRecords,json=recommendations_meta_records,proto3" json:"RecommendationsMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	GenerativeMetaRecords      map[string]*TGenerativeMetaRecord      `protobuf:"bytes,6,rep,name=GenerativeMetaRecords,json=generative_meta_records,proto3" json:"GenerativeMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	FmRadioMetaRecords         map[string]*TFmRadioMetaRecord         `protobuf:"bytes,7,rep,name=FmRadioMetaRecords,json=fm_radio_meta_records,proto3" json:"FmRadioMetaRecords,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state                      protoimpl.MessageState                           `protogen:"open.v1"`
+	TrackMetaRecords           []*TProviderMeta_TrackMetaRecordsEntry           `protobuf:"bytes,1,rep,name=TrackMetaRecords,proto3" json:"TrackMetaRecords,omitempty"`
+	AlbumMetaRecords           []*TProviderMeta_AlbumMetaRecordsEntry           `protobuf:"bytes,2,rep,name=AlbumMetaRecords,proto3" json:"AlbumMetaRecords,omitempty"`
+	ArtistMetaRecords          []*TProviderMeta_ArtistMetaRecordsEntry          `protobuf:"bytes,3,rep,name=ArtistMetaRecords,proto3" json:"ArtistMetaRecords,omitempty"`
+	PlaylistMetaRecords        []*TProviderMeta_PlaylistMetaRecordsEntry        `protobuf:"bytes,4,rep,name=PlaylistMetaRecords,proto3" json:"PlaylistMetaRecords,omitempty"`
+	RecommendationsMetaRecords []*TProviderMeta_RecommendationsMetaRecordsEntry `protobuf:"bytes,5,rep,name=RecommendationsMetaRecords,proto3" json:"RecommendationsMetaRecords,omitempty"`
+	GenerativeMetaRecords      []*TProviderMeta_GenerativeMetaRecordsEntry      `protobuf:"bytes,6,rep,name=GenerativeMetaRecords,proto3" json:"GenerativeMetaRecords,omitempty"`
+	FmRadioMetaRecords         []*TProviderMeta_FmRadioMetaRecordsEntry         `protobuf:"bytes,7,rep,name=FmRadioMetaRecords,proto3" json:"FmRadioMetaRecords,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -578,49 +578,49 @@ func (*TProviderMeta) Descriptor() ([]byte, []int) {
 	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *TProviderMeta) GetTrackMetaRecords() map[string]*TTrackMetaRecord {
+func (x *TProviderMeta) GetTrackMetaRecords() []*TProviderMeta_TrackMetaRecordsEntry {
 	if x != nil {
 		return x.TrackMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetAlbumMetaRecords() map[string]*TAlbumMetaRecord {
+func (x *TProviderMeta) GetAlbumMetaRecords() []*TProviderMeta_AlbumMetaRecordsEntry {
 	if x != nil {
 		return x.AlbumMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetArtistMetaRecords() map[string]*TArtistMetaRecord {
+func (x *TProviderMeta) GetArtistMetaRecords() []*TProviderMeta_ArtistMetaRecordsEntry {
 	if x != nil {
 		return x.ArtistMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetPlaylistMetaRecords() map[string]*TPlaylistMetaRecord {
+func (x *TProviderMeta) GetPlaylistMetaRecords() []*TProviderMeta_PlaylistMetaRecordsEntry {
 	if x != nil {
 		return x.PlaylistMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetRecommendationsMetaRecords() map[string]*TRecommendationsMetaRecord {
+func (x *TProviderMeta) GetRecommendationsMetaRecords() []*TProviderMeta_RecommendationsMetaRecordsEntry {
 	if x != nil {
 		return x.RecommendationsMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetGenerativeMetaRecords() map[string]*TGenerativeMetaRecord {
+func (x *TProviderMeta) GetGenerativeMetaRecords() []*TProviderMeta_GenerativeMetaRecordsEntry {
 	if x != nil {
 		return x.GenerativeMetaRecords
 	}
 	return nil
 }
 
-func (x *TProviderMeta) GetFmRadioMetaRecords() map[string]*TFmRadioMetaRecord {
+func (x *TProviderMeta) GetFmRadioMetaRecords() []*TProviderMeta_FmRadioMetaRecordsEntry {
 	if x != nil {
 		return x.FmRadioMetaRecords
 	}
@@ -629,8 +629,8 @@ func (x *TProviderMeta) GetFmRadioMetaRecords() map[string]*TFmRadioMetaRecord {
 
 type TTrackMetaRecord struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	TrackMeta     *music_provider.TrackMeta `protobuf:"bytes,1,opt,name=TrackMeta,json=track_meta,proto3" json:"TrackMeta,omitempty"`
-	LikeStatus    music_provider.LikeStatus `protobuf:"varint,2,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	TrackMeta     *music_provider.TrackMeta `protobuf:"bytes,1,opt,name=TrackMeta,proto3" json:"TrackMeta,omitempty"`
+	LikeStatus    music_provider.LikeStatus `protobuf:"varint,2,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -681,8 +681,8 @@ func (x *TTrackMetaRecord) GetLikeStatus() music_provider.LikeStatus {
 
 type TAlbumMetaRecord struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	AlbumMeta     *music_provider.AlbumMeta `protobuf:"bytes,1,opt,name=AlbumMeta,json=album_meta,proto3" json:"AlbumMeta,omitempty"`
-	LikeStatus    music_provider.LikeStatus `protobuf:"varint,2,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	AlbumMeta     *music_provider.AlbumMeta `protobuf:"bytes,1,opt,name=AlbumMeta,proto3" json:"AlbumMeta,omitempty"`
+	LikeStatus    music_provider.LikeStatus `protobuf:"varint,2,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -733,8 +733,8 @@ func (x *TAlbumMetaRecord) GetLikeStatus() music_provider.LikeStatus {
 
 type TArtistMetaRecord struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	ArtistMeta    *music_provider.ArtistMeta `protobuf:"bytes,1,opt,name=ArtistMeta,json=artist_meta,proto3" json:"ArtistMeta,omitempty"`
-	LikeStatus    music_provider.LikeStatus  `protobuf:"varint,2,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	ArtistMeta    *music_provider.ArtistMeta `protobuf:"bytes,1,opt,name=ArtistMeta,proto3" json:"ArtistMeta,omitempty"`
+	LikeStatus    music_provider.LikeStatus  `protobuf:"varint,2,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -785,8 +785,8 @@ func (x *TArtistMetaRecord) GetLikeStatus() music_provider.LikeStatus {
 
 type TPlaylistMetaRecord struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	PlaylistMeta  *music_provider.PlaylistMeta `protobuf:"bytes,1,opt,name=PlaylistMeta,json=playlist_meta,proto3" json:"PlaylistMeta,omitempty"`
-	LikeStatus    music_provider.LikeStatus    `protobuf:"varint,2,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	PlaylistMeta  *music_provider.PlaylistMeta `protobuf:"bytes,1,opt,name=PlaylistMeta,proto3" json:"PlaylistMeta,omitempty"`
+	LikeStatus    music_provider.LikeStatus    `protobuf:"varint,2,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -837,7 +837,7 @@ func (x *TPlaylistMetaRecord) GetLikeStatus() music_provider.LikeStatus {
 
 type TRecommendationsMetaRecord struct {
 	state               protoimpl.MessageState              `protogen:"open.v1"`
-	RecommendationsMeta *music_provider.RecommendationsMeta `protobuf:"bytes,1,opt,name=RecommendationsMeta,json=recommendations_meta,proto3" json:"RecommendationsMeta,omitempty"`
+	RecommendationsMeta *music_provider.RecommendationsMeta `protobuf:"bytes,1,opt,name=RecommendationsMeta,proto3" json:"RecommendationsMeta,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -881,7 +881,7 @@ func (x *TRecommendationsMetaRecord) GetRecommendationsMeta() *music_provider.Re
 
 type TGenerativeMetaRecord struct {
 	state          protoimpl.MessageState         `protogen:"open.v1"`
-	GenerativeMeta *music_provider.GenerativeMeta `protobuf:"bytes,1,opt,name=GenerativeMeta,json=generative_meta,proto3" json:"GenerativeMeta,omitempty"`
+	GenerativeMeta *music_provider.GenerativeMeta `protobuf:"bytes,1,opt,name=GenerativeMeta,proto3" json:"GenerativeMeta,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -925,7 +925,7 @@ func (x *TGenerativeMetaRecord) GetGenerativeMeta() *music_provider.GenerativeMe
 
 type TFmRadioMetaRecord struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	FmRadioMeta   *music_provider.FmRadioMeta `protobuf:"bytes,1,opt,name=FmRadioMeta,json=fm_radio_meta,proto3" json:"FmRadioMeta,omitempty"`
+	FmRadioMeta   *music_provider.FmRadioMeta `protobuf:"bytes,1,opt,name=FmRadioMeta,proto3" json:"FmRadioMeta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -967,151 +967,1346 @@ func (x *TFmRadioMetaRecord) GetFmRadioMeta() *music_provider.FmRadioMeta {
 	return nil
 }
 
+type TMetaStorage_ProviderAlbumMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderAlbumMeta    `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderAlbumMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderAlbumMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderAlbumMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderAlbumMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderAlbumMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderAlbumMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderAlbumMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *TMetaStorage_ProviderAlbumMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderAlbumMetaEntry) GetValue() *TProviderAlbumMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderArtistMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderArtistMeta   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderArtistMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderArtistMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderArtistMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderArtistMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderArtistMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderArtistMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderArtistMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *TMetaStorage_ProviderArtistMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderArtistMetaEntry) GetValue() *TProviderArtistMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderPlaylistMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderPlaylistMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderPlaylistMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderPlaylistMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderPlaylistMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderPlaylistMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderPlaylistMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderPlaylistMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderPlaylistMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 2}
+}
+
+func (x *TMetaStorage_ProviderPlaylistMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderPlaylistMetaEntry) GetValue() *TProviderPlaylistMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderTrackMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderTrackMeta    `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderTrackMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderTrackMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderTrackMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderTrackMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderTrackMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderTrackMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderTrackMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 3}
+}
+
+func (x *TMetaStorage_ProviderTrackMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderTrackMetaEntry) GetValue() *TProviderTrackMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderRecommendationsMetaEntry struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Key           string                        `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderRecommendationsMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderRecommendationsMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderRecommendationsMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderRecommendationsMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderRecommendationsMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderRecommendationsMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderRecommendationsMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderRecommendationsMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 4}
+}
+
+func (x *TMetaStorage_ProviderRecommendationsMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderRecommendationsMetaEntry) GetValue() *TProviderRecommendationsMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderGenerativeMetaEntry struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Key           string                   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderGenerativeMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderGenerativeMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderGenerativeMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderGenerativeMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderGenerativeMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderGenerativeMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderGenerativeMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderGenerativeMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 5}
+}
+
+func (x *TMetaStorage_ProviderGenerativeMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderGenerativeMetaEntry) GetValue() *TProviderGenerativeMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderFmRadioMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderFmRadioMeta  `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderFmRadioMetaEntry) Reset() {
+	*x = TMetaStorage_ProviderFmRadioMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderFmRadioMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderFmRadioMetaEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderFmRadioMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderFmRadioMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderFmRadioMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 6}
+}
+
+func (x *TMetaStorage_ProviderFmRadioMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderFmRadioMetaEntry) GetValue() *TProviderFmRadioMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMetaStorage_ProviderInfoEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderInfo         `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMetaStorage_ProviderInfoEntry) Reset() {
+	*x = TMetaStorage_ProviderInfoEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMetaStorage_ProviderInfoEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMetaStorage_ProviderInfoEntry) ProtoMessage() {}
+
+func (x *TMetaStorage_ProviderInfoEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMetaStorage_ProviderInfoEntry.ProtoReflect.Descriptor instead.
+func (*TMetaStorage_ProviderInfoEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{0, 7}
+}
+
+func (x *TMetaStorage_ProviderInfoEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMetaStorage_ProviderInfoEntry) GetValue() *TProviderInfo {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderTrackMeta_TrackMetaEntry struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Key           string                    `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.TrackMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderTrackMeta_TrackMetaEntry) Reset() {
+	*x = TProviderTrackMeta_TrackMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderTrackMeta_TrackMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderTrackMeta_TrackMetaEntry) ProtoMessage() {}
+
+func (x *TProviderTrackMeta_TrackMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderTrackMeta_TrackMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderTrackMeta_TrackMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{2, 0}
+}
+
+func (x *TProviderTrackMeta_TrackMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderTrackMeta_TrackMetaEntry) GetValue() *music_provider.TrackMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderAlbumMeta_AlbumMetaEntry struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Key           string                    `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.AlbumMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderAlbumMeta_AlbumMetaEntry) Reset() {
+	*x = TProviderAlbumMeta_AlbumMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderAlbumMeta_AlbumMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderAlbumMeta_AlbumMetaEntry) ProtoMessage() {}
+
+func (x *TProviderAlbumMeta_AlbumMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderAlbumMeta_AlbumMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderAlbumMeta_AlbumMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{3, 0}
+}
+
+func (x *TProviderAlbumMeta_AlbumMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderAlbumMeta_AlbumMetaEntry) GetValue() *music_provider.AlbumMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderArtistMeta_ArtistMetaEntry struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Key           string                     `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.ArtistMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderArtistMeta_ArtistMetaEntry) Reset() {
+	*x = TProviderArtistMeta_ArtistMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderArtistMeta_ArtistMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderArtistMeta_ArtistMetaEntry) ProtoMessage() {}
+
+func (x *TProviderArtistMeta_ArtistMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderArtistMeta_ArtistMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderArtistMeta_ArtistMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{4, 0}
+}
+
+func (x *TProviderArtistMeta_ArtistMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderArtistMeta_ArtistMetaEntry) GetValue() *music_provider.ArtistMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderPlaylistMeta_PlaylistMetaEntry struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Key           string                       `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.PlaylistMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderPlaylistMeta_PlaylistMetaEntry) Reset() {
+	*x = TProviderPlaylistMeta_PlaylistMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderPlaylistMeta_PlaylistMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderPlaylistMeta_PlaylistMetaEntry) ProtoMessage() {}
+
+func (x *TProviderPlaylistMeta_PlaylistMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderPlaylistMeta_PlaylistMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderPlaylistMeta_PlaylistMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{5, 0}
+}
+
+func (x *TProviderPlaylistMeta_PlaylistMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderPlaylistMeta_PlaylistMetaEntry) GetValue() *music_provider.PlaylistMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderRecommendationsMeta_RecommendationsMetaEntry struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Key           string                              `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.RecommendationsMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderRecommendationsMeta_RecommendationsMetaEntry) Reset() {
+	*x = TProviderRecommendationsMeta_RecommendationsMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderRecommendationsMeta_RecommendationsMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderRecommendationsMeta_RecommendationsMetaEntry) ProtoMessage() {}
+
+func (x *TProviderRecommendationsMeta_RecommendationsMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderRecommendationsMeta_RecommendationsMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderRecommendationsMeta_RecommendationsMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{6, 0}
+}
+
+func (x *TProviderRecommendationsMeta_RecommendationsMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderRecommendationsMeta_RecommendationsMetaEntry) GetValue() *music_provider.RecommendationsMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderGenerativeMeta_GenerativeMetaEntry struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Key           string                         `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.GenerativeMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderGenerativeMeta_GenerativeMetaEntry) Reset() {
+	*x = TProviderGenerativeMeta_GenerativeMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderGenerativeMeta_GenerativeMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderGenerativeMeta_GenerativeMetaEntry) ProtoMessage() {}
+
+func (x *TProviderGenerativeMeta_GenerativeMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderGenerativeMeta_GenerativeMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderGenerativeMeta_GenerativeMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{7, 0}
+}
+
+func (x *TProviderGenerativeMeta_GenerativeMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderGenerativeMeta_GenerativeMetaEntry) GetValue() *music_provider.GenerativeMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderFmRadioMeta_FmRadioMetaEntry struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Key           string                      `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *music_provider.FmRadioMeta `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderFmRadioMeta_FmRadioMetaEntry) Reset() {
+	*x = TProviderFmRadioMeta_FmRadioMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderFmRadioMeta_FmRadioMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderFmRadioMeta_FmRadioMetaEntry) ProtoMessage() {}
+
+func (x *TProviderFmRadioMeta_FmRadioMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderFmRadioMeta_FmRadioMetaEntry.ProtoReflect.Descriptor instead.
+func (*TProviderFmRadioMeta_FmRadioMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{8, 0}
+}
+
+func (x *TProviderFmRadioMeta_FmRadioMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderFmRadioMeta_FmRadioMetaEntry) GetValue() *music_provider.FmRadioMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TMusicPlatformMetaStorage_ProviderMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TProviderMeta         `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TMusicPlatformMetaStorage_ProviderMetaEntry) Reset() {
+	*x = TMusicPlatformMetaStorage_ProviderMetaEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TMusicPlatformMetaStorage_ProviderMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TMusicPlatformMetaStorage_ProviderMetaEntry) ProtoMessage() {}
+
+func (x *TMusicPlatformMetaStorage_ProviderMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TMusicPlatformMetaStorage_ProviderMetaEntry.ProtoReflect.Descriptor instead.
+func (*TMusicPlatformMetaStorage_ProviderMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{9, 0}
+}
+
+func (x *TMusicPlatformMetaStorage_ProviderMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TMusicPlatformMetaStorage_ProviderMetaEntry) GetValue() *TProviderMeta {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_TrackMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TTrackMetaRecord      `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_TrackMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_TrackMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_TrackMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_TrackMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_TrackMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_TrackMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_TrackMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 0}
+}
+
+func (x *TProviderMeta_TrackMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_TrackMetaRecordsEntry) GetValue() *TTrackMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_AlbumMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TAlbumMetaRecord      `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_AlbumMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_AlbumMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_AlbumMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_AlbumMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_AlbumMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_AlbumMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_AlbumMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 1}
+}
+
+func (x *TProviderMeta_AlbumMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_AlbumMetaRecordsEntry) GetValue() *TAlbumMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_ArtistMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TArtistMetaRecord     `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_ArtistMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_ArtistMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_ArtistMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_ArtistMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_ArtistMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_ArtistMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_ArtistMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 2}
+}
+
+func (x *TProviderMeta_ArtistMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_ArtistMetaRecordsEntry) GetValue() *TArtistMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_PlaylistMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TPlaylistMetaRecord   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_PlaylistMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_PlaylistMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_PlaylistMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_PlaylistMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_PlaylistMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_PlaylistMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_PlaylistMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 3}
+}
+
+func (x *TProviderMeta_PlaylistMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_PlaylistMetaRecordsEntry) GetValue() *TPlaylistMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_RecommendationsMetaRecordsEntry struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Key           string                      `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TRecommendationsMetaRecord `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_RecommendationsMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_RecommendationsMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_RecommendationsMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_RecommendationsMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_RecommendationsMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_RecommendationsMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_RecommendationsMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 4}
+}
+
+func (x *TProviderMeta_RecommendationsMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_RecommendationsMetaRecordsEntry) GetValue() *TRecommendationsMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_GenerativeMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TGenerativeMetaRecord `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_GenerativeMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_GenerativeMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_GenerativeMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_GenerativeMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_GenerativeMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_GenerativeMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_GenerativeMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 5}
+}
+
+func (x *TProviderMeta_GenerativeMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_GenerativeMetaRecordsEntry) GetValue() *TGenerativeMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TProviderMeta_FmRadioMetaRecordsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TFmRadioMetaRecord    `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TProviderMeta_FmRadioMetaRecordsEntry) Reset() {
+	*x = TProviderMeta_FmRadioMetaRecordsEntry{}
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TProviderMeta_FmRadioMetaRecordsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TProviderMeta_FmRadioMetaRecordsEntry) ProtoMessage() {}
+
+func (x *TProviderMeta_FmRadioMetaRecordsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TProviderMeta_FmRadioMetaRecordsEntry.ProtoReflect.Descriptor instead.
+func (*TProviderMeta_FmRadioMetaRecordsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP(), []int{10, 6}
+}
+
+func (x *TProviderMeta_FmRadioMetaRecordsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TProviderMeta_FmRadioMetaRecordsEntry) GetValue() *TFmRadioMetaRecord {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_data_scenario_music_meta_storage_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_scenario_music_meta_storage_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/data/scenario/music/meta_storage.proto\x12\x13NAlice.NData.NMusic\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8a\x10\n" +
-	"\fTMetaStorage\x12\x81\x01\n" +
-	"\x11ProviderAlbumMeta\x18\x01 \x03(\v28.NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMetaEntryB\x17\xaa\xdd\x1b\x13provider_album_metaR\x13provider_album_meta\x12\x85\x01\n" +
-	"\x12ProviderArtistMeta\x18\x02 \x03(\v29.NAlice.NData.NMusic.TMetaStorage.ProviderArtistMetaEntryB\x18\xaa\xdd\x1b\x14provider_artist_metaR\x14provider_artist_meta\x12\x8d\x01\n" +
-	"\x14ProviderPlaylistMeta\x18\x03 \x03(\v2;.NAlice.NData.NMusic.TMetaStorage.ProviderPlaylistMetaEntryB\x1a\xaa\xdd\x1b\x16provider_playlist_metaR\x16provider_playlist_meta\x12\x81\x01\n" +
-	"\x11ProviderTrackMeta\x18\x04 \x03(\v28.NAlice.NData.NMusic.TMetaStorage.ProviderTrackMetaEntryB\x17\xaa\xdd\x1b\x13provider_track_metaR\x13provider_track_meta\x12\xa7\x01\n" +
-	"\x1bProviderRecommendationsMeta\x18\x05 \x03(\v2B.NAlice.NData.NMusic.TMetaStorage.ProviderRecommendationsMetaEntryB \xaa\xdd\x1b\x1cprovider_recommendation_metaR\x1cprovider_recommendation_meta\x12\x95\x01\n" +
-	"\x16ProviderGenerativeMeta\x18\x06 \x03(\v2=.NAlice.NData.NMusic.TMetaStorage.ProviderGenerativeMetaEntryB\x1c\xaa\xdd\x1b\x18provider_generative_metaR\x18provider_generative_meta\x12\x8b\x01\n" +
-	"\x13ProviderFmRadioMeta\x18\a \x03(\v2:.NAlice.NData.NMusic.TMetaStorage.ProviderFmRadioMetaEntryB\x1a\xaa\xdd\x1b\x16provider_fm_radio_metaR\x16provider_fm_radio_meta\x12k\n" +
-	"\fProviderInfo\x18\b \x03(\v23.NAlice.NData.NMusic.TMetaStorage.ProviderInfoEntryB\x11\xaa\xdd\x1b\rprovider_infoR\rprovider_info\x1am\n" +
+	"3alice/protos/data/scenario/music/meta_storage.proto\x12\x13NAlice.NData.NMusic\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\r\n" +
+	"\fTMetaStorage\x12f\n" +
+	"\x11ProviderAlbumMeta\x18\x01 \x03(\v28.NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMetaEntryR\x11ProviderAlbumMeta\x12i\n" +
+	"\x12ProviderArtistMeta\x18\x02 \x03(\v29.NAlice.NData.NMusic.TMetaStorage.ProviderArtistMetaEntryR\x12ProviderArtistMeta\x12o\n" +
+	"\x14ProviderPlaylistMeta\x18\x03 \x03(\v2;.NAlice.NData.NMusic.TMetaStorage.ProviderPlaylistMetaEntryR\x14ProviderPlaylistMeta\x12f\n" +
+	"\x11ProviderTrackMeta\x18\x04 \x03(\v28.NAlice.NData.NMusic.TMetaStorage.ProviderTrackMetaEntryR\x11ProviderTrackMeta\x12\x84\x01\n" +
+	"\x1bProviderRecommendationsMeta\x18\x05 \x03(\v2B.NAlice.NData.NMusic.TMetaStorage.ProviderRecommendationsMetaEntryR\x1bProviderRecommendationsMeta\x12u\n" +
+	"\x16ProviderGenerativeMeta\x18\x06 \x03(\v2=.NAlice.NData.NMusic.TMetaStorage.ProviderGenerativeMetaEntryR\x16ProviderGenerativeMeta\x12l\n" +
+	"\x13ProviderFmRadioMeta\x18\a \x03(\v2:.NAlice.NData.NMusic.TMetaStorage.ProviderFmRadioMetaEntryR\x13ProviderFmRadioMeta\x12W\n" +
+	"\fProviderInfo\x18\b \x03(\v23.NAlice.NData.NMusic.TMetaStorage.ProviderInfoEntryR\fProviderInfo\x1ai\n" +
 	"\x16ProviderAlbumMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12=\n" +
-	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TProviderAlbumMetaR\x05value:\x028\x01\x1ao\n" +
+	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TProviderAlbumMetaR\x05value\x1ak\n" +
 	"\x17ProviderArtistMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12>\n" +
-	"\x05value\x18\x02 \x01(\v2(.NAlice.NData.NMusic.TProviderArtistMetaR\x05value:\x028\x01\x1as\n" +
+	"\x05value\x18\x02 \x01(\v2(.NAlice.NData.NMusic.TProviderArtistMetaR\x05value\x1ao\n" +
 	"\x19ProviderPlaylistMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12@\n" +
-	"\x05value\x18\x02 \x01(\v2*.NAlice.NData.NMusic.TProviderPlaylistMetaR\x05value:\x028\x01\x1am\n" +
+	"\x05value\x18\x02 \x01(\v2*.NAlice.NData.NMusic.TProviderPlaylistMetaR\x05value\x1ai\n" +
 	"\x16ProviderTrackMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12=\n" +
-	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TProviderTrackMetaR\x05value:\x028\x01\x1a\x81\x01\n" +
+	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TProviderTrackMetaR\x05value\x1a}\n" +
 	" ProviderRecommendationsMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12G\n" +
-	"\x05value\x18\x02 \x01(\v21.NAlice.NData.NMusic.TProviderRecommendationsMetaR\x05value:\x028\x01\x1aw\n" +
+	"\x05value\x18\x02 \x01(\v21.NAlice.NData.NMusic.TProviderRecommendationsMetaR\x05value\x1as\n" +
 	"\x1bProviderGenerativeMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
-	"\x05value\x18\x02 \x01(\v2,.NAlice.NData.NMusic.TProviderGenerativeMetaR\x05value:\x028\x01\x1aq\n" +
+	"\x05value\x18\x02 \x01(\v2,.NAlice.NData.NMusic.TProviderGenerativeMetaR\x05value\x1am\n" +
 	"\x18ProviderFmRadioMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12?\n" +
-	"\x05value\x18\x02 \x01(\v2).NAlice.NData.NMusic.TProviderFmRadioMetaR\x05value:\x028\x01\x1ac\n" +
+	"\x05value\x18\x02 \x01(\v2).NAlice.NData.NMusic.TProviderFmRadioMetaR\x05value\x1a_\n" +
 	"\x11ProviderInfoEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x128\n" +
-	"\x05value\x18\x02 \x01(\v2\".NAlice.NData.NMusic.TProviderInfoR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\"\xef\x01\n" +
-	"\rTProviderInfo\x122\n" +
+	"\x05value\x18\x02 \x01(\v2\".NAlice.NData.NMusic.TProviderInfoR\x05value\"\x9b\x01\n" +
+	"\rTProviderInfo\x12\x1e\n" +
 	"\n" +
-	"TvImageUrl\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\ftv_image_urlR\ftv_image_url\x12U\n" +
-	"\x15ScreenDevicesImageUrl\x18\x02 \x01(\tB\x1c\xaa\xdd\x1b\x18screen_devices_image_urlR\x18screen_devices_image_url\x12S\n" +
-	"\x15ProviderHumanReadable\x18\x03 \x01(\tB\x1b\xaa\xdd\x1b\x17provider_human_readableR\x17provider_human_readable\"\xd1\x01\n" +
-	"\x12TProviderTrackMeta\x12e\n" +
-	"\tTrackMeta\x18\x01 \x03(\v26.NAlice.NData.NMusic.TProviderTrackMeta.TrackMetaEntryB\x0e\xaa\xdd\x1b\n" +
-	"track_metaR\n" +
-	"track_meta\x1aT\n" +
+	"TvImageUrl\x18\x01 \x01(\tR\n" +
+	"TvImageUrl\x124\n" +
+	"\x15ScreenDevicesImageUrl\x18\x02 \x01(\tR\x15ScreenDevicesImageUrl\x124\n" +
+	"\x15ProviderHumanReadable\x18\x03 \x01(\tR\x15ProviderHumanReadable\"\xbc\x01\n" +
+	"\x12TProviderTrackMeta\x12T\n" +
+	"\tTrackMeta\x18\x01 \x03(\v26.NAlice.NData.NMusic.TProviderTrackMeta.TrackMetaEntryR\tTrackMeta\x1aP\n" +
 	"\x0eTrackMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
-	"\x05value\x18\x02 \x01(\v2\x16.Alice.Music.TrackMetaR\x05value:\x028\x01\"\xd1\x01\n" +
-	"\x12TProviderAlbumMeta\x12e\n" +
-	"\tAlbumMeta\x18\x01 \x03(\v26.NAlice.NData.NMusic.TProviderAlbumMeta.AlbumMetaEntryB\x0e\xaa\xdd\x1b\n" +
-	"album_metaR\n" +
-	"album_meta\x1aT\n" +
+	"\x05value\x18\x02 \x01(\v2\x16.Alice.Music.TrackMetaR\x05value\"\xbc\x01\n" +
+	"\x12TProviderAlbumMeta\x12T\n" +
+	"\tAlbumMeta\x18\x01 \x03(\v26.NAlice.NData.NMusic.TProviderAlbumMeta.AlbumMetaEntryR\tAlbumMeta\x1aP\n" +
 	"\x0eAlbumMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
-	"\x05value\x18\x02 \x01(\v2\x16.Alice.Music.AlbumMetaR\x05value:\x028\x01\"\xd9\x01\n" +
-	"\x13TProviderArtistMeta\x12j\n" +
+	"\x05value\x18\x02 \x01(\v2\x16.Alice.Music.AlbumMetaR\x05value\"\xc3\x01\n" +
+	"\x13TProviderArtistMeta\x12X\n" +
 	"\n" +
-	"ArtistMeta\x18\x01 \x03(\v28.NAlice.NData.NMusic.TProviderArtistMeta.ArtistMetaEntryB\x0f\xaa\xdd\x1b\vartist_metaR\vartist_meta\x1aV\n" +
+	"ArtistMeta\x18\x01 \x03(\v28.NAlice.NData.NMusic.TProviderArtistMeta.ArtistMetaEntryR\n" +
+	"ArtistMeta\x1aR\n" +
 	"\x0fArtistMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12-\n" +
-	"\x05value\x18\x02 \x01(\v2\x17.Alice.Music.ArtistMetaR\x05value:\x028\x01\"\xe9\x01\n" +
-	"\x15TProviderPlaylistMeta\x12t\n" +
-	"\fPlaylistMeta\x18\x01 \x03(\v2<.NAlice.NData.NMusic.TProviderPlaylistMeta.PlaylistMetaEntryB\x11\xaa\xdd\x1b\rplaylist_metaR\rplaylist_meta\x1aZ\n" +
+	"\x05value\x18\x02 \x01(\v2\x17.Alice.Music.ArtistMetaR\x05value\"\xd1\x01\n" +
+	"\x15TProviderPlaylistMeta\x12`\n" +
+	"\fPlaylistMeta\x18\x01 \x03(\v2<.NAlice.NData.NMusic.TProviderPlaylistMeta.PlaylistMetaEntryR\fPlaylistMeta\x1aV\n" +
 	"\x11PlaylistMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12/\n" +
-	"\x05value\x18\x02 \x01(\v2\x19.Alice.Music.PlaylistMetaR\x05value:\x028\x01\"\xa2\x02\n" +
-	"\x1cTProviderRecommendationsMeta\x12\x97\x01\n" +
-	"\x13RecommendationsMeta\x18\x01 \x03(\v2J.NAlice.NData.NMusic.TProviderRecommendationsMeta.RecommendationsMetaEntryB\x18\xaa\xdd\x1b\x14recommendations_metaR\x14recommendations_meta\x1ah\n" +
+	"\x05value\x18\x02 \x01(\v2\x19.Alice.Music.PlaylistMetaR\x05value\"\x82\x02\n" +
+	"\x1cTProviderRecommendationsMeta\x12|\n" +
+	"\x13RecommendationsMeta\x18\x01 \x03(\v2J.NAlice.NData.NMusic.TProviderRecommendationsMeta.RecommendationsMetaEntryR\x13RecommendationsMeta\x1ad\n" +
 	"\x18RecommendationsMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x126\n" +
-	"\x05value\x18\x02 \x01(\v2 .Alice.Music.RecommendationsMetaR\x05value:\x028\x01\"\xf9\x01\n" +
-	"\x17TProviderGenerativeMeta\x12~\n" +
-	"\x0eGenerativeMeta\x18\x01 \x03(\v2@.NAlice.NData.NMusic.TProviderGenerativeMeta.GenerativeMetaEntryB\x13\xaa\xdd\x1b\x0fgenerative_metaR\x0fgenerative_meta\x1a^\n" +
+	"\x05value\x18\x02 \x01(\v2 .Alice.Music.RecommendationsMetaR\x05value\"\xdf\x01\n" +
+	"\x17TProviderGenerativeMeta\x12h\n" +
+	"\x0eGenerativeMeta\x18\x01 \x03(\v2@.NAlice.NData.NMusic.TProviderGenerativeMeta.GenerativeMetaEntryR\x0eGenerativeMeta\x1aZ\n" +
 	"\x13GenerativeMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x121\n" +
-	"\x05value\x18\x02 \x01(\v2\x1b.Alice.Music.GenerativeMetaR\x05value:\x028\x01\"\xe3\x01\n" +
-	"\x14TProviderFmRadioMeta\x12q\n" +
-	"\vFmRadioMeta\x18\x01 \x03(\v2:.NAlice.NData.NMusic.TProviderFmRadioMeta.FmRadioMetaEntryB\x11\xaa\xdd\x1b\rfm_radio_metaR\rfm_radio_meta\x1aX\n" +
+	"\x05value\x18\x02 \x01(\v2\x1b.Alice.Music.GenerativeMetaR\x05value\"\xca\x01\n" +
+	"\x14TProviderFmRadioMeta\x12\\\n" +
+	"\vFmRadioMeta\x18\x01 \x03(\v2:.NAlice.NData.NMusic.TProviderFmRadioMeta.FmRadioMetaEntryR\vFmRadioMeta\x1aT\n" +
 	"\x10FmRadioMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12.\n" +
-	"\x05value\x18\x02 \x01(\v2\x18.Alice.Music.FmRadioMetaR\x05value:\x028\x01\"\x80\x02\n" +
-	"\x19TMusicPlatformMetaStorage\x12x\n" +
-	"\fProviderMeta\x18\x01 \x03(\v2@.NAlice.NData.NMusic.TMusicPlatformMetaStorage.ProviderMetaEntryB\x11\xaa\xdd\x1b\rprovider_metaR\rprovider_meta\x1ac\n" +
+	"\x05value\x18\x02 \x01(\v2\x18.Alice.Music.FmRadioMetaR\x05value\"\xe2\x01\n" +
+	"\x19TMusicPlatformMetaStorage\x12d\n" +
+	"\fProviderMeta\x18\x01 \x03(\v2@.NAlice.NData.NMusic.TMusicPlatformMetaStorage.ProviderMetaEntryR\fProviderMeta\x1a_\n" +
 	"\x11ProviderMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x128\n" +
-	"\x05value\x18\x02 \x01(\v2\".NAlice.NData.NMusic.TProviderMetaR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\"\x88\x0e\n" +
-	"\rTProviderMeta\x12~\n" +
-	"\x10TrackMetaRecords\x18\x01 \x03(\v28.NAlice.NData.NMusic.TProviderMeta.TrackMetaRecordsEntryB\x16\xaa\xdd\x1b\x12track_meta_recordsR\x12track_meta_records\x12~\n" +
-	"\x10AlbumMetaRecords\x18\x02 \x03(\v28.NAlice.NData.NMusic.TProviderMeta.AlbumMetaRecordsEntryB\x16\xaa\xdd\x1b\x12album_meta_recordsR\x12album_meta_records\x12\x82\x01\n" +
-	"\x11ArtistMetaRecords\x18\x03 \x03(\v29.NAlice.NData.NMusic.TProviderMeta.ArtistMetaRecordsEntryB\x17\xaa\xdd\x1b\x13artist_meta_recordsR\x13artist_meta_records\x12\x8a\x01\n" +
-	"\x13PlaylistMetaRecords\x18\x04 \x03(\v2;.NAlice.NData.NMusic.TProviderMeta.PlaylistMetaRecordsEntryB\x19\xaa\xdd\x1b\x15playlist_meta_recordsR\x15playlist_meta_records\x12\xa6\x01\n" +
-	"\x1aRecommendationsMetaRecords\x18\x05 \x03(\v2B.NAlice.NData.NMusic.TProviderMeta.RecommendationsMetaRecordsEntryB \xaa\xdd\x1b\x1crecommendations_meta_recordsR\x1crecommendations_meta_records\x12\x92\x01\n" +
-	"\x15GenerativeMetaRecords\x18\x06 \x03(\v2=.NAlice.NData.NMusic.TProviderMeta.GenerativeMetaRecordsEntryB\x1b\xaa\xdd\x1b\x17generative_meta_recordsR\x17generative_meta_records\x12\x88\x01\n" +
-	"\x12FmRadioMetaRecords\x18\a \x03(\v2:.NAlice.NData.NMusic.TProviderMeta.FmRadioMetaRecordsEntryB\x19\xaa\xdd\x1b\x15fm_radio_meta_recordsR\x15fm_radio_meta_records\x1aj\n" +
+	"\x05value\x18\x02 \x01(\v2\".NAlice.NData.NMusic.TProviderMetaR\x05value\"\x9b\f\n" +
+	"\rTProviderMeta\x12d\n" +
+	"\x10TrackMetaRecords\x18\x01 \x03(\v28.NAlice.NData.NMusic.TProviderMeta.TrackMetaRecordsEntryR\x10TrackMetaRecords\x12d\n" +
+	"\x10AlbumMetaRecords\x18\x02 \x03(\v28.NAlice.NData.NMusic.TProviderMeta.AlbumMetaRecordsEntryR\x10AlbumMetaRecords\x12g\n" +
+	"\x11ArtistMetaRecords\x18\x03 \x03(\v29.NAlice.NData.NMusic.TProviderMeta.ArtistMetaRecordsEntryR\x11ArtistMetaRecords\x12m\n" +
+	"\x13PlaylistMetaRecords\x18\x04 \x03(\v2;.NAlice.NData.NMusic.TProviderMeta.PlaylistMetaRecordsEntryR\x13PlaylistMetaRecords\x12\x82\x01\n" +
+	"\x1aRecommendationsMetaRecords\x18\x05 \x03(\v2B.NAlice.NData.NMusic.TProviderMeta.RecommendationsMetaRecordsEntryR\x1aRecommendationsMetaRecords\x12s\n" +
+	"\x15GenerativeMetaRecords\x18\x06 \x03(\v2=.NAlice.NData.NMusic.TProviderMeta.GenerativeMetaRecordsEntryR\x15GenerativeMetaRecords\x12j\n" +
+	"\x12FmRadioMetaRecords\x18\a \x03(\v2:.NAlice.NData.NMusic.TProviderMeta.FmRadioMetaRecordsEntryR\x12FmRadioMetaRecords\x1af\n" +
 	"\x15TrackMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12;\n" +
-	"\x05value\x18\x02 \x01(\v2%.NAlice.NData.NMusic.TTrackMetaRecordR\x05value:\x028\x01\x1aj\n" +
+	"\x05value\x18\x02 \x01(\v2%.NAlice.NData.NMusic.TTrackMetaRecordR\x05value\x1af\n" +
 	"\x15AlbumMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12;\n" +
-	"\x05value\x18\x02 \x01(\v2%.NAlice.NData.NMusic.TAlbumMetaRecordR\x05value:\x028\x01\x1al\n" +
+	"\x05value\x18\x02 \x01(\v2%.NAlice.NData.NMusic.TAlbumMetaRecordR\x05value\x1ah\n" +
 	"\x16ArtistMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12<\n" +
-	"\x05value\x18\x02 \x01(\v2&.NAlice.NData.NMusic.TArtistMetaRecordR\x05value:\x028\x01\x1ap\n" +
+	"\x05value\x18\x02 \x01(\v2&.NAlice.NData.NMusic.TArtistMetaRecordR\x05value\x1al\n" +
 	"\x18PlaylistMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12>\n" +
-	"\x05value\x18\x02 \x01(\v2(.NAlice.NData.NMusic.TPlaylistMetaRecordR\x05value:\x028\x01\x1a~\n" +
+	"\x05value\x18\x02 \x01(\v2(.NAlice.NData.NMusic.TPlaylistMetaRecordR\x05value\x1az\n" +
 	"\x1fRecommendationsMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12E\n" +
-	"\x05value\x18\x02 \x01(\v2/.NAlice.NData.NMusic.TRecommendationsMetaRecordR\x05value:\x028\x01\x1at\n" +
+	"\x05value\x18\x02 \x01(\v2/.NAlice.NData.NMusic.TRecommendationsMetaRecordR\x05value\x1ap\n" +
 	"\x1aGenerativeMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12@\n" +
-	"\x05value\x18\x02 \x01(\v2*.NAlice.NData.NMusic.TGenerativeMetaRecordR\x05value:\x028\x01\x1an\n" +
+	"\x05value\x18\x02 \x01(\v2*.NAlice.NData.NMusic.TGenerativeMetaRecordR\x05value\x1aj\n" +
 	"\x17FmRadioMetaRecordsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12=\n" +
-	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TFmRadioMetaRecordR\x05value:\x028\x01\"\xa4\x01\n" +
-	"\x10TTrackMetaRecord\x12E\n" +
-	"\tTrackMeta\x18\x01 \x01(\v2\x16.Alice.Music.TrackMetaB\x0e\xaa\xdd\x1b\n" +
-	"track_metaR\n" +
-	"track_meta\x12I\n" +
+	"\x05value\x18\x02 \x01(\v2'.NAlice.NData.NMusic.TFmRadioMetaRecordR\x05value\"\x81\x01\n" +
+	"\x10TTrackMetaRecord\x124\n" +
+	"\tTrackMeta\x18\x01 \x01(\v2\x16.Alice.Music.TrackMetaR\tTrackMeta\x127\n" +
 	"\n" +
-	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\"\xa4\x01\n" +
-	"\x10TAlbumMetaRecord\x12E\n" +
-	"\tAlbumMeta\x18\x01 \x01(\v2\x16.Alice.Music.AlbumMetaB\x0e\xaa\xdd\x1b\n" +
-	"album_metaR\n" +
-	"album_meta\x12I\n" +
+	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\"\x81\x01\n" +
+	"\x10TAlbumMetaRecord\x124\n" +
+	"\tAlbumMeta\x18\x01 \x01(\v2\x16.Alice.Music.AlbumMetaR\tAlbumMeta\x127\n" +
 	"\n" +
-	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\"\xa9\x01\n" +
-	"\x11TArtistMetaRecord\x12I\n" +
+	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\"\x85\x01\n" +
+	"\x11TArtistMetaRecord\x127\n" +
 	"\n" +
-	"ArtistMeta\x18\x01 \x01(\v2\x17.Alice.Music.ArtistMetaB\x0f\xaa\xdd\x1b\vartist_metaR\vartist_meta\x12I\n" +
+	"ArtistMeta\x18\x01 \x01(\v2\x17.Alice.Music.ArtistMetaR\n" +
+	"ArtistMeta\x127\n" +
 	"\n" +
-	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\"\xb3\x01\n" +
-	"\x13TPlaylistMetaRecord\x12Q\n" +
-	"\fPlaylistMeta\x18\x01 \x01(\v2\x19.Alice.Music.PlaylistMetaB\x11\xaa\xdd\x1b\rplaylist_metaR\rplaylist_meta\x12I\n" +
+	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\"\x8d\x01\n" +
+	"\x13TPlaylistMetaRecord\x12=\n" +
+	"\fPlaylistMeta\x18\x01 \x01(\v2\x19.Alice.Music.PlaylistMetaR\fPlaylistMeta\x127\n" +
 	"\n" +
-	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\"\x8b\x01\n" +
-	"\x1aTRecommendationsMetaRecord\x12m\n" +
-	"\x13RecommendationsMeta\x18\x01 \x01(\v2 .Alice.Music.RecommendationsMetaB\x18\xaa\xdd\x1b\x14recommendations_metaR\x14recommendations_meta\"r\n" +
-	"\x15TGenerativeMetaRecord\x12Y\n" +
-	"\x0eGenerativeMeta\x18\x01 \x01(\v2\x1b.Alice.Music.GenerativeMetaB\x13\xaa\xdd\x1b\x0fgenerative_metaR\x0fgenerative_meta\"e\n" +
-	"\x12TFmRadioMetaRecord\x12O\n" +
-	"\vFmRadioMeta\x18\x01 \x01(\v2\x18.Alice.Music.FmRadioMetaB\x11\xaa\xdd\x1b\rfm_radio_metaR\rfm_radio_metaB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"LikeStatus\x18\x02 \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\"p\n" +
+	"\x1aTRecommendationsMetaRecord\x12R\n" +
+	"\x13RecommendationsMeta\x18\x01 \x01(\v2 .Alice.Music.RecommendationsMetaR\x13RecommendationsMeta\"\\\n" +
+	"\x15TGenerativeMetaRecord\x12C\n" +
+	"\x0eGenerativeMeta\x18\x01 \x01(\v2\x1b.Alice.Music.GenerativeMetaR\x0eGenerativeMeta\"P\n" +
+	"\x12TFmRadioMetaRecord\x12:\n" +
+	"\vFmRadioMeta\x18\x01 \x01(\v2\x18.Alice.Music.FmRadioMetaR\vFmRadioMetaB\xeb\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x10MetaStorageProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_meta_storage_proto_rawDescOnce sync.Once
@@ -1127,55 +2322,55 @@ func file_alice_protos_data_scenario_music_meta_storage_proto_rawDescGZIP() []by
 
 var file_alice_protos_data_scenario_music_meta_storage_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
 var file_alice_protos_data_scenario_music_meta_storage_proto_goTypes = []any{
-	(*TMetaStorage)(nil),                 // 0: NAlice.NData.NMusic.TMetaStorage
-	(*TProviderInfo)(nil),                // 1: NAlice.NData.NMusic.TProviderInfo
-	(*TProviderTrackMeta)(nil),           // 2: NAlice.NData.NMusic.TProviderTrackMeta
-	(*TProviderAlbumMeta)(nil),           // 3: NAlice.NData.NMusic.TProviderAlbumMeta
-	(*TProviderArtistMeta)(nil),          // 4: NAlice.NData.NMusic.TProviderArtistMeta
-	(*TProviderPlaylistMeta)(nil),        // 5: NAlice.NData.NMusic.TProviderPlaylistMeta
-	(*TProviderRecommendationsMeta)(nil), // 6: NAlice.NData.NMusic.TProviderRecommendationsMeta
-	(*TProviderGenerativeMeta)(nil),      // 7: NAlice.NData.NMusic.TProviderGenerativeMeta
-	(*TProviderFmRadioMeta)(nil),         // 8: NAlice.NData.NMusic.TProviderFmRadioMeta
-	(*TMusicPlatformMetaStorage)(nil),    // 9: NAlice.NData.NMusic.TMusicPlatformMetaStorage
-	(*TProviderMeta)(nil),                // 10: NAlice.NData.NMusic.TProviderMeta
-	(*TTrackMetaRecord)(nil),             // 11: NAlice.NData.NMusic.TTrackMetaRecord
-	(*TAlbumMetaRecord)(nil),             // 12: NAlice.NData.NMusic.TAlbumMetaRecord
-	(*TArtistMetaRecord)(nil),            // 13: NAlice.NData.NMusic.TArtistMetaRecord
-	(*TPlaylistMetaRecord)(nil),          // 14: NAlice.NData.NMusic.TPlaylistMetaRecord
-	(*TRecommendationsMetaRecord)(nil),   // 15: NAlice.NData.NMusic.TRecommendationsMetaRecord
-	(*TGenerativeMetaRecord)(nil),        // 16: NAlice.NData.NMusic.TGenerativeMetaRecord
-	(*TFmRadioMetaRecord)(nil),           // 17: NAlice.NData.NMusic.TFmRadioMetaRecord
-	nil,                                  // 18: NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMetaEntry
-	nil,                                  // 19: NAlice.NData.NMusic.TMetaStorage.ProviderArtistMetaEntry
-	nil,                                  // 20: NAlice.NData.NMusic.TMetaStorage.ProviderPlaylistMetaEntry
-	nil,                                  // 21: NAlice.NData.NMusic.TMetaStorage.ProviderTrackMetaEntry
-	nil,                                  // 22: NAlice.NData.NMusic.TMetaStorage.ProviderRecommendationsMetaEntry
-	nil,                                  // 23: NAlice.NData.NMusic.TMetaStorage.ProviderGenerativeMetaEntry
-	nil,                                  // 24: NAlice.NData.NMusic.TMetaStorage.ProviderFmRadioMetaEntry
-	nil,                                  // 25: NAlice.NData.NMusic.TMetaStorage.ProviderInfoEntry
-	nil,                                  // 26: NAlice.NData.NMusic.TProviderTrackMeta.TrackMetaEntry
-	nil,                                  // 27: NAlice.NData.NMusic.TProviderAlbumMeta.AlbumMetaEntry
-	nil,                                  // 28: NAlice.NData.NMusic.TProviderArtistMeta.ArtistMetaEntry
-	nil,                                  // 29: NAlice.NData.NMusic.TProviderPlaylistMeta.PlaylistMetaEntry
-	nil,                                  // 30: NAlice.NData.NMusic.TProviderRecommendationsMeta.RecommendationsMetaEntry
-	nil,                                  // 31: NAlice.NData.NMusic.TProviderGenerativeMeta.GenerativeMetaEntry
-	nil,                                  // 32: NAlice.NData.NMusic.TProviderFmRadioMeta.FmRadioMetaEntry
-	nil,                                  // 33: NAlice.NData.NMusic.TMusicPlatformMetaStorage.ProviderMetaEntry
-	nil,                                  // 34: NAlice.NData.NMusic.TProviderMeta.TrackMetaRecordsEntry
-	nil,                                  // 35: NAlice.NData.NMusic.TProviderMeta.AlbumMetaRecordsEntry
-	nil,                                  // 36: NAlice.NData.NMusic.TProviderMeta.ArtistMetaRecordsEntry
-	nil,                                  // 37: NAlice.NData.NMusic.TProviderMeta.PlaylistMetaRecordsEntry
-	nil,                                  // 38: NAlice.NData.NMusic.TProviderMeta.RecommendationsMetaRecordsEntry
-	nil,                                  // 39: NAlice.NData.NMusic.TProviderMeta.GenerativeMetaRecordsEntry
-	nil,                                  // 40: NAlice.NData.NMusic.TProviderMeta.FmRadioMetaRecordsEntry
-	(*music_provider.TrackMeta)(nil),     // 41: Alice.Music.TrackMeta
-	(music_provider.LikeStatus)(0),       // 42: Alice.Music.LikeStatus
-	(*music_provider.AlbumMeta)(nil),     // 43: Alice.Music.AlbumMeta
-	(*music_provider.ArtistMeta)(nil),    // 44: Alice.Music.ArtistMeta
-	(*music_provider.PlaylistMeta)(nil),  // 45: Alice.Music.PlaylistMeta
-	(*music_provider.RecommendationsMeta)(nil), // 46: Alice.Music.RecommendationsMeta
-	(*music_provider.GenerativeMeta)(nil),      // 47: Alice.Music.GenerativeMeta
-	(*music_provider.FmRadioMeta)(nil),         // 48: Alice.Music.FmRadioMeta
+	(*TMetaStorage)(nil),                                          // 0: NAlice.NData.NMusic.TMetaStorage
+	(*TProviderInfo)(nil),                                         // 1: NAlice.NData.NMusic.TProviderInfo
+	(*TProviderTrackMeta)(nil),                                    // 2: NAlice.NData.NMusic.TProviderTrackMeta
+	(*TProviderAlbumMeta)(nil),                                    // 3: NAlice.NData.NMusic.TProviderAlbumMeta
+	(*TProviderArtistMeta)(nil),                                   // 4: NAlice.NData.NMusic.TProviderArtistMeta
+	(*TProviderPlaylistMeta)(nil),                                 // 5: NAlice.NData.NMusic.TProviderPlaylistMeta
+	(*TProviderRecommendationsMeta)(nil),                          // 6: NAlice.NData.NMusic.TProviderRecommendationsMeta
+	(*TProviderGenerativeMeta)(nil),                               // 7: NAlice.NData.NMusic.TProviderGenerativeMeta
+	(*TProviderFmRadioMeta)(nil),                                  // 8: NAlice.NData.NMusic.TProviderFmRadioMeta
+	(*TMusicPlatformMetaStorage)(nil),                             // 9: NAlice.NData.NMusic.TMusicPlatformMetaStorage
+	(*TProviderMeta)(nil),                                         // 10: NAlice.NData.NMusic.TProviderMeta
+	(*TTrackMetaRecord)(nil),                                      // 11: NAlice.NData.NMusic.TTrackMetaRecord
+	(*TAlbumMetaRecord)(nil),                                      // 12: NAlice.NData.NMusic.TAlbumMetaRecord
+	(*TArtistMetaRecord)(nil),                                     // 13: NAlice.NData.NMusic.TArtistMetaRecord
+	(*TPlaylistMetaRecord)(nil),                                   // 14: NAlice.NData.NMusic.TPlaylistMetaRecord
+	(*TRecommendationsMetaRecord)(nil),                            // 15: NAlice.NData.NMusic.TRecommendationsMetaRecord
+	(*TGenerativeMetaRecord)(nil),                                 // 16: NAlice.NData.NMusic.TGenerativeMetaRecord
+	(*TFmRadioMetaRecord)(nil),                                    // 17: NAlice.NData.NMusic.TFmRadioMetaRecord
+	(*TMetaStorage_ProviderAlbumMetaEntry)(nil),                   // 18: NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMetaEntry
+	(*TMetaStorage_ProviderArtistMetaEntry)(nil),                  // 19: NAlice.NData.NMusic.TMetaStorage.ProviderArtistMetaEntry
+	(*TMetaStorage_ProviderPlaylistMetaEntry)(nil),                // 20: NAlice.NData.NMusic.TMetaStorage.ProviderPlaylistMetaEntry
+	(*TMetaStorage_ProviderTrackMetaEntry)(nil),                   // 21: NAlice.NData.NMusic.TMetaStorage.ProviderTrackMetaEntry
+	(*TMetaStorage_ProviderRecommendationsMetaEntry)(nil),         // 22: NAlice.NData.NMusic.TMetaStorage.ProviderRecommendationsMetaEntry
+	(*TMetaStorage_ProviderGenerativeMetaEntry)(nil),              // 23: NAlice.NData.NMusic.TMetaStorage.ProviderGenerativeMetaEntry
+	(*TMetaStorage_ProviderFmRadioMetaEntry)(nil),                 // 24: NAlice.NData.NMusic.TMetaStorage.ProviderFmRadioMetaEntry
+	(*TMetaStorage_ProviderInfoEntry)(nil),                        // 25: NAlice.NData.NMusic.TMetaStorage.ProviderInfoEntry
+	(*TProviderTrackMeta_TrackMetaEntry)(nil),                     // 26: NAlice.NData.NMusic.TProviderTrackMeta.TrackMetaEntry
+	(*TProviderAlbumMeta_AlbumMetaEntry)(nil),                     // 27: NAlice.NData.NMusic.TProviderAlbumMeta.AlbumMetaEntry
+	(*TProviderArtistMeta_ArtistMetaEntry)(nil),                   // 28: NAlice.NData.NMusic.TProviderArtistMeta.ArtistMetaEntry
+	(*TProviderPlaylistMeta_PlaylistMetaEntry)(nil),               // 29: NAlice.NData.NMusic.TProviderPlaylistMeta.PlaylistMetaEntry
+	(*TProviderRecommendationsMeta_RecommendationsMetaEntry)(nil), // 30: NAlice.NData.NMusic.TProviderRecommendationsMeta.RecommendationsMetaEntry
+	(*TProviderGenerativeMeta_GenerativeMetaEntry)(nil),           // 31: NAlice.NData.NMusic.TProviderGenerativeMeta.GenerativeMetaEntry
+	(*TProviderFmRadioMeta_FmRadioMetaEntry)(nil),                 // 32: NAlice.NData.NMusic.TProviderFmRadioMeta.FmRadioMetaEntry
+	(*TMusicPlatformMetaStorage_ProviderMetaEntry)(nil),           // 33: NAlice.NData.NMusic.TMusicPlatformMetaStorage.ProviderMetaEntry
+	(*TProviderMeta_TrackMetaRecordsEntry)(nil),                   // 34: NAlice.NData.NMusic.TProviderMeta.TrackMetaRecordsEntry
+	(*TProviderMeta_AlbumMetaRecordsEntry)(nil),                   // 35: NAlice.NData.NMusic.TProviderMeta.AlbumMetaRecordsEntry
+	(*TProviderMeta_ArtistMetaRecordsEntry)(nil),                  // 36: NAlice.NData.NMusic.TProviderMeta.ArtistMetaRecordsEntry
+	(*TProviderMeta_PlaylistMetaRecordsEntry)(nil),                // 37: NAlice.NData.NMusic.TProviderMeta.PlaylistMetaRecordsEntry
+	(*TProviderMeta_RecommendationsMetaRecordsEntry)(nil),         // 38: NAlice.NData.NMusic.TProviderMeta.RecommendationsMetaRecordsEntry
+	(*TProviderMeta_GenerativeMetaRecordsEntry)(nil),              // 39: NAlice.NData.NMusic.TProviderMeta.GenerativeMetaRecordsEntry
+	(*TProviderMeta_FmRadioMetaRecordsEntry)(nil),                 // 40: NAlice.NData.NMusic.TProviderMeta.FmRadioMetaRecordsEntry
+	(*music_provider.TrackMeta)(nil),                              // 41: Alice.Music.TrackMeta
+	(music_provider.LikeStatus)(0),                                // 42: Alice.Music.LikeStatus
+	(*music_provider.AlbumMeta)(nil),                              // 43: Alice.Music.AlbumMeta
+	(*music_provider.ArtistMeta)(nil),                             // 44: Alice.Music.ArtistMeta
+	(*music_provider.PlaylistMeta)(nil),                           // 45: Alice.Music.PlaylistMeta
+	(*music_provider.RecommendationsMeta)(nil),                    // 46: Alice.Music.RecommendationsMeta
+	(*music_provider.GenerativeMeta)(nil),                         // 47: Alice.Music.GenerativeMeta
+	(*music_provider.FmRadioMeta)(nil),                            // 48: Alice.Music.FmRadioMeta
 }
 var file_alice_protos_data_scenario_music_meta_storage_proto_depIdxs = []int32{
 	18, // 0: NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMeta:type_name -> NAlice.NData.NMusic.TMetaStorage.ProviderAlbumMetaEntry

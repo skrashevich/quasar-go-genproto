@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/night_mode/capability.proto
 
-package nightmodepb
+package night_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TNightModeCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNightModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNightModeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNightModeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNightModeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TNightModeCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNightModeCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,9 +167,9 @@ func (x *TNightModeCapability_TState) GetEnabled() bool {
 
 type TNightModeCapability_TSetNightModeDirective struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Name            string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Enabled         bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
-	ManuallyToggled bool                   `protobuf:"varint,2,opt,name=ManuallyToggled,json=manually_toggled,proto3" json:"ManuallyToggled,omitempty"`
+	Name            string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Enabled         bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
+	ManuallyToggled bool                   `protobuf:"varint,2,opt,name=ManuallyToggled,proto3" json:"ManuallyToggled,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -229,22 +229,22 @@ var File_alice_protos_endpoint_capabilities_night_mode_capability_proto protoref
 
 const file_alice_protos_endpoint_capabilities_night_mode_capability_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/endpoint/capabilities/night_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8e\x04\n" +
-	"\x14TNightModeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	">alice/protos/endpoint/capabilities/night_mode/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf0\x02\n" +
+	"\x14TNightModeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TNightModeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TNightModeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a5\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a\xc6\x01\n" +
-	"\x16TSetNightModeDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled\x12?\n" +
-	"\x0fManuallyToggled\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10manually_toggledR\x10manually_toggled:%\x92\x82\x19\x18set_night_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf2\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cRB\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18NightModeCapabilityProtoP\x01ZJa.yandex-team.ru/alice/protos/endpoint/capabilities/night_mode;nightmodepbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TNightModeCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TNightModeCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\"\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1aq\n" +
+	"\x16TSetNightModeDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x12(\n" +
+	"\x0fManuallyToggled\x18\x02 \x01(\bR\x0fManuallyToggledB\xb4\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/night_mode\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_night_mode_capability_proto_rawDescOnce sync.Once

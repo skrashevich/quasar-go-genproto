@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_system_settings/capability.proto
 
-package alicechatsystemsettingspb
+package alice_chat_system_settings
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -215,8 +215,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_system_settings_capabil
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1at\n" +
 	"&TOpenDefaultAssistantSettingsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19\x1fopen_default_assistant_settings\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9b\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x91\x02B\xb6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAliceChatSystemSettingsProtoZha.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_system_settings;alicechatsystemsettingspbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19\x1fopen_default_assistant_settings\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9b\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x91\x02B\xbb\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAliceChatSystemSettingsProtoZmgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_system_settingsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_system_settings_capability_proto_rawDescOnce sync.Once

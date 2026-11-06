@@ -103,8 +103,8 @@ const file_alice_protos_api_alicekit_events_deferred_tts_generate_deferred_tts_g
 	"\x11_RequestMessageIdB\a\n" +
 	"\x05_TextB\t\n" +
 	"\a_IsLastB\v\n" +
-	"\t_ChunkNumB\xa2\x01\n" +
-	"@ru.yandex.alice.protos.api.alicekit.events.deferred_tts_generateB\x13DeferredTtsGenerateP\x01ZGa.yandex-team.ru/alice/protos/api/alicekit/events/deferred_tts_generateb\x06proto3"
+	"\t_ChunkNumB\xc1\x01\n" +
+	"@ru.yandex.alice.protos.api.alicekit.events.deferred_tts_generateB\x13DeferredTtsGenerateP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/deferred_tts_generateb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_deferred_tts_generate_deferred_tts_generate_proto_rawDescOnce sync.Once

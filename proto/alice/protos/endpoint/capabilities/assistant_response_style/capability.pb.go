@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/assistant_response_style/capability.proto
 
-package assistantresponsestylepb
+package assistant_response_style
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -272,8 +272,8 @@ const file_alice_protos_endpoint_capabilities_assistant_response_style_capabilit
 	"\rResponseStyle\x18\x01 \x01(\x0e2A.NAlice.TAssistantResponseStyleCapability.EAssistantResponseStyleB\x12\xaa\xdd\x1b\x0eresponse_styleR\x0eresponse_style:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"9\n" +
 	"\x17EAssistantResponseStyle\x12\v\n" +
 	"\aDefault\x10\x00\x12\x11\n" +
-	"\rChildOriented\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb9\x02B\xbc\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB%AssistantResponseStyleCapabilityProtoZea.yandex-team.ru/alice/protos/endpoint/capabilities/assistant_response_style;assistantresponsestylepbb\x06proto3"
+	"\rChildOriented\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb9\x02B\xc2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB%AssistantResponseStyleCapabilityProtoZkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/assistant_response_styleb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_assistant_response_style_capability_proto_rawDescOnce sync.Once

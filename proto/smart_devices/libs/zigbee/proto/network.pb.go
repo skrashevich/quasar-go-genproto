@@ -501,7 +501,8 @@ const file_smart_devices_libs_zigbee_proto_network_proto_rawDesc = "" +
 	"\aVersion\x18\b \x01(\x0e2).zigbee.proto.TNetworkParameters.TVersionR\aVersion\"\"\n" +
 	"\bTVersion\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\t\n" +
-	"\x05FIRST\x10\x01b\x06proto3"
+	"\x05FIRST\x10\x01B\xc2\x01\n" +
+	"\x10com.zigbee.protoB\fNetworkProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/zigbee/proto\xa2\x02\x03ZPX\xaa\x02\fZigbee.Proto\xca\x02\fZigbee\\Proto\xe2\x02\x18Zigbee\\Proto\\GPBMetadata\xea\x02\rZigbee::Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_zigbee_proto_network_proto_rawDescOnce sync.Once

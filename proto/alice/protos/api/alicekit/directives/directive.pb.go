@@ -76,20 +76,19 @@ func (TDirective_TChannel_EType) EnumDescriptor() ([]byte, []int) {
 
 type TDirective struct {
 	state             protoimpl.MessageState              `protogen:"open.v1"`
-	Type              string                              `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Name              string                              `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AnalyticsType     string                              `protobuf:"bytes,3,opt,name=AnalyticsType,json=sub_name,proto3" json:"AnalyticsType,omitempty"`
-	IgnoreAnswer      bool                                `protobuf:"varint,4,opt,name=IgnoreAnswer,json=ignore_answer,proto3" json:"IgnoreAnswer,omitempty"`
-	RoomDeviceIds     []string                            `protobuf:"bytes,7,rep,name=RoomDeviceIds,json=room_device_ids,proto3" json:"RoomDeviceIds,omitempty"`
-	IsLedSilent       bool                                `protobuf:"varint,8,opt,name=IsLedSilent,json=is_led_silent,proto3" json:"IsLedSilent,omitempty"`
-	EndpointId        *wrapperspb.StringValue             `protobuf:"bytes,9,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	IsParallel        bool                                `protobuf:"varint,11,opt,name=IsParallel,json=is_parallel,proto3" json:"IsParallel,omitempty"`
-	TimeBeforeDropMs  uint32                              `protobuf:"varint,12,opt,name=TimeBeforeDropMs,json=time_before_drop_ms,proto3" json:"TimeBeforeDropMs,omitempty"`
-	OnFinish          *TDirective_TOnFinishEvent          `protobuf:"bytes,14,opt,name=OnFinish,json=on_finish_event,proto3" json:"OnFinish,omitempty"`
-	SourceInfo        *source.TSourceInfo                 `protobuf:"bytes,17,opt,name=SourceInfo,json=source_info,proto3" json:"SourceInfo,omitempty"`
-	AttachToMultiroom bool                                `protobuf:"varint,18,opt,name=AttachToMultiroom,json=attach_to_multiroom,proto3" json:"AttachToMultiroom,omitempty"`
-	DirectiveType     endpoint.TCapability_EDirectiveType `protobuf:"varint,20,opt,name=DirectiveType,json=directive_type,proto3,enum=NAlice.TCapability_EDirectiveType" json:"DirectiveType,omitempty"`
-	Channel           *TDirective_TChannel                `protobuf:"bytes,21,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
+	Type              string                              `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Name              string                              `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	AnalyticsType     string                              `protobuf:"bytes,3,opt,name=AnalyticsType,proto3" json:"AnalyticsType,omitempty"`
+	IgnoreAnswer      bool                                `protobuf:"varint,4,opt,name=IgnoreAnswer,proto3" json:"IgnoreAnswer,omitempty"`
+	RoomDeviceIds     []string                            `protobuf:"bytes,7,rep,name=RoomDeviceIds,proto3" json:"RoomDeviceIds,omitempty"`
+	IsLedSilent       bool                                `protobuf:"varint,8,opt,name=IsLedSilent,proto3" json:"IsLedSilent,omitempty"`
+	EndpointId        *wrapperspb.StringValue             `protobuf:"bytes,9,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	IsParallel        bool                                `protobuf:"varint,11,opt,name=IsParallel,proto3" json:"IsParallel,omitempty"`
+	TimeBeforeDropMs  uint32                              `protobuf:"varint,12,opt,name=TimeBeforeDropMs,proto3" json:"TimeBeforeDropMs,omitempty"`
+	OnFinish          *TDirective_TOnFinishEvent          `protobuf:"bytes,14,opt,name=OnFinish,proto3" json:"OnFinish,omitempty"`
+	SourceInfo        *source.TSourceInfo                 `protobuf:"bytes,17,opt,name=SourceInfo,proto3" json:"SourceInfo,omitempty"`
+	AttachToMultiroom bool                                `protobuf:"varint,18,opt,name=AttachToMultiroom,proto3" json:"AttachToMultiroom,omitempty"`
+	DirectiveType     endpoint.TCapability_EDirectiveType `protobuf:"varint,20,opt,name=DirectiveType,proto3,enum=NAlice.TCapability_EDirectiveType" json:"DirectiveType,omitempty"`
 	// Types that are valid to be assigned to PayloadType:
 	//
 	//	*TDirective_Payload
@@ -103,7 +102,8 @@ type TDirective struct {
 	//
 	//	*TDirective_PersId
 	OptionalPersId isTDirective_OptionalPersId `protobuf_oneof:"OptionalPersId"`
-	Id             *string                     `protobuf:"bytes,16,opt,name=Id,json=id,proto3,oneof" json:"Id,omitempty"`
+	Id             *string                     `protobuf:"bytes,16,opt,name=Id,proto3,oneof" json:"Id,omitempty"`
+	Channel        *TDirective_TChannel        `protobuf:"bytes,21,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -229,13 +229,6 @@ func (x *TDirective) GetDirectiveType() endpoint.TCapability_EDirectiveType {
 	return endpoint.TCapability_EDirectiveType(0)
 }
 
-func (x *TDirective) GetChannel() *TDirective_TChannel {
-	if x != nil {
-		return x.Channel
-	}
-	return nil
-}
-
 func (x *TDirective) GetPayloadType() isTDirective_PayloadType {
 	if x != nil {
 		return x.PayloadType
@@ -300,16 +293,23 @@ func (x *TDirective) GetId() string {
 	return ""
 }
 
+func (x *TDirective) GetChannel() *TDirective_TChannel {
+	if x != nil {
+		return x.Channel
+	}
+	return nil
+}
+
 type isTDirective_PayloadType interface {
 	isTDirective_PayloadType()
 }
 
 type TDirective_Payload struct {
-	Payload *structpb.Struct `protobuf:"bytes,5,opt,name=Payload,json=payload,proto3,oneof"`
+	Payload *structpb.Struct `protobuf:"bytes,5,opt,name=Payload,proto3,oneof"`
 }
 
 type TDirective_PayloadRaw struct {
-	PayloadRaw []byte `protobuf:"bytes,15,opt,name=PayloadRaw,json=payload_raw,proto3,oneof"`
+	PayloadRaw []byte `protobuf:"bytes,15,opt,name=PayloadRaw,proto3,oneof"`
 }
 
 func (*TDirective_Payload) isTDirective_PayloadType() {}
@@ -321,7 +321,7 @@ type isTDirective_OptionalMultiroomSessionId interface {
 }
 
 type TDirective_MultiroomSessionId struct {
-	MultiroomSessionId string `protobuf:"bytes,6,opt,name=MultiroomSessionId,json=multiroom_session_id,proto3,oneof"`
+	MultiroomSessionId string `protobuf:"bytes,6,opt,name=MultiroomSessionId,proto3,oneof"`
 }
 
 func (*TDirective_MultiroomSessionId) isTDirective_OptionalMultiroomSessionId() {}
@@ -331,7 +331,7 @@ type isTDirective_OptionalPersId interface {
 }
 
 type TDirective_PersId struct {
-	PersId string `protobuf:"bytes,13,opt,name=PersId,json=pers_id,proto3,oneof"`
+	PersId string `protobuf:"bytes,13,opt,name=PersId,proto3,oneof"`
 }
 
 func (*TDirective_PersId) isTDirective_OptionalPersId() {}
@@ -397,7 +397,7 @@ type isTDirective_TOnFinishEvent_Event interface {
 }
 
 type TDirective_TOnFinishEvent_TypedCallbackRequest struct {
-	TypedCallbackRequest *structpb.Struct `protobuf:"bytes,1,opt,name=TypedCallbackRequest,json=typed_callback_request,proto3,oneof"`
+	TypedCallbackRequest *structpb.Struct `protobuf:"bytes,1,opt,name=TypedCallbackRequest,proto3,oneof"`
 }
 
 func (*TDirective_TOnFinishEvent_TypedCallbackRequest) isTDirective_TOnFinishEvent_Event() {}
@@ -450,47 +450,51 @@ var File_alice_protos_api_alicekit_directives_directive_proto protoreflect.FileD
 
 const file_alice_protos_api_alicekit_directives_directive_proto_rawDesc = "" +
 	"\n" +
-	"4alice/protos/api/alicekit/directives/directive.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a$alice/protos/api/source/source.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x99\r\n" +
+	"4alice/protos/api/alicekit/directives/directive.proto\x12\x10NAlice.NAliceApi\x1a+alice/library/censor/protos/extension.proto\x1a$alice/protos/api/source/source.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xc0\t\n" +
 	"\n" +
-	"TDirective\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\rAnalyticsType\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bsub_nameR\bsub_name\x126\n" +
-	"\fIgnoreAnswer\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rignore_answerR\rignore_answer\x12?\n" +
-	"\rRoomDeviceIds\x18\a \x03(\tB\x17\xaa\xdd\x1b\x0froom_device_ids\xf8\x91*\x03R\x0froom_device_ids\x125\n" +
-	"\vIsLedSilent\x18\b \x01(\bB\x11\xaa\xdd\x1b\ris_led_silentR\ris_led_silent\x12N\n" +
+	"TDirective\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12$\n" +
+	"\rAnalyticsType\x18\x03 \x01(\tR\rAnalyticsType\x12\"\n" +
+	"\fIgnoreAnswer\x18\x04 \x01(\bR\fIgnoreAnswer\x12$\n" +
+	"\rRoomDeviceIds\x18\a \x03(\tR\rRoomDeviceIds\x12 \n" +
+	"\vIsLedSilent\x18\b \x01(\bR\vIsLedSilent\x12<\n" +
 	"\n" +
-	"EndpointId\x18\t \x01(\v2\x1c.google.protobuf.StringValueB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x120\n" +
+	"EndpointId\x18\t \x01(\v2\x1c.google.protobuf.StringValueR\n" +
+	"EndpointId\x12\x1e\n" +
 	"\n" +
-	"IsParallel\x18\v \x01(\bB\x0f\xaa\xdd\x1b\vis_parallelR\vis_parallel\x12F\n" +
-	"\x10TimeBeforeDropMs\x18\f \x01(\rB\x17\xaa\xdd\x1b\x13time_before_drop_msR\x13time_before_drop_ms\x12c\n" +
-	"\bOnFinish\x18\x0e \x01(\v2+.NAlice.NAliceApi.TDirective.TOnFinishEventB\x13\xaa\xdd\x1b\x0fon_finish_eventR\x0fon_finish_event\x12O\n" +
+	"IsParallel\x18\v \x01(\bR\n" +
+	"IsParallel\x12*\n" +
+	"\x10TimeBeforeDropMs\x18\f \x01(\rR\x10TimeBeforeDropMs\x12G\n" +
+	"\bOnFinish\x18\x0e \x01(\v2+.NAlice.NAliceApi.TDirective.TOnFinishEventR\bOnFinish\x12=\n" +
 	"\n" +
-	"SourceInfo\x18\x11 \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoB\x0f\xaa\xdd\x1b\vsource_infoR\vsource_info\x12G\n" +
-	"\x11AttachToMultiroom\x18\x12 \x01(\bB\x17\xaa\xdd\x1b\x13attach_to_multiroomR\x13attach_to_multiroom\x12]\n" +
-	"\rDirectiveType\x18\x14 \x01(\x0e2\".NAlice.TCapability.EDirectiveTypeB\x12\xaa\xdd\x1b\x0edirective_typeR\x0edirective_type\x12L\n" +
-	"\aChannel\x18\x15 \x01(\v2%.NAlice.NAliceApi.TDirective.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12H\n" +
-	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\apayload\xa8\x8d'\x02H\x00R\apayload\x12:\n" +
+	"SourceInfo\x18\x11 \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoR\n" +
+	"SourceInfo\x12,\n" +
+	"\x11AttachToMultiroom\x18\x12 \x01(\bR\x11AttachToMultiroom\x12H\n" +
+	"\rDirectiveType\x18\x14 \x01(\x0e2\".NAlice.TCapability.EDirectiveTypeR\rDirectiveType\x123\n" +
+	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructH\x00R\aPayload\x12 \n" +
 	"\n" +
-	"PayloadRaw\x18\x0f \x01(\fB\x17\xa0\xdd\x1b\x05\xaa\xdd\x1b\vpayload_raw\xa8\x8d'\x02H\x00R\vpayload_raw\x12L\n" +
-	"\x12MultiroomSessionId\x18\x06 \x01(\tB\x18\xaa\xdd\x1b\x14multiroom_session_idH\x01R\x14multiroom_session_id\x12&\n" +
-	"\x06PersId\x18\r \x01(\tB\v\xaa\xdd\x1b\apers_idH\x02R\apers_id\x12\x1b\n" +
-	"\x02Id\x18\x10 \x01(\tB\x06\xaa\xdd\x1b\x02idH\x03R\x02id\x88\x01\x01\x1a\x9b\x01\n" +
-	"\x0eTOnFinishEvent\x12o\n" +
-	"\x14TypedCallbackRequest\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x1e\xa0\xdd\x1b\x05\xaa\xdd\x1b\x16typed_callback_requestH\x00R\x16typed_callback_request:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Event\x12\t\xaa\xdd\x1b\x05event\x1a}\n" +
+	"PayloadRaw\x18\x0f \x01(\fH\x00R\n" +
+	"PayloadRaw\x120\n" +
+	"\x12MultiroomSessionId\x18\x06 \x01(\tH\x01R\x12MultiroomSessionId\x12\x18\n" +
+	"\x06PersId\x18\r \x01(\tH\x02R\x06PersId\x12\x13\n" +
+	"\x02Id\x18\x10 \x01(\tH\x03R\x02Id\x88\x01\x01\x12L\n" +
+	"\aChannel\x18\x15 \x01(\v2%.NAlice.NAliceApi.TDirective.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x1ah\n" +
+	"\x0eTOnFinishEvent\x12M\n" +
+	"\x14TypedCallbackRequest\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x14TypedCallbackRequestB\a\n" +
+	"\x05Event\x1a}\n" +
 	"\bTChannel\x12I\n" +
 	"\x04Type\x18\x01 \x01(\x0e2+.NAlice.NAliceApi.TDirective.TChannel.ETypeB\b\xaa\xdd\x1b\x04typeR\x04type\" \n" +
 	"\x05EType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
 	"\n" +
-	"\x06Dialog\x10\x01:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x13\n" +
-	"\vPayloadType\x12\x04\xa0\xdd\x1b\fB?\n" +
-	"\x1aOptionalMultiroomSessionId\x12!\xaa\xdd\x1b\x1doptional_multiroom_session_idB&\n" +
-	"\x0eOptionalPersId\x12\x14\xaa\xdd\x1b\x10optional_pers_idB\x05\n" +
+	"\x06Dialog\x10\x01:\x04\xa8\xdd\x1b\x04B\r\n" +
+	"\vPayloadTypeB\x1c\n" +
+	"\x1aOptionalMultiroomSessionIdB\x10\n" +
+	"\x0eOptionalPersIdB\x05\n" +
 	"\x03_IdJ\b\bԻ\x03\x10ջ\x03J\x04\b\n" +
-	"\x10\vJ\x04\b\x13\x10\x14R\x15UniproxyDirectiveMetaR\fTypedPayloadBy\n" +
-	".ru.yandex.alice.protos.api.alicekit.directivesB\x0eDirectiveProtoP\x01Z5a.yandex-team.ru/alice/protos/api/alicekit/directivesb\x06proto3"
+	"\x10\vJ\x04\b\x13\x10\x14R\x15UniproxyDirectiveMetaR\fTypedPayloadB\xdd\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0eDirectiveProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/directives\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_directives_directive_proto_rawDescOnce sync.Once
@@ -521,8 +525,8 @@ var file_alice_protos_api_alicekit_directives_directive_proto_depIdxs = []int32{
 	2, // 1: NAlice.NAliceApi.TDirective.OnFinish:type_name -> NAlice.NAliceApi.TDirective.TOnFinishEvent
 	5, // 2: NAlice.NAliceApi.TDirective.SourceInfo:type_name -> NAlice.NAliceApi.TSourceInfo
 	6, // 3: NAlice.NAliceApi.TDirective.DirectiveType:type_name -> NAlice.TCapability.EDirectiveType
-	3, // 4: NAlice.NAliceApi.TDirective.Channel:type_name -> NAlice.NAliceApi.TDirective.TChannel
-	7, // 5: NAlice.NAliceApi.TDirective.Payload:type_name -> google.protobuf.Struct
+	7, // 4: NAlice.NAliceApi.TDirective.Payload:type_name -> google.protobuf.Struct
+	3, // 5: NAlice.NAliceApi.TDirective.Channel:type_name -> NAlice.NAliceApi.TDirective.TChannel
 	7, // 6: NAlice.NAliceApi.TDirective.TOnFinishEvent.TypedCallbackRequest:type_name -> google.protobuf.Struct
 	0, // 7: NAlice.NAliceApi.TDirective.TChannel.Type:type_name -> NAlice.NAliceApi.TDirective.TChannel.EType
 	8, // [8:8] is the sub-list for method output_type

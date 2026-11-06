@@ -82,8 +82,8 @@ func (TStreamControl_TActionClose_EReason) EnumDescriptor() ([]byte, []int) {
 
 type TStreamControl struct {
 	state     protoimpl.MessageState `protogen:"open.v1"`
-	StreamId  int64                  `protobuf:"varint,1,opt,name=StreamId,json=stream_id,proto3" json:"StreamId,omitempty"`
-	MessageId string                 `protobuf:"bytes,2,opt,name=MessageId,json=message_id,proto3" json:"MessageId,omitempty"`
+	StreamId  int64                  `protobuf:"varint,1,opt,name=StreamId,proto3" json:"StreamId,omitempty"`
+	MessageId string                 `protobuf:"bytes,2,opt,name=MessageId,proto3" json:"MessageId,omitempty"`
 	// Types that are valid to be assigned to Action:
 	//
 	//	*TStreamControl_Close
@@ -177,15 +177,15 @@ type isTStreamControl_Action interface {
 }
 
 type TStreamControl_Close struct {
-	Close *TStreamControl_TActionClose `protobuf:"bytes,3,opt,name=Close,json=close,proto3,oneof"`
+	Close *TStreamControl_TActionClose `protobuf:"bytes,3,opt,name=Close,proto3,oneof"`
 }
 
 type TStreamControl_SpotterEnd struct {
-	SpotterEnd *TStreamControl_TActionSpotterEnd `protobuf:"bytes,4,opt,name=SpotterEnd,json=spotter_end,proto3,oneof"`
+	SpotterEnd *TStreamControl_TActionSpotterEnd `protobuf:"bytes,4,opt,name=SpotterEnd,proto3,oneof"`
 }
 
 type TStreamControl_LazyTTS struct {
-	LazyTTS *TStreamControl_TActionLazyTTS `protobuf:"bytes,5,opt,name=LazyTTS,json=lazy_tts,proto3,oneof"`
+	LazyTTS *TStreamControl_TActionLazyTTS `protobuf:"bytes,5,opt,name=LazyTTS,proto3,oneof"`
 }
 
 func (*TStreamControl_Close) isTStreamControl_Action() {}
@@ -196,7 +196,7 @@ func (*TStreamControl_LazyTTS) isTStreamControl_Action() {}
 
 type TStreamControl_TActionClose struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Reason        TStreamControl_TActionClose_EReason `protobuf:"varint,1,opt,name=Reason,json=reason,proto3,enum=NAlice.NAliceApi.TStreamControl_TActionClose_EReason" json:"Reason,omitempty"`
+	Reason        TStreamControl_TActionClose_EReason `protobuf:"varint,1,opt,name=Reason,proto3,enum=NAlice.NAliceApi.TStreamControl_TActionClose_EReason" json:"Reason,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -276,7 +276,7 @@ func (*TStreamControl_TActionSpotterEnd) Descriptor() ([]byte, []int) {
 
 type TStreamControl_TActionLazyTTS struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChunkSize     int64                  `protobuf:"varint,1,opt,name=ChunkSize,json=chunk_size,proto3" json:"ChunkSize,omitempty"`
+	ChunkSize     int64                  `protobuf:"varint,1,opt,name=ChunkSize,proto3" json:"ChunkSize,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -322,19 +322,17 @@ var File_alice_protos_api_alicekit_events_stream_control_stream_control_proto pr
 
 const file_alice_protos_api_alicekit_events_stream_control_stream_control_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/stream_control/stream_control.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdb\x05\n" +
-	"\x0eTStreamControl\x12*\n" +
-	"\bStreamId\x18\x01 \x01(\x03B\r\xaa\xdd\x1b\tstream_idR\tstream_id\x12-\n" +
-	"\tMessageId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"message_idR\n" +
-	"message_id\x12P\n" +
-	"\x05Close\x18\x03 \x01(\v2-.NAlice.NAliceApi.TStreamControl.TActionCloseB\t\xaa\xdd\x1b\x05closeH\x00R\x05close\x12f\n" +
+	"Dalice/protos/api/alicekit/events/stream_control/stream_control.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd3\x04\n" +
+	"\x0eTStreamControl\x12\x1a\n" +
+	"\bStreamId\x18\x01 \x01(\x03R\bStreamId\x12\x1c\n" +
+	"\tMessageId\x18\x02 \x01(\tR\tMessageId\x12E\n" +
+	"\x05Close\x18\x03 \x01(\v2-.NAlice.NAliceApi.TStreamControl.TActionCloseH\x00R\x05Close\x12T\n" +
 	"\n" +
-	"SpotterEnd\x18\x04 \x01(\v22.NAlice.NAliceApi.TStreamControl.TActionSpotterEndB\x0f\xaa\xdd\x1b\vspotter_endH\x00R\vspotter_end\x12Z\n" +
-	"\aLazyTTS\x18\x05 \x01(\v2/.NAlice.NAliceApi.TStreamControl.TActionLazyTTSB\f\xaa\xdd\x1b\blazy_ttsH\x00R\blazy_tts\x1a\xdf\x01\n" +
-	"\fTActionClose\x12Y\n" +
-	"\x06Reason\x18\x01 \x01(\x0e25.NAlice.NAliceApi.TStreamControl.TActionClose.EReasonB\n" +
-	"\xaa\xdd\x1b\x06reasonR\x06reason\"n\n" +
+	"SpotterEnd\x18\x04 \x01(\v22.NAlice.NAliceApi.TStreamControl.TActionSpotterEndH\x00R\n" +
+	"SpotterEnd\x12K\n" +
+	"\aLazyTTS\x18\x05 \x01(\v2/.NAlice.NAliceApi.TStreamControl.TActionLazyTTSH\x00R\aLazyTTS\x1a\xcd\x01\n" +
+	"\fTActionClose\x12M\n" +
+	"\x06Reason\x18\x01 \x01(\x0e25.NAlice.NAliceApi.TStreamControl.TActionClose.EReasonR\x06Reason\"n\n" +
 	"\aEReason\x12\x06\n" +
 	"\x02OK\x10\x00\x12\x12\n" +
 	"\x0eINTERNAL_ERROR\x10\x01\x12\x12\n" +
@@ -342,15 +340,12 @@ const file_alice_protos_api_alicekit_events_stream_control_stream_control_proto_
 	"\x14AUDIO_SOURCE_STOPPED\x10\x03\x12\n" +
 	"\n" +
 	"\x06CANCEL\x10\x04\x12\r\n" +
-	"\tNO_SPEECH\x10\x05:\x04\xa8\xdd\x1b\x04\x1a\x13\n" +
-	"\x11TActionSpotterEnd\x1aE\n" +
-	"\x0eTActionLazyTTS\x12-\n" +
-	"\tChunkSize\x18\x01 \x01(\x03B\x0e\xaa\xdd\x1b\n" +
-	"chunk_sizeR\n" +
-	"chunk_size:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x14\n" +
-	"\x06Action\x12\n" +
-	"\xaa\xdd\x1b\x06actionB\x8e\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.events.stream_controlB\rStreamControlP\x01Z@a.yandex-team.ru/alice/protos/api/alicekit/events/stream_controlb\x06proto3"
+	"\tNO_SPEECH\x10\x05\x1a\x13\n" +
+	"\x11TActionSpotterEnd\x1a.\n" +
+	"\x0eTActionLazyTTS\x12\x1c\n" +
+	"\tChunkSize\x18\x01 \x01(\x03R\tChunkSizeB\b\n" +
+	"\x06ActionB\xec\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12StreamControlProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/stream_control\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_stream_control_stream_control_proto_rawDescOnce sync.Once

@@ -25,8 +25,8 @@ const (
 
 type TFinishRequest struct {
 	state            protoimpl.MessageState            `protogen:"open.v1"`
-	RequestMessageId string                            `protobuf:"bytes,1,opt,name=RequestMessageId,json=requestMessageId,proto3" json:"RequestMessageId,omitempty"`
-	AliceRequest     *alice_request.TAliceRequestProto `protobuf:"bytes,2,opt,name=AliceRequest,json=alice_request,proto3" json:"AliceRequest,omitempty"`
+	RequestMessageId string                            `protobuf:"bytes,1,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	AliceRequest     *alice_request.TAliceRequestProto `protobuf:"bytes,2,opt,name=AliceRequest,proto3" json:"AliceRequest,omitempty"`
 	FinishOptions    *TFinishRequest_TFinishOptions    `protobuf:"bytes,3,opt,name=FinishOptions,json=finish_options,proto3" json:"FinishOptions,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -375,10 +375,10 @@ var File_alice_protos_api_alicekit_events_finish_request_finish_request_proto pr
 
 const file_alice_protos_api_alicekit_events_finish_request_finish_request_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/finish_request/finish_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\"\x83\t\n" +
-	"\x0eTFinishRequest\x12@\n" +
-	"\x10RequestMessageId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10requestMessageIdR\x10requestMessageId\x12R\n" +
-	"\fAliceRequest\x18\x02 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\x11\xaa\xdd\x1b\ralice_requestR\ralice_request\x12j\n" +
+	"Dalice/protos/api/alicekit/events/finish_request/finish_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\"\xd3\b\n" +
+	"\x0eTFinishRequest\x12*\n" +
+	"\x10RequestMessageId\x18\x01 \x01(\tR\x10RequestMessageId\x12>\n" +
+	"\fAliceRequest\x18\x02 \x01(\v2\x1a.NAlice.TAliceRequestProtoR\fAliceRequest\x12j\n" +
 	"\rFinishOptions\x18\x03 \x01(\v2/.NAlice.NAliceApi.TFinishRequest.TFinishOptionsB\x12\xaa\xdd\x1b\x0efinish_optionsR\x0efinish_options\x1a\xe8\x06\n" +
 	"\x0eTFinishOptions\x12m\n" +
 	"\n" +
@@ -394,8 +394,8 @@ const file_alice_protos_api_alicekit_events_finish_request_finish_request_proto_
 	"\x15TUpdatePayloadOptions\x12\x83\x01\n" +
 	"\n" +
 	"UpdateText\x18\x01 \x01(\v2Q.NAlice.NAliceApi.TFinishRequest.TFinishOptions.TUpdatePayloadOptions.TUpdateTextB\x0f\xaa\xdd\x1b\vupdate_textR\vupdate_text\x1a\x13\n" +
-	"\vTUpdateText:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x8e\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.events.finish_requestB\rFinishRequestP\x01Z@a.yandex-team.ru/alice/protos/api/alicekit/events/finish_requestb\x06proto3"
+	"\vTUpdateText:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\xec\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12FinishRequestProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/finish_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_finish_request_finish_request_proto_rawDescOnce sync.Once

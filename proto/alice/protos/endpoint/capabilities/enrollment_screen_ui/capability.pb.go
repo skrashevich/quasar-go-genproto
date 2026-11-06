@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/enrollment_screen_ui/capability.proto
 
-package enrollmentscreenuipb
+package enrollment_screen_ui
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -739,8 +739,8 @@ const file_alice_protos_endpoint_capabilities_enrollment_screen_ui_capability_pr
 	"\x0eFinishVideoUrl\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10finish_video_urlR\x10finish_video_url:+\x92\x82\x19\x1efinish_enrollment_ui_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9f\x02\x1a\xa2\x01\n" +
 	"%TShowVoiceprintRemoveSuccessDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x04Puid\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\x04puid\xa8\x8d'\x02\xf8\x91*\x01R\x04puid:5\x92\x82\x19(show_voiceprint_remove_success_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc5\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cbB\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!EnrollmentScreenUiCapabilityProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/enrollment_screen_ui;enrollmentscreenuipbb\x06proto3"
+	"\x04Puid\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\x04puid\xa8\x8d'\x02\xf8\x91*\x01R\x04puid:5\x92\x82\x19(show_voiceprint_remove_success_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc5\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cbB\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!EnrollmentScreenUiCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/enrollment_screen_uib\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_enrollment_screen_ui_capability_proto_rawDescOnce sync.Once

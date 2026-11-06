@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_file_download/capability.proto
 
-package alicefiledownloadpb
+package alice_file_download
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -541,8 +541,8 @@ const file_alice_protos_endpoint_capabilities_alice_file_download_capability_pro
 	"\bMimeType\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tmime_typeR\tmime_type\x12'\n" +
 	"\aCanOpen\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bcan_openR\bcan_open:\x04\xa8\xdd\x1b\x04\x1a\x16\n" +
 	"\x0eTDownloadError:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xd7\x01B\b\n" +
-	"\x06Status:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb3\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceFileDownloadProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/alice_file_download;alicefiledownloadpbb\x06proto3"
+	"\x06Status:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb3\x01B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16AliceFileDownloadProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_file_downloadb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_file_download_capability_proto_rawDescOnce sync.Once

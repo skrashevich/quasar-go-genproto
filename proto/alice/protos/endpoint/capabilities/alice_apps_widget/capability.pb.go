@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_apps_widget/capability.proto
 
-package aliceappswidgetpb
+package alice_apps_widget
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -545,8 +545,8 @@ const file_alice_protos_endpoint_capabilities_alice_apps_widget_capability_proto
 	"\x04Code\x18\x01 \x01(\x03B\b\xaa\xdd\x1b\x04codeR\x04code\x12%\n" +
 	"\aMessage\x18\x02 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage\x125\n" +
 	"\x04Data\x18\x03 \x01(\v2\x17.google.protobuf.StructB\b\xaa\xdd\x1b\x04dataR\x04data:\x04\xa8\xdd\x1b\x04:1\x92\x82\x19$alice_apps_widget_set_data_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc0\x04B\x0e\n" +
-	"\fToolResponse:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe8\x01B\x98\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0fAliceAppsWidgetZWa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_apps_widget;aliceappswidgetpbb\x06proto3"
+	"\fToolResponse:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe8\x01B\xa5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0fAliceAppsWidgetZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_apps_widgetb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_apps_widget_capability_proto_rawDescOnce sync.Once

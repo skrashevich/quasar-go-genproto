@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_serviceability/capability.proto
 
-package serviceability
+package iot_serviceability
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -317,8 +317,8 @@ const file_alice_protos_endpoint_capabilities_iot_serviceability_capability_prot
 	"\x19TIotServiceabilityOkEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x80\x01\x1a*\n" +
 	"\x1eTIotServiceabilityDamagedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1ce\x1a9\n" +
 	"-TIotServiceabilityMechanicalInterferenceEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cf\x1a1\n" +
-	"%TIotServiceabilityAbnormalTongueEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cg:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa7\x01B\xaa\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!TIotServiceabilityCapabilityProtoP\x01ZUa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_serviceability;serviceabilityb\x06proto3"
+	"%TIotServiceabilityAbnormalTongueEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cg:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa7\x01B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!TIotServiceabilityCapabilityProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_serviceabilityb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_serviceability_capability_proto_rawDescOnce sync.Once

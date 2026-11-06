@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ip_cam_streaming/capability.proto
 
-package ipcamstreamingpb
+package ip_cam_streaming
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -903,8 +903,8 @@ const file_alice_protos_endpoint_capabilities_ip_cam_streaming_capability_proto_
 	"\x0fENightModeState\x12\x19\n" +
 	"\x15UnknownNightModeState\x10\x00\x12\x19\n" +
 	"\x15EnabledNightModeState\x10\x01\x12\x1a\n" +
-	"\x16DisabledNightModeState\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa6\x02B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dIpCamStreamingCapabilityProtoP\x01ZUa.yandex-team.ru/alice/protos/endpoint/capabilities/ip_cam_streaming;ipcamstreamingpbb\x06proto3"
+	"\x16DisabledNightModeState\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa6\x02B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dIpCamStreamingCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ip_cam_streamingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ip_cam_streaming_capability_proto_rawDescOnce sync.Once

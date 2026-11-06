@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/builtin_buttons/capability.proto
 
-package builtinbuttonspb
+package builtin_buttons
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -283,8 +283,8 @@ const file_alice_protos_endpoint_capabilities_builtin_buttons_capability_proto_r
 	"\n" +
 	"Capability\x18\x01 \x01(\v2!.NAlice.TBuiltInButtonsCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xb1\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8c\x02B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13BuiltInButtonsProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/builtin_buttons;builtinbuttonspbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xb1\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8c\x02B\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13BuiltInButtonsProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/builtin_buttonsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_builtin_buttons_capability_proto_rawDescOnce sync.Once

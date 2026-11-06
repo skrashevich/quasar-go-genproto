@@ -30,9 +30,9 @@ const (
 	ELang_L_KAZ ELang = 10
 	ELang_L_TUR ELang = 44
 	ELang_L_UZB ELang = 47
-	ELang_L_KIR ELang = 48
 	ELang_L_ARA ELang = 55
 	ELang_L_ARZ ELang = 127
+	ELang_L_KIR ELang = 48
 	ELang_L_ARE ELang = 156
 )
 
@@ -45,9 +45,9 @@ var (
 		10:  "L_KAZ",
 		44:  "L_TUR",
 		47:  "L_UZB",
-		48:  "L_KIR",
 		55:  "L_ARA",
 		127: "L_ARZ",
+		48:  "L_KIR",
 		156: "L_ARE",
 	}
 	ELang_value = map[string]int32{
@@ -57,9 +57,9 @@ var (
 		"L_KAZ": 10,
 		"L_TUR": 44,
 		"L_UZB": 47,
-		"L_KIR": 48,
 		"L_ARA": 55,
 		"L_ARZ": 127,
+		"L_KIR": 48,
 		"L_ARE": 156,
 	}
 )
@@ -104,12 +104,13 @@ const file_alice_protos_data_language_language_proto_rawDesc = "" +
 	"\x12\t\n" +
 	"\x05L_TUR\x10,\x12\t\n" +
 	"\x05L_UZB\x10/\x12\t\n" +
-	"\x05L_KIR\x100\x12\t\n" +
 	"\x05L_ARA\x107\x12\t\n" +
-	"\x05L_ARZ\x10\x7f\x12\n" +
+	"\x05L_ARZ\x10\x7f\x12\t\n" +
+	"\x05L_KIR\x100\x12\n" +
 	"\n" +
-	"\x05L_ARE\x10\x9c\x01BS\n" +
-	"$ru.yandex.alice.protos.data.languageZ+a.yandex-team.ru/alice/protos/data/languageb\x06proto3"
+	"\x05L_ARE\x10\x9c\x01B\x9f\x01\n" +
+	"\n" +
+	"com.NAliceB\rLanguageProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/language\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_language_language_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_tracking/capability.proto
 
-package trackingpb
+package iot_tracking
 
 import (
 	iot "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot"
@@ -28,9 +28,9 @@ const (
 
 type TIotTrackingCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotTrackingCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotTrackingCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotTrackingCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotTrackingCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,8 +124,8 @@ func (*TIotTrackingCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotTrackingCapability_TState struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Active            bool                   `protobuf:"varint,1,opt,name=Active,json=active,proto3" json:"Active,omitempty"`
-	ReportFrequencyMs uint64                 `protobuf:"varint,2,opt,name=ReportFrequencyMs,json=report_frequency_ms,proto3" json:"ReportFrequencyMs,omitempty"`
+	Active            bool                   `protobuf:"varint,1,opt,name=Active,proto3" json:"Active,omitempty"`
+	ReportFrequencyMs uint64                 `protobuf:"varint,2,opt,name=ReportFrequencyMs,proto3" json:"ReportFrequencyMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -176,8 +176,8 @@ func (x *TIotTrackingCapability_TState) GetReportFrequencyMs() uint64 {
 
 type TIotTrackingCapability_TIotStartTrackingDirective struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	ReportFrequencyMs uint64                 `protobuf:"varint,1,opt,name=ReportFrequencyMs,json=report_frequency_ms,proto3" json:"ReportFrequencyMs,omitempty"`
-	TimeoutMs         uint64                 `protobuf:"varint,2,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	ReportFrequencyMs uint64                 `protobuf:"varint,1,opt,name=ReportFrequencyMs,proto3" json:"ReportFrequencyMs,omitempty"`
+	TimeoutMs         uint64                 `protobuf:"varint,2,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -262,60 +262,16 @@ func (*TIotTrackingCapability_TIotStopTrackingDirective) Descriptor() ([]byte, [
 	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 3}
 }
 
-type TIotTrackingCapability_TUpdateStateEvent struct {
-	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Capability    *TIotTrackingCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TIotTrackingCapability_TUpdateStateEvent) Reset() {
-	*x = TIotTrackingCapability_TUpdateStateEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotTrackingCapability_TUpdateStateEvent) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotTrackingCapability_TUpdateStateEvent) ProtoMessage() {}
-
-func (x *TIotTrackingCapability_TUpdateStateEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotTrackingCapability_TUpdateStateEvent.ProtoReflect.Descriptor instead.
-func (*TIotTrackingCapability_TUpdateStateEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 4}
-}
-
-func (x *TIotTrackingCapability_TUpdateStateEvent) GetCapability() *TIotTrackingCapability {
-	if x != nil {
-		return x.Capability
-	}
-	return nil
-}
-
 type TIotTrackingCapability_TIotTrackingEvent struct {
 	state         protoimpl.MessageState                                   `protogen:"open.v1"`
-	ObjectStates  []*TIotTrackingCapability_TIotTrackingEvent_TObjectState `protobuf:"bytes,1,rep,name=ObjectStates,json=object_states,proto3" json:"ObjectStates,omitempty"`
+	ObjectStates  []*TIotTrackingCapability_TIotTrackingEvent_TObjectState `protobuf:"bytes,1,rep,name=ObjectStates,proto3" json:"ObjectStates,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotTrackingCapability_TIotTrackingEvent) Reset() {
 	*x = TIotTrackingCapability_TIotTrackingEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -327,7 +283,7 @@ func (x *TIotTrackingCapability_TIotTrackingEvent) String() string {
 func (*TIotTrackingCapability_TIotTrackingEvent) ProtoMessage() {}
 
 func (x *TIotTrackingCapability_TIotTrackingEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -340,7 +296,7 @@ func (x *TIotTrackingCapability_TIotTrackingEvent) ProtoReflect() protoreflect.M
 
 // Deprecated: Use TIotTrackingCapability_TIotTrackingEvent.ProtoReflect.Descriptor instead.
 func (*TIotTrackingCapability_TIotTrackingEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 5}
+	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 4}
 }
 
 func (x *TIotTrackingCapability_TIotTrackingEvent) GetObjectStates() []*TIotTrackingCapability_TIotTrackingEvent_TObjectState {
@@ -350,11 +306,55 @@ func (x *TIotTrackingCapability_TIotTrackingEvent) GetObjectStates() []*TIotTrac
 	return nil
 }
 
+type TIotTrackingCapability_TUpdateStateEvent struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Capability    *TIotTrackingCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIotTrackingCapability_TUpdateStateEvent) Reset() {
+	*x = TIotTrackingCapability_TUpdateStateEvent{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotTrackingCapability_TUpdateStateEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotTrackingCapability_TUpdateStateEvent) ProtoMessage() {}
+
+func (x *TIotTrackingCapability_TUpdateStateEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotTrackingCapability_TUpdateStateEvent.ProtoReflect.Descriptor instead.
+func (*TIotTrackingCapability_TUpdateStateEvent) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 5}
+}
+
+func (x *TIotTrackingCapability_TUpdateStateEvent) GetCapability() *TIotTrackingCapability {
+	if x != nil {
+		return x.Capability
+	}
+	return nil
+}
+
 type TIotTrackingCapability_TIotTrackingEvent_TObjectState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            uint32                 `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Position      *iot.TPoint            `protobuf:"bytes,2,opt,name=Position,json=position,proto3" json:"Position,omitempty"`
-	VelocityMmS   float32                `protobuf:"fixed32,4,opt,name=VelocityMmS,json=velocity_mm_s,proto3" json:"VelocityMmS,omitempty"`
+	ID            uint32                 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Position      *iot.TPoint            `protobuf:"bytes,2,opt,name=Position,proto3" json:"Position,omitempty"`
+	VelocityMmS   float32                `protobuf:"fixed32,4,opt,name=VelocityMmS,proto3" json:"VelocityMmS,omitempty"`
 	XVelocityMmS  float32                `protobuf:"fixed32,5,opt,name=XVelocityMmS,json=x_velocity_mm_s,proto3" json:"XVelocityMmS,omitempty"`
 	YVelocityMmS  float32                `protobuf:"fixed32,6,opt,name=YVelocityMmS,json=y_velocity_mm_s,proto3" json:"YVelocityMmS,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -388,7 +388,7 @@ func (x *TIotTrackingCapability_TIotTrackingEvent_TObjectState) ProtoReflect() p
 
 // Deprecated: Use TIotTrackingCapability_TIotTrackingEvent_TObjectState.ProtoReflect.Descriptor instead.
 func (*TIotTrackingCapability_TIotTrackingEvent_TObjectState) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 5, 0}
+	return file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescGZIP(), []int{0, 4, 0}
 }
 
 func (x *TIotTrackingCapability_TIotTrackingEvent_TObjectState) GetID() uint32 {
@@ -430,39 +430,36 @@ var File_alice_protos_endpoint_capabilities_iot_tracking_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/iot_tracking/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\xbf\t\n" +
-	"\x16TIotTrackingCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"@alice/protos/endpoint/capabilities/iot_tracking/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\x8b\a\n" +
+	"\x16TIotTrackingCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotTrackingCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotTrackingCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a{\n" +
-	"\x06TState\x12\"\n" +
-	"\x06Active\x18\x01 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06activeR\x06active\x12G\n" +
-	"\x11ReportFrequencyMs\x18\x02 \x01(\x04B\x17\xaa\xdd\x1b\x13report_frequency_msR\x13report_frequency_ms:\x04\xa8\xdd\x1b\x04\x1a\xbf\x01\n" +
-	"\x1aTIotStartTrackingDirective\x12G\n" +
-	"\x11ReportFrequencyMs\x18\x01 \x01(\x04B\x17\xaa\xdd\x1b\x13report_frequency_msR\x13report_frequency_ms\x12-\n" +
-	"\tTimeoutMs\x18\x02 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms:)\x92\x82\x19\x1ciot_start_tracking_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaa\x03\x1aE\n" +
-	"\x19TIotStopTrackingDirective:(\x92\x82\x19\x1biot_stop_tracking_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xab\x03\x1an\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotTrackingCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotTrackingCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aN\n" +
+	"\x06TState\x12\x16\n" +
+	"\x06Active\x18\x01 \x01(\bR\x06Active\x12,\n" +
+	"\x11ReportFrequencyMs\x18\x02 \x01(\x04R\x11ReportFrequencyMs\x1ah\n" +
+	"\x1aTIotStartTrackingDirective\x12,\n" +
+	"\x11ReportFrequencyMs\x18\x01 \x01(\x04R\x11ReportFrequencyMs\x12\x1c\n" +
+	"\tTimeoutMs\x18\x02 \x01(\x04R\tTimeoutMs\x1a\x1b\n" +
+	"\x19TIotStopTrackingDirective\x1a\xe2\x02\n" +
+	"\x11TIotTrackingEvent\x12a\n" +
+	"\fObjectStates\x18\x01 \x03(\v2=.NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectStateR\fObjectStates\x1a\xe9\x01\n" +
+	"\fTObjectState\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x12/\n" +
+	"\bPosition\x18\x02 \x01(\v2\x13.NAlice.NIot.TPointR\bPosition\x12 \n" +
+	"\vVelocityMmS\x18\x04 \x01(\x02R\vVelocityMmS\x12:\n" +
+	"\fXVelocityMmS\x18\x05 \x01(\x02B\x13\xaa\xdd\x1b\x0fx_velocity_mm_sR\x0fx_velocity_mm_s\x12:\n" +
+	"\fYVelocityMmS\x18\x06 \x01(\x02B\x13\xaa\xdd\x1b\x0fy_velocity_mm_sR\x0fy_velocity_mm_s\x1an\n" +
 	"\x11TUpdateStateEvent\x12N\n" +
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TIotTrackingCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xad\x01\x1a\xb1\x03\n" +
-	"\x11TIotTrackingEvent\x12u\n" +
-	"\fObjectStates\x18\x01 \x03(\v2=.NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectStateB\x11\xaa\xdd\x1b\robject_statesR\robject_states\x1a\x9a\x02\n" +
-	"\fTObjectState\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id\x12=\n" +
-	"\bPosition\x18\x02 \x01(\v2\x13.NAlice.NIot.TPointB\f\xaa\xdd\x1b\bpositionR\bposition\x125\n" +
-	"\vVelocityMmS\x18\x04 \x01(\x02B\x11\xaa\xdd\x1b\rvelocity_mm_sR\rvelocity_mm_s\x12:\n" +
-	"\fXVelocityMmS\x18\x05 \x01(\x02B\x13\xaa\xdd\x1b\x0fx_velocity_mm_sR\x0fx_velocity_mm_s\x12:\n" +
-	"\fYVelocityMmS\x18\x06 \x01(\x02B\x13\xaa\xdd\x1b\x0fy_velocity_mm_sR\x0fy_velocity_mm_s:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cW:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x96\x01B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bTIotTrackingCapabilityProtoP\x01ZKa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_tracking;trackingpbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xad\x01B\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_tracking\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_rawDescOnce sync.Once
@@ -483,8 +480,8 @@ var file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_goType
 	(*TIotTrackingCapability_TState)(nil),                         // 2: NAlice.TIotTrackingCapability.TState
 	(*TIotTrackingCapability_TIotStartTrackingDirective)(nil),     // 3: NAlice.TIotTrackingCapability.TIotStartTrackingDirective
 	(*TIotTrackingCapability_TIotStopTrackingDirective)(nil),      // 4: NAlice.TIotTrackingCapability.TIotStopTrackingDirective
-	(*TIotTrackingCapability_TUpdateStateEvent)(nil),              // 5: NAlice.TIotTrackingCapability.TUpdateStateEvent
-	(*TIotTrackingCapability_TIotTrackingEvent)(nil),              // 6: NAlice.TIotTrackingCapability.TIotTrackingEvent
+	(*TIotTrackingCapability_TIotTrackingEvent)(nil),              // 5: NAlice.TIotTrackingCapability.TIotTrackingEvent
+	(*TIotTrackingCapability_TUpdateStateEvent)(nil),              // 6: NAlice.TIotTrackingCapability.TUpdateStateEvent
 	(*TIotTrackingCapability_TIotTrackingEvent_TObjectState)(nil), // 7: NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectState
 	(*endpoint.TCapability_TMeta)(nil),                            // 8: NAlice.TCapability.TMeta
 	(*iot.TPoint)(nil),                                            // 9: NAlice.NIot.TPoint
@@ -493,8 +490,8 @@ var file_alice_protos_endpoint_capabilities_iot_tracking_capability_proto_depIdx
 	8, // 0: NAlice.TIotTrackingCapability.Meta:type_name -> NAlice.TCapability.TMeta
 	1, // 1: NAlice.TIotTrackingCapability.Parameters:type_name -> NAlice.TIotTrackingCapability.TParameters
 	2, // 2: NAlice.TIotTrackingCapability.State:type_name -> NAlice.TIotTrackingCapability.TState
-	0, // 3: NAlice.TIotTrackingCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TIotTrackingCapability
-	7, // 4: NAlice.TIotTrackingCapability.TIotTrackingEvent.ObjectStates:type_name -> NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectState
+	7, // 3: NAlice.TIotTrackingCapability.TIotTrackingEvent.ObjectStates:type_name -> NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectState
+	0, // 4: NAlice.TIotTrackingCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TIotTrackingCapability
 	9, // 5: NAlice.TIotTrackingCapability.TIotTrackingEvent.TObjectState.Position:type_name -> NAlice.NIot.TPoint
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type

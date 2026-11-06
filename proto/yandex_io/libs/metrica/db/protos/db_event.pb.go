@@ -134,8 +134,8 @@ func (x *DatabaseMetricaEvent) GetNewEvent() *DatabaseMetricaEvent_NewEvent {
 }
 
 type DatabaseMetricaEvent_NewEnvironment struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	EnvironmentValues map[string]string      `protobuf:"bytes,1,rep,name=environment_values,json=environmentValues" json:"environment_values,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state             protoimpl.MessageState                                        `protogen:"open.v1"`
+	EnvironmentValues []*DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry `protobuf:"bytes,1,rep,name=environment_values,json=environmentValues" json:"environment_values,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -170,7 +170,7 @@ func (*DatabaseMetricaEvent_NewEnvironment) Descriptor() ([]byte, []int) {
 	return file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDescGZIP(), []int{0, 0}
 }
 
-func (x *DatabaseMetricaEvent_NewEnvironment) GetEnvironmentValues() map[string]string {
+func (x *DatabaseMetricaEvent_NewEnvironment) GetEnvironmentValues() []*DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry {
 	if x != nil {
 		return x.EnvironmentValues
 	}
@@ -301,19 +301,71 @@ func (x *DatabaseMetricaEvent_NewEvent) GetTimestampUs() uint64 {
 	return 0
 }
 
+type DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *string                `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) Reset() {
+	*x = DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry{}
+	mi := &file_yandex_io_libs_metrica_db_protos_db_event_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) ProtoMessage() {}
+
+func (x *DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_libs_metrica_db_protos_db_event_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry.ProtoReflect.Descriptor instead.
+func (*DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDescGZIP(), []int{0, 0, 0}
+}
+
+func (x *DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry) GetValue() string {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return ""
+}
+
 var File_yandex_io_libs_metrica_db_protos_db_event_proto protoreflect.FileDescriptor
 
 const file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDesc = "" +
 	"\n" +
-	"/yandex_io/libs/metrica/db/protos/db_event.proto\x12\fquasar.proto\x1a6yandex_io/protos/connection_type/connection_type.proto\"\xf3\x06\n" +
+	"/yandex_io/libs/metrica/db/protos/db_event.proto\x12\fquasar.proto\x1a6yandex_io/protos/connection_type/connection_type.proto\"\xef\x06\n" +
 	"\x14DatabaseMetricaEvent\x12Z\n" +
 	"\x0fnew_environment\x18\x01 \x01(\v21.quasar.proto.DatabaseMetricaEvent.NewEnvironmentR\x0enewEnvironment\x12H\n" +
-	"\tnew_event\x18\x02 \x01(\v2+.quasar.proto.DatabaseMetricaEvent.NewEventR\bnewEvent\x1a\xcf\x01\n" +
+	"\tnew_event\x18\x02 \x01(\v2+.quasar.proto.DatabaseMetricaEvent.NewEventR\bnewEvent\x1a\xcb\x01\n" +
 	"\x0eNewEnvironment\x12w\n" +
-	"\x12environment_values\x18\x01 \x03(\v2H.quasar.proto.DatabaseMetricaEvent.NewEnvironment.EnvironmentValuesEntryR\x11environmentValues\x1aD\n" +
+	"\x12environment_values\x18\x01 \x03(\v2H.quasar.proto.DatabaseMetricaEvent.NewEnvironment.EnvironmentValuesEntryR\x11environmentValues\x1a@\n" +
 	"\x16EnvironmentValuesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a\xe2\x03\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\x1a\xe2\x03\n" +
 	"\bNewEvent\x12D\n" +
 	"\x04type\x18\x01 \x01(\x0e20.quasar.proto.DatabaseMetricaEvent.NewEvent.TypeR\x04type\x12\x1c\n" +
 	"\ttimestamp\x18\x02 \x01(\x04R\ttimestamp\x12\x12\n" +
@@ -333,7 +385,8 @@ const file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDesc = "" +
 	"\x05ERROR\x10\x00\x12\n" +
 	"\n" +
 	"\x06CLIENT\x10\x01\x12\v\n" +
-	"\aSTATBOX\x10\x02"
+	"\aSTATBOX\x10\x02B\xc3\x01\n" +
+	"\x10com.quasar.protoB\fDbEventProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/metrica/db/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDescOnce sync.Once
@@ -350,12 +403,12 @@ func file_yandex_io_libs_metrica_db_protos_db_event_proto_rawDescGZIP() []byte {
 var file_yandex_io_libs_metrica_db_protos_db_event_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_yandex_io_libs_metrica_db_protos_db_event_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_yandex_io_libs_metrica_db_protos_db_event_proto_goTypes = []any{
-	(DatabaseMetricaEvent_NewEvent_Type)(0),     // 0: quasar.proto.DatabaseMetricaEvent.NewEvent.Type
-	(*DatabaseMetricaEvent)(nil),                // 1: quasar.proto.DatabaseMetricaEvent
-	(*DatabaseMetricaEvent_NewEnvironment)(nil), // 2: quasar.proto.DatabaseMetricaEvent.NewEnvironment
-	(*DatabaseMetricaEvent_NewEvent)(nil),       // 3: quasar.proto.DatabaseMetricaEvent.NewEvent
-	nil,                                         // 4: quasar.proto.DatabaseMetricaEvent.NewEnvironment.EnvironmentValuesEntry
-	(connection_type.ConnectionType)(0),         // 5: quasar.proto.ConnectionType
+	(DatabaseMetricaEvent_NewEvent_Type)(0),                            // 0: quasar.proto.DatabaseMetricaEvent.NewEvent.Type
+	(*DatabaseMetricaEvent)(nil),                                       // 1: quasar.proto.DatabaseMetricaEvent
+	(*DatabaseMetricaEvent_NewEnvironment)(nil),                        // 2: quasar.proto.DatabaseMetricaEvent.NewEnvironment
+	(*DatabaseMetricaEvent_NewEvent)(nil),                              // 3: quasar.proto.DatabaseMetricaEvent.NewEvent
+	(*DatabaseMetricaEvent_NewEnvironment_EnvironmentValuesEntry)(nil), // 4: quasar.proto.DatabaseMetricaEvent.NewEnvironment.EnvironmentValuesEntry
+	(connection_type.ConnectionType)(0),                                // 5: quasar.proto.ConnectionType
 }
 var file_yandex_io_libs_metrica_db_protos_db_event_proto_depIdxs = []int32{
 	2, // 0: quasar.proto.DatabaseMetricaEvent.new_environment:type_name -> quasar.proto.DatabaseMetricaEvent.NewEnvironment

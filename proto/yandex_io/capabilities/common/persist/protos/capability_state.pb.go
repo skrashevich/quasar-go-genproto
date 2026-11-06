@@ -82,8 +82,9 @@ const file_yandex_io_capabilities_common_persist_protos_capability_state_proto_r
 	"\x18PersistedCapabilityState\x12$\n" +
 	"\rAccessTimeSec\x18\x02 \x01(\x04R\rAccessTimeSec\x12B\n" +
 	"\rAnyCapability\x18\x03 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderR\rAnyCapabilityJ\x04\b\x01\x10\x02R\n" +
-	"CapabilityB:\n" +
-	"\x19ru.yandex.quasar.protobufB\x1dPersistedCapabilityStateProtob\x06proto3"
+	"CapabilityB\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x14CapabilityStateProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/common/persist/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_yandex_io_capabilities_common_persist_protos_capability_state_proto_rawDescOnce sync.Once

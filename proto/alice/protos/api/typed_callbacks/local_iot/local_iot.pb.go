@@ -290,8 +290,8 @@ const file_alice_protos_api_typed_callbacks_local_iot_local_iot_proto_rawDesc = 
 	"\n" +
 	"RawPayload\x18\x03 \x01(\fB\x0f\xaa\xdd\x1b\vraw_payloadR\vraw_payload:\x04\xa8\xdd\x1b\x04\"\xb0\x01\n" +
 	"(TExecuteVirtualEndpointDirectiveCallback\x12N\n" +
-	"\tDirective\x18\x01 \x01(\v2!.NAlice.TVirtualEndpointDirectiveB\r\xaa\xdd\x1b\tdirectiveR\tdirective:4\xa8\xdd\x1b\x04\xba\xff\x1b,alice.iot.virtual_endpoint.execute_directiveBu\n" +
-	"4ru.yandex.alice.protos.api.typed_callbacks.local_iotP\x01Z;a.yandex-team.ru/alice/protos/api/typed_callbacks/local_iotb\x06proto3"
+	"\tDirective\x18\x01 \x01(\v2!.NAlice.TVirtualEndpointDirectiveB\r\xaa\xdd\x1b\tdirectiveR\tdirective:4\xa8\xdd\x1b\x04\xba\xff\x1b,alice.iot.virtual_endpoint.execute_directiveB\x94\x01\n" +
+	"4ru.yandex.alice.protos.api.typed_callbacks.local_iotP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/local_iotb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_local_iot_local_iot_proto_rawDescOnce sync.Once

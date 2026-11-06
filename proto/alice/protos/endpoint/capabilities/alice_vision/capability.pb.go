@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_vision/capability.proto
 
-package alicevisionpb
+package alice_vision
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -405,8 +405,8 @@ const file_alice_protos_endpoint_capabilities_alice_vision_capability_proto_rawD
 	".TAliceVisionFreeRequestsLimitExceededDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
 	"\x05Limit\x18\x01 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x12M\n" +
-	"\x13ValidUntilTimestamp\x18\x02 \x01(\x04B\x19\xaa\xdd\x1b\x15valid_until_timestampR\x15valid_until_timestamp:6\x92\x82\x19)alice_vision_free_requests_limit_exceeded\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe5\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cuB\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAliceVisionCapabilitiesProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_vision;alicevisionpbb\x06proto3"
+	"\x13ValidUntilTimestamp\x18\x02 \x01(\x04B\x19\xaa\xdd\x1b\x15valid_until_timestampR\x15valid_until_timestamp:6\x92\x82\x19)alice_vision_free_requests_limit_exceeded\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe5\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cuB\xad\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAliceVisionCapabilitiesProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_visionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_vision_capability_proto_rawDescOnce sync.Once

@@ -191,7 +191,8 @@ const file_smart_devices_libs_zenoh_storage_model_network_proto_rawDesc = "" +
 	"\x11DeviceDescription\x18\x02 \x01(\v2\x1f.NAlice.NIot.TDeviceDescriptionR\x11DeviceDescription\x123\n" +
 	"\aPskPair\x18\x03 \x01(\v2\x19.iot.zenoh.proto.TPskPairR\aPskPair\"H\n" +
 	"\bTNetwork\x12<\n" +
-	"\aDevices\x18\x01 \x03(\v2\".iot.zenoh.proto.TDeviceDescriptorR\aDevicesb\x06proto3"
+	"\aDevices\x18\x01 \x03(\v2\".iot.zenoh.proto.TDeviceDescriptorR\aDevicesB\xd9\x01\n" +
+	"\x13com.iot.zenoh.protoB\fNetworkProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/zenoh/storage/model\xa2\x02\x03IZP\xaa\x02\x0fIot.Zenoh.Proto\xca\x02\x0fIot\\Zenoh\\Proto\xe2\x02\x1bIot\\Zenoh\\Proto\\GPBMetadata\xea\x02\x11Iot::Zenoh::Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_zenoh_storage_model_network_proto_rawDescOnce sync.Once

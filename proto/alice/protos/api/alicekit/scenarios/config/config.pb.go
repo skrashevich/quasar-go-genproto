@@ -193,8 +193,8 @@ const file_alice_protos_api_alicekit_scenarios_config_config_proto_rawDesc = "" 
 	"\n" +
 	"TFrameInfo\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12;\n" +
-	"\rProtoTypeName\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fproto_type_nameR\x0fproto_type_nameB\x8a\x01\n" +
-	"4ru.yandex.alice.protos.api.alicekit.scenarios.configB\x13ScenarioConfigProtoP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/scenarios/configb\x06proto3"
+	"\rProtoTypeName\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fproto_type_nameR\x0fproto_type_nameB\xa9\x01\n" +
+	"4ru.yandex.alice.protos.api.alicekit.scenarios.configB\x13ScenarioConfigProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/scenarios/configb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_scenarios_config_config_proto_rawDescOnce sync.Once

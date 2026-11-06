@@ -24,8 +24,8 @@ const (
 
 type TDurationRestrictions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MinS          uint32                 `protobuf:"varint,1,opt,name=MinS,json=min_s,proto3" json:"MinS,omitempty"`
-	MaxS          uint32                 `protobuf:"varint,2,opt,name=MaxS,json=max_s,proto3" json:"MaxS,omitempty"`
+	MinS          uint32                 `protobuf:"varint,1,opt,name=MinS,proto3" json:"MinS,omitempty"`
+	MaxS          uint32                 `protobuf:"varint,2,opt,name=MaxS,proto3" json:"MaxS,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,11 +78,11 @@ var File_alice_protos_data_scenario_music_common_proto protoreflect.FileDescript
 
 const file_alice_protos_data_scenario_music_common_proto_rawDesc = "" +
 	"\n" +
-	"-alice/protos/data/scenario/music/common.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"]\n" +
-	"\x15TDurationRestrictions\x12\x1e\n" +
-	"\x04MinS\x18\x01 \x01(\rB\t\xaa\xdd\x1b\x05min_sR\x05min_s\x12\x1e\n" +
-	"\x04MaxS\x18\x02 \x01(\rB\t\xaa\xdd\x1b\x05max_sR\x05max_s:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"-alice/protos/data/scenario/music/common.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"?\n" +
+	"\x15TDurationRestrictions\x12\x12\n" +
+	"\x04MinS\x18\x01 \x01(\rR\x04MinS\x12\x12\n" +
+	"\x04MaxS\x18\x02 \x01(\rR\x04MaxSB\xe6\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\vCommonProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_common_proto_rawDescOnce sync.Once

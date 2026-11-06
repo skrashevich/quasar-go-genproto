@@ -7,7 +7,7 @@
 package proto
 
 import (
-	events "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/events"
+	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -23,18 +23,78 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type TAnyEvent struct {
+	state          protoimpl.MessageState               `protogen:"open.v1"`
+	RawEvent       []byte                               `protobuf:"bytes,1,opt,name=RawEvent,proto3" json:"RawEvent,omitempty"`
+	EventType      endpoint.TCapability_EEventType      `protobuf:"varint,2,opt,name=EventType,proto3,enum=NAlice.TCapability_EEventType" json:"EventType,omitempty"`
+	CapabilityType endpoint.TCapability_ECapabilityType `protobuf:"varint,3,opt,name=CapabilityType,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *TAnyEvent) Reset() {
+	*x = TAnyEvent{}
+	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAnyEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAnyEvent) ProtoMessage() {}
+
+func (x *TAnyEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAnyEvent.ProtoReflect.Descriptor instead.
+func (*TAnyEvent) Descriptor() ([]byte, []int) {
+	return file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *TAnyEvent) GetRawEvent() []byte {
+	if x != nil {
+		return x.RawEvent
+	}
+	return nil
+}
+
+func (x *TAnyEvent) GetEventType() endpoint.TCapability_EEventType {
+	if x != nil {
+		return x.EventType
+	}
+	return endpoint.TCapability_EEventType(0)
+}
+
+func (x *TAnyEvent) GetCapabilityType() endpoint.TCapability_ECapabilityType {
+	if x != nil {
+		return x.CapabilityType
+	}
+	return endpoint.TCapability_ECapabilityType(0)
+}
+
 type PersistedCapabilityEvent struct {
-	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Timestamp     *timestamppb.Timestamp            `protobuf:"bytes,2,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
-	EndpointId    uint32                            `protobuf:"varint,3,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
-	AnyEvent      *events.TAnyCapabilityEventHolder `protobuf:"bytes,4,opt,name=AnyEvent,proto3,oneof" json:"AnyEvent,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Timestamp     *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
+	EndpointId    uint32                 `protobuf:"varint,3,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	AnyEvent      *TAnyEvent             `protobuf:"bytes,4,opt,name=AnyEvent,proto3,oneof" json:"AnyEvent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PersistedCapabilityEvent) Reset() {
 	*x = PersistedCapabilityEvent{}
-	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[0]
+	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +106,7 @@ func (x *PersistedCapabilityEvent) String() string {
 func (*PersistedCapabilityEvent) ProtoMessage() {}
 
 func (x *PersistedCapabilityEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[0]
+	mi := &file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +119,7 @@ func (x *PersistedCapabilityEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PersistedCapabilityEvent.ProtoReflect.Descriptor instead.
 func (*PersistedCapabilityEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDescGZIP(), []int{0}
+	return file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PersistedCapabilityEvent) GetTimestamp() *timestamppb.Timestamp {
@@ -76,7 +136,7 @@ func (x *PersistedCapabilityEvent) GetEndpointId() uint32 {
 	return 0
 }
 
-func (x *PersistedCapabilityEvent) GetAnyEvent() *events.TAnyCapabilityEventHolder {
+func (x *PersistedCapabilityEvent) GetAnyEvent() *TAnyEvent {
 	if x != nil {
 		return x.AnyEvent
 	}
@@ -87,15 +147,19 @@ var File_yandex_io_modules_capability_event_sender_persist_proto_persisted_capab
 
 const file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDesc = "" +
 	"\n" +
-	"Xyandex_io/modules/capability_event_sender/persist/proto/persisted_capability_event.proto\x12\fquasar.proto\x1a7alice/protos/endpoint/events/any_capability_event.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x01\n" +
+	"Xyandex_io/modules/capability_event_sender/persist/proto/persisted_capability_event.proto\x12\fquasar.proto\x1a&alice/protos/endpoint/capability.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb2\x01\n" +
+	"\tTAnyEvent\x12\x1a\n" +
+	"\bRawEvent\x18\x01 \x01(\fR\bRawEvent\x12<\n" +
+	"\tEventType\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeR\tEventType\x12K\n" +
+	"\x0eCapabilityType\x18\x03 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeR\x0eCapabilityType\"\xc8\x01\n" +
 	"\x18PersistedCapabilityEvent\x128\n" +
 	"\tTimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tTimestamp\x12\x1e\n" +
 	"\n" +
 	"EndpointId\x18\x03 \x01(\rR\n" +
-	"EndpointId\x12B\n" +
-	"\bAnyEvent\x18\x04 \x01(\v2!.NAlice.TAnyCapabilityEventHolderH\x00R\bAnyEvent\x88\x01\x01B\v\n" +
-	"\t_AnyEventJ\x04\b\x01\x10\x02R\x05EventB:\n" +
-	"\x19ru.yandex.quasar.protobufB\x1dPersistedCapabilityEventProtob\x06proto3"
+	"EndpointId\x128\n" +
+	"\bAnyEvent\x18\x04 \x01(\v2\x17.quasar.proto.TAnyEventH\x00R\bAnyEvent\x88\x01\x01B\v\n" +
+	"\t_AnyEventJ\x04\b\x01\x10\x02R\x05EventB\xeb\x01\n" +
+	"\x10com.quasar.protoB\x1dPersistedCapabilityEventProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/modules/capability_event_sender/persist/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDescOnce sync.Once
@@ -109,20 +173,24 @@ func file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capa
 	return file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDescData
 }
 
-var file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_goTypes = []any{
-	(*PersistedCapabilityEvent)(nil),         // 0: quasar.proto.PersistedCapabilityEvent
-	(*timestamppb.Timestamp)(nil),            // 1: google.protobuf.Timestamp
-	(*events.TAnyCapabilityEventHolder)(nil), // 2: NAlice.TAnyCapabilityEventHolder
+	(*TAnyEvent)(nil),                         // 0: quasar.proto.TAnyEvent
+	(*PersistedCapabilityEvent)(nil),          // 1: quasar.proto.PersistedCapabilityEvent
+	(endpoint.TCapability_EEventType)(0),      // 2: NAlice.TCapability.EEventType
+	(endpoint.TCapability_ECapabilityType)(0), // 3: NAlice.TCapability.ECapabilityType
+	(*timestamppb.Timestamp)(nil),             // 4: google.protobuf.Timestamp
 }
 var file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_depIdxs = []int32{
-	1, // 0: quasar.proto.PersistedCapabilityEvent.Timestamp:type_name -> google.protobuf.Timestamp
-	2, // 1: quasar.proto.PersistedCapabilityEvent.AnyEvent:type_name -> NAlice.TAnyCapabilityEventHolder
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2, // 0: quasar.proto.TAnyEvent.EventType:type_name -> NAlice.TCapability.EEventType
+	3, // 1: quasar.proto.TAnyEvent.CapabilityType:type_name -> NAlice.TCapability.ECapabilityType
+	4, // 2: quasar.proto.PersistedCapabilityEvent.Timestamp:type_name -> google.protobuf.Timestamp
+	0, // 3: quasar.proto.PersistedCapabilityEvent.AnyEvent:type_name -> quasar.proto.TAnyEvent
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() {
@@ -132,14 +200,14 @@ func file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capa
 	if File_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto != nil {
 		return
 	}
-	file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[0].OneofWrappers = []any{}
+	file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDesc), len(file_yandex_io_modules_capability_event_sender_persist_proto_persisted_capability_event_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

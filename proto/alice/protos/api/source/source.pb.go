@@ -24,7 +24,7 @@ const (
 
 type TLocalIoTSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -68,7 +68,7 @@ func (x *TLocalIoTSource) GetEndpointId() string {
 
 type TLocalScenarioSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ScenarioId    string                 `protobuf:"bytes,1,opt,name=ScenarioId,json=scenario_id,proto3" json:"ScenarioId,omitempty"`
+	ScenarioId    string                 `protobuf:"bytes,1,opt,name=ScenarioId,proto3" json:"ScenarioId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -181,11 +181,11 @@ type isTSourceInfo_Source interface {
 }
 
 type TSourceInfo_LocalIoTSource struct {
-	LocalIoTSource *TLocalIoTSource `protobuf:"bytes,1,opt,name=LocalIoTSource,json=local_iot_source,proto3,oneof"`
+	LocalIoTSource *TLocalIoTSource `protobuf:"bytes,1,opt,name=LocalIoTSource,proto3,oneof"`
 }
 
 type TSourceInfo_LocalScenarioSource struct {
-	LocalScenarioSource *TLocalScenarioSource `protobuf:"bytes,2,opt,name=LocalScenarioSource,json=local_scenario_source,proto3,oneof"`
+	LocalScenarioSource *TLocalScenarioSource `protobuf:"bytes,2,opt,name=LocalScenarioSource,proto3,oneof"`
 }
 
 func (*TSourceInfo_LocalIoTSource) isTSourceInfo_Source() {}
@@ -196,17 +196,20 @@ var File_alice_protos_api_source_source_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_source_source_proto_rawDesc = "" +
 	"\n" +
-	"$alice/protos/api/source/source.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"C\n" +
-	"\x0fTLocalIoTSource\x120\n" +
+	"$alice/protos/api/source/source.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"1\n" +
+	"\x0fTLocalIoTSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\"H\n" +
-	"\x14TLocalScenarioSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"6\n" +
+	"\x14TLocalScenarioSource\x12\x1e\n" +
 	"\n" +
-	"ScenarioId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vscenario_idR\vscenario_id\"\x85\x02\n" +
-	"\vTSourceInfo\x12c\n" +
-	"\x0eLocalIoTSource\x18\x01 \x01(\v2!.NAlice.NAliceApi.TLocalIoTSourceB\x14\xaa\xdd\x1b\x10local_iot_sourceH\x00R\x10local_iot_source\x12w\n" +
-	"\x13LocalScenarioSource\x18\x02 \x01(\v2&.NAlice.NAliceApi.TLocalScenarioSourceB\x19\xaa\xdd\x1b\x15local_scenario_sourceH\x00R\x15local_scenario_sourceB\x18\n" +
-	"\x06Source\x12\x0e\xa0\xdd\x1b\r\xaa\xdd\x1b\x06sourceB*Z(a.yandex-team.ru/alice/protos/api/sourceb\x06proto3"
+	"ScenarioId\x18\x01 \x01(\tR\n" +
+	"ScenarioId\"\xc0\x01\n" +
+	"\vTSourceInfo\x12K\n" +
+	"\x0eLocalIoTSource\x18\x01 \x01(\v2!.NAlice.NAliceApi.TLocalIoTSourceH\x00R\x0eLocalIoTSource\x12Z\n" +
+	"\x13LocalScenarioSource\x18\x02 \x01(\v2&.NAlice.NAliceApi.TLocalScenarioSourceH\x00R\x13LocalScenarioSourceB\b\n" +
+	"\x06SourceB\xcd\x01\n" +
+	"\x14com.NAlice.NAliceApiB\vSourceProtoP\x01ZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/source\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_source_source_proto_rawDescOnce sync.Once

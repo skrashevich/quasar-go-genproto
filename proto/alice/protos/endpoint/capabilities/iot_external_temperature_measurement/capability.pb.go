@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_external_temperature_measurement/capability.proto
 
-package iotexternaltemperaturemeasurementpb
+package iot_external_temperature_measurement
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotExternalTemperatureMeasurementCapability struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                               `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotExternalTemperatureMeasurementCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotExternalTemperatureMeasurementCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                               `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotExternalTemperatureMeasurementCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotExternalTemperatureMeasurementCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,7 +87,7 @@ func (x *TIotExternalTemperatureMeasurementCapability) GetState() *TIotExternalT
 
 type TIotExternalTemperatureMeasurementCapability_TParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Unit          endpoint.EUnit         `protobuf:"varint,1,opt,name=Unit,json=unit,proto3,enum=NAlice.EUnit" json:"Unit,omitempty"`
+	Unit          endpoint.EUnit         `protobuf:"varint,1,opt,name=Unit,proto3,enum=NAlice.EUnit" json:"Unit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -131,8 +131,8 @@ func (x *TIotExternalTemperatureMeasurementCapability_TParameters) GetUnit() end
 
 type TIotExternalTemperatureMeasurementCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsEnabled     bool                   `protobuf:"varint,1,opt,name=IsEnabled,json=is_enabled,proto3" json:"IsEnabled,omitempty"`
-	MeasuredValue float64                `protobuf:"fixed64,2,opt,name=MeasuredValue,json=measured_value,proto3" json:"MeasuredValue,omitempty"`
+	IsEnabled     bool                   `protobuf:"varint,1,opt,name=IsEnabled,proto3" json:"IsEnabled,omitempty"`
+	MeasuredValue float64                `protobuf:"fixed64,2,opt,name=MeasuredValue,proto3" json:"MeasuredValue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -183,8 +183,8 @@ func (x *TIotExternalTemperatureMeasurementCapability_TState) GetMeasuredValue()
 
 type TIotExternalTemperatureMeasurementCapability_TSetEnabledExternalTemperatureMeasurementDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IsEnabled     bool                   `protobuf:"varint,1,opt,name=IsEnabled,json=is_enabled,proto3" json:"IsEnabled,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	IsEnabled     bool                   `protobuf:"varint,1,opt,name=IsEnabled,proto3" json:"IsEnabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,8 +236,8 @@ func (x *TIotExternalTemperatureMeasurementCapability_TSetEnabledExternalTempera
 
 type TIotExternalTemperatureMeasurementCapability_TSetMeasuredValueDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	MeasuredValue float64                `protobuf:"fixed64,1,opt,name=MeasuredValue,json=measured_value,proto3" json:"MeasuredValue,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	MeasuredValue float64                `protobuf:"fixed64,1,opt,name=MeasuredValue,proto3" json:"MeasuredValue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -288,7 +288,7 @@ func (x *TIotExternalTemperatureMeasurementCapability_TSetMeasuredValueDirective
 
 type TIotExternalTemperatureMeasurementCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Capability    *TIotExternalTemperatureMeasurementCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotExternalTemperatureMeasurementCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -334,35 +334,30 @@ var File_alice_protos_endpoint_capabilities_iot_external_temperature_measurement
 
 const file_alice_protos_endpoint_capabilities_iot_external_temperature_measurement_capability_proto_rawDesc = "" +
 	"\n" +
-	"Xalice/protos/endpoint/capabilities/iot_external_temperature_measurement/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf3\a\n" +
-	",TIotExternalTemperatureMeasurementCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12p\n" +
+	"Xalice/protos/endpoint/capabilities/iot_external_temperature_measurement/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbf\x05\n" +
+	",TIotExternalTemperatureMeasurementCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12`\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2@.NAlice.TIotExternalTemperatureMeasurementCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12\\\n" +
-	"\x05State\x18\x03 \x01(\v2;.NAlice.TIotExternalTemperatureMeasurementCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a@\n" +
-	"\vTParameters\x12+\n" +
-	"\x04Unit\x18\x01 \x01(\x0e2\r.NAlice.EUnitB\b\xaa\xdd\x1b\x04unitR\x04unit:\x04\xa8\xdd\x1b\x04\x1ax\n" +
-	"\x06TState\x12-\n" +
-	"\tIsEnabled\x18\x01 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_enabledR\n" +
-	"is_enabled\x129\n" +
-	"\rMeasuredValue\x18\x02 \x01(\x01B\x12\xaa\xdd\x1b\x0emeasured_valueR\x0emeasured_value:\x04\xa8\xdd\x1b\x04\x1a\xc7\x01\n" +
-	"2TSetEnabledExternalTemperatureMeasurementDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tIsEnabled\x18\x01 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_enabledR\n" +
-	"is_enabled:C\x92\x82\x196set_enabled_external_temperature_measurement_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbd\x04\x1a\xa1\x01\n" +
-	"\x1aTSetMeasuredValueDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x129\n" +
-	"\rMeasuredValue\x18\x01 \x01(\x01B\x12\xaa\xdd\x1b\x0emeasured_valueR\x0emeasured_value:)\x92\x82\x19\x1cset_measured_value_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbe\x04\x1a\x84\x01\n" +
-	"\x11TUpdateStateEvent\x12d\n" +
+	"Parameters\x18\x02 \x01(\v2@.NAlice.TIotExternalTemperatureMeasurementCapability.TParametersR\n" +
+	"Parameters\x12Q\n" +
+	"\x05State\x18\x03 \x01(\v2;.NAlice.TIotExternalTemperatureMeasurementCapability.TStateR\x05State\x1a0\n" +
+	"\vTParameters\x12!\n" +
+	"\x04Unit\x18\x01 \x01(\x0e2\r.NAlice.EUnitR\x04Unit\x1aL\n" +
+	"\x06TState\x12\x1c\n" +
+	"\tIsEnabled\x18\x01 \x01(\bR\tIsEnabled\x12$\n" +
+	"\rMeasuredValue\x18\x02 \x01(\x01R\rMeasuredValue\x1ag\n" +
+	"2TSetEnabledExternalTemperatureMeasurementDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tIsEnabled\x18\x01 \x01(\bR\tIsEnabled\x1aW\n" +
+	"\x1aTSetMeasuredValueDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12$\n" +
+	"\rMeasuredValue\x18\x01 \x01(\x01R\rMeasuredValue\x1ai\n" +
+	"\x11TUpdateStateEvent\x12T\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v24.NAlice.TIotExternalTemperatureMeasurementCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x9a\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe6\x01B\xde\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB0IotExternalTemperatureMeasurementCapabilityProtoZ|a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_external_temperature_measurement;iotexternaltemperaturemeasurementpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v24.NAlice.TIotExternalTemperatureMeasurementCapabilityR\n" +
+	"CapabilityB\xce\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zwgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_external_temperature_measurement\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_external_temperature_measurement_capability_proto_rawDescOnce sync.Once

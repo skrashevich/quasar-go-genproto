@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_panoramic_display/capability.proto
 
-package automotive_panoramic_displaypb
+package automotive_panoramic_display
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -245,7 +245,7 @@ const file_alice_protos_endpoint_capabilities_automotive_panoramic_display_capab
 	"\"TSetPanoramicDisplayStateDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
 	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:2\x92\x82\x19%set_panoramic_display_state_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf6\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc2\x01B\xca\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB)AutomotivePanoramicDisplayCapabilityProtoZoa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_panoramic_display;automotive_panoramic_displaypbb\x06proto3"
+	",ru.yandex.alice.protos.endpoint.capabilitiesB)AutomotivePanoramicDisplayCapabilityProtoZogithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_panoramic_displayb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_panoramic_display_capability_proto_rawDescOnce sync.Once

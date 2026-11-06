@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ble_setup/capability.proto
 
-package blesetuppb
+package ble_setup
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -28,9 +28,9 @@ const (
 
 type TBleSetupCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBleSetupCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBleSetupCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBleSetupCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBleSetupCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -160,8 +160,8 @@ func (*TBleSetupCapability_TState) Descriptor() ([]byte, []int) {
 
 type TBleSetupCapability_TDeviceInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,json=platform,proto3" json:"Platform,omitempty"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,proto3" json:"Platform,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -212,8 +212,8 @@ func (x *TBleSetupCapability_TDeviceInfo) GetPlatform() string {
 
 type TBleSetupCapability_TStartBleAdvertisingDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -264,10 +264,10 @@ func (x *TBleSetupCapability_TStartBleAdvertisingDirective) GetTimeoutMs() uint3
 
 type TBleSetupCapability_TStartBleDiscoveryDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	DiscoveryId   string                 `protobuf:"bytes,1,opt,name=DiscoveryId,json=discovery_id,proto3" json:"DiscoveryId,omitempty"`
-	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,json=platform,proto3" json:"Platform,omitempty"`
-	TimeoutMs     uint32                 `protobuf:"varint,3,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	DiscoveryId   string                 `protobuf:"bytes,1,opt,name=DiscoveryId,proto3" json:"DiscoveryId,omitempty"`
+	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,proto3" json:"Platform,omitempty"`
+	TimeoutMs     uint32                 `protobuf:"varint,3,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -332,12 +332,12 @@ func (x *TBleSetupCapability_TStartBleDiscoveryDirective) GetTimeoutMs() uint32 
 
 type TBleSetupCapability_TStartBleSetupDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	CipherText    string                 `protobuf:"bytes,2,opt,name=CipherText,json=ciphertext,proto3" json:"CipherText,omitempty"`
-	C             string                 `protobuf:"bytes,3,opt,name=C,json=c,proto3" json:"C,omitempty"`
-	M             string                 `protobuf:"bytes,4,opt,name=M,json=m,proto3" json:"M,omitempty"`
-	TimeoutMs     uint32                 `protobuf:"varint,5,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	CipherText    string                 `protobuf:"bytes,2,opt,name=CipherText,proto3" json:"CipherText,omitempty"`
+	C             string                 `protobuf:"bytes,3,opt,name=C,proto3" json:"C,omitempty"`
+	M             string                 `protobuf:"bytes,4,opt,name=M,proto3" json:"M,omitempty"`
+	TimeoutMs     uint32                 `protobuf:"varint,5,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -416,8 +416,8 @@ func (x *TBleSetupCapability_TStartBleSetupDirective) GetTimeoutMs() uint32 {
 
 type TBleSetupCapability_TBleDiscoveryFinishedEvent struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	DiscoveryId   string                             `protobuf:"bytes,1,opt,name=DiscoveryId,json=discovery_id,proto3" json:"DiscoveryId,omitempty"`
-	Devices       []*TBleSetupCapability_TDeviceInfo `protobuf:"bytes,2,rep,name=Devices,json=device_info,proto3" json:"Devices,omitempty"`
+	DiscoveryId   string                             `protobuf:"bytes,1,opt,name=DiscoveryId,proto3" json:"DiscoveryId,omitempty"`
+	Devices       []*TBleSetupCapability_TDeviceInfo `protobuf:"bytes,2,rep,name=Devices,proto3" json:"Devices,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -470,47 +470,40 @@ var File_alice_protos_endpoint_capabilities_ble_setup_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_ble_setup_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/ble_setup/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xed\t\n" +
-	"\x13TBleSetupCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"=alice/protos/endpoint/capabilities/ble_setup/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7\x06\n" +
+	"\x13TBleSetupCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TBleSetupCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TBleSetupCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1ag\n" +
-	"\vTDeviceInfo\x12.\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x12(\n" +
-	"\bPlatform\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bplatformR\bplatform\x1a\x9b\x01\n" +
-	"\x1dTStartBleAdvertisingDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tTimeoutMs\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms:,\x92\x82\x19\x1fstart_ble_advertising_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x83\x04\x1a\xf6\x01\n" +
-	"\x1bTStartBleDiscoveryDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
-	"\vDiscoveryId\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fdiscovery_idR\fdiscovery_id\x12(\n" +
-	"\bPlatform\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bplatformR\bplatform\x12-\n" +
-	"\tTimeoutMs\x18\x03 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms:*\x92\x82\x19\x1dstart_ble_discovery_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaf\x01\x1a\x99\x02\n" +
-	"\x17TStartBleSetupDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12.\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03R\tdevice_id\x12.\n" +
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TBleSetupCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TBleSetupCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\b\n" +
+	"\x06TState\x1aE\n" +
+	"\vTDeviceInfo\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x1a\n" +
+	"\bPlatform\x18\x02 \x01(\tR\bPlatform\x1aR\n" +
+	"\x1dTStartBleAdvertisingDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tTimeoutMs\x18\x01 \x01(\rR\tTimeoutMs\x1a\x8e\x01\n" +
+	"\x1bTStartBleDiscoveryDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vDiscoveryId\x18\x01 \x01(\tR\vDiscoveryId\x12\x1a\n" +
+	"\bPlatform\x18\x02 \x01(\tR\bPlatform\x12\x1c\n" +
+	"\tTimeoutMs\x18\x03 \x01(\rR\tTimeoutMs\x1a\xa4\x01\n" +
+	"\x17TStartBleSetupDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x1e\n" +
 	"\n" +
-	"CipherText\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"ciphertextR\n" +
-	"ciphertext\x12\x13\n" +
-	"\x01C\x18\x03 \x01(\tB\x05\xaa\xdd\x1b\x01cR\x01c\x12\x13\n" +
-	"\x01M\x18\x04 \x01(\tB\x05\xaa\xdd\x1b\x01mR\x01m\x12-\n" +
-	"\tTimeoutMs\x18\x05 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms:&\x92\x82\x19\x19start_ble_setup_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb0\x01\x1a\xb3\x01\n" +
-	"\x1aTBleDiscoveryFinishedEvent\x123\n" +
-	"\vDiscoveryId\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fdiscovery_idR\fdiscovery_id\x12V\n" +
-	"\aDevices\x18\x02 \x03(\v2'.NAlice.TBleSetupCapability.TDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c/:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c=B\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17BleSetupCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/ble_setup;blesetuppbb\x06proto3"
+	"CipherText\x18\x02 \x01(\tR\n" +
+	"CipherText\x12\f\n" +
+	"\x01C\x18\x03 \x01(\tR\x01C\x12\f\n" +
+	"\x01M\x18\x04 \x01(\tR\x01M\x12\x1c\n" +
+	"\tTimeoutMs\x18\x05 \x01(\rR\tTimeoutMs\x1a\x81\x01\n" +
+	"\x1aTBleDiscoveryFinishedEvent\x12 \n" +
+	"\vDiscoveryId\x18\x01 \x01(\tR\vDiscoveryId\x12A\n" +
+	"\aDevices\x18\x02 \x03(\v2'.NAlice.TBleSetupCapability.TDeviceInfoR\aDevicesB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ble_setup\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ble_setup_capability_proto_rawDescOnce sync.Once

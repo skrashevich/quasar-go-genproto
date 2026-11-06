@@ -1014,8 +1014,8 @@ const file_alice_protos_data_tv_home_result_proto_rawDesc = "" +
 	"\x14TGetWhatsNewResponse\x12L\n" +
 	"\bWhatsNew\x18\x01 \x03(\v2 .NAlice.NTv.TWhatsNewItemWrapperB\r\xaa\xdd\x1b\twhats_newR\twhats_new:\x04\xa8\xdd\x1b\x04\"%\n" +
 	"\x1dTWhatsNewCompleteShowResponse:\x04\xa8\xdd\x1b\x04\"%\n" +
-	"\x1dTWhatsNewClearHistoryResponse:\x04\xa8\xdd\x1b\x04Bd\n" +
-	"#ru.yandex.alice.protos.data.tv.homeB\x11TvHomeResultProtoZ*a.yandex-team.ru/alice/protos/data/tv/homeb\x06proto3"
+	"\x1dTWhatsNewClearHistoryResponse:\x04\xa8\xdd\x1b\x04B\x83\x01\n" +
+	"#ru.yandex.alice.protos.data.tv.homeB\x11TvHomeResultProtoZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/homeb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_home_result_proto_rawDescOnce sync.Once

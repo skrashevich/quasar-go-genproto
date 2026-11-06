@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/animation/capability.proto
 
-package animationpb
+package animation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -555,9 +555,9 @@ func (TAnimationCapability_TDrawAnimationDirective_TAnimationOptions_ESubstituti
 
 type TAnimationCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAnimationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAnimationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAnimationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAnimationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -615,10 +615,10 @@ func (x *TAnimationCapability) GetState() *TAnimationCapability_TState {
 
 type TAnimationCapability_TParameters struct {
 	state             protoimpl.MessageState                `protogen:"open.v1"`
-	SupportedFormats  []TAnimationCapability_EFormat        `protobuf:"varint,1,rep,packed,name=SupportedFormats,json=supported_formats,proto3,enum=NAlice.TAnimationCapability_EFormat" json:"SupportedFormats,omitempty"`
-	Screens           []*TAnimationCapability_TScreen       `protobuf:"bytes,2,rep,name=Screens,json=screens,proto3" json:"Screens,omitempty"`
-	SupportedTypes    []TAnimationCapability_EAnimationType `protobuf:"varint,3,rep,packed,name=SupportedTypes,json=supported_types,proto3,enum=NAlice.TAnimationCapability_EAnimationType" json:"SupportedTypes,omitempty"`
-	SupportsStreaming bool                                  `protobuf:"varint,4,opt,name=SupportsStreaming,json=supports_streaming,proto3" json:"SupportsStreaming,omitempty"`
+	SupportedFormats  []TAnimationCapability_EFormat        `protobuf:"varint,1,rep,packed,name=SupportedFormats,proto3,enum=NAlice.TAnimationCapability_EFormat" json:"SupportedFormats,omitempty"`
+	Screens           []*TAnimationCapability_TScreen       `protobuf:"bytes,2,rep,name=Screens,proto3" json:"Screens,omitempty"`
+	SupportedTypes    []TAnimationCapability_EAnimationType `protobuf:"varint,3,rep,packed,name=SupportedTypes,proto3,enum=NAlice.TAnimationCapability_EAnimationType" json:"SupportedTypes,omitempty"`
+	SupportsStreaming bool                                  `protobuf:"varint,4,opt,name=SupportsStreaming,proto3" json:"SupportsStreaming,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -683,9 +683,9 @@ func (x *TAnimationCapability_TParameters) GetSupportsStreaming() bool {
 
 type TAnimationCapability_TScreen struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Guid          string                                   `protobuf:"bytes,1,opt,name=Guid,json=guid,proto3" json:"Guid,omitempty"`
-	ScreenType    TAnimationCapability_TScreen_EScreenType `protobuf:"varint,2,opt,name=ScreenType,json=screen_type,proto3,enum=NAlice.TAnimationCapability_TScreen_EScreenType" json:"ScreenType,omitempty"`
-	Family        TAnimationCapability_TScreen_EFamily     `protobuf:"varint,3,opt,name=Family,json=family,proto3,enum=NAlice.TAnimationCapability_TScreen_EFamily" json:"Family,omitempty"`
+	Guid          string                                   `protobuf:"bytes,1,opt,name=Guid,proto3" json:"Guid,omitempty"`
+	ScreenType    TAnimationCapability_TScreen_EScreenType `protobuf:"varint,2,opt,name=ScreenType,proto3,enum=NAlice.TAnimationCapability_TScreen_EScreenType" json:"ScreenType,omitempty"`
+	Family        TAnimationCapability_TScreen_EFamily     `protobuf:"varint,3,opt,name=Family,proto3,enum=NAlice.TAnimationCapability_TScreen_EFamily" json:"Family,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -743,7 +743,7 @@ func (x *TAnimationCapability_TScreen) GetFamily() TAnimationCapability_TScreen_
 
 type TAnimationCapability_TAnimation struct {
 	state         protoimpl.MessageState                         `protogen:"open.v1"`
-	AnimationType TAnimationCapability_TAnimation_EAnimationType `protobuf:"varint,1,opt,name=AnimationType,json=animation_type,proto3,enum=NAlice.TAnimationCapability_TAnimation_EAnimationType" json:"AnimationType,omitempty"`
+	AnimationType TAnimationCapability_TAnimation_EAnimationType `protobuf:"varint,1,opt,name=AnimationType,proto3,enum=NAlice.TAnimationCapability_TAnimation_EAnimationType" json:"AnimationType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -786,8 +786,8 @@ func (x *TAnimationCapability_TAnimation) GetAnimationType() TAnimationCapabilit
 }
 
 type TAnimationCapability_TState struct {
-	state           protoimpl.MessageState                               `protogen:"open.v1"`
-	ScreenStatesMap map[string]*TAnimationCapability_TState_TScreenState `protobuf:"bytes,2,rep,name=ScreenStatesMap,json=screen_states_map,proto3" json:"ScreenStatesMap,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state           protoimpl.MessageState                              `protogen:"open.v1"`
+	ScreenStatesMap []*TAnimationCapability_TState_ScreenStatesMapEntry `protobuf:"bytes,2,rep,name=ScreenStatesMap,proto3" json:"ScreenStatesMap,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -822,7 +822,7 @@ func (*TAnimationCapability_TState) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDescGZIP(), []int{0, 3}
 }
 
-func (x *TAnimationCapability_TState) GetScreenStatesMap() map[string]*TAnimationCapability_TState_TScreenState {
+func (x *TAnimationCapability_TState) GetScreenStatesMap() []*TAnimationCapability_TState_ScreenStatesMapEntry {
 	if x != nil {
 		return x.ScreenStatesMap
 	}
@@ -831,12 +831,12 @@ func (x *TAnimationCapability_TState) GetScreenStatesMap() map[string]*TAnimatio
 
 type TAnimationCapability_TDrawAnimationDirective struct {
 	state                   protoimpl.MessageState                                                `protogen:"open.v1"`
-	Name                    string                                                                `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Animations              []*TAnimationCapability_TDrawAnimationDirective_TAnimation            `protobuf:"bytes,1,rep,name=Animations,json=animations,proto3" json:"Animations,omitempty"`
-	AnimationStopPolicy     TAnimationCapability_TDrawAnimationDirective_EAnimationStopPolicy     `protobuf:"varint,2,opt,name=AnimationStopPolicy,json=animation_stop_policy,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_EAnimationStopPolicy" json:"AnimationStopPolicy,omitempty"`
-	SpeakingAnimationPolicy TAnimationCapability_TDrawAnimationDirective_ESpeakingAnimationPolicy `protobuf:"varint,3,opt,name=SpeakingAnimationPolicy,json=speaking_animation_policy,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_ESpeakingAnimationPolicy" json:"SpeakingAnimationPolicy,omitempty"`
-	AnimationOptions        *TAnimationCapability_TDrawAnimationDirective_TAnimationOptions       `protobuf:"bytes,4,opt,name=AnimationOptions,json=animation_options,proto3" json:"AnimationOptions,omitempty"`
-	FadeOutAnimations       []*TAnimationCapability_TDrawAnimationDirective_TAnimation            `protobuf:"bytes,5,rep,name=FadeOutAnimations,json=fade_out_animations,proto3" json:"FadeOutAnimations,omitempty"`
+	Name                    string                                                                `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Animations              []*TAnimationCapability_TDrawAnimationDirective_TAnimation            `protobuf:"bytes,1,rep,name=Animations,proto3" json:"Animations,omitempty"`
+	AnimationStopPolicy     TAnimationCapability_TDrawAnimationDirective_EAnimationStopPolicy     `protobuf:"varint,2,opt,name=AnimationStopPolicy,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_EAnimationStopPolicy" json:"AnimationStopPolicy,omitempty"`
+	SpeakingAnimationPolicy TAnimationCapability_TDrawAnimationDirective_ESpeakingAnimationPolicy `protobuf:"varint,3,opt,name=SpeakingAnimationPolicy,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_ESpeakingAnimationPolicy" json:"SpeakingAnimationPolicy,omitempty"`
+	AnimationOptions        *TAnimationCapability_TDrawAnimationDirective_TAnimationOptions       `protobuf:"bytes,4,opt,name=AnimationOptions,proto3" json:"AnimationOptions,omitempty"`
+	FadeOutAnimations       []*TAnimationCapability_TDrawAnimationDirective_TAnimation            `protobuf:"bytes,5,rep,name=FadeOutAnimations,proto3" json:"FadeOutAnimations,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -915,8 +915,8 @@ func (x *TAnimationCapability_TDrawAnimationDirective) GetFadeOutAnimations() []
 
 type TAnimationCapability_TEnableScreenDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,json=guid,proto3" json:"Guid,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,proto3" json:"Guid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -967,8 +967,8 @@ func (x *TAnimationCapability_TEnableScreenDirective) GetGuid() string {
 
 type TAnimationCapability_TDisableScreenDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,json=guid,proto3" json:"Guid,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Guid          string                 `protobuf:"bytes,2,opt,name=Guid,proto3" json:"Guid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1019,8 +1019,8 @@ func (x *TAnimationCapability_TDisableScreenDirective) GetGuid() string {
 
 type TAnimationCapability_TState_TScreenState struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Enabled       bool                             `protobuf:"varint,2,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
-	Animation     *TAnimationCapability_TAnimation `protobuf:"bytes,3,opt,name=Animation,json=animation,proto3" json:"Animation,omitempty"`
+	Enabled       bool                             `protobuf:"varint,2,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
+	Animation     *TAnimationCapability_TAnimation `protobuf:"bytes,3,opt,name=Animation,proto3" json:"Animation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1065,6 +1065,58 @@ func (x *TAnimationCapability_TState_TScreenState) GetEnabled() bool {
 func (x *TAnimationCapability_TState_TScreenState) GetAnimation() *TAnimationCapability_TAnimation {
 	if x != nil {
 		return x.Animation
+	}
+	return nil
+}
+
+type TAnimationCapability_TState_ScreenStatesMapEntry struct {
+	state         protoimpl.MessageState                    `protogen:"open.v1"`
+	Key           string                                    `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TAnimationCapability_TState_TScreenState `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAnimationCapability_TState_ScreenStatesMapEntry) Reset() {
+	*x = TAnimationCapability_TState_ScreenStatesMapEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_animation_capability_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAnimationCapability_TState_ScreenStatesMapEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAnimationCapability_TState_ScreenStatesMapEntry) ProtoMessage() {}
+
+func (x *TAnimationCapability_TState_ScreenStatesMapEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_animation_capability_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAnimationCapability_TState_ScreenStatesMapEntry.ProtoReflect.Descriptor instead.
+func (*TAnimationCapability_TState_ScreenStatesMapEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDescGZIP(), []int{0, 3, 1}
+}
+
+func (x *TAnimationCapability_TState_ScreenStatesMapEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TAnimationCapability_TState_ScreenStatesMapEntry) GetValue() *TAnimationCapability_TState_TScreenState {
+	if x != nil {
+		return x.Value
 	}
 	return nil
 }
@@ -1150,15 +1202,15 @@ type isTAnimationCapability_TDrawAnimationDirective_TAnimation_Value interface {
 }
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_BinaryAnimation struct {
-	BinaryAnimation *TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation `protobuf:"bytes,1,opt,name=BinaryAnimation,json=binary_animation,proto3,oneof"`
+	BinaryAnimation *TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation `protobuf:"bytes,1,opt,name=BinaryAnimation,proto3,oneof"`
 }
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_S3Directory struct {
-	S3Directory *TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory `protobuf:"bytes,2,opt,name=S3Directory,json=s3_directory,proto3,oneof"`
+	S3Directory *TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory `protobuf:"bytes,2,opt,name=S3Directory,proto3,oneof"`
 }
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_TypedAnimation struct {
-	TypedAnimation *TAnimationCapability_TDrawAnimationDirective_TAnimation_TTypedAnimation `protobuf:"bytes,3,opt,name=TypedAnimation,json=typed_animation,proto3,oneof"`
+	TypedAnimation *TAnimationCapability_TDrawAnimationDirective_TAnimation_TTypedAnimation `protobuf:"bytes,3,opt,name=TypedAnimation,proto3,oneof"`
 }
 
 func (*TAnimationCapability_TDrawAnimationDirective_TAnimation_BinaryAnimation) isTAnimationCapability_TDrawAnimationDirective_TAnimation_Value() {
@@ -1172,9 +1224,9 @@ func (*TAnimationCapability_TDrawAnimationDirective_TAnimation_TypedAnimation) i
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimationOptions struct {
 	state            protoimpl.MessageState                                                           `protogen:"open.v1"`
-	SubstitutionType TAnimationCapability_TDrawAnimationDirective_TAnimationOptions_ESubstitutionType `protobuf:"varint,1,opt,name=SubstitutionType,json=substitution_type,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_TAnimationOptions_ESubstitutionType" json:"SubstitutionType,omitempty"`
-	MinDurationMs    *uint64                                                                          `protobuf:"varint,2,opt,name=MinDurationMs,json=min_duration_ms,proto3,oneof" json:"MinDurationMs,omitempty"`
-	MaxDurationMs    *uint64                                                                          `protobuf:"varint,3,opt,name=MaxDurationMs,json=max_duration_ms,proto3,oneof" json:"MaxDurationMs,omitempty"`
+	SubstitutionType TAnimationCapability_TDrawAnimationDirective_TAnimationOptions_ESubstitutionType `protobuf:"varint,1,opt,name=SubstitutionType,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_TAnimationOptions_ESubstitutionType" json:"SubstitutionType,omitempty"`
+	MinDurationMs    *uint64                                                                          `protobuf:"varint,2,opt,name=MinDurationMs,proto3,oneof" json:"MinDurationMs,omitempty"`
+	MaxDurationMs    *uint64                                                                          `protobuf:"varint,3,opt,name=MaxDurationMs,proto3,oneof" json:"MaxDurationMs,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1232,8 +1284,8 @@ func (x *TAnimationCapability_TDrawAnimationDirective_TAnimationOptions) GetMaxD
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bucket        string                 `protobuf:"bytes,1,opt,name=Bucket,json=bucket,proto3" json:"Bucket,omitempty"`
-	Path          string                 `protobuf:"bytes,2,opt,name=Path,json=path,proto3" json:"Path,omitempty"`
+	Bucket        string                 `protobuf:"bytes,1,opt,name=Bucket,proto3" json:"Bucket,omitempty"`
+	Path          string                 `protobuf:"bytes,2,opt,name=Path,proto3" json:"Path,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1284,8 +1336,8 @@ func (x *TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory) G
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation struct {
 	state              protoimpl.MessageState                                                                    `protogen:"open.v1"`
-	Compression        TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation_ECompressionType `protobuf:"varint,1,opt,name=Compression,json=compression_type,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation_ECompressionType" json:"Compression,omitempty"`
-	Base64EncodedValue string                                                                                    `protobuf:"bytes,2,opt,name=Base64EncodedValue,json=base64_encoded_value,proto3" json:"Base64EncodedValue,omitempty"`
+	Compression        TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation_ECompressionType `protobuf:"varint,1,opt,name=Compression,proto3,enum=NAlice.TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation_ECompressionType" json:"Compression,omitempty"`
+	Base64EncodedValue string                                                                                    `protobuf:"bytes,2,opt,name=Base64EncodedValue,proto3" json:"Base64EncodedValue,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1336,7 +1388,7 @@ func (x *TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimatio
 
 type TAnimationCapability_TDrawAnimationDirective_TAnimation_TTypedAnimation struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Type          TAnimationCapability_EAnimationType `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TAnimationCapability_EAnimationType" json:"Type,omitempty"`
+	Type          TAnimationCapability_EAnimationType `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TAnimationCapability_EAnimationType" json:"Type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1382,25 +1434,24 @@ var File_alice_protos_endpoint_capabilities_animation_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/animation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfc%\n" +
-	"\x14TAnimationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/animation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xeb\x1f\n" +
+	"\x14TAnimationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TAnimationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TAnimationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xfc\x02\n" +
-	"\vTParameters\x12h\n" +
-	"\x10SupportedFormats\x18\x01 \x03(\x0e2$.NAlice.TAnimationCapability.EFormatB\x15\xaa\xdd\x1b\x11supported_formatsR\x11supported_formats\x12K\n" +
-	"\aScreens\x18\x02 \x03(\v2$.NAlice.TAnimationCapability.TScreenB\v\xaa\xdd\x1b\ascreensR\ascreens\x12i\n" +
-	"\x0eSupportedTypes\x18\x03 \x03(\x0e2+.NAlice.TAnimationCapability.EAnimationTypeB\x13\xaa\xdd\x1b\x0fsupported_typesR\x0fsupported_types\x12E\n" +
-	"\x11SupportsStreaming\x18\x04 \x01(\bB\x16\xaa\xdd\x1b\x12supports_streamingR\x12supports_streaming:\x04\xa8\xdd\x1b\x04\x1a\xe7\x03\n" +
-	"\aTScreen\x12\x1c\n" +
-	"\x04Guid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid\x12b\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TAnimationCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TAnimationCapability.TStateR\x05State\x1a\xa2\x02\n" +
+	"\vTParameters\x12P\n" +
+	"\x10SupportedFormats\x18\x01 \x03(\x0e2$.NAlice.TAnimationCapability.EFormatR\x10SupportedFormats\x12>\n" +
+	"\aScreens\x18\x02 \x03(\v2$.NAlice.TAnimationCapability.TScreenR\aScreens\x12S\n" +
+	"\x0eSupportedTypes\x18\x03 \x03(\x0e2+.NAlice.TAnimationCapability.EAnimationTypeR\x0eSupportedTypes\x12,\n" +
+	"\x11SupportsStreaming\x18\x04 \x01(\bR\x11SupportsStreaming\x1a\xbf\x03\n" +
+	"\aTScreen\x12\x12\n" +
+	"\x04Guid\x18\x01 \x01(\tR\x04Guid\x12P\n" +
 	"\n" +
-	"ScreenType\x18\x02 \x01(\x0e20.NAlice.TAnimationCapability.TScreen.EScreenTypeB\x0f\xaa\xdd\x1b\vscreen_typeR\vscreen_type\x12P\n" +
-	"\x06Family\x18\x03 \x01(\x0e2,.NAlice.TAnimationCapability.TScreen.EFamilyB\n" +
-	"\xaa\xdd\x1b\x06familyR\x06family\"t\n" +
+	"ScreenType\x18\x02 \x01(\x0e20.NAlice.TAnimationCapability.TScreen.EScreenTypeR\n" +
+	"ScreenType\x12D\n" +
+	"\x06Family\x18\x03 \x01(\x0e2,.NAlice.TAnimationCapability.TScreen.EFamilyR\x06Family\"t\n" +
 	"\vEScreenType\x12\x15\n" +
 	"\x11UnknownScreenType\x10\x00\x12\t\n" +
 	"\x05Oknix\x10\x01\x12\t\n" +
@@ -1425,57 +1476,55 @@ const file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDesc
 	"\x04Repa\x10\t\x12\n" +
 	"\n" +
 	"\x06Brukva\x10\n" +
-	"\x1a\xe8\x01\n" +
+	"\x1a\xd3\x01\n" +
 	"\n" +
-	"TAnimation\x12q\n" +
-	"\rAnimationType\x18\x01 \x01(\x0e26.NAlice.TAnimationCapability.TAnimation.EAnimationTypeB\x12\xaa\xdd\x1b\x0eanimation_typeR\x0eanimation_type\"g\n" +
+	"TAnimation\x12\\\n" +
+	"\rAnimationType\x18\x01 \x01(\x0e26.NAlice.TAnimationCapability.TAnimation.EAnimationTypeR\rAnimationType\"g\n" +
 	"\x0eEAnimationType\x12\x18\n" +
 	"\x14UnknownAnimationType\x10\x00\x12\v\n" +
 	"\aNothing\x10\x01\x12\b\n" +
 	"\x04Idle\x10\x02\x12\x10\n" +
 	"\fNotification\x10\x03\x12\x12\n" +
-	"\x0eTimerCountdown\x10\x04\x1a\xb1\x03\n" +
-	"\x06TState\x12{\n" +
-	"\x0fScreenStatesMap\x18\x02 \x03(\v28.NAlice.TAnimationCapability.TState.ScreenStatesMapEntryB\x15\xaa\xdd\x1b\x11screen_states_mapR\x11screen_states_map\x1a\x99\x01\n" +
-	"\fTScreenState\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled\x12T\n" +
-	"\tAnimation\x18\x03 \x01(\v2'.NAlice.TAnimationCapability.TAnimationB\r\xaa\xdd\x1b\tanimationR\tanimationJ\x04\b\x01\x10\x02R\x06Screen\x1at\n" +
+	"\x0eTimerCountdown\x10\x04\x1a\xf1\x02\n" +
+	"\x06TState\x12b\n" +
+	"\x0fScreenStatesMap\x18\x02 \x03(\v28.NAlice.TAnimationCapability.TState.ScreenStatesMapEntryR\x0fScreenStatesMap\x1a}\n" +
+	"\fTScreenState\x12\x18\n" +
+	"\aEnabled\x18\x02 \x01(\bR\aEnabled\x12E\n" +
+	"\tAnimation\x18\x03 \x01(\v2'.NAlice.TAnimationCapability.TAnimationR\tAnimationJ\x04\b\x01\x10\x02R\x06Screen\x1ap\n" +
 	"\x14ScreenStatesMapEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12F\n" +
-	"\x05value\x18\x02 \x01(\v20.NAlice.TAnimationCapability.TState.TScreenStateR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\fScreenStates\x1a\xa6\x13\n" +
-	"\x17TDrawAnimationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12o\n" +
+	"\x05value\x18\x02 \x01(\v20.NAlice.TAnimationCapability.TState.TScreenStateR\x05valueJ\x04\b\x01\x10\x02R\fScreenStates\x1a\xfb\x0f\n" +
+	"\x17TDrawAnimationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12_\n" +
 	"\n" +
-	"Animations\x18\x01 \x03(\v2?.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationB\x0e\xaa\xdd\x1b\n" +
-	"animationsR\n" +
-	"animations\x12\x98\x01\n" +
-	"\x13AnimationStopPolicy\x18\x02 \x01(\x0e2I.NAlice.TAnimationCapability.TDrawAnimationDirective.EAnimationStopPolicyB\x19\xaa\xdd\x1b\x15animation_stop_policyR\x15animation_stop_policy\x12\xa8\x01\n" +
-	"\x17SpeakingAnimationPolicy\x18\x03 \x01(\x0e2M.NAlice.TAnimationCapability.TDrawAnimationDirective.ESpeakingAnimationPolicyB\x1d\xaa\xdd\x1b\x19speaking_animation_policyR\x19speaking_animation_policy\x12\x8a\x01\n" +
-	"\x10AnimationOptions\x18\x04 \x01(\v2F.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptionsB\x15\xaa\xdd\x1b\x11animation_optionsR\x11animation_options\x12\x88\x01\n" +
-	"\x11FadeOutAnimations\x18\x05 \x03(\v2?.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationB\x17\xaa\xdd\x1b\x13fade_out_animationsR\x13fade_out_animations\x1a\xc1\a\n" +
+	"Animations\x18\x01 \x03(\v2?.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationR\n" +
+	"Animations\x12{\n" +
+	"\x13AnimationStopPolicy\x18\x02 \x01(\x0e2I.NAlice.TAnimationCapability.TDrawAnimationDirective.EAnimationStopPolicyR\x13AnimationStopPolicy\x12\x87\x01\n" +
+	"\x17SpeakingAnimationPolicy\x18\x03 \x01(\x0e2M.NAlice.TAnimationCapability.TDrawAnimationDirective.ESpeakingAnimationPolicyR\x17SpeakingAnimationPolicy\x12r\n" +
+	"\x10AnimationOptions\x18\x04 \x01(\v2F.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptionsR\x10AnimationOptions\x12m\n" +
+	"\x11FadeOutAnimations\x18\x05 \x03(\v2?.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationR\x11FadeOutAnimations\x1a\x90\x06\n" +
 	"\n" +
-	"TAnimation\x12\x93\x01\n" +
-	"\x0fBinaryAnimation\x18\x01 \x01(\v2P.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimationB\x14\xaa\xdd\x1b\x10binary_animationH\x00R\x10binary_animation\x12\x83\x01\n" +
-	"\vS3Directory\x18\x02 \x01(\v2L.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TS3DirectoryB\x10\xaa\xdd\x1b\fs3_directoryH\x00R\fs3_directory\x12\x8f\x01\n" +
-	"\x0eTypedAnimation\x18\x03 \x01(\v2O.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TTypedAnimationB\x13\xaa\xdd\x1b\x0ftyped_animationH\x00R\x0ftyped_animation\x1aV\n" +
-	"\fTS3Directory\x12\"\n" +
-	"\x06Bucket\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06bucketR\x06bucket\x12\x1c\n" +
-	"\x04Path\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04pathR\x04path:\x04\xa8\xdd\x1b\x04\x1a\xb4\x02\n" +
-	"\x10TBinaryAnimation\x12\x9e\x01\n" +
-	"\vCompression\x18\x01 \x01(\x0e2a.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimation.ECompressionTypeB\x14\xaa\xdd\x1b\x10compression_typeR\x10compression_type\x12J\n" +
-	"\x12Base64EncodedValue\x18\x02 \x01(\tB\x18\xaa\xdd\x1b\x14base64_encoded_valueR\x14base64_encoded_value\"3\n" +
+	"TAnimation\x12|\n" +
+	"\x0fBinaryAnimation\x18\x01 \x01(\v2P.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimationH\x00R\x0fBinaryAnimation\x12p\n" +
+	"\vS3Directory\x18\x02 \x01(\v2L.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TS3DirectoryH\x00R\vS3Directory\x12y\n" +
+	"\x0eTypedAnimation\x18\x03 \x01(\v2O.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TTypedAnimationH\x00R\x0eTypedAnimation\x1a:\n" +
+	"\fTS3Directory\x12\x16\n" +
+	"\x06Bucket\x18\x01 \x01(\tR\x06Bucket\x12\x12\n" +
+	"\x04Path\x18\x02 \x01(\tR\x04Path\x1a\xfd\x01\n" +
+	"\x10TBinaryAnimation\x12\x83\x01\n" +
+	"\vCompression\x18\x01 \x01(\x0e2a.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimation.ECompressionTypeR\vCompression\x12.\n" +
+	"\x12Base64EncodedValue\x18\x02 \x01(\tR\x12Base64EncodedValue\"3\n" +
 	"\x10ECompressionType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04None\x10\x01\x12\b\n" +
-	"\x04Gzip\x10\x02\x1a\\\n" +
-	"\x0fTTypedAnimation\x12I\n" +
-	"\x04Type\x18\x01 \x01(\x0e2+.NAlice.TAnimationCapability.EAnimationTypeB\b\xaa\xdd\x1b\x04typeR\x04type:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\x1a\xae\x03\n" +
-	"\x11TAnimationOptions\x12\x9c\x01\n" +
-	"\x10SubstitutionType\x18\x01 \x01(\x0e2X.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptions.ESubstitutionTypeB\x15\xaa\xdd\x1b\x11substitution_typeR\x11substitution_type\x12@\n" +
-	"\rMinDurationMs\x18\x02 \x01(\x04B\x13\xaa\xdd\x1b\x0fmin_duration_msH\x00R\x0fmin_duration_ms\x88\x01\x01\x12@\n" +
-	"\rMaxDurationMs\x18\x03 \x01(\x04B\x13\xaa\xdd\x1b\x0fmax_duration_msH\x01R\x0fmax_duration_ms\x88\x01\x01\"R\n" +
+	"\x04Gzip\x10\x02\x1aR\n" +
+	"\x0fTTypedAnimation\x12?\n" +
+	"\x04Type\x18\x01 \x01(\x0e2+.NAlice.TAnimationCapability.EAnimationTypeR\x04TypeB\a\n" +
+	"\x05Value\x1a\xe8\x02\n" +
+	"\x11TAnimationOptions\x12\x84\x01\n" +
+	"\x10SubstitutionType\x18\x01 \x01(\x0e2X.NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptions.ESubstitutionTypeR\x10SubstitutionType\x12)\n" +
+	"\rMinDurationMs\x18\x02 \x01(\x04H\x00R\rMinDurationMs\x88\x01\x01\x12)\n" +
+	"\rMaxDurationMs\x18\x03 \x01(\x04H\x01R\rMaxDurationMs\x88\x01\x01\"R\n" +
 	"\x11ESubstitutionType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x0e\n" +
 	"\n" +
@@ -1495,13 +1544,13 @@ const file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDesc
 	"\x18ESpeakingAnimationPolicy\x12\v\n" +
 	"\aDefault\x10\x00\x12\x18\n" +
 	"\x14PlaySpeakingEndOfTts\x10\x01\x12\x19\n" +
-	"\x15SkipSpeakingAnimation\x10\x02:$\x92\x82\x19\x18draw_animation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x12\x1a~\n" +
-	"\x16TEnableScreenDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Guid\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid:\x19\x92\x82\x19\renable_screen\xa8\xdd\x1b\x04\xa8\xc8\x1c&J\x04\b\x01\x10\x02R\x06Screen\x1a\x80\x01\n" +
-	"\x17TDisableScreenDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Guid\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid:\x1a\x92\x82\x19\x0edisable_screen\xa8\xdd\x1b\x04\xa8\xc8\x1c'J\x04\b\x01\x10\x02R\x06Screen\"+\n" +
+	"\x15SkipSpeakingAnimation\x10\x02\x1aO\n" +
+	"\x16TEnableScreenDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Guid\x18\x02 \x01(\tR\x04GuidJ\x04\b\x01\x10\x02R\x06Screen\x1aP\n" +
+	"\x17TDisableScreenDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Guid\x18\x02 \x01(\tR\x04GuidJ\x04\b\x01\x10\x02R\x06Screen\"+\n" +
 	"\aEFormat\x12\t\n" +
 	"\x05S3Url\x10\x00\x12\n" +
 	"\n" +
@@ -1523,8 +1572,9 @@ const file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDesc
 	"\n" +
 	"PlayerNext\x10\v\x12\x11\n" +
 	"\rEmotionalWink\x10\f\x12\x11\n" +
-	"\rEmotionalLove\x10\r:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\bB\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18AnimationCapabilityProtoP\x01ZIa.yandex-team.ru/alice/protos/endpoint/capabilities/animation;animationpbb\x06proto3"
+	"\rEmotionalLove\x10\rB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/animation\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_animation_capability_proto_rawDescOnce sync.Once
@@ -1559,13 +1609,13 @@ var file_alice_protos_endpoint_capabilities_animation_capability_proto_goTypes =
 	(*TAnimationCapability_TEnableScreenDirective)(nil),                                            // 15: NAlice.TAnimationCapability.TEnableScreenDirective
 	(*TAnimationCapability_TDisableScreenDirective)(nil),                                           // 16: NAlice.TAnimationCapability.TDisableScreenDirective
 	(*TAnimationCapability_TState_TScreenState)(nil),                                               // 17: NAlice.TAnimationCapability.TState.TScreenState
-	nil, // 18: NAlice.TAnimationCapability.TState.ScreenStatesMapEntry
-	(*TAnimationCapability_TDrawAnimationDirective_TAnimation)(nil),                  // 19: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation
-	(*TAnimationCapability_TDrawAnimationDirective_TAnimationOptions)(nil),           // 20: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptions
-	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory)(nil),     // 21: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TS3Directory
-	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation)(nil), // 22: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimation
-	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TTypedAnimation)(nil),  // 23: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TTypedAnimation
-	(*endpoint.TCapability_TMeta)(nil),                                               // 24: NAlice.TCapability.TMeta
+	(*TAnimationCapability_TState_ScreenStatesMapEntry)(nil),                                       // 18: NAlice.TAnimationCapability.TState.ScreenStatesMapEntry
+	(*TAnimationCapability_TDrawAnimationDirective_TAnimation)(nil),                                // 19: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation
+	(*TAnimationCapability_TDrawAnimationDirective_TAnimationOptions)(nil),                         // 20: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimationOptions
+	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TS3Directory)(nil),                   // 21: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TS3Directory
+	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TBinaryAnimation)(nil),               // 22: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TBinaryAnimation
+	(*TAnimationCapability_TDrawAnimationDirective_TAnimation_TTypedAnimation)(nil),                // 23: NAlice.TAnimationCapability.TDrawAnimationDirective.TAnimation.TTypedAnimation
+	(*endpoint.TCapability_TMeta)(nil),                                                             // 24: NAlice.TCapability.TMeta
 }
 var file_alice_protos_endpoint_capabilities_animation_capability_proto_depIdxs = []int32{
 	24, // 0: NAlice.TAnimationCapability.Meta:type_name -> NAlice.TCapability.TMeta

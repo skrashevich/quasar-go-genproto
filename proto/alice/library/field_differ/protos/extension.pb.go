@@ -97,8 +97,8 @@ const file_alice_library_field_differ_protos_extension_proto_rawDesc = "" +
 	"\vIFC_NOTHING\x10\x00\x12\f\n" +
 	"\bIFC_DIFF\x10\x01\x12\x10\n" +
 	"\fIFC_PRESENCE\x10\x02:o\n" +
-	"\x13ImportantFieldCheck\x12\x1d.google.protobuf.FieldOptions\x18\xd7\xf1\x04 \x01(\x0e2\x1c.NAlice.EImportantFieldCheckR\x13ImportantFieldCheckBa\n" +
-	"+ru.yandex.alice.library.field_differ.protosZ2a.yandex-team.ru/alice/library/field_differ/protosb\x06proto3"
+	"\x13ImportantFieldCheck\x12\x1d.google.protobuf.FieldOptions\x18\xd7\xf1\x04 \x01(\x0e2\x1c.NAlice.EImportantFieldCheckR\x13ImportantFieldCheckB\x80\x01\n" +
+	"+ru.yandex.alice.library.field_differ.protosZQgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/field_differ/protosb\x06proto3"
 
 var (
 	file_alice_library_field_differ_protos_extension_proto_rawDescOnce sync.Once

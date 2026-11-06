@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tv_channel/capability.proto
 
-package tvchannelpb
+package tv_channel
 
 import (
 	tv_channels "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/tv_channels"
@@ -233,9 +233,9 @@ func (TTvChannelCapability_TCategory_ECategoryType) EnumDescriptor() ([]byte, []
 
 type TTvChannelCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TTvChannelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TTvChannelCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TTvChannelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TTvChannelCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -382,19 +382,19 @@ type isTTvChannelCapability_TTvChannelId_IdentityMethod interface {
 }
 
 type TTvChannelCapability_TTvChannelId_ChannelUri struct {
-	ChannelUri string `protobuf:"bytes,1,opt,name=ChannelUri,json=channel_uri,proto3,oneof"`
+	ChannelUri string `protobuf:"bytes,1,opt,name=ChannelUri,proto3,oneof"`
 }
 
 type TTvChannelCapability_TTvChannelId_ChannelId struct {
-	ChannelId int32 `protobuf:"varint,2,opt,name=ChannelId,json=channel_id,proto3,oneof"`
+	ChannelId int32 `protobuf:"varint,2,opt,name=ChannelId,proto3,oneof"`
 }
 
 type TTvChannelCapability_TTvChannelId_YandexChannelId struct {
-	YandexChannelId int32 `protobuf:"varint,3,opt,name=YandexChannelId,json=yandex_channel_id,proto3,oneof"`
+	YandexChannelId int32 `protobuf:"varint,3,opt,name=YandexChannelId,proto3,oneof"`
 }
 
 type TTvChannelCapability_TTvChannelId_ContentId struct {
-	ContentId string `protobuf:"bytes,4,opt,name=ContentId,json=content_id,proto3,oneof"`
+	ContentId string `protobuf:"bytes,4,opt,name=ContentId,proto3,oneof"`
 }
 
 func (*TTvChannelCapability_TTvChannelId_ChannelUri) isTTvChannelCapability_TTvChannelId_IdentityMethod() {
@@ -411,11 +411,11 @@ func (*TTvChannelCapability_TTvChannelId_ContentId) isTTvChannelCapability_TTvCh
 
 type TTvChannelCapability_TTvChannel struct {
 	state                 protoimpl.MessageState             `protogen:"open.v1"`
-	Id                    *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name                  string                             `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ChannelType           TTvChannelCapability_EChannelType  `protobuf:"varint,3,opt,name=ChannelType,json=channel_type,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
-	ChannelId             string                             `protobuf:"bytes,4,opt,name=ChannelId,json=channel_id,proto3" json:"ChannelId,omitempty"`
-	InputId               string                             `protobuf:"bytes,5,opt,name=InputId,json=input_id,proto3" json:"InputId,omitempty"`
+	Id                    *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name                  string                             `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	ChannelType           TTvChannelCapability_EChannelType  `protobuf:"varint,3,opt,name=ChannelType,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
+	ChannelId             string                             `protobuf:"bytes,4,opt,name=ChannelId,proto3" json:"ChannelId,omitempty"`
+	InputId               string                             `protobuf:"bytes,5,opt,name=InputId,proto3" json:"InputId,omitempty"`
 	LogoUrl               string                             `protobuf:"bytes,6,opt,name=LogoUrl,json=logo_url,proto3" json:"LogoUrl,omitempty"`
 	LogoWithBackgroundUrl string                             `protobuf:"bytes,7,opt,name=LogoWithBackgroundUrl,json=logo_with_background_url,proto3" json:"LogoWithBackgroundUrl,omitempty"`
 	unknownFields         protoimpl.UnknownFields
@@ -503,10 +503,10 @@ func (x *TTvChannelCapability_TTvChannel) GetLogoWithBackgroundUrl() string {
 
 type TTvChannelCapability_TCategory struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
-	Id            string                                       `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title         string                                       `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Type          TTvChannelCapability_TCategory_ECategoryType `protobuf:"varint,3,opt,name=Type,json=type,proto3,enum=NAlice.TTvChannelCapability_TCategory_ECategoryType" json:"Type,omitempty"`
-	IsSelected    bool                                         `protobuf:"varint,4,opt,name=IsSelected,json=is_selected,proto3" json:"IsSelected,omitempty"`
+	Id            string                                       `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title         string                                       `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Type          TTvChannelCapability_TCategory_ECategoryType `protobuf:"varint,3,opt,name=Type,proto3,enum=NAlice.TTvChannelCapability_TCategory_ECategoryType" json:"Type,omitempty"`
+	IsSelected    bool                                         `protobuf:"varint,4,opt,name=IsSelected,proto3" json:"IsSelected,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -571,14 +571,14 @@ func (x *TTvChannelCapability_TCategory) GetIsSelected() bool {
 
 type TTvChannelCapability_TCatchUpEpisodeInformation struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	TvProgramId   string                             `protobuf:"bytes,1,opt,name=TvProgramId,json=tv_program_id,proto3" json:"TvProgramId,omitempty"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,2,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
-	Name          string                             `protobuf:"bytes,3,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StartTime     int64                              `protobuf:"varint,4,opt,name=StartTime,json=start_time,proto3" json:"StartTime,omitempty"`
-	EndTime       int64                              `protobuf:"varint,5,opt,name=EndTime,json=end_time,proto3" json:"EndTime,omitempty"`
-	ProgressTime  int64                              `protobuf:"varint,6,opt,name=ProgressTime,json=progress_time,proto3" json:"ProgressTime,omitempty"`
-	WatermarkTime int64                              `protobuf:"varint,7,opt,name=WatermarkTime,json=watermark_time,proto3" json:"WatermarkTime,omitempty"`
-	HasCatchup    bool                               `protobuf:"varint,8,opt,name=HasCatchup,json=has_catchup,proto3" json:"HasCatchup,omitempty"`
+	TvProgramId   string                             `protobuf:"bytes,1,opt,name=TvProgramId,proto3" json:"TvProgramId,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,2,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,3,opt,name=Name,proto3" json:"Name,omitempty"`
+	StartTime     int64                              `protobuf:"varint,4,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
+	EndTime       int64                              `protobuf:"varint,5,opt,name=EndTime,proto3" json:"EndTime,omitempty"`
+	ProgressTime  int64                              `protobuf:"varint,6,opt,name=ProgressTime,proto3" json:"ProgressTime,omitempty"`
+	WatermarkTime int64                              `protobuf:"varint,7,opt,name=WatermarkTime,proto3" json:"WatermarkTime,omitempty"`
+	HasCatchup    bool                               `protobuf:"varint,8,opt,name=HasCatchup,proto3" json:"HasCatchup,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -671,10 +671,10 @@ func (x *TTvChannelCapability_TCatchUpEpisodeInformation) GetHasCatchup() bool {
 
 type TTvChannelCapability_TChannelTypeAvailability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	ChannelType   TTvChannelCapability_EChannelType `protobuf:"varint,1,opt,name=ChannelType,json=channel_type,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
-	IsAvailable   bool                              `protobuf:"varint,2,opt,name=IsAvailable,json=is_available,proto3" json:"IsAvailable,omitempty"`
-	IsConfigured  bool                              `protobuf:"varint,3,opt,name=IsConfigured,json=is_configured,proto3" json:"IsConfigured,omitempty"`
-	IsManaged     bool                              `protobuf:"varint,4,opt,name=IsManaged,json=is_managed,proto3" json:"IsManaged,omitempty"`
+	ChannelType   TTvChannelCapability_EChannelType `protobuf:"varint,1,opt,name=ChannelType,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
+	IsAvailable   bool                              `protobuf:"varint,2,opt,name=IsAvailable,proto3" json:"IsAvailable,omitempty"`
+	IsConfigured  bool                              `protobuf:"varint,3,opt,name=IsConfigured,proto3" json:"IsConfigured,omitempty"`
+	IsManaged     bool                              `protobuf:"varint,4,opt,name=IsManaged,proto3" json:"IsManaged,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -739,11 +739,11 @@ func (x *TTvChannelCapability_TChannelTypeAvailability) GetIsManaged() bool {
 
 type TTvChannelCapability_TParameters struct {
 	state                              protoimpl.MessageState                           `protogen:"open.v1"`
-	IsFavoritesAvailable               bool                                             `protobuf:"varint,1,opt,name=IsFavoritesAvailable,json=is_favorites_available,proto3" json:"IsFavoritesAvailable,omitempty"`
-	CentaurUseNativeChannelListSidebar bool                                             `protobuf:"varint,2,opt,name=CentaurUseNativeChannelListSidebar,json=centaur_use_native_channel_list_sidebar,proto3" json:"CentaurUseNativeChannelListSidebar,omitempty"`
-	DirectiveForTurningOnChannel       TTvChannelCapability_ETurnOnChannelDirectiveType `protobuf:"varint,3,opt,name=DirectiveForTurningOnChannel,json=directive_for_turning_on_channel,proto3,enum=NAlice.TTvChannelCapability_ETurnOnChannelDirectiveType" json:"DirectiveForTurningOnChannel,omitempty"`
-	UnpurchasedChannelReaction         TTvChannelCapability_EUnpurchasedChannelReaction `protobuf:"varint,4,opt,name=UnpurchasedChannelReaction,json=unpurchased_channel_reaction,proto3,enum=NAlice.TTvChannelCapability_EUnpurchasedChannelReaction" json:"UnpurchasedChannelReaction,omitempty"`
-	TariffOptionsSupported             *bool                                            `protobuf:"varint,5,opt,name=TariffOptionsSupported,json=tariff_options_supported,proto3,oneof" json:"TariffOptionsSupported,omitempty"`
+	IsFavoritesAvailable               bool                                             `protobuf:"varint,1,opt,name=IsFavoritesAvailable,proto3" json:"IsFavoritesAvailable,omitempty"`
+	CentaurUseNativeChannelListSidebar bool                                             `protobuf:"varint,2,opt,name=CentaurUseNativeChannelListSidebar,proto3" json:"CentaurUseNativeChannelListSidebar,omitempty"`
+	DirectiveForTurningOnChannel       TTvChannelCapability_ETurnOnChannelDirectiveType `protobuf:"varint,3,opt,name=DirectiveForTurningOnChannel,proto3,enum=NAlice.TTvChannelCapability_ETurnOnChannelDirectiveType" json:"DirectiveForTurningOnChannel,omitempty"`
+	UnpurchasedChannelReaction         TTvChannelCapability_EUnpurchasedChannelReaction `protobuf:"varint,4,opt,name=UnpurchasedChannelReaction,proto3,enum=NAlice.TTvChannelCapability_EUnpurchasedChannelReaction" json:"UnpurchasedChannelReaction,omitempty"`
+	TariffOptionsSupported             *bool                                            `protobuf:"varint,5,opt,name=TariffOptionsSupported,proto3,oneof" json:"TariffOptionsSupported,omitempty"`
 	unknownFields                      protoimpl.UnknownFields
 	sizeCache                          protoimpl.SizeCache
 }
@@ -814,20 +814,19 @@ func (x *TTvChannelCapability_TParameters) GetTariffOptionsSupported() bool {
 }
 
 type TTvChannelCapability_TState struct {
-	state       protoimpl.MessageState           `protogen:"open.v1"`
-	CurrChannel *TTvChannelCapability_TTvChannel `protobuf:"bytes,1,opt,name=CurrChannel,json=curr_channel,proto3" json:"CurrChannel,omitempty"`
-	LastChannel *TTvChannelCapability_TTvChannel `protobuf:"bytes,2,opt,name=LastChannel,json=last_channel,proto3" json:"LastChannel,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/tv_channel/capability.proto.
-	TimeTurnOffLastChannel      int64                                            `protobuf:"varint,3,opt,name=TimeTurnOffLastChannel,json=time_turn_off_last_channel,proto3" json:"TimeTurnOffLastChannel,omitempty"`
-	ListPreviousChannels        []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,4,rep,name=ListPreviousChannels,json=list_previous_channels,proto3" json:"ListPreviousChannels,omitempty"`
-	ListNextChannels            []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,5,rep,name=ListNextChannels,json=list_next_channels,proto3" json:"ListNextChannels,omitempty"`
-	ChannelTypeAvailabilities   []*TTvChannelCapability_TChannelTypeAvailability `protobuf:"bytes,6,rep,name=ChannelTypeAvailabilities,json=channel_type_availabilities,proto3" json:"ChannelTypeAvailabilities,omitempty"`
-	CatchUpEpisodeInformation   *TTvChannelCapability_TCatchUpEpisodeInformation `protobuf:"bytes,7,opt,name=CatchUpEpisodeInformation,json=catch_up_episode_information,proto3" json:"CatchUpEpisodeInformation,omitempty"`
-	ListFavoritesChannels       []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,8,rep,name=ListFavoritesChannels,json=list_favorites_channels,proto3" json:"ListFavoritesChannels,omitempty"`
-	LastChannelPlayTimestamp    int64                                            `protobuf:"varint,9,opt,name=LastChannelPlayTimestamp,json=last_channel_play_timestamp,proto3" json:"LastChannelPlayTimestamp,omitempty"`
-	IsRegionalVersionsSupported bool                                             `protobuf:"varint,10,opt,name=IsRegionalVersionsSupported,json=is_regional_versions_supported,proto3" json:"IsRegionalVersionsSupported,omitempty"`
-	Categories                  []*TTvChannelCapability_TCategory                `protobuf:"bytes,11,rep,name=Categories,json=categories,proto3" json:"Categories,omitempty"`
-	IsTvGridEnabled             bool                                             `protobuf:"varint,12,opt,name=IsTvGridEnabled,json=is_tv_grid_enabled,proto3" json:"IsTvGridEnabled,omitempty"`
+	state                       protoimpl.MessageState                           `protogen:"open.v1"`
+	CurrChannel                 *TTvChannelCapability_TTvChannel                 `protobuf:"bytes,1,opt,name=CurrChannel,proto3" json:"CurrChannel,omitempty"`
+	LastChannel                 *TTvChannelCapability_TTvChannel                 `protobuf:"bytes,2,opt,name=LastChannel,proto3" json:"LastChannel,omitempty"`
+	TimeTurnOffLastChannel      int64                                            `protobuf:"varint,3,opt,name=TimeTurnOffLastChannel,proto3" json:"TimeTurnOffLastChannel,omitempty"`
+	ListPreviousChannels        []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,4,rep,name=ListPreviousChannels,proto3" json:"ListPreviousChannels,omitempty"`
+	ListNextChannels            []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,5,rep,name=ListNextChannels,proto3" json:"ListNextChannels,omitempty"`
+	ChannelTypeAvailabilities   []*TTvChannelCapability_TChannelTypeAvailability `protobuf:"bytes,6,rep,name=ChannelTypeAvailabilities,proto3" json:"ChannelTypeAvailabilities,omitempty"`
+	CatchUpEpisodeInformation   *TTvChannelCapability_TCatchUpEpisodeInformation `protobuf:"bytes,7,opt,name=CatchUpEpisodeInformation,proto3" json:"CatchUpEpisodeInformation,omitempty"`
+	ListFavoritesChannels       []*TTvChannelCapability_TTvChannel               `protobuf:"bytes,8,rep,name=ListFavoritesChannels,proto3" json:"ListFavoritesChannels,omitempty"`
+	LastChannelPlayTimestamp    int64                                            `protobuf:"varint,9,opt,name=LastChannelPlayTimestamp,proto3" json:"LastChannelPlayTimestamp,omitempty"`
+	IsRegionalVersionsSupported bool                                             `protobuf:"varint,10,opt,name=IsRegionalVersionsSupported,proto3" json:"IsRegionalVersionsSupported,omitempty"`
+	Categories                  []*TTvChannelCapability_TCategory                `protobuf:"bytes,11,rep,name=Categories,proto3" json:"Categories,omitempty"`
+	IsTvGridEnabled             bool                                             `protobuf:"varint,12,opt,name=IsTvGridEnabled,proto3" json:"IsTvGridEnabled,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -876,7 +875,6 @@ func (x *TTvChannelCapability_TState) GetLastChannel() *TTvChannelCapability_TTv
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/tv_channel/capability.proto.
 func (x *TTvChannelCapability_TState) GetTimeTurnOffLastChannel() int64 {
 	if x != nil {
 		return x.TimeTurnOffLastChannel
@@ -949,10 +947,10 @@ func (x *TTvChannelCapability_TState) GetIsTvGridEnabled() bool {
 
 type TTvChannelCapability_TTurnOnTvChannelDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
-	Name          string                             `protobuf:"bytes,4,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TvProgramId   *string                            `protobuf:"bytes,2,opt,name=TvProgramId,json=tv_program_id,proto3,oneof" json:"TvProgramId,omitempty"`
-	Offset        *int64                             `protobuf:"varint,3,opt,name=Offset,json=offset,proto3,oneof" json:"Offset,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,4,opt,name=Name,proto3" json:"Name,omitempty"`
+	TvProgramId   *string                            `protobuf:"bytes,2,opt,name=TvProgramId,proto3,oneof" json:"TvProgramId,omitempty"`
+	Offset        *int64                             `protobuf:"varint,3,opt,name=Offset,proto3,oneof" json:"Offset,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1017,8 +1015,8 @@ func (x *TTvChannelCapability_TTurnOnTvChannelDirective) GetOffset() int64 {
 
 type TTvChannelCapability_TOpenTvChannelSettingsDirective struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	ChannelType   TTvChannelCapability_EChannelType `protobuf:"varint,1,opt,name=ChannelType,json=channel_type,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
-	Name          string                            `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	ChannelType   TTvChannelCapability_EChannelType `protobuf:"varint,1,opt,name=ChannelType,proto3,enum=NAlice.TTvChannelCapability_EChannelType" json:"ChannelType,omitempty"`
+	Name          string                            `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1069,8 +1067,8 @@ func (x *TTvChannelCapability_TOpenTvChannelSettingsDirective) GetName() string 
 
 type TTvChannelCapability_TAddTvChannelFavoritesDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
-	Name          string                             `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1121,8 +1119,8 @@ func (x *TTvChannelCapability_TAddTvChannelFavoritesDirective) GetName() string 
 
 type TTvChannelCapability_TDeleteTvChannelFavoritesDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
-	Name          string                             `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1173,8 +1171,8 @@ func (x *TTvChannelCapability_TDeleteTvChannelFavoritesDirective) GetName() stri
 
 type TTvChannelCapability_TOpenTvChannelsCategoryDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CategoryId    string                 `protobuf:"bytes,1,opt,name=CategoryId,json=category_id,proto3" json:"CategoryId,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	CategoryId    string                 `protobuf:"bytes,1,opt,name=CategoryId,proto3" json:"CategoryId,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1225,7 +1223,7 @@ func (x *TTvChannelCapability_TOpenTvChannelsCategoryDirective) GetName() string
 
 type TTvChannelCapability_TOpenPlayerTvChannelListDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1269,8 +1267,8 @@ func (x *TTvChannelCapability_TOpenPlayerTvChannelListDirective) GetName() strin
 
 type TTvChannelCapability_TOpenPlayerTvProgramDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Name          string                             `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,2,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,2,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1321,9 +1319,9 @@ func (x *TTvChannelCapability_TOpenPlayerTvProgramDirective) GetTvChannelId() *T
 
 type TTvChannelCapability_TOpenTvProgramDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,json=tv_channel_id,proto3" json:"TvChannelId,omitempty"`
-	Name          string                             `protobuf:"bytes,3,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TvProgramId   *string                            `protobuf:"bytes,2,opt,name=TvProgramId,json=tv_program_id,proto3,oneof" json:"TvProgramId,omitempty"`
+	TvChannelId   *TTvChannelCapability_TTvChannelId `protobuf:"bytes,1,opt,name=TvChannelId,proto3" json:"TvChannelId,omitempty"`
+	Name          string                             `protobuf:"bytes,3,opt,name=Name,proto3" json:"Name,omitempty"`
+	TvProgramId   *string                            `protobuf:"bytes,2,opt,name=TvProgramId,proto3,oneof" json:"TvProgramId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1381,8 +1379,8 @@ func (x *TTvChannelCapability_TOpenTvProgramDirective) GetTvProgramId() string {
 
 type TTvChannelCapability_TOpenTvChannelsScreenCentaurDirective struct {
 	state                   protoimpl.MessageState                `protogen:"open.v1"`
-	Name                    string                                `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CentaurChannelsListData *tv_channels.TCentaurChannelsListData `protobuf:"bytes,2,opt,name=CentaurChannelsListData,json=centaur_channels_list_data,proto3" json:"CentaurChannelsListData,omitempty"`
+	Name                    string                                `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CentaurChannelsListData *tv_channels.TCentaurChannelsListData `protobuf:"bytes,2,opt,name=CentaurChannelsListData,proto3" json:"CentaurChannelsListData,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -1435,126 +1433,116 @@ var File_alice_protos_endpoint_capabilities_tv_channel_capability_proto protoref
 
 const file_alice_protos_endpoint_capabilities_tv_channel_capability_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/endpoint/capabilities/tv_channel/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a8alice/protos/data/scenario/tv_channels/tv_channels.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa20\n" +
-	"\x14TTvChannelCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	">alice/protos/endpoint/capabilities/tv_channel/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a8alice/protos/data/scenario/tv_channels/tv_channels.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf9\"\n" +
+	"\x14TTvChannelCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TTvChannelCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TTvChannelCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x90\x02\n" +
-	"\fTTvChannelId\x122\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TTvChannelCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TTvChannelCapability.TStateR\x05State\x1a\xae\x01\n" +
+	"\fTTvChannelId\x12 \n" +
 	"\n" +
-	"ChannelUri\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vchannel_uriH\x00R\vchannel_uri\x12/\n" +
-	"\tChannelId\x18\x02 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"channel_idH\x00R\n" +
-	"channel_id\x12C\n" +
-	"\x0fYandexChannelId\x18\x03 \x01(\x05B\x15\xaa\xdd\x1b\x11yandex_channel_idH\x00R\x11yandex_channel_id\x12/\n" +
-	"\tContentId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"content_idH\x00R\n" +
-	"content_idB%\n" +
-	"\x0eIdentityMethod\x12\x13\xaa\xdd\x1b\x0fidentity_method\x1a\xa5\x03\n" +
+	"ChannelUri\x18\x01 \x01(\tH\x00R\n" +
+	"ChannelUri\x12\x1e\n" +
+	"\tChannelId\x18\x02 \x01(\x05H\x00R\tChannelId\x12*\n" +
+	"\x0fYandexChannelId\x18\x03 \x01(\x05H\x00R\x0fYandexChannelId\x12\x1e\n" +
+	"\tContentId\x18\x04 \x01(\tH\x00R\tContentIdB\x10\n" +
+	"\x0eIdentityMethod\x1a\xe0\x02\n" +
 	"\n" +
-	"TTvChannel\x12A\n" +
-	"\x02Id\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12^\n" +
-	"\vChannelType\x18\x03 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeB\x10\xaa\xdd\x1b\fchannel_typeR\fchannel_type\x12-\n" +
-	"\tChannelId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"channel_idR\n" +
-	"channel_id\x12'\n" +
-	"\aInputId\x18\x05 \x01(\tB\f\xaa\xdd\x1b\binput_idR\binput_id\x12'\n" +
+	"TTvChannel\x129\n" +
+	"\x02Id\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12K\n" +
+	"\vChannelType\x18\x03 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeR\vChannelType\x12\x1c\n" +
+	"\tChannelId\x18\x04 \x01(\tR\tChannelId\x12\x18\n" +
+	"\aInputId\x18\x05 \x01(\tR\aInputId\x12'\n" +
 	"\aLogoUrl\x18\x06 \x01(\tB\f\xaa\xdd\x1b\blogo_urlR\blogo_url\x12U\n" +
-	"\x15LogoWithBackgroundUrl\x18\a \x01(\tB\x1c\xaa\xdd\x1b\x18logo_with_background_urlR\x18logo_with_background_url\x1a\x9d\x02\n" +
-	"\tTCategory\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12R\n" +
-	"\x04Type\x18\x03 \x01(\x0e24.NAlice.TTvChannelCapability.TCategory.ECategoryTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x120\n" +
+	"\x15LogoWithBackgroundUrl\x18\a \x01(\tB\x1c\xaa\xdd\x1b\x18logo_with_background_urlR\x18logo_with_background_url\x1a\xee\x01\n" +
+	"\tTCategory\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12H\n" +
+	"\x04Type\x18\x03 \x01(\x0e24.NAlice.TTvChannelCapability.TCategory.ECategoryTypeR\x04Type\x12\x1e\n" +
 	"\n" +
-	"IsSelected\x18\x04 \x01(\bB\x0f\xaa\xdd\x1b\vis_selectedR\vis_selected\"Q\n" +
+	"IsSelected\x18\x04 \x01(\bR\n" +
+	"IsSelected\"Q\n" +
 	"\rECategoryType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\f\n" +
 	"\bSOFTWARE\x10\x01\x12\v\n" +
 	"\aANTENNA\x10\x02\x12\t\n" +
 	"\x05CABLE\x10\x03\x12\r\n" +
-	"\tSATELLITE\x10\x04\x1a\xd0\x03\n" +
-	"\x1aTCatchUpEpisodeInformation\x125\n" +
-	"\vTvProgramId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rtv_program_idR\rtv_program_id\x12`\n" +
-	"\vTvChannelId\x18\x02 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id\x12\x1c\n" +
-	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tStartTime\x18\x04 \x01(\x03B\x0e\xaa\xdd\x1b\n" +
-	"start_timeR\n" +
-	"start_time\x12'\n" +
-	"\aEndTime\x18\x05 \x01(\x03B\f\xaa\xdd\x1b\bend_timeR\bend_time\x126\n" +
-	"\fProgressTime\x18\x06 \x01(\x03B\x11\xaa\xdd\x1b\rprogress_timeR\rprogress_time\x129\n" +
-	"\rWatermarkTime\x18\a \x01(\x03B\x12\xaa\xdd\x1b\x0ewatermark_timeR\x0ewatermark_time\x120\n" +
+	"\tSATELLITE\x10\x04\x1a\xc1\x02\n" +
+	"\x1aTCatchUpEpisodeInformation\x12 \n" +
+	"\vTvProgramId\x18\x01 \x01(\tR\vTvProgramId\x12K\n" +
+	"\vTvChannelId\x18\x02 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x12\x12\n" +
+	"\x04Name\x18\x03 \x01(\tR\x04Name\x12\x1c\n" +
+	"\tStartTime\x18\x04 \x01(\x03R\tStartTime\x12\x18\n" +
+	"\aEndTime\x18\x05 \x01(\x03R\aEndTime\x12\"\n" +
+	"\fProgressTime\x18\x06 \x01(\x03R\fProgressTime\x12$\n" +
+	"\rWatermarkTime\x18\a \x01(\x03R\rWatermarkTime\x12\x1e\n" +
 	"\n" +
-	"HasCatchup\x18\b \x01(\bB\x0f\xaa\xdd\x1b\vhas_catchupR\vhas_catchup\x1a\x96\x02\n" +
-	"\x18TChannelTypeAvailability\x12^\n" +
-	"\vChannelType\x18\x01 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeB\x10\xaa\xdd\x1b\fchannel_typeR\fchannel_type\x123\n" +
-	"\vIsAvailable\x18\x02 \x01(\bB\x10\xaa\xdd\x1b\fis_availableR\fis_available\x126\n" +
-	"\fIsConfigured\x18\x03 \x01(\bB\x11\xaa\xdd\x1b\ris_configuredR\ris_configured\x12-\n" +
-	"\tIsManaged\x18\x04 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_managedR\n" +
-	"is_managed\x1a\xa8\x05\n" +
-	"\vTParameters\x12P\n" +
-	"\x14IsFavoritesAvailable\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16is_favorites_availableR\x16is_favorites_available\x12\x80\x01\n" +
-	"\"CentaurUseNativeChannelListSidebar\x18\x02 \x01(\bB+\xaa\xdd\x1b'centaur_use_native_channel_list_sidebarR'centaur_use_native_channel_list_sidebar\x12\xa6\x01\n" +
-	"\x1cDirectiveForTurningOnChannel\x18\x03 \x01(\x0e28.NAlice.TTvChannelCapability.ETurnOnChannelDirectiveTypeB$\xaa\xdd\x1b directive_for_turning_on_channelR directive_for_turning_on_channel\x12\x9c\x01\n" +
-	"\x1aUnpurchasedChannelReaction\x18\x04 \x01(\x0e28.NAlice.TTvChannelCapability.EUnpurchasedChannelReactionB \xaa\xdd\x1b\x1cunpurchased_channel_reactionR\x1cunpurchased_channel_reaction\x12[\n" +
-	"\x16TariffOptionsSupported\x18\x05 \x01(\bB\x1c\xaa\xdd\x1b\x18tariff_options_supportedH\x00R\x18tariff_options_supported\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x19\n" +
-	"\x17_TariffOptionsSupported\x1a\xac\n" +
-	"\n" +
-	"\x06TState\x12\\\n" +
-	"\vCurrChannel\x18\x01 \x01(\v2'.NAlice.TTvChannelCapability.TTvChannelB\x10\xaa\xdd\x1b\fcurr_channelR\fcurr_channel\x12\\\n" +
-	"\vLastChannel\x18\x02 \x01(\v2'.NAlice.TTvChannelCapability.TTvChannelB\x10\xaa\xdd\x1b\flast_channelR\flast_channel\x12\\\n" +
-	"\x16TimeTurnOffLastChannel\x18\x03 \x01(\x03B \xaa\xdd\x1b\x1atime_turn_off_last_channel\x18\x01R\x1atime_turn_off_last_channel\x12y\n" +
-	"\x14ListPreviousChannels\x18\x04 \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelB\x1a\xaa\xdd\x1b\x16list_previous_channelsR\x16list_previous_channels\x12m\n" +
-	"\x10ListNextChannels\x18\x05 \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelB\x16\xaa\xdd\x1b\x12list_next_channelsR\x12list_next_channels\x12\x96\x01\n" +
-	"\x19ChannelTypeAvailabilities\x18\x06 \x03(\v25.NAlice.TTvChannelCapability.TChannelTypeAvailabilityB\x1f\xaa\xdd\x1b\x1bchannel_type_availabilitiesR\x1bchannel_type_availabilities\x12\x9a\x01\n" +
-	"\x19CatchUpEpisodeInformation\x18\a \x01(\v27.NAlice.TTvChannelCapability.TCatchUpEpisodeInformationB \xaa\xdd\x1b\x1ccatch_up_episode_informationR\x1ccatch_up_episode_information\x12|\n" +
-	"\x15ListFavoritesChannels\x18\b \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelB\x1b\xaa\xdd\x1b\x17list_favorites_channelsR\x17list_favorites_channels\x12^\n" +
-	"\x18LastChannelPlayTimestamp\x18\t \x01(\x03B\x1f\xaa\xdd\x1b\x1blast_channel_play_timestampR\x1blast_channel_play_timestamp\x12g\n" +
+	"HasCatchup\x18\b \x01(\bR\n" +
+	"HasCatchup\x1a\xcb\x01\n" +
+	"\x18TChannelTypeAvailability\x12K\n" +
+	"\vChannelType\x18\x01 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeR\vChannelType\x12 \n" +
+	"\vIsAvailable\x18\x02 \x01(\bR\vIsAvailable\x12\"\n" +
+	"\fIsConfigured\x18\x03 \x01(\bR\fIsConfigured\x12\x1c\n" +
+	"\tIsManaged\x18\x04 \x01(\bR\tIsManaged\x1a\xe1\x03\n" +
+	"\vTParameters\x122\n" +
+	"\x14IsFavoritesAvailable\x18\x01 \x01(\bR\x14IsFavoritesAvailable\x12N\n" +
+	"\"CentaurUseNativeChannelListSidebar\x18\x02 \x01(\bR\"CentaurUseNativeChannelListSidebar\x12|\n" +
+	"\x1cDirectiveForTurningOnChannel\x18\x03 \x01(\x0e28.NAlice.TTvChannelCapability.ETurnOnChannelDirectiveTypeR\x1cDirectiveForTurningOnChannel\x12x\n" +
+	"\x1aUnpurchasedChannelReaction\x18\x04 \x01(\x0e28.NAlice.TTvChannelCapability.EUnpurchasedChannelReactionR\x1aUnpurchasedChannelReaction\x12;\n" +
+	"\x16TariffOptionsSupported\x18\x05 \x01(\bH\x00R\x16TariffOptionsSupported\x88\x01\x01B\x19\n" +
+	"\x17_TariffOptionsSupported\x1a\xc3\a\n" +
+	"\x06TState\x12I\n" +
+	"\vCurrChannel\x18\x01 \x01(\v2'.NAlice.TTvChannelCapability.TTvChannelR\vCurrChannel\x12I\n" +
+	"\vLastChannel\x18\x02 \x01(\v2'.NAlice.TTvChannelCapability.TTvChannelR\vLastChannel\x126\n" +
+	"\x16TimeTurnOffLastChannel\x18\x03 \x01(\x03R\x16TimeTurnOffLastChannel\x12[\n" +
+	"\x14ListPreviousChannels\x18\x04 \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelR\x14ListPreviousChannels\x12S\n" +
+	"\x10ListNextChannels\x18\x05 \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelR\x10ListNextChannels\x12s\n" +
+	"\x19ChannelTypeAvailabilities\x18\x06 \x03(\v25.NAlice.TTvChannelCapability.TChannelTypeAvailabilityR\x19ChannelTypeAvailabilities\x12u\n" +
+	"\x19CatchUpEpisodeInformation\x18\a \x01(\v27.NAlice.TTvChannelCapability.TCatchUpEpisodeInformationR\x19CatchUpEpisodeInformation\x12]\n" +
+	"\x15ListFavoritesChannels\x18\b \x03(\v2'.NAlice.TTvChannelCapability.TTvChannelR\x15ListFavoritesChannels\x12:\n" +
+	"\x18LastChannelPlayTimestamp\x18\t \x01(\x03R\x18LastChannelPlayTimestamp\x12@\n" +
 	"\x1bIsRegionalVersionsSupported\x18\n" +
-	" \x01(\bB\"\xaa\xdd\x1b\x1eis_regional_versions_supportedR\x1eis_regional_versions_supported\x12V\n" +
+	" \x01(\bR\x1bIsRegionalVersionsSupported\x12F\n" +
 	"\n" +
-	"Categories\x18\v \x03(\v2&.NAlice.TTvChannelCapability.TCategoryB\x0e\xaa\xdd\x1b\n" +
-	"categoriesR\n" +
-	"categories\x12C\n" +
-	"\x0fIsTvGridEnabled\x18\f \x01(\bB\x16\xaa\xdd\x1b\x12is_tv_grid_enabledR\x12is_tv_grid_enabled:\x04\xa8\xdd\x1b\x04\x1a\xbb\x02\n" +
-	"\x19TTurnOnTvChannelDirective\x12`\n" +
-	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id\x12\x1c\n" +
-	"\x04Name\x18\x04 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12:\n" +
-	"\vTvProgramId\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rtv_program_idH\x00R\rtv_program_id\x88\x01\x01\x12'\n" +
-	"\x06Offset\x18\x03 \x01(\x03B\n" +
-	"\xaa\xdd\x1b\x06offsetH\x01R\x06offset\x88\x01\x01:\x1e\x92\x82\x19\x12turn_on_tv_channel\xa8\xdd\x1b\x04\xa8\xc8\x1cAB\x0e\n" +
+	"Categories\x18\v \x03(\v2&.NAlice.TTvChannelCapability.TCategoryR\n" +
+	"Categories\x12(\n" +
+	"\x0fIsTvGridEnabled\x18\f \x01(\bR\x0fIsTvGridEnabled\x1a\xdb\x01\n" +
+	"\x19TTurnOnTvChannelDirective\x12K\n" +
+	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x12\x12\n" +
+	"\x04Name\x18\x04 \x01(\tR\x04Name\x12%\n" +
+	"\vTvProgramId\x18\x02 \x01(\tH\x00R\vTvProgramId\x88\x01\x01\x12\x1b\n" +
+	"\x06Offset\x18\x03 \x01(\x03H\x01R\x06Offset\x88\x01\x01B\x0e\n" +
 	"\f_TvProgramIdB\t\n" +
-	"\a_Offset\x1a\xc5\x01\n" +
-	"\x1fTOpenTvChannelSettingsDirective\x12^\n" +
-	"\vChannelType\x18\x01 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeB\x10\xaa\xdd\x1b\fchannel_typeR\fchannel_type\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x18open_tv_channel_settings\xa8\xdd\x1b\x04\xa8\xc8\x1cB\x1a\xc7\x01\n" +
-	"\x1fTAddTvChannelFavoritesDirective\x12`\n" +
-	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:$\x92\x82\x19\x18add_tv_channel_favorites\xa8\xdd\x1b\x04\xa8\xc8\x1cD\x1a\xcd\x01\n" +
-	"\"TDeleteTvChannelFavoritesDirective\x12`\n" +
-	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:'\x92\x82\x19\x1bdelete_tv_channel_favorites\xa8\xdd\x1b\x04\xa8\xc8\x1cE\x1a\x9a\x01\n" +
-	" TOpenTvChannelsCategoryDirective\x120\n" +
+	"\a_Offset\x1a\x82\x01\n" +
+	"\x1fTOpenTvChannelSettingsDirective\x12K\n" +
+	"\vChannelType\x18\x01 \x01(\x0e2).NAlice.TTvChannelCapability.EChannelTypeR\vChannelType\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1a\x82\x01\n" +
+	"\x1fTAddTvChannelFavoritesDirective\x12K\n" +
+	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1a\x85\x01\n" +
+	"\"TDeleteTvChannelFavoritesDirective\x12K\n" +
+	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1aV\n" +
+	" TOpenTvChannelsCategoryDirective\x12\x1e\n" +
 	"\n" +
-	"CategoryId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vcategory_idR\vcategory_id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:&\x92\x82\x19\x19open_tv_channels_category\xa8\xdd\x1b\x04\xa8\xc8\x1c\x83\x01\x1ak\n" +
-	"!TOpenPlayerTvChannelListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:(\x92\x82\x19\x1bopen_player_tv_channel_list\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa6\x01\x1a\xc4\x01\n" +
-	"\x1dTOpenPlayerTvProgramDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12`\n" +
-	"\vTvChannelId\x18\x02 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id:#\x92\x82\x19\x16open_player_tv_program\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa7\x01\x1a\x82\x02\n" +
-	"\x17TOpenTvProgramDirective\x12`\n" +
-	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdB\x11\xaa\xdd\x1b\rtv_channel_idR\rtv_channel_id\x12\x1c\n" +
-	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12:\n" +
-	"\vTvProgramId\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rtv_program_idH\x00R\rtv_program_id\x88\x01\x01:\x1b\x92\x82\x19\x0fopen_tv_program\xa8\xdd\x1b\x04\xa8\xc8\x1cCB\x0e\n" +
-	"\f_TvProgramId\x1a\x85\x02\n" +
-	"%TOpenTvChannelsScreenCentaurDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x8f\x01\n" +
-	"\x17CentaurChannelsListData\x18\x02 \x01(\v22.NAlice.NData.NTvChannels.TCentaurChannelsListDataB\x1e\xaa\xdd\x1b\x1acentaur_channels_list_dataR\x1acentaur_channels_list_data:,\x92\x82\x19\x1fopen_tv_channels_screen_centaur\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf9\x01\"P\n" +
+	"CategoryId\x18\x01 \x01(\tR\n" +
+	"CategoryId\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1a7\n" +
+	"!TOpenPlayerTvChannelListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a\x80\x01\n" +
+	"\x1dTOpenPlayerTvProgramDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12K\n" +
+	"\vTvChannelId\x18\x02 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x1a\xb1\x01\n" +
+	"\x17TOpenTvProgramDirective\x12K\n" +
+	"\vTvChannelId\x18\x01 \x01(\v2).NAlice.TTvChannelCapability.TTvChannelIdR\vTvChannelId\x12\x12\n" +
+	"\x04Name\x18\x03 \x01(\tR\x04Name\x12%\n" +
+	"\vTvProgramId\x18\x02 \x01(\tH\x00R\vTvProgramId\x88\x01\x01B\x0e\n" +
+	"\f_TvProgramId\x1a\xa9\x01\n" +
+	"%TOpenTvChannelsScreenCentaurDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12l\n" +
+	"\x17CentaurChannelsListData\x18\x02 \x01(\v22.NAlice.NData.NTvChannels.TCentaurChannelsListDataR\x17CentaurChannelsListData\"P\n" +
 	"\fEChannelType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\v\n" +
 	"\aANTENNA\x10\x01\x12\t\n" +
@@ -1567,8 +1555,9 @@ const file_alice_protos_endpoint_capabilities_tv_channel_capability_proto_rawDes
 	"\x14DIRECTIVE_VIDEO_PLAY\x10\x02\"N\n" +
 	"\x1bEUnpurchasedChannelReaction\x12\x14\n" +
 	"\x10REACTION_UNKNOWN\x10\x00\x12\x19\n" +
-	"\x15REACTION_AS_PURCHASED\x10\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1dB\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TvChannelCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/tv_channel;tvchannelpbb\x06proto3"
+	"\x15REACTION_AS_PURCHASED\x10\x01B\xb4\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tv_channel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tv_channel_capability_proto_rawDescOnce sync.Once

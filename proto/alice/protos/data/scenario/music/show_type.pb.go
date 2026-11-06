@@ -179,10 +179,10 @@ var File_alice_protos_data_scenario_music_show_type_proto protoreflect.FileDescr
 
 const file_alice_protos_data_scenario_music_show_type_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/data/scenario/music/show_type.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa1\x02\n" +
-	"\x0eTAliceShowType\x12T\n" +
-	"\aDayPart\x18\x01 \x01(\x0e2,.NAlice.NData.NMusic.TAliceShowType.EDayPartB\f\xaa\xdd\x1b\bday_partR\aDayPart\x12C\n" +
-	"\x03Age\x18\x02 \x01(\x0e2(.NAlice.NData.NMusic.TAliceShowType.EAgeB\a\xaa\xdd\x1b\x03ageR\x03Age\"C\n" +
+	"0alice/protos/data/scenario/music/show_type.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8a\x02\n" +
+	"\x0eTAliceShowType\x12F\n" +
+	"\aDayPart\x18\x01 \x01(\x0e2,.NAlice.NData.NMusic.TAliceShowType.EDayPartR\aDayPart\x12:\n" +
+	"\x03Age\x18\x02 \x01(\x0e2(.NAlice.NData.NMusic.TAliceShowType.EAgeR\x03Age\"C\n" +
 	"\bEDayPart\x12\x12\n" +
 	"\x0eUnknownDayPart\x10\x00\x12\v\n" +
 	"\aMorning\x10\x01\x12\v\n" +
@@ -192,8 +192,8 @@ const file_alice_protos_data_scenario_music_show_type_proto_rawDesc = "" +
 	"\n" +
 	"UnknownAge\x10\x00\x12\t\n" +
 	"\x05Adult\x10\x01\x12\f\n" +
-	"\bChildren\x10\x02B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\bChildren\x10\x02B\xe8\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\rShowTypeProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_show_type_proto_rawDescOnce sync.Once

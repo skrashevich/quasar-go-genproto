@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_state/capability.proto
 
-package alicechatstatepb
+package alice_chat_state
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -235,8 +235,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_state_capability_proto_
 	"\x19TUpdateChatStateDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12/\n" +
 	"\bDialogId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x00R\tdialog_id\x88\x01\x01:\x1e\x92\x82\x19\x11update_chat_state\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfd\x05B\v\n" +
-	"\t_DialogId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd2\x02B\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceChatStateCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_state;alicechatstatepbb\x06proto3"
+	"\t_DialogId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd2\x02B\xb2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceChatStateCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_stateb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_state_capability_proto_rawDescOnce sync.Once

@@ -25,8 +25,8 @@ const (
 
 type TDailyLimit struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Limit         *durationpb.Duration   `protobuf:"bytes,1,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
-	DayOfWeek     *TDayOfWeek            `protobuf:"bytes,2,opt,name=DayOfWeek,json=day_of_week,proto3" json:"DayOfWeek,omitempty"`
+	Limit         *durationpb.Duration   `protobuf:"bytes,1,opt,name=Limit,proto3" json:"Limit,omitempty"`
+	DayOfWeek     *TDayOfWeek            `protobuf:"bytes,2,opt,name=DayOfWeek,proto3" json:"DayOfWeek,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,11 +79,12 @@ var File_alice_protos_data_device_control_panel_daily_limit_proto protoreflect.F
 
 const file_alice_protos_data_device_control_panel_daily_limit_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/data/device_control_panel/daily_limit.proto\x12\x06NAlice\x1a7alice/protos/data/device_control_panel/local_time.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1egoogle/protobuf/duration.proto\"\x94\x01\n" +
-	"\vTDailyLimit\x12:\n" +
-	"\x05Limit\x18\x01 \x01(\v2\x19.google.protobuf.DurationB\t\xaa\xdd\x1b\x05limitR\x05limit\x12C\n" +
-	"\tDayOfWeek\x18\x02 \x01(\v2\x12.NAlice.TDayOfWeekB\x0f\xaa\xdd\x1b\vday_of_weekR\vday_of_week:\x04\xa8\xdd\x1b\x04B|\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x0fDailyLimitProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	"8alice/protos/data/device_control_panel/daily_limit.proto\x12\x06NAlice\x1a7alice/protos/data/device_control_panel/local_time.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1egoogle/protobuf/duration.proto\"p\n" +
+	"\vTDailyLimit\x12/\n" +
+	"\x05Limit\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\x05Limit\x120\n" +
+	"\tDayOfWeek\x18\x02 \x01(\v2\x12.NAlice.TDayOfWeekR\tDayOfWeekB\xad\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fDailyLimitProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_daily_limit_proto_rawDescOnce sync.Once

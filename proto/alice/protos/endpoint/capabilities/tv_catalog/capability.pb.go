@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tv_catalog/capability.proto
 
-package tvcatalogpb
+package tv_catalog
 
 import (
 	home "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/home"
@@ -246,8 +246,8 @@ const file_alice_protos_endpoint_capabilities_tv_catalog_capability_proto_rawDes
 	"\x15TOpenCatalogDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
 	"\aGallery\x18\x02 \x01(\v2!.NAlice.NTv.TTvCarouselResultDataB\v\xaa\xdd\x1b\agalleryR\agallery\x12Q\n" +
-	"\vCatalogTags\x18\x03 \x01(\v2\x1c.NAlice.NTv.TGetTagsResponseB\x10\xaa\xdd\x1b\fcatalog_tagsR\fcatalog_tags:#\x92\x82\x19\x16open_catalog_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cDB\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TvCatalogCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/tv_catalog;tvcatalogpbb\x06proto3"
+	"\vCatalogTags\x18\x03 \x01(\v2\x1c.NAlice.NTv.TGetTagsResponseB\x10\xaa\xdd\x1b\fcatalog_tagsR\fcatalog_tags:#\x92\x82\x19\x16open_catalog_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cDB\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TvCatalogCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tv_catalogb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tv_catalog_capability_proto_rawDescOnce sync.Once

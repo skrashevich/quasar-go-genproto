@@ -824,8 +824,8 @@ const file_alice_protos_api_alicekit_scenarios_protocol_response_proto_rawDesc =
 	"directivesR\n" +
 	"directives\x123\n" +
 	"\x05Error\x18\x03 \x01(\v2\x1d.NAlice.NAliceApi.TLocalErrorR\x05error\x12?\n" +
-	"\tAnalytics\x18\x04 \x01(\v2!.NAlice.NAliceApi.TLocalAnalyticsR\tanalyticsB\x8f\x01\n" +
-	"5ru.yandex.alice.protos.api.alicekit.scenario.protocolB\x15ScenarioResponseProtoP\x01Z=a.yandex-team.ru/alice/protos/api/alicekit/scenarios/protocolb\x06proto3"
+	"\tAnalytics\x18\x04 \x01(\v2!.NAlice.NAliceApi.TLocalAnalyticsR\tanalyticsB\xae\x01\n" +
+	"5ru.yandex.alice.protos.api.alicekit.scenario.protocolB\x15ScenarioResponseProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/scenarios/protocolb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_scenarios_protocol_response_proto_rawDescOnce sync.Once

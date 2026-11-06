@@ -313,8 +313,8 @@ const file_alice_protos_data_scenario_afisha_afisha_proto_rawDesc = "" +
 	"\rSelectionName\x18\x03 \x01(\tB\x12\xaa\xdd\x1b\x0eselection_nameR\x0eselection_name\x12*\n" +
 	"\bImageUrl\x18\x04 \x01(\tB\r\xaa\xdd\x1b\timage_urlR\timage_url\"\xbd\x01\n" +
 	"\x18TAfishaSettingScreenData\x12f\n" +
-	"\x10AfishaSelections\x18\x01 \x03(\v2\".NAlice.NData.TAfishaSelectionDataB\x15\xaa\xdd\x1b\x11afisha_selectionsR\x11afisha_selections:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataBa\n" +
-	"+ru.yandex.alice.protos.data.scenario.afishaZ2a.yandex-team.ru/alice/protos/data/scenario/afishab\x06proto3"
+	"\x10AfishaSelections\x18\x01 \x03(\v2\".NAlice.NData.TAfishaSelectionDataB\x15\xaa\xdd\x1b\x11afisha_selectionsR\x11afisha_selections:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataB\x80\x01\n" +
+	"+ru.yandex.alice.protos.data.scenario.afishaZQgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/afishab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_afisha_afisha_proto_rawDescOnce sync.Once

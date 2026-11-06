@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capability.proto
 
-package endpointpb
+package endpoint
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -181,98 +181,80 @@ const (
 	TCapability_StandbyCapabilityType                           TCapability_ECapabilityType = 152
 	TCapability_IotZoneCapabilityType                           TCapability_ECapabilityType = 153
 	TCapability_IotPlanarViewCapabilityType                     TCapability_ECapabilityType = 154
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_IotColorMusicCapabilityType          TCapability_ECapabilityType = 155
-	TCapability_IotAirQualityCapabilityType          TCapability_ECapabilityType = 156
-	TCapability_CameraSnapshotCapabilityType         TCapability_ECapabilityType = 157
-	TCapability_AppFunctionsCapabilityType           TCapability_ECapabilityType = 158
-	TCapability_IotDisplayOrientationCapabilityType  TCapability_ECapabilityType = 159
-	TCapability_CameraSubscriptionCapabilityType     TCapability_ECapabilityType = 160
-	TCapability_TvGalleryControlCapabilityType       TCapability_ECapabilityType = 161
-	TCapability_IotWindowOpenDetectionCapabilityType TCapability_ECapabilityType = 162
-	TCapability_IotAutoCalibrationCapabilityType     TCapability_ECapabilityType = 163
-	TCapability_SkillsDialogCapabilityType           TCapability_ECapabilityType = 164
-	TCapability_IotBindCapabilityType                TCapability_ECapabilityType = 165
-	TCapability_PayCapabilityType                    TCapability_ECapabilityType = 166
-	TCapability_IotServiceabilityCapabilityType      TCapability_ECapabilityType = 167
-	TCapability_IotErrorListCapabilityType           TCapability_ECapabilityType = 168
-	TCapability_FileUploadCapabilityType             TCapability_ECapabilityType = 169
-	TCapability_IotDoorCapabilityType                TCapability_ECapabilityType = 170
-	TCapability_IotAntifreezeCapabilityType          TCapability_ECapabilityType = 171
-	TCapability_IotAntiscaleCapabilityType           TCapability_ECapabilityType = 172
-	TCapability_AttachmentRenderCapabilityType       TCapability_ECapabilityType = 173
-	TCapability_TapModeCapabilityType                TCapability_ECapabilityType = 174
-	TCapability_NoiseCancellationCapabilityType      TCapability_ECapabilityType = 175
-	TCapability_AliceChatSettingsCapabilityType      TCapability_ECapabilityType = 176
-	TCapability_LedMaskCapabilityType                TCapability_ECapabilityType = 177
-	TCapability_IotCustomLocalityCapabilityType      TCapability_ECapabilityType = 178
-	TCapability_AliceFileDownloadCapabilityType      TCapability_ECapabilityType = 179
-	TCapability_SpeechModeUiCapabilityType           TCapability_ECapabilityType = 180
-	TCapability_AppRatingCapabilityType              TCapability_ECapabilityType = 181
-	TCapability_IotMotorControlCapabilityType        TCapability_ECapabilityType = 182
-	TCapability_IotWorkSpeedCapabilityType           TCapability_ECapabilityType = 183
-	TCapability_IotMotorDirectionCapabilityType      TCapability_ECapabilityType = 184
-	TCapability_TabContentCapabilityType             TCapability_ECapabilityType = 185
-	TCapability_IotZigbeeNeighborCapabilityType      TCapability_ECapabilityType = 186
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_MatterLocalityCapabilityType             TCapability_ECapabilityType = 187
-	TCapability_MetricaCapabilityType                    TCapability_ECapabilityType = 188
-	TCapability_GoCapabilityType                         TCapability_ECapabilityType = 189
-	TCapability_IotZigbeeCoordinatorCapabilityType       TCapability_ECapabilityType = 190
-	TCapability_AppNotificationCapabilityType            TCapability_ECapabilityType = 191
-	TCapability_IotMotorLimitsCapabilityType             TCapability_ECapabilityType = 192
-	TCapability_AliceChatHapticCapabilityType            TCapability_ECapabilityType = 193
-	TCapability_AutomotivePanoramicDisplayCapabilityType TCapability_ECapabilityType = 194
-	TCapability_AutomotiveInfoCapabilityType             TCapability_ECapabilityType = 195
-	TCapability_LightingReactionCapabilityType           TCapability_ECapabilityType = 196
-	TCapability_ColorMusicCapabilityType                 TCapability_ECapabilityType = 197
-	TCapability_BestPriceCapabilityType                  TCapability_ECapabilityType = 198
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_ZenohLocalityCapabilityType        TCapability_ECapabilityType = 199
-	TCapability_ColorAnimationCapabilityType       TCapability_ECapabilityType = 200
-	TCapability_NotesCapabilityType                TCapability_ECapabilityType = 201
-	TCapability_AliceChatNativeAuthCapabilityType  TCapability_ECapabilityType = 202
-	TCapability_CameraVideoRecordingCapabilityType TCapability_ECapabilityType = 203
-	TCapability_VoiceZoneCapabilityType            TCapability_ECapabilityType = 204
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_SmartScenariosCapabilityType TCapability_ECapabilityType = 205
-	TCapability_NetworkCapabilityType        TCapability_ECapabilityType = 206
-	TCapability_SignalLevelCapabilityType    TCapability_ECapabilityType = 207
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_WaterWireLineCapabilityType TCapability_ECapabilityType = 208
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_RadioDiscoveryCapabilityType   TCapability_ECapabilityType = 209
-	TCapability_AliceChatFilesCapabilityType   TCapability_ECapabilityType = 210
-	TCapability_ExternalMcpSkillCapabilityType TCapability_ECapabilityType = 211
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_CommissioningCapabilityType TCapability_ECapabilityType = 212
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_WaterMeterCapabilityType TCapability_ECapabilityType = 213
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_SwitchCapabilityType TCapability_ECapabilityType = 214
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_LeakProtectionDoNotDisturbCapabilityType TCapability_ECapabilityType = 215
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_NeptuneRelayModeCapabilityType TCapability_ECapabilityType = 216
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_PowerSourceCapabilityType TCapability_ECapabilityType = 217
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_TapGroupCapabilityType TCapability_ECapabilityType = 218
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_ConfigCapabilityType              TCapability_ECapabilityType = 219
-	TCapability_DeviceNotificationsCapabilityType TCapability_ECapabilityType = 220
-	TCapability_SoundAlarmCapabilityType          TCapability_ECapabilityType = 221
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_PermissionsCapabilityType TCapability_ECapabilityType = 222
-	TCapability_CaptchaCapabilityType     TCapability_ECapabilityType = 223
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_DigitalMetersDiscoveryCapabilityType TCapability_ECapabilityType = 224
-	TCapability_AliceSatelliteOtaCapabilityType      TCapability_ECapabilityType = 225
-	TCapability_AliceSatelliteDeviceCapabilityType   TCapability_ECapabilityType = 226
-	TCapability_ServerPermissionsCapabilityType      TCapability_ECapabilityType = 227
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_AppFacadeCapabilityType TCapability_ECapabilityType = 228
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
+	TCapability_IotColorMusicCapabilityType                     TCapability_ECapabilityType = 155
+	TCapability_IotAirQualityCapabilityType                     TCapability_ECapabilityType = 156
+	TCapability_CameraSnapshotCapabilityType                    TCapability_ECapabilityType = 157
+	TCapability_AppFunctionsCapabilityType                      TCapability_ECapabilityType = 158
+	TCapability_IotDisplayOrientationCapabilityType             TCapability_ECapabilityType = 159
+	TCapability_CameraSubscriptionCapabilityType                TCapability_ECapabilityType = 160
+	TCapability_TvGalleryControlCapabilityType                  TCapability_ECapabilityType = 161
+	TCapability_IotWindowOpenDetectionCapabilityType            TCapability_ECapabilityType = 162
+	TCapability_IotAutoCalibrationCapabilityType                TCapability_ECapabilityType = 163
+	TCapability_SkillsDialogCapabilityType                      TCapability_ECapabilityType = 164
+	TCapability_IotBindCapabilityType                           TCapability_ECapabilityType = 165
+	TCapability_PayCapabilityType                               TCapability_ECapabilityType = 166
+	TCapability_IotServiceabilityCapabilityType                 TCapability_ECapabilityType = 167
+	TCapability_IotErrorListCapabilityType                      TCapability_ECapabilityType = 168
+	TCapability_FileUploadCapabilityType                        TCapability_ECapabilityType = 169
+	TCapability_IotDoorCapabilityType                           TCapability_ECapabilityType = 170
+	TCapability_IotAntifreezeCapabilityType                     TCapability_ECapabilityType = 171
+	TCapability_IotAntiscaleCapabilityType                      TCapability_ECapabilityType = 172
+	TCapability_AttachmentRenderCapabilityType                  TCapability_ECapabilityType = 173
+	TCapability_TapModeCapabilityType                           TCapability_ECapabilityType = 174
+	TCapability_NoiseCancellationCapabilityType                 TCapability_ECapabilityType = 175
+	TCapability_AliceChatSettingsCapabilityType                 TCapability_ECapabilityType = 176
+	TCapability_LedMaskCapabilityType                           TCapability_ECapabilityType = 177
+	TCapability_IotCustomLocalityCapabilityType                 TCapability_ECapabilityType = 178
+	TCapability_AliceFileDownloadCapabilityType                 TCapability_ECapabilityType = 179
+	TCapability_SpeechModeUiCapabilityType                      TCapability_ECapabilityType = 180
+	TCapability_AppRatingCapabilityType                         TCapability_ECapabilityType = 181
+	TCapability_IotMotorControlCapabilityType                   TCapability_ECapabilityType = 182
+	TCapability_IotWorkSpeedCapabilityType                      TCapability_ECapabilityType = 183
+	TCapability_IotMotorDirectionCapabilityType                 TCapability_ECapabilityType = 184
+	TCapability_TabContentCapabilityType                        TCapability_ECapabilityType = 185
+	TCapability_IotZigbeeNeighborCapabilityType                 TCapability_ECapabilityType = 186
+	TCapability_MatterLocalityCapabilityType                    TCapability_ECapabilityType = 187
+	TCapability_MetricaCapabilityType                           TCapability_ECapabilityType = 188
+	TCapability_GoCapabilityType                                TCapability_ECapabilityType = 189
+	TCapability_IotZigbeeCoordinatorCapabilityType              TCapability_ECapabilityType = 190
+	TCapability_AppNotificationCapabilityType                   TCapability_ECapabilityType = 191
+	TCapability_IotMotorLimitsCapabilityType                    TCapability_ECapabilityType = 192
+	TCapability_AliceChatHapticCapabilityType                   TCapability_ECapabilityType = 193
+	TCapability_AutomotivePanoramicDisplayCapabilityType        TCapability_ECapabilityType = 194
+	TCapability_AutomotiveInfoCapabilityType                    TCapability_ECapabilityType = 195
+	TCapability_LightingReactionCapabilityType                  TCapability_ECapabilityType = 196
+	TCapability_ColorMusicCapabilityType                        TCapability_ECapabilityType = 197
+	TCapability_BestPriceCapabilityType                         TCapability_ECapabilityType = 198
+	TCapability_ZenohLocalityCapabilityType                     TCapability_ECapabilityType = 199
+	TCapability_ColorAnimationCapabilityType                    TCapability_ECapabilityType = 200
+	TCapability_NotesCapabilityType                             TCapability_ECapabilityType = 201
+	TCapability_AliceChatNativeAuthCapabilityType               TCapability_ECapabilityType = 202
+	TCapability_CameraVideoRecordingCapabilityType              TCapability_ECapabilityType = 203
+	TCapability_VoiceZoneCapabilityType                         TCapability_ECapabilityType = 204
+	TCapability_SmartScenariosCapabilityType                    TCapability_ECapabilityType = 205
+	TCapability_NetworkCapabilityType                           TCapability_ECapabilityType = 206
+	TCapability_SignalLevelCapabilityType                       TCapability_ECapabilityType = 207
+	TCapability_WaterWireLineCapabilityType                     TCapability_ECapabilityType = 208
+	TCapability_RadioDiscoveryCapabilityType                    TCapability_ECapabilityType = 209
+	TCapability_AliceChatFilesCapabilityType                    TCapability_ECapabilityType = 210
+	TCapability_ExternalMcpSkillCapabilityType                  TCapability_ECapabilityType = 211
+	TCapability_CommissioningCapabilityType                     TCapability_ECapabilityType = 212
+	TCapability_WaterMeterCapabilityType                        TCapability_ECapabilityType = 213
+	TCapability_SwitchCapabilityType                            TCapability_ECapabilityType = 214
+	TCapability_LeakProtectionDoNotDisturbCapabilityType        TCapability_ECapabilityType = 215
+	TCapability_NeptuneRelayModeCapabilityType                  TCapability_ECapabilityType = 216
+	TCapability_PowerSourceCapabilityType                       TCapability_ECapabilityType = 217
+	TCapability_TapGroupCapabilityType                          TCapability_ECapabilityType = 218
+	TCapability_ConfigCapabilityType                            TCapability_ECapabilityType = 219
+	TCapability_DeviceNotificationsCapabilityType               TCapability_ECapabilityType = 220
+	TCapability_SoundAlarmCapabilityType                        TCapability_ECapabilityType = 221
+	TCapability_PermissionsCapabilityType                       TCapability_ECapabilityType = 222
+	TCapability_CaptchaCapabilityType                           TCapability_ECapabilityType = 223
+	TCapability_DigitalMetersDiscoveryCapabilityType            TCapability_ECapabilityType = 224
+	TCapability_AliceSatelliteOtaCapabilityType                 TCapability_ECapabilityType = 225
+	TCapability_AliceSatelliteDeviceCapabilityType              TCapability_ECapabilityType = 226
+	TCapability_ServerPermissionsCapabilityType                 TCapability_ECapabilityType = 227
+	TCapability_AppFacadeCapabilityType                         TCapability_ECapabilityType = 228
 	TCapability_AliceSatelliteCapabilityType                    TCapability_ECapabilityType = 229
 	TCapability_IotExternalTemperatureMeasurementCapabilityType TCapability_ECapabilityType = 230
 	TCapability_AppStateCapabilityType                          TCapability_ECapabilityType = 231
@@ -281,26 +263,24 @@ const (
 	TCapability_PreferencesCapabilityType                       TCapability_ECapabilityType = 234
 	TCapability_AliceAppsCapabilityType                         TCapability_ECapabilityType = 235
 	TCapability_AliceChatShareCapabilityType                    TCapability_ECapabilityType = 236
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_WaterWireLineHubCapabilityType TCapability_ECapabilityType = 237
-	TCapability_MapsAgentCapabilityType        TCapability_ECapabilityType = 238
-	TCapability_YaBooksCapabilityType          TCapability_ECapabilityType = 239
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
-	TCapability_DoorLockDiscoveryCapabilityType               TCapability_ECapabilityType = 240
-	TCapability_IotMatterNodeNetworkDiagnosticsCapabilityType TCapability_ECapabilityType = 241
-	TCapability_PersonalDeviceCapabilityType                  TCapability_ECapabilityType = 242
-	TCapability_CompanionScreenCapabilityType                 TCapability_ECapabilityType = 243
-	TCapability_NavigatorCapabilityType                       TCapability_ECapabilityType = 244
-	TCapability_TaximeterCapabilityType                       TCapability_ECapabilityType = 245
-	TCapability_WhatsNewStorageCapabilityType                 TCapability_ECapabilityType = 246
-	TCapability_BestPriceChatCapabilityType                   TCapability_ECapabilityType = 247
-	TCapability_RetrieveSourcesCapabilityType                 TCapability_ECapabilityType = 248
-	TCapability_WebCamCapabilityType                          TCapability_ECapabilityType = 249
-	TCapability_TravelHotelCapabilityType                     TCapability_ECapabilityType = 250
-	TCapability_MobileStandbyCapabilityType                   TCapability_ECapabilityType = 251
-	TCapability_CompanionScreenUISkinCapabilityType           TCapability_ECapabilityType = 252
-	TCapability_DefaultAssistantCapabilityType                TCapability_ECapabilityType = 253
-	TCapability_WebPlayerCapabilityType                       TCapability_ECapabilityType = 254
+	TCapability_WaterWireLineHubCapabilityType                  TCapability_ECapabilityType = 237
+	TCapability_MapsAgentCapabilityType                         TCapability_ECapabilityType = 238
+	TCapability_YaBooksCapabilityType                           TCapability_ECapabilityType = 239
+	TCapability_DoorLockDiscoveryCapabilityType                 TCapability_ECapabilityType = 240
+	TCapability_IotMatterNodeNetworkDiagnosticsCapabilityType   TCapability_ECapabilityType = 241
+	TCapability_PersonalDeviceCapabilityType                    TCapability_ECapabilityType = 242
+	TCapability_CompanionScreenCapabilityType                   TCapability_ECapabilityType = 243
+	TCapability_NavigatorCapabilityType                         TCapability_ECapabilityType = 244
+	TCapability_TaximeterCapabilityType                         TCapability_ECapabilityType = 245
+	TCapability_WhatsNewStorageCapabilityType                   TCapability_ECapabilityType = 246
+	TCapability_BestPriceChatCapabilityType                     TCapability_ECapabilityType = 247
+	TCapability_RetrieveSourcesCapabilityType                   TCapability_ECapabilityType = 248
+	TCapability_WebCamCapabilityType                            TCapability_ECapabilityType = 249
+	TCapability_TravelHotelCapabilityType                       TCapability_ECapabilityType = 250
+	TCapability_MobileStandbyCapabilityType                     TCapability_ECapabilityType = 251
+	TCapability_CompanionScreenUISkinCapabilityType             TCapability_ECapabilityType = 252
+	TCapability_DefaultAssistantCapabilityType                  TCapability_ECapabilityType = 253
+	TCapability_WebPlayerCapabilityType                         TCapability_ECapabilityType = 254
 	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
 	TCapability_IotNameViewCapabilityType   TCapability_ECapabilityType = 255
 	TCapability_ContextSwitchCapabilityType TCapability_ECapabilityType = 256
@@ -1146,7 +1126,6 @@ const (
 	TCapability_IotDiscoveryUpdateStateEventType                         TCapability_EEventType = 30
 	TCapability_IotDiscoveryCompleteEventType                            TCapability_EEventType = 31
 	TCapability_IotDiscoveryProgressEventType                            TCapability_EEventType = 223
-	TCapability_IotDiscoveryDistributedCommissioningInitializedEventType TCapability_EEventType = 204
 	TCapability_SmokeSensorDetectedEventType                             TCapability_EEventType = 34
 	TCapability_SmokeSensorNotDetectedEventType                          TCapability_EEventType = 35
 	TCapability_SmokeSensorHighEventType                                 TCapability_EEventType = 36
@@ -1205,7 +1184,6 @@ const (
 	TCapability_CameraLocalArchiveFormatStorageResultEventType           TCapability_EEventType = 117
 	TCapability_IotZigbeeNodeUpdateStateEventType                        TCapability_EEventType = 86
 	TCapability_IotTrackingEventType                                     TCapability_EEventType = 87
-	TCapability_IotTrackingUpdateStateEventType                          TCapability_EEventType = 173
 	TCapability_IotOccupancyEnterEventType                               TCapability_EEventType = 89
 	TCapability_IotOccupancyLeaveEventType                               TCapability_EEventType = 90
 	TCapability_IotOccupancyUpdateStateEventType                         TCapability_EEventType = 93
@@ -1276,6 +1254,8 @@ const (
 	TCapability_DoorLockDiscoveryCompleteEventType                       TCapability_EEventType = 161
 	TCapability_IotMatterNodeNetworkDiagnosticsUpdateStateEventType      TCapability_EEventType = 162
 	TCapability_IotCameraPositioningUpdateStateEventType                 TCapability_EEventType = 164
+	TCapability_IotDiscoveryDistributedCommissioningInitializedEventType TCapability_EEventType = 204
+	TCapability_IotTrackingUpdateStateEventType                          TCapability_EEventType = 173
 	TCapability_CompanionScreenUISkinUpdateStateEventType                TCapability_EEventType = 165
 	TCapability_AudioPlayerMediaRequestEventType                         TCapability_EEventType = 166
 	TCapability_AlarmApproachingEventType                                TCapability_EEventType = 167
@@ -1377,7 +1357,6 @@ var (
 		30:    "IotDiscoveryUpdateStateEventType",
 		31:    "IotDiscoveryCompleteEventType",
 		223:   "IotDiscoveryProgressEventType",
-		204:   "IotDiscoveryDistributedCommissioningInitializedEventType",
 		34:    "SmokeSensorDetectedEventType",
 		35:    "SmokeSensorNotDetectedEventType",
 		36:    "SmokeSensorHighEventType",
@@ -1436,7 +1415,6 @@ var (
 		117:   "CameraLocalArchiveFormatStorageResultEventType",
 		86:    "IotZigbeeNodeUpdateStateEventType",
 		87:    "IotTrackingEventType",
-		173:   "IotTrackingUpdateStateEventType",
 		89:    "IotOccupancyEnterEventType",
 		90:    "IotOccupancyLeaveEventType",
 		93:    "IotOccupancyUpdateStateEventType",
@@ -1507,6 +1485,8 @@ var (
 		161:   "DoorLockDiscoveryCompleteEventType",
 		162:   "IotMatterNodeNetworkDiagnosticsUpdateStateEventType",
 		164:   "IotCameraPositioningUpdateStateEventType",
+		204:   "IotDiscoveryDistributedCommissioningInitializedEventType",
+		173:   "IotTrackingUpdateStateEventType",
 		165:   "CompanionScreenUISkinUpdateStateEventType",
 		166:   "AudioPlayerMediaRequestEventType",
 		167:   "AlarmApproachingEventType",
@@ -1605,7 +1585,6 @@ var (
 		"IotDiscoveryUpdateStateEventType":                         30,
 		"IotDiscoveryCompleteEventType":                            31,
 		"IotDiscoveryProgressEventType":                            223,
-		"IotDiscoveryDistributedCommissioningInitializedEventType": 204,
 		"SmokeSensorDetectedEventType":                             34,
 		"SmokeSensorNotDetectedEventType":                          35,
 		"SmokeSensorHighEventType":                                 36,
@@ -1664,7 +1643,6 @@ var (
 		"CameraLocalArchiveFormatStorageResultEventType":           117,
 		"IotZigbeeNodeUpdateStateEventType":                        86,
 		"IotTrackingEventType":                                     87,
-		"IotTrackingUpdateStateEventType":                          173,
 		"IotOccupancyEnterEventType":                               89,
 		"IotOccupancyLeaveEventType":                               90,
 		"IotOccupancyUpdateStateEventType":                         93,
@@ -1735,6 +1713,8 @@ var (
 		"DoorLockDiscoveryCompleteEventType":                       161,
 		"IotMatterNodeNetworkDiagnosticsUpdateStateEventType":      162,
 		"IotCameraPositioningUpdateStateEventType":                 164,
+		"IotDiscoveryDistributedCommissioningInitializedEventType": 204,
+		"IotTrackingUpdateStateEventType":                          173,
 		"CompanionScreenUISkinUpdateStateEventType":                165,
 		"AudioPlayerMediaRequestEventType":                         166,
 		"AlarmApproachingEventType":                                167,
@@ -1821,580 +1801,552 @@ func (TCapability_EEventType) EnumDescriptor() ([]byte, []int) {
 type TCapability_EDirectiveType int32
 
 const (
-	TCapability_UnknownDirectiveType                                 TCapability_EDirectiveType = 0
-	TCapability_OnOffDirectiveType                                   TCapability_EDirectiveType = 1
-	TCapability_ToggleOnOffDirectiveType                             TCapability_EDirectiveType = 54
-	TCapability_SetStartupModeDirectiveType                          TCapability_EDirectiveType = 192
-	TCapability_ScreenOffDirectiveType                               TCapability_EDirectiveType = 267
-	TCapability_OnWithTimedOffDirectiveType                          TCapability_EDirectiveType = 308
-	TCapability_IotStartDiscoveryDirectiveType                       TCapability_EDirectiveType = 2
-	TCapability_IotFinishDiscoveryDirectiveType                      TCapability_EDirectiveType = 3
-	TCapability_IotForgetDevicesDirectiveType                        TCapability_EDirectiveType = 4
-	TCapability_IotStartTuyaBroadcastDirectiveType                   TCapability_EDirectiveType = 10
-	TCapability_IotRestoreNetworksDirectiveType                      TCapability_EDirectiveType = 13
-	TCapability_IotCancelDiscoveryDirectiveType                      TCapability_EDirectiveType = 14
-	TCapability_IotDeleteNetworksDirectiveType                       TCapability_EDirectiveType = 15
-	TCapability_IotEnableNetworkDirectiveType                        TCapability_EDirectiveType = 27
-	TCapability_IotSyncEndpointsDirectiveType                        TCapability_EDirectiveType = 208
-	TCapability_IotFinishSystemDiscoveryDirectiveType                TCapability_EDirectiveType = 236
-	TCapability_IotDiscoveryContinueDirectiveType                    TCapability_EDirectiveType = 736
-	TCapability_SetAbsoluteLevelDirectiveType                        TCapability_EDirectiveType = 5
-	TCapability_SetRelativeLevelDirectiveType                        TCapability_EDirectiveType = 6
-	TCapability_StartMoveLevelDirectiveType                          TCapability_EDirectiveType = 7
-	TCapability_StopMoveLevelDirectiveType                           TCapability_EDirectiveType = 8
-	TCapability_TransitionLevelDirectiveType                         TCapability_EDirectiveType = 230
-	TCapability_StopTransitionLevelDirectiveType                     TCapability_EDirectiveType = 260
-	TCapability_StartCalibrationLevelDirectiveType                   TCapability_EDirectiveType = 468
-	TCapability_SetLevelCorrectionDirectiveType                      TCapability_EDirectiveType = 570
-	TCapability_SetColorSceneDirectiveType                           TCapability_EDirectiveType = 9
-	TCapability_SetTemperatureKDirectiveType                         TCapability_EDirectiveType = 19
-	TCapability_SetHueAndSaturationDirectiveType                     TCapability_EDirectiveType = 124
-	TCapability_SetHueDirectiveType                                  TCapability_EDirectiveType = 125
-	TCapability_SetSaturationDirectiveType                           TCapability_EDirectiveType = 126
-	TCapability_WebOSLaunchAppDirectiveType                          TCapability_EDirectiveType = 11
-	TCapability_WebOSShowGalleryDirectiveType                        TCapability_EDirectiveType = 12
-	TCapability_WebOSManageAppDirectiveType                          TCapability_EDirectiveType = 184
-	TCapability_SetAdjustableEqualizerBandsDirectiveType             TCapability_EDirectiveType = 16
-	TCapability_SetFixedEqualizerBandsDirectiveType                  TCapability_EDirectiveType = 17
-	TCapability_DrawAnimationDirectiveType                           TCapability_EDirectiveType = 18
-	TCapability_EnableScreenDirectiveType                            TCapability_EDirectiveType = 38
-	TCapability_DisableScreenDirectiveType                           TCapability_EDirectiveType = 39
-	TCapability_StartVideoCallLoginDirectiveType                     TCapability_EDirectiveType = 20
-	TCapability_StartVideoCallDirectiveType                          TCapability_EDirectiveType = 21
-	TCapability_AcceptVideoCallDirectiveType                         TCapability_EDirectiveType = 22
-	TCapability_DiscardVideoCallDirectiveType                        TCapability_EDirectiveType = 23
-	TCapability_VideoCallMuteMicDirectiveType                        TCapability_EDirectiveType = 42
-	TCapability_VideoCallUnmuteMicDirectiveType                      TCapability_EDirectiveType = 43
-	TCapability_VideoCallTurnOnVideoDirectiveType                    TCapability_EDirectiveType = 44
-	TCapability_VideoCallTurnOffVideoDirectiveType                   TCapability_EDirectiveType = 45
-	TCapability_VideoCallSetActionOnCallEndDirectiveType             TCapability_EDirectiveType = 80
-	TCapability_VideoCallLogoutDirectiveType                         TCapability_EDirectiveType = 85
-	TCapability_VideoCallTurnOnAutoCropDirectiveType                 TCapability_EDirectiveType = 212
-	TCapability_VideoCallTurnOffAutoCropDirectiveType                TCapability_EDirectiveType = 213
-	TCapability_ProcessIncomingVideoCallDirectiveType                TCapability_EDirectiveType = 330
-	TCapability_StartRouteManagerDirectiveType                       TCapability_EDirectiveType = 24
-	TCapability_StopRouteManagerDirectiveType                        TCapability_EDirectiveType = 25
-	TCapability_ShowRouteManagerDirectiveType                        TCapability_EDirectiveType = 26
-	TCapability_ContinueRouteManagerDirectiveType                    TCapability_EDirectiveType = 28
-	TCapability_OpenScreensaverDirectiveType                         TCapability_EDirectiveType = 29
-	TCapability_LoadScreensaversDirectiveType                        TCapability_EDirectiveType = 86
-	TCapability_CloseScreensaverDirectiveType                        TCapability_EDirectiveType = 226
-	TCapability_StashViewDirectiveType                               TCapability_EDirectiveType = 30
-	TCapability_UnstashViewDirectiveType                             TCapability_EDirectiveType = 31
-	TCapability_AlarmAddDirectiveType                                TCapability_EDirectiveType = 32
-	TCapability_AlarmSoundSettingsUpdateDirectiveType                TCapability_EDirectiveType = 120
-	TCapability_AlarmUpdateSoundLevelDirectiveType                   TCapability_EDirectiveType = 339
-	TCapability_AlarmUpdateDirectiveType                             TCapability_EDirectiveType = 34
-	TCapability_AlarmSnoozeDirectiveType                             TCapability_EDirectiveType = 116
-	TCapability_AlarmStopDirectiveType                               TCapability_EDirectiveType = 118
-	TCapability_AlarmCancelDirectiveType                             TCapability_EDirectiveType = 132
-	TCapability_TimerSetDirectiveType                                TCapability_EDirectiveType = 112
-	TCapability_TimerCancelDirectiveType                             TCapability_EDirectiveType = 113
-	TCapability_TimerPauseDirectiveType                              TCapability_EDirectiveType = 114
-	TCapability_TimerResumeDirectiveType                             TCapability_EDirectiveType = 115
-	TCapability_AddIotScenariosDirectiveType                         TCapability_EDirectiveType = 35
-	TCapability_RemoveIotScenariosDirectiveType                      TCapability_EDirectiveType = 36
-	TCapability_SyncIotScenariosDirectiveType                        TCapability_EDirectiveType = 37
-	TCapability_ContinueScenarioLaunchDirectiveType                  TCapability_EDirectiveType = 108
-	TCapability_WaitScenarioDelayDirectiveType                       TCapability_EDirectiveType = 109
-	TCapability_SendExecuteNonLocalStepEventDirectiveType            TCapability_EDirectiveType = 110
-	TCapability_SendLocalStepsFinishedEventDirectiveType             TCapability_EDirectiveType = 111
-	TCapability_OptionalDirectiveType                                TCapability_EDirectiveType = 183
-	TCapability_SetIotScenariosActivityDirectiveType                 TCapability_EDirectiveType = 341
-	TCapability_VolumeMuteDirectiveType                              TCapability_EDirectiveType = 40
-	TCapability_VolumeUnmuteDirectiveType                            TCapability_EDirectiveType = 41
-	TCapability_VolumeStartVolumeChangeDirectiveType                 TCapability_EDirectiveType = 181
-	TCapability_VolumeStopVolumeChangeDirectiveType                  TCapability_EDirectiveType = 182
-	TCapability_VolumeSetDirectiveType                               TCapability_EDirectiveType = 254
-	TCapability_BioStartSoundEnrollmentDirectiveType                 TCapability_EDirectiveType = 46
-	TCapability_MultiaccountAddAccountDirectiveType                  TCapability_EDirectiveType = 72
-	TCapability_MultiaccountRemoveAccountDirectiveType               TCapability_EDirectiveType = 73
-	TCapability_FetchEnrollmentAudioDirectiveType                    TCapability_EDirectiveType = 151
-	TCapability_CalculateVoiceprintDirectiveType                     TCapability_EDirectiveType = 205
-	TCapability_MultiaccountRemoveAccountPersIdDirectiveType         TCapability_EDirectiveType = 210
-	TCapability_ShareEnrolledPersonDirectiveType                     TCapability_EDirectiveType = 333
-	TCapability_AddEnrolledPersonDirectiveType                       TCapability_EDirectiveType = 334
-	TCapability_EnrollmentStartDirectiveType                         TCapability_EDirectiveType = 74
-	TCapability_EnrollmentCancelDirectiveType                        TCapability_EDirectiveType = 75
-	TCapability_EnrollmentFinishDirectiveType                        TCapability_EDirectiveType = 76
-	TCapability_EnrollmentShareDirectiveType                         TCapability_EDirectiveType = 472
-	TCapability_LocalAudioFilePlayDirectiveType                      TCapability_EDirectiveType = 47
-	TCapability_LocalAudioFileStopDirectiveType                      TCapability_EDirectiveType = 48
-	TCapability_DivUIShowViewDirectiveType                           TCapability_EDirectiveType = 49
-	TCapability_DivUIPatchViewDirectiveType                          TCapability_EDirectiveType = 50
-	TCapability_DivUIHideViewDirectiveType                           TCapability_EDirectiveType = 51
-	TCapability_DivUIStashViewDirectiveType                          TCapability_EDirectiveType = 52
-	TCapability_DivUIUnstashViewDirectiveType                        TCapability_EDirectiveType = 53
-	TCapability_DivUIHideAllViewsDirectiveType                       TCapability_EDirectiveType = 79
-	TCapability_DivUICallTerminateActionsDirectiveType               TCapability_EDirectiveType = 197
-	TCapability_DivUICallActionsGroupsDirectiveType                  TCapability_EDirectiveType = 207
-	TCapability_OpenAndroidSettingsDirectiveType                     TCapability_EDirectiveType = 55
-	TCapability_CoverOpenDirectiveType                               TCapability_EDirectiveType = 56
-	TCapability_CoverCloseDirectiveType                              TCapability_EDirectiveType = 57
-	TCapability_CoverStopDirectiveType                               TCapability_EDirectiveType = 58
-	TCapability_CoverSetPositionDirectiveType                        TCapability_EDirectiveType = 59
-	TCapability_CoverSetDirectionDirectiveType                       TCapability_EDirectiveType = 60
-	TCapability_CoverSetSpeedDirectiveType                           TCapability_EDirectiveType = 61
-	TCapability_CoverResetLimitsDirectiveType                        TCapability_EDirectiveType = 62
-	TCapability_CoverSetLimitDirectiveType                           TCapability_EDirectiveType = 63
-	TCapability_OpenSearchDirectiveType                              TCapability_EDirectiveType = 64
-	TCapability_TurnOnTvChannelDirectiveType                         TCapability_EDirectiveType = 65
-	TCapability_OpenTvChannelSettingsDirectiveType                   TCapability_EDirectiveType = 66
-	TCapability_OpenTvProgramDirectiveType                           TCapability_EDirectiveType = 67
-	TCapability_OpenTvChannelsCategoryDirectiveType                  TCapability_EDirectiveType = 131
-	TCapability_OpenPlayerTvChannelListDirectiveType                 TCapability_EDirectiveType = 166
-	TCapability_OpenPlayerTvProgramDirectiveType                     TCapability_EDirectiveType = 167
-	TCapability_OpenTvChannelsScreenCentaurDirectiveType             TCapability_EDirectiveType = 249
-	TCapability_AddTvChannelFavoritesDirectiveType                   TCapability_EDirectiveType = 68
-	TCapability_DeleteTvChannelFavoritesDirectiveType                TCapability_EDirectiveType = 69
-	TCapability_OpenVideoDetailsScreenDirectiveType                  TCapability_EDirectiveType = 70
-	TCapability_ShowExternalCinemasDirectiveType                     TCapability_EDirectiveType = 107
-	TCapability_BuyCurrentDirectiveType                              TCapability_EDirectiveType = 138
-	TCapability_OpenSerialNavigatorType                              TCapability_EDirectiveType = 139
-	TCapability_OpenCurrentContentTrailerDirectiveType               TCapability_EDirectiveType = 142
-	TCapability_OpenQRPaymentDirectiveType                           TCapability_EDirectiveType = 168
-	TCapability_SetDivVariablesDirectiveType                         TCapability_EDirectiveType = 71
-	TCapability_SetLocationDirectiveType                             TCapability_EDirectiveType = 81
-	TCapability_SetTimezoneDirectiveType                             TCapability_EDirectiveType = 82
-	TCapability_SetGmtDirectiveType                                  TCapability_EDirectiveType = 258
-	TCapability_ChangeVideoPlayerTrackDirectiveType                  TCapability_EDirectiveType = 83
-	TCapability_ShowVideoPlayerTrackSettingsDirectiveType            TCapability_EDirectiveType = 84
-	TCapability_VideoSkipAdvertisementDirectiveType                  TCapability_EDirectiveType = 180
-	TCapability_CancelAutoskipDirectiveType                          TCapability_EDirectiveType = 185
-	TCapability_VideoSetSpeedLevelDirectiveType                      TCapability_EDirectiveType = 218
-	TCapability_SetFullScreenModeDirectiveType                       TCapability_EDirectiveType = 261
-	TCapability_SkipVideoFragmentDirectiveType                       TCapability_EDirectiveType = 554
-	TCapability_TryIrCommandDirectiveType                            TCapability_EDirectiveType = 87
-	TCapability_TryIrAcCommandDirectiveType                          TCapability_EDirectiveType = 88
-	TCapability_RecordIrPulseDirectiveType                           TCapability_EDirectiveType = 89
-	TCapability_CancelRecordIrPulseDirectiveType                     TCapability_EDirectiveType = 164
-	TCapability_AddIrRemoteDirectiveType                             TCapability_EDirectiveType = 90
-	TCapability_ForgetIrRemoteDirectiveType                          TCapability_EDirectiveType = 91
-	TCapability_RestoreIrRemotesDirectiveType                        TCapability_EDirectiveType = 92
-	TCapability_PartialRestoreIrRemotesDirectiveType                 TCapability_EDirectiveType = 562
-	TCapability_SendIrCommandDirectiveType                           TCapability_EDirectiveType = 93
-	TCapability_SendIrAcCommandDirectiveType                         TCapability_EDirectiveType = 94
-	TCapability_SendIrCustomCommandDirectiveType                     TCapability_EDirectiveType = 520
-	TCapability_PhoneCallsAddAccountDirectiveType                    TCapability_EDirectiveType = 95
-	TCapability_PhoneCallsDeleteAccountDirectiveType                 TCapability_EDirectiveType = 96
-	TCapability_PhoneCallsRefreshAccountDirectiveType                TCapability_EDirectiveType = 277
-	TCapability_PhoneCallsConnectAccountDirectiveType                TCapability_EDirectiveType = 97
-	TCapability_PhoneCallsMakeCallDirectiveType                      TCapability_EDirectiveType = 98
-	TCapability_PhoneCallsAcceptCallDirectiveType                    TCapability_EDirectiveType = 99
-	TCapability_PhoneCallsHangUpCallDirectiveType                    TCapability_EDirectiveType = 100
-	TCapability_PhoneCallsProcessIncomingCallDirectiveType           TCapability_EDirectiveType = 129
-	TCapability_PhoneCallsIgnoreIncomingCallDirectiveType            TCapability_EDirectiveType = 135
-	TCapability_PhoneCallsOpenDeviceCallUiDirectiveType              TCapability_EDirectiveType = 284
-	TCapability_PhoneCallsSetMicMuteDirectiveType                    TCapability_EDirectiveType = 286
-	TCapability_OpenSourceInputDirectiveType                         TCapability_EDirectiveType = 101
-	TCapability_OpenSourceInputsListDirectiveType                    TCapability_EDirectiveType = 102
-	TCapability_LaunchAppDirectiveType                               TCapability_EDirectiveType = 103
-	TCapability_OpenAppDetailsDirectiveType                          TCapability_EDirectiveType = 104
-	TCapability_OpenAppsMarketDirectiveType                          TCapability_EDirectiveType = 338
-	TCapability_InstallMarketAppDirectiveType                        TCapability_EDirectiveType = 401
-	TCapability_OpenSerialNavigatorDirectiveType                     TCapability_EDirectiveType = 105
-	TCapability_ShowEpisodeDirectiveType                             TCapability_EDirectiveType = 304
-	TCapability_SerialNavigatorOpenPurchaseDirectiveType             TCapability_EDirectiveType = 307
-	TCapability_SetMotionDetectionIntervalType                       TCapability_EDirectiveType = 106
-	TCapability_SetMotionSettingDirectiveType                        TCapability_EDirectiveType = 559
-	TCapability_AutoHeadTextMessagingSendMessageDirectiveType        TCapability_EDirectiveType = 117
-	TCapability_AutoHeadTextMessagingEnableSyncDirectiveType         TCapability_EDirectiveType = 121
-	TCapability_AutoHeadTextMessagingDisableSyncDirectiveType        TCapability_EDirectiveType = 122
-	TCapability_AutoHeadTextMessagingOpenPopupMessageDirectiveType   TCapability_EDirectiveType = 136
-	TCapability_SetLocalizationDirectiveType                         TCapability_EDirectiveType = 119
-	TCapability_NotifyDirectiveType                                  TCapability_EDirectiveType = 123
-	TCapability_ApproveNotifyDirectiveType                           TCapability_EDirectiveType = 137
-	TCapability_ActivateOwnAppDirectiveType                          TCapability_EDirectiveType = 127
-	TCapability_CategoryDirectiveType                                TCapability_EDirectiveType = 128
-	TCapability_ShowTvCategoriesDirectiveType                        TCapability_EDirectiveType = 143
-	TCapability_HideTvCategoriesDirectiveType                        TCapability_EDirectiveType = 144
-	TCapability_ShowWhatYouCanDirectiveType                          TCapability_EDirectiveType = 179
-	TCapability_BuzzerPlayDirectiveType                              TCapability_EDirectiveType = 130
-	TCapability_UpdateInformerDirectiveType                          TCapability_EDirectiveType = 133
-	TCapability_UpdateAllInformersDirectiveType                      TCapability_EDirectiveType = 134
-	TCapability_AddToWatchListDirectiveType                          TCapability_EDirectiveType = 140
-	TCapability_RemoveFromWatchListDirectiveType                     TCapability_EDirectiveType = 141
-	TCapability_AdhanSetSoundLevelDirectiveType                      TCapability_EDirectiveType = 145
-	TCapability_AdhanSetMuezzinSettingsDirectiveType                 TCapability_EDirectiveType = 146
-	TCapability_AdhanAddOrUpdateDirectiveType                        TCapability_EDirectiveType = 147
-	TCapability_AdhanRemoveDirectiveType                             TCapability_EDirectiveType = 148
-	TCapability_AdhanUpdateActivationTimesDirectiveType              TCapability_EDirectiveType = 149
-	TCapability_AdhanStopDirectiveType                               TCapability_EDirectiveType = 150
-	TCapability_SyncIoTUserInfoDirectiveType                         TCapability_EDirectiveType = 153
-	TCapability_SetIoTUserInfoDirectiveType                          TCapability_EDirectiveType = 154
-	TCapability_SetIoTAccountSettingsDirectiveType                   TCapability_EDirectiveType = 203
-	TCapability_RouteDirectiveType                                   TCapability_EDirectiveType = 204
-	TCapability_ScenarioVoiceTriggerDirectiveType                    TCapability_EDirectiveType = 206
-	TCapability_ScheduleActionDirectiveType                          TCapability_EDirectiveType = 220
-	TCapability_CancelScheduledActionDirectiveType                   TCapability_EDirectiveType = 221
-	TCapability_IoTEndpointsStateChangedDirectiveType                TCapability_EDirectiveType = 437
-	TCapability_IoTEndpointsRemovedDirectiveType                     TCapability_EDirectiveType = 438
-	TCapability_SubscribeIoTEndpointsDirectiveType                   TCapability_EDirectiveType = 439
-	TCapability_UnsubscribeIoTEndpointsDirectiveType                 TCapability_EDirectiveType = 440
-	TCapability_SetAudioPlayerSequenceStateDirectiveType             TCapability_EDirectiveType = 152
-	TCapability_AudioPlayerPlayDirectiveType                         TCapability_EDirectiveType = 155
-	TCapability_AudioPlayerLikeDirectiveType                         TCapability_EDirectiveType = 156
-	TCapability_AudioPlayerUnlikeDirectiveType                       TCapability_EDirectiveType = 157
-	TCapability_AudioPlayerDislikeDirectiveType                      TCapability_EDirectiveType = 158
-	TCapability_AudioPlayerUndislikeDirectiveType                    TCapability_EDirectiveType = 159
-	TCapability_AudioPlayerNextDirectiveType                         TCapability_EDirectiveType = 160
-	TCapability_AudioPlayerPreviousDirectiveType                     TCapability_EDirectiveType = 161
-	TCapability_AudioPlayerRepeatOneDirectiveType                    TCapability_EDirectiveType = 162
-	TCapability_AudioPlayerRepeatAllDirectiveType                    TCapability_EDirectiveType = 163
-	TCapability_AudioPlayerUnrepeatDirectiveType                     TCapability_EDirectiveType = 170
-	TCapability_AudioPlayerShuffleDirectiveType                      TCapability_EDirectiveType = 171
-	TCapability_AudioPlayerUnshuffleDirectiveType                    TCapability_EDirectiveType = 172
-	TCapability_AudioPlayerGetLyricsDirectiveType                    TCapability_EDirectiveType = 196
-	TCapability_AudioPlayerSetSpeedLevelDirectiveType                TCapability_EDirectiveType = 217
-	TCapability_AudioPlayerEnableKaraokeModeDirectiveType            TCapability_EDirectiveType = 312
-	TCapability_AudioPlayerDisableKaraokeModeDirectiveType           TCapability_EDirectiveType = 313
-	TCapability_EnableCommandPhrasesDirectiveType                    TCapability_EDirectiveType = 165
-	TCapability_DisableCommandPhrasesDirectiveType                   TCapability_EDirectiveType = 194
-	TCapability_SwitchAccountDirectiveType                           TCapability_EDirectiveType = 173
-	TCapability_OpenAccountListDirectiveType                         TCapability_EDirectiveType = 188
-	TCapability_RefreshAccountDirectiveType                          TCapability_EDirectiveType = 238
-	TCapability_AddAccountDirectiveType                              TCapability_EDirectiveType = 271
-	TCapability_LocalAddAccountDirectiveType                         TCapability_EDirectiveType = 278
-	TCapability_ExpandAccountListDirectiveType                       TCapability_EDirectiveType = 298
-	TCapability_ShowLoginScreenDirectiveType                         TCapability_EDirectiveType = 299
-	TCapability_AuthorizePupaDirectiveType                           TCapability_EDirectiveType = 300
-	TCapability_AddGuestUserDirective                                TCapability_EDirectiveType = 534
-	TCapability_ClearGuestUserDirective                              TCapability_EDirectiveType = 535
-	TCapability_AddAccountWithCookieDirectiveType                    TCapability_EDirectiveType = 723
-	TCapability_RemoveAccountDirectiveType                           TCapability_EDirectiveType = 724
-	TCapability_ChangeOwnerDirectiveType                             TCapability_EDirectiveType = 753
-	TCapability_OtaApplyDirectiveType                                TCapability_EDirectiveType = 174
-	TCapability_ForceOtaRequestDirectiveType                         TCapability_EDirectiveType = 202
-	TCapability_StartBleDiscoveryDirectiveType                       TCapability_EDirectiveType = 175
-	TCapability_StartBleSetupDirectiveType                           TCapability_EDirectiveType = 176
-	TCapability_StartBleAdvertisingDirectiveType                     TCapability_EDirectiveType = 515
-	TCapability_InstallTvUpdateDirectiveType                         TCapability_EDirectiveType = 177
-	TCapability_DownloadTvUpdateDirectiveType                        TCapability_EDirectiveType = 178
-	TCapability_HideTvUpdateDirectiveType                            TCapability_EDirectiveType = 189
-	TCapability_RetryTvUpdateDirectiveType                           TCapability_EDirectiveType = 190
-	TCapability_KidsStartAwakeningDirectiveType                      TCapability_EDirectiveType = 186
-	TCapability_KidsStopAwakeningDirectiveType                       TCapability_EDirectiveType = 187
-	TCapability_IotSetDisabledIndicatorDirectiveType                 TCapability_EDirectiveType = 193
-	TCapability_OpenCatalogDirectiveType                             TCapability_EDirectiveType = 195
-	TCapability_StartLightSequenceDirectiveType                      TCapability_EDirectiveType = 198
-	TCapability_StopLightSequenceDirectiveType                       TCapability_EDirectiveType = 199
-	TCapability_SensorSoundAlarmMuteDirectiveType                    TCapability_EDirectiveType = 200
-	TCapability_ToggleSensorSoundAlarmMuteDirectiveType              TCapability_EDirectiveType = 201
-	TCapability_OpenUrlDirectiveType                                 TCapability_EDirectiveType = 209
-	TCapability_OpenBrowserDirectiveType                             TCapability_EDirectiveType = 214
-	TCapability_SetVadActionDirectiveType                            TCapability_EDirectiveType = 211
-	TCapability_OpenSmartHomeDirectiveType                           TCapability_EDirectiveType = 225
-	TCapability_OpenSmartHomePageDirectiveType                       TCapability_EDirectiveType = 215
-	TCapability_YaDiskAlbumItemsDataDirectiveType                    TCapability_EDirectiveType = 216
-	TCapability_ConnectBluetoothDirectiveType                        TCapability_EDirectiveType = 219
-	TCapability_DisconnectBluetoothDirectiveType                     TCapability_EDirectiveType = 222
-	TCapability_ForgetPairedDevicesDirectiveType                     TCapability_EDirectiveType = 428
-	TCapability_SetDoNotDisturbStateDirectiveType                    TCapability_EDirectiveType = 224
-	TCapability_ThermostatModeSetDirectiveType                       TCapability_EDirectiveType = 227
-	TCapability_ThermostatSetAbsoluteSetpointDirectiveType           TCapability_EDirectiveType = 228
-	TCapability_ThermostatSetRelativeSetpointDirectiveType           TCapability_EDirectiveType = 229
-	TCapability_AccessibilityPressButtonByIdDirectiveType            TCapability_EDirectiveType = 231
-	TCapability_SetBrightnessLevelDirectiveType                      TCapability_EDirectiveType = 232
-	TCapability_SetAutoBrightnessDirectiveType                       TCapability_EDirectiveType = 250
-	TCapability_CheckFirmwareUpdateDirectiveType                     TCapability_EDirectiveType = 233
-	TCapability_PlayerSkipToNextDirectiveType                        TCapability_EDirectiveType = 234
-	TCapability_PlayerSkipToPreviousDirectiveType                    TCapability_EDirectiveType = 235
-	TCapability_YoutubeOpenAccountsDirectiveType                     TCapability_EDirectiveType = 247
-	TCapability_OpenYoutubeUriDirectiveType                          TCapability_EDirectiveType = 257
-	TCapability_YoutubeLikeDirectiveType                             TCapability_EDirectiveType = 262
-	TCapability_YoutubeDislikeDirectiveType                          TCapability_EDirectiveType = 263
-	TCapability_AccessibilityWriteTextInInputDirectiveType           TCapability_EDirectiveType = 237
-	TCapability_SetIntonationSpottingDirectiveType                   TCapability_EDirectiveType = 239
-	TCapability_ConnectToNetworkDirectiveType                        TCapability_EDirectiveType = 240
-	TCapability_SetWifiConfigurationDirectiveType                    TCapability_EDirectiveType = 241
-	TCapability_ForceSyncWifiConfigurationDirectiveType              TCapability_EDirectiveType = 244
-	TCapability_SetNightModeDirectiveType                            TCapability_EDirectiveType = 242
-	TCapability_OpenColdstartRecommendationsDirectiveType            TCapability_EDirectiveType = 243
-	TCapability_ShowVolumeDirectiveType                              TCapability_EDirectiveType = 245
-	TCapability_SetVisualSpottingDirectiveType                       TCapability_EDirectiveType = 246
-	TCapability_OpenVideoMainScreenDirectiveType                     TCapability_EDirectiveType = 248
-	TCapability_AddTeaserDirectiveType                               TCapability_EDirectiveType = 251
-	TCapability_RotateTeasersDirectiveType                           TCapability_EDirectiveType = 252
-	TCapability_RemoveTeaserDirectiveType                            TCapability_EDirectiveType = 253
-	TCapability_OpenTretyakovkaInfoDirectiveType                     TCapability_EDirectiveType = 550
-	TCapability_StartFeatureBoardingDirectiveType                    TCapability_EDirectiveType = 256
-	TCapability_ApplyMusicPlatformQueueDirectiveType                 TCapability_EDirectiveType = 259
-	TCapability_IotSetRelaySwitchInputModeDirectiveType              TCapability_EDirectiveType = 264
-	TCapability_ShowAudioPlayerScreenDirectiveType                   TCapability_EDirectiveType = 265
-	TCapability_IotSetSwitchModeDirectiveType                        TCapability_EDirectiveType = 266
-	TCapability_CentaurOpenVideoDetailsScreenDirectiveType           TCapability_EDirectiveType = 268
-	TCapability_CentaurOpenSeriesScreenDirectiveType                 TCapability_EDirectiveType = 269
-	TCapability_CentaurOpenVideoPurchaseScreenDirectiveType          TCapability_EDirectiveType = 270
-	TCapability_StartEnrollmentOnboardingDirectiveType               TCapability_EDirectiveType = 272
-	TCapability_ShowEnrollmentUserAvatarDirectiveType                TCapability_EDirectiveType = 273
-	TCapability_ShowEnrollmentPhraseDirectiveType                    TCapability_EDirectiveType = 274
-	TCapability_FinishEnrollmentUiDirectiveType                      TCapability_EDirectiveType = 287
-	TCapability_ShowVoiceprintRemoveSuccessDirectiveType             TCapability_EDirectiveType = 325
-	TCapability_IotStartIdentifyDirectiveType                        TCapability_EDirectiveType = 275
-	TCapability_TimerStopDirectiveType                               TCapability_EDirectiveType = 276
-	TCapability_NoiseReductionSetModeDirectiveType                   TCapability_EDirectiveType = 279
-	TCapability_HideClockDirectiveType                               TCapability_EDirectiveType = 280
-	TCapability_ShowClockDirectiveType                               TCapability_EDirectiveType = 281
-	TCapability_IotSetPowerProfileDirectiveType                      TCapability_EDirectiveType = 282
-	TCapability_SendBugReportType                                    TCapability_EDirectiveType = 285
-	TCapability_LegacySendBugReportType                              TCapability_EDirectiveType = 360
-	TCapability_ShowWhatsNewDirectiveType                            TCapability_EDirectiveType = 288
-	TCapability_ShowWhatsNewInSourcesDirectiveType                   TCapability_EDirectiveType = 462
-	TCapability_SetConditioningSystemStateDirectiveType              TCapability_EDirectiveType = 289
-	TCapability_SetCoolingSystemStateDirectiveType                   TCapability_EDirectiveType = 295
-	TCapability_SetAutoConditioningSystemStateDirectiveType          TCapability_EDirectiveType = 301
-	TCapability_SetHvacSeatTemperatureDirectiveType                  TCapability_EDirectiveType = 306
-	TCapability_SetHvacRecirculationStateDirectiveType               TCapability_EDirectiveType = 314
-	TCapability_SetHvacTemperatureDirectiveType                      TCapability_EDirectiveType = 315
-	TCapability_SetHvacDefrosterStateDirectiveType                   TCapability_EDirectiveType = 318
-	TCapability_SetSteeringWheelHeatingStateDirectiveType            TCapability_EDirectiveType = 319
-	TCapability_SetFanDirectionDirectiveType                         TCapability_EDirectiveType = 320
-	TCapability_SetHvacFanSpeedDirectiveType                         TCapability_EDirectiveType = 321
-	TCapability_SetHvacSeatVentilationDirectiveType                  TCapability_EDirectiveType = 326
-	TCapability_SetAutoSeatHeatingStateDirectiveType                 TCapability_EDirectiveType = 510
-	TCapability_SetAutoSeatVentilationStateDirectiveType             TCapability_EDirectiveType = 511
-	TCapability_OpenBodySideMirrorsDirectiveType                     TCapability_EDirectiveType = 323
-	TCapability_OpenBodyTrunkDirectiveType                           TCapability_EDirectiveType = 324
-	TCapability_OpenBodySunVisorDirectiveType                        TCapability_EDirectiveType = 327
-	TCapability_OpenBodyTrapdoorDirectiveType                        TCapability_EDirectiveType = 328
-	TCapability_OpenBodyWindowDirectiveType                          TCapability_EDirectiveType = 329
-	TCapability_OpenDeviceCallUIDirectiveType                        TCapability_EDirectiveType = 290
-	TCapability_GetCallableDevicesDirectiveType                      TCapability_EDirectiveType = 291
-	TCapability_ShowCallErrorDirectiveType                           TCapability_EDirectiveType = 599
-	TCapability_AliceShowStartDirectiveType                          TCapability_EDirectiveType = 292
-	TCapability_AliceShowStopDirectiveType                           TCapability_EDirectiveType = 294
-	TCapability_MakeOrderProcessSearchResultsDirectiveType           TCapability_EDirectiveType = 293
-	TCapability_MakeOrderLaunchApplicationDirectiveType              TCapability_EDirectiveType = 310
-	TCapability_MakeOrderUpdateStateDirectiveType                    TCapability_EDirectiveType = 322
-	TCapability_MakeOrderProcessCheckoutResultDirectiveType          TCapability_EDirectiveType = 343
-	TCapability_DontAutoPlayRelatedVideoDirectiveType                TCapability_EDirectiveType = 297
-	TCapability_AliceBlockDirectiveType                              TCapability_EDirectiveType = 302
-	TCapability_AliceUnblockDirectiveType                            TCapability_EDirectiveType = 303
-	TCapability_UpdateTtsPlaceholderDirectiveType                    TCapability_EDirectiveType = 317
-	TCapability_VocalizeDirectiveType                                TCapability_EDirectiveType = 332
-	TCapability_AliceStartDataInputDirective                         TCapability_EDirectiveType = 409
-	TCapability_StartSpeechInputDirectiveType                        TCapability_EDirectiveType = 494
-	TCapability_StartRecordInputDirectiveType                        TCapability_EDirectiveType = 509
-	TCapability_StartVoiceInputDirectiveType                         TCapability_EDirectiveType = 552
-	TCapability_StartTextInputDirectiveType                          TCapability_EDirectiveType = 560
-	TCapability_StopConversationDirectiveType                        TCapability_EDirectiveType = 561
-	TCapability_SetActiveDialogDirectiveType                         TCapability_EDirectiveType = 569
-	TCapability_SetJingleStateDirectiveType                          TCapability_EDirectiveType = 586
-	TCapability_CompleteStreamingResponseDirectiveType               TCapability_EDirectiveType = 571
-	TCapability_AliceStartFileUploadDirective                        TCapability_EDirectiveType = 525
-	TCapability_CompleteTtsResponseDirectiveType                     TCapability_EDirectiveType = 596
-	TCapability_InvalidateAutoListenDirectiveType                    TCapability_EDirectiveType = 683
-	TCapability_StartNoteInputDirectiveType                          TCapability_EDirectiveType = 600
-	TCapability_SetUniProxySettingsDirectiveType                     TCapability_EDirectiveType = 608
-	TCapability_FinishSpeechInputDirectiveType                       TCapability_EDirectiveType = 611
-	TCapability_StartTranslateInputDirectiveType                     TCapability_EDirectiveType = 619
-	TCapability_SetSpeechModeOptionsDirectiveType                    TCapability_EDirectiveType = 627
-	TCapability_DialogChannelPlaceholderDirectiveType                TCapability_EDirectiveType = 745
-	TCapability_StartRecognizeDirectiveType                          TCapability_EDirectiveType = 749
-	TCapability_SetGestureRecognitionDirectiveType                   TCapability_EDirectiveType = 305
-	TCapability_IotSetPulseTimeDirectiveType                         TCapability_EDirectiveType = 309
-	TCapability_StartSetupDirectiveType                              TCapability_EDirectiveType = 311
-	TCapability_FillChatInputDirectiveType                           TCapability_EDirectiveType = 331
-	TCapability_ShowProPurchaseScreenDirectiveType                   TCapability_EDirectiveType = 350
-	TCapability_ShowFullscreenImageGalleryDirectiveType              TCapability_EDirectiveType = 351
-	TCapability_ZoomImageDirectiveType                               TCapability_EDirectiveType = 353
-	TCapability_DownloadImageDirectiveType                           TCapability_EDirectiveType = 354
-	TCapability_ShowPromoScreenDirectiveType                         TCapability_EDirectiveType = 355
-	TCapability_ShareImageDirectiveType                              TCapability_EDirectiveType = 367
-	TCapability_SetChatRequestModeDirectiveType                      TCapability_EDirectiveType = 414
-	TCapability_AddChatDiv2CardDirectiveType                         TCapability_EDirectiveType = 415
-	TCapability_FinishChatDirectiveType                              TCapability_EDirectiveType = 423
-	TCapability_LimitExceededBannerDirectiveType                     TCapability_EDirectiveType = 457
-	TCapability_FewRequestsLeftBannerDirective                       TCapability_EDirectiveType = 524
-	TCapability_OpenChatListDirectiveType                            TCapability_EDirectiveType = 499
-	TCapability_CreateNewChatDirectiveType                           TCapability_EDirectiveType = 500
-	TCapability_ChatNavigateBackDirectiveType                        TCapability_EDirectiveType = 501
-	TCapability_ShowBannerDirectiveType                              TCapability_EDirectiveType = 536
-	TCapability_LoginWithCallbackDirectiveType                       TCapability_EDirectiveType = 538
-	TCapability_OpenSerpViewDirectiveType                            TCapability_EDirectiveType = 547
-	TCapability_ShowModalDirectiveType                               TCapability_EDirectiveType = 575
-	TCapability_ShowNotificationDirectiveType                        TCapability_EDirectiveType = 579
-	TCapability_LimitUpdatedDirectiveType                            TCapability_EDirectiveType = 676
-	TCapability_CecVolumeUpDirectiveType                             TCapability_EDirectiveType = 335
-	TCapability_CecVolumeDownDirectiveType                           TCapability_EDirectiveType = 336
-	TCapability_CloseCardDirectiveType                               TCapability_EDirectiveType = 337
-	TCapability_SendVideoFrameCallbackDirectiveType                  TCapability_EDirectiveType = 340
-	TCapability_ShowAliceVisionScreenDirectiveType                   TCapability_EDirectiveType = 469
-	TCapability_AliceVisionFreeRequestsLimitExceededDirectiveType    TCapability_EDirectiveType = 485
-	TCapability_ProcessSmartVolumeDirectiveType                      TCapability_EDirectiveType = 342
-	TCapability_IotMoveCameraRelativeDirectiveType                   TCapability_EDirectiveType = 344
-	TCapability_IotCalibrateCameraDirectiveType                      TCapability_EDirectiveType = 390
-	TCapability_IotMoveCameraToPositionDirectiveType                 TCapability_EDirectiveType = 396
-	TCapability_IotStartWHIPVideoStreamDirectiveType                 TCapability_EDirectiveType = 345
-	TCapability_IotStopVideoStreamDirectiveType                      TCapability_EDirectiveType = 346
-	TCapability_IotSetVideoStreamResolutionDirectiveType             TCapability_EDirectiveType = 447
-	TCapability_IotSetVideoStreamKeepaliveModeDirectiveType          TCapability_EDirectiveType = 460
-	TCapability_OpenDeeplinkDirectiveType                            TCapability_EDirectiveType = 347
-	TCapability_SetIotInterlockDirectiveType                         TCapability_EDirectiveType = 348
-	TCapability_ChildModeUnblockDirectiveType                        TCapability_EDirectiveType = 349
-	TCapability_TakeScreenshotDirectiveType                          TCapability_EDirectiveType = 352
-	TCapability_SetIotEnableClientDirectiveType                      TCapability_EDirectiveType = 356
-	TCapability_IotSettingChildLockDirectiveType                     TCapability_EDirectiveType = 357
-	TCapability_SetMassageSeatSpeedDirectiveType                     TCapability_EDirectiveType = 358
-	TCapability_SetMassageModeDirectiveType                          TCapability_EDirectiveType = 361
-	TCapability_StartFaceEnrollmentDirectiveType                     TCapability_EDirectiveType = 362
-	TCapability_StartFaceRecordingDirectiveType                      TCapability_EDirectiveType = 488
-	TCapability_ForgetAllFacesDirectiveType                          TCapability_EDirectiveType = 363
-	TCapability_ForgetFaceEnrollmentDirectiveType                    TCapability_EDirectiveType = 410
-	TCapability_OpenSmartHomeConfirmQrDirectiveType                  TCapability_EDirectiveType = 411
-	TCapability_SetIotBallastMinDirectiveType                        TCapability_EDirectiveType = 364
-	TCapability_SetIotBallastMaxDirectiveType                        TCapability_EDirectiveType = 365
-	TCapability_SetIotBallastMinMaxDirectiveType                     TCapability_EDirectiveType = 366
-	TCapability_CollectMusicVerticalDirectiveType                    TCapability_EDirectiveType = 368
-	TCapability_ShowMusicAlbumScreenDirectiveType                    TCapability_EDirectiveType = 603
-	TCapability_ShowMusicArtistScreenDirectiveType                   TCapability_EDirectiveType = 606
-	TCapability_ShowMusicPlaylistScreenDirectiveType                 TCapability_EDirectiveType = 607
-	TCapability_ShowMusicArtistPopularTracksDirectiveType            TCapability_EDirectiveType = 612
-	TCapability_ShowMusicArtistPopularAlbumsDirectiveType            TCapability_EDirectiveType = 613
-	TCapability_ShowMusicArtistPlaylistsDirectiveType                TCapability_EDirectiveType = 614
-	TCapability_ShowMusicArtistSimilarArtistsDirectiveType           TCapability_EDirectiveType = 615
-	TCapability_TOpenProlongationScreenDirectiveType                 TCapability_EDirectiveType = 369
-	TCapability_TSendUnblockRequestDirectiveType                     TCapability_EDirectiveType = 370
-	TCapability_TProlongTimeLimitDirectiveType                       TCapability_EDirectiveType = 371
-	TCapability_OpenProPurchaseScreenDirectiveType                   TCapability_EDirectiveType = 372
-	TCapability_ForceSubscriptionCheckDirectiveType                  TCapability_EDirectiveType = 400
-	TCapability_ShowAliceProBannerDirectiveType                      TCapability_EDirectiveType = 416
-	TCapability_PlayInExternalPlayerDirectiveType                    TCapability_EDirectiveType = 373
-	TCapability_ControlExternalPlayerDirectiveType                   TCapability_EDirectiveType = 374
-	TCapability_PlayerControlPlayDirectiveType                       TCapability_EDirectiveType = 375
-	TCapability_PlayerControlNextTrackDirectiveType                  TCapability_EDirectiveType = 376
-	TCapability_PlayerControlPrevTrackDirectiveType                  TCapability_EDirectiveType = 377
-	TCapability_PlayerControlPauseDirectiveType                      TCapability_EDirectiveType = 378
-	TCapability_PlayerControlResumeDirectiveType                     TCapability_EDirectiveType = 379
-	TCapability_PlayerControlShuffleDirectiveType                    TCapability_EDirectiveType = 380
-	TCapability_PlayerControlUnshuffleDirectiveType                  TCapability_EDirectiveType = 381
-	TCapability_PlayerControlRepeatDirectiveType                     TCapability_EDirectiveType = 382
-	TCapability_PlayerControlReplayDirectiveType                     TCapability_EDirectiveType = 383
-	TCapability_PlayerControlRewindDirectiveType                     TCapability_EDirectiveType = 384
-	TCapability_PlayerControlFastForwardDirectiveType                TCapability_EDirectiveType = 385
-	TCapability_PlayerControlLikeDirectiveType                       TCapability_EDirectiveType = 386
-	TCapability_PlayerControlDislikeDirectiveType                    TCapability_EDirectiveType = 387
-	TCapability_PlayerControlUndoLikeDirectiveType                   TCapability_EDirectiveType = 388
-	TCapability_PlayerControlUndoDislikeDirectiveType                TCapability_EDirectiveType = 389
-	TCapability_OpenMusicSearchDirectiveType                         TCapability_EDirectiveType = 391
-	TCapability_MusicSearchRequestDirectiveType                      TCapability_EDirectiveType = 413
-	TCapability_SetHudStateDirectiveType                             TCapability_EDirectiveType = 392
-	TCapability_SetHudBrightnessDirectiveType                        TCapability_EDirectiveType = 393
-	TCapability_SetHudModeDirectiveType                              TCapability_EDirectiveType = 394
-	TCapability_SetHudHeightDirectiveType                            TCapability_EDirectiveType = 395
-	TCapability_SetAmbientLightingStateDirectiveType                 TCapability_EDirectiveType = 398
-	TCapability_ChangeAmbientLightingColorDirectiveType              TCapability_EDirectiveType = 399
-	TCapability_ChangeAmbientLightingModeDirectiveType               TCapability_EDirectiveType = 763
-	TCapability_SetPrivacyModeDirectiveType                          TCapability_EDirectiveType = 402
-	TCapability_TogglePrivacyModeDirectiveType                       TCapability_EDirectiveType = 451
-	TCapability_SetInstrumentPanelBrightnessDirectiveType            TCapability_EDirectiveType = 403
-	TCapability_CameraLocalArchiveListFilesDirectiveType             TCapability_EDirectiveType = 404
-	TCapability_CameraLocalArchiveRemoveFilesDirectiveType           TCapability_EDirectiveType = 497
-	TCapability_CameraLocalArchiveGetFileDirectiveType               TCapability_EDirectiveType = 405
-	TCapability_CameraLocalArchiveGetManifestDirectiveType           TCapability_EDirectiveType = 406
-	TCapability_CameraLocalArchiveGetFileHeaderDirectiveType         TCapability_EDirectiveType = 407
-	TCapability_CameraLocalArchiveGetFileSegmentDirectiveType        TCapability_EDirectiveType = 408
-	TCapability_CameraLocalArchiveGetFileThumbnailDirectiveType      TCapability_EDirectiveType = 453
-	TCapability_CameraLocalArchiveFormatStorageDirectiveType         TCapability_EDirectiveType = 424
-	TCapability_CameraLocalArchiveUnmountStorageDirectiveType        TCapability_EDirectiveType = 425
-	TCapability_IotSetUxLayoutDirectiveType                          TCapability_EDirectiveType = 412
-	TCapability_SetNightVisionModeDirectiveType                      TCapability_EDirectiveType = 417
-	TCapability_OpenScreenAlarmListDirectiveType                     TCapability_EDirectiveType = 418
-	TCapability_OpenScreenAlarmEditDirectiveType                     TCapability_EDirectiveType = 419
-	TCapability_CloseScreenAlarmActiveDirectiveType                  TCapability_EDirectiveType = 445
-	TCapability_OpenScreenTimerListDirectiveType                     TCapability_EDirectiveType = 421
-	TCapability_OpenScreenTimerInfoDirectiveType                     TCapability_EDirectiveType = 422
-	TCapability_CloseScreenTimerActiveDirectiveType                  TCapability_EDirectiveType = 446
-	TCapability_LongPollingJobDirectiveType                          TCapability_EDirectiveType = 420
-	TCapability_IotStartTrackingDirectiveType                        TCapability_EDirectiveType = 426
-	TCapability_IotStopTrackingDirectiveType                         TCapability_EDirectiveType = 427
-	TCapability_SetLyricsDirectiveType                               TCapability_EDirectiveType = 429
-	TCapability_EnableLyricsDirectiveType                            TCapability_EDirectiveType = 430
-	TCapability_DisableLyricsDirectiveType                           TCapability_EDirectiveType = 431
-	TCapability_IotSetPlanarViewBasisDirectiveType                   TCapability_EDirectiveType = 432
-	TCapability_IotSetPlanarViewGridDirectiveType                    TCapability_EDirectiveType = 572
-	TCapability_IotCreateZoneDirectiveType                           TCapability_EDirectiveType = 433
-	TCapability_IotUpdateZoneDirectiveType                           TCapability_EDirectiveType = 434
-	TCapability_IotDeleteZoneDirectiveType                           TCapability_EDirectiveType = 435
-	TCapability_IotToggleZoneDirectiveType                           TCapability_EDirectiveType = 436
-	TCapability_SetIotColorMusicDirectiveType                        TCapability_EDirectiveType = 441
-	TCapability_StartMultiroomDirectiveType                          TCapability_EDirectiveType = 442
-	TCapability_MultiroomSemanticFrameDirectiveType                  TCapability_EDirectiveType = 443
-	TCapability_CameraSnapshotTakePictureDirectiveType               TCapability_EDirectiveType = 444
-	TCapability_InvokeAppFunctionDirectiveType                       TCapability_EDirectiveType = 448
-	TCapability_SetIotDisplayOrientationDirectiveType                TCapability_EDirectiveType = 449
-	TCapability_HideFromDelayedDirectiveType                         TCapability_EDirectiveType = 450
-	TCapability_SetIotWindowOpenDetectionDirectiveType               TCapability_EDirectiveType = 452
-	TCapability_StartIotAutoCalibrationDirectiveType                 TCapability_EDirectiveType = 454
-	TCapability_IotBindDirectiveType                                 TCapability_EDirectiveType = 455
-	TCapability_IotUnbindDirectiveType                               TCapability_EDirectiveType = 456
-	TCapability_TPurchaseVideoDirectiveType                          TCapability_EDirectiveType = 458
-	TCapability_TPurchaseSubscriptionDirectiveType                   TCapability_EDirectiveType = 459
-	TCapability_StartFileUploadDirectiveType                         TCapability_EDirectiveType = 463
-	TCapability_StartFilePollingDirectiveType                        TCapability_EDirectiveType = 464
-	TCapability_SetIotAntifreezeDirectiveType                        TCapability_EDirectiveType = 465
-	TCapability_SetIotAntiscaleDirectiveType                         TCapability_EDirectiveType = 466
-	TCapability_SetRecalibrationEnabledDirectiveType                 TCapability_EDirectiveType = 671
-	TCapability_ResetCalibrationDirectiveType                        TCapability_EDirectiveType = 477
-	TCapability_TImageAttachmentDirectiveType                        TCapability_EDirectiveType = 467
-	TCapability_ShowAliceChatSettingsDirectiveType                   TCapability_EDirectiveType = 470
-	TCapability_SetChatSettingModeDirectiveType                      TCapability_EDirectiveType = 523
-	TCapability_SetLedMaskDirectiveType                              TCapability_EDirectiveType = 471
-	TCapability_SetNoiseCancellationModeDirectiveType                TCapability_EDirectiveType = 473
-	TCapability_IotCustomLocalitySaveKeyDirectiveType                TCapability_EDirectiveType = 474
-	TCapability_IotCustomLocalityStartDirective                      TCapability_EDirectiveType = 475
-	TCapability_LaunchFileDownloadDirectiveType                      TCapability_EDirectiveType = 476
-	TCapability_SpeechModeShowTimeEndingBannerDirectiveType          TCapability_EDirectiveType = 478
-	TCapability_SpeechModeShowDirectiveType                          TCapability_EDirectiveType = 479
-	TCapability_TriggerRatingDirectiveType                           TCapability_EDirectiveType = 480
-	TCapability_MotorControlOpenDirectiveType                        TCapability_EDirectiveType = 481
-	TCapability_MotorControlCloseDirectiveType                       TCapability_EDirectiveType = 482
-	TCapability_MotorControlStopDirectiveType                        TCapability_EDirectiveType = 483
-	TCapability_MotorControlToggleDirectiveType                      TCapability_EDirectiveType = 672
-	TCapability_SetWorkSpeedDirectiveType                            TCapability_EDirectiveType = 484
-	TCapability_SetMotorDirectionDirectiveType                       TCapability_EDirectiveType = 486
-	TCapability_UpdateSiteContentDirectiveType                       TCapability_EDirectiveType = 487
-	TCapability_ZigbeeNeighborsRequestDirectiveType                  TCapability_EDirectiveType = 489
-	TCapability_MatterAdvertisingStartDirectiveType                  TCapability_EDirectiveType = 490
-	TCapability_MatterLocalityStopDirectiveType                      TCapability_EDirectiveType = 529
-	TCapability_SendMetricaEventDirectiveType                        TCapability_EDirectiveType = 491
-	TCapability_SetChannelDirectiveType                              TCapability_EDirectiveType = 492
-	TCapability_StartEnergyScanDirectiveType                         TCapability_EDirectiveType = 493
-	TCapability_ScheduleLocalNotificationDirectiveType               TCapability_EDirectiveType = 495
-	TCapability_SetMotorLimitsDirectiveType                          TCapability_EDirectiveType = 496
-	TCapability_SetMotorOpenLimitDirectiveType                       TCapability_EDirectiveType = 507
-	TCapability_SetMotorCloseLimitDirectiveType                      TCapability_EDirectiveType = 508
-	TCapability_AliceChatHapticDirectiveType                         TCapability_EDirectiveType = 498
-	TCapability_AliceChatHapticToggleSettingDirectiveType            TCapability_EDirectiveType = 673
-	TCapability_SetPanoramicDisplayStateDirectiveType                TCapability_EDirectiveType = 502
-	TCapability_SetEventsDirectiveType                               TCapability_EDirectiveType = 503
-	TCapability_PlayWeatherDirectiveType                             TCapability_EDirectiveType = 506
-	TCapability_SetReactionEventsDirectiveType                       TCapability_EDirectiveType = 522
-	TCapability_SetReactionSettingDirectiveType                      TCapability_EDirectiveType = 541
-	TCapability_SetEnableColorMusicDirectiveType                     TCapability_EDirectiveType = 504
-	TCapability_SetAnimationColorMusicDirectiveType                  TCapability_EDirectiveType = 505
-	TCapability_ZenohLocalitySaveKeyDirectiveType                    TCapability_EDirectiveType = 512
-	TCapability_ZenohLocalityStartDirective                          TCapability_EDirectiveType = 513
-	TCapability_ZenohLocalityStopDirectiveType                       TCapability_EDirectiveType = 530
-	TCapability_SetAnimationColorAnimationDirectiveType              TCapability_EDirectiveType = 514
-	TCapability_SetAnimationTypeCommonSettingDirectiveType           TCapability_EDirectiveType = 537
-	TCapability_StereoPairNoConnectionNotificationDirectiveType      TCapability_EDirectiveType = 516
-	TCapability_StereoPairPlayerNotReadyNotificationDirectiveType    TCapability_EDirectiveType = 517
-	TCapability_ExecuteActionOnLeaderDirectiveType                   TCapability_EDirectiveType = 592
-	TCapability_SyncNotesDirectiveType                               TCapability_EDirectiveType = 518
-	TCapability_OpenNativePassportDirectiveType                      TCapability_EDirectiveType = 519
-	TCapability_NativeLogoutDirectiveType                            TCapability_EDirectiveType = 691
-	TCapability_NativeDeleteAccountDirectiveType                     TCapability_EDirectiveType = 692
-	TCapability_CameraVideoRecordingStartVideoRecordingDirectiveType TCapability_EDirectiveType = 521
-	TCapability_ActivateSmartScenarioDirectiveType                   TCapability_EDirectiveType = 10001
-	TCapability_DeactivateSmartScenarioDirectiveType                 TCapability_EDirectiveType = 10002
-	TCapability_SetFeedBackDirectiveType                             TCapability_EDirectiveType = 526
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capability.proto.
+	TCapability_UnknownDirectiveType                                     TCapability_EDirectiveType = 0
+	TCapability_OnOffDirectiveType                                       TCapability_EDirectiveType = 1
+	TCapability_ToggleOnOffDirectiveType                                 TCapability_EDirectiveType = 54
+	TCapability_SetStartupModeDirectiveType                              TCapability_EDirectiveType = 192
+	TCapability_ScreenOffDirectiveType                                   TCapability_EDirectiveType = 267
+	TCapability_OnWithTimedOffDirectiveType                              TCapability_EDirectiveType = 308
+	TCapability_IotStartDiscoveryDirectiveType                           TCapability_EDirectiveType = 2
+	TCapability_IotFinishDiscoveryDirectiveType                          TCapability_EDirectiveType = 3
+	TCapability_IotForgetDevicesDirectiveType                            TCapability_EDirectiveType = 4
+	TCapability_IotStartTuyaBroadcastDirectiveType                       TCapability_EDirectiveType = 10
+	TCapability_IotRestoreNetworksDirectiveType                          TCapability_EDirectiveType = 13
+	TCapability_IotCancelDiscoveryDirectiveType                          TCapability_EDirectiveType = 14
+	TCapability_IotDeleteNetworksDirectiveType                           TCapability_EDirectiveType = 15
+	TCapability_IotEnableNetworkDirectiveType                            TCapability_EDirectiveType = 27
+	TCapability_IotSyncEndpointsDirectiveType                            TCapability_EDirectiveType = 208
+	TCapability_IotFinishSystemDiscoveryDirectiveType                    TCapability_EDirectiveType = 236
+	TCapability_SetAbsoluteLevelDirectiveType                            TCapability_EDirectiveType = 5
+	TCapability_SetRelativeLevelDirectiveType                            TCapability_EDirectiveType = 6
+	TCapability_StartMoveLevelDirectiveType                              TCapability_EDirectiveType = 7
+	TCapability_StopMoveLevelDirectiveType                               TCapability_EDirectiveType = 8
+	TCapability_TransitionLevelDirectiveType                             TCapability_EDirectiveType = 230
+	TCapability_StopTransitionLevelDirectiveType                         TCapability_EDirectiveType = 260
+	TCapability_StartCalibrationLevelDirectiveType                       TCapability_EDirectiveType = 468
+	TCapability_SetLevelCorrectionDirectiveType                          TCapability_EDirectiveType = 570
+	TCapability_SetColorSceneDirectiveType                               TCapability_EDirectiveType = 9
+	TCapability_SetTemperatureKDirectiveType                             TCapability_EDirectiveType = 19
+	TCapability_SetHueAndSaturationDirectiveType                         TCapability_EDirectiveType = 124
+	TCapability_SetHueDirectiveType                                      TCapability_EDirectiveType = 125
+	TCapability_SetSaturationDirectiveType                               TCapability_EDirectiveType = 126
+	TCapability_WebOSLaunchAppDirectiveType                              TCapability_EDirectiveType = 11
+	TCapability_WebOSShowGalleryDirectiveType                            TCapability_EDirectiveType = 12
+	TCapability_WebOSManageAppDirectiveType                              TCapability_EDirectiveType = 184
+	TCapability_SetAdjustableEqualizerBandsDirectiveType                 TCapability_EDirectiveType = 16
+	TCapability_SetFixedEqualizerBandsDirectiveType                      TCapability_EDirectiveType = 17
+	TCapability_DrawAnimationDirectiveType                               TCapability_EDirectiveType = 18
+	TCapability_EnableScreenDirectiveType                                TCapability_EDirectiveType = 38
+	TCapability_DisableScreenDirectiveType                               TCapability_EDirectiveType = 39
+	TCapability_StartVideoCallLoginDirectiveType                         TCapability_EDirectiveType = 20
+	TCapability_StartVideoCallDirectiveType                              TCapability_EDirectiveType = 21
+	TCapability_AcceptVideoCallDirectiveType                             TCapability_EDirectiveType = 22
+	TCapability_DiscardVideoCallDirectiveType                            TCapability_EDirectiveType = 23
+	TCapability_VideoCallMuteMicDirectiveType                            TCapability_EDirectiveType = 42
+	TCapability_VideoCallUnmuteMicDirectiveType                          TCapability_EDirectiveType = 43
+	TCapability_VideoCallTurnOnVideoDirectiveType                        TCapability_EDirectiveType = 44
+	TCapability_VideoCallTurnOffVideoDirectiveType                       TCapability_EDirectiveType = 45
+	TCapability_VideoCallSetActionOnCallEndDirectiveType                 TCapability_EDirectiveType = 80
+	TCapability_VideoCallLogoutDirectiveType                             TCapability_EDirectiveType = 85
+	TCapability_VideoCallTurnOnAutoCropDirectiveType                     TCapability_EDirectiveType = 212
+	TCapability_VideoCallTurnOffAutoCropDirectiveType                    TCapability_EDirectiveType = 213
+	TCapability_ProcessIncomingVideoCallDirectiveType                    TCapability_EDirectiveType = 330
+	TCapability_StartRouteManagerDirectiveType                           TCapability_EDirectiveType = 24
+	TCapability_StopRouteManagerDirectiveType                            TCapability_EDirectiveType = 25
+	TCapability_ShowRouteManagerDirectiveType                            TCapability_EDirectiveType = 26
+	TCapability_ContinueRouteManagerDirectiveType                        TCapability_EDirectiveType = 28
+	TCapability_OpenScreensaverDirectiveType                             TCapability_EDirectiveType = 29
+	TCapability_LoadScreensaversDirectiveType                            TCapability_EDirectiveType = 86
+	TCapability_CloseScreensaverDirectiveType                            TCapability_EDirectiveType = 226
+	TCapability_StashViewDirectiveType                                   TCapability_EDirectiveType = 30
+	TCapability_UnstashViewDirectiveType                                 TCapability_EDirectiveType = 31
+	TCapability_AlarmAddDirectiveType                                    TCapability_EDirectiveType = 32
+	TCapability_AlarmSoundSettingsUpdateDirectiveType                    TCapability_EDirectiveType = 120
+	TCapability_AlarmUpdateSoundLevelDirectiveType                       TCapability_EDirectiveType = 339
+	TCapability_AlarmUpdateDirectiveType                                 TCapability_EDirectiveType = 34
+	TCapability_AlarmSnoozeDirectiveType                                 TCapability_EDirectiveType = 116
+	TCapability_AlarmStopDirectiveType                                   TCapability_EDirectiveType = 118
+	TCapability_AlarmCancelDirectiveType                                 TCapability_EDirectiveType = 132
+	TCapability_TimerSetDirectiveType                                    TCapability_EDirectiveType = 112
+	TCapability_TimerCancelDirectiveType                                 TCapability_EDirectiveType = 113
+	TCapability_TimerPauseDirectiveType                                  TCapability_EDirectiveType = 114
+	TCapability_TimerResumeDirectiveType                                 TCapability_EDirectiveType = 115
+	TCapability_AddIotScenariosDirectiveType                             TCapability_EDirectiveType = 35
+	TCapability_RemoveIotScenariosDirectiveType                          TCapability_EDirectiveType = 36
+	TCapability_SyncIotScenariosDirectiveType                            TCapability_EDirectiveType = 37
+	TCapability_ContinueScenarioLaunchDirectiveType                      TCapability_EDirectiveType = 108
+	TCapability_WaitScenarioDelayDirectiveType                           TCapability_EDirectiveType = 109
+	TCapability_SendExecuteNonLocalStepEventDirectiveType                TCapability_EDirectiveType = 110
+	TCapability_SendLocalStepsFinishedEventDirectiveType                 TCapability_EDirectiveType = 111
+	TCapability_OptionalDirectiveType                                    TCapability_EDirectiveType = 183
+	TCapability_SetIotScenariosActivityDirectiveType                     TCapability_EDirectiveType = 341
+	TCapability_VolumeMuteDirectiveType                                  TCapability_EDirectiveType = 40
+	TCapability_VolumeUnmuteDirectiveType                                TCapability_EDirectiveType = 41
+	TCapability_VolumeStartVolumeChangeDirectiveType                     TCapability_EDirectiveType = 181
+	TCapability_VolumeStopVolumeChangeDirectiveType                      TCapability_EDirectiveType = 182
+	TCapability_VolumeSetDirectiveType                                   TCapability_EDirectiveType = 254
+	TCapability_BioStartSoundEnrollmentDirectiveType                     TCapability_EDirectiveType = 46
+	TCapability_MultiaccountAddAccountDirectiveType                      TCapability_EDirectiveType = 72
+	TCapability_MultiaccountRemoveAccountDirectiveType                   TCapability_EDirectiveType = 73
+	TCapability_EnrollmentStartDirectiveType                             TCapability_EDirectiveType = 74
+	TCapability_EnrollmentCancelDirectiveType                            TCapability_EDirectiveType = 75
+	TCapability_EnrollmentFinishDirectiveType                            TCapability_EDirectiveType = 76
+	TCapability_FetchEnrollmentAudioDirectiveType                        TCapability_EDirectiveType = 151
+	TCapability_CalculateVoiceprintDirectiveType                         TCapability_EDirectiveType = 205
+	TCapability_MultiaccountRemoveAccountPersIdDirectiveType             TCapability_EDirectiveType = 210
+	TCapability_ShareEnrolledPersonDirectiveType                         TCapability_EDirectiveType = 333
+	TCapability_AddEnrolledPersonDirectiveType                           TCapability_EDirectiveType = 334
+	TCapability_EnrollmentShareDirectiveType                             TCapability_EDirectiveType = 472
+	TCapability_LocalAudioFilePlayDirectiveType                          TCapability_EDirectiveType = 47
+	TCapability_LocalAudioFileStopDirectiveType                          TCapability_EDirectiveType = 48
+	TCapability_DivUIShowViewDirectiveType                               TCapability_EDirectiveType = 49
+	TCapability_DivUIPatchViewDirectiveType                              TCapability_EDirectiveType = 50
+	TCapability_DivUIHideViewDirectiveType                               TCapability_EDirectiveType = 51
+	TCapability_DivUIStashViewDirectiveType                              TCapability_EDirectiveType = 52
+	TCapability_DivUIUnstashViewDirectiveType                            TCapability_EDirectiveType = 53
+	TCapability_DivUIHideAllViewsDirectiveType                           TCapability_EDirectiveType = 79
+	TCapability_DivUICallTerminateActionsDirectiveType                   TCapability_EDirectiveType = 197
+	TCapability_DivUICallActionsGroupsDirectiveType                      TCapability_EDirectiveType = 207
+	TCapability_OpenAndroidSettingsDirectiveType                         TCapability_EDirectiveType = 55
+	TCapability_CoverOpenDirectiveType                                   TCapability_EDirectiveType = 56
+	TCapability_CoverCloseDirectiveType                                  TCapability_EDirectiveType = 57
+	TCapability_CoverStopDirectiveType                                   TCapability_EDirectiveType = 58
+	TCapability_CoverSetPositionDirectiveType                            TCapability_EDirectiveType = 59
+	TCapability_CoverSetDirectionDirectiveType                           TCapability_EDirectiveType = 60
+	TCapability_CoverSetSpeedDirectiveType                               TCapability_EDirectiveType = 61
+	TCapability_CoverResetLimitsDirectiveType                            TCapability_EDirectiveType = 62
+	TCapability_CoverSetLimitDirectiveType                               TCapability_EDirectiveType = 63
+	TCapability_OpenSearchDirectiveType                                  TCapability_EDirectiveType = 64
+	TCapability_TurnOnTvChannelDirectiveType                             TCapability_EDirectiveType = 65
+	TCapability_OpenTvChannelSettingsDirectiveType                       TCapability_EDirectiveType = 66
+	TCapability_OpenTvProgramDirectiveType                               TCapability_EDirectiveType = 67
+	TCapability_OpenTvChannelsCategoryDirectiveType                      TCapability_EDirectiveType = 131
+	TCapability_OpenPlayerTvChannelListDirectiveType                     TCapability_EDirectiveType = 166
+	TCapability_OpenPlayerTvProgramDirectiveType                         TCapability_EDirectiveType = 167
+	TCapability_OpenTvChannelsScreenCentaurDirectiveType                 TCapability_EDirectiveType = 249
+	TCapability_AddTvChannelFavoritesDirectiveType                       TCapability_EDirectiveType = 68
+	TCapability_DeleteTvChannelFavoritesDirectiveType                    TCapability_EDirectiveType = 69
+	TCapability_OpenVideoDetailsScreenDirectiveType                      TCapability_EDirectiveType = 70
+	TCapability_ShowExternalCinemasDirectiveType                         TCapability_EDirectiveType = 107
+	TCapability_BuyCurrentDirectiveType                                  TCapability_EDirectiveType = 138
+	TCapability_OpenSerialNavigatorType                                  TCapability_EDirectiveType = 139
+	TCapability_OpenCurrentContentTrailerDirectiveType                   TCapability_EDirectiveType = 142
+	TCapability_OpenQRPaymentDirectiveType                               TCapability_EDirectiveType = 168
+	TCapability_SetDivVariablesDirectiveType                             TCapability_EDirectiveType = 71
+	TCapability_SetLocationDirectiveType                                 TCapability_EDirectiveType = 81
+	TCapability_SetTimezoneDirectiveType                                 TCapability_EDirectiveType = 82
+	TCapability_SetGmtDirectiveType                                      TCapability_EDirectiveType = 258
+	TCapability_ChangeVideoPlayerTrackDirectiveType                      TCapability_EDirectiveType = 83
+	TCapability_ShowVideoPlayerTrackSettingsDirectiveType                TCapability_EDirectiveType = 84
+	TCapability_VideoSkipAdvertisementDirectiveType                      TCapability_EDirectiveType = 180
+	TCapability_CancelAutoskipDirectiveType                              TCapability_EDirectiveType = 185
+	TCapability_VideoSetSpeedLevelDirectiveType                          TCapability_EDirectiveType = 218
+	TCapability_SetFullScreenModeDirectiveType                           TCapability_EDirectiveType = 261
+	TCapability_SkipVideoFragmentDirectiveType                           TCapability_EDirectiveType = 554
+	TCapability_TryIrCommandDirectiveType                                TCapability_EDirectiveType = 87
+	TCapability_TryIrAcCommandDirectiveType                              TCapability_EDirectiveType = 88
+	TCapability_RecordIrPulseDirectiveType                               TCapability_EDirectiveType = 89
+	TCapability_CancelRecordIrPulseDirectiveType                         TCapability_EDirectiveType = 164
+	TCapability_AddIrRemoteDirectiveType                                 TCapability_EDirectiveType = 90
+	TCapability_ForgetIrRemoteDirectiveType                              TCapability_EDirectiveType = 91
+	TCapability_RestoreIrRemotesDirectiveType                            TCapability_EDirectiveType = 92
+	TCapability_PartialRestoreIrRemotesDirectiveType                     TCapability_EDirectiveType = 562
+	TCapability_SendIrCommandDirectiveType                               TCapability_EDirectiveType = 93
+	TCapability_SendIrAcCommandDirectiveType                             TCapability_EDirectiveType = 94
+	TCapability_SendIrCustomCommandDirectiveType                         TCapability_EDirectiveType = 520
+	TCapability_PhoneCallsAddAccountDirectiveType                        TCapability_EDirectiveType = 95
+	TCapability_PhoneCallsDeleteAccountDirectiveType                     TCapability_EDirectiveType = 96
+	TCapability_PhoneCallsRefreshAccountDirectiveType                    TCapability_EDirectiveType = 277
+	TCapability_PhoneCallsConnectAccountDirectiveType                    TCapability_EDirectiveType = 97
+	TCapability_PhoneCallsMakeCallDirectiveType                          TCapability_EDirectiveType = 98
+	TCapability_PhoneCallsAcceptCallDirectiveType                        TCapability_EDirectiveType = 99
+	TCapability_PhoneCallsHangUpCallDirectiveType                        TCapability_EDirectiveType = 100
+	TCapability_PhoneCallsProcessIncomingCallDirectiveType               TCapability_EDirectiveType = 129
+	TCapability_PhoneCallsIgnoreIncomingCallDirectiveType                TCapability_EDirectiveType = 135
+	TCapability_PhoneCallsOpenDeviceCallUiDirectiveType                  TCapability_EDirectiveType = 284
+	TCapability_PhoneCallsSetMicMuteDirectiveType                        TCapability_EDirectiveType = 286
+	TCapability_OpenSourceInputDirectiveType                             TCapability_EDirectiveType = 101
+	TCapability_OpenSourceInputsListDirectiveType                        TCapability_EDirectiveType = 102
+	TCapability_LaunchAppDirectiveType                                   TCapability_EDirectiveType = 103
+	TCapability_OpenAppDetailsDirectiveType                              TCapability_EDirectiveType = 104
+	TCapability_OpenAppsMarketDirectiveType                              TCapability_EDirectiveType = 338
+	TCapability_InstallMarketAppDirectiveType                            TCapability_EDirectiveType = 401
+	TCapability_OpenSerialNavigatorDirectiveType                         TCapability_EDirectiveType = 105
+	TCapability_ShowEpisodeDirectiveType                                 TCapability_EDirectiveType = 304
+	TCapability_SerialNavigatorOpenPurchaseDirectiveType                 TCapability_EDirectiveType = 307
+	TCapability_SetMotionDetectionIntervalType                           TCapability_EDirectiveType = 106
+	TCapability_SetMotionSettingDirectiveType                            TCapability_EDirectiveType = 559
+	TCapability_AutoHeadTextMessagingSendMessageDirectiveType            TCapability_EDirectiveType = 117
+	TCapability_AutoHeadTextMessagingEnableSyncDirectiveType             TCapability_EDirectiveType = 121
+	TCapability_AutoHeadTextMessagingDisableSyncDirectiveType            TCapability_EDirectiveType = 122
+	TCapability_AutoHeadTextMessagingOpenPopupMessageDirectiveType       TCapability_EDirectiveType = 136
+	TCapability_SetLocalizationDirectiveType                             TCapability_EDirectiveType = 119
+	TCapability_NotifyDirectiveType                                      TCapability_EDirectiveType = 123
+	TCapability_ApproveNotifyDirectiveType                               TCapability_EDirectiveType = 137
+	TCapability_ActivateOwnAppDirectiveType                              TCapability_EDirectiveType = 127
+	TCapability_CategoryDirectiveType                                    TCapability_EDirectiveType = 128
+	TCapability_ShowTvCategoriesDirectiveType                            TCapability_EDirectiveType = 143
+	TCapability_HideTvCategoriesDirectiveType                            TCapability_EDirectiveType = 144
+	TCapability_ShowWhatYouCanDirectiveType                              TCapability_EDirectiveType = 179
+	TCapability_BuzzerPlayDirectiveType                                  TCapability_EDirectiveType = 130
+	TCapability_UpdateInformerDirectiveType                              TCapability_EDirectiveType = 133
+	TCapability_UpdateAllInformersDirectiveType                          TCapability_EDirectiveType = 134
+	TCapability_AddToWatchListDirectiveType                              TCapability_EDirectiveType = 140
+	TCapability_RemoveFromWatchListDirectiveType                         TCapability_EDirectiveType = 141
+	TCapability_AdhanSetSoundLevelDirectiveType                          TCapability_EDirectiveType = 145
+	TCapability_AdhanSetMuezzinSettingsDirectiveType                     TCapability_EDirectiveType = 146
+	TCapability_AdhanAddOrUpdateDirectiveType                            TCapability_EDirectiveType = 147
+	TCapability_AdhanRemoveDirectiveType                                 TCapability_EDirectiveType = 148
+	TCapability_AdhanUpdateActivationTimesDirectiveType                  TCapability_EDirectiveType = 149
+	TCapability_AdhanStopDirectiveType                                   TCapability_EDirectiveType = 150
+	TCapability_SyncIoTUserInfoDirectiveType                             TCapability_EDirectiveType = 153
+	TCapability_SetIoTUserInfoDirectiveType                              TCapability_EDirectiveType = 154
+	TCapability_SetIoTAccountSettingsDirectiveType                       TCapability_EDirectiveType = 203
+	TCapability_RouteDirectiveType                                       TCapability_EDirectiveType = 204
+	TCapability_ScenarioVoiceTriggerDirectiveType                        TCapability_EDirectiveType = 206
+	TCapability_ScheduleActionDirectiveType                              TCapability_EDirectiveType = 220
+	TCapability_CancelScheduledActionDirectiveType                       TCapability_EDirectiveType = 221
+	TCapability_IoTEndpointsStateChangedDirectiveType                    TCapability_EDirectiveType = 437
+	TCapability_IoTEndpointsRemovedDirectiveType                         TCapability_EDirectiveType = 438
+	TCapability_SubscribeIoTEndpointsDirectiveType                       TCapability_EDirectiveType = 439
+	TCapability_UnsubscribeIoTEndpointsDirectiveType                     TCapability_EDirectiveType = 440
+	TCapability_SetAudioPlayerSequenceStateDirectiveType                 TCapability_EDirectiveType = 152
+	TCapability_AudioPlayerPlayDirectiveType                             TCapability_EDirectiveType = 155
+	TCapability_AudioPlayerLikeDirectiveType                             TCapability_EDirectiveType = 156
+	TCapability_AudioPlayerUnlikeDirectiveType                           TCapability_EDirectiveType = 157
+	TCapability_AudioPlayerDislikeDirectiveType                          TCapability_EDirectiveType = 158
+	TCapability_AudioPlayerUndislikeDirectiveType                        TCapability_EDirectiveType = 159
+	TCapability_AudioPlayerNextDirectiveType                             TCapability_EDirectiveType = 160
+	TCapability_AudioPlayerPreviousDirectiveType                         TCapability_EDirectiveType = 161
+	TCapability_AudioPlayerRepeatOneDirectiveType                        TCapability_EDirectiveType = 162
+	TCapability_AudioPlayerRepeatAllDirectiveType                        TCapability_EDirectiveType = 163
+	TCapability_AudioPlayerUnrepeatDirectiveType                         TCapability_EDirectiveType = 170
+	TCapability_AudioPlayerShuffleDirectiveType                          TCapability_EDirectiveType = 171
+	TCapability_AudioPlayerUnshuffleDirectiveType                        TCapability_EDirectiveType = 172
+	TCapability_AudioPlayerGetLyricsDirectiveType                        TCapability_EDirectiveType = 196
+	TCapability_AudioPlayerSetSpeedLevelDirectiveType                    TCapability_EDirectiveType = 217
+	TCapability_AudioPlayerEnableKaraokeModeDirectiveType                TCapability_EDirectiveType = 312
+	TCapability_AudioPlayerDisableKaraokeModeDirectiveType               TCapability_EDirectiveType = 313
+	TCapability_EnableCommandPhrasesDirectiveType                        TCapability_EDirectiveType = 165
+	TCapability_DisableCommandPhrasesDirectiveType                       TCapability_EDirectiveType = 194
+	TCapability_SwitchAccountDirectiveType                               TCapability_EDirectiveType = 173
+	TCapability_OpenAccountListDirectiveType                             TCapability_EDirectiveType = 188
+	TCapability_RefreshAccountDirectiveType                              TCapability_EDirectiveType = 238
+	TCapability_AddAccountDirectiveType                                  TCapability_EDirectiveType = 271
+	TCapability_LocalAddAccountDirectiveType                             TCapability_EDirectiveType = 278
+	TCapability_ExpandAccountListDirectiveType                           TCapability_EDirectiveType = 298
+	TCapability_ShowLoginScreenDirectiveType                             TCapability_EDirectiveType = 299
+	TCapability_AuthorizePupaDirectiveType                               TCapability_EDirectiveType = 300
+	TCapability_AddGuestUserDirective                                    TCapability_EDirectiveType = 534
+	TCapability_ClearGuestUserDirective                                  TCapability_EDirectiveType = 535
+	TCapability_OtaApplyDirectiveType                                    TCapability_EDirectiveType = 174
+	TCapability_ForceOtaRequestDirectiveType                             TCapability_EDirectiveType = 202
+	TCapability_StartBleDiscoveryDirectiveType                           TCapability_EDirectiveType = 175
+	TCapability_StartBleSetupDirectiveType                               TCapability_EDirectiveType = 176
+	TCapability_StartBleAdvertisingDirectiveType                         TCapability_EDirectiveType = 515
+	TCapability_InstallTvUpdateDirectiveType                             TCapability_EDirectiveType = 177
+	TCapability_DownloadTvUpdateDirectiveType                            TCapability_EDirectiveType = 178
+	TCapability_HideTvUpdateDirectiveType                                TCapability_EDirectiveType = 189
+	TCapability_RetryTvUpdateDirectiveType                               TCapability_EDirectiveType = 190
+	TCapability_KidsStartAwakeningDirectiveType                          TCapability_EDirectiveType = 186
+	TCapability_KidsStopAwakeningDirectiveType                           TCapability_EDirectiveType = 187
+	TCapability_IotSetDisabledIndicatorDirectiveType                     TCapability_EDirectiveType = 193
+	TCapability_OpenCatalogDirectiveType                                 TCapability_EDirectiveType = 195
+	TCapability_StartLightSequenceDirectiveType                          TCapability_EDirectiveType = 198
+	TCapability_StopLightSequenceDirectiveType                           TCapability_EDirectiveType = 199
+	TCapability_SensorSoundAlarmMuteDirectiveType                        TCapability_EDirectiveType = 200
+	TCapability_ToggleSensorSoundAlarmMuteDirectiveType                  TCapability_EDirectiveType = 201
+	TCapability_OpenUrlDirectiveType                                     TCapability_EDirectiveType = 209
+	TCapability_OpenBrowserDirectiveType                                 TCapability_EDirectiveType = 214
+	TCapability_SetVadActionDirectiveType                                TCapability_EDirectiveType = 211
+	TCapability_OpenSmartHomeDirectiveType                               TCapability_EDirectiveType = 225
+	TCapability_OpenSmartHomePageDirectiveType                           TCapability_EDirectiveType = 215
+	TCapability_YaDiskAlbumItemsDataDirectiveType                        TCapability_EDirectiveType = 216
+	TCapability_ConnectBluetoothDirectiveType                            TCapability_EDirectiveType = 219
+	TCapability_DisconnectBluetoothDirectiveType                         TCapability_EDirectiveType = 222
+	TCapability_ForgetPairedDevicesDirectiveType                         TCapability_EDirectiveType = 428
+	TCapability_SetDoNotDisturbStateDirectiveType                        TCapability_EDirectiveType = 224
+	TCapability_ThermostatModeSetDirectiveType                           TCapability_EDirectiveType = 227
+	TCapability_ThermostatSetAbsoluteSetpointDirectiveType               TCapability_EDirectiveType = 228
+	TCapability_ThermostatSetRelativeSetpointDirectiveType               TCapability_EDirectiveType = 229
+	TCapability_AccessibilityPressButtonByIdDirectiveType                TCapability_EDirectiveType = 231
+	TCapability_SetBrightnessLevelDirectiveType                          TCapability_EDirectiveType = 232
+	TCapability_SetAutoBrightnessDirectiveType                           TCapability_EDirectiveType = 250
+	TCapability_CheckFirmwareUpdateDirectiveType                         TCapability_EDirectiveType = 233
+	TCapability_PlayerSkipToNextDirectiveType                            TCapability_EDirectiveType = 234
+	TCapability_PlayerSkipToPreviousDirectiveType                        TCapability_EDirectiveType = 235
+	TCapability_YoutubeOpenAccountsDirectiveType                         TCapability_EDirectiveType = 247
+	TCapability_OpenYoutubeUriDirectiveType                              TCapability_EDirectiveType = 257
+	TCapability_YoutubeLikeDirectiveType                                 TCapability_EDirectiveType = 262
+	TCapability_YoutubeDislikeDirectiveType                              TCapability_EDirectiveType = 263
+	TCapability_AccessibilityWriteTextInInputDirectiveType               TCapability_EDirectiveType = 237
+	TCapability_SetIntonationSpottingDirectiveType                       TCapability_EDirectiveType = 239
+	TCapability_ConnectToNetworkDirectiveType                            TCapability_EDirectiveType = 240
+	TCapability_SetWifiConfigurationDirectiveType                        TCapability_EDirectiveType = 241
+	TCapability_ForceSyncWifiConfigurationDirectiveType                  TCapability_EDirectiveType = 244
+	TCapability_SetNightModeDirectiveType                                TCapability_EDirectiveType = 242
+	TCapability_OpenColdstartRecommendationsDirectiveType                TCapability_EDirectiveType = 243
+	TCapability_ShowVolumeDirectiveType                                  TCapability_EDirectiveType = 245
+	TCapability_SetVisualSpottingDirectiveType                           TCapability_EDirectiveType = 246
+	TCapability_OpenVideoMainScreenDirectiveType                         TCapability_EDirectiveType = 248
+	TCapability_AddTeaserDirectiveType                                   TCapability_EDirectiveType = 251
+	TCapability_RotateTeasersDirectiveType                               TCapability_EDirectiveType = 252
+	TCapability_RemoveTeaserDirectiveType                                TCapability_EDirectiveType = 253
+	TCapability_OpenTretyakovkaInfoDirectiveType                         TCapability_EDirectiveType = 550
+	TCapability_StartFeatureBoardingDirectiveType                        TCapability_EDirectiveType = 256
+	TCapability_ApplyMusicPlatformQueueDirectiveType                     TCapability_EDirectiveType = 259
+	TCapability_IotSetRelaySwitchInputModeDirectiveType                  TCapability_EDirectiveType = 264
+	TCapability_ShowAudioPlayerScreenDirectiveType                       TCapability_EDirectiveType = 265
+	TCapability_IotSetSwitchModeDirectiveType                            TCapability_EDirectiveType = 266
+	TCapability_CentaurOpenVideoDetailsScreenDirectiveType               TCapability_EDirectiveType = 268
+	TCapability_CentaurOpenSeriesScreenDirectiveType                     TCapability_EDirectiveType = 269
+	TCapability_CentaurOpenVideoPurchaseScreenDirectiveType              TCapability_EDirectiveType = 270
+	TCapability_StartEnrollmentOnboardingDirectiveType                   TCapability_EDirectiveType = 272
+	TCapability_ShowEnrollmentUserAvatarDirectiveType                    TCapability_EDirectiveType = 273
+	TCapability_ShowEnrollmentPhraseDirectiveType                        TCapability_EDirectiveType = 274
+	TCapability_FinishEnrollmentUiDirectiveType                          TCapability_EDirectiveType = 287
+	TCapability_ShowVoiceprintRemoveSuccessDirectiveType                 TCapability_EDirectiveType = 325
+	TCapability_IotStartIdentifyDirectiveType                            TCapability_EDirectiveType = 275
+	TCapability_TimerStopDirectiveType                                   TCapability_EDirectiveType = 276
+	TCapability_NoiseReductionSetModeDirectiveType                       TCapability_EDirectiveType = 279
+	TCapability_HideClockDirectiveType                                   TCapability_EDirectiveType = 280
+	TCapability_ShowClockDirectiveType                                   TCapability_EDirectiveType = 281
+	TCapability_IotSetPowerProfileDirectiveType                          TCapability_EDirectiveType = 282
+	TCapability_SendBugReportType                                        TCapability_EDirectiveType = 285
+	TCapability_LegacySendBugReportType                                  TCapability_EDirectiveType = 360
+	TCapability_ShowWhatsNewDirectiveType                                TCapability_EDirectiveType = 288
+	TCapability_ShowWhatsNewInSourcesDirectiveType                       TCapability_EDirectiveType = 462
+	TCapability_SetConditioningSystemStateDirectiveType                  TCapability_EDirectiveType = 289
+	TCapability_SetCoolingSystemStateDirectiveType                       TCapability_EDirectiveType = 295
+	TCapability_SetAutoConditioningSystemStateDirectiveType              TCapability_EDirectiveType = 301
+	TCapability_SetHvacSeatTemperatureDirectiveType                      TCapability_EDirectiveType = 306
+	TCapability_SetHvacRecirculationStateDirectiveType                   TCapability_EDirectiveType = 314
+	TCapability_SetHvacTemperatureDirectiveType                          TCapability_EDirectiveType = 315
+	TCapability_SetHvacDefrosterStateDirectiveType                       TCapability_EDirectiveType = 318
+	TCapability_SetSteeringWheelHeatingStateDirectiveType                TCapability_EDirectiveType = 319
+	TCapability_SetFanDirectionDirectiveType                             TCapability_EDirectiveType = 320
+	TCapability_SetHvacFanSpeedDirectiveType                             TCapability_EDirectiveType = 321
+	TCapability_SetHvacSeatVentilationDirectiveType                      TCapability_EDirectiveType = 326
+	TCapability_SetAutoSeatHeatingStateDirectiveType                     TCapability_EDirectiveType = 510
+	TCapability_SetAutoSeatVentilationStateDirectiveType                 TCapability_EDirectiveType = 511
+	TCapability_OpenBodySideMirrorsDirectiveType                         TCapability_EDirectiveType = 323
+	TCapability_OpenBodyTrunkDirectiveType                               TCapability_EDirectiveType = 324
+	TCapability_OpenBodySunVisorDirectiveType                            TCapability_EDirectiveType = 327
+	TCapability_OpenBodyTrapdoorDirectiveType                            TCapability_EDirectiveType = 328
+	TCapability_OpenBodyWindowDirectiveType                              TCapability_EDirectiveType = 329
+	TCapability_OpenDeviceCallUIDirectiveType                            TCapability_EDirectiveType = 290
+	TCapability_GetCallableDevicesDirectiveType                          TCapability_EDirectiveType = 291
+	TCapability_AliceShowStartDirectiveType                              TCapability_EDirectiveType = 292
+	TCapability_AliceShowStopDirectiveType                               TCapability_EDirectiveType = 294
+	TCapability_MakeOrderProcessSearchResultsDirectiveType               TCapability_EDirectiveType = 293
+	TCapability_MakeOrderLaunchApplicationDirectiveType                  TCapability_EDirectiveType = 310
+	TCapability_MakeOrderUpdateStateDirectiveType                        TCapability_EDirectiveType = 322
+	TCapability_MakeOrderProcessCheckoutResultDirectiveType              TCapability_EDirectiveType = 343
+	TCapability_DontAutoPlayRelatedVideoDirectiveType                    TCapability_EDirectiveType = 297
+	TCapability_AliceBlockDirectiveType                                  TCapability_EDirectiveType = 302
+	TCapability_AliceUnblockDirectiveType                                TCapability_EDirectiveType = 303
+	TCapability_UpdateTtsPlaceholderDirectiveType                        TCapability_EDirectiveType = 317
+	TCapability_VocalizeDirectiveType                                    TCapability_EDirectiveType = 332
+	TCapability_AliceStartDataInputDirective                             TCapability_EDirectiveType = 409
+	TCapability_StartSpeechInputDirectiveType                            TCapability_EDirectiveType = 494
+	TCapability_StartRecordInputDirectiveType                            TCapability_EDirectiveType = 509
+	TCapability_StartVoiceInputDirectiveType                             TCapability_EDirectiveType = 552
+	TCapability_StartTextInputDirectiveType                              TCapability_EDirectiveType = 560
+	TCapability_StopConversationDirectiveType                            TCapability_EDirectiveType = 561
+	TCapability_SetActiveDialogDirectiveType                             TCapability_EDirectiveType = 569
+	TCapability_SetJingleStateDirectiveType                              TCapability_EDirectiveType = 586
+	TCapability_CompleteStreamingResponseDirectiveType                   TCapability_EDirectiveType = 571
+	TCapability_AliceStartFileUploadDirective                            TCapability_EDirectiveType = 525
+	TCapability_CompleteTtsResponseDirectiveType                         TCapability_EDirectiveType = 596
+	TCapability_SetGestureRecognitionDirectiveType                       TCapability_EDirectiveType = 305
+	TCapability_IotSetPulseTimeDirectiveType                             TCapability_EDirectiveType = 309
+	TCapability_StartSetupDirectiveType                                  TCapability_EDirectiveType = 311
+	TCapability_FillChatInputDirectiveType                               TCapability_EDirectiveType = 331
+	TCapability_ShowProPurchaseScreenDirectiveType                       TCapability_EDirectiveType = 350
+	TCapability_ShowFullscreenImageGalleryDirectiveType                  TCapability_EDirectiveType = 351
+	TCapability_ZoomImageDirectiveType                                   TCapability_EDirectiveType = 353
+	TCapability_DownloadImageDirectiveType                               TCapability_EDirectiveType = 354
+	TCapability_ShowPromoScreenDirectiveType                             TCapability_EDirectiveType = 355
+	TCapability_ShareImageDirectiveType                                  TCapability_EDirectiveType = 367
+	TCapability_SetChatRequestModeDirectiveType                          TCapability_EDirectiveType = 414
+	TCapability_AddChatDiv2CardDirectiveType                             TCapability_EDirectiveType = 415
+	TCapability_FinishChatDirectiveType                                  TCapability_EDirectiveType = 423
+	TCapability_LimitExceededBannerDirectiveType                         TCapability_EDirectiveType = 457
+	TCapability_FewRequestsLeftBannerDirective                           TCapability_EDirectiveType = 524
+	TCapability_OpenChatListDirectiveType                                TCapability_EDirectiveType = 499
+	TCapability_CreateNewChatDirectiveType                               TCapability_EDirectiveType = 500
+	TCapability_ChatNavigateBackDirectiveType                            TCapability_EDirectiveType = 501
+	TCapability_ShowBannerDirectiveType                                  TCapability_EDirectiveType = 536
+	TCapability_LoginWithCallbackDirectiveType                           TCapability_EDirectiveType = 538
+	TCapability_OpenSerpViewDirectiveType                                TCapability_EDirectiveType = 547
+	TCapability_ShowModalDirectiveType                                   TCapability_EDirectiveType = 575
+	TCapability_ShowNotificationDirectiveType                            TCapability_EDirectiveType = 579
+	TCapability_CecVolumeUpDirectiveType                                 TCapability_EDirectiveType = 335
+	TCapability_CecVolumeDownDirectiveType                               TCapability_EDirectiveType = 336
+	TCapability_CloseCardDirectiveType                                   TCapability_EDirectiveType = 337
+	TCapability_SendVideoFrameCallbackDirectiveType                      TCapability_EDirectiveType = 340
+	TCapability_ShowAliceVisionScreenDirectiveType                       TCapability_EDirectiveType = 469
+	TCapability_AliceVisionFreeRequestsLimitExceededDirectiveType        TCapability_EDirectiveType = 485
+	TCapability_ProcessSmartVolumeDirectiveType                          TCapability_EDirectiveType = 342
+	TCapability_IotMoveCameraRelativeDirectiveType                       TCapability_EDirectiveType = 344
+	TCapability_IotCalibrateCameraDirectiveType                          TCapability_EDirectiveType = 390
+	TCapability_IotMoveCameraToPositionDirectiveType                     TCapability_EDirectiveType = 396
+	TCapability_IotStartWHIPVideoStreamDirectiveType                     TCapability_EDirectiveType = 345
+	TCapability_IotStopVideoStreamDirectiveType                          TCapability_EDirectiveType = 346
+	TCapability_IotSetVideoStreamResolutionDirectiveType                 TCapability_EDirectiveType = 447
+	TCapability_IotSetVideoStreamKeepaliveModeDirectiveType              TCapability_EDirectiveType = 460
+	TCapability_OpenDeeplinkDirectiveType                                TCapability_EDirectiveType = 347
+	TCapability_SetIotInterlockDirectiveType                             TCapability_EDirectiveType = 348
+	TCapability_ChildModeUnblockDirectiveType                            TCapability_EDirectiveType = 349
+	TCapability_TakeScreenshotDirectiveType                              TCapability_EDirectiveType = 352
+	TCapability_SetIotEnableClientDirectiveType                          TCapability_EDirectiveType = 356
+	TCapability_IotSettingChildLockDirectiveType                         TCapability_EDirectiveType = 357
+	TCapability_SetMassageSeatSpeedDirectiveType                         TCapability_EDirectiveType = 358
+	TCapability_SetMassageModeDirectiveType                              TCapability_EDirectiveType = 361
+	TCapability_StartFaceEnrollmentDirectiveType                         TCapability_EDirectiveType = 362
+	TCapability_StartFaceRecordingDirectiveType                          TCapability_EDirectiveType = 488
+	TCapability_ForgetAllFacesDirectiveType                              TCapability_EDirectiveType = 363
+	TCapability_ForgetFaceEnrollmentDirectiveType                        TCapability_EDirectiveType = 410
+	TCapability_OpenSmartHomeConfirmQrDirectiveType                      TCapability_EDirectiveType = 411
+	TCapability_SetIotBallastMinDirectiveType                            TCapability_EDirectiveType = 364
+	TCapability_SetIotBallastMaxDirectiveType                            TCapability_EDirectiveType = 365
+	TCapability_SetIotBallastMinMaxDirectiveType                         TCapability_EDirectiveType = 366
+	TCapability_CollectMusicVerticalDirectiveType                        TCapability_EDirectiveType = 368
+	TCapability_TOpenProlongationScreenDirectiveType                     TCapability_EDirectiveType = 369
+	TCapability_TSendUnblockRequestDirectiveType                         TCapability_EDirectiveType = 370
+	TCapability_TProlongTimeLimitDirectiveType                           TCapability_EDirectiveType = 371
+	TCapability_OpenProPurchaseScreenDirectiveType                       TCapability_EDirectiveType = 372
+	TCapability_ForceSubscriptionCheckDirectiveType                      TCapability_EDirectiveType = 400
+	TCapability_ShowAliceProBannerDirectiveType                          TCapability_EDirectiveType = 416
+	TCapability_PlayInExternalPlayerDirectiveType                        TCapability_EDirectiveType = 373
+	TCapability_ControlExternalPlayerDirectiveType                       TCapability_EDirectiveType = 374
+	TCapability_PlayerControlPlayDirectiveType                           TCapability_EDirectiveType = 375
+	TCapability_PlayerControlNextTrackDirectiveType                      TCapability_EDirectiveType = 376
+	TCapability_PlayerControlPrevTrackDirectiveType                      TCapability_EDirectiveType = 377
+	TCapability_PlayerControlPauseDirectiveType                          TCapability_EDirectiveType = 378
+	TCapability_PlayerControlResumeDirectiveType                         TCapability_EDirectiveType = 379
+	TCapability_PlayerControlShuffleDirectiveType                        TCapability_EDirectiveType = 380
+	TCapability_PlayerControlUnshuffleDirectiveType                      TCapability_EDirectiveType = 381
+	TCapability_PlayerControlRepeatDirectiveType                         TCapability_EDirectiveType = 382
+	TCapability_PlayerControlReplayDirectiveType                         TCapability_EDirectiveType = 383
+	TCapability_PlayerControlRewindDirectiveType                         TCapability_EDirectiveType = 384
+	TCapability_PlayerControlFastForwardDirectiveType                    TCapability_EDirectiveType = 385
+	TCapability_PlayerControlLikeDirectiveType                           TCapability_EDirectiveType = 386
+	TCapability_PlayerControlDislikeDirectiveType                        TCapability_EDirectiveType = 387
+	TCapability_PlayerControlUndoLikeDirectiveType                       TCapability_EDirectiveType = 388
+	TCapability_PlayerControlUndoDislikeDirectiveType                    TCapability_EDirectiveType = 389
+	TCapability_OpenMusicSearchDirectiveType                             TCapability_EDirectiveType = 391
+	TCapability_MusicSearchRequestDirectiveType                          TCapability_EDirectiveType = 413
+	TCapability_SetHudStateDirectiveType                                 TCapability_EDirectiveType = 392
+	TCapability_SetHudBrightnessDirectiveType                            TCapability_EDirectiveType = 393
+	TCapability_SetHudModeDirectiveType                                  TCapability_EDirectiveType = 394
+	TCapability_SetHudHeightDirectiveType                                TCapability_EDirectiveType = 395
+	TCapability_SetAmbientLightingStateDirectiveType                     TCapability_EDirectiveType = 398
+	TCapability_ChangeAmbientLightingColorDirectiveType                  TCapability_EDirectiveType = 399
+	TCapability_SetPrivacyModeDirectiveType                              TCapability_EDirectiveType = 402
+	TCapability_TogglePrivacyModeDirectiveType                           TCapability_EDirectiveType = 451
+	TCapability_SetInstrumentPanelBrightnessDirectiveType                TCapability_EDirectiveType = 403
+	TCapability_CameraLocalArchiveListFilesDirectiveType                 TCapability_EDirectiveType = 404
+	TCapability_CameraLocalArchiveRemoveFilesDirectiveType               TCapability_EDirectiveType = 497
+	TCapability_CameraLocalArchiveGetFileDirectiveType                   TCapability_EDirectiveType = 405
+	TCapability_CameraLocalArchiveGetManifestDirectiveType               TCapability_EDirectiveType = 406
+	TCapability_CameraLocalArchiveGetFileHeaderDirectiveType             TCapability_EDirectiveType = 407
+	TCapability_CameraLocalArchiveGetFileSegmentDirectiveType            TCapability_EDirectiveType = 408
+	TCapability_CameraLocalArchiveGetFileThumbnailDirectiveType          TCapability_EDirectiveType = 453
+	TCapability_CameraLocalArchiveFormatStorageDirectiveType             TCapability_EDirectiveType = 424
+	TCapability_CameraLocalArchiveUnmountStorageDirectiveType            TCapability_EDirectiveType = 425
+	TCapability_IotSetUxLayoutDirectiveType                              TCapability_EDirectiveType = 412
+	TCapability_SetNightVisionModeDirectiveType                          TCapability_EDirectiveType = 417
+	TCapability_OpenScreenAlarmListDirectiveType                         TCapability_EDirectiveType = 418
+	TCapability_OpenScreenAlarmEditDirectiveType                         TCapability_EDirectiveType = 419
+	TCapability_CloseScreenAlarmActiveDirectiveType                      TCapability_EDirectiveType = 445
+	TCapability_OpenScreenTimerListDirectiveType                         TCapability_EDirectiveType = 421
+	TCapability_OpenScreenTimerInfoDirectiveType                         TCapability_EDirectiveType = 422
+	TCapability_CloseScreenTimerActiveDirectiveType                      TCapability_EDirectiveType = 446
+	TCapability_LongPollingJobDirectiveType                              TCapability_EDirectiveType = 420
+	TCapability_IotStartTrackingDirectiveType                            TCapability_EDirectiveType = 426
+	TCapability_IotStopTrackingDirectiveType                             TCapability_EDirectiveType = 427
+	TCapability_SetLyricsDirectiveType                                   TCapability_EDirectiveType = 429
+	TCapability_EnableLyricsDirectiveType                                TCapability_EDirectiveType = 430
+	TCapability_DisableLyricsDirectiveType                               TCapability_EDirectiveType = 431
+	TCapability_IotSetPlanarViewBasisDirectiveType                       TCapability_EDirectiveType = 432
+	TCapability_IotSetPlanarViewGridDirectiveType                        TCapability_EDirectiveType = 572
+	TCapability_IotCreateZoneDirectiveType                               TCapability_EDirectiveType = 433
+	TCapability_IotUpdateZoneDirectiveType                               TCapability_EDirectiveType = 434
+	TCapability_IotDeleteZoneDirectiveType                               TCapability_EDirectiveType = 435
+	TCapability_IotToggleZoneDirectiveType                               TCapability_EDirectiveType = 436
+	TCapability_SetIotColorMusicDirectiveType                            TCapability_EDirectiveType = 441
+	TCapability_StartMultiroomDirectiveType                              TCapability_EDirectiveType = 442
+	TCapability_MultiroomSemanticFrameDirectiveType                      TCapability_EDirectiveType = 443
+	TCapability_CameraSnapshotTakePictureDirectiveType                   TCapability_EDirectiveType = 444
+	TCapability_InvokeAppFunctionDirectiveType                           TCapability_EDirectiveType = 448
+	TCapability_SetIotDisplayOrientationDirectiveType                    TCapability_EDirectiveType = 449
+	TCapability_HideFromDelayedDirectiveType                             TCapability_EDirectiveType = 450
+	TCapability_SetIotWindowOpenDetectionDirectiveType                   TCapability_EDirectiveType = 452
+	TCapability_StartIotAutoCalibrationDirectiveType                     TCapability_EDirectiveType = 454
+	TCapability_IotBindDirectiveType                                     TCapability_EDirectiveType = 455
+	TCapability_IotUnbindDirectiveType                                   TCapability_EDirectiveType = 456
+	TCapability_TPurchaseVideoDirectiveType                              TCapability_EDirectiveType = 458
+	TCapability_TPurchaseSubscriptionDirectiveType                       TCapability_EDirectiveType = 459
+	TCapability_StartFileUploadDirectiveType                             TCapability_EDirectiveType = 463
+	TCapability_StartFilePollingDirectiveType                            TCapability_EDirectiveType = 464
+	TCapability_SetIotAntifreezeDirectiveType                            TCapability_EDirectiveType = 465
+	TCapability_SetIotAntiscaleDirectiveType                             TCapability_EDirectiveType = 466
+	TCapability_SetRecalibrationEnabledDirectiveType                     TCapability_EDirectiveType = 671
+	TCapability_ResetCalibrationDirectiveType                            TCapability_EDirectiveType = 477
+	TCapability_TImageAttachmentDirectiveType                            TCapability_EDirectiveType = 467
+	TCapability_ShowAliceChatSettingsDirectiveType                       TCapability_EDirectiveType = 470
+	TCapability_SetChatSettingModeDirectiveType                          TCapability_EDirectiveType = 523
+	TCapability_SetLedMaskDirectiveType                                  TCapability_EDirectiveType = 471
+	TCapability_SetNoiseCancellationModeDirectiveType                    TCapability_EDirectiveType = 473
+	TCapability_IotCustomLocalitySaveKeyDirectiveType                    TCapability_EDirectiveType = 474
+	TCapability_IotCustomLocalityStartDirective                          TCapability_EDirectiveType = 475
+	TCapability_LaunchFileDownloadDirectiveType                          TCapability_EDirectiveType = 476
+	TCapability_SpeechModeShowTimeEndingBannerDirectiveType              TCapability_EDirectiveType = 478
+	TCapability_SpeechModeShowDirectiveType                              TCapability_EDirectiveType = 479
+	TCapability_TriggerRatingDirectiveType                               TCapability_EDirectiveType = 480
+	TCapability_MotorControlOpenDirectiveType                            TCapability_EDirectiveType = 481
+	TCapability_MotorControlCloseDirectiveType                           TCapability_EDirectiveType = 482
+	TCapability_MotorControlStopDirectiveType                            TCapability_EDirectiveType = 483
+	TCapability_SetWorkSpeedDirectiveType                                TCapability_EDirectiveType = 484
+	TCapability_SetMotorDirectionDirectiveType                           TCapability_EDirectiveType = 486
+	TCapability_UpdateSiteContentDirectiveType                           TCapability_EDirectiveType = 487
+	TCapability_ZigbeeNeighborsRequestDirectiveType                      TCapability_EDirectiveType = 489
+	TCapability_MatterAdvertisingStartDirectiveType                      TCapability_EDirectiveType = 490
+	TCapability_MatterLocalityStopDirectiveType                          TCapability_EDirectiveType = 529
+	TCapability_SendMetricaEventDirectiveType                            TCapability_EDirectiveType = 491
+	TCapability_SetChannelDirectiveType                                  TCapability_EDirectiveType = 492
+	TCapability_StartEnergyScanDirectiveType                             TCapability_EDirectiveType = 493
+	TCapability_ScheduleLocalNotificationDirectiveType                   TCapability_EDirectiveType = 495
+	TCapability_SetMotorLimitsDirectiveType                              TCapability_EDirectiveType = 496
+	TCapability_SetMotorOpenLimitDirectiveType                           TCapability_EDirectiveType = 507
+	TCapability_SetMotorCloseLimitDirectiveType                          TCapability_EDirectiveType = 508
+	TCapability_AliceChatHapticDirectiveType                             TCapability_EDirectiveType = 498
+	TCapability_SetPanoramicDisplayStateDirectiveType                    TCapability_EDirectiveType = 502
+	TCapability_SetEventsDirectiveType                                   TCapability_EDirectiveType = 503
+	TCapability_PlayWeatherDirectiveType                                 TCapability_EDirectiveType = 506
+	TCapability_SetReactionEventsDirectiveType                           TCapability_EDirectiveType = 522
+	TCapability_SetReactionSettingDirectiveType                          TCapability_EDirectiveType = 541
+	TCapability_SetEnableColorMusicDirectiveType                         TCapability_EDirectiveType = 504
+	TCapability_SetAnimationColorMusicDirectiveType                      TCapability_EDirectiveType = 505
+	TCapability_ZenohLocalitySaveKeyDirectiveType                        TCapability_EDirectiveType = 512
+	TCapability_ZenohLocalityStartDirective                              TCapability_EDirectiveType = 513
+	TCapability_ZenohLocalityStopDirectiveType                           TCapability_EDirectiveType = 530
+	TCapability_SetAnimationColorAnimationDirectiveType                  TCapability_EDirectiveType = 514
+	TCapability_SetAnimationTypeCommonSettingDirectiveType               TCapability_EDirectiveType = 537
+	TCapability_StereoPairNoConnectionNotificationDirectiveType          TCapability_EDirectiveType = 516
+	TCapability_StereoPairPlayerNotReadyNotificationDirectiveType        TCapability_EDirectiveType = 517
+	TCapability_ExecuteActionOnLeaderDirectiveType                       TCapability_EDirectiveType = 592
+	TCapability_SyncNotesDirectiveType                                   TCapability_EDirectiveType = 518
+	TCapability_OpenNativePassportDirectiveType                          TCapability_EDirectiveType = 519
+	TCapability_CameraVideoRecordingStartVideoRecordingDirectiveType     TCapability_EDirectiveType = 521
+	TCapability_ActivateSmartScenarioDirectiveType                       TCapability_EDirectiveType = 10001
+	TCapability_DeactivateSmartScenarioDirectiveType                     TCapability_EDirectiveType = 10002
+	TCapability_SetFeedBackDirectiveType                                 TCapability_EDirectiveType = 526
 	TCapability_SetWorkModeDirectiveType                                 TCapability_EDirectiveType = 527
 	TCapability_SaveSensorsDirectiveType                                 TCapability_EDirectiveType = 528
 	TCapability_AddWireLineDirectiveType                                 TCapability_EDirectiveType = 588
 	TCapability_RemoveWireLineDirectiveType                              TCapability_EDirectiveType = 589
-	TCapability_ReplaceWireLineDirectiveType                             TCapability_EDirectiveType = 722
 	TCapability_StartRadioDiscoveryDirectiveType                         TCapability_EDirectiveType = 531
 	TCapability_StopRadioDiscoveryDirectiveType                          TCapability_EDirectiveType = 532
 	TCapability_ForgetRadioDirectiveType                                 TCapability_EDirectiveType = 533
@@ -2431,12 +2383,39 @@ const (
 	TCapability_ScreenshotTakenDirectiveType                             TCapability_EDirectiveType = 587
 	TCapability_StartDoorLockDiscoveryDirectiveType                      TCapability_EDirectiveType = 590
 	TCapability_ShowTimersDirectiveType                                  TCapability_EDirectiveType = 591
-	TCapability_ShowAlarmsDirectiveType                                  TCapability_EDirectiveType = 601
-	TCapability_ShowRemindersDirectiveType                               TCapability_EDirectiveType = 602
 	TCapability_ShowWeatherDirectiveType                                 TCapability_EDirectiveType = 597
 	TCapability_OpenWhatsNewStorageDirectiveType                         TCapability_EDirectiveType = 593
 	TCapability_PlayHlsStreamDirectiveType                               TCapability_EDirectiveType = 594
 	TCapability_PlayWebRTCStreamDirectiveType                            TCapability_EDirectiveType = 595
+	TCapability_IotDiscoveryContinueDirectiveType                        TCapability_EDirectiveType = 736
+	TCapability_AddAccountWithCookieDirectiveType                        TCapability_EDirectiveType = 723
+	TCapability_RemoveAccountDirectiveType                               TCapability_EDirectiveType = 724
+	TCapability_ChangeOwnerDirectiveType                                 TCapability_EDirectiveType = 753
+	TCapability_ShowCallErrorDirectiveType                               TCapability_EDirectiveType = 599
+	TCapability_InvalidateAutoListenDirectiveType                        TCapability_EDirectiveType = 683
+	TCapability_StartNoteInputDirectiveType                              TCapability_EDirectiveType = 600
+	TCapability_SetUniProxySettingsDirectiveType                         TCapability_EDirectiveType = 608
+	TCapability_FinishSpeechInputDirectiveType                           TCapability_EDirectiveType = 611
+	TCapability_StartTranslateInputDirectiveType                         TCapability_EDirectiveType = 619
+	TCapability_SetSpeechModeOptionsDirectiveType                        TCapability_EDirectiveType = 627
+	TCapability_DialogChannelPlaceholderDirectiveType                    TCapability_EDirectiveType = 745
+	TCapability_StartRecognizeDirectiveType                              TCapability_EDirectiveType = 749
+	TCapability_LimitUpdatedDirectiveType                                TCapability_EDirectiveType = 676
+	TCapability_ShowMusicAlbumScreenDirectiveType                        TCapability_EDirectiveType = 603
+	TCapability_ShowMusicArtistScreenDirectiveType                       TCapability_EDirectiveType = 606
+	TCapability_ShowMusicPlaylistScreenDirectiveType                     TCapability_EDirectiveType = 607
+	TCapability_ShowMusicArtistPopularTracksDirectiveType                TCapability_EDirectiveType = 612
+	TCapability_ShowMusicArtistPopularAlbumsDirectiveType                TCapability_EDirectiveType = 613
+	TCapability_ShowMusicArtistPlaylistsDirectiveType                    TCapability_EDirectiveType = 614
+	TCapability_ShowMusicArtistSimilarArtistsDirectiveType               TCapability_EDirectiveType = 615
+	TCapability_ChangeAmbientLightingModeDirectiveType                   TCapability_EDirectiveType = 763
+	TCapability_MotorControlToggleDirectiveType                          TCapability_EDirectiveType = 672
+	TCapability_AliceChatHapticToggleSettingDirectiveType                TCapability_EDirectiveType = 673
+	TCapability_NativeLogoutDirectiveType                                TCapability_EDirectiveType = 691
+	TCapability_NativeDeleteAccountDirectiveType                         TCapability_EDirectiveType = 692
+	TCapability_ReplaceWireLineDirectiveType                             TCapability_EDirectiveType = 722
+	TCapability_ShowAlarmsDirectiveType                                  TCapability_EDirectiveType = 601
+	TCapability_ShowRemindersDirectiveType                               TCapability_EDirectiveType = 602
 	TCapability_SetCompanionScreenUISkinDirectiveType                    TCapability_EDirectiveType = 598
 	TCapability_ShowAnimationDirectiveType                               TCapability_EDirectiveType = 604
 	TCapability_PlayWebVideoDirectiveType                                TCapability_EDirectiveType = 605
@@ -2596,7 +2575,6 @@ var (
 		27:    "IotEnableNetworkDirectiveType",
 		208:   "IotSyncEndpointsDirectiveType",
 		236:   "IotFinishSystemDiscoveryDirectiveType",
-		736:   "IotDiscoveryContinueDirectiveType",
 		5:     "SetAbsoluteLevelDirectiveType",
 		6:     "SetRelativeLevelDirectiveType",
 		7:     "StartMoveLevelDirectiveType",
@@ -2668,14 +2646,14 @@ var (
 		46:    "BioStartSoundEnrollmentDirectiveType",
 		72:    "MultiaccountAddAccountDirectiveType",
 		73:    "MultiaccountRemoveAccountDirectiveType",
+		74:    "EnrollmentStartDirectiveType",
+		75:    "EnrollmentCancelDirectiveType",
+		76:    "EnrollmentFinishDirectiveType",
 		151:   "FetchEnrollmentAudioDirectiveType",
 		205:   "CalculateVoiceprintDirectiveType",
 		210:   "MultiaccountRemoveAccountPersIdDirectiveType",
 		333:   "ShareEnrolledPersonDirectiveType",
 		334:   "AddEnrolledPersonDirectiveType",
-		74:    "EnrollmentStartDirectiveType",
-		75:    "EnrollmentCancelDirectiveType",
-		76:    "EnrollmentFinishDirectiveType",
 		472:   "EnrollmentShareDirectiveType",
 		47:    "LocalAudioFilePlayDirectiveType",
 		48:    "LocalAudioFileStopDirectiveType",
@@ -2819,9 +2797,6 @@ var (
 		300:   "AuthorizePupaDirectiveType",
 		534:   "AddGuestUserDirective",
 		535:   "ClearGuestUserDirective",
-		723:   "AddAccountWithCookieDirectiveType",
-		724:   "RemoveAccountDirectiveType",
-		753:   "ChangeOwnerDirectiveType",
 		174:   "OtaApplyDirectiveType",
 		202:   "ForceOtaRequestDirectiveType",
 		175:   "StartBleDiscoveryDirectiveType",
@@ -2919,7 +2894,6 @@ var (
 		329:   "OpenBodyWindowDirectiveType",
 		290:   "OpenDeviceCallUIDirectiveType",
 		291:   "GetCallableDevicesDirectiveType",
-		599:   "ShowCallErrorDirectiveType",
 		292:   "AliceShowStartDirectiveType",
 		294:   "AliceShowStopDirectiveType",
 		293:   "MakeOrderProcessSearchResultsDirectiveType",
@@ -2942,14 +2916,6 @@ var (
 		571:   "CompleteStreamingResponseDirectiveType",
 		525:   "AliceStartFileUploadDirective",
 		596:   "CompleteTtsResponseDirectiveType",
-		683:   "InvalidateAutoListenDirectiveType",
-		600:   "StartNoteInputDirectiveType",
-		608:   "SetUniProxySettingsDirectiveType",
-		611:   "FinishSpeechInputDirectiveType",
-		619:   "StartTranslateInputDirectiveType",
-		627:   "SetSpeechModeOptionsDirectiveType",
-		745:   "DialogChannelPlaceholderDirectiveType",
-		749:   "StartRecognizeDirectiveType",
 		305:   "SetGestureRecognitionDirectiveType",
 		309:   "IotSetPulseTimeDirectiveType",
 		311:   "StartSetupDirectiveType",
@@ -2973,7 +2939,6 @@ var (
 		547:   "OpenSerpViewDirectiveType",
 		575:   "ShowModalDirectiveType",
 		579:   "ShowNotificationDirectiveType",
-		676:   "LimitUpdatedDirectiveType",
 		335:   "CecVolumeUpDirectiveType",
 		336:   "CecVolumeDownDirectiveType",
 		337:   "CloseCardDirectiveType",
@@ -3005,13 +2970,6 @@ var (
 		365:   "SetIotBallastMaxDirectiveType",
 		366:   "SetIotBallastMinMaxDirectiveType",
 		368:   "CollectMusicVerticalDirectiveType",
-		603:   "ShowMusicAlbumScreenDirectiveType",
-		606:   "ShowMusicArtistScreenDirectiveType",
-		607:   "ShowMusicPlaylistScreenDirectiveType",
-		612:   "ShowMusicArtistPopularTracksDirectiveType",
-		613:   "ShowMusicArtistPopularAlbumsDirectiveType",
-		614:   "ShowMusicArtistPlaylistsDirectiveType",
-		615:   "ShowMusicArtistSimilarArtistsDirectiveType",
 		369:   "TOpenProlongationScreenDirectiveType",
 		370:   "TSendUnblockRequestDirectiveType",
 		371:   "TProlongTimeLimitDirectiveType",
@@ -3043,7 +3001,6 @@ var (
 		395:   "SetHudHeightDirectiveType",
 		398:   "SetAmbientLightingStateDirectiveType",
 		399:   "ChangeAmbientLightingColorDirectiveType",
-		763:   "ChangeAmbientLightingModeDirectiveType",
 		402:   "SetPrivacyModeDirectiveType",
 		451:   "TogglePrivacyModeDirectiveType",
 		403:   "SetInstrumentPanelBrightnessDirectiveType",
@@ -3109,7 +3066,6 @@ var (
 		481:   "MotorControlOpenDirectiveType",
 		482:   "MotorControlCloseDirectiveType",
 		483:   "MotorControlStopDirectiveType",
-		672:   "MotorControlToggleDirectiveType",
 		484:   "SetWorkSpeedDirectiveType",
 		486:   "SetMotorDirectionDirectiveType",
 		487:   "UpdateSiteContentDirectiveType",
@@ -3124,7 +3080,6 @@ var (
 		507:   "SetMotorOpenLimitDirectiveType",
 		508:   "SetMotorCloseLimitDirectiveType",
 		498:   "AliceChatHapticDirectiveType",
-		673:   "AliceChatHapticToggleSettingDirectiveType",
 		502:   "SetPanoramicDisplayStateDirectiveType",
 		503:   "SetEventsDirectiveType",
 		506:   "PlayWeatherDirectiveType",
@@ -3142,8 +3097,6 @@ var (
 		592:   "ExecuteActionOnLeaderDirectiveType",
 		518:   "SyncNotesDirectiveType",
 		519:   "OpenNativePassportDirectiveType",
-		691:   "NativeLogoutDirectiveType",
-		692:   "NativeDeleteAccountDirectiveType",
 		521:   "CameraVideoRecordingStartVideoRecordingDirectiveType",
 		10001: "ActivateSmartScenarioDirectiveType",
 		10002: "DeactivateSmartScenarioDirectiveType",
@@ -3152,7 +3105,6 @@ var (
 		528:   "SaveSensorsDirectiveType",
 		588:   "AddWireLineDirectiveType",
 		589:   "RemoveWireLineDirectiveType",
-		722:   "ReplaceWireLineDirectiveType",
 		531:   "StartRadioDiscoveryDirectiveType",
 		532:   "StopRadioDiscoveryDirectiveType",
 		533:   "ForgetRadioDirectiveType",
@@ -3189,12 +3141,39 @@ var (
 		587:   "ScreenshotTakenDirectiveType",
 		590:   "StartDoorLockDiscoveryDirectiveType",
 		591:   "ShowTimersDirectiveType",
-		601:   "ShowAlarmsDirectiveType",
-		602:   "ShowRemindersDirectiveType",
 		597:   "ShowWeatherDirectiveType",
 		593:   "OpenWhatsNewStorageDirectiveType",
 		594:   "PlayHlsStreamDirectiveType",
 		595:   "PlayWebRTCStreamDirectiveType",
+		736:   "IotDiscoveryContinueDirectiveType",
+		723:   "AddAccountWithCookieDirectiveType",
+		724:   "RemoveAccountDirectiveType",
+		753:   "ChangeOwnerDirectiveType",
+		599:   "ShowCallErrorDirectiveType",
+		683:   "InvalidateAutoListenDirectiveType",
+		600:   "StartNoteInputDirectiveType",
+		608:   "SetUniProxySettingsDirectiveType",
+		611:   "FinishSpeechInputDirectiveType",
+		619:   "StartTranslateInputDirectiveType",
+		627:   "SetSpeechModeOptionsDirectiveType",
+		745:   "DialogChannelPlaceholderDirectiveType",
+		749:   "StartRecognizeDirectiveType",
+		676:   "LimitUpdatedDirectiveType",
+		603:   "ShowMusicAlbumScreenDirectiveType",
+		606:   "ShowMusicArtistScreenDirectiveType",
+		607:   "ShowMusicPlaylistScreenDirectiveType",
+		612:   "ShowMusicArtistPopularTracksDirectiveType",
+		613:   "ShowMusicArtistPopularAlbumsDirectiveType",
+		614:   "ShowMusicArtistPlaylistsDirectiveType",
+		615:   "ShowMusicArtistSimilarArtistsDirectiveType",
+		763:   "ChangeAmbientLightingModeDirectiveType",
+		672:   "MotorControlToggleDirectiveType",
+		673:   "AliceChatHapticToggleSettingDirectiveType",
+		691:   "NativeLogoutDirectiveType",
+		692:   "NativeDeleteAccountDirectiveType",
+		722:   "ReplaceWireLineDirectiveType",
+		601:   "ShowAlarmsDirectiveType",
+		602:   "ShowRemindersDirectiveType",
 		598:   "SetCompanionScreenUISkinDirectiveType",
 		604:   "ShowAnimationDirectiveType",
 		605:   "PlayWebVideoDirectiveType",
@@ -3351,7 +3330,6 @@ var (
 		"IotEnableNetworkDirectiveType":                            27,
 		"IotSyncEndpointsDirectiveType":                            208,
 		"IotFinishSystemDiscoveryDirectiveType":                    236,
-		"IotDiscoveryContinueDirectiveType":                        736,
 		"SetAbsoluteLevelDirectiveType":                            5,
 		"SetRelativeLevelDirectiveType":                            6,
 		"StartMoveLevelDirectiveType":                              7,
@@ -3423,14 +3401,14 @@ var (
 		"BioStartSoundEnrollmentDirectiveType":                     46,
 		"MultiaccountAddAccountDirectiveType":                      72,
 		"MultiaccountRemoveAccountDirectiveType":                   73,
+		"EnrollmentStartDirectiveType":                             74,
+		"EnrollmentCancelDirectiveType":                            75,
+		"EnrollmentFinishDirectiveType":                            76,
 		"FetchEnrollmentAudioDirectiveType":                        151,
 		"CalculateVoiceprintDirectiveType":                         205,
 		"MultiaccountRemoveAccountPersIdDirectiveType":             210,
 		"ShareEnrolledPersonDirectiveType":                         333,
 		"AddEnrolledPersonDirectiveType":                           334,
-		"EnrollmentStartDirectiveType":                             74,
-		"EnrollmentCancelDirectiveType":                            75,
-		"EnrollmentFinishDirectiveType":                            76,
 		"EnrollmentShareDirectiveType":                             472,
 		"LocalAudioFilePlayDirectiveType":                          47,
 		"LocalAudioFileStopDirectiveType":                          48,
@@ -3574,9 +3552,6 @@ var (
 		"AuthorizePupaDirectiveType":                               300,
 		"AddGuestUserDirective":                                    534,
 		"ClearGuestUserDirective":                                  535,
-		"AddAccountWithCookieDirectiveType":                        723,
-		"RemoveAccountDirectiveType":                               724,
-		"ChangeOwnerDirectiveType":                                 753,
 		"OtaApplyDirectiveType":                                    174,
 		"ForceOtaRequestDirectiveType":                             202,
 		"StartBleDiscoveryDirectiveType":                           175,
@@ -3674,7 +3649,6 @@ var (
 		"OpenBodyWindowDirectiveType":                              329,
 		"OpenDeviceCallUIDirectiveType":                            290,
 		"GetCallableDevicesDirectiveType":                          291,
-		"ShowCallErrorDirectiveType":                               599,
 		"AliceShowStartDirectiveType":                              292,
 		"AliceShowStopDirectiveType":                               294,
 		"MakeOrderProcessSearchResultsDirectiveType":               293,
@@ -3697,14 +3671,6 @@ var (
 		"CompleteStreamingResponseDirectiveType":                   571,
 		"AliceStartFileUploadDirective":                            525,
 		"CompleteTtsResponseDirectiveType":                         596,
-		"InvalidateAutoListenDirectiveType":                        683,
-		"StartNoteInputDirectiveType":                              600,
-		"SetUniProxySettingsDirectiveType":                         608,
-		"FinishSpeechInputDirectiveType":                           611,
-		"StartTranslateInputDirectiveType":                         619,
-		"SetSpeechModeOptionsDirectiveType":                        627,
-		"DialogChannelPlaceholderDirectiveType":                    745,
-		"StartRecognizeDirectiveType":                              749,
 		"SetGestureRecognitionDirectiveType":                       305,
 		"IotSetPulseTimeDirectiveType":                             309,
 		"StartSetupDirectiveType":                                  311,
@@ -3728,7 +3694,6 @@ var (
 		"OpenSerpViewDirectiveType":                                547,
 		"ShowModalDirectiveType":                                   575,
 		"ShowNotificationDirectiveType":                            579,
-		"LimitUpdatedDirectiveType":                                676,
 		"CecVolumeUpDirectiveType":                                 335,
 		"CecVolumeDownDirectiveType":                               336,
 		"CloseCardDirectiveType":                                   337,
@@ -3760,13 +3725,6 @@ var (
 		"SetIotBallastMaxDirectiveType":                            365,
 		"SetIotBallastMinMaxDirectiveType":                         366,
 		"CollectMusicVerticalDirectiveType":                        368,
-		"ShowMusicAlbumScreenDirectiveType":                        603,
-		"ShowMusicArtistScreenDirectiveType":                       606,
-		"ShowMusicPlaylistScreenDirectiveType":                     607,
-		"ShowMusicArtistPopularTracksDirectiveType":                612,
-		"ShowMusicArtistPopularAlbumsDirectiveType":                613,
-		"ShowMusicArtistPlaylistsDirectiveType":                    614,
-		"ShowMusicArtistSimilarArtistsDirectiveType":               615,
 		"TOpenProlongationScreenDirectiveType":                     369,
 		"TSendUnblockRequestDirectiveType":                         370,
 		"TProlongTimeLimitDirectiveType":                           371,
@@ -3798,7 +3756,6 @@ var (
 		"SetHudHeightDirectiveType":                                395,
 		"SetAmbientLightingStateDirectiveType":                     398,
 		"ChangeAmbientLightingColorDirectiveType":                  399,
-		"ChangeAmbientLightingModeDirectiveType":                   763,
 		"SetPrivacyModeDirectiveType":                              402,
 		"TogglePrivacyModeDirectiveType":                           451,
 		"SetInstrumentPanelBrightnessDirectiveType":                403,
@@ -3864,7 +3821,6 @@ var (
 		"MotorControlOpenDirectiveType":                            481,
 		"MotorControlCloseDirectiveType":                           482,
 		"MotorControlStopDirectiveType":                            483,
-		"MotorControlToggleDirectiveType":                          672,
 		"SetWorkSpeedDirectiveType":                                484,
 		"SetMotorDirectionDirectiveType":                           486,
 		"UpdateSiteContentDirectiveType":                           487,
@@ -3879,7 +3835,6 @@ var (
 		"SetMotorOpenLimitDirectiveType":                           507,
 		"SetMotorCloseLimitDirectiveType":                          508,
 		"AliceChatHapticDirectiveType":                             498,
-		"AliceChatHapticToggleSettingDirectiveType":                673,
 		"SetPanoramicDisplayStateDirectiveType":                    502,
 		"SetEventsDirectiveType":                                   503,
 		"PlayWeatherDirectiveType":                                 506,
@@ -3897,8 +3852,6 @@ var (
 		"ExecuteActionOnLeaderDirectiveType":                       592,
 		"SyncNotesDirectiveType":                                   518,
 		"OpenNativePassportDirectiveType":                          519,
-		"NativeLogoutDirectiveType":                                691,
-		"NativeDeleteAccountDirectiveType":                         692,
 		"CameraVideoRecordingStartVideoRecordingDirectiveType":     521,
 		"ActivateSmartScenarioDirectiveType":                       10001,
 		"DeactivateSmartScenarioDirectiveType":                     10002,
@@ -3907,7 +3860,6 @@ var (
 		"SaveSensorsDirectiveType":                                 528,
 		"AddWireLineDirectiveType":                                 588,
 		"RemoveWireLineDirectiveType":                              589,
-		"ReplaceWireLineDirectiveType":                             722,
 		"StartRadioDiscoveryDirectiveType":                         531,
 		"StopRadioDiscoveryDirectiveType":                          532,
 		"ForgetRadioDirectiveType":                                 533,
@@ -3944,12 +3896,39 @@ var (
 		"ScreenshotTakenDirectiveType":                             587,
 		"StartDoorLockDiscoveryDirectiveType":                      590,
 		"ShowTimersDirectiveType":                                  591,
-		"ShowAlarmsDirectiveType":                                  601,
-		"ShowRemindersDirectiveType":                               602,
 		"ShowWeatherDirectiveType":                                 597,
 		"OpenWhatsNewStorageDirectiveType":                         593,
 		"PlayHlsStreamDirectiveType":                               594,
 		"PlayWebRTCStreamDirectiveType":                            595,
+		"IotDiscoveryContinueDirectiveType":                        736,
+		"AddAccountWithCookieDirectiveType":                        723,
+		"RemoveAccountDirectiveType":                               724,
+		"ChangeOwnerDirectiveType":                                 753,
+		"ShowCallErrorDirectiveType":                               599,
+		"InvalidateAutoListenDirectiveType":                        683,
+		"StartNoteInputDirectiveType":                              600,
+		"SetUniProxySettingsDirectiveType":                         608,
+		"FinishSpeechInputDirectiveType":                           611,
+		"StartTranslateInputDirectiveType":                         619,
+		"SetSpeechModeOptionsDirectiveType":                        627,
+		"DialogChannelPlaceholderDirectiveType":                    745,
+		"StartRecognizeDirectiveType":                              749,
+		"LimitUpdatedDirectiveType":                                676,
+		"ShowMusicAlbumScreenDirectiveType":                        603,
+		"ShowMusicArtistScreenDirectiveType":                       606,
+		"ShowMusicPlaylistScreenDirectiveType":                     607,
+		"ShowMusicArtistPopularTracksDirectiveType":                612,
+		"ShowMusicArtistPopularAlbumsDirectiveType":                613,
+		"ShowMusicArtistPlaylistsDirectiveType":                    614,
+		"ShowMusicArtistSimilarArtistsDirectiveType":               615,
+		"ChangeAmbientLightingModeDirectiveType":                   763,
+		"MotorControlToggleDirectiveType":                          672,
+		"AliceChatHapticToggleSettingDirectiveType":                673,
+		"NativeLogoutDirectiveType":                                691,
+		"NativeDeleteAccountDirectiveType":                         692,
+		"ReplaceWireLineDirectiveType":                             722,
+		"ShowAlarmsDirectiveType":                                  601,
+		"ShowRemindersDirectiveType":                               602,
 		"SetCompanionScreenUISkinDirectiveType":                    598,
 		"ShowAnimationDirectiveType":                               604,
 		"PlayWebVideoDirectiveType":                                605,
@@ -4156,10 +4135,10 @@ func (*TCapability) Descriptor() ([]byte, []int) {
 
 type TCapability_TMeta struct {
 	state               protoimpl.MessageState       `protogen:"open.v1"`
-	SupportedDirectives []TCapability_EDirectiveType `protobuf:"varint,1,rep,packed,name=SupportedDirectives,json=supported_directives,proto3,enum=NAlice.TCapability_EDirectiveType" json:"SupportedDirectives,omitempty"`
-	SupportedEvents     []TCapability_EEventType     `protobuf:"varint,4,rep,packed,name=SupportedEvents,json=supported_events,proto3,enum=NAlice.TCapability_EEventType" json:"SupportedEvents,omitempty"`
-	Retrievable         bool                         `protobuf:"varint,2,opt,name=Retrievable,json=retrievable,proto3" json:"Retrievable,omitempty"`
-	Reportable          bool                         `protobuf:"varint,3,opt,name=Reportable,json=reportable,proto3" json:"Reportable,omitempty"`
+	SupportedDirectives []TCapability_EDirectiveType `protobuf:"varint,1,rep,packed,name=SupportedDirectives,proto3,enum=NAlice.TCapability_EDirectiveType" json:"SupportedDirectives,omitempty"`
+	SupportedEvents     []TCapability_EEventType     `protobuf:"varint,4,rep,packed,name=SupportedEvents,proto3,enum=NAlice.TCapability_EEventType" json:"SupportedEvents,omitempty"`
+	Retrievable         bool                         `protobuf:"varint,2,opt,name=Retrievable,proto3" json:"Retrievable,omitempty"`
+	Reportable          bool                         `protobuf:"varint,3,opt,name=Reportable,proto3" json:"Reportable,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -4273,16 +4252,15 @@ var File_alice_protos_endpoint_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\n" +
-	"&alice/protos/endpoint/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"̂\x03\n" +
-	"\vTCapability\x1a\xd1\x02\n" +
-	"\x05TMeta\x12o\n" +
-	"\x13SupportedDirectives\x18\x01 \x03(\x0e2\".NAlice.TCapability.EDirectiveTypeB\x18\xaa\xdd\x1b\x14supported_directivesR\x14supported_directives\x12_\n" +
-	"\x0fSupportedEvents\x18\x04 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\x14\xaa\xdd\x1b\x10supported_eventsR\x10supported_events\x121\n" +
-	"\vRetrievable\x18\x02 \x01(\bB\x0f\xaa\xdd\x1b\vretrievableR\vretrievable\x12.\n" +
+	"&alice/protos/endpoint/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaf\xfe\x02\n" +
+	"\vTCapability\x1a\xf8\x01\n" +
+	"\x05TMeta\x12T\n" +
+	"\x13SupportedDirectives\x18\x01 \x03(\x0e2\".NAlice.TCapability.EDirectiveTypeR\x13SupportedDirectives\x12H\n" +
+	"\x0fSupportedEvents\x18\x04 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x0fSupportedEvents\x12 \n" +
+	"\vRetrievable\x18\x02 \x01(\bR\vRetrievable\x12\x1e\n" +
 	"\n" +
-	"Reportable\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"reportableR\n" +
-	"reportable:\x04\xa8\xdd\x1b\x04J\x04\b\x05\x10\x06R\aPrivate\"\xb6Y\n" +
+	"Reportable\x18\x03 \x01(\bR\n" +
+	"ReportableJ\x04\b\x05\x10\x06R\aPrivate\"\xceX\n" +
 	"\x0fECapabilityType\x12\x19\n" +
 	"\x15UnknownCapabilityType\x10\x00\x12\x17\n" +
 	"\x13OnOffCapabilityType\x10\x01\x12\x1e\n" +
@@ -4439,8 +4417,8 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1aIotOccupancyCapabilityType\x10\x97\x01\x12\x1a\n" +
 	"\x15StandbyCapabilityType\x10\x98\x01\x12\x1a\n" +
 	"\x15IotZoneCapabilityType\x10\x99\x01\x12 \n" +
-	"\x1bIotPlanarViewCapabilityType\x10\x9a\x01\x12$\n" +
-	"\x1bIotColorMusicCapabilityType\x10\x9b\x01\x1a\x02\b\x01\x12 \n" +
+	"\x1bIotPlanarViewCapabilityType\x10\x9a\x01\x12 \n" +
+	"\x1bIotColorMusicCapabilityType\x10\x9b\x01\x12 \n" +
 	"\x1bIotAirQualityCapabilityType\x10\x9c\x01\x12!\n" +
 	"\x1cCameraSnapshotCapabilityType\x10\x9d\x01\x12\x1f\n" +
 	"\x1aAppFunctionsCapabilityType\x10\x9e\x01\x12(\n" +
@@ -4471,8 +4449,8 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1aIotWorkSpeedCapabilityType\x10\xb7\x01\x12$\n" +
 	"\x1fIotMotorDirectionCapabilityType\x10\xb8\x01\x12\x1d\n" +
 	"\x18TabContentCapabilityType\x10\xb9\x01\x12$\n" +
-	"\x1fIotZigbeeNeighborCapabilityType\x10\xba\x01\x12%\n" +
-	"\x1cMatterLocalityCapabilityType\x10\xbb\x01\x1a\x02\b\x01\x12\x1a\n" +
+	"\x1fIotZigbeeNeighborCapabilityType\x10\xba\x01\x12!\n" +
+	"\x1cMatterLocalityCapabilityType\x10\xbb\x01\x12\x1a\n" +
 	"\x15MetricaCapabilityType\x10\xbc\x01\x12\x15\n" +
 	"\x10GoCapabilityType\x10\xbd\x01\x12'\n" +
 	"\"IotZigbeeCoordinatorCapabilityType\x10\xbe\x01\x12\"\n" +
@@ -4483,49 +4461,49 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1cAutomotiveInfoCapabilityType\x10\xc3\x01\x12#\n" +
 	"\x1eLightingReactionCapabilityType\x10\xc4\x01\x12\x1d\n" +
 	"\x18ColorMusicCapabilityType\x10\xc5\x01\x12\x1c\n" +
-	"\x17BestPriceCapabilityType\x10\xc6\x01\x12$\n" +
-	"\x1bZenohLocalityCapabilityType\x10\xc7\x01\x1a\x02\b\x01\x12!\n" +
+	"\x17BestPriceCapabilityType\x10\xc6\x01\x12 \n" +
+	"\x1bZenohLocalityCapabilityType\x10\xc7\x01\x12!\n" +
 	"\x1cColorAnimationCapabilityType\x10\xc8\x01\x12\x18\n" +
 	"\x13NotesCapabilityType\x10\xc9\x01\x12&\n" +
 	"!AliceChatNativeAuthCapabilityType\x10\xca\x01\x12'\n" +
 	"\"CameraVideoRecordingCapabilityType\x10\xcb\x01\x12\x1c\n" +
-	"\x17VoiceZoneCapabilityType\x10\xcc\x01\x12%\n" +
-	"\x1cSmartScenariosCapabilityType\x10\xcd\x01\x1a\x02\b\x01\x12\x1a\n" +
+	"\x17VoiceZoneCapabilityType\x10\xcc\x01\x12!\n" +
+	"\x1cSmartScenariosCapabilityType\x10\xcd\x01\x12\x1a\n" +
 	"\x15NetworkCapabilityType\x10\xce\x01\x12\x1e\n" +
-	"\x19SignalLevelCapabilityType\x10\xcf\x01\x12$\n" +
-	"\x1bWaterWireLineCapabilityType\x10\xd0\x01\x1a\x02\b\x01\x12%\n" +
-	"\x1cRadioDiscoveryCapabilityType\x10\xd1\x01\x1a\x02\b\x01\x12!\n" +
+	"\x19SignalLevelCapabilityType\x10\xcf\x01\x12 \n" +
+	"\x1bWaterWireLineCapabilityType\x10\xd0\x01\x12!\n" +
+	"\x1cRadioDiscoveryCapabilityType\x10\xd1\x01\x12!\n" +
 	"\x1cAliceChatFilesCapabilityType\x10\xd2\x01\x12#\n" +
-	"\x1eExternalMcpSkillCapabilityType\x10\xd3\x01\x12$\n" +
-	"\x1bCommissioningCapabilityType\x10\xd4\x01\x1a\x02\b\x01\x12!\n" +
-	"\x18WaterMeterCapabilityType\x10\xd5\x01\x1a\x02\b\x01\x12\x1d\n" +
-	"\x14SwitchCapabilityType\x10\xd6\x01\x1a\x02\b\x01\x121\n" +
-	"(LeakProtectionDoNotDisturbCapabilityType\x10\xd7\x01\x1a\x02\b\x01\x12'\n" +
-	"\x1eNeptuneRelayModeCapabilityType\x10\xd8\x01\x1a\x02\b\x01\x12\"\n" +
-	"\x19PowerSourceCapabilityType\x10\xd9\x01\x1a\x02\b\x01\x12\x1f\n" +
-	"\x16TapGroupCapabilityType\x10\xda\x01\x1a\x02\b\x01\x12\x1d\n" +
-	"\x14ConfigCapabilityType\x10\xdb\x01\x1a\x02\b\x01\x12&\n" +
+	"\x1eExternalMcpSkillCapabilityType\x10\xd3\x01\x12 \n" +
+	"\x1bCommissioningCapabilityType\x10\xd4\x01\x12\x1d\n" +
+	"\x18WaterMeterCapabilityType\x10\xd5\x01\x12\x19\n" +
+	"\x14SwitchCapabilityType\x10\xd6\x01\x12-\n" +
+	"(LeakProtectionDoNotDisturbCapabilityType\x10\xd7\x01\x12#\n" +
+	"\x1eNeptuneRelayModeCapabilityType\x10\xd8\x01\x12\x1e\n" +
+	"\x19PowerSourceCapabilityType\x10\xd9\x01\x12\x1b\n" +
+	"\x16TapGroupCapabilityType\x10\xda\x01\x12\x19\n" +
+	"\x14ConfigCapabilityType\x10\xdb\x01\x12&\n" +
 	"!DeviceNotificationsCapabilityType\x10\xdc\x01\x12\x1d\n" +
-	"\x18SoundAlarmCapabilityType\x10\xdd\x01\x12\"\n" +
-	"\x19PermissionsCapabilityType\x10\xde\x01\x1a\x02\b\x01\x12\x1a\n" +
-	"\x15CaptchaCapabilityType\x10\xdf\x01\x12-\n" +
-	"$DigitalMetersDiscoveryCapabilityType\x10\xe0\x01\x1a\x02\b\x01\x12$\n" +
+	"\x18SoundAlarmCapabilityType\x10\xdd\x01\x12\x1e\n" +
+	"\x19PermissionsCapabilityType\x10\xde\x01\x12\x1a\n" +
+	"\x15CaptchaCapabilityType\x10\xdf\x01\x12)\n" +
+	"$DigitalMetersDiscoveryCapabilityType\x10\xe0\x01\x12$\n" +
 	"\x1fAliceSatelliteOtaCapabilityType\x10\xe1\x01\x12'\n" +
 	"\"AliceSatelliteDeviceCapabilityType\x10\xe2\x01\x12$\n" +
-	"\x1fServerPermissionsCapabilityType\x10\xe3\x01\x12 \n" +
-	"\x17AppFacadeCapabilityType\x10\xe4\x01\x1a\x02\b\x01\x12%\n" +
-	"\x1cAliceSatelliteCapabilityType\x10\xe5\x01\x1a\x02\b\x01\x124\n" +
+	"\x1fServerPermissionsCapabilityType\x10\xe3\x01\x12\x1c\n" +
+	"\x17AppFacadeCapabilityType\x10\xe4\x01\x12!\n" +
+	"\x1cAliceSatelliteCapabilityType\x10\xe5\x01\x124\n" +
 	"/IotExternalTemperatureMeasurementCapabilityType\x10\xe6\x01\x12\x1b\n" +
 	"\x16AppStateCapabilityType\x10\xe7\x01\x12\"\n" +
 	"\x1dAliceAppsWidgetCapabilityType\x10\xe8\x01\x12\x19\n" +
 	"\x14CloudyCapabilityType\x10\xe9\x01\x12\x1e\n" +
 	"\x19PreferencesCapabilityType\x10\xea\x01\x12\x1c\n" +
 	"\x17AliceAppsCapabilityType\x10\xeb\x01\x12!\n" +
-	"\x1cAliceChatShareCapabilityType\x10\xec\x01\x12'\n" +
-	"\x1eWaterWireLineHubCapabilityType\x10\xed\x01\x1a\x02\b\x01\x12\x1c\n" +
+	"\x1cAliceChatShareCapabilityType\x10\xec\x01\x12#\n" +
+	"\x1eWaterWireLineHubCapabilityType\x10\xed\x01\x12\x1c\n" +
 	"\x17MapsAgentCapabilityType\x10\xee\x01\x12\x1a\n" +
-	"\x15YaBooksCapabilityType\x10\xef\x01\x12(\n" +
-	"\x1fDoorLockDiscoveryCapabilityType\x10\xf0\x01\x1a\x02\b\x01\x122\n" +
+	"\x15YaBooksCapabilityType\x10\xef\x01\x12$\n" +
+	"\x1fDoorLockDiscoveryCapabilityType\x10\xf0\x01\x122\n" +
 	"-IotMatterNodeNetworkDiagnosticsCapabilityType\x10\xf1\x01\x12!\n" +
 	"\x1cPersonalDeviceCapabilityType\x10\xf2\x01\x12\"\n" +
 	"\x1dCompanionScreenCapabilityType\x10\xf3\x01\x12\x1c\n" +
@@ -4621,7 +4599,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x18RoutineRunCapabilityType\x10\xd0\x02\x12-\n" +
 	"$DoorLockCloseDirectionCapabilityType\x10\xd1\x02\x1a\x02\b\x01\x12!\n" +
 	"\x1cAliceChatStateCapabilityType\x10\xd2\x02\x12 \n" +
-	"\x1bBackendStatusCapabilityType\x10\xd3\x02\"\x06\b\xb4\x02\x10\xb4\x02\"\x06\b\xb5\x02\x10\xb5\x02\"\x06\b\xb6\x02\x10\xb6\x02\"\x99B\n" +
+	"\x1bBackendStatusCapabilityType\x10\xd3\x02\"\xfcA\n" +
 	"\n" +
 	"EEventType\x12\x14\n" +
 	"\x10UnknownEventType\x10\x00\x12\x18\n" +
@@ -4667,8 +4645,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1cIrRemoteUpdateStateEventType\x10\x1d\x12$\n" +
 	" IotDiscoveryUpdateStateEventType\x10\x1e\x12!\n" +
 	"\x1dIotDiscoveryCompleteEventType\x10\x1f\x12\"\n" +
-	"\x1dIotDiscoveryProgressEventType\x10\xdf\x01\x12=\n" +
-	"8IotDiscoveryDistributedCommissioningInitializedEventType\x10\xcc\x01\x12 \n" +
+	"\x1dIotDiscoveryProgressEventType\x10\xdf\x01\x12 \n" +
 	"\x1cSmokeSensorDetectedEventType\x10\"\x12#\n" +
 	"\x1fSmokeSensorNotDetectedEventType\x10#\x12\x1c\n" +
 	"\x18SmokeSensorHighEventType\x10$\x12!\n" +
@@ -4726,8 +4703,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"&CameraLocalArchiveUpdateStateEventType\x10U\x122\n" +
 	".CameraLocalArchiveFormatStorageResultEventType\x10u\x12%\n" +
 	"!IotZigbeeNodeUpdateStateEventType\x10V\x12\x18\n" +
-	"\x14IotTrackingEventType\x10W\x12$\n" +
-	"\x1fIotTrackingUpdateStateEventType\x10\xad\x01\x12\x1e\n" +
+	"\x14IotTrackingEventType\x10W\x12\x1e\n" +
 	"\x1aIotOccupancyEnterEventType\x10Y\x12\x1e\n" +
 	"\x1aIotOccupancyLeaveEventType\x10Z\x12$\n" +
 	" IotOccupancyUpdateStateEventType\x10]\x12%\n" +
@@ -4797,7 +4773,9 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\"DoorLockDiscoveryProgressEventType\x10\xa0\x01\x12'\n" +
 	"\"DoorLockDiscoveryCompleteEventType\x10\xa1\x01\x128\n" +
 	"3IotMatterNodeNetworkDiagnosticsUpdateStateEventType\x10\xa2\x01\x12-\n" +
-	"(IotCameraPositioningUpdateStateEventType\x10\xa4\x01\x12.\n" +
+	"(IotCameraPositioningUpdateStateEventType\x10\xa4\x01\x12=\n" +
+	"8IotDiscoveryDistributedCommissioningInitializedEventType\x10\xcc\x01\x12$\n" +
+	"\x1fIotTrackingUpdateStateEventType\x10\xad\x01\x12.\n" +
 	")CompanionScreenUISkinUpdateStateEventType\x10\xa5\x01\x12%\n" +
 	" AudioPlayerMediaRequestEventType\x10\xa6\x01\x12\x1e\n" +
 	"\x19AlarmApproachingEventType\x10\xa7\x01\x12\x18\n" +
@@ -4850,7 +4828,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	" SoundRoutingUpdateStateEventType\x10\xd8\x01\x12(\n" +
 	"#VirtualSurroundUpdateStateEventType\x10\xd9\x01\x12-\n" +
 	"(DoorLockDoNotDisturbUpdateStateEventType\x10\xda\x01\x12/\n" +
-	"*DoorLockCloseDirectionUpdateStateEventType\x10\xdb\x01\"\x04\bX\x10X*\x15IotOccupancyEventType\"\x92\xe4\x01\n" +
+	"*DoorLockCloseDirectionUpdateStateEventType\x10\xdb\x01\"\xd3\xe1\x01\n" +
 	"\x0eEDirectiveType\x12\x18\n" +
 	"\x14UnknownDirectiveType\x10\x00\x12\x16\n" +
 	"\x12OnOffDirectiveType\x10\x01\x12\x1c\n" +
@@ -4868,8 +4846,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1eIotDeleteNetworksDirectiveType\x10\x0f\x12!\n" +
 	"\x1dIotEnableNetworkDirectiveType\x10\x1b\x12\"\n" +
 	"\x1dIotSyncEndpointsDirectiveType\x10\xd0\x01\x12*\n" +
-	"%IotFinishSystemDiscoveryDirectiveType\x10\xec\x01\x12&\n" +
-	"!IotDiscoveryContinueDirectiveType\x10\xe0\x05\x12!\n" +
+	"%IotFinishSystemDiscoveryDirectiveType\x10\xec\x01\x12!\n" +
 	"\x1dSetAbsoluteLevelDirectiveType\x10\x05\x12!\n" +
 	"\x1dSetRelativeLevelDirectiveType\x10\x06\x12\x1f\n" +
 	"\x1bStartMoveLevelDirectiveType\x10\a\x12\x1e\n" +
@@ -4940,15 +4917,15 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x16VolumeSetDirectiveType\x10\xfe\x01\x12(\n" +
 	"$BioStartSoundEnrollmentDirectiveType\x10.\x12'\n" +
 	"#MultiaccountAddAccountDirectiveType\x10H\x12*\n" +
-	"&MultiaccountRemoveAccountDirectiveType\x10I\x12&\n" +
+	"&MultiaccountRemoveAccountDirectiveType\x10I\x12 \n" +
+	"\x1cEnrollmentStartDirectiveType\x10J\x12!\n" +
+	"\x1dEnrollmentCancelDirectiveType\x10K\x12!\n" +
+	"\x1dEnrollmentFinishDirectiveType\x10L\x12&\n" +
 	"!FetchEnrollmentAudioDirectiveType\x10\x97\x01\x12%\n" +
 	" CalculateVoiceprintDirectiveType\x10\xcd\x01\x121\n" +
 	",MultiaccountRemoveAccountPersIdDirectiveType\x10\xd2\x01\x12%\n" +
 	" ShareEnrolledPersonDirectiveType\x10\xcd\x02\x12#\n" +
-	"\x1eAddEnrolledPersonDirectiveType\x10\xce\x02\x12 \n" +
-	"\x1cEnrollmentStartDirectiveType\x10J\x12!\n" +
-	"\x1dEnrollmentCancelDirectiveType\x10K\x12!\n" +
-	"\x1dEnrollmentFinishDirectiveType\x10L\x12!\n" +
+	"\x1eAddEnrolledPersonDirectiveType\x10\xce\x02\x12!\n" +
 	"\x1cEnrollmentShareDirectiveType\x10\xd8\x03\x12#\n" +
 	"\x1fLocalAudioFilePlayDirectiveType\x10/\x12#\n" +
 	"\x1fLocalAudioFileStopDirectiveType\x100\x12\x1e\n" +
@@ -5091,10 +5068,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1cShowLoginScreenDirectiveType\x10\xab\x02\x12\x1f\n" +
 	"\x1aAuthorizePupaDirectiveType\x10\xac\x02\x12\x1a\n" +
 	"\x15AddGuestUserDirective\x10\x96\x04\x12\x1c\n" +
-	"\x17ClearGuestUserDirective\x10\x97\x04\x12&\n" +
-	"!AddAccountWithCookieDirectiveType\x10\xd3\x05\x12\x1f\n" +
-	"\x1aRemoveAccountDirectiveType\x10\xd4\x05\x12\x1d\n" +
-	"\x18ChangeOwnerDirectiveType\x10\xf1\x05\x12\x1a\n" +
+	"\x17ClearGuestUserDirective\x10\x97\x04\x12\x1a\n" +
 	"\x15OtaApplyDirectiveType\x10\xae\x01\x12!\n" +
 	"\x1cForceOtaRequestDirectiveType\x10\xca\x01\x12#\n" +
 	"\x1eStartBleDiscoveryDirectiveType\x10\xaf\x01\x12\x1f\n" +
@@ -5191,8 +5165,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1dOpenBodyTrapdoorDirectiveType\x10\xc8\x02\x12 \n" +
 	"\x1bOpenBodyWindowDirectiveType\x10\xc9\x02\x12\"\n" +
 	"\x1dOpenDeviceCallUIDirectiveType\x10\xa2\x02\x12$\n" +
-	"\x1fGetCallableDevicesDirectiveType\x10\xa3\x02\x12\x1f\n" +
-	"\x1aShowCallErrorDirectiveType\x10\xd7\x04\x12 \n" +
+	"\x1fGetCallableDevicesDirectiveType\x10\xa3\x02\x12 \n" +
 	"\x1bAliceShowStartDirectiveType\x10\xa4\x02\x12\x1f\n" +
 	"\x1aAliceShowStopDirectiveType\x10\xa6\x02\x12/\n" +
 	"*MakeOrderProcessSearchResultsDirectiveType\x10\xa5\x02\x12,\n" +
@@ -5214,15 +5187,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1bSetJingleStateDirectiveType\x10\xca\x04\x12+\n" +
 	"&CompleteStreamingResponseDirectiveType\x10\xbb\x04\x12\"\n" +
 	"\x1dAliceStartFileUploadDirective\x10\x8d\x04\x12%\n" +
-	" CompleteTtsResponseDirectiveType\x10\xd4\x04\x12&\n" +
-	"!InvalidateAutoListenDirectiveType\x10\xab\x05\x12 \n" +
-	"\x1bStartNoteInputDirectiveType\x10\xd8\x04\x12%\n" +
-	" SetUniProxySettingsDirectiveType\x10\xe0\x04\x12#\n" +
-	"\x1eFinishSpeechInputDirectiveType\x10\xe3\x04\x12%\n" +
-	" StartTranslateInputDirectiveType\x10\xeb\x04\x12&\n" +
-	"!SetSpeechModeOptionsDirectiveType\x10\xf3\x04\x12*\n" +
-	"%DialogChannelPlaceholderDirectiveType\x10\xe9\x05\x12 \n" +
-	"\x1bStartRecognizeDirectiveType\x10\xed\x05\x12'\n" +
+	" CompleteTtsResponseDirectiveType\x10\xd4\x04\x12'\n" +
 	"\"SetGestureRecognitionDirectiveType\x10\xb1\x02\x12!\n" +
 	"\x1cIotSetPulseTimeDirectiveType\x10\xb5\x02\x12\x1c\n" +
 	"\x17StartSetupDirectiveType\x10\xb7\x02\x12\x1f\n" +
@@ -5245,8 +5210,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1eLoginWithCallbackDirectiveType\x10\x9a\x04\x12\x1e\n" +
 	"\x19OpenSerpViewDirectiveType\x10\xa3\x04\x12\x1b\n" +
 	"\x16ShowModalDirectiveType\x10\xbf\x04\x12\"\n" +
-	"\x1dShowNotificationDirectiveType\x10\xc3\x04\x12\x1e\n" +
-	"\x19LimitUpdatedDirectiveType\x10\xa4\x05\x12\x1d\n" +
+	"\x1dShowNotificationDirectiveType\x10\xc3\x04\x12\x1d\n" +
 	"\x18CecVolumeUpDirectiveType\x10\xcf\x02\x12\x1f\n" +
 	"\x1aCecVolumeDownDirectiveType\x10\xd0\x02\x12\x1b\n" +
 	"\x16CloseCardDirectiveType\x10\xd1\x02\x12(\n" +
@@ -5277,14 +5241,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1dSetIotBallastMinDirectiveType\x10\xec\x02\x12\"\n" +
 	"\x1dSetIotBallastMaxDirectiveType\x10\xed\x02\x12%\n" +
 	" SetIotBallastMinMaxDirectiveType\x10\xee\x02\x12&\n" +
-	"!CollectMusicVerticalDirectiveType\x10\xf0\x02\x12&\n" +
-	"!ShowMusicAlbumScreenDirectiveType\x10\xdb\x04\x12'\n" +
-	"\"ShowMusicArtistScreenDirectiveType\x10\xde\x04\x12)\n" +
-	"$ShowMusicPlaylistScreenDirectiveType\x10\xdf\x04\x12.\n" +
-	")ShowMusicArtistPopularTracksDirectiveType\x10\xe4\x04\x12.\n" +
-	")ShowMusicArtistPopularAlbumsDirectiveType\x10\xe5\x04\x12*\n" +
-	"%ShowMusicArtistPlaylistsDirectiveType\x10\xe6\x04\x12/\n" +
-	"*ShowMusicArtistSimilarArtistsDirectiveType\x10\xe7\x04\x12)\n" +
+	"!CollectMusicVerticalDirectiveType\x10\xf0\x02\x12)\n" +
 	"$TOpenProlongationScreenDirectiveType\x10\xf1\x02\x12%\n" +
 	" TSendUnblockRequestDirectiveType\x10\xf2\x02\x12#\n" +
 	"\x1eTProlongTimeLimitDirectiveType\x10\xf3\x02\x12'\n" +
@@ -5315,8 +5272,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x17SetHudModeDirectiveType\x10\x8a\x03\x12\x1e\n" +
 	"\x19SetHudHeightDirectiveType\x10\x8b\x03\x12)\n" +
 	"$SetAmbientLightingStateDirectiveType\x10\x8e\x03\x12,\n" +
-	"'ChangeAmbientLightingColorDirectiveType\x10\x8f\x03\x12+\n" +
-	"&ChangeAmbientLightingModeDirectiveType\x10\xfb\x05\x12 \n" +
+	"'ChangeAmbientLightingColorDirectiveType\x10\x8f\x03\x12 \n" +
 	"\x1bSetPrivacyModeDirectiveType\x10\x92\x03\x12#\n" +
 	"\x1eTogglePrivacyModeDirectiveType\x10\xc3\x03\x12.\n" +
 	")SetInstrumentPanelBrightnessDirectiveType\x10\x93\x03\x12-\n" +
@@ -5381,8 +5337,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1aTriggerRatingDirectiveType\x10\xe0\x03\x12\"\n" +
 	"\x1dMotorControlOpenDirectiveType\x10\xe1\x03\x12#\n" +
 	"\x1eMotorControlCloseDirectiveType\x10\xe2\x03\x12\"\n" +
-	"\x1dMotorControlStopDirectiveType\x10\xe3\x03\x12$\n" +
-	"\x1fMotorControlToggleDirectiveType\x10\xa0\x05\x12\x1e\n" +
+	"\x1dMotorControlStopDirectiveType\x10\xe3\x03\x12\x1e\n" +
 	"\x19SetWorkSpeedDirectiveType\x10\xe4\x03\x12#\n" +
 	"\x1eSetMotorDirectionDirectiveType\x10\xe6\x03\x12#\n" +
 	"\x1eUpdateSiteContentDirectiveType\x10\xe7\x03\x12(\n" +
@@ -5396,8 +5351,7 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1bSetMotorLimitsDirectiveType\x10\xf0\x03\x12#\n" +
 	"\x1eSetMotorOpenLimitDirectiveType\x10\xfb\x03\x12$\n" +
 	"\x1fSetMotorCloseLimitDirectiveType\x10\xfc\x03\x12!\n" +
-	"\x1cAliceChatHapticDirectiveType\x10\xf2\x03\x12.\n" +
-	")AliceChatHapticToggleSettingDirectiveType\x10\xa1\x05\x12*\n" +
+	"\x1cAliceChatHapticDirectiveType\x10\xf2\x03\x12*\n" +
 	"%SetPanoramicDisplayStateDirectiveType\x10\xf6\x03\x12\x1b\n" +
 	"\x16SetEventsDirectiveType\x10\xf7\x03\x12\x1d\n" +
 	"\x18PlayWeatherDirectiveType\x10\xfa\x03\x12#\n" +
@@ -5414,18 +5368,15 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"1StereoPairPlayerNotReadyNotificationDirectiveType\x10\x85\x04\x12'\n" +
 	"\"ExecuteActionOnLeaderDirectiveType\x10\xd0\x04\x12\x1b\n" +
 	"\x16SyncNotesDirectiveType\x10\x86\x04\x12$\n" +
-	"\x1fOpenNativePassportDirectiveType\x10\x87\x04\x12\x1e\n" +
-	"\x19NativeLogoutDirectiveType\x10\xb3\x05\x12%\n" +
-	" NativeDeleteAccountDirectiveType\x10\xb4\x05\x129\n" +
+	"\x1fOpenNativePassportDirectiveType\x10\x87\x04\x129\n" +
 	"4CameraVideoRecordingStartVideoRecordingDirectiveType\x10\x89\x04\x12'\n" +
 	"\"ActivateSmartScenarioDirectiveType\x10\x91N\x12)\n" +
 	"$DeactivateSmartScenarioDirectiveType\x10\x92N\x12\x1d\n" +
-	"\x18SetFeedBackDirectiveType\x10\x8e\x04\x12!\n" +
-	"\x18SetWorkModeDirectiveType\x10\x8f\x04\x1a\x02\b\x01\x12\x1d\n" +
+	"\x18SetFeedBackDirectiveType\x10\x8e\x04\x12\x1d\n" +
+	"\x18SetWorkModeDirectiveType\x10\x8f\x04\x12\x1d\n" +
 	"\x18SaveSensorsDirectiveType\x10\x90\x04\x12\x1d\n" +
 	"\x18AddWireLineDirectiveType\x10\xcc\x04\x12 \n" +
-	"\x1bRemoveWireLineDirectiveType\x10\xcd\x04\x12!\n" +
-	"\x1cReplaceWireLineDirectiveType\x10\xd2\x05\x12%\n" +
+	"\x1bRemoveWireLineDirectiveType\x10\xcd\x04\x12%\n" +
 	" StartRadioDiscoveryDirectiveType\x10\x93\x04\x12$\n" +
 	"\x1fStopRadioDiscoveryDirectiveType\x10\x94\x04\x12\x1d\n" +
 	"\x18ForgetRadioDirectiveType\x10\x95\x04\x12*\n" +
@@ -5461,13 +5412,40 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x18ScrollToTopDirectiveType\x10\xc7\x04\x12!\n" +
 	"\x1cScreenshotTakenDirectiveType\x10\xcb\x04\x12(\n" +
 	"#StartDoorLockDiscoveryDirectiveType\x10\xce\x04\x12\x1c\n" +
-	"\x17ShowTimersDirectiveType\x10\xcf\x04\x12\x1c\n" +
-	"\x17ShowAlarmsDirectiveType\x10\xd9\x04\x12\x1f\n" +
-	"\x1aShowRemindersDirectiveType\x10\xda\x04\x12\x1d\n" +
+	"\x17ShowTimersDirectiveType\x10\xcf\x04\x12\x1d\n" +
 	"\x18ShowWeatherDirectiveType\x10\xd5\x04\x12%\n" +
 	" OpenWhatsNewStorageDirectiveType\x10\xd1\x04\x12\x1f\n" +
 	"\x1aPlayHlsStreamDirectiveType\x10\xd2\x04\x12\"\n" +
-	"\x1dPlayWebRTCStreamDirectiveType\x10\xd3\x04\x12*\n" +
+	"\x1dPlayWebRTCStreamDirectiveType\x10\xd3\x04\x12&\n" +
+	"!IotDiscoveryContinueDirectiveType\x10\xe0\x05\x12&\n" +
+	"!AddAccountWithCookieDirectiveType\x10\xd3\x05\x12\x1f\n" +
+	"\x1aRemoveAccountDirectiveType\x10\xd4\x05\x12\x1d\n" +
+	"\x18ChangeOwnerDirectiveType\x10\xf1\x05\x12\x1f\n" +
+	"\x1aShowCallErrorDirectiveType\x10\xd7\x04\x12&\n" +
+	"!InvalidateAutoListenDirectiveType\x10\xab\x05\x12 \n" +
+	"\x1bStartNoteInputDirectiveType\x10\xd8\x04\x12%\n" +
+	" SetUniProxySettingsDirectiveType\x10\xe0\x04\x12#\n" +
+	"\x1eFinishSpeechInputDirectiveType\x10\xe3\x04\x12%\n" +
+	" StartTranslateInputDirectiveType\x10\xeb\x04\x12&\n" +
+	"!SetSpeechModeOptionsDirectiveType\x10\xf3\x04\x12*\n" +
+	"%DialogChannelPlaceholderDirectiveType\x10\xe9\x05\x12 \n" +
+	"\x1bStartRecognizeDirectiveType\x10\xed\x05\x12\x1e\n" +
+	"\x19LimitUpdatedDirectiveType\x10\xa4\x05\x12&\n" +
+	"!ShowMusicAlbumScreenDirectiveType\x10\xdb\x04\x12'\n" +
+	"\"ShowMusicArtistScreenDirectiveType\x10\xde\x04\x12)\n" +
+	"$ShowMusicPlaylistScreenDirectiveType\x10\xdf\x04\x12.\n" +
+	")ShowMusicArtistPopularTracksDirectiveType\x10\xe4\x04\x12.\n" +
+	")ShowMusicArtistPopularAlbumsDirectiveType\x10\xe5\x04\x12*\n" +
+	"%ShowMusicArtistPlaylistsDirectiveType\x10\xe6\x04\x12/\n" +
+	"*ShowMusicArtistSimilarArtistsDirectiveType\x10\xe7\x04\x12+\n" +
+	"&ChangeAmbientLightingModeDirectiveType\x10\xfb\x05\x12$\n" +
+	"\x1fMotorControlToggleDirectiveType\x10\xa0\x05\x12.\n" +
+	")AliceChatHapticToggleSettingDirectiveType\x10\xa1\x05\x12\x1e\n" +
+	"\x19NativeLogoutDirectiveType\x10\xb3\x05\x12%\n" +
+	" NativeDeleteAccountDirectiveType\x10\xb4\x05\x12!\n" +
+	"\x1cReplaceWireLineDirectiveType\x10\xd2\x05\x12\x1c\n" +
+	"\x17ShowAlarmsDirectiveType\x10\xd9\x04\x12\x1f\n" +
+	"\x1aShowRemindersDirectiveType\x10\xda\x04\x12*\n" +
 	"%SetCompanionScreenUISkinDirectiveType\x10\xd6\x04\x12\x1f\n" +
 	"\x1aShowAnimationDirectiveType\x10\xdc\x04\x12\x1e\n" +
 	"\x19PlayWebVideoDirectiveType\x10\xdd\x04\x12\x1b\n" +
@@ -5605,12 +5583,13 @@ const file_alice_protos_endpoint_capability_proto_rawDesc = "" +
 	"\x1dChangeHvacScreenDirectiveType\x10\xf9\x05\x12&\n" +
 	"!ClearIotAgentContextDirectiveType\x10\xfa\x05\x12+\n" +
 	"&DoorLockCloseDirectionSetDirectiveType\x10\xfc\x05\x12!\n" +
-	"\x1cUpdateChatStateDirectiveType\x10\xfd\x05\"\x04\b!\x10!\"\x04\bM\x10M\"\x04\bN\x10N\"\x06\b\xbf\x01\x10\xbf\x01\"\x06\b\xff\x01\x10\xff\x01\"\x06\b\x9b\x02\x10\x9b\x02\"\x06\b\xa8\x02\x10\xa8\x02\"\x06\b\xbc\x02\x10\xbc\x02*\x18AlarmRemoveDirectiveType*\x1eGenerateViceprintDirectiveType*\x1aTurnScreenOffDirectiveType*'FinishEnrollmentOnboardingDirectiveType* SetSeatHeatingStateDirectiveType* UpdateTtsPlaceholerDirectiveType*\x1eUpdateVoiceprintsDirectiveType*\x1cMatchVoiceprintDirectiveType:n\n" +
+	"\x1cUpdateChatStateDirectiveType\x10\xfd\x05:n\n" +
 	"\x0eCapabilityType\x12\x1f.google.protobuf.MessageOptions\x18\x84\xc9\x03 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeR\x0eCapabilityType:k\n" +
 	"\rDirectiveType\x12\x1f.google.protobuf.MessageOptions\x18\x85\xc9\x03 \x01(\x0e2\".NAlice.TCapability.EDirectiveTypeR\rDirectiveType:_\n" +
 	"\tEventType\x12\x1f.google.protobuf.MessageOptions\x18\x86\xc9\x03 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeR\tEventType:k\n" +
-	"\x0fConditionEvents\x12\x1f.google.protobuf.MessageOptions\x18\x87\xc9\x03 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x0fConditionEventsBe\n" +
-	"\x1fru.yandex.alice.protos.endpointB\x0fCapabilityProtoZ1a.yandex-team.ru/alice/protos/endpoint;endpointpbb\x06proto3"
+	"\x0fConditionEvents\x12\x1f.google.protobuf.MessageOptions\x18\x87\xc9\x03 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x0fConditionEventsB\x9c\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capability_proto_rawDescOnce sync.Once

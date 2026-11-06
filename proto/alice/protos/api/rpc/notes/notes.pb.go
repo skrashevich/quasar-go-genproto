@@ -5493,8 +5493,8 @@ const file_alice_protos_api_rpc_notes_notes_proto_rawDesc = "" +
 	"\x16NS_ALL_BY_CREATED_DESC\x10\x01\x12\x1e\n" +
 	"\x1aNS_TIMED_IN_TIMELINE_ORDER\x10\x02\x12\x1e\n" +
 	"\x1aNS_UNTIMED_BY_CREATED_DESC\x10\x03\x12\x1c\n" +
-	"\x18NS_TIMED_BY_CREATED_DESC\x10\x04B]\n" +
-	"$ru.yandex.alice.protos.api.rpc.notesB\bNotesApiZ+a.yandex-team.ru/alice/protos/api/rpc/notesb\x06proto3"
+	"\x18NS_TIMED_BY_CREATED_DESC\x10\x04B|\n" +
+	"$ru.yandex.alice.protos.api.rpc.notesB\bNotesApiZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/notesb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_notes_notes_proto_rawDescOnce sync.Once

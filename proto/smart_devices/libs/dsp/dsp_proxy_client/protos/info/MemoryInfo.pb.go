@@ -99,7 +99,8 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_MemoryInfo_proto_
 	"\x05total\x18\x01 \x01(\x02R\x05total\x12\x12\n" +
 	"\x04free\x18\x02 \x01(\x02R\x04free\x12\x19\n" +
 	"\bmin_free\x18\x03 \x01(\x02R\aminFree\x12\x12\n" +
-	"\x04used\x18\x04 \x01(\x02R\x04usedb\x06proto3"
+	"\x04used\x18\x04 \x01(\x02R\x04usedB\xe9\x01\n" +
+	"\x13com.yandex.dsp.infoB\x0fMemoryInfoProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos/info\xa2\x02\x03YDI\xaa\x02\x0fYandex.Dsp.Info\xca\x02\x0fYandex\\Dsp\\Info\xe2\x02\x1bYandex\\Dsp\\Info\\GPBMetadata\xea\x02\x11Yandex::Dsp::Infob\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_MemoryInfo_proto_rawDescOnce sync.Once

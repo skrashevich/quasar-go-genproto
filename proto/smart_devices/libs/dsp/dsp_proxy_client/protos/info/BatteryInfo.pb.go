@@ -71,7 +71,8 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_BatteryInfo_proto
 	"\n" +
 	"Esmart_devices/libs/dsp/dsp_proxy_client/protos/info/BatteryInfo.proto\x12\x0fyandex.dsp.info\x1aEsmart_devices/libs/dsp/dsp_proxy_client/protos/info/BatteryStat.proto\"A\n" +
 	"\vBatteryInfo\x122\n" +
-	"\x05stats\x18\x01 \x03(\v2\x1c.yandex.dsp.info.BatteryStatR\x05statsb\x06proto3"
+	"\x05stats\x18\x01 \x03(\v2\x1c.yandex.dsp.info.BatteryStatR\x05statsB\xea\x01\n" +
+	"\x13com.yandex.dsp.infoB\x10BatteryInfoProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos/info\xa2\x02\x03YDI\xaa\x02\x0fYandex.Dsp.Info\xca\x02\x0fYandex\\Dsp\\Info\xe2\x02\x1bYandex\\Dsp\\Info\\GPBMetadata\xea\x02\x11Yandex::Dsp::Infob\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_BatteryInfo_proto_rawDescOnce sync.Once

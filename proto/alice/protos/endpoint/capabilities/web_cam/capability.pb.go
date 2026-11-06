@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/web_cam/capability.proto
 
-package webcampb
+package web_cam
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -327,8 +327,8 @@ const file_alice_protos_endpoint_capabilities_web_cam_capability_proto_rawDesc =
 	"\n" +
 	"CameraName\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vcamera_nameR\vcamera_name\x121\n" +
 	"\vDescription\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x12*\n" +
-	"\bCameraID\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tcamera_idR\tcamera_id:*\x92\x82\x19\x1dplay_web_rtc_stream_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf9\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16TWebCamCapabilityProtoP\x01ZDa.yandex-team.ru/alice/protos/endpoint/capabilities/web_cam;webcampbb\x06proto3"
+	"\bCameraID\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tcamera_idR\tcamera_id:*\x92\x82\x19\x1dplay_web_rtc_stream_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf9\x01B\xa4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16TWebCamCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/web_camb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_web_cam_capability_proto_rawDescOnce sync.Once

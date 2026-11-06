@@ -358,8 +358,8 @@ const file_alice_iot_bulbik_protos_response_proto_rawDesc = "" +
 	"\fResponseBody\x18\x01 \x01(\v2%.NAlice.NBulbik.TScenarioResponseBodyH\x00R\bresponse\x126\n" +
 	"\x05Error\x18\x02 \x01(\v2\x1e.NAlice.NBulbik.TScenarioErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bResponseBd\n" +
-	")ru.yandex.alice.megamind.protos.scenariosB\rResponseProtoZ(a.yandex-team.ru/alice/iot/bulbik/protosb\x06proto3"
+	"\bResponseB\x83\x01\n" +
+	")ru.yandex.alice.megamind.protos.scenariosB\rResponseProtoZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/iot/bulbik/protosb\x06proto3"
 
 var (
 	file_alice_iot_bulbik_protos_response_proto_rawDescOnce sync.Once

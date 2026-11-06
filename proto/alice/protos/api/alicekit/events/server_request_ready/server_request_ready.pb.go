@@ -62,8 +62,8 @@ var File_alice_protos_api_alicekit_events_server_request_ready_server_request_re
 const file_alice_protos_api_alicekit_events_server_request_ready_server_request_ready_proto_rawDesc = "" +
 	"\n" +
 	"Palice/protos/api/alicekit/events/server_request_ready/server_request_ready.proto\x12\x10NAlice.NAliceApi\"\x15\n" +
-	"\x13TServerRequestReadyB\x9f\x01\n" +
-	"?ru.yandex.alice.protos.api.alicekit.events.server_request_readyB\x12ServerRequestReadyP\x01ZFa.yandex-team.ru/alice/protos/api/alicekit/events/server_request_readyb\x06proto3"
+	"\x13TServerRequestReadyB\xf7\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x17ServerRequestReadyProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/server_request_ready\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_server_request_ready_server_request_ready_proto_rawDescOnce sync.Once

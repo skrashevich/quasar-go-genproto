@@ -229,8 +229,8 @@ const file_response_state_proto_rawDesc = "" +
 	" \x01(\v2$.quark.core.proto.AliceProTrialStateR\x12aliceProTrialState\x12:\n" +
 	"\n" +
 	"alice_mode\x18\v \x01(\x0e2\x1b.quark.core.proto.AliceModeR\taliceMode\x12T\n" +
-	"\x13request_annotations\x18\f \x03(\v2#.quark.core.proto.RequestAnnotationR\x12requestAnnotationsB0\n" +
-	"\x19ru.yandex.quasar.protobufB\x13ResponseStateProtos"
+	"\x13request_annotations\x18\f \x03(\v2#.quark.core.proto.RequestAnnotationR\x12requestAnnotationsBa\n" +
+	"\x19ru.yandex.quasar.protobufB\x13ResponseStateProtosZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_response_state_proto_rawDescOnce sync.Once

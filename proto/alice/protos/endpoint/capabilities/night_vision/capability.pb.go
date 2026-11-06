@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/night_vision/capability.proto
 
-package nightvisionpb
+package night_vision
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -349,8 +349,8 @@ const file_alice_protos_endpoint_capabilities_night_vision_capability_proto_rawD
 	"\fMODE_UNKNOWN\x10\x00\x12\x17\n" +
 	"\x13MODE_ALWAYS_ENABLED\x10\x01\x12\x18\n" +
 	"\x14MODE_ALWAYS_DISABLED\x10\x02\x12\x12\n" +
-	"\x0eMODE_AUTOMATIC\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x92\x01B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aNightVisionCapabilityProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/night_vision;nightvisionpbb\x06proto3"
+	"\x0eMODE_AUTOMATIC\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x92\x01B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aNightVisionCapabilityProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/night_visionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_night_vision_capability_proto_rawDescOnce sync.Once

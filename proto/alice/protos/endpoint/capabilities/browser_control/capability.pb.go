@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/browser_control/capability.proto
 
-package browsercontrolpb
+package browser_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -5184,8 +5184,8 @@ const file_alice_protos_endpoint_capabilities_browser_control_capability_proto_r
 	"\x19EBookmarksPanelVisibility\x12!\n" +
 	"\x1dBookmarksPanelVisibilityNever\x10\x00\x12\"\n" +
 	"\x1eBookmarksPanelVisibilityAlways\x10\x01\x12'\n" +
-	"#BookmarksPanelVisibilityOnlyOnTablo\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x86\x02B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dBrowserControlCapabilityProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/browser_control;browsercontrolpbb\x06proto3"
+	"#BookmarksPanelVisibilityOnlyOnTablo\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x86\x02B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dBrowserControlCapabilityProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/browser_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_browser_control_capability_proto_rawDescOnce sync.Once

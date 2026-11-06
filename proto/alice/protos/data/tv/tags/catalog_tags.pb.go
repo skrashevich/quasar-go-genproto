@@ -157,8 +157,8 @@ const file_alice_protos_data_tv_tags_catalog_tags_proto_rawDesc = "" +
 	"\x10TGetTagsResponse\x12O\n" +
 	"\fSelectedTags\x18\x01 \x03(\v2\x17.NAlice.NTv.TCatalogTagB\x11\xaa\xdd\x1b\rselected_tagsR\rselected_tags\x12R\n" +
 	"\rAvailableTags\x18\x02 \x03(\v2\x17.NAlice.NTv.TCatalogTagB\x12\xaa\xdd\x1b\x0eavailable_tagsR\x0eavailable_tags\x12P\n" +
-	"\rVoiceControls\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04B^\n" +
-	"#ru.yandex.alice.protos.data.tv.tagsB\vCatalogTagsZ*a.yandex-team.ru/alice/protos/data/tv/tagsb\x06proto3"
+	"\rVoiceControls\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04B}\n" +
+	"#ru.yandex.alice.protos.data.tv.tagsB\vCatalogTagsZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/tagsb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_tags_catalog_tags_proto_rawDescOnce sync.Once

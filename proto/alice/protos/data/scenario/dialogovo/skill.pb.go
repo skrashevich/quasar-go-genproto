@@ -1272,8 +1272,8 @@ const file_alice_protos_data_scenario_dialogovo_skill_proto_rawDesc = "" +
 	"skill_infoR\n" +
 	"skill_info\x12\x1c\n" +
 	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12%\n" +
-	"\aRequest\x18\x03 \x01(\tB\v\xaa\xdd\x1b\arequestR\arequest:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataB\x83\x01\n" +
-	".ru.yandex.alice.protos.data.scenario.dialogovoB\x1aDialogovoScenarioDataProtoZ5a.yandex-team.ru/alice/protos/data/scenario/dialogovob\x06proto3"
+	"\aRequest\x18\x03 \x01(\tB\v\xaa\xdd\x1b\arequestR\arequest:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataB\xa2\x01\n" +
+	".ru.yandex.alice.protos.data.scenario.dialogovoB\x1aDialogovoScenarioDataProtoZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/dialogovob\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_dialogovo_skill_proto_rawDescOnce sync.Once

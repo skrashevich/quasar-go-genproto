@@ -26,10 +26,10 @@ const (
 
 type TDialogState struct {
 	state          protoimpl.MessageState           `protogen:"open.v1"`
-	Alice2ModeInfo *alice_mode_info.TAlice2ModeInfo `protobuf:"bytes,4,opt,name=Alice2ModeInfo,json=alice2_mode_info,proto3" json:"Alice2ModeInfo,omitempty"`
-	DialogId       *string                          `protobuf:"bytes,1,opt,name=DialogId,json=dialog_id,proto3,oneof" json:"DialogId,omitempty"`
-	FolderId       *string                          `protobuf:"bytes,2,opt,name=FolderId,json=folder_id,proto3,oneof" json:"FolderId,omitempty"`
-	DialogType     *dialog_type.EDialogType         `protobuf:"varint,3,opt,name=DialogType,json=dialog_type,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
+	Alice2ModeInfo *alice_mode_info.TAlice2ModeInfo `protobuf:"bytes,4,opt,name=Alice2ModeInfo,proto3" json:"Alice2ModeInfo,omitempty"`
+	DialogId       *string                          `protobuf:"bytes,1,opt,name=DialogId,proto3,oneof" json:"DialogId,omitempty"`
+	FolderId       *string                          `protobuf:"bytes,2,opt,name=FolderId,proto3,oneof" json:"FolderId,omitempty"`
+	DialogType     *dialog_type.EDialogType         `protobuf:"varint,3,opt,name=DialogType,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
 	CharacterId    *string                          `protobuf:"bytes,5,opt,name=CharacterId,json=character_id,proto3,oneof" json:"CharacterId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -104,19 +104,21 @@ var File_alice_protos_data_dialog_state_dialog_state_proto protoreflect.FileDesc
 
 const file_alice_protos_data_dialog_state_dialog_state_proto_rawDesc = "" +
 	"\n" +
-	"1alice/protos/data/dialog_state/dialog_state.proto\x12\x06NAlice\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x03\n" +
-	"\fTDialogState\x12h\n" +
-	"\x0eAlice2ModeInfo\x18\x04 \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoB\x14\xaa\xdd\x1b\x10alice2_mode_infoR\x10alice2_mode_info\x12/\n" +
-	"\bDialogId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x00R\tdialog_id\x88\x01\x01\x12/\n" +
-	"\bFolderId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tfolder_idH\x01R\tfolder_id\x88\x01\x01\x12P\n" +
+	"1alice/protos/data/dialog_state/dialog_state.proto\x12\x06NAlice\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd5\x02\n" +
+	"\fTDialogState\x12P\n" +
+	"\x0eAlice2ModeInfo\x18\x04 \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoR\x0eAlice2ModeInfo\x12\x1f\n" +
+	"\bDialogId\x18\x01 \x01(\tH\x00R\bDialogId\x88\x01\x01\x12\x1f\n" +
+	"\bFolderId\x18\x02 \x01(\tH\x01R\bFolderId\x88\x01\x01\x12>\n" +
 	"\n" +
-	"DialogType\x18\x03 \x01(\x0e2\x19.NAlice.NData.EDialogTypeB\x0f\xaa\xdd\x1b\vdialog_typeH\x02R\vdialog_type\x88\x01\x01\x128\n" +
-	"\vCharacterId\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\fcharacter_idH\x03R\fcharacter_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"DialogType\x18\x03 \x01(\x0e2\x19.NAlice.NData.EDialogTypeH\x02R\n" +
+	"DialogType\x88\x01\x01\x128\n" +
+	"\vCharacterId\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\fcharacter_idH\x03R\fcharacter_id\x88\x01\x01B\v\n" +
 	"\t_DialogIdB\v\n" +
 	"\t_FolderIdB\r\n" +
 	"\v_DialogTypeB\x0e\n" +
-	"\f_CharacterIdB[\n" +
-	"(ru.yandex.alice.protos.data.dialog_stateZ/a.yandex-team.ru/alice/protos/data/dialog_stateb\x06proto3"
+	"\f_CharacterIdB\xa6\x01\n" +
+	"\n" +
+	"com.NAliceB\x10DialogStateProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialog_state\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_dialog_state_dialog_state_proto_rawDescOnce sync.Once

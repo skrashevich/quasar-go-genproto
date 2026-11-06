@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/accessibility_voice_control/capability.proto
 
-package accessibilityvoicecontrolpb
+package accessibility_voice_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -442,8 +442,8 @@ const file_alice_protos_endpoint_capabilities_accessibility_voice_control_capabi
 	"\aUnknown\x10\x00\x12\x0f\n" +
 	"\vOverlayOnly\x10\x01\x12\v\n" +
 	"\aGptOnly\x10\x02\x12\x10\n" +
-	"\fOverlayFirst\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cNB\xc5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB(AccessibilityVoiceControlCapabilityProtoZka.yandex-team.ru/alice/protos/endpoint/capabilities/accessibility_voice_control;accessibilityvoicecontrolpbb\x06proto3"
+	"\fOverlayFirst\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cNB\xc8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB(AccessibilityVoiceControlCapabilityProtoZngithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/accessibility_voice_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_accessibility_voice_control_capability_proto_rawDescOnce sync.Once

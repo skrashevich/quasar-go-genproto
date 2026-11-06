@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/vinyl/capability.proto
 
-package vinylpb
+package vinyl
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -429,9 +429,9 @@ const file_alice_protos_endpoint_capabilities_vinyl_capability_proto_rawDesc = "
 	"PositionMs\x18\x02 \x01(\x03R\n" +
 	"PositionMs\x12\"\n" +
 	"\fPlaybackRate\x18\x03 \x01(\x01R\fPlaybackRate\x12\x1a\n" +
-	"\bIsMoving\x18\x04 \x01(\bR\bIsMoving:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xca\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9e\x02B}\n" +
+	"\bIsMoving\x18\x04 \x01(\bR\bIsMoving:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xca\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9e\x02B\x94\x01\n" +
 	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"VinylProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/vinyl;vinylpbb\x06proto3"
+	"VinylProtoZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/vinylb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_vinyl_capability_proto_rawDescOnce sync.Once

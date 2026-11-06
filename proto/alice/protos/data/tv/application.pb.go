@@ -83,8 +83,8 @@ const file_alice_protos_data_tv_application_proto_rawDesc = "" +
 	"\x17TRecentApplicationsItem\x120\n" +
 	"\n" +
 	"PackageIds\x18\x01 \x03(\tB\x0f\xaa\xdd\x1b\vpackage_idsR\vpackage_ids\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title:\x04\xa8\xdd\x1b\x04BT\n" +
-	"\x1eru.yandex.alice.protos.data.tvB\vApplicationZ%a.yandex-team.ru/alice/protos/data/tvb\x06proto3"
+	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title:\x04\xa8\xdd\x1b\x04Bs\n" +
+	"\x1eru.yandex.alice.protos.data.tvB\vApplicationZDgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_application_proto_rawDescOnce sync.Once

@@ -110,8 +110,8 @@ const file_alice_protos_data_serial_navigator_season_info_proto_rawDesc = "" +
 	"\xaa\xdd\x1b\x06seasonR\x06season\x126\n" +
 	"\fEpisodeCount\x18\x04 \x01(\rB\x11\xaa\xdd\x1b\repisode_countR\repisode_count\x120\n" +
 	"\n" +
-	"SeasonName\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vseason_nameR\vseason_nameBs\n" +
-	"+ru.yandex.alice.protos.data.serialnavigatorB\x0fSeasonInfoProtoZ3a.yandex-team.ru/alice/protos/data/serial_navigatorb\x06proto3"
+	"SeasonName\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vseason_nameR\vseason_nameB\x92\x01\n" +
+	"+ru.yandex.alice.protos.data.serialnavigatorB\x0fSeasonInfoProtoZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/serial_navigatorb\x06proto3"
 
 var (
 	file_alice_protos_data_serial_navigator_season_info_proto_rawDescOnce sync.Once

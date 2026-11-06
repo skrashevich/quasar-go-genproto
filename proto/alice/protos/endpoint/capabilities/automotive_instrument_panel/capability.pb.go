@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_instrument_panel/capability.proto
 
-package automotive_instrument_panelpb
+package automotive_instrument_panel
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -650,8 +650,8 @@ const file_alice_protos_endpoint_capabilities_automotive_instrument_panel_capabi
 	"brightness:,\x92\x82\x19\x1fset_instrument_panel_brightness\xa8\xdd\x1b\x04\xa8\xc8\x1c\x93\x03\"9\n" +
 	"\vEPropertyId\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x1d\n" +
-	"\x19InstrumentPanelBrightness\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x89\x01B\xc7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB(AutomotiveInstrumentPanelCapabilityProtoZma.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_instrument_panel;automotive_instrument_panelpbb\x06proto3"
+	"\x19InstrumentPanelBrightness\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x89\x01B\xc8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB(AutomotiveInstrumentPanelCapabilityProtoZngithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_instrument_panelb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_instrument_panel_capability_proto_rawDescOnce sync.Once

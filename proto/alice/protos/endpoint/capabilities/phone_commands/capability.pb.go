@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/phone_commands/capability.proto
 
-package phonecommandspb
+package phone_commands
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -277,8 +277,8 @@ const file_alice_protos_endpoint_capabilities_phone_commands_capability_proto_ra
 	"\tECallType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\f\n" +
 	"\bIncoming\x10\x01\x12\f\n" +
-	"\bOutgoing\x10\x02:*\x92\x82\x19\x1dphone_get_last_called_contact\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb1\x02B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cPhoneCommandsCapabilityProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/phone_commands;phonecommandspbb\x06proto3"
+	"\bOutgoing\x10\x02:*\x92\x82\x19\x1dphone_get_last_called_contact\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb1\x02B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cPhoneCommandsCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/phone_commandsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_phone_commands_capability_proto_rawDescOnce sync.Once

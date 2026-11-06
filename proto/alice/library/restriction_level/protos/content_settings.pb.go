@@ -93,7 +93,9 @@ const file_alice_library_restriction_level_protos_content_settings_proto_rawDesc
 	"\x06medium\x10\x00\x12\f\n" +
 	"\bchildren\x10\x01\x12\v\n" +
 	"\awithout\x10\x02\x12\b\n" +
-	"\x04safe\x10\x03B9Z7a.yandex-team.ru/alice/library/restriction_level/protos"
+	"\x04safe\x10\x03B\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x14ContentSettingsProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/restriction_level/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_library_restriction_level_protos_content_settings_proto_rawDescOnce sync.Once

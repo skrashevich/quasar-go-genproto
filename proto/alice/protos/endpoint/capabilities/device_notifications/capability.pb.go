@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/device_notifications/capability.proto
 
-package device_notificationspb
+package device_notifications
 
 import (
 	device_notifications "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_notifications"
@@ -464,8 +464,8 @@ const file_alice_protos_endpoint_capabilities_device_notifications_capability_pr
 	"\xaa\xdd\x1b\x06filter\x1a\x9b\x01\n" +
 	"\x1bTReadNotificationsDirective\x12<\n" +
 	"\x0eNotificationID\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\x0fnotification_idR\x0fnotification_id\x12\x13\n" +
-	"\x04Name\x18\xe8\a \x01(\tR\x04Name:)\x92\x82\x19\x1cread_notifications_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xac\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xdc\x01B\xa9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18DeviceNotificationsProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/device_notifications;device_notificationspbb\x06proto3"
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name:)\x92\x82\x19\x1cread_notifications_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xac\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xdc\x01B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18DeviceNotificationsProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/device_notificationsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_device_notifications_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/standby/capability.proto
 
-package standbypb
+package standby
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -79,9 +79,9 @@ func (TStandbyCapability_TState_EMode) EnumDescriptor() ([]byte, []int) {
 
 type TStandbyCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TStandbyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TStandbyCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TStandbyCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TStandbyCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -211,7 +211,7 @@ func (*TStandbyCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TStandbyCapability_TState struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Mode          TStandbyCapability_TState_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TStandbyCapability_TState_EMode" json:"Mode,omitempty"`
+	Mode          TStandbyCapability_TState_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TStandbyCapability_TState_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,24 +257,24 @@ var File_alice_protos_endpoint_capabilities_standby_capability_proto protoreflec
 
 const file_alice_protos_endpoint_capabilities_standby_capability_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/endpoint/capabilities/standby/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdb\x03\n" +
-	"\x12TStandbyCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	";alice/protos/endpoint/capabilities/standby/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf3\x02\n" +
+	"\x12TStandbyCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TStandbyCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TStandbyCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a6\n" +
-	"\x12TPowerOffDirective: \x92\x82\x19\x13power_off_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc5\x04\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x97\x01\n" +
-	"\x06TState\x12E\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TStandbyCapability.TState.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode\"@\n" +
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TStandbyCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TStandbyCapability.TStateR\x05State\x1a\x14\n" +
+	"\x12TPowerOffDirective\x1a\r\n" +
+	"\vTParameters\x1a\x87\x01\n" +
+	"\x06TState\x12;\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TStandbyCapability.TState.EModeR\x04Mode\"@\n" +
 	"\x05EMode\x12\v\n" +
 	"\aDefault\x10\x00\x12\v\n" +
 	"\aStandby\x10\x01\x12\x0f\n" +
 	"\vDeepStandby\x10\x02\x12\f\n" +
-	"\bPowerOff\x10\x03:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x98\x01B\x83\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\fStandbyProtoZEa.yandex-team.ru/alice/protos/endpoint/capabilities/standby;standbypbb\x06proto3"
+	"\bPowerOff\x10\x03B\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/standby\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_standby_capability_proto_rawDescOnce sync.Once

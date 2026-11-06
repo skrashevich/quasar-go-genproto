@@ -24,10 +24,10 @@ const (
 
 type TSingleImage struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	UrlAvatar     *TSingleImage_TImageRef `protobuf:"bytes,1,opt,name=UrlAvatar,json=url_avatar,proto3" json:"UrlAvatar,omitempty"`
-	UrlSource     *TSingleImage_TImageRef `protobuf:"bytes,2,opt,name=UrlSource,json=url_source,proto3" json:"UrlSource,omitempty"`
-	Text          string                  `protobuf:"bytes,4,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	HttpSource    string                  `protobuf:"bytes,5,opt,name=HttpSource,json=http_source,proto3" json:"HttpSource,omitempty"`
+	UrlAvatar     *TSingleImage_TImageRef `protobuf:"bytes,1,opt,name=UrlAvatar,proto3" json:"UrlAvatar,omitempty"`
+	UrlSource     *TSingleImage_TImageRef `protobuf:"bytes,2,opt,name=UrlSource,proto3" json:"UrlSource,omitempty"`
+	Text          string                  `protobuf:"bytes,4,opt,name=Text,proto3" json:"Text,omitempty"`
+	HttpSource    string                  `protobuf:"bytes,5,opt,name=HttpSource,proto3" json:"HttpSource,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -92,7 +92,7 @@ func (x *TSingleImage) GetHttpSource() string {
 
 type TImageGallery struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Images        []*TSingleImage        `protobuf:"bytes,2,rep,name=Images,json=images,proto3" json:"Images,omitempty"`
+	Images        []*TSingleImage        `protobuf:"bytes,2,rep,name=Images,proto3" json:"Images,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -136,8 +136,8 @@ func (x *TImageGallery) GetImages() []*TSingleImage {
 
 type TImageGrid struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Images        *TImageGallery         `protobuf:"bytes,2,opt,name=Images,json=images,proto3" json:"Images,omitempty"`
+	Title         string                 `protobuf:"bytes,1,opt,name=Title,proto3" json:"Title,omitempty"`
+	Images        *TImageGallery         `protobuf:"bytes,2,opt,name=Images,proto3" json:"Images,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,9 +188,9 @@ func (x *TImageGrid) GetImages() *TImageGallery {
 
 type TSingleImage_TImageRef struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Url           string                 `protobuf:"bytes,1,opt,name=Url,json=url,proto3" json:"Url,omitempty"`
-	Width         int32                  `protobuf:"varint,2,opt,name=Width,json=width,proto3" json:"Width,omitempty"`
-	Height        int32                  `protobuf:"varint,3,opt,name=Height,json=height,proto3" json:"Height,omitempty"`
+	Url           string                 `protobuf:"bytes,1,opt,name=Url,proto3" json:"Url,omitempty"`
+	Width         int32                  `protobuf:"varint,2,opt,name=Width,proto3" json:"Width,omitempty"`
+	Height        int32                  `protobuf:"varint,3,opt,name=Height,proto3" json:"Height,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -250,31 +250,26 @@ var File_alice_protos_data_scenario_objects_image_proto protoreflect.FileDescrip
 
 const file_alice_protos_data_scenario_objects_image_proto_rawDesc = "" +
 	"\n" +
-	".alice/protos/data/scenario/objects/image.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x86\x03\n" +
-	"\fTSingleImage\x12S\n" +
-	"\tUrlAvatar\x18\x01 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefB\x0e\xaa\xdd\x1b\n" +
-	"url_avatarR\n" +
-	"url_avatar\x12S\n" +
-	"\tUrlSource\x18\x02 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefB\x0e\xaa\xdd\x1b\n" +
-	"url_sourceR\n" +
-	"url_source\x12\x1c\n" +
-	"\x04Text\x18\x04 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x120\n" +
+	".alice/protos/data/scenario/objects/image.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa8\x02\n" +
+	"\fTSingleImage\x12B\n" +
+	"\tUrlAvatar\x18\x01 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefR\tUrlAvatar\x12B\n" +
+	"\tUrlSource\x18\x02 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefR\tUrlSource\x12\x12\n" +
+	"\x04Text\x18\x04 \x01(\tR\x04Text\x12\x1e\n" +
 	"\n" +
-	"HttpSource\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vhttp_sourceR\vhttp_source\x1ak\n" +
-	"\tTImageRef\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url\x12\x1f\n" +
-	"\x05Width\x18\x02 \x01(\x05B\t\xaa\xdd\x1b\x05widthR\x05width\x12\"\n" +
-	"\x06Height\x18\x03 \x01(\x05B\n" +
-	"\xaa\xdd\x1b\x06heightR\x06heightJ\x04\b\x03\x10\x04R\tHttpSorce\"^\n" +
-	"\rTImageGallery\x12>\n" +
-	"\x06Images\x18\x02 \x03(\v2\x1a.NAlice.NData.TSingleImageB\n" +
-	"\xaa\xdd\x1b\x06imagesR\x06imagesJ\x04\b\x01\x10\x02R\aGallery\"n\n" +
+	"HttpSource\x18\x05 \x01(\tR\n" +
+	"HttpSource\x1aK\n" +
+	"\tTImageRef\x12\x10\n" +
+	"\x03Url\x18\x01 \x01(\tR\x03Url\x12\x14\n" +
+	"\x05Width\x18\x02 \x01(\x05R\x05Width\x12\x16\n" +
+	"\x06Height\x18\x03 \x01(\x05R\x06HeightJ\x04\b\x03\x10\x04R\tHttpSorce\"R\n" +
+	"\rTImageGallery\x122\n" +
+	"\x06Images\x18\x02 \x03(\v2\x1a.NAlice.NData.TSingleImageR\x06ImagesJ\x04\b\x01\x10\x02R\aGallery\"W\n" +
 	"\n" +
-	"TImageGrid\x12\x1f\n" +
-	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12?\n" +
-	"\x06Images\x18\x02 \x01(\v2\x1b.NAlice.NData.TImageGalleryB\n" +
-	"\xaa\xdd\x1b\x06imagesR\x06imagesBc\n" +
-	",ru.yandex.alice.protos.data.scenario.objectsZ3a.yandex-team.ru/alice/protos/data/scenario/objectsb\x06proto3"
+	"TImageGrid\x12\x14\n" +
+	"\x05Title\x18\x01 \x01(\tR\x05Title\x123\n" +
+	"\x06Images\x18\x02 \x01(\v2\x1b.NAlice.NData.TImageGalleryR\x06ImagesB\xc3\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"ImageProtoP\x01ZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/objects\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_objects_image_proto_rawDescOnce sync.Once

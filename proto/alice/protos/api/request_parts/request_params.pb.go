@@ -73,11 +73,11 @@ func (TRequestParams_ERequestType) EnumDescriptor() ([]byte, []int) {
 
 type TRequestParams struct {
 	state                             protoimpl.MessageState      `protogen:"open.v1"`
-	DisableOutputSpeech               bool                        `protobuf:"varint,1,opt,name=DisableOutputSpeech,json=disable_output_speech,proto3" json:"DisableOutputSpeech,omitempty"`
-	DisableShouldListen               bool                        `protobuf:"varint,2,opt,name=DisableShouldListen,json=disable_should_listen,proto3" json:"DisableShouldListen,omitempty"`
-	IsParallel                        bool                        `protobuf:"varint,3,opt,name=IsParallel,json=is_parallel,proto3" json:"IsParallel,omitempty"`
-	RequestType                       TRequestParams_ERequestType `protobuf:"varint,4,opt,name=RequestType,json=request_type,proto3,enum=NAlice.TRequestParams_ERequestType" json:"RequestType,omitempty"`
-	EnableOutputSpeechScenarioControl bool                        `protobuf:"varint,5,opt,name=EnableOutputSpeechScenarioControl,json=enable_output_speech_scenario_control,proto3" json:"EnableOutputSpeechScenarioControl,omitempty"`
+	DisableOutputSpeech               bool                        `protobuf:"varint,1,opt,name=DisableOutputSpeech,proto3" json:"DisableOutputSpeech,omitempty"`
+	DisableShouldListen               bool                        `protobuf:"varint,2,opt,name=DisableShouldListen,proto3" json:"DisableShouldListen,omitempty"`
+	IsParallel                        bool                        `protobuf:"varint,3,opt,name=IsParallel,proto3" json:"IsParallel,omitempty"`
+	RequestType                       TRequestParams_ERequestType `protobuf:"varint,4,opt,name=RequestType,proto3,enum=NAlice.TRequestParams_ERequestType" json:"RequestType,omitempty"`
+	EnableOutputSpeechScenarioControl bool                        `protobuf:"varint,5,opt,name=EnableOutputSpeechScenarioControl,proto3" json:"EnableOutputSpeechScenarioControl,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -151,20 +151,22 @@ var File_alice_protos_api_request_parts_request_params_proto protoreflect.FileDe
 
 const file_alice_protos_api_request_parts_request_params_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/api/request_parts/request_params.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\x03\n" +
-	"\x0eTRequestParams\x12M\n" +
-	"\x13DisableOutputSpeech\x18\x01 \x01(\bB\x19\xaa\xdd\x1b\x15disable_output_speechR\x15disable_output_speech\x12M\n" +
-	"\x13DisableShouldListen\x18\x02 \x01(\bB\x19\xaa\xdd\x1b\x15disable_should_listenR\x15disable_should_listen\x120\n" +
+	"3alice/protos/api/request_parts/request_params.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe3\x02\n" +
+	"\x0eTRequestParams\x120\n" +
+	"\x13DisableOutputSpeech\x18\x01 \x01(\bR\x13DisableOutputSpeech\x120\n" +
+	"\x13DisableShouldListen\x18\x02 \x01(\bR\x13DisableShouldListen\x12\x1e\n" +
 	"\n" +
-	"IsParallel\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vis_parallelR\vis_parallel\x12X\n" +
-	"\vRequestType\x18\x04 \x01(\x0e2#.NAlice.TRequestParams.ERequestTypeB\x10\xaa\xdd\x1b\frequest_typeR\frequest_type\x12{\n" +
-	"!EnableOutputSpeechScenarioControl\x18\x05 \x01(\bB)\xaa\xdd\x1b%enable_output_speech_scenario_controlR%enable_output_speech_scenario_control\"8\n" +
+	"IsParallel\x18\x03 \x01(\bR\n" +
+	"IsParallel\x12E\n" +
+	"\vRequestType\x18\x04 \x01(\x0e2#.NAlice.TRequestParams.ERequestTypeR\vRequestType\x12L\n" +
+	"!EnableOutputSpeechScenarioControl\x18\x05 \x01(\bR!EnableOutputSpeechScenarioControl\"8\n" +
 	"\fERequestType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\n" +
 	"\n" +
 	"\x06Dialog\x10\x01\x12\r\n" +
-	"\tNonDialog\x10\x02:\x04\xa8\xdd\x1b\x04B[\n" +
-	"(ru.yandex.alice.protos.api.request_partsZ/a.yandex-team.ru/alice/protos/api/request_partsb\x06proto3"
+	"\tNonDialog\x10\x02B\xa8\x01\n" +
+	"\n" +
+	"com.NAliceB\x12RequestParamsProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/request_parts\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_request_parts_request_params_proto_rawDescOnce sync.Once

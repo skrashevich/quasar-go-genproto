@@ -405,8 +405,8 @@ const file_alice_protos_data_tv_search_tv_search_result_proto_rawDesc = "" +
 	"SearchText\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vsearch_textR\vsearch_text\x12P\n" +
 	"\rVoiceControls\x18\x04 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls\x12S\n" +
 	"\rMetaInfoVideo\x18\x05 \x01(\v2\x16.NAlice.TMetaInfoVideoB\x13\xaa\xdd\x1b\x0fmeta_info_videoR\x0fmeta_info_video\x12[\n" +
-	"\x10AvailableFilters\x18\x06 \x03(\v2\x17.NAlice.TTvSearchFilterB\x15\xaa\xdd\x1b\x11available_filtersR\x11available_filters:\x04\xa8\xdd\x1b\x04Be\n" +
-	"%ru.yandex.alice.protos.data.tv.searchB\x0eTvSearchResultZ,a.yandex-team.ru/alice/protos/data/tv/searchb\x06proto3"
+	"\x10AvailableFilters\x18\x06 \x03(\v2\x17.NAlice.TTvSearchFilterB\x15\xaa\xdd\x1b\x11available_filtersR\x11available_filters:\x04\xa8\xdd\x1b\x04B\x84\x01\n" +
+	"%ru.yandex.alice.protos.data.tv.searchB\x0eTvSearchResultZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/searchb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_search_tv_search_result_proto_rawDescOnce sync.Once

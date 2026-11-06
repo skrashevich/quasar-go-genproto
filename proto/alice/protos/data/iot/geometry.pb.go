@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/data/iot/geometry.proto
 
-package iotpb
+package iot
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -24,8 +24,8 @@ const (
 
 type TPoint struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	XMm           int32                  `protobuf:"zigzag32,1,opt,name=XMm,json=xmm,proto3" json:"XMm,omitempty"`
-	YMm           int32                  `protobuf:"zigzag32,2,opt,name=YMm,json=ymm,proto3" json:"YMm,omitempty"`
+	XMm           int32                  `protobuf:"zigzag32,1,opt,name=XMm,proto3" json:"XMm,omitempty"`
+	YMm           int32                  `protobuf:"zigzag32,2,opt,name=YMm,proto3" json:"YMm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,8 +76,8 @@ func (x *TPoint) GetYMm() int32 {
 
 type TCell struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	X             uint32                 `protobuf:"varint,1,opt,name=X,json=x,proto3" json:"X,omitempty"`
-	Y             uint32                 `protobuf:"varint,2,opt,name=Y,json=y,proto3" json:"Y,omitempty"`
+	X             uint32                 `protobuf:"varint,1,opt,name=X,proto3" json:"X,omitempty"`
+	Y             uint32                 `protobuf:"varint,2,opt,name=Y,proto3" json:"Y,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,8 +128,8 @@ func (x *TCell) GetY() uint32 {
 
 type TBounds struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lower         *TPoint                `protobuf:"bytes,1,opt,name=Lower,json=lower,proto3" json:"Lower,omitempty"`
-	Upper         *TPoint                `protobuf:"bytes,2,opt,name=Upper,json=upper,proto3" json:"Upper,omitempty"`
+	Lower         *TPoint                `protobuf:"bytes,1,opt,name=Lower,proto3" json:"Lower,omitempty"`
+	Upper         *TPoint                `protobuf:"bytes,2,opt,name=Upper,proto3" json:"Upper,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -180,8 +180,8 @@ func (x *TBounds) GetUpper() *TPoint {
 
 type TBasis struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Origin        *TPoint                `protobuf:"bytes,1,opt,name=Origin,json=origin,proto3" json:"Origin,omitempty"`
-	AngleDeg      float32                `protobuf:"fixed32,2,opt,name=AngleDeg,json=angle_deg,proto3" json:"AngleDeg,omitempty"`
+	Origin        *TPoint                `protobuf:"bytes,1,opt,name=Origin,proto3" json:"Origin,omitempty"`
+	AngleDeg      float32                `protobuf:"fixed32,2,opt,name=AngleDeg,proto3" json:"AngleDeg,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -232,7 +232,7 @@ func (x *TBasis) GetAngleDeg() float32 {
 
 type TGrid struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CellSizeMm    uint32                 `protobuf:"varint,1,opt,name=CellSizeMm,json=cell_size_mm,proto3" json:"CellSizeMm,omitempty"`
+	CellSizeMm    uint32                 `protobuf:"varint,1,opt,name=CellSizeMm,proto3" json:"CellSizeMm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -276,7 +276,7 @@ func (x *TGrid) GetCellSizeMm() uint32 {
 
 type TPolygonZoneShape struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Vertices      []*TPoint              `protobuf:"bytes,1,rep,name=Vertices,json=vertices,proto3" json:"Vertices,omitempty"`
+	Vertices      []*TPoint              `protobuf:"bytes,1,rep,name=Vertices,proto3" json:"Vertices,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -320,7 +320,7 @@ func (x *TPolygonZoneShape) GetVertices() []*TPoint {
 
 type TGridZoneShape struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Cells         []*TCell               `protobuf:"bytes,1,rep,name=Cells,json=cells,proto3" json:"Cells,omitempty"`
+	Cells         []*TCell               `protobuf:"bytes,1,rep,name=Cells,proto3" json:"Cells,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -433,11 +433,11 @@ type isTZoneShape_ZoneShape interface {
 }
 
 type TZoneShape_PolygonZoneShape struct {
-	PolygonZoneShape *TPolygonZoneShape `protobuf:"bytes,1,opt,name=PolygonZoneShape,json=polygon_zone_shape,proto3,oneof"`
+	PolygonZoneShape *TPolygonZoneShape `protobuf:"bytes,1,opt,name=PolygonZoneShape,proto3,oneof"`
 }
 
 type TZoneShape_GridZoneShape struct {
-	GridZoneShape *TGridZoneShape `protobuf:"bytes,2,opt,name=GridZoneShape,json=grid_zone_shape,proto3,oneof"`
+	GridZoneShape *TGridZoneShape `protobuf:"bytes,2,opt,name=GridZoneShape,proto3,oneof"`
 }
 
 func (*TZoneShape_PolygonZoneShape) isTZoneShape_ZoneShape() {}
@@ -448,34 +448,33 @@ var File_alice_protos_data_iot_geometry_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_iot_geometry_proto_rawDesc = "" +
 	"\n" +
-	"$alice/protos/data/iot/geometry.proto\x12\vNAlice.NIot\x1a&yt/yt_proto/yt/formats/extension.proto\"D\n" +
-	"\x06TPoint\x12\x19\n" +
-	"\x03XMm\x18\x01 \x01(\x11B\a\xaa\xdd\x1b\x03xmmR\x03xmm\x12\x19\n" +
-	"\x03YMm\x18\x02 \x01(\x11B\a\xaa\xdd\x1b\x03ymmR\x03ymm:\x04\xa8\xdd\x1b\x04\"7\n" +
-	"\x05TCell\x12\x13\n" +
-	"\x01X\x18\x01 \x01(\rB\x05\xaa\xdd\x1b\x01xR\x01x\x12\x13\n" +
-	"\x01Y\x18\x02 \x01(\rB\x05\xaa\xdd\x1b\x01yR\x01y:\x04\xa8\xdd\x1b\x04\"{\n" +
-	"\aTBounds\x124\n" +
-	"\x05Lower\x18\x01 \x01(\v2\x13.NAlice.NIot.TPointB\t\xaa\xdd\x1b\x05lowerR\x05lower\x124\n" +
-	"\x05Upper\x18\x02 \x01(\v2\x13.NAlice.NIot.TPointB\t\xaa\xdd\x1b\x05upperR\x05upper:\x04\xa8\xdd\x1b\x04\"s\n" +
-	"\x06TBasis\x127\n" +
-	"\x06Origin\x18\x01 \x01(\v2\x13.NAlice.NIot.TPointB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12*\n" +
-	"\bAngleDeg\x18\x02 \x01(\x02B\r\xaa\xdd\x1b\tangle_degR\tangle_deg:\x04\xa8\xdd\x1b\x04\"A\n" +
-	"\x05TGrid\x122\n" +
+	"$alice/protos/data/iot/geometry.proto\x12\vNAlice.NIot\x1a&yt/yt_proto/yt/formats/extension.proto\",\n" +
+	"\x06TPoint\x12\x10\n" +
+	"\x03XMm\x18\x01 \x01(\x11R\x03XMm\x12\x10\n" +
+	"\x03YMm\x18\x02 \x01(\x11R\x03YMm\"#\n" +
+	"\x05TCell\x12\f\n" +
+	"\x01X\x18\x01 \x01(\rR\x01X\x12\f\n" +
+	"\x01Y\x18\x02 \x01(\rR\x01Y\"_\n" +
+	"\aTBounds\x12)\n" +
+	"\x05Lower\x18\x01 \x01(\v2\x13.NAlice.NIot.TPointR\x05Lower\x12)\n" +
+	"\x05Upper\x18\x02 \x01(\v2\x13.NAlice.NIot.TPointR\x05Upper\"Q\n" +
+	"\x06TBasis\x12+\n" +
+	"\x06Origin\x18\x01 \x01(\v2\x13.NAlice.NIot.TPointR\x06Origin\x12\x1a\n" +
+	"\bAngleDeg\x18\x02 \x01(\x02R\bAngleDeg\"'\n" +
+	"\x05TGrid\x12\x1e\n" +
 	"\n" +
-	"CellSizeMm\x18\x01 \x01(\rB\x10\xaa\xdd\x1b\fcell_size_mmR\fcell_size_mm:\x04\xa8\xdd\x1b\x04\"X\n" +
-	"\x11TPolygonZoneShape\x12=\n" +
-	"\bVertices\x18\x01 \x03(\v2\x13.NAlice.NIot.TPointB\f\xaa\xdd\x1b\bverticesR\bvertices:\x04\xa8\xdd\x1b\x04\"K\n" +
-	"\x0eTGridZoneShape\x123\n" +
-	"\x05Cells\x18\x01 \x03(\v2\x12.NAlice.NIot.TCellB\t\xaa\xdd\x1b\x05cellsR\x05cells:\x04\xa8\xdd\x1b\x04\"\xf3\x01\n" +
+	"CellSizeMm\x18\x01 \x01(\rR\n" +
+	"CellSizeMm\"D\n" +
+	"\x11TPolygonZoneShape\x12/\n" +
+	"\bVertices\x18\x01 \x03(\v2\x13.NAlice.NIot.TPointR\bVertices\":\n" +
+	"\x0eTGridZoneShape\x12(\n" +
+	"\x05Cells\x18\x01 \x03(\v2\x12.NAlice.NIot.TCellR\x05Cells\"\xac\x01\n" +
 	"\n" +
-	"TZoneShape\x12f\n" +
-	"\x10PolygonZoneShape\x18\x01 \x01(\v2\x1e.NAlice.NIot.TPolygonZoneShapeB\x16\xaa\xdd\x1b\x12polygon_zone_shapeH\x00R\x12polygon_zone_shape\x12Z\n" +
-	"\rGridZoneShape\x18\x02 \x01(\v2\x1b.NAlice.NIot.TGridZoneShapeB\x13\xaa\xdd\x1b\x0fgrid_zone_shapeH\x00R\x0fgrid_zone_shape:\x04\xa8\xdd\x1b\x04B\x1b\n" +
-	"\tZoneShape\x12\x0e\xaa\xdd\x1b\n" +
-	"zone_shapeB`\n" +
-	"\x1fru.yandex.alice.protos.data.iotB\rGeometryProtoP\x01Z,a.yandex-team.ru/alice/protos/data/iot;iotpbb\x06proto3"
+	"TZoneShape\x12L\n" +
+	"\x10PolygonZoneShape\x18\x01 \x01(\v2\x1e.NAlice.NIot.TPolygonZoneShapeH\x00R\x10PolygonZoneShape\x12C\n" +
+	"\rGridZoneShape\x18\x02 \x01(\v2\x1b.NAlice.NIot.TGridZoneShapeH\x00R\rGridZoneShapeB\v\n" +
+	"\tZoneShapeB\xb4\x01\n" +
+	"\x0fcom.NAlice.NIotB\rGeometryProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot\xa2\x02\x03NNX\xaa\x02\vNAlice.NIot\xca\x02\vNAlice\\NIot\xe2\x02\x17NAlice\\NIot\\GPBMetadata\xea\x02\fNAlice::NIotb\x06proto3"
 
 var (
 	file_alice_protos_data_iot_geometry_proto_rawDescOnce sync.Once

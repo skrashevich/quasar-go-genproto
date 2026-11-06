@@ -74,8 +74,8 @@ const file_alice_protos_data_spotter_threshold_type_proto_rawDesc = "" +
 	".alice/protos/data/spotter/threshold_type.proto\x12\fNAlice.NData*?\n" +
 	"\x15ESpotterThresholdType\x12\x14\n" +
 	"\x10DefaultThreshold\x10\x00\x12\x10\n" +
-	"\fSubThreshold\x10\x01BQ\n" +
-	"#ru.yandex.alice.protos.data.spotterZ*a.yandex-team.ru/alice/protos/data/spotterb\x06proto3"
+	"\fSubThreshold\x10\x01B\xc2\x01\n" +
+	"\x10com.NAlice.NDataB\x12ThresholdTypeProtoP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/spotter\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_spotter_threshold_type_proto_rawDescOnce sync.Once

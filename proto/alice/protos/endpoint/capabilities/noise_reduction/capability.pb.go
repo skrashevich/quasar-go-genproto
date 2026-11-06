@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/noise_reduction/capability.proto
 
-package noisereductionpb
+package noise_reduction
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -76,9 +76,9 @@ func (TNoiseReductionCapability_EMode) EnumDescriptor() ([]byte, []int) {
 
 type TNoiseReductionCapability struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNoiseReductionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNoiseReductionCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNoiseReductionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNoiseReductionCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,7 +172,7 @@ func (*TNoiseReductionCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNoiseReductionCapability_TState struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Mode          TNoiseReductionCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TNoiseReductionCapability_EMode" json:"Mode,omitempty"`
+	Mode          TNoiseReductionCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TNoiseReductionCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -216,8 +216,8 @@ func (x *TNoiseReductionCapability_TState) GetMode() TNoiseReductionCapability_E
 
 type TNoiseReductionCapability_TSetModeDirective struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Name          string                          `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Mode          TNoiseReductionCapability_EMode `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.TNoiseReductionCapability_EMode" json:"Mode,omitempty"`
+	Name          string                          `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Mode          TNoiseReductionCapability_EMode `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.TNoiseReductionCapability_EMode" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -270,25 +270,25 @@ var File_alice_protos_endpoint_capabilities_noise_reduction_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_noise_reduction_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/noise_reduction/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd0\x04\n" +
-	"\x19TNoiseReductionCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12]\n" +
+	"Calice/protos/endpoint/capabilities/noise_reduction/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc5\x03\n" +
+	"\x19TNoiseReductionCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12M\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2-.NAlice.TNoiseReductionCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12I\n" +
-	"\x05State\x18\x03 \x01(\v2(.NAlice.TNoiseReductionCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aU\n" +
-	"\x06TState\x12E\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TNoiseReductionCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:\x04\xa8\xdd\x1b\x04\x1a\xaa\x01\n" +
-	"\x11TSetModeDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12E\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TNoiseReductionCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:/\x92\x82\x19\"noise_reduction_set_mode_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x97\x02\"-\n" +
+	"Parameters\x18\x02 \x01(\v2-.NAlice.TNoiseReductionCapability.TParametersR\n" +
+	"Parameters\x12>\n" +
+	"\x05State\x18\x03 \x01(\v2(.NAlice.TNoiseReductionCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aE\n" +
+	"\x06TState\x12;\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TNoiseReductionCapability.EModeR\x04Mode\x1ae\n" +
+	"\x11TSetModeDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12;\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2'.NAlice.TNoiseReductionCapability.EModeR\x04Mode\"-\n" +
 	"\x05EMode\x12\f\n" +
 	"\bDisabled\x10\x00\x12\v\n" +
 	"\aDefault\x10\x01\x12\t\n" +
-	"\x05Nanny\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1ceB\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dNoiseReductionCapabilityProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/noise_reduction;noisereductionpbb\x06proto3"
+	"\x05Nanny\x10\x02B\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/noise_reduction\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_noise_reduction_capability_proto_rawDescOnce sync.Once

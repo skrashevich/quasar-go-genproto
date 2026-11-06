@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/app_launch/capability.proto
 
-package applaunchpb
+package app_launch
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -643,8 +643,8 @@ const file_alice_protos_endpoint_capabilities_app_launch_capability_proto_rawDes
 	"\x0eSCREEN_CENTRAL\x10\x00\x12\x13\n" +
 	"\x0fSCREEN_CO_PILOT\x10\x01\x12\x12\n" +
 	"\x0eSCREEN_CEILING\x10\x02\x12\x1b\n" +
-	"\x17SCREEN_INSTRUMENT_PANEL\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c'B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18AppLaunchCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/app_launch;applaunchpbb\x06proto3"
+	"\x17SCREEN_INSTRUMENT_PANEL\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c'B\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18AppLaunchCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/app_launchb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_app_launch_capability_proto_rawDescOnce sync.Once

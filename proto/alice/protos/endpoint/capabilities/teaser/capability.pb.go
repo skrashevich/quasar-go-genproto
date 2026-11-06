@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/teaser/capability.proto
 
-package teaserpb
+package teaser
 
 import (
 	teasers "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/centaur/teasers"
@@ -592,8 +592,8 @@ const file_alice_protos_endpoint_capabilities_teaser_capability_proto_rawDesc = 
 	"\bTeaserId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tteaser_idR\tteaser_id:$\x92\x82\x19\x17remove_teaser_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfd\x01\x1a\xc7\x01\n" +
 	"\x1dTOpenTretyakovkaInfoDirective\x12\x1c\n" +
 	"\x04Name\x18\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19\x1fopen_tretyakovka_info_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa6\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aR\x05TitleR\vDescriptionR\x06AuthorR\x04DateR\n" +
-	"BrowserUrlR\bImageUrl:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cZB\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16TeasersCapabilityProtoP\x01ZCa.yandex-team.ru/alice/protos/endpoint/capabilities/teaser;teaserpbb\x06proto3"
+	"BrowserUrlR\bImageUrl:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cZB\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16TeasersCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/teaserb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_teaser_capability_proto_rawDescOnce sync.Once

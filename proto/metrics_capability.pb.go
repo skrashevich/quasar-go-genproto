@@ -561,7 +561,7 @@ const file_metrics_capability_proto_rawDesc = "" +
 	"\x10EnvironmentEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\v\n" +
-	"\tdirectiveB\x1dB\x1bMetricsIoComCapabilityProtob\x06proto3"
+	"\tdirectiveBNB\x1bMetricsIoComCapabilityProtoZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_metrics_capability_proto_rawDescOnce sync.Once

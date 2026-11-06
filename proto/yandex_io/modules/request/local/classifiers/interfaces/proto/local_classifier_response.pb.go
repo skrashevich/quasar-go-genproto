@@ -72,7 +72,9 @@ const file_yandex_io_modules_request_local_classifiers_interfaces_proto_local_cl
 	"\n" +
 	"\\yandex_io/modules/request/local/classifiers/interfaces/proto/local_classifier_response.proto\x12\x06NAlice\x1a6alice/protos/api/alicekit/scenarios/frames/frame.proto\"T\n" +
 	"\x18TLocalClassifierResponse\x128\n" +
-	"\x06Frames\x18\x01 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameR\x06Framesb\x06proto3"
+	"\x06Frames\x18\x01 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameR\x06FramesB\xd0\x01\n" +
+	"\n" +
+	"com.NAliceB\x1cLocalClassifierResponseProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/modules/request/local/classifiers/interfaces/proto\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_yandex_io_modules_request_local_classifiers_interfaces_proto_local_classifier_response_proto_rawDescOnce sync.Once

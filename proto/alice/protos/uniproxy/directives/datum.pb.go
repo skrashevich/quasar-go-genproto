@@ -25,7 +25,7 @@ const (
 
 type TUpdateDatumAddressContextSaveDirective struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Request       *datum.TUpdateDatumAddressRequest `protobuf:"bytes,1,opt,name=Request,json=request,proto3" json:"Request,omitempty"`
+	Request       *datum.TUpdateDatumAddressRequest `protobuf:"bytes,1,opt,name=Request,proto3" json:"Request,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -71,10 +71,11 @@ var File_alice_protos_uniproxy_directives_datum_proto protoreflect.FileDescripto
 
 const file_alice_protos_uniproxy_directives_datum_proto_rawDesc = "" +
 	"\n" +
-	",alice/protos/uniproxy/directives/datum.proto\x12\x1aNAlice.NUniproxyDirectives\x1a&alice/protos/api/datum/addresses.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x84\x01\n" +
-	"'TUpdateDatumAddressContextSaveDirective\x12S\n" +
-	"\aRequest\x18\x01 \x01(\v2,.NAlice.NDatumApi.TUpdateDatumAddressRequestB\v\xaa\xdd\x1b\arequestR\arequest:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.uniproxy.directivesZ1a.yandex-team.ru/alice/protos/uniproxy/directivesb\x06proto3"
+	",alice/protos/uniproxy/directives/datum.proto\x12\x1aNAlice.NUniproxyDirectives\x1a&alice/protos/api/datum/addresses.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"q\n" +
+	"'TUpdateDatumAddressContextSaveDirective\x12F\n" +
+	"\aRequest\x18\x01 \x01(\v2,.NAlice.NDatumApi.TUpdateDatumAddressRequestR\aRequestB\x87\x02\n" +
+	"\x1ecom.NAlice.NUniproxyDirectivesB\n" +
+	"DatumProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/uniproxy/directives\xa2\x02\x03NNX\xaa\x02\x1aNAlice.NUniproxyDirectives\xca\x02\x1aNAlice\\NUniproxyDirectives\xe2\x02&NAlice\\NUniproxyDirectives\\GPBMetadata\xea\x02\x1bNAlice::NUniproxyDirectivesb\x06proto3"
 
 var (
 	file_alice_protos_uniproxy_directives_datum_proto_rawDescOnce sync.Once

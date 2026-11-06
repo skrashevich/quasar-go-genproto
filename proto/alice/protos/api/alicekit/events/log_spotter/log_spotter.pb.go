@@ -27,19 +27,19 @@ const (
 
 type TLogSpotter struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	Extra               *TLogSpotter_TExtra    `protobuf:"bytes,1,opt,name=Extra,json=extra,proto3" json:"Extra,omitempty"`
-	Format              *string                `protobuf:"bytes,2,opt,name=Format,json=format,proto3,oneof" json:"Format,omitempty"`
-	Transcript          *string                `protobuf:"bytes,3,opt,name=Transcript,json=transcript,proto3,oneof" json:"Transcript,omitempty"`
-	Source              *string                `protobuf:"bytes,4,opt,name=Source,json=source,proto3,oneof" json:"Source,omitempty"`
-	Firmware            *string                `protobuf:"bytes,5,opt,name=Firmware,json=firmware,proto3,oneof" json:"Firmware,omitempty"`
-	Lang                *string                `protobuf:"bytes,6,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
-	VinsMessageId       *string                `protobuf:"bytes,7,opt,name=VinsMessageId,json=vinsMessageId,proto3,oneof" json:"VinsMessageId,omitempty"`
-	Priority            *int32                 `protobuf:"varint,8,opt,name=Priority,json=priority,proto3,oneof" json:"Priority,omitempty"`
-	BtDeviceName        *string                `protobuf:"bytes,9,opt,name=BtDeviceName,json=btDeviceName,proto3,oneof" json:"BtDeviceName,omitempty"`
-	BtDeviceClass       *string                `protobuf:"bytes,10,opt,name=BtDeviceClass,json=btDeviceClass,proto3,oneof" json:"BtDeviceClass,omitempty"`
-	ExternalSoundAccess *bool                  `protobuf:"varint,11,opt,name=ExternalSoundAccess,json=externalSoundAccess,proto3,oneof" json:"ExternalSoundAccess,omitempty"`
-	EndpointId          *string                `protobuf:"bytes,12,opt,name=EndpointId,json=endpoint_id,proto3,oneof" json:"EndpointId,omitempty"`
-	IsServiceRawData    *bool                  `protobuf:"varint,13,opt,name=IsServiceRawData,json=isServiceRawData,proto3,oneof" json:"IsServiceRawData,omitempty"`
+	Extra               *TLogSpotter_TExtra    `protobuf:"bytes,1,opt,name=Extra,proto3" json:"Extra,omitempty"`
+	Format              *string                `protobuf:"bytes,2,opt,name=Format,proto3,oneof" json:"Format,omitempty"`
+	Transcript          *string                `protobuf:"bytes,3,opt,name=Transcript,proto3,oneof" json:"Transcript,omitempty"`
+	Source              *string                `protobuf:"bytes,4,opt,name=Source,proto3,oneof" json:"Source,omitempty"`
+	Firmware            *string                `protobuf:"bytes,5,opt,name=Firmware,proto3,oneof" json:"Firmware,omitempty"`
+	Lang                *string                `protobuf:"bytes,6,opt,name=Lang,proto3,oneof" json:"Lang,omitempty"`
+	VinsMessageId       *string                `protobuf:"bytes,7,opt,name=VinsMessageId,proto3,oneof" json:"VinsMessageId,omitempty"`
+	Priority            *int32                 `protobuf:"varint,8,opt,name=Priority,proto3,oneof" json:"Priority,omitempty"`
+	BtDeviceName        *string                `protobuf:"bytes,9,opt,name=BtDeviceName,proto3,oneof" json:"BtDeviceName,omitempty"`
+	BtDeviceClass       *string                `protobuf:"bytes,10,opt,name=BtDeviceClass,proto3,oneof" json:"BtDeviceClass,omitempty"`
+	ExternalSoundAccess *bool                  `protobuf:"varint,11,opt,name=ExternalSoundAccess,proto3,oneof" json:"ExternalSoundAccess,omitempty"`
+	EndpointId          *string                `protobuf:"bytes,12,opt,name=EndpointId,proto3,oneof" json:"EndpointId,omitempty"`
+	IsServiceRawData    *bool                  `protobuf:"varint,13,opt,name=IsServiceRawData,proto3,oneof" json:"IsServiceRawData,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -167,15 +167,15 @@ func (x *TLogSpotter) GetIsServiceRawData() bool {
 
 type TLogSpotter_TExtraPayload struct {
 	state              protoimpl.MessageState         `protogen:"open.v1"`
-	DeviceState        *device_state.TDeviceState     `protobuf:"bytes,1,opt,name=DeviceState,json=device_state,proto3" json:"DeviceState,omitempty"`
-	Experiments        *experiments.TExperimentsProto `protobuf:"bytes,2,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
-	QuasmodromGroup    *string                        `protobuf:"bytes,3,opt,name=QuasmodromGroup,json=quasmodrom_group,proto3,oneof" json:"QuasmodromGroup,omitempty"`
-	QuasmodromSubgroup *string                        `protobuf:"bytes,4,opt,name=QuasmodromSubgroup,json=quasmodrom_subgroup,proto3,oneof" json:"QuasmodromSubgroup,omitempty"`
-	TestBuckets        *string                        `protobuf:"bytes,5,opt,name=TestBuckets,json=test_buckets,proto3,oneof" json:"TestBuckets,omitempty"`
-	Testids            *string                        `protobuf:"bytes,6,opt,name=Testids,json=testids,proto3,oneof" json:"Testids,omitempty"`
-	Context            *string                        `protobuf:"bytes,7,opt,name=Context,json=context,proto3,oneof" json:"Context,omitempty"`
-	CallId             *string                        `protobuf:"bytes,8,opt,name=CallId,json=callId,proto3,oneof" json:"CallId,omitempty"`
-	DurationMs         *string                        `protobuf:"bytes,9,opt,name=DurationMs,json=durationMs,proto3,oneof" json:"DurationMs,omitempty"`
+	DeviceState        *device_state.TDeviceState     `protobuf:"bytes,1,opt,name=DeviceState,proto3" json:"DeviceState,omitempty"`
+	Experiments        *experiments.TExperimentsProto `protobuf:"bytes,2,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
+	QuasmodromGroup    *string                        `protobuf:"bytes,3,opt,name=QuasmodromGroup,proto3,oneof" json:"QuasmodromGroup,omitempty"`
+	QuasmodromSubgroup *string                        `protobuf:"bytes,4,opt,name=QuasmodromSubgroup,proto3,oneof" json:"QuasmodromSubgroup,omitempty"`
+	TestBuckets        *string                        `protobuf:"bytes,5,opt,name=TestBuckets,proto3,oneof" json:"TestBuckets,omitempty"`
+	Testids            *string                        `protobuf:"bytes,6,opt,name=Testids,proto3,oneof" json:"Testids,omitempty"`
+	Context            *string                        `protobuf:"bytes,7,opt,name=Context,proto3,oneof" json:"Context,omitempty"`
+	CallId             *string                        `protobuf:"bytes,8,opt,name=CallId,proto3,oneof" json:"CallId,omitempty"`
+	DurationMs         *string                        `protobuf:"bytes,9,opt,name=DurationMs,proto3,oneof" json:"DurationMs,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -275,8 +275,8 @@ func (x *TLogSpotter_TExtraPayload) GetDurationMs() string {
 
 type TLogSpotter_TExtra struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	RawPayload    *structpb.Struct           `protobuf:"bytes,1,opt,name=RawPayload,json=raw_payload,proto3" json:"RawPayload,omitempty"`
-	Payload       *TLogSpotter_TExtraPayload `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	RawPayload    *structpb.Struct           `protobuf:"bytes,1,opt,name=RawPayload,proto3" json:"RawPayload,omitempty"`
+	Payload       *TLogSpotter_TExtraPayload `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -329,43 +329,40 @@ var File_alice_protos_api_alicekit_events_log_spotter_log_spotter_proto protoref
 
 const file_alice_protos_api_alicekit_events_log_spotter_log_spotter_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/api/alicekit/events/log_spotter/log_spotter.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\r\n" +
-	"\vTLogSpotter\x12E\n" +
-	"\x05Extra\x18\x01 \x01(\v2$.NAlice.NAliceApi.TLogSpotter.TExtraB\t\xaa\xdd\x1b\x05extraR\x05extra\x12'\n" +
-	"\x06Format\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06formatH\x00R\x06format\x88\x01\x01\x123\n" +
+	">alice/protos/api/alicekit/events/log_spotter/log_spotter.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdc\n" +
 	"\n" +
-	"Transcript\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"transcriptH\x01R\n" +
-	"transcript\x88\x01\x01\x12'\n" +
-	"\x06Source\x18\x04 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06sourceH\x02R\x06source\x88\x01\x01\x12-\n" +
-	"\bFirmware\x18\x05 \x01(\tB\f\xaa\xdd\x1b\bfirmwareH\x03R\bfirmware\x88\x01\x01\x12!\n" +
-	"\x04Lang\x18\x06 \x01(\tB\b\xaa\xdd\x1b\x04langH\x04R\x04lang\x88\x01\x01\x12<\n" +
-	"\rVinsMessageId\x18\a \x01(\tB\x11\xaa\xdd\x1b\rvinsMessageIdH\x05R\rvinsMessageId\x88\x01\x01\x12-\n" +
-	"\bPriority\x18\b \x01(\x05B\f\xaa\xdd\x1b\bpriorityH\x06R\bpriority\x88\x01\x01\x129\n" +
-	"\fBtDeviceName\x18\t \x01(\tB\x10\xaa\xdd\x1b\fbtDeviceNameH\aR\fbtDeviceName\x88\x01\x01\x12<\n" +
+	"\vTLogSpotter\x12:\n" +
+	"\x05Extra\x18\x01 \x01(\v2$.NAlice.NAliceApi.TLogSpotter.TExtraR\x05Extra\x12\x1b\n" +
+	"\x06Format\x18\x02 \x01(\tH\x00R\x06Format\x88\x01\x01\x12#\n" +
+	"\n" +
+	"Transcript\x18\x03 \x01(\tH\x01R\n" +
+	"Transcript\x88\x01\x01\x12\x1b\n" +
+	"\x06Source\x18\x04 \x01(\tH\x02R\x06Source\x88\x01\x01\x12\x1f\n" +
+	"\bFirmware\x18\x05 \x01(\tH\x03R\bFirmware\x88\x01\x01\x12\x17\n" +
+	"\x04Lang\x18\x06 \x01(\tH\x04R\x04Lang\x88\x01\x01\x12)\n" +
+	"\rVinsMessageId\x18\a \x01(\tH\x05R\rVinsMessageId\x88\x01\x01\x12\x1f\n" +
+	"\bPriority\x18\b \x01(\x05H\x06R\bPriority\x88\x01\x01\x12'\n" +
+	"\fBtDeviceName\x18\t \x01(\tH\aR\fBtDeviceName\x88\x01\x01\x12)\n" +
 	"\rBtDeviceClass\x18\n" +
-	" \x01(\tB\x11\xaa\xdd\x1b\rbtDeviceClassH\bR\rbtDeviceClass\x88\x01\x01\x12N\n" +
-	"\x13ExternalSoundAccess\x18\v \x01(\bB\x17\xaa\xdd\x1b\x13externalSoundAccessH\tR\x13externalSoundAccess\x88\x01\x01\x125\n" +
+	" \x01(\tH\bR\rBtDeviceClass\x88\x01\x01\x125\n" +
+	"\x13ExternalSoundAccess\x18\v \x01(\bH\tR\x13ExternalSoundAccess\x88\x01\x01\x12#\n" +
 	"\n" +
-	"EndpointId\x18\f \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idH\n" +
-	"R\vendpoint_id\x88\x01\x01\x12E\n" +
-	"\x10IsServiceRawData\x18\r \x01(\bB\x14\xaa\xdd\x1b\x10isServiceRawDataH\vR\x10isServiceRawData\x88\x01\x01\x1a\xaa\x05\n" +
-	"\rTExtraPayload\x12S\n" +
-	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateB\x10\xaa\xdd\x1b\fdevice_stateR\fdevice_state\x12L\n" +
-	"\vExperiments\x18\x02 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12D\n" +
-	"\x0fQuasmodromGroup\x18\x03 \x01(\tB\x14\xaa\xdd\x1b\x10quasmodrom_groupH\x00R\x10quasmodrom_group\x88\x01\x01\x12M\n" +
-	"\x12QuasmodromSubgroup\x18\x04 \x01(\tB\x17\xaa\xdd\x1b\x13quasmodrom_subgroupH\x01R\x13quasmodrom_subgroup\x88\x01\x01\x128\n" +
-	"\vTestBuckets\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\ftest_bucketsH\x02R\ftest_buckets\x88\x01\x01\x12*\n" +
-	"\aTestids\x18\x06 \x01(\tB\v\xaa\xdd\x1b\atestidsH\x03R\atestids\x88\x01\x01\x12*\n" +
-	"\aContext\x18\a \x01(\tB\v\xaa\xdd\x1b\acontextH\x04R\acontext\x88\x01\x01\x12'\n" +
-	"\x06CallId\x18\b \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06callIdH\x05R\x06callId\x88\x01\x01\x123\n" +
+	"EndpointId\x18\f \x01(\tH\n" +
+	"R\n" +
+	"EndpointId\x88\x01\x01\x12/\n" +
+	"\x10IsServiceRawData\x18\r \x01(\bH\vR\x10IsServiceRawData\x88\x01\x01\x1a\x86\x04\n" +
+	"\rTExtraPayload\x12@\n" +
+	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateR\vDeviceState\x12;\n" +
+	"\vExperiments\x18\x02 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12-\n" +
+	"\x0fQuasmodromGroup\x18\x03 \x01(\tH\x00R\x0fQuasmodromGroup\x88\x01\x01\x123\n" +
+	"\x12QuasmodromSubgroup\x18\x04 \x01(\tH\x01R\x12QuasmodromSubgroup\x88\x01\x01\x12%\n" +
+	"\vTestBuckets\x18\x05 \x01(\tH\x02R\vTestBuckets\x88\x01\x01\x12\x1d\n" +
+	"\aTestids\x18\x06 \x01(\tH\x03R\aTestids\x88\x01\x01\x12\x1d\n" +
+	"\aContext\x18\a \x01(\tH\x04R\aContext\x88\x01\x01\x12\x1b\n" +
+	"\x06CallId\x18\b \x01(\tH\x05R\x06CallId\x88\x01\x01\x12#\n" +
 	"\n" +
-	"DurationMs\x18\t \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"durationMsH\x06R\n" +
-	"durationMs\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x12\n" +
+	"DurationMs\x18\t \x01(\tH\x06R\n" +
+	"DurationMs\x88\x01\x01B\x12\n" +
 	"\x10_QuasmodromGroupB\x15\n" +
 	"\x13_QuasmodromSubgroupB\x0e\n" +
 	"\f_TestBucketsB\n" +
@@ -374,11 +371,12 @@ const file_alice_protos_api_alicekit_events_log_spotter_log_spotter_proto_rawDes
 	"\n" +
 	"\b_ContextB\t\n" +
 	"\a_CallIdB\r\n" +
-	"\v_DurationMs\x1a\xa7\x01\n" +
-	"\x06TExtra\x12I\n" +
+	"\v_DurationMs\x1a\x88\x01\n" +
+	"\x06TExtra\x127\n" +
 	"\n" +
-	"RawPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x0f\xaa\xdd\x1b\vraw_payloadR\vraw_payload\x12R\n" +
-	"\aPayload\x18\x02 \x01(\v2+.NAlice.NAliceApi.TLogSpotter.TExtraPayloadB\v\xaa\xdd\x1b\apayloadR\apayload:\x04\xa8\xdd\x1b\x04B\t\n" +
+	"RawPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructR\n" +
+	"RawPayload\x12E\n" +
+	"\aPayload\x18\x02 \x01(\v2+.NAlice.NAliceApi.TLogSpotter.TExtraPayloadR\aPayloadB\t\n" +
 	"\a_FormatB\r\n" +
 	"\v_TranscriptB\t\n" +
 	"\a_SourceB\v\n" +
@@ -390,9 +388,8 @@ const file_alice_protos_api_alicekit_events_log_spotter_log_spotter_proto_rawDes
 	"\x0e_BtDeviceClassB\x16\n" +
 	"\x14_ExternalSoundAccessB\r\n" +
 	"\v_EndpointIdB\x13\n" +
-	"\x11_IsServiceRawDataB\x85\x01\n" +
-	"6ru.yandex.alice.protos.api.alicekit.events.log_spotterB\n" +
-	"LogSpotterP\x01Z=a.yandex-team.ru/alice/protos/api/alicekit/events/log_spotterb\x06proto3"
+	"\x11_IsServiceRawDataB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0fLogSpotterProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/log_spotter\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_log_spotter_log_spotter_proto_rawDescOnce sync.Once

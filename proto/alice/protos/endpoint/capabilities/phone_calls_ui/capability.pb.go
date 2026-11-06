@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/phone_calls_ui/capability.proto
 
-package phonecallsuipb
+package phone_calls_ui
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -499,8 +499,8 @@ const file_alice_protos_endpoint_capabilities_phone_calls_ui_capability_proto_ra
 	"\x14ERROR_REASON_UNKNOWN\x10\x00\x12/\n" +
 	"+ERROR_REASON_INCOMING_DEVICE_DO_NOT_DISTURB\x10\x01:+\x92\x82\x19\x1ephone_calls_ui_show_call_error\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd7\x04B\n" +
 	"\n" +
-	"\b_Message:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cjB\x9e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bPhoneCallsUICapabilityProtoZQa.yandex-team.ru/alice/protos/endpoint/capabilities/phone_calls_ui;phonecallsuipbb\x06proto3"
+	"\b_Message:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cjB\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bPhoneCallsUICapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/phone_calls_uib\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_phone_calls_ui_capability_proto_rawDescOnce sync.Once

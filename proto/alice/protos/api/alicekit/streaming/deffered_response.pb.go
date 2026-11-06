@@ -27,19 +27,19 @@ const (
 )
 
 type TDeferedAliceResponseProto struct {
-	state                           protoimpl.MessageState                                `protogen:"open.v1"`
-	ResponsePartialNum              uint32                                                `protobuf:"varint,3,opt,name=ResponsePartialNum,json=response_partial_num,proto3" json:"ResponsePartialNum,omitempty"`
-	IsLast                          bool                                                  `protobuf:"varint,4,opt,name=IsLast,json=is_last,proto3" json:"IsLast,omitempty"`
-	RequestId                       string                                                `protobuf:"bytes,6,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
-	ChatHistoryResponseKeys         []*TDeferedAliceResponseProto_TChatHistoryResponseKey `protobuf:"bytes,15,rep,name=ChatHistoryResponseKeys,json=chat_history_response_keys,proto3" json:"ChatHistoryResponseKeys,omitempty"`
-	ContainsSensitiveDataInResponse bool                                                  `protobuf:"varint,18,opt,name=ContainsSensitiveDataInResponse,json=contains_sensitive_data_in_response,proto3" json:"ContainsSensitiveDataInResponse,omitempty"`
+	state                   protoimpl.MessageState                                `protogen:"open.v1"`
+	ResponsePartialNum      uint32                                                `protobuf:"varint,3,opt,name=ResponsePartialNum,proto3" json:"ResponsePartialNum,omitempty"`
+	IsLast                  bool                                                  `protobuf:"varint,4,opt,name=IsLast,proto3" json:"IsLast,omitempty"`
+	RequestId               string                                                `protobuf:"bytes,6,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
+	ChatHistoryResponseKeys []*TDeferedAliceResponseProto_TChatHistoryResponseKey `protobuf:"bytes,15,rep,name=ChatHistoryResponseKeys,proto3" json:"ChatHistoryResponseKeys,omitempty"`
 	// Types that are valid to be assigned to TDeferredResponse:
 	//
 	//	*TDeferedAliceResponseProto_BaseResponse
 	//	*TDeferedAliceResponseProto_CancelResponse
-	TDeferredResponse isTDeferedAliceResponseProto_TDeferredResponse `protobuf_oneof:"TDeferredResponse"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	TDeferredResponse               isTDeferedAliceResponseProto_TDeferredResponse `protobuf_oneof:"TDeferredResponse"`
+	ContainsSensitiveDataInResponse bool                                           `protobuf:"varint,18,opt,name=ContainsSensitiveDataInResponse,json=contains_sensitive_data_in_response,proto3" json:"ContainsSensitiveDataInResponse,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
 }
 
 func (x *TDeferedAliceResponseProto) Reset() {
@@ -100,13 +100,6 @@ func (x *TDeferedAliceResponseProto) GetChatHistoryResponseKeys() []*TDeferedAli
 	return nil
 }
 
-func (x *TDeferedAliceResponseProto) GetContainsSensitiveDataInResponse() bool {
-	if x != nil {
-		return x.ContainsSensitiveDataInResponse
-	}
-	return false
-}
-
 func (x *TDeferedAliceResponseProto) GetTDeferredResponse() isTDeferedAliceResponseProto_TDeferredResponse {
 	if x != nil {
 		return x.TDeferredResponse
@@ -132,16 +125,23 @@ func (x *TDeferedAliceResponseProto) GetCancelResponse() *TDeferedAliceResponseP
 	return nil
 }
 
+func (x *TDeferedAliceResponseProto) GetContainsSensitiveDataInResponse() bool {
+	if x != nil {
+		return x.ContainsSensitiveDataInResponse
+	}
+	return false
+}
+
 type isTDeferedAliceResponseProto_TDeferredResponse interface {
 	isTDeferedAliceResponseProto_TDeferredResponse()
 }
 
 type TDeferedAliceResponseProto_BaseResponse struct {
-	BaseResponse *TDeferedAliceResponseProto_TBaseResponse `protobuf:"bytes,1,opt,name=BaseResponse,json=base_response,proto3,oneof"`
+	BaseResponse *TDeferedAliceResponseProto_TBaseResponse `protobuf:"bytes,1,opt,name=BaseResponse,proto3,oneof"`
 }
 
 type TDeferedAliceResponseProto_CancelResponse struct {
-	CancelResponse *TDeferedAliceResponseProto_TCancelResponse `protobuf:"bytes,2,opt,name=CancelResponse,json=cancel_response,proto3,oneof"`
+	CancelResponse *TDeferedAliceResponseProto_TCancelResponse `protobuf:"bytes,2,opt,name=CancelResponse,proto3,oneof"`
 }
 
 func (*TDeferedAliceResponseProto_BaseResponse) isTDeferedAliceResponseProto_TDeferredResponse() {}
@@ -150,8 +150,8 @@ func (*TDeferedAliceResponseProto_CancelResponse) isTDeferedAliceResponseProto_T
 
 type TDeferedAliceResponseProto_TChatHistoryResponseKey struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	HistoryMessageId *string                `protobuf:"bytes,1,opt,name=HistoryMessageId,json=history_message_id,proto3,oneof" json:"HistoryMessageId,omitempty"`
-	Timestamp        *uint64                `protobuf:"varint,2,opt,name=Timestamp,json=timestamp,proto3,oneof" json:"Timestamp,omitempty"`
+	HistoryMessageId *string                `protobuf:"bytes,1,opt,name=HistoryMessageId,proto3,oneof" json:"HistoryMessageId,omitempty"`
+	Timestamp        *uint64                `protobuf:"varint,2,opt,name=Timestamp,proto3,oneof" json:"Timestamp,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -202,12 +202,12 @@ func (x *TDeferedAliceResponseProto_TChatHistoryResponseKey) GetTimestamp() uint
 
 type TDeferedAliceResponseProto_TBaseResponse struct {
 	state             protoimpl.MessageState          `protogen:"open.v1"`
-	Cards             []*cards.TCard                  `protobuf:"bytes,3,rep,name=Cards,json=cards,proto3" json:"Cards,omitempty"`
-	ShouldListen      bool                            `protobuf:"varint,5,opt,name=ShouldListen,json=should_listen,proto3" json:"ShouldListen,omitempty"`
-	Suggests          []*suggests.TSuggest            `protobuf:"bytes,7,rep,name=Suggests,json=suggests,proto3" json:"Suggests,omitempty"`
-	Directives        []*directives.TDirective        `protobuf:"bytes,8,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	Text              *string                         `protobuf:"bytes,1,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
-	RequestAnnotation *annotations.TRequestAnnotation `protobuf:"bytes,11,opt,name=RequestAnnotation,json=request_annotation,proto3,oneof" json:"RequestAnnotation,omitempty"`
+	Cards             []*cards.TCard                  `protobuf:"bytes,3,rep,name=Cards,proto3" json:"Cards,omitempty"`
+	ShouldListen      bool                            `protobuf:"varint,5,opt,name=ShouldListen,proto3" json:"ShouldListen,omitempty"`
+	Suggests          []*suggests.TSuggest            `protobuf:"bytes,7,rep,name=Suggests,proto3" json:"Suggests,omitempty"`
+	Directives        []*directives.TDirective        `protobuf:"bytes,8,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	Text              *string                         `protobuf:"bytes,1,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
+	RequestAnnotation *annotations.TRequestAnnotation `protobuf:"bytes,11,opt,name=RequestAnnotation,proto3,oneof" json:"RequestAnnotation,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -286,8 +286,8 @@ func (x *TDeferedAliceResponseProto_TBaseResponse) GetRequestAnnotation() *annot
 
 type TDeferedAliceResponseProto_TCancelResponse struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Cancel        bool                     `protobuf:"varint,1,opt,name=Cancel,json=cancel,proto3" json:"Cancel,omitempty"`
-	Directives    []*directives.TDirective `protobuf:"bytes,2,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
+	Cancel        bool                     `protobuf:"varint,1,opt,name=Cancel,proto3" json:"Cancel,omitempty"`
+	Directives    []*directives.TDirective `protobuf:"bytes,2,rep,name=Directives,proto3" json:"Directives,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -340,46 +340,42 @@ var File_alice_protos_api_alicekit_streaming_deffered_response_proto protoreflec
 
 const file_alice_protos_api_alicekit_streaming_deffered_response_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/api/alicekit/streaming/deffered_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\"\xe7\f\n" +
-	"\x1aTDeferedAliceResponseProto\x12J\n" +
-	"\x12ResponsePartialNum\x18\x03 \x01(\rB\x18\xaa\xdd\x1b\x14response_partial_numR\x14response_partial_num\x12$\n" +
-	"\x06IsLast\x18\x04 \x01(\bB\v\xaa\xdd\x1b\ais_lastR\ais_last\x12-\n" +
-	"\tRequestId\x18\x06 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12\xa1\x01\n" +
-	"\x17ChatHistoryResponseKeys\x18\x0f \x03(\v2D.NAlice.NAliceApi.TDeferedAliceResponseProto.TChatHistoryResponseKeyB\x1e\xaa\xdd\x1b\x1achat_history_response_keysR\x1achat_history_response_keys\x12u\n" +
-	"\x1fContainsSensitiveDataInResponse\x18\x12 \x01(\bB'\xaa\xdd\x1b#contains_sensitive_data_in_responseR#contains_sensitive_data_in_response\x12t\n" +
-	"\fBaseResponse\x18\x01 \x01(\v2:.NAlice.NAliceApi.TDeferedAliceResponseProto.TBaseResponseB\x11\xaa\xdd\x1b\rbase_responseH\x00R\rbase_response\x12|\n" +
-	"\x0eCancelResponse\x18\x02 \x01(\v2<.NAlice.NAliceApi.TDeferedAliceResponseProto.TCancelResponseB\x13\xaa\xdd\x1b\x0fcancel_responseH\x00R\x0fcancel_response\x1a\xb9\x01\n" +
-	"\x17TChatHistoryResponseKey\x12I\n" +
-	"\x10HistoryMessageId\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12history_message_idH\x00R\x12history_message_id\x88\x01\x01\x120\n" +
-	"\tTimestamp\x18\x02 \x01(\x04B\r\xaa\xdd\x1b\ttimestampH\x01R\ttimestamp\x88\x01\x01B\x13\n" +
+	";alice/protos/api/alicekit/streaming/deffered_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\"\xa1\n" +
+	"\n" +
+	"\x1aTDeferedAliceResponseProto\x12.\n" +
+	"\x12ResponsePartialNum\x18\x03 \x01(\rR\x12ResponsePartialNum\x12\x16\n" +
+	"\x06IsLast\x18\x04 \x01(\bR\x06IsLast\x12\x1c\n" +
+	"\tRequestId\x18\x06 \x01(\tR\tRequestId\x12~\n" +
+	"\x17ChatHistoryResponseKeys\x18\x0f \x03(\v2D.NAlice.NAliceApi.TDeferedAliceResponseProto.TChatHistoryResponseKeyR\x17ChatHistoryResponseKeys\x12`\n" +
+	"\fBaseResponse\x18\x01 \x01(\v2:.NAlice.NAliceApi.TDeferedAliceResponseProto.TBaseResponseH\x00R\fBaseResponse\x12f\n" +
+	"\x0eCancelResponse\x18\x02 \x01(\v2<.NAlice.NAliceApi.TDeferedAliceResponseProto.TCancelResponseH\x00R\x0eCancelResponse\x12u\n" +
+	"\x1fContainsSensitiveDataInResponse\x18\x12 \x01(\bB'\xaa\xdd\x1b#contains_sensitive_data_in_responseR#contains_sensitive_data_in_response\x1a\x90\x01\n" +
+	"\x17TChatHistoryResponseKey\x12/\n" +
+	"\x10HistoryMessageId\x18\x01 \x01(\tH\x00R\x10HistoryMessageId\x88\x01\x01\x12!\n" +
+	"\tTimestamp\x18\x02 \x01(\x04H\x01R\tTimestamp\x88\x01\x01B\x13\n" +
 	"\x11_HistoryMessageIdB\f\n" +
 	"\n" +
-	"_Timestamp\x1a\x9a\x04\n" +
-	"\rTBaseResponse\x128\n" +
-	"\x05Cards\x18\x03 \x03(\v2\x17.NAlice.NAliceApi.TCardB\t\xaa\xdd\x1b\x05cardsR\x05cards\x126\n" +
-	"\fShouldListen\x18\x05 \x01(\bB\x11\xaa\xdd\x1b\rshould_listenR\rshould_listen\x12D\n" +
-	"\bSuggests\x18\a \x03(\v2\x1a.NAlice.NAliceApi.TSuggestB\f\xaa\xdd\x1b\bsuggestsR\bsuggests\x12L\n" +
+	"_Timestamp\x1a\xba\x03\n" +
+	"\rTBaseResponse\x12-\n" +
+	"\x05Cards\x18\x03 \x03(\v2\x17.NAlice.NAliceApi.TCardR\x05Cards\x12\"\n" +
+	"\fShouldListen\x18\x05 \x01(\bR\fShouldListen\x126\n" +
+	"\bSuggests\x18\a \x03(\v2\x1a.NAlice.NAliceApi.TSuggestR\bSuggests\x12<\n" +
 	"\n" +
-	"Directives\x18\b \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12!\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01\x12p\n" +
-	"\x11RequestAnnotation\x18\v \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationB\x16\xaa\xdd\x1b\x12request_annotationH\x01R\x12request_annotation\x88\x01\x01B\a\n" +
+	"Directives\x18\b \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12\x17\n" +
+	"\x04Text\x18\x01 \x01(\tH\x00R\x04Text\x88\x01\x01\x12W\n" +
+	"\x11RequestAnnotation\x18\v \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationH\x01R\x11RequestAnnotation\x88\x01\x01B\a\n" +
 	"\x05_TextB\x14\n" +
 	"\x12_RequestAnnotationJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vR\x05VoiceR\x11EmotionDirectivesR\x17SummarizerAnalyticsInfo\x1a\x83\x01\n" +
-	"\x0fTCancelResponse\x12\"\n" +
-	"\x06Cancel\x18\x01 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06cancelR\x06cancel\x12L\n" +
+	"\x10\vR\x05VoiceR\x11EmotionDirectivesR\x17SummarizerAnalyticsInfo\x1ag\n" +
+	"\x0fTCancelResponse\x12\x16\n" +
+	"\x06Cancel\x18\x01 \x01(\bR\x06Cancel\x12<\n" +
 	"\n" +
-	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directivesB*\n" +
-	"\x11TDeferredResponse\x12\x15\xaa\xdd\x1b\x11deferred_responseJ\x04\b\x05\x10\x06R\bSessionsB~\n" +
-	"-ru.yandex.alice.protos.api.alicekit.streamingB\x15DefferedResponseProtoP\x01Z4a.yandex-team.ru/alice/protos/api/alicekit/streamingb\x06proto3"
+	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"DirectivesB\x13\n" +
+	"\x11TDeferredResponseJ\x04\b\x05\x10\x06R\bSessionsB\xe3\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x15DefferedResponseProtoP\x01ZSgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/streaming\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_streaming_deffered_response_proto_rawDescOnce sync.Once

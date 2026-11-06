@@ -1737,16 +1737,15 @@ func (x *ReportMessage_Session_SessionDesc) GetSessionType() ReportMessage_Sessi
 }
 
 type ReportMessage_Session_Event struct {
-	state           protoimpl.MessageState                   `protogen:"open.v1"`
-	NumberInSession *uint64                                  `protobuf:"varint,1,req,name=number_in_session,json=numberInSession" json:"number_in_session,omitempty"`
-	Time            *uint64                                  `protobuf:"varint,2,req,name=time" json:"time,omitempty"`
-	Type            *uint32                                  `protobuf:"varint,3,req,name=type" json:"type,omitempty"`
-	Name            *string                                  `protobuf:"bytes,4,opt,name=name" json:"name,omitempty"`
-	Value           []byte                                   `protobuf:"bytes,5,opt,name=value" json:"value,omitempty"`
-	Location        *ReportMessage_Location                  `protobuf:"bytes,6,opt,name=location" json:"location,omitempty"`
-	NetworkInfo     *ReportMessage_Session_Event_NetworkInfo `protobuf:"bytes,7,opt,name=network_info,json=networkInfo" json:"network_info,omitempty"`
-	Environment     *string                                  `protobuf:"bytes,8,opt,name=environment" json:"environment,omitempty"`
-	// Deprecated: Marked as deprecated in yandex_io/libs/appmetrica/proto/metrica.proto.
+	state                   protoimpl.MessageState                    `protogen:"open.v1"`
+	NumberInSession         *uint64                                   `protobuf:"varint,1,req,name=number_in_session,json=numberInSession" json:"number_in_session,omitempty"`
+	Time                    *uint64                                   `protobuf:"varint,2,req,name=time" json:"time,omitempty"`
+	Type                    *uint32                                   `protobuf:"varint,3,req,name=type" json:"type,omitempty"`
+	Name                    *string                                   `protobuf:"bytes,4,opt,name=name" json:"name,omitempty"`
+	Value                   []byte                                    `protobuf:"bytes,5,opt,name=value" json:"value,omitempty"`
+	Location                *ReportMessage_Location                   `protobuf:"bytes,6,opt,name=location" json:"location,omitempty"`
+	NetworkInfo             *ReportMessage_Session_Event_NetworkInfo  `protobuf:"bytes,7,opt,name=network_info,json=networkInfo" json:"network_info,omitempty"`
+	Environment             *string                                   `protobuf:"bytes,8,opt,name=environment" json:"environment,omitempty"`
 	Account                 *ReportMessage_Session_Event_Account      `protobuf:"bytes,9,opt,name=account" json:"account,omitempty"`
 	BytesTruncated          *uint32                                   `protobuf:"varint,10,opt,name=bytes_truncated,json=bytesTruncated" json:"bytes_truncated,omitempty"`
 	EncodingType            *ReportMessage_Session_Event_EncodingType `protobuf:"varint,12,opt,name=encoding_type,json=encodingType,enum=ReportMessage_Session_Event_EncodingType,def=0" json:"encoding_type,omitempty"`
@@ -1860,7 +1859,6 @@ func (x *ReportMessage_Session_Event) GetEnvironment() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in yandex_io/libs/appmetrica/proto/metrica.proto.
 func (x *ReportMessage_Session_Event) GetAccount() *ReportMessage_Session_Event_Account {
 	if x != nil {
 		return x.Account
@@ -2230,7 +2228,6 @@ func (x *ReportMessage_Session_Event_NetworkInfo) GetWifiAccessPoint() *ReportMe
 	return nil
 }
 
-// Deprecated: Marked as deprecated in yandex_io/libs/appmetrica/proto/metrica.proto.
 type ReportMessage_Session_Event_Account struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            *string                `protobuf:"bytes,1,req,name=id" json:"id,omitempty"`
@@ -2694,7 +2691,7 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\ttimestamp\x18\x01 \x02(\x04R\ttimestamp\x12\x1b\n" +
 	"\ttime_zone\x18\x02 \x02(\x11R\btimeZone\x12,\n" +
 	"\x12server_time_offset\x18\x03 \x01(\x03R\x10serverTimeOffset\x12X\n" +
-	"%obtained_before_first_synchronization\x18\x04 \x01(\b:\x05falseR\"obtainedBeforeFirstSynchronization\"\x9d)\n" +
+	"%obtained_before_first_synchronization\x18\x04 \x01(\b:\x05falseR\"obtainedBeforeFirstSynchronization\"\x95)\n" +
 	"\rReportMessage\x12\"\n" +
 	"\tsend_time\x18\x01 \x01(\v2\x05.TimeR\bsendTime\x122\n" +
 	"\bsessions\x18\x03 \x03(\v2\x16.ReportMessage.SessionR\bsessions\x12N\n" +
@@ -2714,7 +2711,7 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\x05speed\x18\x06 \x01(\rR\x05speed\x12\x1a\n" +
 	"\baltitude\x18\a \x01(\x05R\baltitude\x12?\n" +
 	"\bprovider\x18\b \x01(\x0e2\x11.LocationProvider:\x10PROVIDER_UNKNOWNR\bprovider\x12+\n" +
-	"\x11original_provider\x18\t \x01(\tR\x10originalProvider\x1a\xf6\x1f\n" +
+	"\x11original_provider\x18\t \x01(\tR\x10originalProvider\x1a\xee\x1f\n" +
 	"\aSession\x12\x0e\n" +
 	"\x02id\x18\x01 \x02(\x04R\x02id\x12E\n" +
 	"\fsession_desc\x18\x02 \x02(\v2\".ReportMessage.Session.SessionDescR\vsessionDesc\x124\n" +
@@ -2745,7 +2742,7 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\vSessionType\x12\x16\n" +
 	"\x12SESSION_FOREGROUND\x10\x00\x12\x16\n" +
 	"\x12SESSION_BACKGROUND\x10\x01\x12\x16\n" +
-	"\x12SESSION_DIAGNOSTIC\x10\x02\x1a\xa2\x14\n" +
+	"\x12SESSION_DIAGNOSTIC\x10\x02\x1a\x9a\x14\n" +
 	"\x05Event\x12*\n" +
 	"\x11number_in_session\x18\x01 \x02(\x04R\x0fnumberInSession\x12\x12\n" +
 	"\x04time\x18\x02 \x02(\x04R\x04time\x12\x12\n" +
@@ -2754,8 +2751,8 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\x05value\x18\x05 \x01(\fR\x05value\x123\n" +
 	"\blocation\x18\x06 \x01(\v2\x17.ReportMessage.LocationR\blocation\x12K\n" +
 	"\fnetwork_info\x18\a \x01(\v2(.ReportMessage.Session.Event.NetworkInfoR\vnetworkInfo\x12 \n" +
-	"\venvironment\x18\b \x01(\tR\venvironment\x12B\n" +
-	"\aaccount\x18\t \x01(\v2$.ReportMessage.Session.Event.AccountB\x02\x18\x01R\aaccount\x12'\n" +
+	"\venvironment\x18\b \x01(\tR\venvironment\x12>\n" +
+	"\aaccount\x18\t \x01(\v2$.ReportMessage.Session.Event.AccountR\aaccount\x12'\n" +
 	"\x0fbytes_truncated\x18\n" +
 	" \x01(\rR\x0ebytesTruncated\x12T\n" +
 	"\rencoding_type\x18\f \x01(\x0e2).ReportMessage.Session.Event.EncodingType:\x04NONER\fencodingType\x12p\n" +
@@ -2784,11 +2781,11 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\x05State\x12\x11\n" +
 	"\rSTATE_UNKNOWN\x10\x00\x12\x12\n" +
 	"\x0eSTATE_DISABLED\x10\x01\x12\x11\n" +
-	"\rSTATE_ENABLED\x10\x02\x1aK\n" +
+	"\rSTATE_ENABLED\x10\x02\x1aG\n" +
 	"\aAccount\x12\x0e\n" +
 	"\x02id\x18\x01 \x02(\tR\x02id\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12\x18\n" +
-	"\aoptions\x18\x03 \x01(\tR\aoptions:\x02\x18\x01\"\x8e\x06\n" +
+	"\aoptions\x18\x03 \x01(\tR\aoptions\"\x8e\x06\n" +
 	"\tEventType\x12\x0e\n" +
 	"\n" +
 	"EVENT_INIT\x10\x01\x12\x0f\n" +
@@ -2957,7 +2954,7 @@ const file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDesc = "" +
 	"\x12CALL_STATE_UNKNOWN\x10\x00\x12\x13\n" +
 	"\x0fCALL_STATE_IDLE\x10\x01\x12\x16\n" +
 	"\x12CALL_STATE_RINGING\x10\x02\x12\x16\n" +
-	"\x12CALL_STATE_OFFHOOK\x10\x03"
+	"\x12CALL_STATE_OFFHOOK\x10\x03BaB\fMetricaProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/appmetrica/proto"
 
 var (
 	file_yandex_io_libs_appmetrica_proto_metrica_proto_rawDescOnce sync.Once

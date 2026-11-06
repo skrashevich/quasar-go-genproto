@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/sound_routing/capability.proto
 
-package sound_routingpb
+package sound_routing
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -914,8 +914,8 @@ const file_alice_protos_endpoint_capabilities_sound_routing_capability_proto_raw
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TSoundRoutingCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xd8\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc0\x02B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bSoundRoutingCapabilityProtoP\x01ZQa.yandex-team.ru/alice/protos/endpoint/capabilities/sound_routing;sound_routingpbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xd8\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc0\x02B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bSoundRoutingCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/sound_routingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_sound_routing_capability_proto_rawDescOnce sync.Once

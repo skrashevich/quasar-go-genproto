@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/phone_by_contacts_book/capability.proto
 
-package phonebycontactsbookpb
+package phone_by_contacts_book
 
 import (
 	typed_callbacks "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks"
@@ -310,8 +310,8 @@ const file_alice_protos_endpoint_capabilities_phone_by_contacts_book_capability_
 	"\x10OnSelectCallback\x18\x02 \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\x16\xaa\xdd\x1b\x12on_select_callbackR\x12on_select_callback\x12\x1c\n" +
 	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\"\n" +
 	"\x06Phones\x18\x04 \x03(\tB\n" +
-	"\xaa\xdd\x1b\x06phonesR\x06phones:\x04\xa8\xdd\x1b\x04:+\x92\x82\x19\x1ephone_by_contacts_book_contact\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb0\x02B\xb4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"PhoneByContactsBookCapabilityProtoZ`a.yandex-team.ru/alice/protos/endpoint/capabilities/phone_by_contacts_book;phonebycontactsbookpbb\x06proto3"
+	"\xaa\xdd\x1b\x06phonesR\x06phones:\x04\xa8\xdd\x1b\x04:+\x92\x82\x19\x1ephone_by_contacts_book_contact\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb0\x02B\xbd\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"PhoneByContactsBookCapabilityProtoZigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/phone_by_contacts_bookb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_phone_by_contacts_book_capability_proto_rawDescOnce sync.Once

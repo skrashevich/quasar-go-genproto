@@ -331,8 +331,8 @@ const file_yandex_io_protos_account_storage_proto_rawDesc = "" +
 	"\vAccountType\x12\r\n" +
 	"\tUNDEFINED\x10\x00\x12\t\n" +
 	"\x05OWNER\x10\x01\x12\t\n" +
-	"\x05GUEST\x10\x02B0\n" +
-	"\x19ru.yandex.quasar.protobufB\x13AccountStorageProto"
+	"\x05GUEST\x10\x02B\xba\x01\n" +
+	"\x10com.quasar.protoB\x13AccountStorageProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_account_storage_proto_rawDescOnce sync.Once

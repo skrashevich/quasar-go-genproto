@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/permissions/capability.proto
 
-package permissionspb
+package permissions
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -855,8 +855,8 @@ const file_alice_protos_endpoint_capabilities_permissions_capability_proto_rawDe
 	"\n" +
 	"Permission\x18\x01 \x01(\v20.NAlice.TServerPermissionsCapability.TPermissionB\x0e\xaa\xdd\x1b\n" +
 	"permissionR\n" +
-	"permission:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x99\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe3\x01B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPermissionsCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/permissions;permissionspbb\x06proto3"
+	"permission:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x99\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe3\x01B\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPermissionsCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/permissionsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_permissions_capability_proto_rawDescOnce sync.Once

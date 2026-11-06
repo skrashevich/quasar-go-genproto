@@ -378,8 +378,8 @@ const file_alice_megamind_protos_scenarios_directives_sound_directives_sound_dir
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12N\n" +
 	"\x12MultiroomSessionId\x18\x02 \x01(\tB\x1c\x98\x82\x19\x01\xaa\xdd\x1b\x14multiroom_session_idR\x14multiroom_session_id\x12&\n" +
 	"\x06RoomId\x18\x03 \x01(\tB\r\xaa\xdd\x1b\aroom_id\x18\x01R\aroom_id\x12X\n" +
-	"\fLocationInfo\x18\x04 \x01(\v2 .NAlice.NScenarios.TLocationInfoB\x11\xaa\xdd\x1b\rlocation_infoR\rlocation_info:\x14\x92\x82\x19\fsound_louder\xa8\xdd\x1b\x04B\xad\x01\n" +
-	"Eru.yandex.alice.megamind.protos.scenarios.directives.sound_directivesB\x14SoundDirectivesProtoP\x01ZLa.yandex-team.ru/alice/megamind/protos/scenarios/directives/sound_directivesb\x06proto3"
+	"\fLocationInfo\x18\x04 \x01(\v2 .NAlice.NScenarios.TLocationInfoB\x11\xaa\xdd\x1b\rlocation_infoR\rlocation_info:\x14\x92\x82\x19\fsound_louder\xa8\xdd\x1b\x04B\xcc\x01\n" +
+	"Eru.yandex.alice.megamind.protos.scenarios.directives.sound_directivesB\x14SoundDirectivesProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/directives/sound_directivesb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_directives_sound_directives_sound_directives_proto_rawDescOnce sync.Once

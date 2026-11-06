@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/app_functions/capability.proto
 
-package appfunctionspb
+package app_functions
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -372,8 +372,8 @@ const file_alice_protos_endpoint_capabilities_app_functions_capability_proto_raw
 	"\x04Name\x18\x04 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
 	"\vPackageName\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name\x126\n" +
 	"\fFunctionName\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rfunction_nameR\rfunction_name\x12A\n" +
-	"\bArgument\x18\x03 \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bargumentR\bargument:*\x92\x82\x19\x1dinvoke_app_function_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc0\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9e\x01B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAppFunctionsCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/app_functions;appfunctionspbb\x06proto3"
+	"\bArgument\x18\x03 \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bargumentR\bargument:*\x92\x82\x19\x1dinvoke_app_function_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc0\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9e\x01B\xad\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAppFunctionsCapabilityProtoZ`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/app_functionsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_app_functions_capability_proto_rawDescOnce sync.Once

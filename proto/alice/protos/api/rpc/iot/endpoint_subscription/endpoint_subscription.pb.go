@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/rpc/iot/endpoint_subscription/endpoint_subscription.proto
 
-package endpointsubscriptionpb
+package endpoint_subscription
 
 import (
 	endpoint_protocol "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/iot/endpoint_protocol"
@@ -334,8 +334,8 @@ const file_alice_protos_api_rpc_iot_endpoint_subscription_endpoint_subscription_
 	"\tResponses\x18\x01 \x03(\v2:.NAlice.TUnsubscribeIoTEndpointsResponse.TEndpointResponseB\r\xaa\xdd\x1b\tresponsesR\tresponses\x1a^\n" +
 	"\x11TEndpointResponse\x12I\n" +
 	"\x06Status\x18\x01 \x01(\v2%.NAlice.NAliceApi.TSubscriptionStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status:\x04\xa8\xdd\x1b\x04B\xa4\x01\n" +
-	"4ru.yandex.alice.protos.api.rpc.endpoint_subscriptionB\x14EndpointSubscriptionZVa.yandex-team.ru/alice/protos/api/rpc/iot/endpoint_subscription;endpointsubscriptionpbb\x06proto3"
+	"\xaa\xdd\x1b\x06statusR\x06status:\x04\xa8\xdd\x1b\x04B\xac\x01\n" +
+	"4ru.yandex.alice.protos.api.rpc.endpoint_subscriptionB\x14EndpointSubscriptionZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/iot/endpoint_subscriptionb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_iot_endpoint_subscription_endpoint_subscription_proto_rawDescOnce sync.Once

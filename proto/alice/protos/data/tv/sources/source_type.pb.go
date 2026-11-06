@@ -103,9 +103,10 @@ const file_alice_protos_data_tv_sources_source_type_proto_rawDesc = "" +
 	"\x06ST_VGA\x10\x05\x12\x0e\n" +
 	"\n" +
 	"ST_Y_PB_PR\x10\x06\x12\t\n" +
-	"\x05ST_AV\x10\aBc\n" +
-	"&ru.yandex.alice.protos.data.tv.sourcesB\n" +
-	"SourceTypeZ-a.yandex-team.ru/alice/protos/data/tv/sourcesb\x06proto3"
+	"\x05ST_AV\x10\aB\xb8\x01\n" +
+	"\x0ecom.NAlice.NTvB\x0fSourceTypeProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/sources\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_sources_source_type_proto_rawDescOnce sync.Once

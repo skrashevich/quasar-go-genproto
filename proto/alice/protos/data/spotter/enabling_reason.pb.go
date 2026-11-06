@@ -94,8 +94,8 @@ const file_alice_protos_data_spotter_enabling_reason_proto_rawDesc = "" +
 	"\x11ActivationSpotter\x10\x03\x12\x12\n" +
 	"\x0eCommandSpotter\x10\x04\x12\x12\n" +
 	"\x0eListeningState\x10\x05\x12\x1a\n" +
-	"\x16IntonationInterruption\x10\x06BQ\n" +
-	"#ru.yandex.alice.protos.data.spotterZ*a.yandex-team.ru/alice/protos/data/spotterb\x06proto3"
+	"\x16IntonationInterruption\x10\x06B\xc3\x01\n" +
+	"\x10com.NAlice.NDataB\x13EnablingReasonProtoP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/spotter\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_spotter_enabling_reason_proto_rawDescOnce sync.Once

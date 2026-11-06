@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/all/all.proto
 
-package allcapabilitiespb
+package all
 
 import (
 	accessibility_voice_control "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/accessibility_voice_control"
@@ -5663,8 +5663,8 @@ const file_alice_protos_endpoint_capabilities_all_all_proto_rawDesc = "" +
 	"\x17BackendStatusCapability\x18\xd3\x02 \x01(\v2 .NAlice.TBackendStatusCapabilityB!\xa0\xdd\x1b\x05\xaa\xdd\x1b\x19backend_status_capabilityH\x00R\x19backend_status_capability:\x04\xa8\xdd\x1b\x04B\x1c\n" +
 	"\n" +
 	"Capability\x12\x0e\xaa\xdd\x1b\n" +
-	"capabilityJ\x06\b\xbb\x01\x10\xbc\x01J\x06\b\xc3\x01\x10\xc4\x01J\x06\b\xc7\x01\x10\xc8\x01J\x06\b\xce\x01\x10\xcf\x01J\x06\b\xcf\x01\x10\xd0\x01J\x06\b\xd2\x01\x10\xd3\x01J\x06\b\xd4\x01\x10\xd5\x01J\x06\b\xd5\x01\x10\xd6\x01J\x06\b\xd6\x01\x10\xd7\x01J\x06\b\xd7\x01\x10\xd8\x01J\x06\b\xd8\x01\x10\xd9\x01J\x06\b\xd9\x01\x10\xda\x01J\x06\b\xda\x01\x10\xdb\x01J\x06\b\xdd\x01\x10\xde\x01J\x06\b\xdf\x01\x10\xe0\x01J\x06\b\xe3\x01\x10\xe4\x01J\x06\b\xe4\x01\x10\xe5\x01J\x06\b\xec\x01\x10\xed\x01J\x06\b\xef\x01\x10\xf0\x01J\x06\b\xff\x01\x10\x80\x02J\x06\b\x83\x02\x10\x84\x02J\x06\b\x85\x02\x10\x86\x02J\x06\b\x9e\x02\x10\x9f\x02J\x06\b\xcc\x02\x10\xcd\x02R\x18MatterLocalityCapabilityR\x18SmartScenariosCapabilityR\x17ZenohLocalityCapabilityR\x17WaterWireLineCapabilityR\x18RadioDiscoveryCapabilityR\x17CommissioningCapabilityR\x14WaterMeterCapabilityR\x10SwitchCapabilityR$LeakProtectionDoNotDisturbCapabilityR\x1aNeptuneRelayModeCapabilityR\x15PowerSourceCapabilityR\x12TapGroupCapabilityR\x10ConfigCapabilityR\x15PermissionsCapabilityR DigitalMetersDiscoveryCapabilityR\x13AppFacadeCapabilityR\x18AliceSatelliteCapabilityR\x1aWaterWireLineHubCapabilityR\x1bDoorLockDiscoveryCapabilityR\x15IotNameViewCapabilityR\x14NeptuneUpsCapabilityR\x16SystemPromptCapabilityR\x1fAssistantResponseModeCapabilityR\x1eDoorLockDoNotDisturbCapabilityB\x8f\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AllCapabilitiesProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/all;allcapabilitiespbb\x06proto3"
+	"capabilityJ\x06\b\xbb\x01\x10\xbc\x01J\x06\b\xc3\x01\x10\xc4\x01J\x06\b\xc7\x01\x10\xc8\x01J\x06\b\xce\x01\x10\xcf\x01J\x06\b\xcf\x01\x10\xd0\x01J\x06\b\xd2\x01\x10\xd3\x01J\x06\b\xd4\x01\x10\xd5\x01J\x06\b\xd5\x01\x10\xd6\x01J\x06\b\xd6\x01\x10\xd7\x01J\x06\b\xd7\x01\x10\xd8\x01J\x06\b\xd8\x01\x10\xd9\x01J\x06\b\xd9\x01\x10\xda\x01J\x06\b\xda\x01\x10\xdb\x01J\x06\b\xdd\x01\x10\xde\x01J\x06\b\xdf\x01\x10\xe0\x01J\x06\b\xe3\x01\x10\xe4\x01J\x06\b\xe4\x01\x10\xe5\x01J\x06\b\xec\x01\x10\xed\x01J\x06\b\xef\x01\x10\xf0\x01J\x06\b\xff\x01\x10\x80\x02J\x06\b\x83\x02\x10\x84\x02J\x06\b\x85\x02\x10\x86\x02J\x06\b\x9e\x02\x10\x9f\x02J\x06\b\xcc\x02\x10\xcd\x02R\x18MatterLocalityCapabilityR\x18SmartScenariosCapabilityR\x17ZenohLocalityCapabilityR\x17WaterWireLineCapabilityR\x18RadioDiscoveryCapabilityR\x17CommissioningCapabilityR\x14WaterMeterCapabilityR\x10SwitchCapabilityR$LeakProtectionDoNotDisturbCapabilityR\x1aNeptuneRelayModeCapabilityR\x15PowerSourceCapabilityR\x12TapGroupCapabilityR\x10ConfigCapabilityR\x15PermissionsCapabilityR DigitalMetersDiscoveryCapabilityR\x13AppFacadeCapabilityR\x18AliceSatelliteCapabilityR\x1aWaterWireLineHubCapabilityR\x1bDoorLockDiscoveryCapabilityR\x15IotNameViewCapabilityR\x14NeptuneUpsCapabilityR\x16SystemPromptCapabilityR\x1fAssistantResponseModeCapabilityR\x1eDoorLockDoNotDisturbCapabilityB\x9c\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AllCapabilitiesProtoZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/allb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_all_all_proto_rawDescOnce sync.Once

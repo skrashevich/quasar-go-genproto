@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_zone/capability.proto
 
-package zonepb
+package iot_zone
 
 import (
 	iot "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot"
@@ -77,9 +77,9 @@ func (TIotZoneCapability_EZoneType) EnumDescriptor() ([]byte, []int) {
 
 type TIotZoneCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotZoneCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotZoneCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotZoneCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotZoneCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -137,11 +137,11 @@ func (x *TIotZoneCapability) GetState() *TIotZoneCapability_TState {
 
 type TIotZoneCapability_TZone struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	ID            uint32                       `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Enabled       bool                         `protobuf:"varint,2,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
-	Mutable       bool                         `protobuf:"varint,5,opt,name=Mutable,json=mutable,proto3" json:"Mutable,omitempty"`
-	Type          TIotZoneCapability_EZoneType `protobuf:"varint,3,opt,name=Type,json=type,proto3,enum=NAlice.TIotZoneCapability_EZoneType" json:"Type,omitempty"`
-	Shape         *iot.TZoneShape              `protobuf:"bytes,4,opt,name=Shape,json=shape,proto3" json:"Shape,omitempty"`
+	ID            uint32                       `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Enabled       bool                         `protobuf:"varint,2,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
+	Mutable       bool                         `protobuf:"varint,5,opt,name=Mutable,proto3" json:"Mutable,omitempty"`
+	Type          TIotZoneCapability_EZoneType `protobuf:"varint,3,opt,name=Type,proto3,enum=NAlice.TIotZoneCapability_EZoneType" json:"Type,omitempty"`
+	Shape         *iot.TZoneShape              `protobuf:"bytes,4,opt,name=Shape,proto3" json:"Shape,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -213,8 +213,8 @@ func (x *TIotZoneCapability_TZone) GetShape() *iot.TZoneShape {
 
 type TIotZoneCapability_TParameters struct {
 	state                          protoimpl.MessageState `protogen:"open.v1"`
-	MaxPresenceOccupancyZonesCount *uint32                `protobuf:"varint,1,opt,name=MaxPresenceOccupancyZonesCount,json=max_presence_occupancy_zones_count,proto3,oneof" json:"MaxPresenceOccupancyZonesCount,omitempty"`
-	MaxPresenceNoiseZonesCount     *uint32                `protobuf:"varint,2,opt,name=MaxPresenceNoiseZonesCount,json=max_presence_noise_zones_count,proto3,oneof" json:"MaxPresenceNoiseZonesCount,omitempty"`
+	MaxPresenceOccupancyZonesCount *uint32                `protobuf:"varint,1,opt,name=MaxPresenceOccupancyZonesCount,proto3,oneof" json:"MaxPresenceOccupancyZonesCount,omitempty"`
+	MaxPresenceNoiseZonesCount     *uint32                `protobuf:"varint,2,opt,name=MaxPresenceNoiseZonesCount,proto3,oneof" json:"MaxPresenceNoiseZonesCount,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -265,7 +265,7 @@ func (x *TIotZoneCapability_TParameters) GetMaxPresenceNoiseZonesCount() uint32 
 
 type TIotZoneCapability_TState struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Zones         []*TIotZoneCapability_TZone `protobuf:"bytes,1,rep,name=Zones,json=zones,proto3" json:"Zones,omitempty"`
+	Zones         []*TIotZoneCapability_TZone `protobuf:"bytes,1,rep,name=Zones,proto3" json:"Zones,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -309,9 +309,9 @@ func (x *TIotZoneCapability_TState) GetZones() []*TIotZoneCapability_TZone {
 
 type TIotZoneCapability_TIotCreateZoneDirective struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Type          TIotZoneCapability_EZoneType `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TIotZoneCapability_EZoneType" json:"Type,omitempty"`
-	Shape         *iot.TZoneShape              `protobuf:"bytes,2,opt,name=Shape,json=shape,proto3" json:"Shape,omitempty"`
-	Enabled       bool                         `protobuf:"varint,3,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Type          TIotZoneCapability_EZoneType `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TIotZoneCapability_EZoneType" json:"Type,omitempty"`
+	Shape         *iot.TZoneShape              `protobuf:"bytes,2,opt,name=Shape,proto3" json:"Shape,omitempty"`
+	Enabled       bool                         `protobuf:"varint,3,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -369,8 +369,8 @@ func (x *TIotZoneCapability_TIotCreateZoneDirective) GetEnabled() bool {
 
 type TIotZoneCapability_TIotUpdateZoneDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            uint32                 `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Shape         *iot.TZoneShape        `protobuf:"bytes,2,opt,name=Shape,json=shape,proto3" json:"Shape,omitempty"`
+	ID            uint32                 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Shape         *iot.TZoneShape        `protobuf:"bytes,2,opt,name=Shape,proto3" json:"Shape,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -421,7 +421,7 @@ func (x *TIotZoneCapability_TIotUpdateZoneDirective) GetShape() *iot.TZoneShape 
 
 type TIotZoneCapability_TIotDeleteZoneDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            uint32                 `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
+	ID            uint32                 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -465,8 +465,8 @@ func (x *TIotZoneCapability_TIotDeleteZoneDirective) GetID() uint32 {
 
 type TIotZoneCapability_TIotToggleZoneDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            uint32                 `protobuf:"varint,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Enabled       bool                   `protobuf:"varint,2,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	ID            uint32                 `protobuf:"varint,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Enabled       bool                   `protobuf:"varint,2,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -517,7 +517,7 @@ func (x *TIotZoneCapability_TIotToggleZoneDirective) GetEnabled() bool {
 
 type TIotZoneCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TIotZoneCapability    `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotZoneCapability    `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -563,49 +563,48 @@ var File_alice_protos_endpoint_capabilities_iot_zone_capability_proto protorefle
 
 const file_alice_protos_endpoint_capabilities_iot_zone_capability_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/endpoint/capabilities/iot_zone/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\x9e\r\n" +
-	"\x12TIotZoneCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	"<alice/protos/endpoint/capabilities/iot_zone/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\xb7\t\n" +
+	"\x12TIotZoneCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TIotZoneCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TIotZoneCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xf1\x01\n" +
-	"\x05TZone\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled\x12%\n" +
-	"\aMutable\x18\x05 \x01(\bB\v\xaa\xdd\x1b\amutableR\amutable\x12B\n" +
-	"\x04Type\x18\x03 \x01(\x0e2$.NAlice.TIotZoneCapability.EZoneTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x128\n" +
-	"\x05Shape\x18\x04 \x01(\v2\x17.NAlice.NIot.TZoneShapeB\t\xaa\xdd\x1b\x05shapeR\x05shape:\x04\xa8\xdd\x1b\x04\x1a\xbb\x02\n" +
-	"\vTParameters\x12w\n" +
-	"\x1eMaxPresenceOccupancyZonesCount\x18\x01 \x01(\rB&\xaa\xdd\x1b\"max_presence_occupancy_zones_countH\x00R\"max_presence_occupancy_zones_count\x88\x01\x01\x12k\n" +
-	"\x1aMaxPresenceNoiseZonesCount\x18\x02 \x01(\rB\"\xaa\xdd\x1b\x1emax_presence_noise_zones_countH\x01R\x1emax_presence_noise_zones_count\x88\x01\x01:\x04\xa8\xdd\x1b\x04B!\n" +
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TIotZoneCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TIotZoneCapability.TStateR\x05State\x1a\xb4\x01\n" +
+	"\x05TZone\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x12\x18\n" +
+	"\aEnabled\x18\x02 \x01(\bR\aEnabled\x12\x18\n" +
+	"\aMutable\x18\x05 \x01(\bR\aMutable\x128\n" +
+	"\x04Type\x18\x03 \x01(\x0e2$.NAlice.TIotZoneCapability.EZoneTypeR\x04Type\x12-\n" +
+	"\x05Shape\x18\x04 \x01(\v2\x17.NAlice.NIot.TZoneShapeR\x05Shape\x1a\xe1\x01\n" +
+	"\vTParameters\x12K\n" +
+	"\x1eMaxPresenceOccupancyZonesCount\x18\x01 \x01(\rH\x00R\x1eMaxPresenceOccupancyZonesCount\x88\x01\x01\x12C\n" +
+	"\x1aMaxPresenceNoiseZonesCount\x18\x02 \x01(\rH\x01R\x1aMaxPresenceNoiseZonesCount\x88\x01\x01B!\n" +
 	"\x1f_MaxPresenceOccupancyZonesCountB\x1d\n" +
-	"\x1b_MaxPresenceNoiseZonesCount\x1aQ\n" +
-	"\x06TState\x12A\n" +
-	"\x05Zones\x18\x01 \x03(\v2 .NAlice.TIotZoneCapability.TZoneB\t\xaa\xdd\x1b\x05zonesR\x05zones:\x04\xa8\xdd\x1b\x04\x1a\xe6\x01\n" +
-	"\x17TIotCreateZoneDirective\x12B\n" +
-	"\x04Type\x18\x01 \x01(\x0e2$.NAlice.TIotZoneCapability.EZoneTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x128\n" +
-	"\x05Shape\x18\x02 \x01(\v2\x17.NAlice.NIot.TZoneShapeB\t\xaa\xdd\x1b\x05shapeR\x05shape\x12%\n" +
-	"\aEnabled\x18\x03 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:&\x92\x82\x19\x19iot_create_zone_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb1\x03\x1a\x93\x01\n" +
-	"\x17TIotUpdateZoneDirective\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id\x128\n" +
-	"\x05Shape\x18\x02 \x01(\v2\x17.NAlice.NIot.TZoneShapeB\t\xaa\xdd\x1b\x05shapeR\x05shape:&\x92\x82\x19\x19iot_update_zone_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb2\x03\x1aY\n" +
-	"\x17TIotDeleteZoneDirective\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id:&\x92\x82\x19\x19iot_delete_zone_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x03\x1a\x80\x01\n" +
-	"\x17TIotToggleZoneDirective\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\rB\x06\xaa\xdd\x1b\x02idR\x02id\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:&\x92\x82\x19\x19iot_toggle_zone_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb4\x03\x1aj\n" +
-	"\x11TUpdateStateEvent\x12J\n" +
+	"\x1b_MaxPresenceNoiseZonesCount\x1a@\n" +
+	"\x06TState\x126\n" +
+	"\x05Zones\x18\x01 \x03(\v2 .NAlice.TIotZoneCapability.TZoneR\x05Zones\x1a\x9c\x01\n" +
+	"\x17TIotCreateZoneDirective\x128\n" +
+	"\x04Type\x18\x01 \x01(\x0e2$.NAlice.TIotZoneCapability.EZoneTypeR\x04Type\x12-\n" +
+	"\x05Shape\x18\x02 \x01(\v2\x17.NAlice.NIot.TZoneShapeR\x05Shape\x12\x18\n" +
+	"\aEnabled\x18\x03 \x01(\bR\aEnabled\x1aX\n" +
+	"\x17TIotUpdateZoneDirective\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x12-\n" +
+	"\x05Shape\x18\x02 \x01(\v2\x17.NAlice.NIot.TZoneShapeR\x05Shape\x1a)\n" +
+	"\x17TIotDeleteZoneDirective\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x1aC\n" +
+	"\x17TIotToggleZoneDirective\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\rR\x02ID\x12\x18\n" +
+	"\aEnabled\x18\x02 \x01(\bR\aEnabled\x1aO\n" +
+	"\x11TUpdateStateEvent\x12:\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TIotZoneCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x8a\x01\"Z\n" +
+	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TIotZoneCapabilityR\n" +
+	"Capability\"Z\n" +
 	"\tEZoneType\x12\x13\n" +
 	"\x0fUnknownZoneType\x10\x00\x12\x1d\n" +
 	"\x19PresenceOccupancyZoneType\x10\x01\x12\x19\n" +
-	"\x15PresenceNoiseZoneType\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x99\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17TIotZoneCapabilityProtoP\x01ZCa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_zone;zonepbb\x06proto3"
+	"\x15PresenceNoiseZoneType\x10\x02B\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_zone\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_zone_capability_proto_rawDescOnce sync.Once

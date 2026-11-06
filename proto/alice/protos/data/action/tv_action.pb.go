@@ -26,9 +26,9 @@ const (
 
 type TTvAction struct {
 	state          protoimpl.MessageState     `protogen:"open.v1"`
-	Directive      *anypb.Any                 `protobuf:"bytes,2,opt,name=Directive,json=directive,proto3" json:"Directive,omitempty"`
-	AliceRequestId *string                    `protobuf:"bytes,4,opt,name=AliceRequestId,json=alice_request_id,proto3,oneof" json:"AliceRequestId,omitempty"`
-	EventSource    *event_source.TEventSource `protobuf:"bytes,5,opt,name=EventSource,json=event_source,proto3,oneof" json:"EventSource,omitempty"`
+	Directive      *anypb.Any                 `protobuf:"bytes,2,opt,name=Directive,proto3" json:"Directive,omitempty"`
+	AliceRequestId *string                    `protobuf:"bytes,4,opt,name=AliceRequestId,proto3,oneof" json:"AliceRequestId,omitempty"`
+	EventSource    *event_source.TEventSource `protobuf:"bytes,5,opt,name=EventSource,proto3,oneof" json:"EventSource,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -88,14 +88,15 @@ var File_alice_protos_data_action_tv_action_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_action_tv_action_proto_rawDesc = "" +
 	"\n" +
-	"(alice/protos/data/action/tv_action.proto\x12\x06NAlice\x1a1alice/protos/data/event_source/event_source.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\"\x97\x02\n" +
-	"\tTTvAction\x12A\n" +
-	"\tDirective\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\r\xaa\xdd\x1b\tdirectiveR\tdirective\x12C\n" +
-	"\x0eAliceRequestId\x18\x04 \x01(\tB\x14\xaa\xdd\x1b\x10alice_request_idH\x00R\x10alice_request_id\x88\x01\x01\x12N\n" +
-	"\vEventSource\x18\x05 \x01(\v2\x14.NAlice.TEventSourceB\x10\xaa\xdd\x1b\fevent_sourceH\x01R\fevent_source\x88\x01\x01B\x11\n" +
+	"(alice/protos/data/action/tv_action.proto\x12\x06NAlice\x1a1alice/protos/data/event_source/event_source.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\"\xdd\x01\n" +
+	"\tTTvAction\x122\n" +
+	"\tDirective\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\tDirective\x12+\n" +
+	"\x0eAliceRequestId\x18\x04 \x01(\tH\x00R\x0eAliceRequestId\x88\x01\x01\x12;\n" +
+	"\vEventSource\x18\x05 \x01(\v2\x14.NAlice.TEventSourceH\x01R\vEventSource\x88\x01\x01B\x11\n" +
 	"\x0f_AliceRequestIdB\x0e\n" +
-	"\f_EventSourceJ\x04\b\x03\x10\x04R\tRequestIdBY\n" +
-	"\"ru.yandex.alice.protos.data.actionB\bTvActionZ)a.yandex-team.ru/alice/protos/data/actionb\x06proto3"
+	"\f_EventSourceJ\x04\b\x03\x10\x04R\tRequestIdB\x9d\x01\n" +
+	"\n" +
+	"com.NAliceB\rTvActionProtoP\x01ZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/action\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_action_tv_action_proto_rawDescOnce sync.Once

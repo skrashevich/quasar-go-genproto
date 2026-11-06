@@ -75,7 +75,10 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_DspCoreEnum_proto_rawD
 	"yandex.dsp*#\n" +
 	"\vDspCoreEnum\x12\t\n" +
 	"\x05DSP_A\x10\x00\x12\t\n" +
-	"\x05DSP_B\x10\x01b\x06proto3"
+	"\x05DSP_B\x10\x01B\xcb\x01\n" +
+	"\x0ecom.yandex.dspB\x10DspCoreEnumProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos\xa2\x02\x03YDX\xaa\x02\n" +
+	"Yandex.Dsp\xca\x02\n" +
+	"Yandex\\Dsp\xe2\x02\x16Yandex\\Dsp\\GPBMetadata\xea\x02\vYandex::Dspb\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_DspCoreEnum_proto_rawDescOnce sync.Once

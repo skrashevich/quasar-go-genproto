@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/level/capability.proto
 
-package levelpb
+package level
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -165,9 +165,9 @@ func (TLevelCapability_EMoveMode) EnumDescriptor() ([]byte, []int) {
 
 type TLevelCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLevelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLevelCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLevelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLevelCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -225,10 +225,10 @@ func (x *TLevelCapability) GetState() *TLevelCapability_TState {
 
 type TLevelCapability_TParameters struct {
 	state               protoimpl.MessageState     `protogen:"open.v1"`
-	Instance            TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,json=instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
-	Range               *endpoint.TRange           `protobuf:"bytes,2,opt,name=Range,json=range,proto3" json:"Range,omitempty"`
-	Unit                endpoint.EUnit             `protobuf:"varint,3,opt,name=Unit,json=unit,proto3,enum=NAlice.EUnit" json:"Unit,omitempty"`
-	SupportsCalibration bool                       `protobuf:"varint,4,opt,name=SupportsCalibration,json=supports_calibration,proto3" json:"SupportsCalibration,omitempty"`
+	Instance            TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
+	Range               *endpoint.TRange           `protobuf:"bytes,2,opt,name=Range,proto3" json:"Range,omitempty"`
+	Unit                endpoint.EUnit             `protobuf:"varint,3,opt,name=Unit,proto3,enum=NAlice.EUnit" json:"Unit,omitempty"`
+	SupportsCalibration bool                       `protobuf:"varint,4,opt,name=SupportsCalibration,proto3" json:"SupportsCalibration,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -293,8 +293,8 @@ func (x *TLevelCapability_TParameters) GetSupportsCalibration() bool {
 
 type TLevelCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Level         float64                `protobuf:"fixed64,1,opt,name=Level,json=level,proto3" json:"Level,omitempty"`
-	Calibrating   bool                   `protobuf:"varint,2,opt,name=Calibrating,json=calibrating,proto3" json:"Calibrating,omitempty"`
+	Level         float64                `protobuf:"fixed64,1,opt,name=Level,proto3" json:"Level,omitempty"`
+	Calibrating   bool                   `protobuf:"varint,2,opt,name=Calibrating,proto3" json:"Calibrating,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -345,10 +345,10 @@ func (x *TLevelCapability_TState) GetCalibrating() bool {
 
 type TLevelCapability_TSetAbsoluteLevelDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TargetLevel    float64                `protobuf:"fixed64,1,opt,name=TargetLevel,json=target_level,proto3" json:"TargetLevel,omitempty"`
-	TransitionTime uint32                 `protobuf:"varint,2,opt,name=TransitionTime,json=transition_time,proto3" json:"TransitionTime,omitempty"`
-	WithOnOff      bool                   `protobuf:"varint,3,opt,name=WithOnOff,json=with_on_off,proto3" json:"WithOnOff,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TargetLevel    float64                `protobuf:"fixed64,1,opt,name=TargetLevel,proto3" json:"TargetLevel,omitempty"`
+	TransitionTime uint32                 `protobuf:"varint,2,opt,name=TransitionTime,proto3" json:"TransitionTime,omitempty"`
+	WithOnOff      bool                   `protobuf:"varint,3,opt,name=WithOnOff,proto3" json:"WithOnOff,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -413,10 +413,10 @@ func (x *TLevelCapability_TSetAbsoluteLevelDirective) GetWithOnOff() bool {
 
 type TLevelCapability_TSetRelativeLevelDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	RelativeLevel  float64                `protobuf:"fixed64,1,opt,name=RelativeLevel,json=relative_level,proto3" json:"RelativeLevel,omitempty"`
-	TransitionTime uint32                 `protobuf:"varint,2,opt,name=TransitionTime,json=transition_time,proto3" json:"TransitionTime,omitempty"`
-	WithOnOff      bool                   `protobuf:"varint,3,opt,name=WithOnOff,json=with_on_off,proto3" json:"WithOnOff,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	RelativeLevel  float64                `protobuf:"fixed64,1,opt,name=RelativeLevel,proto3" json:"RelativeLevel,omitempty"`
+	TransitionTime uint32                 `protobuf:"varint,2,opt,name=TransitionTime,proto3" json:"TransitionTime,omitempty"`
+	WithOnOff      bool                   `protobuf:"varint,3,opt,name=WithOnOff,proto3" json:"WithOnOff,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -481,11 +481,11 @@ func (x *TLevelCapability_TSetRelativeLevelDirective) GetWithOnOff() bool {
 
 type TLevelCapability_TTransitionLevelDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StartLevel     float64                `protobuf:"fixed64,1,opt,name=StartLevel,json=start_level,proto3" json:"StartLevel,omitempty"`
-	EndLevel       float64                `protobuf:"fixed64,2,opt,name=EndLevel,json=end_level,proto3" json:"EndLevel,omitempty"`
-	TransitionTime uint32                 `protobuf:"varint,3,opt,name=TransitionTime,json=transition_time,proto3" json:"TransitionTime,omitempty"`
-	WithOnOff      bool                   `protobuf:"varint,4,opt,name=WithOnOff,json=with_on_off,proto3" json:"WithOnOff,omitempty"`
+	Name           string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	StartLevel     float64                `protobuf:"fixed64,1,opt,name=StartLevel,proto3" json:"StartLevel,omitempty"`
+	EndLevel       float64                `protobuf:"fixed64,2,opt,name=EndLevel,proto3" json:"EndLevel,omitempty"`
+	TransitionTime uint32                 `protobuf:"varint,3,opt,name=TransitionTime,proto3" json:"TransitionTime,omitempty"`
+	WithOnOff      bool                   `protobuf:"varint,4,opt,name=WithOnOff,proto3" json:"WithOnOff,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -557,7 +557,7 @@ func (x *TLevelCapability_TTransitionLevelDirective) GetWithOnOff() bool {
 
 type TLevelCapability_TStopTransitionLevelDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -601,7 +601,7 @@ func (x *TLevelCapability_TStopTransitionLevelDirective) GetName() string {
 
 type TLevelCapability_TStartCalibrationDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -645,7 +645,7 @@ func (x *TLevelCapability_TStartCalibrationDirective) GetName() string {
 
 type TLevelCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TLevelCapability      `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TLevelCapability      `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -689,10 +689,10 @@ func (x *TLevelCapability_TUpdateStateEvent) GetCapability() *TLevelCapability {
 
 type TLevelCapability_TCondition struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Instance      TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,json=instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
-	LowerBound    *wrapperspb.DoubleValue    `protobuf:"bytes,2,opt,name=LowerBound,json=lower_bound,proto3" json:"LowerBound,omitempty"`
-	UpperBound    *wrapperspb.DoubleValue    `protobuf:"bytes,3,opt,name=UpperBound,json=upper_bound,proto3" json:"UpperBound,omitempty"`
-	Hysteresis    float64                    `protobuf:"fixed64,4,opt,name=Hysteresis,json=hysteresis,proto3" json:"Hysteresis,omitempty"`
+	Instance      TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
+	LowerBound    *wrapperspb.DoubleValue    `protobuf:"bytes,2,opt,name=LowerBound,proto3" json:"LowerBound,omitempty"`
+	UpperBound    *wrapperspb.DoubleValue    `protobuf:"bytes,3,opt,name=UpperBound,proto3" json:"UpperBound,omitempty"`
+	Hysteresis    float64                    `protobuf:"fixed64,4,opt,name=Hysteresis,proto3" json:"Hysteresis,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -757,9 +757,9 @@ func (x *TLevelCapability_TCondition) GetHysteresis() float64 {
 
 type TLevelCapability_TLevelFilter struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Instance      TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,json=instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
-	LowerBound    *wrapperspb.DoubleValue    `protobuf:"bytes,2,opt,name=LowerBound,json=lower_bound,proto3" json:"LowerBound,omitempty"`
-	UpperBound    *wrapperspb.DoubleValue    `protobuf:"bytes,3,opt,name=UpperBound,json=upper_bound,proto3" json:"UpperBound,omitempty"`
+	Instance      TLevelCapability_EInstance `protobuf:"varint,1,opt,name=Instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
+	LowerBound    *wrapperspb.DoubleValue    `protobuf:"bytes,2,opt,name=LowerBound,proto3" json:"LowerBound,omitempty"`
+	UpperBound    *wrapperspb.DoubleValue    `protobuf:"bytes,3,opt,name=UpperBound,proto3" json:"UpperBound,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -819,65 +819,67 @@ var File_alice_protos_endpoint_capabilities_level_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_level_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/level/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xed\x15\n" +
-	"\x10TLevelCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/level/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe8\x0f\n" +
+	"\x10TLevelCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TLevelCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TLevelCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x8c\x02\n" +
-	"\vTParameters\x12L\n" +
-	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceB\f\xaa\xdd\x1b\binstanceR\binstance\x12/\n" +
-	"\x05Range\x18\x02 \x01(\v2\x0e.NAlice.TRangeB\t\xaa\xdd\x1b\x05rangeR\x05range\x12+\n" +
-	"\x04Unit\x18\x03 \x01(\x0e2\r.NAlice.EUnitB\b\xaa\xdd\x1b\x04unitR\x04unit\x12K\n" +
-	"\x13SupportsCalibration\x18\x04 \x01(\bB\x18\xaa\xdd\x1b\x14supports_calibrationR\x14supports_calibration:\x04\xa8\xdd\x1b\x04\x1ab\n" +
-	"\x06TState\x12\x1f\n" +
-	"\x05Level\x18\x01 \x01(\x01B\t\xaa\xdd\x1b\x05levelR\x05level\x121\n" +
-	"\vCalibrating\x18\x02 \x01(\bB\x0f\xaa\xdd\x1b\vcalibratingR\vcalibrating:\x04\xa8\xdd\x1b\x04\x1a\x89\x02\n" +
-	"\x1aTSetAbsoluteLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
-	"\vTargetLevel\x18\x01 \x01(\x01B\x10\xaa\xdd\x1b\ftarget_levelR\ftarget_level\x12<\n" +
-	"\x0eTransitionTime\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0ftransition_timeR\x0ftransition_time\x12/\n" +
-	"\tWithOnOff\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vwith_on_offR\vwith_on_off:(\x92\x82\x19\x1cset_absolute_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x05\x1a\x8f\x02\n" +
-	"\x1aTSetRelativeLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x129\n" +
-	"\rRelativeLevel\x18\x01 \x01(\x01B\x12\xaa\xdd\x1b\x0erelative_levelR\x0erelative_level\x12<\n" +
-	"\x0eTransitionTime\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0ftransition_timeR\x0ftransition_time\x12/\n" +
-	"\tWithOnOff\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vwith_on_offR\vwith_on_off:(\x92\x82\x19\x1cset_relative_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x06\x1a\xb0\x02\n" +
-	"\x19TTransitionLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TLevelCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TLevelCapability.TStateR\x05State\x1a\xc8\x01\n" +
+	"\vTParameters\x12>\n" +
+	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceR\bInstance\x12$\n" +
+	"\x05Range\x18\x02 \x01(\v2\x0e.NAlice.TRangeR\x05Range\x12!\n" +
+	"\x04Unit\x18\x03 \x01(\x0e2\r.NAlice.EUnitR\x04Unit\x120\n" +
+	"\x13SupportsCalibration\x18\x04 \x01(\bR\x13SupportsCalibration\x1a@\n" +
+	"\x06TState\x12\x14\n" +
+	"\x05Level\x18\x01 \x01(\x01R\x05Level\x12 \n" +
+	"\vCalibrating\x18\x02 \x01(\bR\vCalibrating\x1a\x99\x01\n" +
+	"\x1aTSetAbsoluteLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vTargetLevel\x18\x01 \x01(\x01R\vTargetLevel\x12&\n" +
+	"\x0eTransitionTime\x18\x02 \x01(\rR\x0eTransitionTime\x12\x1c\n" +
+	"\tWithOnOff\x18\x03 \x01(\bR\tWithOnOff\x1a\x9d\x01\n" +
+	"\x1aTSetRelativeLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12$\n" +
+	"\rRelativeLevel\x18\x01 \x01(\x01R\rRelativeLevel\x12&\n" +
+	"\x0eTransitionTime\x18\x02 \x01(\rR\x0eTransitionTime\x12\x1c\n" +
+	"\tWithOnOff\x18\x03 \x01(\bR\tWithOnOff\x1a\xb2\x01\n" +
+	"\x19TTransitionLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"StartLevel\x18\x01 \x01(\x01B\x0f\xaa\xdd\x1b\vstart_levelR\vstart_level\x12*\n" +
-	"\bEndLevel\x18\x02 \x01(\x01B\r\xaa\xdd\x1b\tend_levelR\tend_level\x12<\n" +
-	"\x0eTransitionTime\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0ftransition_timeR\x0ftransition_time\x12/\n" +
-	"\tWithOnOff\x18\x04 \x01(\bB\x0f\xaa\xdd\x1b\vwith_on_offR\vwith_on_off:'\x92\x82\x19\x1atransition_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe6\x01\x1al\n" +
-	"\x1dTStopTransitionLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19\x1fstop_transition_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x84\x02\x1ae\n" +
-	"\x1aTStartCalibrationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:(\x92\x82\x19\x1bstart_calibration_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd4\x03\x1ag\n" +
-	"\x11TUpdateStateEvent\x12H\n" +
+	"StartLevel\x18\x01 \x01(\x01R\n" +
+	"StartLevel\x12\x1a\n" +
+	"\bEndLevel\x18\x02 \x01(\x01R\bEndLevel\x12&\n" +
+	"\x0eTransitionTime\x18\x03 \x01(\rR\x0eTransitionTime\x12\x1c\n" +
+	"\tWithOnOff\x18\x04 \x01(\bR\tWithOnOff\x1a4\n" +
+	"\x1dTStopTransitionLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a1\n" +
+	"\x1aTStartCalibrationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1aM\n" +
+	"\x11TUpdateStateEvent\x128\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x18.NAlice.TLevelCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x0f\x1a\xb5\x02\n" +
+	"Capability\x18\x01 \x01(\v2\x18.NAlice.TLevelCapabilityR\n" +
+	"Capability\x1a\xe8\x01\n" +
 	"\n" +
-	"TCondition\x12L\n" +
-	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceB\f\xaa\xdd\x1b\binstanceR\binstance\x12N\n" +
+	"TCondition\x12>\n" +
+	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceR\bInstance\x12<\n" +
 	"\n" +
-	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vlower_boundR\vlower_bound\x12N\n" +
+	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"LowerBound\x12<\n" +
 	"\n" +
-	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vupper_boundR\vupper_bound\x12.\n" +
+	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"UpperBound\x12\x1e\n" +
 	"\n" +
-	"Hysteresis\x18\x04 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"hysteresisR\n" +
-	"hysteresis:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x0f\x1a\x87\x02\n" +
-	"\fTLevelFilter\x12L\n" +
-	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceB\f\xaa\xdd\x1b\binstanceR\binstance\x12N\n" +
+	"Hysteresis\x18\x04 \x01(\x01R\n" +
+	"Hysteresis\x1a\xca\x01\n" +
+	"\fTLevelFilter\x12>\n" +
+	"\bInstance\x18\x01 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceR\bInstance\x12<\n" +
 	"\n" +
-	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vlower_boundR\vlower_bound\x12N\n" +
+	"LowerBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"LowerBound\x12<\n" +
 	"\n" +
-	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vupper_boundR\vupper_bound:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x0f\"\x9a\x03\n" +
+	"UpperBound\x18\x03 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"UpperBound\"\x9a\x03\n" +
 	"\tEInstance\x12\x13\n" +
 	"\x0fUnknownInstance\x10\x00\x12\x17\n" +
 	"\x13TemperatureInstance\x10\x01\x12\x14\n" +
@@ -899,8 +901,9 @@ const file_alice_protos_endpoint_capabilities_level_capability_proto_rawDesc = "
 	"\vNOXInstance\x10\x10\"\x1d\n" +
 	"\tEMoveMode\x12\x06\n" +
 	"\x02Up\x10\x00\x12\b\n" +
-	"\x04Down\x10\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x03B\x89\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14LevelCapabilityProtoP\x01ZAa.yandex-team.ru/alice/protos/endpoint/capabilities/level;levelpbb\x06proto3"
+	"\x04Down\x10\x01B\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/level\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_level_capability_proto_rawDescOnce sync.Once

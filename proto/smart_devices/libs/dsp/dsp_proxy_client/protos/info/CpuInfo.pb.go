@@ -80,7 +80,8 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_CpuInfo_proto_raw
 	"Asmart_devices/libs/dsp/dsp_proxy_client/protos/info/CpuInfo.proto\x12\x0fyandex.dsp.info\x1aBsmart_devices/libs/dsp/dsp_proxy_client/protos/info/CpuUsage.proto\x1aDsmart_devices/libs/dsp/dsp_proxy_client/protos/info/ThreadInfo.proto\"q\n" +
 	"\aCpuInfo\x12/\n" +
 	"\x05total\x18\x01 \x01(\v2\x19.yandex.dsp.info.CpuUsageR\x05total\x125\n" +
-	"\athreads\x18\x02 \x03(\v2\x1b.yandex.dsp.info.ThreadInfoR\athreadsb\x06proto3"
+	"\athreads\x18\x02 \x03(\v2\x1b.yandex.dsp.info.ThreadInfoR\athreadsB\xe6\x01\n" +
+	"\x13com.yandex.dsp.infoB\fCpuInfoProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos/info\xa2\x02\x03YDI\xaa\x02\x0fYandex.Dsp.Info\xca\x02\x0fYandex\\Dsp\\Info\xe2\x02\x1bYandex\\Dsp\\Info\\GPBMetadata\xea\x02\x11Yandex::Dsp::Infob\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_CpuInfo_proto_rawDescOnce sync.Once

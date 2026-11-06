@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/retrieve_sources/capability.proto
 
-package retrievesourcespb
+package retrieve_sources
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -231,8 +231,8 @@ const file_alice_protos_endpoint_capabilities_retrieve_sources_capability_proto_
 	"\vESourceType\x12\x17\n" +
 	"\x13SourceTypeUndefined\x10\x00\x12\x12\n" +
 	"\x0eSourceTypeMail\x10\x01\x12\x1b\n" +
-	"\x17SourceTypeKnowledgeBase\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf8\x01B\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14RetrieveSourcesProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/retrieve_sources;retrievesourcespbb\x06proto3"
+	"\x17SourceTypeKnowledgeBase\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf8\x01B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14RetrieveSourcesProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/retrieve_sourcesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_retrieve_sources_capability_proto_rawDescOnce sync.Once

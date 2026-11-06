@@ -200,8 +200,8 @@ const file_client_info_proto_rawDesc = "" +
 	"\x10quasmodrom_group\x18\f \x01(\tR\x0fquasmodromGroup\x12/\n" +
 	"\x13quasmodrom_subgroup\x18\r \x01(\tR\x12quasmodromSubgroup\x12'\n" +
 	"\x0fdevice_firmware\x18\x0e \x01(\tR\x0edeviceFirmware\x12)\n" +
-	"\x10integration_type\x18\x0f \x01(\tR\x0fintegrationTypeB.\n" +
-	"\x1acom.yandex.quasar.protobufB\x10ClientInfoProtos"
+	"\x10integration_type\x18\x0f \x01(\tR\x0fintegrationTypeB_\n" +
+	"\x1acom.yandex.quasar.protobufB\x10ClientInfoProtosZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_client_info_proto_rawDescOnce sync.Once

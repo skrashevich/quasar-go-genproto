@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/enrollment_frame/enrollment_frame.proto
 
-package enrollmentframe
+package enrollment_frame
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -88,16 +88,16 @@ type isTEnrollmentStatusTypeSlot_Value interface {
 }
 
 type TEnrollmentStatusTypeSlot_EnrollmentStatus struct {
-	EnrollmentStatus *iot.TEnrollmentStatus `protobuf:"bytes,1,opt,name=EnrollmentStatus,json=enrollment_status,proto3,oneof"`
+	EnrollmentStatus *iot.TEnrollmentStatus `protobuf:"bytes,1,opt,name=EnrollmentStatus,proto3,oneof"`
 }
 
 func (*TEnrollmentStatusTypeSlot_EnrollmentStatus) isTEnrollmentStatusTypeSlot_Value() {}
 
 type TEnrollmentStatusSemanticFrame struct {
 	state                  protoimpl.MessageState     `protogen:"open.v1"`
-	Puid                   *common.TStringSlot        `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	Status                 *TEnrollmentStatusTypeSlot `protobuf:"bytes,2,opt,name=Status,json=status,proto3" json:"Status,omitempty"`
-	ActiveEnrollmentPersId *common.TStringSlot        `protobuf:"bytes,3,opt,name=ActiveEnrollmentPersId,json=active_enrollment_pers_id,proto3" json:"ActiveEnrollmentPersId,omitempty"`
+	Puid                   *common.TStringSlot        `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	Status                 *TEnrollmentStatusTypeSlot `protobuf:"bytes,2,opt,name=Status,proto3" json:"Status,omitempty"`
+	ActiveEnrollmentPersId *common.TStringSlot        `protobuf:"bytes,3,opt,name=ActiveEnrollmentPersId,proto3" json:"ActiveEnrollmentPersId,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -155,12 +155,12 @@ func (x *TEnrollmentStatusSemanticFrame) GetActiveEnrollmentPersId() *common.TSt
 
 type TSelectEnrollmentTypeSemanticFrame struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	EncryptedCode       *common.TStringSlot    `protobuf:"bytes,1,opt,name=EncryptedCode,json=encrypted_code,proto3" json:"EncryptedCode,omitempty"`
-	Signature           *common.TStringSlot    `protobuf:"bytes,2,opt,name=Signature,json=signature,proto3" json:"Signature,omitempty"`
-	EncryptedSessionKey *common.TStringSlot    `protobuf:"bytes,3,opt,name=EncryptedSessionKey,json=encrypted_session_key,proto3" json:"EncryptedSessionKey,omitempty"`
-	Puid                *common.TStringSlot    `protobuf:"bytes,4,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	TokenType           *common.TTokenTypeSlot `protobuf:"bytes,5,opt,name=TokenType,json=token_type,proto3" json:"TokenType,omitempty"`
-	UserType            *common.TStringSlot    `protobuf:"bytes,6,opt,name=UserType,json=user_type,proto3" json:"UserType,omitempty"`
+	EncryptedCode       *common.TStringSlot    `protobuf:"bytes,1,opt,name=EncryptedCode,proto3" json:"EncryptedCode,omitempty"`
+	Signature           *common.TStringSlot    `protobuf:"bytes,2,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	EncryptedSessionKey *common.TStringSlot    `protobuf:"bytes,3,opt,name=EncryptedSessionKey,proto3" json:"EncryptedSessionKey,omitempty"`
+	Puid                *common.TStringSlot    `protobuf:"bytes,4,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	TokenType           *common.TTokenTypeSlot `protobuf:"bytes,5,opt,name=TokenType,proto3" json:"TokenType,omitempty"`
+	UserType            *common.TStringSlot    `protobuf:"bytes,6,opt,name=UserType,proto3" json:"UserType,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -311,7 +311,7 @@ func (*TVoiceprintEnrollmentDoneSemanticFrame) Descriptor() ([]byte, []int) {
 
 type TGuestEnrollmentStartSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Puid          *common.TStringSlot    `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	Puid          *common.TStringSlot    `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -393,30 +393,28 @@ var File_alice_megamind_protos_scenarios_frames_enrollment_frame_enrollment_fram
 
 const file_alice_megamind_protos_scenarios_frames_enrollment_frame_enrollment_frame_proto_rawDesc = "" +
 	"\n" +
-	"Nalice/megamind/protos/scenarios/frames/enrollment_frame/enrollment_frame.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a6alice/protos/data/scenario/iot/enrollment_status.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb6\x01\n" +
-	"\x19TEnrollmentStatusTypeSlot\x12\x7f\n" +
-	"\x10EnrollmentStatus\x18\x01 \x01(\v2$.NAlice.NData.NIoT.TEnrollmentStatusB*\xaa\xdd\x1b\x11enrollment_status\u0085\x1c\x11enrollment_statusH\x00R\x11enrollment_status:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xef\x02\n" +
-	"\x1eTEnrollmentStatusSemanticFrame\x12A\n" +
-	"\x04Puid\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\x04puid\xba\x85\x1c\x04puid\xa8\x8d'\x02\xf8\x91*\x01R\x04puid\x12O\n" +
-	"\x06Status\x18\x02 \x01(\v2!.NAlice.TEnrollmentStatusTypeSlotB\x14\xaa\xdd\x1b\x06status\xba\x85\x1c\x06statusR\x06status\x12\x8a\x01\n" +
-	"\x16ActiveEnrollmentPersId\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB:\xaa\xdd\x1b\x19active_enrollment_pers_id\xba\x85\x1c\x19active_enrollment_pers_idR\x19active_enrollment_pers_id:,\xa8\xdd\x1b\x04\x9a\xff\x1b$alice.multiaccount.enrollment_status\"\x84\x05\n" +
-	"\"TSelectEnrollmentTypeSemanticFrame\x12h\n" +
-	"\rEncryptedCode\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB,\xaa\xdd\x1b\x0eencrypted_code\xba\x85\x1c\x0eencrypted_code\xa8\x8d'\x02\xf8\x91*\x02R\x0eencrypted_code\x12U\n" +
-	"\tSignature\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB\"\xaa\xdd\x1b\tsignature\xba\x85\x1c\tsignature\xa8\x8d'\x02\xf8\x91*\x02R\tsignature\x12\x83\x01\n" +
-	"\x13EncryptedSessionKey\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB:\xaa\xdd\x1b\x15encrypted_session_key\xba\x85\x1c\x15encrypted_session_key\xa8\x8d'\x02\xf8\x91*\x02R\x15encrypted_session_key\x12A\n" +
-	"\x04Puid\x18\x04 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\x04puid\xba\x85\x1c\x04puid\xa8\x8d'\x02\xf8\x91*\x01R\x04puid\x12S\n" +
-	"\tTokenType\x18\x05 \x01(\v2\x16.NAlice.TTokenTypeSlotB\x1c\xaa\xdd\x1b\n" +
-	"token_type\xba\x85\x1c\n" +
-	"token_typeR\n" +
-	"token_type\x12L\n" +
-	"\bUserType\x18\x06 \x01(\v2\x13.NAlice.TStringSlotB\x1a\xaa\xdd\x1b\tuser_type\xba\x85\x1c\tuser_typeR\tuser_type:1\xa8\xdd\x1b\x04\x9a\xff\x1b)alice.multiaccount.select_enrollment_type\"`\n" +
-	"\x1eTCancelEnrollmentSemanticFrame:>\xa8\xdd\x1b\x04\x9a\xff\x1b6personal_assistant.scenarios.voiceprint_enroll__cancel\"e\n" +
-	"&TVoiceprintEnrollmentDoneSemanticFrame:;\xa8\xdd\x1b\x04\x9a\xff\x1b3personal_assistant.scenarios.voiceprint_enroll.done\"\x8d\x01\n" +
-	"\"TGuestEnrollmentStartSemanticFrame\x12A\n" +
-	"\x04Puid\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\x04puid\xba\x85\x1c\x04puid\xa8\x8d'\x02\xf8\x91*\x01R\x04puid:$\xa8\xdd\x1b\x04\x9a\xff\x1b\x1calice.guest.enrollment.start\"L\n" +
-	"#TGuestEnrollmentFinishSemanticFrame:%\xa8\xdd\x1b\x04\x9a\xff\x1b\x1dalice.guest.enrollment.finishB\xb0\x01\n" +
-	"Aru.yandex.alice.megamind.protos.scenarios.frames.enrollment_frameB\x0fFrameEnrollmentP\x01ZXa.yandex-team.ru/alice/megamind/protos/scenarios/frames/enrollment_frame;enrollmentframeb\x06proto3"
+	"Nalice/megamind/protos/scenarios/frames/enrollment_frame/enrollment_frame.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a6alice/protos/data/scenario/iot/enrollment_status.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"x\n" +
+	"\x19TEnrollmentStatusTypeSlot\x12R\n" +
+	"\x10EnrollmentStatus\x18\x01 \x01(\v2$.NAlice.NData.NIoT.TEnrollmentStatusH\x00R\x10EnrollmentStatusB\a\n" +
+	"\x05Value\"\xd1\x01\n" +
+	"\x1eTEnrollmentStatusSemanticFrame\x12'\n" +
+	"\x04Puid\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x04Puid\x129\n" +
+	"\x06Status\x18\x02 \x01(\v2!.NAlice.TEnrollmentStatusTypeSlotR\x06Status\x12K\n" +
+	"\x16ActiveEnrollmentPersId\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\x16ActiveEnrollmentPersId\"\xe9\x02\n" +
+	"\"TSelectEnrollmentTypeSemanticFrame\x129\n" +
+	"\rEncryptedCode\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\rEncryptedCode\x121\n" +
+	"\tSignature\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\tSignature\x12E\n" +
+	"\x13EncryptedSessionKey\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\x13EncryptedSessionKey\x12'\n" +
+	"\x04Puid\x18\x04 \x01(\v2\x13.NAlice.TStringSlotR\x04Puid\x124\n" +
+	"\tTokenType\x18\x05 \x01(\v2\x16.NAlice.TTokenTypeSlotR\tTokenType\x12/\n" +
+	"\bUserType\x18\x06 \x01(\v2\x13.NAlice.TStringSlotR\bUserType\" \n" +
+	"\x1eTCancelEnrollmentSemanticFrame\"(\n" +
+	"&TVoiceprintEnrollmentDoneSemanticFrame\"M\n" +
+	"\"TGuestEnrollmentStartSemanticFrame\x12'\n" +
+	"\x04Puid\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x04Puid\"%\n" +
+	"#TGuestEnrollmentFinishSemanticFrameB\xc3\x01\n" +
+	"\n" +
+	"com.NAliceB\x14EnrollmentFrameProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/enrollment_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_enrollment_frame_enrollment_frame_proto_rawDescOnce sync.Once

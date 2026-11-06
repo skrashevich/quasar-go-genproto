@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/extensions/extensions.proto
 
-package extensionspb
+package extensions
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -482,8 +482,9 @@ const file_alice_protos_extensions_extensions_proto_rawDesc = "" +
 	"\x18SkipDefaultSerialization\x12\x1d.google.protobuf.FieldOptions\x18\u009b\x03 \x01(\bR\x18SkipDefaultSerialization:9\n" +
 	"\aDivName\x12\x1d.google.protobuf.FieldOptions\x18\xf9\xbf\x03 \x01(\tR\aDivName:U\n" +
 	"\x15java_marker_interface\x12\x1f.google.protobuf.MessageOptions\x18\xfa\xbf\x03 \x01(\tR\x13javaMarkerInterface:d\n" +
-	"\x1djava_builder_marker_interface\x12\x1f.google.protobuf.MessageOptions\x18\xfc\xbf\x03 \x01(\tR\x1ajavaBuilderMarkerInterfaceBk\n" +
-	"!ru.yandex.alice.protos.extensionsB\x0fExtensionsProtoZ5a.yandex-team.ru/alice/protos/extensions;extensionspbb\x06proto3"
+	"\x1djava_builder_marker_interface\x12\x1f.google.protobuf.MessageOptions\x18\xfc\xbf\x03 \x01(\tR\x1ajavaBuilderMarkerInterfaceB\x9e\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fExtensionsProtoP\x01ZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/extensions\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_extensions_extensions_proto_rawDescOnce sync.Once

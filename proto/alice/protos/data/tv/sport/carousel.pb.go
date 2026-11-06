@@ -222,8 +222,8 @@ const file_alice_protos_data_tv_sport_carousel_proto_rawDesc = "" +
 	"\x10ESportEventState\x12\x11\n" +
 	"\rUNKNOWN_STATE\x10\x00\x12\b\n" +
 	"\x04LIVE\x10\x01\x12\f\n" +
-	"\bANNOUNCE\x10\x02BS\n" +
-	"$ru.yandex.alice.protos.data.tv.sportZ+a.yandex-team.ru/alice/protos/data/tv/sportb\x06proto3"
+	"\bANNOUNCE\x10\x02Br\n" +
+	"$ru.yandex.alice.protos.data.tv.sportZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/sportb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_sport_carousel_proto_rawDescOnce sync.Once

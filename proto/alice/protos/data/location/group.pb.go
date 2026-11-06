@@ -25,15 +25,15 @@ const (
 
 type TUserGroup struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Id            string                   `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name          string                   `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Type          device.EUserDeviceType   `protobuf:"varint,3,opt,name=Type,json=type,proto3,enum=NAlice.EUserDeviceType" json:"Type,omitempty"`
-	Aliases       []string                 `protobuf:"bytes,4,rep,name=Aliases,json=aliases,proto3" json:"Aliases,omitempty"`
-	HouseholdId   string                   `protobuf:"bytes,5,opt,name=HouseholdId,json=household_id,proto3" json:"HouseholdId,omitempty"`
-	AnalyticsType string                   `protobuf:"bytes,6,opt,name=AnalyticsType,json=analytics_type,proto3" json:"AnalyticsType,omitempty"`
-	AnalyticsName string                   `protobuf:"bytes,7,opt,name=AnalyticsName,json=analytics_name,proto3" json:"AnalyticsName,omitempty"`
-	SharingInfo   *device.TUserSharingInfo `protobuf:"bytes,8,opt,name=SharingInfo,json=sharing_info,proto3" json:"SharingInfo,omitempty"`
-	Permissions   []string                 `protobuf:"bytes,9,rep,name=Permissions,json=permissions,proto3" json:"Permissions,omitempty"`
+	Id            string                   `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name          string                   `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Type          device.EUserDeviceType   `protobuf:"varint,3,opt,name=Type,proto3,enum=NAlice.EUserDeviceType" json:"Type,omitempty"`
+	Aliases       []string                 `protobuf:"bytes,4,rep,name=Aliases,proto3" json:"Aliases,omitempty"`
+	HouseholdId   string                   `protobuf:"bytes,5,opt,name=HouseholdId,proto3" json:"HouseholdId,omitempty"`
+	AnalyticsType string                   `protobuf:"bytes,6,opt,name=AnalyticsType,proto3" json:"AnalyticsType,omitempty"`
+	AnalyticsName string                   `protobuf:"bytes,7,opt,name=AnalyticsName,proto3" json:"AnalyticsName,omitempty"`
+	SharingInfo   *device.TUserSharingInfo `protobuf:"bytes,8,opt,name=SharingInfo,proto3" json:"SharingInfo,omitempty"`
+	Permissions   []string                 `protobuf:"bytes,9,rep,name=Permissions,proto3" json:"Permissions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -135,19 +135,21 @@ var File_alice_protos_data_location_group_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_location_group_proto_rawDesc = "" +
 	"\n" +
-	"&alice/protos/data/location/group.proto\x12\x06NAlice\x1a#alice/protos/data/device/info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd3\x03\n" +
+	"&alice/protos/data/location/group.proto\x12\x06NAlice\x1a#alice/protos/data/device/info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3\x02\n" +
 	"\n" +
-	"TUserGroup\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\x04Type\x18\x03 \x01(\x0e2\x17.NAlice.EUserDeviceTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12%\n" +
-	"\aAliases\x18\x04 \x03(\tB\v\xaa\xdd\x1b\aaliasesR\aaliases\x123\n" +
-	"\vHouseholdId\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\fhousehold_idR\fhousehold_id\x129\n" +
-	"\rAnalyticsType\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0eanalytics_typeR\x0eanalytics_type\x129\n" +
-	"\rAnalyticsName\x18\a \x01(\tB\x12\xaa\xdd\x1b\x0eanalytics_nameR\x0eanalytics_name\x12M\n" +
-	"\vSharingInfo\x18\b \x01(\v2\x18.NAlice.TUserSharingInfoB\x10\xaa\xdd\x1b\fsharing_infoR\fsharing_info\x121\n" +
-	"\vPermissions\x18\t \x03(\tB\x0f\xaa\xdd\x1b\vpermissionsR\vpermissions:\x04\xa8\xdd\x1b\x04BZ\n" +
-	"$ru.yandex.alice.protos.data.locationB\x05GroupZ+a.yandex-team.ru/alice/protos/data/locationb\x06proto3"
+	"TUserGroup\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12+\n" +
+	"\x04Type\x18\x03 \x01(\x0e2\x17.NAlice.EUserDeviceTypeR\x04Type\x12\x18\n" +
+	"\aAliases\x18\x04 \x03(\tR\aAliases\x12 \n" +
+	"\vHouseholdId\x18\x05 \x01(\tR\vHouseholdId\x12$\n" +
+	"\rAnalyticsType\x18\x06 \x01(\tR\rAnalyticsType\x12$\n" +
+	"\rAnalyticsName\x18\a \x01(\tR\rAnalyticsName\x12:\n" +
+	"\vSharingInfo\x18\b \x01(\v2\x18.NAlice.TUserSharingInfoR\vSharingInfo\x12 \n" +
+	"\vPermissions\x18\t \x03(\tR\vPermissionsB\x9c\x01\n" +
+	"\n" +
+	"com.NAliceB\n" +
+	"GroupProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/location\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_location_group_proto_rawDescOnce sync.Once

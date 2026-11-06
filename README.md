@@ -1,11 +1,18 @@
 # Quasar Go protobuf bindings
 
-This module provides Go bindings for all Quasar protobuf schemas in
+This module extends the original
+[`freequasar/quasar-go-genproto`](https://github.com/freequasar/quasar-go-genproto/tree/2f85025877ff367b10bc6e93e089207b8fca9a46)
+with Go bindings for all Quasar protobuf schemas in
 [v3rt3p/quasar-protos](https://github.com/v3rt3p/quasar-protos), including
 those used by [Quasar Bridge](https://github.com/skrashevich/quasar-bridge).
 At upstream commit
 [`14217ab44835dc0b107ae27c710b27cb9329e1d2`](https://github.com/v3rt3p/quasar-protos/commit/14217ab44835dc0b107ae27c710b27cb9329e1d2)
-the snapshot covers 860 upstream schemas and one retained legacy schema.
+the source snapshot covers 860 upstream schemas and one retained legacy schema.
+The generator combines these with the pinned original descriptors, producing
+864 Go files in a single module. Original message fields, types, defaults,
+JSON names, enum values and import paths take precedence. New declarations
+and fields extend that contract. Details and provenance are in
+[`compatibility/README.md`](compatibility/README.md).
 Standard `google/protobuf/` imports use protoc's includes and the official
 Go protobuf packages.
 
@@ -23,14 +30,16 @@ This exception is explicit in `schemas/manifest.json` under `legacy_overrides`.
 
 ## Use in Go
 
-Go 1.23 or later is required. Add the module at a version or commit you have
-chosen:
+Go 1.23 or later is required. Add the module at a chosen version or commit:
 
 ```sh
 go get github.com/skrashevich/quasar-go-genproto@VERSION
 ```
 
-Import generated packages using the original schema directory layout. For example:
+When migrating from freequasar, change the import prefix from
+`github.com/freequasar/quasar-go-genproto` to
+`github.com/skrashevich/quasar-go-genproto`. Package suffixes and the original
+Go API are preserved, along with protobuf names, encoding and JSON behavior.
 
 ```go
 import client "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/protocol/client"
@@ -53,10 +62,12 @@ including its `include/` directory next to `bin/`. Put `protoc` on `PATH`, then
 install the pinned Go generator and regenerate from the checked-in snapshot:
 
 ```sh
+python3 -m pip install -r scripts/requirements.txt
 GOTOOLCHAIN=go1.27.0 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
 export PATH="$(go env GOPATH)/bin:$PATH"
 python3 scripts/update-protos.py
 python3 scripts/update-protos.py --check
+sh scripts/check-compat.sh
 go test ./...
 go vet ./...
 ```
@@ -71,6 +82,18 @@ schemas come from protoc's includes and use the official Go runtime packages. `-
 set and bytes of generated files, without changing the checkout. Executables
 can be selected using `--protoc` and `--protoc-gen-go`.
 
+## Check the original Go API
+
+The offline compatibility check loads every package in one external client and
+compares all original descriptors, plus a legacy binary and ProtoJSON envelope.
+CI also compares every exported Go declaration against the pinned original, accounting
+for the module path change:
+
+```sh
+go install golang.org/x/exp/cmd/apidiff@v0.0.0-20260908205506-85c1c2202aba
+sh scripts/check-api.sh
+```
+
 ## Update the source
 
 Choose an exact full lowercase 40-character upstream Git SHA:
@@ -78,6 +101,7 @@ Choose an exact full lowercase 40-character upstream Git SHA:
 ```sh
 python3 scripts/update-protos.py --revision FULL_SHA
 python3 scripts/update-protos.py --check
+sh scripts/check-compat.sh
 go test ./...
 go vet ./...
 ```

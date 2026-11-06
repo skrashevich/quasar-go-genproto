@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/metrica/capability.proto
 
-package metricaspb
+package metrica
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -280,8 +280,8 @@ const file_alice_protos_endpoint_capabilities_metrica_capability_proto_rawDesc =
 	"\x04Body\x18\x03 \x01(\v2\x17.google.protobuf.StructB\b\xaa\xdd\x1b\x04bodyR\x04body:\x04\xa8\xdd\x1b\x04\x1a\xa6\x01\n" +
 	"\x1aTSendMetricaEventDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12I\n" +
-	"\x05Event\x18\x02 \x01(\v2(.NAlice.TMetricaCapability.TMetricaEventB\t\xaa\xdd\x1b\x05eventR\x05event:\x1f\x92\x82\x19\x12send_metrica_event\xa8\xdd\x1b\x04\xa8\xc8\x1c\xeb\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbc\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16MetricaCapabilityProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/metrica;metricaspbb\x06proto3"
+	"\x05Event\x18\x02 \x01(\v2(.NAlice.TMetricaCapability.TMetricaEventB\t\xaa\xdd\x1b\x05eventR\x05event:\x1f\x92\x82\x19\x12send_metrica_event\xa8\xdd\x1b\x04\xa8\xc8\x1c\xeb\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbc\x01B\xa2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16MetricaCapabilityProtoZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/metricab\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_metrica_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/audio_file_player/capability.proto
 
-package audiofileplayerpb
+package audio_file_player
 
 import (
 	channel "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/channel"
@@ -406,9 +406,9 @@ func (TAudioFilePlayerCapability_EStoredSound) EnumDescriptor() ([]byte, []int) 
 
 type TAudioFilePlayerCapability struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAudioFilePlayerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAudioFilePlayerCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAudioFilePlayerCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAudioFilePlayerCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -466,7 +466,7 @@ func (x *TAudioFilePlayerCapability) GetState() *TAudioFilePlayerCapability_TSta
 
 type TAudioFilePlayerCapability_TParameters struct {
 	state         protoimpl.MessageState                    `protogen:"open.v1"`
-	StoredSounds  []TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,1,rep,packed,name=StoredSounds,json=stored_sounds,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound" json:"StoredSounds,omitempty"`
+	StoredSounds  []TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,1,rep,packed,name=StoredSounds,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound" json:"StoredSounds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -546,10 +546,10 @@ func (*TAudioFilePlayerCapability_TState) Descriptor() ([]byte, []int) {
 
 type TAudioFilePlayerCapability_TLocalAudioFilePlayDirective struct {
 	state     protoimpl.MessageState    `protogen:"open.v1"`
-	Name      string                    `protobuf:"bytes,4,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Channel   channel.EDirectiveChannel `protobuf:"varint,2,opt,name=Channel,json=channel,proto3,enum=NAlice.EDirectiveChannel" json:"Channel,omitempty"`
-	Looped    bool                      `protobuf:"varint,3,opt,name=Looped,json=looped,proto3" json:"Looped,omitempty"`
-	PlayTimes uint32                    `protobuf:"varint,5,opt,name=PlayTimes,json=play_times,proto3" json:"PlayTimes,omitempty"`
+	Name      string                    `protobuf:"bytes,4,opt,name=Name,proto3" json:"Name,omitempty"`
+	Channel   channel.EDirectiveChannel `protobuf:"varint,2,opt,name=Channel,proto3,enum=NAlice.EDirectiveChannel" json:"Channel,omitempty"`
+	Looped    bool                      `protobuf:"varint,3,opt,name=Looped,proto3" json:"Looped,omitempty"`
+	PlayTimes uint32                    `protobuf:"varint,5,opt,name=PlayTimes,proto3" json:"PlayTimes,omitempty"`
 	// Types that are valid to be assigned to Sound:
 	//
 	//	*TAudioFilePlayerCapability_TLocalAudioFilePlayDirective_SoundToPlay
@@ -647,11 +647,11 @@ type isTAudioFilePlayerCapability_TLocalAudioFilePlayDirective_Sound interface {
 }
 
 type TAudioFilePlayerCapability_TLocalAudioFilePlayDirective_SoundToPlay struct {
-	SoundToPlay TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,7,opt,name=SoundToPlay,json=sound_to_play,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound,oneof"`
+	SoundToPlay TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,7,opt,name=SoundToPlay,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound,oneof"`
 }
 
 type TAudioFilePlayerCapability_TLocalAudioFilePlayDirective_FileName struct {
-	FileName string `protobuf:"bytes,6,opt,name=FileName,json=file_name,proto3,oneof"`
+	FileName string `protobuf:"bytes,6,opt,name=FileName,proto3,oneof"`
 }
 
 func (*TAudioFilePlayerCapability_TLocalAudioFilePlayDirective_SoundToPlay) isTAudioFilePlayerCapability_TLocalAudioFilePlayDirective_Sound() {
@@ -662,8 +662,8 @@ func (*TAudioFilePlayerCapability_TLocalAudioFilePlayDirective_FileName) isTAudi
 
 type TAudioFilePlayerCapability_TLocalAudioFileStopDirective struct {
 	state   protoimpl.MessageState    `protogen:"open.v1"`
-	Name    string                    `protobuf:"bytes,3,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Channel channel.EDirectiveChannel `protobuf:"varint,2,opt,name=Channel,json=channel,proto3,enum=NAlice.EDirectiveChannel" json:"Channel,omitempty"`
+	Name    string                    `protobuf:"bytes,3,opt,name=Name,proto3" json:"Name,omitempty"`
+	Channel channel.EDirectiveChannel `protobuf:"varint,2,opt,name=Channel,proto3,enum=NAlice.EDirectiveChannel" json:"Channel,omitempty"`
 	// Types that are valid to be assigned to Sound:
 	//
 	//	*TAudioFilePlayerCapability_TLocalAudioFileStopDirective_SoundToPlay
@@ -747,11 +747,11 @@ type isTAudioFilePlayerCapability_TLocalAudioFileStopDirective_Sound interface {
 }
 
 type TAudioFilePlayerCapability_TLocalAudioFileStopDirective_SoundToPlay struct {
-	SoundToPlay TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,7,opt,name=SoundToPlay,json=sound_to_play,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound,oneof"`
+	SoundToPlay TAudioFilePlayerCapability_EStoredSound `protobuf:"varint,7,opt,name=SoundToPlay,proto3,enum=NAlice.TAudioFilePlayerCapability_EStoredSound,oneof"`
 }
 
 type TAudioFilePlayerCapability_TLocalAudioFileStopDirective_FileName struct {
-	FileName string `protobuf:"bytes,6,opt,name=FileName,json=file_name,proto3,oneof"`
+	FileName string `protobuf:"bytes,6,opt,name=FileName,proto3,oneof"`
 }
 
 func (*TAudioFilePlayerCapability_TLocalAudioFileStopDirective_SoundToPlay) isTAudioFilePlayerCapability_TLocalAudioFileStopDirective_Sound() {
@@ -764,34 +764,30 @@ var File_alice_protos_endpoint_capabilities_audio_file_player_capability_proto p
 
 const file_alice_protos_endpoint_capabilities_audio_file_player_capability_proto_rawDesc = "" +
 	"\n" +
-	"Ealice/protos/endpoint/capabilities/audio_file_player/capability.proto\x12\x06NAlice\x1a'alice/protos/data/channel/channel.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xae\x1d\n" +
-	"\x1aTAudioFilePlayerCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12^\n" +
+	"Ealice/protos/endpoint/capabilities/audio_file_player/capability.proto\x12\x06NAlice\x1a'alice/protos/data/channel/channel.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xee\x1a\n" +
+	"\x1aTAudioFilePlayerCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12N\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2..NAlice.TAudioFilePlayerCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12J\n" +
-	"\x05State\x18\x03 \x01(\v2).NAlice.TAudioFilePlayerCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a|\n" +
-	"\vTParameters\x12g\n" +
-	"\fStoredSounds\x18\x01 \x03(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundB\x11\xaa\xdd\x1b\rstored_soundsR\rstored_sounds:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xb3\x03\n" +
-	"\x1cTLocalAudioFilePlayDirective\x12\x1c\n" +
-	"\x04Name\x18\x04 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12@\n" +
-	"\aChannel\x18\x02 \x01(\x0e2\x19.NAlice.EDirectiveChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12\"\n" +
-	"\x06Looped\x18\x03 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06loopedR\x06looped\x12-\n" +
-	"\tPlayTimes\x18\x05 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"play_timesR\n" +
-	"play_times\x12h\n" +
-	"\vSoundToPlay\x18\a \x01(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundB\x11\xaa\xdd\x1b\rsound_to_playH\x00R\rsound_to_play\x12,\n" +
-	"\bFileName\x18\x06 \x01(\tB\r\xaa\xdd\x1b\tfile_nameH\x00R\tfile_name:!\x92\x82\x19\x15local_audio_file_play\xa8\xdd\x1b\x04\xa8\xc8\x1c/B\x12\n" +
-	"\x05Sound\x12\t\xaa\xdd\x1b\x05soundJ\x04\b\x01\x10\x02R\vStoredSound\x1a\xe0\x02\n" +
-	"\x1cTLocalAudioFileStopDirective\x12\x1c\n" +
-	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12@\n" +
-	"\aChannel\x18\x02 \x01(\x0e2\x19.NAlice.EDirectiveChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12h\n" +
-	"\vSoundToPlay\x18\a \x01(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundB\x11\xaa\xdd\x1b\rsound_to_playH\x00R\rsound_to_play\x12,\n" +
-	"\bFileName\x18\x06 \x01(\tB\r\xaa\xdd\x1b\tfile_nameH\x00R\tfile_name:!\x92\x82\x19\x15local_audio_file_stop\xa8\xdd\x1b\x04\xa8\xc8\x1c0B\x12\n" +
-	"\x05Sound\x12\t\xaa\xdd\x1b\x05soundJ\x04\b\x01\x10\x02R\vStoredSound\"\xf9\x13\n" +
+	"Parameters\x18\x02 \x01(\v2..NAlice.TAudioFilePlayerCapability.TParametersR\n" +
+	"Parameters\x12?\n" +
+	"\x05State\x18\x03 \x01(\v2).NAlice.TAudioFilePlayerCapability.TStateR\x05State\x1ab\n" +
+	"\vTParameters\x12S\n" +
+	"\fStoredSounds\x18\x01 \x03(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundR\fStoredSounds\x1a\b\n" +
+	"\x06TState\x1a\xac\x02\n" +
+	"\x1cTLocalAudioFilePlayDirective\x12\x12\n" +
+	"\x04Name\x18\x04 \x01(\tR\x04Name\x123\n" +
+	"\aChannel\x18\x02 \x01(\x0e2\x19.NAlice.EDirectiveChannelR\aChannel\x12\x16\n" +
+	"\x06Looped\x18\x03 \x01(\bR\x06Looped\x12\x1c\n" +
+	"\tPlayTimes\x18\x05 \x01(\rR\tPlayTimes\x12S\n" +
+	"\vSoundToPlay\x18\a \x01(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundH\x00R\vSoundToPlay\x12\x1c\n" +
+	"\bFileName\x18\x06 \x01(\tH\x00R\bFileNameB\a\n" +
+	"\x05SoundJ\x04\b\x01\x10\x02R\vStoredSound\x1a\xf6\x01\n" +
+	"\x1cTLocalAudioFileStopDirective\x12\x12\n" +
+	"\x04Name\x18\x03 \x01(\tR\x04Name\x123\n" +
+	"\aChannel\x18\x02 \x01(\x0e2\x19.NAlice.EDirectiveChannelR\aChannel\x12S\n" +
+	"\vSoundToPlay\x18\a \x01(\x0e2/.NAlice.TAudioFilePlayerCapability.EStoredSoundH\x00R\vSoundToPlay\x12\x1c\n" +
+	"\bFileName\x18\x06 \x01(\tH\x00R\bFileNameB\a\n" +
+	"\x05SoundJ\x04\b\x01\x10\x02R\vStoredSound\"\xf9\x13\n" +
 	"\fEStoredSound\x12\x10\n" +
 	"\fUnknownSound\x10\x00\x12\x0f\n" +
 	"\vCallRinging\x10\x01\x12\x19\n" +
@@ -913,8 +909,9 @@ const file_alice_protos_endpoint_capabilities_audio_file_player_capability_proto
 	"\rPowerSafeMode\x10m\x12\x16\n" +
 	"\x12PowerVolumeReduced\x10n\x12\x1f\n" +
 	"\x1bFirstEnterConfigureBadPower\x10o\x12\x16\n" +
-	"\x12BackendUnavailable\x10p:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x18B\xa9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB AudioFilePlayerCapabilitiesProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/audio_file_player;audiofileplayerpbb\x06proto3"
+	"\x12BackendUnavailable\x10pB\xbb\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/audio_file_player\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_audio_file_player_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/color_music/capability.proto
 
-package colormusicpb
+package color_music
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -618,8 +618,8 @@ const file_alice_protos_endpoint_capabilities_color_music_capability_proto_rawDe
 	"\x05Scene\x10\x02\x12\x0e\n" +
 	"\n" +
 	"ColorMusic\x10\x03\x12\x0f\n" +
-	"\vStroboscope\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc5\x01B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19ColorMusicCapabilityProtoZLa.yandex-team.ru/alice/protos/endpoint/capabilities/color_music;colormusicpbb\x06proto3"
+	"\vStroboscope\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc5\x01B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19ColorMusicCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/color_musicb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_color_music_capability_proto_rawDescOnce sync.Once

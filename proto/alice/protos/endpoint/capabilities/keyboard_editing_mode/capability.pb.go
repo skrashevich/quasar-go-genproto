@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/keyboard_editing_mode/capability.proto
 
-package keyboardeditingmodepb
+package keyboard_editing_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -237,8 +237,8 @@ const file_alice_protos_endpoint_capabilities_keyboard_editing_mode_capability_p
 	"\fEEditingMode\x12\x0e\n" +
 	"\n" +
 	"EM_DEFAULT\x10\x00\x12\v\n" +
-	"\aEM_EDIT\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8a\x02B\xb3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"KeyboardEditingModeCapabilityProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/keyboard_editing_mode;keyboardeditingmodepbb\x06proto3"
+	"\aEM_EDIT\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8a\x02B\xbc\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"KeyboardEditingModeCapabilityProtoZhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/keyboard_editing_modeb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_keyboard_editing_mode_capability_proto_rawDescOnce sync.Once

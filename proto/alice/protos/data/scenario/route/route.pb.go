@@ -928,8 +928,8 @@ const file_alice_protos_data_scenario_route_route_proto_rawDesc = "" +
 	"\x03Via\x18\x02 \x01(\v2\x1c.NAlice.NData.TRouteLocationB\a\xaa\xdd\x1b\x03viaR\x03via\x124\n" +
 	"\x02To\x18\x03 \x01(\v2\x1c.NAlice.NData.TRouteLocationB\x06\xaa\xdd\x1b\x02toR\x02to\x128\n" +
 	"\x06Routes\x18\x04 \x03(\v2\x14.NAlice.NData.TRouteB\n" +
-	"\xaa\xdd\x1b\x06routesR\x06routesB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.routeZ1a.yandex-team.ru/alice/protos/data/scenario/routeb\x06proto3"
+	"\xaa\xdd\x1b\x06routesR\x06routesB~\n" +
+	"*ru.yandex.alice.protos.data.scenario.routeZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/routeb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_route_route_proto_rawDescOnce sync.Once

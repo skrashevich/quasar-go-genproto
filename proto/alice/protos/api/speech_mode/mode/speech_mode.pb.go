@@ -165,19 +165,19 @@ type isTSpeechMode_Mode interface {
 }
 
 type TSpeechMode_Note struct {
-	Note *TSpeechMode_TNote `protobuf:"bytes,1,opt,name=Note,json=note,proto3,oneof"`
+	Note *TSpeechMode_TNote `protobuf:"bytes,1,opt,name=Note,proto3,oneof"`
 }
 
 type TSpeechMode_Mic struct {
-	Mic *TSpeechMode_TMic `protobuf:"bytes,2,opt,name=Mic,json=mic,proto3,oneof"`
+	Mic *TSpeechMode_TMic `protobuf:"bytes,2,opt,name=Mic,proto3,oneof"`
 }
 
 type TSpeechMode_Translate struct {
-	Translate *TSpeechMode_TTranslate `protobuf:"bytes,3,opt,name=Translate,json=translate,proto3,oneof"`
+	Translate *TSpeechMode_TTranslate `protobuf:"bytes,3,opt,name=Translate,proto3,oneof"`
 }
 
 type TSpeechMode_Voice struct {
-	Voice *TSpeechMode_TVoice `protobuf:"bytes,4,opt,name=Voice,json=voice,proto3,oneof"`
+	Voice *TSpeechMode_TVoice `protobuf:"bytes,4,opt,name=Voice,proto3,oneof"`
 }
 
 func (*TSpeechMode_Note) isTSpeechMode_Mode() {}
@@ -478,16 +478,16 @@ var File_alice_protos_api_speech_mode_mode_speech_mode_proto protoreflect.FileDe
 
 const file_alice_protos_api_speech_mode_mode_speech_mode_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/api/speech_mode/mode/speech_mode.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdc\x06\n" +
-	"\vTSpeechMode\x129\n" +
-	"\x04Note\x18\x01 \x01(\v2\x19.NAlice.TSpeechMode.TNoteB\b\xaa\xdd\x1b\x04noteH\x00R\x04note\x125\n" +
-	"\x03Mic\x18\x02 \x01(\v2\x18.NAlice.TSpeechMode.TMicB\a\xaa\xdd\x1b\x03micH\x00R\x03mic\x12M\n" +
-	"\tTranslate\x18\x03 \x01(\v2\x1e.NAlice.TSpeechMode.TTranslateB\r\xaa\xdd\x1b\ttranslateH\x00R\ttranslate\x12=\n" +
-	"\x05Voice\x18\x04 \x01(\v2\x1a.NAlice.TSpeechMode.TVoiceB\t\xaa\xdd\x1b\x05voiceH\x00R\x05voice\x1a\r\n" +
-	"\x05TNote:\x04\xa8\xdd\x1b\x04\x1a\f\n" +
-	"\x04TMic:\x04\xa8\xdd\x1b\x04\x1a\x12\n" +
+	"3alice/protos/api/speech_mode/mode/speech_mode.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf8\x05\n" +
+	"\vTSpeechMode\x12/\n" +
+	"\x04Note\x18\x01 \x01(\v2\x19.NAlice.TSpeechMode.TNoteH\x00R\x04Note\x12,\n" +
+	"\x03Mic\x18\x02 \x01(\v2\x18.NAlice.TSpeechMode.TMicH\x00R\x03Mic\x12>\n" +
+	"\tTranslate\x18\x03 \x01(\v2\x1e.NAlice.TSpeechMode.TTranslateH\x00R\tTranslate\x122\n" +
+	"\x05Voice\x18\x04 \x01(\v2\x1a.NAlice.TSpeechMode.TVoiceH\x00R\x05Voice\x1a\a\n" +
+	"\x05TNote\x1a\x06\n" +
+	"\x04TMic\x1a\f\n" +
 	"\n" +
-	"TTranslate:\x04\xa8\xdd\x1b\x04\x1a\x83\x04\n" +
+	"TTranslate\x1a\xee\x03\n" +
 	"\x06TVoice\x12J\n" +
 	"\aOptions\x18\x02 \x01(\v2#.NAlice.TSpeechMode.TVoice.TOptionsB\v\xaa\xdd\x1b\aoptionsR\aoptions\x1a\x97\x03\n" +
 	"\bTOptions\x12j\n" +
@@ -508,11 +508,13 @@ const file_alice_protos_api_speech_mode_mode_speech_mode_proto_rawDesc = "" +
 	"\n" +
 	"\b_VoiceIdB\f\n" +
 	"\n" +
-	"_SharingId:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\aoptions:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Mode\x12\b\xaa\xdd\x1b\x04mode\"\x9f\x01\n" +
+	"_SharingIdB\x06\n" +
+	"\x04Mode\"\x9f\x01\n" +
 	"\x12TSpeechModeOptions\x12k\n" +
 	"\x10VoiceModeOptions\x18\x01 \x01(\v2#.NAlice.TSpeechMode.TVoice.TOptionsB\x16\xaa\xdd\x1b\x12voice_mode_optionsH\x00R\x12voice_mode_options:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aOptions\x12\v\xaa\xdd\x1b\aoptionsB4Z2a.yandex-team.ru/alice/protos/api/speech_mode/modeb\x06proto3"
+	"\aOptions\x12\v\xaa\xdd\x1b\aoptionsB\xa8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fSpeechModeProtoP\x01ZQgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/speech_mode/mode\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_speech_mode_mode_speech_mode_proto_rawDescOnce sync.Once

@@ -27,8 +27,8 @@ const (
 
 type TRemoveVoiceprintTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	PersId        string                 `protobuf:"bytes,2,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
+	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	PersId        string                 `protobuf:"bytes,2,opt,name=PersId,proto3" json:"PersId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,8 +79,8 @@ func (x *TRemoveVoiceprintTypedCallback) GetPersId() string {
 
 type TSendIotEnrollmentPushTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	NeedNlg       bool                   `protobuf:"varint,2,opt,name=NeedNlg,json=need_nlg,proto3" json:"NeedNlg,omitempty"`
+	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	NeedNlg       bool                   `protobuf:"varint,2,opt,name=NeedNlg,proto3" json:"NeedNlg,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -131,7 +131,7 @@ func (x *TSendIotEnrollmentPushTypedCallback) GetNeedNlg() bool {
 
 type TStartEnrollmentOnboardingTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,7 +175,7 @@ func (x *TStartEnrollmentOnboardingTypedCallback) GetPuid() string {
 
 type TStartEnrollmentTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	Puid          string                 `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
 	UserName      string                 `protobuf:"bytes,2,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
 	Aliases       []string               `protobuf:"bytes,3,rep,name=Aliases,json=aliases,proto3" json:"Aliases,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -271,8 +271,8 @@ func (*TCancelEnrollmentTypedCallback) Descriptor() ([]byte, []int) {
 
 type TRegisterSharedEnrollmentTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserName      string                 `protobuf:"bytes,1,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
-	UserGender    voiceprint.EGender     `protobuf:"varint,2,opt,name=UserGender,json=user_gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"UserGender,omitempty"`
+	UserName      string                 `protobuf:"bytes,1,opt,name=UserName,proto3" json:"UserName,omitempty"`
+	UserGender    voiceprint.EGender     `protobuf:"varint,2,opt,name=UserGender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"UserGender,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -361,26 +361,27 @@ var File_alice_protos_api_typed_callbacks_voiceprint_voiceprint_proto protorefle
 
 const file_alice_protos_api_typed_callbacks_voiceprint_voiceprint_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/api/typed_callbacks/voiceprint/voiceprint.proto\x12\x1dNAlice.NScenarios.NVoiceprint\x1a+alice/library/censor/protos/extension.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8f\x01\n" +
-	"\x1eTRemoveVoiceprintTypedCallback\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04puid\xa8\x8d'\x02R\x04puid\x12$\n" +
-	"\x06PersId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id:%\xa8\xdd\x1b\x04\xba\xff\x1b\x1dRemoveVoiceprintTypedCallback\"\x9c\x01\n" +
-	"#TSendIotEnrollmentPushTypedCallback\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04puid\xa8\x8d'\x02R\x04puid\x12'\n" +
-	"\aNeedNlg\x18\x02 \x01(\bB\f\xaa\xdd\x1b\bneed_nlgR\bneed_nlg:*\xa8\xdd\x1b\x04\xba\xff\x1b\"SendIotEnrollmentPushTypedCallback\"{\n" +
-	"'TStartEnrollmentOnboardingTypedCallback\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04puid\xa8\x8d'\x02R\x04puid:.\xa8\xdd\x1b\x04\xba\xff\x1b&StartEnrollmentOnboardingTypedCallback\"\xba\x01\n" +
-	"\x1dTStartEnrollmentTypedCallback\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04puid\xa8\x8d'\x02R\x04puid\x12*\n" +
+	"<alice/protos/api/typed_callbacks/voiceprint/voiceprint.proto\x12\x1dNAlice.NScenarios.NVoiceprint\x1a+alice/library/censor/protos/extension.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"L\n" +
+	"\x1eTRemoveVoiceprintTypedCallback\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\tR\x04Puid\x12\x16\n" +
+	"\x06PersId\x18\x02 \x01(\tR\x06PersId\"S\n" +
+	"#TSendIotEnrollmentPushTypedCallback\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\tR\x04Puid\x12\x18\n" +
+	"\aNeedNlg\x18\x02 \x01(\bR\aNeedNlg\"=\n" +
+	"'TStartEnrollmentOnboardingTypedCallback\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\tR\x04Puid\"\x86\x01\n" +
+	"\x1dTStartEnrollmentTypedCallback\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\tR\x04Puid\x12*\n" +
 	"\bUserName\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tuser_nameR\tuser_name\x12%\n" +
-	"\aAliases\x18\x03 \x03(\tB\v\xaa\xdd\x1b\aaliasesR\aaliases:$\xa8\xdd\x1b\x04\xba\xff\x1b\x1cStartEnrollmentTypedCallback\"G\n" +
-	"\x1eTCancelEnrollmentTypedCallback:%\xa8\xdd\x1b\x04\xba\xff\x1b\x1dCancelEnrollmentTypedCallback\"\xd8\x01\n" +
-	"&TRegisterSharedEnrollmentTypedCallback\x12*\n" +
-	"\bUserName\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tuser_nameR\tuser_name\x12S\n" +
+	"\aAliases\x18\x03 \x03(\tB\v\xaa\xdd\x1b\aaliasesR\aaliases\" \n" +
+	"\x1eTCancelEnrollmentTypedCallback\"\x87\x01\n" +
+	"&TRegisterSharedEnrollmentTypedCallback\x12\x1a\n" +
+	"\bUserName\x18\x01 \x01(\tR\bUserName\x12A\n" +
 	"\n" +
-	"UserGender\x18\x02 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderB\x0f\xaa\xdd\x1b\vuser_genderR\vuser_gender:-\xa8\xdd\x1b\x04\xba\xff\x1b%RegisterSharedEnrollmentTypedCallback\"S\n" +
-	"$TRegisterChildKolonkishTypedCallback:+\xa8\xdd\x1b\x04\xba\xff\x1b#RegisterChildKolonkishTypedCallbackBw\n" +
-	"5ru.yandex.alice.protos.api.typed_callbacks.voiceprintP\x01Z<a.yandex-team.ru/alice/protos/api/typed_callbacks/voiceprintb\x06proto3"
+	"UserGender\x18\x02 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderR\n" +
+	"UserGender\"&\n" +
+	"$TRegisterChildKolonkishTypedCallbackB\xa7\x02\n" +
+	"!com.NAlice.NScenarios.NVoiceprintB\x0fVoiceprintProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/voiceprint\xa2\x02\x03NNN\xaa\x02\x1dNAlice.NScenarios.NVoiceprint\xca\x02\x1dNAlice\\NScenarios\\NVoiceprint\xe2\x02)NAlice\\NScenarios\\NVoiceprint\\GPBMetadata\xea\x02\x1fNAlice::NScenarios::NVoiceprintb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_voiceprint_voiceprint_proto_rawDescOnce sync.Once

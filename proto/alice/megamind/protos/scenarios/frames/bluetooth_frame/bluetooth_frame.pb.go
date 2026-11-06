@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/bluetooth_frame/bluetooth_frame.proto
 
-package bluetoothframe
+package bluetooth_frame
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/extensions"
@@ -64,8 +64,8 @@ var File_alice_megamind_protos_scenarios_frames_bluetooth_frame_bluetooth_frame_
 const file_alice_megamind_protos_scenarios_frames_bluetooth_frame_bluetooth_frame_proto_rawDesc = "" +
 	"\n" +
 	"Lalice/megamind/protos/scenarios/frames/bluetooth_frame/bluetooth_frame.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"N\n" +
-	"\x19TBluetoothOnSemanticFrame:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.bluetooth_onB\xac\x01\n" +
-	"@ru.yandex.alice.megamind.protos.scenarios.frames.bluetooth_frameB\x0eFrameBluetoothP\x01ZVa.yandex-team.ru/alice/megamind/protos/scenarios/frames/bluetooth_frame;bluetoothframeb\x06proto3"
+	"\x19TBluetoothOnSemanticFrame:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.bluetooth_onB\xbc\x01\n" +
+	"@ru.yandex.alice.megamind.protos.scenarios.frames.bluetooth_frameB\x0eFrameBluetoothP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/bluetooth_frameb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_bluetooth_frame_bluetooth_frame_proto_rawDescOnce sync.Once

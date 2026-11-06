@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_wallpaper/capability.proto
 
-package automotive_wallpaperpb
+package automotive_wallpaper
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -330,8 +330,8 @@ const file_alice_protos_endpoint_capabilities_automotive_wallpaper_capability_pr
 	"\x04Type\x18\x01 \x01(\x0e25.NAlice.TAutomotiveWallpaperCapability.EWallpaperTypeB\b\xaa\xdd\x1b\x04typeR\x04type:$\x92\x82\x19\x17set_wallpaper_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf4\x05\"C\n" +
 	"\x0eEWallpaperType\x12\x1a\n" +
 	"\x16WALLPAPER_TYPE_DESKTOP\x10\x00\x12\x15\n" +
-	"\x11WALLPAPER_TYPE_3D\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcb\x02B\xb3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AutomotiveWallpaperCapabilityProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_wallpaper;automotive_wallpaperpbb\x06proto3"
+	"\x11WALLPAPER_TYPE_3D\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcb\x02B\xbb\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AutomotiveWallpaperCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_wallpaperb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_wallpaper_capability_proto_rawDescOnce sync.Once

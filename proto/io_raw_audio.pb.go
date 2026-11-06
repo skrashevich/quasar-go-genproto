@@ -71,8 +71,8 @@ const file_io_raw_audio_proto_rawDesc = "" +
 	"\n" +
 	"\x12io_raw_audio.proto\x12\x13quark.android.proto\x1a\x13channel_types.proto\"]\n" +
 	"\x1bIORawAudioInputChannelsData\x12>\n" +
-	"\bchannels\x18\x01 \x03(\x0e2\".QuarkProtos.AudioInputChannelTypeR\bchannelsB&\n" +
-	"\x1acom.yandex.quasar.protobufB\bYandexIO"
+	"\bchannels\x18\x01 \x03(\x0e2\".QuarkProtos.AudioInputChannelTypeR\bchannelsBW\n" +
+	"\x1acom.yandex.quasar.protobufB\bYandexIOZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_io_raw_audio_proto_rawDescOnce sync.Once

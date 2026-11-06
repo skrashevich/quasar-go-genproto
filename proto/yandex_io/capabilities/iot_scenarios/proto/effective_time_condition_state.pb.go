@@ -23,7 +23,7 @@ const (
 
 type TEffectiveTimeConditionState struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	LastTriggerTimeSec uint64                 `protobuf:"varint,1,opt,name=LastTriggerTimeSec,json=last_trigger_time_sec,proto3" json:"LastTriggerTimeSec,omitempty"`
+	LastTriggerTimeSec uint64                 `protobuf:"varint,1,opt,name=LastTriggerTimeSec,proto3" json:"LastTriggerTimeSec,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -69,9 +69,10 @@ var File_yandex_io_capabilities_iot_scenarios_proto_effective_time_condition_sta
 
 const file_yandex_io_capabilities_iot_scenarios_proto_effective_time_condition_state_proto_rawDesc = "" +
 	"\n" +
-	"Oyandex_io/capabilities/iot_scenarios/proto/effective_time_condition_state.proto\x12\fquasar.proto\"Q\n" +
-	"\x1cTEffectiveTimeConditionState\x121\n" +
-	"\x12LastTriggerTimeSec\x18\x01 \x01(\x04R\x15last_trigger_time_secb\x06proto3"
+	"Oyandex_io/capabilities/iot_scenarios/proto/effective_time_condition_state.proto\x12\fquasar.proto\"N\n" +
+	"\x1cTEffectiveTimeConditionState\x12.\n" +
+	"\x12LastTriggerTimeSec\x18\x01 \x01(\x04R\x12LastTriggerTimeSecB\xe1\x01\n" +
+	"\x10com.quasar.protoB EffectiveTimeConditionStateProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/iot_scenarios/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_capabilities_iot_scenarios_proto_effective_time_condition_state_proto_rawDescOnce sync.Once

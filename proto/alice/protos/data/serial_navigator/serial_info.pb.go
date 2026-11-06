@@ -205,8 +205,8 @@ const file_alice_protos_data_serial_navigator_serial_info_proto_rawDesc = "" +
 	"\rEpisodesCount\x18\x02 \x01(\rB\x12\xaa\xdd\x1b\x0eepisodes_countH\x01R\x0eepisodes_count\x88\x01\x01B\x0f\n" +
 	"\r_SeasonNumberB\x10\n" +
 	"\x0e_EpisodesCount:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\t_AgeLimitJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06Bs\n" +
-	"+ru.yandex.alice.protos.data.serialnavigatorB\x0fSerialInfoProtoZ3a.yandex-team.ru/alice/protos/data/serial_navigatorb\x06proto3"
+	"\t_AgeLimitJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06B\x92\x01\n" +
+	"+ru.yandex.alice.protos.data.serialnavigatorB\x0fSerialInfoProtoZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/serial_navigatorb\x06proto3"
 
 var (
 	file_alice_protos_data_serial_navigator_serial_info_proto_rawDescOnce sync.Once

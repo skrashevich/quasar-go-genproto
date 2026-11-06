@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_level_emitter/capability.proto
 
-package iotlevelemitterpb
+package iot_level_emitter
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -297,8 +297,8 @@ const file_alice_protos_endpoint_capabilities_iot_level_emitter_capability_proto
 	"\x19TUpdateRelativeLevelEvent\x12\x1f\n" +
 	"\x05Level\x18\x01 \x01(\x01B\t\xaa\xdd\x1b\x05levelR\x05level\x12<\n" +
 	"\x0eTransitionTime\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0ftransition_timeR\x0ftransition_time\x12/\n" +
-	"\tWithOnOff\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vwith_on_offR\vwith_on_off:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cK:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c}B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eIotLevelEmitterCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_level_emitter;iotlevelemitterpbb\x06proto3"
+	"\tWithOnOff\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vwith_on_offR\vwith_on_off:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cK:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c}B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eIotLevelEmitterCapabilityProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_level_emitterb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_level_emitter_capability_proto_rawDescOnce sync.Once

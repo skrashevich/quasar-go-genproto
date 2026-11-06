@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ya_browser/capability.proto
 
-package yabrowserpb
+package ya_browser
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -271,8 +271,8 @@ const file_alice_protos_endpoint_capabilities_ya_browser_capability_proto_rawDes
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
 	"\x03Url\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:*\x92\x82\x19\x1dya_browser_open_url_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd1\x01\x1aZ\n" +
 	"\x15TOpenBrowserDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x16open_browser_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd6\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cHB\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18YaBrowserCapabilityProtoP\x01ZJa.yandex-team.ru/alice/protos/endpoint/capabilities/ya_browser;yabrowserpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x16open_browser_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd6\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cHB\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18YaBrowserCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ya_browserb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ya_browser_capability_proto_rawDescOnce sync.Once

@@ -74,10 +74,10 @@ func (TTtsUpdateState_EReportReason) EnumDescriptor() ([]byte, []int) {
 
 type TTtsUpdateState struct {
 	state            protoimpl.MessageState        `protogen:"open.v1"`
-	RequestMessageId string                        `protobuf:"bytes,1,opt,name=RequestMessageId,json=requestMessageId,proto3" json:"RequestMessageId,omitempty"`
-	State            *TTtsUpdateState_TTsState     `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
-	ReportReason     TTtsUpdateState_EReportReason `protobuf:"varint,3,opt,name=ReportReason,json=report_reason,proto3,enum=NAlice.NAliceApi.TTtsUpdateState_EReportReason" json:"ReportReason,omitempty"`
-	SubStreamId      uint32                        `protobuf:"varint,4,opt,name=SubStreamId,json=sub_stream_id,proto3" json:"SubStreamId,omitempty"`
+	RequestMessageId string                        `protobuf:"bytes,1,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	State            *TTtsUpdateState_TTsState     `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
+	ReportReason     TTtsUpdateState_EReportReason `protobuf:"varint,3,opt,name=ReportReason,proto3,enum=NAlice.NAliceApi.TTtsUpdateState_EReportReason" json:"ReportReason,omitempty"`
+	SubStreamId      uint32                        `protobuf:"varint,4,opt,name=SubStreamId,proto3" json:"SubStreamId,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -196,21 +196,21 @@ var File_alice_protos_api_alicekit_events_tts_update_state_tts_update_state_prot
 
 const file_alice_protos_api_alicekit_events_tts_update_state_tts_update_state_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/alicekit/events/tts_update_state/tts_update_state.proto\x12\x10NAlice.NAliceApi\x1a\x1egoogle/protobuf/duration.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfd\x03\n" +
-	"\x0fTTtsUpdateState\x12B\n" +
-	"\x10RequestMessageId\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12request_message_idR\x10requestMessageId\x12K\n" +
-	"\x05State\x18\x02 \x01(\v2*.NAlice.NAliceApi.TTtsUpdateState.TTsStateB\t\xaa\xdd\x1b\x05stateR\x05state\x12g\n" +
-	"\fReportReason\x18\x03 \x01(\x0e2/.NAlice.NAliceApi.TTtsUpdateState.EReportReasonB\x11\xaa\xdd\x1b\rreport_reasonR\rreport_reason\x125\n" +
-	"\vSubStreamId\x18\x04 \x01(\rB\x11\xaa\xdd\x1b\rsub_stream_idR\rsub_stream_id\x1aw\n" +
+	"Halice/protos/api/alicekit/events/tts_update_state/tts_update_state.proto\x12\x10NAlice.NAliceApi\x1a\x1egoogle/protobuf/duration.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x03\n" +
+	"\x0fTTtsUpdateState\x12*\n" +
+	"\x10RequestMessageId\x18\x01 \x01(\tR\x10RequestMessageId\x12@\n" +
+	"\x05State\x18\x02 \x01(\v2*.NAlice.NAliceApi.TTtsUpdateState.TTsStateR\x05State\x12S\n" +
+	"\fReportReason\x18\x03 \x01(\x0e2/.NAlice.NAliceApi.TTtsUpdateState.EReportReasonR\fReportReason\x12 \n" +
+	"\vSubStreamId\x18\x04 \x01(\rR\vSubStreamId\x1aq\n" +
 	"\bTTsState\x12G\n" +
 	"\x11PlayedTtsDuration\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\x11PlayedTtsDuration\x12\x1c\n" +
-	"\tIsPlaying\x18\x02 \x01(\bR\tIsPlaying:\x04\xa8\xdd\x1b\x04\":\n" +
+	"\tIsPlaying\x18\x02 \x01(\bR\tIsPlaying\":\n" +
 	"\rEReportReason\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x10\n" +
 	"\fInterruption\x10\x01\x12\n" +
 	"\n" +
-	"\x06Finish\x10\x02:\x04\xa8\xdd\x1b\x04B\x93\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.tts_update_stateB\x0eTtsUpdateStateP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/tts_update_stateb\x06proto3"
+	"\x06Finish\x10\x02B\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13TtsUpdateStateProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/tts_update_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_tts_update_state_tts_update_state_proto_rawDescOnce sync.Once

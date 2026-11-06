@@ -26,11 +26,11 @@ const (
 
 type TCapabilityUpdateState struct {
 	state            protoimpl.MessageState               `protogen:"open.v1"`
-	RequestMessageId string                               `protobuf:"bytes,1,opt,name=RequestMessageId,json=requestMessageId,proto3" json:"RequestMessageId,omitempty"`
-	EndpointId       string                               `protobuf:"bytes,2,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	Capability       *anypb.Any                           `protobuf:"bytes,3,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
-	AnyCapability    *endpoint.TAnyCapabilityHolder       `protobuf:"bytes,5,opt,name=AnyCapability,json=any_capability,proto3" json:"AnyCapability,omitempty"`
-	CapabilityType   endpoint.TCapability_ECapabilityType `protobuf:"varint,4,opt,name=CapabilityType,json=capability_type,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
+	RequestMessageId string                               `protobuf:"bytes,1,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	EndpointId       string                               `protobuf:"bytes,2,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	Capability       *anypb.Any                           `protobuf:"bytes,3,opt,name=Capability,proto3" json:"Capability,omitempty"`
+	AnyCapability    *endpoint.TAnyCapabilityHolder       `protobuf:"bytes,5,opt,name=AnyCapability,proto3" json:"AnyCapability,omitempty"`
+	CapabilityType   endpoint.TCapability_ECapabilityType `protobuf:"varint,4,opt,name=CapabilityType,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -104,18 +104,18 @@ var File_alice_protos_api_alicekit_events_capability_update_state_capability_upd
 
 const file_alice_protos_api_alicekit_events_capability_update_state_capability_update_state_proto_rawDesc = "" +
 	"\n" +
-	"Valice/protos/api/alicekit/events/capability_update_state/capability_update_state.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/endpoint/any_capability.proto\x1a&alice/protos/endpoint/capability.proto\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x94\x03\n" +
-	"\x16TCapabilityUpdateState\x12@\n" +
-	"\x10RequestMessageId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10requestMessageIdR\x10requestMessageId\x120\n" +
+	"Valice/protos/api/alicekit/events/capability_update_state/capability_update_state.proto\x12\x10NAlice.NAliceApi\x1a*alice/protos/endpoint/any_capability.proto\x1a&alice/protos/endpoint/capability.proto\x1a\x19google/protobuf/any.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xab\x02\n" +
+	"\x16TCapabilityUpdateState\x12*\n" +
+	"\x10RequestMessageId\x18\x01 \x01(\tR\x10RequestMessageId\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12D\n" +
+	"EndpointId\x18\x02 \x01(\tR\n" +
+	"EndpointId\x124\n" +
 	"\n" +
-	"Capability\x18\x03 \x01(\v2\x14.google.protobuf.AnyB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability\x12W\n" +
-	"\rAnyCapability\x18\x05 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderB\x12\xaa\xdd\x1b\x0eany_capabilityR\x0eany_capability\x12a\n" +
-	"\x0eCapabilityType\x18\x04 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeB\x13\xaa\xdd\x1b\x0fcapability_typeR\x0fcapability_type:\x04\xa8\xdd\x1b\x04B\xa8\x01\n" +
-	"Bru.yandex.alice.protos.api.alicekit.events.capability_update_stateB\x15CapabilityUpdateStateP\x01ZIa.yandex-team.ru/alice/protos/api/alicekit/events/capability_update_stateb\x06proto3"
+	"Capability\x18\x03 \x01(\v2\x14.google.protobuf.AnyR\n" +
+	"Capability\x12B\n" +
+	"\rAnyCapability\x18\x05 \x01(\v2\x1c.NAlice.TAnyCapabilityHolderR\rAnyCapability\x12K\n" +
+	"\x0eCapabilityType\x18\x04 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeR\x0eCapabilityTypeB\xfd\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x1aCapabilityUpdateStateProtoP\x01Zhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/capability_update_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_capability_update_state_capability_update_state_proto_rawDescOnce sync.Once

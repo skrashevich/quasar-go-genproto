@@ -464,8 +464,8 @@ const file_alice_protos_data_tron_tags_proto_rawDesc = "" +
 	"\x06NoteId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\anote_idR\anote_id\x12*\n" +
 	"\bHashPuid\x18\x04 \x01(\tB\r\xaa\xdd\x1b\thash_puidR\thash_puid\x12K\n" +
 	"\bExpireAt\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampB\r\xaa\xdd\x1b\texpire_atH\x00R\texpire_at\x88\x01\x01B\v\n" +
-	"\t_ExpireAtBK\n" +
-	" ru.yandex.alice.protos.data.tronZ'a.yandex-team.ru/alice/protos/data/tronb\x06proto3"
+	"\t_ExpireAtBj\n" +
+	" ru.yandex.alice.protos.data.tronZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tronb\x06proto3"
 
 var (
 	file_alice_protos_data_tron_tags_proto_rawDescOnce sync.Once

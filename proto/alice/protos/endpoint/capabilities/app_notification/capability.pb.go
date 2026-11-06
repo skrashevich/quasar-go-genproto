@@ -308,8 +308,8 @@ const file_alice_protos_endpoint_capabilities_app_notification_capability_proto_
 	"\x11_NotificationTypeB\x0e\n" +
 	"\f_DeeplinkUrl\"\"\n" +
 	"\x11ENotificationType\x12\r\n" +
-	"\tSatellite\x10\x00:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbf\x01B\xa5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAppNotificationCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/app_notification;app_notificationb\x06proto3"
+	"\tSatellite\x10\x00:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbf\x01B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAppNotificationCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/app_notificationb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_app_notification_capability_proto_rawDescOnce sync.Once

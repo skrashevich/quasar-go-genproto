@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screen/capability.proto
 
-package screenpb
+package screen
 
 import (
 	screen "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/screen"
@@ -870,8 +870,8 @@ const file_alice_protos_endpoint_capabilities_screen_capability_proto_rawDesc = 
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x19.NAlice.TScreenCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cC:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cVB\x8c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15ScreenCapabilityProtoP\x01ZCa.yandex-team.ru/alice/protos/endpoint/capabilities/screen;screenpbb\x06proto3"
+	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cC:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cVB\xa2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15ScreenCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screen_capability_proto_rawDescOnce sync.Once

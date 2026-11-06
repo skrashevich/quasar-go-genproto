@@ -83,8 +83,8 @@ const file_alice_protos_data_news_provider_proto_rawDesc = "" +
 	"\n" +
 	"NewsSource\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vnews_sourceR\vnews_source\x12\"\n" +
 	"\x06Rubric\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06rubricR\x06rubric:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\xaa\xdd\x1b\x06rubricR\x06rubric:\x04\xa8\xdd\x1b\x04B`\n" +
+	"\x1bru.yandex.alice.protos.dataZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/datab\x06proto3"
 
 var (
 	file_alice_protos_data_news_provider_proto_rawDescOnce sync.Once

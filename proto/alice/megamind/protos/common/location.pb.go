@@ -25,11 +25,11 @@ const (
 
 type TLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lat           *float64               `protobuf:"fixed64,1,opt,name=Lat,json=lat" json:"Lat,omitempty"`
-	Lon           *float64               `protobuf:"fixed64,2,opt,name=Lon,json=lon" json:"Lon,omitempty"`
-	Accuracy      *float64               `protobuf:"fixed64,3,opt,name=Accuracy,json=accuracy" json:"Accuracy,omitempty"`
-	Recency       *float64               `protobuf:"fixed64,4,opt,name=Recency,json=recency" json:"Recency,omitempty"`
-	Speed         *float64               `protobuf:"fixed64,5,opt,name=Speed,json=speed" json:"Speed,omitempty"`
+	Lat           *float64               `protobuf:"fixed64,1,opt,name=Lat" json:"Lat,omitempty"`
+	Lon           *float64               `protobuf:"fixed64,2,opt,name=Lon" json:"Lon,omitempty"`
+	Accuracy      *float64               `protobuf:"fixed64,3,opt,name=Accuracy" json:"Accuracy,omitempty"`
+	Recency       *float64               `protobuf:"fixed64,4,opt,name=Recency" json:"Recency,omitempty"`
+	Speed         *float64               `protobuf:"fixed64,5,opt,name=Speed" json:"Speed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -101,10 +101,10 @@ func (x *TLocation) GetSpeed() float64 {
 
 type TFavouriteLocation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lat           *float64               `protobuf:"fixed64,1,opt,name=Lat,json=lat" json:"Lat,omitempty"`
-	Lon           *float64               `protobuf:"fixed64,2,opt,name=Lon,json=lon" json:"Lon,omitempty"`
-	Title         *string                `protobuf:"bytes,3,opt,name=Title,json=title" json:"Title,omitempty"`
-	SubTitle      *string                `protobuf:"bytes,4,opt,name=SubTitle,json=subtitle" json:"SubTitle,omitempty"`
+	Lat           *float64               `protobuf:"fixed64,1,opt,name=Lat" json:"Lat,omitempty"`
+	Lon           *float64               `protobuf:"fixed64,2,opt,name=Lon" json:"Lon,omitempty"`
+	Title         *string                `protobuf:"bytes,3,opt,name=Title" json:"Title,omitempty"`
+	SubTitle      *string                `protobuf:"bytes,4,opt,name=SubTitle" json:"SubTitle,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -171,19 +171,20 @@ var File_alice_megamind_protos_common_location_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_common_location_proto_rawDesc = "" +
 	"\n" +
-	"+alice/megamind/protos/common/location.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xc1\x01\n" +
-	"\tTLocation\x12\x1d\n" +
-	"\x03Lat\x18\x01 \x01(\x01B\v\xaa\xdd\x1b\x03lat\xf8\x91*\x03R\x03lat\x12\x1d\n" +
-	"\x03Lon\x18\x02 \x01(\x01B\v\xaa\xdd\x1b\x03lon\xf8\x91*\x03R\x03lon\x12(\n" +
-	"\bAccuracy\x18\x03 \x01(\x01B\f\xaa\xdd\x1b\baccuracyR\baccuracy\x12%\n" +
-	"\aRecency\x18\x04 \x01(\x01B\v\xaa\xdd\x1b\arecencyR\arecency\x12\x1f\n" +
-	"\x05Speed\x18\x05 \x01(\x01B\t\xaa\xdd\x1b\x05speedR\x05speed:\x04\xa8\xdd\x1b\x04\"\xa3\x01\n" +
-	"\x12TFavouriteLocation\x12\x1d\n" +
-	"\x03Lat\x18\x01 \x01(\x01B\v\xaa\xdd\x1b\x03lat\xf8\x91*\x03R\x03lat\x12\x1d\n" +
-	"\x03Lon\x18\x02 \x01(\x01B\v\xaa\xdd\x1b\x03lon\xf8\x91*\x03R\x03lon\x12\x1f\n" +
-	"\x05Title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubTitle\x18\x04 \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle:\x04\xa8\xdd\x1b\x04Bf\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\rLocationProtoZ-a.yandex-team.ru/alice/megamind/protos/common"
+	"+alice/megamind/protos/common/location.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"{\n" +
+	"\tTLocation\x12\x10\n" +
+	"\x03Lat\x18\x01 \x01(\x01R\x03Lat\x12\x10\n" +
+	"\x03Lon\x18\x02 \x01(\x01R\x03Lon\x12\x1a\n" +
+	"\bAccuracy\x18\x03 \x01(\x01R\bAccuracy\x12\x18\n" +
+	"\aRecency\x18\x04 \x01(\x01R\aRecency\x12\x14\n" +
+	"\x05Speed\x18\x05 \x01(\x01R\x05Speed\"j\n" +
+	"\x12TFavouriteLocation\x12\x10\n" +
+	"\x03Lat\x18\x01 \x01(\x01R\x03Lat\x12\x10\n" +
+	"\x03Lon\x18\x02 \x01(\x01R\x03Lon\x12\x14\n" +
+	"\x05Title\x18\x03 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubTitle\x18\x04 \x01(\tR\bSubTitleB\xa1\x01\n" +
+	"\n" +
+	"com.NAliceB\rLocationProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_megamind_protos_common_location_proto_rawDescOnce sync.Once

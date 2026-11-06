@@ -81,8 +81,8 @@ const file_alice_protos_data_tron_tron_technical_info_proto_rawDesc = "" +
 	"0alice/protos/data/tron/tron_technical_info.proto\x12\x19NAlice.NData.NTron.NNotes\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\x01\n" +
 	"\x12TTronTechnicalInfo\x126\n" +
 	"\fOriginalUuid\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\roriginal_uuidR\roriginal_uuid\x12D\n" +
-	"\x10OriginalDeviceId\x18\x02 \x01(\tB\x16\xaa\xdd\x1b\x12original_device_idR\x12original_device_idBK\n" +
-	" ru.yandex.alice.protos.data.tronZ'a.yandex-team.ru/alice/protos/data/tronb\x06proto3"
+	"\x10OriginalDeviceId\x18\x02 \x01(\tB\x16\xaa\xdd\x1b\x12original_device_idR\x12original_device_idBj\n" +
+	" ru.yandex.alice.protos.data.tronZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tronb\x06proto3"
 
 var (
 	file_alice_protos_data_tron_tron_technical_info_proto_rawDescOnce sync.Once

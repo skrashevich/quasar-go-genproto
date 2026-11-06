@@ -7,7 +7,6 @@
 package files
 
 import (
-	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
 	voice_cloning "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/file_service/voice_cloning"
 	draw_picture "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/draw_picture"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -392,15 +391,15 @@ type isTFileInfo_TSource_Source interface {
 }
 
 type TFileInfo_TSource_S3Source struct {
-	S3Source *TFileInfo_TSource_TS3Source `protobuf:"bytes,1,opt,name=S3Source,json=s3_source,proto3,oneof"`
+	S3Source *TFileInfo_TSource_TS3Source `protobuf:"bytes,1,opt,name=S3Source,proto3,oneof"`
 }
 
 type TFileInfo_TSource_AvatarSource struct {
-	AvatarSource *TFileInfo_TSource_TAvatarSource `protobuf:"bytes,2,opt,name=AvatarSource,json=avatar_source,proto3,oneof"`
+	AvatarSource *TFileInfo_TSource_TAvatarSource `protobuf:"bytes,2,opt,name=AvatarSource,proto3,oneof"`
 }
 
 type TFileInfo_TSource_ExternalUrlSource struct {
-	ExternalUrlSource *TFileInfo_TSource_TExternalUrlSource `protobuf:"bytes,3,opt,name=ExternalUrlSource,json=external_url_source,proto3,oneof"`
+	ExternalUrlSource *TFileInfo_TSource_TExternalUrlSource `protobuf:"bytes,3,opt,name=ExternalUrlSource,proto3,oneof"`
 }
 
 func (*TFileInfo_TSource_S3Source) isTFileInfo_TSource_Source() {}
@@ -411,16 +410,16 @@ func (*TFileInfo_TSource_ExternalUrlSource) isTFileInfo_TSource_Source() {}
 
 type TFileInfo_TFeatures struct {
 	state                  protoimpl.MessageState                       `protogen:"open.v1"`
-	IsEcomUrl              bool                                         `protobuf:"varint,1,opt,name=IsEcomUrl,json=is_ecom_url,proto3" json:"IsEcomUrl,omitempty"`
-	ParsedResultFormat     TFileInfo_EParsedResultFormat                `protobuf:"varint,2,opt,name=ParsedResultFormat,json=parsed_result_format,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EParsedResultFormat" json:"ParsedResultFormat,omitempty"`
-	ImageClassifiersResult *TFileInfo_TFeatures_TImageClassifiersResult `protobuf:"bytes,3,opt,name=ImageClassifiersResult,json=image_classifiers_result,proto3" json:"ImageClassifiersResult,omitempty"`
-	IsParsedByClient       bool                                         `protobuf:"varint,5,opt,name=IsParsedByClient,json=is_parsed_by_client,proto3" json:"IsParsedByClient,omitempty"`
-	DrawPictureFeatures    *TFileInfo_TFeatures_TDrawPictureFeatures    `protobuf:"bytes,6,opt,name=DrawPictureFeatures,json=draw_picture_features,proto3" json:"DrawPictureFeatures,omitempty"`
+	IsEcomUrl              bool                                         `protobuf:"varint,1,opt,name=IsEcomUrl,proto3" json:"IsEcomUrl,omitempty"`
+	ParsedResultFormat     TFileInfo_EParsedResultFormat                `protobuf:"varint,2,opt,name=ParsedResultFormat,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EParsedResultFormat" json:"ParsedResultFormat,omitempty"`
+	ImageClassifiersResult *TFileInfo_TFeatures_TImageClassifiersResult `protobuf:"bytes,3,opt,name=ImageClassifiersResult,proto3" json:"ImageClassifiersResult,omitempty"`
+	IsParsedByClient       bool                                         `protobuf:"varint,5,opt,name=IsParsedByClient,proto3" json:"IsParsedByClient,omitempty"`
+	DrawPictureFeatures    *TFileInfo_TFeatures_TDrawPictureFeatures    `protobuf:"bytes,6,opt,name=DrawPictureFeatures,proto3" json:"DrawPictureFeatures,omitempty"`
+	OriginalUrl            *string                                      `protobuf:"bytes,4,opt,name=OriginalUrl,proto3,oneof" json:"OriginalUrl,omitempty"`
 	DialogAppFeatures      *TFileInfo_TFeatures_TDialogAppFeatures      `protobuf:"bytes,8,opt,name=DialogAppFeatures,json=dialog_app_features,proto3" json:"DialogAppFeatures,omitempty"`
 	ProductFeatures        *TFileInfo_TFeatures_TProductFeatures        `protobuf:"bytes,9,opt,name=ProductFeatures,json=product_features,proto3" json:"ProductFeatures,omitempty"`
 	VoiceEmbeddings        *voice_cloning.TVoiceEmbedding               `protobuf:"bytes,11,opt,name=VoiceEmbeddings,json=voice_embeddings,proto3" json:"VoiceEmbeddings,omitempty"`
 	VoiceMetadata          *voice_cloning.TVoiceMetadata                `protobuf:"bytes,12,opt,name=VoiceMetadata,json=voice_metadata,proto3" json:"VoiceMetadata,omitempty"`
-	OriginalUrl            *string                                      `protobuf:"bytes,4,opt,name=OriginalUrl,json=original_url,proto3,oneof" json:"OriginalUrl,omitempty"`
 	IndexCreated           *bool                                        `protobuf:"varint,7,opt,name=IndexCreated,json=index_created,proto3,oneof" json:"IndexCreated,omitempty"`
 	TextPreview            *string                                      `protobuf:"bytes,10,opt,name=TextPreview,json=text_preview,proto3,oneof" json:"TextPreview,omitempty"`
 	unknownFields          protoimpl.UnknownFields
@@ -492,6 +491,13 @@ func (x *TFileInfo_TFeatures) GetDrawPictureFeatures() *TFileInfo_TFeatures_TDra
 	return nil
 }
 
+func (x *TFileInfo_TFeatures) GetOriginalUrl() string {
+	if x != nil && x.OriginalUrl != nil {
+		return *x.OriginalUrl
+	}
+	return ""
+}
+
 func (x *TFileInfo_TFeatures) GetDialogAppFeatures() *TFileInfo_TFeatures_TDialogAppFeatures {
 	if x != nil {
 		return x.DialogAppFeatures
@@ -520,13 +526,6 @@ func (x *TFileInfo_TFeatures) GetVoiceMetadata() *voice_cloning.TVoiceMetadata {
 	return nil
 }
 
-func (x *TFileInfo_TFeatures) GetOriginalUrl() string {
-	if x != nil && x.OriginalUrl != nil {
-		return *x.OriginalUrl
-	}
-	return ""
-}
-
 func (x *TFileInfo_TFeatures) GetIndexCreated() bool {
 	if x != nil && x.IndexCreated != nil {
 		return *x.IndexCreated
@@ -543,8 +542,8 @@ func (x *TFileInfo_TFeatures) GetTextPreview() string {
 
 type TFileInfo_TSource_TS3Source struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	S3Bucket      string                 `protobuf:"bytes,1,opt,name=S3Bucket,json=s3_bucket,proto3" json:"S3Bucket,omitempty"`
-	S3Key         string                 `protobuf:"bytes,2,opt,name=S3Key,json=s3_key,proto3" json:"S3Key,omitempty"`
+	S3Bucket      string                 `protobuf:"bytes,1,opt,name=S3Bucket,proto3" json:"S3Bucket,omitempty"`
+	S3Key         string                 `protobuf:"bytes,2,opt,name=S3Key,proto3" json:"S3Key,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -595,9 +594,9 @@ func (x *TFileInfo_TSource_TS3Source) GetS3Key() string {
 
 type TFileInfo_TSource_TAvatarSource struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	AvatarId        string                 `protobuf:"bytes,1,opt,name=AvatarId,json=avatar_id,proto3" json:"AvatarId,omitempty"`
-	AvatarNamespace string                 `protobuf:"bytes,2,opt,name=AvatarNamespace,json=avatar_namespace,proto3" json:"AvatarNamespace,omitempty"`
-	GroupId         *uint64                `protobuf:"varint,3,opt,name=GroupId,json=group_id,proto3,oneof" json:"GroupId,omitempty"`
+	AvatarId        string                 `protobuf:"bytes,1,opt,name=AvatarId,proto3" json:"AvatarId,omitempty"`
+	AvatarNamespace string                 `protobuf:"bytes,2,opt,name=AvatarNamespace,proto3" json:"AvatarNamespace,omitempty"`
+	GroupId         *uint64                `protobuf:"varint,3,opt,name=GroupId,proto3,oneof" json:"GroupId,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -655,7 +654,7 @@ func (x *TFileInfo_TSource_TAvatarSource) GetGroupId() uint64 {
 
 type TFileInfo_TSource_TExternalUrlSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Url           string                 `protobuf:"bytes,1,opt,name=Url,json=url,proto3" json:"Url,omitempty"`
+	Url           string                 `protobuf:"bytes,1,opt,name=Url,proto3" json:"Url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -699,8 +698,8 @@ func (x *TFileInfo_TSource_TExternalUrlSource) GetUrl() string {
 
 type TFileInfo_TFeatures_TBinaryClassifierResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Result        bool                   `protobuf:"varint,2,opt,name=Result,json=result,proto3" json:"Result,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Result        bool                   `protobuf:"varint,2,opt,name=Result,proto3" json:"Result,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -751,7 +750,7 @@ func (x *TFileInfo_TFeatures_TBinaryClassifierResult) GetResult() bool {
 
 type TFileInfo_TFeatures_TImageClassifiersResult struct {
 	state                    protoimpl.MessageState                         `protogen:"open.v1"`
-	BinaryClassifiersResults []*TFileInfo_TFeatures_TBinaryClassifierResult `protobuf:"bytes,1,rep,name=BinaryClassifiersResults,json=binary_classifiers_results,proto3" json:"BinaryClassifiersResults,omitempty"`
+	BinaryClassifiersResults []*TFileInfo_TFeatures_TBinaryClassifierResult `protobuf:"bytes,1,rep,name=BinaryClassifiersResults,proto3" json:"BinaryClassifiersResults,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -795,7 +794,7 @@ func (x *TFileInfo_TFeatures_TImageClassifiersResult) GetBinaryClassifiersResult
 
 type TFileInfo_TFeatures_TDrawPictureFeatures struct {
 	state          protoimpl.MessageState                    `protogen:"open.v1"`
-	GenerationMode draw_picture.TDrawPicture_EGenerationMode `protobuf:"varint,1,opt,name=GenerationMode,json=generation_mode,proto3,enum=NAlice.TDrawPicture_EGenerationMode" json:"GenerationMode,omitempty"`
+	GenerationMode draw_picture.TDrawPicture_EGenerationMode `protobuf:"varint,1,opt,name=GenerationMode,proto3,enum=NAlice.TDrawPicture_EGenerationMode" json:"GenerationMode,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -989,48 +988,45 @@ var File_alice_protos_api_files_file_info_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_files_file_info_proto_rawDesc = "" +
 	"\n" +
-	"&alice/protos/api/files/file_info.proto\x12\x12NAlice.NApi.NFiles\x1a&yt/yt_proto/yt/formats/extension.proto\x1a+alice/library/censor/protos/extension.proto\x1a=alice/protos/data/scenario/draw_picture/generation_mode.proto\x1a@alice/protos/api/rpc/file_service/voice_cloning/voice_data.proto\"\xd4\x1b\n" +
-	"\tTFileInfo\x1a\xd1\x05\n" +
-	"\aTSource\x12]\n" +
-	"\bS3Source\x18\x01 \x01(\v2/.NAlice.NApi.NFiles.TFileInfo.TSource.TS3SourceB\r\xaa\xdd\x1b\ts3_sourceH\x00R\ts3_source\x12m\n" +
-	"\fAvatarSource\x18\x02 \x01(\v23.NAlice.NApi.NFiles.TFileInfo.TSource.TAvatarSourceB\x11\xaa\xdd\x1b\ravatar_sourceH\x00R\ravatar_source\x12\x83\x01\n" +
-	"\x11ExternalUrlSource\x18\x03 \x01(\v28.NAlice.NApi.NFiles.TFileInfo.TSource.TExternalUrlSourceB\x17\xaa\xdd\x1b\x13external_url_sourceH\x00R\x13external_url_source\x1a`\n" +
-	"\tTS3Source\x12*\n" +
-	"\bS3Bucket\x18\x01 \x01(\tB\r\xaa\xdd\x1b\ts3_bucketR\ts3_bucket\x12!\n" +
-	"\x05S3Key\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06s3_keyR\x06s3_key:\x04\xa8\xdd\x1b\x04\x1a\xbc\x01\n" +
-	"\rTAvatarSource\x12*\n" +
-	"\bAvatarId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tavatar_idR\tavatar_id\x12?\n" +
-	"\x0fAvatarNamespace\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10avatar_namespaceR\x10avatar_namespace\x12,\n" +
-	"\aGroupId\x18\x03 \x01(\x04B\f\xaa\xdd\x1b\bgroup_idH\x00R\bgroup_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\n" +
+	"&alice/protos/api/files/file_info.proto\x12\x12NAlice.NApi.NFiles\x1a&yt/yt_proto/yt/formats/extension.proto\x1a=alice/protos/data/scenario/draw_picture/generation_mode.proto\x1a@alice/protos/api/rpc/file_service/voice_cloning/voice_data.proto\"\x8b\x18\n" +
+	"\tTFileInfo\x1a\x91\x04\n" +
+	"\aTSource\x12M\n" +
+	"\bS3Source\x18\x01 \x01(\v2/.NAlice.NApi.NFiles.TFileInfo.TSource.TS3SourceH\x00R\bS3Source\x12Y\n" +
+	"\fAvatarSource\x18\x02 \x01(\v23.NAlice.NApi.NFiles.TFileInfo.TSource.TAvatarSourceH\x00R\fAvatarSource\x12h\n" +
+	"\x11ExternalUrlSource\x18\x03 \x01(\v28.NAlice.NApi.NFiles.TFileInfo.TSource.TExternalUrlSourceH\x00R\x11ExternalUrlSource\x1a=\n" +
+	"\tTS3Source\x12\x1a\n" +
+	"\bS3Bucket\x18\x01 \x01(\tR\bS3Bucket\x12\x14\n" +
+	"\x05S3Key\x18\x02 \x01(\tR\x05S3Key\x1a\x80\x01\n" +
+	"\rTAvatarSource\x12\x1a\n" +
+	"\bAvatarId\x18\x01 \x01(\tR\bAvatarId\x12(\n" +
+	"\x0fAvatarNamespace\x18\x02 \x01(\tR\x0fAvatarNamespace\x12\x1d\n" +
+	"\aGroupId\x18\x03 \x01(\x04H\x00R\aGroupId\x88\x01\x01B\n" +
 	"\n" +
-	"\b_GroupId\x1a5\n" +
-	"\x12TExternalUrlSource\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x14\n" +
-	"\x06Source\x12\n" +
-	"\xaa\xdd\x1b\x06source\x1a\xf4\x10\n" +
-	"\tTFeatures\x12/\n" +
-	"\tIsEcomUrl\x18\x01 \x01(\bB\x0f\xaa\xdd\x1b\vis_ecom_urlR\vis_ecom_url\x12}\n" +
-	"\x12ParsedResultFormat\x18\x02 \x01(\x0e21.NAlice.NApi.NFiles.TFileInfo.EParsedResultFormatB\x18\xaa\xdd\x1b\x14parsed_result_formatR\x14parsed_result_format\x12\x97\x01\n" +
-	"\x16ImageClassifiersResult\x18\x03 \x01(\v2?.NAlice.NApi.NFiles.TFileInfo.TFeatures.TImageClassifiersResultB\x1c\xaa\xdd\x1b\x18image_classifiers_resultR\x18image_classifiers_result\x12F\n" +
-	"\x10IsParsedByClient\x18\x05 \x01(\bB\x17\xaa\xdd\x1b\x13is_parsed_by_clientR\x13is_parsed_by_client\x12\x8b\x01\n" +
-	"\x13DrawPictureFeatures\x18\x06 \x01(\v2<.NAlice.NApi.NFiles.TFileInfo.TFeatures.TDrawPictureFeaturesB\x19\xaa\xdd\x1b\x15draw_picture_featuresR\x15draw_picture_features\x12\x83\x01\n" +
+	"\b_GroupId\x1a&\n" +
+	"\x12TExternalUrlSource\x12\x10\n" +
+	"\x03Url\x18\x01 \x01(\tR\x03UrlB\b\n" +
+	"\x06Source\x1a\xf1\x0e\n" +
+	"\tTFeatures\x12\x1c\n" +
+	"\tIsEcomUrl\x18\x01 \x01(\bR\tIsEcomUrl\x12a\n" +
+	"\x12ParsedResultFormat\x18\x02 \x01(\x0e21.NAlice.NApi.NFiles.TFileInfo.EParsedResultFormatR\x12ParsedResultFormat\x12w\n" +
+	"\x16ImageClassifiersResult\x18\x03 \x01(\v2?.NAlice.NApi.NFiles.TFileInfo.TFeatures.TImageClassifiersResultR\x16ImageClassifiersResult\x12*\n" +
+	"\x10IsParsedByClient\x18\x05 \x01(\bR\x10IsParsedByClient\x12n\n" +
+	"\x13DrawPictureFeatures\x18\x06 \x01(\v2<.NAlice.NApi.NFiles.TFileInfo.TFeatures.TDrawPictureFeaturesR\x13DrawPictureFeatures\x12%\n" +
+	"\vOriginalUrl\x18\x04 \x01(\tH\x00R\vOriginalUrl\x88\x01\x01\x12\x83\x01\n" +
 	"\x11DialogAppFeatures\x18\b \x01(\v2:.NAlice.NApi.NFiles.TFileInfo.TFeatures.TDialogAppFeaturesB\x17\xaa\xdd\x1b\x13dialog_app_featuresR\x13dialog_app_features\x12y\n" +
 	"\x0fProductFeatures\x18\t \x01(\v28.NAlice.NApi.NFiles.TFileInfo.TFeatures.TProductFeaturesB\x14\xaa\xdd\x1b\x10product_featuresR\x10product_features\x12\x84\x01\n" +
 	"\x0fVoiceEmbeddings\x18\v \x01(\v27.NAlice.NApi.NFileService.NVoiceCloning.TVoiceEmbeddingB \xaa\xdd\x1b\x10voice_embeddings\xa8\x8d'\x01\xa8\x8d'\x02\xa8\x8d'\x04R\x10voice_embeddings\x12}\n" +
-	"\rVoiceMetadata\x18\f \x01(\v26.NAlice.NApi.NFileService.NVoiceCloning.TVoiceMetadataB\x1e\xaa\xdd\x1b\x0evoice_metadata\xa8\x8d'\x01\xa8\x8d'\x02\xa8\x8d'\x04R\x0evoice_metadata\x128\n" +
-	"\vOriginalUrl\x18\x04 \x01(\tB\x10\xaa\xdd\x1b\foriginal_urlH\x00R\foriginal_url\x88\x01\x01\x12;\n" +
+	"\rVoiceMetadata\x18\f \x01(\v26.NAlice.NApi.NFileService.NVoiceCloning.TVoiceMetadataB\x1e\xaa\xdd\x1b\x0evoice_metadata\xa8\x8d'\x01\xa8\x8d'\x02\xa8\x8d'\x04R\x0evoice_metadata\x12;\n" +
 	"\fIndexCreated\x18\a \x01(\bB\x11\xaa\xdd\x1b\rindex_createdH\x01R\rindex_created\x88\x01\x01\x12<\n" +
 	"\vTextPreview\x18\n" +
-	" \x01(\tB\x14\xaa\xdd\x1b\ftext_preview\xa8\x8d'\x04H\x02R\ftext_preview\x88\x01\x01\x1a[\n" +
-	"\x17TBinaryClassifierResult\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\"\n" +
-	"\x06Result\x18\x02 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06resultR\x06result:\x04\xa8\xdd\x1b\x04\x1a\xbf\x01\n" +
-	"\x17TImageClassifiersResult\x12\x9d\x01\n" +
-	"\x18BinaryClassifiersResults\x18\x01 \x03(\v2?.NAlice.NApi.NFiles.TFileInfo.TFeatures.TBinaryClassifierResultB\x1e\xaa\xdd\x1b\x1abinary_classifiers_resultsR\x1abinary_classifiers_results:\x04\xa8\xdd\x1b\x04\x1a\x80\x01\n" +
-	"\x14TDrawPictureFeatures\x12b\n" +
-	"\x0eGenerationMode\x18\x01 \x01(\x0e2$.NAlice.TDrawPicture.EGenerationModeB\x13\xaa\xdd\x1b\x0fgeneration_modeR\x0fgeneration_mode:\x04\xa8\xdd\x1b\x04\x1aQ\n" +
+	" \x01(\tB\x14\xaa\xdd\x1b\ftext_preview\xa8\x8d'\x04H\x02R\ftext_preview\x88\x01\x01\x1aA\n" +
+	"\x17TBinaryClassifierResult\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x16\n" +
+	"\x06Result\x18\x02 \x01(\bR\x06Result\x1a\x96\x01\n" +
+	"\x17TImageClassifiersResult\x12{\n" +
+	"\x18BinaryClassifiersResults\x18\x01 \x03(\v2?.NAlice.NApi.NFiles.TFileInfo.TFeatures.TBinaryClassifierResultR\x18BinaryClassifiersResults\x1ad\n" +
+	"\x14TDrawPictureFeatures\x12L\n" +
+	"\x0eGenerationMode\x18\x01 \x01(\x0e2$.NAlice.TDrawPicture.EGenerationModeR\x0eGenerationMode\x1aQ\n" +
 	"\x12TDialogAppFeatures\x125\n" +
 	"\vDialogAppId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rdialog_app_idR\rdialog_app_id:\x04\xa8\xdd\x1b\x04\x1a\xde\x02\n" +
 	"\x10TProductFeatures\x12w\n" +
@@ -1048,7 +1044,7 @@ const file_alice_protos_api_files_file_info_proto_rawDesc = "" +
 	"\n" +
 	"\b_WareMd5:\x04\xa8\xdd\x1b\x04B\f\n" +
 	"\n" +
-	"_ProductId:\x04\xa8\xdd\x1b\x04B\x0e\n" +
+	"_ProductIdB\x0e\n" +
 	"\f_OriginalUrlB\x0f\n" +
 	"\r_IndexCreatedB\x0e\n" +
 	"\f_TextPreview\"Y\n" +
@@ -1088,8 +1084,8 @@ const file_alice_protos_api_files_file_info_proto_rawDesc = "" +
 	"\rTooSmallVideo\x10\b\x12\x10\n" +
 	"\fTooLongVideo\x10\t\x12\x13\n" +
 	"\x0fUnsupportedLang\x10\n" +
-	":\x04\xa8\xdd\x1b\x04BK\n" +
-	" ru.yandex.alice.protos.api.filesZ'a.yandex-team.ru/alice/protos/api/filesb\x06proto3"
+	"B\xd9\x01\n" +
+	"\x16com.NAlice.NApi.NFilesB\rFileInfoProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/files\xa2\x02\x03NNN\xaa\x02\x12NAlice.NApi.NFiles\xca\x02\x12NAlice\\NApi\\NFiles\xe2\x02\x1eNAlice\\NApi\\NFiles\\GPBMetadata\xea\x02\x14NAlice::NApi::NFilesb\x06proto3"
 
 var (
 	file_alice_protos_api_files_file_info_proto_rawDescOnce sync.Once

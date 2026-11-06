@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_motor_limits/capability.proto
 
-package iotmotorlimitspb
+package iot_motor_limits
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotMotorLimitsCapability struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotMotorLimitsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotMotorLimitsCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotMotorLimitsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotMotorLimitsCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,8 +123,8 @@ func (*TIotMotorLimitsCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotMotorLimitsCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	OpenLimit     float64                `protobuf:"fixed64,1,opt,name=OpenLimit,json=open_limit,proto3" json:"OpenLimit,omitempty"`
-	CloseLimit    float64                `protobuf:"fixed64,2,opt,name=CloseLimit,json=close_limit,proto3" json:"CloseLimit,omitempty"`
+	OpenLimit     float64                `protobuf:"fixed64,1,opt,name=OpenLimit,proto3" json:"OpenLimit,omitempty"`
+	CloseLimit    float64                `protobuf:"fixed64,2,opt,name=CloseLimit,proto3" json:"CloseLimit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,9 +175,9 @@ func (x *TIotMotorLimitsCapability_TState) GetCloseLimit() float64 {
 
 type TIotMotorLimitsCapability_TSetMotorLimitsDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	OpenLimit     float64                `protobuf:"fixed64,1,opt,name=OpenLimit,json=open_limit,proto3" json:"OpenLimit,omitempty"`
-	CloseLimit    float64                `protobuf:"fixed64,2,opt,name=CloseLimit,json=close_limit,proto3" json:"CloseLimit,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	OpenLimit     float64                `protobuf:"fixed64,1,opt,name=OpenLimit,proto3" json:"OpenLimit,omitempty"`
+	CloseLimit    float64                `protobuf:"fixed64,2,opt,name=CloseLimit,proto3" json:"CloseLimit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -235,8 +235,8 @@ func (x *TIotMotorLimitsCapability_TSetMotorLimitsDirective) GetCloseLimit() flo
 
 type TIotMotorLimitsCapability_TSetMotorOpenLimitDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Limit         float64                `protobuf:"fixed64,1,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Limit         float64                `protobuf:"fixed64,1,opt,name=Limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -287,8 +287,8 @@ func (x *TIotMotorLimitsCapability_TSetMotorOpenLimitDirective) GetLimit() float
 
 type TIotMotorLimitsCapability_TSetMotorCloseLimitDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Limit         float64                `protobuf:"fixed64,1,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Limit         float64                `protobuf:"fixed64,1,opt,name=Limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -339,7 +339,7 @@ func (x *TIotMotorLimitsCapability_TSetMotorCloseLimitDirective) GetLimit() floa
 
 type TIotMotorLimitsCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Capability    *TIotMotorLimitsCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotMotorLimitsCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -385,40 +385,37 @@ var File_alice_protos_endpoint_capabilities_iot_motor_limits_capability_proto pr
 
 const file_alice_protos_endpoint_capabilities_iot_motor_limits_capability_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/endpoint/capabilities/iot_motor_limits/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe3\a\n" +
-	"\x19TIotMotorLimitsCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12]\n" +
+	"Dalice/protos/endpoint/capabilities/iot_motor_limits/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c\x05\n" +
+	"\x19TIotMotorLimitsCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12M\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2-.NAlice.TIotMotorLimitsCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12I\n" +
-	"\x05State\x18\x03 \x01(\v2(.NAlice.TIotMotorLimitsCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1ao\n" +
-	"\x06TState\x12-\n" +
-	"\tOpenLimit\x18\x01 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"open_limitR\n" +
-	"open_limit\x120\n" +
+	"Parameters\x18\x02 \x01(\v2-.NAlice.TIotMotorLimitsCapability.TParametersR\n" +
+	"Parameters\x12>\n" +
+	"\x05State\x18\x03 \x01(\v2(.NAlice.TIotMotorLimitsCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aF\n" +
+	"\x06TState\x12\x1c\n" +
+	"\tOpenLimit\x18\x01 \x01(\x01R\tOpenLimit\x12\x1e\n" +
 	"\n" +
-	"CloseLimit\x18\x02 \x01(\x01B\x0f\xaa\xdd\x1b\vclose_limitR\vclose_limit:\x04\xa8\xdd\x1b\x04\x1a\xc3\x01\n" +
-	"\x18TSetMotorLimitsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\tOpenLimit\x18\x01 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"open_limitR\n" +
-	"open_limit\x120\n" +
+	"CloseLimit\x18\x02 \x01(\x01R\n" +
+	"CloseLimit\x1am\n" +
+	"\x18TSetMotorLimitsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tOpenLimit\x18\x01 \x01(\x01R\tOpenLimit\x12\x1e\n" +
 	"\n" +
-	"CloseLimit\x18\x02 \x01(\x01B\x0f\xaa\xdd\x1b\vclose_limitR\vclose_limit:'\x92\x82\x19\x1aset_motor_limits_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf0\x03\x1a\x8a\x01\n" +
-	"\x1bTSetMotorOpenLimitDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Limit\x18\x01 \x01(\x01B\t\xaa\xdd\x1b\x05limitR\x05limit:+\x92\x82\x19\x1eset_motor_open_limit_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfb\x03\x1a\x8c\x01\n" +
-	"\x1cTSetMotorCloseLimitDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Limit\x18\x01 \x01(\x01B\t\xaa\xdd\x1b\x05limitR\x05limit:,\x92\x82\x19\x1fset_motor_close_limit_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfc\x03\x1ap\n" +
-	"\x11TUpdateStateEvent\x12Q\n" +
+	"CloseLimit\x18\x02 \x01(\x01R\n" +
+	"CloseLimit\x1aH\n" +
+	"\x1bTSetMotorOpenLimitDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Limit\x18\x01 \x01(\x01R\x05Limit\x1aI\n" +
+	"\x1cTSetMotorCloseLimitDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Limit\x18\x01 \x01(\x01R\x05Limit\x1aV\n" +
+	"\x11TUpdateStateEvent\x12A\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2!.NAlice.TIotMotorLimitsCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x7f:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc0\x01B\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dIotMotorLimitsCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_motor_limits;iotmotorlimitspbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2!.NAlice.TIotMotorLimitsCapabilityR\n" +
+	"CapabilityB\xba\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_motor_limits\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_motor_limits_capability_proto_rawDescOnce sync.Once

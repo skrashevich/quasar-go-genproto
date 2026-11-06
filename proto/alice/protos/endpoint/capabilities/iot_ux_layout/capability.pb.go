@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_ux_layout/capability.proto
 
-package iotuxlayoutpb
+package iot_ux_layout
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TIotUxLayoutCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotUxLayoutCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotUxLayoutCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotUxLayoutCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotUxLayoutCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,8 +87,8 @@ func (x *TIotUxLayoutCapability) GetState() *TIotUxLayoutCapability_TState {
 
 type TIotUxLayoutCapability_TParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MinIndex      uint32                 `protobuf:"varint,1,opt,name=MinIndex,json=min_index,proto3" json:"MinIndex,omitempty"`
-	MaxIndex      uint32                 `protobuf:"varint,2,opt,name=MaxIndex,json=max_index,proto3" json:"MaxIndex,omitempty"`
+	MinIndex      uint32                 `protobuf:"varint,1,opt,name=MinIndex,proto3" json:"MinIndex,omitempty"`
+	MaxIndex      uint32                 `protobuf:"varint,2,opt,name=MaxIndex,proto3" json:"MaxIndex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -139,7 +139,7 @@ func (x *TIotUxLayoutCapability_TParameters) GetMaxIndex() uint32 {
 
 type TIotUxLayoutCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Index         uint32                 `protobuf:"varint,1,opt,name=Index,json=index,proto3" json:"Index,omitempty"`
+	Index         uint32                 `protobuf:"varint,1,opt,name=Index,proto3" json:"Index,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -183,8 +183,8 @@ func (x *TIotUxLayoutCapability_TState) GetIndex() uint32 {
 
 type TIotUxLayoutCapability_TSetUxLayoutDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Index         uint32                 `protobuf:"varint,1,opt,name=Index,json=index,proto3" json:"Index,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Index         uint32                 `protobuf:"varint,1,opt,name=Index,proto3" json:"Index,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -235,7 +235,7 @@ func (x *TIotUxLayoutCapability_TSetUxLayoutDirective) GetIndex() uint32 {
 
 type TIotUxLayoutCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Capability    *TIotUxLayoutCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotUxLayoutCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -281,28 +281,27 @@ var File_alice_protos_endpoint_capabilities_iot_ux_layout_capability_proto proto
 
 const file_alice_protos_endpoint_capabilities_iot_ux_layout_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/iot_ux_layout/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x91\x05\n" +
-	"\x16TIotUxLayoutCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"Aalice/protos/endpoint/capabilities/iot_ux_layout/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd0\x03\n" +
+	"\x16TIotUxLayoutCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotUxLayoutCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotUxLayoutCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1ak\n" +
-	"\vTParameters\x12*\n" +
-	"\bMinIndex\x18\x01 \x01(\rB\r\xaa\xdd\x1b\tmin_indexR\tmin_index\x12*\n" +
-	"\bMaxIndex\x18\x02 \x01(\rB\r\xaa\xdd\x1b\tmax_indexR\tmax_index:\x04\xa8\xdd\x1b\x04\x1a/\n" +
-	"\x06TState\x12\x1f\n" +
-	"\x05Index\x18\x01 \x01(\rB\t\xaa\xdd\x1b\x05indexR\x05index:\x04\xa8\xdd\x1b\x04\x1a\x81\x01\n" +
-	"\x15TSetUxLayoutDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1f\n" +
-	"\x05Index\x18\x01 \x01(\rB\t\xaa\xdd\x1b\x05indexR\x05index:(\x92\x82\x19\x1biot_set_ux_layout_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9c\x03\x1am\n" +
-	"\x11TUpdateStateEvent\x12N\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TIotUxLayoutCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TIotUxLayoutCapability.TStateR\x05State\x1aE\n" +
+	"\vTParameters\x12\x1a\n" +
+	"\bMinIndex\x18\x01 \x01(\rR\bMinIndex\x12\x1a\n" +
+	"\bMaxIndex\x18\x02 \x01(\rR\bMaxIndex\x1a\x1e\n" +
+	"\x06TState\x12\x14\n" +
+	"\x05Index\x18\x01 \x01(\rR\x05Index\x1aB\n" +
+	"\x15TSetUxLayoutDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x14\n" +
+	"\x05Index\x18\x01 \x01(\rR\x05Index\x1aS\n" +
+	"\x11TUpdateStateEvent\x12>\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TIotUxLayoutCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cO:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8e\x01B\x9b\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aIotUxLayoutCapabilityProtoZOa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_ux_layout;iotuxlayoutpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TIotUxLayoutCapabilityR\n" +
+	"CapabilityB\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_ux_layout\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_ux_layout_capability_proto_rawDescOnce sync.Once

@@ -47,6 +47,74 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type SoundFormat_Type int32
+
+const (
+	SoundFormat_UNKNOWN                          SoundFormat_Type = 0
+	SoundFormat_PCM                              SoundFormat_Type = 1
+	SoundFormat_OPUS                             SoundFormat_Type = 2
+	SoundFormat_RAW                              SoundFormat_Type = 3
+	SoundFormat_HEADERLESS_OPUS_STREAM           SoundFormat_Type = 4
+	SoundFormat_HEADERLESS_OPUS_STREAM_BYTE_SIZE SoundFormat_Type = 5
+)
+
+// Enum value maps for SoundFormat_Type.
+var (
+	SoundFormat_Type_name = map[int32]string{
+		0: "UNKNOWN",
+		1: "PCM",
+		2: "OPUS",
+		3: "RAW",
+		4: "HEADERLESS_OPUS_STREAM",
+		5: "HEADERLESS_OPUS_STREAM_BYTE_SIZE",
+	}
+	SoundFormat_Type_value = map[string]int32{
+		"UNKNOWN":                          0,
+		"PCM":                              1,
+		"OPUS":                             2,
+		"RAW":                              3,
+		"HEADERLESS_OPUS_STREAM":           4,
+		"HEADERLESS_OPUS_STREAM_BYTE_SIZE": 5,
+	}
+)
+
+func (x SoundFormat_Type) Enum() *SoundFormat_Type {
+	p := new(SoundFormat_Type)
+	*p = x
+	return p
+}
+
+func (x SoundFormat_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SoundFormat_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[0].Descriptor()
+}
+
+func (SoundFormat_Type) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[0]
+}
+
+func (x SoundFormat_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *SoundFormat_Type) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = SoundFormat_Type(num)
+	return nil
+}
+
+// Deprecated: Use SoundFormat_Type.Descriptor instead.
+func (SoundFormat_Type) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{0, 0}
+}
+
 type SoundQuality_Quality int32
 
 const (
@@ -83,11 +151,11 @@ func (x SoundQuality_Quality) String() string {
 }
 
 func (SoundQuality_Quality) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[0].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[1].Descriptor()
 }
 
 func (SoundQuality_Quality) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[0]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[1]
 }
 
 func (x SoundQuality_Quality) Number() protoreflect.EnumNumber {
@@ -106,7 +174,7 @@ func (x *SoundQuality_Quality) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use SoundQuality_Quality.Descriptor instead.
 func (SoundQuality_Quality) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{0, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{1, 0}
 }
 
 type Remoting_DirectiveHandlerMethod_Method int32
@@ -142,11 +210,11 @@ func (x Remoting_DirectiveHandlerMethod_Method) String() string {
 }
 
 func (Remoting_DirectiveHandlerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[1].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[2].Descriptor()
 }
 
 func (Remoting_DirectiveHandlerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[1]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[2]
 }
 
 func (x Remoting_DirectiveHandlerMethod_Method) Number() protoreflect.EnumNumber {
@@ -165,7 +233,7 @@ func (x *Remoting_DirectiveHandlerMethod_Method) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Remoting_DirectiveHandlerMethod_Method.Descriptor instead.
 func (Remoting_DirectiveHandlerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 0, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 0, 0}
 }
 
 type Remoting_EndpointStorageMethod_Method int32
@@ -201,11 +269,11 @@ func (x Remoting_EndpointStorageMethod_Method) String() string {
 }
 
 func (Remoting_EndpointStorageMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[2].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[3].Descriptor()
 }
 
 func (Remoting_EndpointStorageMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[2]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[3]
 }
 
 func (x Remoting_EndpointStorageMethod_Method) Number() protoreflect.EnumNumber {
@@ -224,7 +292,7 @@ func (x *Remoting_EndpointStorageMethod_Method) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Remoting_EndpointStorageMethod_Method.Descriptor instead.
 func (Remoting_EndpointStorageMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 4, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 4, 0}
 }
 
 type Remoting_EndpointMethod_Method int32
@@ -260,11 +328,11 @@ func (x Remoting_EndpointMethod_Method) String() string {
 }
 
 func (Remoting_EndpointMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[3].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[4].Descriptor()
 }
 
 func (Remoting_EndpointMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[3]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[4]
 }
 
 func (x Remoting_EndpointMethod_Method) Number() protoreflect.EnumNumber {
@@ -283,7 +351,7 @@ func (x *Remoting_EndpointMethod_Method) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Remoting_EndpointMethod_Method.Descriptor instead.
 func (Remoting_EndpointMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 5, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 5, 0}
 }
 
 type Remoting_AliceCapabilityMethod_Method int32
@@ -400,11 +468,11 @@ func (x Remoting_AliceCapabilityMethod_Method) String() string {
 }
 
 func (Remoting_AliceCapabilityMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[4].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[5].Descriptor()
 }
 
 func (Remoting_AliceCapabilityMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[4]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[5]
 }
 
 func (x Remoting_AliceCapabilityMethod_Method) Number() protoreflect.EnumNumber {
@@ -423,7 +491,7 @@ func (x *Remoting_AliceCapabilityMethod_Method) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Remoting_AliceCapabilityMethod_Method.Descriptor instead.
 func (Remoting_AliceCapabilityMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 6, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 6, 0}
 }
 
 type Remoting_AliceCapabilityListenerMethod_Method int32
@@ -480,11 +548,11 @@ func (x Remoting_AliceCapabilityListenerMethod_Method) String() string {
 }
 
 func (Remoting_AliceCapabilityListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[5].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[6].Descriptor()
 }
 
 func (Remoting_AliceCapabilityListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[5]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[6]
 }
 
 func (x Remoting_AliceCapabilityListenerMethod_Method) Number() protoreflect.EnumNumber {
@@ -503,7 +571,7 @@ func (x *Remoting_AliceCapabilityListenerMethod_Method) UnmarshalJSON(b []byte) 
 
 // Deprecated: Use Remoting_AliceCapabilityListenerMethod_Method.Descriptor instead.
 func (Remoting_AliceCapabilityListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 7, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 7, 0}
 }
 
 type Remoting_AliceRequestEventsMethod_Method int32
@@ -539,11 +607,11 @@ func (x Remoting_AliceRequestEventsMethod_Method) String() string {
 }
 
 func (Remoting_AliceRequestEventsMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[6].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[7].Descriptor()
 }
 
 func (Remoting_AliceRequestEventsMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[6]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[7]
 }
 
 func (x Remoting_AliceRequestEventsMethod_Method) Number() protoreflect.EnumNumber {
@@ -562,7 +630,7 @@ func (x *Remoting_AliceRequestEventsMethod_Method) UnmarshalJSON(b []byte) error
 
 // Deprecated: Use Remoting_AliceRequestEventsMethod_Method.Descriptor instead.
 func (Remoting_AliceRequestEventsMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 8, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 8, 0}
 }
 
 type Remoting_FastCommandRequesterMethod_Method int32
@@ -592,11 +660,11 @@ func (x Remoting_FastCommandRequesterMethod_Method) String() string {
 }
 
 func (Remoting_FastCommandRequesterMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[7].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[8].Descriptor()
 }
 
 func (Remoting_FastCommandRequesterMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[7]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[8]
 }
 
 func (x Remoting_FastCommandRequesterMethod_Method) Number() protoreflect.EnumNumber {
@@ -615,7 +683,7 @@ func (x *Remoting_FastCommandRequesterMethod_Method) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use Remoting_FastCommandRequesterMethod_Method.Descriptor instead.
 func (Remoting_FastCommandRequesterMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 9, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 9, 0}
 }
 
 type Remoting_FastCommandRequesterListenerMethod_Method int32
@@ -648,11 +716,11 @@ func (x Remoting_FastCommandRequesterListenerMethod_Method) String() string {
 }
 
 func (Remoting_FastCommandRequesterListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[8].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[9].Descriptor()
 }
 
 func (Remoting_FastCommandRequesterListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[8]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[9]
 }
 
 func (x Remoting_FastCommandRequesterListenerMethod_Method) Number() protoreflect.EnumNumber {
@@ -671,7 +739,7 @@ func (x *Remoting_FastCommandRequesterListenerMethod_Method) UnmarshalJSON(b []b
 
 // Deprecated: Use Remoting_FastCommandRequesterListenerMethod_Method.Descriptor instead.
 func (Remoting_FastCommandRequesterListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 10, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 10, 0}
 }
 
 type Remoting_FilePlayerCapabilityMethod_Method int32
@@ -707,11 +775,11 @@ func (x Remoting_FilePlayerCapabilityMethod_Method) String() string {
 }
 
 func (Remoting_FilePlayerCapabilityMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[9].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[10].Descriptor()
 }
 
 func (Remoting_FilePlayerCapabilityMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[9]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[10]
 }
 
 func (x Remoting_FilePlayerCapabilityMethod_Method) Number() protoreflect.EnumNumber {
@@ -730,7 +798,7 @@ func (x *Remoting_FilePlayerCapabilityMethod_Method) UnmarshalJSON(b []byte) err
 
 // Deprecated: Use Remoting_FilePlayerCapabilityMethod_Method.Descriptor instead.
 func (Remoting_FilePlayerCapabilityMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 11, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 11, 0}
 }
 
 type Remoting_PlaybackControlCapabilityMethod_Method int32
@@ -808,11 +876,11 @@ func (x Remoting_PlaybackControlCapabilityMethod_Method) String() string {
 }
 
 func (Remoting_PlaybackControlCapabilityMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[10].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[11].Descriptor()
 }
 
 func (Remoting_PlaybackControlCapabilityMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[10]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[11]
 }
 
 func (x Remoting_PlaybackControlCapabilityMethod_Method) Number() protoreflect.EnumNumber {
@@ -831,7 +899,7 @@ func (x *Remoting_PlaybackControlCapabilityMethod_Method) UnmarshalJSON(b []byte
 
 // Deprecated: Use Remoting_PlaybackControlCapabilityMethod_Method.Descriptor instead.
 func (Remoting_PlaybackControlCapabilityMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 13, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 13, 0}
 }
 
 type Remoting_SpotterCapabilityMethod_Method int32
@@ -876,11 +944,11 @@ func (x Remoting_SpotterCapabilityMethod_Method) String() string {
 }
 
 func (Remoting_SpotterCapabilityMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[11].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[12].Descriptor()
 }
 
 func (Remoting_SpotterCapabilityMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[11]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[12]
 }
 
 func (x Remoting_SpotterCapabilityMethod_Method) Number() protoreflect.EnumNumber {
@@ -899,7 +967,7 @@ func (x *Remoting_SpotterCapabilityMethod_Method) UnmarshalJSON(b []byte) error 
 
 // Deprecated: Use Remoting_SpotterCapabilityMethod_Method.Descriptor instead.
 func (Remoting_SpotterCapabilityMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 14, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 14, 0}
 }
 
 type Remoting_SpotterCapabilityListenerMethod_Method int32
@@ -935,11 +1003,11 @@ func (x Remoting_SpotterCapabilityListenerMethod_Method) String() string {
 }
 
 func (Remoting_SpotterCapabilityListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[12].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[13].Descriptor()
 }
 
 func (Remoting_SpotterCapabilityListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[12]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[13]
 }
 
 func (x Remoting_SpotterCapabilityListenerMethod_Method) Number() protoreflect.EnumNumber {
@@ -958,7 +1026,7 @@ func (x *Remoting_SpotterCapabilityListenerMethod_Method) UnmarshalJSON(b []byte
 
 // Deprecated: Use Remoting_SpotterCapabilityListenerMethod_Method.Descriptor instead.
 func (Remoting_SpotterCapabilityListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 15, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 15, 0}
 }
 
 type Remoting_VocalizerCapabilityMethod_Method int32
@@ -1003,11 +1071,11 @@ func (x Remoting_VocalizerCapabilityMethod_Method) String() string {
 }
 
 func (Remoting_VocalizerCapabilityMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[13].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[14].Descriptor()
 }
 
 func (Remoting_VocalizerCapabilityMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[13]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[14]
 }
 
 func (x Remoting_VocalizerCapabilityMethod_Method) Number() protoreflect.EnumNumber {
@@ -1026,7 +1094,7 @@ func (x *Remoting_VocalizerCapabilityMethod_Method) UnmarshalJSON(b []byte) erro
 
 // Deprecated: Use Remoting_VocalizerCapabilityMethod_Method.Descriptor instead.
 func (Remoting_VocalizerCapabilityMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 17, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 17, 0}
 }
 
 type Remoting_VocalizerCapabilityMethod_SynthesizeMode int32
@@ -1059,11 +1127,11 @@ func (x Remoting_VocalizerCapabilityMethod_SynthesizeMode) String() string {
 }
 
 func (Remoting_VocalizerCapabilityMethod_SynthesizeMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[14].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[15].Descriptor()
 }
 
 func (Remoting_VocalizerCapabilityMethod_SynthesizeMode) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[14]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[15]
 }
 
 func (x Remoting_VocalizerCapabilityMethod_SynthesizeMode) Number() protoreflect.EnumNumber {
@@ -1082,7 +1150,7 @@ func (x *Remoting_VocalizerCapabilityMethod_SynthesizeMode) UnmarshalJSON(b []by
 
 // Deprecated: Use Remoting_VocalizerCapabilityMethod_SynthesizeMode.Descriptor instead.
 func (Remoting_VocalizerCapabilityMethod_SynthesizeMode) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 17, 1}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 17, 1}
 }
 
 type Remoting_VocalizerCapabilityListenerMethod_Method int32
@@ -1124,11 +1192,11 @@ func (x Remoting_VocalizerCapabilityListenerMethod_Method) String() string {
 }
 
 func (Remoting_VocalizerCapabilityListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[15].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[16].Descriptor()
 }
 
 func (Remoting_VocalizerCapabilityListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[15]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[16]
 }
 
 func (x Remoting_VocalizerCapabilityListenerMethod_Method) Number() protoreflect.EnumNumber {
@@ -1147,7 +1215,311 @@ func (x *Remoting_VocalizerCapabilityListenerMethod_Method) UnmarshalJSON(b []by
 
 // Deprecated: Use Remoting_VocalizerCapabilityListenerMethod_Method.Descriptor instead.
 func (Remoting_VocalizerCapabilityListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 18, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 18, 0}
+}
+
+type Remoting_DirectiveSequencerMethod_Method int32
+
+const (
+	Remoting_DirectiveSequencerMethod_ADD_DIRECTIVES                Remoting_DirectiveSequencerMethod_Method = 0
+	Remoting_DirectiveSequencerMethod_ON_HANDLE_DIRECTIVE_STARTED   Remoting_DirectiveSequencerMethod_Method = 1
+	Remoting_DirectiveSequencerMethod_ON_HANDLE_DIRECTIVE_COMPLETED Remoting_DirectiveSequencerMethod_Method = 2
+	Remoting_DirectiveSequencerMethod_ADD_LISTENER                  Remoting_DirectiveSequencerMethod_Method = 3
+	Remoting_DirectiveSequencerMethod_ADD_DIRECTIVE_HANDLER         Remoting_DirectiveSequencerMethod_Method = 4
+	Remoting_DirectiveSequencerMethod_REMOVE_DIRECTIVE_HANDLER      Remoting_DirectiveSequencerMethod_Method = 5
+)
+
+// Enum value maps for Remoting_DirectiveSequencerMethod_Method.
+var (
+	Remoting_DirectiveSequencerMethod_Method_name = map[int32]string{
+		0: "ADD_DIRECTIVES",
+		1: "ON_HANDLE_DIRECTIVE_STARTED",
+		2: "ON_HANDLE_DIRECTIVE_COMPLETED",
+		3: "ADD_LISTENER",
+		4: "ADD_DIRECTIVE_HANDLER",
+		5: "REMOVE_DIRECTIVE_HANDLER",
+	}
+	Remoting_DirectiveSequencerMethod_Method_value = map[string]int32{
+		"ADD_DIRECTIVES":                0,
+		"ON_HANDLE_DIRECTIVE_STARTED":   1,
+		"ON_HANDLE_DIRECTIVE_COMPLETED": 2,
+		"ADD_LISTENER":                  3,
+		"ADD_DIRECTIVE_HANDLER":         4,
+		"REMOVE_DIRECTIVE_HANDLER":      5,
+	}
+)
+
+func (x Remoting_DirectiveSequencerMethod_Method) Enum() *Remoting_DirectiveSequencerMethod_Method {
+	p := new(Remoting_DirectiveSequencerMethod_Method)
+	*p = x
+	return p
+}
+
+func (x Remoting_DirectiveSequencerMethod_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Remoting_DirectiveSequencerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[17].Descriptor()
+}
+
+func (Remoting_DirectiveSequencerMethod_Method) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[17]
+}
+
+func (x Remoting_DirectiveSequencerMethod_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *Remoting_DirectiveSequencerMethod_Method) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = Remoting_DirectiveSequencerMethod_Method(num)
+	return nil
+}
+
+// Deprecated: Use Remoting_DirectiveSequencerMethod_Method.Descriptor instead.
+func (Remoting_DirectiveSequencerMethod_Method) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 19, 0}
+}
+
+type Remoting_DirectiveSequencerListenerMethod_Method int32
+
+const (
+	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_HANDLED           Remoting_DirectiveSequencerListenerMethod_Method = 0
+	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_UNHANDLED         Remoting_DirectiveSequencerListenerMethod_Method = 4
+	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_STARTED           Remoting_DirectiveSequencerListenerMethod_Method = 1
+	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_COMPLETED         Remoting_DirectiveSequencerListenerMethod_Method = 2
+	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVES_SEQUENCE_STARTED Remoting_DirectiveSequencerListenerMethod_Method = 3
+)
+
+// Enum value maps for Remoting_DirectiveSequencerListenerMethod_Method.
+var (
+	Remoting_DirectiveSequencerListenerMethod_Method_name = map[int32]string{
+		0: "ON_DIRECTIVE_HANDLED",
+		4: "ON_DIRECTIVE_UNHANDLED",
+		1: "ON_DIRECTIVE_STARTED",
+		2: "ON_DIRECTIVE_COMPLETED",
+		3: "ON_DIRECTIVES_SEQUENCE_STARTED",
+	}
+	Remoting_DirectiveSequencerListenerMethod_Method_value = map[string]int32{
+		"ON_DIRECTIVE_HANDLED":           0,
+		"ON_DIRECTIVE_UNHANDLED":         4,
+		"ON_DIRECTIVE_STARTED":           1,
+		"ON_DIRECTIVE_COMPLETED":         2,
+		"ON_DIRECTIVES_SEQUENCE_STARTED": 3,
+	}
+)
+
+func (x Remoting_DirectiveSequencerListenerMethod_Method) Enum() *Remoting_DirectiveSequencerListenerMethod_Method {
+	p := new(Remoting_DirectiveSequencerListenerMethod_Method)
+	*p = x
+	return p
+}
+
+func (x Remoting_DirectiveSequencerListenerMethod_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Remoting_DirectiveSequencerListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[18].Descriptor()
+}
+
+func (Remoting_DirectiveSequencerListenerMethod_Method) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[18]
+}
+
+func (x Remoting_DirectiveSequencerListenerMethod_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *Remoting_DirectiveSequencerListenerMethod_Method) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = Remoting_DirectiveSequencerListenerMethod_Method(num)
+	return nil
+}
+
+// Deprecated: Use Remoting_DirectiveSequencerListenerMethod_Method.Descriptor instead.
+func (Remoting_DirectiveSequencerListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 20, 0}
+}
+
+type Remoting_TandemCapabilityListenerMethod_Method int32
+
+const (
+	Remoting_TandemCapabilityListenerMethod_STATE_CHANGED Remoting_TandemCapabilityListenerMethod_Method = 0
+)
+
+// Enum value maps for Remoting_TandemCapabilityListenerMethod_Method.
+var (
+	Remoting_TandemCapabilityListenerMethod_Method_name = map[int32]string{
+		0: "STATE_CHANGED",
+	}
+	Remoting_TandemCapabilityListenerMethod_Method_value = map[string]int32{
+		"STATE_CHANGED": 0,
+	}
+)
+
+func (x Remoting_TandemCapabilityListenerMethod_Method) Enum() *Remoting_TandemCapabilityListenerMethod_Method {
+	p := new(Remoting_TandemCapabilityListenerMethod_Method)
+	*p = x
+	return p
+}
+
+func (x Remoting_TandemCapabilityListenerMethod_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Remoting_TandemCapabilityListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[19].Descriptor()
+}
+
+func (Remoting_TandemCapabilityListenerMethod_Method) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[19]
+}
+
+func (x Remoting_TandemCapabilityListenerMethod_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *Remoting_TandemCapabilityListenerMethod_Method) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = Remoting_TandemCapabilityListenerMethod_Method(num)
+	return nil
+}
+
+// Deprecated: Use Remoting_TandemCapabilityListenerMethod_Method.Descriptor instead.
+func (Remoting_TandemCapabilityListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 21, 0}
+}
+
+type Remoting_ClockStorageMethod_Method int32
+
+const (
+	Remoting_ClockStorageMethod_UPDATE_CLOCKS           Remoting_ClockStorageMethod_Method = 0
+	Remoting_ClockStorageMethod_ADD_CLOCK               Remoting_ClockStorageMethod_Method = 1
+	Remoting_ClockStorageMethod_DUMP_CLOCK_OBSERVATIONS Remoting_ClockStorageMethod_Method = 2
+)
+
+// Enum value maps for Remoting_ClockStorageMethod_Method.
+var (
+	Remoting_ClockStorageMethod_Method_name = map[int32]string{
+		0: "UPDATE_CLOCKS",
+		1: "ADD_CLOCK",
+		2: "DUMP_CLOCK_OBSERVATIONS",
+	}
+	Remoting_ClockStorageMethod_Method_value = map[string]int32{
+		"UPDATE_CLOCKS":           0,
+		"ADD_CLOCK":               1,
+		"DUMP_CLOCK_OBSERVATIONS": 2,
+	}
+)
+
+func (x Remoting_ClockStorageMethod_Method) Enum() *Remoting_ClockStorageMethod_Method {
+	p := new(Remoting_ClockStorageMethod_Method)
+	*p = x
+	return p
+}
+
+func (x Remoting_ClockStorageMethod_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Remoting_ClockStorageMethod_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[20].Descriptor()
+}
+
+func (Remoting_ClockStorageMethod_Method) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[20]
+}
+
+func (x Remoting_ClockStorageMethod_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *Remoting_ClockStorageMethod_Method) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = Remoting_ClockStorageMethod_Method(num)
+	return nil
+}
+
+// Deprecated: Use Remoting_ClockStorageMethod_Method.Descriptor instead.
+func (Remoting_ClockStorageMethod_Method) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 22, 0}
+}
+
+type Remoting_TimingsManagerMethod_Method int32
+
+const (
+	Remoting_TimingsManagerMethod_PUT_EVENT      Remoting_TimingsManagerMethod_Method = 0
+	Remoting_TimingsManagerMethod_ADD_META       Remoting_TimingsManagerMethod_Method = 1
+	Remoting_TimingsManagerMethod_FLUSH_TIMELINE Remoting_TimingsManagerMethod_Method = 2
+)
+
+// Enum value maps for Remoting_TimingsManagerMethod_Method.
+var (
+	Remoting_TimingsManagerMethod_Method_name = map[int32]string{
+		0: "PUT_EVENT",
+		1: "ADD_META",
+		2: "FLUSH_TIMELINE",
+	}
+	Remoting_TimingsManagerMethod_Method_value = map[string]int32{
+		"PUT_EVENT":      0,
+		"ADD_META":       1,
+		"FLUSH_TIMELINE": 2,
+	}
+)
+
+func (x Remoting_TimingsManagerMethod_Method) Enum() *Remoting_TimingsManagerMethod_Method {
+	p := new(Remoting_TimingsManagerMethod_Method)
+	*p = x
+	return p
+}
+
+func (x Remoting_TimingsManagerMethod_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Remoting_TimingsManagerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_remoting_proto_enumTypes[21].Descriptor()
+}
+
+func (Remoting_TimingsManagerMethod_Method) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_remoting_proto_enumTypes[21]
+}
+
+func (x Remoting_TimingsManagerMethod_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *Remoting_TimingsManagerMethod_Method) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = Remoting_TimingsManagerMethod_Method(num)
+	return nil
+}
+
+// Deprecated: Use Remoting_TimingsManagerMethod_Method.Descriptor instead.
+func (Remoting_TimingsManagerMethod_Method) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23, 0}
 }
 
 type Remoting_RoutingAudioPlayerMethod_Method int32
@@ -1180,11 +1552,11 @@ func (x Remoting_RoutingAudioPlayerMethod_Method) String() string {
 }
 
 func (Remoting_RoutingAudioPlayerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[16].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[22].Descriptor()
 }
 
 func (Remoting_RoutingAudioPlayerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[16]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[22]
 }
 
 func (x Remoting_RoutingAudioPlayerMethod_Method) Number() protoreflect.EnumNumber {
@@ -1203,7 +1575,7 @@ func (x *Remoting_RoutingAudioPlayerMethod_Method) UnmarshalJSON(b []byte) error
 
 // Deprecated: Use Remoting_RoutingAudioPlayerMethod_Method.Descriptor instead.
 func (Remoting_RoutingAudioPlayerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 19, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 24, 0}
 }
 
 type Remoting_AudioPlayerMethod_Method int32
@@ -1248,11 +1620,11 @@ func (x Remoting_AudioPlayerMethod_Method) String() string {
 }
 
 func (Remoting_AudioPlayerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[17].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[23].Descriptor()
 }
 
 func (Remoting_AudioPlayerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[17]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[23]
 }
 
 func (x Remoting_AudioPlayerMethod_Method) Number() protoreflect.EnumNumber {
@@ -1271,7 +1643,7 @@ func (x *Remoting_AudioPlayerMethod_Method) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use Remoting_AudioPlayerMethod_Method.Descriptor instead.
 func (Remoting_AudioPlayerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 20, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 25, 0}
 }
 
 type Remoting_AudioPlayerListenerMethod_Method int32
@@ -1319,11 +1691,11 @@ func (x Remoting_AudioPlayerListenerMethod_Method) String() string {
 }
 
 func (Remoting_AudioPlayerListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[18].Descriptor()
+	return file_yandex_io_protos_remoting_proto_enumTypes[24].Descriptor()
 }
 
 func (Remoting_AudioPlayerListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[18]
+	return &file_yandex_io_protos_remoting_proto_enumTypes[24]
 }
 
 func (x Remoting_AudioPlayerListenerMethod_Method) Number() protoreflect.EnumNumber {
@@ -1342,311 +1714,43 @@ func (x *Remoting_AudioPlayerListenerMethod_Method) UnmarshalJSON(b []byte) erro
 
 // Deprecated: Use Remoting_AudioPlayerListenerMethod_Method.Descriptor instead.
 func (Remoting_AudioPlayerListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 21, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 26, 0}
 }
 
-type Remoting_DirectiveSequencerMethod_Method int32
+type SoundFormat struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
 
-const (
-	Remoting_DirectiveSequencerMethod_ADD_DIRECTIVES                Remoting_DirectiveSequencerMethod_Method = 0
-	Remoting_DirectiveSequencerMethod_ON_HANDLE_DIRECTIVE_STARTED   Remoting_DirectiveSequencerMethod_Method = 1
-	Remoting_DirectiveSequencerMethod_ON_HANDLE_DIRECTIVE_COMPLETED Remoting_DirectiveSequencerMethod_Method = 2
-	Remoting_DirectiveSequencerMethod_ADD_LISTENER                  Remoting_DirectiveSequencerMethod_Method = 3
-	Remoting_DirectiveSequencerMethod_ADD_DIRECTIVE_HANDLER         Remoting_DirectiveSequencerMethod_Method = 4
-	Remoting_DirectiveSequencerMethod_REMOVE_DIRECTIVE_HANDLER      Remoting_DirectiveSequencerMethod_Method = 5
-)
+func (x *SoundFormat) Reset() {
+	*x = SoundFormat{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
 
-// Enum value maps for Remoting_DirectiveSequencerMethod_Method.
-var (
-	Remoting_DirectiveSequencerMethod_Method_name = map[int32]string{
-		0: "ADD_DIRECTIVES",
-		1: "ON_HANDLE_DIRECTIVE_STARTED",
-		2: "ON_HANDLE_DIRECTIVE_COMPLETED",
-		3: "ADD_LISTENER",
-		4: "ADD_DIRECTIVE_HANDLER",
-		5: "REMOVE_DIRECTIVE_HANDLER",
+func (x *SoundFormat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SoundFormat) ProtoMessage() {}
+
+func (x *SoundFormat) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
 	}
-	Remoting_DirectiveSequencerMethod_Method_value = map[string]int32{
-		"ADD_DIRECTIVES":                0,
-		"ON_HANDLE_DIRECTIVE_STARTED":   1,
-		"ON_HANDLE_DIRECTIVE_COMPLETED": 2,
-		"ADD_LISTENER":                  3,
-		"ADD_DIRECTIVE_HANDLER":         4,
-		"REMOVE_DIRECTIVE_HANDLER":      5,
-	}
-)
-
-func (x Remoting_DirectiveSequencerMethod_Method) Enum() *Remoting_DirectiveSequencerMethod_Method {
-	p := new(Remoting_DirectiveSequencerMethod_Method)
-	*p = x
-	return p
+	return mi.MessageOf(x)
 }
 
-func (x Remoting_DirectiveSequencerMethod_Method) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Remoting_DirectiveSequencerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[19].Descriptor()
-}
-
-func (Remoting_DirectiveSequencerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[19]
-}
-
-func (x Remoting_DirectiveSequencerMethod_Method) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Remoting_DirectiveSequencerMethod_Method) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Remoting_DirectiveSequencerMethod_Method(num)
-	return nil
-}
-
-// Deprecated: Use Remoting_DirectiveSequencerMethod_Method.Descriptor instead.
-func (Remoting_DirectiveSequencerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 22, 0}
-}
-
-type Remoting_DirectiveSequencerListenerMethod_Method int32
-
-const (
-	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_HANDLED           Remoting_DirectiveSequencerListenerMethod_Method = 0
-	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_UNHANDLED         Remoting_DirectiveSequencerListenerMethod_Method = 4
-	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_STARTED           Remoting_DirectiveSequencerListenerMethod_Method = 1
-	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVE_COMPLETED         Remoting_DirectiveSequencerListenerMethod_Method = 2
-	Remoting_DirectiveSequencerListenerMethod_ON_DIRECTIVES_SEQUENCE_STARTED Remoting_DirectiveSequencerListenerMethod_Method = 3
-)
-
-// Enum value maps for Remoting_DirectiveSequencerListenerMethod_Method.
-var (
-	Remoting_DirectiveSequencerListenerMethod_Method_name = map[int32]string{
-		0: "ON_DIRECTIVE_HANDLED",
-		4: "ON_DIRECTIVE_UNHANDLED",
-		1: "ON_DIRECTIVE_STARTED",
-		2: "ON_DIRECTIVE_COMPLETED",
-		3: "ON_DIRECTIVES_SEQUENCE_STARTED",
-	}
-	Remoting_DirectiveSequencerListenerMethod_Method_value = map[string]int32{
-		"ON_DIRECTIVE_HANDLED":           0,
-		"ON_DIRECTIVE_UNHANDLED":         4,
-		"ON_DIRECTIVE_STARTED":           1,
-		"ON_DIRECTIVE_COMPLETED":         2,
-		"ON_DIRECTIVES_SEQUENCE_STARTED": 3,
-	}
-)
-
-func (x Remoting_DirectiveSequencerListenerMethod_Method) Enum() *Remoting_DirectiveSequencerListenerMethod_Method {
-	p := new(Remoting_DirectiveSequencerListenerMethod_Method)
-	*p = x
-	return p
-}
-
-func (x Remoting_DirectiveSequencerListenerMethod_Method) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Remoting_DirectiveSequencerListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[20].Descriptor()
-}
-
-func (Remoting_DirectiveSequencerListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[20]
-}
-
-func (x Remoting_DirectiveSequencerListenerMethod_Method) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Remoting_DirectiveSequencerListenerMethod_Method) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Remoting_DirectiveSequencerListenerMethod_Method(num)
-	return nil
-}
-
-// Deprecated: Use Remoting_DirectiveSequencerListenerMethod_Method.Descriptor instead.
-func (Remoting_DirectiveSequencerListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 23, 0}
-}
-
-type Remoting_TandemCapabilityListenerMethod_Method int32
-
-const (
-	Remoting_TandemCapabilityListenerMethod_STATE_CHANGED Remoting_TandemCapabilityListenerMethod_Method = 0
-)
-
-// Enum value maps for Remoting_TandemCapabilityListenerMethod_Method.
-var (
-	Remoting_TandemCapabilityListenerMethod_Method_name = map[int32]string{
-		0: "STATE_CHANGED",
-	}
-	Remoting_TandemCapabilityListenerMethod_Method_value = map[string]int32{
-		"STATE_CHANGED": 0,
-	}
-)
-
-func (x Remoting_TandemCapabilityListenerMethod_Method) Enum() *Remoting_TandemCapabilityListenerMethod_Method {
-	p := new(Remoting_TandemCapabilityListenerMethod_Method)
-	*p = x
-	return p
-}
-
-func (x Remoting_TandemCapabilityListenerMethod_Method) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Remoting_TandemCapabilityListenerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[21].Descriptor()
-}
-
-func (Remoting_TandemCapabilityListenerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[21]
-}
-
-func (x Remoting_TandemCapabilityListenerMethod_Method) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Remoting_TandemCapabilityListenerMethod_Method) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Remoting_TandemCapabilityListenerMethod_Method(num)
-	return nil
-}
-
-// Deprecated: Use Remoting_TandemCapabilityListenerMethod_Method.Descriptor instead.
-func (Remoting_TandemCapabilityListenerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 24, 0}
-}
-
-type Remoting_ClockStorageMethod_Method int32
-
-const (
-	Remoting_ClockStorageMethod_UPDATE_CLOCKS           Remoting_ClockStorageMethod_Method = 0
-	Remoting_ClockStorageMethod_ADD_CLOCK               Remoting_ClockStorageMethod_Method = 1
-	Remoting_ClockStorageMethod_DUMP_CLOCK_OBSERVATIONS Remoting_ClockStorageMethod_Method = 2
-)
-
-// Enum value maps for Remoting_ClockStorageMethod_Method.
-var (
-	Remoting_ClockStorageMethod_Method_name = map[int32]string{
-		0: "UPDATE_CLOCKS",
-		1: "ADD_CLOCK",
-		2: "DUMP_CLOCK_OBSERVATIONS",
-	}
-	Remoting_ClockStorageMethod_Method_value = map[string]int32{
-		"UPDATE_CLOCKS":           0,
-		"ADD_CLOCK":               1,
-		"DUMP_CLOCK_OBSERVATIONS": 2,
-	}
-)
-
-func (x Remoting_ClockStorageMethod_Method) Enum() *Remoting_ClockStorageMethod_Method {
-	p := new(Remoting_ClockStorageMethod_Method)
-	*p = x
-	return p
-}
-
-func (x Remoting_ClockStorageMethod_Method) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Remoting_ClockStorageMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[22].Descriptor()
-}
-
-func (Remoting_ClockStorageMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[22]
-}
-
-func (x Remoting_ClockStorageMethod_Method) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Remoting_ClockStorageMethod_Method) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Remoting_ClockStorageMethod_Method(num)
-	return nil
-}
-
-// Deprecated: Use Remoting_ClockStorageMethod_Method.Descriptor instead.
-func (Remoting_ClockStorageMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 25, 0}
-}
-
-type Remoting_TimingsManagerMethod_Method int32
-
-const (
-	Remoting_TimingsManagerMethod_PUT_EVENT      Remoting_TimingsManagerMethod_Method = 0
-	Remoting_TimingsManagerMethod_ADD_META       Remoting_TimingsManagerMethod_Method = 1
-	Remoting_TimingsManagerMethod_FLUSH_TIMELINE Remoting_TimingsManagerMethod_Method = 2
-)
-
-// Enum value maps for Remoting_TimingsManagerMethod_Method.
-var (
-	Remoting_TimingsManagerMethod_Method_name = map[int32]string{
-		0: "PUT_EVENT",
-		1: "ADD_META",
-		2: "FLUSH_TIMELINE",
-	}
-	Remoting_TimingsManagerMethod_Method_value = map[string]int32{
-		"PUT_EVENT":      0,
-		"ADD_META":       1,
-		"FLUSH_TIMELINE": 2,
-	}
-)
-
-func (x Remoting_TimingsManagerMethod_Method) Enum() *Remoting_TimingsManagerMethod_Method {
-	p := new(Remoting_TimingsManagerMethod_Method)
-	*p = x
-	return p
-}
-
-func (x Remoting_TimingsManagerMethod_Method) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (Remoting_TimingsManagerMethod_Method) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_remoting_proto_enumTypes[23].Descriptor()
-}
-
-func (Remoting_TimingsManagerMethod_Method) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_remoting_proto_enumTypes[23]
-}
-
-func (x Remoting_TimingsManagerMethod_Method) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Do not use.
-func (x *Remoting_TimingsManagerMethod_Method) UnmarshalJSON(b []byte) error {
-	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
-	if err != nil {
-		return err
-	}
-	*x = Remoting_TimingsManagerMethod_Method(num)
-	return nil
-}
-
-// Deprecated: Use Remoting_TimingsManagerMethod_Method.Descriptor instead.
-func (Remoting_TimingsManagerMethod_Method) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26, 0}
+// Deprecated: Use SoundFormat.ProtoReflect.Descriptor instead.
+func (*SoundFormat) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{0}
 }
 
 type SoundQuality struct {
@@ -1657,7 +1761,7 @@ type SoundQuality struct {
 
 func (x *SoundQuality) Reset() {
 	*x = SoundQuality{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[0]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1669,7 +1773,7 @@ func (x *SoundQuality) String() string {
 func (*SoundQuality) ProtoMessage() {}
 
 func (x *SoundQuality) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[0]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1682,7 +1786,7 @@ func (x *SoundQuality) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SoundQuality.ProtoReflect.Descriptor instead.
 func (*SoundQuality) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{1}
 }
 
 type VocalizerSettings struct {
@@ -1705,7 +1809,7 @@ type VocalizerSettings struct {
 
 func (x *VocalizerSettings) Reset() {
 	*x = VocalizerSettings{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[1]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1717,7 +1821,7 @@ func (x *VocalizerSettings) String() string {
 func (*VocalizerSettings) ProtoMessage() {}
 
 func (x *VocalizerSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[1]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1730,7 +1834,7 @@ func (x *VocalizerSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VocalizerSettings.ProtoReflect.Descriptor instead.
 func (*VocalizerSettings) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{1}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *VocalizerSettings) GetLanguage() string {
@@ -1829,7 +1933,7 @@ type RecognizerSettings struct {
 
 func (x *RecognizerSettings) Reset() {
 	*x = RecognizerSettings{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[2]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1841,7 +1945,7 @@ func (x *RecognizerSettings) String() string {
 func (*RecognizerSettings) ProtoMessage() {}
 
 func (x *RecognizerSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[2]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1854,7 +1958,7 @@ func (x *RecognizerSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecognizerSettings.ProtoReflect.Descriptor instead.
 func (*RecognizerSettings) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{2}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RecognizerSettings) GetLanguage() string {
@@ -1895,7 +1999,7 @@ type VoiceServiceSettings struct {
 
 func (x *VoiceServiceSettings) Reset() {
 	*x = VoiceServiceSettings{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[3]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1907,7 +2011,7 @@ func (x *VoiceServiceSettings) String() string {
 func (*VoiceServiceSettings) ProtoMessage() {}
 
 func (x *VoiceServiceSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[3]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1920,7 +2024,7 @@ func (x *VoiceServiceSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VoiceServiceSettings.ProtoReflect.Descriptor instead.
 func (*VoiceServiceSettings) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{3}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *VoiceServiceSettings) GetVocalizerSettings() *VocalizerSettings {
@@ -1977,7 +2081,7 @@ type Remoting struct {
 
 func (x *Remoting) Reset() {
 	*x = Remoting{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[4]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1989,7 +2093,7 @@ func (x *Remoting) String() string {
 func (*Remoting) ProtoMessage() {}
 
 func (x *Remoting) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[4]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2002,7 +2106,7 @@ func (x *Remoting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting.ProtoReflect.Descriptor instead.
 func (*Remoting) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Remoting) GetRemoteObjectId() string {
@@ -2435,6 +2539,74 @@ func (*Remoting_AudioPlayerMethod_) isRemoting_Method() {}
 
 func (*Remoting_AudioPlayerListenerMethod_) isRemoting_Method() {}
 
+type SoundInfo struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChannelCount  *int64                 `protobuf:"varint,1,opt,name=channel_count,json=channelCount" json:"channel_count,omitempty"`
+	SampleRate    *int64                 `protobuf:"varint,2,opt,name=sample_rate,json=sampleRate" json:"sample_rate,omitempty"`
+	SampleSize    *int64                 `protobuf:"varint,3,opt,name=sample_size,json=sampleSize" json:"sample_size,omitempty"`
+	Type          *SoundFormat_Type      `protobuf:"varint,4,opt,name=type,enum=quasar.proto.SoundFormat_Type" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SoundInfo) Reset() {
+	*x = SoundInfo{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SoundInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SoundInfo) ProtoMessage() {}
+
+func (x *SoundInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SoundInfo.ProtoReflect.Descriptor instead.
+func (*SoundInfo) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *SoundInfo) GetChannelCount() int64 {
+	if x != nil && x.ChannelCount != nil {
+		return *x.ChannelCount
+	}
+	return 0
+}
+
+func (x *SoundInfo) GetSampleRate() int64 {
+	if x != nil && x.SampleRate != nil {
+		return *x.SampleRate
+	}
+	return 0
+}
+
+func (x *SoundInfo) GetSampleSize() int64 {
+	if x != nil && x.SampleSize != nil {
+		return *x.SampleSize
+	}
+	return 0
+}
+
+func (x *SoundInfo) GetType() SoundFormat_Type {
+	if x != nil && x.Type != nil {
+		return *x.Type
+	}
+	return SoundFormat_UNKNOWN
+}
+
 type Remoting_DirectiveHandlerMethod struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
 	Method        *Remoting_DirectiveHandlerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_DirectiveHandlerMethod_Method" json:"method,omitempty"`
@@ -2447,7 +2619,7 @@ type Remoting_DirectiveHandlerMethod struct {
 
 func (x *Remoting_DirectiveHandlerMethod) Reset() {
 	*x = Remoting_DirectiveHandlerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[5]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2459,7 +2631,7 @@ func (x *Remoting_DirectiveHandlerMethod) String() string {
 func (*Remoting_DirectiveHandlerMethod) ProtoMessage() {}
 
 func (x *Remoting_DirectiveHandlerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[5]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2472,7 +2644,7 @@ func (x *Remoting_DirectiveHandlerMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_DirectiveHandlerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_DirectiveHandlerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 0}
 }
 
 func (x *Remoting_DirectiveHandlerMethod) GetMethod() Remoting_DirectiveHandlerMethod_Method {
@@ -2512,7 +2684,7 @@ type Remoting_CapabilityStateChangedMethod struct {
 
 func (x *Remoting_CapabilityStateChangedMethod) Reset() {
 	*x = Remoting_CapabilityStateChangedMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[6]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2524,7 +2696,7 @@ func (x *Remoting_CapabilityStateChangedMethod) String() string {
 func (*Remoting_CapabilityStateChangedMethod) ProtoMessage() {}
 
 func (x *Remoting_CapabilityStateChangedMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[6]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2537,7 +2709,7 @@ func (x *Remoting_CapabilityStateChangedMethod) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use Remoting_CapabilityStateChangedMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_CapabilityStateChangedMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 1}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 1}
 }
 
 func (x *Remoting_CapabilityStateChangedMethod) GetCapability() *protos1.Capability {
@@ -2556,7 +2728,7 @@ type Remoting_CapabilityAddListenerMethod struct {
 
 func (x *Remoting_CapabilityAddListenerMethod) Reset() {
 	*x = Remoting_CapabilityAddListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[7]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2568,7 +2740,7 @@ func (x *Remoting_CapabilityAddListenerMethod) String() string {
 func (*Remoting_CapabilityAddListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_CapabilityAddListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[7]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2581,7 +2753,7 @@ func (x *Remoting_CapabilityAddListenerMethod) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use Remoting_CapabilityAddListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_CapabilityAddListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 2}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 2}
 }
 
 func (x *Remoting_CapabilityAddListenerMethod) GetCapabilityId() string {
@@ -2600,7 +2772,7 @@ type Remoting_CapabilityEventsMethod struct {
 
 func (x *Remoting_CapabilityEventsMethod) Reset() {
 	*x = Remoting_CapabilityEventsMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[8]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2612,7 +2784,7 @@ func (x *Remoting_CapabilityEventsMethod) String() string {
 func (*Remoting_CapabilityEventsMethod) ProtoMessage() {}
 
 func (x *Remoting_CapabilityEventsMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[8]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2625,7 +2797,7 @@ func (x *Remoting_CapabilityEventsMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_CapabilityEventsMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_CapabilityEventsMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 3}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 3}
 }
 
 func (x *Remoting_CapabilityEventsMethod) GetEvents() []*events.TCapabilityEvent {
@@ -2647,7 +2819,7 @@ type Remoting_EndpointStorageMethod struct {
 
 func (x *Remoting_EndpointStorageMethod) Reset() {
 	*x = Remoting_EndpointStorageMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[9]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2659,7 +2831,7 @@ func (x *Remoting_EndpointStorageMethod) String() string {
 func (*Remoting_EndpointStorageMethod) ProtoMessage() {}
 
 func (x *Remoting_EndpointStorageMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[9]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2672,7 +2844,7 @@ func (x *Remoting_EndpointStorageMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_EndpointStorageMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_EndpointStorageMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 4}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 4}
 }
 
 func (x *Remoting_EndpointStorageMethod) GetStorageName() string {
@@ -2716,7 +2888,7 @@ type Remoting_EndpointMethod struct {
 
 func (x *Remoting_EndpointMethod) Reset() {
 	*x = Remoting_EndpointMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[10]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2728,7 +2900,7 @@ func (x *Remoting_EndpointMethod) String() string {
 func (*Remoting_EndpointMethod) ProtoMessage() {}
 
 func (x *Remoting_EndpointMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[10]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2741,7 +2913,7 @@ func (x *Remoting_EndpointMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_EndpointMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_EndpointMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 5}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 5}
 }
 
 func (x *Remoting_EndpointMethod) GetMethod() Remoting_EndpointMethod_Method {
@@ -2810,7 +2982,7 @@ type Remoting_AliceCapabilityMethod struct {
 
 func (x *Remoting_AliceCapabilityMethod) Reset() {
 	*x = Remoting_AliceCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[11]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2822,7 +2994,7 @@ func (x *Remoting_AliceCapabilityMethod) String() string {
 func (*Remoting_AliceCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_AliceCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[11]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2835,7 +3007,7 @@ func (x *Remoting_AliceCapabilityMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_AliceCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_AliceCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 6}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 6}
 }
 
 func (x *Remoting_AliceCapabilityMethod) GetMethod() Remoting_AliceCapabilityMethod_Method {
@@ -3018,7 +3190,7 @@ type Remoting_AliceCapabilityListenerMethod struct {
 
 func (x *Remoting_AliceCapabilityListenerMethod) Reset() {
 	*x = Remoting_AliceCapabilityListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[12]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3030,7 +3202,7 @@ func (x *Remoting_AliceCapabilityListenerMethod) String() string {
 func (*Remoting_AliceCapabilityListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_AliceCapabilityListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[12]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3043,7 +3215,7 @@ func (x *Remoting_AliceCapabilityListenerMethod) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use Remoting_AliceCapabilityListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_AliceCapabilityListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 7}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 7}
 }
 
 func (x *Remoting_AliceCapabilityListenerMethod) GetMethod() Remoting_AliceCapabilityListenerMethod_Method {
@@ -3140,7 +3312,7 @@ type Remoting_AliceRequestEventsMethod struct {
 
 func (x *Remoting_AliceRequestEventsMethod) Reset() {
 	*x = Remoting_AliceRequestEventsMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[13]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3152,7 +3324,7 @@ func (x *Remoting_AliceRequestEventsMethod) String() string {
 func (*Remoting_AliceRequestEventsMethod) ProtoMessage() {}
 
 func (x *Remoting_AliceRequestEventsMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[13]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3165,7 +3337,7 @@ func (x *Remoting_AliceRequestEventsMethod) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use Remoting_AliceRequestEventsMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_AliceRequestEventsMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 8}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 8}
 }
 
 func (x *Remoting_AliceRequestEventsMethod) GetMethod() Remoting_AliceRequestEventsMethod_Method {
@@ -3243,19 +3415,19 @@ type Remoting_FastCommandRequesterMethod struct {
 	state       protoimpl.MessageState                      `protogen:"open.v1"`
 	Method      *Remoting_FastCommandRequesterMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_FastCommandRequesterMethod_Method" json:"method,omitempty"`
 	EventSource *event_source.TEventSource                  `protobuf:"bytes,4,opt,name=event_source,json=eventSource" json:"event_source,omitempty"`
-	RequestId   *string                                     `protobuf:"bytes,5,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
 	// Types that are valid to be assigned to Command:
 	//
 	//	*Remoting_FastCommandRequesterMethod_StringCommand
 	//	*Remoting_FastCommandRequesterMethod_FastCommand
 	Command       isRemoting_FastCommandRequesterMethod_Command `protobuf_oneof:"command"`
+	RequestId     *string                                       `protobuf:"bytes,5,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Remoting_FastCommandRequesterMethod) Reset() {
 	*x = Remoting_FastCommandRequesterMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[14]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3267,7 +3439,7 @@ func (x *Remoting_FastCommandRequesterMethod) String() string {
 func (*Remoting_FastCommandRequesterMethod) ProtoMessage() {}
 
 func (x *Remoting_FastCommandRequesterMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[14]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3280,7 +3452,7 @@ func (x *Remoting_FastCommandRequesterMethod) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use Remoting_FastCommandRequesterMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_FastCommandRequesterMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 9}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 9}
 }
 
 func (x *Remoting_FastCommandRequesterMethod) GetMethod() Remoting_FastCommandRequesterMethod_Method {
@@ -3295,13 +3467,6 @@ func (x *Remoting_FastCommandRequesterMethod) GetEventSource() *event_source.TEv
 		return x.EventSource
 	}
 	return nil
-}
-
-func (x *Remoting_FastCommandRequesterMethod) GetRequestId() string {
-	if x != nil && x.RequestId != nil {
-		return *x.RequestId
-	}
-	return ""
 }
 
 func (x *Remoting_FastCommandRequesterMethod) GetCommand() isRemoting_FastCommandRequesterMethod_Command {
@@ -3327,6 +3492,13 @@ func (x *Remoting_FastCommandRequesterMethod) GetFastCommand() *FastCommand {
 		}
 	}
 	return nil
+}
+
+func (x *Remoting_FastCommandRequesterMethod) GetRequestId() string {
+	if x != nil && x.RequestId != nil {
+		return *x.RequestId
+	}
+	return ""
 }
 
 type isRemoting_FastCommandRequesterMethod_Command interface {
@@ -3365,7 +3537,7 @@ type Remoting_FastCommandRequesterListenerMethod struct {
 
 func (x *Remoting_FastCommandRequesterListenerMethod) Reset() {
 	*x = Remoting_FastCommandRequesterListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[15]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3377,7 +3549,7 @@ func (x *Remoting_FastCommandRequesterListenerMethod) String() string {
 func (*Remoting_FastCommandRequesterListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_FastCommandRequesterListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[15]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3390,7 +3562,7 @@ func (x *Remoting_FastCommandRequesterListenerMethod) ProtoReflect() protoreflec
 
 // Deprecated: Use Remoting_FastCommandRequesterListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_FastCommandRequesterListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 10}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 10}
 }
 
 func (x *Remoting_FastCommandRequesterListenerMethod) GetMethod() Remoting_FastCommandRequesterListenerMethod_Method {
@@ -3488,7 +3660,7 @@ type Remoting_FilePlayerCapabilityMethod struct {
 
 func (x *Remoting_FilePlayerCapabilityMethod) Reset() {
 	*x = Remoting_FilePlayerCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[16]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3500,7 +3672,7 @@ func (x *Remoting_FilePlayerCapabilityMethod) String() string {
 func (*Remoting_FilePlayerCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_FilePlayerCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[16]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3513,7 +3685,7 @@ func (x *Remoting_FilePlayerCapabilityMethod) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use Remoting_FilePlayerCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_FilePlayerCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 11}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 11}
 }
 
 func (x *Remoting_FilePlayerCapabilityMethod) GetMethod() Remoting_FilePlayerCapabilityMethod_Method {
@@ -3597,7 +3769,7 @@ type Remoting_FilePlayerCapabilityEventsMethod struct {
 
 func (x *Remoting_FilePlayerCapabilityEventsMethod) Reset() {
 	*x = Remoting_FilePlayerCapabilityEventsMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[17]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3609,7 +3781,7 @@ func (x *Remoting_FilePlayerCapabilityEventsMethod) String() string {
 func (*Remoting_FilePlayerCapabilityEventsMethod) ProtoMessage() {}
 
 func (x *Remoting_FilePlayerCapabilityEventsMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[17]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3622,7 +3794,7 @@ func (x *Remoting_FilePlayerCapabilityEventsMethod) ProtoReflect() protoreflect.
 
 // Deprecated: Use Remoting_FilePlayerCapabilityEventsMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_FilePlayerCapabilityEventsMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 12}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 12}
 }
 
 func (x *Remoting_FilePlayerCapabilityEventsMethod) GetDirectiveEvent() *DirectiveEvent {
@@ -3661,7 +3833,7 @@ type Remoting_PlaybackControlCapabilityMethod struct {
 
 func (x *Remoting_PlaybackControlCapabilityMethod) Reset() {
 	*x = Remoting_PlaybackControlCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[18]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3673,7 +3845,7 @@ func (x *Remoting_PlaybackControlCapabilityMethod) String() string {
 func (*Remoting_PlaybackControlCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_PlaybackControlCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[18]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3686,7 +3858,7 @@ func (x *Remoting_PlaybackControlCapabilityMethod) ProtoReflect() protoreflect.M
 
 // Deprecated: Use Remoting_PlaybackControlCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_PlaybackControlCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 13}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 13}
 }
 
 func (x *Remoting_PlaybackControlCapabilityMethod) GetMethod() Remoting_PlaybackControlCapabilityMethod_Method {
@@ -3749,7 +3921,7 @@ type Remoting_SpotterCapabilityMethod struct {
 
 func (x *Remoting_SpotterCapabilityMethod) Reset() {
 	*x = Remoting_SpotterCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[19]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3761,7 +3933,7 @@ func (x *Remoting_SpotterCapabilityMethod) String() string {
 func (*Remoting_SpotterCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_SpotterCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[19]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3774,7 +3946,7 @@ func (x *Remoting_SpotterCapabilityMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_SpotterCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_SpotterCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 14}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 14}
 }
 
 func (x *Remoting_SpotterCapabilityMethod) GetMethod() Remoting_SpotterCapabilityMethod_Method {
@@ -3810,7 +3982,7 @@ type Remoting_SpotterCapabilityListenerMethod struct {
 
 func (x *Remoting_SpotterCapabilityListenerMethod) Reset() {
 	*x = Remoting_SpotterCapabilityListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[20]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3822,7 +3994,7 @@ func (x *Remoting_SpotterCapabilityListenerMethod) String() string {
 func (*Remoting_SpotterCapabilityListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_SpotterCapabilityListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[20]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3835,7 +4007,7 @@ func (x *Remoting_SpotterCapabilityListenerMethod) ProtoReflect() protoreflect.M
 
 // Deprecated: Use Remoting_SpotterCapabilityListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_SpotterCapabilityListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 15}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 15}
 }
 
 func (x *Remoting_SpotterCapabilityListenerMethod) GetMethod() Remoting_SpotterCapabilityListenerMethod_Method {
@@ -3880,6 +4052,7 @@ type Remoting_DeviceStateCapabilityMethod struct {
 	//	*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures_
 	//	*Remoting_DeviceStateCapabilityMethod_VideoState
 	//	*Remoting_DeviceStateCapabilityMethod_RcuState
+	//	*Remoting_DeviceStateCapabilityMethod_ScreenState
 	//	*Remoting_DeviceStateCapabilityMethod_MultiroomState
 	//	*Remoting_DeviceStateCapabilityMethod_PackagesState
 	//	*Remoting_DeviceStateCapabilityMethod_Experiments
@@ -3915,7 +4088,7 @@ type Remoting_DeviceStateCapabilityMethod struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[21]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3927,7 +4100,7 @@ func (x *Remoting_DeviceStateCapabilityMethod) String() string {
 func (*Remoting_DeviceStateCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[21]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3940,7 +4113,7 @@ func (x *Remoting_DeviceStateCapabilityMethod) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod) GetValue() isRemoting_DeviceStateCapabilityMethod_Value {
@@ -4035,6 +4208,15 @@ func (x *Remoting_DeviceStateCapabilityMethod) GetRcuState() *device_state.TDevi
 	if x != nil {
 		if x, ok := x.Value.(*Remoting_DeviceStateCapabilityMethod_RcuState); ok {
 			return x.RcuState
+		}
+	}
+	return nil
+}
+
+func (x *Remoting_DeviceStateCapabilityMethod) GetScreenState() *device_state.TDeviceState_TScreen {
+	if x != nil {
+		if x, ok := x.Value.(*Remoting_DeviceStateCapabilityMethod_ScreenState); ok {
+			return x.ScreenState
 		}
 	}
 	return nil
@@ -4336,6 +4518,10 @@ type Remoting_DeviceStateCapabilityMethod_RcuState struct {
 	RcuState *device_state.TDeviceState_TRcuState `protobuf:"bytes,10,opt,name=rcu_state,json=rcuState,oneof"`
 }
 
+type Remoting_DeviceStateCapabilityMethod_ScreenState struct {
+	ScreenState *device_state.TDeviceState_TScreen `protobuf:"bytes,11,opt,name=screen_state,json=screenState,oneof"`
+}
+
 type Remoting_DeviceStateCapabilityMethod_MultiroomState struct {
 	MultiroomState *device_state.TDeviceState_TMultiroom `protobuf:"bytes,12,opt,name=multiroom_state,json=multiroomState,oneof"`
 }
@@ -4478,6 +4664,9 @@ func (*Remoting_DeviceStateCapabilityMethod_VideoState) isRemoting_DeviceStateCa
 func (*Remoting_DeviceStateCapabilityMethod_RcuState) isRemoting_DeviceStateCapabilityMethod_Value() {
 }
 
+func (*Remoting_DeviceStateCapabilityMethod_ScreenState) isRemoting_DeviceStateCapabilityMethod_Value() {
+}
+
 func (*Remoting_DeviceStateCapabilityMethod_MultiroomState) isRemoting_DeviceStateCapabilityMethod_Value() {
 }
 
@@ -4574,7 +4763,7 @@ type Remoting_VocalizerCapabilityMethod struct {
 
 func (x *Remoting_VocalizerCapabilityMethod) Reset() {
 	*x = Remoting_VocalizerCapabilityMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[22]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4586,7 +4775,7 @@ func (x *Remoting_VocalizerCapabilityMethod) String() string {
 func (*Remoting_VocalizerCapabilityMethod) ProtoMessage() {}
 
 func (x *Remoting_VocalizerCapabilityMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[22]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4599,7 +4788,7 @@ func (x *Remoting_VocalizerCapabilityMethod) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use Remoting_VocalizerCapabilityMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_VocalizerCapabilityMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 17}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 17}
 }
 
 func (x *Remoting_VocalizerCapabilityMethod) GetMethod() Remoting_VocalizerCapabilityMethod_Method {
@@ -4638,19 +4827,19 @@ func (x *Remoting_VocalizerCapabilityMethod) GetSettings() *VocalizerSettings {
 }
 
 type Remoting_VocalizerCapabilityListenerMethod struct {
-	state         protoimpl.MessageState                             `protogen:"open.v1"`
-	Method        *Remoting_VocalizerCapabilityListenerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_VocalizerCapabilityListenerMethod_Method" json:"method,omitempty"`
-	ErrorCode     *int32                                             `protobuf:"varint,2,opt,name=error_code,json=errorCode" json:"error_code,omitempty"`
-	ErrorMessage  *string                                            `protobuf:"bytes,3,opt,name=error_message,json=errorMessage" json:"error_message,omitempty"`
-	SoundInfo     *SoundInfo                                         `protobuf:"bytes,4,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
-	Buffer        []byte                                             `protobuf:"bytes,5,opt,name=buffer" json:"buffer,omitempty"`
+	state         protoimpl.MessageState                                `protogen:"open.v1"`
+	Method        *Remoting_VocalizerCapabilityListenerMethod_Method    `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_VocalizerCapabilityListenerMethod_Method" json:"method,omitempty"`
+	ErrorCode     *int32                                                `protobuf:"varint,2,opt,name=error_code,json=errorCode" json:"error_code,omitempty"`
+	ErrorMessage  *string                                               `protobuf:"bytes,3,opt,name=error_message,json=errorMessage" json:"error_message,omitempty"`
+	SoundInfo     *Remoting_VocalizerCapabilityListenerMethod_SoundInfo `protobuf:"bytes,4,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
+	Buffer        []byte                                                `protobuf:"bytes,5,opt,name=buffer" json:"buffer,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Remoting_VocalizerCapabilityListenerMethod) Reset() {
 	*x = Remoting_VocalizerCapabilityListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[23]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4662,7 +4851,7 @@ func (x *Remoting_VocalizerCapabilityListenerMethod) String() string {
 func (*Remoting_VocalizerCapabilityListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_VocalizerCapabilityListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[23]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4675,7 +4864,7 @@ func (x *Remoting_VocalizerCapabilityListenerMethod) ProtoReflect() protoreflect
 
 // Deprecated: Use Remoting_VocalizerCapabilityListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_VocalizerCapabilityListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 18}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 18}
 }
 
 func (x *Remoting_VocalizerCapabilityListenerMethod) GetMethod() Remoting_VocalizerCapabilityListenerMethod_Method {
@@ -4699,7 +4888,7 @@ func (x *Remoting_VocalizerCapabilityListenerMethod) GetErrorMessage() string {
 	return ""
 }
 
-func (x *Remoting_VocalizerCapabilityListenerMethod) GetSoundInfo() *SoundInfo {
+func (x *Remoting_VocalizerCapabilityListenerMethod) GetSoundInfo() *Remoting_VocalizerCapabilityListenerMethod_SoundInfo {
 	if x != nil {
 		return x.SoundInfo
 	}
@@ -4711,218 +4900,6 @@ func (x *Remoting_VocalizerCapabilityListenerMethod) GetBuffer() []byte {
 		return x.Buffer
 	}
 	return nil
-}
-
-type Remoting_RoutingAudioPlayerMethod struct {
-	state          protoimpl.MessageState                    `protogen:"open.v1"`
-	Method         *Remoting_RoutingAudioPlayerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_RoutingAudioPlayerMethod_Method" json:"method,omitempty"`
-	EndpointId     *string                                   `protobuf:"bytes,2,opt,name=endpoint_id,json=endpointId" json:"endpoint_id,omitempty"`
-	PlayerObjectId *string                                   `protobuf:"bytes,3,opt,name=player_object_id,json=playerObjectId" json:"player_object_id,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
-}
-
-func (x *Remoting_RoutingAudioPlayerMethod) Reset() {
-	*x = Remoting_RoutingAudioPlayerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[24]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *Remoting_RoutingAudioPlayerMethod) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Remoting_RoutingAudioPlayerMethod) ProtoMessage() {}
-
-func (x *Remoting_RoutingAudioPlayerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[24]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Remoting_RoutingAudioPlayerMethod.ProtoReflect.Descriptor instead.
-func (*Remoting_RoutingAudioPlayerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 19}
-}
-
-func (x *Remoting_RoutingAudioPlayerMethod) GetMethod() Remoting_RoutingAudioPlayerMethod_Method {
-	if x != nil && x.Method != nil {
-		return *x.Method
-	}
-	return Remoting_RoutingAudioPlayerMethod_ADD_PLAYER
-}
-
-func (x *Remoting_RoutingAudioPlayerMethod) GetEndpointId() string {
-	if x != nil && x.EndpointId != nil {
-		return *x.EndpointId
-	}
-	return ""
-}
-
-func (x *Remoting_RoutingAudioPlayerMethod) GetPlayerObjectId() string {
-	if x != nil && x.PlayerObjectId != nil {
-		return *x.PlayerObjectId
-	}
-	return ""
-}
-
-type Remoting_AudioPlayerMethod struct {
-	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Method        *Remoting_AudioPlayerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_AudioPlayerMethod_Method" json:"method,omitempty"`
-	SoundInfo     *SoundInfo                         `protobuf:"bytes,2,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
-	Buffer        []byte                             `protobuf:"bytes,3,opt,name=buffer" json:"buffer,omitempty"`
-	EventSource   *event_source.TEventSource         `protobuf:"bytes,4,opt,name=event_source,json=eventSource" json:"event_source,omitempty"`
-	Volume        *float32                           `protobuf:"fixed32,5,opt,name=volume" json:"volume,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *Remoting_AudioPlayerMethod) Reset() {
-	*x = Remoting_AudioPlayerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[25]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *Remoting_AudioPlayerMethod) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Remoting_AudioPlayerMethod) ProtoMessage() {}
-
-func (x *Remoting_AudioPlayerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[25]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Remoting_AudioPlayerMethod.ProtoReflect.Descriptor instead.
-func (*Remoting_AudioPlayerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 20}
-}
-
-func (x *Remoting_AudioPlayerMethod) GetMethod() Remoting_AudioPlayerMethod_Method {
-	if x != nil && x.Method != nil {
-		return *x.Method
-	}
-	return Remoting_AudioPlayerMethod_PLAY
-}
-
-func (x *Remoting_AudioPlayerMethod) GetSoundInfo() *SoundInfo {
-	if x != nil {
-		return x.SoundInfo
-	}
-	return nil
-}
-
-func (x *Remoting_AudioPlayerMethod) GetBuffer() []byte {
-	if x != nil {
-		return x.Buffer
-	}
-	return nil
-}
-
-func (x *Remoting_AudioPlayerMethod) GetEventSource() *event_source.TEventSource {
-	if x != nil {
-		return x.EventSource
-	}
-	return nil
-}
-
-func (x *Remoting_AudioPlayerMethod) GetVolume() float32 {
-	if x != nil && x.Volume != nil {
-		return *x.Volume
-	}
-	return 0
-}
-
-type Remoting_AudioPlayerListenerMethod struct {
-	state         protoimpl.MessageState                     `protogen:"open.v1"`
-	Method        *Remoting_AudioPlayerListenerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_AudioPlayerListenerMethod_Method" json:"method,omitempty"`
-	SoundInfo     *SoundInfo                                 `protobuf:"bytes,2,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
-	Buffer        []byte                                     `protobuf:"bytes,3,opt,name=buffer" json:"buffer,omitempty"`
-	ErrorCode     *int32                                     `protobuf:"varint,4,opt,name=error_code,json=errorCode" json:"error_code,omitempty"`
-	ErrorMessage  *string                                    `protobuf:"bytes,5,opt,name=error_message,json=errorMessage" json:"error_message,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) Reset() {
-	*x = Remoting_AudioPlayerListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[26]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Remoting_AudioPlayerListenerMethod) ProtoMessage() {}
-
-func (x *Remoting_AudioPlayerListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[26]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Remoting_AudioPlayerListenerMethod.ProtoReflect.Descriptor instead.
-func (*Remoting_AudioPlayerListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 21}
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) GetMethod() Remoting_AudioPlayerListenerMethod_Method {
-	if x != nil && x.Method != nil {
-		return *x.Method
-	}
-	return Remoting_AudioPlayerListenerMethod_ON_PLAYING_BEGIN
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) GetSoundInfo() *SoundInfo {
-	if x != nil {
-		return x.SoundInfo
-	}
-	return nil
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) GetBuffer() []byte {
-	if x != nil {
-		return x.Buffer
-	}
-	return nil
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) GetErrorCode() int32 {
-	if x != nil && x.ErrorCode != nil {
-		return *x.ErrorCode
-	}
-	return 0
-}
-
-func (x *Remoting_AudioPlayerListenerMethod) GetErrorMessage() string {
-	if x != nil && x.ErrorMessage != nil {
-		return *x.ErrorMessage
-	}
-	return ""
 }
 
 type Remoting_DirectiveSequencerMethod struct {
@@ -4939,7 +4916,7 @@ type Remoting_DirectiveSequencerMethod struct {
 
 func (x *Remoting_DirectiveSequencerMethod) Reset() {
 	*x = Remoting_DirectiveSequencerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4951,7 +4928,7 @@ func (x *Remoting_DirectiveSequencerMethod) String() string {
 func (*Remoting_DirectiveSequencerMethod) ProtoMessage() {}
 
 func (x *Remoting_DirectiveSequencerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4964,7 +4941,7 @@ func (x *Remoting_DirectiveSequencerMethod) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use Remoting_DirectiveSequencerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_DirectiveSequencerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 22}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 19}
 }
 
 func (x *Remoting_DirectiveSequencerMethod) GetMethod() Remoting_DirectiveSequencerMethod_Method {
@@ -5022,7 +4999,7 @@ type Remoting_DirectiveSequencerListenerMethod struct {
 
 func (x *Remoting_DirectiveSequencerListenerMethod) Reset() {
 	*x = Remoting_DirectiveSequencerListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5034,7 +5011,7 @@ func (x *Remoting_DirectiveSequencerListenerMethod) String() string {
 func (*Remoting_DirectiveSequencerListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_DirectiveSequencerListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5047,7 +5024,7 @@ func (x *Remoting_DirectiveSequencerListenerMethod) ProtoReflect() protoreflect.
 
 // Deprecated: Use Remoting_DirectiveSequencerListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_DirectiveSequencerListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 23}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 20}
 }
 
 func (x *Remoting_DirectiveSequencerListenerMethod) GetMethod() Remoting_DirectiveSequencerListenerMethod_Method {
@@ -5096,7 +5073,7 @@ type Remoting_TandemCapabilityListenerMethod struct {
 
 func (x *Remoting_TandemCapabilityListenerMethod) Reset() {
 	*x = Remoting_TandemCapabilityListenerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5108,7 +5085,7 @@ func (x *Remoting_TandemCapabilityListenerMethod) String() string {
 func (*Remoting_TandemCapabilityListenerMethod) ProtoMessage() {}
 
 func (x *Remoting_TandemCapabilityListenerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5121,7 +5098,7 @@ func (x *Remoting_TandemCapabilityListenerMethod) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use Remoting_TandemCapabilityListenerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_TandemCapabilityListenerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 24}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 21}
 }
 
 func (x *Remoting_TandemCapabilityListenerMethod) GetMethod() Remoting_TandemCapabilityListenerMethod_Method {
@@ -5156,7 +5133,7 @@ type Remoting_ClockStorageMethod struct {
 
 func (x *Remoting_ClockStorageMethod) Reset() {
 	*x = Remoting_ClockStorageMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5168,7 +5145,7 @@ func (x *Remoting_ClockStorageMethod) String() string {
 func (*Remoting_ClockStorageMethod) ProtoMessage() {}
 
 func (x *Remoting_ClockStorageMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5181,7 +5158,7 @@ func (x *Remoting_ClockStorageMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_ClockStorageMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_ClockStorageMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 25}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 22}
 }
 
 func (x *Remoting_ClockStorageMethod) GetMethod() Remoting_ClockStorageMethod_Method {
@@ -5220,7 +5197,7 @@ type Remoting_TimingsManagerMethod struct {
 
 func (x *Remoting_TimingsManagerMethod) Reset() {
 	*x = Remoting_TimingsManagerMethod{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5232,7 +5209,7 @@ func (x *Remoting_TimingsManagerMethod) String() string {
 func (*Remoting_TimingsManagerMethod) ProtoMessage() {}
 
 func (x *Remoting_TimingsManagerMethod) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5245,7 +5222,7 @@ func (x *Remoting_TimingsManagerMethod) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Remoting_TimingsManagerMethod.ProtoReflect.Descriptor instead.
 func (*Remoting_TimingsManagerMethod) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23}
 }
 
 func (x *Remoting_TimingsManagerMethod) GetMethod() Remoting_TimingsManagerMethod_Method {
@@ -5297,6 +5274,218 @@ func (x *Remoting_TimingsManagerMethod) GetSubMeta() []*Remoting_TimingsManagerM
 	return nil
 }
 
+type Remoting_RoutingAudioPlayerMethod struct {
+	state          protoimpl.MessageState                    `protogen:"open.v1"`
+	Method         *Remoting_RoutingAudioPlayerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_RoutingAudioPlayerMethod_Method" json:"method,omitempty"`
+	EndpointId     *string                                   `protobuf:"bytes,2,opt,name=endpoint_id,json=endpointId" json:"endpoint_id,omitempty"`
+	PlayerObjectId *string                                   `protobuf:"bytes,3,opt,name=player_object_id,json=playerObjectId" json:"player_object_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *Remoting_RoutingAudioPlayerMethod) Reset() {
+	*x = Remoting_RoutingAudioPlayerMethod{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Remoting_RoutingAudioPlayerMethod) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Remoting_RoutingAudioPlayerMethod) ProtoMessage() {}
+
+func (x *Remoting_RoutingAudioPlayerMethod) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Remoting_RoutingAudioPlayerMethod.ProtoReflect.Descriptor instead.
+func (*Remoting_RoutingAudioPlayerMethod) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 24}
+}
+
+func (x *Remoting_RoutingAudioPlayerMethod) GetMethod() Remoting_RoutingAudioPlayerMethod_Method {
+	if x != nil && x.Method != nil {
+		return *x.Method
+	}
+	return Remoting_RoutingAudioPlayerMethod_ADD_PLAYER
+}
+
+func (x *Remoting_RoutingAudioPlayerMethod) GetEndpointId() string {
+	if x != nil && x.EndpointId != nil {
+		return *x.EndpointId
+	}
+	return ""
+}
+
+func (x *Remoting_RoutingAudioPlayerMethod) GetPlayerObjectId() string {
+	if x != nil && x.PlayerObjectId != nil {
+		return *x.PlayerObjectId
+	}
+	return ""
+}
+
+type Remoting_AudioPlayerMethod struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Method        *Remoting_AudioPlayerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_AudioPlayerMethod_Method" json:"method,omitempty"`
+	SoundInfo     *SoundInfo                         `protobuf:"bytes,2,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
+	Buffer        []byte                             `protobuf:"bytes,3,opt,name=buffer" json:"buffer,omitempty"`
+	EventSource   *event_source.TEventSource         `protobuf:"bytes,4,opt,name=event_source,json=eventSource" json:"event_source,omitempty"`
+	Volume        *float32                           `protobuf:"fixed32,5,opt,name=volume" json:"volume,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Remoting_AudioPlayerMethod) Reset() {
+	*x = Remoting_AudioPlayerMethod{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Remoting_AudioPlayerMethod) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Remoting_AudioPlayerMethod) ProtoMessage() {}
+
+func (x *Remoting_AudioPlayerMethod) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Remoting_AudioPlayerMethod.ProtoReflect.Descriptor instead.
+func (*Remoting_AudioPlayerMethod) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 25}
+}
+
+func (x *Remoting_AudioPlayerMethod) GetMethod() Remoting_AudioPlayerMethod_Method {
+	if x != nil && x.Method != nil {
+		return *x.Method
+	}
+	return Remoting_AudioPlayerMethod_PLAY
+}
+
+func (x *Remoting_AudioPlayerMethod) GetSoundInfo() *SoundInfo {
+	if x != nil {
+		return x.SoundInfo
+	}
+	return nil
+}
+
+func (x *Remoting_AudioPlayerMethod) GetBuffer() []byte {
+	if x != nil {
+		return x.Buffer
+	}
+	return nil
+}
+
+func (x *Remoting_AudioPlayerMethod) GetEventSource() *event_source.TEventSource {
+	if x != nil {
+		return x.EventSource
+	}
+	return nil
+}
+
+func (x *Remoting_AudioPlayerMethod) GetVolume() float32 {
+	if x != nil && x.Volume != nil {
+		return *x.Volume
+	}
+	return 0
+}
+
+type Remoting_AudioPlayerListenerMethod struct {
+	state         protoimpl.MessageState                     `protogen:"open.v1"`
+	Method        *Remoting_AudioPlayerListenerMethod_Method `protobuf:"varint,1,opt,name=method,enum=quasar.proto.Remoting_AudioPlayerListenerMethod_Method" json:"method,omitempty"`
+	SoundInfo     *SoundInfo                                 `protobuf:"bytes,2,opt,name=sound_info,json=soundInfo" json:"sound_info,omitempty"`
+	Buffer        []byte                                     `protobuf:"bytes,3,opt,name=buffer" json:"buffer,omitempty"`
+	ErrorCode     *int32                                     `protobuf:"varint,4,opt,name=error_code,json=errorCode" json:"error_code,omitempty"`
+	ErrorMessage  *string                                    `protobuf:"bytes,5,opt,name=error_message,json=errorMessage" json:"error_message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) Reset() {
+	*x = Remoting_AudioPlayerListenerMethod{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Remoting_AudioPlayerListenerMethod) ProtoMessage() {}
+
+func (x *Remoting_AudioPlayerListenerMethod) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Remoting_AudioPlayerListenerMethod.ProtoReflect.Descriptor instead.
+func (*Remoting_AudioPlayerListenerMethod) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 26}
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) GetMethod() Remoting_AudioPlayerListenerMethod_Method {
+	if x != nil && x.Method != nil {
+		return *x.Method
+	}
+	return Remoting_AudioPlayerListenerMethod_ON_PLAYING_BEGIN
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) GetSoundInfo() *SoundInfo {
+	if x != nil {
+		return x.SoundInfo
+	}
+	return nil
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) GetBuffer() []byte {
+	if x != nil {
+		return x.Buffer
+	}
+	return nil
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) GetErrorCode() int32 {
+	if x != nil && x.ErrorCode != nil {
+		return *x.ErrorCode
+	}
+	return 0
+}
+
+func (x *Remoting_AudioPlayerListenerMethod) GetErrorMessage() string {
+	if x != nil && x.ErrorMessage != nil {
+		return *x.ErrorMessage
+	}
+	return ""
+}
+
 type Remoting_AliceCapabilityListenerMethod_TFileUploadEvent struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	InteractionId   *string                `protobuf:"bytes,1,opt,name=interaction_id,json=interactionId" json:"interaction_id,omitempty"`
@@ -5307,7 +5496,7 @@ type Remoting_AliceCapabilityListenerMethod_TFileUploadEvent struct {
 
 func (x *Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) Reset() {
 	*x = Remoting_AliceCapabilityListenerMethod_TFileUploadEvent{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5319,7 +5508,7 @@ func (x *Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) String() strin
 func (*Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) ProtoMessage() {}
 
 func (x *Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5332,7 +5521,7 @@ func (x *Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) ProtoReflect()
 
 // Deprecated: Use Remoting_AliceCapabilityListenerMethod_TFileUploadEvent.ProtoReflect.Descriptor instead.
 func (*Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 7, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 7, 0}
 }
 
 func (x *Remoting_AliceCapabilityListenerMethod_TFileUploadEvent) GetInteractionId() string {
@@ -5361,7 +5550,7 @@ type Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams struct {
 
 func (x *Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) Reset() {
 	*x = Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5373,7 +5562,7 @@ func (x *Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) String() stri
 func (*Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) ProtoMessage() {}
 
 func (x *Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5386,7 +5575,7 @@ func (x *Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) ProtoReflect(
 
 // Deprecated: Use Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams.ProtoReflect.Descriptor instead.
 func (*Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 11, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 11, 0}
 }
 
 func (x *Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams) GetPlayLooped() bool {
@@ -5427,7 +5616,7 @@ type Remoting_SpotterCapabilityMethod_ModelPath struct {
 
 func (x *Remoting_SpotterCapabilityMethod_ModelPath) Reset() {
 	*x = Remoting_SpotterCapabilityMethod_ModelPath{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[34]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5439,7 +5628,7 @@ func (x *Remoting_SpotterCapabilityMethod_ModelPath) String() string {
 func (*Remoting_SpotterCapabilityMethod_ModelPath) ProtoMessage() {}
 
 func (x *Remoting_SpotterCapabilityMethod_ModelPath) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[34]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5452,7 +5641,7 @@ func (x *Remoting_SpotterCapabilityMethod_ModelPath) ProtoReflect() protoreflect
 
 // Deprecated: Use Remoting_SpotterCapabilityMethod_ModelPath.ProtoReflect.Descriptor instead.
 func (*Remoting_SpotterCapabilityMethod_ModelPath) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 14, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 14, 0}
 }
 
 func (x *Remoting_SpotterCapabilityMethod_ModelPath) GetType() string {
@@ -5478,7 +5667,7 @@ type Remoting_DeviceStateCapabilityMethod_SupportedFeatures struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_SupportedFeatures) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_SupportedFeatures{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5490,7 +5679,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_SupportedFeatures) String() string
 func (*Remoting_DeviceStateCapabilityMethod_SupportedFeatures) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_SupportedFeatures) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5503,7 +5692,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_SupportedFeatures) ProtoReflect() 
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_SupportedFeatures.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_SupportedFeatures) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 0}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_SupportedFeatures) GetValues() []string {
@@ -5522,7 +5711,7 @@ type Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5534,7 +5723,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) String() stri
 func (*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5547,7 +5736,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) ProtoReflect(
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 1}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 1}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures) GetValues() []string {
@@ -5568,7 +5757,7 @@ type Remoting_DeviceStateCapabilityMethod_VolumeState struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_VolumeState) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_VolumeState{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5580,7 +5769,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_VolumeState) String() string {
 func (*Remoting_DeviceStateCapabilityMethod_VolumeState) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_VolumeState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5593,7 +5782,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_VolumeState) ProtoReflect() protor
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_VolumeState.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_VolumeState) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 2}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 2}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_VolumeState) GetSoundMuted() bool {
@@ -5626,7 +5815,7 @@ type Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5638,7 +5827,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) Strin
 func (*Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5651,7 +5840,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) Proto
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 3}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 3}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings) GetValue() protos2.EContentSettings {
@@ -5670,7 +5859,7 @@ type Remoting_DeviceStateCapabilityMethod_Permissions struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_Permissions) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_Permissions{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5682,7 +5871,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_Permissions) String() string {
 func (*Remoting_DeviceStateCapabilityMethod_Permissions) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_Permissions) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5695,7 +5884,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_Permissions) ProtoReflect() protor
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_Permissions.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_Permissions) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 4}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 4}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_Permissions) GetValues() []*alice_request1.TAliceRequestProto_TRequest_TAdditionalOptions_TPermission {
@@ -5714,7 +5903,7 @@ type Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[40]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5726,7 +5915,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) String
 func (*Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[40]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5739,7 +5928,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) ProtoR
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 5}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 5}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions) GetValues() []*data.TExternalEntityDescription {
@@ -5759,7 +5948,7 @@ type Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5771,7 +5960,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) String(
 func (*Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5784,7 +5973,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) ProtoRe
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 6}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 6}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities) GetActions() *device_state.TDeviceState_TActiveActions {
@@ -5811,7 +6000,7 @@ type Remoting_DeviceStateCapabilityMethod_InternetConnectionState struct {
 
 func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) Reset() {
 	*x = Remoting_DeviceStateCapabilityMethod_InternetConnectionState{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5823,7 +6012,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) String() 
 func (*Remoting_DeviceStateCapabilityMethod_InternetConnectionState) ProtoMessage() {}
 
 func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5836,7 +6025,7 @@ func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) ProtoRefl
 
 // Deprecated: Use Remoting_DeviceStateCapabilityMethod_InternetConnectionState.ProtoReflect.Descriptor instead.
 func (*Remoting_DeviceStateCapabilityMethod_InternetConnectionState) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 16, 7}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 16, 7}
 }
 
 func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) GetInternetConnection() *device_state.TDeviceState_TInternetConnection {
@@ -5853,6 +6042,74 @@ func (x *Remoting_DeviceStateCapabilityMethod_InternetConnectionState) GetStatus
 	return nil
 }
 
+type Remoting_VocalizerCapabilityListenerMethod_SoundInfo struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChannelCount  *int64                 `protobuf:"varint,1,opt,name=channel_count,json=channelCount" json:"channel_count,omitempty"`
+	SampleRate    *int64                 `protobuf:"varint,2,opt,name=sample_rate,json=sampleRate" json:"sample_rate,omitempty"`
+	SampleSize    *int64                 `protobuf:"varint,3,opt,name=sample_size,json=sampleSize" json:"sample_size,omitempty"`
+	Type          *SoundFormat_Type      `protobuf:"varint,4,opt,name=type,enum=quasar.proto.SoundFormat_Type" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) Reset() {
+	*x = Remoting_VocalizerCapabilityListenerMethod_SoundInfo{}
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Remoting_VocalizerCapabilityListenerMethod_SoundInfo) ProtoMessage() {}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Remoting_VocalizerCapabilityListenerMethod_SoundInfo.ProtoReflect.Descriptor instead.
+func (*Remoting_VocalizerCapabilityListenerMethod_SoundInfo) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 18, 0}
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) GetChannelCount() int64 {
+	if x != nil && x.ChannelCount != nil {
+		return *x.ChannelCount
+	}
+	return 0
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) GetSampleRate() int64 {
+	if x != nil && x.SampleRate != nil {
+		return *x.SampleRate
+	}
+	return 0
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) GetSampleSize() int64 {
+	if x != nil && x.SampleSize != nil {
+		return *x.SampleSize
+	}
+	return 0
+}
+
+func (x *Remoting_VocalizerCapabilityListenerMethod_SoundInfo) GetType() SoundFormat_Type {
+	if x != nil && x.Type != nil {
+		return *x.Type
+	}
+	return SoundFormat_UNKNOWN
+}
+
 type Remoting_TimingsManagerMethod_Event struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          *string                `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
@@ -5863,7 +6120,7 @@ type Remoting_TimingsManagerMethod_Event struct {
 
 func (x *Remoting_TimingsManagerMethod_Event) Reset() {
 	*x = Remoting_TimingsManagerMethod_Event{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[43]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5875,7 +6132,7 @@ func (x *Remoting_TimingsManagerMethod_Event) String() string {
 func (*Remoting_TimingsManagerMethod_Event) ProtoMessage() {}
 
 func (x *Remoting_TimingsManagerMethod_Event) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[43]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5888,7 +6145,7 @@ func (x *Remoting_TimingsManagerMethod_Event) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use Remoting_TimingsManagerMethod_Event.ProtoReflect.Descriptor instead.
 func (*Remoting_TimingsManagerMethod_Event) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26, 0}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23, 0}
 }
 
 func (x *Remoting_TimingsManagerMethod_Event) GetName() string {
@@ -5916,7 +6173,7 @@ type Remoting_TimingsManagerMethod_Meta struct {
 
 func (x *Remoting_TimingsManagerMethod_Meta) Reset() {
 	*x = Remoting_TimingsManagerMethod_Meta{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[44]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5928,7 +6185,7 @@ func (x *Remoting_TimingsManagerMethod_Meta) String() string {
 func (*Remoting_TimingsManagerMethod_Meta) ProtoMessage() {}
 
 func (x *Remoting_TimingsManagerMethod_Meta) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[44]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5941,7 +6198,7 @@ func (x *Remoting_TimingsManagerMethod_Meta) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use Remoting_TimingsManagerMethod_Meta.ProtoReflect.Descriptor instead.
 func (*Remoting_TimingsManagerMethod_Meta) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26, 1}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23, 1}
 }
 
 func (x *Remoting_TimingsManagerMethod_Meta) GetKey() string {
@@ -5975,7 +6232,7 @@ type Remoting_TimingsManagerMethod_SubEvent struct {
 
 func (x *Remoting_TimingsManagerMethod_SubEvent) Reset() {
 	*x = Remoting_TimingsManagerMethod_SubEvent{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[45]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5987,7 +6244,7 @@ func (x *Remoting_TimingsManagerMethod_SubEvent) String() string {
 func (*Remoting_TimingsManagerMethod_SubEvent) ProtoMessage() {}
 
 func (x *Remoting_TimingsManagerMethod_SubEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[45]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6000,7 +6257,7 @@ func (x *Remoting_TimingsManagerMethod_SubEvent) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use Remoting_TimingsManagerMethod_SubEvent.ProtoReflect.Descriptor instead.
 func (*Remoting_TimingsManagerMethod_SubEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26, 2}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23, 2}
 }
 
 func (x *Remoting_TimingsManagerMethod_SubEvent) GetEvent() *Remoting_TimingsManagerMethod_Event {
@@ -6029,7 +6286,7 @@ type Remoting_TimingsManagerMethod_SubInfo struct {
 
 func (x *Remoting_TimingsManagerMethod_SubInfo) Reset() {
 	*x = Remoting_TimingsManagerMethod_SubInfo{}
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[46]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6041,7 +6298,7 @@ func (x *Remoting_TimingsManagerMethod_SubInfo) String() string {
 func (*Remoting_TimingsManagerMethod_SubInfo) ProtoMessage() {}
 
 func (x *Remoting_TimingsManagerMethod_SubInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_remoting_proto_msgTypes[46]
+	mi := &file_yandex_io_protos_remoting_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6054,7 +6311,7 @@ func (x *Remoting_TimingsManagerMethod_SubInfo) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use Remoting_TimingsManagerMethod_SubInfo.ProtoReflect.Descriptor instead.
 func (*Remoting_TimingsManagerMethod_SubInfo) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{4, 26, 3}
+	return file_yandex_io_protos_remoting_proto_rawDescGZIP(), []int{5, 23, 3}
 }
 
 func (x *Remoting_TimingsManagerMethod_SubInfo) GetKey() string {
@@ -6089,7 +6346,15 @@ var File_yandex_io_protos_remoting_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\n" +
-	"\x1fyandex_io/protos/remoting.proto\x12\fquasar.proto\x1a\"yandex_io/protos/alice_state.proto\x1a.yandex_io/protos/alice_event/alice_event.proto\x1a#yandex_io/protos/fast_command.proto\x1a$yandex_io/protos/model_objects.proto\x1a;yandex_io/protos/capabilities/device_state_capability.proto\x1a2yandex_io/protos/video_summary/video_summary.proto\x1a<yandex_io/sdk/private/endpoint_storage/protos/endpoint.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\x1a=alice/library/restriction_level/protos/content_settings.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aBalice/protos/api/alicekit/client/alice_request/alice_request.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a'alice/protos/api/biometry/options.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a9alice/protos/endpoint/capabilities/alice/capability.proto\x1aEalice/protos/endpoint/capabilities/audio_file_player/capability.proto\x1a?alice/protos/endpoint/capabilities/file_upload/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a3alice/protos/data/external_entity_description.proto\x1a7alice/protos/data/scenario/reminders/device_state.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\"H\n" +
+	"\x1fyandex_io/protos/remoting.proto\x12\fquasar.proto\x1a\"yandex_io/protos/alice_state.proto\x1a.yandex_io/protos/alice_event/alice_event.proto\x1a#yandex_io/protos/fast_command.proto\x1a$yandex_io/protos/model_objects.proto\x1a;yandex_io/protos/capabilities/device_state_capability.proto\x1a<yandex_io/sdk/private/endpoint_storage/protos/endpoint.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\x1a=alice/library/restriction_level/protos/content_settings.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aBalice/protos/api/alicekit/client/alice_request/alice_request.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a'alice/protos/api/biometry/options.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a9alice/protos/endpoint/capabilities/alice/capability.proto\x1aEalice/protos/endpoint/capabilities/audio_file_player/capability.proto\x1a?alice/protos/endpoint/capabilities/file_upload/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a3alice/protos/data/external_entity_description.proto\x1a7alice/protos/data/scenario/reminders/device_state.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a2yandex_io/protos/video_summary/video_summary.proto\"\x80\x01\n" +
+	"\vSoundFormat\"q\n" +
+	"\x04Type\x12\v\n" +
+	"\aUNKNOWN\x10\x00\x12\a\n" +
+	"\x03PCM\x10\x01\x12\b\n" +
+	"\x04OPUS\x10\x02\x12\a\n" +
+	"\x03RAW\x10\x03\x12\x1a\n" +
+	"\x16HEADERLESS_OPUS_STREAM\x10\x04\x12$\n" +
+	" HEADERLESS_OPUS_STREAM_BYTE_SIZE\x10\x05\"H\n" +
 	"\fSoundQuality\"8\n" +
 	"\aQuality\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\a\n" +
@@ -6119,7 +6384,7 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\x12enable_punctuation\x18\x04 \x01(\bR\x11enablePunctuation\"\xb9\x01\n" +
 	"\x14VoiceServiceSettings\x12N\n" +
 	"\x12vocalizer_settings\x18\x01 \x01(\v2\x1f.quasar.proto.VocalizerSettingsR\x11vocalizerSettings\x12Q\n" +
-	"\x13recognizer_settings\x18\x02 \x01(\v2 .quasar.proto.RecognizerSettingsR\x12recognizerSettings\"\x8a\x9a\x01\n" +
+	"\x13recognizer_settings\x18\x02 \x01(\v2 .quasar.proto.RecognizerSettingsR\x12recognizerSettings\"\xa5\x9c\x01\n" +
 	"\bRemoting\x12(\n" +
 	"\x10remote_object_id\x18\a \x01(\tR\x0eremoteObjectId\x12\x1d\n" +
 	"\n" +
@@ -6304,11 +6569,11 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\rvins_response\x1a\xd6\x02\n" +
 	"\x1aFastCommandRequesterMethod\x12P\n" +
 	"\x06method\x18\x01 \x01(\x0e28.quasar.proto.Remoting.FastCommandRequesterMethod.MethodR\x06method\x127\n" +
-	"\fevent_source\x18\x04 \x01(\v2\x14.NAlice.TEventSourceR\veventSource\x12\x1d\n" +
-	"\n" +
-	"request_id\x18\x05 \x01(\tR\trequestId\x12'\n" +
+	"\fevent_source\x18\x04 \x01(\v2\x14.NAlice.TEventSourceR\veventSource\x12'\n" +
 	"\x0estring_command\x18\x02 \x01(\tH\x00R\rstringCommand\x12>\n" +
-	"\ffast_command\x18\x03 \x01(\v2\x19.quasar.proto.FastCommandH\x00R\vfastCommand\"\x1a\n" +
+	"\ffast_command\x18\x03 \x01(\v2\x19.quasar.proto.FastCommandH\x00R\vfastCommand\x12\x1d\n" +
+	"\n" +
+	"request_id\x18\x05 \x01(\tR\trequestId\"\x1a\n" +
 	"\x06Method\x12\x10\n" +
 	"\fSEND_REQUEST\x10\x00B\t\n" +
 	"\acommand\x1a\xa4\x03\n" +
@@ -6407,7 +6672,7 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\x06Method\x12\x12\n" +
 	"\x0eON_MODEL_ERROR\x10\x00\x12\x10\n" +
 	"\fON_MODEL_SET\x10\x01\x12\x15\n" +
-	"\x11ON_PHRASE_SPOTTED\x10\x02\x1a\xbc!\n" +
+	"\x11ON_PHRASE_SPOTTED\x10\x02\x1a\x83\"\n" +
 	"\x1bDeviceStateCapabilityMethod\x12T\n" +
 	"\x0fbluetooth_state\x18\x01 \x01(\v2).NAlice.NAliceApi.TDeviceState.TBluetoothH\x00R\x0ebluetoothState\x12H\n" +
 	"\vmusic_state\x18\x03 \x01(\v2%.NAlice.NAliceApi.TDeviceState.TMusicH\x00R\n" +
@@ -6422,7 +6687,8 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\vvideo_state\x18\t \x01(\v2%.NAlice.NAliceApi.TDeviceState.TVideoH\x00R\n" +
 	"videoState\x12G\n" +
 	"\trcu_state\x18\n" +
-	" \x01(\v2(.NAlice.NAliceApi.TDeviceState.TRcuStateH\x00R\brcuState\x12T\n" +
+	" \x01(\v2(.NAlice.NAliceApi.TDeviceState.TRcuStateH\x00R\brcuState\x12K\n" +
+	"\fscreen_state\x18\v \x01(\v2&.NAlice.NAliceApi.TDeviceState.TScreenH\x00R\vscreenState\x12T\n" +
 	"\x0fmultiroom_state\x18\f \x01(\v2).NAlice.NAliceApi.TDeviceState.TMultiroomH\x00R\x0emultiroomState\x12V\n" +
 	"\x0epackages_state\x18\r \x01(\v2-.NAlice.NAliceApi.TDeviceState.TPackagesStateH\x00R\rpackagesState\x12=\n" +
 	"\vexperiments\x18\x0e \x01(\v2\x19.NAlice.TExperimentsProtoH\x00R\vexperiments\x12K\n" +
@@ -6474,7 +6740,7 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\x17InternetConnectionState\x12c\n" +
 	"\x13internet_connection\x18\x01 \x01(\v22.NAlice.NAliceApi.TDeviceState.TInternetConnectionR\x12internetConnection\x12W\n" +
 	"\x06status\x18\x02 \x01(\v2?.NAlice.TDeviceStateCapability.TState.TInternetConnectionStatusR\x06statusB\a\n" +
-	"\x05valueJ\x04\b\x1d\x10\x1eJ\x04\b\x02\x10\x03J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x14\x10\x15J\x04\b\x1e\x10\x1fJ\x04\b\x19\x10\x1aJ\x04\b/\x100J\x04\b\v\x10\f\x1a\xd9\x03\n" +
+	"\x05valueJ\x04\b\x1d\x10\x1eJ\x04\b\x02\x10\x03J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x14\x10\x15J\x04\b\x1e\x10\x1fJ\x04\b\x19\x10\x1aJ\x04\b/\x100\x1a\xd9\x03\n" +
 	"\x19VocalizerCapabilityMethod\x12O\n" +
 	"\x06method\x18\x01 \x01(\x0e27.quasar.proto.Remoting.VocalizerCapabilityMethod.MethodR\x06method\x12\x12\n" +
 	"\x04text\x18\x02 \x01(\tR\x04text\x12S\n" +
@@ -6492,62 +6758,28 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\fSET_SETTINGS\x10\x05\"Y\n" +
 	"\x0eSynthesizeMode\x12!\n" +
 	"\x1dTEXT_SYNTHESIZING_MODE_APPEND\x10\x00\x12$\n" +
-	" TEXT_SYNTHESIZING_MODE_INTERRUPT\x10\x01\x1a\x8e\x03\n" +
+	" TEXT_SYNTHESIZING_MODE_INTERRUPT\x10\x01\x1a\xe2\x04\n" +
 	"!VocalizerCapabilityListenerMethod\x12W\n" +
 	"\x06method\x18\x01 \x01(\x0e2?.quasar.proto.Remoting.VocalizerCapabilityListenerMethod.MethodR\x06method\x12\x1d\n" +
 	"\n" +
 	"error_code\x18\x02 \x01(\x05R\terrorCode\x12#\n" +
-	"\rerror_message\x18\x03 \x01(\tR\ferrorMessage\x126\n" +
+	"\rerror_message\x18\x03 \x01(\tR\ferrorMessage\x12a\n" +
 	"\n" +
-	"sound_info\x18\x04 \x01(\v2\x17.quasar.proto.SoundInfoR\tsoundInfo\x12\x16\n" +
-	"\x06buffer\x18\x05 \x01(\fR\x06buffer\"|\n" +
+	"sound_info\x18\x04 \x01(\v2B.quasar.proto.Remoting.VocalizerCapabilityListenerMethod.SoundInfoR\tsoundInfo\x12\x16\n" +
+	"\x06buffer\x18\x05 \x01(\fR\x06buffer\x1a\xa6\x01\n" +
+	"\tSoundInfo\x12#\n" +
+	"\rchannel_count\x18\x01 \x01(\x03R\fchannelCount\x12\x1f\n" +
+	"\vsample_rate\x18\x02 \x01(\x03R\n" +
+	"sampleRate\x12\x1f\n" +
+	"\vsample_size\x18\x03 \x01(\x03R\n" +
+	"sampleSize\x122\n" +
+	"\x04type\x18\x04 \x01(\x0e2\x1e.quasar.proto.SoundFormat.TypeR\x04type\"|\n" +
 	"\x06Method\x12\x14\n" +
 	"\x10ON_PLAYING_BEGIN\x10\x00\x12\x13\n" +
 	"\x0fON_PLAYING_DONE\x10\x01\x12\x16\n" +
 	"\x12ON_VOCALIZER_ERROR\x10\x02\x12\x15\n" +
 	"\x11ON_SYNTHESIS_DONE\x10\x03\x12\x18\n" +
-	"\x14ON_PARTIAL_SYNTHESIS\x10\x04\x1a\xe2\x01\n" +
-	"\x18RoutingAudioPlayerMethod\x12N\n" +
-	"\x06method\x18\x01 \x01(\x0e26.quasar.proto.Remoting.RoutingAudioPlayerMethod.MethodR\x06method\x12\x1f\n" +
-	"\vendpoint_id\x18\x02 \x01(\tR\n" +
-	"endpointId\x12(\n" +
-	"\x10player_object_id\x18\x03 \x01(\tR\x0eplayerObjectId\"+\n" +
-	"\x06Method\x12\x0e\n" +
-	"\n" +
-	"ADD_PLAYER\x10\x00\x12\x11\n" +
-	"\rREMOVE_PLAYER\x10\x01\x1a\xd9\x02\n" +
-	"\x11AudioPlayerMethod\x12G\n" +
-	"\x06method\x18\x01 \x01(\x0e2/.quasar.proto.Remoting.AudioPlayerMethod.MethodR\x06method\x126\n" +
-	"\n" +
-	"sound_info\x18\x02 \x01(\v2\x17.quasar.proto.SoundInfoR\tsoundInfo\x12\x16\n" +
-	"\x06buffer\x18\x03 \x01(\fR\x06buffer\x127\n" +
-	"\fevent_source\x18\x04 \x01(\v2\x14.NAlice.TEventSourceR\veventSource\x12\x16\n" +
-	"\x06volume\x18\x05 \x01(\x02R\x06volume\"Z\n" +
-	"\x06Method\x12\b\n" +
-	"\x04PLAY\x10\x00\x12\t\n" +
-	"\x05PAUSE\x10\x01\x12\n" +
-	"\n" +
-	"\x06CANCEL\x10\x02\x12\r\n" +
-	"\tPLAY_DATA\x10\x03\x12\x10\n" +
-	"\fSET_DATA_END\x10\x04\x12\x0e\n" +
-	"\n" +
-	"SET_VOLUME\x10\x05\x1a\xa8\x03\n" +
-	"\x19AudioPlayerListenerMethod\x12O\n" +
-	"\x06method\x18\x01 \x01(\x0e27.quasar.proto.Remoting.AudioPlayerListenerMethod.MethodR\x06method\x126\n" +
-	"\n" +
-	"sound_info\x18\x02 \x01(\v2\x17.quasar.proto.SoundInfoR\tsoundInfo\x12\x16\n" +
-	"\x06buffer\x18\x03 \x01(\fR\x06buffer\x12\x1d\n" +
-	"\n" +
-	"error_code\x18\x04 \x01(\x05R\terrorCode\x12#\n" +
-	"\rerror_message\x18\x05 \x01(\tR\ferrorMessage\"\xa5\x01\n" +
-	"\x06Method\x12\x14\n" +
-	"\x10ON_PLAYING_BEGIN\x10\x00\x12\x15\n" +
-	"\x11ON_PLAYING_PAUSED\x10\x01\x12\x16\n" +
-	"\x12ON_PLAYING_RESUMED\x10\x02\x12\x13\n" +
-	"\x0fON_PLAYING_DONE\x10\x03\x12\x13\n" +
-	"\x0fON_PLAYING_DATA\x10\x04\x12\x14\n" +
-	"\x10ON_PLAYING_ERROR\x10\x05\x12\x16\n" +
-	"\x12ON_BUFFER_UNDERRUN\x10\x06\x1a\xaf\x04\n" +
+	"\x14ON_PARTIAL_SYNTHESIS\x10\x04\x1a\xaf\x04\n" +
 	"\x18DirectiveSequencerMethod\x12N\n" +
 	"\x06method\x18\x01 \x01(\x0e26.quasar.proto.Remoting.DirectiveSequencerMethod.MethodR\x06method\x125\n" +
 	"\tdirective\x18\x02 \x01(\v2\x17.quasar.proto.DirectiveR\tdirective\x127\n" +
@@ -6620,9 +6852,57 @@ const file_yandex_io_protos_remoting_proto_rawDesc = "" +
 	"\x06Method\x12\r\n" +
 	"\tPUT_EVENT\x10\x00\x12\f\n" +
 	"\bADD_META\x10\x01\x12\x12\n" +
-	"\x0eFLUSH_TIMELINE\x10\x02B\b\n" +
-	"\x06methodJ\x04\b\x04\x10\x05J\x04\b\v\x10\fJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eB*\n" +
-	"\x19ru.yandex.quasar.protobufB\rRemotingProto"
+	"\x0eFLUSH_TIMELINE\x10\x02\x1a\xe2\x01\n" +
+	"\x18RoutingAudioPlayerMethod\x12N\n" +
+	"\x06method\x18\x01 \x01(\x0e26.quasar.proto.Remoting.RoutingAudioPlayerMethod.MethodR\x06method\x12\x1f\n" +
+	"\vendpoint_id\x18\x02 \x01(\tR\n" +
+	"endpointId\x12(\n" +
+	"\x10player_object_id\x18\x03 \x01(\tR\x0eplayerObjectId\"+\n" +
+	"\x06Method\x12\x0e\n" +
+	"\n" +
+	"ADD_PLAYER\x10\x00\x12\x11\n" +
+	"\rREMOVE_PLAYER\x10\x01\x1a\xd9\x02\n" +
+	"\x11AudioPlayerMethod\x12G\n" +
+	"\x06method\x18\x01 \x01(\x0e2/.quasar.proto.Remoting.AudioPlayerMethod.MethodR\x06method\x126\n" +
+	"\n" +
+	"sound_info\x18\x02 \x01(\v2\x17.quasar.proto.SoundInfoR\tsoundInfo\x12\x16\n" +
+	"\x06buffer\x18\x03 \x01(\fR\x06buffer\x127\n" +
+	"\fevent_source\x18\x04 \x01(\v2\x14.NAlice.TEventSourceR\veventSource\x12\x16\n" +
+	"\x06volume\x18\x05 \x01(\x02R\x06volume\"Z\n" +
+	"\x06Method\x12\b\n" +
+	"\x04PLAY\x10\x00\x12\t\n" +
+	"\x05PAUSE\x10\x01\x12\n" +
+	"\n" +
+	"\x06CANCEL\x10\x02\x12\r\n" +
+	"\tPLAY_DATA\x10\x03\x12\x10\n" +
+	"\fSET_DATA_END\x10\x04\x12\x0e\n" +
+	"\n" +
+	"SET_VOLUME\x10\x05\x1a\xa8\x03\n" +
+	"\x19AudioPlayerListenerMethod\x12O\n" +
+	"\x06method\x18\x01 \x01(\x0e27.quasar.proto.Remoting.AudioPlayerListenerMethod.MethodR\x06method\x126\n" +
+	"\n" +
+	"sound_info\x18\x02 \x01(\v2\x17.quasar.proto.SoundInfoR\tsoundInfo\x12\x16\n" +
+	"\x06buffer\x18\x03 \x01(\fR\x06buffer\x12\x1d\n" +
+	"\n" +
+	"error_code\x18\x04 \x01(\x05R\terrorCode\x12#\n" +
+	"\rerror_message\x18\x05 \x01(\tR\ferrorMessage\"\xa5\x01\n" +
+	"\x06Method\x12\x14\n" +
+	"\x10ON_PLAYING_BEGIN\x10\x00\x12\x15\n" +
+	"\x11ON_PLAYING_PAUSED\x10\x01\x12\x16\n" +
+	"\x12ON_PLAYING_RESUMED\x10\x02\x12\x13\n" +
+	"\x0fON_PLAYING_DONE\x10\x03\x12\x13\n" +
+	"\x0fON_PLAYING_DATA\x10\x04\x12\x14\n" +
+	"\x10ON_PLAYING_ERROR\x10\x05\x12\x16\n" +
+	"\x12ON_BUFFER_UNDERRUN\x10\x06B\b\n" +
+	"\x06methodJ\x04\b\x04\x10\x05J\x04\b\v\x10\fJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1e\"\xa6\x01\n" +
+	"\tSoundInfo\x12#\n" +
+	"\rchannel_count\x18\x01 \x01(\x03R\fchannelCount\x12\x1f\n" +
+	"\vsample_rate\x18\x02 \x01(\x03R\n" +
+	"sampleRate\x12\x1f\n" +
+	"\vsample_size\x18\x03 \x01(\x03R\n" +
+	"sampleSize\x122\n" +
+	"\x04type\x18\x04 \x01(\x0e2\x1e.quasar.proto.SoundFormat.TypeR\x04typeB\xb4\x01\n" +
+	"\x10com.quasar.protoB\rRemotingProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_remoting_proto_rawDescOnce sync.Once
@@ -6636,299 +6916,305 @@ func file_yandex_io_protos_remoting_proto_rawDescGZIP() []byte {
 	return file_yandex_io_protos_remoting_proto_rawDescData
 }
 
-var file_yandex_io_protos_remoting_proto_enumTypes = make([]protoimpl.EnumInfo, 24)
-var file_yandex_io_protos_remoting_proto_msgTypes = make([]protoimpl.MessageInfo, 47)
+var file_yandex_io_protos_remoting_proto_enumTypes = make([]protoimpl.EnumInfo, 25)
+var file_yandex_io_protos_remoting_proto_msgTypes = make([]protoimpl.MessageInfo, 50)
 var file_yandex_io_protos_remoting_proto_goTypes = []any{
-	(SoundQuality_Quality)(0),                                                          // 0: quasar.proto.SoundQuality.Quality
-	(Remoting_DirectiveHandlerMethod_Method)(0),                                        // 1: quasar.proto.Remoting.DirectiveHandlerMethod.Method
-	(Remoting_EndpointStorageMethod_Method)(0),                                         // 2: quasar.proto.Remoting.EndpointStorageMethod.Method
-	(Remoting_EndpointMethod_Method)(0),                                                // 3: quasar.proto.Remoting.EndpointMethod.Method
-	(Remoting_AliceCapabilityMethod_Method)(0),                                         // 4: quasar.proto.Remoting.AliceCapabilityMethod.Method
-	(Remoting_AliceCapabilityListenerMethod_Method)(0),                                 // 5: quasar.proto.Remoting.AliceCapabilityListenerMethod.Method
-	(Remoting_AliceRequestEventsMethod_Method)(0),                                      // 6: quasar.proto.Remoting.AliceRequestEventsMethod.Method
-	(Remoting_FastCommandRequesterMethod_Method)(0),                                    // 7: quasar.proto.Remoting.FastCommandRequesterMethod.Method
-	(Remoting_FastCommandRequesterListenerMethod_Method)(0),                            // 8: quasar.proto.Remoting.FastCommandRequesterListenerMethod.Method
-	(Remoting_FilePlayerCapabilityMethod_Method)(0),                                    // 9: quasar.proto.Remoting.FilePlayerCapabilityMethod.Method
-	(Remoting_PlaybackControlCapabilityMethod_Method)(0),                               // 10: quasar.proto.Remoting.PlaybackControlCapabilityMethod.Method
-	(Remoting_SpotterCapabilityMethod_Method)(0),                                       // 11: quasar.proto.Remoting.SpotterCapabilityMethod.Method
-	(Remoting_SpotterCapabilityListenerMethod_Method)(0),                               // 12: quasar.proto.Remoting.SpotterCapabilityListenerMethod.Method
-	(Remoting_VocalizerCapabilityMethod_Method)(0),                                     // 13: quasar.proto.Remoting.VocalizerCapabilityMethod.Method
-	(Remoting_VocalizerCapabilityMethod_SynthesizeMode)(0),                             // 14: quasar.proto.Remoting.VocalizerCapabilityMethod.SynthesizeMode
-	(Remoting_VocalizerCapabilityListenerMethod_Method)(0),                             // 15: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.Method
-	(Remoting_RoutingAudioPlayerMethod_Method)(0),                                      // 16: quasar.proto.Remoting.RoutingAudioPlayerMethod.Method
-	(Remoting_AudioPlayerMethod_Method)(0),                                             // 17: quasar.proto.Remoting.AudioPlayerMethod.Method
-	(Remoting_AudioPlayerListenerMethod_Method)(0),                                     // 18: quasar.proto.Remoting.AudioPlayerListenerMethod.Method
-	(Remoting_DirectiveSequencerMethod_Method)(0),                                      // 19: quasar.proto.Remoting.DirectiveSequencerMethod.Method
-	(Remoting_DirectiveSequencerListenerMethod_Method)(0),                              // 20: quasar.proto.Remoting.DirectiveSequencerListenerMethod.Method
-	(Remoting_TandemCapabilityListenerMethod_Method)(0),                                // 21: quasar.proto.Remoting.TandemCapabilityListenerMethod.Method
-	(Remoting_ClockStorageMethod_Method)(0),                                            // 22: quasar.proto.Remoting.ClockStorageMethod.Method
-	(Remoting_TimingsManagerMethod_Method)(0),                                          // 23: quasar.proto.Remoting.TimingsManagerMethod.Method
-	(*SoundQuality)(nil),                                                               // 24: quasar.proto.SoundQuality
-	(*VocalizerSettings)(nil),                                                          // 25: quasar.proto.VocalizerSettings
-	(*RecognizerSettings)(nil),                                                         // 26: quasar.proto.RecognizerSettings
-	(*VoiceServiceSettings)(nil),                                                       // 27: quasar.proto.VoiceServiceSettings
-	(*Remoting)(nil),                                                                   // 28: quasar.proto.Remoting
-	(*Remoting_DirectiveHandlerMethod)(nil),                                            // 29: quasar.proto.Remoting.DirectiveHandlerMethod
-	(*Remoting_CapabilityStateChangedMethod)(nil),                                      // 30: quasar.proto.Remoting.CapabilityStateChangedMethod
-	(*Remoting_CapabilityAddListenerMethod)(nil),                                       // 31: quasar.proto.Remoting.CapabilityAddListenerMethod
-	(*Remoting_CapabilityEventsMethod)(nil),                                            // 32: quasar.proto.Remoting.CapabilityEventsMethod
-	(*Remoting_EndpointStorageMethod)(nil),                                             // 33: quasar.proto.Remoting.EndpointStorageMethod
-	(*Remoting_EndpointMethod)(nil),                                                    // 34: quasar.proto.Remoting.EndpointMethod
-	(*Remoting_AliceCapabilityMethod)(nil),                                             // 35: quasar.proto.Remoting.AliceCapabilityMethod
-	(*Remoting_AliceCapabilityListenerMethod)(nil),                                     // 36: quasar.proto.Remoting.AliceCapabilityListenerMethod
-	(*Remoting_AliceRequestEventsMethod)(nil),                                          // 37: quasar.proto.Remoting.AliceRequestEventsMethod
-	(*Remoting_FastCommandRequesterMethod)(nil),                                        // 38: quasar.proto.Remoting.FastCommandRequesterMethod
-	(*Remoting_FastCommandRequesterListenerMethod)(nil),                                // 39: quasar.proto.Remoting.FastCommandRequesterListenerMethod
-	(*Remoting_FilePlayerCapabilityMethod)(nil),                                        // 40: quasar.proto.Remoting.FilePlayerCapabilityMethod
-	(*Remoting_FilePlayerCapabilityEventsMethod)(nil),                                  // 41: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod
-	(*Remoting_PlaybackControlCapabilityMethod)(nil),                                   // 42: quasar.proto.Remoting.PlaybackControlCapabilityMethod
-	(*Remoting_SpotterCapabilityMethod)(nil),                                           // 43: quasar.proto.Remoting.SpotterCapabilityMethod
-	(*Remoting_SpotterCapabilityListenerMethod)(nil),                                   // 44: quasar.proto.Remoting.SpotterCapabilityListenerMethod
-	(*Remoting_DeviceStateCapabilityMethod)(nil),                                       // 45: quasar.proto.Remoting.DeviceStateCapabilityMethod
-	(*Remoting_VocalizerCapabilityMethod)(nil),                                         // 46: quasar.proto.Remoting.VocalizerCapabilityMethod
-	(*Remoting_VocalizerCapabilityListenerMethod)(nil),                                 // 47: quasar.proto.Remoting.VocalizerCapabilityListenerMethod
-	(*Remoting_RoutingAudioPlayerMethod)(nil),                                          // 48: quasar.proto.Remoting.RoutingAudioPlayerMethod
-	(*Remoting_AudioPlayerMethod)(nil),                                                 // 49: quasar.proto.Remoting.AudioPlayerMethod
-	(*Remoting_AudioPlayerListenerMethod)(nil),                                         // 50: quasar.proto.Remoting.AudioPlayerListenerMethod
+	(SoundFormat_Type)(0),                                                              // 0: quasar.proto.SoundFormat.Type
+	(SoundQuality_Quality)(0),                                                          // 1: quasar.proto.SoundQuality.Quality
+	(Remoting_DirectiveHandlerMethod_Method)(0),                                        // 2: quasar.proto.Remoting.DirectiveHandlerMethod.Method
+	(Remoting_EndpointStorageMethod_Method)(0),                                         // 3: quasar.proto.Remoting.EndpointStorageMethod.Method
+	(Remoting_EndpointMethod_Method)(0),                                                // 4: quasar.proto.Remoting.EndpointMethod.Method
+	(Remoting_AliceCapabilityMethod_Method)(0),                                         // 5: quasar.proto.Remoting.AliceCapabilityMethod.Method
+	(Remoting_AliceCapabilityListenerMethod_Method)(0),                                 // 6: quasar.proto.Remoting.AliceCapabilityListenerMethod.Method
+	(Remoting_AliceRequestEventsMethod_Method)(0),                                      // 7: quasar.proto.Remoting.AliceRequestEventsMethod.Method
+	(Remoting_FastCommandRequesterMethod_Method)(0),                                    // 8: quasar.proto.Remoting.FastCommandRequesterMethod.Method
+	(Remoting_FastCommandRequesterListenerMethod_Method)(0),                            // 9: quasar.proto.Remoting.FastCommandRequesterListenerMethod.Method
+	(Remoting_FilePlayerCapabilityMethod_Method)(0),                                    // 10: quasar.proto.Remoting.FilePlayerCapabilityMethod.Method
+	(Remoting_PlaybackControlCapabilityMethod_Method)(0),                               // 11: quasar.proto.Remoting.PlaybackControlCapabilityMethod.Method
+	(Remoting_SpotterCapabilityMethod_Method)(0),                                       // 12: quasar.proto.Remoting.SpotterCapabilityMethod.Method
+	(Remoting_SpotterCapabilityListenerMethod_Method)(0),                               // 13: quasar.proto.Remoting.SpotterCapabilityListenerMethod.Method
+	(Remoting_VocalizerCapabilityMethod_Method)(0),                                     // 14: quasar.proto.Remoting.VocalizerCapabilityMethod.Method
+	(Remoting_VocalizerCapabilityMethod_SynthesizeMode)(0),                             // 15: quasar.proto.Remoting.VocalizerCapabilityMethod.SynthesizeMode
+	(Remoting_VocalizerCapabilityListenerMethod_Method)(0),                             // 16: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.Method
+	(Remoting_DirectiveSequencerMethod_Method)(0),                                      // 17: quasar.proto.Remoting.DirectiveSequencerMethod.Method
+	(Remoting_DirectiveSequencerListenerMethod_Method)(0),                              // 18: quasar.proto.Remoting.DirectiveSequencerListenerMethod.Method
+	(Remoting_TandemCapabilityListenerMethod_Method)(0),                                // 19: quasar.proto.Remoting.TandemCapabilityListenerMethod.Method
+	(Remoting_ClockStorageMethod_Method)(0),                                            // 20: quasar.proto.Remoting.ClockStorageMethod.Method
+	(Remoting_TimingsManagerMethod_Method)(0),                                          // 21: quasar.proto.Remoting.TimingsManagerMethod.Method
+	(Remoting_RoutingAudioPlayerMethod_Method)(0),                                      // 22: quasar.proto.Remoting.RoutingAudioPlayerMethod.Method
+	(Remoting_AudioPlayerMethod_Method)(0),                                             // 23: quasar.proto.Remoting.AudioPlayerMethod.Method
+	(Remoting_AudioPlayerListenerMethod_Method)(0),                                     // 24: quasar.proto.Remoting.AudioPlayerListenerMethod.Method
+	(*SoundFormat)(nil),                                                                // 25: quasar.proto.SoundFormat
+	(*SoundQuality)(nil),                                                               // 26: quasar.proto.SoundQuality
+	(*VocalizerSettings)(nil),                                                          // 27: quasar.proto.VocalizerSettings
+	(*RecognizerSettings)(nil),                                                         // 28: quasar.proto.RecognizerSettings
+	(*VoiceServiceSettings)(nil),                                                       // 29: quasar.proto.VoiceServiceSettings
+	(*Remoting)(nil),                                                                   // 30: quasar.proto.Remoting
+	(*SoundInfo)(nil),                                                                  // 31: quasar.proto.SoundInfo
+	(*Remoting_DirectiveHandlerMethod)(nil),                                            // 32: quasar.proto.Remoting.DirectiveHandlerMethod
+	(*Remoting_CapabilityStateChangedMethod)(nil),                                      // 33: quasar.proto.Remoting.CapabilityStateChangedMethod
+	(*Remoting_CapabilityAddListenerMethod)(nil),                                       // 34: quasar.proto.Remoting.CapabilityAddListenerMethod
+	(*Remoting_CapabilityEventsMethod)(nil),                                            // 35: quasar.proto.Remoting.CapabilityEventsMethod
+	(*Remoting_EndpointStorageMethod)(nil),                                             // 36: quasar.proto.Remoting.EndpointStorageMethod
+	(*Remoting_EndpointMethod)(nil),                                                    // 37: quasar.proto.Remoting.EndpointMethod
+	(*Remoting_AliceCapabilityMethod)(nil),                                             // 38: quasar.proto.Remoting.AliceCapabilityMethod
+	(*Remoting_AliceCapabilityListenerMethod)(nil),                                     // 39: quasar.proto.Remoting.AliceCapabilityListenerMethod
+	(*Remoting_AliceRequestEventsMethod)(nil),                                          // 40: quasar.proto.Remoting.AliceRequestEventsMethod
+	(*Remoting_FastCommandRequesterMethod)(nil),                                        // 41: quasar.proto.Remoting.FastCommandRequesterMethod
+	(*Remoting_FastCommandRequesterListenerMethod)(nil),                                // 42: quasar.proto.Remoting.FastCommandRequesterListenerMethod
+	(*Remoting_FilePlayerCapabilityMethod)(nil),                                        // 43: quasar.proto.Remoting.FilePlayerCapabilityMethod
+	(*Remoting_FilePlayerCapabilityEventsMethod)(nil),                                  // 44: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod
+	(*Remoting_PlaybackControlCapabilityMethod)(nil),                                   // 45: quasar.proto.Remoting.PlaybackControlCapabilityMethod
+	(*Remoting_SpotterCapabilityMethod)(nil),                                           // 46: quasar.proto.Remoting.SpotterCapabilityMethod
+	(*Remoting_SpotterCapabilityListenerMethod)(nil),                                   // 47: quasar.proto.Remoting.SpotterCapabilityListenerMethod
+	(*Remoting_DeviceStateCapabilityMethod)(nil),                                       // 48: quasar.proto.Remoting.DeviceStateCapabilityMethod
+	(*Remoting_VocalizerCapabilityMethod)(nil),                                         // 49: quasar.proto.Remoting.VocalizerCapabilityMethod
+	(*Remoting_VocalizerCapabilityListenerMethod)(nil),                                 // 50: quasar.proto.Remoting.VocalizerCapabilityListenerMethod
 	(*Remoting_DirectiveSequencerMethod)(nil),                                          // 51: quasar.proto.Remoting.DirectiveSequencerMethod
 	(*Remoting_DirectiveSequencerListenerMethod)(nil),                                  // 52: quasar.proto.Remoting.DirectiveSequencerListenerMethod
 	(*Remoting_TandemCapabilityListenerMethod)(nil),                                    // 53: quasar.proto.Remoting.TandemCapabilityListenerMethod
 	(*Remoting_ClockStorageMethod)(nil),                                                // 54: quasar.proto.Remoting.ClockStorageMethod
 	(*Remoting_TimingsManagerMethod)(nil),                                              // 55: quasar.proto.Remoting.TimingsManagerMethod
-	(*Remoting_AliceCapabilityListenerMethod_TFileUploadEvent)(nil),                    // 56: quasar.proto.Remoting.AliceCapabilityListenerMethod.TFileUploadEvent
-	(*Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams)(nil),                   // 57: quasar.proto.Remoting.FilePlayerCapabilityMethod.FilePlayerPlayParams
-	(*Remoting_SpotterCapabilityMethod_ModelPath)(nil),                                 // 58: quasar.proto.Remoting.SpotterCapabilityMethod.ModelPath
-	(*Remoting_DeviceStateCapabilityMethod_SupportedFeatures)(nil),                     // 59: quasar.proto.Remoting.DeviceStateCapabilityMethod.SupportedFeatures
-	(*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures)(nil),                   // 60: quasar.proto.Remoting.DeviceStateCapabilityMethod.UnsupportedFeatures
-	(*Remoting_DeviceStateCapabilityMethod_VolumeState)(nil),                           // 61: quasar.proto.Remoting.DeviceStateCapabilityMethod.VolumeState
-	(*Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings)(nil),           // 62: quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings
-	(*Remoting_DeviceStateCapabilityMethod_Permissions)(nil),                           // 63: quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions
-	(*Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions)(nil),            // 64: quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions
-	(*Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities)(nil),             // 65: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities
-	(*Remoting_DeviceStateCapabilityMethod_InternetConnectionState)(nil),               // 66: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState
-	(*Remoting_TimingsManagerMethod_Event)(nil),                                        // 67: quasar.proto.Remoting.TimingsManagerMethod.Event
-	(*Remoting_TimingsManagerMethod_Meta)(nil),                                         // 68: quasar.proto.Remoting.TimingsManagerMethod.Meta
-	(*Remoting_TimingsManagerMethod_SubEvent)(nil),                                     // 69: quasar.proto.Remoting.TimingsManagerMethod.SubEvent
-	(*Remoting_TimingsManagerMethod_SubInfo)(nil),                                      // 70: quasar.proto.Remoting.TimingsManagerMethod.SubInfo
-	(SoundFormat_Type)(0),                                                              // 71: quasar.proto.SoundFormat.Type
-	(*protos.Directive)(nil),                                                           // 72: quasar.proto.Directive
-	(*protos1.Capability)(nil),                                                         // 73: quasar.proto.Capability
-	(*events.TCapabilityEvent)(nil),                                                    // 74: NAlice.TCapabilityEvent
-	(*protos1.Endpoint)(nil),                                                           // 75: quasar.proto.Endpoint
-	(*endpoint.TEndpoint)(nil),                                                         // 76: NAlice.TEndpoint
-	(*VinsRequest)(nil),                                                                // 77: quasar.proto.VinsRequest
-	(audio_file_player.TAudioFilePlayerCapability_EStoredSound)(0),                     // 78: NAlice.TAudioFilePlayerCapability.EStoredSound
-	(*alice.TAliceCapability_TVocalizeDirective)(nil),                                  // 79: NAlice.TAliceCapability.TVocalizeDirective
-	(dialog_type.EDialogType)(0),                                                       // 80: NAlice.NData.EDialogType
-	(*alice_mode_info.TAlice2ModeInfo)(nil),                                            // 81: NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
-	(*alice.TAliceCapability_TStartDataInputDirective)(nil),                            // 82: NAlice.TAliceCapability.TStartDataInputDirective
-	(*alice_request.TAliceRequest)(nil),                                                // 83: NAlice.NAliceApi.TAliceRequest
-	(*file_upload.TFileUploadCapability_TStartFileUploadDirective)(nil),                // 84: NAlice.TFileUploadCapability.TStartFileUploadDirective
-	(*alice.TAliceCapability_TStartRecognizeDirective)(nil),                            // 85: NAlice.TAliceCapability.TStartRecognizeDirective
-	(*AliceState)(nil),                                                                 // 86: quasar.proto.AliceState
-	(AliceState_Error)(0),                                                              // 87: quasar.proto.AliceState.Error
-	(*AllStartupSettings)(nil),                                                         // 88: quasar.proto.AllStartupSettings
-	(*alice_event.TAliceEvent)(nil),                                                    // 89: quasar.proto.TAliceEvent
-	(*alice_response.TAliceResponseProto)(nil),                                         // 90: NAlice.NAliceApi.TAliceResponseProto
-	(*event_source.TEventSource)(nil),                                                  // 91: NAlice.TEventSource
-	(*FastCommand)(nil),                                                                // 92: quasar.proto.FastCommand
-	(protos1.AudioChannel)(0),                                                          // 93: quasar.proto.AudioChannel
-	(*DirectiveEvent)(nil),                                                             // 94: quasar.proto.DirectiveEvent
-	(*EmptyMessage)(nil),                                                               // 95: quasar.proto.EmptyMessage
-	(*AudioClientEvent)(nil),                                                           // 96: quasar.proto.AudioClientEvent
-	(MediaRequest_RewindType)(0),                                                       // 97: quasar.proto.MediaRequest.RewindType
-	(*device_state.TDeviceState_TBluetooth)(nil),                                       // 98: NAlice.NAliceApi.TDeviceState.TBluetooth
-	(*device_state.TDeviceState_TMusic)(nil),                                           // 99: NAlice.NAliceApi.TDeviceState.TMusic
-	(*structpb.Struct)(nil),                                                            // 100: google.protobuf.Struct
-	(*device_state.TDeviceState_TLastWatched)(nil),                                     // 101: NAlice.NAliceApi.TDeviceState.TLastWatched
-	(*device_state.TDeviceState_TVideo)(nil),                                           // 102: NAlice.NAliceApi.TDeviceState.TVideo
-	(*device_state.TDeviceState_TRcuState)(nil),                                        // 103: NAlice.NAliceApi.TDeviceState.TRcuState
-	(*device_state.TDeviceState_TMultiroom)(nil),                                       // 104: NAlice.NAliceApi.TDeviceState.TMultiroom
-	(*device_state.TDeviceState_TPackagesState)(nil),                                   // 105: NAlice.NAliceApi.TDeviceState.TPackagesState
-	(*experiments.TExperimentsProto)(nil),                                              // 106: NAlice.TExperimentsProto
-	(*enrollment_headers.TEnrollmentHeaders)(nil),                                      // 107: NAlice.TEnrollmentHeaders
-	(*environment_state.TEnvironmentDeviceInfo)(nil),                                   // 108: NAlice.NAliceApi.TEnvironmentDeviceInfo
-	(*device_state.TDeviceState_TBattery)(nil),                                         // 109: NAlice.NAliceApi.TDeviceState.TBattery
-	(*device_state.TDeviceState_TClockDisplayState)(nil),                               // 110: NAlice.NAliceApi.TDeviceState.TClockDisplayState
-	(*device_state.TDeviceState_TDeviceConfig)(nil),                                    // 111: NAlice.NAliceApi.TDeviceState.TDeviceConfig
-	(*device_state.TDeviceState_TAppScreenInfo)(nil),                                   // 112: NAlice.NAliceApi.TDeviceState.TAppScreenInfo
-	(*reminders.TDeviceRemindersState)(nil),                                            // 113: NAlice.NData.NReminders.TDeviceRemindersState
-	(*alice_request1.TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions)(nil), // 114: NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
-	(*device_state.TDeviceState)(nil),                                                  // 115: NAlice.NAliceApi.TDeviceState
-	(*device_state.TDeviceState_TActiveActions)(nil),                                   // 116: NAlice.NAliceApi.TDeviceState.TActiveActions
-	(*biometry.TOndeviceBiometryOptions)(nil),                                          // 117: NAlice.TOndeviceBiometryOptions
-	(*capabilities.TDeviceStateCapability_TState_TConfigurationStatus)(nil),            // 118: NAlice.TDeviceStateCapability.TState.TConfigurationStatus
-	(*capabilities.TDeviceStateCapability_TState_TUpdateStatus)(nil),                   // 119: NAlice.TDeviceStateCapability.TState.TUpdateStatus
-	(*capabilities.TDeviceStateCapability_TState_TScreensaverState)(nil),               // 120: NAlice.TDeviceStateCapability.TState.TScreensaverState
-	(*SoundInfo)(nil),                                                                  // 121: quasar.proto.SoundInfo
-	(DirectiveEvent_Result)(0),                                                         // 122: quasar.proto.DirectiveEvent.Result
-	(*protos1.DirectiveHandler)(nil),                                                   // 123: quasar.proto.DirectiveHandler
-	(*capabilities.TDeviceStateCapability_TState)(nil),                                 // 124: NAlice.TDeviceStateCapability.TState
-	(*video_summary.TVideoSummary)(nil),                                                // 125: NAlice.TVideoSummary
-	(*Clock)(nil),                                                                      // 126: quasar.proto.Clock
-	(protos2.EContentSettings)(0),                                                      // 127: NAlice.EContentSettings
-	(*alice_request1.TAliceRequestProto_TRequest_TAdditionalOptions_TPermission)(nil),  // 128: NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermission
-	(*data.TExternalEntityDescription)(nil),                                            // 129: NAlice.NData.TExternalEntityDescription
-	(*device_state.TDeviceState_TInternetConnection)(nil),                              // 130: NAlice.NAliceApi.TDeviceState.TInternetConnection
-	(*capabilities.TDeviceStateCapability_TState_TInternetConnectionStatus)(nil),       // 131: NAlice.TDeviceStateCapability.TState.TInternetConnectionStatus
+	(*Remoting_RoutingAudioPlayerMethod)(nil),                                          // 56: quasar.proto.Remoting.RoutingAudioPlayerMethod
+	(*Remoting_AudioPlayerMethod)(nil),                                                 // 57: quasar.proto.Remoting.AudioPlayerMethod
+	(*Remoting_AudioPlayerListenerMethod)(nil),                                         // 58: quasar.proto.Remoting.AudioPlayerListenerMethod
+	(*Remoting_AliceCapabilityListenerMethod_TFileUploadEvent)(nil),                    // 59: quasar.proto.Remoting.AliceCapabilityListenerMethod.TFileUploadEvent
+	(*Remoting_FilePlayerCapabilityMethod_FilePlayerPlayParams)(nil),                   // 60: quasar.proto.Remoting.FilePlayerCapabilityMethod.FilePlayerPlayParams
+	(*Remoting_SpotterCapabilityMethod_ModelPath)(nil),                                 // 61: quasar.proto.Remoting.SpotterCapabilityMethod.ModelPath
+	(*Remoting_DeviceStateCapabilityMethod_SupportedFeatures)(nil),                     // 62: quasar.proto.Remoting.DeviceStateCapabilityMethod.SupportedFeatures
+	(*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures)(nil),                   // 63: quasar.proto.Remoting.DeviceStateCapabilityMethod.UnsupportedFeatures
+	(*Remoting_DeviceStateCapabilityMethod_VolumeState)(nil),                           // 64: quasar.proto.Remoting.DeviceStateCapabilityMethod.VolumeState
+	(*Remoting_DeviceStateCapabilityMethod_DeviceConfigContentSettings)(nil),           // 65: quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings
+	(*Remoting_DeviceStateCapabilityMethod_Permissions)(nil),                           // 66: quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions
+	(*Remoting_DeviceStateCapabilityMethod_ExternalEntityDescriptions)(nil),            // 67: quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions
+	(*Remoting_DeviceStateCapabilityMethod_ActiveActionsWithEntities)(nil),             // 68: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities
+	(*Remoting_DeviceStateCapabilityMethod_InternetConnectionState)(nil),               // 69: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState
+	(*Remoting_VocalizerCapabilityListenerMethod_SoundInfo)(nil),                       // 70: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.SoundInfo
+	(*Remoting_TimingsManagerMethod_Event)(nil),                                        // 71: quasar.proto.Remoting.TimingsManagerMethod.Event
+	(*Remoting_TimingsManagerMethod_Meta)(nil),                                         // 72: quasar.proto.Remoting.TimingsManagerMethod.Meta
+	(*Remoting_TimingsManagerMethod_SubEvent)(nil),                                     // 73: quasar.proto.Remoting.TimingsManagerMethod.SubEvent
+	(*Remoting_TimingsManagerMethod_SubInfo)(nil),                                      // 74: quasar.proto.Remoting.TimingsManagerMethod.SubInfo
+	(*protos.Directive)(nil),                                                           // 75: quasar.proto.Directive
+	(*protos1.Capability)(nil),                                                         // 76: quasar.proto.Capability
+	(*events.TCapabilityEvent)(nil),                                                    // 77: NAlice.TCapabilityEvent
+	(*protos1.Endpoint)(nil),                                                           // 78: quasar.proto.Endpoint
+	(*endpoint.TEndpoint)(nil),                                                         // 79: NAlice.TEndpoint
+	(*VinsRequest)(nil),                                                                // 80: quasar.proto.VinsRequest
+	(audio_file_player.TAudioFilePlayerCapability_EStoredSound)(0),                     // 81: NAlice.TAudioFilePlayerCapability.EStoredSound
+	(*alice.TAliceCapability_TVocalizeDirective)(nil),                                  // 82: NAlice.TAliceCapability.TVocalizeDirective
+	(dialog_type.EDialogType)(0),                                                       // 83: NAlice.NData.EDialogType
+	(*alice_mode_info.TAlice2ModeInfo)(nil),                                            // 84: NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
+	(*alice.TAliceCapability_TStartDataInputDirective)(nil),                            // 85: NAlice.TAliceCapability.TStartDataInputDirective
+	(*alice_request.TAliceRequest)(nil),                                                // 86: NAlice.NAliceApi.TAliceRequest
+	(*file_upload.TFileUploadCapability_TStartFileUploadDirective)(nil),                // 87: NAlice.TFileUploadCapability.TStartFileUploadDirective
+	(*alice.TAliceCapability_TStartRecognizeDirective)(nil),                            // 88: NAlice.TAliceCapability.TStartRecognizeDirective
+	(*AliceState)(nil),                                                                 // 89: quasar.proto.AliceState
+	(AliceState_Error)(0),                                                              // 90: quasar.proto.AliceState.Error
+	(*AllStartupSettings)(nil),                                                         // 91: quasar.proto.AllStartupSettings
+	(*alice_event.TAliceEvent)(nil),                                                    // 92: quasar.proto.TAliceEvent
+	(*alice_response.TAliceResponseProto)(nil),                                         // 93: NAlice.NAliceApi.TAliceResponseProto
+	(*event_source.TEventSource)(nil),                                                  // 94: NAlice.TEventSource
+	(*FastCommand)(nil),                                                                // 95: quasar.proto.FastCommand
+	(protos1.AudioChannel)(0),                                                          // 96: quasar.proto.AudioChannel
+	(*DirectiveEvent)(nil),                                                             // 97: quasar.proto.DirectiveEvent
+	(*EmptyMessage)(nil),                                                               // 98: quasar.proto.EmptyMessage
+	(*AudioClientEvent)(nil),                                                           // 99: quasar.proto.AudioClientEvent
+	(MediaRequest_RewindType)(0),                                                       // 100: quasar.proto.MediaRequest.RewindType
+	(*device_state.TDeviceState_TBluetooth)(nil),                                       // 101: NAlice.NAliceApi.TDeviceState.TBluetooth
+	(*device_state.TDeviceState_TMusic)(nil),                                           // 102: NAlice.NAliceApi.TDeviceState.TMusic
+	(*structpb.Struct)(nil),                                                            // 103: google.protobuf.Struct
+	(*device_state.TDeviceState_TLastWatched)(nil),                                     // 104: NAlice.NAliceApi.TDeviceState.TLastWatched
+	(*device_state.TDeviceState_TVideo)(nil),                                           // 105: NAlice.NAliceApi.TDeviceState.TVideo
+	(*device_state.TDeviceState_TRcuState)(nil),                                        // 106: NAlice.NAliceApi.TDeviceState.TRcuState
+	(*device_state.TDeviceState_TScreen)(nil),                                          // 107: NAlice.NAliceApi.TDeviceState.TScreen
+	(*device_state.TDeviceState_TMultiroom)(nil),                                       // 108: NAlice.NAliceApi.TDeviceState.TMultiroom
+	(*device_state.TDeviceState_TPackagesState)(nil),                                   // 109: NAlice.NAliceApi.TDeviceState.TPackagesState
+	(*experiments.TExperimentsProto)(nil),                                              // 110: NAlice.TExperimentsProto
+	(*enrollment_headers.TEnrollmentHeaders)(nil),                                      // 111: NAlice.TEnrollmentHeaders
+	(*environment_state.TEnvironmentDeviceInfo)(nil),                                   // 112: NAlice.NAliceApi.TEnvironmentDeviceInfo
+	(*device_state.TDeviceState_TBattery)(nil),                                         // 113: NAlice.NAliceApi.TDeviceState.TBattery
+	(*device_state.TDeviceState_TClockDisplayState)(nil),                               // 114: NAlice.NAliceApi.TDeviceState.TClockDisplayState
+	(*device_state.TDeviceState_TDeviceConfig)(nil),                                    // 115: NAlice.NAliceApi.TDeviceState.TDeviceConfig
+	(*device_state.TDeviceState_TAppScreenInfo)(nil),                                   // 116: NAlice.NAliceApi.TDeviceState.TAppScreenInfo
+	(*reminders.TDeviceRemindersState)(nil),                                            // 117: NAlice.NData.NReminders.TDeviceRemindersState
+	(*alice_request1.TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions)(nil), // 118: NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
+	(*device_state.TDeviceState)(nil),                                                  // 119: NAlice.NAliceApi.TDeviceState
+	(*device_state.TDeviceState_TActiveActions)(nil),                                   // 120: NAlice.NAliceApi.TDeviceState.TActiveActions
+	(*biometry.TOndeviceBiometryOptions)(nil),                                          // 121: NAlice.TOndeviceBiometryOptions
+	(*capabilities.TDeviceStateCapability_TState_TConfigurationStatus)(nil),            // 122: NAlice.TDeviceStateCapability.TState.TConfigurationStatus
+	(*capabilities.TDeviceStateCapability_TState_TUpdateStatus)(nil),                   // 123: NAlice.TDeviceStateCapability.TState.TUpdateStatus
+	(*capabilities.TDeviceStateCapability_TState_TScreensaverState)(nil),               // 124: NAlice.TDeviceStateCapability.TState.TScreensaverState
+	(DirectiveEvent_Result)(0),                                                         // 125: quasar.proto.DirectiveEvent.Result
+	(*protos1.DirectiveHandler)(nil),                                                   // 126: quasar.proto.DirectiveHandler
+	(*capabilities.TDeviceStateCapability_TState)(nil),                                 // 127: NAlice.TDeviceStateCapability.TState
+	(*video_summary.TVideoSummary)(nil),                                                // 128: NAlice.TVideoSummary
+	(*Clock)(nil),                                                                      // 129: quasar.proto.Clock
+	(protos2.EContentSettings)(0),                                                      // 130: NAlice.EContentSettings
+	(*alice_request1.TAliceRequestProto_TRequest_TAdditionalOptions_TPermission)(nil),  // 131: NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermission
+	(*data.TExternalEntityDescription)(nil),                                            // 132: NAlice.NData.TExternalEntityDescription
+	(*device_state.TDeviceState_TInternetConnection)(nil),                              // 133: NAlice.NAliceApi.TDeviceState.TInternetConnection
+	(*capabilities.TDeviceStateCapability_TState_TInternetConnectionStatus)(nil),       // 134: NAlice.TDeviceStateCapability.TState.TInternetConnectionStatus
 }
 var file_yandex_io_protos_remoting_proto_depIdxs = []int32{
-	71,  // 0: quasar.proto.VocalizerSettings.sound_type:type_name -> quasar.proto.SoundFormat.Type
-	0,   // 1: quasar.proto.VocalizerSettings.quality:type_name -> quasar.proto.SoundQuality.Quality
-	25,  // 2: quasar.proto.VoiceServiceSettings.vocalizer_settings:type_name -> quasar.proto.VocalizerSettings
-	26,  // 3: quasar.proto.VoiceServiceSettings.recognizer_settings:type_name -> quasar.proto.RecognizerSettings
-	33,  // 4: quasar.proto.Remoting.endpoint_storage_method:type_name -> quasar.proto.Remoting.EndpointStorageMethod
-	29,  // 5: quasar.proto.Remoting.directive_handler_method:type_name -> quasar.proto.Remoting.DirectiveHandlerMethod
-	30,  // 6: quasar.proto.Remoting.capability_state_changed_method:type_name -> quasar.proto.Remoting.CapabilityStateChangedMethod
-	32,  // 7: quasar.proto.Remoting.capability_events_method:type_name -> quasar.proto.Remoting.CapabilityEventsMethod
-	31,  // 8: quasar.proto.Remoting.capability_add_listener_method:type_name -> quasar.proto.Remoting.CapabilityAddListenerMethod
-	34,  // 9: quasar.proto.Remoting.endpoint_method:type_name -> quasar.proto.Remoting.EndpointMethod
-	35,  // 10: quasar.proto.Remoting.alice_capability_method:type_name -> quasar.proto.Remoting.AliceCapabilityMethod
-	37,  // 11: quasar.proto.Remoting.alice_request_events_method:type_name -> quasar.proto.Remoting.AliceRequestEventsMethod
-	40,  // 12: quasar.proto.Remoting.file_player_capability_method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod
-	41,  // 13: quasar.proto.Remoting.file_player_capability_events_method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityEventsMethod
-	42,  // 14: quasar.proto.Remoting.playback_control_capability_method:type_name -> quasar.proto.Remoting.PlaybackControlCapabilityMethod
-	43,  // 15: quasar.proto.Remoting.spotter_capability_method:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod
-	44,  // 16: quasar.proto.Remoting.spotter_capability_listener_method:type_name -> quasar.proto.Remoting.SpotterCapabilityListenerMethod
-	45,  // 17: quasar.proto.Remoting.device_state_capability_method:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod
-	36,  // 18: quasar.proto.Remoting.alice_capability_listener_method:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod
-	46,  // 19: quasar.proto.Remoting.vocalizer_capability_method:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod
-	47,  // 20: quasar.proto.Remoting.vocalizer_capability_listener_method:type_name -> quasar.proto.Remoting.VocalizerCapabilityListenerMethod
+	0,   // 0: quasar.proto.VocalizerSettings.sound_type:type_name -> quasar.proto.SoundFormat.Type
+	1,   // 1: quasar.proto.VocalizerSettings.quality:type_name -> quasar.proto.SoundQuality.Quality
+	27,  // 2: quasar.proto.VoiceServiceSettings.vocalizer_settings:type_name -> quasar.proto.VocalizerSettings
+	28,  // 3: quasar.proto.VoiceServiceSettings.recognizer_settings:type_name -> quasar.proto.RecognizerSettings
+	36,  // 4: quasar.proto.Remoting.endpoint_storage_method:type_name -> quasar.proto.Remoting.EndpointStorageMethod
+	32,  // 5: quasar.proto.Remoting.directive_handler_method:type_name -> quasar.proto.Remoting.DirectiveHandlerMethod
+	33,  // 6: quasar.proto.Remoting.capability_state_changed_method:type_name -> quasar.proto.Remoting.CapabilityStateChangedMethod
+	35,  // 7: quasar.proto.Remoting.capability_events_method:type_name -> quasar.proto.Remoting.CapabilityEventsMethod
+	34,  // 8: quasar.proto.Remoting.capability_add_listener_method:type_name -> quasar.proto.Remoting.CapabilityAddListenerMethod
+	37,  // 9: quasar.proto.Remoting.endpoint_method:type_name -> quasar.proto.Remoting.EndpointMethod
+	38,  // 10: quasar.proto.Remoting.alice_capability_method:type_name -> quasar.proto.Remoting.AliceCapabilityMethod
+	40,  // 11: quasar.proto.Remoting.alice_request_events_method:type_name -> quasar.proto.Remoting.AliceRequestEventsMethod
+	43,  // 12: quasar.proto.Remoting.file_player_capability_method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod
+	44,  // 13: quasar.proto.Remoting.file_player_capability_events_method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityEventsMethod
+	45,  // 14: quasar.proto.Remoting.playback_control_capability_method:type_name -> quasar.proto.Remoting.PlaybackControlCapabilityMethod
+	46,  // 15: quasar.proto.Remoting.spotter_capability_method:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod
+	47,  // 16: quasar.proto.Remoting.spotter_capability_listener_method:type_name -> quasar.proto.Remoting.SpotterCapabilityListenerMethod
+	48,  // 17: quasar.proto.Remoting.device_state_capability_method:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod
+	39,  // 18: quasar.proto.Remoting.alice_capability_listener_method:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod
+	49,  // 19: quasar.proto.Remoting.vocalizer_capability_method:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod
+	50,  // 20: quasar.proto.Remoting.vocalizer_capability_listener_method:type_name -> quasar.proto.Remoting.VocalizerCapabilityListenerMethod
 	51,  // 21: quasar.proto.Remoting.directive_sequencer_method:type_name -> quasar.proto.Remoting.DirectiveSequencerMethod
 	52,  // 22: quasar.proto.Remoting.directive_sequencer_listener_method:type_name -> quasar.proto.Remoting.DirectiveSequencerListenerMethod
 	53,  // 23: quasar.proto.Remoting.tandem_capability_listener_method:type_name -> quasar.proto.Remoting.TandemCapabilityListenerMethod
 	54,  // 24: quasar.proto.Remoting.clock_storage_method:type_name -> quasar.proto.Remoting.ClockStorageMethod
-	38,  // 25: quasar.proto.Remoting.fast_command_requester_method:type_name -> quasar.proto.Remoting.FastCommandRequesterMethod
-	39,  // 26: quasar.proto.Remoting.fast_command_requester_listener_method:type_name -> quasar.proto.Remoting.FastCommandRequesterListenerMethod
+	41,  // 25: quasar.proto.Remoting.fast_command_requester_method:type_name -> quasar.proto.Remoting.FastCommandRequesterMethod
+	42,  // 26: quasar.proto.Remoting.fast_command_requester_listener_method:type_name -> quasar.proto.Remoting.FastCommandRequesterListenerMethod
 	55,  // 27: quasar.proto.Remoting.timings_manager_method:type_name -> quasar.proto.Remoting.TimingsManagerMethod
-	48,  // 28: quasar.proto.Remoting.routing_audio_player_method:type_name -> quasar.proto.Remoting.RoutingAudioPlayerMethod
-	49,  // 29: quasar.proto.Remoting.audio_player_method:type_name -> quasar.proto.Remoting.AudioPlayerMethod
-	50,  // 30: quasar.proto.Remoting.audio_player_listener_method:type_name -> quasar.proto.Remoting.AudioPlayerListenerMethod
-	1,   // 31: quasar.proto.Remoting.DirectiveHandlerMethod.method:type_name -> quasar.proto.Remoting.DirectiveHandlerMethod.Method
-	72,  // 32: quasar.proto.Remoting.DirectiveHandlerMethod.directive:type_name -> quasar.proto.Directive
-	73,  // 33: quasar.proto.Remoting.CapabilityStateChangedMethod.capability:type_name -> quasar.proto.Capability
-	74,  // 34: quasar.proto.Remoting.CapabilityEventsMethod.events:type_name -> NAlice.TCapabilityEvent
-	2,   // 35: quasar.proto.Remoting.EndpointStorageMethod.method:type_name -> quasar.proto.Remoting.EndpointStorageMethod.Method
-	75,  // 36: quasar.proto.Remoting.EndpointStorageMethod.endpoints:type_name -> quasar.proto.Endpoint
-	3,   // 37: quasar.proto.Remoting.EndpointMethod.method:type_name -> quasar.proto.Remoting.EndpointMethod.Method
-	73,  // 38: quasar.proto.Remoting.EndpointMethod.capability:type_name -> quasar.proto.Capability
-	76,  // 39: quasar.proto.Remoting.EndpointMethod.state:type_name -> NAlice.TEndpoint
-	4,   // 40: quasar.proto.Remoting.AliceCapabilityMethod.method:type_name -> quasar.proto.Remoting.AliceCapabilityMethod.Method
-	77,  // 41: quasar.proto.Remoting.AliceCapabilityMethod.vins_request:type_name -> quasar.proto.VinsRequest
-	78,  // 42: quasar.proto.Remoting.AliceCapabilityMethod.error_sound:type_name -> NAlice.TAudioFilePlayerCapability.EStoredSound
-	27,  // 43: quasar.proto.Remoting.AliceCapabilityMethod.voice_service_settings:type_name -> quasar.proto.VoiceServiceSettings
-	79,  // 44: quasar.proto.Remoting.AliceCapabilityMethod.vocalize_directive:type_name -> NAlice.TAliceCapability.TVocalizeDirective
-	80,  // 45: quasar.proto.Remoting.AliceCapabilityMethod.dialog_type:type_name -> NAlice.NData.EDialogType
-	81,  // 46: quasar.proto.Remoting.AliceCapabilityMethod.alice_2_settings:type_name -> NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
-	82,  // 47: quasar.proto.Remoting.AliceCapabilityMethod.start_data_input_directive:type_name -> NAlice.TAliceCapability.TStartDataInputDirective
-	83,  // 48: quasar.proto.Remoting.AliceCapabilityMethod.alice_request:type_name -> NAlice.NAliceApi.TAliceRequest
-	84,  // 49: quasar.proto.Remoting.AliceCapabilityMethod.start_file_upload_directive:type_name -> NAlice.TFileUploadCapability.TStartFileUploadDirective
-	85,  // 50: quasar.proto.Remoting.AliceCapabilityMethod.start_recognize_directive:type_name -> NAlice.TAliceCapability.TStartRecognizeDirective
-	5,   // 51: quasar.proto.Remoting.AliceCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod.Method
-	86,  // 52: quasar.proto.Remoting.AliceCapabilityListenerMethod.state:type_name -> quasar.proto.AliceState
-	77,  // 53: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_request:type_name -> quasar.proto.VinsRequest
-	72,  // 54: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_response:type_name -> quasar.proto.Directive
-	87,  // 55: quasar.proto.Remoting.AliceCapabilityListenerMethod.error_code:type_name -> quasar.proto.AliceState.Error
-	88,  // 56: quasar.proto.Remoting.AliceCapabilityListenerMethod.all_startup_settings:type_name -> quasar.proto.AllStartupSettings
-	89,  // 57: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_event:type_name -> quasar.proto.TAliceEvent
-	56,  // 58: quasar.proto.Remoting.AliceCapabilityListenerMethod.file_upload_event:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod.TFileUploadEvent
-	6,   // 59: quasar.proto.Remoting.AliceRequestEventsMethod.method:type_name -> quasar.proto.Remoting.AliceRequestEventsMethod.Method
-	87,  // 60: quasar.proto.Remoting.AliceRequestEventsMethod.error_code:type_name -> quasar.proto.AliceState.Error
-	90,  // 61: quasar.proto.Remoting.AliceRequestEventsMethod.vins_response_proto:type_name -> NAlice.NAliceApi.TAliceResponseProto
-	7,   // 62: quasar.proto.Remoting.FastCommandRequesterMethod.method:type_name -> quasar.proto.Remoting.FastCommandRequesterMethod.Method
-	91,  // 63: quasar.proto.Remoting.FastCommandRequesterMethod.event_source:type_name -> NAlice.TEventSource
-	92,  // 64: quasar.proto.Remoting.FastCommandRequesterMethod.fast_command:type_name -> quasar.proto.FastCommand
-	8,   // 65: quasar.proto.Remoting.FastCommandRequesterListenerMethod.method:type_name -> quasar.proto.Remoting.FastCommandRequesterListenerMethod.Method
-	92,  // 66: quasar.proto.Remoting.FastCommandRequesterListenerMethod.fast_command:type_name -> quasar.proto.FastCommand
-	9,   // 67: quasar.proto.Remoting.FilePlayerCapabilityMethod.method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod.Method
-	93,  // 68: quasar.proto.Remoting.FilePlayerCapabilityMethod.channel:type_name -> quasar.proto.AudioChannel
-	57,  // 69: quasar.proto.Remoting.FilePlayerCapabilityMethod.play_params:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod.FilePlayerPlayParams
-	78,  // 70: quasar.proto.Remoting.FilePlayerCapabilityMethod.stored_sound:type_name -> NAlice.TAudioFilePlayerCapability.EStoredSound
-	94,  // 71: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.directive_event:type_name -> quasar.proto.DirectiveEvent
-	95,  // 72: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.handshake_response:type_name -> quasar.proto.EmptyMessage
-	96,  // 73: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.audio_client_event:type_name -> quasar.proto.AudioClientEvent
-	10,  // 74: quasar.proto.Remoting.PlaybackControlCapabilityMethod.method:type_name -> quasar.proto.Remoting.PlaybackControlCapabilityMethod.Method
-	97,  // 75: quasar.proto.Remoting.PlaybackControlCapabilityMethod.rewind_type:type_name -> quasar.proto.MediaRequest.RewindType
-	91,  // 76: quasar.proto.Remoting.PlaybackControlCapabilityMethod.event_source:type_name -> NAlice.TEventSource
-	11,  // 77: quasar.proto.Remoting.SpotterCapabilityMethod.method:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod.Method
-	58,  // 78: quasar.proto.Remoting.SpotterCapabilityMethod.model_path:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod.ModelPath
-	12,  // 79: quasar.proto.Remoting.SpotterCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.SpotterCapabilityListenerMethod.Method
-	98,  // 80: quasar.proto.Remoting.DeviceStateCapabilityMethod.bluetooth_state:type_name -> NAlice.NAliceApi.TDeviceState.TBluetooth
-	99,  // 81: quasar.proto.Remoting.DeviceStateCapabilityMethod.music_state:type_name -> NAlice.NAliceApi.TDeviceState.TMusic
-	100, // 82: quasar.proto.Remoting.DeviceStateCapabilityMethod.radio_state:type_name -> google.protobuf.Struct
-	101, // 83: quasar.proto.Remoting.DeviceStateCapabilityMethod.last_watched:type_name -> NAlice.NAliceApi.TDeviceState.TLastWatched
-	59,  // 84: quasar.proto.Remoting.DeviceStateCapabilityMethod.supported_features:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.SupportedFeatures
-	60,  // 85: quasar.proto.Remoting.DeviceStateCapabilityMethod.unsupported_features:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.UnsupportedFeatures
-	102, // 86: quasar.proto.Remoting.DeviceStateCapabilityMethod.video_state:type_name -> NAlice.NAliceApi.TDeviceState.TVideo
-	103, // 87: quasar.proto.Remoting.DeviceStateCapabilityMethod.rcu_state:type_name -> NAlice.NAliceApi.TDeviceState.TRcuState
-	104, // 88: quasar.proto.Remoting.DeviceStateCapabilityMethod.multiroom_state:type_name -> NAlice.NAliceApi.TDeviceState.TMultiroom
-	105, // 89: quasar.proto.Remoting.DeviceStateCapabilityMethod.packages_state:type_name -> NAlice.NAliceApi.TDeviceState.TPackagesState
-	106, // 90: quasar.proto.Remoting.DeviceStateCapabilityMethod.experiments:type_name -> NAlice.TExperimentsProto
-	107, // 91: quasar.proto.Remoting.DeviceStateCapabilityMethod.enrollment_headers:type_name -> NAlice.TEnrollmentHeaders
-	108, // 92: quasar.proto.Remoting.DeviceStateCapabilityMethod.environment_device_info:type_name -> NAlice.NAliceApi.TEnvironmentDeviceInfo
-	61,  // 93: quasar.proto.Remoting.DeviceStateCapabilityMethod.volume_state:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.VolumeState
-	109, // 94: quasar.proto.Remoting.DeviceStateCapabilityMethod.battery:type_name -> NAlice.NAliceApi.TDeviceState.TBattery
-	110, // 95: quasar.proto.Remoting.DeviceStateCapabilityMethod.clock_display_state:type_name -> NAlice.NAliceApi.TDeviceState.TClockDisplayState
-	111, // 96: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_config:type_name -> NAlice.NAliceApi.TDeviceState.TDeviceConfig
-	62,  // 97: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_config_content_settings:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings
-	112, // 98: quasar.proto.Remoting.DeviceStateCapabilityMethod.app_screen_info:type_name -> NAlice.NAliceApi.TDeviceState.TAppScreenInfo
-	113, // 99: quasar.proto.Remoting.DeviceStateCapabilityMethod.reminders_state:type_name -> NAlice.NData.NReminders.TDeviceRemindersState
-	114, // 100: quasar.proto.Remoting.DeviceStateCapabilityMethod.bass_options:type_name -> NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
-	63,  // 101: quasar.proto.Remoting.DeviceStateCapabilityMethod.permissions:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions
-	115, // 102: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_state:type_name -> NAlice.NAliceApi.TDeviceState
-	66,  // 103: quasar.proto.Remoting.DeviceStateCapabilityMethod.internet_connection_state:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState
-	64,  // 104: quasar.proto.Remoting.DeviceStateCapabilityMethod.external_entity_descriptions:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions
-	116, // 105: quasar.proto.Remoting.DeviceStateCapabilityMethod.active_actions:type_name -> NAlice.NAliceApi.TDeviceState.TActiveActions
-	117, // 106: quasar.proto.Remoting.DeviceStateCapabilityMethod.biometry_options:type_name -> NAlice.TOndeviceBiometryOptions
-	118, // 107: quasar.proto.Remoting.DeviceStateCapabilityMethod.configuration_status:type_name -> NAlice.TDeviceStateCapability.TState.TConfigurationStatus
-	119, // 108: quasar.proto.Remoting.DeviceStateCapabilityMethod.update_status:type_name -> NAlice.TDeviceStateCapability.TState.TUpdateStatus
-	120, // 109: quasar.proto.Remoting.DeviceStateCapabilityMethod.screensaver_state:type_name -> NAlice.TDeviceStateCapability.TState.TScreensaverState
-	65,  // 110: quasar.proto.Remoting.DeviceStateCapabilityMethod.active_actions_with_entities:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities
-	13,  // 111: quasar.proto.Remoting.VocalizerCapabilityMethod.method:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod.Method
-	14,  // 112: quasar.proto.Remoting.VocalizerCapabilityMethod.mode:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod.SynthesizeMode
-	25,  // 113: quasar.proto.Remoting.VocalizerCapabilityMethod.settings:type_name -> quasar.proto.VocalizerSettings
-	15,  // 114: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.VocalizerCapabilityListenerMethod.Method
-	121, // 115: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.sound_info:type_name -> quasar.proto.SoundInfo
-	16,  // 116: quasar.proto.Remoting.RoutingAudioPlayerMethod.method:type_name -> quasar.proto.Remoting.RoutingAudioPlayerMethod.Method
-	17,  // 117: quasar.proto.Remoting.AudioPlayerMethod.method:type_name -> quasar.proto.Remoting.AudioPlayerMethod.Method
-	121, // 118: quasar.proto.Remoting.AudioPlayerMethod.sound_info:type_name -> quasar.proto.SoundInfo
-	91,  // 119: quasar.proto.Remoting.AudioPlayerMethod.event_source:type_name -> NAlice.TEventSource
-	18,  // 120: quasar.proto.Remoting.AudioPlayerListenerMethod.method:type_name -> quasar.proto.Remoting.AudioPlayerListenerMethod.Method
-	121, // 121: quasar.proto.Remoting.AudioPlayerListenerMethod.sound_info:type_name -> quasar.proto.SoundInfo
-	19,  // 122: quasar.proto.Remoting.DirectiveSequencerMethod.method:type_name -> quasar.proto.Remoting.DirectiveSequencerMethod.Method
-	72,  // 123: quasar.proto.Remoting.DirectiveSequencerMethod.directive:type_name -> quasar.proto.Directive
-	72,  // 124: quasar.proto.Remoting.DirectiveSequencerMethod.directives:type_name -> quasar.proto.Directive
-	122, // 125: quasar.proto.Remoting.DirectiveSequencerMethod.result:type_name -> quasar.proto.DirectiveEvent.Result
-	123, // 126: quasar.proto.Remoting.DirectiveSequencerMethod.directive_handler:type_name -> quasar.proto.DirectiveHandler
-	20,  // 127: quasar.proto.Remoting.DirectiveSequencerListenerMethod.method:type_name -> quasar.proto.Remoting.DirectiveSequencerListenerMethod.Method
-	72,  // 128: quasar.proto.Remoting.DirectiveSequencerListenerMethod.directive:type_name -> quasar.proto.Directive
-	122, // 129: quasar.proto.Remoting.DirectiveSequencerListenerMethod.result:type_name -> quasar.proto.DirectiveEvent.Result
-	72,  // 130: quasar.proto.Remoting.DirectiveSequencerListenerMethod.directives:type_name -> quasar.proto.Directive
-	21,  // 131: quasar.proto.Remoting.TandemCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.TandemCapabilityListenerMethod.Method
-	124, // 132: quasar.proto.Remoting.TandemCapabilityListenerMethod.state:type_name -> NAlice.TDeviceStateCapability.TState
-	125, // 133: quasar.proto.Remoting.TandemCapabilityListenerMethod.follower_video:type_name -> NAlice.TVideoSummary
-	22,  // 134: quasar.proto.Remoting.ClockStorageMethod.method:type_name -> quasar.proto.Remoting.ClockStorageMethod.Method
-	126, // 135: quasar.proto.Remoting.ClockStorageMethod.clocks:type_name -> quasar.proto.Clock
-	23,  // 136: quasar.proto.Remoting.TimingsManagerMethod.method:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Method
-	67,  // 137: quasar.proto.Remoting.TimingsManagerMethod.event:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Event
-	68,  // 138: quasar.proto.Remoting.TimingsManagerMethod.meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
-	68,  // 139: quasar.proto.Remoting.TimingsManagerMethod.all_meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
-	69,  // 140: quasar.proto.Remoting.TimingsManagerMethod.sub_events:type_name -> quasar.proto.Remoting.TimingsManagerMethod.SubEvent
-	70,  // 141: quasar.proto.Remoting.TimingsManagerMethod.sub_meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.SubInfo
-	127, // 142: quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings.value:type_name -> NAlice.EContentSettings
-	128, // 143: quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions.values:type_name -> NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermission
-	129, // 144: quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions.values:type_name -> NAlice.NData.TExternalEntityDescription
-	116, // 145: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities.actions:type_name -> NAlice.NAliceApi.TDeviceState.TActiveActions
-	129, // 146: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities.entities:type_name -> NAlice.NData.TExternalEntityDescription
-	130, // 147: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState.internet_connection:type_name -> NAlice.NAliceApi.TDeviceState.TInternetConnection
-	131, // 148: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState.status:type_name -> NAlice.TDeviceStateCapability.TState.TInternetConnectionStatus
-	67,  // 149: quasar.proto.Remoting.TimingsManagerMethod.SubEvent.event:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Event
-	68,  // 150: quasar.proto.Remoting.TimingsManagerMethod.SubInfo.meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
-	151, // [151:151] is the sub-list for method output_type
-	151, // [151:151] is the sub-list for method input_type
-	151, // [151:151] is the sub-list for extension type_name
-	151, // [151:151] is the sub-list for extension extendee
-	0,   // [0:151] is the sub-list for field type_name
+	56,  // 28: quasar.proto.Remoting.routing_audio_player_method:type_name -> quasar.proto.Remoting.RoutingAudioPlayerMethod
+	57,  // 29: quasar.proto.Remoting.audio_player_method:type_name -> quasar.proto.Remoting.AudioPlayerMethod
+	58,  // 30: quasar.proto.Remoting.audio_player_listener_method:type_name -> quasar.proto.Remoting.AudioPlayerListenerMethod
+	0,   // 31: quasar.proto.SoundInfo.type:type_name -> quasar.proto.SoundFormat.Type
+	2,   // 32: quasar.proto.Remoting.DirectiveHandlerMethod.method:type_name -> quasar.proto.Remoting.DirectiveHandlerMethod.Method
+	75,  // 33: quasar.proto.Remoting.DirectiveHandlerMethod.directive:type_name -> quasar.proto.Directive
+	76,  // 34: quasar.proto.Remoting.CapabilityStateChangedMethod.capability:type_name -> quasar.proto.Capability
+	77,  // 35: quasar.proto.Remoting.CapabilityEventsMethod.events:type_name -> NAlice.TCapabilityEvent
+	3,   // 36: quasar.proto.Remoting.EndpointStorageMethod.method:type_name -> quasar.proto.Remoting.EndpointStorageMethod.Method
+	78,  // 37: quasar.proto.Remoting.EndpointStorageMethod.endpoints:type_name -> quasar.proto.Endpoint
+	4,   // 38: quasar.proto.Remoting.EndpointMethod.method:type_name -> quasar.proto.Remoting.EndpointMethod.Method
+	76,  // 39: quasar.proto.Remoting.EndpointMethod.capability:type_name -> quasar.proto.Capability
+	79,  // 40: quasar.proto.Remoting.EndpointMethod.state:type_name -> NAlice.TEndpoint
+	5,   // 41: quasar.proto.Remoting.AliceCapabilityMethod.method:type_name -> quasar.proto.Remoting.AliceCapabilityMethod.Method
+	80,  // 42: quasar.proto.Remoting.AliceCapabilityMethod.vins_request:type_name -> quasar.proto.VinsRequest
+	81,  // 43: quasar.proto.Remoting.AliceCapabilityMethod.error_sound:type_name -> NAlice.TAudioFilePlayerCapability.EStoredSound
+	29,  // 44: quasar.proto.Remoting.AliceCapabilityMethod.voice_service_settings:type_name -> quasar.proto.VoiceServiceSettings
+	82,  // 45: quasar.proto.Remoting.AliceCapabilityMethod.vocalize_directive:type_name -> NAlice.TAliceCapability.TVocalizeDirective
+	83,  // 46: quasar.proto.Remoting.AliceCapabilityMethod.dialog_type:type_name -> NAlice.NData.EDialogType
+	84,  // 47: quasar.proto.Remoting.AliceCapabilityMethod.alice_2_settings:type_name -> NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
+	85,  // 48: quasar.proto.Remoting.AliceCapabilityMethod.start_data_input_directive:type_name -> NAlice.TAliceCapability.TStartDataInputDirective
+	86,  // 49: quasar.proto.Remoting.AliceCapabilityMethod.alice_request:type_name -> NAlice.NAliceApi.TAliceRequest
+	87,  // 50: quasar.proto.Remoting.AliceCapabilityMethod.start_file_upload_directive:type_name -> NAlice.TFileUploadCapability.TStartFileUploadDirective
+	88,  // 51: quasar.proto.Remoting.AliceCapabilityMethod.start_recognize_directive:type_name -> NAlice.TAliceCapability.TStartRecognizeDirective
+	6,   // 52: quasar.proto.Remoting.AliceCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod.Method
+	89,  // 53: quasar.proto.Remoting.AliceCapabilityListenerMethod.state:type_name -> quasar.proto.AliceState
+	80,  // 54: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_request:type_name -> quasar.proto.VinsRequest
+	75,  // 55: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_response:type_name -> quasar.proto.Directive
+	90,  // 56: quasar.proto.Remoting.AliceCapabilityListenerMethod.error_code:type_name -> quasar.proto.AliceState.Error
+	91,  // 57: quasar.proto.Remoting.AliceCapabilityListenerMethod.all_startup_settings:type_name -> quasar.proto.AllStartupSettings
+	92,  // 58: quasar.proto.Remoting.AliceCapabilityListenerMethod.alice_event:type_name -> quasar.proto.TAliceEvent
+	59,  // 59: quasar.proto.Remoting.AliceCapabilityListenerMethod.file_upload_event:type_name -> quasar.proto.Remoting.AliceCapabilityListenerMethod.TFileUploadEvent
+	7,   // 60: quasar.proto.Remoting.AliceRequestEventsMethod.method:type_name -> quasar.proto.Remoting.AliceRequestEventsMethod.Method
+	90,  // 61: quasar.proto.Remoting.AliceRequestEventsMethod.error_code:type_name -> quasar.proto.AliceState.Error
+	93,  // 62: quasar.proto.Remoting.AliceRequestEventsMethod.vins_response_proto:type_name -> NAlice.NAliceApi.TAliceResponseProto
+	8,   // 63: quasar.proto.Remoting.FastCommandRequesterMethod.method:type_name -> quasar.proto.Remoting.FastCommandRequesterMethod.Method
+	94,  // 64: quasar.proto.Remoting.FastCommandRequesterMethod.event_source:type_name -> NAlice.TEventSource
+	95,  // 65: quasar.proto.Remoting.FastCommandRequesterMethod.fast_command:type_name -> quasar.proto.FastCommand
+	9,   // 66: quasar.proto.Remoting.FastCommandRequesterListenerMethod.method:type_name -> quasar.proto.Remoting.FastCommandRequesterListenerMethod.Method
+	95,  // 67: quasar.proto.Remoting.FastCommandRequesterListenerMethod.fast_command:type_name -> quasar.proto.FastCommand
+	10,  // 68: quasar.proto.Remoting.FilePlayerCapabilityMethod.method:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod.Method
+	96,  // 69: quasar.proto.Remoting.FilePlayerCapabilityMethod.channel:type_name -> quasar.proto.AudioChannel
+	60,  // 70: quasar.proto.Remoting.FilePlayerCapabilityMethod.play_params:type_name -> quasar.proto.Remoting.FilePlayerCapabilityMethod.FilePlayerPlayParams
+	81,  // 71: quasar.proto.Remoting.FilePlayerCapabilityMethod.stored_sound:type_name -> NAlice.TAudioFilePlayerCapability.EStoredSound
+	97,  // 72: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.directive_event:type_name -> quasar.proto.DirectiveEvent
+	98,  // 73: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.handshake_response:type_name -> quasar.proto.EmptyMessage
+	99,  // 74: quasar.proto.Remoting.FilePlayerCapabilityEventsMethod.audio_client_event:type_name -> quasar.proto.AudioClientEvent
+	11,  // 75: quasar.proto.Remoting.PlaybackControlCapabilityMethod.method:type_name -> quasar.proto.Remoting.PlaybackControlCapabilityMethod.Method
+	100, // 76: quasar.proto.Remoting.PlaybackControlCapabilityMethod.rewind_type:type_name -> quasar.proto.MediaRequest.RewindType
+	94,  // 77: quasar.proto.Remoting.PlaybackControlCapabilityMethod.event_source:type_name -> NAlice.TEventSource
+	12,  // 78: quasar.proto.Remoting.SpotterCapabilityMethod.method:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod.Method
+	61,  // 79: quasar.proto.Remoting.SpotterCapabilityMethod.model_path:type_name -> quasar.proto.Remoting.SpotterCapabilityMethod.ModelPath
+	13,  // 80: quasar.proto.Remoting.SpotterCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.SpotterCapabilityListenerMethod.Method
+	101, // 81: quasar.proto.Remoting.DeviceStateCapabilityMethod.bluetooth_state:type_name -> NAlice.NAliceApi.TDeviceState.TBluetooth
+	102, // 82: quasar.proto.Remoting.DeviceStateCapabilityMethod.music_state:type_name -> NAlice.NAliceApi.TDeviceState.TMusic
+	103, // 83: quasar.proto.Remoting.DeviceStateCapabilityMethod.radio_state:type_name -> google.protobuf.Struct
+	104, // 84: quasar.proto.Remoting.DeviceStateCapabilityMethod.last_watched:type_name -> NAlice.NAliceApi.TDeviceState.TLastWatched
+	62,  // 85: quasar.proto.Remoting.DeviceStateCapabilityMethod.supported_features:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.SupportedFeatures
+	63,  // 86: quasar.proto.Remoting.DeviceStateCapabilityMethod.unsupported_features:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.UnsupportedFeatures
+	105, // 87: quasar.proto.Remoting.DeviceStateCapabilityMethod.video_state:type_name -> NAlice.NAliceApi.TDeviceState.TVideo
+	106, // 88: quasar.proto.Remoting.DeviceStateCapabilityMethod.rcu_state:type_name -> NAlice.NAliceApi.TDeviceState.TRcuState
+	107, // 89: quasar.proto.Remoting.DeviceStateCapabilityMethod.screen_state:type_name -> NAlice.NAliceApi.TDeviceState.TScreen
+	108, // 90: quasar.proto.Remoting.DeviceStateCapabilityMethod.multiroom_state:type_name -> NAlice.NAliceApi.TDeviceState.TMultiroom
+	109, // 91: quasar.proto.Remoting.DeviceStateCapabilityMethod.packages_state:type_name -> NAlice.NAliceApi.TDeviceState.TPackagesState
+	110, // 92: quasar.proto.Remoting.DeviceStateCapabilityMethod.experiments:type_name -> NAlice.TExperimentsProto
+	111, // 93: quasar.proto.Remoting.DeviceStateCapabilityMethod.enrollment_headers:type_name -> NAlice.TEnrollmentHeaders
+	112, // 94: quasar.proto.Remoting.DeviceStateCapabilityMethod.environment_device_info:type_name -> NAlice.NAliceApi.TEnvironmentDeviceInfo
+	64,  // 95: quasar.proto.Remoting.DeviceStateCapabilityMethod.volume_state:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.VolumeState
+	113, // 96: quasar.proto.Remoting.DeviceStateCapabilityMethod.battery:type_name -> NAlice.NAliceApi.TDeviceState.TBattery
+	114, // 97: quasar.proto.Remoting.DeviceStateCapabilityMethod.clock_display_state:type_name -> NAlice.NAliceApi.TDeviceState.TClockDisplayState
+	115, // 98: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_config:type_name -> NAlice.NAliceApi.TDeviceState.TDeviceConfig
+	65,  // 99: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_config_content_settings:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings
+	116, // 100: quasar.proto.Remoting.DeviceStateCapabilityMethod.app_screen_info:type_name -> NAlice.NAliceApi.TDeviceState.TAppScreenInfo
+	117, // 101: quasar.proto.Remoting.DeviceStateCapabilityMethod.reminders_state:type_name -> NAlice.NData.NReminders.TDeviceRemindersState
+	118, // 102: quasar.proto.Remoting.DeviceStateCapabilityMethod.bass_options:type_name -> NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
+	66,  // 103: quasar.proto.Remoting.DeviceStateCapabilityMethod.permissions:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions
+	119, // 104: quasar.proto.Remoting.DeviceStateCapabilityMethod.device_state:type_name -> NAlice.NAliceApi.TDeviceState
+	69,  // 105: quasar.proto.Remoting.DeviceStateCapabilityMethod.internet_connection_state:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState
+	67,  // 106: quasar.proto.Remoting.DeviceStateCapabilityMethod.external_entity_descriptions:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions
+	120, // 107: quasar.proto.Remoting.DeviceStateCapabilityMethod.active_actions:type_name -> NAlice.NAliceApi.TDeviceState.TActiveActions
+	121, // 108: quasar.proto.Remoting.DeviceStateCapabilityMethod.biometry_options:type_name -> NAlice.TOndeviceBiometryOptions
+	122, // 109: quasar.proto.Remoting.DeviceStateCapabilityMethod.configuration_status:type_name -> NAlice.TDeviceStateCapability.TState.TConfigurationStatus
+	123, // 110: quasar.proto.Remoting.DeviceStateCapabilityMethod.update_status:type_name -> NAlice.TDeviceStateCapability.TState.TUpdateStatus
+	124, // 111: quasar.proto.Remoting.DeviceStateCapabilityMethod.screensaver_state:type_name -> NAlice.TDeviceStateCapability.TState.TScreensaverState
+	68,  // 112: quasar.proto.Remoting.DeviceStateCapabilityMethod.active_actions_with_entities:type_name -> quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities
+	14,  // 113: quasar.proto.Remoting.VocalizerCapabilityMethod.method:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod.Method
+	15,  // 114: quasar.proto.Remoting.VocalizerCapabilityMethod.mode:type_name -> quasar.proto.Remoting.VocalizerCapabilityMethod.SynthesizeMode
+	27,  // 115: quasar.proto.Remoting.VocalizerCapabilityMethod.settings:type_name -> quasar.proto.VocalizerSettings
+	16,  // 116: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.VocalizerCapabilityListenerMethod.Method
+	70,  // 117: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.sound_info:type_name -> quasar.proto.Remoting.VocalizerCapabilityListenerMethod.SoundInfo
+	17,  // 118: quasar.proto.Remoting.DirectiveSequencerMethod.method:type_name -> quasar.proto.Remoting.DirectiveSequencerMethod.Method
+	75,  // 119: quasar.proto.Remoting.DirectiveSequencerMethod.directive:type_name -> quasar.proto.Directive
+	75,  // 120: quasar.proto.Remoting.DirectiveSequencerMethod.directives:type_name -> quasar.proto.Directive
+	125, // 121: quasar.proto.Remoting.DirectiveSequencerMethod.result:type_name -> quasar.proto.DirectiveEvent.Result
+	126, // 122: quasar.proto.Remoting.DirectiveSequencerMethod.directive_handler:type_name -> quasar.proto.DirectiveHandler
+	18,  // 123: quasar.proto.Remoting.DirectiveSequencerListenerMethod.method:type_name -> quasar.proto.Remoting.DirectiveSequencerListenerMethod.Method
+	75,  // 124: quasar.proto.Remoting.DirectiveSequencerListenerMethod.directive:type_name -> quasar.proto.Directive
+	125, // 125: quasar.proto.Remoting.DirectiveSequencerListenerMethod.result:type_name -> quasar.proto.DirectiveEvent.Result
+	75,  // 126: quasar.proto.Remoting.DirectiveSequencerListenerMethod.directives:type_name -> quasar.proto.Directive
+	19,  // 127: quasar.proto.Remoting.TandemCapabilityListenerMethod.method:type_name -> quasar.proto.Remoting.TandemCapabilityListenerMethod.Method
+	127, // 128: quasar.proto.Remoting.TandemCapabilityListenerMethod.state:type_name -> NAlice.TDeviceStateCapability.TState
+	128, // 129: quasar.proto.Remoting.TandemCapabilityListenerMethod.follower_video:type_name -> NAlice.TVideoSummary
+	20,  // 130: quasar.proto.Remoting.ClockStorageMethod.method:type_name -> quasar.proto.Remoting.ClockStorageMethod.Method
+	129, // 131: quasar.proto.Remoting.ClockStorageMethod.clocks:type_name -> quasar.proto.Clock
+	21,  // 132: quasar.proto.Remoting.TimingsManagerMethod.method:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Method
+	71,  // 133: quasar.proto.Remoting.TimingsManagerMethod.event:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Event
+	72,  // 134: quasar.proto.Remoting.TimingsManagerMethod.meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
+	72,  // 135: quasar.proto.Remoting.TimingsManagerMethod.all_meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
+	73,  // 136: quasar.proto.Remoting.TimingsManagerMethod.sub_events:type_name -> quasar.proto.Remoting.TimingsManagerMethod.SubEvent
+	74,  // 137: quasar.proto.Remoting.TimingsManagerMethod.sub_meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.SubInfo
+	22,  // 138: quasar.proto.Remoting.RoutingAudioPlayerMethod.method:type_name -> quasar.proto.Remoting.RoutingAudioPlayerMethod.Method
+	23,  // 139: quasar.proto.Remoting.AudioPlayerMethod.method:type_name -> quasar.proto.Remoting.AudioPlayerMethod.Method
+	31,  // 140: quasar.proto.Remoting.AudioPlayerMethod.sound_info:type_name -> quasar.proto.SoundInfo
+	94,  // 141: quasar.proto.Remoting.AudioPlayerMethod.event_source:type_name -> NAlice.TEventSource
+	24,  // 142: quasar.proto.Remoting.AudioPlayerListenerMethod.method:type_name -> quasar.proto.Remoting.AudioPlayerListenerMethod.Method
+	31,  // 143: quasar.proto.Remoting.AudioPlayerListenerMethod.sound_info:type_name -> quasar.proto.SoundInfo
+	130, // 144: quasar.proto.Remoting.DeviceStateCapabilityMethod.DeviceConfigContentSettings.value:type_name -> NAlice.EContentSettings
+	131, // 145: quasar.proto.Remoting.DeviceStateCapabilityMethod.Permissions.values:type_name -> NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermission
+	132, // 146: quasar.proto.Remoting.DeviceStateCapabilityMethod.ExternalEntityDescriptions.values:type_name -> NAlice.NData.TExternalEntityDescription
+	120, // 147: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities.actions:type_name -> NAlice.NAliceApi.TDeviceState.TActiveActions
+	132, // 148: quasar.proto.Remoting.DeviceStateCapabilityMethod.ActiveActionsWithEntities.entities:type_name -> NAlice.NData.TExternalEntityDescription
+	133, // 149: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState.internet_connection:type_name -> NAlice.NAliceApi.TDeviceState.TInternetConnection
+	134, // 150: quasar.proto.Remoting.DeviceStateCapabilityMethod.InternetConnectionState.status:type_name -> NAlice.TDeviceStateCapability.TState.TInternetConnectionStatus
+	0,   // 151: quasar.proto.Remoting.VocalizerCapabilityListenerMethod.SoundInfo.type:type_name -> quasar.proto.SoundFormat.Type
+	71,  // 152: quasar.proto.Remoting.TimingsManagerMethod.SubEvent.event:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Event
+	72,  // 153: quasar.proto.Remoting.TimingsManagerMethod.SubInfo.meta:type_name -> quasar.proto.Remoting.TimingsManagerMethod.Meta
+	154, // [154:154] is the sub-list for method output_type
+	154, // [154:154] is the sub-list for method input_type
+	154, // [154:154] is the sub-list for extension type_name
+	154, // [154:154] is the sub-list for extension extendee
+	0,   // [0:154] is the sub-list for field type_name
 }
 
 func init() { file_yandex_io_protos_remoting_proto_init() }
@@ -6939,7 +7225,7 @@ func file_yandex_io_protos_remoting_proto_init() {
 	file_yandex_io_protos_alice_state_proto_init()
 	file_yandex_io_protos_fast_command_proto_init()
 	file_yandex_io_protos_model_objects_proto_init()
-	file_yandex_io_protos_remoting_proto_msgTypes[4].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[5].OneofWrappers = []any{
 		(*Remoting_EndpointStorageMethod_)(nil),
 		(*Remoting_DirectiveHandlerMethod_)(nil),
 		(*Remoting_CapabilityStateChangedMethod_)(nil),
@@ -6968,23 +7254,23 @@ func file_yandex_io_protos_remoting_proto_init() {
 		(*Remoting_AudioPlayerMethod_)(nil),
 		(*Remoting_AudioPlayerListenerMethod_)(nil),
 	}
-	file_yandex_io_protos_remoting_proto_msgTypes[13].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[15].OneofWrappers = []any{
 		(*Remoting_AliceRequestEventsMethod_VinsResponseJson)(nil),
 		(*Remoting_AliceRequestEventsMethod_VinsResponseProto)(nil),
 	}
-	file_yandex_io_protos_remoting_proto_msgTypes[14].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[16].OneofWrappers = []any{
 		(*Remoting_FastCommandRequesterMethod_StringCommand)(nil),
 		(*Remoting_FastCommandRequesterMethod_FastCommand)(nil),
 	}
-	file_yandex_io_protos_remoting_proto_msgTypes[15].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[17].OneofWrappers = []any{
 		(*Remoting_FastCommandRequesterListenerMethod_StringCommand)(nil),
 		(*Remoting_FastCommandRequesterListenerMethod_FastCommand)(nil),
 	}
-	file_yandex_io_protos_remoting_proto_msgTypes[16].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[18].OneofWrappers = []any{
 		(*Remoting_FilePlayerCapabilityMethod_FilePath)(nil),
 		(*Remoting_FilePlayerCapabilityMethod_StoredSound)(nil),
 	}
-	file_yandex_io_protos_remoting_proto_msgTypes[21].OneofWrappers = []any{
+	file_yandex_io_protos_remoting_proto_msgTypes[23].OneofWrappers = []any{
 		(*Remoting_DeviceStateCapabilityMethod_BluetoothState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_MusicState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_RadioState)(nil),
@@ -6995,6 +7281,7 @@ func file_yandex_io_protos_remoting_proto_init() {
 		(*Remoting_DeviceStateCapabilityMethod_UnsupportedFeatures_)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_VideoState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_RcuState)(nil),
+		(*Remoting_DeviceStateCapabilityMethod_ScreenState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_MultiroomState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_PackagesState)(nil),
 		(*Remoting_DeviceStateCapabilityMethod_Experiments)(nil),
@@ -7029,8 +7316,8 @@ func file_yandex_io_protos_remoting_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_yandex_io_protos_remoting_proto_rawDesc), len(file_yandex_io_protos_remoting_proto_rawDesc)),
-			NumEnums:      24,
-			NumMessages:   47,
+			NumEnums:      25,
+			NumMessages:   50,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

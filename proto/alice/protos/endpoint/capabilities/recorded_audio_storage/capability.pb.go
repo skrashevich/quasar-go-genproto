@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/recorded_audio_storage/capability.proto
 
-package recordedaudiostoragepb
+package recorded_audio_storage
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_recorded_audio_storage_capability_
 	"\x05State\x18\x03 \x01(\v2..NAlice.TRecordedAudioStorageCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aH\n" +
 	"\x06TState\x128\n" +
-	"\fUsedDataSize\x18\x01 \x01(\x03B\x12\xaa\xdd\x1b\x0eused_data_sizeR\x0eused_data_size:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa4\x02B\xac\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19RecordedAudioStorageProtoZaa.yandex-team.ru/alice/protos/endpoint/capabilities/recorded_audio_storage;recordedaudiostoragepbb\x06proto3"
+	"\fUsedDataSize\x18\x01 \x01(\x03B\x12\xaa\xdd\x1b\x0eused_data_sizeR\x0eused_data_size:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa4\x02B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19RecordedAudioStorageProtoZigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/recorded_audio_storageb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_recorded_audio_storage_capability_proto_rawDescOnce sync.Once

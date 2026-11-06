@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/battery/capability.proto
 
-package batterypb
+package battery
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -76,9 +76,9 @@ func (TBatteryCapability_TState_EChargingMode) EnumDescriptor() ([]byte, []int) 
 
 type TBatteryCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBatteryCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBatteryCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBatteryCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBatteryCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,10 +172,10 @@ func (*TBatteryCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TBatteryCapability_TState struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Percentage    *float64                                 `protobuf:"fixed64,1,opt,name=Percentage,json=percentage,proto3,oneof" json:"Percentage,omitempty"`
-	Voltage       *float64                                 `protobuf:"fixed64,2,opt,name=Voltage,json=voltage,proto3,oneof" json:"Voltage,omitempty"`
-	IsCharging    *bool                                    `protobuf:"varint,3,opt,name=IsCharging,json=is_charging,proto3,oneof" json:"IsCharging,omitempty"`
-	ChargingMode  *TBatteryCapability_TState_EChargingMode `protobuf:"varint,4,opt,name=ChargingMode,json=charging_mode,proto3,enum=NAlice.TBatteryCapability_TState_EChargingMode,oneof" json:"ChargingMode,omitempty"`
+	Percentage    *float64                                 `protobuf:"fixed64,1,opt,name=Percentage,proto3,oneof" json:"Percentage,omitempty"`
+	Voltage       *float64                                 `protobuf:"fixed64,2,opt,name=Voltage,proto3,oneof" json:"Voltage,omitempty"`
+	IsCharging    *bool                                    `protobuf:"varint,3,opt,name=IsCharging,proto3,oneof" json:"IsCharging,omitempty"`
+	ChargingMode  *TBatteryCapability_TState_EChargingMode `protobuf:"varint,4,opt,name=ChargingMode,proto3,enum=NAlice.TBatteryCapability_TState_EChargingMode,oneof" json:"ChargingMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -240,7 +240,7 @@ func (x *TBatteryCapability_TState) GetChargingMode() TBatteryCapability_TState_
 
 type TBatteryCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TBatteryCapability    `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TBatteryCapability    `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -284,9 +284,9 @@ func (x *TBatteryCapability_TUpdateStateEvent) GetCapability() *TBatteryCapabili
 
 type TBatteryCapability_TCondition struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	LowerBound    *wrapperspb.DoubleValue `protobuf:"bytes,1,opt,name=LowerBound,json=lower_bound,proto3" json:"LowerBound,omitempty"`
-	UpperBound    *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=UpperBound,json=upper_bound,proto3" json:"UpperBound,omitempty"`
-	Hysteresis    float64                 `protobuf:"fixed64,3,opt,name=Hysteresis,json=hysteresis,proto3" json:"Hysteresis,omitempty"`
+	LowerBound    *wrapperspb.DoubleValue `protobuf:"bytes,1,opt,name=LowerBound,proto3" json:"LowerBound,omitempty"`
+	UpperBound    *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=UpperBound,proto3" json:"UpperBound,omitempty"`
+	Hysteresis    float64                 `protobuf:"fixed64,3,opt,name=Hysteresis,proto3" json:"Hysteresis,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -344,8 +344,8 @@ func (x *TBatteryCapability_TCondition) GetHysteresis() float64 {
 
 type TBatteryCapability_TPowerLevelFilter struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	LowerBound    *wrapperspb.DoubleValue `protobuf:"bytes,1,opt,name=LowerBound,json=lower_bound,proto3" json:"LowerBound,omitempty"`
-	UpperBound    *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=UpperBound,json=upper_bound,proto3" json:"UpperBound,omitempty"`
+	LowerBound    *wrapperspb.DoubleValue `protobuf:"bytes,1,opt,name=LowerBound,proto3" json:"LowerBound,omitempty"`
+	UpperBound    *wrapperspb.DoubleValue `protobuf:"bytes,2,opt,name=UpperBound,proto3" json:"UpperBound,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -398,54 +398,56 @@ var File_alice_protos_endpoint_capabilities_battery_capability_proto protoreflec
 
 const file_alice_protos_endpoint_capabilities_battery_capability_proto_rawDesc = "" +
 	"\n" +
-	";alice/protos/endpoint/capabilities/battery/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb2\t\n" +
-	"\x12TBatteryCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	";alice/protos/endpoint/capabilities/battery/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xac\a\n" +
+	"\x12TBatteryCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TBatteryCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TBatteryCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x91\x03\n" +
-	"\x06TState\x123\n" +
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TBatteryCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TBatteryCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xc8\x02\n" +
+	"\x06TState\x12#\n" +
 	"\n" +
-	"Percentage\x18\x01 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"percentageH\x00R\n" +
-	"percentage\x88\x01\x01\x12*\n" +
-	"\aVoltage\x18\x02 \x01(\x01B\v\xaa\xdd\x1b\avoltageH\x01R\avoltage\x88\x01\x01\x125\n" +
+	"Percentage\x18\x01 \x01(\x01H\x00R\n" +
+	"Percentage\x88\x01\x01\x12\x1d\n" +
+	"\aVoltage\x18\x02 \x01(\x01H\x01R\aVoltage\x88\x01\x01\x12#\n" +
 	"\n" +
-	"IsCharging\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vis_chargingH\x02R\vis_charging\x88\x01\x01\x12l\n" +
-	"\fChargingMode\x18\x04 \x01(\x0e2/.NAlice.TBatteryCapability.TState.EChargingModeB\x11\xaa\xdd\x1b\rcharging_modeH\x03R\rcharging_mode\x88\x01\x01\"@\n" +
+	"IsCharging\x18\x03 \x01(\bH\x02R\n" +
+	"IsCharging\x88\x01\x01\x12X\n" +
+	"\fChargingMode\x18\x04 \x01(\x0e2/.NAlice.TBatteryCapability.TState.EChargingModeH\x03R\fChargingMode\x88\x01\x01\"@\n" +
 	"\rEChargingMode\x12\v\n" +
 	"\aDefault\x10\x00\x12\x10\n" +
 	"\fFastCharging\x10\x01\x12\x10\n" +
-	"\fSlowCharging\x10\x02:\x04\xa8\xdd\x1b\x04B\r\n" +
+	"\fSlowCharging\x10\x02B\r\n" +
 	"\v_PercentageB\n" +
 	"\n" +
 	"\b_VoltageB\r\n" +
 	"\v_IsChargingB\x0f\n" +
-	"\r_ChargingMode\x1ai\n" +
-	"\x11TUpdateStateEvent\x12J\n" +
+	"\r_ChargingMode\x1aO\n" +
+	"\x11TUpdateStateEvent\x12:\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TBatteryCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x12\x1a\xe7\x01\n" +
+	"Capability\x18\x01 \x01(\v2\x1a.NAlice.TBatteryCapabilityR\n" +
+	"Capability\x1a\xa8\x01\n" +
 	"\n" +
-	"TCondition\x12N\n" +
+	"TCondition\x12<\n" +
 	"\n" +
-	"LowerBound\x18\x01 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vlower_boundR\vlower_bound\x12N\n" +
+	"LowerBound\x18\x01 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"LowerBound\x12<\n" +
 	"\n" +
-	"UpperBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vupper_boundR\vupper_bound\x12.\n" +
+	"UpperBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"UpperBound\x12\x1e\n" +
 	"\n" +
-	"Hysteresis\x18\x03 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"hysteresisR\n" +
-	"hysteresis:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x12\x1a\xbe\x01\n" +
-	"\x11TPowerLevelFilter\x12N\n" +
+	"Hysteresis\x18\x03 \x01(\x01R\n" +
+	"Hysteresis\x1a\x8f\x01\n" +
+	"\x11TPowerLevelFilter\x12<\n" +
 	"\n" +
-	"LowerBound\x18\x01 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vlower_boundR\vlower_bound\x12N\n" +
+	"LowerBound\x18\x01 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"LowerBound\x12<\n" +
 	"\n" +
-	"UpperBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueB\x0f\xaa\xdd\x1b\vupper_boundR\vupper_bound:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01\x12:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x0fB\x83\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\fBatteryProtoZEa.yandex-team.ru/alice/protos/endpoint/capabilities/battery;batterypbb\x06proto3"
+	"UpperBound\x18\x02 \x01(\v2\x1c.google.protobuf.DoubleValueR\n" +
+	"UpperBoundB\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/battery\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_battery_capability_proto_rawDescOnce sync.Once

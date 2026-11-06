@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screen_sunrise/capability.proto
 
-package screen_sunrisepb
+package screen_sunrise
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -610,8 +610,8 @@ const file_alice_protos_endpoint_capabilities_screen_sunrise_capability_proto_ra
 	"\n" +
 	"Capability\x18\x01 \x01(\v2 .NAlice.TScreenSunriseCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xac\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x84\x02B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cScreenSunriseCapabilityProtoP\x01ZSa.yandex-team.ru/alice/protos/endpoint/capabilities/screen_sunrise;screen_sunrisepbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xac\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x84\x02B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cScreenSunriseCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screen_sunriseb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screen_sunrise_capability_proto_rawDescOnce sync.Once

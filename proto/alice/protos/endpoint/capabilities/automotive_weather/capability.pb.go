@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_weather/capability.proto
 
-package automotive_weatherpb
+package automotive_weather
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -600,8 +600,8 @@ const file_alice_protos_endpoint_capabilities_automotive_weather_capability_prot
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1a\xb7\x01\n" +
 	"\x15TShowWeatherDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12O\n" +
-	"\x04Card\x18\x01 \x01(\v21.NAlice.TAutomotiveWeatherCapability.TWeatherCardB\b\xaa\xdd\x1b\x04cardR\x04card:.\x92\x82\x19!show_automotive_weather_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb6\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa5\x02B\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB AutomotiveWeatherCapabilityProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_weather;automotive_weatherpbb\x06proto3"
+	"\x04Card\x18\x01 \x01(\v21.NAlice.TAutomotiveWeatherCapability.TWeatherCardB\b\xaa\xdd\x1b\x04cardR\x04card:.\x92\x82\x19!show_automotive_weather_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb6\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa5\x02B\xb7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB AutomotiveWeatherCapabilityProtoZegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_weatherb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_weather_capability_proto_rawDescOnce sync.Once

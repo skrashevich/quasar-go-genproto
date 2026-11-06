@@ -91,8 +91,8 @@ const file_alice_protos_data_tv_serial_navigator_serial_navigator_position_proto
 	"\x18TSerialNavigatorPosition\x126\n" +
 	"\fSeasonNumber\x18\x01 \x01(\rB\x11\xaa\xdd\x1b\rseason_numberR\rseason_number\x129\n" +
 	"\rEpisodeNumber\x18\x02 \x01(\rB\x12\xaa\xdd\x1b\x0eepisode_numberR\x0eepisode_number\x12(\n" +
-	"\bProgress\x18\x03 \x01(\rB\f\xaa\xdd\x1b\bprogressR\bprogressB\x86\x01\n" +
-	".ru.yandex.alice.protos.data.tv.serialnavigatorB\x1cSerialNavigatorPositionProtoZ6a.yandex-team.ru/alice/protos/data/tv/serial_navigatorb\x06proto3"
+	"\bProgress\x18\x03 \x01(\rB\f\xaa\xdd\x1b\bprogressR\bprogressB\xa5\x01\n" +
+	".ru.yandex.alice.protos.data.tv.serialnavigatorB\x1cSerialNavigatorPositionProtoZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/serial_navigatorb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_serial_navigator_serial_navigator_position_proto_rawDescOnce sync.Once

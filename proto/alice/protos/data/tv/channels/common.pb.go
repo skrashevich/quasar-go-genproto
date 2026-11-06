@@ -250,11 +250,11 @@ type isTTvChannelId_IdentityMethod interface {
 }
 
 type TTvChannelId_ChannelUri struct {
-	ChannelUri string `protobuf:"bytes,1,opt,name=ChannelUri,json=channel_uri,proto3,oneof"`
+	ChannelUri string `protobuf:"bytes,1,opt,name=ChannelUri,proto3,oneof"`
 }
 
 type TTvChannelId_ContentId struct {
-	ContentId string `protobuf:"bytes,2,opt,name=ContentId,json=content_id,proto3,oneof"`
+	ContentId string `protobuf:"bytes,2,opt,name=ContentId,proto3,oneof"`
 }
 
 func (*TTvChannelId_ChannelUri) isTTvChannelId_IdentityMethod() {}
@@ -262,32 +262,31 @@ func (*TTvChannelId_ChannelUri) isTTvChannelId_IdentityMethod() {}
 func (*TTvChannelId_ContentId) isTTvChannelId_IdentityMethod() {}
 
 type TChannel struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	ChannelId           int32                  `protobuf:"varint,1,opt,name=ChannelId,json=channel_id,proto3" json:"ChannelId,omitempty"`
-	ChannelProvider     string                 `protobuf:"bytes,2,opt,name=ChannelProvider,json=channel_provider,proto3" json:"ChannelProvider,omitempty"`
-	ChannelProviderId   string                 `protobuf:"bytes,3,opt,name=ChannelProviderId,json=channel_provider_id,proto3" json:"ChannelProviderId,omitempty"`
-	Title               string                 `protobuf:"bytes,4,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Description         string                 `protobuf:"bytes,5,opt,name=Description,json=description,proto3" json:"Description,omitempty"`
-	DisplayNumber       string                 `protobuf:"bytes,6,opt,name=DisplayNumber,json=display_number,proto3" json:"DisplayNumber,omitempty"`
-	Thumbnail           string                 `protobuf:"bytes,7,opt,name=Thumbnail,json=thumbnail,proto3" json:"Thumbnail,omitempty"`
-	Icon                string                 `protobuf:"bytes,8,opt,name=Icon,json=icon,proto3" json:"Icon,omitempty"`
-	IconBgColor         string                 `protobuf:"bytes,9,opt,name=IconBgColor,json=icon_bg_color,proto3" json:"IconBgColor,omitempty"`
-	HasCatchup          bool                   `protobuf:"varint,11,opt,name=HasCatchup,json=has_catchup,proto3" json:"HasCatchup,omitempty"`
-	CatchupAgeSeconds   int32                  `protobuf:"varint,12,opt,name=CatchupAgeSeconds,json=catchup_age_seconds,proto3" json:"CatchupAgeSeconds,omitempty"`
-	RestrictionAge      string                 `protobuf:"bytes,13,opt,name=RestrictionAge,json=restriction_age,proto3" json:"RestrictionAge,omitempty"`
-	WatchingOption      *TWatchingOption       `protobuf:"bytes,14,opt,name=WatchingOption,json=watching_option,proto3" json:"WatchingOption,omitempty"`
-	BadgeUrl            string                 `protobuf:"bytes,15,opt,name=BadgeUrl,json=badge_url,proto3" json:"BadgeUrl,omitempty"`
-	ChannelProviderLogo string                 `protobuf:"bytes,16,opt,name=ChannelProviderLogo,json=channel_provider_logo,proto3" json:"ChannelProviderLogo,omitempty"`
-	Advertisement       []*TAdvertisementItem  `protobuf:"bytes,17,rep,name=Advertisement,json=advertisement,proto3" json:"Advertisement,omitempty"`
-	Tvis                *TTvis                 `protobuf:"bytes,18,opt,name=Tvis,json=tvis,proto3" json:"Tvis,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/tv/channels/common.proto.
-	CurrentEpisodes     []*TProgramItem         `protobuf:"bytes,19,rep,name=CurrentEpisodes,json=current_episodes,proto3" json:"CurrentEpisodes,omitempty"`
-	ItemSelectionNumber int32                   `protobuf:"varint,20,opt,name=ItemSelectionNumber,json=item_selection_number,proto3" json:"ItemSelectionNumber,omitempty"`
-	ChannelBgColor      string                  `protobuf:"bytes,21,opt,name=ChannelBgColor,json=channel_bg_color,proto3" json:"ChannelBgColor,omitempty"`
-	ViewOptions         *TViewOptions           `protobuf:"bytes,22,opt,name=ViewOptions,json=view_options,proto3" json:"ViewOptions,omitempty"`
-	IsMultiplex         bool                    `protobuf:"varint,23,opt,name=IsMultiplex,json=is_multiplex,proto3" json:"IsMultiplex,omitempty"`
-	LogoUrl             string                  `protobuf:"bytes,24,opt,name=LogoUrl,json=logo_url,proto3" json:"LogoUrl,omitempty"`
-	BadgeMds            *avatar.TAvatarMdsImage `protobuf:"bytes,25,opt,name=BadgeMds,json=badge_mds,proto3,oneof" json:"BadgeMds,omitempty"`
+	state               protoimpl.MessageState  `protogen:"open.v1"`
+	ChannelId           int32                   `protobuf:"varint,1,opt,name=ChannelId,proto3" json:"ChannelId,omitempty"`
+	ChannelProvider     string                  `protobuf:"bytes,2,opt,name=ChannelProvider,proto3" json:"ChannelProvider,omitempty"`
+	ChannelProviderId   string                  `protobuf:"bytes,3,opt,name=ChannelProviderId,proto3" json:"ChannelProviderId,omitempty"`
+	Title               string                  `protobuf:"bytes,4,opt,name=Title,proto3" json:"Title,omitempty"`
+	Description         string                  `protobuf:"bytes,5,opt,name=Description,proto3" json:"Description,omitempty"`
+	DisplayNumber       string                  `protobuf:"bytes,6,opt,name=DisplayNumber,proto3" json:"DisplayNumber,omitempty"`
+	Thumbnail           string                  `protobuf:"bytes,7,opt,name=Thumbnail,proto3" json:"Thumbnail,omitempty"`
+	Icon                string                  `protobuf:"bytes,8,opt,name=Icon,proto3" json:"Icon,omitempty"`
+	IconBgColor         string                  `protobuf:"bytes,9,opt,name=IconBgColor,proto3" json:"IconBgColor,omitempty"`
+	HasCatchup          bool                    `protobuf:"varint,11,opt,name=HasCatchup,proto3" json:"HasCatchup,omitempty"`
+	CatchupAgeSeconds   int32                   `protobuf:"varint,12,opt,name=CatchupAgeSeconds,proto3" json:"CatchupAgeSeconds,omitempty"`
+	RestrictionAge      string                  `protobuf:"bytes,13,opt,name=RestrictionAge,proto3" json:"RestrictionAge,omitempty"`
+	WatchingOption      *TWatchingOption        `protobuf:"bytes,14,opt,name=WatchingOption,proto3" json:"WatchingOption,omitempty"`
+	BadgeUrl            string                  `protobuf:"bytes,15,opt,name=BadgeUrl,proto3" json:"BadgeUrl,omitempty"`
+	ChannelProviderLogo string                  `protobuf:"bytes,16,opt,name=ChannelProviderLogo,proto3" json:"ChannelProviderLogo,omitempty"`
+	Advertisement       []*TAdvertisementItem   `protobuf:"bytes,17,rep,name=Advertisement,proto3" json:"Advertisement,omitempty"`
+	Tvis                *TTvis                  `protobuf:"bytes,18,opt,name=Tvis,proto3" json:"Tvis,omitempty"`
+	CurrentEpisodes     []*TProgramItem         `protobuf:"bytes,19,rep,name=CurrentEpisodes,proto3" json:"CurrentEpisodes,omitempty"`
+	ItemSelectionNumber int32                   `protobuf:"varint,20,opt,name=ItemSelectionNumber,proto3" json:"ItemSelectionNumber,omitempty"`
+	ChannelBgColor      string                  `protobuf:"bytes,21,opt,name=ChannelBgColor,proto3" json:"ChannelBgColor,omitempty"`
+	ViewOptions         *TViewOptions           `protobuf:"bytes,22,opt,name=ViewOptions,proto3" json:"ViewOptions,omitempty"`
+	IsMultiplex         bool                    `protobuf:"varint,23,opt,name=IsMultiplex,proto3" json:"IsMultiplex,omitempty"`
+	LogoUrl             string                  `protobuf:"bytes,24,opt,name=LogoUrl,proto3" json:"LogoUrl,omitempty"`
+	BadgeMds            *avatar.TAvatarMdsImage `protobuf:"bytes,25,opt,name=BadgeMds,proto3,oneof" json:"BadgeMds,omitempty"`
 	IconMds             *avatar.TAvatarMdsImage `protobuf:"bytes,26,opt,name=IconMds,json=icon_mds,proto3,oneof" json:"IconMds,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
@@ -442,7 +441,6 @@ func (x *TChannel) GetTvis() *TTvis {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/tv/channels/common.proto.
 func (x *TChannel) GetCurrentEpisodes() []*TProgramItem {
 	if x != nil {
 		return x.CurrentEpisodes
@@ -501,7 +499,7 @@ func (x *TChannel) GetIconMds() *avatar.TAvatarMdsImage {
 
 type TWatchingOption struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsPaid        bool                   `protobuf:"varint,1,opt,name=IsPaid,json=is_paid,proto3" json:"IsPaid,omitempty"`
+	IsPaid        bool                   `protobuf:"varint,1,opt,name=IsPaid,proto3" json:"IsPaid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -545,11 +543,11 @@ func (x *TWatchingOption) GetIsPaid() bool {
 
 type TViewOptions struct {
 	state              protoimpl.MessageState             `protogen:"open.v1"`
-	Type               string                             `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	MonetizationModels []string                           `protobuf:"bytes,2,rep,name=MonetizationModels,json=monetization_models,proto3" json:"MonetizationModels,omitempty"`
-	Watchability       TViewOptions_EWatchabilityStatus   `protobuf:"varint,3,opt,name=Watchability,json=watchability,proto3,enum=NAlice.NTv.TViewOptions_EWatchabilityStatus" json:"Watchability,omitempty"`
-	Purchasability     TViewOptions_EPurchasabilityStatus `protobuf:"varint,4,opt,name=Purchasability,json=purchasability,proto3,enum=NAlice.NTv.TViewOptions_EPurchasabilityStatus" json:"Purchasability,omitempty"`
-	BillingFeatureName string                             `protobuf:"bytes,12,opt,name=BillingFeatureName,json=billing_feature_name,proto3" json:"BillingFeatureName,omitempty"`
+	Type               string                             `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	MonetizationModels []string                           `protobuf:"bytes,2,rep,name=MonetizationModels,proto3" json:"MonetizationModels,omitempty"`
+	Watchability       TViewOptions_EWatchabilityStatus   `protobuf:"varint,3,opt,name=Watchability,proto3,enum=NAlice.NTv.TViewOptions_EWatchabilityStatus" json:"Watchability,omitempty"`
+	Purchasability     TViewOptions_EPurchasabilityStatus `protobuf:"varint,4,opt,name=Purchasability,proto3,enum=NAlice.NTv.TViewOptions_EPurchasabilityStatus" json:"Purchasability,omitempty"`
+	BillingFeatureName string                             `protobuf:"bytes,12,opt,name=BillingFeatureName,proto3" json:"BillingFeatureName,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -621,9 +619,9 @@ func (x *TViewOptions) GetBillingFeatureName() string {
 
 type TCategory struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Name          string                       `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Channels      []*TCategory_TChannelWrapper `protobuf:"bytes,2,rep,name=Channels,json=channels,proto3" json:"Channels,omitempty"`
-	CategoryId    string                       `protobuf:"bytes,3,opt,name=CategoryId,json=category_id,proto3" json:"CategoryId,omitempty"`
+	Name          string                       `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Channels      []*TCategory_TChannelWrapper `protobuf:"bytes,2,rep,name=Channels,proto3" json:"Channels,omitempty"`
+	CategoryId    string                       `protobuf:"bytes,3,opt,name=CategoryId,proto3" json:"CategoryId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -681,19 +679,19 @@ func (x *TCategory) GetCategoryId() string {
 
 type TProgramItem struct {
 	state            protoimpl.MessageState  `protogen:"open.v1"`
-	Title            string                  `protobuf:"bytes,1,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	ProgramId        int32                   `protobuf:"varint,2,opt,name=ProgramId,json=program_id,proto3" json:"ProgramId,omitempty"`
-	StartTime        string                  `protobuf:"bytes,3,opt,name=StartTime,json=start_time,proto3" json:"StartTime,omitempty"`
-	EndTime          string                  `protobuf:"bytes,4,opt,name=EndTime,json=end_time,proto3" json:"EndTime,omitempty"`
-	ContentId        string                  `protobuf:"bytes,5,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
-	Duration         int32                   `protobuf:"varint,6,opt,name=Duration,json=duration,proto3" json:"Duration,omitempty"`
-	Thumbnail        string                  `protobuf:"bytes,7,opt,name=Thumbnail,json=thumbnail,proto3" json:"Thumbnail,omitempty"`
-	Description      string                  `protobuf:"bytes,8,opt,name=Description,json=description,proto3" json:"Description,omitempty"`
-	RestrictionAge   string                  `protobuf:"bytes,9,opt,name=RestrictionAge,json=restriction_age,proto3" json:"RestrictionAge,omitempty"`
-	Advertisement    []*TAdvertisementItem   `protobuf:"bytes,10,rep,name=Advertisement,json=advertisement,proto3" json:"Advertisement,omitempty"`
-	Tvis             *TTvis                  `protobuf:"bytes,11,opt,name=Tvis,json=tvis,proto3" json:"Tvis,omitempty"`
-	Genre            string                  `protobuf:"bytes,13,opt,name=Genre,json=genre,proto3" json:"Genre,omitempty"`
-	CatchupContentId string                  `protobuf:"bytes,14,opt,name=CatchupContentId,json=catchup_content_id,proto3" json:"CatchupContentId,omitempty"`
+	Title            string                  `protobuf:"bytes,1,opt,name=Title,proto3" json:"Title,omitempty"`
+	ProgramId        int32                   `protobuf:"varint,2,opt,name=ProgramId,proto3" json:"ProgramId,omitempty"`
+	StartTime        string                  `protobuf:"bytes,3,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
+	EndTime          string                  `protobuf:"bytes,4,opt,name=EndTime,proto3" json:"EndTime,omitempty"`
+	ContentId        string                  `protobuf:"bytes,5,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
+	Duration         int32                   `protobuf:"varint,6,opt,name=Duration,proto3" json:"Duration,omitempty"`
+	Thumbnail        string                  `protobuf:"bytes,7,opt,name=Thumbnail,proto3" json:"Thumbnail,omitempty"`
+	Description      string                  `protobuf:"bytes,8,opt,name=Description,proto3" json:"Description,omitempty"`
+	RestrictionAge   string                  `protobuf:"bytes,9,opt,name=RestrictionAge,proto3" json:"RestrictionAge,omitempty"`
+	Advertisement    []*TAdvertisementItem   `protobuf:"bytes,10,rep,name=Advertisement,proto3" json:"Advertisement,omitempty"`
+	Tvis             *TTvis                  `protobuf:"bytes,11,opt,name=Tvis,proto3" json:"Tvis,omitempty"`
+	Genre            string                  `protobuf:"bytes,13,opt,name=Genre,proto3" json:"Genre,omitempty"`
+	CatchupContentId string                  `protobuf:"bytes,14,opt,name=CatchupContentId,proto3" json:"CatchupContentId,omitempty"`
 	ThumbnailMds     *avatar.TAvatarMdsImage `protobuf:"bytes,15,opt,name=ThumbnailMds,json=thumbnail_mds,proto3,oneof" json:"ThumbnailMds,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -829,9 +827,9 @@ func (x *TProgramItem) GetThumbnailMds() *avatar.TAvatarMdsImage {
 
 type TAdvertisementItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Position      string                 `protobuf:"bytes,1,opt,name=Position,json=position,proto3" json:"Position,omitempty"`
-	SdkData       *TSdkData              `protobuf:"bytes,3,opt,name=SdkData,json=sdk_data,proto3" json:"SdkData,omitempty"`
-	Urls          []string               `protobuf:"bytes,2,rep,name=Urls,json=urls,proto3" json:"Urls,omitempty"`
+	Position      string                 `protobuf:"bytes,1,opt,name=Position,proto3" json:"Position,omitempty"`
+	SdkData       *TSdkData              `protobuf:"bytes,3,opt,name=SdkData,proto3" json:"SdkData,omitempty"`
+	Urls          []string               `protobuf:"bytes,2,rep,name=Urls,proto3" json:"Urls,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -888,10 +886,10 @@ func (x *TAdvertisementItem) GetUrls() []string {
 }
 
 type TSdkData struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Type           string                 `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	VendorClientId string                 `protobuf:"bytes,2,opt,name=VendorClientId,json=vendor_client_id,proto3" json:"VendorClientId,omitempty"`
-	Params         map[string]string      `protobuf:"bytes,3,rep,name=Params,json=params,proto3" json:"Params,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state          protoimpl.MessageState  `protogen:"open.v1"`
+	Type           string                  `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	VendorClientId string                  `protobuf:"bytes,2,opt,name=VendorClientId,proto3" json:"VendorClientId,omitempty"`
+	Params         []*TSdkData_ParamsEntry `protobuf:"bytes,3,rep,name=Params,proto3" json:"Params,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -940,7 +938,7 @@ func (x *TSdkData) GetVendorClientId() string {
 	return ""
 }
 
-func (x *TSdkData) GetParams() map[string]string {
+func (x *TSdkData) GetParams() []*TSdkData_ParamsEntry {
 	if x != nil {
 		return x.Params
 	}
@@ -949,7 +947,7 @@ func (x *TSdkData) GetParams() map[string]string {
 
 type TTvis struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Url           string                 `protobuf:"bytes,1,opt,name=Url,json=url,proto3" json:"Url,omitempty"`
+	Url           string                 `protobuf:"bytes,1,opt,name=Url,proto3" json:"Url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1062,71 +1060,121 @@ type isTCategory_TChannelWrapper_Id interface {
 }
 
 type TCategory_TChannelWrapper_ChannelId struct {
-	ChannelId int32 `protobuf:"varint,1,opt,name=ChannelId,json=channel_id,proto3,oneof"`
+	ChannelId int32 `protobuf:"varint,1,opt,name=ChannelId,proto3,oneof"`
 }
 
 type TCategory_TChannelWrapper_InternalId struct {
-	InternalId int32 `protobuf:"varint,2,opt,name=InternalId,json=internal_id,proto3,oneof"`
+	InternalId int32 `protobuf:"varint,2,opt,name=InternalId,proto3,oneof"`
 }
 
 func (*TCategory_TChannelWrapper_ChannelId) isTCategory_TChannelWrapper_Id() {}
 
 func (*TCategory_TChannelWrapper_InternalId) isTCategory_TChannelWrapper_Id() {}
 
+type TSdkData_ParamsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TSdkData_ParamsEntry) Reset() {
+	*x = TSdkData_ParamsEntry{}
+	mi := &file_alice_protos_data_tv_channels_common_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TSdkData_ParamsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TSdkData_ParamsEntry) ProtoMessage() {}
+
+func (x *TSdkData_ParamsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_tv_channels_common_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TSdkData_ParamsEntry.ProtoReflect.Descriptor instead.
+func (*TSdkData_ParamsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_tv_channels_common_proto_rawDescGZIP(), []int{7, 0}
+}
+
+func (x *TSdkData_ParamsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TSdkData_ParamsEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_data_tv_channels_common_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_tv_channels_common_proto_rawDesc = "" +
 	"\n" +
 	"*alice/protos/data/tv/channels/common.proto\x12\n" +
-	"NAlice.NTv\x1a%alice/protos/data/avatar/avatar.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x01\n" +
-	"\fTTvChannelId\x122\n" +
+	"NAlice.NTv\x1a%alice/protos/data/avatar/avatar.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"b\n" +
+	"\fTTvChannelId\x12 \n" +
 	"\n" +
-	"ChannelUri\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vchannel_uriH\x00R\vchannel_uri\x12/\n" +
-	"\tContentId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"content_idH\x00R\n" +
-	"content_idB)\n" +
-	"\x0eIdentityMethod\x12\x17\xa0\xdd\x1b\r\xaa\xdd\x1b\x0fidentity_method\"\xc5\f\n" +
-	"\bTChannel\x12-\n" +
-	"\tChannelId\x18\x01 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"channel_idR\n" +
-	"channel_id\x12?\n" +
-	"\x0fChannelProvider\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10channel_providerR\x10channel_provider\x12G\n" +
-	"\x11ChannelProviderId\x18\x03 \x01(\tB\x17\xaa\xdd\x1b\x13channel_provider_idR\x13channel_provider_id\x12\x1f\n" +
-	"\x05Title\x18\x04 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x121\n" +
-	"\vDescription\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x129\n" +
-	"\rDisplayNumber\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0edisplay_numberR\x0edisplay_number\x12+\n" +
-	"\tThumbnail\x18\a \x01(\tB\r\xaa\xdd\x1b\tthumbnailR\tthumbnail\x12\x1c\n" +
-	"\x04Icon\x18\b \x01(\tB\b\xaa\xdd\x1b\x04iconR\x04icon\x125\n" +
-	"\vIconBgColor\x18\t \x01(\tB\x11\xaa\xdd\x1b\ricon_bg_colorR\ricon_bg_color\x120\n" +
+	"ChannelUri\x18\x01 \x01(\tH\x00R\n" +
+	"ChannelUri\x12\x1e\n" +
+	"\tContentId\x18\x02 \x01(\tH\x00R\tContentIdB\x10\n" +
+	"\x0eIdentityMethod\"\xe7\b\n" +
+	"\bTChannel\x12\x1c\n" +
+	"\tChannelId\x18\x01 \x01(\x05R\tChannelId\x12(\n" +
+	"\x0fChannelProvider\x18\x02 \x01(\tR\x0fChannelProvider\x12,\n" +
+	"\x11ChannelProviderId\x18\x03 \x01(\tR\x11ChannelProviderId\x12\x14\n" +
+	"\x05Title\x18\x04 \x01(\tR\x05Title\x12 \n" +
+	"\vDescription\x18\x05 \x01(\tR\vDescription\x12$\n" +
+	"\rDisplayNumber\x18\x06 \x01(\tR\rDisplayNumber\x12\x1c\n" +
+	"\tThumbnail\x18\a \x01(\tR\tThumbnail\x12\x12\n" +
+	"\x04Icon\x18\b \x01(\tR\x04Icon\x12 \n" +
+	"\vIconBgColor\x18\t \x01(\tR\vIconBgColor\x12\x1e\n" +
 	"\n" +
-	"HasCatchup\x18\v \x01(\bB\x0f\xaa\xdd\x1b\vhas_catchupR\vhas_catchup\x12G\n" +
-	"\x11CatchupAgeSeconds\x18\f \x01(\x05B\x17\xaa\xdd\x1b\x13catchup_age_secondsR\x13catchup_age_seconds\x12<\n" +
-	"\x0eRestrictionAge\x18\r \x01(\tB\x13\xaa\xdd\x1b\x0frestriction_ageR\x0frestriction_age\x12Y\n" +
-	"\x0eWatchingOption\x18\x0e \x01(\v2\x1b.NAlice.NTv.TWatchingOptionB\x13\xaa\xdd\x1b\x0fwatching_optionR\x0fwatching_option\x12*\n" +
-	"\bBadgeUrl\x18\x0f \x01(\tB\r\xaa\xdd\x1b\tbadge_urlR\tbadge_url\x12M\n" +
-	"\x13ChannelProviderLogo\x18\x10 \x01(\tB\x19\xaa\xdd\x1b\x15channel_provider_logoR\x15channel_provider_logo\x12W\n" +
-	"\rAdvertisement\x18\x11 \x03(\v2\x1e.NAlice.NTv.TAdvertisementItemB\x11\xaa\xdd\x1b\radvertisementR\radvertisement\x12/\n" +
-	"\x04Tvis\x18\x12 \x01(\v2\x11.NAlice.NTv.TTvisB\b\xaa\xdd\x1b\x04tvisR\x04tvis\x12[\n" +
-	"\x0fCurrentEpisodes\x18\x13 \x03(\v2\x18.NAlice.NTv.TProgramItemB\x16\xaa\xdd\x1b\x10current_episodes\x18\x01R\x10current_episodes\x12M\n" +
-	"\x13ItemSelectionNumber\x18\x14 \x01(\x05B\x19\xaa\xdd\x1b\x15item_selection_numberR\x15item_selection_number\x12>\n" +
-	"\x0eChannelBgColor\x18\x15 \x01(\tB\x14\xaa\xdd\x1b\x10channel_bg_colorR\x10channel_bg_color\x12M\n" +
-	"\vViewOptions\x18\x16 \x01(\v2\x18.NAlice.NTv.TViewOptionsB\x10\xaa\xdd\x1b\fview_optionsR\fview_options\x123\n" +
-	"\vIsMultiplex\x18\x17 \x01(\bB\x10\xaa\xdd\x1b\fis_multiplexR\fis_multiplex\x12'\n" +
-	"\aLogoUrl\x18\x18 \x01(\tB\f\xaa\xdd\x1b\blogo_urlR\blogo_url\x12H\n" +
-	"\bBadgeMds\x18\x19 \x01(\v2\x17.NAlice.TAvatarMdsImageB\r\xaa\xdd\x1b\tbadge_mdsH\x00R\tbadge_mds\x88\x01\x01\x12E\n" +
-	"\aIconMds\x18\x1a \x01(\v2\x17.NAlice.TAvatarMdsImageB\f\xaa\xdd\x1b\bicon_mdsH\x01R\bicon_mds\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"HasCatchup\x18\v \x01(\bR\n" +
+	"HasCatchup\x12,\n" +
+	"\x11CatchupAgeSeconds\x18\f \x01(\x05R\x11CatchupAgeSeconds\x12&\n" +
+	"\x0eRestrictionAge\x18\r \x01(\tR\x0eRestrictionAge\x12C\n" +
+	"\x0eWatchingOption\x18\x0e \x01(\v2\x1b.NAlice.NTv.TWatchingOptionR\x0eWatchingOption\x12\x1a\n" +
+	"\bBadgeUrl\x18\x0f \x01(\tR\bBadgeUrl\x120\n" +
+	"\x13ChannelProviderLogo\x18\x10 \x01(\tR\x13ChannelProviderLogo\x12D\n" +
+	"\rAdvertisement\x18\x11 \x03(\v2\x1e.NAlice.NTv.TAdvertisementItemR\rAdvertisement\x12%\n" +
+	"\x04Tvis\x18\x12 \x01(\v2\x11.NAlice.NTv.TTvisR\x04Tvis\x12B\n" +
+	"\x0fCurrentEpisodes\x18\x13 \x03(\v2\x18.NAlice.NTv.TProgramItemR\x0fCurrentEpisodes\x120\n" +
+	"\x13ItemSelectionNumber\x18\x14 \x01(\x05R\x13ItemSelectionNumber\x12&\n" +
+	"\x0eChannelBgColor\x18\x15 \x01(\tR\x0eChannelBgColor\x12:\n" +
+	"\vViewOptions\x18\x16 \x01(\v2\x18.NAlice.NTv.TViewOptionsR\vViewOptions\x12 \n" +
+	"\vIsMultiplex\x18\x17 \x01(\bR\vIsMultiplex\x12\x18\n" +
+	"\aLogoUrl\x18\x18 \x01(\tR\aLogoUrl\x128\n" +
+	"\bBadgeMds\x18\x19 \x01(\v2\x17.NAlice.TAvatarMdsImageH\x00R\bBadgeMds\x88\x01\x01\x12E\n" +
+	"\aIconMds\x18\x1a \x01(\v2\x17.NAlice.TAvatarMdsImageB\f\xaa\xdd\x1b\bicon_mdsH\x01R\bicon_mds\x88\x01\x01B\v\n" +
 	"\t_BadgeMdsB\n" +
 	"\n" +
 	"\b_IconMdsJ\x04\b\n" +
-	"\x10\vR\aBageUrl\"=\n" +
-	"\x0fTWatchingOption\x12$\n" +
-	"\x06IsPaid\x18\x01 \x01(\bB\v\xaa\xdd\x1b\ais_paidR\ais_paid:\x04\xa8\xdd\x1b\x04\"\x89\x05\n" +
-	"\fTViewOptions\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12H\n" +
-	"\x12MonetizationModels\x18\x02 \x03(\tB\x17\xaa\xdd\x1b\x13monetization_modelsR\x13monetization_models\x12b\n" +
-	"\fWatchability\x18\x03 \x01(\x0e2,.NAlice.NTv.TViewOptions.EWatchabilityStatusB\x10\xaa\xdd\x1b\fwatchabilityR\fwatchability\x12j\n" +
-	"\x0ePurchasability\x18\x04 \x01(\x0e2..NAlice.NTv.TViewOptions.EPurchasabilityStatusB\x12\xaa\xdd\x1b\x0epurchasabilityR\x0epurchasability\x12J\n" +
-	"\x12BillingFeatureName\x18\f \x01(\tB\x18\xaa\xdd\x1b\x14billing_feature_nameR\x14billing_feature_name\"J\n" +
+	"\x10\vR\aBageUrl\")\n" +
+	"\x0fTWatchingOption\x12\x16\n" +
+	"\x06IsPaid\x18\x01 \x01(\bR\x06IsPaid\"\xa3\x04\n" +
+	"\fTViewOptions\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12.\n" +
+	"\x12MonetizationModels\x18\x02 \x03(\tR\x12MonetizationModels\x12P\n" +
+	"\fWatchability\x18\x03 \x01(\x0e2,.NAlice.NTv.TViewOptions.EWatchabilityStatusR\fWatchability\x12V\n" +
+	"\x0ePurchasability\x18\x04 \x01(\x0e2..NAlice.NTv.TViewOptions.EPurchasabilityStatusR\x0ePurchasability\x12.\n" +
+	"\x12BillingFeatureName\x18\f \x01(\tR\x12BillingFeatureName\"J\n" +
 	"\x13EWatchabilityStatus\x12\x0f\n" +
 	"\vW_UNDEFINED\x10\x00\x12\x0f\n" +
 	"\vW_WATCHABLE\x10\x01\x12\x11\n" +
@@ -1137,56 +1185,49 @@ const file_alice_protos_data_tv_channels_common_proto_rawDesc = "" +
 	"\vP_PURCHASED\x10\x02\x12\x13\n" +
 	"\x0fP_UNPURCHASABLE\x10\x03J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vJ\x04\b\v\x10\fJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12\"\xb9\x02\n" +
-	"\tTCategory\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12O\n" +
-	"\bChannels\x18\x02 \x03(\v2%.NAlice.NTv.TCategory.TChannelWrapperB\f\xaa\xdd\x1b\bchannelsR\bchannels\x120\n" +
+	"\x10\vJ\x04\b\v\x10\fJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12\"\xdd\x01\n" +
+	"\tTCategory\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12A\n" +
+	"\bChannels\x18\x02 \x03(\v2%.NAlice.NTv.TCategory.TChannelWrapperR\bChannels\x12\x1e\n" +
 	"\n" +
-	"CategoryId\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vcategory_idR\vcategory_id\x1a\x84\x01\n" +
-	"\x0fTChannelWrapper\x12/\n" +
-	"\tChannelId\x18\x01 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"channel_idH\x00R\n" +
-	"channel_id\x122\n" +
+	"CategoryId\x18\x03 \x01(\tR\n" +
+	"CategoryId\x1aY\n" +
+	"\x0fTChannelWrapper\x12\x1e\n" +
+	"\tChannelId\x18\x01 \x01(\x05H\x00R\tChannelId\x12 \n" +
 	"\n" +
-	"InternalId\x18\x02 \x01(\x05B\x0f\xaa\xdd\x1b\vinternal_idH\x00R\vinternal_idB\f\n" +
-	"\x02Id\x12\x06\xaa\xdd\x1b\x02id:\x04\xa8\xdd\x1b\x04\"\x9f\x06\n" +
-	"\fTProgramItem\x12\x1f\n" +
-	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12-\n" +
-	"\tProgramId\x18\x02 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"program_idR\n" +
-	"program_id\x12-\n" +
-	"\tStartTime\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"start_timeR\n" +
-	"start_time\x12'\n" +
-	"\aEndTime\x18\x04 \x01(\tB\f\xaa\xdd\x1b\bend_timeR\bend_time\x12-\n" +
-	"\tContentId\x18\x05 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x12(\n" +
-	"\bDuration\x18\x06 \x01(\x05B\f\xaa\xdd\x1b\bdurationR\bduration\x12+\n" +
-	"\tThumbnail\x18\a \x01(\tB\r\xaa\xdd\x1b\tthumbnailR\tthumbnail\x121\n" +
-	"\vDescription\x18\b \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x12<\n" +
-	"\x0eRestrictionAge\x18\t \x01(\tB\x13\xaa\xdd\x1b\x0frestriction_ageR\x0frestriction_age\x12W\n" +
+	"InternalId\x18\x02 \x01(\x05H\x00R\n" +
+	"InternalIdB\x04\n" +
+	"\x02Id\"\xc6\x04\n" +
+	"\fTProgramItem\x12\x14\n" +
+	"\x05Title\x18\x01 \x01(\tR\x05Title\x12\x1c\n" +
+	"\tProgramId\x18\x02 \x01(\x05R\tProgramId\x12\x1c\n" +
+	"\tStartTime\x18\x03 \x01(\tR\tStartTime\x12\x18\n" +
+	"\aEndTime\x18\x04 \x01(\tR\aEndTime\x12\x1c\n" +
+	"\tContentId\x18\x05 \x01(\tR\tContentId\x12\x1a\n" +
+	"\bDuration\x18\x06 \x01(\x05R\bDuration\x12\x1c\n" +
+	"\tThumbnail\x18\a \x01(\tR\tThumbnail\x12 \n" +
+	"\vDescription\x18\b \x01(\tR\vDescription\x12&\n" +
+	"\x0eRestrictionAge\x18\t \x01(\tR\x0eRestrictionAge\x12D\n" +
 	"\rAdvertisement\x18\n" +
-	" \x03(\v2\x1e.NAlice.NTv.TAdvertisementItemB\x11\xaa\xdd\x1b\radvertisementR\radvertisement\x12/\n" +
-	"\x04Tvis\x18\v \x01(\v2\x11.NAlice.NTv.TTvisB\b\xaa\xdd\x1b\x04tvisR\x04tvis\x12\x1f\n" +
-	"\x05Genre\x18\r \x01(\tB\t\xaa\xdd\x1b\x05genreR\x05genre\x12D\n" +
-	"\x10CatchupContentId\x18\x0e \x01(\tB\x16\xaa\xdd\x1b\x12catchup_content_idR\x12catchup_content_id\x12T\n" +
-	"\fThumbnailMds\x18\x0f \x01(\v2\x17.NAlice.TAvatarMdsImageB\x11\xaa\xdd\x1b\rthumbnail_mdsH\x00R\rthumbnail_mds\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0f\n" +
-	"\r_ThumbnailMdsJ\x04\b\f\x10\rR\fEpisodeTitle\"\xa1\x01\n" +
-	"\x12TAdvertisementItem\x12(\n" +
-	"\bPosition\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bpositionR\bposition\x12=\n" +
-	"\aSdkData\x18\x03 \x01(\v2\x14.NAlice.NTv.TSdkDataB\f\xaa\xdd\x1b\bsdk_dataR\bsdk_data\x12\x1c\n" +
-	"\x04Urls\x18\x02 \x03(\tB\b\xaa\xdd\x1b\x04urlsR\x04urls:\x04\xa8\xdd\x1b\x04\"\xef\x01\n" +
-	"\bTSdkData\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12>\n" +
-	"\x0eVendorClientId\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10vendor_client_idR\x10vendor_client_id\x12D\n" +
-	"\x06Params\x18\x03 \x03(\v2 .NAlice.NTv.TSdkData.ParamsEntryB\n" +
-	"\xaa\xdd\x1b\x06paramsR\x06params\x1a9\n" +
+	" \x03(\v2\x1e.NAlice.NTv.TAdvertisementItemR\rAdvertisement\x12%\n" +
+	"\x04Tvis\x18\v \x01(\v2\x11.NAlice.NTv.TTvisR\x04Tvis\x12\x14\n" +
+	"\x05Genre\x18\r \x01(\tR\x05Genre\x12*\n" +
+	"\x10CatchupContentId\x18\x0e \x01(\tR\x10CatchupContentId\x12T\n" +
+	"\fThumbnailMds\x18\x0f \x01(\v2\x17.NAlice.TAvatarMdsImageB\x11\xaa\xdd\x1b\rthumbnail_mdsH\x00R\rthumbnail_mds\x88\x01\x01B\x0f\n" +
+	"\r_ThumbnailMdsJ\x04\b\f\x10\rR\fEpisodeTitle\"t\n" +
+	"\x12TAdvertisementItem\x12\x1a\n" +
+	"\bPosition\x18\x01 \x01(\tR\bPosition\x12.\n" +
+	"\aSdkData\x18\x03 \x01(\v2\x14.NAlice.NTv.TSdkDataR\aSdkData\x12\x12\n" +
+	"\x04Urls\x18\x02 \x03(\tR\x04Urls\"\xb7\x01\n" +
+	"\bTSdkData\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12&\n" +
+	"\x0eVendorClientId\x18\x02 \x01(\tR\x0eVendorClientId\x128\n" +
+	"\x06Params\x18\x03 \x03(\v2 .NAlice.NTv.TSdkData.ParamsEntryR\x06Params\x1a5\n" +
 	"\vParamsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\"(\n" +
-	"\x05TTvis\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04*_\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\x19\n" +
+	"\x05TTvis\x12\x10\n" +
+	"\x03Url\x18\x01 \x01(\tR\x03Url*_\n" +
 	"\fEChannelType\x12\x0e\n" +
 	"\n" +
 	"CT_UNKNOWN\x10\x00\x12\x0e\n" +
@@ -1194,8 +1235,10 @@ const file_alice_protos_data_tv_channels_common_proto_rawDesc = "" +
 	"CT_ANTENNA\x10\x01\x12\f\n" +
 	"\bCT_CABLE\x10\x02\x12\x0f\n" +
 	"\vCT_SOFTWARE\x10\x03\x12\x10\n" +
-	"\fCT_SATELLITE\x10\x04B[\n" +
-	"'ru.yandex.alice.protos.data.tv.channelsP\x01Z.a.yandex-team.ru/alice/protos/data/tv/channelsb\x06proto3"
+	"\fCT_SATELLITE\x10\x04B\xb5\x01\n" +
+	"\x0ecom.NAlice.NTvB\vCommonProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/channels\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_channels_common_proto_rawDescOnce sync.Once
@@ -1225,7 +1268,7 @@ var file_alice_protos_data_tv_channels_common_proto_goTypes = []any{
 	(*TSdkData)(nil),                        // 10: NAlice.NTv.TSdkData
 	(*TTvis)(nil),                           // 11: NAlice.NTv.TTvis
 	(*TCategory_TChannelWrapper)(nil),       // 12: NAlice.NTv.TCategory.TChannelWrapper
-	nil,                                     // 13: NAlice.NTv.TSdkData.ParamsEntry
+	(*TSdkData_ParamsEntry)(nil),            // 13: NAlice.NTv.TSdkData.ParamsEntry
 	(*avatar.TAvatarMdsImage)(nil),          // 14: NAlice.TAvatarMdsImage
 }
 var file_alice_protos_data_tv_channels_common_proto_depIdxs = []int32{

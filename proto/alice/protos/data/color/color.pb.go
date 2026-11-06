@@ -136,8 +136,9 @@ const file_alice_protos_data_color_color_proto_rawDesc = "" +
 	"\n" +
 	"\x06Purple\x10\x0e\x12\n" +
 	"\n" +
-	"\x06Silver\x10\x0fBM\n" +
-	"!ru.yandex.alice.protos.data.colorZ(a.yandex-team.ru/alice/protos/data/colorb\x06proto3"
+	"\x06Silver\x10\x0fB\xb8\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"ColorProtoP\x01ZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/color\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_color_color_proto_rawDescOnce sync.Once

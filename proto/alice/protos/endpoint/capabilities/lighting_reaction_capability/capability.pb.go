@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lighting_reaction_capability/capability.proto
 
-package lightingreactioncapabilitypb
+package lighting_reaction_capability
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -143,9 +143,9 @@ func (TLightingReactionCapability_EEvent) EnumDescriptor() ([]byte, []int) {
 
 type TLightingReactionCapability struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta              `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLightingReactionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLightingReactionCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta              `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLightingReactionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLightingReactionCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -262,7 +262,7 @@ type isTLightingReactionCapability_TSetting_Setting interface {
 }
 
 type TLightingReactionCapability_TSetting_DndRespect struct {
-	DndRespect *TLightingReactionCapability_TSetting_TDndRespectSetting `protobuf:"bytes,1,opt,name=DndRespect,json=dnd_respect,proto3,oneof"`
+	DndRespect *TLightingReactionCapability_TSetting_TDndRespectSetting `protobuf:"bytes,1,opt,name=DndRespect,proto3,oneof"`
 }
 
 func (*TLightingReactionCapability_TSetting_DndRespect) isTLightingReactionCapability_TSetting_Setting() {
@@ -270,8 +270,8 @@ func (*TLightingReactionCapability_TSetting_DndRespect) isTLightingReactionCapab
 
 type TLightingReactionCapability_TParameters struct {
 	state             protoimpl.MessageState                  `protogen:"open.v1"`
-	SupportedWeather  []TLightingReactionCapability_EWeather  `protobuf:"varint,1,rep,packed,name=SupportedWeather,json=supported_weather,proto3,enum=NAlice.TLightingReactionCapability_EWeather" json:"SupportedWeather,omitempty"`
-	SupportedSettings []*TLightingReactionCapability_TSetting `protobuf:"bytes,2,rep,name=SupportedSettings,json=supported_settings,proto3" json:"SupportedSettings,omitempty"`
+	SupportedWeather  []TLightingReactionCapability_EWeather  `protobuf:"varint,1,rep,packed,name=SupportedWeather,proto3,enum=NAlice.TLightingReactionCapability_EWeather" json:"SupportedWeather,omitempty"`
+	SupportedSettings []*TLightingReactionCapability_TSetting `protobuf:"bytes,2,rep,name=SupportedSettings,proto3" json:"SupportedSettings,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -322,8 +322,8 @@ func (x *TLightingReactionCapability_TParameters) GetSupportedSettings() []*TLig
 
 type TLightingReactionCapability_TReactionEvent struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Event         TLightingReactionCapability_EEvent `protobuf:"varint,1,opt,name=Event,json=event,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"Event,omitempty"`
-	Enabled       bool                               `protobuf:"varint,2,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Event         TLightingReactionCapability_EEvent `protobuf:"varint,1,opt,name=Event,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"Event,omitempty"`
+	Enabled       bool                               `protobuf:"varint,2,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -374,9 +374,9 @@ func (x *TLightingReactionCapability_TReactionEvent) GetEnabled() bool {
 
 type TLightingReactionCapability_TState struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	EnabledEvents []TLightingReactionCapability_EEvent          `protobuf:"varint,1,rep,packed,name=EnabledEvents,json=enabled_events,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"EnabledEvents,omitempty"`
-	Events        []*TLightingReactionCapability_TReactionEvent `protobuf:"bytes,2,rep,name=Events,json=events,proto3" json:"Events,omitempty"`
-	Settings      []*TLightingReactionCapability_TSetting       `protobuf:"bytes,3,rep,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
+	EnabledEvents []TLightingReactionCapability_EEvent          `protobuf:"varint,1,rep,packed,name=EnabledEvents,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"EnabledEvents,omitempty"`
+	Events        []*TLightingReactionCapability_TReactionEvent `protobuf:"bytes,2,rep,name=Events,proto3" json:"Events,omitempty"`
+	Settings      []*TLightingReactionCapability_TSetting       `protobuf:"bytes,3,rep,name=Settings,proto3" json:"Settings,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -434,8 +434,8 @@ func (x *TLightingReactionCapability_TState) GetSettings() []*TLightingReactionC
 
 type TLightingReactionCapability_TSetEventsDirective struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Name          string                               `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Events        []TLightingReactionCapability_EEvent `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"Events,omitempty"`
+	Name          string                               `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Events        []TLightingReactionCapability_EEvent `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TLightingReactionCapability_EEvent" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -486,8 +486,8 @@ func (x *TLightingReactionCapability_TSetEventsDirective) GetEvents() []TLightin
 
 type TLightingReactionCapability_TSetReactionEventsDirective struct {
 	state          protoimpl.MessageState                        `protogen:"open.v1"`
-	Name           string                                        `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ReactionEvents []*TLightingReactionCapability_TReactionEvent `protobuf:"bytes,1,rep,name=ReactionEvents,json=reaction_events,proto3" json:"ReactionEvents,omitempty"`
+	Name           string                                        `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	ReactionEvents []*TLightingReactionCapability_TReactionEvent `protobuf:"bytes,1,rep,name=ReactionEvents,proto3" json:"ReactionEvents,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -538,8 +538,8 @@ func (x *TLightingReactionCapability_TSetReactionEventsDirective) GetReactionEve
 
 type TLightingReactionCapability_TPlayWeatherDirective struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Name          string                               `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Weather       TLightingReactionCapability_EWeather `protobuf:"varint,1,opt,name=Weather,json=weather,proto3,enum=NAlice.TLightingReactionCapability_EWeather" json:"Weather,omitempty"`
+	Name          string                               `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Weather       TLightingReactionCapability_EWeather `protobuf:"varint,1,opt,name=Weather,proto3,enum=NAlice.TLightingReactionCapability_EWeather" json:"Weather,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -590,8 +590,8 @@ func (x *TLightingReactionCapability_TPlayWeatherDirective) GetWeather() TLighti
 
 type TLightingReactionCapability_TSetReactionSettingDirective struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Name          string                                `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Setting       *TLightingReactionCapability_TSetting `protobuf:"bytes,1,opt,name=Setting,json=setting,proto3" json:"Setting,omitempty"`
+	Name          string                                `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Setting       *TLightingReactionCapability_TSetting `protobuf:"bytes,1,opt,name=Setting,proto3" json:"Setting,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -642,7 +642,7 @@ func (x *TLightingReactionCapability_TSetReactionSettingDirective) GetSetting() 
 
 type TLightingReactionCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Capability    *TLightingReactionCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TLightingReactionCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -686,7 +686,7 @@ func (x *TLightingReactionCapability_TUpdateStateEvent) GetCapability() *TLighti
 
 type TLightingReactionCapability_TSetting_TDndRespectSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -732,49 +732,46 @@ var File_alice_protos_endpoint_capabilities_lighting_reaction_capability_capabil
 
 const file_alice_protos_endpoint_capabilities_lighting_reaction_capability_capability_proto_rawDesc = "" +
 	"\n" +
-	"Palice/protos/endpoint/capabilities/lighting_reaction_capability/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe8\x11\n" +
-	"\x1bTLightingReactionCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12_\n" +
+	"Palice/protos/endpoint/capabilities/lighting_reaction_capability/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd2\r\n" +
+	"\x1bTLightingReactionCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12O\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2/.NAlice.TLightingReactionCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12K\n" +
-	"\x05State\x18\x03 \x01(\v2*.NAlice.TLightingReactionCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xe0\x01\n" +
-	"\bTSetting\x12s\n" +
+	"Parameters\x18\x02 \x01(\v2/.NAlice.TLightingReactionCapability.TParametersR\n" +
+	"Parameters\x12@\n" +
+	"\x05State\x18\x03 \x01(\v2*.NAlice.TLightingReactionCapability.TStateR\x05State\x1a\xa8\x01\n" +
+	"\bTSetting\x12a\n" +
 	"\n" +
-	"DndRespect\x18\x01 \x01(\v2?.NAlice.TLightingReactionCapability.TSetting.TDndRespectSettingB\x0f\xaa\xdd\x1b\vdnd_respectH\x00R\vdnd_respect\x1aA\n" +
-	"\x12TDndRespectSetting\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aSetting\x12\v\xaa\xdd\x1b\asetting\x1a\xfa\x01\n" +
-	"\vTParameters\x12p\n" +
-	"\x10SupportedWeather\x18\x01 \x03(\x0e2,.NAlice.TLightingReactionCapability.EWeatherB\x15\xaa\xdd\x1b\x11supported_weatherR\x11supported_weather\x12s\n" +
-	"\x11SupportedSettings\x18\x02 \x03(\v2,.NAlice.TLightingReactionCapability.TSettingB\x16\xaa\xdd\x1b\x12supported_settingsR\x12supported_settings:\x04\xa8\xdd\x1b\x04\x1a\x8a\x01\n" +
-	"\x0eTReactionEvent\x12K\n" +
-	"\x05Event\x18\x01 \x01(\x0e2*.NAlice.TLightingReactionCapability.EEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a\xa5\x02\n" +
-	"\x06TState\x12e\n" +
-	"\rEnabledEvents\x18\x01 \x03(\x0e2*.NAlice.TLightingReactionCapability.EEventB\x12\xaa\xdd\x1b\x0eenabled_eventsR\x0eenabled_events\x12V\n" +
-	"\x06Events\x18\x02 \x03(\v22.NAlice.TLightingReactionCapability.TReactionEventB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events\x12V\n" +
-	"\bSettings\x18\x03 \x03(\v2,.NAlice.TLightingReactionCapability.TSettingB\f\xaa\xdd\x1b\bsettingsR\bsettings:\x04\xa8\xdd\x1b\x04\x1a\xa7\x01\n" +
-	"\x13TSetEventsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12N\n" +
-	"\x06Events\x18\x01 \x03(\x0e2*.NAlice.TLightingReactionCapability.EEventB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:!\x92\x82\x19\x14set_events_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf7\x03\x1a\xda\x01\n" +
-	"\x1bTSetReactionEventsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12p\n" +
-	"\x0eReactionEvents\x18\x01 \x03(\v22.NAlice.TLightingReactionCapability.TReactionEventB\x13\xaa\xdd\x1b\x0freaction_eventsR\x0freaction_events:*\x92\x82\x19\x1dset_reaction_events_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8a\x04\x1a\xb0\x01\n" +
-	"\x15TPlayWeatherDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\aWeather\x18\x01 \x01(\x0e2,.NAlice.TLightingReactionCapability.EWeatherB\v\xaa\xdd\x1b\aweatherR\aweather:#\x92\x82\x19\x16play_weather_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfa\x03\x1a\xbf\x01\n" +
-	"\x1cTSetReactionSettingDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\aSetting\x18\x01 \x01(\v2,.NAlice.TLightingReactionCapability.TSettingB\v\xaa\xdd\x1b\asettingR\asetting:+\x92\x82\x19\x1eset_reaction_setting_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9d\x04\x1as\n" +
-	"\x11TUpdateStateEvent\x12S\n" +
+	"DndRespect\x18\x01 \x01(\v2?.NAlice.TLightingReactionCapability.TSetting.TDndRespectSettingH\x00R\n" +
+	"DndRespect\x1a.\n" +
+	"\x12TDndRespectSetting\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabledB\t\n" +
+	"\aSetting\x1a\xc3\x01\n" +
+	"\vTParameters\x12X\n" +
+	"\x10SupportedWeather\x18\x01 \x03(\x0e2,.NAlice.TLightingReactionCapability.EWeatherR\x10SupportedWeather\x12Z\n" +
+	"\x11SupportedSettings\x18\x02 \x03(\v2,.NAlice.TLightingReactionCapability.TSettingR\x11SupportedSettings\x1al\n" +
+	"\x0eTReactionEvent\x12@\n" +
+	"\x05Event\x18\x01 \x01(\x0e2*.NAlice.TLightingReactionCapability.EEventR\x05Event\x12\x18\n" +
+	"\aEnabled\x18\x02 \x01(\bR\aEnabled\x1a\xf0\x01\n" +
+	"\x06TState\x12P\n" +
+	"\rEnabledEvents\x18\x01 \x03(\x0e2*.NAlice.TLightingReactionCapability.EEventR\rEnabledEvents\x12J\n" +
+	"\x06Events\x18\x02 \x03(\v22.NAlice.TLightingReactionCapability.TReactionEventR\x06Events\x12H\n" +
+	"\bSettings\x18\x03 \x03(\v2,.NAlice.TLightingReactionCapability.TSettingR\bSettings\x1an\n" +
+	"\x13TSetEventsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12B\n" +
+	"\x06Events\x18\x01 \x03(\x0e2*.NAlice.TLightingReactionCapability.EEventR\x06Events\x1a\x8e\x01\n" +
+	"\x1bTSetReactionEventsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12Z\n" +
+	"\x0eReactionEvents\x18\x01 \x03(\v22.NAlice.TLightingReactionCapability.TReactionEventR\x0eReactionEvents\x1at\n" +
+	"\x15TPlayWeatherDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12F\n" +
+	"\aWeather\x18\x01 \x01(\x0e2,.NAlice.TLightingReactionCapability.EWeatherR\aWeather\x1a{\n" +
+	"\x1cTSetReactionSettingDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12F\n" +
+	"\aSetting\x18\x01 \x01(\v2,.NAlice.TLightingReactionCapability.TSettingR\aSetting\x1aX\n" +
+	"\x11TUpdateStateEvent\x12C\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2#.NAlice.TLightingReactionCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x81\x01\"5\n" +
+	"Capability\x18\x01 \x01(\v2#.NAlice.TLightingReactionCapabilityR\n" +
+	"Capability\"5\n" +
 	"\bEWeather\x12\b\n" +
 	"\x04RAIN\x10\x00\x12\b\n" +
 	"\x04SNOW\x10\x01\x12\n" +
@@ -790,8 +787,9 @@ const file_alice_protos_endpoint_capabilities_lighting_reaction_capability_capab
 	"\n" +
 	"EVENT_CALL\x10\x05\x12\x0f\n" +
 	"\vEVENT_ALARM\x10\x06\x12\x11\n" +
-	"\rEVENT_WEATHER\x10\a:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc4\x01B\xbe\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fLightingReactionCapabilityProtoZma.yandex-team.ru/alice/protos/endpoint/capabilities/lighting_reaction_capability;lightingreactioncapabilitypbb\x06proto3"
+	"\rEVENT_WEATHER\x10\aB\xc6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zogithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lighting_reaction_capability\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lighting_reaction_capability_capability_proto_rawDescOnce sync.Once

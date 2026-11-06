@@ -24,22 +24,22 @@ const (
 
 type TVideoGalleryItemMeta struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Duration      uint32                 `protobuf:"varint,1,opt,name=Duration,json=duration,proto3" json:"Duration,omitempty"`
-	Episode       uint32                 `protobuf:"varint,2,opt,name=Episode,json=episode,proto3" json:"Episode,omitempty"`
-	EpisodesCount uint32                 `protobuf:"varint,3,opt,name=EpisodesCount,json=episodes_count,proto3" json:"EpisodesCount,omitempty"`
-	Genre         string                 `protobuf:"bytes,4,opt,name=Genre,json=genre,proto3" json:"Genre,omitempty"`
-	MinAge        uint32                 `protobuf:"varint,5,opt,name=MinAge,json=min_age,proto3" json:"MinAge,omitempty"`
-	ProviderName  string                 `protobuf:"bytes,6,opt,name=ProviderName,json=provider_name,proto3" json:"ProviderName,omitempty"`
-	Rating        float64                `protobuf:"fixed64,7,opt,name=Rating,json=rating,proto3" json:"Rating,omitempty"`
-	ReleaseYear   uint32                 `protobuf:"varint,8,opt,name=ReleaseYear,json=release_year,proto3" json:"ReleaseYear,omitempty"`
-	Season        uint32                 `protobuf:"varint,9,opt,name=Season,json=season,proto3" json:"Season,omitempty"`
-	SeasonsCount  uint32                 `protobuf:"varint,10,opt,name=SeasonsCount,json=seasons_count,proto3" json:"SeasonsCount,omitempty"`
-	Type          string                 `protobuf:"bytes,11,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	ViewCount     uint64                 `protobuf:"varint,12,opt,name=ViewCount,json=view_count,proto3" json:"ViewCount,omitempty"`
-	Position      uint32                 `protobuf:"varint,13,opt,name=Position,json=position,proto3" json:"Position,omitempty"`
-	VideoId       string                 `protobuf:"bytes,14,opt,name=VideoId,json=video_id,proto3" json:"VideoId,omitempty"`
-	OntoId        string                 `protobuf:"bytes,15,opt,name=OntoId,json=onto_id,proto3" json:"OntoId,omitempty"`
-	Title         string                 `protobuf:"bytes,16,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
+	Duration      uint32                 `protobuf:"varint,1,opt,name=Duration,proto3" json:"Duration,omitempty"`
+	Episode       uint32                 `protobuf:"varint,2,opt,name=Episode,proto3" json:"Episode,omitempty"`
+	EpisodesCount uint32                 `protobuf:"varint,3,opt,name=EpisodesCount,proto3" json:"EpisodesCount,omitempty"`
+	Genre         string                 `protobuf:"bytes,4,opt,name=Genre,proto3" json:"Genre,omitempty"`
+	MinAge        uint32                 `protobuf:"varint,5,opt,name=MinAge,proto3" json:"MinAge,omitempty"`
+	ProviderName  string                 `protobuf:"bytes,6,opt,name=ProviderName,proto3" json:"ProviderName,omitempty"`
+	Rating        float64                `protobuf:"fixed64,7,opt,name=Rating,proto3" json:"Rating,omitempty"`
+	ReleaseYear   uint32                 `protobuf:"varint,8,opt,name=ReleaseYear,proto3" json:"ReleaseYear,omitempty"`
+	Season        uint32                 `protobuf:"varint,9,opt,name=Season,proto3" json:"Season,omitempty"`
+	SeasonsCount  uint32                 `protobuf:"varint,10,opt,name=SeasonsCount,proto3" json:"SeasonsCount,omitempty"`
+	Type          string                 `protobuf:"bytes,11,opt,name=Type,proto3" json:"Type,omitempty"`
+	ViewCount     uint64                 `protobuf:"varint,12,opt,name=ViewCount,proto3" json:"ViewCount,omitempty"`
+	Position      uint32                 `protobuf:"varint,13,opt,name=Position,proto3" json:"Position,omitempty"`
+	VideoId       string                 `protobuf:"bytes,14,opt,name=VideoId,proto3" json:"VideoId,omitempty"`
+	OntoId        string                 `protobuf:"bytes,15,opt,name=OntoId,proto3" json:"OntoId,omitempty"`
+	Title         string                 `protobuf:"bytes,16,opt,name=Title,proto3" json:"Title,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -190,30 +190,27 @@ var File_alice_protos_data_entity_meta_video_nlu_meta_proto protoreflect.FileDes
 
 const file_alice_protos_data_entity_meta_video_nlu_meta_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/data/entity_meta/video_nlu_meta.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc4\x05\n" +
-	"\x15TVideoGalleryItemMeta\x12(\n" +
-	"\bDuration\x18\x01 \x01(\rB\f\xaa\xdd\x1b\bdurationR\bduration\x12%\n" +
-	"\aEpisode\x18\x02 \x01(\rB\v\xaa\xdd\x1b\aepisodeR\aepisode\x129\n" +
-	"\rEpisodesCount\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0eepisodes_countR\x0eepisodes_count\x12\x1f\n" +
-	"\x05Genre\x18\x04 \x01(\tB\t\xaa\xdd\x1b\x05genreR\x05genre\x12$\n" +
-	"\x06MinAge\x18\x05 \x01(\rB\v\xaa\xdd\x1b\amin_ageR\amin_age\x126\n" +
-	"\fProviderName\x18\x06 \x01(\tB\x11\xaa\xdd\x1b\rprovider_nameR\rprovider_name\x12\"\n" +
-	"\x06Rating\x18\a \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06ratingR\x06rating\x123\n" +
-	"\vReleaseYear\x18\b \x01(\rB\x10\xaa\xdd\x1b\frelease_yearR\frelease_year\x12\"\n" +
-	"\x06Season\x18\t \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06seasonR\x06season\x126\n" +
+	"2alice/protos/data/entity_meta/video_nlu_meta.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x03\n" +
+	"\x15TVideoGalleryItemMeta\x12\x1a\n" +
+	"\bDuration\x18\x01 \x01(\rR\bDuration\x12\x18\n" +
+	"\aEpisode\x18\x02 \x01(\rR\aEpisode\x12$\n" +
+	"\rEpisodesCount\x18\x03 \x01(\rR\rEpisodesCount\x12\x14\n" +
+	"\x05Genre\x18\x04 \x01(\tR\x05Genre\x12\x16\n" +
+	"\x06MinAge\x18\x05 \x01(\rR\x06MinAge\x12\"\n" +
+	"\fProviderName\x18\x06 \x01(\tR\fProviderName\x12\x16\n" +
+	"\x06Rating\x18\a \x01(\x01R\x06Rating\x12 \n" +
+	"\vReleaseYear\x18\b \x01(\rR\vReleaseYear\x12\x16\n" +
+	"\x06Season\x18\t \x01(\rR\x06Season\x12\"\n" +
 	"\fSeasonsCount\x18\n" +
-	" \x01(\rB\x11\xaa\xdd\x1b\rseasons_countR\rseasons_count\x12\x1c\n" +
-	"\x04Type\x18\v \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12-\n" +
-	"\tViewCount\x18\f \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"view_countR\n" +
-	"view_count\x12(\n" +
-	"\bPosition\x18\r \x01(\rB\f\xaa\xdd\x1b\bpositionR\bposition\x12'\n" +
-	"\aVideoId\x18\x0e \x01(\tB\f\xaa\xdd\x1b\bvideo_idR\bvideo_id\x12$\n" +
-	"\x06OntoId\x18\x0f \x01(\tB\v\xaa\xdd\x1b\aonto_idR\aonto_id\x12\x1f\n" +
-	"\x05Title\x18\x10 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title:\x04\xa8\xdd\x1b\x04BY\n" +
-	"'ru.yandex.alice.protos.data.entity_metaZ.a.yandex-team.ru/alice/protos/data/entity_metab\x06proto3"
+	" \x01(\rR\fSeasonsCount\x12\x12\n" +
+	"\x04Type\x18\v \x01(\tR\x04Type\x12\x1c\n" +
+	"\tViewCount\x18\f \x01(\x04R\tViewCount\x12\x1a\n" +
+	"\bPosition\x18\r \x01(\rR\bPosition\x12\x18\n" +
+	"\aVideoId\x18\x0e \x01(\tR\aVideoId\x12\x16\n" +
+	"\x06OntoId\x18\x0f \x01(\tR\x06OntoId\x12\x14\n" +
+	"\x05Title\x18\x10 \x01(\tR\x05TitleB\xa6\x01\n" +
+	"\n" +
+	"com.NAliceB\x11VideoNluMetaProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/entity_meta\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_entity_meta_video_nlu_meta_proto_rawDescOnce sync.Once

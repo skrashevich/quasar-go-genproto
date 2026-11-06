@@ -93,10 +93,10 @@ func (TMusicSearchRequest_EMusicSearchType) EnumDescriptor() ([]byte, []int) {
 
 type TMusicSearchRequest struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Query         string                               `protobuf:"bytes,1,opt,name=Query,json=query,proto3" json:"Query,omitempty"`
-	Type          TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,json=type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
-	Offset        uint32                               `protobuf:"varint,3,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
-	Limit         uint32                               `protobuf:"varint,4,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Query         string                               `protobuf:"bytes,1,opt,name=Query,proto3" json:"Query,omitempty"`
+	Type          TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
+	Offset        uint32                               `protobuf:"varint,3,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit         uint32                               `protobuf:"varint,4,opt,name=Limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -161,8 +161,8 @@ func (x *TMusicSearchRequest) GetLimit() uint32 {
 
 type TMusicSearchResponse struct {
 	state          protoimpl.MessageState                      `protogen:"open.v1"`
-	Type           TMusicSearchRequest_EMusicSearchType        `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
-	SearchElements []*TMusicSearchResponse_TMusicSearchElement `protobuf:"bytes,2,rep,name=SearchElements,json=search_elements,proto3" json:"SearchElements,omitempty"`
+	Type           TMusicSearchRequest_EMusicSearchType        `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
+	SearchElements []*TMusicSearchResponse_TMusicSearchElement `protobuf:"bytes,2,rep,name=SearchElements,proto3" json:"SearchElements,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -249,7 +249,7 @@ func (*TMusicSearchHistoryRequest) Descriptor() ([]byte, []int) {
 
 type TMusicSearchHistoryResponse struct {
 	state          protoimpl.MessageState                      `protogen:"open.v1"`
-	SearchElements []*TMusicSearchResponse_TMusicSearchElement `protobuf:"bytes,1,rep,name=SearchElements,json=search_elements,proto3" json:"SearchElements,omitempty"`
+	SearchElements []*TMusicSearchResponse_TMusicSearchElement `protobuf:"bytes,1,rep,name=SearchElements,proto3" json:"SearchElements,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -365,9 +365,9 @@ func (*TMusicSearchFeedbackResponse) Descriptor() ([]byte, []int) {
 
 type TMusicSearchNavigationRequest struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Query         string                               `protobuf:"bytes,1,opt,name=Query,json=query,proto3" json:"Query,omitempty"`
-	Type          TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,json=type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
-	Limit         uint32                               `protobuf:"varint,3,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Query         string                               `protobuf:"bytes,1,opt,name=Query,proto3" json:"Query,omitempty"`
+	Type          TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
+	Limit         uint32                               `protobuf:"varint,3,opt,name=Limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -425,7 +425,7 @@ func (x *TMusicSearchNavigationRequest) GetLimit() uint32 {
 
 type TMusicSearchNavigationResponse struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,1,rep,name=VoiceControls,json=voice_control,proto3" json:"VoiceControls,omitempty"`
+	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,1,rep,name=VoiceControls,proto3" json:"VoiceControls,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -469,7 +469,7 @@ func (x *TMusicSearchNavigationResponse) GetVoiceControls() []*voice_control.TVo
 
 type TMusicSearchResponse_TMusicSearchElement struct {
 	state        protoimpl.MessageState       `protogen:"open.v1"`
-	VoiceControl *voice_control.TVoiceControl `protobuf:"bytes,7,opt,name=VoiceControl,json=voice_control,proto3" json:"VoiceControl,omitempty"`
+	VoiceControl *voice_control.TVoiceControl `protobuf:"bytes,7,opt,name=VoiceControl,proto3" json:"VoiceControl,omitempty"`
 	// Types that are valid to be assigned to TElementInfo:
 	//
 	//	*TMusicSearchResponse_TMusicSearchElement_Track
@@ -586,27 +586,27 @@ type isTMusicSearchResponse_TMusicSearchElement_TElementInfo interface {
 }
 
 type TMusicSearchResponse_TMusicSearchElement_Track struct {
-	Track *objects.TTrack `protobuf:"bytes,1,opt,name=Track,json=track,proto3,oneof"`
+	Track *objects.TTrack `protobuf:"bytes,1,opt,name=Track,proto3,oneof"`
 }
 
 type TMusicSearchResponse_TMusicSearchElement_Artist struct {
-	Artist *objects.TArtist `protobuf:"bytes,2,opt,name=Artist,json=artist,proto3,oneof"`
+	Artist *objects.TArtist `protobuf:"bytes,2,opt,name=Artist,proto3,oneof"`
 }
 
 type TMusicSearchResponse_TMusicSearchElement_Album struct {
-	Album *objects.TAlbum `protobuf:"bytes,3,opt,name=Album,json=album,proto3,oneof"`
+	Album *objects.TAlbum `protobuf:"bytes,3,opt,name=Album,proto3,oneof"`
 }
 
 type TMusicSearchResponse_TMusicSearchElement_Playlist struct {
-	Playlist *objects.TPlaylist `protobuf:"bytes,4,opt,name=Playlist,json=playlist,proto3,oneof"`
+	Playlist *objects.TPlaylist `protobuf:"bytes,4,opt,name=Playlist,proto3,oneof"`
 }
 
 type TMusicSearchResponse_TMusicSearchElement_PodcastEpisode struct {
-	PodcastEpisode *objects.TPodcastEpisode `protobuf:"bytes,5,opt,name=PodcastEpisode,json=podcast_episode,proto3,oneof"`
+	PodcastEpisode *objects.TPodcastEpisode `protobuf:"bytes,5,opt,name=PodcastEpisode,proto3,oneof"`
 }
 
 type TMusicSearchResponse_TMusicSearchElement_Wave struct {
-	Wave *objects.TWave `protobuf:"bytes,6,opt,name=Wave,json=wave,proto3,oneof"`
+	Wave *objects.TWave `protobuf:"bytes,6,opt,name=Wave,proto3,oneof"`
 }
 
 func (*TMusicSearchResponse_TMusicSearchElement_Track) isTMusicSearchResponse_TMusicSearchElement_TElementInfo() {
@@ -631,13 +631,12 @@ var File_alice_protos_api_rpc_music_music_search_music_search_proto protoreflect
 
 const file_alice_protos_api_rpc_music_music_search_music_search_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/api/rpc/music/music_search/music_search.proto\x12\rNAlice.NMusic\x1a2alice/protos/api/voice_control/voice_control.proto\x1a.alice/protos/data/scenario/objects/music.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd7\x02\n" +
-	"\x13TMusicSearchRequest\x12\x1f\n" +
-	"\x05Query\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05queryR\x05query\x12Q\n" +
-	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12\"\n" +
-	"\x06Offset\x18\x03 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06offsetR\x06offset\x12\x1f\n" +
-	"\x05Limit\x18\x04 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\"\x80\x01\n" +
+	":alice/protos/api/rpc/music/music_search/music_search.proto\x12\rNAlice.NMusic\x1a2alice/protos/api/voice_control/voice_control.proto\x1a.alice/protos/data/scenario/objects/music.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x02\n" +
+	"\x13TMusicSearchRequest\x12\x14\n" +
+	"\x05Query\x18\x01 \x01(\tR\x05Query\x12G\n" +
+	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeR\x04Type\x12\x16\n" +
+	"\x06Offset\x18\x03 \x01(\rR\x06Offset\x12\x14\n" +
+	"\x05Limit\x18\x04 \x01(\rR\x05Limit\"\x80\x01\n" +
 	"\x10EMusicSearchType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\a\n" +
 	"\x03All\x10\x01\x12\t\n" +
@@ -648,31 +647,31 @@ const file_alice_protos_api_rpc_music_music_search_music_search_proto_rawDesc = 
 	"\bPlaylist\x10\x05\x12\v\n" +
 	"\aPodcast\x10\x06\x12\r\n" +
 	"\tAudiobook\x10\a\x12\b\n" +
-	"\x04Clip\x10\b:\x04\xa8\xdd\x1b\x04\"\xf7\x05\n" +
-	"\x14TMusicSearchResponse\x12Q\n" +
-	"\x04Type\x18\x01 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12u\n" +
-	"\x0eSearchElements\x18\x02 \x03(\v27.NAlice.NMusic.TMusicSearchResponse.TMusicSearchElementB\x13\xaa\xdd\x1b\x0fsearch_elementsR\x0fsearch_elements\x1a\x8e\x04\n" +
-	"\x13TMusicSearchElement\x12M\n" +
-	"\fVoiceControl\x18\a \x01(\v2\x15.NAlice.TVoiceControlB\x11\xaa\xdd\x1b\rvoice_controlR\rvoice_control\x127\n" +
-	"\x05Track\x18\x01 \x01(\v2\x14.NAlice.NData.TTrackB\t\xaa\xdd\x1b\x05trackH\x00R\x05track\x12;\n" +
-	"\x06Artist\x18\x02 \x01(\v2\x15.NAlice.NData.TArtistB\n" +
-	"\xaa\xdd\x1b\x06artistH\x00R\x06artist\x127\n" +
-	"\x05Album\x18\x03 \x01(\v2\x14.NAlice.NData.TAlbumB\t\xaa\xdd\x1b\x05albumH\x00R\x05album\x12C\n" +
-	"\bPlaylist\x18\x04 \x01(\v2\x17.NAlice.NData.TPlaylistB\f\xaa\xdd\x1b\bplaylistH\x00R\bplaylist\x12]\n" +
-	"\x0ePodcastEpisode\x18\x05 \x01(\v2\x1d.NAlice.NData.TPodcastEpisodeB\x13\xaa\xdd\x1b\x0fpodcast_episodeH\x00R\x0fpodcast_episode\x123\n" +
-	"\x04Wave\x18\x06 \x01(\v2\x13.NAlice.NData.TWaveB\b\xaa\xdd\x1b\x04waveH\x00R\x04waveB \n" +
-	"\fTElementInfo\x12\x10\xaa\xdd\x1b\felement_info:\x04\xa8\xdd\x1b\x04\"\"\n" +
-	"\x1aTMusicSearchHistoryRequest:\x04\xa8\xdd\x1b\x04\"\x9a\x01\n" +
-	"\x1bTMusicSearchHistoryResponse\x12u\n" +
-	"\x0eSearchElements\x18\x01 \x03(\v27.NAlice.NMusic.TMusicSearchResponse.TMusicSearchElementB\x13\xaa\xdd\x1b\x0fsearch_elementsR\x0fsearch_elements:\x04\xa8\xdd\x1b\x04\"#\n" +
-	"\x1bTMusicSearchFeedbackRequest:\x04\xa8\xdd\x1b\x04\"$\n" +
-	"\x1cTMusicSearchFeedbackResponse:\x04\xa8\xdd\x1b\x04\"\xba\x01\n" +
-	"\x1dTMusicSearchNavigationRequest\x12\x1f\n" +
-	"\x05Query\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05queryR\x05query\x12Q\n" +
-	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1f\n" +
-	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit:\x04\xa8\xdd\x1b\x04\"v\n" +
-	"\x1eTMusicSearchNavigationResponse\x12N\n" +
-	"\rVoiceControls\x18\x01 \x03(\v2\x15.NAlice.TVoiceControlB\x11\xaa\xdd\x1b\rvoice_controlR\rvoice_control:\x04\xa8\xdd\x1b\x04B:Z8a.yandex-team.ru/alice/protos/api/rpc/music/music_searchb\x06proto3"
+	"\x04Clip\x10\b\"\xdb\x04\n" +
+	"\x14TMusicSearchResponse\x12G\n" +
+	"\x04Type\x18\x01 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeR\x04Type\x12_\n" +
+	"\x0eSearchElements\x18\x02 \x03(\v27.NAlice.NMusic.TMusicSearchResponse.TMusicSearchElementR\x0eSearchElements\x1a\x98\x03\n" +
+	"\x13TMusicSearchElement\x129\n" +
+	"\fVoiceControl\x18\a \x01(\v2\x15.NAlice.TVoiceControlR\fVoiceControl\x12,\n" +
+	"\x05Track\x18\x01 \x01(\v2\x14.NAlice.NData.TTrackH\x00R\x05Track\x12/\n" +
+	"\x06Artist\x18\x02 \x01(\v2\x15.NAlice.NData.TArtistH\x00R\x06Artist\x12,\n" +
+	"\x05Album\x18\x03 \x01(\v2\x14.NAlice.NData.TAlbumH\x00R\x05Album\x125\n" +
+	"\bPlaylist\x18\x04 \x01(\v2\x17.NAlice.NData.TPlaylistH\x00R\bPlaylist\x12G\n" +
+	"\x0ePodcastEpisode\x18\x05 \x01(\v2\x1d.NAlice.NData.TPodcastEpisodeH\x00R\x0ePodcastEpisode\x12)\n" +
+	"\x04Wave\x18\x06 \x01(\v2\x13.NAlice.NData.TWaveH\x00R\x04WaveB\x0e\n" +
+	"\fTElementInfo\"\x1c\n" +
+	"\x1aTMusicSearchHistoryRequest\"~\n" +
+	"\x1bTMusicSearchHistoryResponse\x12_\n" +
+	"\x0eSearchElements\x18\x01 \x03(\v27.NAlice.NMusic.TMusicSearchResponse.TMusicSearchElementR\x0eSearchElements\"\x1d\n" +
+	"\x1bTMusicSearchFeedbackRequest\"\x1e\n" +
+	"\x1cTMusicSearchFeedbackResponse\"\x94\x01\n" +
+	"\x1dTMusicSearchNavigationRequest\x12\x14\n" +
+	"\x05Query\x18\x01 \x01(\tR\x05Query\x12G\n" +
+	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeR\x04Type\x12\x14\n" +
+	"\x05Limit\x18\x03 \x01(\rR\x05Limit\"]\n" +
+	"\x1eTMusicSearchNavigationResponse\x12;\n" +
+	"\rVoiceControls\x18\x01 \x03(\v2\x15.NAlice.TVoiceControlR\rVoiceControlsB\xd3\x01\n" +
+	"\x11com.NAlice.NMusicB\x10MusicSearchProtoP\x01ZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/music/music_search\xa2\x02\x03NNX\xaa\x02\rNAlice.NMusic\xca\x02\rNAlice\\NMusic\xe2\x02\x19NAlice\\NMusic\\GPBMetadata\xea\x02\x0eNAlice::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_music_music_search_music_search_proto_rawDescOnce sync.Once

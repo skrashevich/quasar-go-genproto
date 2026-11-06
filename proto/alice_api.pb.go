@@ -135,7 +135,7 @@ const file_alice_api_proto_rawDesc = "" +
 	"\vAliceModels\x18\x02 \x01(\v2#.quark.core.proto.TAliceModelsStateR\vAliceModels\x12O\n" +
 	"\x10FileUploadParams\x18\x03 \x01(\v2#.quark.core.proto.TFileUploadParamsR\x10FileUploadParams\"J\n" +
 	"\x13TAliceStateResponse\x123\n" +
-	"\x05State\x18\x01 \x01(\v2\x1d.quark.core.proto.TAliceStateR\x05Stateb\x06proto3"
+	"\x05State\x18\x01 \x01(\v2\x1d.quark.core.proto.TAliceStateR\x05StateB1Z/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_alice_api_proto_rawDescOnce sync.Once

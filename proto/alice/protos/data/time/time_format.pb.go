@@ -73,7 +73,7 @@ func (TTimeFormat_EFormat) EnumDescriptor() ([]byte, []int) {
 
 type TTimeFormat struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Format        TTimeFormat_EFormat    `protobuf:"varint,1,opt,name=Format,json=format,proto3,enum=NAlice.NData.TTimeFormat_EFormat" json:"Format,omitempty"`
+	Format        TTimeFormat_EFormat    `protobuf:"varint,1,opt,name=Format,proto3,enum=NAlice.NData.TTimeFormat_EFormat" json:"Format,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,15 +119,14 @@ var File_alice_protos_data_time_time_format_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_time_time_format_proto_rawDesc = "" +
 	"\n" +
-	"(alice/protos/data/time/time_format.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8e\x01\n" +
-	"\vTTimeFormat\x12E\n" +
-	"\x06Format\x18\x01 \x01(\x0e2!.NAlice.NData.TTimeFormat.EFormatB\n" +
-	"\xaa\xdd\x1b\x06formatR\x06format\"2\n" +
+	"(alice/protos/data/time/time_format.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"|\n" +
+	"\vTTimeFormat\x129\n" +
+	"\x06Format\x18\x01 \x01(\x0e2!.NAlice.NData.TTimeFormat.EFormatR\x06Format\"2\n" +
 	"\aEFormat\x12\r\n" +
 	"\tUndefined\x10\x00\x12\v\n" +
 	"\aHours12\x10\x01\x12\v\n" +
-	"\aHours24\x10\x02:\x04\xa8\xdd\x1b\x04BK\n" +
-	" ru.yandex.alice.protos.data.timeZ'a.yandex-team.ru/alice/protos/data/timeb\x06proto3"
+	"\aHours24\x10\x02B\xbc\x01\n" +
+	"\x10com.NAlice.NDataB\x0fTimeFormatProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/time\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_time_time_format_proto_rawDescOnce sync.Once

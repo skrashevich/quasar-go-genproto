@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/video_player/capability.proto
 
-package videoplayerpb
+package video_player
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -557,8 +557,8 @@ const file_alice_protos_endpoint_capabilities_video_player_capability_proto_rawD
 	"\bAgeLimit\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tage_limitR\tage_limit\x12,\n" +
 	"\aStartAt\x18\x03 \x01(\x03B\f\xaa\xdd\x1b\bstart_atH\x00R\bstart_at\x88\x01\x01:'\x92\x82\x19\x1aplay_sport_video_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe2\x04B\n" +
 	"\n" +
-	"\b_StartAt:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c]B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aVideoPlayerCapabilityProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/video_player;videoplayerpbb\x06proto3"
+	"\b_StartAt:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c]B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aVideoPlayerCapabilityProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_playerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_player_capability_proto_rawDescOnce sync.Once

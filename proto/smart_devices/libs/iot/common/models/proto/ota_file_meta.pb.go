@@ -74,7 +74,8 @@ const file_smart_devices_libs_iot_common_models_proto_ota_file_meta_proto_rawDes
 	"\vOtaFileMeta\x12:\n" +
 	"\n" +
 	"accessedAt\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"accessedAtb\x06proto3"
+	"accessedAtB\xad\x01\n" +
+	"\tcom.protoB\x10OtaFileMetaProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/iot/common/models/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_iot_common_models_proto_ota_file_meta_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/voice_zone/capability.proto
 
-package voice_zonepb
+package voice_zone
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -569,8 +569,8 @@ const file_alice_protos_endpoint_capabilities_voice_zone_capability_proto_rawDes
 	"\x1eTSetVoiceZoneSettingsDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x89\x01\n" +
 	"\x19SuppressedActivationZones\x18\x01 \x01(\v2#.NAlice.TVoiceZoneCapability.TZonesB\x1f\xaa\xdd\x1b\x1bsuppressed_activation_zonesH\x00R\x1bsuppressed_activation_zones\x88\x01\x01:$\x92\x82\x19\x17set_voice_zone_settings\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb5\x05B\x1c\n" +
-	"\x1a_SuppressedActivationZones:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcc\x01B\x8b\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eVoiceZoneProtoZKa.yandex-team.ru/alice/protos/endpoint/capabilities/voice_zone;voice_zonepbb\x06proto3"
+	"\x1a_SuppressedActivationZones:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcc\x01B\x9d\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eVoiceZoneProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/voice_zoneb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_voice_zone_capability_proto_rawDescOnce sync.Once

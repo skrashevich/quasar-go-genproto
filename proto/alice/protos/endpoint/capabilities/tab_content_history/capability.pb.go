@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tab_content_history/capability.proto
 
-package tab_content_historypb
+package tab_content_history
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -292,8 +292,8 @@ const file_alice_protos_endpoint_capabilities_tab_content_history_capability_pro
 	"\tQueryGuid\x18\x01 \x01(\tR\n" +
 	"query_guid\x12!\n" +
 	"\vQueryStatus\x18\x02 \x01(\tR\fquery_status\x12!\n" +
-	"\vQueryResult\x18\x03 \x01(\tR\fquery_result:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xae\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x87\x02B\xaf\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB TabContentHistoryCapabilityProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/tab_content_history;tab_content_historypbb\x06proto3"
+	"\vQueryResult\x18\x03 \x01(\tR\fquery_result:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xae\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x87\x02B\xb8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB TabContentHistoryCapabilityProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tab_content_historyb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tab_content_history_capability_proto_rawDescOnce sync.Once

@@ -176,8 +176,8 @@ const file_alice_protos_data_price_proto_rawDesc = "" +
 	"\bCurrency\x18\x02 \x01(\x0e2\x1e.NAlice.NData.TPrice.ECurrencyB\f\xaa\xdd\x1b\bcurrencyR\bcurrency\")\n" +
 	"\tECurrency\x12\x13\n" +
 	"\x0fUnknownCurrency\x10\x00\x12\a\n" +
-	"\x03Rub\x10\x01BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\x03Rub\x10\x01B`\n" +
+	"\x1bru.yandex.alice.protos.dataZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/datab\x06proto3"
 
 var (
 	file_alice_protos_data_price_proto_rawDescOnce sync.Once

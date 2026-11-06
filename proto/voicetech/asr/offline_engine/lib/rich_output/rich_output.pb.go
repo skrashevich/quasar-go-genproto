@@ -414,7 +414,7 @@ const file_voicetech_asr_offline_engine_lib_rich_output_rich_output_proto_rawDes
 	"Confidence\x12J\n" +
 	"\x0eDiagnosticInfo\x18\n" +
 	" \x01(\v2\x1c.NAsr.NProto.TDiagnosticInfoB\x04\xa0\xc2\x1a\x01R\x0eDiagnosticInfo:P\n" +
-	"\x13hybrid_serializable\x12\x1d.google.protobuf.FieldOptions\x18\xa4\xa8\x03 \x01(\bR\x12hybridSerializable"
+	"\x13hybrid_serializable\x12\x1d.google.protobuf.FieldOptions\x18\xa4\xa8\x03 \x01(\bR\x12hybridSerializableB^Z\\github.com/skrashevich/quasar-go-genproto/proto/voicetech/asr/offline_engine/lib/rich_output"
 
 var (
 	file_voicetech_asr_offline_engine_lib_rich_output_rich_output_proto_rawDescOnce sync.Once

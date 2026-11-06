@@ -25,8 +25,8 @@ const (
 
 type TExecuteDirective struct {
 	state          protoimpl.MessageState             `protogen:"open.v1"`
-	Directive      *directives.TDirective             `protobuf:"bytes,1,opt,name=Directive,json=directive,proto3" json:"Directive,omitempty"`
-	ResponsePolicy *TExecuteDirective_TResponsePolicy `protobuf:"bytes,2,opt,name=ResponsePolicy,json=response_policy,proto3" json:"ResponsePolicy,omitempty"`
+	Directive      *directives.TDirective             `protobuf:"bytes,1,opt,name=Directive,proto3" json:"Directive,omitempty"`
+	ResponsePolicy *TExecuteDirective_TResponsePolicy `protobuf:"bytes,2,opt,name=ResponsePolicy,proto3" json:"ResponsePolicy,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -146,11 +146,11 @@ type isTExecuteDirective_TResponsePolicy_Policy interface {
 }
 
 type TExecuteDirective_TResponsePolicy_OnStartedPolicy struct {
-	OnStartedPolicy *TExecuteDirective_TResponsePolicy_TOnStartedPolicy `protobuf:"bytes,1,opt,name=OnStartedPolicy,json=on_started_policy,proto3,oneof"`
+	OnStartedPolicy *TExecuteDirective_TResponsePolicy_TOnStartedPolicy `protobuf:"bytes,1,opt,name=OnStartedPolicy,proto3,oneof"`
 }
 
 type TExecuteDirective_TResponsePolicy_OnFinishedPolicy struct {
-	OnFinishedPolicy *TExecuteDirective_TResponsePolicy_TOnFinishedPolicy `protobuf:"bytes,2,opt,name=OnFinishedPolicy,json=on_finished_policy,proto3,oneof"`
+	OnFinishedPolicy *TExecuteDirective_TResponsePolicy_TOnFinishedPolicy `protobuf:"bytes,2,opt,name=OnFinishedPolicy,proto3,oneof"`
 }
 
 func (*TExecuteDirective_TResponsePolicy_OnStartedPolicy) isTExecuteDirective_TResponsePolicy_Policy() {
@@ -235,17 +235,17 @@ var File_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directi
 
 const file_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directive_execute_directive_proto_rawDesc = "" +
 	"\n" +
-	"aalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive/execute_directive.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc0\x04\n" +
-	"\x11TExecuteDirective\x12I\n" +
-	"\tDirective\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB\r\xaa\xdd\x1b\tdirectiveR\tdirective\x12q\n" +
-	"\x0eResponsePolicy\x18\x02 \x01(\v23.NAlice.NAliceApi.TExecuteDirective.TResponsePolicyB\x13\xaa\xdd\x1b\x0fresponse_policyR\x0fresponse_policy\x1a\xe6\x02\n" +
-	"\x0fTResponsePolicy\x12\x89\x01\n" +
-	"\x0fOnStartedPolicy\x18\x01 \x01(\v2D.NAlice.NAliceApi.TExecuteDirective.TResponsePolicy.TOnStartedPolicyB\x15\xaa\xdd\x1b\x11on_started_policyH\x00R\x11on_started_policy\x12\x8d\x01\n" +
-	"\x10OnFinishedPolicy\x18\x02 \x01(\v2E.NAlice.NAliceApi.TExecuteDirective.TResponsePolicy.TOnFinishedPolicyB\x16\xaa\xdd\x1b\x12on_finished_policyH\x00R\x12on_finished_policy\x1a\x12\n" +
+	"aalice/protos/api/alicekit/events/sync_push/sync_request/execute_directive/execute_directive.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xda\x03\n" +
+	"\x11TExecuteDirective\x12:\n" +
+	"\tDirective\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tDirective\x12[\n" +
+	"\x0eResponsePolicy\x18\x02 \x01(\v23.NAlice.NAliceApi.TExecuteDirective.TResponsePolicyR\x0eResponsePolicy\x1a\xab\x02\n" +
+	"\x0fTResponsePolicy\x12p\n" +
+	"\x0fOnStartedPolicy\x18\x01 \x01(\v2D.NAlice.NAliceApi.TExecuteDirective.TResponsePolicy.TOnStartedPolicyH\x00R\x0fOnStartedPolicy\x12s\n" +
+	"\x10OnFinishedPolicy\x18\x02 \x01(\v2E.NAlice.NAliceApi.TExecuteDirective.TResponsePolicy.TOnFinishedPolicyH\x00R\x10OnFinishedPolicy\x1a\x12\n" +
 	"\x10TOnStartedPolicy\x1a\x13\n" +
-	"\x11TOnFinishedPolicy:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06Policy:\x04\xa8\xdd\x1b\x04B\xc5\x01\n" +
-	"Sru.yandex.alice.protos.api.alicekit.events.sync_push.sync_request.execute_directiveB\x10ExecuteDirectiveP\x01ZZa.yandex-team.ru/alice/protos/api/alicekit/events/sync_push/sync_request/execute_directiveb\x06proto3"
+	"\x11TOnFinishedPolicyB\b\n" +
+	"\x06PolicyB\x89\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x15ExecuteDirectiveProtoP\x01Zygithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push/sync_request/execute_directive\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_sync_request_execute_directive_execute_directive_proto_rawDescOnce sync.Once

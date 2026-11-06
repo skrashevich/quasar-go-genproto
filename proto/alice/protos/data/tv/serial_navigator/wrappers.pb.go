@@ -148,8 +148,8 @@ const file_alice_protos_data_tv_serial_navigator_wrappers_proto_rawDesc = "" +
 	"\x12TSerialInfoWrapper\x121\n" +
 	"\x04Info\x18\x01 \x01(\v2\x13.NAlice.TSerialInfoB\b\xaa\xdd\x1b\x04infoR\x04info\x12E\n" +
 	"\aSeasons\x18\x02 \x03(\v2\x1e.NAlice.NTv.TSeasonInfoWrapperB\v\xaa\xdd\x1b\aseasonsR\aseasons\x12M\n" +
-	"\fVoiceControl\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlB\x11\xaa\xdd\x1b\rvoice_controlR\rvoice_control:\x04\xa8\xdd\x1b\x04B\x89\x01\n" +
-	".ru.yandex.alice.protos.data.tv.serialnavigatorB\x1fSerialNavigatorInfoWrapperProtoZ6a.yandex-team.ru/alice/protos/data/tv/serial_navigatorb\x06proto3"
+	"\fVoiceControl\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlB\x11\xaa\xdd\x1b\rvoice_controlR\rvoice_control:\x04\xa8\xdd\x1b\x04B\xa8\x01\n" +
+	".ru.yandex.alice.protos.data.tv.serialnavigatorB\x1fSerialNavigatorInfoWrapperProtoZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/serial_navigatorb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_serial_navigator_wrappers_proto_rawDescOnce sync.Once

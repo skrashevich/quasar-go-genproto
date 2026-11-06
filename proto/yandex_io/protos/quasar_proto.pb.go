@@ -8,8 +8,8 @@ package protos
 
 import (
 	sync_messages "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/config/sync_messages"
-	_ "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/metrica/db/protos"
-	_ "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/directive_sequencer/protos"
+	protos1 "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/metrica/db/protos"
+	protos "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/directive_sequencer/protos"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/private/endpoint_storage/protos"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -390,6 +390,65 @@ func (SimplePlayerState_PlayerType) EnumDescriptor() ([]byte, []int) {
 	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{23, 0}
 }
 
+type WebsocketClientState_State int32
+
+const (
+	WebsocketClientState_DISCONNECTED WebsocketClientState_State = 0
+	WebsocketClientState_CONNECTING   WebsocketClientState_State = 1
+	WebsocketClientState_CONNECTED    WebsocketClientState_State = 2
+)
+
+// Enum value maps for WebsocketClientState_State.
+var (
+	WebsocketClientState_State_name = map[int32]string{
+		0: "DISCONNECTED",
+		1: "CONNECTING",
+		2: "CONNECTED",
+	}
+	WebsocketClientState_State_value = map[string]int32{
+		"DISCONNECTED": 0,
+		"CONNECTING":   1,
+		"CONNECTED":    2,
+	}
+)
+
+func (x WebsocketClientState_State) Enum() *WebsocketClientState_State {
+	p := new(WebsocketClientState_State)
+	*p = x
+	return p
+}
+
+func (x WebsocketClientState_State) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (WebsocketClientState_State) Descriptor() protoreflect.EnumDescriptor {
+	return file_yandex_io_protos_quasar_proto_proto_enumTypes[6].Descriptor()
+}
+
+func (WebsocketClientState_State) Type() protoreflect.EnumType {
+	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[6]
+}
+
+func (x WebsocketClientState_State) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Do not use.
+func (x *WebsocketClientState_State) UnmarshalJSON(b []byte) error {
+	num, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)
+	if err != nil {
+		return err
+	}
+	*x = WebsocketClientState_State(num)
+	return nil
+}
+
+// Deprecated: Use WebsocketClientState_State.Descriptor instead.
+func (WebsocketClientState_State) EnumDescriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{26, 0}
+}
+
 type LogMessage_Level int32
 
 const (
@@ -429,11 +488,11 @@ func (x LogMessage_Level) String() string {
 }
 
 func (LogMessage_Level) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_quasar_proto_proto_enumTypes[6].Descriptor()
+	return file_yandex_io_protos_quasar_proto_proto_enumTypes[7].Descriptor()
 }
 
 func (LogMessage_Level) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[6]
+	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[7]
 }
 
 func (x LogMessage_Level) Number() protoreflect.EnumNumber {
@@ -452,7 +511,7 @@ func (x *LogMessage_Level) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use LogMessage_Level.Descriptor instead.
 func (LogMessage_Level) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{27, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{29, 0}
 }
 
 type NetworkStats_ArpState int32
@@ -503,11 +562,11 @@ func (x NetworkStats_ArpState) String() string {
 }
 
 func (NetworkStats_ArpState) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_quasar_proto_proto_enumTypes[7].Descriptor()
+	return file_yandex_io_protos_quasar_proto_proto_enumTypes[8].Descriptor()
 }
 
 func (NetworkStats_ArpState) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[7]
+	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[8]
 }
 
 func (x NetworkStats_ArpState) Number() protoreflect.EnumNumber {
@@ -526,7 +585,7 @@ func (x *NetworkStats_ArpState) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use NetworkStats_ArpState.Descriptor instead.
 func (NetworkStats_ArpState) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{31, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{33, 0}
 }
 
 type UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status int32
@@ -562,11 +621,11 @@ func (x UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) String() s
 }
 
 func (UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_quasar_proto_proto_enumTypes[8].Descriptor()
+	return file_yandex_io_protos_quasar_proto_proto_enumTypes[9].Descriptor()
 }
 
 func (UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[8]
+	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[9]
 }
 
 func (x UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) Number() protoreflect.EnumNumber {
@@ -585,7 +644,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) Unmarshal
 
 // Deprecated: Use UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status.Descriptor instead.
 func (UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32, 0, 0, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34, 0, 0, 0}
 }
 
 type QuasarMessage_Type int32
@@ -1008,11 +1067,11 @@ func (x QuasarMessage_Type) String() string {
 }
 
 func (QuasarMessage_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_yandex_io_protos_quasar_proto_proto_enumTypes[9].Descriptor()
+	return file_yandex_io_protos_quasar_proto_proto_enumTypes[10].Descriptor()
 }
 
 func (QuasarMessage_Type) Type() protoreflect.EnumType {
-	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[9]
+	return &file_yandex_io_protos_quasar_proto_proto_enumTypes[10]
 }
 
 func (x QuasarMessage_Type) Number() protoreflect.EnumNumber {
@@ -1031,7 +1090,7 @@ func (x *QuasarMessage_Type) UnmarshalJSON(b []byte) error {
 
 // Deprecated: Use QuasarMessage_Type.Descriptor instead.
 func (QuasarMessage_Type) EnumDescriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{40, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{38, 0}
 }
 
 type WifiConnect struct {
@@ -2753,31 +2812,31 @@ func (x *RadioStateOverride) GetColor() string {
 }
 
 type SimplePlayerState struct {
-	state                 protoimpl.MessageState        `protogen:"open.v1"`
-	HasPause              *bool                         `protobuf:"varint,1,opt,name=has_pause,json=hasPause" json:"has_pause,omitempty"`
-	HasPlay               *bool                         `protobuf:"varint,2,opt,name=has_play,json=hasPlay" json:"has_play,omitempty"`
-	HasNext               *bool                         `protobuf:"varint,3,opt,name=has_next,json=hasNext" json:"has_next,omitempty"`
-	HasPrev               *bool                         `protobuf:"varint,4,opt,name=has_prev,json=hasPrev" json:"has_prev,omitempty"`
-	PositionTimePoint     *int64                        `protobuf:"varint,22,opt,name=position_time_point,json=positionTimePoint" json:"position_time_point,omitempty"`
-	Position              *float64                      `protobuf:"fixed64,5,opt,name=position" json:"position,omitempty"`
-	Duration              *float64                      `protobuf:"fixed64,6,opt,name=duration" json:"duration,omitempty"`
-	Title                 *string                       `protobuf:"bytes,7,opt,name=title" json:"title,omitempty"`
-	Subtitle              *string                       `protobuf:"bytes,8,opt,name=subtitle" json:"subtitle,omitempty"`
-	HasProgressBar        *bool                         `protobuf:"varint,9,opt,name=has_progress_bar,json=hasProgressBar" json:"has_progress_bar,omitempty"`
-	HasLike               *bool                         `protobuf:"varint,11,opt,name=has_like,json=hasLike" json:"has_like,omitempty"`
-	HasDislike            *bool                         `protobuf:"varint,12,opt,name=has_dislike,json=hasDislike" json:"has_dislike,omitempty"`
-	ShowPlayer            *bool                         `protobuf:"varint,13,opt,name=show_player,json=showPlayer" json:"show_player,omitempty"`
-	LiveStreamText        *string                       `protobuf:"bytes,14,opt,name=live_stream_text,json=liveStreamText" json:"live_stream_text,omitempty"`
-	Id                    *string                       `protobuf:"bytes,15,opt,name=id" json:"id,omitempty"`
-	Type                  *string                       `protobuf:"bytes,16,opt,name=type" json:"type,omitempty"`
-	PlayerName            *string                       `protobuf:"bytes,17,opt,name=player_name,json=playerName" json:"player_name,omitempty"`
-	EntityInfo            *SimplePlayerState_EntityInfo `protobuf:"bytes,18,opt,name=entity_info,json=entityInfo" json:"entity_info,omitempty"`
-	ProviderName          *string                       `protobuf:"bytes,19,opt,name=provider_name,json=providerName" json:"provider_name,omitempty"`
-	HideProgressBar       *bool                         `protobuf:"varint,20,opt,name=hide_progress_bar,json=hideProgressBar" json:"hide_progress_bar,omitempty"`
-	PlayerType            *SimplePlayerState_PlayerType `protobuf:"varint,21,opt,name=player_type,json=playerType,enum=quasar.proto.SimplePlayerState_PlayerType" json:"player_type,omitempty"`
-	PlaybackStarterUserId *string                       `protobuf:"bytes,23,opt,name=playback_starter_user_id,json=playbackStarterUserId" json:"playback_starter_user_id,omitempty"`
-	CurrentScreen         *string                       `protobuf:"bytes,24,opt,name=current_screen,json=currentScreen" json:"current_screen,omitempty"`
-	Extra                 map[string]string             `protobuf:"bytes,100,rep,name=extra" json:"extra,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state                 protoimpl.MessageState          `protogen:"open.v1"`
+	HasPause              *bool                           `protobuf:"varint,1,opt,name=has_pause,json=hasPause" json:"has_pause,omitempty"`
+	HasPlay               *bool                           `protobuf:"varint,2,opt,name=has_play,json=hasPlay" json:"has_play,omitempty"`
+	HasNext               *bool                           `protobuf:"varint,3,opt,name=has_next,json=hasNext" json:"has_next,omitempty"`
+	HasPrev               *bool                           `protobuf:"varint,4,opt,name=has_prev,json=hasPrev" json:"has_prev,omitempty"`
+	PositionTimePoint     *int64                          `protobuf:"varint,22,opt,name=position_time_point,json=positionTimePoint" json:"position_time_point,omitempty"`
+	Position              *float64                        `protobuf:"fixed64,5,opt,name=position" json:"position,omitempty"`
+	Duration              *float64                        `protobuf:"fixed64,6,opt,name=duration" json:"duration,omitempty"`
+	Title                 *string                         `protobuf:"bytes,7,opt,name=title" json:"title,omitempty"`
+	Subtitle              *string                         `protobuf:"bytes,8,opt,name=subtitle" json:"subtitle,omitempty"`
+	HasProgressBar        *bool                           `protobuf:"varint,9,opt,name=has_progress_bar,json=hasProgressBar" json:"has_progress_bar,omitempty"`
+	HasLike               *bool                           `protobuf:"varint,11,opt,name=has_like,json=hasLike" json:"has_like,omitempty"`
+	HasDislike            *bool                           `protobuf:"varint,12,opt,name=has_dislike,json=hasDislike" json:"has_dislike,omitempty"`
+	ShowPlayer            *bool                           `protobuf:"varint,13,opt,name=show_player,json=showPlayer" json:"show_player,omitempty"`
+	LiveStreamText        *string                         `protobuf:"bytes,14,opt,name=live_stream_text,json=liveStreamText" json:"live_stream_text,omitempty"`
+	Id                    *string                         `protobuf:"bytes,15,opt,name=id" json:"id,omitempty"`
+	Type                  *string                         `protobuf:"bytes,16,opt,name=type" json:"type,omitempty"`
+	PlayerName            *string                         `protobuf:"bytes,17,opt,name=player_name,json=playerName" json:"player_name,omitempty"`
+	EntityInfo            *SimplePlayerState_EntityInfo   `protobuf:"bytes,18,opt,name=entity_info,json=entityInfo" json:"entity_info,omitempty"`
+	ProviderName          *string                         `protobuf:"bytes,19,opt,name=provider_name,json=providerName" json:"provider_name,omitempty"`
+	HideProgressBar       *bool                           `protobuf:"varint,20,opt,name=hide_progress_bar,json=hideProgressBar" json:"hide_progress_bar,omitempty"`
+	PlayerType            *SimplePlayerState_PlayerType   `protobuf:"varint,21,opt,name=player_type,json=playerType,enum=quasar.proto.SimplePlayerState_PlayerType" json:"player_type,omitempty"`
+	PlaybackStarterUserId *string                         `protobuf:"bytes,23,opt,name=playback_starter_user_id,json=playbackStarterUserId" json:"playback_starter_user_id,omitempty"`
+	CurrentScreen         *string                         `protobuf:"bytes,24,opt,name=current_screen,json=currentScreen" json:"current_screen,omitempty"`
+	Extra                 []*SimplePlayerState_ExtraEntry `protobuf:"bytes,100,rep,name=extra" json:"extra,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -2973,7 +3032,7 @@ func (x *SimplePlayerState) GetCurrentScreen() string {
 	return ""
 }
 
-func (x *SimplePlayerState) GetExtra() map[string]string {
+func (x *SimplePlayerState) GetExtra() []*SimplePlayerState_ExtraEntry {
 	if x != nil {
 		return x.Extra
 	}
@@ -3156,6 +3215,99 @@ func (x *MordoviaCommandMessage) GetVinsRequestId() string {
 	return ""
 }
 
+type WebsocketClientState struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	State         *WebsocketClientState_State `protobuf:"varint,1,opt,name=state,enum=quasar.proto.WebsocketClientState_State,def=0" json:"state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+// Default values for WebsocketClientState fields.
+const (
+	Default_WebsocketClientState_State = WebsocketClientState_DISCONNECTED
+)
+
+func (x *WebsocketClientState) Reset() {
+	*x = WebsocketClientState{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WebsocketClientState) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WebsocketClientState) ProtoMessage() {}
+
+func (x *WebsocketClientState) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WebsocketClientState.ProtoReflect.Descriptor instead.
+func (*WebsocketClientState) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *WebsocketClientState) GetState() WebsocketClientState_State {
+	if x != nil && x.State != nil {
+		return *x.State
+	}
+	return Default_WebsocketClientState_State
+}
+
+type XivaSubscriptions struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	XivaSubscriptions []string               `protobuf:"bytes,1,rep,name=xiva_subscriptions,json=xivaSubscriptions" json:"xiva_subscriptions,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *XivaSubscriptions) Reset() {
+	*x = XivaSubscriptions{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *XivaSubscriptions) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*XivaSubscriptions) ProtoMessage() {}
+
+func (x *XivaSubscriptions) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use XivaSubscriptions.ProtoReflect.Descriptor instead.
+func (*XivaSubscriptions) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *XivaSubscriptions) GetXivaSubscriptions() []string {
+	if x != nil {
+		return x.XivaSubscriptions
+	}
+	return nil
+}
+
 type SetupRcuAutoEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	TvModel       *string                `protobuf:"bytes,1,opt,name=tv_model,json=tvModel" json:"tv_model,omitempty"`
@@ -3165,7 +3317,7 @@ type SetupRcuAutoEvent struct {
 
 func (x *SetupRcuAutoEvent) Reset() {
 	*x = SetupRcuAutoEvent{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[26]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3177,7 +3329,7 @@ func (x *SetupRcuAutoEvent) String() string {
 func (*SetupRcuAutoEvent) ProtoMessage() {}
 
 func (x *SetupRcuAutoEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[26]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3190,7 +3342,7 @@ func (x *SetupRcuAutoEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetupRcuAutoEvent.ProtoReflect.Descriptor instead.
 func (*SetupRcuAutoEvent) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{26}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *SetupRcuAutoEvent) GetTvModel() string {
@@ -3214,7 +3366,7 @@ type LogMessage struct {
 
 func (x *LogMessage) Reset() {
 	*x = LogMessage{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3226,7 +3378,7 @@ func (x *LogMessage) String() string {
 func (*LogMessage) ProtoMessage() {}
 
 func (x *LogMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3239,7 +3391,7 @@ func (x *LogMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogMessage.ProtoReflect.Descriptor instead.
 func (*LogMessage) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{27}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *LogMessage) GetLevel() LogMessage_Level {
@@ -3297,7 +3449,7 @@ type NsdEnable struct {
 
 func (x *NsdEnable) Reset() {
 	*x = NsdEnable{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3309,7 +3461,7 @@ func (x *NsdEnable) String() string {
 func (*NsdEnable) ProtoMessage() {}
 
 func (x *NsdEnable) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3322,7 +3474,7 @@ func (x *NsdEnable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NsdEnable.ProtoReflect.Descriptor instead.
 func (*NsdEnable) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{28}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *NsdEnable) GetServerPort() uint32 {
@@ -3370,7 +3522,7 @@ type BrickState struct {
 
 func (x *BrickState) Reset() {
 	*x = BrickState{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3382,7 +3534,7 @@ func (x *BrickState) String() string {
 func (*BrickState) ProtoMessage() {}
 
 func (x *BrickState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3395,7 +3547,7 @@ func (x *BrickState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BrickState.ProtoReflect.Descriptor instead.
 func (*BrickState) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{29}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *BrickState) GetBrickStatus() BrickStatus {
@@ -3422,7 +3574,7 @@ type NetworkStatsCommand struct {
 
 func (x *NetworkStatsCommand) Reset() {
 	*x = NetworkStatsCommand{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3434,7 +3586,7 @@ func (x *NetworkStatsCommand) String() string {
 func (*NetworkStatsCommand) ProtoMessage() {}
 
 func (x *NetworkStatsCommand) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3447,7 +3599,7 @@ func (x *NetworkStatsCommand) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkStatsCommand.ProtoReflect.Descriptor instead.
 func (*NetworkStatsCommand) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{30}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *NetworkStatsCommand) GetDumpNetStatus() *NetworkStatsCommand_DumpNetStatus {
@@ -3474,7 +3626,7 @@ type NetworkStats struct {
 
 func (x *NetworkStats) Reset() {
 	*x = NetworkStats{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3486,7 +3638,7 @@ func (x *NetworkStats) String() string {
 func (*NetworkStats) ProtoMessage() {}
 
 func (x *NetworkStats) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3499,7 +3651,7 @@ func (x *NetworkStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkStats.ProtoReflect.Descriptor instead.
 func (*NetworkStats) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{31}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *NetworkStats) GetDevices() []*NetworkStats_NetDevice {
@@ -3526,7 +3678,7 @@ type UpdateHealthCheck struct {
 
 func (x *UpdateHealthCheck) Reset() {
 	*x = UpdateHealthCheck{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3538,7 +3690,7 @@ func (x *UpdateHealthCheck) String() string {
 func (*UpdateHealthCheck) ProtoMessage() {}
 
 func (x *UpdateHealthCheck) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3551,7 +3703,7 @@ func (x *UpdateHealthCheck) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateHealthCheck.ProtoReflect.Descriptor instead.
 func (*UpdateHealthCheck) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *UpdateHealthCheck) GetFailed() bool {
@@ -3578,7 +3730,7 @@ type RssStatus struct {
 
 func (x *RssStatus) Reset() {
 	*x = RssStatus{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3590,7 +3742,7 @@ func (x *RssStatus) String() string {
 func (*RssStatus) ProtoMessage() {}
 
 func (x *RssStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3603,7 +3755,7 @@ func (x *RssStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RssStatus.ProtoReflect.Descriptor instead.
 func (*RssStatus) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{33}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *RssStatus) GetDaemon() string {
@@ -3620,58 +3772,6 @@ func (x *RssStatus) GetIsOk() bool {
 	return false
 }
 
-type MinidumpStatus struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Daemon        *string                `protobuf:"bytes,1,opt,name=daemon" json:"daemon,omitempty"`
-	Info          *string                `protobuf:"bytes,2,opt,name=info" json:"info,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *MinidumpStatus) Reset() {
-	*x = MinidumpStatus{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[34]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *MinidumpStatus) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*MinidumpStatus) ProtoMessage() {}
-
-func (x *MinidumpStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[34]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use MinidumpStatus.ProtoReflect.Descriptor instead.
-func (*MinidumpStatus) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34}
-}
-
-func (x *MinidumpStatus) GetDaemon() string {
-	if x != nil && x.Daemon != nil {
-		return *x.Daemon
-	}
-	return ""
-}
-
-func (x *MinidumpStatus) GetInfo() string {
-	if x != nil && x.Info != nil {
-		return *x.Info
-	}
-	return ""
-}
-
 type ForceCheckUpdates struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	TimeoutSeconds *uint64                `protobuf:"varint,1,opt,name=timeout_seconds,json=timeoutSeconds" json:"timeout_seconds,omitempty"`
@@ -3681,7 +3781,7 @@ type ForceCheckUpdates struct {
 
 func (x *ForceCheckUpdates) Reset() {
 	*x = ForceCheckUpdates{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3693,7 +3793,7 @@ func (x *ForceCheckUpdates) String() string {
 func (*ForceCheckUpdates) ProtoMessage() {}
 
 func (x *ForceCheckUpdates) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3706,7 +3806,7 @@ func (x *ForceCheckUpdates) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForceCheckUpdates.ProtoReflect.Descriptor instead.
 func (*ForceCheckUpdates) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{35}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *ForceCheckUpdates) GetTimeoutSeconds() uint64 {
@@ -3726,7 +3826,7 @@ type EqualizerParameters struct {
 
 func (x *EqualizerParameters) Reset() {
 	*x = EqualizerParameters{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3738,7 +3838,7 @@ func (x *EqualizerParameters) String() string {
 func (*EqualizerParameters) ProtoMessage() {}
 
 func (x *EqualizerParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3751,7 +3851,7 @@ func (x *EqualizerParameters) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EqualizerParameters.ProtoReflect.Descriptor instead.
 func (*EqualizerParameters) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{36}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *EqualizerParameters) GetJsonData() string {
@@ -3768,6 +3868,1310 @@ func (x *EqualizerParameters) GetConfigHash() string {
 	return ""
 }
 
+type QuasarMessage struct {
+	state                               protoimpl.MessageState                       `protogen:"open.v1"`
+	RequestId                           *string                                      `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
+	AliceState                          *AliceState                                  `protobuf:"bytes,3,opt,name=alice_state,json=aliceState" json:"alice_state,omitempty"`
+	BrokenMicInfo                       *BrokenMicInfo                               `protobuf:"bytes,112,opt,name=broken_mic_info,json=brokenMicInfo" json:"broken_mic_info,omitempty"`
+	WifiListRequest                     *EmptyMessage                                `protobuf:"bytes,4,opt,name=wifi_list_request,json=wifiListRequest" json:"wifi_list_request,omitempty"`
+	WifiList                            *WifiList                                    `protobuf:"bytes,5,opt,name=wifi_list,json=wifiList" json:"wifi_list,omitempty"`
+	WifiNetworksDisable                 *EmptyMessage                                `protobuf:"bytes,30,opt,name=wifi_networks_disable,json=wifiNetworksDisable" json:"wifi_networks_disable,omitempty"`
+	WifiNetworksEnable                  *EmptyMessage                                `protobuf:"bytes,105,opt,name=wifi_networks_enable,json=wifiNetworksEnable" json:"wifi_networks_enable,omitempty"`
+	WifiReassociate                     *EmptyMessage                                `protobuf:"bytes,249,opt,name=wifi_reassociate,json=wifiReassociate" json:"wifi_reassociate,omitempty"`
+	WifiConnect                         *WifiConnect                                 `protobuf:"bytes,6,opt,name=wifi_connect,json=wifiConnect" json:"wifi_connect,omitempty"`
+	AsyncWifiConnect                    *WifiConnect                                 `protobuf:"bytes,64,opt,name=async_wifi_connect,json=asyncWifiConnect" json:"async_wifi_connect,omitempty"`
+	WifiConnectResponse                 *WifiConnectResponse                         `protobuf:"bytes,7,opt,name=wifi_connect_response,json=wifiConnectResponse" json:"wifi_connect_response,omitempty"`
+	MediaRequest                        *MediaRequest                                `protobuf:"bytes,8,opt,name=media_request,json=mediaRequest" json:"media_request,omitempty"`
+	AddUserRequest                      *AddUserRequest                              `protobuf:"bytes,11,opt,name=add_user_request,json=addUserRequest" json:"add_user_request,omitempty"`
+	AddUserResponse                     *AddUserResponse                             `protobuf:"bytes,12,opt,name=add_user_response,json=addUserResponse" json:"add_user_response,omitempty"`
+	DeleteUserRequest                   *DeleteUserRequest                           `protobuf:"bytes,216,opt,name=delete_user_request,json=deleteUserRequest" json:"delete_user_request,omitempty"`
+	DeleteUserResponse                  *DeleteUserResponse                          `protobuf:"bytes,217,opt,name=delete_user_response,json=deleteUserResponse" json:"delete_user_response,omitempty"`
+	ChangeUserRequest                   *ChangeUserRequest                           `protobuf:"bytes,97,opt,name=change_user_request,json=changeUserRequest" json:"change_user_request,omitempty"`
+	IssueAuthCodeRequest                *IssueAuthCodeRequest                        `protobuf:"bytes,242,opt,name=issue_auth_code_request,json=issueAuthCodeRequest" json:"issue_auth_code_request,omitempty"`
+	IssueAuthCodeResponse               *IssueAuthCodeResponse                       `protobuf:"bytes,243,opt,name=issue_auth_code_response,json=issueAuthCodeResponse" json:"issue_auth_code_response,omitempty"`
+	AddUserEvent                        *AuthEvent                                   `protobuf:"bytes,219,opt,name=add_user_event,json=addUserEvent" json:"add_user_event,omitempty"`
+	ChangeUserEvent                     *AuthEvent                                   `protobuf:"bytes,13,opt,name=change_user_event,json=changeUserEvent" json:"change_user_event,omitempty"`
+	DeleteUserEvent                     *AuthEvent                                   `protobuf:"bytes,220,opt,name=delete_user_event,json=deleteUserEvent" json:"delete_user_event,omitempty"`
+	ChangeTokenEvent                    *AuthEvent                                   `protobuf:"bytes,100,opt,name=change_token_event,json=changeTokenEvent" json:"change_token_event,omitempty"`
+	OwnerStartupInfo                    *OwnerStartupInfo                            `protobuf:"bytes,221,opt,name=owner_startup_info,json=ownerStartupInfo" json:"owner_startup_info,omitempty"`
+	AllStartupInfo                      *AllStartupInfo                              `protobuf:"bytes,222,opt,name=all_startup_info,json=allStartupInfo" json:"all_startup_info,omitempty"`
+	ConfigurationModeApUp               *EmptyMessage                                `protobuf:"bytes,89,opt,name=configuration_mode_ap_up,json=configurationModeApUp" json:"configuration_mode_ap_up,omitempty"`
+	MetricaMessage                      *MetricaMessage                              `protobuf:"bytes,24,opt,name=metrica_message,json=metricaMessage" json:"metrica_message,omitempty"`
+	MediaMessage                        *MediaMessage                                `protobuf:"bytes,27,opt,name=media_message,json=mediaMessage" json:"media_message,omitempty"`
+	RecordingEvent                      *RecordingEvent                              `protobuf:"bytes,32,opt,name=recording_event,json=recordingEvent" json:"recording_event,omitempty"`
+	AppState                            *AppState                                    `protobuf:"bytes,33,opt,name=app_state,json=appState" json:"app_state,omitempty"`
+	WifiStatus                          *WifiStatus                                  `protobuf:"bytes,35,opt,name=wifi_status,json=wifiStatus" json:"wifi_status,omitempty"`
+	CriticalUpdateProgress              *UpdateProgress                              `protobuf:"bytes,36,opt,name=critical_update_progress,json=criticalUpdateProgress" json:"critical_update_progress,omitempty"`
+	NoCriticalUpdateFound               *EmptyMessage                                `protobuf:"bytes,37,opt,name=no_critical_update_found,json=noCriticalUpdateFound" json:"no_critical_update_found,omitempty"`
+	StartCriticalUpdate                 *EmptyMessage                                `protobuf:"bytes,38,opt,name=start_critical_update,json=startCriticalUpdate" json:"start_critical_update,omitempty"`
+	ChildPhraseEndEvent                 *PhraseEndEvent                              `protobuf:"bytes,41,opt,name=child_phrase_end_event,json=childPhraseEndEvent" json:"child_phrase_end_event,omitempty"`
+	VolumeState                         *VolumeState                                 `protobuf:"bytes,42,opt,name=volumeState" json:"volumeState,omitempty"`
+	ExternalCommand                     *ExternalCommandMessage                      `protobuf:"bytes,44,opt,name=external_command,json=externalCommand" json:"external_command,omitempty"`
+	ExternalCommandResponse             *ExternalCommandResponse                     `protobuf:"bytes,45,opt,name=external_command_response,json=externalCommandResponse" json:"external_command_response,omitempty"`
+	TimersState                         *TimersState                                 `protobuf:"bytes,46,opt,name=timers_state,json=timersState" json:"timers_state,omitempty"`
+	AlarmsState                         *AlarmsState                                 `protobuf:"bytes,47,opt,name=alarms_state,json=alarmsState" json:"alarms_state,omitempty"`
+	SetAlarmsState                      *TimersState                                 `protobuf:"bytes,208,opt,name=set_alarms_state,json=setAlarmsState" json:"set_alarms_state,omitempty"`
+	WatchedVideo                        *WatchedVideoState                           `protobuf:"bytes,51,opt,name=watched_video,json=watchedVideo" json:"watched_video,omitempty"`
+	CurrentLocation                     *Location                                    `protobuf:"bytes,55,opt,name=current_location,json=currentLocation" json:"current_location,omitempty"`
+	PushNotification                    *PushNotification                            `protobuf:"bytes,57,opt,name=push_notification,json=pushNotification" json:"push_notification,omitempty"`
+	ResetWifi                           *EmptyMessage                                `protobuf:"bytes,60,opt,name=reset_wifi,json=resetWifi" json:"reset_wifi,omitempty"`
+	UserConfigUpdate                    *UserConfig                                  `protobuf:"bytes,63,opt,name=user_config_update,json=userConfigUpdate" json:"user_config_update,omitempty"`
+	BrickState                          *BrickState                                  `protobuf:"bytes,235,opt,name=brick_state,json=brickState" json:"brick_state,omitempty"`
+	CurrentTimezone                     *Timezone                                    `protobuf:"bytes,67,opt,name=current_timezone,json=currentTimezone" json:"current_timezone,omitempty"`
+	BluetoothRequest                    *BluetoothRequest                            `protobuf:"bytes,69,opt,name=bluetooth_request,json=bluetoothRequest" json:"bluetooth_request,omitempty"`
+	BluetoothSourceEvent                *BluetoothSourceEvent                        `protobuf:"bytes,71,opt,name=bluetooth_source_event,json=bluetoothSourceEvent" json:"bluetooth_source_event,omitempty"`
+	BluetoothSinkEvent                  *BluetoothSinkEvent                          `protobuf:"bytes,72,opt,name=bluetooth_sink_event,json=bluetoothSinkEvent" json:"bluetooth_sink_event,omitempty"`
+	WifiConfigReload                    *EmptyMessage                                `protobuf:"bytes,74,opt,name=wifi_config_reload,json=wifiConfigReload" json:"wifi_config_reload,omitempty"`
+	LeaderOverride                      *LeaderOverride                              `protobuf:"bytes,77,opt,name=leader_override,json=leaderOverride" json:"leader_override,omitempty"`
+	VolumeSetMessage                    *VolumeSetMessage                            `protobuf:"bytes,78,opt,name=volume_set_message,json=volumeSetMessage" json:"volume_set_message,omitempty"`
+	VinsCallResponse                    *VinsCallResponse                            `protobuf:"bytes,80,opt,name=vins_call_response,json=vinsCallResponse" json:"vins_call_response,omitempty"`
+	DeviceGroupState                    *DeviceGroupState                            `protobuf:"bytes,81,opt,name=device_group_state,json=deviceGroupState" json:"device_group_state,omitempty"`
+	GlagoldState                        *GlagoldState                                `protobuf:"bytes,82,opt,name=glagold_state,json=glagoldState" json:"glagold_state,omitempty"`
+	SimplePlayerState                   *SimplePlayerState                           `protobuf:"bytes,84,opt,name=simple_player_state,json=simplePlayerState" json:"simple_player_state,omitempty"`
+	IoEvent                             *IOEvent                                     `protobuf:"bytes,85,opt,name=io_event,json=ioEvent" json:"io_event,omitempty"`
+	IoControl                           *IOControlCommand                            `protobuf:"bytes,88,opt,name=io_control,json=ioControl" json:"io_control,omitempty"`
+	IoHubMessage                        *IOHubMessage                                `protobuf:"bytes,183,opt,name=io_hub_message,json=ioHubMessage" json:"io_hub_message,omitempty"`
+	IoAudioChannelsData                 *IOAudioChannelsData                         `protobuf:"bytes,158,opt,name=io_audio_channels_data,json=ioAudioChannelsData" json:"io_audio_channels_data,omitempty"`
+	IoChannelRequest                    *IOChannelRequest                            `protobuf:"bytes,159,opt,name=io_channel_request,json=ioChannelRequest" json:"io_channel_request,omitempty"`
+	MordoviaShow                        *MordoviaShowMessage                         `protobuf:"bytes,95,opt,name=mordovia_show,json=mordoviaShow" json:"mordovia_show,omitempty"`
+	MordoviaCommand                     *MordoviaCommandMessage                      `protobuf:"bytes,96,opt,name=mordovia_command,json=mordoviaCommand" json:"mordovia_command,omitempty"`
+	ConfigurationState                  *ConfigurationState                          `protobuf:"varint,98,opt,name=configuration_state,json=configurationState,enum=quasar.proto.ConfigurationState" json:"configuration_state,omitempty"`
+	ControlRequest                      *ControlRequest                              `protobuf:"bytes,101,opt,name=control_request,json=controlRequest" json:"control_request,omitempty"`
+	OnboardingRequest                   *OnboardingRequest                           `protobuf:"bytes,103,opt,name=onboarding_request,json=onboardingRequest" json:"onboarding_request,omitempty"`
+	UpdateState                         *UpdateState                                 `protobuf:"bytes,104,opt,name=update_state,json=updateState" json:"update_state,omitempty"`
+	AudioInputs                         []*AudioInput                                `protobuf:"bytes,108,rep,name=audio_inputs,json=audioInputs" json:"audio_inputs,omitempty"`
+	XivaWebsocketSendBinaryMessage      []byte                                       `protobuf:"bytes,114,opt,name=xiva_websocket_send_binary_message,json=xivaWebsocketSendBinaryMessage" json:"xiva_websocket_send_binary_message,omitempty"`
+	XivaWebsocketRecvBinaryMessage      []byte                                       `protobuf:"bytes,115,opt,name=xiva_websocket_recv_binary_message,json=xivaWebsocketRecvBinaryMessage" json:"xiva_websocket_recv_binary_message,omitempty"`
+	XivaWebsocketClientState            *WebsocketClientState                        `protobuf:"bytes,116,opt,name=xiva_websocket_client_state,json=xivaWebsocketClientState" json:"xiva_websocket_client_state,omitempty"`
+	SubscribeToPushdXivaWebsocketEvents *EmptyMessage                                `protobuf:"bytes,117,opt,name=subscribe_to_pushd_xiva_websocket_events,json=subscribeToPushdXivaWebsocketEvents" json:"subscribe_to_pushd_xiva_websocket_events,omitempty"`
+	ListXivaSubscriptions               *EmptyMessage                                `protobuf:"bytes,118,opt,name=list_xiva_subscriptions,json=listXivaSubscriptions" json:"list_xiva_subscriptions,omitempty"`
+	XivaSubscriptions                   *XivaSubscriptions                           `protobuf:"bytes,119,opt,name=xiva_subscriptions,json=xivaSubscriptions" json:"xiva_subscriptions,omitempty"`
+	OnMediaError                        *MediaContentType                            `protobuf:"varint,124,opt,name=on_media_error,json=onMediaError,enum=quasar.proto.MediaContentType" json:"on_media_error,omitempty"`
+	CheckUpdates                        *EmptyMessage                                `protobuf:"bytes,126,opt,name=check_updates,json=checkUpdates" json:"check_updates,omitempty"`
+	AudioClientEvent                    *AudioClientEvent                            `protobuf:"bytes,127,opt,name=audio_client_event,json=audioClientEvent" json:"audio_client_event,omitempty"`
+	MultiroomBroadcast                  *MultiroomBroadcast                          `protobuf:"bytes,128,opt,name=multiroom_broadcast,json=multiroomBroadcast" json:"multiroom_broadcast,omitempty"`
+	ReadyToApplyUpdate                  *UpdateApplyTimeout                          `protobuf:"bytes,130,opt,name=ready_to_apply_update,json=readyToApplyUpdate" json:"ready_to_apply_update,omitempty"`
+	ConfirmUpdateApply                  *EmptyMessage                                `protobuf:"bytes,131,opt,name=confirm_update_apply,json=confirmUpdateApply" json:"confirm_update_apply,omitempty"`
+	PostponeUpdateApply                 *EmptyMessage                                `protobuf:"bytes,132,opt,name=postpone_update_apply,json=postponeUpdateApply" json:"postpone_update_apply,omitempty"`
+	NotificationUpdateEvent             *NotificationUpdateEvent                     `protobuf:"bytes,134,opt,name=notification_update_event,json=notificationUpdateEvent" json:"notification_update_event,omitempty"`
+	NtpSyncEvent                        *NtpSyncEvent                                `protobuf:"bytes,143,opt,name=ntp_sync_event,json=ntpSyncEvent" json:"ntp_sync_event,omitempty"`
+	SetupCredentialsMessage             *SetupCredentialsMessage                     `protobuf:"bytes,146,opt,name=setup_credentials_message,json=setupCredentialsMessage" json:"setup_credentials_message,omitempty"`
+	MultiroomDirective                  *MultiroomDirective                          `protobuf:"bytes,148,opt,name=multiroom_directive,json=multiroomDirective" json:"multiroom_directive,omitempty"`
+	SetupCredentialsHandlingCompleted   *EmptyMessage                                `protobuf:"bytes,149,opt,name=setup_credentials_handling_completed,json=setupCredentialsHandlingCompleted" json:"setup_credentials_handling_completed,omitempty"`
+	EncryptedSetupCredentialsMessage    *EncryptedSetupCredentialsMessage            `protobuf:"bytes,150,opt,name=encrypted_setup_credentials_message,json=encryptedSetupCredentialsMessage" json:"encrypted_setup_credentials_message,omitempty"`
+	SetupStatusMessage                  *SetupStatusMessage                          `protobuf:"bytes,151,opt,name=setup_status_message,json=setupStatusMessage" json:"setup_status_message,omitempty"`
+	MultiroomState                      *MultiroomState                              `protobuf:"bytes,152,opt,name=multiroom_state,json=multiroomState" json:"multiroom_state,omitempty"`
+	TestpointMessage                    *TestpointMessage                            `protobuf:"bytes,154,opt,name=testpoint_message,json=testpointMessage" json:"testpoint_message,omitempty"`
+	ServiceNameReady                    *string                                      `protobuf:"bytes,157,opt,name=service_name_ready,json=serviceNameReady" json:"service_name_ready,omitempty"`
+	RcuEvent                            *RcuEvent                                    `protobuf:"bytes,160,opt,name=rcu_event,json=rcuEvent" json:"rcu_event,omitempty"`
+	RcuVoiceEvent                       *RcuVoiceEvent                               `protobuf:"bytes,161,opt,name=rcu_voice_event,json=rcuVoiceEvent" json:"rcu_voice_event,omitempty"`
+	NetworkStatus                       *NetworkStatus                               `protobuf:"bytes,162,opt,name=network_status,json=networkStatus" json:"network_status,omitempty"`
+	ResetNetwork                        *EmptyMessage                                `protobuf:"bytes,163,opt,name=reset_network,json=resetNetwork" json:"reset_network,omitempty"`
+	NetworksDisable                     *EmptyMessage                                `protobuf:"bytes,164,opt,name=networks_disable,json=networksDisable" json:"networks_disable,omitempty"`
+	NetworksEnable                      *EmptyMessage                                `protobuf:"bytes,165,opt,name=networks_enable,json=networksEnable" json:"networks_enable,omitempty"`
+	NetworkConfigReload                 *EmptyMessage                                `protobuf:"bytes,166,opt,name=network_config_reload,json=networkConfigReload" json:"network_config_reload,omitempty"`
+	NetworkStatsCommand                 *NetworkStatsCommand                         `protobuf:"bytes,241,opt,name=network_stats_command,json=networkStatsCommand" json:"network_stats_command,omitempty"`
+	NetworkStats                        *NetworkStats                                `protobuf:"bytes,240,opt,name=network_stats,json=networkStats" json:"network_stats,omitempty"`
+	RefreshUserEvent                    *AuthEvent                                   `protobuf:"bytes,167,opt,name=refresh_user_event,json=refreshUserEvent" json:"refresh_user_event,omitempty"`
+	AuthTokenUpdateRequest              *AuthTokenUpdateRequest                      `protobuf:"bytes,171,opt,name=auth_token_update_request,json=authTokenUpdateRequest" json:"auth_token_update_request,omitempty"`
+	LegacyPlayerStateChanged            *LegacyPlayerStateChanged                    `protobuf:"bytes,173,opt,name=legacy_player_state_changed,json=legacyPlayerStateChanged" json:"legacy_player_state_changed,omitempty"`
+	SetupRcu                            *EmptyMessage                                `protobuf:"bytes,153,opt,name=setup_rcu,json=setupRcu" json:"setup_rcu,omitempty"`
+	SetupRcuAuto                        *SetupRcuAutoEvent                           `protobuf:"bytes,174,opt,name=setup_rcu_auto,json=setupRcuAuto" json:"setup_rcu_auto,omitempty"`
+	SetupRcuCheck                       *EmptyMessage                                `protobuf:"bytes,175,opt,name=setup_rcu_check,json=setupRcuCheck" json:"setup_rcu_check,omitempty"`
+	SetupRcuAdvanced                    *EmptyMessage                                `protobuf:"bytes,176,opt,name=setup_rcu_advanced,json=setupRcuAdvanced" json:"setup_rcu_advanced,omitempty"`
+	SetupRcuManual                      *EmptyMessage                                `protobuf:"bytes,177,opt,name=setup_rcu_manual,json=setupRcuManual" json:"setup_rcu_manual,omitempty"`
+	LedScreenCommand                    *LedScreenCommand                            `protobuf:"bytes,180,opt,name=led_screen_command,json=ledScreenCommand" json:"led_screen_command,omitempty"`
+	GlagolClusterMessage                *GlagolClusterMessage                        `protobuf:"bytes,181,opt,name=glagol_cluster_message,json=glagolClusterMessage" json:"glagol_cluster_message,omitempty"`
+	GlagolClusterSign                   *GlagolClusterSign                           `protobuf:"bytes,182,opt,name=glagol_cluster_sign,json=glagolClusterSign" json:"glagol_cluster_sign,omitempty"`
+	LogMessage                          *LogMessage                                  `protobuf:"bytes,184,opt,name=log_message,json=logMessage" json:"log_message,omitempty"`
+	GlagolDiscoveryRequest              *GlagolDiscoveryRequest                      `protobuf:"bytes,185,opt,name=glagol_discovery_request,json=glagolDiscoveryRequest" json:"glagol_discovery_request,omitempty"`
+	GlagolDiscoveryUpdated              *EmptyMessage                                `protobuf:"bytes,186,opt,name=glagol_discovery_updated,json=glagolDiscoveryUpdated" json:"glagol_discovery_updated,omitempty"`
+	GlagolDiscoveryResult               *GlagolDiscoveryResult                       `protobuf:"bytes,187,opt,name=glagol_discovery_result,json=glagolDiscoveryResult" json:"glagol_discovery_result,omitempty"`
+	AllStartupSettings                  *AllStartupSettings                          `protobuf:"bytes,188,opt,name=all_startup_settings,json=allStartupSettings" json:"all_startup_settings,omitempty"`
+	NsdDiscoveredItem                   *NsdInfo                                     `protobuf:"bytes,190,opt,name=nsd_discovered_item,json=nsdDiscoveredItem" json:"nsd_discovered_item,omitempty"`
+	NsdDiscoveredItems                  *NsdInfoList                                 `protobuf:"bytes,191,opt,name=nsd_discovered_items,json=nsdDiscoveredItems" json:"nsd_discovered_items,omitempty"`
+	NsdLostItem                         *NsdInfo                                     `protobuf:"bytes,192,opt,name=nsd_lost_item,json=nsdLostItem" json:"nsd_lost_item,omitempty"`
+	NsdDiscoveredRequest                *EmptyMessage                                `protobuf:"bytes,193,opt,name=nsd_discovered_request,json=nsdDiscoveredRequest" json:"nsd_discovered_request,omitempty"`
+	NsdDisable                          *EmptyMessage                                `protobuf:"bytes,194,opt,name=nsd_disable,json=nsdDisable" json:"nsd_disable,omitempty"`
+	NsdEnable                           *NsdEnable                                   `protobuf:"bytes,195,opt,name=nsd_enable,json=nsdEnable" json:"nsd_enable,omitempty"`
+	NsdDisableCompleted                 *EmptyMessage                                `protobuf:"bytes,196,opt,name=nsd_disable_completed,json=nsdDisableCompleted" json:"nsd_disable_completed,omitempty"`
+	NsdGuestMode                        *EmptyMessage                                `protobuf:"bytes,199,opt,name=nsd_guest_mode,json=nsdGuestMode" json:"nsd_guest_mode,omitempty"`
+	NsdStereoPairFollower               *EmptyMessage                                `protobuf:"bytes,202,opt,name=nsd_stereo_pair_follower,json=nsdStereoPairFollower" json:"nsd_stereo_pair_follower,omitempty"`
+	StereoPairMessage                   *StereoPair                                  `protobuf:"bytes,198,opt,name=stereo_pair_message,json=stereoPairMessage" json:"stereo_pair_message,omitempty"`
+	VolumeManagerMessage                *VolumeManager                               `protobuf:"bytes,200,opt,name=volume_manager_message,json=volumeManagerMessage" json:"volume_manager_message,omitempty"`
+	SpectrogramAnimationMessage         *SpectrogramAnimation                        `protobuf:"bytes,201,opt,name=spectrogram_animation_message,json=spectrogramAnimationMessage" json:"spectrogram_animation_message,omitempty"`
+	AliceMessage                        *Alice                                       `protobuf:"bytes,204,opt,name=alice_message,json=aliceMessage" json:"alice_message,omitempty"`
+	EnvironmentMessage                  *EnvironmentMessage                          `protobuf:"bytes,207,opt,name=environment_message,json=environmentMessage" json:"environment_message,omitempty"`
+	Remoting                            *Remoting                                    `protobuf:"bytes,210,opt,name=remoting" json:"remoting,omitempty"`
+	Directive                           *protos.Directive                            `protobuf:"bytes,211,opt,name=directive" json:"directive,omitempty"`
+	WifiTurnOff                         *EmptyMessage                                `protobuf:"bytes,213,opt,name=wifi_turn_off,json=wifiTurnOff" json:"wifi_turn_off,omitempty"`
+	WifiTurnOn                          *EmptyMessage                                `protobuf:"bytes,214,opt,name=wifi_turn_on,json=wifiTurnOn" json:"wifi_turn_on,omitempty"`
+	CallAction                          *QuasarMessage_CallAction                    `protobuf:"bytes,228,opt,name=call_action,json=callAction" json:"call_action,omitempty"`
+	BackendRequest                      *BackendRequest                              `protobuf:"bytes,229,opt,name=backend_request,json=backendRequest" json:"backend_request,omitempty"`
+	BackendResponse                     *BackendResponse                             `protobuf:"bytes,230,opt,name=backend_response,json=backendResponse" json:"backend_response,omitempty"`
+	VqeInfo                             *VqeInfo                                     `protobuf:"bytes,233,opt,name=vqe_info,json=vqeInfo" json:"vqe_info,omitempty"`
+	VqeZone                             *string                                      `protobuf:"bytes,248,opt,name=vqe_zone,json=vqeZone" json:"vqe_zone,omitempty"`
+	AudioError                          *EmptyMessage                                `protobuf:"bytes,234,opt,name=audio_error,json=audioError" json:"audio_error,omitempty"`
+	ConfigCapabilityEvents              *sync_messages.ConfigCapabilityEvents        `protobuf:"bytes,236,opt,name=config_capability_events,json=configCapabilityEvents" json:"config_capability_events,omitempty"`
+	ConfigCapabilitySubscriptions       *sync_messages.ConfigCapabilitySubscriptions `protobuf:"bytes,237,opt,name=config_capability_subscriptions,json=configCapabilitySubscriptions" json:"config_capability_subscriptions,omitempty"`
+	UpdateHealthCheck                   *UpdateHealthCheck                           `protobuf:"bytes,244,opt,name=update_health_check,json=updateHealthCheck" json:"update_health_check,omitempty"`
+	ForceCheckUpdates                   *ForceCheckUpdates                           `protobuf:"bytes,245,opt,name=force_check_updates,json=forceCheckUpdates" json:"force_check_updates,omitempty"`
+	DatabaseMetricaMessage              *protos1.DatabaseMetricaEvent                `protobuf:"bytes,246,opt,name=database_metrica_message,json=databaseMetricaMessage" json:"database_metrica_message,omitempty"`
+	AudioStorageEvent                   *AudioStorageEvent                           `protobuf:"bytes,247,opt,name=audio_storage_event,json=audioStorageEvent" json:"audio_storage_event,omitempty"`
+	RssStatus                           *RssStatus                                   `protobuf:"bytes,250,opt,name=rss_status,json=rssStatus" json:"rss_status,omitempty"`
+	EqualizerParams                     *EqualizerParameters                         `protobuf:"bytes,251,opt,name=equalizer_params,json=equalizerParams" json:"equalizer_params,omitempty"`
+	Payload                             []byte                                       `protobuf:"bytes,252,opt,name=payload" json:"payload,omitempty"`
+	Type                                *QuasarMessage_Type                          `protobuf:"varint,253,opt,name=type,enum=quasar.proto.QuasarMessage_Type" json:"type,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *QuasarMessage) Reset() {
+	*x = QuasarMessage{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *QuasarMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QuasarMessage) ProtoMessage() {}
+
+func (x *QuasarMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QuasarMessage.ProtoReflect.Descriptor instead.
+func (*QuasarMessage) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *QuasarMessage) GetRequestId() string {
+	if x != nil && x.RequestId != nil {
+		return *x.RequestId
+	}
+	return ""
+}
+
+func (x *QuasarMessage) GetAliceState() *AliceState {
+	if x != nil {
+		return x.AliceState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBrokenMicInfo() *BrokenMicInfo {
+	if x != nil {
+		return x.BrokenMicInfo
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiListRequest() *EmptyMessage {
+	if x != nil {
+		return x.WifiListRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiList() *WifiList {
+	if x != nil {
+		return x.WifiList
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiNetworksDisable() *EmptyMessage {
+	if x != nil {
+		return x.WifiNetworksDisable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiNetworksEnable() *EmptyMessage {
+	if x != nil {
+		return x.WifiNetworksEnable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiReassociate() *EmptyMessage {
+	if x != nil {
+		return x.WifiReassociate
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiConnect() *WifiConnect {
+	if x != nil {
+		return x.WifiConnect
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAsyncWifiConnect() *WifiConnect {
+	if x != nil {
+		return x.AsyncWifiConnect
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiConnectResponse() *WifiConnectResponse {
+	if x != nil {
+		return x.WifiConnectResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMediaRequest() *MediaRequest {
+	if x != nil {
+		return x.MediaRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAddUserRequest() *AddUserRequest {
+	if x != nil {
+		return x.AddUserRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAddUserResponse() *AddUserResponse {
+	if x != nil {
+		return x.AddUserResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDeleteUserRequest() *DeleteUserRequest {
+	if x != nil {
+		return x.DeleteUserRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDeleteUserResponse() *DeleteUserResponse {
+	if x != nil {
+		return x.DeleteUserResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetChangeUserRequest() *ChangeUserRequest {
+	if x != nil {
+		return x.ChangeUserRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIssueAuthCodeRequest() *IssueAuthCodeRequest {
+	if x != nil {
+		return x.IssueAuthCodeRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIssueAuthCodeResponse() *IssueAuthCodeResponse {
+	if x != nil {
+		return x.IssueAuthCodeResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAddUserEvent() *AuthEvent {
+	if x != nil {
+		return x.AddUserEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetChangeUserEvent() *AuthEvent {
+	if x != nil {
+		return x.ChangeUserEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDeleteUserEvent() *AuthEvent {
+	if x != nil {
+		return x.DeleteUserEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetChangeTokenEvent() *AuthEvent {
+	if x != nil {
+		return x.ChangeTokenEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetOwnerStartupInfo() *OwnerStartupInfo {
+	if x != nil {
+		return x.OwnerStartupInfo
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAllStartupInfo() *AllStartupInfo {
+	if x != nil {
+		return x.AllStartupInfo
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetConfigurationModeApUp() *EmptyMessage {
+	if x != nil {
+		return x.ConfigurationModeApUp
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMetricaMessage() *MetricaMessage {
+	if x != nil {
+		return x.MetricaMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMediaMessage() *MediaMessage {
+	if x != nil {
+		return x.MediaMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetRecordingEvent() *RecordingEvent {
+	if x != nil {
+		return x.RecordingEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAppState() *AppState {
+	if x != nil {
+		return x.AppState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiStatus() *WifiStatus {
+	if x != nil {
+		return x.WifiStatus
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetCriticalUpdateProgress() *UpdateProgress {
+	if x != nil {
+		return x.CriticalUpdateProgress
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNoCriticalUpdateFound() *EmptyMessage {
+	if x != nil {
+		return x.NoCriticalUpdateFound
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetStartCriticalUpdate() *EmptyMessage {
+	if x != nil {
+		return x.StartCriticalUpdate
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetChildPhraseEndEvent() *PhraseEndEvent {
+	if x != nil {
+		return x.ChildPhraseEndEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVolumeState() *VolumeState {
+	if x != nil {
+		return x.VolumeState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetExternalCommand() *ExternalCommandMessage {
+	if x != nil {
+		return x.ExternalCommand
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetExternalCommandResponse() *ExternalCommandResponse {
+	if x != nil {
+		return x.ExternalCommandResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetTimersState() *TimersState {
+	if x != nil {
+		return x.TimersState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAlarmsState() *AlarmsState {
+	if x != nil {
+		return x.AlarmsState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetAlarmsState() *TimersState {
+	if x != nil {
+		return x.SetAlarmsState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWatchedVideo() *WatchedVideoState {
+	if x != nil {
+		return x.WatchedVideo
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetCurrentLocation() *Location {
+	if x != nil {
+		return x.CurrentLocation
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetPushNotification() *PushNotification {
+	if x != nil {
+		return x.PushNotification
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetResetWifi() *EmptyMessage {
+	if x != nil {
+		return x.ResetWifi
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetUserConfigUpdate() *UserConfig {
+	if x != nil {
+		return x.UserConfigUpdate
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBrickState() *BrickState {
+	if x != nil {
+		return x.BrickState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetCurrentTimezone() *Timezone {
+	if x != nil {
+		return x.CurrentTimezone
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBluetoothRequest() *BluetoothRequest {
+	if x != nil {
+		return x.BluetoothRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBluetoothSourceEvent() *BluetoothSourceEvent {
+	if x != nil {
+		return x.BluetoothSourceEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBluetoothSinkEvent() *BluetoothSinkEvent {
+	if x != nil {
+		return x.BluetoothSinkEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiConfigReload() *EmptyMessage {
+	if x != nil {
+		return x.WifiConfigReload
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetLeaderOverride() *LeaderOverride {
+	if x != nil {
+		return x.LeaderOverride
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVolumeSetMessage() *VolumeSetMessage {
+	if x != nil {
+		return x.VolumeSetMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVinsCallResponse() *VinsCallResponse {
+	if x != nil {
+		return x.VinsCallResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDeviceGroupState() *DeviceGroupState {
+	if x != nil {
+		return x.DeviceGroupState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagoldState() *GlagoldState {
+	if x != nil {
+		return x.GlagoldState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSimplePlayerState() *SimplePlayerState {
+	if x != nil {
+		return x.SimplePlayerState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIoEvent() *IOEvent {
+	if x != nil {
+		return x.IoEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIoControl() *IOControlCommand {
+	if x != nil {
+		return x.IoControl
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIoHubMessage() *IOHubMessage {
+	if x != nil {
+		return x.IoHubMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIoAudioChannelsData() *IOAudioChannelsData {
+	if x != nil {
+		return x.IoAudioChannelsData
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetIoChannelRequest() *IOChannelRequest {
+	if x != nil {
+		return x.IoChannelRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMordoviaShow() *MordoviaShowMessage {
+	if x != nil {
+		return x.MordoviaShow
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMordoviaCommand() *MordoviaCommandMessage {
+	if x != nil {
+		return x.MordoviaCommand
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetConfigurationState() ConfigurationState {
+	if x != nil && x.ConfigurationState != nil {
+		return *x.ConfigurationState
+	}
+	return ConfigurationState_UNKNOWN_STATE
+}
+
+func (x *QuasarMessage) GetControlRequest() *ControlRequest {
+	if x != nil {
+		return x.ControlRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetOnboardingRequest() *OnboardingRequest {
+	if x != nil {
+		return x.OnboardingRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetUpdateState() *UpdateState {
+	if x != nil {
+		return x.UpdateState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAudioInputs() []*AudioInput {
+	if x != nil {
+		return x.AudioInputs
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetXivaWebsocketSendBinaryMessage() []byte {
+	if x != nil {
+		return x.XivaWebsocketSendBinaryMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetXivaWebsocketRecvBinaryMessage() []byte {
+	if x != nil {
+		return x.XivaWebsocketRecvBinaryMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetXivaWebsocketClientState() *WebsocketClientState {
+	if x != nil {
+		return x.XivaWebsocketClientState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSubscribeToPushdXivaWebsocketEvents() *EmptyMessage {
+	if x != nil {
+		return x.SubscribeToPushdXivaWebsocketEvents
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetListXivaSubscriptions() *EmptyMessage {
+	if x != nil {
+		return x.ListXivaSubscriptions
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetXivaSubscriptions() *XivaSubscriptions {
+	if x != nil {
+		return x.XivaSubscriptions
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetOnMediaError() MediaContentType {
+	if x != nil && x.OnMediaError != nil {
+		return *x.OnMediaError
+	}
+	return MediaContentType_MUSIC
+}
+
+func (x *QuasarMessage) GetCheckUpdates() *EmptyMessage {
+	if x != nil {
+		return x.CheckUpdates
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAudioClientEvent() *AudioClientEvent {
+	if x != nil {
+		return x.AudioClientEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMultiroomBroadcast() *MultiroomBroadcast {
+	if x != nil {
+		return x.MultiroomBroadcast
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetReadyToApplyUpdate() *UpdateApplyTimeout {
+	if x != nil {
+		return x.ReadyToApplyUpdate
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetConfirmUpdateApply() *EmptyMessage {
+	if x != nil {
+		return x.ConfirmUpdateApply
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetPostponeUpdateApply() *EmptyMessage {
+	if x != nil {
+		return x.PostponeUpdateApply
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNotificationUpdateEvent() *NotificationUpdateEvent {
+	if x != nil {
+		return x.NotificationUpdateEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNtpSyncEvent() *NtpSyncEvent {
+	if x != nil {
+		return x.NtpSyncEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupCredentialsMessage() *SetupCredentialsMessage {
+	if x != nil {
+		return x.SetupCredentialsMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMultiroomDirective() *MultiroomDirective {
+	if x != nil {
+		return x.MultiroomDirective
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupCredentialsHandlingCompleted() *EmptyMessage {
+	if x != nil {
+		return x.SetupCredentialsHandlingCompleted
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetEncryptedSetupCredentialsMessage() *EncryptedSetupCredentialsMessage {
+	if x != nil {
+		return x.EncryptedSetupCredentialsMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupStatusMessage() *SetupStatusMessage {
+	if x != nil {
+		return x.SetupStatusMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetMultiroomState() *MultiroomState {
+	if x != nil {
+		return x.MultiroomState
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetTestpointMessage() *TestpointMessage {
+	if x != nil {
+		return x.TestpointMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetServiceNameReady() string {
+	if x != nil && x.ServiceNameReady != nil {
+		return *x.ServiceNameReady
+	}
+	return ""
+}
+
+func (x *QuasarMessage) GetRcuEvent() *RcuEvent {
+	if x != nil {
+		return x.RcuEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetRcuVoiceEvent() *RcuVoiceEvent {
+	if x != nil {
+		return x.RcuVoiceEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworkStatus() *NetworkStatus {
+	if x != nil {
+		return x.NetworkStatus
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetResetNetwork() *EmptyMessage {
+	if x != nil {
+		return x.ResetNetwork
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworksDisable() *EmptyMessage {
+	if x != nil {
+		return x.NetworksDisable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworksEnable() *EmptyMessage {
+	if x != nil {
+		return x.NetworksEnable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworkConfigReload() *EmptyMessage {
+	if x != nil {
+		return x.NetworkConfigReload
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworkStatsCommand() *NetworkStatsCommand {
+	if x != nil {
+		return x.NetworkStatsCommand
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNetworkStats() *NetworkStats {
+	if x != nil {
+		return x.NetworkStats
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetRefreshUserEvent() *AuthEvent {
+	if x != nil {
+		return x.RefreshUserEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAuthTokenUpdateRequest() *AuthTokenUpdateRequest {
+	if x != nil {
+		return x.AuthTokenUpdateRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetLegacyPlayerStateChanged() *LegacyPlayerStateChanged {
+	if x != nil {
+		return x.LegacyPlayerStateChanged
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupRcu() *EmptyMessage {
+	if x != nil {
+		return x.SetupRcu
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupRcuAuto() *SetupRcuAutoEvent {
+	if x != nil {
+		return x.SetupRcuAuto
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupRcuCheck() *EmptyMessage {
+	if x != nil {
+		return x.SetupRcuCheck
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupRcuAdvanced() *EmptyMessage {
+	if x != nil {
+		return x.SetupRcuAdvanced
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSetupRcuManual() *EmptyMessage {
+	if x != nil {
+		return x.SetupRcuManual
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetLedScreenCommand() *LedScreenCommand {
+	if x != nil {
+		return x.LedScreenCommand
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagolClusterMessage() *GlagolClusterMessage {
+	if x != nil {
+		return x.GlagolClusterMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagolClusterSign() *GlagolClusterSign {
+	if x != nil {
+		return x.GlagolClusterSign
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetLogMessage() *LogMessage {
+	if x != nil {
+		return x.LogMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagolDiscoveryRequest() *GlagolDiscoveryRequest {
+	if x != nil {
+		return x.GlagolDiscoveryRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagolDiscoveryUpdated() *EmptyMessage {
+	if x != nil {
+		return x.GlagolDiscoveryUpdated
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetGlagolDiscoveryResult() *GlagolDiscoveryResult {
+	if x != nil {
+		return x.GlagolDiscoveryResult
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAllStartupSettings() *AllStartupSettings {
+	if x != nil {
+		return x.AllStartupSettings
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdDiscoveredItem() *NsdInfo {
+	if x != nil {
+		return x.NsdDiscoveredItem
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdDiscoveredItems() *NsdInfoList {
+	if x != nil {
+		return x.NsdDiscoveredItems
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdLostItem() *NsdInfo {
+	if x != nil {
+		return x.NsdLostItem
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdDiscoveredRequest() *EmptyMessage {
+	if x != nil {
+		return x.NsdDiscoveredRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdDisable() *EmptyMessage {
+	if x != nil {
+		return x.NsdDisable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdEnable() *NsdEnable {
+	if x != nil {
+		return x.NsdEnable
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdDisableCompleted() *EmptyMessage {
+	if x != nil {
+		return x.NsdDisableCompleted
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdGuestMode() *EmptyMessage {
+	if x != nil {
+		return x.NsdGuestMode
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetNsdStereoPairFollower() *EmptyMessage {
+	if x != nil {
+		return x.NsdStereoPairFollower
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetStereoPairMessage() *StereoPair {
+	if x != nil {
+		return x.StereoPairMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVolumeManagerMessage() *VolumeManager {
+	if x != nil {
+		return x.VolumeManagerMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetSpectrogramAnimationMessage() *SpectrogramAnimation {
+	if x != nil {
+		return x.SpectrogramAnimationMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAliceMessage() *Alice {
+	if x != nil {
+		return x.AliceMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetEnvironmentMessage() *EnvironmentMessage {
+	if x != nil {
+		return x.EnvironmentMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetRemoting() *Remoting {
+	if x != nil {
+		return x.Remoting
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDirective() *protos.Directive {
+	if x != nil {
+		return x.Directive
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiTurnOff() *EmptyMessage {
+	if x != nil {
+		return x.WifiTurnOff
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetWifiTurnOn() *EmptyMessage {
+	if x != nil {
+		return x.WifiTurnOn
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetCallAction() *QuasarMessage_CallAction {
+	if x != nil {
+		return x.CallAction
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBackendRequest() *BackendRequest {
+	if x != nil {
+		return x.BackendRequest
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetBackendResponse() *BackendResponse {
+	if x != nil {
+		return x.BackendResponse
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVqeInfo() *VqeInfo {
+	if x != nil {
+		return x.VqeInfo
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetVqeZone() string {
+	if x != nil && x.VqeZone != nil {
+		return *x.VqeZone
+	}
+	return ""
+}
+
+func (x *QuasarMessage) GetAudioError() *EmptyMessage {
+	if x != nil {
+		return x.AudioError
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetConfigCapabilityEvents() *sync_messages.ConfigCapabilityEvents {
+	if x != nil {
+		return x.ConfigCapabilityEvents
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetConfigCapabilitySubscriptions() *sync_messages.ConfigCapabilitySubscriptions {
+	if x != nil {
+		return x.ConfigCapabilitySubscriptions
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetUpdateHealthCheck() *UpdateHealthCheck {
+	if x != nil {
+		return x.UpdateHealthCheck
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetForceCheckUpdates() *ForceCheckUpdates {
+	if x != nil {
+		return x.ForceCheckUpdates
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetDatabaseMetricaMessage() *protos1.DatabaseMetricaEvent {
+	if x != nil {
+		return x.DatabaseMetricaMessage
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetAudioStorageEvent() *AudioStorageEvent {
+	if x != nil {
+		return x.AudioStorageEvent
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetRssStatus() *RssStatus {
+	if x != nil {
+		return x.RssStatus
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetEqualizerParams() *EqualizerParameters {
+	if x != nil {
+		return x.EqualizerParams
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetPayload() []byte {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
+func (x *QuasarMessage) GetType() QuasarMessage_Type {
+	if x != nil && x.Type != nil {
+		return *x.Type
+	}
+	return QuasarMessage_TYPE_UNSPECIFIED
+}
+
+type MinidumpStatus struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Daemon        *string                `protobuf:"bytes,1,opt,name=daemon" json:"daemon,omitempty"`
+	Info          *string                `protobuf:"bytes,2,opt,name=info" json:"info,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MinidumpStatus) Reset() {
+	*x = MinidumpStatus{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MinidumpStatus) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MinidumpStatus) ProtoMessage() {}
+
+func (x *MinidumpStatus) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MinidumpStatus.ProtoReflect.Descriptor instead.
+func (*MinidumpStatus) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *MinidumpStatus) GetDaemon() string {
+	if x != nil && x.Daemon != nil {
+		return *x.Daemon
+	}
+	return ""
+}
+
+func (x *MinidumpStatus) GetInfo() string {
+	if x != nil && x.Info != nil {
+		return *x.Info
+	}
+	return ""
+}
+
 type ConfigurationStateHolder struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	State         *ConfigurationState    `protobuf:"varint,1,opt,name=state,enum=quasar.proto.ConfigurationState" json:"state,omitempty"`
@@ -3777,7 +5181,7 @@ type ConfigurationStateHolder struct {
 
 func (x *ConfigurationStateHolder) Reset() {
 	*x = ConfigurationStateHolder{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3789,7 +5193,7 @@ func (x *ConfigurationStateHolder) String() string {
 func (*ConfigurationStateHolder) ProtoMessage() {}
 
 func (x *ConfigurationStateHolder) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3802,7 +5206,7 @@ func (x *ConfigurationStateHolder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfigurationStateHolder.ProtoReflect.Descriptor instead.
 func (*ConfigurationStateHolder) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{37}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *ConfigurationStateHolder) GetState() ConfigurationState {
@@ -3821,7 +5225,7 @@ type OnMediaErrorHolder struct {
 
 func (x *OnMediaErrorHolder) Reset() {
 	*x = OnMediaErrorHolder{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3833,7 +5237,7 @@ func (x *OnMediaErrorHolder) String() string {
 func (*OnMediaErrorHolder) ProtoMessage() {}
 
 func (x *OnMediaErrorHolder) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3846,7 +5250,7 @@ func (x *OnMediaErrorHolder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnMediaErrorHolder.ProtoReflect.Descriptor instead.
 func (*OnMediaErrorHolder) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{38}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *OnMediaErrorHolder) GetMediaContentType() MediaContentType {
@@ -3866,7 +5270,7 @@ type LogMessages struct {
 
 func (x *LogMessages) Reset() {
 	*x = LogMessages{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3878,7 +5282,7 @@ func (x *LogMessages) String() string {
 func (*LogMessages) ProtoMessage() {}
 
 func (x *LogMessages) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3891,7 +5295,7 @@ func (x *LogMessages) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogMessages.ProtoReflect.Descriptor instead.
 func (*LogMessages) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{39}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *LogMessages) GetLogMessages() []*LogMessage {
@@ -3908,90 +5312,6 @@ func (x *LogMessages) GetBatchId() uint64 {
 	return 0
 }
 
-type QuasarMessage struct {
-	state                         protoimpl.MessageState                       `protogen:"open.v1"`
-	RequestId                     *string                                      `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
-	Payload                       []byte                                       `protobuf:"bytes,252,opt,name=payload" json:"payload,omitempty"`
-	Type                          *QuasarMessage_Type                          `protobuf:"varint,253,opt,name=type,enum=quasar.proto.QuasarMessage_Type" json:"type,omitempty"`
-	GlagolClusterSign             *GlagolClusterSign                           `protobuf:"bytes,182,opt,name=glagol_cluster_sign,json=glagolClusterSign" json:"glagol_cluster_sign,omitempty"`
-	ConfigCapabilityEvents        *sync_messages.ConfigCapabilityEvents        `protobuf:"bytes,236,opt,name=config_capability_events,json=configCapabilityEvents" json:"config_capability_events,omitempty"`
-	ConfigCapabilitySubscriptions *sync_messages.ConfigCapabilitySubscriptions `protobuf:"bytes,237,opt,name=config_capability_subscriptions,json=configCapabilitySubscriptions" json:"config_capability_subscriptions,omitempty"`
-	unknownFields                 protoimpl.UnknownFields
-	sizeCache                     protoimpl.SizeCache
-}
-
-func (x *QuasarMessage) Reset() {
-	*x = QuasarMessage{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[40]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *QuasarMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*QuasarMessage) ProtoMessage() {}
-
-func (x *QuasarMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[40]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use QuasarMessage.ProtoReflect.Descriptor instead.
-func (*QuasarMessage) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{40}
-}
-
-func (x *QuasarMessage) GetRequestId() string {
-	if x != nil && x.RequestId != nil {
-		return *x.RequestId
-	}
-	return ""
-}
-
-func (x *QuasarMessage) GetPayload() []byte {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
-func (x *QuasarMessage) GetType() QuasarMessage_Type {
-	if x != nil && x.Type != nil {
-		return *x.Type
-	}
-	return QuasarMessage_TYPE_UNSPECIFIED
-}
-
-func (x *QuasarMessage) GetGlagolClusterSign() *GlagolClusterSign {
-	if x != nil {
-		return x.GlagolClusterSign
-	}
-	return nil
-}
-
-func (x *QuasarMessage) GetConfigCapabilityEvents() *sync_messages.ConfigCapabilityEvents {
-	if x != nil {
-		return x.ConfigCapabilityEvents
-	}
-	return nil
-}
-
-func (x *QuasarMessage) GetConfigCapabilitySubscriptions() *sync_messages.ConfigCapabilitySubscriptions {
-	if x != nil {
-		return x.ConfigCapabilitySubscriptions
-	}
-	return nil
-}
-
 type MetricaMessage_AppEnvironmentValue struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
@@ -4002,7 +5322,7 @@ type MetricaMessage_AppEnvironmentValue struct {
 
 func (x *MetricaMessage_AppEnvironmentValue) Reset() {
 	*x = MetricaMessage_AppEnvironmentValue{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4014,7 +5334,7 @@ func (x *MetricaMessage_AppEnvironmentValue) String() string {
 func (*MetricaMessage_AppEnvironmentValue) ProtoMessage() {}
 
 func (x *MetricaMessage_AppEnvironmentValue) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4054,7 +5374,7 @@ type MetricaMessage_StatsRecord struct {
 
 func (x *MetricaMessage_StatsRecord) Reset() {
 	*x = MetricaMessage_StatsRecord{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4066,7 +5386,7 @@ func (x *MetricaMessage_StatsRecord) String() string {
 func (*MetricaMessage_StatsRecord) ProtoMessage() {}
 
 func (x *MetricaMessage_StatsRecord) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4106,7 +5426,7 @@ type MetricaMessage_Statistics struct {
 
 func (x *MetricaMessage_Statistics) Reset() {
 	*x = MetricaMessage_Statistics{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[43]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4118,7 +5438,7 @@ func (x *MetricaMessage_Statistics) String() string {
 func (*MetricaMessage_Statistics) ProtoMessage() {}
 
 func (x *MetricaMessage_Statistics) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[43]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4158,7 +5478,7 @@ type SimplePlayerState_TrackInfo struct {
 
 func (x *SimplePlayerState_TrackInfo) Reset() {
 	*x = SimplePlayerState_TrackInfo{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[44]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4170,7 +5490,7 @@ func (x *SimplePlayerState_TrackInfo) String() string {
 func (*SimplePlayerState_TrackInfo) ProtoMessage() {}
 
 func (x *SimplePlayerState_TrackInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[44]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4215,7 +5535,7 @@ type SimplePlayerState_EntityInfo struct {
 
 func (x *SimplePlayerState_EntityInfo) Reset() {
 	*x = SimplePlayerState_EntityInfo{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[45]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4227,7 +5547,7 @@ func (x *SimplePlayerState_EntityInfo) String() string {
 func (*SimplePlayerState_EntityInfo) ProtoMessage() {}
 
 func (x *SimplePlayerState_EntityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[45]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4292,6 +5612,58 @@ func (x *SimplePlayerState_EntityInfo) GetRepeatMode() string {
 	return ""
 }
 
+type SimplePlayerState_ExtraEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *string                `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SimplePlayerState_ExtraEntry) Reset() {
+	*x = SimplePlayerState_ExtraEntry{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimplePlayerState_ExtraEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimplePlayerState_ExtraEntry) ProtoMessage() {}
+
+func (x *SimplePlayerState_ExtraEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimplePlayerState_ExtraEntry.ProtoReflect.Descriptor instead.
+func (*SimplePlayerState_ExtraEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{23, 2}
+}
+
+func (x *SimplePlayerState_ExtraEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *SimplePlayerState_ExtraEntry) GetValue() string {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return ""
+}
+
 type LogMessage_Source struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Filename      *string                `protobuf:"bytes,1,opt,name=filename" json:"filename,omitempty"`
@@ -4304,7 +5676,7 @@ type LogMessage_Source struct {
 
 func (x *LogMessage_Source) Reset() {
 	*x = LogMessage_Source{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[47]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4316,7 +5688,7 @@ func (x *LogMessage_Source) String() string {
 func (*LogMessage_Source) ProtoMessage() {}
 
 func (x *LogMessage_Source) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[47]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4329,7 +5701,7 @@ func (x *LogMessage_Source) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogMessage_Source.ProtoReflect.Descriptor instead.
 func (*LogMessage_Source) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{27, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{29, 0}
 }
 
 func (x *LogMessage_Source) GetFilename() string {
@@ -4368,7 +5740,7 @@ type NetworkStatsCommand_DumpNetStatus struct {
 
 func (x *NetworkStatsCommand_DumpNetStatus) Reset() {
 	*x = NetworkStatsCommand_DumpNetStatus{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[48]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4380,7 +5752,7 @@ func (x *NetworkStatsCommand_DumpNetStatus) String() string {
 func (*NetworkStatsCommand_DumpNetStatus) ProtoMessage() {}
 
 func (x *NetworkStatsCommand_DumpNetStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[48]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4393,7 +5765,7 @@ func (x *NetworkStatsCommand_DumpNetStatus) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use NetworkStatsCommand_DumpNetStatus.ProtoReflect.Descriptor instead.
 func (*NetworkStatsCommand_DumpNetStatus) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{30, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32, 0}
 }
 
 type NetworkStats_Arp struct {
@@ -4407,7 +5779,7 @@ type NetworkStats_Arp struct {
 
 func (x *NetworkStats_Arp) Reset() {
 	*x = NetworkStats_Arp{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[49]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4419,7 +5791,7 @@ func (x *NetworkStats_Arp) String() string {
 func (*NetworkStats_Arp) ProtoMessage() {}
 
 func (x *NetworkStats_Arp) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[49]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4432,7 +5804,7 @@ func (x *NetworkStats_Arp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkStats_Arp.ProtoReflect.Descriptor instead.
 func (*NetworkStats_Arp) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{31, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{33, 0}
 }
 
 func (x *NetworkStats_Arp) GetIp() string {
@@ -4470,7 +5842,7 @@ type NetworkStats_NetDevice struct {
 
 func (x *NetworkStats_NetDevice) Reset() {
 	*x = NetworkStats_NetDevice{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[50]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4482,7 +5854,7 @@ func (x *NetworkStats_NetDevice) String() string {
 func (*NetworkStats_NetDevice) ProtoMessage() {}
 
 func (x *NetworkStats_NetDevice) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[50]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4495,7 +5867,7 @@ func (x *NetworkStats_NetDevice) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkStats_NetDevice.ProtoReflect.Descriptor instead.
 func (*NetworkStats_NetDevice) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{31, 1}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{33, 1}
 }
 
 func (x *NetworkStats_NetDevice) GetName() string {
@@ -4553,7 +5925,7 @@ type UpdateHealthCheck_UpdateHealthCheckStatus struct {
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus) Reset() {
 	*x = UpdateHealthCheck_UpdateHealthCheckStatus{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[51]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4565,7 +5937,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus) String() string {
 func (*UpdateHealthCheck_UpdateHealthCheckStatus) ProtoMessage() {}
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[51]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4578,7 +5950,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus) ProtoReflect() protoreflect.
 
 // Deprecated: Use UpdateHealthCheck_UpdateHealthCheckStatus.ProtoReflect.Descriptor instead.
 func (*UpdateHealthCheck_UpdateHealthCheckStatus) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34, 0}
 }
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus) GetIsAliceConnected() bool {
@@ -4617,15 +5989,15 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus) GetMinidumpInfos() *UpdateHe
 }
 
 type UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses struct {
-	state         protoimpl.MessageState                                                  `protogen:"open.v1"`
-	Statuses      map[string]UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status `protobuf:"bytes,1,rep,name=statuses" json:"statuses,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=quasar.proto.UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status"`
+	state         protoimpl.MessageState                                                 `protogen:"open.v1"`
+	Statuses      []*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry `protobuf:"bytes,1,rep,name=statuses" json:"statuses,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) Reset() {
 	*x = UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[52]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4637,7 +6009,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) String() string 
 func (*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) ProtoMessage() {}
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[52]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4650,10 +6022,10 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) ProtoReflect() p
 
 // Deprecated: Use UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses.ProtoReflect.Descriptor instead.
 func (*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32, 0, 0}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34, 0, 0}
 }
 
-func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) GetStatuses() map[string]UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status {
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses) GetStatuses() []*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry {
 	if x != nil {
 		return x.Statuses
 	}
@@ -4669,7 +6041,7 @@ type UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos struct {
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) Reset() {
 	*x = UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos{}
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[53]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4681,7 +6053,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) String() strin
 func (*UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) ProtoMessage() {}
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[53]
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4694,7 +6066,7 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) ProtoReflect()
 
 // Deprecated: Use UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos.ProtoReflect.Descriptor instead.
 func (*UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) Descriptor() ([]byte, []int) {
-	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{32, 0, 1}
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34, 0, 1}
 }
 
 func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) GetInfos() map[string]string {
@@ -4702,6 +6074,198 @@ func (x *UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos) GetInfos() map
 		return x.Infos
 	}
 	return nil
+}
+
+type UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry struct {
+	state         protoimpl.MessageState                                        `protogen:"open.v1"`
+	Key           *string                                                       `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status `protobuf:"varint,2,opt,name=value,enum=quasar.proto.UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) Reset() {
+	*x = UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) ProtoMessage() {}
+
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry.ProtoReflect.Descriptor instead.
+func (*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{34, 0, 0, 0}
+}
+
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry) GetValue() UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_UNKNOWN
+}
+
+type QuasarMessage_CallAction struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AcceptCall    *EmptyMessage          `protobuf:"bytes,1,opt,name=accept_call,json=acceptCall" json:"accept_call,omitempty"`
+	DeclineCall   *EmptyMessage          `protobuf:"bytes,2,opt,name=decline_call,json=declineCall" json:"decline_call,omitempty"`
+	HangupCall    *EmptyMessage          `protobuf:"bytes,3,opt,name=hangup_call,json=hangupCall" json:"hangup_call,omitempty"`
+	MakeCall      *EmptyMessage          `protobuf:"bytes,4,opt,name=make_call,json=makeCall" json:"make_call,omitempty"`
+	CallGuid      *string                `protobuf:"bytes,6,opt,name=call_guid,json=callGuid" json:"call_guid,omitempty"`
+	DeviceId      *string                `protobuf:"bytes,7,opt,name=device_id,json=deviceId" json:"device_id,omitempty"`
+	UserGuid      *string                `protobuf:"bytes,8,opt,name=user_guid,json=userGuid" json:"user_guid,omitempty"`
+	OnAccept      []*protos.Directive    `protobuf:"bytes,9,rep,name=on_accept,json=onAccept" json:"on_accept,omitempty"`
+	OnEnd         []*protos.Directive    `protobuf:"bytes,10,rep,name=on_end,json=onEnd" json:"on_end,omitempty"`
+	OnDeclined    []*protos.Directive    `protobuf:"bytes,13,rep,name=on_declined,json=onDeclined" json:"on_declined,omitempty"`
+	Payload       *string                `protobuf:"bytes,11,opt,name=payload" json:"payload,omitempty"`
+	IsNannyCall   *bool                  `protobuf:"varint,12,opt,name=is_nanny_call,json=isNannyCall" json:"is_nanny_call,omitempty"`
+	RequestId     *string                `protobuf:"bytes,14,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *QuasarMessage_CallAction) Reset() {
+	*x = QuasarMessage_CallAction{}
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *QuasarMessage_CallAction) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*QuasarMessage_CallAction) ProtoMessage() {}
+
+func (x *QuasarMessage_CallAction) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_quasar_proto_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use QuasarMessage_CallAction.ProtoReflect.Descriptor instead.
+func (*QuasarMessage_CallAction) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_quasar_proto_proto_rawDescGZIP(), []int{38, 0}
+}
+
+func (x *QuasarMessage_CallAction) GetAcceptCall() *EmptyMessage {
+	if x != nil {
+		return x.AcceptCall
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetDeclineCall() *EmptyMessage {
+	if x != nil {
+		return x.DeclineCall
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetHangupCall() *EmptyMessage {
+	if x != nil {
+		return x.HangupCall
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetMakeCall() *EmptyMessage {
+	if x != nil {
+		return x.MakeCall
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetCallGuid() string {
+	if x != nil && x.CallGuid != nil {
+		return *x.CallGuid
+	}
+	return ""
+}
+
+func (x *QuasarMessage_CallAction) GetDeviceId() string {
+	if x != nil && x.DeviceId != nil {
+		return *x.DeviceId
+	}
+	return ""
+}
+
+func (x *QuasarMessage_CallAction) GetUserGuid() string {
+	if x != nil && x.UserGuid != nil {
+		return *x.UserGuid
+	}
+	return ""
+}
+
+func (x *QuasarMessage_CallAction) GetOnAccept() []*protos.Directive {
+	if x != nil {
+		return x.OnAccept
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetOnEnd() []*protos.Directive {
+	if x != nil {
+		return x.OnEnd
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetOnDeclined() []*protos.Directive {
+	if x != nil {
+		return x.OnDeclined
+	}
+	return nil
+}
+
+func (x *QuasarMessage_CallAction) GetPayload() string {
+	if x != nil && x.Payload != nil {
+		return *x.Payload
+	}
+	return ""
+}
+
+func (x *QuasarMessage_CallAction) GetIsNannyCall() bool {
+	if x != nil && x.IsNannyCall != nil {
+		return *x.IsNannyCall
+	}
+	return false
+}
+
+func (x *QuasarMessage_CallAction) GetRequestId() string {
+	if x != nil && x.RequestId != nil {
+		return *x.RequestId
+	}
+	return ""
 }
 
 var file_yandex_io_protos_quasar_proto_proto_extTypes = []protoimpl.ExtensionInfo{
@@ -4725,7 +6289,7 @@ var File_yandex_io_protos_quasar_proto_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\n" +
-	"#yandex_io/protos/quasar_proto.proto\x12\fquasar.proto\x1a&yandex_io/protos/account_storage.proto\x1a\"yandex_io/protos/alice_state.proto\x1a$yandex_io/protos/model_objects.proto\x1a yandex_io/protos/yandex_io.proto\x1a'yandex_io/protos/functional_tests.proto\x1a\x1fyandex_io/protos/remoting.proto\x1a<yandex_io/sdk/private/endpoint_storage/protos/endpoint.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\x1a?yandex_io/capabilities/config/sync_messages/sync_messages.proto\x1a/yandex_io/libs/metrica/db/protos/db_event.proto\x1a google/protobuf/descriptor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"w\n" +
+	"#yandex_io/protos/quasar_proto.proto\x12\fquasar.proto\x1a&yandex_io/protos/account_storage.proto\x1a\"yandex_io/protos/alice_state.proto\x1a$yandex_io/protos/model_objects.proto\x1a yandex_io/protos/yandex_io.proto\x1a'yandex_io/protos/functional_tests.proto\x1a\x1fyandex_io/protos/remoting.proto\x1a<yandex_io/sdk/private/endpoint_storage/protos/endpoint.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\x1a?yandex_io/capabilities/config/sync_messages/sync_messages.proto\x1a/yandex_io/libs/metrica/db/protos/db_event.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a google/protobuf/descriptor.proto\"w\n" +
 	"\vWifiConnect\x12\x17\n" +
 	"\awifi_id\x18\x01 \x01(\tR\x06wifiId\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x123\n" +
@@ -4909,7 +6473,7 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\tis_paused\x18\x01 \x01(\bR\bisPaused\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1b\n" +
 	"\tcover_uri\x18\x03 \x01(\tR\bcoverUri\x12\x14\n" +
-	"\x05color\x18\x04 \x01(\tR\x05color\"\xe4\n" +
+	"\x05color\x18\x04 \x01(\tR\x05color\"\xe0\n" +
 	"\n" +
 	"\x11SimplePlayerState\x12\x1b\n" +
 	"\thas_pause\x18\x01 \x01(\bR\bhasPause\x12\x19\n" +
@@ -4953,11 +6517,11 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\x04next\x18\x05 \x01(\v2).quasar.proto.SimplePlayerState.TrackInfoR\x04next\x12\x1a\n" +
 	"\bshuffled\x18\x06 \x01(\bR\bshuffled\x12\x1f\n" +
 	"\vrepeat_mode\x18\a \x01(\tR\n" +
-	"repeatMode\x1a8\n" +
+	"repeatMode\x1a4\n" +
 	"\n" +
 	"ExtraEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"I\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"I\n" +
 	"\n" +
 	"PlayerType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\t\n" +
@@ -4980,7 +6544,16 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\x04meta\x18\x02 \x01(\tR\x04meta\x12\x19\n" +
 	"\bview_key\x18\x04 \x01(\tR\aviewKey\x12#\n" +
 	"\rscenario_name\x18\x05 \x01(\tR\fscenarioName\x12&\n" +
-	"\x0fvins_request_id\x18\x06 \x01(\tR\rvinsRequestIdJ\x04\b\x03\x10\x04\".\n" +
+	"\x0fvins_request_id\x18\x06 \x01(\tR\rvinsRequestIdJ\x04\b\x03\x10\x04\"\x9e\x01\n" +
+	"\x14WebsocketClientState\x12L\n" +
+	"\x05state\x18\x01 \x01(\x0e2(.quasar.proto.WebsocketClientState.State:\fDISCONNECTEDR\x05state\"8\n" +
+	"\x05State\x12\x10\n" +
+	"\fDISCONNECTED\x10\x00\x12\x0e\n" +
+	"\n" +
+	"CONNECTING\x10\x01\x12\r\n" +
+	"\tCONNECTED\x10\x02\"B\n" +
+	"\x11XivaSubscriptions\x12-\n" +
+	"\x12xiva_subscriptions\x18\x01 \x03(\tR\x11xivaSubscriptions\".\n" +
 	"\x11SetupRcuAutoEvent\x12\x19\n" +
 	"\btv_model\x18\x01 \x01(\tR\atvModel\"\x91\x03\n" +
 	"\n" +
@@ -5044,21 +6617,21 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\n" +
 	"\x06FAILED\x10\x05\x12\t\n" +
 	"\x05NOARP\x10\x06\x12\v\n" +
-	"\aUNKNOWN\x10\a\"\xe2\a\n" +
+	"\aUNKNOWN\x10\a\"\xde\a\n" +
 	"\x11UpdateHealthCheck\x12\x16\n" +
 	"\x06failed\x18\x01 \x01(\bR\x06failed\x12O\n" +
-	"\x06status\x18\x02 \x01(\v27.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatusR\x06status\x1a\xe3\x06\n" +
+	"\x06status\x18\x02 \x01(\v27.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatusR\x06status\x1a\xdf\x06\n" +
 	"\x17UpdateHealthCheckStatus\x12,\n" +
 	"\x12is_alice_connected\x18\x01 \x01(\bR\x10isAliceConnected\x121\n" +
 	"\x15is_mic_audio_detected\x18\x02 \x01(\bR\x12isMicAudioDetected\x12f\n" +
 	"\frss_statuses\x18\x03 \x01(\v2C.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatusesR\vrssStatuses\x12'\n" +
 	"\x0fspotter_started\x18\x04 \x01(\bR\x0espotterStarted\x12l\n" +
-	"\x0eminidump_infos\x18\x05 \x01(\v2E.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfosR\rminidumpInfos\x1a\xb3\x02\n" +
+	"\x0eminidump_infos\x18\x05 \x01(\v2E.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfosR\rminidumpInfos\x1a\xaf\x02\n" +
 	"\vRssStatuses\x12m\n" +
-	"\bstatuses\x18\x01 \x03(\v2Q.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntryR\bstatuses\x1a\x87\x01\n" +
+	"\bstatuses\x18\x01 \x03(\v2Q.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntryR\bstatuses\x1a\x83\x01\n" +
 	"\rStatusesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12`\n" +
-	"\x05value\x18\x02 \x01(\x0e2J.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusR\x05value:\x028\x01\"+\n" +
+	"\x05value\x18\x02 \x01(\x0e2J.quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusR\x05value\"+\n" +
 	"\x06Status\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\x06\n" +
 	"\x02OK\x10\x01\x12\f\n" +
@@ -5072,30 +6645,198 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\tRssStatus\x12\x16\n" +
 	"\x06daemon\x18\x01 \x01(\tR\x06daemon\x12\x13\n" +
 	"\x05is_ok\x18\x02 \x01(\bR\x04isOk\"<\n" +
-	"\x0eMinidumpStatus\x12\x16\n" +
-	"\x06daemon\x18\x01 \x01(\tR\x06daemon\x12\x12\n" +
-	"\x04info\x18\x02 \x01(\tR\x04info\"<\n" +
 	"\x11ForceCheckUpdates\x12'\n" +
 	"\x0ftimeout_seconds\x18\x01 \x01(\x04R\x0etimeoutSeconds\"S\n" +
 	"\x13EqualizerParameters\x12\x1b\n" +
 	"\tjson_data\x18\x01 \x01(\tR\bjsonData\x12\x1f\n" +
 	"\vconfig_hash\x18\x02 \x01(\tR\n" +
-	"configHash\"R\n" +
-	"\x18ConfigurationStateHolder\x126\n" +
-	"\x05state\x18\x01 \x01(\x0e2 .quasar.proto.ConfigurationStateR\x05state\"b\n" +
-	"\x12OnMediaErrorHolder\x12L\n" +
-	"\x12media_content_type\x18\x01 \x01(\x0e2\x1e.quasar.proto.MediaContentTypeR\x10mediaContentType\"e\n" +
-	"\vLogMessages\x12;\n" +
-	"\flog_messages\x18\x01 \x03(\v2\x18.quasar.proto.LogMessageR\vlogMessages\x12\x19\n" +
-	"\bbatch_id\x18\x02 \x01(\x04R\abatchId\"\xd2e\n" +
+	"configHash\"\xe2\xa1\x01\n" +
 	"\rQuasarMessage\x12\x1d\n" +
 	"\n" +
-	"request_id\x18\x01 \x01(\tR\trequestId\x12\x19\n" +
-	"\apayload\x18\xfc\x01 \x01(\fR\apayload\x125\n" +
-	"\x04type\x18\xfd\x01 \x01(\x0e2 .quasar.proto.QuasarMessage.TypeR\x04type\x12P\n" +
-	"\x13glagol_cluster_sign\x18\xb6\x01 \x01(\v2\x1f.quasar.proto.GlagolClusterSignR\x11glagolClusterSign\x12_\n" +
+	"request_id\x18\x01 \x01(\tR\trequestId\x129\n" +
+	"\valice_state\x18\x03 \x01(\v2\x18.quasar.proto.AliceStateR\n" +
+	"aliceState\x12C\n" +
+	"\x0fbroken_mic_info\x18p \x01(\v2\x1b.quasar.proto.BrokenMicInfoR\rbrokenMicInfo\x12F\n" +
+	"\x11wifi_list_request\x18\x04 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0fwifiListRequest\x123\n" +
+	"\twifi_list\x18\x05 \x01(\v2\x16.quasar.proto.WifiListR\bwifiList\x12N\n" +
+	"\x15wifi_networks_disable\x18\x1e \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13wifiNetworksDisable\x12L\n" +
+	"\x14wifi_networks_enable\x18i \x01(\v2\x1a.quasar.proto.EmptyMessageR\x12wifiNetworksEnable\x12F\n" +
+	"\x10wifi_reassociate\x18\xf9\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0fwifiReassociate\x12<\n" +
+	"\fwifi_connect\x18\x06 \x01(\v2\x19.quasar.proto.WifiConnectR\vwifiConnect\x12G\n" +
+	"\x12async_wifi_connect\x18@ \x01(\v2\x19.quasar.proto.WifiConnectR\x10asyncWifiConnect\x12U\n" +
+	"\x15wifi_connect_response\x18\a \x01(\v2!.quasar.proto.WifiConnectResponseR\x13wifiConnectResponse\x12?\n" +
+	"\rmedia_request\x18\b \x01(\v2\x1a.quasar.proto.MediaRequestR\fmediaRequest\x12F\n" +
+	"\x10add_user_request\x18\v \x01(\v2\x1c.quasar.proto.AddUserRequestR\x0eaddUserRequest\x12I\n" +
+	"\x11add_user_response\x18\f \x01(\v2\x1d.quasar.proto.AddUserResponseR\x0faddUserResponse\x12P\n" +
+	"\x13delete_user_request\x18\xd8\x01 \x01(\v2\x1f.quasar.proto.DeleteUserRequestR\x11deleteUserRequest\x12S\n" +
+	"\x14delete_user_response\x18\xd9\x01 \x01(\v2 .quasar.proto.DeleteUserResponseR\x12deleteUserResponse\x12O\n" +
+	"\x13change_user_request\x18a \x01(\v2\x1f.quasar.proto.ChangeUserRequestR\x11changeUserRequest\x12Z\n" +
+	"\x17issue_auth_code_request\x18\xf2\x01 \x01(\v2\".quasar.proto.IssueAuthCodeRequestR\x14issueAuthCodeRequest\x12]\n" +
+	"\x18issue_auth_code_response\x18\xf3\x01 \x01(\v2#.quasar.proto.IssueAuthCodeResponseR\x15issueAuthCodeResponse\x12>\n" +
+	"\x0eadd_user_event\x18\xdb\x01 \x01(\v2\x17.quasar.proto.AuthEventR\faddUserEvent\x12C\n" +
+	"\x11change_user_event\x18\r \x01(\v2\x17.quasar.proto.AuthEventR\x0fchangeUserEvent\x12D\n" +
+	"\x11delete_user_event\x18\xdc\x01 \x01(\v2\x17.quasar.proto.AuthEventR\x0fdeleteUserEvent\x12E\n" +
+	"\x12change_token_event\x18d \x01(\v2\x17.quasar.proto.AuthEventR\x10changeTokenEvent\x12M\n" +
+	"\x12owner_startup_info\x18\xdd\x01 \x01(\v2\x1e.quasar.proto.OwnerStartupInfoR\x10ownerStartupInfo\x12G\n" +
+	"\x10all_startup_info\x18\xde\x01 \x01(\v2\x1c.quasar.proto.AllStartupInfoR\x0eallStartupInfo\x12S\n" +
+	"\x18configuration_mode_ap_up\x18Y \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15configurationModeApUp\x12E\n" +
+	"\x0fmetrica_message\x18\x18 \x01(\v2\x1c.quasar.proto.MetricaMessageR\x0emetricaMessage\x12?\n" +
+	"\rmedia_message\x18\x1b \x01(\v2\x1a.quasar.proto.MediaMessageR\fmediaMessage\x12E\n" +
+	"\x0frecording_event\x18  \x01(\v2\x1c.quasar.proto.RecordingEventR\x0erecordingEvent\x123\n" +
+	"\tapp_state\x18! \x01(\v2\x16.quasar.proto.AppStateR\bappState\x129\n" +
+	"\vwifi_status\x18# \x01(\v2\x18.quasar.proto.WifiStatusR\n" +
+	"wifiStatus\x12V\n" +
+	"\x18critical_update_progress\x18$ \x01(\v2\x1c.quasar.proto.UpdateProgressR\x16criticalUpdateProgress\x12S\n" +
+	"\x18no_critical_update_found\x18% \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15noCriticalUpdateFound\x12N\n" +
+	"\x15start_critical_update\x18& \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13startCriticalUpdate\x12Q\n" +
+	"\x16child_phrase_end_event\x18) \x01(\v2\x1c.quasar.proto.PhraseEndEventR\x13childPhraseEndEvent\x12;\n" +
+	"\vvolumeState\x18* \x01(\v2\x19.quasar.proto.VolumeStateR\vvolumeState\x12O\n" +
+	"\x10external_command\x18, \x01(\v2$.quasar.proto.ExternalCommandMessageR\x0fexternalCommand\x12a\n" +
+	"\x19external_command_response\x18- \x01(\v2%.quasar.proto.ExternalCommandResponseR\x17externalCommandResponse\x12<\n" +
+	"\ftimers_state\x18. \x01(\v2\x19.quasar.proto.TimersStateR\vtimersState\x12<\n" +
+	"\falarms_state\x18/ \x01(\v2\x19.quasar.proto.AlarmsStateR\valarmsState\x12D\n" +
+	"\x10set_alarms_state\x18\xd0\x01 \x01(\v2\x19.quasar.proto.TimersStateR\x0esetAlarmsState\x12D\n" +
+	"\rwatched_video\x183 \x01(\v2\x1f.quasar.proto.WatchedVideoStateR\fwatchedVideo\x12A\n" +
+	"\x10current_location\x187 \x01(\v2\x16.quasar.proto.LocationR\x0fcurrentLocation\x12K\n" +
+	"\x11push_notification\x189 \x01(\v2\x1e.quasar.proto.PushNotificationR\x10pushNotification\x129\n" +
+	"\n" +
+	"reset_wifi\x18< \x01(\v2\x1a.quasar.proto.EmptyMessageR\tresetWifi\x12F\n" +
+	"\x12user_config_update\x18? \x01(\v2\x18.quasar.proto.UserConfigR\x10userConfigUpdate\x12:\n" +
+	"\vbrick_state\x18\xeb\x01 \x01(\v2\x18.quasar.proto.BrickStateR\n" +
+	"brickState\x12A\n" +
+	"\x10current_timezone\x18C \x01(\v2\x16.quasar.proto.TimezoneR\x0fcurrentTimezone\x12K\n" +
+	"\x11bluetooth_request\x18E \x01(\v2\x1e.quasar.proto.BluetoothRequestR\x10bluetoothRequest\x12X\n" +
+	"\x16bluetooth_source_event\x18G \x01(\v2\".quasar.proto.BluetoothSourceEventR\x14bluetoothSourceEvent\x12R\n" +
+	"\x14bluetooth_sink_event\x18H \x01(\v2 .quasar.proto.BluetoothSinkEventR\x12bluetoothSinkEvent\x12H\n" +
+	"\x12wifi_config_reload\x18J \x01(\v2\x1a.quasar.proto.EmptyMessageR\x10wifiConfigReload\x12E\n" +
+	"\x0fleader_override\x18M \x01(\v2\x1c.quasar.proto.LeaderOverrideR\x0eleaderOverride\x12L\n" +
+	"\x12volume_set_message\x18N \x01(\v2\x1e.quasar.proto.VolumeSetMessageR\x10volumeSetMessage\x12L\n" +
+	"\x12vins_call_response\x18P \x01(\v2\x1e.quasar.proto.VinsCallResponseR\x10vinsCallResponse\x12L\n" +
+	"\x12device_group_state\x18Q \x01(\v2\x1e.quasar.proto.DeviceGroupStateR\x10deviceGroupState\x12?\n" +
+	"\rglagold_state\x18R \x01(\v2\x1a.quasar.proto.GlagoldStateR\fglagoldState\x12O\n" +
+	"\x13simple_player_state\x18T \x01(\v2\x1f.quasar.proto.SimplePlayerStateR\x11simplePlayerState\x120\n" +
+	"\bio_event\x18U \x01(\v2\x15.quasar.proto.IOEventR\aioEvent\x12=\n" +
+	"\n" +
+	"io_control\x18X \x01(\v2\x1e.quasar.proto.IOControlCommandR\tioControl\x12A\n" +
+	"\x0eio_hub_message\x18\xb7\x01 \x01(\v2\x1a.quasar.proto.IOHubMessageR\fioHubMessage\x12W\n" +
+	"\x16io_audio_channels_data\x18\x9e\x01 \x01(\v2!.quasar.proto.IOAudioChannelsDataR\x13ioAudioChannelsData\x12M\n" +
+	"\x12io_channel_request\x18\x9f\x01 \x01(\v2\x1e.quasar.proto.IOChannelRequestR\x10ioChannelRequest\x12F\n" +
+	"\rmordovia_show\x18_ \x01(\v2!.quasar.proto.MordoviaShowMessageR\fmordoviaShow\x12O\n" +
+	"\x10mordovia_command\x18` \x01(\v2$.quasar.proto.MordoviaCommandMessageR\x0fmordoviaCommand\x12Q\n" +
+	"\x13configuration_state\x18b \x01(\x0e2 .quasar.proto.ConfigurationStateR\x12configurationState\x12E\n" +
+	"\x0fcontrol_request\x18e \x01(\v2\x1c.quasar.proto.ControlRequestR\x0econtrolRequest\x12N\n" +
+	"\x12onboarding_request\x18g \x01(\v2\x1f.quasar.proto.OnboardingRequestR\x11onboardingRequest\x12<\n" +
+	"\fupdate_state\x18h \x01(\v2\x19.quasar.proto.UpdateStateR\vupdateState\x12;\n" +
+	"\faudio_inputs\x18l \x03(\v2\x18.quasar.proto.AudioInputR\vaudioInputs\x12J\n" +
+	"\"xiva_websocket_send_binary_message\x18r \x01(\fR\x1exivaWebsocketSendBinaryMessage\x12J\n" +
+	"\"xiva_websocket_recv_binary_message\x18s \x01(\fR\x1exivaWebsocketRecvBinaryMessage\x12a\n" +
+	"\x1bxiva_websocket_client_state\x18t \x01(\v2\".quasar.proto.WebsocketClientStateR\x18xivaWebsocketClientState\x12q\n" +
+	"(subscribe_to_pushd_xiva_websocket_events\x18u \x01(\v2\x1a.quasar.proto.EmptyMessageR#subscribeToPushdXivaWebsocketEvents\x12R\n" +
+	"\x17list_xiva_subscriptions\x18v \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15listXivaSubscriptions\x12N\n" +
+	"\x12xiva_subscriptions\x18w \x01(\v2\x1f.quasar.proto.XivaSubscriptionsR\x11xivaSubscriptions\x12D\n" +
+	"\x0eon_media_error\x18| \x01(\x0e2\x1e.quasar.proto.MediaContentTypeR\fonMediaError\x12?\n" +
+	"\rcheck_updates\x18~ \x01(\v2\x1a.quasar.proto.EmptyMessageR\fcheckUpdates\x12L\n" +
+	"\x12audio_client_event\x18\x7f \x01(\v2\x1e.quasar.proto.AudioClientEventR\x10audioClientEvent\x12R\n" +
+	"\x13multiroom_broadcast\x18\x80\x01 \x01(\v2 .quasar.proto.MultiroomBroadcastR\x12multiroomBroadcast\x12T\n" +
+	"\x15ready_to_apply_update\x18\x82\x01 \x01(\v2 .quasar.proto.UpdateApplyTimeoutR\x12readyToApplyUpdate\x12M\n" +
+	"\x14confirm_update_apply\x18\x83\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x12confirmUpdateApply\x12O\n" +
+	"\x15postpone_update_apply\x18\x84\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13postponeUpdateApply\x12b\n" +
+	"\x19notification_update_event\x18\x86\x01 \x01(\v2%.quasar.proto.NotificationUpdateEventR\x17notificationUpdateEvent\x12A\n" +
+	"\x0entp_sync_event\x18\x8f\x01 \x01(\v2\x1a.quasar.proto.NtpSyncEventR\fntpSyncEvent\x12b\n" +
+	"\x19setup_credentials_message\x18\x92\x01 \x01(\v2%.quasar.proto.SetupCredentialsMessageR\x17setupCredentialsMessage\x12R\n" +
+	"\x13multiroom_directive\x18\x94\x01 \x01(\v2 .quasar.proto.MultiroomDirectiveR\x12multiroomDirective\x12l\n" +
+	"$setup_credentials_handling_completed\x18\x95\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR!setupCredentialsHandlingCompleted\x12~\n" +
+	"#encrypted_setup_credentials_message\x18\x96\x01 \x01(\v2..quasar.proto.EncryptedSetupCredentialsMessageR encryptedSetupCredentialsMessage\x12S\n" +
+	"\x14setup_status_message\x18\x97\x01 \x01(\v2 .quasar.proto.SetupStatusMessageR\x12setupStatusMessage\x12F\n" +
+	"\x0fmultiroom_state\x18\x98\x01 \x01(\v2\x1c.quasar.proto.MultiroomStateR\x0emultiroomState\x12L\n" +
+	"\x11testpoint_message\x18\x9a\x01 \x01(\v2\x1e.quasar.proto.TestpointMessageR\x10testpointMessage\x12-\n" +
+	"\x12service_name_ready\x18\x9d\x01 \x01(\tR\x10serviceNameReady\x124\n" +
+	"\trcu_event\x18\xa0\x01 \x01(\v2\x16.quasar.proto.RcuEventR\brcuEvent\x12D\n" +
+	"\x0frcu_voice_event\x18\xa1\x01 \x01(\v2\x1b.quasar.proto.RcuVoiceEventR\rrcuVoiceEvent\x12C\n" +
+	"\x0enetwork_status\x18\xa2\x01 \x01(\v2\x1b.quasar.proto.NetworkStatusR\rnetworkStatus\x12@\n" +
+	"\rreset_network\x18\xa3\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\fresetNetwork\x12F\n" +
+	"\x10networks_disable\x18\xa4\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0fnetworksDisable\x12D\n" +
+	"\x0fnetworks_enable\x18\xa5\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0enetworksEnable\x12O\n" +
+	"\x15network_config_reload\x18\xa6\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13networkConfigReload\x12V\n" +
+	"\x15network_stats_command\x18\xf1\x01 \x01(\v2!.quasar.proto.NetworkStatsCommandR\x13networkStatsCommand\x12@\n" +
+	"\rnetwork_stats\x18\xf0\x01 \x01(\v2\x1a.quasar.proto.NetworkStatsR\fnetworkStats\x12F\n" +
+	"\x12refresh_user_event\x18\xa7\x01 \x01(\v2\x17.quasar.proto.AuthEventR\x10refreshUserEvent\x12`\n" +
+	"\x19auth_token_update_request\x18\xab\x01 \x01(\v2$.quasar.proto.AuthTokenUpdateRequestR\x16authTokenUpdateRequest\x12f\n" +
+	"\x1blegacy_player_state_changed\x18\xad\x01 \x01(\v2&.quasar.proto.LegacyPlayerStateChangedR\x18legacyPlayerStateChanged\x128\n" +
+	"\tsetup_rcu\x18\x99\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\bsetupRcu\x12F\n" +
+	"\x0esetup_rcu_auto\x18\xae\x01 \x01(\v2\x1f.quasar.proto.SetupRcuAutoEventR\fsetupRcuAuto\x12C\n" +
+	"\x0fsetup_rcu_check\x18\xaf\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\rsetupRcuCheck\x12I\n" +
+	"\x12setup_rcu_advanced\x18\xb0\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x10setupRcuAdvanced\x12E\n" +
+	"\x10setup_rcu_manual\x18\xb1\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x0esetupRcuManual\x12M\n" +
+	"\x12led_screen_command\x18\xb4\x01 \x01(\v2\x1e.quasar.proto.LedScreenCommandR\x10ledScreenCommand\x12Y\n" +
+	"\x16glagol_cluster_message\x18\xb5\x01 \x01(\v2\".quasar.proto.GlagolClusterMessageR\x14glagolClusterMessage\x12P\n" +
+	"\x13glagol_cluster_sign\x18\xb6\x01 \x01(\v2\x1f.quasar.proto.GlagolClusterSignR\x11glagolClusterSign\x12:\n" +
+	"\vlog_message\x18\xb8\x01 \x01(\v2\x18.quasar.proto.LogMessageR\n" +
+	"logMessage\x12_\n" +
+	"\x18glagol_discovery_request\x18\xb9\x01 \x01(\v2$.quasar.proto.GlagolDiscoveryRequestR\x16glagolDiscoveryRequest\x12U\n" +
+	"\x18glagol_discovery_updated\x18\xba\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x16glagolDiscoveryUpdated\x12\\\n" +
+	"\x17glagol_discovery_result\x18\xbb\x01 \x01(\v2#.quasar.proto.GlagolDiscoveryResultR\x15glagolDiscoveryResult\x12S\n" +
+	"\x14all_startup_settings\x18\xbc\x01 \x01(\v2 .quasar.proto.AllStartupSettingsR\x12allStartupSettings\x12F\n" +
+	"\x13nsd_discovered_item\x18\xbe\x01 \x01(\v2\x15.quasar.proto.NsdInfoR\x11nsdDiscoveredItem\x12L\n" +
+	"\x14nsd_discovered_items\x18\xbf\x01 \x01(\v2\x19.quasar.proto.NsdInfoListR\x12nsdDiscoveredItems\x12:\n" +
+	"\rnsd_lost_item\x18\xc0\x01 \x01(\v2\x15.quasar.proto.NsdInfoR\vnsdLostItem\x12Q\n" +
+	"\x16nsd_discovered_request\x18\xc1\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x14nsdDiscoveredRequest\x12<\n" +
+	"\vnsd_disable\x18\xc2\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\n" +
+	"nsdDisable\x127\n" +
+	"\n" +
+	"nsd_enable\x18\xc3\x01 \x01(\v2\x17.quasar.proto.NsdEnableR\tnsdEnable\x12O\n" +
+	"\x15nsd_disable_completed\x18\xc4\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x13nsdDisableCompleted\x12A\n" +
+	"\x0ensd_guest_mode\x18\xc7\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\fnsdGuestMode\x12T\n" +
+	"\x18nsd_stereo_pair_follower\x18\xca\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15nsdStereoPairFollower\x12I\n" +
+	"\x13stereo_pair_message\x18\xc6\x01 \x01(\v2\x18.quasar.proto.StereoPairR\x11stereoPairMessage\x12R\n" +
+	"\x16volume_manager_message\x18\xc8\x01 \x01(\v2\x1b.quasar.proto.VolumeManagerR\x14volumeManagerMessage\x12g\n" +
+	"\x1dspectrogram_animation_message\x18\xc9\x01 \x01(\v2\".quasar.proto.SpectrogramAnimationR\x1bspectrogramAnimationMessage\x129\n" +
+	"\ralice_message\x18\xcc\x01 \x01(\v2\x13.quasar.proto.AliceR\faliceMessage\x12R\n" +
+	"\x13environment_message\x18\xcf\x01 \x01(\v2 .quasar.proto.EnvironmentMessageR\x12environmentMessage\x123\n" +
+	"\bremoting\x18\xd2\x01 \x01(\v2\x16.quasar.proto.RemotingR\bremoting\x126\n" +
+	"\tdirective\x18\xd3\x01 \x01(\v2\x17.quasar.proto.DirectiveR\tdirective\x12?\n" +
+	"\rwifi_turn_off\x18\xd5\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\vwifiTurnOff\x12=\n" +
+	"\fwifi_turn_on\x18\xd6\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\n" +
+	"wifiTurnOn\x12H\n" +
+	"\vcall_action\x18\xe4\x01 \x01(\v2&.quasar.proto.QuasarMessage.CallActionR\n" +
+	"callAction\x12F\n" +
+	"\x0fbackend_request\x18\xe5\x01 \x01(\v2\x1c.quasar.proto.BackendRequestR\x0ebackendRequest\x12I\n" +
+	"\x10backend_response\x18\xe6\x01 \x01(\v2\x1d.quasar.proto.BackendResponseR\x0fbackendResponse\x121\n" +
+	"\bvqe_info\x18\xe9\x01 \x01(\v2\x15.quasar.proto.VqeInfoR\avqeInfo\x12\x1a\n" +
+	"\bvqe_zone\x18\xf8\x01 \x01(\tR\avqeZone\x12<\n" +
+	"\vaudio_error\x18\xea\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\n" +
+	"audioError\x12_\n" +
 	"\x18config_capability_events\x18\xec\x01 \x01(\v2$.quasar.proto.ConfigCapabilityEventsR\x16configCapabilityEvents\x12t\n" +
-	"\x1fconfig_capability_subscriptions\x18\xed\x01 \x01(\v2+.quasar.proto.ConfigCapabilitySubscriptionsR\x1dconfigCapabilitySubscriptions\"\xb8=\n" +
+	"\x1fconfig_capability_subscriptions\x18\xed\x01 \x01(\v2+.quasar.proto.ConfigCapabilitySubscriptionsR\x1dconfigCapabilitySubscriptions\x12P\n" +
+	"\x13update_health_check\x18\xf4\x01 \x01(\v2\x1f.quasar.proto.UpdateHealthCheckR\x11updateHealthCheck\x12P\n" +
+	"\x13force_check_updates\x18\xf5\x01 \x01(\v2\x1f.quasar.proto.ForceCheckUpdatesR\x11forceCheckUpdates\x12]\n" +
+	"\x18database_metrica_message\x18\xf6\x01 \x01(\v2\".quasar.proto.DatabaseMetricaEventR\x16databaseMetricaMessage\x12P\n" +
+	"\x13audio_storage_event\x18\xf7\x01 \x01(\v2\x1f.quasar.proto.AudioStorageEventR\x11audioStorageEvent\x127\n" +
+	"\n" +
+	"rss_status\x18\xfa\x01 \x01(\v2\x17.quasar.proto.RssStatusR\trssStatus\x12M\n" +
+	"\x10equalizer_params\x18\xfb\x01 \x01(\v2!.quasar.proto.EqualizerParametersR\x0fequalizerParams\x12\x19\n" +
+	"\apayload\x18\xfc\x01 \x01(\fR\apayload\x125\n" +
+	"\x04type\x18\xfd\x01 \x01(\x0e2 .quasar.proto.QuasarMessage.TypeR\x04type\x1a\xf1\x04\n" +
+	"\n" +
+	"CallAction\x12;\n" +
+	"\vaccept_call\x18\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\n" +
+	"acceptCall\x12=\n" +
+	"\fdecline_call\x18\x02 \x01(\v2\x1a.quasar.proto.EmptyMessageR\vdeclineCall\x12;\n" +
+	"\vhangup_call\x18\x03 \x01(\v2\x1a.quasar.proto.EmptyMessageR\n" +
+	"hangupCall\x127\n" +
+	"\tmake_call\x18\x04 \x01(\v2\x1a.quasar.proto.EmptyMessageR\bmakeCall\x12\x1b\n" +
+	"\tcall_guid\x18\x06 \x01(\tR\bcallGuid\x12\x1b\n" +
+	"\tdevice_id\x18\a \x01(\tR\bdeviceId\x12\x1b\n" +
+	"\tuser_guid\x18\b \x01(\tR\buserGuid\x124\n" +
+	"\ton_accept\x18\t \x03(\v2\x17.quasar.proto.DirectiveR\bonAccept\x12.\n" +
+	"\x06on_end\x18\n" +
+	" \x03(\v2\x17.quasar.proto.DirectiveR\x05onEnd\x128\n" +
+	"\von_declined\x18\r \x03(\v2\x17.quasar.proto.DirectiveR\n" +
+	"onDeclined\x12\x18\n" +
+	"\apayload\x18\v \x01(\tR\apayload\x12\"\n" +
+	"\ris_nanny_call\x18\f \x01(\bR\visNannyCall\x12\x1d\n" +
+	"\n" +
+	"request_id\x18\x0e \x01(\tR\trequestIdJ\x04\b\x05\x10\x06R\x17make_call_to_own_device\"\xb8=\n" +
 	"\x04Type\x12\x14\n" +
 	"\x10TYPE_UNSPECIFIED\x10\x00\x121\n" +
 	"\x10TYPE_ALICE_STATE\x10\x03\x1a\x1b\xc2\xce\x1c\x17quasar.proto.AliceState\x12$\n" +
@@ -5230,14 +6971,19 @@ const file_yandex_io_protos_quasar_proto_proto_rawDesc = "" +
 	"\x11TYPE_LOG_MESSAGES\x10\x80\x02\x1a\x1c\xc2\xce\x1c\x18quasar.proto.LogMessages\x12H\n" +
 	"\x18TYPE_REMOTE_AUDIO_SOURCE\x10\x81\x02\x1a)\xc2\xce\x1c%quasar.proto.RemoteAudioSourceMessage\"\x04\b,\x10,\"\x04\b-\x10-\"\x04\b9\x109\"\x04\br\x10r\"\x04\bs\x10s\"\x04\bt\x10t\"\x04\bu\x10u\"\x04\bv\x10v\"\x04\bw\x10w\"\x06\b\xb6\x01\x10\xb6\x01\"\x06\b\xbc\x01\x10\xbc\x01\"\x06\b\xc1\x01\x10\xc1\x01\"\x06\b\xc7\x01\x10\xc7\x01*\x15TYPE_EXTERNAL_COMMAND*\x1eTYPE_EXTERNAL_COMMAND_RESPONSE*\x18TYPE_GLAGOL_CLUSTER_SIGN*\x19TYPE_ALL_STARTUP_SETTINGS*\x1bTYPE_NSD_DISCOVERED_REQUEST*\x13TYPE_NSD_GUEST_MODE*\x16TYPE_PUSH_NOTIFICATION*'TYPE_XIVA_WEBSOCKET_SEND_BINARY_MESSAGE*'TYPE_XIVA_WEBSOCKET_RECV_BINARY_MESSAGE* TYPE_XIVA_WEBSOCKET_CLIENT_STATE*-TYPE_SUBSCRIBE_TO_PUSHD_XIVA_WEBSOCKET_EVENTS*\x1cTYPE_LIST_XIVA_SUBSCRIPTIONS*\x17TYPE_XIVA_SUBSCRIPTIONSJ\x04\b\x02\x10\x03J\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1f\x10 J\x04\b\"\x10#J\x04\b'\x10(J\x04\b(\x10)J\x04\b+\x10,J\x04\b1\x102J\x04\b2\x103J\x04\b4\x105J\x04\b6\x107J\x04\bB\x10CJ\x04\bF\x10GJ\x04\bI\x10JJ\x04\bK\x10LJ\x04\bL\x10MJ\x04\bO\x10PJ\x04\bS\x10TJ\x04\bV\x10WJ\x04\bW\x10XJ\x04\bZ\x10[J\x04\b[\x10\\J\x04\b\\\x10]J\x04\b]\x10^J\x04\b^\x10_J\x04\bc\x10dJ\x04\bf\x10gJ\x04\bk\x10lJ\x04\bm\x10nJ\x04\bn\x10oJ\x04\bo\x10pJ\x04\bx\x10yJ\x04\by\x10zJ\x04\bz\x10{J\x04\b{\x10|J\x04\b}\x10~J\x04\bq\x10rJ\x06\b\x85\x01\x10\x86\x01J\x06\b\x90\x01\x10\x91\x01J\x06\b\x93\x01\x10\x94\x01J\x06\b\x9b\x01\x10\x9c\x01J\x06\b\x9c\x01\x10\x9d\x01J\x06\b\xa8\x01\x10\xa9\x01J\x06\b\xac\x01\x10\xad\x01J\x06\b\xb2\x01\x10\xb3\x01J\x06\b\xda\x01\x10\xdb\x01J\x06\b\xe0\x01\x10\xe1\x01J\x06\b\xe1\x01\x10\xe2\x01J\x06\b\xe2\x01\x10\xe3\x01J\x06\b\xe4\x01\x10\xe5\x01J\x06\b\xee\x01\x10\xef\x01J\x06\b\xef\x01\x10\xf0\x01J\a\b\xfe\x01\x10\xb8\x94\x01J\n" +
-	"\b\xa0\x9c\x01\x10\x80\x80\x80\x80\x02J\x04\b\x03\x10\x04J\x04\bp\x10qJ\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x1e\x10\x1fJ\x04\bi\x10jJ\x06\b\xf9\x01\x10\xfa\x01J\x04\b\x06\x10\aJ\x04\b@\x10AJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x06\b\xd8\x01\x10\xd9\x01J\x06\b\xd9\x01\x10\xda\x01J\x04\ba\x10bJ\x06\b\xf2\x01\x10\xf3\x01J\x06\b\xf3\x01\x10\xf4\x01J\x06\b\xdb\x01\x10\xdc\x01J\x04\b\r\x10\x0eJ\x06\b\xdc\x01\x10\xdd\x01J\x04\bd\x10eJ\x06\b\xdd\x01\x10\xde\x01J\x06\b\xde\x01\x10\xdf\x01J\x04\bY\x10ZJ\x04\b\x18\x10\x19J\x04\b\x1b\x10\x1cJ\x04\b \x10!J\x04\b!\x10\"J\x04\b#\x10$J\x04\b$\x10%J\x04\b%\x10&J\x04\b&\x10'J\x04\b)\x10*J\x04\b*\x10+J\x04\b,\x10-J\x04\b-\x10.J\x04\b.\x10/J\x04\b/\x100J\x06\b\xd0\x01\x10\xd1\x01J\x04\b3\x104J\x04\b5\x106J\x04\b7\x108J\x04\b9\x10:J\x04\b;\x10<J\x04\b<\x10=J\x04\b?\x10@J\x04\bA\x10BJ\x06\b\xeb\x01\x10\xec\x01J\x04\bC\x10DJ\x04\bE\x10FJ\x04\bG\x10HJ\x04\bH\x10IJ\x04\bJ\x10KJ\x04\bM\x10NJ\x04\bN\x10OJ\x04\bP\x10QJ\x04\bQ\x10RJ\x04\bR\x10SJ\x04\bT\x10UJ\x04\bU\x10VJ\x04\bX\x10YJ\x06\b\xb7\x01\x10\xb8\x01J\x06\b\x9e\x01\x10\x9f\x01J\x06\b\x9f\x01\x10\xa0\x01J\x04\b_\x10`J\x04\b`\x10aJ\x04\bb\x10cJ\x04\be\x10fJ\x04\bg\x10hJ\x04\bh\x10iJ\x04\bj\x10kJ\x04\bl\x10mJ\x04\br\x10sJ\x04\bs\x10tJ\x04\bt\x10uJ\x04\bu\x10vJ\x04\bv\x10wJ\x04\bw\x10xJ\x04\b|\x10}J\x04\b~\x10\x7fJ\x05\b\x7f\x10\x80\x01J\x06\b\x80\x01\x10\x81\x01J\x06\b\x82\x01\x10\x83\x01J\x06\b\x83\x01\x10\x84\x01J\x06\b\x84\x01\x10\x85\x01J\x06\b\x86\x01\x10\x87\x01J\x06\b\x87\x01\x10\x88\x01J\x06\b\x88\x01\x10\x89\x01J\x06\b\x89\x01\x10\x8a\x01J\x06\b\x8a\x01\x10\x8b\x01J\x06\b\xdf\x01\x10\xe0\x01J\x06\b\x8c\x01\x10\x8d\x01J\x06\b\x8d\x01\x10\x8e\x01J\x06\b\x8e\x01\x10\x8f\x01J\x06\b\x8b\x01\x10\x8c\x01J\x06\b\x8f\x01\x10\x90\x01J\x06\b\x91\x01\x10\x92\x01J\x06\b\x92\x01\x10\x93\x01J\x06\b\x94\x01\x10\x95\x01J\x06\b\x95\x01\x10\x96\x01J\x06\b\x96\x01\x10\x97\x01J\x06\b\x97\x01\x10\x98\x01J\x06\b\x98\x01\x10\x99\x01J\x06\b\x9a\x01\x10\x9b\x01J\x06\b\x9d\x01\x10\x9e\x01J\x06\b\xa0\x01\x10\xa1\x01J\x06\b\xa1\x01\x10\xa2\x01J\x06\b\xa2\x01\x10\xa3\x01J\x06\b\xa3\x01\x10\xa4\x01J\x06\b\xa4\x01\x10\xa5\x01J\x06\b\xa5\x01\x10\xa6\x01J\x06\b\xa6\x01\x10\xa7\x01J\x06\b\xf1\x01\x10\xf2\x01J\x06\b\xf0\x01\x10\xf1\x01J\x06\b\xa7\x01\x10\xa8\x01J\x06\b\xab\x01\x10\xac\x01J\x06\b\xad\x01\x10\xae\x01J\x06\b\x99\x01\x10\x9a\x01J\x06\b\xae\x01\x10\xaf\x01J\x06\b\xaf\x01\x10\xb0\x01J\x06\b\xb0\x01\x10\xb1\x01J\x06\b\xb1\x01\x10\xb2\x01J\x06\b\xb3\x01\x10\xb4\x01J\x06\b\xbd\x01\x10\xbe\x01J\x06\b\xb4\x01\x10\xb5\x01J\x06\b\xb5\x01\x10\xb6\x01J\x06\b\xb8\x01\x10\xb9\x01J\x06\b\xb9\x01\x10\xba\x01J\x06\b\xba\x01\x10\xbb\x01J\x06\b\xbb\x01\x10\xbc\x01J\x06\b\xbc\x01\x10\xbd\x01J\x06\b\xbe\x01\x10\xbf\x01J\x06\b\xbf\x01\x10\xc0\x01J\x06\b\xc0\x01\x10\xc1\x01J\x06\b\xc1\x01\x10\xc2\x01J\x06\b\xc2\x01\x10\xc3\x01J\x06\b\xc3\x01\x10\xc4\x01J\x06\b\xc4\x01\x10\xc5\x01J\x06\b\xc7\x01\x10\xc8\x01J\x06\b\xca\x01\x10\xcb\x01J\x06\b\xc5\x01\x10\xc6\x01J\x06\b\xc6\x01\x10\xc7\x01J\x06\b\xc8\x01\x10\xc9\x01J\x06\b\xc9\x01\x10\xca\x01J\x06\b\xcc\x01\x10\xcd\x01J\x06\b\xcd\x01\x10\xce\x01J\x06\b\xce\x01\x10\xcf\x01J\x06\b\xd1\x01\x10\xd2\x01J\x06\b\xcf\x01\x10\xd0\x01J\x06\b\xd2\x01\x10\xd3\x01J\x06\b\xd3\x01\x10\xd4\x01J\x06\b\xd5\x01\x10\xd6\x01J\x06\b\xd6\x01\x10\xd7\x01J\x06\b\xe5\x01\x10\xe6\x01J\x06\b\xe6\x01\x10\xe7\x01J\x06\b\xe7\x01\x10\xe8\x01J\x06\b\xe8\x01\x10\xe9\x01J\x06\b\xe9\x01\x10\xea\x01J\x06\b\xf8\x01\x10\xf9\x01J\x06\b\xea\x01\x10\xeb\x01J\x06\b\xf4\x01\x10\xf5\x01J\x06\b\xf5\x01\x10\xf6\x01J\x06\b\xf6\x01\x10\xf7\x01J\x06\b\xf7\x01\x10\xf8\x01J\x06\b\xfa\x01\x10\xfb\x01J\x06\b\xfb\x01\x10\xfc\x01R\valice_stateR\x0fbroken_mic_infoR\x11wifi_list_requestR\twifi_listR\x15wifi_networks_disableR\x14wifi_networks_enableR\x10wifi_reassociateR\fwifi_connectR\x12async_wifi_connectR\x15wifi_connect_responseR\rmedia_requestR\x10add_user_requestR\x11add_user_responseR\x13delete_user_requestR\x14delete_user_responseR\x13change_user_requestR\x17issue_auth_code_requestR\x18issue_auth_code_responseR\x0eadd_user_eventR\x11change_user_eventR\x11delete_user_eventR\x12change_token_eventR\x12owner_startup_infoR\x10all_startup_infoR\x18configuration_mode_ap_upR\x0fmetrica_messageR\rmedia_messageR\x0frecording_eventR\tapp_stateR\vwifi_statusR\x18critical_update_progressR\x18no_critical_update_foundR\x15start_critical_updateR\x16child_phrase_end_eventR\vvolumeStateR\x10external_commandR\x19external_command_responseR\ftimers_stateR\falarms_stateR\x10set_alarms_stateR\rwatched_videoR\x0fcurrent_weatherR\x10current_locationR\x11push_notificationR\vauth_failedR\n" +
-	"reset_wifiR\x12user_config_updateR\x12subscription_stateR\vbrick_stateR\x10current_timezoneR\x11bluetooth_requestR\x16bluetooth_source_eventR\x14bluetooth_sink_eventR\x12wifi_config_reloadR\x0fleader_overrideR\x12volume_set_messageR\x12vins_call_responseR\x12device_group_stateR\rglagold_stateR\x13simple_player_stateR\bio_eventR\n" +
-	"io_controlR\x0eio_hub_messageR\x16io_audio_channels_dataR\x12io_channel_requestR\rmordovia_showR\x10mordovia_commandR\x13configuration_stateR\x0fcontrol_requestR\x12onboarding_requestR\fupdate_stateR\x12cached_user_configR\faudio_inputsR\"xiva_websocket_send_binary_messageR\"xiva_websocket_recv_binary_messageR\x1bxiva_websocket_client_stateR(subscribe_to_pushd_xiva_websocket_eventsR\x17list_xiva_subscriptionsR\x12xiva_subscriptionsR\x0eon_media_errorR\rcheck_updatesR\x12audio_client_eventR\x13multiroom_broadcastR\x15ready_to_apply_updateR\x14confirm_update_applyR\x15postpone_update_applyR\x19notification_update_eventR\x0entp_sync_eventR\x14do_not_disturb_eventR\x19setup_credentials_messageR\x13multiroom_directiveR$setup_credentials_handling_completedR#encrypted_setup_credentials_messageR\x14setup_status_messageR\x0fmultiroom_stateR\x11testpoint_messageR\x12service_name_readyR\trcu_eventR\x0frcu_voice_eventR\x0enetwork_statusR\rreset_networkR\x10networks_disableR\x0fnetworks_enableR\x15network_config_reloadR\x15network_stats_commandR\rnetwork_statsR\x12refresh_user_eventR\x19auth_token_update_requestR\x1blegacy_player_state_changedR\tsetup_rcuR\x0esetup_rcu_autoR\x0fsetup_rcu_checkR\x12setup_rcu_advancedR\x10setup_rcu_manualR\x14account_devices_listR\x16rerequest_devices_listR\x12led_screen_commandR\x16glagol_cluster_messageR\vlog_messageR\x18glagol_discovery_requestR\x18glagol_discovery_updatedR\x17glagol_discovery_resultR\x14all_startup_settingsR\x13nsd_discovered_itemR\x14nsd_discovered_itemsR\rnsd_lost_itemR\x16nsd_discovered_requestR\vnsd_disableR\n" +
-	"nsd_enableR\x15nsd_disable_completedR\x0ensd_guest_modeR\x18nsd_stereo_pair_followerR\x17features_config_messageR\x13stereo_pair_messageR\x16volume_manager_messageR\x1dspectrogram_animation_messageR\ralice_messageR\fcall_messageR\x13environment_messageR\bremotingR\tdirectiveR\rwifi_turn_offR\fwifi_turn_onR\vcall_actionR\x0fbackend_requestR\x10backend_responseR\x15update_config_requestR\x12ab_testing_cookiesR\bvqe_infoR\bvqe_zoneR\vaudio_errorR\x13update_health_checkR\x13force_check_updatesR\x18database_metrica_messageR\x13audio_storage_eventR\n" +
-	"rss_statusR\x10equalizer_params:F\n" +
-	"\fpayload_type\x12!.google.protobuf.EnumValueOptions\x18\xe8\xc9\x03 \x01(\tR\vpayloadTypeB(\n" +
-	"\x19ru.yandex.quasar.protobufB\vQuasarProto"
+	"\x10\vJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1f\x10 J\x04\b\"\x10#J\x04\b'\x10(J\x04\b(\x10)J\x04\b+\x10,J\x04\b1\x102J\x04\b2\x103J\x04\b4\x105J\x04\b6\x107J\x04\bB\x10CJ\x04\bF\x10GJ\x04\bI\x10JJ\x04\bK\x10LJ\x04\bL\x10MJ\x04\bO\x10PJ\x04\bS\x10TJ\x04\bV\x10WJ\x04\bW\x10XJ\x04\bZ\x10[J\x04\b[\x10\\J\x04\b\\\x10]J\x04\b]\x10^J\x04\b^\x10_J\x04\bc\x10dJ\x04\bf\x10gJ\x04\bk\x10lJ\x04\bm\x10nJ\x04\bn\x10oJ\x04\bo\x10pJ\x04\bx\x10yJ\x04\by\x10zJ\x04\bz\x10{J\x04\b{\x10|J\x04\b}\x10~J\x04\bq\x10rJ\x06\b\x85\x01\x10\x86\x01J\x06\b\x90\x01\x10\x91\x01J\x06\b\x93\x01\x10\x94\x01J\x06\b\x9b\x01\x10\x9c\x01J\x06\b\x9c\x01\x10\x9d\x01J\x06\b\xa8\x01\x10\xa9\x01J\x06\b\xac\x01\x10\xad\x01J\x06\b\xb2\x01\x10\xb3\x01J\x06\b\xda\x01\x10\xdb\x01J\x06\b\xe0\x01\x10\xe1\x01J\x06\b\xe1\x01\x10\xe2\x01J\x06\b\xe2\x01\x10\xe3\x01J\x06\b\xee\x01\x10\xef\x01J\x06\b\xef\x01\x10\xf0\x01J\x04\b5\x106J\x04\b;\x10<J\x04\bA\x10BJ\x04\bj\x10kJ\x06\b\x87\x01\x10\x88\x01J\x06\b\x88\x01\x10\x89\x01J\x06\b\x89\x01\x10\x8a\x01J\x06\b\x8a\x01\x10\x8b\x01J\x06\b\xdf\x01\x10\xe0\x01J\x06\b\x8c\x01\x10\x8d\x01J\x06\b\x8d\x01\x10\x8e\x01J\x06\b\x8e\x01\x10\x8f\x01J\x06\b\x8b\x01\x10\x8c\x01J\x06\b\x91\x01\x10\x92\x01J\x06\b\xb3\x01\x10\xb4\x01J\x06\b\xbd\x01\x10\xbe\x01J\x06\b\xc5\x01\x10\xc6\x01J\x06\b\xcd\x01\x10\xce\x01J\x06\b\xce\x01\x10\xcf\x01J\x06\b\xd1\x01\x10\xd2\x01J\x06\b\xe7\x01\x10\xe8\x01J\x06\b\xe8\x01\x10\xe9\x01R\x0fcurrent_weatherR\vauth_failedR\x12subscription_stateR\x12cached_user_configR\x14do_not_disturb_eventR\x14account_devices_listR\x16rerequest_devices_listR\x17features_config_messageR\fcall_messageR\x15update_config_requestR\x12ab_testing_cookies\"<\n" +
+	"\x0eMinidumpStatus\x12\x16\n" +
+	"\x06daemon\x18\x01 \x01(\tR\x06daemon\x12\x12\n" +
+	"\x04info\x18\x02 \x01(\tR\x04info\"R\n" +
+	"\x18ConfigurationStateHolder\x126\n" +
+	"\x05state\x18\x01 \x01(\x0e2 .quasar.proto.ConfigurationStateR\x05state\"b\n" +
+	"\x12OnMediaErrorHolder\x12L\n" +
+	"\x12media_content_type\x18\x01 \x01(\x0e2\x1e.quasar.proto.MediaContentTypeR\x10mediaContentType\"e\n" +
+	"\vLogMessages\x12;\n" +
+	"\flog_messages\x18\x01 \x03(\v2\x18.quasar.proto.LogMessageR\vlogMessages\x12\x19\n" +
+	"\bbatch_id\x18\x02 \x01(\x04R\abatchId:F\n" +
+	"\fpayload_type\x12!.google.protobuf.EnumValueOptions\x18\xe8\xc9\x03 \x01(\tR\vpayloadTypeB\xb7\x01\n" +
+	"\x10com.quasar.protoB\x10QuasarProtoProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_quasar_proto_proto_rawDescOnce sync.Once
@@ -5251,8 +6997,8 @@ func file_yandex_io_protos_quasar_proto_proto_rawDescGZIP() []byte {
 	return file_yandex_io_protos_quasar_proto_proto_rawDescData
 }
 
-var file_yandex_io_protos_quasar_proto_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
-var file_yandex_io_protos_quasar_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 56)
+var file_yandex_io_protos_quasar_proto_proto_enumTypes = make([]protoimpl.EnumInfo, 11)
+var file_yandex_io_protos_quasar_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 59)
 var file_yandex_io_protos_quasar_proto_proto_goTypes = []any{
 	(WifiConnectResponse_Status)(0),                                   // 0: quasar.proto.WifiConnectResponse.Status
 	(IssueAuthCodeResponse_Status)(0),                                 // 1: quasar.proto.IssueAuthCodeResponse.Status
@@ -5260,171 +7006,386 @@ var file_yandex_io_protos_quasar_proto_proto_goTypes = []any{
 	(DeleteUserResponse_Status)(0),                                    // 3: quasar.proto.DeleteUserResponse.Status
 	(VinsCallResponse_Status)(0),                                      // 4: quasar.proto.VinsCallResponse.Status
 	(SimplePlayerState_PlayerType)(0),                                 // 5: quasar.proto.SimplePlayerState.PlayerType
-	(LogMessage_Level)(0),                                             // 6: quasar.proto.LogMessage.Level
-	(NetworkStats_ArpState)(0),                                        // 7: quasar.proto.NetworkStats.ArpState
-	(UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status)(0), // 8: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.Status
-	(QuasarMessage_Type)(0),                                           // 9: quasar.proto.QuasarMessage.Type
-	(*WifiConnect)(nil),                                               // 10: quasar.proto.WifiConnect
-	(*WifiConnectResponse)(nil),                                       // 11: quasar.proto.WifiConnectResponse
-	(*MediaMessage)(nil),                                              // 12: quasar.proto.MediaMessage
-	(*AddUserRequest)(nil),                                            // 13: quasar.proto.AddUserRequest
-	(*DeleteUserRequest)(nil),                                         // 14: quasar.proto.DeleteUserRequest
-	(*ChangeUserRequest)(nil),                                         // 15: quasar.proto.ChangeUserRequest
-	(*IssueAuthCodeRequest)(nil),                                      // 16: quasar.proto.IssueAuthCodeRequest
-	(*IssueAuthCodeResponse)(nil),                                     // 17: quasar.proto.IssueAuthCodeResponse
-	(*AuthTokenUpdateRequest)(nil),                                    // 18: quasar.proto.AuthTokenUpdateRequest
-	(*AddUserResponse)(nil),                                           // 19: quasar.proto.AddUserResponse
-	(*DeleteUserResponse)(nil),                                        // 20: quasar.proto.DeleteUserResponse
-	(*AuthEvent)(nil),                                                 // 21: quasar.proto.AuthEvent
-	(*OwnerStartupInfo)(nil),                                          // 22: quasar.proto.OwnerStartupInfo
-	(*AllStartupInfo)(nil),                                            // 23: quasar.proto.AllStartupInfo
-	(*MetricaMessage)(nil),                                            // 24: quasar.proto.MetricaMessage
-	(*RecordingEvent)(nil),                                            // 25: quasar.proto.RecordingEvent
-	(*PhraseEndEvent)(nil),                                            // 26: quasar.proto.PhraseEndEvent
-	(*UpdateProgress)(nil),                                            // 27: quasar.proto.UpdateProgress
-	(*ExternalCommandResponse)(nil),                                   // 28: quasar.proto.ExternalCommandResponse
-	(*VinsCallResponse)(nil),                                          // 29: quasar.proto.VinsCallResponse
-	(*LeaderOverride)(nil),                                            // 30: quasar.proto.LeaderOverride
-	(*MusicStateOverride)(nil),                                        // 31: quasar.proto.MusicStateOverride
-	(*RadioStateOverride)(nil),                                        // 32: quasar.proto.RadioStateOverride
-	(*SimplePlayerState)(nil),                                         // 33: quasar.proto.SimplePlayerState
-	(*MordoviaShowMessage)(nil),                                       // 34: quasar.proto.MordoviaShowMessage
-	(*MordoviaCommandMessage)(nil),                                    // 35: quasar.proto.MordoviaCommandMessage
-	(*SetupRcuAutoEvent)(nil),                                         // 36: quasar.proto.SetupRcuAutoEvent
-	(*LogMessage)(nil),                                                // 37: quasar.proto.LogMessage
-	(*NsdEnable)(nil),                                                 // 38: quasar.proto.NsdEnable
-	(*BrickState)(nil),                                                // 39: quasar.proto.BrickState
-	(*NetworkStatsCommand)(nil),                                       // 40: quasar.proto.NetworkStatsCommand
-	(*NetworkStats)(nil),                                              // 41: quasar.proto.NetworkStats
-	(*UpdateHealthCheck)(nil),                                         // 42: quasar.proto.UpdateHealthCheck
-	(*RssStatus)(nil),                                                 // 43: quasar.proto.RssStatus
-	(*MinidumpStatus)(nil),                                            // 44: quasar.proto.MinidumpStatus
-	(*ForceCheckUpdates)(nil),                                         // 45: quasar.proto.ForceCheckUpdates
-	(*EqualizerParameters)(nil),                                       // 46: quasar.proto.EqualizerParameters
-	(*ConfigurationStateHolder)(nil),                                  // 47: quasar.proto.ConfigurationStateHolder
-	(*OnMediaErrorHolder)(nil),                                        // 48: quasar.proto.OnMediaErrorHolder
-	(*LogMessages)(nil),                                               // 49: quasar.proto.LogMessages
-	(*QuasarMessage)(nil),                                             // 50: quasar.proto.QuasarMessage
-	(*MetricaMessage_AppEnvironmentValue)(nil),                        // 51: quasar.proto.MetricaMessage.AppEnvironmentValue
-	(*MetricaMessage_StatsRecord)(nil),                                // 52: quasar.proto.MetricaMessage.StatsRecord
-	(*MetricaMessage_Statistics)(nil),                                 // 53: quasar.proto.MetricaMessage.Statistics
-	(*SimplePlayerState_TrackInfo)(nil),                               // 54: quasar.proto.SimplePlayerState.TrackInfo
-	(*SimplePlayerState_EntityInfo)(nil),                              // 55: quasar.proto.SimplePlayerState.EntityInfo
-	nil,                                                               // 56: quasar.proto.SimplePlayerState.ExtraEntry
-	(*LogMessage_Source)(nil),                                         // 57: quasar.proto.LogMessage.Source
-	(*NetworkStatsCommand_DumpNetStatus)(nil),                         // 58: quasar.proto.NetworkStatsCommand.DumpNetStatus
-	(*NetworkStats_Arp)(nil),                                          // 59: quasar.proto.NetworkStats.Arp
-	(*NetworkStats_NetDevice)(nil),                                    // 60: quasar.proto.NetworkStats.NetDevice
-	(*UpdateHealthCheck_UpdateHealthCheckStatus)(nil),                 // 61: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus
-	(*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses)(nil),     // 62: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses
-	(*UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos)(nil),   // 63: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos
-	nil,                                // 64: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry
-	nil,                                // 65: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.InfosEntry
-	(WifiType)(0),                      // 66: quasar.proto.WifiType
-	(*SearchResult)(nil),               // 67: quasar.proto.SearchResult
-	(*MediaItem)(nil),                  // 68: quasar.proto.MediaItem
-	(*EmptyMessage)(nil),               // 69: quasar.proto.EmptyMessage
-	(*DescriptionItem)(nil),            // 70: quasar.proto.DescriptionItem
-	(*PaymentItem)(nil),                // 71: quasar.proto.PaymentItem
-	(*TvAnnounce)(nil),                 // 72: quasar.proto.TvAnnounce
-	(AccountType)(0),                   // 73: quasar.proto.AccountType
-	(*NetworkStatus)(nil),              // 74: quasar.proto.NetworkStatus
-	(*Location)(nil),                   // 75: quasar.proto.Location
-	(*Timezone)(nil),                   // 76: quasar.proto.Timezone
-	(*timestamppb.Timestamp)(nil),      // 77: google.protobuf.Timestamp
-	(AppState_MusicState_TrackType)(0), // 78: quasar.proto.AppState.MusicState.TrackType
-	(Audio_Screen)(0),                  // 79: quasar.proto.Audio.Screen
-	(GlagolDiscoveryItem_GroupRole)(0), // 80: quasar.proto.GlagolDiscoveryItem.GroupRole
-	(BrickStatus)(0),                   // 81: quasar.proto.BrickStatus
-	(ConfigurationState)(0),            // 82: quasar.proto.ConfigurationState
-	(MediaContentType)(0),              // 83: quasar.proto.MediaContentType
-	(*GlagolClusterSign)(nil),          // 84: quasar.proto.GlagolClusterSign
-	(*sync_messages.ConfigCapabilityEvents)(nil),        // 85: quasar.proto.ConfigCapabilityEvents
-	(*sync_messages.ConfigCapabilitySubscriptions)(nil), // 86: quasar.proto.ConfigCapabilitySubscriptions
-	(*descriptorpb.EnumValueOptions)(nil),               // 87: google.protobuf.EnumValueOptions
+	(WebsocketClientState_State)(0),                                   // 6: quasar.proto.WebsocketClientState.State
+	(LogMessage_Level)(0),                                             // 7: quasar.proto.LogMessage.Level
+	(NetworkStats_ArpState)(0),                                        // 8: quasar.proto.NetworkStats.ArpState
+	(UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_Status)(0), // 9: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.Status
+	(QuasarMessage_Type)(0),                                           // 10: quasar.proto.QuasarMessage.Type
+	(*WifiConnect)(nil),                                               // 11: quasar.proto.WifiConnect
+	(*WifiConnectResponse)(nil),                                       // 12: quasar.proto.WifiConnectResponse
+	(*MediaMessage)(nil),                                              // 13: quasar.proto.MediaMessage
+	(*AddUserRequest)(nil),                                            // 14: quasar.proto.AddUserRequest
+	(*DeleteUserRequest)(nil),                                         // 15: quasar.proto.DeleteUserRequest
+	(*ChangeUserRequest)(nil),                                         // 16: quasar.proto.ChangeUserRequest
+	(*IssueAuthCodeRequest)(nil),                                      // 17: quasar.proto.IssueAuthCodeRequest
+	(*IssueAuthCodeResponse)(nil),                                     // 18: quasar.proto.IssueAuthCodeResponse
+	(*AuthTokenUpdateRequest)(nil),                                    // 19: quasar.proto.AuthTokenUpdateRequest
+	(*AddUserResponse)(nil),                                           // 20: quasar.proto.AddUserResponse
+	(*DeleteUserResponse)(nil),                                        // 21: quasar.proto.DeleteUserResponse
+	(*AuthEvent)(nil),                                                 // 22: quasar.proto.AuthEvent
+	(*OwnerStartupInfo)(nil),                                          // 23: quasar.proto.OwnerStartupInfo
+	(*AllStartupInfo)(nil),                                            // 24: quasar.proto.AllStartupInfo
+	(*MetricaMessage)(nil),                                            // 25: quasar.proto.MetricaMessage
+	(*RecordingEvent)(nil),                                            // 26: quasar.proto.RecordingEvent
+	(*PhraseEndEvent)(nil),                                            // 27: quasar.proto.PhraseEndEvent
+	(*UpdateProgress)(nil),                                            // 28: quasar.proto.UpdateProgress
+	(*ExternalCommandResponse)(nil),                                   // 29: quasar.proto.ExternalCommandResponse
+	(*VinsCallResponse)(nil),                                          // 30: quasar.proto.VinsCallResponse
+	(*LeaderOverride)(nil),                                            // 31: quasar.proto.LeaderOverride
+	(*MusicStateOverride)(nil),                                        // 32: quasar.proto.MusicStateOverride
+	(*RadioStateOverride)(nil),                                        // 33: quasar.proto.RadioStateOverride
+	(*SimplePlayerState)(nil),                                         // 34: quasar.proto.SimplePlayerState
+	(*MordoviaShowMessage)(nil),                                       // 35: quasar.proto.MordoviaShowMessage
+	(*MordoviaCommandMessage)(nil),                                    // 36: quasar.proto.MordoviaCommandMessage
+	(*WebsocketClientState)(nil),                                      // 37: quasar.proto.WebsocketClientState
+	(*XivaSubscriptions)(nil),                                         // 38: quasar.proto.XivaSubscriptions
+	(*SetupRcuAutoEvent)(nil),                                         // 39: quasar.proto.SetupRcuAutoEvent
+	(*LogMessage)(nil),                                                // 40: quasar.proto.LogMessage
+	(*NsdEnable)(nil),                                                 // 41: quasar.proto.NsdEnable
+	(*BrickState)(nil),                                                // 42: quasar.proto.BrickState
+	(*NetworkStatsCommand)(nil),                                       // 43: quasar.proto.NetworkStatsCommand
+	(*NetworkStats)(nil),                                              // 44: quasar.proto.NetworkStats
+	(*UpdateHealthCheck)(nil),                                         // 45: quasar.proto.UpdateHealthCheck
+	(*RssStatus)(nil),                                                 // 46: quasar.proto.RssStatus
+	(*ForceCheckUpdates)(nil),                                         // 47: quasar.proto.ForceCheckUpdates
+	(*EqualizerParameters)(nil),                                       // 48: quasar.proto.EqualizerParameters
+	(*QuasarMessage)(nil),                                             // 49: quasar.proto.QuasarMessage
+	(*MinidumpStatus)(nil),                                            // 50: quasar.proto.MinidumpStatus
+	(*ConfigurationStateHolder)(nil),                                  // 51: quasar.proto.ConfigurationStateHolder
+	(*OnMediaErrorHolder)(nil),                                        // 52: quasar.proto.OnMediaErrorHolder
+	(*LogMessages)(nil),                                               // 53: quasar.proto.LogMessages
+	(*MetricaMessage_AppEnvironmentValue)(nil),                        // 54: quasar.proto.MetricaMessage.AppEnvironmentValue
+	(*MetricaMessage_StatsRecord)(nil),                                // 55: quasar.proto.MetricaMessage.StatsRecord
+	(*MetricaMessage_Statistics)(nil),                                 // 56: quasar.proto.MetricaMessage.Statistics
+	(*SimplePlayerState_TrackInfo)(nil),                               // 57: quasar.proto.SimplePlayerState.TrackInfo
+	(*SimplePlayerState_EntityInfo)(nil),                              // 58: quasar.proto.SimplePlayerState.EntityInfo
+	(*SimplePlayerState_ExtraEntry)(nil),                              // 59: quasar.proto.SimplePlayerState.ExtraEntry
+	(*LogMessage_Source)(nil),                                         // 60: quasar.proto.LogMessage.Source
+	(*NetworkStatsCommand_DumpNetStatus)(nil),                         // 61: quasar.proto.NetworkStatsCommand.DumpNetStatus
+	(*NetworkStats_Arp)(nil),                                          // 62: quasar.proto.NetworkStats.Arp
+	(*NetworkStats_NetDevice)(nil),                                    // 63: quasar.proto.NetworkStats.NetDevice
+	(*UpdateHealthCheck_UpdateHealthCheckStatus)(nil),                 // 64: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus
+	(*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses)(nil),     // 65: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses
+	(*UpdateHealthCheck_UpdateHealthCheckStatus_MinidumpInfos)(nil),   // 66: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos
+	(*UpdateHealthCheck_UpdateHealthCheckStatus_RssStatuses_StatusesEntry)(nil), // 67: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry
+	nil,                                                 // 68: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.InfosEntry
+	(*QuasarMessage_CallAction)(nil),                    // 69: quasar.proto.QuasarMessage.CallAction
+	(WifiType)(0),                                       // 70: quasar.proto.WifiType
+	(*SearchResult)(nil),                                // 71: quasar.proto.SearchResult
+	(*MediaItem)(nil),                                   // 72: quasar.proto.MediaItem
+	(*EmptyMessage)(nil),                                // 73: quasar.proto.EmptyMessage
+	(*DescriptionItem)(nil),                             // 74: quasar.proto.DescriptionItem
+	(*PaymentItem)(nil),                                 // 75: quasar.proto.PaymentItem
+	(*TvAnnounce)(nil),                                  // 76: quasar.proto.TvAnnounce
+	(AccountType)(0),                                    // 77: quasar.proto.AccountType
+	(*NetworkStatus)(nil),                               // 78: quasar.proto.NetworkStatus
+	(*Location)(nil),                                    // 79: quasar.proto.Location
+	(*Timezone)(nil),                                    // 80: quasar.proto.Timezone
+	(*timestamppb.Timestamp)(nil),                       // 81: google.protobuf.Timestamp
+	(AppState_MusicState_TrackType)(0),                  // 82: quasar.proto.AppState.MusicState.TrackType
+	(Audio_Screen)(0),                                   // 83: quasar.proto.Audio.Screen
+	(GlagolDiscoveryItem_GroupRole)(0),                  // 84: quasar.proto.GlagolDiscoveryItem.GroupRole
+	(BrickStatus)(0),                                    // 85: quasar.proto.BrickStatus
+	(*AliceState)(nil),                                  // 86: quasar.proto.AliceState
+	(*BrokenMicInfo)(nil),                               // 87: quasar.proto.BrokenMicInfo
+	(*WifiList)(nil),                                    // 88: quasar.proto.WifiList
+	(*MediaRequest)(nil),                                // 89: quasar.proto.MediaRequest
+	(*AppState)(nil),                                    // 90: quasar.proto.AppState
+	(*WifiStatus)(nil),                                  // 91: quasar.proto.WifiStatus
+	(*VolumeState)(nil),                                 // 92: quasar.proto.VolumeState
+	(*ExternalCommandMessage)(nil),                      // 93: quasar.proto.ExternalCommandMessage
+	(*TimersState)(nil),                                 // 94: quasar.proto.TimersState
+	(*AlarmsState)(nil),                                 // 95: quasar.proto.AlarmsState
+	(*WatchedVideoState)(nil),                           // 96: quasar.proto.WatchedVideoState
+	(*PushNotification)(nil),                            // 97: quasar.proto.PushNotification
+	(*UserConfig)(nil),                                  // 98: quasar.proto.UserConfig
+	(*BluetoothRequest)(nil),                            // 99: quasar.proto.BluetoothRequest
+	(*BluetoothSourceEvent)(nil),                        // 100: quasar.proto.BluetoothSourceEvent
+	(*BluetoothSinkEvent)(nil),                          // 101: quasar.proto.BluetoothSinkEvent
+	(*VolumeSetMessage)(nil),                            // 102: quasar.proto.VolumeSetMessage
+	(*DeviceGroupState)(nil),                            // 103: quasar.proto.DeviceGroupState
+	(*GlagoldState)(nil),                                // 104: quasar.proto.GlagoldState
+	(*IOEvent)(nil),                                     // 105: quasar.proto.IOEvent
+	(*IOControlCommand)(nil),                            // 106: quasar.proto.IOControlCommand
+	(*IOHubMessage)(nil),                                // 107: quasar.proto.IOHubMessage
+	(*IOAudioChannelsData)(nil),                         // 108: quasar.proto.IOAudioChannelsData
+	(*IOChannelRequest)(nil),                            // 109: quasar.proto.IOChannelRequest
+	(ConfigurationState)(0),                             // 110: quasar.proto.ConfigurationState
+	(*ControlRequest)(nil),                              // 111: quasar.proto.ControlRequest
+	(*OnboardingRequest)(nil),                           // 112: quasar.proto.OnboardingRequest
+	(*UpdateState)(nil),                                 // 113: quasar.proto.UpdateState
+	(*AudioInput)(nil),                                  // 114: quasar.proto.AudioInput
+	(MediaContentType)(0),                               // 115: quasar.proto.MediaContentType
+	(*AudioClientEvent)(nil),                            // 116: quasar.proto.AudioClientEvent
+	(*MultiroomBroadcast)(nil),                          // 117: quasar.proto.MultiroomBroadcast
+	(*UpdateApplyTimeout)(nil),                          // 118: quasar.proto.UpdateApplyTimeout
+	(*NotificationUpdateEvent)(nil),                     // 119: quasar.proto.NotificationUpdateEvent
+	(*NtpSyncEvent)(nil),                                // 120: quasar.proto.NtpSyncEvent
+	(*SetupCredentialsMessage)(nil),                     // 121: quasar.proto.SetupCredentialsMessage
+	(*MultiroomDirective)(nil),                          // 122: quasar.proto.MultiroomDirective
+	(*EncryptedSetupCredentialsMessage)(nil),            // 123: quasar.proto.EncryptedSetupCredentialsMessage
+	(*SetupStatusMessage)(nil),                          // 124: quasar.proto.SetupStatusMessage
+	(*MultiroomState)(nil),                              // 125: quasar.proto.MultiroomState
+	(*TestpointMessage)(nil),                            // 126: quasar.proto.TestpointMessage
+	(*RcuEvent)(nil),                                    // 127: quasar.proto.RcuEvent
+	(*RcuVoiceEvent)(nil),                               // 128: quasar.proto.RcuVoiceEvent
+	(*LegacyPlayerStateChanged)(nil),                    // 129: quasar.proto.LegacyPlayerStateChanged
+	(*LedScreenCommand)(nil),                            // 130: quasar.proto.LedScreenCommand
+	(*GlagolClusterMessage)(nil),                        // 131: quasar.proto.GlagolClusterMessage
+	(*GlagolClusterSign)(nil),                           // 132: quasar.proto.GlagolClusterSign
+	(*GlagolDiscoveryRequest)(nil),                      // 133: quasar.proto.GlagolDiscoveryRequest
+	(*GlagolDiscoveryResult)(nil),                       // 134: quasar.proto.GlagolDiscoveryResult
+	(*AllStartupSettings)(nil),                          // 135: quasar.proto.AllStartupSettings
+	(*NsdInfo)(nil),                                     // 136: quasar.proto.NsdInfo
+	(*NsdInfoList)(nil),                                 // 137: quasar.proto.NsdInfoList
+	(*StereoPair)(nil),                                  // 138: quasar.proto.StereoPair
+	(*VolumeManager)(nil),                               // 139: quasar.proto.VolumeManager
+	(*SpectrogramAnimation)(nil),                        // 140: quasar.proto.SpectrogramAnimation
+	(*Alice)(nil),                                       // 141: quasar.proto.Alice
+	(*EnvironmentMessage)(nil),                          // 142: quasar.proto.EnvironmentMessage
+	(*Remoting)(nil),                                    // 143: quasar.proto.Remoting
+	(*protos.Directive)(nil),                            // 144: quasar.proto.Directive
+	(*BackendRequest)(nil),                              // 145: quasar.proto.BackendRequest
+	(*BackendResponse)(nil),                             // 146: quasar.proto.BackendResponse
+	(*VqeInfo)(nil),                                     // 147: quasar.proto.VqeInfo
+	(*sync_messages.ConfigCapabilityEvents)(nil),        // 148: quasar.proto.ConfigCapabilityEvents
+	(*sync_messages.ConfigCapabilitySubscriptions)(nil), // 149: quasar.proto.ConfigCapabilitySubscriptions
+	(*protos1.DatabaseMetricaEvent)(nil),                // 150: quasar.proto.DatabaseMetricaEvent
+	(*AudioStorageEvent)(nil),                           // 151: quasar.proto.AudioStorageEvent
+	(*descriptorpb.EnumValueOptions)(nil),               // 152: google.protobuf.EnumValueOptions
 }
 var file_yandex_io_protos_quasar_proto_proto_depIdxs = []int32{
-	66, // 0: quasar.proto.WifiConnect.wifi_type:type_name -> quasar.proto.WifiType
-	0,  // 1: quasar.proto.WifiConnectResponse.status:type_name -> quasar.proto.WifiConnectResponse.Status
-	67, // 2: quasar.proto.MediaMessage.recommendations:type_name -> quasar.proto.SearchResult
-	67, // 3: quasar.proto.MediaMessage.featured_new:type_name -> quasar.proto.SearchResult
-	67, // 4: quasar.proto.MediaMessage.trending:type_name -> quasar.proto.SearchResult
-	67, // 5: quasar.proto.MediaMessage.music:type_name -> quasar.proto.SearchResult
-	68, // 6: quasar.proto.MediaMessage.last_watched:type_name -> quasar.proto.MediaItem
-	69, // 7: quasar.proto.MediaMessage.next_screen:type_name -> quasar.proto.EmptyMessage
-	69, // 8: quasar.proto.MediaMessage.previous_screen:type_name -> quasar.proto.EmptyMessage
-	69, // 9: quasar.proto.MediaMessage.to_start:type_name -> quasar.proto.EmptyMessage
-	69, // 10: quasar.proto.MediaMessage.to_end:type_name -> quasar.proto.EmptyMessage
-	69, // 11: quasar.proto.MediaMessage.to_home_screen:type_name -> quasar.proto.EmptyMessage
-	67, // 12: quasar.proto.MediaMessage.show_video_list:type_name -> quasar.proto.SearchResult
-	70, // 13: quasar.proto.MediaMessage.show_description:type_name -> quasar.proto.DescriptionItem
-	71, // 14: quasar.proto.MediaMessage.show_payment:type_name -> quasar.proto.PaymentItem
-	72, // 15: quasar.proto.MediaMessage.show_tv_announce:type_name -> quasar.proto.TvAnnounce
-	69, // 16: quasar.proto.MediaMessage.show_bottom_sheet:type_name -> quasar.proto.EmptyMessage
-	69, // 17: quasar.proto.MediaMessage.hide_bottom_sheet:type_name -> quasar.proto.EmptyMessage
-	69, // 18: quasar.proto.MediaMessage.leader_lost:type_name -> quasar.proto.EmptyMessage
-	69, // 19: quasar.proto.MediaMessage.leader_connected:type_name -> quasar.proto.EmptyMessage
-	69, // 20: quasar.proto.MediaMessage.hdmi_on:type_name -> quasar.proto.EmptyMessage
-	69, // 21: quasar.proto.MediaMessage.hdmi_off:type_name -> quasar.proto.EmptyMessage
-	69, // 22: quasar.proto.MediaMessage.go_up:type_name -> quasar.proto.EmptyMessage
-	69, // 23: quasar.proto.MediaMessage.go_down:type_name -> quasar.proto.EmptyMessage
-	73, // 24: quasar.proto.AddUserRequest.account_type:type_name -> quasar.proto.AccountType
-	1,  // 25: quasar.proto.IssueAuthCodeResponse.status:type_name -> quasar.proto.IssueAuthCodeResponse.Status
-	2,  // 26: quasar.proto.AddUserResponse.status:type_name -> quasar.proto.AddUserResponse.Status
-	3,  // 27: quasar.proto.DeleteUserResponse.status:type_name -> quasar.proto.DeleteUserResponse.Status
-	73, // 28: quasar.proto.AuthEvent.type:type_name -> quasar.proto.AccountType
-	21, // 29: quasar.proto.AllStartupInfo.accounts:type_name -> quasar.proto.AuthEvent
-	51, // 30: quasar.proto.MetricaMessage.app_environment_value:type_name -> quasar.proto.MetricaMessage.AppEnvironmentValue
-	74, // 31: quasar.proto.MetricaMessage.network_status:type_name -> quasar.proto.NetworkStatus
-	75, // 32: quasar.proto.MetricaMessage.location:type_name -> quasar.proto.Location
-	76, // 33: quasar.proto.MetricaMessage.timezone:type_name -> quasar.proto.Timezone
-	53, // 34: quasar.proto.MetricaMessage.stats:type_name -> quasar.proto.MetricaMessage.Statistics
-	69, // 35: quasar.proto.MetricaMessage.flush:type_name -> quasar.proto.EmptyMessage
-	69, // 36: quasar.proto.MetricaMessage.clock_synchronized:type_name -> quasar.proto.EmptyMessage
-	77, // 37: quasar.proto.MetricaMessage.timestamp:type_name -> google.protobuf.Timestamp
-	69, // 38: quasar.proto.RecordingEvent.pause:type_name -> quasar.proto.EmptyMessage
-	69, // 39: quasar.proto.RecordingEvent.resume:type_name -> quasar.proto.EmptyMessage
-	4,  // 40: quasar.proto.VinsCallResponse.status:type_name -> quasar.proto.VinsCallResponse.Status
-	31, // 41: quasar.proto.LeaderOverride.music_state_override:type_name -> quasar.proto.MusicStateOverride
-	32, // 42: quasar.proto.LeaderOverride.radio_state_override:type_name -> quasar.proto.RadioStateOverride
-	78, // 43: quasar.proto.MusicStateOverride.next_track_type:type_name -> quasar.proto.AppState.MusicState.TrackType
-	79, // 44: quasar.proto.MusicStateOverride.screen_type:type_name -> quasar.proto.Audio.Screen
-	55, // 45: quasar.proto.SimplePlayerState.entity_info:type_name -> quasar.proto.SimplePlayerState.EntityInfo
-	5,  // 46: quasar.proto.SimplePlayerState.player_type:type_name -> quasar.proto.SimplePlayerState.PlayerType
-	56, // 47: quasar.proto.SimplePlayerState.extra:type_name -> quasar.proto.SimplePlayerState.ExtraEntry
-	6,  // 48: quasar.proto.LogMessage.level:type_name -> quasar.proto.LogMessage.Level
-	57, // 49: quasar.proto.LogMessage.source:type_name -> quasar.proto.LogMessage.Source
-	80, // 50: quasar.proto.NsdEnable.stereopair:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
-	80, // 51: quasar.proto.NsdEnable.tandem:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
-	81, // 52: quasar.proto.BrickState.brick_status:type_name -> quasar.proto.BrickStatus
-	58, // 53: quasar.proto.NetworkStatsCommand.dump_net_status:type_name -> quasar.proto.NetworkStatsCommand.DumpNetStatus
-	69, // 54: quasar.proto.NetworkStatsCommand.get_arps:type_name -> quasar.proto.EmptyMessage
-	60, // 55: quasar.proto.NetworkStats.devices:type_name -> quasar.proto.NetworkStats.NetDevice
-	69, // 56: quasar.proto.NetworkStats.with_arps:type_name -> quasar.proto.EmptyMessage
-	61, // 57: quasar.proto.UpdateHealthCheck.status:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus
-	82, // 58: quasar.proto.ConfigurationStateHolder.state:type_name -> quasar.proto.ConfigurationState
-	83, // 59: quasar.proto.OnMediaErrorHolder.media_content_type:type_name -> quasar.proto.MediaContentType
-	37, // 60: quasar.proto.LogMessages.log_messages:type_name -> quasar.proto.LogMessage
-	9,  // 61: quasar.proto.QuasarMessage.type:type_name -> quasar.proto.QuasarMessage.Type
-	84, // 62: quasar.proto.QuasarMessage.glagol_cluster_sign:type_name -> quasar.proto.GlagolClusterSign
-	85, // 63: quasar.proto.QuasarMessage.config_capability_events:type_name -> quasar.proto.ConfigCapabilityEvents
-	86, // 64: quasar.proto.QuasarMessage.config_capability_subscriptions:type_name -> quasar.proto.ConfigCapabilitySubscriptions
-	52, // 65: quasar.proto.MetricaMessage.Statistics.data:type_name -> quasar.proto.MetricaMessage.StatsRecord
-	54, // 66: quasar.proto.SimplePlayerState.EntityInfo.prev:type_name -> quasar.proto.SimplePlayerState.TrackInfo
-	54, // 67: quasar.proto.SimplePlayerState.EntityInfo.next:type_name -> quasar.proto.SimplePlayerState.TrackInfo
-	7,  // 68: quasar.proto.NetworkStats.Arp.state:type_name -> quasar.proto.NetworkStats.ArpState
-	59, // 69: quasar.proto.NetworkStats.NetDevice.arps:type_name -> quasar.proto.NetworkStats.Arp
-	62, // 70: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.rss_statuses:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses
-	63, // 71: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.minidump_infos:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos
-	64, // 72: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.statuses:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry
-	65, // 73: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.infos:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.InfosEntry
-	8,  // 74: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry.value:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.Status
-	87, // 75: quasar.proto.payload_type:extendee -> google.protobuf.EnumValueOptions
-	76, // [76:76] is the sub-list for method output_type
-	76, // [76:76] is the sub-list for method input_type
-	76, // [76:76] is the sub-list for extension type_name
-	75, // [75:76] is the sub-list for extension extendee
-	0,  // [0:75] is the sub-list for field type_name
+	70,  // 0: quasar.proto.WifiConnect.wifi_type:type_name -> quasar.proto.WifiType
+	0,   // 1: quasar.proto.WifiConnectResponse.status:type_name -> quasar.proto.WifiConnectResponse.Status
+	71,  // 2: quasar.proto.MediaMessage.recommendations:type_name -> quasar.proto.SearchResult
+	71,  // 3: quasar.proto.MediaMessage.featured_new:type_name -> quasar.proto.SearchResult
+	71,  // 4: quasar.proto.MediaMessage.trending:type_name -> quasar.proto.SearchResult
+	71,  // 5: quasar.proto.MediaMessage.music:type_name -> quasar.proto.SearchResult
+	72,  // 6: quasar.proto.MediaMessage.last_watched:type_name -> quasar.proto.MediaItem
+	73,  // 7: quasar.proto.MediaMessage.next_screen:type_name -> quasar.proto.EmptyMessage
+	73,  // 8: quasar.proto.MediaMessage.previous_screen:type_name -> quasar.proto.EmptyMessage
+	73,  // 9: quasar.proto.MediaMessage.to_start:type_name -> quasar.proto.EmptyMessage
+	73,  // 10: quasar.proto.MediaMessage.to_end:type_name -> quasar.proto.EmptyMessage
+	73,  // 11: quasar.proto.MediaMessage.to_home_screen:type_name -> quasar.proto.EmptyMessage
+	71,  // 12: quasar.proto.MediaMessage.show_video_list:type_name -> quasar.proto.SearchResult
+	74,  // 13: quasar.proto.MediaMessage.show_description:type_name -> quasar.proto.DescriptionItem
+	75,  // 14: quasar.proto.MediaMessage.show_payment:type_name -> quasar.proto.PaymentItem
+	76,  // 15: quasar.proto.MediaMessage.show_tv_announce:type_name -> quasar.proto.TvAnnounce
+	73,  // 16: quasar.proto.MediaMessage.show_bottom_sheet:type_name -> quasar.proto.EmptyMessage
+	73,  // 17: quasar.proto.MediaMessage.hide_bottom_sheet:type_name -> quasar.proto.EmptyMessage
+	73,  // 18: quasar.proto.MediaMessage.leader_lost:type_name -> quasar.proto.EmptyMessage
+	73,  // 19: quasar.proto.MediaMessage.leader_connected:type_name -> quasar.proto.EmptyMessage
+	73,  // 20: quasar.proto.MediaMessage.hdmi_on:type_name -> quasar.proto.EmptyMessage
+	73,  // 21: quasar.proto.MediaMessage.hdmi_off:type_name -> quasar.proto.EmptyMessage
+	73,  // 22: quasar.proto.MediaMessage.go_up:type_name -> quasar.proto.EmptyMessage
+	73,  // 23: quasar.proto.MediaMessage.go_down:type_name -> quasar.proto.EmptyMessage
+	77,  // 24: quasar.proto.AddUserRequest.account_type:type_name -> quasar.proto.AccountType
+	1,   // 25: quasar.proto.IssueAuthCodeResponse.status:type_name -> quasar.proto.IssueAuthCodeResponse.Status
+	2,   // 26: quasar.proto.AddUserResponse.status:type_name -> quasar.proto.AddUserResponse.Status
+	3,   // 27: quasar.proto.DeleteUserResponse.status:type_name -> quasar.proto.DeleteUserResponse.Status
+	77,  // 28: quasar.proto.AuthEvent.type:type_name -> quasar.proto.AccountType
+	22,  // 29: quasar.proto.AllStartupInfo.accounts:type_name -> quasar.proto.AuthEvent
+	54,  // 30: quasar.proto.MetricaMessage.app_environment_value:type_name -> quasar.proto.MetricaMessage.AppEnvironmentValue
+	78,  // 31: quasar.proto.MetricaMessage.network_status:type_name -> quasar.proto.NetworkStatus
+	79,  // 32: quasar.proto.MetricaMessage.location:type_name -> quasar.proto.Location
+	80,  // 33: quasar.proto.MetricaMessage.timezone:type_name -> quasar.proto.Timezone
+	56,  // 34: quasar.proto.MetricaMessage.stats:type_name -> quasar.proto.MetricaMessage.Statistics
+	73,  // 35: quasar.proto.MetricaMessage.flush:type_name -> quasar.proto.EmptyMessage
+	73,  // 36: quasar.proto.MetricaMessage.clock_synchronized:type_name -> quasar.proto.EmptyMessage
+	81,  // 37: quasar.proto.MetricaMessage.timestamp:type_name -> google.protobuf.Timestamp
+	73,  // 38: quasar.proto.RecordingEvent.pause:type_name -> quasar.proto.EmptyMessage
+	73,  // 39: quasar.proto.RecordingEvent.resume:type_name -> quasar.proto.EmptyMessage
+	4,   // 40: quasar.proto.VinsCallResponse.status:type_name -> quasar.proto.VinsCallResponse.Status
+	32,  // 41: quasar.proto.LeaderOverride.music_state_override:type_name -> quasar.proto.MusicStateOverride
+	33,  // 42: quasar.proto.LeaderOverride.radio_state_override:type_name -> quasar.proto.RadioStateOverride
+	82,  // 43: quasar.proto.MusicStateOverride.next_track_type:type_name -> quasar.proto.AppState.MusicState.TrackType
+	83,  // 44: quasar.proto.MusicStateOverride.screen_type:type_name -> quasar.proto.Audio.Screen
+	58,  // 45: quasar.proto.SimplePlayerState.entity_info:type_name -> quasar.proto.SimplePlayerState.EntityInfo
+	5,   // 46: quasar.proto.SimplePlayerState.player_type:type_name -> quasar.proto.SimplePlayerState.PlayerType
+	59,  // 47: quasar.proto.SimplePlayerState.extra:type_name -> quasar.proto.SimplePlayerState.ExtraEntry
+	6,   // 48: quasar.proto.WebsocketClientState.state:type_name -> quasar.proto.WebsocketClientState.State
+	7,   // 49: quasar.proto.LogMessage.level:type_name -> quasar.proto.LogMessage.Level
+	60,  // 50: quasar.proto.LogMessage.source:type_name -> quasar.proto.LogMessage.Source
+	84,  // 51: quasar.proto.NsdEnable.stereopair:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
+	84,  // 52: quasar.proto.NsdEnable.tandem:type_name -> quasar.proto.GlagolDiscoveryItem.GroupRole
+	85,  // 53: quasar.proto.BrickState.brick_status:type_name -> quasar.proto.BrickStatus
+	61,  // 54: quasar.proto.NetworkStatsCommand.dump_net_status:type_name -> quasar.proto.NetworkStatsCommand.DumpNetStatus
+	73,  // 55: quasar.proto.NetworkStatsCommand.get_arps:type_name -> quasar.proto.EmptyMessage
+	63,  // 56: quasar.proto.NetworkStats.devices:type_name -> quasar.proto.NetworkStats.NetDevice
+	73,  // 57: quasar.proto.NetworkStats.with_arps:type_name -> quasar.proto.EmptyMessage
+	64,  // 58: quasar.proto.UpdateHealthCheck.status:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus
+	86,  // 59: quasar.proto.QuasarMessage.alice_state:type_name -> quasar.proto.AliceState
+	87,  // 60: quasar.proto.QuasarMessage.broken_mic_info:type_name -> quasar.proto.BrokenMicInfo
+	73,  // 61: quasar.proto.QuasarMessage.wifi_list_request:type_name -> quasar.proto.EmptyMessage
+	88,  // 62: quasar.proto.QuasarMessage.wifi_list:type_name -> quasar.proto.WifiList
+	73,  // 63: quasar.proto.QuasarMessage.wifi_networks_disable:type_name -> quasar.proto.EmptyMessage
+	73,  // 64: quasar.proto.QuasarMessage.wifi_networks_enable:type_name -> quasar.proto.EmptyMessage
+	73,  // 65: quasar.proto.QuasarMessage.wifi_reassociate:type_name -> quasar.proto.EmptyMessage
+	11,  // 66: quasar.proto.QuasarMessage.wifi_connect:type_name -> quasar.proto.WifiConnect
+	11,  // 67: quasar.proto.QuasarMessage.async_wifi_connect:type_name -> quasar.proto.WifiConnect
+	12,  // 68: quasar.proto.QuasarMessage.wifi_connect_response:type_name -> quasar.proto.WifiConnectResponse
+	89,  // 69: quasar.proto.QuasarMessage.media_request:type_name -> quasar.proto.MediaRequest
+	14,  // 70: quasar.proto.QuasarMessage.add_user_request:type_name -> quasar.proto.AddUserRequest
+	20,  // 71: quasar.proto.QuasarMessage.add_user_response:type_name -> quasar.proto.AddUserResponse
+	15,  // 72: quasar.proto.QuasarMessage.delete_user_request:type_name -> quasar.proto.DeleteUserRequest
+	21,  // 73: quasar.proto.QuasarMessage.delete_user_response:type_name -> quasar.proto.DeleteUserResponse
+	16,  // 74: quasar.proto.QuasarMessage.change_user_request:type_name -> quasar.proto.ChangeUserRequest
+	17,  // 75: quasar.proto.QuasarMessage.issue_auth_code_request:type_name -> quasar.proto.IssueAuthCodeRequest
+	18,  // 76: quasar.proto.QuasarMessage.issue_auth_code_response:type_name -> quasar.proto.IssueAuthCodeResponse
+	22,  // 77: quasar.proto.QuasarMessage.add_user_event:type_name -> quasar.proto.AuthEvent
+	22,  // 78: quasar.proto.QuasarMessage.change_user_event:type_name -> quasar.proto.AuthEvent
+	22,  // 79: quasar.proto.QuasarMessage.delete_user_event:type_name -> quasar.proto.AuthEvent
+	22,  // 80: quasar.proto.QuasarMessage.change_token_event:type_name -> quasar.proto.AuthEvent
+	23,  // 81: quasar.proto.QuasarMessage.owner_startup_info:type_name -> quasar.proto.OwnerStartupInfo
+	24,  // 82: quasar.proto.QuasarMessage.all_startup_info:type_name -> quasar.proto.AllStartupInfo
+	73,  // 83: quasar.proto.QuasarMessage.configuration_mode_ap_up:type_name -> quasar.proto.EmptyMessage
+	25,  // 84: quasar.proto.QuasarMessage.metrica_message:type_name -> quasar.proto.MetricaMessage
+	13,  // 85: quasar.proto.QuasarMessage.media_message:type_name -> quasar.proto.MediaMessage
+	26,  // 86: quasar.proto.QuasarMessage.recording_event:type_name -> quasar.proto.RecordingEvent
+	90,  // 87: quasar.proto.QuasarMessage.app_state:type_name -> quasar.proto.AppState
+	91,  // 88: quasar.proto.QuasarMessage.wifi_status:type_name -> quasar.proto.WifiStatus
+	28,  // 89: quasar.proto.QuasarMessage.critical_update_progress:type_name -> quasar.proto.UpdateProgress
+	73,  // 90: quasar.proto.QuasarMessage.no_critical_update_found:type_name -> quasar.proto.EmptyMessage
+	73,  // 91: quasar.proto.QuasarMessage.start_critical_update:type_name -> quasar.proto.EmptyMessage
+	27,  // 92: quasar.proto.QuasarMessage.child_phrase_end_event:type_name -> quasar.proto.PhraseEndEvent
+	92,  // 93: quasar.proto.QuasarMessage.volumeState:type_name -> quasar.proto.VolumeState
+	93,  // 94: quasar.proto.QuasarMessage.external_command:type_name -> quasar.proto.ExternalCommandMessage
+	29,  // 95: quasar.proto.QuasarMessage.external_command_response:type_name -> quasar.proto.ExternalCommandResponse
+	94,  // 96: quasar.proto.QuasarMessage.timers_state:type_name -> quasar.proto.TimersState
+	95,  // 97: quasar.proto.QuasarMessage.alarms_state:type_name -> quasar.proto.AlarmsState
+	94,  // 98: quasar.proto.QuasarMessage.set_alarms_state:type_name -> quasar.proto.TimersState
+	96,  // 99: quasar.proto.QuasarMessage.watched_video:type_name -> quasar.proto.WatchedVideoState
+	79,  // 100: quasar.proto.QuasarMessage.current_location:type_name -> quasar.proto.Location
+	97,  // 101: quasar.proto.QuasarMessage.push_notification:type_name -> quasar.proto.PushNotification
+	73,  // 102: quasar.proto.QuasarMessage.reset_wifi:type_name -> quasar.proto.EmptyMessage
+	98,  // 103: quasar.proto.QuasarMessage.user_config_update:type_name -> quasar.proto.UserConfig
+	42,  // 104: quasar.proto.QuasarMessage.brick_state:type_name -> quasar.proto.BrickState
+	80,  // 105: quasar.proto.QuasarMessage.current_timezone:type_name -> quasar.proto.Timezone
+	99,  // 106: quasar.proto.QuasarMessage.bluetooth_request:type_name -> quasar.proto.BluetoothRequest
+	100, // 107: quasar.proto.QuasarMessage.bluetooth_source_event:type_name -> quasar.proto.BluetoothSourceEvent
+	101, // 108: quasar.proto.QuasarMessage.bluetooth_sink_event:type_name -> quasar.proto.BluetoothSinkEvent
+	73,  // 109: quasar.proto.QuasarMessage.wifi_config_reload:type_name -> quasar.proto.EmptyMessage
+	31,  // 110: quasar.proto.QuasarMessage.leader_override:type_name -> quasar.proto.LeaderOverride
+	102, // 111: quasar.proto.QuasarMessage.volume_set_message:type_name -> quasar.proto.VolumeSetMessage
+	30,  // 112: quasar.proto.QuasarMessage.vins_call_response:type_name -> quasar.proto.VinsCallResponse
+	103, // 113: quasar.proto.QuasarMessage.device_group_state:type_name -> quasar.proto.DeviceGroupState
+	104, // 114: quasar.proto.QuasarMessage.glagold_state:type_name -> quasar.proto.GlagoldState
+	34,  // 115: quasar.proto.QuasarMessage.simple_player_state:type_name -> quasar.proto.SimplePlayerState
+	105, // 116: quasar.proto.QuasarMessage.io_event:type_name -> quasar.proto.IOEvent
+	106, // 117: quasar.proto.QuasarMessage.io_control:type_name -> quasar.proto.IOControlCommand
+	107, // 118: quasar.proto.QuasarMessage.io_hub_message:type_name -> quasar.proto.IOHubMessage
+	108, // 119: quasar.proto.QuasarMessage.io_audio_channels_data:type_name -> quasar.proto.IOAudioChannelsData
+	109, // 120: quasar.proto.QuasarMessage.io_channel_request:type_name -> quasar.proto.IOChannelRequest
+	35,  // 121: quasar.proto.QuasarMessage.mordovia_show:type_name -> quasar.proto.MordoviaShowMessage
+	36,  // 122: quasar.proto.QuasarMessage.mordovia_command:type_name -> quasar.proto.MordoviaCommandMessage
+	110, // 123: quasar.proto.QuasarMessage.configuration_state:type_name -> quasar.proto.ConfigurationState
+	111, // 124: quasar.proto.QuasarMessage.control_request:type_name -> quasar.proto.ControlRequest
+	112, // 125: quasar.proto.QuasarMessage.onboarding_request:type_name -> quasar.proto.OnboardingRequest
+	113, // 126: quasar.proto.QuasarMessage.update_state:type_name -> quasar.proto.UpdateState
+	114, // 127: quasar.proto.QuasarMessage.audio_inputs:type_name -> quasar.proto.AudioInput
+	37,  // 128: quasar.proto.QuasarMessage.xiva_websocket_client_state:type_name -> quasar.proto.WebsocketClientState
+	73,  // 129: quasar.proto.QuasarMessage.subscribe_to_pushd_xiva_websocket_events:type_name -> quasar.proto.EmptyMessage
+	73,  // 130: quasar.proto.QuasarMessage.list_xiva_subscriptions:type_name -> quasar.proto.EmptyMessage
+	38,  // 131: quasar.proto.QuasarMessage.xiva_subscriptions:type_name -> quasar.proto.XivaSubscriptions
+	115, // 132: quasar.proto.QuasarMessage.on_media_error:type_name -> quasar.proto.MediaContentType
+	73,  // 133: quasar.proto.QuasarMessage.check_updates:type_name -> quasar.proto.EmptyMessage
+	116, // 134: quasar.proto.QuasarMessage.audio_client_event:type_name -> quasar.proto.AudioClientEvent
+	117, // 135: quasar.proto.QuasarMessage.multiroom_broadcast:type_name -> quasar.proto.MultiroomBroadcast
+	118, // 136: quasar.proto.QuasarMessage.ready_to_apply_update:type_name -> quasar.proto.UpdateApplyTimeout
+	73,  // 137: quasar.proto.QuasarMessage.confirm_update_apply:type_name -> quasar.proto.EmptyMessage
+	73,  // 138: quasar.proto.QuasarMessage.postpone_update_apply:type_name -> quasar.proto.EmptyMessage
+	119, // 139: quasar.proto.QuasarMessage.notification_update_event:type_name -> quasar.proto.NotificationUpdateEvent
+	120, // 140: quasar.proto.QuasarMessage.ntp_sync_event:type_name -> quasar.proto.NtpSyncEvent
+	121, // 141: quasar.proto.QuasarMessage.setup_credentials_message:type_name -> quasar.proto.SetupCredentialsMessage
+	122, // 142: quasar.proto.QuasarMessage.multiroom_directive:type_name -> quasar.proto.MultiroomDirective
+	73,  // 143: quasar.proto.QuasarMessage.setup_credentials_handling_completed:type_name -> quasar.proto.EmptyMessage
+	123, // 144: quasar.proto.QuasarMessage.encrypted_setup_credentials_message:type_name -> quasar.proto.EncryptedSetupCredentialsMessage
+	124, // 145: quasar.proto.QuasarMessage.setup_status_message:type_name -> quasar.proto.SetupStatusMessage
+	125, // 146: quasar.proto.QuasarMessage.multiroom_state:type_name -> quasar.proto.MultiroomState
+	126, // 147: quasar.proto.QuasarMessage.testpoint_message:type_name -> quasar.proto.TestpointMessage
+	127, // 148: quasar.proto.QuasarMessage.rcu_event:type_name -> quasar.proto.RcuEvent
+	128, // 149: quasar.proto.QuasarMessage.rcu_voice_event:type_name -> quasar.proto.RcuVoiceEvent
+	78,  // 150: quasar.proto.QuasarMessage.network_status:type_name -> quasar.proto.NetworkStatus
+	73,  // 151: quasar.proto.QuasarMessage.reset_network:type_name -> quasar.proto.EmptyMessage
+	73,  // 152: quasar.proto.QuasarMessage.networks_disable:type_name -> quasar.proto.EmptyMessage
+	73,  // 153: quasar.proto.QuasarMessage.networks_enable:type_name -> quasar.proto.EmptyMessage
+	73,  // 154: quasar.proto.QuasarMessage.network_config_reload:type_name -> quasar.proto.EmptyMessage
+	43,  // 155: quasar.proto.QuasarMessage.network_stats_command:type_name -> quasar.proto.NetworkStatsCommand
+	44,  // 156: quasar.proto.QuasarMessage.network_stats:type_name -> quasar.proto.NetworkStats
+	22,  // 157: quasar.proto.QuasarMessage.refresh_user_event:type_name -> quasar.proto.AuthEvent
+	19,  // 158: quasar.proto.QuasarMessage.auth_token_update_request:type_name -> quasar.proto.AuthTokenUpdateRequest
+	129, // 159: quasar.proto.QuasarMessage.legacy_player_state_changed:type_name -> quasar.proto.LegacyPlayerStateChanged
+	73,  // 160: quasar.proto.QuasarMessage.setup_rcu:type_name -> quasar.proto.EmptyMessage
+	39,  // 161: quasar.proto.QuasarMessage.setup_rcu_auto:type_name -> quasar.proto.SetupRcuAutoEvent
+	73,  // 162: quasar.proto.QuasarMessage.setup_rcu_check:type_name -> quasar.proto.EmptyMessage
+	73,  // 163: quasar.proto.QuasarMessage.setup_rcu_advanced:type_name -> quasar.proto.EmptyMessage
+	73,  // 164: quasar.proto.QuasarMessage.setup_rcu_manual:type_name -> quasar.proto.EmptyMessage
+	130, // 165: quasar.proto.QuasarMessage.led_screen_command:type_name -> quasar.proto.LedScreenCommand
+	131, // 166: quasar.proto.QuasarMessage.glagol_cluster_message:type_name -> quasar.proto.GlagolClusterMessage
+	132, // 167: quasar.proto.QuasarMessage.glagol_cluster_sign:type_name -> quasar.proto.GlagolClusterSign
+	40,  // 168: quasar.proto.QuasarMessage.log_message:type_name -> quasar.proto.LogMessage
+	133, // 169: quasar.proto.QuasarMessage.glagol_discovery_request:type_name -> quasar.proto.GlagolDiscoveryRequest
+	73,  // 170: quasar.proto.QuasarMessage.glagol_discovery_updated:type_name -> quasar.proto.EmptyMessage
+	134, // 171: quasar.proto.QuasarMessage.glagol_discovery_result:type_name -> quasar.proto.GlagolDiscoveryResult
+	135, // 172: quasar.proto.QuasarMessage.all_startup_settings:type_name -> quasar.proto.AllStartupSettings
+	136, // 173: quasar.proto.QuasarMessage.nsd_discovered_item:type_name -> quasar.proto.NsdInfo
+	137, // 174: quasar.proto.QuasarMessage.nsd_discovered_items:type_name -> quasar.proto.NsdInfoList
+	136, // 175: quasar.proto.QuasarMessage.nsd_lost_item:type_name -> quasar.proto.NsdInfo
+	73,  // 176: quasar.proto.QuasarMessage.nsd_discovered_request:type_name -> quasar.proto.EmptyMessage
+	73,  // 177: quasar.proto.QuasarMessage.nsd_disable:type_name -> quasar.proto.EmptyMessage
+	41,  // 178: quasar.proto.QuasarMessage.nsd_enable:type_name -> quasar.proto.NsdEnable
+	73,  // 179: quasar.proto.QuasarMessage.nsd_disable_completed:type_name -> quasar.proto.EmptyMessage
+	73,  // 180: quasar.proto.QuasarMessage.nsd_guest_mode:type_name -> quasar.proto.EmptyMessage
+	73,  // 181: quasar.proto.QuasarMessage.nsd_stereo_pair_follower:type_name -> quasar.proto.EmptyMessage
+	138, // 182: quasar.proto.QuasarMessage.stereo_pair_message:type_name -> quasar.proto.StereoPair
+	139, // 183: quasar.proto.QuasarMessage.volume_manager_message:type_name -> quasar.proto.VolumeManager
+	140, // 184: quasar.proto.QuasarMessage.spectrogram_animation_message:type_name -> quasar.proto.SpectrogramAnimation
+	141, // 185: quasar.proto.QuasarMessage.alice_message:type_name -> quasar.proto.Alice
+	142, // 186: quasar.proto.QuasarMessage.environment_message:type_name -> quasar.proto.EnvironmentMessage
+	143, // 187: quasar.proto.QuasarMessage.remoting:type_name -> quasar.proto.Remoting
+	144, // 188: quasar.proto.QuasarMessage.directive:type_name -> quasar.proto.Directive
+	73,  // 189: quasar.proto.QuasarMessage.wifi_turn_off:type_name -> quasar.proto.EmptyMessage
+	73,  // 190: quasar.proto.QuasarMessage.wifi_turn_on:type_name -> quasar.proto.EmptyMessage
+	69,  // 191: quasar.proto.QuasarMessage.call_action:type_name -> quasar.proto.QuasarMessage.CallAction
+	145, // 192: quasar.proto.QuasarMessage.backend_request:type_name -> quasar.proto.BackendRequest
+	146, // 193: quasar.proto.QuasarMessage.backend_response:type_name -> quasar.proto.BackendResponse
+	147, // 194: quasar.proto.QuasarMessage.vqe_info:type_name -> quasar.proto.VqeInfo
+	73,  // 195: quasar.proto.QuasarMessage.audio_error:type_name -> quasar.proto.EmptyMessage
+	148, // 196: quasar.proto.QuasarMessage.config_capability_events:type_name -> quasar.proto.ConfigCapabilityEvents
+	149, // 197: quasar.proto.QuasarMessage.config_capability_subscriptions:type_name -> quasar.proto.ConfigCapabilitySubscriptions
+	45,  // 198: quasar.proto.QuasarMessage.update_health_check:type_name -> quasar.proto.UpdateHealthCheck
+	47,  // 199: quasar.proto.QuasarMessage.force_check_updates:type_name -> quasar.proto.ForceCheckUpdates
+	150, // 200: quasar.proto.QuasarMessage.database_metrica_message:type_name -> quasar.proto.DatabaseMetricaEvent
+	151, // 201: quasar.proto.QuasarMessage.audio_storage_event:type_name -> quasar.proto.AudioStorageEvent
+	46,  // 202: quasar.proto.QuasarMessage.rss_status:type_name -> quasar.proto.RssStatus
+	48,  // 203: quasar.proto.QuasarMessage.equalizer_params:type_name -> quasar.proto.EqualizerParameters
+	10,  // 204: quasar.proto.QuasarMessage.type:type_name -> quasar.proto.QuasarMessage.Type
+	110, // 205: quasar.proto.ConfigurationStateHolder.state:type_name -> quasar.proto.ConfigurationState
+	115, // 206: quasar.proto.OnMediaErrorHolder.media_content_type:type_name -> quasar.proto.MediaContentType
+	40,  // 207: quasar.proto.LogMessages.log_messages:type_name -> quasar.proto.LogMessage
+	55,  // 208: quasar.proto.MetricaMessage.Statistics.data:type_name -> quasar.proto.MetricaMessage.StatsRecord
+	57,  // 209: quasar.proto.SimplePlayerState.EntityInfo.prev:type_name -> quasar.proto.SimplePlayerState.TrackInfo
+	57,  // 210: quasar.proto.SimplePlayerState.EntityInfo.next:type_name -> quasar.proto.SimplePlayerState.TrackInfo
+	8,   // 211: quasar.proto.NetworkStats.Arp.state:type_name -> quasar.proto.NetworkStats.ArpState
+	62,  // 212: quasar.proto.NetworkStats.NetDevice.arps:type_name -> quasar.proto.NetworkStats.Arp
+	65,  // 213: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.rss_statuses:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses
+	66,  // 214: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.minidump_infos:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos
+	67,  // 215: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.statuses:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry
+	68,  // 216: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.infos:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.MinidumpInfos.InfosEntry
+	9,   // 217: quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.StatusesEntry.value:type_name -> quasar.proto.UpdateHealthCheck.UpdateHealthCheckStatus.RssStatuses.Status
+	73,  // 218: quasar.proto.QuasarMessage.CallAction.accept_call:type_name -> quasar.proto.EmptyMessage
+	73,  // 219: quasar.proto.QuasarMessage.CallAction.decline_call:type_name -> quasar.proto.EmptyMessage
+	73,  // 220: quasar.proto.QuasarMessage.CallAction.hangup_call:type_name -> quasar.proto.EmptyMessage
+	73,  // 221: quasar.proto.QuasarMessage.CallAction.make_call:type_name -> quasar.proto.EmptyMessage
+	144, // 222: quasar.proto.QuasarMessage.CallAction.on_accept:type_name -> quasar.proto.Directive
+	144, // 223: quasar.proto.QuasarMessage.CallAction.on_end:type_name -> quasar.proto.Directive
+	144, // 224: quasar.proto.QuasarMessage.CallAction.on_declined:type_name -> quasar.proto.Directive
+	152, // 225: quasar.proto.payload_type:extendee -> google.protobuf.EnumValueOptions
+	226, // [226:226] is the sub-list for method output_type
+	226, // [226:226] is the sub-list for method input_type
+	226, // [226:226] is the sub-list for extension type_name
+	225, // [225:226] is the sub-list for extension extendee
+	0,   // [0:225] is the sub-list for field type_name
 }
 
 func init() { file_yandex_io_protos_quasar_proto_proto_init() }
@@ -5443,8 +7404,8 @@ func file_yandex_io_protos_quasar_proto_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_yandex_io_protos_quasar_proto_proto_rawDesc), len(file_yandex_io_protos_quasar_proto_proto_rawDesc)),
-			NumEnums:      10,
-			NumMessages:   56,
+			NumEnums:      11,
+			NumMessages:   59,
 			NumExtensions: 1,
 			NumServices:   0,
 		},

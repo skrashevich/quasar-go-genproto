@@ -24,8 +24,8 @@ const (
 
 type TDirectiveInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Version       int64                  `protobuf:"varint,1,opt,name=Version,json=version,proto3" json:"Version,omitempty"`
-	SdkDirective  *protos.Directive      `protobuf:"bytes,2,opt,name=SdkDirective,json=sdk_directive,proto3" json:"SdkDirective,omitempty"`
+	Version       int64                  `protobuf:"varint,1,opt,name=Version,proto3" json:"Version,omitempty"`
+	SdkDirective  *protos.Directive      `protobuf:"bytes,2,opt,name=SdkDirective,proto3" json:"SdkDirective,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,10 +78,11 @@ var File_yandex_io_capabilities_iot_scenarios_proto_directive_info_proto protore
 
 const file_yandex_io_capabilities_iot_scenarios_proto_directive_info_proto_rawDesc = "" +
 	"\n" +
-	"?yandex_io/capabilities/iot_scenarios/proto/directive_info.proto\x12\fquasar.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"h\n" +
+	"?yandex_io/capabilities/iot_scenarios/proto/directive_info.proto\x12\fquasar.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"g\n" +
 	"\x0eTDirectiveInfo\x12\x18\n" +
-	"\aVersion\x18\x01 \x01(\x03R\aversion\x12<\n" +
-	"\fSdkDirective\x18\x02 \x01(\v2\x17.quasar.proto.DirectiveR\rsdk_directiveb\x06proto3"
+	"\aVersion\x18\x01 \x01(\x03R\aVersion\x12;\n" +
+	"\fSdkDirective\x18\x02 \x01(\v2\x17.quasar.proto.DirectiveR\fSdkDirectiveB\xd3\x01\n" +
+	"\x10com.quasar.protoB\x12DirectiveInfoProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/iot_scenarios/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_capabilities_iot_scenarios_proto_directive_info_proto_rawDescOnce sync.Once

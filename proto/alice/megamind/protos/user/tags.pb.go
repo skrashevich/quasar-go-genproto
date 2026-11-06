@@ -123,10 +123,10 @@ func (TUserTags_TBiometrical_EStatus) EnumDescriptor() ([]byte, []int) {
 
 type TUserTags struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Owner         *TUserTags_TOwner       `protobuf:"bytes,1,opt,name=Owner,json=owner,proto3" json:"Owner,omitempty"`
-	Active        *TUserTags_TActive      `protobuf:"bytes,2,opt,name=Active,json=active,proto3" json:"Active,omitempty"`
-	Biometrical   *TUserTags_TBiometrical `protobuf:"bytes,3,opt,name=Biometrical,json=biometrical,proto3" json:"Biometrical,omitempty"`
-	Child         *TUserTags_TChild       `protobuf:"bytes,4,opt,name=Child,json=child,proto3" json:"Child,omitempty"`
+	Owner         *TUserTags_TOwner       `protobuf:"bytes,1,opt,name=Owner,proto3" json:"Owner,omitempty"`
+	Active        *TUserTags_TActive      `protobuf:"bytes,2,opt,name=Active,proto3" json:"Active,omitempty"`
+	Biometrical   *TUserTags_TBiometrical `protobuf:"bytes,3,opt,name=Biometrical,proto3" json:"Biometrical,omitempty"`
+	Child         *TUserTags_TChild       `protobuf:"bytes,4,opt,name=Child,proto3" json:"Child,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,11 +263,11 @@ func (*TUserTags_TActive) Descriptor() ([]byte, []int) {
 
 type TUserTags_TBiometrical struct {
 	state             protoimpl.MessageState                 `protogen:"open.v1"`
-	Origin            TUserTags_TBiometrical_EOrigin         `protobuf:"varint,1,opt,name=Origin,json=origin,proto3,enum=NAlice.TUserTags_TBiometrical_EOrigin" json:"Origin,omitempty"`
-	Status            TUserTags_TBiometrical_EStatus         `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.TUserTags_TBiometrical_EStatus" json:"Status,omitempty"`
-	IsOwnerEnrolled   bool                                   `protobuf:"varint,3,opt,name=IsOwnerEnrolled,json=is_owner_enrolled,proto3" json:"IsOwnerEnrolled,omitempty"`
-	EnrollmentHeaders *enrollment_headers.TEnrollmentHeaders `protobuf:"bytes,4,opt,name=EnrollmentHeaders,json=enrollment_headers,proto3" json:"EnrollmentHeaders,omitempty"`
-	RefMessageId      string                                 `protobuf:"bytes,5,opt,name=RefMessageId,json=ref_message_id,proto3" json:"RefMessageId,omitempty"`
+	Origin            TUserTags_TBiometrical_EOrigin         `protobuf:"varint,1,opt,name=Origin,proto3,enum=NAlice.TUserTags_TBiometrical_EOrigin" json:"Origin,omitempty"`
+	Status            TUserTags_TBiometrical_EStatus         `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.TUserTags_TBiometrical_EStatus" json:"Status,omitempty"`
+	IsOwnerEnrolled   bool                                   `protobuf:"varint,3,opt,name=IsOwnerEnrolled,proto3" json:"IsOwnerEnrolled,omitempty"`
+	EnrollmentHeaders *enrollment_headers.TEnrollmentHeaders `protobuf:"bytes,4,opt,name=EnrollmentHeaders,proto3" json:"EnrollmentHeaders,omitempty"`
+	RefMessageId      string                                 `protobuf:"bytes,5,opt,name=RefMessageId,proto3" json:"RefMessageId,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -377,23 +377,20 @@ var File_alice_megamind_protos_user_tags_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_user_tags_proto_rawDesc = "" +
 	"\n" +
-	"%alice/megamind/protos/user/tags.proto\x12\x06NAlice\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcd\x06\n" +
-	"\tTUserTags\x129\n" +
-	"\x05Owner\x18\x01 \x01(\v2\x18.NAlice.TUserTags.TOwnerB\t\xaa\xdd\x1b\x05ownerR\x05owner\x12=\n" +
-	"\x06Active\x18\x02 \x01(\v2\x19.NAlice.TUserTags.TActiveB\n" +
-	"\xaa\xdd\x1b\x06activeR\x06active\x12Q\n" +
-	"\vBiometrical\x18\x03 \x01(\v2\x1e.NAlice.TUserTags.TBiometricalB\x0f\xaa\xdd\x1b\vbiometricalR\vbiometrical\x129\n" +
-	"\x05Child\x18\x04 \x01(\v2\x18.NAlice.TUserTags.TChildB\t\xaa\xdd\x1b\x05childR\x05child\x1a\x0e\n" +
-	"\x06TOwner:\x04\xa8\xdd\x1b\x04\x1a\x0f\n" +
-	"\aTActive:\x04\xa8\xdd\x1b\x04\x1a\x80\x04\n" +
-	"\fTBiometrical\x12J\n" +
-	"\x06Origin\x18\x01 \x01(\x0e2&.NAlice.TUserTags.TBiometrical.EOriginB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12J\n" +
-	"\x06Status\x18\x02 \x01(\x0e2&.NAlice.TUserTags.TBiometrical.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12A\n" +
-	"\x0fIsOwnerEnrolled\x18\x03 \x01(\bB\x15\xaa\xdd\x1b\x11is_owner_enrolledR\x11is_owner_enrolled\x12a\n" +
-	"\x11EnrollmentHeaders\x18\x04 \x01(\v2\x1a.NAlice.TEnrollmentHeadersB\x16\xaa\xdd\x1b\x12enrollment_headersR\x12enrollment_headers\x128\n" +
-	"\fRefMessageId\x18\x05 \x01(\tB\x12\xaa\xdd\x1b\x0eref_message_idR\x0eref_message_id\"O\n" +
+	"%alice/megamind/protos/user/tags.proto\x12\x06NAlice\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9c\x05\n" +
+	"\tTUserTags\x12.\n" +
+	"\x05Owner\x18\x01 \x01(\v2\x18.NAlice.TUserTags.TOwnerR\x05Owner\x121\n" +
+	"\x06Active\x18\x02 \x01(\v2\x19.NAlice.TUserTags.TActiveR\x06Active\x12@\n" +
+	"\vBiometrical\x18\x03 \x01(\v2\x1e.NAlice.TUserTags.TBiometricalR\vBiometrical\x12.\n" +
+	"\x05Child\x18\x04 \x01(\v2\x18.NAlice.TUserTags.TChildR\x05Child\x1a\b\n" +
+	"\x06TOwner\x1a\t\n" +
+	"\aTActive\x1a\x9a\x03\n" +
+	"\fTBiometrical\x12>\n" +
+	"\x06Origin\x18\x01 \x01(\x0e2&.NAlice.TUserTags.TBiometrical.EOriginR\x06Origin\x12>\n" +
+	"\x06Status\x18\x02 \x01(\x0e2&.NAlice.TUserTags.TBiometrical.EStatusR\x06Status\x12(\n" +
+	"\x0fIsOwnerEnrolled\x18\x03 \x01(\bR\x0fIsOwnerEnrolled\x12H\n" +
+	"\x11EnrollmentHeaders\x18\x04 \x01(\v2\x1a.NAlice.TEnrollmentHeadersR\x11EnrollmentHeaders\x12\"\n" +
+	"\fRefMessageId\x18\x05 \x01(\tR\fRefMessageId\"O\n" +
 	"\aEOrigin\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x11\n" +
 	"\rRemoteControl\x10\x01\x12\x11\n" +
@@ -401,9 +398,10 @@ const file_alice_megamind_protos_user_tags_proto_rawDesc = "" +
 	"\rVideoBiometry\x10\x03\"!\n" +
 	"\aEStatus\x12\v\n" +
 	"\aNoMatch\x10\x00\x12\t\n" +
-	"\x05Match\x10\x01:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TChild:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B]\n" +
-	"$ru.yandex.alice.megamind.protos.userB\bUserTagsZ+a.yandex-team.ru/alice/megamind/protos/userb\x06proto3"
+	"\x05Match\x10\x01\x1a\b\n" +
+	"\x06TChildB\x9b\x01\n" +
+	"\n" +
+	"com.NAliceB\tTagsProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/user\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_user_tags_proto_rawDescOnce sync.Once

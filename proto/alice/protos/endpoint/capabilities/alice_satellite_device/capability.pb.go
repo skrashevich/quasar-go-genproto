@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_satellite_device/capability.proto
 
-package alicesatellitedevicepb
+package alice_satellite_device
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -583,8 +583,8 @@ const file_alice_protos_endpoint_capabilities_alice_satellite_device_capability_
 	"\tBLUEBERRY\x10\x03\"3\n" +
 	"\x10EConnectionState\x12\x10\n" +
 	"\fDISCONNECTED\x10\x00\x12\r\n" +
-	"\tCONNECTED\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe2\x01B\xac\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AliceSatelliteDeviceProtoZaa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_satellite_device;alicesatellitedevicepbb\x06proto3"
+	"\tCONNECTED\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xe2\x01B\xb4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AliceSatelliteDeviceProtoZigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_satellite_deviceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_satellite_device_capability_proto_rawDescOnce sync.Once

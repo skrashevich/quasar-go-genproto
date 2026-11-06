@@ -43,27 +43,27 @@ const (
 
 type TAliceRequestProto struct {
 	state                   protoimpl.MessageState                  `protogen:"open.v1"`
-	Header                  *TAliceRequestProto_THeader             `protobuf:"bytes,1,opt,name=Header,json=header,proto3" json:"Header,omitempty"`
-	Application             *protos.TClientInfoProto                `protobuf:"bytes,2,opt,name=Application,json=application,proto3" json:"Application,omitempty"`
-	Request                 *TAliceRequestProto_TRequest            `protobuf:"bytes,3,opt,name=Request,json=request,proto3" json:"Request,omitempty"`
-	EventSource             *event_source.TEventSource              `protobuf:"bytes,11,opt,name=EventSource,json=event_source,proto3" json:"EventSource,omitempty"`
-	EnrollmentHeaders       *enrollment_headers.TEnrollmentHeaders  `protobuf:"bytes,12,opt,name=EnrollmentHeaders,json=enrollment_headers,proto3" json:"EnrollmentHeaders,omitempty"`
-	EnableSpotterValidation bool                                    `protobuf:"varint,15,opt,name=EnableSpotterValidation,json=enable_spotter_validation,proto3" json:"EnableSpotterValidation,omitempty"`
-	AdvancedAsrOptions      *TAliceRequestProto_TAdvancedAsrOptions `protobuf:"bytes,25,opt,name=AdvancedAsrOptions,json=advancedASROptions,proto3" json:"AdvancedAsrOptions,omitempty"`
-	DialogHistoryBlock      *TAliceRequestProto_TDialogHistoryBlock `protobuf:"bytes,30,opt,name=DialogHistoryBlock,json=dialog_history_block,proto3" json:"DialogHistoryBlock,omitempty"`
-	Alice2Settings          *alice_mode_info.TAlice2ModeInfo        `protobuf:"bytes,34,opt,name=Alice2Settings,json=alice_2_settings,proto3" json:"Alice2Settings,omitempty"`
-	Firmware                *string                                 `protobuf:"bytes,13,opt,name=Firmware,json=firmware,proto3,oneof" json:"Firmware,omitempty"`
-	VoiceInputMessageId     *string                                 `protobuf:"bytes,14,opt,name=VoiceInputMessageId,json=voiceInputMessageId,proto3,oneof" json:"VoiceInputMessageId,omitempty"`
-	SpotterPhrase           *string                                 `protobuf:"bytes,16,opt,name=SpotterPhrase,json=spotter_phrase,proto3,oneof" json:"SpotterPhrase,omitempty"`
-	EmbeddedSpotterInfo     *string                                 `protobuf:"bytes,17,opt,name=EmbeddedSpotterInfo,json=embedded_spotter_info,proto3,oneof" json:"EmbeddedSpotterInfo,omitempty"`
-	Lang                    *string                                 `protobuf:"bytes,18,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
-	Topic                   *string                                 `protobuf:"bytes,19,opt,name=Topic,json=topic,proto3,oneof" json:"Topic,omitempty"`
-	DisableAntimat          *bool                                   `protobuf:"varint,20,opt,name=DisableAntimat,json=disableAntimatNormalizer,proto3,oneof" json:"DisableAntimat,omitempty"`
-	Punctuation             *bool                                   `protobuf:"varint,21,opt,name=Punctuation,json=punctuation,proto3,oneof" json:"Punctuation,omitempty"`
-	Format                  *string                                 `protobuf:"bytes,22,opt,name=Format,json=format,proto3,oneof" json:"Format,omitempty"`
-	RecognizeMusicOnly      *bool                                   `protobuf:"varint,23,opt,name=RecognizeMusicOnly,json=recognize_music_only,proto3,oneof" json:"RecognizeMusicOnly,omitempty"`
-	Tags                    *string                                 `protobuf:"bytes,24,opt,name=Tags,json=tags,proto3,oneof" json:"Tags,omitempty"`
-	SpeechSession           *session.TSpeechSession                 `protobuf:"bytes,41,opt,name=SpeechSession,json=speech_session,proto3,oneof" json:"SpeechSession,omitempty"`
+	Header                  *TAliceRequestProto_THeader             `protobuf:"bytes,1,opt,name=Header,proto3" json:"Header,omitempty"`
+	Application             *protos.TClientInfoProto                `protobuf:"bytes,2,opt,name=Application,proto3" json:"Application,omitempty"`
+	Request                 *TAliceRequestProto_TRequest            `protobuf:"bytes,3,opt,name=Request,proto3" json:"Request,omitempty"`
+	EventSource             *event_source.TEventSource              `protobuf:"bytes,11,opt,name=EventSource,proto3" json:"EventSource,omitempty"`
+	EnrollmentHeaders       *enrollment_headers.TEnrollmentHeaders  `protobuf:"bytes,12,opt,name=EnrollmentHeaders,proto3" json:"EnrollmentHeaders,omitempty"`
+	EnableSpotterValidation bool                                    `protobuf:"varint,15,opt,name=EnableSpotterValidation,proto3" json:"EnableSpotterValidation,omitempty"`
+	AdvancedAsrOptions      *TAliceRequestProto_TAdvancedAsrOptions `protobuf:"bytes,25,opt,name=AdvancedAsrOptions,proto3" json:"AdvancedAsrOptions,omitempty"`
+	DialogHistoryBlock      *TAliceRequestProto_TDialogHistoryBlock `protobuf:"bytes,30,opt,name=DialogHistoryBlock,proto3" json:"DialogHistoryBlock,omitempty"`
+	Alice2Settings          *alice_mode_info.TAlice2ModeInfo        `protobuf:"bytes,34,opt,name=Alice2Settings,proto3" json:"Alice2Settings,omitempty"`
+	Firmware                *string                                 `protobuf:"bytes,13,opt,name=Firmware,proto3,oneof" json:"Firmware,omitempty"`
+	VoiceInputMessageId     *string                                 `protobuf:"bytes,14,opt,name=VoiceInputMessageId,proto3,oneof" json:"VoiceInputMessageId,omitempty"`
+	SpotterPhrase           *string                                 `protobuf:"bytes,16,opt,name=SpotterPhrase,proto3,oneof" json:"SpotterPhrase,omitempty"`
+	EmbeddedSpotterInfo     *string                                 `protobuf:"bytes,17,opt,name=EmbeddedSpotterInfo,proto3,oneof" json:"EmbeddedSpotterInfo,omitempty"`
+	Lang                    *string                                 `protobuf:"bytes,18,opt,name=Lang,proto3,oneof" json:"Lang,omitempty"`
+	Topic                   *string                                 `protobuf:"bytes,19,opt,name=Topic,proto3,oneof" json:"Topic,omitempty"`
+	DisableAntimat          *bool                                   `protobuf:"varint,20,opt,name=DisableAntimat,proto3,oneof" json:"DisableAntimat,omitempty"`
+	Punctuation             *bool                                   `protobuf:"varint,21,opt,name=Punctuation,proto3,oneof" json:"Punctuation,omitempty"`
+	Format                  *string                                 `protobuf:"bytes,22,opt,name=Format,proto3,oneof" json:"Format,omitempty"`
+	RecognizeMusicOnly      *bool                                   `protobuf:"varint,23,opt,name=RecognizeMusicOnly,proto3,oneof" json:"RecognizeMusicOnly,omitempty"`
+	Tags                    *string                                 `protobuf:"bytes,24,opt,name=Tags,proto3,oneof" json:"Tags,omitempty"`
+	SpeechSession           *session.TSpeechSession                 `protobuf:"bytes,41,opt,name=SpeechSession,proto3,oneof" json:"SpeechSession,omitempty"`
 	TtsOptions              *tts_options.TClientTtsOptions          `protobuf:"bytes,44,opt,name=TtsOptions,json=tts_options,proto3,oneof" json:"TtsOptions,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
@@ -255,13 +255,13 @@ func (x *TAliceRequestProto) GetTtsOptions() *tts_options.TClientTtsOptions {
 
 type TAliceRequestProto_THeader struct {
 	state          protoimpl.MessageState   `protogen:"open.v1"`
-	RequestId      *string                  `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3,oneof" json:"RequestId,omitempty"`
-	PrevReqId      *string                  `protobuf:"bytes,2,opt,name=PrevReqId,json=prev_req_id,proto3,oneof" json:"PrevReqId,omitempty"`
-	SequenceNumber *uint32                  `protobuf:"varint,3,opt,name=SequenceNumber,json=sequence_number,proto3,oneof" json:"SequenceNumber,omitempty"`
-	DialogId       *string                  `protobuf:"bytes,4,opt,name=DialogId,json=dialog_id,proto3,oneof" json:"DialogId,omitempty"`
-	FolderId       *string                  `protobuf:"bytes,10,opt,name=FolderId,json=folder_id,proto3,oneof" json:"FolderId,omitempty"`
-	DialogType     *dialog_type.EDialogType `protobuf:"varint,8,opt,name=DialogType,json=dialog_type,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
-	DialogShareId  *string                  `protobuf:"bytes,9,opt,name=DialogShareId,json=dialog_share_id,proto3,oneof" json:"DialogShareId,omitempty"`
+	RequestId      *string                  `protobuf:"bytes,1,opt,name=RequestId,proto3,oneof" json:"RequestId,omitempty"`
+	PrevReqId      *string                  `protobuf:"bytes,2,opt,name=PrevReqId,proto3,oneof" json:"PrevReqId,omitempty"`
+	SequenceNumber *uint32                  `protobuf:"varint,3,opt,name=SequenceNumber,proto3,oneof" json:"SequenceNumber,omitempty"`
+	DialogId       *string                  `protobuf:"bytes,4,opt,name=DialogId,proto3,oneof" json:"DialogId,omitempty"`
+	FolderId       *string                  `protobuf:"bytes,10,opt,name=FolderId,proto3,oneof" json:"FolderId,omitempty"`
+	DialogType     *dialog_type.EDialogType `protobuf:"varint,8,opt,name=DialogType,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
+	DialogShareId  *string                  `protobuf:"bytes,9,opt,name=DialogShareId,proto3,oneof" json:"DialogShareId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -347,13 +347,13 @@ func (x *TAliceRequestProto_THeader) GetDialogShareId() string {
 
 type TAliceRequestProto_TRequest struct {
 	state             protoimpl.MessageState                          `protogen:"open.v1"`
-	Event             *common.TEvent                                  `protobuf:"bytes,1,opt,name=Event,json=event,proto3" json:"Event,omitempty"`
-	Location          *common.TLocation                               `protobuf:"bytes,2,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
+	Event             *common.TEvent                                  `protobuf:"bytes,1,opt,name=Event,proto3" json:"Event,omitempty"`
+	Location          *common.TLocation                               `protobuf:"bytes,2,opt,name=Location,proto3" json:"Location,omitempty"`
 	Experiments       *experiments.TExperimentsProto                  `protobuf:"bytes,3,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
-	AdditionalOptions *TAliceRequestProto_TRequest_TAdditionalOptions `protobuf:"bytes,5,opt,name=AdditionalOptions,json=additional_options,proto3" json:"AdditionalOptions,omitempty"`
-	ResetSession      bool                                            `protobuf:"varint,7,opt,name=ResetSession,json=reset_session,proto3" json:"ResetSession,omitempty"`
-	UniproxyOptions   *uniproxy_options.TUniproxyOptions              `protobuf:"bytes,17,opt,name=UniproxyOptions,json=uniproxy_options,proto3" json:"UniproxyOptions,omitempty"`
-	BiometryOptions   *biometry.TOndeviceBiometryOptions              `protobuf:"bytes,21,opt,name=BiometryOptions,json=biometry_options,proto3" json:"BiometryOptions,omitempty"`
+	AdditionalOptions *TAliceRequestProto_TRequest_TAdditionalOptions `protobuf:"bytes,5,opt,name=AdditionalOptions,proto3" json:"AdditionalOptions,omitempty"`
+	ResetSession      bool                                            `protobuf:"varint,7,opt,name=ResetSession,proto3" json:"ResetSession,omitempty"`
+	UniproxyOptions   *uniproxy_options.TUniproxyOptions              `protobuf:"bytes,17,opt,name=UniproxyOptions,proto3" json:"UniproxyOptions,omitempty"`
+	BiometryOptions   *biometry.TOndeviceBiometryOptions              `protobuf:"bytes,21,opt,name=BiometryOptions,proto3" json:"BiometryOptions,omitempty"`
 	// Types that are valid to be assigned to DeviceStateType:
 	//
 	//	*TAliceRequestProto_TRequest_DeviceState
@@ -364,9 +364,9 @@ type TAliceRequestProto_TRequest struct {
 	//	*TAliceRequestProto_TRequest_EnvironmentState
 	//	*TAliceRequestProto_TRequest_EnvironmentStateRaw
 	EnvironmentStateType isTAliceRequestProto_TRequest_EnvironmentStateType `protobuf_oneof:"EnvironmentStateType"`
-	VoiceSession         *bool                                              `protobuf:"varint,6,opt,name=VoiceSession,json=voice_session,proto3,oneof" json:"VoiceSession,omitempty"`
-	ActivationType       *string                                            `protobuf:"bytes,14,opt,name=ActivationType,json=activation_type,proto3,oneof" json:"ActivationType,omitempty"`
-	MegamindCookies      *string                                            `protobuf:"bytes,15,opt,name=MegamindCookies,json=megamind_cookies,proto3,oneof" json:"MegamindCookies,omitempty"`
+	VoiceSession         *bool                                              `protobuf:"varint,6,opt,name=VoiceSession,proto3,oneof" json:"VoiceSession,omitempty"`
+	ActivationType       *string                                            `protobuf:"bytes,14,opt,name=ActivationType,proto3,oneof" json:"ActivationType,omitempty"`
+	MegamindCookies      *string                                            `protobuf:"bytes,15,opt,name=MegamindCookies,proto3,oneof" json:"MegamindCookies,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -526,11 +526,11 @@ type isTAliceRequestProto_TRequest_DeviceStateType interface {
 }
 
 type TAliceRequestProto_TRequest_DeviceState struct {
-	DeviceState *device_state.TDeviceState `protobuf:"bytes,4,opt,name=DeviceState,json=device_state,proto3,oneof"`
+	DeviceState *device_state.TDeviceState `protobuf:"bytes,4,opt,name=DeviceState,proto3,oneof"`
 }
 
 type TAliceRequestProto_TRequest_DeviceStateRaw struct {
-	DeviceStateRaw []byte `protobuf:"bytes,18,opt,name=DeviceStateRaw,json=device_state_raw,proto3,oneof"`
+	DeviceStateRaw []byte `protobuf:"bytes,18,opt,name=DeviceStateRaw,proto3,oneof"`
 }
 
 func (*TAliceRequestProto_TRequest_DeviceState) isTAliceRequestProto_TRequest_DeviceStateType() {}
@@ -542,11 +542,11 @@ type isTAliceRequestProto_TRequest_EnvironmentStateType interface {
 }
 
 type TAliceRequestProto_TRequest_EnvironmentState struct {
-	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,16,opt,name=EnvironmentState,json=environment_state,proto3,oneof"`
+	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,16,opt,name=EnvironmentState,proto3,oneof"`
 }
 
 type TAliceRequestProto_TRequest_EnvironmentStateRaw struct {
-	EnvironmentStateRaw []byte `protobuf:"bytes,19,opt,name=EnvironmentStateRaw,json=environment_state_raw,proto3,oneof"`
+	EnvironmentStateRaw []byte `protobuf:"bytes,19,opt,name=EnvironmentStateRaw,proto3,oneof"`
 }
 
 func (*TAliceRequestProto_TRequest_EnvironmentState) isTAliceRequestProto_TRequest_EnvironmentStateType() {
@@ -557,12 +557,12 @@ func (*TAliceRequestProto_TRequest_EnvironmentStateRaw) isTAliceRequestProto_TRe
 
 type TAliceRequestProto_TAdvancedAsrOptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Grammar           []string               `protobuf:"bytes,4,rep,name=Grammar,json=grammar,proto3" json:"Grammar,omitempty"`
-	PartialResults    *bool                  `protobuf:"varint,1,opt,name=PartialResults,json=partial_results,proto3,oneof" json:"PartialResults,omitempty"`
-	ManualPunctuation *bool                  `protobuf:"varint,2,opt,name=ManualPunctuation,json=manual_punctuation,proto3,oneof" json:"ManualPunctuation,omitempty"`
-	Capitalize        *bool                  `protobuf:"varint,3,opt,name=Capitalize,json=capitalize,proto3,oneof" json:"Capitalize,omitempty"`
-	UtteranceSilence  *uint64                `protobuf:"varint,5,opt,name=UtteranceSilence,json=utterance_silence,proto3,oneof" json:"UtteranceSilence,omitempty"`
-	Biometry          *string                `protobuf:"bytes,6,opt,name=Biometry,json=biometry,proto3,oneof" json:"Biometry,omitempty"`
+	Grammar           []string               `protobuf:"bytes,4,rep,name=Grammar,proto3" json:"Grammar,omitempty"`
+	PartialResults    *bool                  `protobuf:"varint,1,opt,name=PartialResults,proto3,oneof" json:"PartialResults,omitempty"`
+	ManualPunctuation *bool                  `protobuf:"varint,2,opt,name=ManualPunctuation,proto3,oneof" json:"ManualPunctuation,omitempty"`
+	Capitalize        *bool                  `protobuf:"varint,3,opt,name=Capitalize,proto3,oneof" json:"Capitalize,omitempty"`
+	UtteranceSilence  *uint64                `protobuf:"varint,5,opt,name=UtteranceSilence,proto3,oneof" json:"UtteranceSilence,omitempty"`
+	Biometry          *string                `protobuf:"bytes,6,opt,name=Biometry,proto3,oneof" json:"Biometry,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -641,7 +641,7 @@ func (x *TAliceRequestProto_TAdvancedAsrOptions) GetBiometry() string {
 
 type TAliceRequestProto_TDialogHistoryBlock struct {
 	state         protoimpl.MessageState                                     `protogen:"open.v1"`
-	ChatFiles     []*TAliceRequestProto_TDialogHistoryBlock_TFileDescription `protobuf:"bytes,2,rep,name=ChatFiles,json=chat_files,proto3" json:"ChatFiles,omitempty"`
+	ChatFiles     []*TAliceRequestProto_TDialogHistoryBlock_TFileDescription `protobuf:"bytes,2,rep,name=ChatFiles,proto3" json:"ChatFiles,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -685,18 +685,18 @@ func (x *TAliceRequestProto_TDialogHistoryBlock) GetChatFiles() []*TAliceRequest
 
 type TAliceRequestProto_TRequest_TAdditionalOptions struct {
 	state                 protoimpl.MessageState                                        `protogen:"open.v1"`
-	BassOptions           *TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions  `protobuf:"bytes,3,opt,name=BassOptions,json=bass_options,proto3" json:"BassOptions,omitempty"`
-	SupportedFeatures     []string                                                      `protobuf:"bytes,4,rep,name=SupportedFeatures,json=supported_features,proto3" json:"SupportedFeatures,omitempty"`
-	UnsupportedFeatures   []string                                                      `protobuf:"bytes,5,rep,name=UnsupportedFeatures,json=unsupported_features,proto3" json:"UnsupportedFeatures,omitempty"`
-	QuasarAuxiliaryConfig *quasar.TAuxiliaryConfig                                      `protobuf:"bytes,11,opt,name=QuasarAuxiliaryConfig,json=quasar_auxiliary_config,proto3" json:"QuasarAuxiliaryConfig,omitempty"`
-	Permissions           []*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission `protobuf:"bytes,14,rep,name=Permissions,json=permissions,proto3" json:"Permissions,omitempty"`
-	GuestUserOptions      *guest.TGuestOptions                                          `protobuf:"bytes,19,opt,name=GuestUserOptions,json=guest_user_options,proto3" json:"GuestUserOptions,omitempty"`
-	UsersOptions          []*user.TUserOptions                                          `protobuf:"bytes,28,rep,name=UsersOptions,json=users_options,proto3" json:"UsersOptions,omitempty"`
-	OAuthToken            *string                                                       `protobuf:"bytes,1,opt,name=OAuthToken,json=oauth_token,proto3,oneof" json:"OAuthToken,omitempty"`
-	DivKitVersion         *string                                                       `protobuf:"bytes,6,opt,name=DivKitVersion,json=divkit_version,proto3,oneof" json:"DivKitVersion,omitempty"`
-	ICookie               *string                                                       `protobuf:"bytes,15,opt,name=ICookie,json=icookie,proto3,oneof" json:"ICookie,omitempty"`
-	SpeakersCount         *int32                                                        `protobuf:"varint,23,opt,name=SpeakersCount,json=speakers_count,proto3,oneof" json:"SpeakersCount,omitempty"`
-	OriginDomain          *string                                                       `protobuf:"bytes,26,opt,name=OriginDomain,json=origin_domain,proto3,oneof" json:"OriginDomain,omitempty"`
+	BassOptions           *TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions  `protobuf:"bytes,3,opt,name=BassOptions,proto3" json:"BassOptions,omitempty"`
+	SupportedFeatures     []string                                                      `protobuf:"bytes,4,rep,name=SupportedFeatures,proto3" json:"SupportedFeatures,omitempty"`
+	UnsupportedFeatures   []string                                                      `protobuf:"bytes,5,rep,name=UnsupportedFeatures,proto3" json:"UnsupportedFeatures,omitempty"`
+	QuasarAuxiliaryConfig *quasar.TAuxiliaryConfig                                      `protobuf:"bytes,11,opt,name=QuasarAuxiliaryConfig,proto3" json:"QuasarAuxiliaryConfig,omitempty"`
+	Permissions           []*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission `protobuf:"bytes,14,rep,name=Permissions,proto3" json:"Permissions,omitempty"`
+	GuestUserOptions      *guest.TGuestOptions                                          `protobuf:"bytes,19,opt,name=GuestUserOptions,proto3" json:"GuestUserOptions,omitempty"`
+	UsersOptions          []*user.TUserOptions                                          `protobuf:"bytes,28,rep,name=UsersOptions,proto3" json:"UsersOptions,omitempty"`
+	OAuthToken            *string                                                       `protobuf:"bytes,1,opt,name=OAuthToken,proto3,oneof" json:"OAuthToken,omitempty"`
+	DivKitVersion         *string                                                       `protobuf:"bytes,6,opt,name=DivKitVersion,proto3,oneof" json:"DivKitVersion,omitempty"`
+	ICookie               *string                                                       `protobuf:"bytes,15,opt,name=ICookie,proto3,oneof" json:"ICookie,omitempty"`
+	SpeakersCount         *int32                                                        `protobuf:"varint,23,opt,name=SpeakersCount,proto3,oneof" json:"SpeakersCount,omitempty"`
+	OriginDomain          *string                                                       `protobuf:"bytes,26,opt,name=OriginDomain,proto3,oneof" json:"OriginDomain,omitempty"`
 	IncognitoOptions      *incognito_mode.TIncognitoOptions                             `protobuf:"bytes,33,opt,name=IncognitoOptions,json=incognito_options,proto3,oneof" json:"IncognitoOptions,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
@@ -825,12 +825,12 @@ func (x *TAliceRequestProto_TRequest_TAdditionalOptions) GetIncognitoOptions() *
 
 type TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Cookies           []string               `protobuf:"bytes,4,rep,name=Cookies,json=cookies,proto3" json:"Cookies,omitempty"`
-	UserAgent         *string                `protobuf:"bytes,1,opt,name=UserAgent,json=user_agent,proto3,oneof" json:"UserAgent,omitempty"`
-	FiltrationLevel   *uint32                `protobuf:"varint,2,opt,name=FiltrationLevel,json=filtration_level,proto3,oneof" json:"FiltrationLevel,omitempty"`
-	ScreenScaleFactor *float64               `protobuf:"fixed64,5,opt,name=ScreenScaleFactor,json=screen_scale_factor,proto3,oneof" json:"ScreenScaleFactor,omitempty"`
-	RegionId          *int32                 `protobuf:"varint,9,opt,name=RegionId,json=region_id,proto3,oneof" json:"RegionId,omitempty"`
-	SearchRegion      *string                `protobuf:"bytes,12,opt,name=SearchRegion,json=search_region,proto3,oneof" json:"SearchRegion,omitempty"`
+	Cookies           []string               `protobuf:"bytes,4,rep,name=Cookies,proto3" json:"Cookies,omitempty"`
+	UserAgent         *string                `protobuf:"bytes,1,opt,name=UserAgent,proto3,oneof" json:"UserAgent,omitempty"`
+	FiltrationLevel   *uint32                `protobuf:"varint,2,opt,name=FiltrationLevel,proto3,oneof" json:"FiltrationLevel,omitempty"`
+	ScreenScaleFactor *float64               `protobuf:"fixed64,5,opt,name=ScreenScaleFactor,proto3,oneof" json:"ScreenScaleFactor,omitempty"`
+	RegionId          *int32                 `protobuf:"varint,9,opt,name=RegionId,proto3,oneof" json:"RegionId,omitempty"`
+	SearchRegion      *string                `protobuf:"bytes,12,opt,name=SearchRegion,proto3,oneof" json:"SearchRegion,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -914,7 +914,7 @@ type TAliceRequestProto_TRequest_TAdditionalOptions_TPermission struct {
 	//	*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Granted
 	//	*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Status
 	PermissionStatus isTAliceRequestProto_TRequest_TAdditionalOptions_TPermission_PermissionStatus `protobuf_oneof:"PermissionStatus"`
-	Name             *string                                                                       `protobuf:"bytes,2,opt,name=Name,json=name,proto3,oneof" json:"Name,omitempty"`
+	Name             *string                                                                       `protobuf:"bytes,2,opt,name=Name,proto3,oneof" json:"Name,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -986,11 +986,11 @@ type isTAliceRequestProto_TRequest_TAdditionalOptions_TPermission_PermissionStat
 }
 
 type TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Granted struct {
-	Granted bool `protobuf:"varint,1,opt,name=Granted,json=granted,proto3,oneof"`
+	Granted bool `protobuf:"varint,1,opt,name=Granted,proto3,oneof"`
 }
 
 type TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Status struct {
-	Status bool `protobuf:"varint,3,opt,name=Status,json=status,proto3,oneof"`
+	Status bool `protobuf:"varint,3,opt,name=Status,proto3,oneof"`
 }
 
 func (*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Granted) isTAliceRequestProto_TRequest_TAdditionalOptions_TPermission_PermissionStatus() {
@@ -1001,18 +1001,18 @@ func (*TAliceRequestProto_TRequest_TAdditionalOptions_TPermission_Status) isTAli
 
 type TAliceRequestProto_TDialogHistoryBlock_TFileDescription struct {
 	state            protoimpl.MessageState              `protogen:"open.v1"`
-	Title            *string                             `protobuf:"bytes,1,opt,name=Title,json=title,proto3,oneof" json:"Title,omitempty"`
-	Guid             *string                             `protobuf:"bytes,3,opt,name=Guid,json=guid,proto3,oneof" json:"Guid,omitempty"`
-	Status           *files.TFileInfo_EFileServiceStatus `protobuf:"varint,4,opt,name=Status,json=status,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileServiceStatus,oneof" json:"Status,omitempty"`
-	UploadTimestamp  *uint64                             `protobuf:"varint,5,opt,name=UploadTimestamp,json=upload_timestamp,proto3,oneof" json:"UploadTimestamp,omitempty"`
-	ProcessedContent *string                             `protobuf:"bytes,6,opt,name=ProcessedContent,json=processed_content,proto3,oneof" json:"ProcessedContent,omitempty"`
-	PreviewUrl       *string                             `protobuf:"bytes,7,opt,name=PreviewUrl,json=preview_url,proto3,oneof" json:"PreviewUrl,omitempty"`
-	SizeBytes        *uint64                             `protobuf:"varint,8,opt,name=SizeBytes,json=size_bytes,proto3,oneof" json:"SizeBytes,omitempty"`
-	MimeType         *string                             `protobuf:"bytes,9,opt,name=MimeType,json=mime_type,proto3,oneof" json:"MimeType,omitempty"`
-	FileType         *files.TFileInfo_EFileType          `protobuf:"varint,10,opt,name=FileType,json=file_type,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileType,oneof" json:"FileType,omitempty"`
-	Source           *files.TFileInfo_TSource            `protobuf:"bytes,12,opt,name=Source,json=source,proto3,oneof" json:"Source,omitempty"`
-	Result           *files.TFileInfo_TSource            `protobuf:"bytes,13,opt,name=Result,json=result,proto3,oneof" json:"Result,omitempty"`
-	Features         *files.TFileInfo_TFeatures          `protobuf:"bytes,14,opt,name=Features,json=features,proto3,oneof" json:"Features,omitempty"`
+	Title            *string                             `protobuf:"bytes,1,opt,name=Title,proto3,oneof" json:"Title,omitempty"`
+	Guid             *string                             `protobuf:"bytes,3,opt,name=Guid,proto3,oneof" json:"Guid,omitempty"`
+	Status           *files.TFileInfo_EFileServiceStatus `protobuf:"varint,4,opt,name=Status,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileServiceStatus,oneof" json:"Status,omitempty"`
+	UploadTimestamp  *uint64                             `protobuf:"varint,5,opt,name=UploadTimestamp,proto3,oneof" json:"UploadTimestamp,omitempty"`
+	ProcessedContent *string                             `protobuf:"bytes,6,opt,name=ProcessedContent,proto3,oneof" json:"ProcessedContent,omitempty"`
+	PreviewUrl       *string                             `protobuf:"bytes,7,opt,name=PreviewUrl,proto3,oneof" json:"PreviewUrl,omitempty"`
+	SizeBytes        *uint64                             `protobuf:"varint,8,opt,name=SizeBytes,proto3,oneof" json:"SizeBytes,omitempty"`
+	MimeType         *string                             `protobuf:"bytes,9,opt,name=MimeType,proto3,oneof" json:"MimeType,omitempty"`
+	FileType         *files.TFileInfo_EFileType          `protobuf:"varint,10,opt,name=FileType,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileType,oneof" json:"FileType,omitempty"`
+	Source           *files.TFileInfo_TSource            `protobuf:"bytes,12,opt,name=Source,proto3,oneof" json:"Source,omitempty"`
+	Result           *files.TFileInfo_TSource            `protobuf:"bytes,13,opt,name=Result,proto3,oneof" json:"Result,omitempty"`
+	Features         *files.TFileInfo_TFeatures          `protobuf:"bytes,14,opt,name=Features,proto3,oneof" json:"Features,omitempty"`
 	ShareId          *string                             `protobuf:"bytes,16,opt,name=ShareId,json=share_id,proto3,oneof" json:"ShareId,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -1143,46 +1143,43 @@ var File_alice_protos_api_alicekit_events_alice_request_alice_request_proto prot
 
 const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/api/alicekit/events/alice_request/alice_request.proto\x12\x06NAlice\x1a)alice/megamind/protos/common/events.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a+alice/megamind/protos/common/location.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a/alice/megamind/protos/guest/guest_options.proto\x1a3alice/megamind/protos/quasar/auxiliary_config.proto\x1a(alice/megamind/protos/user/options.proto\x1a+alice/library/censor/protos/extension.proto\x1a-alice/library/client/protos/client_info.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aEalice/protos/api/alicekit/common/tts_options/client_tts_options.proto\x1aHalice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x1a'alice/protos/api/biometry/options.proto\x1a&alice/protos/api/files/file_info.proto\x1a7alice/protos/api/incognito_mode/incognito_options.proto\x1a9alice/protos/api/speech_mode/session/speech_session.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7A\n" +
-	"\x12TAliceRequestProto\x12F\n" +
-	"\x06Header\x18\x01 \x01(\v2\".NAlice.TAliceRequestProto.THeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header\x12K\n" +
-	"\vApplication\x18\x02 \x01(\v2\x18.NAlice.TClientInfoProtoB\x0f\xaa\xdd\x1b\vapplicationR\vapplication\x12J\n" +
-	"\aRequest\x18\x03 \x01(\v2#.NAlice.TAliceRequestProto.TRequestB\v\xaa\xdd\x1b\arequestR\arequest\x12I\n" +
-	"\vEventSource\x18\v \x01(\v2\x14.NAlice.TEventSourceB\x10\xaa\xdd\x1b\fevent_sourceR\fevent_source\x12a\n" +
-	"\x11EnrollmentHeaders\x18\f \x01(\v2\x1a.NAlice.TEnrollmentHeadersB\x16\xaa\xdd\x1b\x12enrollment_headersR\x12enrollment_headers\x12Y\n" +
-	"\x17EnableSpotterValidation\x18\x0f \x01(\bB\x1d\xaa\xdd\x1b\x19enable_spotter_validationR\x19enable_spotter_validation\x12x\n" +
-	"\x12AdvancedAsrOptions\x18\x19 \x01(\v2..NAlice.TAliceRequestProto.TAdvancedAsrOptionsB\x18\xaa\xdd\x1b\x14advanced_asr_optionsR\x12advancedASROptions\x12z\n" +
-	"\x12DialogHistoryBlock\x18\x1e \x01(\v2..NAlice.TAliceRequestProto.TDialogHistoryBlockB\x18\xaa\xdd\x1b\x14dialog_history_blockR\x14dialog_history_block\x12h\n" +
-	"\x0eAlice2Settings\x18\" \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoB\x14\xaa\xdd\x1b\x10alice_2_settingsR\x10alice_2_settings\x12-\n" +
-	"\bFirmware\x18\r \x01(\tB\f\xaa\xdd\x1b\bfirmwareH\x00R\bfirmware\x88\x01\x01\x12Q\n" +
-	"\x13VoiceInputMessageId\x18\x0e \x01(\tB\x1a\xaa\xdd\x1b\x16voice_input_message_idH\x01R\x13voiceInputMessageId\x88\x01\x01\x12>\n" +
-	"\rSpotterPhrase\x18\x10 \x01(\tB\x12\xaa\xdd\x1b\x0espotter_phraseH\x02R\x0espotter_phrase\x88\x01\x01\x12R\n" +
-	"\x13EmbeddedSpotterInfo\x18\x11 \x01(\tB\x19\xaa\xdd\x1b\x15embedded_spotter_infoH\x03R\x15embedded_spotter_info\x88\x01\x01\x12!\n" +
-	"\x04Lang\x18\x12 \x01(\tB\b\xaa\xdd\x1b\x04langH\x04R\x04lang\x88\x01\x01\x12$\n" +
-	"\x05Topic\x18\x13 \x01(\tB\t\xaa\xdd\x1b\x05topicH\x05R\x05topic\x88\x01\x01\x12U\n" +
-	"\x0eDisableAntimat\x18\x14 \x01(\bB\x1e\xaa\xdd\x1b\x1adisable_antimat_normalizerH\x06R\x18disableAntimatNormalizer\x88\x01\x01\x126\n" +
-	"\vPunctuation\x18\x15 \x01(\bB\x0f\xaa\xdd\x1b\vpunctuationH\aR\vpunctuation\x88\x01\x01\x12'\n" +
-	"\x06Format\x18\x16 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06formatH\bR\x06format\x88\x01\x01\x12O\n" +
-	"\x12RecognizeMusicOnly\x18\x17 \x01(\bB\x18\xaa\xdd\x1b\x14recognize_music_onlyH\tR\x14recognize_music_only\x88\x01\x01\x12!\n" +
-	"\x04Tags\x18\x18 \x01(\tB\b\xaa\xdd\x1b\x04tagsH\n" +
-	"R\x04tags\x88\x01\x01\x12V\n" +
-	"\rSpeechSession\x18) \x01(\v2\x16.NAlice.TSpeechSessionB\x12\xaa\xdd\x1b\x0espeech_sessionH\vR\x0espeech_session\x88\x01\x01\x12f\n" +
+	"Balice/protos/api/alicekit/events/alice_request/alice_request.proto\x12\x06NAlice\x1a)alice/megamind/protos/common/events.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a+alice/megamind/protos/common/location.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a/alice/megamind/protos/guest/guest_options.proto\x1a3alice/megamind/protos/quasar/auxiliary_config.proto\x1a(alice/megamind/protos/user/options.proto\x1a+alice/library/censor/protos/extension.proto\x1a-alice/library/client/protos/client_info.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aHalice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x1a'alice/protos/api/biometry/options.proto\x1a&alice/protos/api/files/file_info.proto\x1a9alice/protos/api/speech_mode/session/speech_session.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aEalice/protos/api/alicekit/common/tts_options/client_tts_options.proto\x1a7alice/protos/api/incognito_mode/incognito_options.proto\"\xe63\n" +
+	"\x12TAliceRequestProto\x12:\n" +
+	"\x06Header\x18\x01 \x01(\v2\".NAlice.TAliceRequestProto.THeaderR\x06Header\x12:\n" +
+	"\vApplication\x18\x02 \x01(\v2\x18.NAlice.TClientInfoProtoR\vApplication\x12=\n" +
+	"\aRequest\x18\x03 \x01(\v2#.NAlice.TAliceRequestProto.TRequestR\aRequest\x126\n" +
+	"\vEventSource\x18\v \x01(\v2\x14.NAlice.TEventSourceR\vEventSource\x12H\n" +
+	"\x11EnrollmentHeaders\x18\f \x01(\v2\x1a.NAlice.TEnrollmentHeadersR\x11EnrollmentHeaders\x128\n" +
+	"\x17EnableSpotterValidation\x18\x0f \x01(\bR\x17EnableSpotterValidation\x12^\n" +
+	"\x12AdvancedAsrOptions\x18\x19 \x01(\v2..NAlice.TAliceRequestProto.TAdvancedAsrOptionsR\x12AdvancedAsrOptions\x12^\n" +
+	"\x12DialogHistoryBlock\x18\x1e \x01(\v2..NAlice.TAliceRequestProto.TDialogHistoryBlockR\x12DialogHistoryBlock\x12P\n" +
+	"\x0eAlice2Settings\x18\" \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoR\x0eAlice2Settings\x12\x1f\n" +
+	"\bFirmware\x18\r \x01(\tH\x00R\bFirmware\x88\x01\x01\x125\n" +
+	"\x13VoiceInputMessageId\x18\x0e \x01(\tH\x01R\x13VoiceInputMessageId\x88\x01\x01\x12)\n" +
+	"\rSpotterPhrase\x18\x10 \x01(\tH\x02R\rSpotterPhrase\x88\x01\x01\x125\n" +
+	"\x13EmbeddedSpotterInfo\x18\x11 \x01(\tH\x03R\x13EmbeddedSpotterInfo\x88\x01\x01\x12\x17\n" +
+	"\x04Lang\x18\x12 \x01(\tH\x04R\x04Lang\x88\x01\x01\x12\x19\n" +
+	"\x05Topic\x18\x13 \x01(\tH\x05R\x05Topic\x88\x01\x01\x12+\n" +
+	"\x0eDisableAntimat\x18\x14 \x01(\bH\x06R\x0eDisableAntimat\x88\x01\x01\x12%\n" +
+	"\vPunctuation\x18\x15 \x01(\bH\aR\vPunctuation\x88\x01\x01\x12\x1b\n" +
+	"\x06Format\x18\x16 \x01(\tH\bR\x06Format\x88\x01\x01\x123\n" +
+	"\x12RecognizeMusicOnly\x18\x17 \x01(\bH\tR\x12RecognizeMusicOnly\x88\x01\x01\x12\x17\n" +
+	"\x04Tags\x18\x18 \x01(\tH\n" +
+	"R\x04Tags\x88\x01\x01\x12A\n" +
+	"\rSpeechSession\x18) \x01(\v2\x16.NAlice.TSpeechSessionH\vR\rSpeechSession\x88\x01\x01\x12f\n" +
 	"\n" +
-	"TtsOptions\x18, \x01(\v2#.NAlice.NAliceApi.TClientTtsOptionsB\x1b\xaa\xdd\x1b\vtts_options\xa8\x8d'\x01\xa8\x8d'\x02\xa8\x8d'\x04H\fR\vtts_options\x88\x01\x01\x1a\xd3\x04\n" +
-	"\aTHeader\x122\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idH\x00R\n" +
-	"request_id\x88\x01\x01\x124\n" +
-	"\tPrevReqId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vprev_req_idH\x01R\vprev_req_id\x88\x01\x01\x12A\n" +
-	"\x0eSequenceNumber\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0fsequence_numberH\x02R\x0fsequence_number\x88\x01\x01\x12/\n" +
-	"\bDialogId\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x03R\tdialog_id\x88\x01\x01\x12/\n" +
+	"TtsOptions\x18, \x01(\v2#.NAlice.NAliceApi.TClientTtsOptionsB\x1b\xaa\xdd\x1b\vtts_options\xa8\x8d'\x01\xa8\x8d'\x02\xa8\x8d'\x04H\fR\vtts_options\x88\x01\x01\x1a\xca\x03\n" +
+	"\aTHeader\x12!\n" +
+	"\tRequestId\x18\x01 \x01(\tH\x00R\tRequestId\x88\x01\x01\x12!\n" +
+	"\tPrevReqId\x18\x02 \x01(\tH\x01R\tPrevReqId\x88\x01\x01\x12+\n" +
+	"\x0eSequenceNumber\x18\x03 \x01(\rH\x02R\x0eSequenceNumber\x88\x01\x01\x12\x1f\n" +
+	"\bDialogId\x18\x04 \x01(\tH\x03R\bDialogId\x88\x01\x01\x12\x1f\n" +
 	"\bFolderId\x18\n" +
-	" \x01(\tB\r\xaa\xdd\x1b\tfolder_idH\x04R\tfolder_id\x88\x01\x01\x12P\n" +
+	" \x01(\tH\x04R\bFolderId\x88\x01\x01\x12>\n" +
 	"\n" +
-	"DialogType\x18\b \x01(\x0e2\x19.NAlice.NData.EDialogTypeB\x0f\xaa\xdd\x1b\vdialog_typeH\x05R\vdialog_type\x88\x01\x01\x12@\n" +
-	"\rDialogShareId\x18\t \x01(\tB\x13\xaa\xdd\x1b\x0fdialog_share_idH\x06R\x0fdialog_share_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"DialogType\x18\b \x01(\x0e2\x19.NAlice.NData.EDialogTypeH\x05R\n" +
+	"DialogType\x88\x01\x01\x12)\n" +
+	"\rDialogShareId\x18\t \x01(\tH\x06R\rDialogShareId\x88\x01\x01B\f\n" +
 	"\n" +
 	"_RequestIdB\f\n" +
 	"\n" +
@@ -1192,60 +1189,58 @@ const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_ra
 	"\t_FolderIdB\r\n" +
 	"\v_DialogTypeB\x10\n" +
 	"\x0e_DialogShareIdJ\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\fRefMessageIdR\tSessionIdR\n" +
-	"RandomSeed\x1a\xf3\x1c\n" +
-	"\bTRequest\x12/\n" +
-	"\x05Event\x18\x01 \x01(\v2\x0e.NAlice.TEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12;\n" +
-	"\bLocation\x18\x02 \x01(\v2\x11.NAlice.TLocationB\f\xaa\xdd\x1b\blocationR\blocation\x12L\n" +
-	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vExperiments\x12}\n" +
-	"\x11AdditionalOptions\x18\x05 \x01(\v26.NAlice.TAliceRequestProto.TRequest.TAdditionalOptionsB\x16\xaa\xdd\x1b\x12additional_optionsR\x12additional_options\x126\n" +
-	"\fResetSession\x18\a \x01(\bB\x11\xaa\xdd\x1b\rreset_sessionR\rreset_session\x12c\n" +
-	"\x0fUniproxyOptions\x18\x11 \x01(\v2\".NAlice.NAliceApi.TUniproxyOptionsB\x14\xaa\xdd\x1b\x10uniproxy_optionsR\x10uniproxy_options\x12a\n" +
-	"\x0fBiometryOptions\x18\x15 \x01(\v2 .NAlice.TOndeviceBiometryOptionsB\x14\xaa\xdd\x1b\x10biometry_optionsR\x10biometry_options\x12U\n" +
-	"\vDeviceState\x18\x04 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateB\x10\xaa\xdd\x1b\fdevice_stateH\x00R\fdevice_state\x12@\n" +
-	"\x0eDeviceStateRaw\x18\x12 \x01(\fB\x14\xaa\xdd\x1b\x10device_state_rawH\x00R\x10device_state_raw\x12i\n" +
-	"\x10EnvironmentState\x18\x10 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x15\xaa\xdd\x1b\x11environment_stateH\x01R\x11environment_state\x12O\n" +
-	"\x13EnvironmentStateRaw\x18\x13 \x01(\fB\x19\xaa\xdd\x1b\x15environment_state_rawH\x01R\x15environment_state_raw\x12;\n" +
-	"\fVoiceSession\x18\x06 \x01(\bB\x11\xaa\xdd\x1b\rvoice_sessionH\x02R\rvoice_session\x88\x01\x01\x12A\n" +
-	"\x0eActivationType\x18\x0e \x01(\tB\x13\xaa\xdd\x1b\x0factivation_typeH\x03R\x0factivation_type\x88\x01\x01\x12D\n" +
-	"\x0fMegamindCookies\x18\x0f \x01(\tB\x14\xaa\xdd\x1b\x10megamind_cookiesH\x04R\x10megamind_cookies\x88\x01\x01\x1a\x96\x12\n" +
-	"\x12TAdditionalOptions\x12x\n" +
-	"\vBassOptions\x18\x03 \x01(\v2C.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsB\x10\xaa\xdd\x1b\fbass_optionsR\fbass_options\x12E\n" +
-	"\x11SupportedFeatures\x18\x04 \x03(\tB\x16\xaa\xdd\x1b\x12supported_featuresR\x12supported_features\x12K\n" +
-	"\x13UnsupportedFeatures\x18\x05 \x03(\tB\x18\xaa\xdd\x1b\x14unsupported_featuresR\x14unsupported_features\x12\x84\x01\n" +
-	"\x15QuasarAuxiliaryConfig\x18\v \x01(\v2/.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfigB\x1b\xaa\xdd\x1b\x17quasar_auxiliary_configR\x17quasar_auxiliary_config\x12u\n" +
-	"\vPermissions\x18\x0e \x03(\v2B.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermissionB\x0f\xaa\xdd\x1b\vpermissionsR\vpermissions\x12_\n" +
-	"\x10GuestUserOptions\x18\x13 \x01(\v2\x15.NAlice.TGuestOptionsB\x1a\xaa\xdd\x1b\x12guest_user_options\xa8\x8d'\x01R\x12guest_user_options\x12L\n" +
-	"\fUsersOptions\x18\x1c \x03(\v2\x14.NAlice.TUserOptionsB\x11\xaa\xdd\x1b\rusers_optionsR\rusers_options\x12=\n" +
+	"RandomSeed\x1a\xb3\x16\n" +
+	"\bTRequest\x12$\n" +
+	"\x05Event\x18\x01 \x01(\v2\x0e.NAlice.TEventR\x05Event\x12-\n" +
+	"\bLocation\x18\x02 \x01(\v2\x11.NAlice.TLocationR\bLocation\x12;\n" +
+	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12d\n" +
+	"\x11AdditionalOptions\x18\x05 \x01(\v26.NAlice.TAliceRequestProto.TRequest.TAdditionalOptionsR\x11AdditionalOptions\x12\"\n" +
+	"\fResetSession\x18\a \x01(\bR\fResetSession\x12L\n" +
+	"\x0fUniproxyOptions\x18\x11 \x01(\v2\".NAlice.NAliceApi.TUniproxyOptionsR\x0fUniproxyOptions\x12J\n" +
+	"\x0fBiometryOptions\x18\x15 \x01(\v2 .NAlice.TOndeviceBiometryOptionsR\x0fBiometryOptions\x12B\n" +
+	"\vDeviceState\x18\x04 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateH\x00R\vDeviceState\x12(\n" +
+	"\x0eDeviceStateRaw\x18\x12 \x01(\fH\x00R\x0eDeviceStateRaw\x12Q\n" +
+	"\x10EnvironmentState\x18\x10 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateH\x01R\x10EnvironmentState\x122\n" +
+	"\x13EnvironmentStateRaw\x18\x13 \x01(\fH\x01R\x13EnvironmentStateRaw\x12'\n" +
+	"\fVoiceSession\x18\x06 \x01(\bH\x02R\fVoiceSession\x88\x01\x01\x12+\n" +
+	"\x0eActivationType\x18\x0e \x01(\tH\x03R\x0eActivationType\x88\x01\x01\x12-\n" +
+	"\x0fMegamindCookies\x18\x0f \x01(\tH\x04R\x0fMegamindCookies\x88\x01\x01\x1a\x82\x0e\n" +
+	"\x12TAdditionalOptions\x12e\n" +
+	"\vBassOptions\x18\x03 \x01(\v2C.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsR\vBassOptions\x12,\n" +
+	"\x11SupportedFeatures\x18\x04 \x03(\tR\x11SupportedFeatures\x120\n" +
+	"\x13UnsupportedFeatures\x18\x05 \x03(\tR\x13UnsupportedFeatures\x12e\n" +
+	"\x15QuasarAuxiliaryConfig\x18\v \x01(\v2/.NAlice.NQuasarAuxiliaryConfig.TAuxiliaryConfigR\x15QuasarAuxiliaryConfig\x12d\n" +
+	"\vPermissions\x18\x0e \x03(\v2B.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermissionR\vPermissions\x12A\n" +
+	"\x10GuestUserOptions\x18\x13 \x01(\v2\x15.NAlice.TGuestOptionsR\x10GuestUserOptions\x128\n" +
+	"\fUsersOptions\x18\x1c \x03(\v2\x14.NAlice.TUserOptionsR\fUsersOptions\x12#\n" +
 	"\n" +
-	"OAuthToken\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\voauth_token\xa8\x8d'\x01\xa8\x8d'\x04H\x00R\voauth_token\x88\x01\x01\x12>\n" +
-	"\rDivKitVersion\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0edivkit_versionH\x01R\x0edivkit_version\x88\x01\x01\x12*\n" +
-	"\aICookie\x18\x0f \x01(\tB\v\xaa\xdd\x1b\aicookieH\x02R\aicookie\x88\x01\x01\x12>\n" +
-	"\rSpeakersCount\x18\x17 \x01(\x05B\x12\xaa\xdd\x1b\x0espeakers_countH\x03R\x0espeakers_count\x88\x01\x01\x12;\n" +
-	"\fOriginDomain\x18\x1a \x01(\tB\x11\xaa\xdd\x1b\rorigin_domainH\x04R\rorigin_domain\x88\x01\x01\x12b\n" +
-	"\x10IncognitoOptions\x18! \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsH\x05R\x11incognito_options\x88\x01\x01\x1a\xc1\x04\n" +
-	"\fTBassOptions\x12-\n" +
-	"\aCookies\x18\x04 \x03(\tB\x13\xaa\xdd\x1b\acookies\xa8\x8d'\x01\xa8\x8d'\x04R\acookies\x122\n" +
-	"\tUserAgent\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"user_agentH\x00R\n" +
-	"user_agent\x88\x01\x01\x12D\n" +
-	"\x0fFiltrationLevel\x18\x02 \x01(\rB\x14\xaa\xdd\x1b\x10filtration_levelH\x01R\x10filtration_level\x88\x01\x01\x12L\n" +
-	"\x11ScreenScaleFactor\x18\x05 \x01(\x01B\x17\xaa\xdd\x1b\x13screen_scale_factorH\x02R\x13screen_scale_factor\x88\x01\x01\x12/\n" +
-	"\bRegionId\x18\t \x01(\x05B\r\xaa\xdd\x1b\tregion_idH\x03R\tregion_id\x88\x01\x01\x12;\n" +
-	"\fSearchRegion\x18\f \x01(\tB\x11\xaa\xdd\x1b\rsearch_regionH\x04R\rsearch_region\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"OAuthToken\x18\x01 \x01(\tH\x00R\n" +
+	"OAuthToken\x88\x01\x01\x12)\n" +
+	"\rDivKitVersion\x18\x06 \x01(\tH\x01R\rDivKitVersion\x88\x01\x01\x12\x1d\n" +
+	"\aICookie\x18\x0f \x01(\tH\x02R\aICookie\x88\x01\x01\x12)\n" +
+	"\rSpeakersCount\x18\x17 \x01(\x05H\x03R\rSpeakersCount\x88\x01\x01\x12'\n" +
+	"\fOriginDomain\x18\x1a \x01(\tH\x04R\fOriginDomain\x88\x01\x01\x12b\n" +
+	"\x10IncognitoOptions\x18! \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsH\x05R\x11incognito_options\x88\x01\x01\x1a\xbf\x03\n" +
+	"\fTBassOptions\x12\x18\n" +
+	"\aCookies\x18\x04 \x03(\tR\aCookies\x12!\n" +
+	"\tUserAgent\x18\x01 \x01(\tH\x00R\tUserAgent\x88\x01\x01\x12-\n" +
+	"\x0fFiltrationLevel\x18\x02 \x01(\rH\x01R\x0fFiltrationLevel\x88\x01\x01\x121\n" +
+	"\x11ScreenScaleFactor\x18\x05 \x01(\x01H\x02R\x11ScreenScaleFactor\x88\x01\x01\x12\x1f\n" +
+	"\bRegionId\x18\t \x01(\x05H\x03R\bRegionId\x88\x01\x01\x12'\n" +
+	"\fSearchRegion\x18\f \x01(\tH\x04R\fSearchRegion\x88\x01\x01B\f\n" +
 	"\n" +
 	"_UserAgentB\x12\n" +
 	"\x10_FiltrationLevelB\x14\n" +
 	"\x12_ScreenScaleFactorB\v\n" +
 	"\t_RegionIdB\x0f\n" +
 	"\r_SearchRegionJ\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\n" +
-	"\x10\vJ\x04\b\v\x10\fR\bClientIPR\vMegamindCgiR\tProcessIdR\x11VideoGalleryLimitR\x0fSessionIdCookieR\x06Origin\x1a\xac\x01\n" +
-	"\vTPermission\x12'\n" +
-	"\aGranted\x18\x01 \x01(\bB\v\xaa\xdd\x1b\agrantedH\x00R\agranted\x12$\n" +
-	"\x06Status\x18\x03 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06statusH\x00R\x06status\x12!\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameH\x01R\x04name\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x12\n" +
+	"\x10\vJ\x04\b\v\x10\fR\bClientIPR\vMegamindCgiR\tProcessIdR\x11VideoGalleryLimitR\x0fSessionIdCookieR\x06Origin\x1a\x83\x01\n" +
+	"\vTPermission\x12\x1a\n" +
+	"\aGranted\x18\x01 \x01(\bH\x00R\aGranted\x12\x18\n" +
+	"\x06Status\x18\x03 \x01(\bH\x00R\x06Status\x12\x17\n" +
+	"\x04Name\x18\x02 \x01(\tH\x01R\x04Name\x88\x01\x01B\x12\n" +
 	"\x10PermissionStatusB\a\n" +
-	"\x05_NameJ\b\bԻ\x03\x10ջ\x03:\x04\xa8\xdd\x1b\x04B\r\n" +
+	"\x05_NameJ\b\bԻ\x03\x10ջ\x03B\r\n" +
 	"\v_OAuthTokenB\x10\n" +
 	"\x0e_DivKitVersionB\n" +
 	"\n" +
@@ -1254,8 +1249,8 @@ const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_ra
 	"\r_OriginDomainB\x13\n" +
 	"\x11_IncognitoOptionsJ\x04\b\x02\x10\x03J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x1b\x10\x1cJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b \x10!R\tYandexUIDR\fServerTimeMsR\rRadioStationsR\aAppInfoR\x10DoNotUseUserLogsR\x04PuidR\bExpboxesR\x12FavouriteLocationsR\fGuestOptionsR\x0eSourceScreenIdR\x0fSessionIdCookieR\n" +
-	"SpotterRmsR\x11ActiveUserOptionsR\x11DatumPersonalDataR\tSaeCookieR\x11CookiesCollectionR\tCompanyId:\x04\xa8\xdd\x1b\x04B\x11\n" +
+	"\x10\vJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x1b\x10\x1cR\tYandexUIDR\fServerTimeMsR\rRadioStationsR\aAppInfoR\x10DoNotUseUserLogsR\x04PuidR\bExpboxesR\x12FavouriteLocationsR\fGuestOptionsR\x0eSourceScreenIdR\x0fSessionIdCookieR\n" +
+	"SpotterRmsR\x11ActiveUserOptionsB\x11\n" +
 	"\x0fDeviceStateTypeB\x16\n" +
 	"\x14EnvironmentStateTypeB\x0f\n" +
 	"\r_VoiceSessionB\x11\n" +
@@ -1264,47 +1259,40 @@ const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_ra
 	"J\x04\b\n" +
 	"\x10\vJ\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x04\b\x14\x10\x15R\x11StickinessOptionsR\aTestIDsR\n" +
 	"LaasRegionR\x0fRawPersonalDataR\rSmartHomeInfoR\x11NotificationStateR\n" +
-	"AsrOptions\x1a\xed\x03\n" +
-	"\x13TAdvancedAsrOptions\x12%\n" +
-	"\aGrammar\x18\x04 \x03(\tB\v\xaa\xdd\x1b\agrammarR\agrammar\x12A\n" +
-	"\x0ePartialResults\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fpartial_resultsH\x00R\x0fpartial_results\x88\x01\x01\x12J\n" +
-	"\x11ManualPunctuation\x18\x02 \x01(\bB\x16\xaa\xdd\x1b\x12manual_punctuationH\x01R\x12manual_punctuation\x88\x01\x01\x123\n" +
+	"AsrOptions\x1a\xf5\x02\n" +
+	"\x13TAdvancedAsrOptions\x12\x18\n" +
+	"\aGrammar\x18\x04 \x03(\tR\aGrammar\x12+\n" +
+	"\x0ePartialResults\x18\x01 \x01(\bH\x00R\x0ePartialResults\x88\x01\x01\x121\n" +
+	"\x11ManualPunctuation\x18\x02 \x01(\bH\x01R\x11ManualPunctuation\x88\x01\x01\x12#\n" +
 	"\n" +
-	"Capitalize\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"capitalizeH\x02R\n" +
-	"capitalize\x88\x01\x01\x12G\n" +
-	"\x10UtteranceSilence\x18\x05 \x01(\x04B\x15\xaa\xdd\x1b\x11utterance_silenceH\x03R\x11utterance_silence\x88\x01\x01\x12-\n" +
-	"\bBiometry\x18\x06 \x01(\tB\f\xaa\xdd\x1b\bbiometryH\x04R\bbiometry\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
+	"Capitalize\x18\x03 \x01(\bH\x02R\n" +
+	"Capitalize\x88\x01\x01\x12/\n" +
+	"\x10UtteranceSilence\x18\x05 \x01(\x04H\x03R\x10UtteranceSilence\x88\x01\x01\x12\x1f\n" +
+	"\bBiometry\x18\x06 \x01(\tH\x04R\bBiometry\x88\x01\x01B\x11\n" +
 	"\x0f_PartialResultsB\x14\n" +
 	"\x12_ManualPunctuationB\r\n" +
 	"\v_CapitalizeB\x13\n" +
 	"\x11_UtteranceSilenceB\v\n" +
-	"\t_BiometryJ\x04\b\a\x10\bR\rBiometryGroup\x1a\xc6\t\n" +
-	"\x13TDialogHistoryBlock\x12n\n" +
-	"\tChatFiles\x18\x02 \x03(\v2?.NAlice.TAliceRequestProto.TDialogHistoryBlock.TFileDescriptionB\x0e\xaa\xdd\x1b\n" +
-	"chat_filesR\n" +
-	"chat_files\x1a\xa7\b\n" +
-	"\x10TFileDescription\x12$\n" +
-	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x12!\n" +
-	"\x04Guid\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04guidH\x01R\x04guid\x88\x01\x01\x12Y\n" +
-	"\x06Status\x18\x04 \x01(\x0e20.NAlice.NApi.NFiles.TFileInfo.EFileServiceStatusB\n" +
-	"\xaa\xdd\x1b\x06statusH\x02R\x06status\x88\x01\x01\x12D\n" +
-	"\x0fUploadTimestamp\x18\x05 \x01(\x04B\x14\xaa\xdd\x1b\x10upload_timestampH\x03R\x10upload_timestamp\x88\x01\x01\x12O\n" +
-	"\x10ProcessedContent\x18\x06 \x01(\tB\x1d\xaa\xdd\x1b\x11processed_content\xa8\x8d'\x01\xa8\x8d'\x04H\x04R\x11processed_content\x88\x01\x01\x125\n" +
+	"\t_BiometryJ\x04\b\a\x10\bR\rBiometryGroup\x1a\xf4\a\n" +
+	"\x13TDialogHistoryBlock\x12]\n" +
+	"\tChatFiles\x18\x02 \x03(\v2?.NAlice.TAliceRequestProto.TDialogHistoryBlock.TFileDescriptionR\tChatFiles\x1a\xe6\x06\n" +
+	"\x10TFileDescription\x12\x19\n" +
+	"\x05Title\x18\x01 \x01(\tH\x00R\x05Title\x88\x01\x01\x12\x17\n" +
+	"\x04Guid\x18\x03 \x01(\tH\x01R\x04Guid\x88\x01\x01\x12M\n" +
+	"\x06Status\x18\x04 \x01(\x0e20.NAlice.NApi.NFiles.TFileInfo.EFileServiceStatusH\x02R\x06Status\x88\x01\x01\x12-\n" +
+	"\x0fUploadTimestamp\x18\x05 \x01(\x04H\x03R\x0fUploadTimestamp\x88\x01\x01\x12/\n" +
+	"\x10ProcessedContent\x18\x06 \x01(\tH\x04R\x10ProcessedContent\x88\x01\x01\x12#\n" +
 	"\n" +
-	"PreviewUrl\x18\a \x01(\tB\x0f\xaa\xdd\x1b\vpreview_urlH\x05R\vpreview_url\x88\x01\x01\x122\n" +
-	"\tSizeBytes\x18\b \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"size_bytesH\x06R\n" +
-	"size_bytes\x88\x01\x01\x12/\n" +
-	"\bMimeType\x18\t \x01(\tB\r\xaa\xdd\x1b\tmime_typeH\aR\tmime_type\x88\x01\x01\x12X\n" +
+	"PreviewUrl\x18\a \x01(\tH\x05R\n" +
+	"PreviewUrl\x88\x01\x01\x12!\n" +
+	"\tSizeBytes\x18\b \x01(\x04H\x06R\tSizeBytes\x88\x01\x01\x12\x1f\n" +
+	"\bMimeType\x18\t \x01(\tH\aR\bMimeType\x88\x01\x01\x12H\n" +
 	"\bFileType\x18\n" +
-	" \x01(\x0e2'.NAlice.NApi.NFiles.TFileInfo.EFileTypeB\r\xaa\xdd\x1b\tfile_typeH\bR\tfile_type\x88\x01\x01\x12N\n" +
-	"\x06Source\x18\f \x01(\v2%.NAlice.NApi.NFiles.TFileInfo.TSourceB\n" +
-	"\xaa\xdd\x1b\x06sourceH\tR\x06source\x88\x01\x01\x12N\n" +
-	"\x06Result\x18\r \x01(\v2%.NAlice.NApi.NFiles.TFileInfo.TSourceB\n" +
-	"\xaa\xdd\x1b\x06resultH\n" +
-	"R\x06result\x88\x01\x01\x12V\n" +
-	"\bFeatures\x18\x0e \x01(\v2'.NAlice.NApi.NFiles.TFileInfo.TFeaturesB\f\xaa\xdd\x1b\bfeaturesH\vR\bfeatures\x88\x01\x01\x12,\n" +
+	" \x01(\x0e2'.NAlice.NApi.NFiles.TFileInfo.EFileTypeH\bR\bFileType\x88\x01\x01\x12B\n" +
+	"\x06Source\x18\f \x01(\v2%.NAlice.NApi.NFiles.TFileInfo.TSourceH\tR\x06Source\x88\x01\x01\x12B\n" +
+	"\x06Result\x18\r \x01(\v2%.NAlice.NApi.NFiles.TFileInfo.TSourceH\n" +
+	"R\x06Result\x88\x01\x01\x12H\n" +
+	"\bFeatures\x18\x0e \x01(\v2'.NAlice.NApi.NFiles.TFileInfo.TFeaturesH\vR\bFeatures\x88\x01\x01\x12,\n" +
 	"\aShareId\x18\x10 \x01(\tB\f\xaa\xdd\x1b\bshare_idH\fR\bshare_id\x88\x01\x01B\b\n" +
 	"\x06_TitleB\a\n" +
 	"\x05_GuidB\t\n" +
@@ -1320,7 +1308,7 @@ const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_ra
 	"\a_ResultB\v\n" +
 	"\t_FeaturesB\n" +
 	"\n" +
-	"\b_ShareIdJ\x04\b\x02\x10\x03R\tExtensionJ\x04\b\x01\x10\x02R\x0fChatDialogTurns:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"\b_ShareIdJ\x04\b\x02\x10\x03R\tExtensionJ\x04\b\x01\x10\x02R\x0fChatDialogTurnsB\v\n" +
 	"\t_FirmwareB\x16\n" +
 	"\x14_VoiceInputMessageIdB\x10\n" +
 	"\x0e_SpotterPhraseB\x16\n" +
@@ -1336,8 +1324,9 @@ const file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_ra
 	"\v_TtsOptionsJ\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
 	"\x10\vJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1f\x10 J\x04\b \x10!J\x04\b!\x10\"J\x04\b#\x10$J\x04\b$\x10%J\x04\b%\x10&J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)R\aSessionR\vMementoDataR\x0fIoTUserInfoDataR\bContactsR\rContactsProtoR\tGuestDataR\rGuestUserDataR\rOnlineDevicesR\x13QuasarDeviceConfigsR\x10BlackBoxUserInfoR\x11EmergencyContactsR\x11SubscriptionsInfoR\x0eActiveUserDataR\n" +
-	"Alice2ModeR\rAccountConfigR\x14BlackBoxFullUserInfoR\x18QuasarDeviceConfigsProtoR\rRecentDialogsR\tUserFactsR\rFraudDetectedB\x90\x01\n" +
-	"8ru.yandex.alice.protos.api.alicekit.events.alice_requestB\x11AliceRequestProtoP\x01Z?a.yandex-team.ru/alice/protos/api/alicekit/events/alice_requestb\x06proto3"
+	"Alice2ModeR\rAccountConfigR\x14BlackBoxFullUserInfoR\x18QuasarDeviceConfigsProtoR\rRecentDialogsR\tUserFactsR\rFraudDetectedB\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x11AliceRequestProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/alice_request\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_alice_request_alice_request_proto_rawDescOnce sync.Once

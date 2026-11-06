@@ -23,14 +23,14 @@ const (
 )
 
 type TCommonPlayerState struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	IsPlaying         bool                   `protobuf:"varint,1,opt,name=IsPlaying,json=is_playing,proto3" json:"IsPlaying,omitempty"`
-	LastPlayTimestamp uint64                 `protobuf:"varint,2,opt,name=LastPlayTimestamp,json=last_play_timestamp,proto3" json:"LastPlayTimestamp,omitempty"`
-	LastStopTimestamp uint64                 `protobuf:"varint,3,opt,name=LastStopTimestamp,json=last_stop_timestamp,proto3" json:"LastStopTimestamp,omitempty"`
-	ScenarioMeta      map[string]string      `protobuf:"bytes,4,rep,name=ScenarioMeta,json=scenario_meta,proto3" json:"ScenarioMeta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	DurationMs        uint32                 `protobuf:"varint,5,opt,name=DurationMs,json=duration_ms,proto3" json:"DurationMs,omitempty"`
-	PlayedMs          uint32                 `protobuf:"varint,6,opt,name=PlayedMs,json=played_ms,proto3" json:"PlayedMs,omitempty"`
-	OffsetMs          int32                  `protobuf:"varint,7,opt,name=OffsetMs,json=offset_ms,proto3" json:"OffsetMs,omitempty"`
+	state             protoimpl.MessageState                  `protogen:"open.v1"`
+	IsPlaying         bool                                    `protobuf:"varint,1,opt,name=IsPlaying,proto3" json:"IsPlaying,omitempty"`
+	LastPlayTimestamp uint64                                  `protobuf:"varint,2,opt,name=LastPlayTimestamp,proto3" json:"LastPlayTimestamp,omitempty"`
+	LastStopTimestamp uint64                                  `protobuf:"varint,3,opt,name=LastStopTimestamp,proto3" json:"LastStopTimestamp,omitempty"`
+	ScenarioMeta      []*TCommonPlayerState_ScenarioMetaEntry `protobuf:"bytes,4,rep,name=ScenarioMeta,proto3" json:"ScenarioMeta,omitempty"`
+	DurationMs        uint32                                  `protobuf:"varint,5,opt,name=DurationMs,proto3" json:"DurationMs,omitempty"`
+	PlayedMs          uint32                                  `protobuf:"varint,6,opt,name=PlayedMs,proto3" json:"PlayedMs,omitempty"`
+	OffsetMs          int32                                   `protobuf:"varint,7,opt,name=OffsetMs,proto3" json:"OffsetMs,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -86,7 +86,7 @@ func (x *TCommonPlayerState) GetLastStopTimestamp() uint64 {
 	return 0
 }
 
-func (x *TCommonPlayerState) GetScenarioMeta() map[string]string {
+func (x *TCommonPlayerState) GetScenarioMeta() []*TCommonPlayerState_ScenarioMetaEntry {
 	if x != nil {
 		return x.ScenarioMeta
 	}
@@ -114,27 +114,78 @@ func (x *TCommonPlayerState) GetOffsetMs() int32 {
 	return 0
 }
 
+type TCommonPlayerState_ScenarioMetaEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TCommonPlayerState_ScenarioMetaEntry) Reset() {
+	*x = TCommonPlayerState_ScenarioMetaEntry{}
+	mi := &file_alice_protos_data_common_player_state_common_player_state_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TCommonPlayerState_ScenarioMetaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TCommonPlayerState_ScenarioMetaEntry) ProtoMessage() {}
+
+func (x *TCommonPlayerState_ScenarioMetaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_common_player_state_common_player_state_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TCommonPlayerState_ScenarioMetaEntry.ProtoReflect.Descriptor instead.
+func (*TCommonPlayerState_ScenarioMetaEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_common_player_state_common_player_state_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *TCommonPlayerState_ScenarioMetaEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TCommonPlayerState_ScenarioMetaEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_data_common_player_state_common_player_state_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_common_player_state_common_player_state_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/data/common_player_state/common_player_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x04\n" +
-	"\x12TCommonPlayerState\x12-\n" +
-	"\tIsPlaying\x18\x01 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_playingR\n" +
-	"is_playing\x12G\n" +
-	"\x11LastPlayTimestamp\x18\x02 \x01(\x04B\x17\xaa\xdd\x1b\x13last_play_timestampR\x13last_play_timestamp\x12G\n" +
-	"\x11LastStopTimestamp\x18\x03 \x01(\x04B\x17\xaa\xdd\x1b\x13last_stop_timestampR\x13last_stop_timestamp\x12h\n" +
-	"\fScenarioMeta\x18\x04 \x03(\v2,.NAlice.TCommonPlayerState.ScenarioMetaEntryB\x15\xa0\xdd\x1b\n" +
-	"\xaa\xdd\x1b\rscenario_metaR\rscenario_meta\x120\n" +
+	"?alice/protos/data/common_player_state/common_player_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf5\x02\n" +
+	"\x12TCommonPlayerState\x12\x1c\n" +
+	"\tIsPlaying\x18\x01 \x01(\bR\tIsPlaying\x12,\n" +
+	"\x11LastPlayTimestamp\x18\x02 \x01(\x04R\x11LastPlayTimestamp\x12,\n" +
+	"\x11LastStopTimestamp\x18\x03 \x01(\x04R\x11LastStopTimestamp\x12P\n" +
+	"\fScenarioMeta\x18\x04 \x03(\v2,.NAlice.TCommonPlayerState.ScenarioMetaEntryR\fScenarioMeta\x12\x1e\n" +
 	"\n" +
-	"DurationMs\x18\x05 \x01(\rB\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12*\n" +
-	"\bPlayedMs\x18\x06 \x01(\rB\r\xaa\xdd\x1b\tplayed_msR\tplayed_ms\x12*\n" +
-	"\bOffsetMs\x18\a \x01(\x05B\r\xaa\xdd\x1b\toffset_msR\toffset_ms\x1a?\n" +
+	"DurationMs\x18\x05 \x01(\rR\n" +
+	"DurationMs\x12\x1a\n" +
+	"\bPlayedMs\x18\x06 \x01(\rR\bPlayedMs\x12\x1a\n" +
+	"\bOffsetMs\x18\a \x01(\x05R\bOffsetMs\x1a;\n" +
 	"\x11ScenarioMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04B\x81\x01\n" +
-	"/ru.yandex.alice.protos.data.common_player_stateB\x16CommonPlayerStateProtoZ6a.yandex-team.ru/alice/protos/data/common_player_stateb\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05valueB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x16CommonPlayerStateProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/common_player_state\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_common_player_state_common_player_state_proto_rawDescOnce sync.Once
@@ -150,8 +201,8 @@ func file_alice_protos_data_common_player_state_common_player_state_proto_rawDes
 
 var file_alice_protos_data_common_player_state_common_player_state_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_alice_protos_data_common_player_state_common_player_state_proto_goTypes = []any{
-	(*TCommonPlayerState)(nil), // 0: NAlice.TCommonPlayerState
-	nil,                        // 1: NAlice.TCommonPlayerState.ScenarioMetaEntry
+	(*TCommonPlayerState)(nil),                   // 0: NAlice.TCommonPlayerState
+	(*TCommonPlayerState_ScenarioMetaEntry)(nil), // 1: NAlice.TCommonPlayerState.ScenarioMetaEntry
 }
 var file_alice_protos_data_common_player_state_common_player_state_proto_depIdxs = []int32{
 	1, // 0: NAlice.TCommonPlayerState.ScenarioMeta:type_name -> NAlice.TCommonPlayerState.ScenarioMetaEntry

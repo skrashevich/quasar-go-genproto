@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/volume/capability.proto
 
-package volumepb
+package volume
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -24,58 +24,6 @@ const (
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
-
-type TVolumeCapability_EAudioStream int32
-
-const (
-	TVolumeCapability_MEDIA      TVolumeCapability_EAudioStream = 0
-	TVolumeCapability_NAVIGATION TVolumeCapability_EAudioStream = 1
-	TVolumeCapability_VOICE_CALL TVolumeCapability_EAudioStream = 2
-	TVolumeCapability_ASSISTANT  TVolumeCapability_EAudioStream = 3
-)
-
-// Enum value maps for TVolumeCapability_EAudioStream.
-var (
-	TVolumeCapability_EAudioStream_name = map[int32]string{
-		0: "MEDIA",
-		1: "NAVIGATION",
-		2: "VOICE_CALL",
-		3: "ASSISTANT",
-	}
-	TVolumeCapability_EAudioStream_value = map[string]int32{
-		"MEDIA":      0,
-		"NAVIGATION": 1,
-		"VOICE_CALL": 2,
-		"ASSISTANT":  3,
-	}
-)
-
-func (x TVolumeCapability_EAudioStream) Enum() *TVolumeCapability_EAudioStream {
-	p := new(TVolumeCapability_EAudioStream)
-	*p = x
-	return p
-}
-
-func (x TVolumeCapability_EAudioStream) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (TVolumeCapability_EAudioStream) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[0].Descriptor()
-}
-
-func (TVolumeCapability_EAudioStream) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[0]
-}
-
-func (x TVolumeCapability_EAudioStream) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use TVolumeCapability_EAudioStream.Descriptor instead.
-func (TVolumeCapability_EAudioStream) EnumDescriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDescGZIP(), []int{0, 0}
-}
 
 type TVolumeCapability_ESource int32
 
@@ -119,11 +67,11 @@ func (x TVolumeCapability_ESource) String() string {
 }
 
 func (TVolumeCapability_ESource) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[1].Descriptor()
+	return file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[0].Descriptor()
 }
 
 func (TVolumeCapability_ESource) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[1]
+	return &file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[0]
 }
 
 func (x TVolumeCapability_ESource) Number() protoreflect.EnumNumber {
@@ -132,6 +80,58 @@ func (x TVolumeCapability_ESource) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use TVolumeCapability_ESource.Descriptor instead.
 func (TVolumeCapability_ESource) EnumDescriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDescGZIP(), []int{0, 0}
+}
+
+type TVolumeCapability_EAudioStream int32
+
+const (
+	TVolumeCapability_MEDIA      TVolumeCapability_EAudioStream = 0
+	TVolumeCapability_NAVIGATION TVolumeCapability_EAudioStream = 1
+	TVolumeCapability_VOICE_CALL TVolumeCapability_EAudioStream = 2
+	TVolumeCapability_ASSISTANT  TVolumeCapability_EAudioStream = 3
+)
+
+// Enum value maps for TVolumeCapability_EAudioStream.
+var (
+	TVolumeCapability_EAudioStream_name = map[int32]string{
+		0: "MEDIA",
+		1: "NAVIGATION",
+		2: "VOICE_CALL",
+		3: "ASSISTANT",
+	}
+	TVolumeCapability_EAudioStream_value = map[string]int32{
+		"MEDIA":      0,
+		"NAVIGATION": 1,
+		"VOICE_CALL": 2,
+		"ASSISTANT":  3,
+	}
+)
+
+func (x TVolumeCapability_EAudioStream) Enum() *TVolumeCapability_EAudioStream {
+	p := new(TVolumeCapability_EAudioStream)
+	*p = x
+	return p
+}
+
+func (x TVolumeCapability_EAudioStream) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TVolumeCapability_EAudioStream) Descriptor() protoreflect.EnumDescriptor {
+	return file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[1].Descriptor()
+}
+
+func (TVolumeCapability_EAudioStream) Type() protoreflect.EnumType {
+	return &file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes[1]
+}
+
+func (x TVolumeCapability_EAudioStream) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TVolumeCapability_EAudioStream.Descriptor instead.
+func (TVolumeCapability_EAudioStream) EnumDescriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDescGZIP(), []int{0, 1}
 }
 
@@ -186,9 +186,9 @@ func (TVolumeCapability_TVolumeSetDirective_EMode) EnumDescriptor() ([]byte, []i
 
 type TVolumeCapability struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta    `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TVolumeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TVolumeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta    `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TVolumeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TVolumeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -246,9 +246,9 @@ func (x *TVolumeCapability) GetState() *TVolumeCapability_TState {
 
 type TVolumeCapability_TParameters struct {
 	state                 protoimpl.MessageState           `protogen:"open.v1"`
-	SupportsPercentLevel  bool                             `protobuf:"varint,1,opt,name=SupportsPercentLevel,json=supports_platform_level,proto3" json:"SupportsPercentLevel,omitempty"`
-	UseCoarseScale        bool                             `protobuf:"varint,2,opt,name=UseCoarseScale,json=use_coarse_scale,proto3" json:"UseCoarseScale,omitempty"`
-	SupportVolumeDbLevels bool                             `protobuf:"varint,3,opt,name=SupportVolumeDbLevels,json=support_volume_db_levels,proto3" json:"SupportVolumeDbLevels,omitempty"`
+	SupportsPercentLevel  bool                             `protobuf:"varint,1,opt,name=SupportsPercentLevel,proto3" json:"SupportsPercentLevel,omitempty"`
+	UseCoarseScale        bool                             `protobuf:"varint,2,opt,name=UseCoarseScale,proto3" json:"UseCoarseScale,omitempty"`
+	SupportVolumeDbLevels bool                             `protobuf:"varint,3,opt,name=SupportVolumeDbLevels,proto3" json:"SupportVolumeDbLevels,omitempty"`
 	SupportedStreams      []TVolumeCapability_EAudioStream `protobuf:"varint,4,rep,packed,name=SupportedStreams,json=supported_streams,proto3,enum=NAlice.TVolumeCapability_EAudioStream" json:"SupportedStreams,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
@@ -314,12 +314,12 @@ func (x *TVolumeCapability_TParameters) GetSupportedStreams() []TVolumeCapabilit
 
 type TVolumeCapability_TState struct {
 	state            protoimpl.MessageState                   `protogen:"open.v1"`
-	IsMuted          bool                                     `protobuf:"varint,1,opt,name=IsMuted,json=is_muted,proto3" json:"IsMuted,omitempty"`
-	Level            uint32                                   `protobuf:"varint,2,opt,name=Level,json=level,proto3" json:"Level,omitempty"`
-	MaxLevel         uint32                                   `protobuf:"varint,3,opt,name=MaxLevel,json=max_level,proto3" json:"MaxLevel,omitempty"`
-	PercentLevel     float32                                  `protobuf:"fixed32,4,opt,name=PercentLevel,json=percent_level,proto3" json:"PercentLevel,omitempty"`
-	LastChangeSource TVolumeCapability_ESource                `protobuf:"varint,5,opt,name=LastChangeSource,json=last_change_source,proto3,enum=NAlice.TVolumeCapability_ESource" json:"LastChangeSource,omitempty"`
-	VolumeDbLevels   []float32                                `protobuf:"fixed32,6,rep,packed,name=VolumeDbLevels,json=volume_db_levels,proto3" json:"VolumeDbLevels,omitempty"`
+	IsMuted          bool                                     `protobuf:"varint,1,opt,name=IsMuted,proto3" json:"IsMuted,omitempty"`
+	Level            uint32                                   `protobuf:"varint,2,opt,name=Level,proto3" json:"Level,omitempty"`
+	MaxLevel         uint32                                   `protobuf:"varint,3,opt,name=MaxLevel,proto3" json:"MaxLevel,omitempty"`
+	PercentLevel     float32                                  `protobuf:"fixed32,4,opt,name=PercentLevel,proto3" json:"PercentLevel,omitempty"`
+	LastChangeSource TVolumeCapability_ESource                `protobuf:"varint,5,opt,name=LastChangeSource,proto3,enum=NAlice.TVolumeCapability_ESource" json:"LastChangeSource,omitempty"`
+	VolumeDbLevels   []float32                                `protobuf:"fixed32,6,rep,packed,name=VolumeDbLevels,proto3" json:"VolumeDbLevels,omitempty"`
 	StreamStates     []*TVolumeCapability_TState_TStreamState `protobuf:"bytes,7,rep,name=StreamStates,json=stream_states,proto3" json:"StreamStates,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -406,8 +406,8 @@ func (x *TVolumeCapability_TState) GetStreamStates() []*TVolumeCapability_TState
 
 type TVolumeCapability_TVolumeMuteDirective struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	IsMuted       bool                           `protobuf:"varint,1,opt,name=IsMuted,json=is_muted,proto3" json:"IsMuted,omitempty"`
-	Source        TVolumeCapability_ESource      `protobuf:"varint,2,opt,name=Source,json=source,proto3,enum=NAlice.TVolumeCapability_ESource" json:"Source,omitempty"`
+	IsMuted       bool                           `protobuf:"varint,1,opt,name=IsMuted,proto3" json:"IsMuted,omitempty"`
+	Source        TVolumeCapability_ESource      `protobuf:"varint,2,opt,name=Source,proto3,enum=NAlice.TVolumeCapability_ESource" json:"Source,omitempty"`
 	Stream        TVolumeCapability_EAudioStream `protobuf:"varint,3,opt,name=Stream,json=stream,proto3,enum=NAlice.TVolumeCapability_EAudioStream" json:"Stream,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -510,14 +510,14 @@ func (x *TVolumeCapability_TVolumeUnmuteDirective) GetStream() TVolumeCapability
 
 type TVolumeCapability_TVolumeStartVolumeChange struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	InitialPercentLevel uint32                 `protobuf:"varint,1,opt,name=InitialPercentLevel,json=initial_percent_level,proto3" json:"InitialPercentLevel,omitempty"`
-	FinalPercentLevel   uint32                 `protobuf:"varint,2,opt,name=FinalPercentLevel,json=final_percent_level,proto3" json:"FinalPercentLevel,omitempty"`
+	InitialPercentLevel uint32                 `protobuf:"varint,1,opt,name=InitialPercentLevel,proto3" json:"InitialPercentLevel,omitempty"`
+	FinalPercentLevel   uint32                 `protobuf:"varint,2,opt,name=FinalPercentLevel,proto3" json:"FinalPercentLevel,omitempty"`
 	// Types that are valid to be assigned to TimeStepPolicy:
 	//
 	//	*TVolumeCapability_TVolumeStartVolumeChange_StepMs
 	//	*TVolumeCapability_TVolumeStartVolumeChange_FullTimeMs
 	TimeStepPolicy isTVolumeCapability_TVolumeStartVolumeChange_TimeStepPolicy `protobuf_oneof:"TimeStepPolicy"`
-	PercentStep    *uint32                                                     `protobuf:"varint,5,opt,name=PercentStep,json=percent_step,proto3,oneof" json:"PercentStep,omitempty"`
+	PercentStep    *uint32                                                     `protobuf:"varint,5,opt,name=PercentStep,proto3,oneof" json:"PercentStep,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -603,11 +603,11 @@ type isTVolumeCapability_TVolumeStartVolumeChange_TimeStepPolicy interface {
 }
 
 type TVolumeCapability_TVolumeStartVolumeChange_StepMs struct {
-	StepMs uint32 `protobuf:"varint,3,opt,name=StepMs,json=step_ms,proto3,oneof"`
+	StepMs uint32 `protobuf:"varint,3,opt,name=StepMs,proto3,oneof"`
 }
 
 type TVolumeCapability_TVolumeStartVolumeChange_FullTimeMs struct {
-	FullTimeMs uint32 `protobuf:"varint,4,opt,name=FullTimeMs,json=full_time_ms,proto3,oneof"`
+	FullTimeMs uint32 `protobuf:"varint,4,opt,name=FullTimeMs,proto3,oneof"`
 }
 
 func (*TVolumeCapability_TVolumeStartVolumeChange_StepMs) isTVolumeCapability_TVolumeStartVolumeChange_TimeStepPolicy() {
@@ -618,7 +618,7 @@ func (*TVolumeCapability_TVolumeStartVolumeChange_FullTimeMs) isTVolumeCapabilit
 
 type TVolumeCapability_TVolumeStopVolumeChange struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	RestoreVolumeLevel bool                   `protobuf:"varint,1,opt,name=RestoreVolumeLevel,json=restore_volume_level,proto3" json:"RestoreVolumeLevel,omitempty"`
+	RestoreVolumeLevel bool                   `protobuf:"varint,1,opt,name=RestoreVolumeLevel,proto3" json:"RestoreVolumeLevel,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -662,9 +662,9 @@ func (x *TVolumeCapability_TVolumeStopVolumeChange) GetRestoreVolumeLevel() bool
 
 type TVolumeCapability_TVolumeSetDirective struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	PercentLevel  float32                                     `protobuf:"fixed32,1,opt,name=PercentLevel,json=percent_level,proto3" json:"PercentLevel,omitempty"`
-	Mode          TVolumeCapability_TVolumeSetDirective_EMode `protobuf:"varint,2,opt,name=Mode,json=mode,proto3,enum=NAlice.TVolumeCapability_TVolumeSetDirective_EMode" json:"Mode,omitempty"`
-	Source        TVolumeCapability_ESource                   `protobuf:"varint,3,opt,name=Source,json=source,proto3,enum=NAlice.TVolumeCapability_ESource" json:"Source,omitempty"`
+	PercentLevel  float32                                     `protobuf:"fixed32,1,opt,name=PercentLevel,proto3" json:"PercentLevel,omitempty"`
+	Mode          TVolumeCapability_TVolumeSetDirective_EMode `protobuf:"varint,2,opt,name=Mode,proto3,enum=NAlice.TVolumeCapability_TVolumeSetDirective_EMode" json:"Mode,omitempty"`
+	Source        TVolumeCapability_ESource                   `protobuf:"varint,3,opt,name=Source,proto3,enum=NAlice.TVolumeCapability_ESource" json:"Source,omitempty"`
 	Stream        TVolumeCapability_EAudioStream              `protobuf:"varint,4,opt,name=Stream,json=stream,proto3,enum=NAlice.TVolumeCapability_EAudioStream" json:"Stream,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -816,26 +816,25 @@ var File_alice_protos_endpoint_capabilities_volume_capability_proto protoreflect
 
 const file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/endpoint/capabilities/volume/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\x17\n" +
-	"\x11TVolumeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12U\n" +
+	":alice/protos/endpoint/capabilities/volume/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xaf\x12\n" +
+	"\x11TVolumeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12E\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2%.NAlice.TVolumeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12A\n" +
-	"\x05State\x18\x03 \x01(\v2 .NAlice.TVolumeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xea\x02\n" +
-	"\vTParameters\x12R\n" +
-	"\x14SupportsPercentLevel\x18\x01 \x01(\bB\x1b\xaa\xdd\x1b\x17supports_platform_levelR\x17supports_platform_level\x12>\n" +
-	"\x0eUseCoarseScale\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10use_coarse_scaleR\x10use_coarse_scale\x12U\n" +
-	"\x15SupportVolumeDbLevels\x18\x03 \x01(\bB\x1c\xaa\xdd\x1b\x18support_volume_db_levelsR\x18support_volume_db_levels\x12j\n" +
-	"\x10SupportedStreams\x18\x04 \x03(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\x15\xaa\xdd\x1b\x11supported_streamsR\x11supported_streams:\x04\xa8\xdd\x1b\x04\x1a\xc6\x06\n" +
-	"\x06TState\x12'\n" +
-	"\aIsMuted\x18\x01 \x01(\bB\f\xaa\xdd\x1b\bis_mutedR\bis_muted\x12\x1f\n" +
-	"\x05Level\x18\x02 \x01(\rB\t\xaa\xdd\x1b\x05levelR\x05level\x12*\n" +
-	"\bMaxLevel\x18\x03 \x01(\rB\r\xaa\xdd\x1b\tmax_levelR\tmax_level\x126\n" +
-	"\fPercentLevel\x18\x04 \x01(\x02B\x11\xaa\xdd\x1b\rpercent_levelR\rpercent_level\x12g\n" +
-	"\x10LastChangeSource\x18\x05 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceB\x16\xaa\xdd\x1b\x12last_change_sourceR\x12last_change_source\x12>\n" +
-	"\x0eVolumeDbLevels\x18\x06 \x03(\x02B\x14\xaa\xdd\x1b\x10volume_db_levelsR\x10volume_db_levels\x12e\n" +
+	"Parameters\x18\x02 \x01(\v2%.NAlice.TVolumeCapability.TParametersR\n" +
+	"Parameters\x126\n" +
+	"\x05State\x18\x03 \x01(\v2 .NAlice.TVolumeCapability.TStateR\x05State\x1a\x8b\x02\n" +
+	"\vTParameters\x122\n" +
+	"\x14SupportsPercentLevel\x18\x01 \x01(\bR\x14SupportsPercentLevel\x12&\n" +
+	"\x0eUseCoarseScale\x18\x02 \x01(\bR\x0eUseCoarseScale\x124\n" +
+	"\x15SupportVolumeDbLevels\x18\x03 \x01(\bR\x15SupportVolumeDbLevels\x12j\n" +
+	"\x10SupportedStreams\x18\x04 \x03(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\x15\xaa\xdd\x1b\x11supported_streamsR\x11supported_streams\x1a\xd0\x05\n" +
+	"\x06TState\x12\x18\n" +
+	"\aIsMuted\x18\x01 \x01(\bR\aIsMuted\x12\x14\n" +
+	"\x05Level\x18\x02 \x01(\rR\x05Level\x12\x1a\n" +
+	"\bMaxLevel\x18\x03 \x01(\rR\bMaxLevel\x12\"\n" +
+	"\fPercentLevel\x18\x04 \x01(\x02R\fPercentLevel\x12M\n" +
+	"\x10LastChangeSource\x18\x05 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceR\x10LastChangeSource\x12&\n" +
+	"\x0eVolumeDbLevels\x18\x06 \x03(\x02R\x0eVolumeDbLevels\x12e\n" +
 	"\fStreamStates\x18\a \x03(\v2-.NAlice.TVolumeCapability.TState.TStreamStateB\x11\xaa\xdd\x1b\rstream_statesR\rstream_states\x1a\xf7\x02\n" +
 	"\fTStreamState\x12J\n" +
 	"\x06Stream\x18\x01 \x01(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\n" +
@@ -844,54 +843,53 @@ const file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDesc = 
 	"\x05Level\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05levelR\x05level\x12*\n" +
 	"\bMaxLevel\x18\x04 \x01(\rB\r\xaa\xdd\x1b\tmax_levelR\tmax_level\x126\n" +
 	"\fPercentLevel\x18\x05 \x01(\x02B\x11\xaa\xdd\x1b\rpercent_levelR\rpercent_level\x12g\n" +
-	"\x10LastChangeSource\x18\x06 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceB\x16\xaa\xdd\x1b\x12last_change_sourceR\x12last_change_source:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1a\xeb\x01\n" +
-	"\x14TVolumeMuteDirective\x12'\n" +
-	"\aIsMuted\x18\x01 \x01(\bB\f\xaa\xdd\x1b\bis_mutedR\bis_muted\x12E\n" +
-	"\x06Source\x18\x02 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\x12J\n" +
+	"\x10LastChangeSource\x18\x06 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceB\x16\xaa\xdd\x1b\x12last_change_sourceR\x12last_change_source:\x04\xa8\xdd\x1b\x04\x1a\xb7\x01\n" +
+	"\x14TVolumeMuteDirective\x12\x18\n" +
+	"\aIsMuted\x18\x01 \x01(\bR\aIsMuted\x129\n" +
+	"\x06Source\x18\x02 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceR\x06Source\x12J\n" +
 	"\x06Stream\x18\x03 \x01(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\n" +
-	"\xaa\xdd\x1b\x06streamR\x06stream:\x17\x92\x82\x19\vvolume_mute\xa8\xdd\x1b\x04\xa8\xc8\x1c(\x1a\x7f\n" +
+	"\xaa\xdd\x1b\x06streamR\x06stream\x1ad\n" +
 	"\x16TVolumeUnmuteDirective\x12J\n" +
 	"\x06Stream\x18\x01 \x01(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\n" +
-	"\xaa\xdd\x1b\x06streamR\x06stream:\x19\x92\x82\x19\rvolume_unmute\xa8\xdd\x1b\x04\xa8\xc8\x1c)\x1a\x8e\x03\n" +
-	"\x18TVolumeStartVolumeChange\x12M\n" +
-	"\x13InitialPercentLevel\x18\x01 \x01(\rB\x19\xaa\xdd\x1b\x15initial_percent_levelR\x15initial_percent_level\x12G\n" +
-	"\x11FinalPercentLevel\x18\x02 \x01(\rB\x17\xaa\xdd\x1b\x13final_percent_levelR\x13final_percent_level\x12&\n" +
-	"\x06StepMs\x18\x03 \x01(\rB\v\xaa\xdd\x1b\astep_msH\x00R\astep_ms\x124\n" +
+	"\xaa\xdd\x1b\x06streamR\x06stream\x1a\xff\x01\n" +
+	"\x18TVolumeStartVolumeChange\x120\n" +
+	"\x13InitialPercentLevel\x18\x01 \x01(\rR\x13InitialPercentLevel\x12,\n" +
+	"\x11FinalPercentLevel\x18\x02 \x01(\rR\x11FinalPercentLevel\x12\x18\n" +
+	"\x06StepMs\x18\x03 \x01(\rH\x00R\x06StepMs\x12 \n" +
 	"\n" +
-	"FullTimeMs\x18\x04 \x01(\rB\x10\xaa\xdd\x1b\ffull_time_msH\x00R\ffull_time_ms\x128\n" +
-	"\vPercentStep\x18\x05 \x01(\rB\x10\xaa\xdd\x1b\fpercent_stepH\x01R\fpercent_step\x88\x01\x01: \x92\x82\x19\x13start_volume_change\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb5\x01B\x10\n" +
+	"FullTimeMs\x18\x04 \x01(\rH\x00R\n" +
+	"FullTimeMs\x12%\n" +
+	"\vPercentStep\x18\x05 \x01(\rH\x01R\vPercentStep\x88\x01\x01B\x10\n" +
 	"\x0eTimeStepPolicyB\x0e\n" +
-	"\f_PercentStep\x1a\x86\x01\n" +
-	"\x17TVolumeStopVolumeChange\x12J\n" +
-	"\x12RestoreVolumeLevel\x18\x01 \x01(\bB\x18\xaa\xdd\x1b\x14restore_volume_levelR\x14restore_volume_level:\x1f\x92\x82\x19\x12stop_volume_change\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb6\x01\x1a\x93\x03\n" +
-	"\x13TVolumeSetDirective\x126\n" +
-	"\fPercentLevel\x18\x01 \x01(\x02B\x11\xaa\xdd\x1b\rpercent_levelR\rpercent_level\x12Q\n" +
-	"\x04Mode\x18\x02 \x01(\x0e23.NAlice.TVolumeCapability.TVolumeSetDirective.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x12E\n" +
-	"\x06Source\x18\x03 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\x12J\n" +
+	"\f_PercentStep\x1aI\n" +
+	"\x17TVolumeStopVolumeChange\x12.\n" +
+	"\x12RestoreVolumeLevel\x18\x01 \x01(\bR\x12RestoreVolumeLevel\x1a\xd0\x02\n" +
+	"\x13TVolumeSetDirective\x12\"\n" +
+	"\fPercentLevel\x18\x01 \x01(\x02R\fPercentLevel\x12G\n" +
+	"\x04Mode\x18\x02 \x01(\x0e23.NAlice.TVolumeCapability.TVolumeSetDirective.EModeR\x04Mode\x129\n" +
+	"\x06Source\x18\x03 \x01(\x0e2!.NAlice.TVolumeCapability.ESourceR\x06Source\x12J\n" +
 	"\x06Stream\x18\x04 \x01(\x0e2&.NAlice.TVolumeCapability.EAudioStreamB\n" +
 	"\xaa\xdd\x1b\x06streamR\x06stream\"E\n" +
 	"\x05EMode\x12\x10\n" +
 	"\fEModeDefault\x10\x00\x12\x14\n" +
 	"\x10EModeNotLessThan\x10\x01\x12\x14\n" +
-	"\x10EModeNotMoreThan\x10\x02:\x17\x92\x82\x19\n" +
-	"volume_set\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfe\x01\"H\n" +
-	"\fEAudioStream\x12\t\n" +
-	"\x05MEDIA\x10\x00\x12\x0e\n" +
-	"\n" +
-	"NAVIGATION\x10\x01\x12\x0e\n" +
-	"\n" +
-	"VOICE_CALL\x10\x02\x12\r\n" +
-	"\tASSISTANT\x10\x03\"\x80\x01\n" +
+	"\x10EModeNotMoreThan\x10\x02\"\x80\x01\n" +
 	"\aESource\x12\x10\n" +
 	"\fESourceVoice\x10\x00\x12\x11\n" +
 	"\rESourceButton\x10\x01\x12\x14\n" +
 	"\x10ESourceBluetooth\x10\x02\x12\x12\n" +
 	"\x0eESourceRcuHold\x10\x03\x12\x13\n" +
 	"\x0fESourceRcuPress\x10\x04\x12\x11\n" +
-	"\fESourceOther\x10\xe8\a:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x17B\x80\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\vVolumeProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/volume;volumepbb\x06proto3"
+	"\fESourceOther\x10\xe8\a\"H\n" +
+	"\fEAudioStream\x12\t\n" +
+	"\x05MEDIA\x10\x00\x12\x0e\n" +
+	"\n" +
+	"NAVIGATION\x10\x01\x12\x0e\n" +
+	"\n" +
+	"VOICE_CALL\x10\x02\x12\r\n" +
+	"\tASSISTANT\x10\x03B\xb0\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/volume\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDescOnce sync.Once
@@ -908,8 +906,8 @@ func file_alice_protos_endpoint_capabilities_volume_capability_proto_rawDescGZIP
 var file_alice_protos_endpoint_capabilities_volume_capability_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_alice_protos_endpoint_capabilities_volume_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_alice_protos_endpoint_capabilities_volume_capability_proto_goTypes = []any{
-	(TVolumeCapability_EAudioStream)(0),                // 0: NAlice.TVolumeCapability.EAudioStream
-	(TVolumeCapability_ESource)(0),                     // 1: NAlice.TVolumeCapability.ESource
+	(TVolumeCapability_ESource)(0),                     // 0: NAlice.TVolumeCapability.ESource
+	(TVolumeCapability_EAudioStream)(0),                // 1: NAlice.TVolumeCapability.EAudioStream
 	(TVolumeCapability_TVolumeSetDirective_EMode)(0),   // 2: NAlice.TVolumeCapability.TVolumeSetDirective.EMode
 	(*TVolumeCapability)(nil),                          // 3: NAlice.TVolumeCapability
 	(*TVolumeCapability_TParameters)(nil),              // 4: NAlice.TVolumeCapability.TParameters
@@ -926,17 +924,17 @@ var file_alice_protos_endpoint_capabilities_volume_capability_proto_depIdxs = []
 	12, // 0: NAlice.TVolumeCapability.Meta:type_name -> NAlice.TCapability.TMeta
 	4,  // 1: NAlice.TVolumeCapability.Parameters:type_name -> NAlice.TVolumeCapability.TParameters
 	5,  // 2: NAlice.TVolumeCapability.State:type_name -> NAlice.TVolumeCapability.TState
-	0,  // 3: NAlice.TVolumeCapability.TParameters.SupportedStreams:type_name -> NAlice.TVolumeCapability.EAudioStream
-	1,  // 4: NAlice.TVolumeCapability.TState.LastChangeSource:type_name -> NAlice.TVolumeCapability.ESource
+	1,  // 3: NAlice.TVolumeCapability.TParameters.SupportedStreams:type_name -> NAlice.TVolumeCapability.EAudioStream
+	0,  // 4: NAlice.TVolumeCapability.TState.LastChangeSource:type_name -> NAlice.TVolumeCapability.ESource
 	11, // 5: NAlice.TVolumeCapability.TState.StreamStates:type_name -> NAlice.TVolumeCapability.TState.TStreamState
-	1,  // 6: NAlice.TVolumeCapability.TVolumeMuteDirective.Source:type_name -> NAlice.TVolumeCapability.ESource
-	0,  // 7: NAlice.TVolumeCapability.TVolumeMuteDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
-	0,  // 8: NAlice.TVolumeCapability.TVolumeUnmuteDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
+	0,  // 6: NAlice.TVolumeCapability.TVolumeMuteDirective.Source:type_name -> NAlice.TVolumeCapability.ESource
+	1,  // 7: NAlice.TVolumeCapability.TVolumeMuteDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
+	1,  // 8: NAlice.TVolumeCapability.TVolumeUnmuteDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
 	2,  // 9: NAlice.TVolumeCapability.TVolumeSetDirective.Mode:type_name -> NAlice.TVolumeCapability.TVolumeSetDirective.EMode
-	1,  // 10: NAlice.TVolumeCapability.TVolumeSetDirective.Source:type_name -> NAlice.TVolumeCapability.ESource
-	0,  // 11: NAlice.TVolumeCapability.TVolumeSetDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
-	0,  // 12: NAlice.TVolumeCapability.TState.TStreamState.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
-	1,  // 13: NAlice.TVolumeCapability.TState.TStreamState.LastChangeSource:type_name -> NAlice.TVolumeCapability.ESource
+	0,  // 10: NAlice.TVolumeCapability.TVolumeSetDirective.Source:type_name -> NAlice.TVolumeCapability.ESource
+	1,  // 11: NAlice.TVolumeCapability.TVolumeSetDirective.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
+	1,  // 12: NAlice.TVolumeCapability.TState.TStreamState.Stream:type_name -> NAlice.TVolumeCapability.EAudioStream
+	0,  // 13: NAlice.TVolumeCapability.TState.TStreamState.LastChangeSource:type_name -> NAlice.TVolumeCapability.ESource
 	14, // [14:14] is the sub-list for method output_type
 	14, // [14:14] is the sub-list for method input_type
 	14, // [14:14] is the sub-list for extension type_name

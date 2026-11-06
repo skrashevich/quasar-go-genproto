@@ -74,8 +74,8 @@ const file_alice_protos_data_aliceapp_native_settings_aliceapp_native_binary_set
 	"Oalice/protos/data/aliceapp_native_settings/aliceapp_native_binary_setting.proto\x12$NAlice.NData.NAliceAppNativeSettings*<\n" +
 	"\x1fEAliceNativeBinarySettingStatus\x12\f\n" +
 	"\bDISABLED\x10\x00\x12\v\n" +
-	"\aENABLED\x10\x01Bs\n" +
-	"4ru.yandex.alice.protos.data.aliceapp_native_settingsZ;a.yandex-team.ru/alice/protos/data/aliceapp_native_settingsb\x06proto3"
+	"\aENABLED\x10\x01B\x92\x01\n" +
+	"4ru.yandex.alice.protos.data.aliceapp_native_settingsZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/aliceapp_native_settingsb\x06proto3"
 
 var (
 	file_alice_protos_data_aliceapp_native_settings_aliceapp_native_binary_setting_proto_rawDescOnce sync.Once

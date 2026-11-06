@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_camera_positioning/capability.proto
 
-package camerapositioningpb
+package iot_camera_positioning
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -767,8 +767,8 @@ const file_alice_protos_endpoint_capabilities_iot_camera_positioning_capability_
 	"\x19CALIBRATION_STATE_UNKNOWN\x10\x00\x12\"\n" +
 	"\x1eCALIBRATION_STATE_UNCALIBRATED\x10\x01\x12!\n" +
 	"\x1dCALIBRATION_STATE_CALIBRATING\x10\x02\x12 \n" +
-	"\x1cCALIBRATION_STATE_CALIBRATED\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cwB\xb5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB#IotCameraPositioningCapabilityProtoP\x01Z^a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_camera_positioning;camerapositioningpbb\x06proto3"
+	"\x1cCALIBRATION_STATE_CALIBRATED\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cwB\xc0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB#IotCameraPositioningCapabilityProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_camera_positioningb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_camera_positioning_capability_proto_rawDescOnce sync.Once

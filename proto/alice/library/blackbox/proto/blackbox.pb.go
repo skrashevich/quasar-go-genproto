@@ -4,11 +4,12 @@
 // 	protoc        v7.36.1
 // source: alice/library/blackbox/proto/blackbox.proto
 
-package blackbox
+package proto
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
+	blackbox "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/blackbox"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -24,87 +25,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ECredentialStatus int32
-
-const (
-	ECredentialStatus_CRED_STATUS_VALID                    ECredentialStatus = 0
-	ECredentialStatus_CRED_STATUS_NEED_RESET               ECredentialStatus = 1
-	ECredentialStatus_CRED_STATUS_EXPIRED                  ECredentialStatus = 2
-	ECredentialStatus_CRED_STATUS_NOAUTH                   ECredentialStatus = 3
-	ECredentialStatus_CRED_STATUS_DISABLED                 ECredentialStatus = 4
-	ECredentialStatus_CRED_STATUS_INVALID                  ECredentialStatus = 5
-	ECredentialStatus_CRED_STATUS_NEOLITE                  ECredentialStatus = 6
-	ECredentialStatus_CRED_STATUS_BORIGIN_MISMATCH         ECredentialStatus = 7
-	ECredentialStatus_CRED_STATUS_WRONG_GUARD              ECredentialStatus = 8
-	ECredentialStatus_CRED_STATUS_NEOLITE_SESSION          ECredentialStatus = 9
-	ECredentialStatus_CRED_STATUS_BORIGIN_MISMATCH_SESSION ECredentialStatus = 10
-	ECredentialStatus_CRED_STATUS_UNKNOWN                  ECredentialStatus = 255
-)
-
-// Enum value maps for ECredentialStatus.
-var (
-	ECredentialStatus_name = map[int32]string{
-		0:   "CRED_STATUS_VALID",
-		1:   "CRED_STATUS_NEED_RESET",
-		2:   "CRED_STATUS_EXPIRED",
-		3:   "CRED_STATUS_NOAUTH",
-		4:   "CRED_STATUS_DISABLED",
-		5:   "CRED_STATUS_INVALID",
-		6:   "CRED_STATUS_NEOLITE",
-		7:   "CRED_STATUS_BORIGIN_MISMATCH",
-		8:   "CRED_STATUS_WRONG_GUARD",
-		9:   "CRED_STATUS_NEOLITE_SESSION",
-		10:  "CRED_STATUS_BORIGIN_MISMATCH_SESSION",
-		255: "CRED_STATUS_UNKNOWN",
-	}
-	ECredentialStatus_value = map[string]int32{
-		"CRED_STATUS_VALID":                    0,
-		"CRED_STATUS_NEED_RESET":               1,
-		"CRED_STATUS_EXPIRED":                  2,
-		"CRED_STATUS_NOAUTH":                   3,
-		"CRED_STATUS_DISABLED":                 4,
-		"CRED_STATUS_INVALID":                  5,
-		"CRED_STATUS_NEOLITE":                  6,
-		"CRED_STATUS_BORIGIN_MISMATCH":         7,
-		"CRED_STATUS_WRONG_GUARD":              8,
-		"CRED_STATUS_NEOLITE_SESSION":          9,
-		"CRED_STATUS_BORIGIN_MISMATCH_SESSION": 10,
-		"CRED_STATUS_UNKNOWN":                  255,
-	}
-)
-
-func (x ECredentialStatus) Enum() *ECredentialStatus {
-	p := new(ECredentialStatus)
-	*p = x
-	return p
-}
-
-func (x ECredentialStatus) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ECredentialStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_library_blackbox_proto_blackbox_proto_enumTypes[0].Descriptor()
-}
-
-func (ECredentialStatus) Type() protoreflect.EnumType {
-	return &file_alice_library_blackbox_proto_blackbox_proto_enumTypes[0]
-}
-
-func (x ECredentialStatus) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ECredentialStatus.Descriptor instead.
-func (ECredentialStatus) EnumDescriptor() ([]byte, []int) {
-	return file_alice_library_blackbox_proto_blackbox_proto_rawDescGZIP(), []int{0}
-}
-
 type TBlackBoxFullUserInfoProto struct {
 	state      protoimpl.MessageState             `protogen:"open.v1"`
 	UserTicket string                             `protobuf:"bytes,1,opt,name=UserTicket,proto3" json:"UserTicket,omitempty"`
 	OAuth      *TBlackBoxFullUserInfoProto_TOAuth `protobuf:"bytes,4,opt,name=OAuth,proto3" json:"OAuth,omitempty"`
-	Status     ECredentialStatus                  `protobuf:"varint,5,opt,name=Status,json=status,proto3,enum=NAlice.ECredentialStatus" json:"Status,omitempty"`
+	Status     blackbox.ECredentialStatus         `protobuf:"varint,5,opt,name=Status,json=status,proto3,enum=NAlice.ECredentialStatus" json:"Status,omitempty"`
 	// Types that are valid to be assigned to OptionalUserInfo:
 	//
 	//	*TBlackBoxFullUserInfoProto_UserInfo
@@ -158,11 +83,11 @@ func (x *TBlackBoxFullUserInfoProto) GetOAuth() *TBlackBoxFullUserInfoProto_TOAu
 	return nil
 }
 
-func (x *TBlackBoxFullUserInfoProto) GetStatus() ECredentialStatus {
+func (x *TBlackBoxFullUserInfoProto) GetStatus() blackbox.ECredentialStatus {
 	if x != nil {
 		return x.Status
 	}
-	return ECredentialStatus_CRED_STATUS_VALID
+	return blackbox.ECredentialStatus(0)
 }
 
 func (x *TBlackBoxFullUserInfoProto) GetOptionalUserInfo() isTBlackBoxFullUserInfoProto_OptionalUserInfo {
@@ -602,7 +527,7 @@ var File_alice_library_blackbox_proto_blackbox_proto protoreflect.FileDescriptor
 
 const file_alice_library_blackbox_proto_blackbox_proto_rawDesc = "" +
 	"\n" +
-	"+alice/library/blackbox/proto/blackbox.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x83\x1d\n" +
+	"+alice/library/blackbox/proto/blackbox.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a-alice/megamind/protos/blackbox/blackbox.proto\"\x83\x1d\n" +
 	"\x1aTBlackBoxFullUserInfoProto\x12;\n" +
 	"\n" +
 	"UserTicket\x18\x01 \x01(\tB\x1b\xaa\xdd\x1b\vuser_ticket\xa8\x8d'\x01\xa8\x8d'\x04\xf8\x91*\x02R\n" +
@@ -684,21 +609,7 @@ const file_alice_library_blackbox_proto_blackbox_proto_rawDesc = "" +
 	"\x0f_ClientIsYandexB\b\n" +
 	"\x06_ScopeB.\n" +
 	"\x10OptionalUserInfo\x12\x1a\xa0\xdd\x1b\r\xaa\xdd\x1b\x12optional_user_infoB\b\n" +
-	"\x06_ErrorJ\x04\b\x03\x10\x04R\bClientId*\xe7\x02\n" +
-	"\x11ECredentialStatus\x12\x15\n" +
-	"\x11CRED_STATUS_VALID\x10\x00\x12\x1a\n" +
-	"\x16CRED_STATUS_NEED_RESET\x10\x01\x12\x17\n" +
-	"\x13CRED_STATUS_EXPIRED\x10\x02\x12\x16\n" +
-	"\x12CRED_STATUS_NOAUTH\x10\x03\x12\x18\n" +
-	"\x14CRED_STATUS_DISABLED\x10\x04\x12\x17\n" +
-	"\x13CRED_STATUS_INVALID\x10\x05\x12\x17\n" +
-	"\x13CRED_STATUS_NEOLITE\x10\x06\x12 \n" +
-	"\x1cCRED_STATUS_BORIGIN_MISMATCH\x10\a\x12\x1b\n" +
-	"\x17CRED_STATUS_WRONG_GUARD\x10\b\x12\x1f\n" +
-	"\x1bCRED_STATUS_NEOLITE_SESSION\x10\t\x12(\n" +
-	"$CRED_STATUS_BORIGIN_MISMATCH_SESSION\x10\n" +
-	"\x12\x18\n" +
-	"\x13CRED_STATUS_UNKNOWN\x10\xff\x01B8Z6a.yandex-team.ru/alice/library/blackbox/proto;blackboxb\x06proto3"
+	"\x06_ErrorJ\x04\b\x03\x10\x04R\bClientIdBNZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/blackbox/protob\x06proto3"
 
 var (
 	file_alice_library_blackbox_proto_blackbox_proto_rawDescOnce sync.Once
@@ -712,18 +623,17 @@ func file_alice_library_blackbox_proto_blackbox_proto_rawDescGZIP() []byte {
 	return file_alice_library_blackbox_proto_blackbox_proto_rawDescData
 }
 
-var file_alice_library_blackbox_proto_blackbox_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_alice_library_blackbox_proto_blackbox_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_library_blackbox_proto_blackbox_proto_goTypes = []any{
-	(ECredentialStatus)(0),                       // 0: NAlice.ECredentialStatus
-	(*TBlackBoxFullUserInfoProto)(nil),           // 1: NAlice.TBlackBoxFullUserInfoProto
-	(*TBlackBoxFullUserInfoProto_TUserInfo)(nil), // 2: NAlice.TBlackBoxFullUserInfoProto.TUserInfo
-	(*TBlackBoxFullUserInfoProto_TOAuth)(nil),    // 3: NAlice.TBlackBoxFullUserInfoProto.TOAuth
+	(*TBlackBoxFullUserInfoProto)(nil),           // 0: NAlice.TBlackBoxFullUserInfoProto
+	(*TBlackBoxFullUserInfoProto_TUserInfo)(nil), // 1: NAlice.TBlackBoxFullUserInfoProto.TUserInfo
+	(*TBlackBoxFullUserInfoProto_TOAuth)(nil),    // 2: NAlice.TBlackBoxFullUserInfoProto.TOAuth
+	(blackbox.ECredentialStatus)(0),              // 3: NAlice.ECredentialStatus
 }
 var file_alice_library_blackbox_proto_blackbox_proto_depIdxs = []int32{
-	3, // 0: NAlice.TBlackBoxFullUserInfoProto.OAuth:type_name -> NAlice.TBlackBoxFullUserInfoProto.TOAuth
-	0, // 1: NAlice.TBlackBoxFullUserInfoProto.Status:type_name -> NAlice.ECredentialStatus
-	2, // 2: NAlice.TBlackBoxFullUserInfoProto.UserInfo:type_name -> NAlice.TBlackBoxFullUserInfoProto.TUserInfo
+	2, // 0: NAlice.TBlackBoxFullUserInfoProto.OAuth:type_name -> NAlice.TBlackBoxFullUserInfoProto.TOAuth
+	3, // 1: NAlice.TBlackBoxFullUserInfoProto.Status:type_name -> NAlice.ECredentialStatus
+	1, // 2: NAlice.TBlackBoxFullUserInfoProto.UserInfo:type_name -> NAlice.TBlackBoxFullUserInfoProto.TUserInfo
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -746,14 +656,13 @@ func file_alice_library_blackbox_proto_blackbox_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_alice_library_blackbox_proto_blackbox_proto_rawDesc), len(file_alice_library_blackbox_proto_blackbox_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_alice_library_blackbox_proto_blackbox_proto_goTypes,
 		DependencyIndexes: file_alice_library_blackbox_proto_blackbox_proto_depIdxs,
-		EnumInfos:         file_alice_library_blackbox_proto_blackbox_proto_enumTypes,
 		MessageInfos:      file_alice_library_blackbox_proto_blackbox_proto_msgTypes,
 	}.Build()
 	File_alice_library_blackbox_proto_blackbox_proto = out.File

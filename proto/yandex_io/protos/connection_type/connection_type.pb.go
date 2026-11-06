@@ -88,8 +88,8 @@ const file_yandex_io_protos_connection_type_connection_type_proto_rawDesc = "" +
 	"\x0eConnectionType\x12\x1b\n" +
 	"\x17CONNECTION_TYPE_UNKNOWN\x10\x00\x12\x18\n" +
 	"\x14CONNECTION_TYPE_WIFI\x10\x01\x12\x1c\n" +
-	"\x18CONNECTION_TYPE_ETHERNET\x10\x02B)\n" +
-	"\x19ru.yandex.quasar.protobufB\fQuasarCommon"
+	"\x18CONNECTION_TYPE_ETHERNET\x10\x02B\xca\x01\n" +
+	"\x10com.quasar.protoB\x13ConnectionTypeProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/connection_type\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_connection_type_connection_type_proto_rawDescOnce sync.Once

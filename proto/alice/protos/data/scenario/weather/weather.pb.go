@@ -2915,8 +2915,8 @@ const file_alice_protos_data_scenario_weather_weather_proto_rawDesc = "" +
 	"moon_phase\x12-\n" +
 	"\tFeelsLike\x18\b \x01(\bB\x0e\xaa\xdd\x1b\n" +
 	"feels_likeR\n" +
-	"feels_like:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bc\n" +
-	",ru.yandex.alice.protos.data.scenario.weatherZ3a.yandex-team.ru/alice/protos/data/scenario/weatherb\x06proto3"
+	"feels_like:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x82\x01\n" +
+	",ru.yandex.alice.protos.data.scenario.weatherZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/weatherb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_weather_weather_proto_rawDescOnce sync.Once

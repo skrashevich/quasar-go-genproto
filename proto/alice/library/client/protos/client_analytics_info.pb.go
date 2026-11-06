@@ -24,7 +24,7 @@ const (
 
 type TClientAnalyticsInfoProto struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ClientUrl     *string                `protobuf:"bytes,1,opt,name=ClientUrl,json=client_url" json:"ClientUrl,omitempty"`
+	ClientUrl     *string                `protobuf:"bytes,1,opt,name=ClientUrl" json:"ClientUrl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,12 +70,11 @@ var File_alice_library_client_protos_client_analytics_info_proto protoreflect.Fi
 
 const file_alice_library_client_protos_client_analytics_info_proto_rawDesc = "" +
 	"\n" +
-	"7alice/library/client/protos/client_analytics_info.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"P\n" +
-	"\x19TClientAnalyticsInfoProto\x12-\n" +
-	"\tClientUrl\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"client_urlR\n" +
-	"client_url:\x04\xa8\xdd\x1b\x04Bo\n" +
-	"%ru.yandex.alice.library.client.protosB\x18ClientAnalyticsInfoProtoZ,a.yandex-team.ru/alice/library/client/protos"
+	"7alice/library/client/protos/client_analytics_info.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"9\n" +
+	"\x19TClientAnalyticsInfoProto\x12\x1c\n" +
+	"\tClientUrl\x18\x01 \x01(\tR\tClientUrlB\xab\x01\n" +
+	"\n" +
+	"com.NAliceB\x18ClientAnalyticsInfoProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_library_client_protos_client_analytics_info_proto_rawDescOnce sync.Once

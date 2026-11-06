@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/auto_frame/auto_frame.proto
 
-package autoframe
+package auto_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -7950,8 +7950,8 @@ const file_alice_megamind_protos_scenarios_frames_auto_frame_auto_frame_proto_ra
 	"-TAutoSetAutomaticDefrostingStateSemanticFrame\x12`\n" +
 	"\x06Action\x18\x01 \x01(\v22.NAlice.TAutoSetAutomaticDefrostingStateActionSlotB\x14\xaa\xdd\x1b\x06action\xba\x85\x1c\x06actionR\x06action:7\xa8\xdd\x1b\x04\x9a\xff\x1b/alice.automotive.set_automatic_defrosting_state\"\xcb\x01\n" +
 	"-TAutoSetHvacTemperatureSyncStateSemanticFrame\x12`\n" +
-	"\x06Action\x18\x01 \x01(\v22.NAlice.TAutoSetHvacTemperatureSyncStateActionSlotB\x14\xaa\xdd\x1b\x06action\xba\x85\x1c\x06actionR\x06action:8\xa8\xdd\x1b\x04\x9a\xff\x1b0alice.automotive.set_hvac_temperature_sync_stateB\x98\x01\n" +
-	";ru.yandex.alice.megamind.protos.scenarios.frames.auto_frameB\tFrameAutoP\x01ZLa.yandex-team.ru/alice/megamind/protos/scenarios/frames/auto_frame;autoframeb\x06proto3"
+	"\x06Action\x18\x01 \x01(\v22.NAlice.TAutoSetHvacTemperatureSyncStateActionSlotB\x14\xaa\xdd\x1b\x06action\xba\x85\x1c\x06actionR\x06action:8\xa8\xdd\x1b\x04\x9a\xff\x1b0alice.automotive.set_hvac_temperature_sync_stateB\xad\x01\n" +
+	";ru.yandex.alice.megamind.protos.scenarios.frames.auto_frameB\tFrameAutoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/auto_frameb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_auto_frame_auto_frame_proto_rawDescOnce sync.Once

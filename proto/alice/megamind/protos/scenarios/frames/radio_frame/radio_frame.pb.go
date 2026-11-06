@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/radio_frame/radio_frame.proto
 
-package radioframe
+package radio_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -142,11 +142,11 @@ type isTFmRadioStationSlot_Value interface {
 }
 
 type TFmRadioStationSlot_FmRadioValue struct {
-	FmRadioValue string `protobuf:"bytes,1,opt,name=FmRadioValue,json=fm_radio_value,proto3,oneof"`
+	FmRadioValue string `protobuf:"bytes,1,opt,name=FmRadioValue,proto3,oneof"`
 }
 
 type TFmRadioStationSlot_FmRadioCustomValue struct {
-	FmRadioCustomValue string `protobuf:"bytes,2,opt,name=FmRadioCustomValue,json=fm_radio_custom_value,proto3,oneof"`
+	FmRadioCustomValue string `protobuf:"bytes,2,opt,name=FmRadioCustomValue,proto3,oneof"`
 }
 
 func (*TFmRadioStationSlot_FmRadioValue) isTFmRadioStationSlot_Value() {}
@@ -224,11 +224,11 @@ type isTFmRadioFreqSlot_Value interface {
 }
 
 type TFmRadioFreqSlot_FmRadioFreqValue struct {
-	FmRadioFreqValue string `protobuf:"bytes,1,opt,name=FmRadioFreqValue,json=fm_radio_freq_value,proto3,oneof"`
+	FmRadioFreqValue string `protobuf:"bytes,1,opt,name=FmRadioFreqValue,proto3,oneof"`
 }
 
 type TFmRadioFreqSlot_FmRadioFreqCustomValue struct {
-	FmRadioFreqCustomValue string `protobuf:"bytes,2,opt,name=FmRadioFreqCustomValue,json=fm_radio_freq_custom_value,proto3,oneof"`
+	FmRadioFreqCustomValue string `protobuf:"bytes,2,opt,name=FmRadioFreqCustomValue,proto3,oneof"`
 }
 
 func (*TFmRadioFreqSlot_FmRadioFreqValue) isTFmRadioFreqSlot_Value() {}
@@ -296,7 +296,7 @@ type isTFmRadioInfoSlot_Value interface {
 }
 
 type TFmRadioInfoSlot_FmRadioInfoValue struct {
-	FmRadioInfoValue *data.TFmRadioInfo `protobuf:"bytes,1,opt,name=FmRadioInfoValue,json=fm_radio_info_value,proto3,oneof"`
+	FmRadioInfoValue *data.TFmRadioInfo `protobuf:"bytes,1,opt,name=FmRadioInfoValue,proto3,oneof"`
 }
 
 func (*TFmRadioInfoSlot_FmRadioInfoValue) isTFmRadioInfoSlot_Value() {}
@@ -362,17 +362,17 @@ type isTFmRadioPlaybackSourceSlot_Value interface {
 }
 
 type TFmRadioPlaybackSourceSlot_EnumValue struct {
-	EnumValue TFmRadioPlaybackSourceSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TFmRadioPlaybackSourceSlot_EValue,oneof"`
+	EnumValue TFmRadioPlaybackSourceSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TFmRadioPlaybackSourceSlot_EValue,oneof"`
 }
 
 func (*TFmRadioPlaybackSourceSlot_EnumValue) isTFmRadioPlaybackSourceSlot_Value() {}
 
 type TRadioPlaySemanticFrame struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	FmRadioStation *TFmRadioStationSlot   `protobuf:"bytes,1,opt,name=FmRadioStation,json=fm_radio,proto3" json:"FmRadioStation,omitempty"`
-	FmRadioFreq    *TFmRadioFreqSlot      `protobuf:"bytes,2,opt,name=FmRadioFreq,json=fm_radio_freq,proto3" json:"FmRadioFreq,omitempty"`
-	FmRadioInfo    *TFmRadioInfoSlot      `protobuf:"bytes,3,opt,name=FmRadioInfo,json=fm_radio_info,proto3" json:"FmRadioInfo,omitempty"`
-	DisableNlg     *common.TBoolSlot      `protobuf:"bytes,4,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
+	FmRadioStation *TFmRadioStationSlot   `protobuf:"bytes,1,opt,name=FmRadioStation,proto3" json:"FmRadioStation,omitempty"`
+	FmRadioFreq    *TFmRadioFreqSlot      `protobuf:"bytes,2,opt,name=FmRadioFreq,proto3" json:"FmRadioFreq,omitempty"`
+	FmRadioInfo    *TFmRadioInfoSlot      `protobuf:"bytes,3,opt,name=FmRadioInfo,proto3" json:"FmRadioInfo,omitempty"`
+	DisableNlg     *common.TBoolSlot      `protobuf:"bytes,4,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -437,10 +437,10 @@ func (x *TRadioPlaySemanticFrame) GetDisableNlg() *common.TBoolSlot {
 
 type TFmRadioPlaySemanticFrame struct {
 	state          protoimpl.MessageState      `protogen:"open.v1"`
-	FmRadioStation *TFmRadioStationSlot        `protobuf:"bytes,1,opt,name=FmRadioStation,json=fm_radio,proto3" json:"FmRadioStation,omitempty"`
-	FmRadioFreq    *TFmRadioFreqSlot           `protobuf:"bytes,2,opt,name=FmRadioFreq,json=fm_radio_freq,proto3" json:"FmRadioFreq,omitempty"`
-	DisableNlg     *common.TBoolSlot           `protobuf:"bytes,3,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
-	PlaybackSource *TFmRadioPlaybackSourceSlot `protobuf:"bytes,4,opt,name=PlaybackSource,json=playback_source,proto3" json:"PlaybackSource,omitempty"`
+	FmRadioStation *TFmRadioStationSlot        `protobuf:"bytes,1,opt,name=FmRadioStation,proto3" json:"FmRadioStation,omitempty"`
+	FmRadioFreq    *TFmRadioFreqSlot           `protobuf:"bytes,2,opt,name=FmRadioFreq,proto3" json:"FmRadioFreq,omitempty"`
+	DisableNlg     *common.TBoolSlot           `protobuf:"bytes,3,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
+	PlaybackSource *TFmRadioPlaybackSourceSlot `protobuf:"bytes,4,opt,name=PlaybackSource,proto3" json:"PlaybackSource,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -507,41 +507,40 @@ var File_alice_megamind_protos_scenarios_frames_radio_frame_radio_frame_proto pr
 
 const file_alice_megamind_protos_scenarios_frames_radio_frame_radio_frame_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/megamind/protos/scenarios/frames/radio_frame/radio_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a%alice/protos/data/fm_radio_info.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xea\x01\n" +
-	"\x13TFmRadioStationSlot\x12N\n" +
-	"\fFmRadioValue\x18\x01 \x01(\tB&\xaa\xdd\x1b\x0efm_radio_value\u0085\x1c\x10fm_radio_stationH\x00R\x0efm_radio_value\x12i\n" +
-	"\x12FmRadioCustomValue\x18\x02 \x01(\tB4\xaa\xdd\x1b\x15fm_radio_custom_value\u0085\x1c\x17custom.fm_radio_stationH\x00R\x15fm_radio_custom_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xfd\x01\n" +
-	"\x10TFmRadioFreqSlot\x12Y\n" +
-	"\x10FmRadioFreqValue\x18\x01 \x01(\tB(\xaa\xdd\x1b\x13fm_radio_freq_value\u0085\x1c\rfm_radio_freqH\x00R\x13fm_radio_freq_value\x12t\n" +
-	"\x16FmRadioFreqCustomValue\x18\x02 \x01(\tB6\xaa\xdd\x1b\x1afm_radio_freq_custom_value\u0085\x1c\x14custom.fm_radio_freqH\x00R\x1afm_radio_freq_custom_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xa3\x01\n" +
-	"\x10TFmRadioInfoSlot\x12u\n" +
-	"\x10FmRadioInfoValue\x18\x01 \x01(\v2\x1a.NAlice.NData.TFmRadioInfoB(\xaa\xdd\x1b\x13fm_radio_info_value\u0085\x1c\rfm_radio_infoH\x00R\x13fm_radio_info_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xc6\x01\n" +
-	"\x1aTFmRadioPlaybackSourceSlot\x12h\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2).NAlice.TFmRadioPlaybackSourceSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"$\n" +
+	"Dalice/megamind/protos/scenarios/frames/radio_frame/radio_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a%alice/protos/data/fm_radio_info.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"v\n" +
+	"\x13TFmRadioStationSlot\x12$\n" +
+	"\fFmRadioValue\x18\x01 \x01(\tH\x00R\fFmRadioValue\x120\n" +
+	"\x12FmRadioCustomValue\x18\x02 \x01(\tH\x00R\x12FmRadioCustomValueB\a\n" +
+	"\x05Value\"\x83\x01\n" +
+	"\x10TFmRadioFreqSlot\x12,\n" +
+	"\x10FmRadioFreqValue\x18\x01 \x01(\tH\x00R\x10FmRadioFreqValue\x128\n" +
+	"\x16FmRadioFreqCustomValue\x18\x02 \x01(\tH\x00R\x16FmRadioFreqCustomValueB\a\n" +
+	"\x05Value\"e\n" +
+	"\x10TFmRadioInfoSlot\x12H\n" +
+	"\x10FmRadioInfoValue\x18\x01 \x01(\v2\x1a.NAlice.NData.TFmRadioInfoH\x00R\x10FmRadioInfoValueB\a\n" +
+	"\x05Value\"\x96\x01\n" +
+	"\x1aTFmRadioPlaybackSourceSlot\x12I\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2).NAlice.TFmRadioPlaybackSourceSlot.EValueH\x00R\tEnumValue\"$\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\r\n" +
-	"\tAliceShow\x10\x01:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xbb\x03\n" +
-	"\x17TRadioPlaySemanticFrame\x12W\n" +
-	"\x0eFmRadioStation\x18\x01 \x01(\v2\x1b.NAlice.TFmRadioStationSlotB\x18\xaa\xdd\x1b\bfm_radio\xba\x85\x1c\bfm_radioR\bfm_radio\x12`\n" +
-	"\vFmRadioFreq\x18\x02 \x01(\v2\x18.NAlice.TFmRadioFreqSlotB\"\xaa\xdd\x1b\rfm_radio_freq\xba\x85\x1c\rfm_radio_freqR\rfm_radio_freq\x12`\n" +
-	"\vFmRadioInfo\x18\x03 \x01(\v2\x18.NAlice.TFmRadioInfoSlotB\"\xaa\xdd\x1b\rfm_radio_info\xba\x85\x1c\rfm_radio_infoR\rfm_radio_info\x12R\n" +
+	"\tAliceShow\x10\x01B\a\n" +
+	"\x05Value\"\x89\x02\n" +
+	"\x17TRadioPlaySemanticFrame\x12C\n" +
+	"\x0eFmRadioStation\x18\x01 \x01(\v2\x1b.NAlice.TFmRadioStationSlotR\x0eFmRadioStation\x12:\n" +
+	"\vFmRadioFreq\x18\x02 \x01(\v2\x18.NAlice.TFmRadioFreqSlotR\vFmRadioFreq\x12:\n" +
+	"\vFmRadioInfo\x18\x03 \x01(\v2\x18.NAlice.TFmRadioInfoSlotR\vFmRadioInfo\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x04 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg:/\xa8\xdd\x1b\x04\x9a\xff\x1b'personal_assistant.scenarios.radio_play\"\xc2\x03\n" +
-	"\x19TFmRadioPlaySemanticFrame\x12W\n" +
-	"\x0eFmRadioStation\x18\x01 \x01(\v2\x1b.NAlice.TFmRadioStationSlotB\x18\xaa\xdd\x1b\bfm_radio\xba\x85\x1c\bfm_radioR\bfm_radio\x12`\n" +
-	"\vFmRadioFreq\x18\x02 \x01(\v2\x18.NAlice.TFmRadioFreqSlotB\"\xaa\xdd\x1b\rfm_radio_freq\xba\x85\x1c\rfm_radio_freqR\rfm_radio_freq\x12R\n" +
+	"DisableNlg\x18\x04 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\"\x9b\x02\n" +
+	"\x19TFmRadioPlaySemanticFrame\x12C\n" +
+	"\x0eFmRadioStation\x18\x01 \x01(\v2\x1b.NAlice.TFmRadioStationSlotR\x0eFmRadioStation\x12:\n" +
+	"\vFmRadioFreq\x18\x02 \x01(\v2\x18.NAlice.TFmRadioFreqSlotR\vFmRadioFreq\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x03 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg\x12s\n" +
-	"\x0ePlaybackSource\x18\x04 \x01(\v2\".NAlice.TFmRadioPlaybackSourceSlotB&\xaa\xdd\x1b\x0fplayback_source\xba\x85\x1c\x0fplayback_sourceR\x0fplayback_source:!\xa8\xdd\x1b\x04\x9a\xff\x1b\x19alice.music.fm_radio_playB\x9c\x01\n" +
-	"<ru.yandex.alice.megamind.protos.scenarios.frames.radio_frameB\n" +
-	"FrameRadioP\x01ZNa.yandex-team.ru/alice/megamind/protos/scenarios/frames/radio_frame;radioframeb\x06proto3"
+	"DisableNlg\x18\x03 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\x12J\n" +
+	"\x0ePlaybackSource\x18\x04 \x01(\v2\".NAlice.TFmRadioPlaybackSourceSlotR\x0ePlaybackSourceB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fRadioFrameProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/radio_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_radio_frame_radio_frame_proto_rawDescOnce sync.Once

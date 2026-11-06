@@ -320,8 +320,8 @@ const file_alice_protos_data_scenario_ya_disk_ya_disk_proto_rawDesc = "" +
 	"\x10EOrientationType\x12\a\n" +
 	"\x03Any\x10\x00\x12\x11\n" +
 	"\rLandscapeOnly\x10\x01\x12\x10\n" +
-	"\fPortraitOnly\x10\x02Bc\n" +
-	",ru.yandex.alice.protos.data.scenario.ya_diskZ3a.yandex-team.ru/alice/protos/data/scenario/ya_diskb\x06proto3"
+	"\fPortraitOnly\x10\x02B\x82\x01\n" +
+	",ru.yandex.alice.protos.data.scenario.ya_diskZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/ya_diskb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_ya_disk_ya_disk_proto_rawDescOnce sync.Once

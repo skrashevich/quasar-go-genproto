@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_fridge/capability.proto
 
-package automotive_fridgepb
+package automotive_fridge
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -458,8 +458,8 @@ const file_alice_protos_endpoint_capabilities_automotive_fridge_capability_proto
 	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:'\x92\x82\x19\x1aset_fridge_state_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc0\x05\"8\n" +
 	"\vEPropertyId\x12\x14\n" +
 	"\x10PROPERTY_UNKNOWN\x10\x00\x12\x13\n" +
-	"\x0fFRIDGE_POWER_ON\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xac\x02B\xaa\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fAutomotiveFridgeCapabilityProtoZYa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_fridge;automotive_fridgepbb\x06proto3"
+	"\x0fFRIDGE_POWER_ON\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xac\x02B\xb5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fAutomotiveFridgeCapabilityProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_fridgeb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_fridge_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/playback_control/capability.proto
 
-package playback_controlpb
+package playback_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -80,9 +80,9 @@ func (TPlaybackControlCapability_EPlayerType) EnumDescriptor() ([]byte, []int) {
 
 type TPlaybackControlCapability struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TPlaybackControlCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TPlaybackControlCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TPlaybackControlCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TPlaybackControlCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -140,8 +140,8 @@ func (x *TPlaybackControlCapability) GetState() *TPlaybackControlCapability_TSta
 
 type TPlaybackControlCapability_TTrackInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Type          string                 `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Type          string                 `protobuf:"bytes,2,opt,name=Type,proto3" json:"Type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -192,13 +192,13 @@ func (x *TPlaybackControlCapability_TTrackInfo) GetType() string {
 
 type TPlaybackControlCapability_TEntityInfo struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Id            string                                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Type          string                                 `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Description   string                                 `protobuf:"bytes,3,opt,name=Description,json=description,proto3" json:"Description,omitempty"`
-	Prev          *TPlaybackControlCapability_TTrackInfo `protobuf:"bytes,4,opt,name=Prev,json=prev,proto3" json:"Prev,omitempty"`
-	Next          *TPlaybackControlCapability_TTrackInfo `protobuf:"bytes,5,opt,name=Next,json=next,proto3" json:"Next,omitempty"`
-	Shuffled      bool                                   `protobuf:"varint,6,opt,name=Shuffled,json=shuffled,proto3" json:"Shuffled,omitempty"`
-	RepeatMode    string                                 `protobuf:"bytes,7,opt,name=RepeatMode,json=repeat_mode,proto3" json:"RepeatMode,omitempty"`
+	Id            string                                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Type          string                                 `protobuf:"bytes,2,opt,name=Type,proto3" json:"Type,omitempty"`
+	Description   string                                 `protobuf:"bytes,3,opt,name=Description,proto3" json:"Description,omitempty"`
+	Prev          *TPlaybackControlCapability_TTrackInfo `protobuf:"bytes,4,opt,name=Prev,proto3" json:"Prev,omitempty"`
+	Next          *TPlaybackControlCapability_TTrackInfo `protobuf:"bytes,5,opt,name=Next,proto3" json:"Next,omitempty"`
+	Shuffled      bool                                   `protobuf:"varint,6,opt,name=Shuffled,proto3" json:"Shuffled,omitempty"`
+	RepeatMode    string                                 `protobuf:"bytes,7,opt,name=RepeatMode,proto3" json:"RepeatMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -319,29 +319,29 @@ func (*TPlaybackControlCapability_TParameters) Descriptor() ([]byte, []int) {
 }
 
 type TPlaybackControlCapability_TState struct {
-	state             protoimpl.MessageState                  `protogen:"open.v1"`
-	Id                string                                  `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	RawType           string                                  `protobuf:"bytes,2,opt,name=RawType,json=raw_type,proto3" json:"RawType,omitempty"`
-	RawPlayerType     string                                  `protobuf:"bytes,3,opt,name=RawPlayerType,json=raw_player_type,proto3" json:"RawPlayerType,omitempty"`
-	PlayerType        TPlaybackControlCapability_EPlayerType  `protobuf:"varint,4,opt,name=PlayerType,json=player_type,proto3,enum=NAlice.TPlaybackControlCapability_EPlayerType" json:"PlayerType,omitempty"`
-	HasPause          bool                                    `protobuf:"varint,5,opt,name=HasPause,json=has_pause,proto3" json:"HasPause,omitempty"`
-	HasPlay           bool                                    `protobuf:"varint,6,opt,name=HasPlay,json=has_play,proto3" json:"HasPlay,omitempty"`
-	HasNext           bool                                    `protobuf:"varint,7,opt,name=HasNext,json=has_next,proto3" json:"HasNext,omitempty"`
-	HasPrev           bool                                    `protobuf:"varint,8,opt,name=HasPrev,json=has_prev,proto3" json:"HasPrev,omitempty"`
-	HasLike           bool                                    `protobuf:"varint,9,opt,name=HasLike,json=has_like,proto3" json:"HasLike,omitempty"`
-	HasDislike        bool                                    `protobuf:"varint,10,opt,name=HasDislike,json=has_dislike,proto3" json:"HasDislike,omitempty"`
-	PositionTimePoint int64                                   `protobuf:"varint,11,opt,name=PositionTimePoint,json=position_time_point,proto3" json:"PositionTimePoint,omitempty"`
-	PositionSec       uint32                                  `protobuf:"varint,12,opt,name=PositionSec,json=position_sec,proto3" json:"PositionSec,omitempty"`
-	DurationSec       uint32                                  `protobuf:"varint,13,opt,name=DurationSec,json=duration_sec,proto3" json:"DurationSec,omitempty"`
-	Title             string                                  `protobuf:"bytes,14,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Subtitle          string                                  `protobuf:"bytes,15,opt,name=Subtitle,json=subtitle,proto3" json:"Subtitle,omitempty"`
-	HasProgressBar    bool                                    `protobuf:"varint,16,opt,name=HasProgressBar,json=has_progress_bar,proto3" json:"HasProgressBar,omitempty"`
-	ShowPlayer        bool                                    `protobuf:"varint,17,opt,name=ShowPlayer,json=show_player,proto3" json:"ShowPlayer,omitempty"`
-	LiveStreamText    string                                  `protobuf:"bytes,18,opt,name=LiveStreamText,json=live_stream_text,proto3" json:"LiveStreamText,omitempty"`
-	EntityInfo        *TPlaybackControlCapability_TEntityInfo `protobuf:"bytes,19,opt,name=EntityInfo,json=entity_info,proto3" json:"EntityInfo,omitempty"`
-	ProviderName      string                                  `protobuf:"bytes,20,opt,name=ProviderName,json=provider_name,proto3" json:"ProviderName,omitempty"`
-	HideProgressBar   bool                                    `protobuf:"varint,21,opt,name=HideProgressBar,json=hide_progress_bar,proto3" json:"HideProgressBar,omitempty"`
-	Extra             map[string]string                       `protobuf:"bytes,22,rep,name=Extra,json=extra,proto3" json:"Extra,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state             protoimpl.MessageState                          `protogen:"open.v1"`
+	Id                string                                          `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	RawType           string                                          `protobuf:"bytes,2,opt,name=RawType,proto3" json:"RawType,omitempty"`
+	RawPlayerType     string                                          `protobuf:"bytes,3,opt,name=RawPlayerType,proto3" json:"RawPlayerType,omitempty"`
+	PlayerType        TPlaybackControlCapability_EPlayerType          `protobuf:"varint,4,opt,name=PlayerType,proto3,enum=NAlice.TPlaybackControlCapability_EPlayerType" json:"PlayerType,omitempty"`
+	HasPause          bool                                            `protobuf:"varint,5,opt,name=HasPause,proto3" json:"HasPause,omitempty"`
+	HasPlay           bool                                            `protobuf:"varint,6,opt,name=HasPlay,proto3" json:"HasPlay,omitempty"`
+	HasNext           bool                                            `protobuf:"varint,7,opt,name=HasNext,proto3" json:"HasNext,omitempty"`
+	HasPrev           bool                                            `protobuf:"varint,8,opt,name=HasPrev,proto3" json:"HasPrev,omitempty"`
+	HasLike           bool                                            `protobuf:"varint,9,opt,name=HasLike,proto3" json:"HasLike,omitempty"`
+	HasDislike        bool                                            `protobuf:"varint,10,opt,name=HasDislike,proto3" json:"HasDislike,omitempty"`
+	PositionTimePoint int64                                           `protobuf:"varint,11,opt,name=PositionTimePoint,proto3" json:"PositionTimePoint,omitempty"`
+	PositionSec       uint32                                          `protobuf:"varint,12,opt,name=PositionSec,proto3" json:"PositionSec,omitempty"`
+	DurationSec       uint32                                          `protobuf:"varint,13,opt,name=DurationSec,proto3" json:"DurationSec,omitempty"`
+	Title             string                                          `protobuf:"bytes,14,opt,name=Title,proto3" json:"Title,omitempty"`
+	Subtitle          string                                          `protobuf:"bytes,15,opt,name=Subtitle,proto3" json:"Subtitle,omitempty"`
+	HasProgressBar    bool                                            `protobuf:"varint,16,opt,name=HasProgressBar,proto3" json:"HasProgressBar,omitempty"`
+	ShowPlayer        bool                                            `protobuf:"varint,17,opt,name=ShowPlayer,proto3" json:"ShowPlayer,omitempty"`
+	LiveStreamText    string                                          `protobuf:"bytes,18,opt,name=LiveStreamText,proto3" json:"LiveStreamText,omitempty"`
+	EntityInfo        *TPlaybackControlCapability_TEntityInfo         `protobuf:"bytes,19,opt,name=EntityInfo,proto3" json:"EntityInfo,omitempty"`
+	ProviderName      string                                          `protobuf:"bytes,20,opt,name=ProviderName,proto3" json:"ProviderName,omitempty"`
+	HideProgressBar   bool                                            `protobuf:"varint,21,opt,name=HideProgressBar,proto3" json:"HideProgressBar,omitempty"`
+	Extra             []*TPlaybackControlCapability_TState_ExtraEntry `protobuf:"bytes,22,rep,name=Extra,proto3" json:"Extra,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -523,79 +523,135 @@ func (x *TPlaybackControlCapability_TState) GetHideProgressBar() bool {
 	return false
 }
 
-func (x *TPlaybackControlCapability_TState) GetExtra() map[string]string {
+func (x *TPlaybackControlCapability_TState) GetExtra() []*TPlaybackControlCapability_TState_ExtraEntry {
 	if x != nil {
 		return x.Extra
 	}
 	return nil
 }
 
+type TPlaybackControlCapability_TState_ExtraEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TPlaybackControlCapability_TState_ExtraEntry) Reset() {
+	*x = TPlaybackControlCapability_TState_ExtraEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_playback_control_capability_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TPlaybackControlCapability_TState_ExtraEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TPlaybackControlCapability_TState_ExtraEntry) ProtoMessage() {}
+
+func (x *TPlaybackControlCapability_TState_ExtraEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_playback_control_capability_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TPlaybackControlCapability_TState_ExtraEntry.ProtoReflect.Descriptor instead.
+func (*TPlaybackControlCapability_TState_ExtraEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_playback_control_capability_proto_rawDescGZIP(), []int{0, 3, 0}
+}
+
+func (x *TPlaybackControlCapability_TState_ExtraEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TPlaybackControlCapability_TState_ExtraEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_endpoint_capabilities_playback_control_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_playback_control_capability_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/endpoint/capabilities/playback_control/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbc\x10\n" +
-	"\x1aTPlaybackControlCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12^\n" +
+	"Dalice/protos/endpoint/capabilities/playback_control/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x84\f\n" +
+	"\x1aTPlaybackControlCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12N\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2..NAlice.TPlaybackControlCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12J\n" +
-	"\x05State\x18\x03 \x01(\v2).NAlice.TPlaybackControlCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1aH\n" +
+	"Parameters\x18\x02 \x01(\v2..NAlice.TPlaybackControlCapability.TParametersR\n" +
+	"Parameters\x12?\n" +
+	"\x05State\x18\x03 \x01(\v2).NAlice.TPlaybackControlCapability.TStateR\x05State\x1a0\n" +
 	"\n" +
-	"TTrackInfo\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type:\x04\xa8\xdd\x1b\x04\x1a\xf2\x02\n" +
-	"\vTEntityInfo\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x121\n" +
-	"\vDescription\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x12K\n" +
-	"\x04Prev\x18\x04 \x01(\v2-.NAlice.TPlaybackControlCapability.TTrackInfoB\b\xaa\xdd\x1b\x04prevR\x04prev\x12K\n" +
-	"\x04Next\x18\x05 \x01(\v2-.NAlice.TPlaybackControlCapability.TTrackInfoB\b\xaa\xdd\x1b\x04nextR\x04next\x12(\n" +
-	"\bShuffled\x18\x06 \x01(\bB\f\xaa\xdd\x1b\bshuffledR\bshuffled\x120\n" +
+	"TTrackInfo\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x1a\x95\x02\n" +
+	"\vTEntityInfo\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x12 \n" +
+	"\vDescription\x18\x03 \x01(\tR\vDescription\x12A\n" +
+	"\x04Prev\x18\x04 \x01(\v2-.NAlice.TPlaybackControlCapability.TTrackInfoR\x04Prev\x12A\n" +
+	"\x04Next\x18\x05 \x01(\v2-.NAlice.TPlaybackControlCapability.TTrackInfoR\x04Next\x12\x1a\n" +
+	"\bShuffled\x18\x06 \x01(\bR\bShuffled\x12\x1e\n" +
 	"\n" +
-	"RepeatMode\x18\a \x01(\tB\x0f\xaa\xdd\x1b\vrepeat_modeR\vrepeat_mode:\x04\xa8\xdd\x1b\x04\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x8e\n" +
+	"RepeatMode\x18\a \x01(\tR\n" +
+	"RepeatMode\x1a\r\n" +
+	"\vTParameters\x1a\x80\a\n" +
+	"\x06TState\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x18\n" +
+	"\aRawType\x18\x02 \x01(\tR\aRawType\x12$\n" +
+	"\rRawPlayerType\x18\x03 \x01(\tR\rRawPlayerType\x12N\n" +
 	"\n" +
-	"\x06TState\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12'\n" +
-	"\aRawType\x18\x02 \x01(\tB\f\xaa\xdd\x1b\braw_typeR\braw_type\x12;\n" +
-	"\rRawPlayerType\x18\x03 \x01(\tB\x13\xaa\xdd\x1b\x0fraw_player_typeR\x0fraw_player_type\x12`\n" +
-	"\n" +
-	"PlayerType\x18\x04 \x01(\x0e2..NAlice.TPlaybackControlCapability.EPlayerTypeB\x0f\xaa\xdd\x1b\vplayer_typeR\vplayer_type\x12*\n" +
-	"\bHasPause\x18\x05 \x01(\bB\r\xaa\xdd\x1b\thas_pauseR\thas_pause\x12'\n" +
-	"\aHasPlay\x18\x06 \x01(\bB\f\xaa\xdd\x1b\bhas_playR\bhas_play\x12'\n" +
-	"\aHasNext\x18\a \x01(\bB\f\xaa\xdd\x1b\bhas_nextR\bhas_next\x12'\n" +
-	"\aHasPrev\x18\b \x01(\bB\f\xaa\xdd\x1b\bhas_prevR\bhas_prev\x12'\n" +
-	"\aHasLike\x18\t \x01(\bB\f\xaa\xdd\x1b\bhas_likeR\bhas_like\x120\n" +
+	"PlayerType\x18\x04 \x01(\x0e2..NAlice.TPlaybackControlCapability.EPlayerTypeR\n" +
+	"PlayerType\x12\x1a\n" +
+	"\bHasPause\x18\x05 \x01(\bR\bHasPause\x12\x18\n" +
+	"\aHasPlay\x18\x06 \x01(\bR\aHasPlay\x12\x18\n" +
+	"\aHasNext\x18\a \x01(\bR\aHasNext\x12\x18\n" +
+	"\aHasPrev\x18\b \x01(\bR\aHasPrev\x12\x18\n" +
+	"\aHasLike\x18\t \x01(\bR\aHasLike\x12\x1e\n" +
 	"\n" +
 	"HasDislike\x18\n" +
-	" \x01(\bB\x0f\xaa\xdd\x1b\vhas_dislikeR\vhas_dislike\x12G\n" +
-	"\x11PositionTimePoint\x18\v \x01(\x03B\x17\xaa\xdd\x1b\x13position_time_pointR\x13position_time_point\x123\n" +
-	"\vPositionSec\x18\f \x01(\rB\x10\xaa\xdd\x1b\fposition_secR\fposition_sec\x123\n" +
-	"\vDurationSec\x18\r \x01(\rB\x10\xaa\xdd\x1b\fduration_secR\fduration_sec\x12\x1f\n" +
-	"\x05Title\x18\x0e \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubtitle\x18\x0f \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle\x12>\n" +
-	"\x0eHasProgressBar\x18\x10 \x01(\bB\x14\xaa\xdd\x1b\x10has_progress_barR\x10has_progress_bar\x120\n" +
+	" \x01(\bR\n" +
+	"HasDislike\x12,\n" +
+	"\x11PositionTimePoint\x18\v \x01(\x03R\x11PositionTimePoint\x12 \n" +
+	"\vPositionSec\x18\f \x01(\rR\vPositionSec\x12 \n" +
+	"\vDurationSec\x18\r \x01(\rR\vDurationSec\x12\x14\n" +
+	"\x05Title\x18\x0e \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubtitle\x18\x0f \x01(\tR\bSubtitle\x12&\n" +
+	"\x0eHasProgressBar\x18\x10 \x01(\bR\x0eHasProgressBar\x12\x1e\n" +
 	"\n" +
-	"ShowPlayer\x18\x11 \x01(\bB\x0f\xaa\xdd\x1b\vshow_playerR\vshow_player\x12>\n" +
-	"\x0eLiveStreamText\x18\x12 \x01(\tB\x14\xaa\xdd\x1b\x10live_stream_textR\x10live_stream_text\x12`\n" +
+	"ShowPlayer\x18\x11 \x01(\bR\n" +
+	"ShowPlayer\x12&\n" +
+	"\x0eLiveStreamText\x18\x12 \x01(\tR\x0eLiveStreamText\x12N\n" +
 	"\n" +
-	"EntityInfo\x18\x13 \x01(\v2..NAlice.TPlaybackControlCapability.TEntityInfoB\x0f\xaa\xdd\x1b\ventity_infoR\ventity_info\x126\n" +
-	"\fProviderName\x18\x14 \x01(\tB\x11\xaa\xdd\x1b\rprovider_nameR\rprovider_name\x12A\n" +
-	"\x0fHideProgressBar\x18\x15 \x01(\bB\x15\xaa\xdd\x1b\x11hide_progress_barR\x11hide_progress_bar\x12U\n" +
-	"\x05Extra\x18\x16 \x03(\v24.NAlice.TPlaybackControlCapability.TState.ExtraEntryB\t\xaa\xdd\x1b\x05extraR\x05extra\x1a8\n" +
+	"EntityInfo\x18\x13 \x01(\v2..NAlice.TPlaybackControlCapability.TEntityInfoR\n" +
+	"EntityInfo\x12\"\n" +
+	"\fProviderName\x18\x14 \x01(\tR\fProviderName\x12(\n" +
+	"\x0fHideProgressBar\x18\x15 \x01(\bR\x0fHideProgressBar\x12J\n" +
+	"\x05Extra\x18\x16 \x03(\v24.NAlice.TPlaybackControlCapability.TState.ExtraEntryR\x05Extra\x1a4\n" +
 	"\n" +
 	"ExtraEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\"J\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"J\n" +
 	"\vEPlayerType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\t\n" +
 	"\x05Music\x10\x01\x12\t\n" +
 	"\x05Radio\x10\x02\x12\r\n" +
 	"\tBluetooth\x10\x03\x12\t\n" +
-	"\x05Video\x10\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c6B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1ePlaybackControlCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/playback_control;playback_controlpbb\x06proto3"
+	"\x05Video\x10\x04B\xba\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/playback_control\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_playback_control_capability_proto_rawDescOnce sync.Once
@@ -612,14 +668,14 @@ func file_alice_protos_endpoint_capabilities_playback_control_capability_proto_r
 var file_alice_protos_endpoint_capabilities_playback_control_capability_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_alice_protos_endpoint_capabilities_playback_control_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_alice_protos_endpoint_capabilities_playback_control_capability_proto_goTypes = []any{
-	(TPlaybackControlCapability_EPlayerType)(0),    // 0: NAlice.TPlaybackControlCapability.EPlayerType
-	(*TPlaybackControlCapability)(nil),             // 1: NAlice.TPlaybackControlCapability
-	(*TPlaybackControlCapability_TTrackInfo)(nil),  // 2: NAlice.TPlaybackControlCapability.TTrackInfo
-	(*TPlaybackControlCapability_TEntityInfo)(nil), // 3: NAlice.TPlaybackControlCapability.TEntityInfo
-	(*TPlaybackControlCapability_TParameters)(nil), // 4: NAlice.TPlaybackControlCapability.TParameters
-	(*TPlaybackControlCapability_TState)(nil),      // 5: NAlice.TPlaybackControlCapability.TState
-	nil,                                // 6: NAlice.TPlaybackControlCapability.TState.ExtraEntry
-	(*endpoint.TCapability_TMeta)(nil), // 7: NAlice.TCapability.TMeta
+	(TPlaybackControlCapability_EPlayerType)(0),          // 0: NAlice.TPlaybackControlCapability.EPlayerType
+	(*TPlaybackControlCapability)(nil),                   // 1: NAlice.TPlaybackControlCapability
+	(*TPlaybackControlCapability_TTrackInfo)(nil),        // 2: NAlice.TPlaybackControlCapability.TTrackInfo
+	(*TPlaybackControlCapability_TEntityInfo)(nil),       // 3: NAlice.TPlaybackControlCapability.TEntityInfo
+	(*TPlaybackControlCapability_TParameters)(nil),       // 4: NAlice.TPlaybackControlCapability.TParameters
+	(*TPlaybackControlCapability_TState)(nil),            // 5: NAlice.TPlaybackControlCapability.TState
+	(*TPlaybackControlCapability_TState_ExtraEntry)(nil), // 6: NAlice.TPlaybackControlCapability.TState.ExtraEntry
+	(*endpoint.TCapability_TMeta)(nil),                   // 7: NAlice.TCapability.TMeta
 }
 var file_alice_protos_endpoint_capabilities_playback_control_capability_proto_depIdxs = []int32{
 	7, // 0: NAlice.TPlaybackControlCapability.Meta:type_name -> NAlice.TCapability.TMeta

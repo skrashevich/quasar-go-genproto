@@ -182,9 +182,9 @@ func (TPlaySettings_TSendPush_EState) EnumDescriptor() ([]byte, []int) {
 
 type TOriginInfo struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	SupportedFeatures []string               `protobuf:"bytes,3,rep,name=SupportedFeatures,json=supported_features,proto3" json:"SupportedFeatures,omitempty"`
-	DeviceId          *string                `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3,oneof" json:"DeviceId,omitempty"`
-	UUID              *string                `protobuf:"bytes,2,opt,name=UUID,json=uuid,proto3,oneof" json:"UUID,omitempty"`
+	SupportedFeatures []string               `protobuf:"bytes,3,rep,name=SupportedFeatures,proto3" json:"SupportedFeatures,omitempty"`
+	DeviceId          *string                `protobuf:"bytes,1,opt,name=DeviceId,proto3,oneof" json:"DeviceId,omitempty"`
+	UUID              *string                `protobuf:"bytes,2,opt,name=UUID,proto3,oneof" json:"UUID,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -242,8 +242,8 @@ func (x *TOriginInfo) GetUUID() string {
 
 type TPlaySettings struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	SendPush      *TPlaySettings_TSendPush     `protobuf:"bytes,1,opt,name=SendPush,json=send_push,proto3" json:"SendPush,omitempty"`
-	PlayLocation  *TPlaySettings_TPlayLocation `protobuf:"bytes,2,opt,name=PlayLocation,json=play_location,proto3" json:"PlayLocation,omitempty"`
+	SendPush      *TPlaySettings_TSendPush     `protobuf:"bytes,1,opt,name=SendPush,proto3" json:"SendPush,omitempty"`
+	PlayLocation  *TPlaySettings_TPlayLocation `protobuf:"bytes,2,opt,name=PlayLocation,proto3" json:"PlayLocation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -294,7 +294,7 @@ func (x *TPlaySettings) GetPlayLocation() *TPlaySettings_TPlayLocation {
 
 type TProperties struct {
 	state            protoimpl.MessageState         `protogen:"open.v1"`
-	ArchivedProperty *TProperties_TArchivedProperty `protobuf:"bytes,1,opt,name=ArchivedProperty,json=archived_property,proto3" json:"ArchivedProperty,omitempty"`
+	ArchivedProperty *TProperties_TArchivedProperty `protobuf:"bytes,1,opt,name=ArchivedProperty,proto3" json:"ArchivedProperty,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -338,10 +338,10 @@ func (x *TProperties) GetArchivedProperty() *TProperties_TArchivedProperty {
 
 type TReminderExtensions struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	ClientTimeDeltaSeconds int64                  `protobuf:"varint,1,opt,name=ClientTimeDeltaSeconds,json=client_time_delta_seconds,proto3" json:"ClientTimeDeltaSeconds,omitempty"`
-	OriginInfo             *TOriginInfo           `protobuf:"bytes,2,opt,name=OriginInfo,json=origin_info,proto3" json:"OriginInfo,omitempty"`
-	PlaySettings           *TPlaySettings         `protobuf:"bytes,3,opt,name=PlaySettings,json=play_settings,proto3" json:"PlaySettings,omitempty"`
-	Properties             *TProperties           `protobuf:"bytes,4,opt,name=Properties,json=properties,proto3" json:"Properties,omitempty"`
+	ClientTimeDeltaSeconds int64                  `protobuf:"varint,1,opt,name=ClientTimeDeltaSeconds,proto3" json:"ClientTimeDeltaSeconds,omitempty"`
+	OriginInfo             *TOriginInfo           `protobuf:"bytes,2,opt,name=OriginInfo,proto3" json:"OriginInfo,omitempty"`
+	PlaySettings           *TPlaySettings         `protobuf:"bytes,3,opt,name=PlaySettings,proto3" json:"PlaySettings,omitempty"`
+	Properties             *TProperties           `protobuf:"bytes,4,opt,name=Properties,proto3" json:"Properties,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -406,7 +406,7 @@ func (x *TReminderExtensions) GetProperties() *TProperties {
 
 type TPlaySettings_TSendPush struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	State         TPlaySettings_TSendPush_EState `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.NData.NReminders.TPlaySettings_TSendPush_EState" json:"State,omitempty"`
+	State         TPlaySettings_TSendPush_EState `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.NData.NReminders.TPlaySettings_TSendPush_EState" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -450,7 +450,7 @@ func (x *TPlaySettings_TSendPush) GetState() TPlaySettings_TSendPush_EState {
 
 type TPlaySettings_TPlayLocation struct {
 	state           protoimpl.MessageState                        `protogen:"open.v1"`
-	SelectedDevices *TPlaySettings_TPlayLocation_TSelectedDevices `protobuf:"bytes,1,opt,name=SelectedDevices,json=selected_devices,proto3" json:"SelectedDevices,omitempty"`
+	SelectedDevices *TPlaySettings_TPlayLocation_TSelectedDevices `protobuf:"bytes,1,opt,name=SelectedDevices,proto3" json:"SelectedDevices,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -494,7 +494,7 @@ func (x *TPlaySettings_TPlayLocation) GetSelectedDevices() *TPlaySettings_TPlayL
 
 type TPlaySettings_TPlayLocation_TSelectedDevices struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	SelectedDeviceIds []string               `protobuf:"bytes,1,rep,name=SelectedDeviceIds,json=selected_device_ids,proto3" json:"SelectedDeviceIds,omitempty"`
+	SelectedDeviceIds []string               `protobuf:"bytes,1,rep,name=SelectedDeviceIds,proto3" json:"SelectedDeviceIds,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -538,7 +538,7 @@ func (x *TPlaySettings_TPlayLocation_TSelectedDevices) GetSelectedDeviceIds() []
 
 type TProperties_TArchivedProperty struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	ManualArchivedTime *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=ManualArchivedTime,json=manual_archived_time,proto3" json:"ManualArchivedTime,omitempty"`
+	ManualArchivedTime *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=ManualArchivedTime,proto3" json:"ManualArchivedTime,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -584,39 +584,39 @@ var File_alice_protos_data_scenario_reminders_extensions_proto protoreflect.File
 
 const file_alice_protos_data_scenario_reminders_extensions_proto_rawDesc = "" +
 	"\n" +
-	"5alice/protos/data/scenario/reminders/extensions.proto\x12\x17NAlice.NData.NReminders\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xc6\x01\n" +
-	"\vTOriginInfo\x12E\n" +
-	"\x11SupportedFeatures\x18\x03 \x03(\tB\x16\xaa\xdd\x1b\x12supported_featuresR\x12supported_features\x123\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03H\x00R\tdevice_id\x88\x01\x01\x12%\n" +
-	"\x04UUID\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03H\x01R\x04uuid\x88\x01\x01B\v\n" +
+	"5alice/protos/data/scenario/reminders/extensions.proto\x12\x17NAlice.NData.NReminders\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\x8b\x01\n" +
+	"\vTOriginInfo\x12,\n" +
+	"\x11SupportedFeatures\x18\x03 \x03(\tR\x11SupportedFeatures\x12\x1f\n" +
+	"\bDeviceId\x18\x01 \x01(\tH\x00R\bDeviceId\x88\x01\x01\x12\x17\n" +
+	"\x04UUID\x18\x02 \x01(\tH\x01R\x04UUID\x88\x01\x01B\v\n" +
 	"\t_DeviceIdB\a\n" +
-	"\x05_UUID\"\xf3\x04\n" +
-	"\rTPlaySettings\x12\\\n" +
-	"\bSendPush\x18\x01 \x01(\v20.NAlice.NData.NReminders.TPlaySettings.TSendPushB\r\xaa\xdd\x1b\tsend_pushR\tsend_push\x12l\n" +
-	"\fPlayLocation\x18\x02 \x01(\v24.NAlice.NData.NReminders.TPlaySettings.TPlayLocationB\x11\xaa\xdd\x1b\rplay_locationR\rplay_location\x1a\x99\x01\n" +
-	"\tTSendPush\x12X\n" +
-	"\x05State\x18\x01 \x01(\x0e27.NAlice.NData.NReminders.TPlaySettings.TSendPush.EStateB\t\xaa\xdd\x1b\x05stateR\x05state\"2\n" +
+	"\x05_UUID\"\x8d\x04\n" +
+	"\rTPlaySettings\x12L\n" +
+	"\bSendPush\x18\x01 \x01(\v20.NAlice.NData.NReminders.TPlaySettings.TSendPushR\bSendPush\x12X\n" +
+	"\fPlayLocation\x18\x02 \x01(\v24.NAlice.NData.NReminders.TPlaySettings.TPlayLocationR\fPlayLocation\x1a\x8e\x01\n" +
+	"\tTSendPush\x12M\n" +
+	"\x05State\x18\x01 \x01(\x0e27.NAlice.NData.NReminders.TPlaySettings.TSendPush.EStateR\x05State\"2\n" +
 	"\x06EState\x12\r\n" +
 	"\tUndefined\x10\x00\x12\v\n" +
 	"\aEnabled\x10\x01\x12\f\n" +
-	"\bDisabled\x10\x02\x1a\xf9\x01\n" +
-	"\rTPlayLocation\x12\x86\x01\n" +
-	"\x0fSelectedDevices\x18\x01 \x01(\v2E.NAlice.NData.NReminders.TPlaySettings.TPlayLocation.TSelectedDevicesB\x14\xaa\xdd\x1b\x10selected_devicesR\x10selected_devices\x1a_\n" +
-	"\x10TSelectedDevices\x12K\n" +
-	"\x11SelectedDeviceIds\x18\x01 \x03(\tB\x1b\xaa\xdd\x1b\x13selected_device_ids\xf8\x91*\x03R\x13selected_device_ids\"\x86\x02\n" +
-	"\vTProperties\x12z\n" +
-	"\x10ArchivedProperty\x18\x01 \x01(\v26.NAlice.NData.NReminders.TProperties.TArchivedPropertyB\x15\xaa\xdd\x1b\x11archived_propertyR\x11archived_property\x1a{\n" +
-	"\x11TArchivedProperty\x12f\n" +
-	"\x12ManualArchivedTime\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x18\xaa\xdd\x1b\x14manual_archived_timeR\x14manual_archived_time\"\xfd\x02\n" +
-	"\x13TReminderExtensions\x12X\n" +
-	"\x16ClientTimeDeltaSeconds\x18\x01 \x01(\x03B\x1d\xaa\xdd\x1b\x19client_time_delta_secondsR\x19client_time_delta_seconds\x12V\n" +
+	"\bDisabled\x10\x02\x1a\xc2\x01\n" +
+	"\rTPlayLocation\x12o\n" +
+	"\x0fSelectedDevices\x18\x01 \x01(\v2E.NAlice.NData.NReminders.TPlaySettings.TPlayLocation.TSelectedDevicesR\x0fSelectedDevices\x1a@\n" +
+	"\x10TSelectedDevices\x12,\n" +
+	"\x11SelectedDeviceIds\x18\x01 \x03(\tR\x11SelectedDeviceIds\"\xd2\x01\n" +
+	"\vTProperties\x12b\n" +
+	"\x10ArchivedProperty\x18\x01 \x01(\v26.NAlice.NData.NReminders.TProperties.TArchivedPropertyR\x10ArchivedProperty\x1a_\n" +
+	"\x11TArchivedProperty\x12J\n" +
+	"\x12ManualArchivedTime\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x12ManualArchivedTime\"\xa5\x02\n" +
+	"\x13TReminderExtensions\x126\n" +
+	"\x16ClientTimeDeltaSeconds\x18\x01 \x01(\x03R\x16ClientTimeDeltaSeconds\x12D\n" +
 	"\n" +
-	"OriginInfo\x18\x02 \x01(\v2$.NAlice.NData.NReminders.TOriginInfoB\x0f\xaa\xdd\x1b\vorigin_infoR\vorigin_info\x12^\n" +
-	"\fPlaySettings\x18\x03 \x01(\v2&.NAlice.NData.NReminders.TPlaySettingsB\x11\xaa\xdd\x1b\rplay_settingsR\rplay_settings\x12T\n" +
+	"OriginInfo\x18\x02 \x01(\v2$.NAlice.NData.NReminders.TOriginInfoR\n" +
+	"OriginInfo\x12J\n" +
+	"\fPlaySettings\x18\x03 \x01(\v2&.NAlice.NData.NReminders.TPlaySettingsR\fPlaySettings\x12D\n" +
 	"\n" +
-	"Properties\x18\x04 \x01(\v2$.NAlice.NData.NReminders.TPropertiesB\x0e\xaa\xdd\x1b\n" +
-	"propertiesR\n" +
-	"properties*<\n" +
+	"Properties\x18\x04 \x01(\v2$.NAlice.NData.NReminders.TPropertiesR\n" +
+	"Properties*<\n" +
 	"\x13ERemindersSyncState\x12\r\n" +
 	"\tUndefined\x10\x00\x12\n" +
 	"\n" +
@@ -631,8 +631,8 @@ const file_alice_protos_data_scenario_reminders_extensions_proto_rawDesc = "" +
 	"\x06Logout\x10\x03\x12\x1a\n" +
 	"\x16DisableSyncAndWipeMine\x10\x04\x12\x0e\n" +
 	"\n" +
-	"EnableSync\x10\x05Bg\n" +
-	".ru.yandex.alice.protos.data.scenario.remindersZ5a.yandex-team.ru/alice/protos/data/scenario/remindersb\x06proto3"
+	"EnableSync\x10\x05B\x82\x02\n" +
+	"\x1bcom.NAlice.NData.NRemindersB\x0fExtensionsProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/reminders\xa2\x02\x03NNN\xaa\x02\x17NAlice.NData.NReminders\xca\x02\x17NAlice\\NData\\NReminders\xe2\x02#NAlice\\NData\\NReminders\\GPBMetadata\xea\x02\x19NAlice::NData::NRemindersb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_reminders_extensions_proto_rawDescOnce sync.Once

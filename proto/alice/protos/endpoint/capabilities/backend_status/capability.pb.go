@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/backend_status/capability.proto
 
-package backendstatuspb
+package backend_status
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -231,8 +231,8 @@ const file_alice_protos_endpoint_capabilities_backend_status_capability_proto_ra
 	"\aEStatus\x12\x11\n" +
 	"\rUnknownStatus\x10\x00\x12\r\n" +
 	"\tAvailable\x10\x01\x12\x0f\n" +
-	"\vUnavailable\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd3\x02B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cBackendStatusCapabilityProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/backend_status;backendstatuspbb\x06proto3"
+	"\vUnavailable\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd3\x02B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cBackendStatusCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/backend_statusb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_backend_status_capability_proto_rawDescOnce sync.Once

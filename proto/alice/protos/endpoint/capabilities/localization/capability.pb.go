@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/localization/capability.proto
 
-package localizationpb
+package localization
 
 import (
 	localization "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/localization"
@@ -28,9 +28,9 @@ const (
 
 type TLocalizationCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLocalizationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLocalizationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLocalizationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLocalizationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,8 +124,8 @@ func (*TLocalizationCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TLocalizationCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Country       localization.ECountry  `protobuf:"varint,1,opt,name=Country,json=country,proto3,enum=NAlice.NData.ECountry" json:"Country,omitempty"`
-	Locale        localization.ELocale   `protobuf:"varint,2,opt,name=Locale,json=locale,proto3,enum=NAlice.NData.ELocale" json:"Locale,omitempty"`
+	Country       localization.ECountry  `protobuf:"varint,1,opt,name=Country,proto3,enum=NAlice.NData.ECountry" json:"Country,omitempty"`
+	Locale        localization.ELocale   `protobuf:"varint,2,opt,name=Locale,proto3,enum=NAlice.NData.ELocale" json:"Locale,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -176,9 +176,9 @@ func (x *TLocalizationCapability_TState) GetLocale() localization.ELocale {
 
 type TLocalizationCapability_TSetLocalizationDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Country       localization.ECountry  `protobuf:"varint,1,opt,name=Country,json=country,proto3,enum=NAlice.NData.ECountry" json:"Country,omitempty"`
-	Locale        localization.ELocale   `protobuf:"varint,2,opt,name=Locale,json=locale,proto3,enum=NAlice.NData.ELocale" json:"Locale,omitempty"`
-	Name          string                 `protobuf:"bytes,3,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Country       localization.ECountry  `protobuf:"varint,1,opt,name=Country,proto3,enum=NAlice.NData.ECountry" json:"Country,omitempty"`
+	Locale        localization.ELocale   `protobuf:"varint,2,opt,name=Locale,proto3,enum=NAlice.NData.ELocale" json:"Locale,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -238,25 +238,23 @@ var File_alice_protos_endpoint_capabilities_localization_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_localization_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/localization/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a1alice/protos/data/localization/localization.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf6\x04\n" +
-	"\x17TLocalizationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"@alice/protos/endpoint/capabilities/localization/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a1alice/protos/data/localization/localization.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe0\x03\n" +
+	"\x17TLocalizationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TLocalizationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TLocalizationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x88\x01\n" +
-	"\x06TState\x12=\n" +
-	"\aCountry\x18\x01 \x01(\x0e2\x16.NAlice.NData.ECountryB\v\xaa\xdd\x1b\acountryR\acountry\x129\n" +
-	"\x06Locale\x18\x02 \x01(\x0e2\x15.NAlice.NData.ELocaleB\n" +
-	"\xaa\xdd\x1b\x06localeR\x06locale:\x04\xa8\xdd\x1b\x04\x1a\xd1\x01\n" +
-	"\x19TSetLocalizationDirective\x12=\n" +
-	"\aCountry\x18\x01 \x01(\x0e2\x16.NAlice.NData.ECountryB\v\xaa\xdd\x1b\acountryR\acountry\x129\n" +
-	"\x06Locale\x18\x02 \x01(\x0e2\x15.NAlice.NData.ELocaleB\n" +
-	"\xaa\xdd\x1b\x06localeR\x06locale\x12\x1c\n" +
-	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1c\x92\x82\x19\x10set_localization\xa8\xdd\x1b\x04\xa8\xc8\x1cw:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c+B\x92\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11LocalizationProtoZOa.yandex-team.ru/alice/protos/endpoint/capabilities/localization;localizationpbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TLocalizationCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TLocalizationCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1ai\n" +
+	"\x06TState\x120\n" +
+	"\aCountry\x18\x01 \x01(\x0e2\x16.NAlice.NData.ECountryR\aCountry\x12-\n" +
+	"\x06Locale\x18\x02 \x01(\x0e2\x15.NAlice.NData.ELocaleR\x06Locale\x1a\x90\x01\n" +
+	"\x19TSetLocalizationDirective\x120\n" +
+	"\aCountry\x18\x01 \x01(\x0e2\x16.NAlice.NData.ECountryR\aCountry\x12-\n" +
+	"\x06Locale\x18\x02 \x01(\x0e2\x15.NAlice.NData.ELocaleR\x06Locale\x12\x12\n" +
+	"\x04Name\x18\x03 \x01(\tR\x04NameB\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/localization\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_localization_capability_proto_rawDescOnce sync.Once

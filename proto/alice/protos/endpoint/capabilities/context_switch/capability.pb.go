@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/context_switch/capability.proto
 
-package context_switchpb
+package context_switch
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -514,8 +514,8 @@ const file_alice_protos_endpoint_capabilities_context_switch_capability_proto_ra
 	"\x1dPendingScenarioSummarizeVideo\x10\x02\x12$\n" +
 	" PendingScenarioSummarizeDocument\x10\x03\x12 \n" +
 	"\x1cPendingScenarioSummarizePage\x10\x04\x12 \n" +
-	"\x1cPendingScenarioPageQuestions\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x80\x02B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cContextSwitchCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/context_switch;context_switchpbb\x06proto3"
+	"\x1cPendingScenarioPageQuestions\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x80\x02B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cContextSwitchCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/context_switchb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_context_switch_capability_proto_rawDescOnce sync.Once

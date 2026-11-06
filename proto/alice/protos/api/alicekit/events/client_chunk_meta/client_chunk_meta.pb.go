@@ -164,8 +164,8 @@ const file_alice_protos_api_alicekit_events_client_chunk_meta_client_chunk_meta_
 	"\x15SendSteadyTimepointMs\x18\x01 \x01(\x04B\x1c\xaa\xdd\x1b\x18send_steady_timepoint_msH\x00R\x18send_steady_timepoint_ms\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x18\n" +
 	"\x16_SendSteadyTimepointMs:\x04\xa8\xdd\x1b\x04B\x1b\n" +
 	"\tChunkMeta\x12\x0e\xaa\xdd\x1b\n" +
-	"chunk_metaB\x96\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.client_chunk_metaB\x0fClientChunkMetaP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/client_chunk_metab\x06proto3"
+	"chunk_metaB\xb5\x01\n" +
+	"<ru.yandex.alice.protos.api.alicekit.events.client_chunk_metaB\x0fClientChunkMetaP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/client_chunk_metab\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_client_chunk_meta_client_chunk_meta_proto_rawDescOnce sync.Once

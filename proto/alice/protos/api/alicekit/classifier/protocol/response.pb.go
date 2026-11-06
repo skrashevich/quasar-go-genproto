@@ -280,8 +280,8 @@ const file_alice_protos_api_alicekit_classifier_protocol_response_proto_rawDesc 
 	"\n" +
 	"TAnalytics\x12>\n" +
 	"\aTimings\x18\x01 \x01(\v2$.NAlice.NAliceApi.TLocalEventTimingsR\atimingsB\b\n" +
-	"\x06ResultB\x94\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.classifier.protocolB\x17ClassifierResponseProtoP\x01Z>a.yandex-team.ru/alice/protos/api/alicekit/classifier/protocolb\x06proto3"
+	"\x06ResultB\xb3\x01\n" +
+	"7ru.yandex.alice.protos.api.alicekit.classifier.protocolB\x17ClassifierResponseProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/classifier/protocolb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_classifier_protocol_response_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/best_price_chat/capability.proto
 
-package best_price_chatpb
+package best_price_chat
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -200,8 +200,8 @@ const file_alice_protos_endpoint_capabilities_best_price_chat_capability_proto_r
 	"\xaa\xdd\x1b\x06regionH\x00R\x06region\x88\x01\x01\x12R\n" +
 	"\x13RegionHumanReadable\x18\x03 \x01(\tB\x19\xaa\xdd\x1b\x15region_human_readableH\x01R\x15region_human_readable\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
 	"\a_RegionB\x16\n" +
-	"\x14_RegionHumanReadable:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf7\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cBestPriceChatCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/best_price_chat;best_price_chatpbb\x06proto3"
+	"\x14_RegionHumanReadable:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf7\x01B\xb0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cBestPriceChatCapabilityProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/best_price_chatb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_best_price_chat_capability_proto_rawDescOnce sync.Once

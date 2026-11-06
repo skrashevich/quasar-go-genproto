@@ -77,11 +77,10 @@ func (EUserPriorityType) EnumDescriptor() ([]byte, []int) {
 type TAlice2ModeInfo_EMode int32
 
 const (
-	TAlice2ModeInfo_Undefined TAlice2ModeInfo_EMode = 0
-	TAlice2ModeInfo_Base      TAlice2ModeInfo_EMode = 1
-	TAlice2ModeInfo_Pro       TAlice2ModeInfo_EMode = 2
-	TAlice2ModeInfo_External  TAlice2ModeInfo_EMode = 3
-	// Deprecated: Marked as deprecated in alice/protos/api/alice_mode_info/alice_mode_info.proto.
+	TAlice2ModeInfo_Undefined    TAlice2ModeInfo_EMode = 0
+	TAlice2ModeInfo_Base         TAlice2ModeInfo_EMode = 1
+	TAlice2ModeInfo_Pro          TAlice2ModeInfo_EMode = 2
+	TAlice2ModeInfo_External     TAlice2ModeInfo_EMode = 3
 	TAlice2ModeInfo_Search       TAlice2ModeInfo_EMode = 4
 	TAlice2ModeInfo_DeepResearch TAlice2ModeInfo_EMode = 5
 )
@@ -135,9 +134,9 @@ func (TAlice2ModeInfo_EMode) EnumDescriptor() ([]byte, []int) {
 
 type TAlice2ModeInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Mode          TAlice2ModeInfo_EMode  `protobuf:"varint,1,opt,name=Mode,json=mode,proto3,enum=NAlice.NApi.NAlice2Mode.TAlice2ModeInfo_EMode" json:"Mode,omitempty"`
-	Preset        string                 `protobuf:"bytes,2,opt,name=Preset,json=preset,proto3" json:"Preset,omitempty"`
-	HackMode      *string                `protobuf:"bytes,3,opt,name=HackMode,json=hack_mode,proto3,oneof" json:"HackMode,omitempty"`
+	Mode          TAlice2ModeInfo_EMode  `protobuf:"varint,1,opt,name=Mode,proto3,enum=NAlice.NApi.NAlice2Mode.TAlice2ModeInfo_EMode" json:"Mode,omitempty"`
+	Preset        string                 `protobuf:"bytes,2,opt,name=Preset,proto3" json:"Preset,omitempty"`
+	HackMode      *string                `protobuf:"bytes,3,opt,name=HackMode,proto3,oneof" json:"HackMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,9 +194,9 @@ func (x *TAlice2ModeInfo) GetHackMode() string {
 
 type TAlice2TrialState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	LeftCount     uint32                 `protobuf:"varint,1,opt,name=LeftCount,json=left_count,proto3" json:"LeftCount,omitempty"`
-	Limit         uint32                 `protobuf:"varint,2,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
-	TimeLimitSec  uint32                 `protobuf:"varint,3,opt,name=TimeLimitSec,json=time_limit_sec,proto3" json:"TimeLimitSec,omitempty"`
+	LeftCount     uint32                 `protobuf:"varint,1,opt,name=LeftCount,proto3" json:"LeftCount,omitempty"`
+	Limit         uint32                 `protobuf:"varint,2,opt,name=Limit,proto3" json:"Limit,omitempty"`
+	TimeLimitSec  uint32                 `protobuf:"varint,3,opt,name=TimeLimitSec,proto3" json:"TimeLimitSec,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,32 +256,30 @@ var File_alice_protos_api_alice_mode_info_alice_mode_info_proto protoreflect.Fil
 
 const file_alice_protos_api_alice_mode_info_alice_mode_info_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/api/alice_mode_info/alice_mode_info.proto\x12\x17NAlice.NApi.NAlice2Mode\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x02\n" +
-	"\x0fTAlice2ModeInfo\x12L\n" +
-	"\x04Mode\x18\x01 \x01(\x0e2..NAlice.NApi.NAlice2Mode.TAlice2ModeInfo.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x12\"\n" +
-	"\x06Preset\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06presetR\x06preset\x12/\n" +
-	"\bHackMode\x18\x03 \x01(\tB\r\xaa\xdd\x1b\thack_modeH\x00R\thack_mode\x88\x01\x01\"Y\n" +
+	"6alice/protos/api/alice_mode_info/alice_mode_info.proto\x12\x17NAlice.NApi.NAlice2Mode\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf2\x01\n" +
+	"\x0fTAlice2ModeInfo\x12B\n" +
+	"\x04Mode\x18\x01 \x01(\x0e2..NAlice.NApi.NAlice2Mode.TAlice2ModeInfo.EModeR\x04Mode\x12\x16\n" +
+	"\x06Preset\x18\x02 \x01(\tR\x06Preset\x12\x1f\n" +
+	"\bHackMode\x18\x03 \x01(\tH\x00R\bHackMode\x88\x01\x01\"U\n" +
 	"\x05EMode\x12\r\n" +
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04Base\x10\x01\x12\a\n" +
 	"\x03Pro\x10\x02\x12\f\n" +
-	"\bExternal\x10\x03\x12\x0e\n" +
-	"\x06Search\x10\x04\x1a\x02\b\x01\x12\x10\n" +
-	"\fDeepResearch\x10\x05:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\t_HackMode\"\xa3\x01\n" +
-	"\x11TAlice2TrialState\x12-\n" +
-	"\tLeftCount\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"left_countR\n" +
-	"left_count\x12\x1f\n" +
-	"\x05Limit\x18\x02 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x128\n" +
-	"\fTimeLimitSec\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0etime_limit_secR\x0etime_limit_sec:\x04\xa8\xdd\x1b\x04*i\n" +
+	"\bExternal\x10\x03\x12\n" +
+	"\n" +
+	"\x06Search\x10\x04\x12\x10\n" +
+	"\fDeepResearch\x10\x05B\v\n" +
+	"\t_HackMode\"k\n" +
+	"\x11TAlice2TrialState\x12\x1c\n" +
+	"\tLeftCount\x18\x01 \x01(\rR\tLeftCount\x12\x14\n" +
+	"\x05Limit\x18\x02 \x01(\rR\x05Limit\x12\"\n" +
+	"\fTimeLimitSec\x18\x03 \x01(\rR\fTimeLimitSec*i\n" +
 	"\x11EUserPriorityType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\x10\n" +
 	"\fSubscription\x10\x01\x12\x17\n" +
 	"\x13WithoutSubscription\x10\x02\x12\x1a\n" +
-	"\x16NewWithoutSubscription\x10\x03B_\n" +
-	"*ru.yandex.alice.protos.api.alice_mode_infoZ1a.yandex-team.ru/alice/protos/api/alice_mode_infob\x06proto3"
+	"\x16NewWithoutSubscription\x10\x03B\x81\x02\n" +
+	"\x1bcom.NAlice.NApi.NAlice2ModeB\x12AliceModeInfoProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alice_mode_info\xa2\x02\x03NNN\xaa\x02\x17NAlice.NApi.NAlice2Mode\xca\x02\x17NAlice\\NApi\\NAlice2Mode\xe2\x02#NAlice\\NApi\\NAlice2Mode\\GPBMetadata\xea\x02\x19NAlice::NApi::NAlice2Modeb\x06proto3"
 
 var (
 	file_alice_protos_api_alice_mode_info_alice_mode_info_proto_rawDescOnce sync.Once

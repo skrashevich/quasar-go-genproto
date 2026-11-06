@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/clock_app/capability.proto
 
-package clockapppb
+package clock_app
 
 import (
 	alarm "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/alarm"
@@ -77,9 +77,9 @@ func (TClockAppCapability_TTimerListScreenState_ESectionOfListScreen) EnumDescri
 
 type TClockAppCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TClockAppCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TClockAppCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TClockAppCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TClockAppCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -292,31 +292,31 @@ type isTClockAppCapability_TState_ScreenState interface {
 }
 
 type TClockAppCapability_TState_AlarmListScreenState struct {
-	AlarmListScreenState *TClockAppCapability_TAlarmListScreenState `protobuf:"bytes,1,opt,name=AlarmListScreenState,json=alarm_list_screen_state,proto3,oneof"`
+	AlarmListScreenState *TClockAppCapability_TAlarmListScreenState `protobuf:"bytes,1,opt,name=AlarmListScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_AlarmEditScreenState struct {
-	AlarmEditScreenState *TClockAppCapability_TAlarmEditScreenState `protobuf:"bytes,2,opt,name=AlarmEditScreenState,json=alarm_edit_screen_state,proto3,oneof"`
+	AlarmEditScreenState *TClockAppCapability_TAlarmEditScreenState `protobuf:"bytes,2,opt,name=AlarmEditScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_AlarmActiveScreenState struct {
-	AlarmActiveScreenState *TClockAppCapability_TAlarmActiveScreenState `protobuf:"bytes,3,opt,name=AlarmActiveScreenState,json=alarm_active_screen_state,proto3,oneof"`
+	AlarmActiveScreenState *TClockAppCapability_TAlarmActiveScreenState `protobuf:"bytes,3,opt,name=AlarmActiveScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_TimerListScreenState struct {
-	TimerListScreenState *TClockAppCapability_TTimerListScreenState `protobuf:"bytes,4,opt,name=TimerListScreenState,json=timer_list_screen_state,proto3,oneof"`
+	TimerListScreenState *TClockAppCapability_TTimerListScreenState `protobuf:"bytes,4,opt,name=TimerListScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_TimerInfoScreenState struct {
-	TimerInfoScreenState *TClockAppCapability_TTimerInfoScreenState `protobuf:"bytes,5,opt,name=TimerInfoScreenState,json=timer_info_screen_state,proto3,oneof"`
+	TimerInfoScreenState *TClockAppCapability_TTimerInfoScreenState `protobuf:"bytes,5,opt,name=TimerInfoScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_TimerActiveScreenState struct {
-	TimerActiveScreenState *TClockAppCapability_TTimerActiveScreenState `protobuf:"bytes,6,opt,name=TimerActiveScreenState,json=timer_active_screen_state,proto3,oneof"`
+	TimerActiveScreenState *TClockAppCapability_TTimerActiveScreenState `protobuf:"bytes,6,opt,name=TimerActiveScreenState,proto3,oneof"`
 }
 
 type TClockAppCapability_TState_TimerCreateScreenState struct {
-	TimerCreateScreenState *TClockAppCapability_TTimerCreateScreenState `protobuf:"bytes,7,opt,name=TimerCreateScreenState,json=timer_create_screen_state,proto3,oneof"`
+	TimerCreateScreenState *TClockAppCapability_TTimerCreateScreenState `protobuf:"bytes,7,opt,name=TimerCreateScreenState,proto3,oneof"`
 }
 
 func (*TClockAppCapability_TState_AlarmListScreenState) isTClockAppCapability_TState_ScreenState() {}
@@ -338,7 +338,7 @@ func (*TClockAppCapability_TState_TimerCreateScreenState) isTClockAppCapability_
 
 type TClockAppCapability_TAlarmListScreenState struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	AlarmList     *TClockAppCapability_TAlarmList `protobuf:"bytes,3,opt,name=AlarmList,json=alarm_list,proto3" json:"AlarmList,omitempty"`
+	AlarmList     *TClockAppCapability_TAlarmList `protobuf:"bytes,3,opt,name=AlarmList,proto3" json:"AlarmList,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -382,7 +382,7 @@ func (x *TClockAppCapability_TAlarmListScreenState) GetAlarmList() *TClockAppCap
 
 type TClockAppCapability_TAlarmEditScreenState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Alarm         *alarm.TAlarm          `protobuf:"bytes,1,opt,name=Alarm,json=alarm,proto3" json:"Alarm,omitempty"`
+	Alarm         *alarm.TAlarm          `protobuf:"bytes,1,opt,name=Alarm,proto3" json:"Alarm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -426,7 +426,7 @@ func (x *TClockAppCapability_TAlarmEditScreenState) GetAlarm() *alarm.TAlarm {
 
 type TClockAppCapability_TAlarmActiveScreenState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AlarmId       string                 `protobuf:"bytes,1,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
+	AlarmId       string                 `protobuf:"bytes,1,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -470,7 +470,7 @@ func (x *TClockAppCapability_TAlarmActiveScreenState) GetAlarmId() string {
 
 type TClockAppCapability_TTimerListScreenState struct {
 	state         protoimpl.MessageState                                         `protogen:"open.v1"`
-	TargetSection TClockAppCapability_TTimerListScreenState_ESectionOfListScreen `protobuf:"varint,1,opt,name=TargetSection,json=target_section,proto3,enum=NAlice.TClockAppCapability_TTimerListScreenState_ESectionOfListScreen" json:"TargetSection,omitempty"`
+	TargetSection TClockAppCapability_TTimerListScreenState_ESectionOfListScreen `protobuf:"varint,1,opt,name=TargetSection,proto3,enum=NAlice.TClockAppCapability_TTimerListScreenState_ESectionOfListScreen" json:"TargetSection,omitempty"`
 	// Types that are valid to be assigned to ScreenInfo:
 	//
 	//	*TClockAppCapability_TTimerListScreenState_TimerDuration
@@ -547,11 +547,11 @@ type isTClockAppCapability_TTimerListScreenState_ScreenInfo interface {
 }
 
 type TClockAppCapability_TTimerListScreenState_TimerDuration struct {
-	TimerDuration uint32 `protobuf:"varint,3,opt,name=TimerDuration,json=timer_duration,proto3,oneof"`
+	TimerDuration uint32 `protobuf:"varint,3,opt,name=TimerDuration,proto3,oneof"`
 }
 
 type TClockAppCapability_TTimerListScreenState_TimerList struct {
-	TimerList *TClockAppCapability_TTimerList `protobuf:"bytes,4,opt,name=TimerList,json=timer_list,proto3,oneof"`
+	TimerList *TClockAppCapability_TTimerList `protobuf:"bytes,4,opt,name=TimerList,proto3,oneof"`
 }
 
 func (*TClockAppCapability_TTimerListScreenState_TimerDuration) isTClockAppCapability_TTimerListScreenState_ScreenInfo() {
@@ -562,7 +562,7 @@ func (*TClockAppCapability_TTimerListScreenState_TimerList) isTClockAppCapabilit
 
 type TClockAppCapability_TTimerInfoScreenState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimerId       string                 `protobuf:"bytes,1,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	TimerId       string                 `protobuf:"bytes,1,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -606,7 +606,7 @@ func (x *TClockAppCapability_TTimerInfoScreenState) GetTimerId() string {
 
 type TClockAppCapability_TTimerActiveScreenState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimerId       string                 `protobuf:"bytes,1,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	TimerId       string                 `protobuf:"bytes,1,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -650,7 +650,7 @@ func (x *TClockAppCapability_TTimerActiveScreenState) GetTimerId() string {
 
 type TClockAppCapability_TTimerCreateScreenState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimerDuration uint32                 `protobuf:"varint,1,opt,name=TimerDuration,json=timer_duration,proto3" json:"TimerDuration,omitempty"`
+	TimerDuration uint32                 `protobuf:"varint,1,opt,name=TimerDuration,proto3" json:"TimerDuration,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -694,9 +694,9 @@ func (x *TClockAppCapability_TTimerCreateScreenState) GetTimerDuration() uint32 
 
 type TClockAppCapability_TOpenScreenAlarmListDirective struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TargetAlarmIds []string               `protobuf:"bytes,2,rep,name=TargetAlarmIds,json=target_alarm_ids,proto3" json:"TargetAlarmIds,omitempty"`
-	ForceAutoClose bool                   `protobuf:"varint,3,opt,name=ForceAutoClose,json=force_auto_close,proto3" json:"ForceAutoClose,omitempty"`
+	Name           string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TargetAlarmIds []string               `protobuf:"bytes,2,rep,name=TargetAlarmIds,proto3" json:"TargetAlarmIds,omitempty"`
+	ForceAutoClose bool                   `protobuf:"varint,3,opt,name=ForceAutoClose,proto3" json:"ForceAutoClose,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -754,8 +754,8 @@ func (x *TClockAppCapability_TOpenScreenAlarmListDirective) GetForceAutoClose() 
 
 type TClockAppCapability_TOpenScreenAlarmEditDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	AlarmId       string                 `protobuf:"bytes,2,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -806,7 +806,7 @@ func (x *TClockAppCapability_TOpenScreenAlarmEditDirective) GetAlarmId() string 
 
 type TClockAppCapability_TCloseScreenAlarmActiveDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -850,10 +850,10 @@ func (x *TClockAppCapability_TCloseScreenAlarmActiveDirective) GetName() string 
 
 type TClockAppCapability_TOpenScreenTimerListDirective struct {
 	state          protoimpl.MessageState                                         `protogen:"open.v1"`
-	Name           string                                                         `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TargetTimerIds []string                                                       `protobuf:"bytes,2,rep,name=TargetTimerIds,json=target_timer_ids,proto3" json:"TargetTimerIds,omitempty"`
-	TargetSection  TClockAppCapability_TTimerListScreenState_ESectionOfListScreen `protobuf:"varint,3,opt,name=TargetSection,json=target_section,proto3,enum=NAlice.TClockAppCapability_TTimerListScreenState_ESectionOfListScreen" json:"TargetSection,omitempty"`
-	ForceAutoClose bool                                                           `protobuf:"varint,4,opt,name=ForceAutoClose,json=force_auto_close,proto3" json:"ForceAutoClose,omitempty"`
+	Name           string                                                         `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TargetTimerIds []string                                                       `protobuf:"bytes,2,rep,name=TargetTimerIds,proto3" json:"TargetTimerIds,omitempty"`
+	TargetSection  TClockAppCapability_TTimerListScreenState_ESectionOfListScreen `protobuf:"varint,3,opt,name=TargetSection,proto3,enum=NAlice.TClockAppCapability_TTimerListScreenState_ESectionOfListScreen" json:"TargetSection,omitempty"`
+	ForceAutoClose bool                                                           `protobuf:"varint,4,opt,name=ForceAutoClose,proto3" json:"ForceAutoClose,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -918,8 +918,8 @@ func (x *TClockAppCapability_TOpenScreenTimerListDirective) GetForceAutoClose() 
 
 type TClockAppCapability_TOpenScreenTimerInfoDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -970,7 +970,7 @@ func (x *TClockAppCapability_TOpenScreenTimerInfoDirective) GetTimerId() string 
 
 type TClockAppCapability_TCloseScreenTimerActiveDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1014,8 +1014,8 @@ func (x *TClockAppCapability_TCloseScreenTimerActiveDirective) GetName() string 
 
 type TClockAppCapability_TAlarmList struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	TargetAlarmIds []string               `protobuf:"bytes,1,rep,name=TargetAlarmIds,json=target_alarm_ids,proto3" json:"TargetAlarmIds,omitempty"`
-	OtherAlarmIds  []string               `protobuf:"bytes,2,rep,name=OtherAlarmIds,json=other_alarm_ids,proto3" json:"OtherAlarmIds,omitempty"`
+	TargetAlarmIds []string               `protobuf:"bytes,1,rep,name=TargetAlarmIds,proto3" json:"TargetAlarmIds,omitempty"`
+	OtherAlarmIds  []string               `protobuf:"bytes,2,rep,name=OtherAlarmIds,proto3" json:"OtherAlarmIds,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1066,8 +1066,8 @@ func (x *TClockAppCapability_TAlarmList) GetOtherAlarmIds() []string {
 
 type TClockAppCapability_TTimerList struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	TargetTimerIds []string               `protobuf:"bytes,1,rep,name=TargetTimerIds,json=target_timer_ids,proto3" json:"TargetTimerIds,omitempty"`
-	OtherTimerIds  []string               `protobuf:"bytes,2,rep,name=OtherTimerIds,json=other_timer_ids,proto3" json:"OtherTimerIds,omitempty"`
+	TargetTimerIds []string               `protobuf:"bytes,1,rep,name=TargetTimerIds,proto3" json:"TargetTimerIds,omitempty"`
+	OtherTimerIds  []string               `protobuf:"bytes,2,rep,name=OtherTimerIds,proto3" json:"OtherTimerIds,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1120,79 +1120,75 @@ var File_alice_protos_endpoint_capabilities_clock_app_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_clock_app_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/clock_app/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/alarm/alarm.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x91\x1d\n" +
-	"\x13TClockAppCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"=alice/protos/endpoint/capabilities/clock_app/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/alarm/alarm.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa3\x14\n" +
+	"\x13TClockAppCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TClockAppCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TClockAppCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x8d\b\n" +
-	"\x06TState\x12\x87\x01\n" +
-	"\x14AlarmListScreenState\x18\x01 \x01(\v21.NAlice.TClockAppCapability.TAlarmListScreenStateB\x1b\xaa\xdd\x1b\x17alarm_list_screen_stateH\x00R\x17alarm_list_screen_state\x12\x87\x01\n" +
-	"\x14AlarmEditScreenState\x18\x02 \x01(\v21.NAlice.TClockAppCapability.TAlarmEditScreenStateB\x1b\xaa\xdd\x1b\x17alarm_edit_screen_stateH\x00R\x17alarm_edit_screen_state\x12\x8f\x01\n" +
-	"\x16AlarmActiveScreenState\x18\x03 \x01(\v23.NAlice.TClockAppCapability.TAlarmActiveScreenStateB\x1d\xaa\xdd\x1b\x19alarm_active_screen_stateH\x00R\x19alarm_active_screen_state\x12\x87\x01\n" +
-	"\x14TimerListScreenState\x18\x04 \x01(\v21.NAlice.TClockAppCapability.TTimerListScreenStateB\x1b\xaa\xdd\x1b\x17timer_list_screen_stateH\x00R\x17timer_list_screen_state\x12\x87\x01\n" +
-	"\x14TimerInfoScreenState\x18\x05 \x01(\v21.NAlice.TClockAppCapability.TTimerInfoScreenStateB\x1b\xaa\xdd\x1b\x17timer_info_screen_stateH\x00R\x17timer_info_screen_state\x12\x8f\x01\n" +
-	"\x16TimerActiveScreenState\x18\x06 \x01(\v23.NAlice.TClockAppCapability.TTimerActiveScreenStateB\x1d\xaa\xdd\x1b\x19timer_active_screen_stateH\x00R\x19timer_active_screen_state\x12\x8f\x01\n" +
-	"\x16TimerCreateScreenState\x18\a \x01(\v23.NAlice.TClockAppCapability.TTimerCreateScreenStateB\x1d\xaa\xdd\x1b\x19timer_create_screen_stateH\x00R\x19timer_create_screen_state:\x04\xa8\xdd\x1b\x04B\x1f\n" +
-	"\vScreenState\x12\x10\xaa\xdd\x1b\fscreen_state\x1a\x99\x01\n" +
-	"\x15TAlarmListScreenState\x12U\n" +
-	"\tAlarmList\x18\x03 \x01(\v2&.NAlice.TClockAppCapability.TAlarmListB\x0e\xaa\xdd\x1b\n" +
-	"alarm_listR\n" +
-	"alarm_list:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\bAlarmIdsR\rOtherAlarmIds\x1aT\n" +
-	"\x15TAlarmEditScreenState\x125\n" +
-	"\x05Alarm\x18\x01 \x01(\v2\x14.NAlice.NData.TAlarmB\t\xaa\xdd\x1b\x05alarmR\x05alarm:\x04\xa8\xdd\x1b\x04\x1aH\n" +
-	"\x17TAlarmActiveScreenState\x12'\n" +
-	"\aAlarmId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:\x04\xa8\xdd\x1b\x04\x1a\xaa\x03\n" +
-	"\x15TTimerListScreenState\x12\x81\x01\n" +
-	"\rTargetSection\x18\x01 \x01(\x0e2F.NAlice.TClockAppCapability.TTimerListScreenState.ESectionOfListScreenB\x12\xaa\xdd\x1b\x0etarget_sectionR\x0etarget_section\x12;\n" +
-	"\rTimerDuration\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0etimer_durationH\x00R\x0etimer_duration\x12W\n" +
-	"\tTimerList\x18\x04 \x01(\v2&.NAlice.TClockAppCapability.TTimerListB\x0e\xaa\xdd\x1b\n" +
-	"timer_listH\x00R\n" +
-	"timer_list\">\n" +
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TClockAppCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TClockAppCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\x88\x06\n" +
+	"\x06TState\x12g\n" +
+	"\x14AlarmListScreenState\x18\x01 \x01(\v21.NAlice.TClockAppCapability.TAlarmListScreenStateH\x00R\x14AlarmListScreenState\x12g\n" +
+	"\x14AlarmEditScreenState\x18\x02 \x01(\v21.NAlice.TClockAppCapability.TAlarmEditScreenStateH\x00R\x14AlarmEditScreenState\x12m\n" +
+	"\x16AlarmActiveScreenState\x18\x03 \x01(\v23.NAlice.TClockAppCapability.TAlarmActiveScreenStateH\x00R\x16AlarmActiveScreenState\x12g\n" +
+	"\x14TimerListScreenState\x18\x04 \x01(\v21.NAlice.TClockAppCapability.TTimerListScreenStateH\x00R\x14TimerListScreenState\x12g\n" +
+	"\x14TimerInfoScreenState\x18\x05 \x01(\v21.NAlice.TClockAppCapability.TTimerInfoScreenStateH\x00R\x14TimerInfoScreenState\x12m\n" +
+	"\x16TimerActiveScreenState\x18\x06 \x01(\v23.NAlice.TClockAppCapability.TTimerActiveScreenStateH\x00R\x16TimerActiveScreenState\x12m\n" +
+	"\x16TimerCreateScreenState\x18\a \x01(\v23.NAlice.TClockAppCapability.TTimerCreateScreenStateH\x00R\x16TimerCreateScreenStateB\r\n" +
+	"\vScreenState\x1a\x82\x01\n" +
+	"\x15TAlarmListScreenState\x12D\n" +
+	"\tAlarmList\x18\x03 \x01(\v2&.NAlice.TClockAppCapability.TAlarmListR\tAlarmListJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\bAlarmIdsR\rOtherAlarmIds\x1aC\n" +
+	"\x15TAlarmEditScreenState\x12*\n" +
+	"\x05Alarm\x18\x01 \x01(\v2\x14.NAlice.NData.TAlarmR\x05Alarm\x1a3\n" +
+	"\x17TAlarmActiveScreenState\x12\x18\n" +
+	"\aAlarmId\x18\x01 \x01(\tR\aAlarmId\x1a\xd7\x02\n" +
+	"\x15TTimerListScreenState\x12l\n" +
+	"\rTargetSection\x18\x01 \x01(\x0e2F.NAlice.TClockAppCapability.TTimerListScreenState.ESectionOfListScreenR\rTargetSection\x12&\n" +
+	"\rTimerDuration\x18\x03 \x01(\rH\x00R\rTimerDuration\x12F\n" +
+	"\tTimerList\x18\x04 \x01(\v2&.NAlice.TClockAppCapability.TTimerListH\x00R\tTimerList\">\n" +
 	"\x14ESectionOfListScreen\x12\r\n" +
 	"\tUndefined\x10\x00\x12\n" +
 	"\n" +
 	"\x06Timers\x10\x01\x12\v\n" +
-	"\aHistory\x10\x02:\x04\xa8\xdd\x1b\x04B\x1d\n" +
+	"\aHistory\x10\x02B\f\n" +
 	"\n" +
-	"ScreenInfo\x12\x0f\xaa\xdd\x1b\vscreen_infoJ\x04\b\x02\x10\x03R\fTargetTimers\x1aF\n" +
-	"\x15TTimerInfoScreenState\x12'\n" +
-	"\aTimerId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:\x04\xa8\xdd\x1b\x04\x1aH\n" +
-	"\x17TTimerActiveScreenState\x12'\n" +
-	"\aTimerId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:\x04\xa8\xdd\x1b\x04\x1aZ\n" +
-	"\x17TTimerCreateScreenState\x129\n" +
-	"\rTimerDuration\x18\x01 \x01(\rB\x12\xaa\xdd\x1b\x0etimer_durationR\x0etimer_duration:\x04\xa8\xdd\x1b\x04\x1a\xec\x01\n" +
-	"\x1dTOpenScreenAlarmListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eTargetAlarmIds\x18\x02 \x03(\tB\x14\xaa\xdd\x1b\x10target_alarm_idsR\x10target_alarm_ids\x12>\n" +
-	"\x0eForceAutoClose\x18\x03 \x01(\bB\x14\xaa\xdd\x1b\x10force_auto_closeR\x10force_auto_close:-\x92\x82\x19 open_screen_alarm_list_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa2\x03\x1a\x95\x01\n" +
-	"\x1dTOpenScreenAlarmEditDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aAlarmId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id:-\x92\x82\x19 open_screen_alarm_edit_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa3\x03\x1ar\n" +
-	" TCloseScreenAlarmActiveDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:0\x92\x82\x19#close_screen_alarm_active_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbd\x03\x1a\xf0\x02\n" +
-	"\x1dTOpenScreenTimerListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eTargetTimerIds\x18\x02 \x03(\tB\x14\xaa\xdd\x1b\x10target_timer_idsR\x10target_timer_ids\x12\x81\x01\n" +
-	"\rTargetSection\x18\x03 \x01(\x0e2F.NAlice.TClockAppCapability.TTimerListScreenState.ESectionOfListScreenB\x12\xaa\xdd\x1b\x0etarget_sectionR\x0etarget_section\x12>\n" +
-	"\x0eForceAutoClose\x18\x04 \x01(\bB\x14\xaa\xdd\x1b\x10force_auto_closeR\x10force_auto_close:-\x92\x82\x19 open_screen_timer_list_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa5\x03\x1a\x95\x01\n" +
-	"\x1dTOpenScreenTimerInfoDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:-\x92\x82\x19 open_screen_timer_info_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa6\x03\x1ar\n" +
-	" TCloseScreenTimerActiveDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:0\x92\x82\x19#close_screen_timer_active_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbe\x03\x1a\x8f\x01\n" +
+	"ScreenInfoJ\x04\b\x02\x10\x03R\fTargetTimers\x1a1\n" +
+	"\x15TTimerInfoScreenState\x12\x18\n" +
+	"\aTimerId\x18\x01 \x01(\tR\aTimerId\x1a3\n" +
+	"\x17TTimerActiveScreenState\x12\x18\n" +
+	"\aTimerId\x18\x01 \x01(\tR\aTimerId\x1a?\n" +
+	"\x17TTimerCreateScreenState\x12$\n" +
+	"\rTimerDuration\x18\x01 \x01(\rR\rTimerDuration\x1a\x83\x01\n" +
+	"\x1dTOpenScreenAlarmListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12&\n" +
+	"\x0eTargetAlarmIds\x18\x02 \x03(\tR\x0eTargetAlarmIds\x12&\n" +
+	"\x0eForceAutoClose\x18\x03 \x01(\bR\x0eForceAutoClose\x1aM\n" +
+	"\x1dTOpenScreenAlarmEditDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aAlarmId\x18\x02 \x01(\tR\aAlarmId\x1a6\n" +
+	" TCloseScreenAlarmActiveDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a\xf1\x01\n" +
+	"\x1dTOpenScreenTimerListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12&\n" +
+	"\x0eTargetTimerIds\x18\x02 \x03(\tR\x0eTargetTimerIds\x12l\n" +
+	"\rTargetSection\x18\x03 \x01(\x0e2F.NAlice.TClockAppCapability.TTimerListScreenState.ESectionOfListScreenR\rTargetSection\x12&\n" +
+	"\x0eForceAutoClose\x18\x04 \x01(\bR\x0eForceAutoClose\x1aM\n" +
+	"\x1dTOpenScreenTimerInfoDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\x1a6\n" +
+	" TCloseScreenTimerActiveDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1aZ\n" +
 	"\n" +
-	"TAlarmList\x12>\n" +
-	"\x0eTargetAlarmIds\x18\x01 \x03(\tB\x14\xaa\xdd\x1b\x10target_alarm_idsR\x10target_alarm_ids\x12;\n" +
-	"\rOtherAlarmIds\x18\x02 \x03(\tB\x13\xaa\xdd\x1b\x0fother_alarm_idsR\x0fother_alarm_ids:\x04\xa8\xdd\x1b\x04\x1a\x8f\x01\n" +
+	"TAlarmList\x12&\n" +
+	"\x0eTargetAlarmIds\x18\x01 \x03(\tR\x0eTargetAlarmIds\x12$\n" +
+	"\rOtherAlarmIds\x18\x02 \x03(\tR\rOtherAlarmIds\x1aZ\n" +
 	"\n" +
-	"TTimerList\x12>\n" +
-	"\x0eTargetTimerIds\x18\x01 \x03(\tB\x14\xaa\xdd\x1b\x10target_timer_idsR\x10target_timer_ids\x12;\n" +
-	"\rOtherTimerIds\x18\x02 \x03(\tB\x13\xaa\xdd\x1b\x0fother_timer_idsR\x0fother_timer_ids:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x90\x01B\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17ClockAppCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/clock_app;clockapppbb\x06proto3"
+	"TTimerList\x12&\n" +
+	"\x0eTargetTimerIds\x18\x01 \x03(\tR\x0eTargetTimerIds\x12$\n" +
+	"\rOtherTimerIds\x18\x02 \x03(\tR\rOtherTimerIdsB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/clock_app\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_clock_app_capability_proto_rawDescOnce sync.Once

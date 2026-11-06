@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/web_player/capability.proto
 
-package webplayerpb
+package web_player
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -588,8 +588,8 @@ const file_alice_protos_endpoint_capabilities_web_player_capability_proto_rawDes
 	"\bAgeLimit\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tage_limitH\x00R\tage_limit\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
 	"\t_AgeLimit:%\x92\x82\x19\x18play_web_video_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdd\x04B\x0e\n" +
 	"\f_EpisodeInfoB\x11\n" +
-	"\x0f_RecommendReqId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfe\x01B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19TWebPlayerCapabilityProtoP\x01ZJa.yandex-team.ru/alice/protos/endpoint/capabilities/web_player;webplayerpbb\x06proto3"
+	"\x0f_RecommendReqId:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfe\x01B\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19TWebPlayerCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/web_playerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_web_player_capability_proto_rawDescOnce sync.Once

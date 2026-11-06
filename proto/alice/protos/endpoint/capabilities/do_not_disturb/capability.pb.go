@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/do_not_disturb/capability.proto
 
-package do_not_disturbpb
+package do_not_disturb
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -76,9 +76,9 @@ func (TDoNotDisturbCapability_TSetDoNotDisturbStateDirective_EForceDoNotDisturbS
 
 type TDoNotDisturbCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TDoNotDisturbCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TDoNotDisturbCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TDoNotDisturbCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TDoNotDisturbCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,7 +172,7 @@ func (*TDoNotDisturbCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TDoNotDisturbCapability_TFeatures struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	AllowIncomingCalls bool                   `protobuf:"varint,1,opt,name=AllowIncomingCalls,json=allow_incoming_calls,proto3" json:"AllowIncomingCalls,omitempty"`
+	AllowIncomingCalls bool                   `protobuf:"varint,1,opt,name=AllowIncomingCalls,proto3" json:"AllowIncomingCalls,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -216,8 +216,8 @@ func (x *TDoNotDisturbCapability_TFeatures) GetAllowIncomingCalls() bool {
 
 type TDoNotDisturbCapability_TState struct {
 	state                 protoimpl.MessageState             `protogen:"open.v1"`
-	IsDoNotDisturbEnabled bool                               `protobuf:"varint,1,opt,name=IsDoNotDisturbEnabled,json=is_do_not_disturb_enabled,proto3" json:"IsDoNotDisturbEnabled,omitempty"`
-	Features              *TDoNotDisturbCapability_TFeatures `protobuf:"bytes,2,opt,name=Features,json=features,proto3" json:"Features,omitempty"`
+	IsDoNotDisturbEnabled bool                               `protobuf:"varint,1,opt,name=IsDoNotDisturbEnabled,proto3" json:"IsDoNotDisturbEnabled,omitempty"`
+	Features              *TDoNotDisturbCapability_TFeatures `protobuf:"bytes,2,opt,name=Features,proto3" json:"Features,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -268,8 +268,8 @@ func (x *TDoNotDisturbCapability_TState) GetFeatures() *TDoNotDisturbCapability_
 
 type TDoNotDisturbCapability_TSetDoNotDisturbStateDirective struct {
 	state                  protoimpl.MessageState                                                         `protogen:"open.v1"`
-	Name                   string                                                                         `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ForceDoNotDisturbState TDoNotDisturbCapability_TSetDoNotDisturbStateDirective_EForceDoNotDisturbState `protobuf:"varint,1,opt,name=ForceDoNotDisturbState,json=force_do_not_disturb_state,proto3,enum=NAlice.TDoNotDisturbCapability_TSetDoNotDisturbStateDirective_EForceDoNotDisturbState" json:"ForceDoNotDisturbState,omitempty"`
+	Name                   string                                                                         `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	ForceDoNotDisturbState TDoNotDisturbCapability_TSetDoNotDisturbStateDirective_EForceDoNotDisturbState `protobuf:"varint,1,opt,name=ForceDoNotDisturbState,proto3,enum=NAlice.TDoNotDisturbCapability_TSetDoNotDisturbStateDirective_EForceDoNotDisturbState" json:"ForceDoNotDisturbState,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -322,28 +322,28 @@ var File_alice_protos_endpoint_capabilities_do_not_disturb_capability_proto prot
 
 const file_alice_protos_endpoint_capabilities_do_not_disturb_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/do_not_disturb/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa7\a\n" +
-	"\x17TDoNotDisturbCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Balice/protos/endpoint/capabilities/do_not_disturb/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc0\x05\n" +
+	"\x17TDoNotDisturbCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TDoNotDisturbCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TDoNotDisturbCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a]\n" +
-	"\tTFeatures\x12J\n" +
-	"\x12AllowIncomingCalls\x18\x01 \x01(\bB\x18\xaa\xdd\x1b\x14allow_incoming_callsR\x14allow_incoming_calls:\x04\xa8\xdd\x1b\x04\x1a\xbc\x01\n" +
-	"\x06TState\x12W\n" +
-	"\x15IsDoNotDisturbEnabled\x18\x01 \x01(\bB\x1d\xaa\xdd\x1b\x19is_do_not_disturb_enabledR\x19is_do_not_disturb_enabled\x12S\n" +
-	"\bFeatures\x18\x02 \x01(\v2).NAlice.TDoNotDisturbCapability.TFeaturesB\f\xaa\xdd\x1b\bfeaturesR\bfeatures:\x04\xa8\xdd\x1b\x04\x1a\xef\x02\n" +
-	"\x1eTSetDoNotDisturbStateDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xb2\x01\n" +
-	"\x16ForceDoNotDisturbState\x18\x01 \x01(\x0e2V.NAlice.TDoNotDisturbCapability.TSetDoNotDisturbStateDirective.EForceDoNotDisturbStateB\x1e\xaa\xdd\x1b\x1aforce_do_not_disturb_stateR\x1aforce_do_not_disturb_state\"N\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TDoNotDisturbCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TDoNotDisturbCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a;\n" +
+	"\tTFeatures\x12.\n" +
+	"\x12AllowIncomingCalls\x18\x01 \x01(\bR\x12AllowIncomingCalls\x1a\x85\x01\n" +
+	"\x06TState\x124\n" +
+	"\x15IsDoNotDisturbEnabled\x18\x01 \x01(\bR\x15IsDoNotDisturbEnabled\x12E\n" +
+	"\bFeatures\x18\x02 \x01(\v2).NAlice.TDoNotDisturbCapability.TFeaturesR\bFeatures\x1a\x96\x02\n" +
+	"\x1eTSetDoNotDisturbStateDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x8e\x01\n" +
+	"\x16ForceDoNotDisturbState\x18\x01 \x01(\x0e2V.NAlice.TDoNotDisturbCapability.TSetDoNotDisturbStateDirective.EForceDoNotDisturbStateR\x16ForceDoNotDisturbState\"N\n" +
 	"\x17EForceDoNotDisturbState\x12\x10\n" +
 	"\fNoForceState\x10\x00\x12\x10\n" +
 	"\fForceDisable\x10\x01\x12\x0f\n" +
-	"\vForceEnable\x10\x02:)\x92\x82\x19\x1cset_do_not_disturb_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe0\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c%B\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11DoNotDisturbProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/do_not_disturb;do_not_disturbpbb\x06proto3"
+	"\vForceEnable\x10\x02B\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/do_not_disturb\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_do_not_disturb_capability_proto_rawDescOnce sync.Once

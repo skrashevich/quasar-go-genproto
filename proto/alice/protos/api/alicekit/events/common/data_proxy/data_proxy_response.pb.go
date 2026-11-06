@@ -80,9 +80,9 @@ func (TDataProxyResponse_EStatusCode) EnumDescriptor() ([]byte, []int) {
 
 type TDataProxyResponse struct {
 	state            protoimpl.MessageState               `protogen:"open.v1"`
-	Status           *TDataProxyResponse_EStatusCode      `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.NAliceApi.TDataProxyResponse_EStatusCode,oneof" json:"Status,omitempty"`
-	Headers          *TDataProxyResponse_TStreamHeaders   `protobuf:"bytes,2,opt,name=Headers,json=headers,proto3,oneof" json:"Headers,omitempty"`
-	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,10,opt,name=EnvironmentState,json=environment_state,proto3,oneof" json:"EnvironmentState,omitempty"`
+	Status           *TDataProxyResponse_EStatusCode      `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.NAliceApi.TDataProxyResponse_EStatusCode,oneof" json:"Status,omitempty"`
+	Headers          *TDataProxyResponse_TStreamHeaders   `protobuf:"bytes,2,opt,name=Headers,proto3,oneof" json:"Headers,omitempty"`
+	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,10,opt,name=EnvironmentState,proto3,oneof" json:"EnvironmentState,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -140,8 +140,8 @@ func (x *TDataProxyResponse) GetEnvironmentState() *environment_state.TEnvironme
 
 type TDataProxyResponse_TStreamHeaders struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentSize   *uint64                `protobuf:"varint,1,opt,name=ContentSize,json=content_size,proto3,oneof" json:"ContentSize,omitempty"`
-	ContentType   *string                `protobuf:"bytes,2,opt,name=ContentType,json=content_type,proto3,oneof" json:"ContentType,omitempty"`
+	ContentSize   *uint64                `protobuf:"varint,1,opt,name=ContentSize,proto3,oneof" json:"ContentSize,omitempty"`
+	ContentType   *string                `protobuf:"bytes,2,opt,name=ContentType,proto3,oneof" json:"ContentType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -194,16 +194,15 @@ var File_alice_protos_api_alicekit_events_common_data_proxy_data_proxy_response_
 
 const file_alice_protos_api_alicekit_events_common_data_proxy_data_proxy_response_proto_rawDesc = "" +
 	"\n" +
-	"Lalice/protos/api/alicekit/events/common/data_proxy/data_proxy_response.proto\x12\x10NAlice.NAliceApi\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x80\x05\n" +
-	"\x12TDataProxyResponse\x12Y\n" +
-	"\x06Status\x18\x01 \x01(\x0e20.NAlice.NAliceApi.TDataProxyResponse.EStatusCodeB\n" +
-	"\xaa\xdd\x1b\x06statusH\x00R\x06status\x88\x01\x01\x12_\n" +
-	"\aHeaders\x18\x02 \x01(\v23.NAlice.NAliceApi.TDataProxyResponse.TStreamHeadersB\v\xaa\xdd\x1b\aheadersH\x01R\aheaders\x88\x01\x01\x12l\n" +
+	"Lalice/protos/api/alicekit/events/common/data_proxy/data_proxy_response.proto\x12\x10NAlice.NAliceApi\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9c\x04\n" +
+	"\x12TDataProxyResponse\x12M\n" +
+	"\x06Status\x18\x01 \x01(\x0e20.NAlice.NAliceApi.TDataProxyResponse.EStatusCodeH\x00R\x06Status\x88\x01\x01\x12R\n" +
+	"\aHeaders\x18\x02 \x01(\v23.NAlice.NAliceApi.TDataProxyResponse.TStreamHeadersH\x01R\aHeaders\x88\x01\x01\x12T\n" +
 	"\x10EnvironmentState\x18\n" +
-	" \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x15\xaa\xdd\x1b\x11environment_stateH\x02R\x11environment_state\x88\x01\x01\x1a\xaa\x01\n" +
-	"\x0eTStreamHeaders\x128\n" +
-	"\vContentSize\x18\x01 \x01(\x04B\x10\xaa\xdd\x1b\fcontent_sizeH\x00R\fcontent_size\x88\x01\x01\x128\n" +
-	"\vContentType\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fcontent_typeH\x01R\fcontent_type\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
+	" \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateH\x02R\x10EnvironmentState\x88\x01\x01\x1a~\n" +
+	"\x0eTStreamHeaders\x12%\n" +
+	"\vContentSize\x18\x01 \x01(\x04H\x00R\vContentSize\x88\x01\x01\x12%\n" +
+	"\vContentType\x18\x02 \x01(\tH\x01R\vContentType\x88\x01\x01B\x0e\n" +
 	"\f_ContentSizeB\x0e\n" +
 	"\f_ContentType\"a\n" +
 	"\vEStatusCode\x12\v\n" +
@@ -211,12 +210,12 @@ const file_alice_protos_api_alicekit_events_common_data_proxy_data_proxy_respons
 	"\x02Ok\x10\x01\x12\x12\n" +
 	"\x0eInvalidRequest\x10\x02\x12\x18\n" +
 	"\x14UnsupportedDirective\x10\x03\x12\x0f\n" +
-	"\vKeyNotFound\x10\x04:\x04\xa8\xdd\x1b\x04B\t\n" +
+	"\vKeyNotFound\x10\x04B\t\n" +
 	"\a_StatusB\n" +
 	"\n" +
 	"\b_HeadersB\x13\n" +
-	"\x11_EnvironmentStateB\x98\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.common.data_proxyB\x11DataProxyResponseP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/common/data_proxyb\x06proto3"
+	"\x11_EnvironmentStateB\xf3\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x16DataProxyResponseProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/data_proxy\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_data_proxy_data_proxy_response_proto_rawDescOnce sync.Once

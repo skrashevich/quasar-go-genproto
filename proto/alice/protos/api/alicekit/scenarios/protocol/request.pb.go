@@ -30,7 +30,7 @@ const (
 
 type TInput struct {
 	state          protoimpl.MessageState   `protogen:"open.v1"`
-	SemanticFrames []*frames.TSemanticFrame `protobuf:"bytes,1,rep,name=SemanticFrames,json=semantic_frames,proto3" json:"SemanticFrames,omitempty"`
+	SemanticFrames []*frames.TSemanticFrame `protobuf:"bytes,1,rep,name=SemanticFrames,proto3" json:"SemanticFrames,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -133,18 +133,18 @@ type isTDataSource_Type interface {
 }
 
 type TDataSource_UserInfo struct {
-	UserInfo *blackbox.TBlackBoxUserInfo `protobuf:"bytes,7,opt,name=UserInfo,json=user_info,proto3,oneof"`
+	UserInfo *blackbox.TBlackBoxUserInfo `protobuf:"bytes,7,opt,name=UserInfo,proto3,oneof"`
 }
 
 func (*TDataSource_UserInfo) isTDataSource_Type() {}
 
 type TScenarioBaseRequest struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	RequestId     string                     `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
-	RandomSeed    uint64                     `protobuf:"varint,4,opt,name=RandomSeed,json=random_seed,proto3" json:"RandomSeed,omitempty"`
-	ClientInfo    *protos.TClientInfoProto   `protobuf:"bytes,5,opt,name=ClientInfo,json=client_info,proto3" json:"ClientInfo,omitempty"`
-	DeviceState   *device_state.TDeviceState `protobuf:"bytes,8,opt,name=DeviceState,json=device_state,proto3" json:"DeviceState,omitempty"`
-	Experiments   *structpb.Struct           `protobuf:"bytes,10,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
+	RequestId     string                     `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
+	RandomSeed    uint64                     `protobuf:"varint,4,opt,name=RandomSeed,proto3" json:"RandomSeed,omitempty"`
+	ClientInfo    *protos.TClientInfoProto   `protobuf:"bytes,5,opt,name=ClientInfo,proto3" json:"ClientInfo,omitempty"`
+	DeviceState   *device_state.TDeviceState `protobuf:"bytes,8,opt,name=DeviceState,proto3" json:"DeviceState,omitempty"`
+	Experiments   *structpb.Struct           `protobuf:"bytes,10,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -215,10 +215,10 @@ func (x *TScenarioBaseRequest) GetExperiments() *structpb.Struct {
 }
 
 type TScenarioRunRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	BaseRequest   *TScenarioBaseRequest  `protobuf:"bytes,1,opt,name=BaseRequest,json=base_request,proto3" json:"BaseRequest,omitempty"`
-	Input         *TInput                `protobuf:"bytes,2,opt,name=Input,json=input,proto3" json:"Input,omitempty"`
-	DataSources   map[int32]*TDataSource `protobuf:"bytes,4,rep,name=DataSources,json=data_sources,proto3" json:"DataSources,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	BaseRequest   *TScenarioBaseRequest                   `protobuf:"bytes,1,opt,name=BaseRequest,proto3" json:"BaseRequest,omitempty"`
+	Input         *TInput                                 `protobuf:"bytes,2,opt,name=Input,proto3" json:"Input,omitempty"`
+	DataSources   []*TScenarioRunRequest_DataSourcesEntry `protobuf:"bytes,4,rep,name=DataSources,proto3" json:"DataSources,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -267,7 +267,7 @@ func (x *TScenarioRunRequest) GetInput() *TInput {
 	return nil
 }
 
-func (x *TScenarioRunRequest) GetDataSources() map[int32]*TDataSource {
+func (x *TScenarioRunRequest) GetDataSources() []*TScenarioRunRequest_DataSourcesEntry {
 	if x != nil {
 		return x.DataSources
 	}
@@ -275,11 +275,11 @@ func (x *TScenarioRunRequest) GetDataSources() map[int32]*TDataSource {
 }
 
 type TScenarioApplyRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	BaseRequest   *TScenarioBaseRequest  `protobuf:"bytes,1,opt,name=BaseRequest,json=base_request,proto3" json:"BaseRequest,omitempty"`
-	Arguments     *anypb.Any             `protobuf:"bytes,2,opt,name=Arguments,json=arguments,proto3" json:"Arguments,omitempty"`
-	Input         *TInput                `protobuf:"bytes,3,opt,name=Input,json=input,proto3" json:"Input,omitempty"`
-	DataSources   map[int32]*TDataSource `protobuf:"bytes,5,rep,name=DataSources,json=data_sources,proto3" json:"DataSources,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                    `protogen:"open.v1"`
+	BaseRequest   *TScenarioBaseRequest                     `protobuf:"bytes,1,opt,name=BaseRequest,proto3" json:"BaseRequest,omitempty"`
+	Arguments     *anypb.Any                                `protobuf:"bytes,2,opt,name=Arguments,proto3" json:"Arguments,omitempty"`
+	Input         *TInput                                   `protobuf:"bytes,3,opt,name=Input,proto3" json:"Input,omitempty"`
+	DataSources   []*TScenarioApplyRequest_DataSourcesEntry `protobuf:"bytes,5,rep,name=DataSources,proto3" json:"DataSources,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -335,67 +335,23 @@ func (x *TScenarioApplyRequest) GetInput() *TInput {
 	return nil
 }
 
-func (x *TScenarioApplyRequest) GetDataSources() map[int32]*TDataSource {
+func (x *TScenarioApplyRequest) GetDataSources() []*TScenarioApplyRequest_DataSourcesEntry {
 	if x != nil {
 		return x.DataSources
 	}
 	return nil
 }
 
-type TRuntimeSettings struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Payload       *structpb.Struct       `protobuf:"bytes,1,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TRuntimeSettings) Reset() {
-	*x = TRuntimeSettings{}
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TRuntimeSettings) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TRuntimeSettings) ProtoMessage() {}
-
-func (x *TRuntimeSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TRuntimeSettings.ProtoReflect.Descriptor instead.
-func (*TRuntimeSettings) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *TRuntimeSettings) GetPayload() *structpb.Struct {
-	if x != nil {
-		return x.Payload
-	}
-	return nil
-}
-
 type TExactCapability struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *anypb.Any             `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *anypb.Any             `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TExactCapability) Reset() {
 	*x = TExactCapability{}
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[6]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -407,7 +363,7 @@ func (x *TExactCapability) String() string {
 func (*TExactCapability) ProtoMessage() {}
 
 func (x *TExactCapability) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[6]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -420,7 +376,7 @@ func (x *TExactCapability) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TExactCapability.ProtoReflect.Descriptor instead.
 func (*TExactCapability) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{6}
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *TExactCapability) GetCapability() *anypb.Any {
@@ -432,14 +388,14 @@ func (x *TExactCapability) GetCapability() *anypb.Any {
 
 type TExactTypedSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SemanticFrame *anypb.Any             `protobuf:"bytes,1,opt,name=SemanticFrame,json=semantic_frame,proto3" json:"SemanticFrame,omitempty"`
+	SemanticFrame *anypb.Any             `protobuf:"bytes,1,opt,name=SemanticFrame,proto3" json:"SemanticFrame,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TExactTypedSemanticFrame) Reset() {
 	*x = TExactTypedSemanticFrame{}
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[7]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -451,7 +407,7 @@ func (x *TExactTypedSemanticFrame) String() string {
 func (*TExactTypedSemanticFrame) ProtoMessage() {}
 
 func (x *TExactTypedSemanticFrame) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[7]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -464,7 +420,7 @@ func (x *TExactTypedSemanticFrame) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TExactTypedSemanticFrame.ProtoReflect.Descriptor instead.
 func (*TExactTypedSemanticFrame) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{7}
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *TExactTypedSemanticFrame) GetSemanticFrame() *anypb.Any {
@@ -476,10 +432,10 @@ func (x *TExactTypedSemanticFrame) GetSemanticFrame() *anypb.Any {
 
 type TLocalScenarioRunRequest struct {
 	state              protoimpl.MessageState      `protogen:"open.v1"`
-	ScenarioRunRequest *TScenarioRunRequest        `protobuf:"bytes,1,opt,name=ScenarioRunRequest,json=scenario_run_request,proto3" json:"ScenarioRunRequest,omitempty"`
-	Capabilities       []*TExactCapability         `protobuf:"bytes,2,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
-	SemanticFrames     []*TExactTypedSemanticFrame `protobuf:"bytes,3,rep,name=SemanticFrames,json=semantic_frames,proto3" json:"SemanticFrames,omitempty"`
-	IsPureLocal        bool                        `protobuf:"varint,4,opt,name=IsPureLocal,json=is_pure_local,proto3" json:"IsPureLocal,omitempty"`
+	ScenarioRunRequest *TScenarioRunRequest        `protobuf:"bytes,1,opt,name=ScenarioRunRequest,proto3" json:"ScenarioRunRequest,omitempty"`
+	Capabilities       []*TExactCapability         `protobuf:"bytes,2,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
+	SemanticFrames     []*TExactTypedSemanticFrame `protobuf:"bytes,3,rep,name=SemanticFrames,proto3" json:"SemanticFrames,omitempty"`
+	IsPureLocal        bool                        `protobuf:"varint,4,opt,name=IsPureLocal,proto3" json:"IsPureLocal,omitempty"`
 	RuntimeSettings    *TRuntimeSettings           `protobuf:"bytes,5,opt,name=RuntimeSettings,json=runtime_settings,proto3" json:"RuntimeSettings,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
@@ -487,7 +443,7 @@ type TLocalScenarioRunRequest struct {
 
 func (x *TLocalScenarioRunRequest) Reset() {
 	*x = TLocalScenarioRunRequest{}
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[8]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -499,7 +455,7 @@ func (x *TLocalScenarioRunRequest) String() string {
 func (*TLocalScenarioRunRequest) ProtoMessage() {}
 
 func (x *TLocalScenarioRunRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[8]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -512,7 +468,7 @@ func (x *TLocalScenarioRunRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TLocalScenarioRunRequest.ProtoReflect.Descriptor instead.
 func (*TLocalScenarioRunRequest) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{8}
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *TLocalScenarioRunRequest) GetScenarioRunRequest() *TScenarioRunRequest {
@@ -552,16 +508,16 @@ func (x *TLocalScenarioRunRequest) GetRuntimeSettings() *TRuntimeSettings {
 
 type TLocalScenarioApplyRequest struct {
 	state                protoimpl.MessageState      `protogen:"open.v1"`
-	ScenarioApplyRequest *TScenarioApplyRequest      `protobuf:"bytes,1,opt,name=ScenarioApplyRequest,json=scenario_apply_request,proto3" json:"ScenarioApplyRequest,omitempty"`
-	Capabilities         []*TExactCapability         `protobuf:"bytes,2,rep,name=Capabilities,json=capabilities,proto3" json:"Capabilities,omitempty"`
-	SemanticFrames       []*TExactTypedSemanticFrame `protobuf:"bytes,3,rep,name=SemanticFrames,json=semantic_frames,proto3" json:"SemanticFrames,omitempty"`
+	ScenarioApplyRequest *TScenarioApplyRequest      `protobuf:"bytes,1,opt,name=ScenarioApplyRequest,proto3" json:"ScenarioApplyRequest,omitempty"`
+	Capabilities         []*TExactCapability         `protobuf:"bytes,2,rep,name=Capabilities,proto3" json:"Capabilities,omitempty"`
+	SemanticFrames       []*TExactTypedSemanticFrame `protobuf:"bytes,3,rep,name=SemanticFrames,proto3" json:"SemanticFrames,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
 
 func (x *TLocalScenarioApplyRequest) Reset() {
 	*x = TLocalScenarioApplyRequest{}
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[9]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -573,7 +529,7 @@ func (x *TLocalScenarioApplyRequest) String() string {
 func (*TLocalScenarioApplyRequest) ProtoMessage() {}
 
 func (x *TLocalScenarioApplyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[9]
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -586,7 +542,7 @@ func (x *TLocalScenarioApplyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TLocalScenarioApplyRequest.ProtoReflect.Descriptor instead.
 func (*TLocalScenarioApplyRequest) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{9}
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *TLocalScenarioApplyRequest) GetScenarioApplyRequest() *TScenarioApplyRequest {
@@ -610,65 +566,214 @@ func (x *TLocalScenarioApplyRequest) GetSemanticFrames() []*TExactTypedSemanticF
 	return nil
 }
 
+type TRuntimeSettings struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Payload       *structpb.Struct       `protobuf:"bytes,1,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TRuntimeSettings) Reset() {
+	*x = TRuntimeSettings{}
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TRuntimeSettings) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TRuntimeSettings) ProtoMessage() {}
+
+func (x *TRuntimeSettings) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TRuntimeSettings.ProtoReflect.Descriptor instead.
+func (*TRuntimeSettings) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *TRuntimeSettings) GetPayload() *structpb.Struct {
+	if x != nil {
+		return x.Payload
+	}
+	return nil
+}
+
+type TScenarioRunRequest_DataSourcesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           int32                  `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TDataSource           `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TScenarioRunRequest_DataSourcesEntry) Reset() {
+	*x = TScenarioRunRequest_DataSourcesEntry{}
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TScenarioRunRequest_DataSourcesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TScenarioRunRequest_DataSourcesEntry) ProtoMessage() {}
+
+func (x *TScenarioRunRequest_DataSourcesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TScenarioRunRequest_DataSourcesEntry.ProtoReflect.Descriptor instead.
+func (*TScenarioRunRequest_DataSourcesEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{3, 0}
+}
+
+func (x *TScenarioRunRequest_DataSourcesEntry) GetKey() int32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TScenarioRunRequest_DataSourcesEntry) GetValue() *TDataSource {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TScenarioApplyRequest_DataSourcesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           int32                  `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TDataSource           `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TScenarioApplyRequest_DataSourcesEntry) Reset() {
+	*x = TScenarioApplyRequest_DataSourcesEntry{}
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TScenarioApplyRequest_DataSourcesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TScenarioApplyRequest_DataSourcesEntry) ProtoMessage() {}
+
+func (x *TScenarioApplyRequest_DataSourcesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TScenarioApplyRequest_DataSourcesEntry.ProtoReflect.Descriptor instead.
+func (*TScenarioApplyRequest_DataSourcesEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP(), []int{4, 0}
+}
+
+func (x *TScenarioApplyRequest_DataSourcesEntry) GetKey() int32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TScenarioApplyRequest_DataSourcesEntry) GetValue() *TDataSource {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_api_alicekit_scenarios_protocol_request_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/api/alicekit/scenarios/protocol/request.proto\x12\x10NAlice.NAliceApi\x1a-alice/library/client/protos/client_info.proto\x1a-alice/megamind/protos/blackbox/blackbox.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a6alice/protos/api/alicekit/scenarios/frames/frame.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x01\n" +
-	"\x06TInput\x12I\n" +
-	"\x0eSemanticFrames\x18\x01 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameR\x0fsemantic_framesJ\x04\b\x04\x10\x05J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\x04TextR\x05VoiceR\x05ImageR\x05MusicR\bCallbackR\rTypedCallback\"\xb8\r\n" +
-	"\vTDataSource\x128\n" +
-	"\bUserInfo\x18\a \x01(\v2\x19.NAlice.TBlackBoxUserInfoH\x00R\tuser_infoB\x06\n" +
+	":alice/protos/api/alicekit/scenarios/protocol/request.proto\x12\x10NAlice.NAliceApi\x1a-alice/library/client/protos/client_info.proto\x1a-alice/megamind/protos/blackbox/blackbox.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a6alice/protos/api/alicekit/scenarios/frames/frame.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\x01\n" +
+	"\x06TInput\x12H\n" +
+	"\x0eSemanticFrames\x18\x01 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameR\x0eSemanticFramesJ\x04\b\x04\x10\x05J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\x04TextR\x05VoiceR\x05ImageR\x05MusicR\bCallbackR\rTypedCallback\"\xb7\r\n" +
+	"\vTDataSource\x127\n" +
+	"\bUserInfo\x18\a \x01(\v2\x19.NAlice.TBlackBoxUserInfoH\x00R\bUserInfoB\x06\n" +
 	"\x04TypeJ\x04\b\x01\x10\x04J\x04\b\x05\x10\x06J\x04\b\t\x10\n" +
 	"J\x04\b\n" +
-	"\x10\vJ\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b$\x10%J\x04\b+\x10,J\x04\b<\x10=J\x04\b=\x10>J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\b\x10\tJ\x04\b\v\x10\fJ\x04\b\x18\x10\x19J\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b>\x10?J\x04\b%\x10&J\x04\b2\x103J\x04\b\x13\x10\x14J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b-\x10.J\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b \x10!J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b*\x10+J\x04\b,\x10-J\x04\b.\x10/J\x04\b/\x100J\x04\b0\x101J\x04\b1\x102J\x04\b3\x104J\x04\b4\x105J\x04\b5\x106J\x04\b6\x107J\x04\b7\x108J\x04\b8\x109J\x04\b9\x10:J\x04\b:\x10;J\x04\b;\x10<J\x04\b?\x10@J\x04\b@\x10AJ\x04\bA\x10BJ\x04\bB\x10CJ\x04\bC\x10DR\x13BegemotTaggerResultR\fEntitySearchR\x0fPersonalIntentsR\x13BegemotIotNluResultR\x16TandemEnvironmentStateR\x13PersonalUsedIntentsR\x14BegemotGcMemoryStateR\x0eActiveUserDataR\rSmartHomeInfoR\fUserLocationR\x15BegemotExternalMarkupR\rDialogHistoryR\x19BegemotItemSelectorResultR\x14BegemotFixlistResultR\rWebSearchDocsR\x12WebSearchDocsRightR\x12WebSearchWizplacesR\x16WebSearchSummarizationR\x12WebSearchRenderrerR\x0fWebSearchWizardR\x0fWebSearchBannerR\x16WebSearchUnifiedBannerR\x14WebSearchRequestMetaR#WebSearchGenerativeAnswerWizardDataR\x0fVinsWizardRulesR\x0eVideoViewStateR\x11NotificationStateR\x14Alice4BusinessConfigR\x0fResponseHistoryR\x1eSkillDiscoveryGcSaasCandidatesR\x14DeviceStateNavigatorR\x0fDeviceStateFullR\vIotUserInfoR\aAppInfoR\x0fRawPersonalDataR\x15VideoCurrentlyPlayingR\fContactsListR\x10EnvironmentStateR\vWhisperInfoR\tGuestDataR\fGuestOptionsR\x11QuasarDevicesInfoR\rRawLaasRegionR\x16VinsWebSearchSetupDataR\x13PersonalIntentsInfoR\rAliceHashPuidR\x13QuasarDeviceConfigsR\x1bEmergencyButtonContactsListR\x11IoTUserInfo_RoomsR\x12IoTUserInfo_GroupsR\x13IoTUserInfo_DevicesR\x15IoTUserInfo_ScenariosR\x12IoTUserInfo_ColorsR\x16IoTUserInfo_HouseholdsR\x17IoTUserInfo_RoomDevicesR\x1bIoTUserInfo_ScenarioDevicesR\x1eIoTUserInfo_HouseholdGuestsMapR\x11ActiveUserOptionsR\x11SummarizerRequestR\x14MultiwizardResponsesR\x1aEnvironmentStateTandemDataR\x1cEnvironmentStateEndpointMeta\"\xf2\x04\n" +
-	"\x14TScenarioBaseRequest\x12\x1d\n" +
-	"\tRequestId\x18\x01 \x01(\tR\n" +
-	"request_id\x12\x1f\n" +
+	"\x10\vJ\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b$\x10%J\x04\b+\x10,J\x04\b<\x10=J\x04\b=\x10>J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\b\x10\tJ\x04\b\v\x10\fJ\x04\b\x18\x10\x19J\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b>\x10?J\x04\b%\x10&J\x04\b2\x103J\x04\b\x13\x10\x14J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b-\x10.J\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b \x10!J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b*\x10+J\x04\b,\x10-J\x04\b.\x10/J\x04\b/\x100J\x04\b0\x101J\x04\b1\x102J\x04\b3\x104J\x04\b4\x105J\x04\b5\x106J\x04\b6\x107J\x04\b7\x108J\x04\b8\x109J\x04\b9\x10:J\x04\b:\x10;J\x04\b;\x10<J\x04\b?\x10@J\x04\b@\x10AJ\x04\bA\x10BJ\x04\bB\x10CJ\x04\bC\x10DR\x13BegemotTaggerResultR\fEntitySearchR\x0fPersonalIntentsR\x13BegemotIotNluResultR\x16TandemEnvironmentStateR\x13PersonalUsedIntentsR\x14BegemotGcMemoryStateR\x0eActiveUserDataR\rSmartHomeInfoR\fUserLocationR\x15BegemotExternalMarkupR\rDialogHistoryR\x19BegemotItemSelectorResultR\x14BegemotFixlistResultR\rWebSearchDocsR\x12WebSearchDocsRightR\x12WebSearchWizplacesR\x16WebSearchSummarizationR\x12WebSearchRenderrerR\x0fWebSearchWizardR\x0fWebSearchBannerR\x16WebSearchUnifiedBannerR\x14WebSearchRequestMetaR#WebSearchGenerativeAnswerWizardDataR\x0fVinsWizardRulesR\x0eVideoViewStateR\x11NotificationStateR\x14Alice4BusinessConfigR\x0fResponseHistoryR\x1eSkillDiscoveryGcSaasCandidatesR\x14DeviceStateNavigatorR\x0fDeviceStateFullR\vIotUserInfoR\aAppInfoR\x0fRawPersonalDataR\x15VideoCurrentlyPlayingR\fContactsListR\x10EnvironmentStateR\vWhisperInfoR\tGuestDataR\fGuestOptionsR\x11QuasarDevicesInfoR\rRawLaasRegionR\x16VinsWebSearchSetupDataR\x13PersonalIntentsInfoR\rAliceHashPuidR\x13QuasarDeviceConfigsR\x1bEmergencyButtonContactsListR\x11IoTUserInfo_RoomsR\x12IoTUserInfo_GroupsR\x13IoTUserInfo_DevicesR\x15IoTUserInfo_ScenariosR\x12IoTUserInfo_ColorsR\x16IoTUserInfo_HouseholdsR\x17IoTUserInfo_RoomDevicesR\x1bIoTUserInfo_ScenarioDevicesR\x1eIoTUserInfo_HouseholdGuestsMapR\x11ActiveUserOptionsR\x11SummarizerRequestR\x14MultiwizardResponsesR\x1aEnvironmentStateTandemDataR\x1cEnvironmentStateEndpointMeta\"\xee\x04\n" +
+	"\x14TScenarioBaseRequest\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x12\x1e\n" +
 	"\n" +
-	"RandomSeed\x18\x04 \x01(\x04R\vrandom_seed\x129\n" +
+	"RandomSeed\x18\x04 \x01(\x04R\n" +
+	"RandomSeed\x128\n" +
 	"\n" +
-	"ClientInfo\x18\x05 \x01(\v2\x18.NAlice.TClientInfoProtoR\vclient_info\x12A\n" +
-	"\vDeviceState\x18\b \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateR\fdevice_state\x129\n" +
+	"ClientInfo\x18\x05 \x01(\v2\x18.NAlice.TClientInfoProtoR\n" +
+	"ClientInfo\x12@\n" +
+	"\vDeviceState\x18\b \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateR\vDeviceState\x129\n" +
 	"\vExperiments\x18\n" +
-	" \x01(\v2\x17.google.protobuf.StructR\vexperimentsJ\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\t\x10\n" +
+	" \x01(\v2\x17.google.protobuf.StructR\vExperimentsJ\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\t\x10\n" +
 	"J\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x18\x10\x19R\bDialogIdR\fServerTimeMsR\bLocationR\n" +
 	"InterfacesR\x05StateR\aOptionsR\fIsNewSessionR\x0fUserPreferencesR\x0eIsSessionResetR\fUserLanguageR\x12UserClassificationR\aMementoR\rRequestSourceR\fIsStackOwnerR\x06OriginR\vNluFeaturesR\vStackParamsR\n" +
-	"DialogTypeR\fLocalization\"\xd0\x02\n" +
-	"\x13TScenarioRunRequest\x12I\n" +
-	"\vBaseRequest\x18\x01 \x01(\v2&.NAlice.NAliceApi.TScenarioBaseRequestR\fbase_request\x12.\n" +
-	"\x05Input\x18\x02 \x01(\v2\x18.NAlice.NAliceApi.TInputR\x05input\x12Y\n" +
-	"\vDataSources\x18\x04 \x03(\v26.NAlice.NAliceApi.TScenarioRunRequest.DataSourcesEntryR\fdata_sources\x1a]\n" +
+	"DialogTypeR\fLocalization\"\xca\x02\n" +
+	"\x13TScenarioRunRequest\x12H\n" +
+	"\vBaseRequest\x18\x01 \x01(\v2&.NAlice.NAliceApi.TScenarioBaseRequestR\vBaseRequest\x12.\n" +
+	"\x05Input\x18\x02 \x01(\v2\x18.NAlice.NAliceApi.TInputR\x05Input\x12X\n" +
+	"\vDataSources\x18\x04 \x03(\v26.NAlice.NAliceApi.TScenarioRunRequest.DataSourcesEntryR\vDataSources\x1aY\n" +
 	"\x10DataSourcesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\x05R\x03key\x123\n" +
-	"\x05value\x18\x02 \x01(\v2\x1d.NAlice.NAliceApi.TDataSourceR\x05value:\x028\x01J\x04\b\x03\x10\x04\"\x88\x03\n" +
-	"\x15TScenarioApplyRequest\x12I\n" +
-	"\vBaseRequest\x18\x01 \x01(\v2&.NAlice.NAliceApi.TScenarioBaseRequestR\fbase_request\x122\n" +
-	"\tArguments\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\targuments\x12.\n" +
-	"\x05Input\x18\x03 \x01(\v2\x18.NAlice.NAliceApi.TInputR\x05input\x12[\n" +
-	"\vDataSources\x18\x05 \x03(\v28.NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntryR\fdata_sources\x1a]\n" +
+	"\x05value\x18\x02 \x01(\v2\x1d.NAlice.NAliceApi.TDataSourceR\x05valueJ\x04\b\x03\x10\x04\"\x82\x03\n" +
+	"\x15TScenarioApplyRequest\x12H\n" +
+	"\vBaseRequest\x18\x01 \x01(\v2&.NAlice.NAliceApi.TScenarioBaseRequestR\vBaseRequest\x122\n" +
+	"\tArguments\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\tArguments\x12.\n" +
+	"\x05Input\x18\x03 \x01(\v2\x18.NAlice.NAliceApi.TInputR\x05Input\x12Z\n" +
+	"\vDataSources\x18\x05 \x03(\v28.NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntryR\vDataSources\x1aY\n" +
 	"\x10DataSourcesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\x05R\x03key\x123\n" +
-	"\x05value\x18\x02 \x01(\v2\x1d.NAlice.NAliceApi.TDataSourceR\x05value:\x028\x01J\x04\b\x04\x10\x05\"E\n" +
-	"\x10TRuntimeSettings\x121\n" +
-	"\aPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructR\apayload\"Y\n" +
-	"\x10TExactCapability\x12E\n" +
+	"\x05value\x18\x02 \x01(\v2\x1d.NAlice.NAliceApi.TDataSourceR\x05valueJ\x04\b\x04\x10\x05\"H\n" +
+	"\x10TExactCapability\x124\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x14.google.protobuf.AnyB\x0f\xaa\xdd\x1b\vсapabilityR\n" +
-	"capability\"k\n" +
-	"\x18TExactTypedSemanticFrame\x12O\n" +
-	"\rSemanticFrame\x18\x01 \x01(\v2\x14.google.protobuf.AnyB\x12\xaa\xdd\x1b\x0esemantic_frameR\x0esemantic_frame\"\xc4\x03\n" +
-	"\x18TLocalScenarioRunRequest\x12q\n" +
-	"\x12ScenarioRunRequest\x18\x01 \x01(\v2%.NAlice.NAliceApi.TScenarioRunRequestB\x18\xaa\xdd\x1b\x14scenario_run_requestR\x14scenario_run_request\x12X\n" +
-	"\fCapabilities\x18\x02 \x03(\v2\".NAlice.NAliceApi.TExactCapabilityB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x12h\n" +
-	"\x0eSemanticFrames\x18\x03 \x03(\v2*.NAlice.NAliceApi.TExactTypedSemanticFrameB\x13\xaa\xdd\x1b\x0fsemantic_framesR\x0fsemantic_frames\x12\"\n" +
-	"\vIsPureLocal\x18\x04 \x01(\bR\ris_pure_local\x12M\n" +
-	"\x0fRuntimeSettings\x18\x05 \x01(\v2\".NAlice.NAliceApi.TRuntimeSettingsR\x10runtime_settings\"\xdb\x02\n" +
-	"\x1aTLocalScenarioApplyRequest\x12y\n" +
-	"\x14ScenarioApplyRequest\x18\x01 \x01(\v2'.NAlice.NAliceApi.TScenarioApplyRequestB\x1a\xaa\xdd\x1b\x16scenario_apply_requestR\x16scenario_apply_request\x12X\n" +
-	"\fCapabilities\x18\x02 \x03(\v2\".NAlice.NAliceApi.TExactCapabilityB\x10\xaa\xdd\x1b\fcapabilitiesR\fcapabilities\x12h\n" +
-	"\x0eSemanticFrames\x18\x03 \x03(\v2*.NAlice.NAliceApi.TExactTypedSemanticFrameB\x13\xaa\xdd\x1b\x0fsemantic_framesR\x0fsemantic_framesB\x8f\x01\n" +
-	"6ru.yandex.alice.protos.api.alicekit.scenarios.protocolB\x14ScenarioRequestProtoP\x01Z=a.yandex-team.ru/alice/protos/api/alicekit/scenarios/protocolb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\n" +
+	"Capability\"V\n" +
+	"\x18TExactTypedSemanticFrame\x12:\n" +
+	"\rSemanticFrame\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\rSemanticFrame\"\xfe\x02\n" +
+	"\x18TLocalScenarioRunRequest\x12U\n" +
+	"\x12ScenarioRunRequest\x18\x01 \x01(\v2%.NAlice.NAliceApi.TScenarioRunRequestR\x12ScenarioRunRequest\x12F\n" +
+	"\fCapabilities\x18\x02 \x03(\v2\".NAlice.NAliceApi.TExactCapabilityR\fCapabilities\x12R\n" +
+	"\x0eSemanticFrames\x18\x03 \x03(\v2*.NAlice.NAliceApi.TExactTypedSemanticFrameR\x0eSemanticFrames\x12 \n" +
+	"\vIsPureLocal\x18\x04 \x01(\bR\vIsPureLocal\x12M\n" +
+	"\x0fRuntimeSettings\x18\x05 \x01(\v2\".NAlice.NAliceApi.TRuntimeSettingsR\x10runtime_settings\"\x95\x02\n" +
+	"\x1aTLocalScenarioApplyRequest\x12[\n" +
+	"\x14ScenarioApplyRequest\x18\x01 \x01(\v2'.NAlice.NAliceApi.TScenarioApplyRequestR\x14ScenarioApplyRequest\x12F\n" +
+	"\fCapabilities\x18\x02 \x03(\v2\".NAlice.NAliceApi.TExactCapabilityR\fCapabilities\x12R\n" +
+	"\x0eSemanticFrames\x18\x03 \x03(\v2*.NAlice.NAliceApi.TExactTypedSemanticFrameR\x0eSemanticFrames\"E\n" +
+	"\x10TRuntimeSettings\x121\n" +
+	"\aPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructR\apayloadB\xe3\x01\n" +
+	"\x14com.NAlice.NAliceApiB\fRequestProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/scenarios/protocol\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescOnce sync.Once
@@ -684,24 +789,24 @@ func file_alice_protos_api_alicekit_scenarios_protocol_request_proto_rawDescGZIP
 
 var file_alice_protos_api_alicekit_scenarios_protocol_request_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_alice_protos_api_alicekit_scenarios_protocol_request_proto_goTypes = []any{
-	(*TInput)(nil),                     // 0: NAlice.NAliceApi.TInput
-	(*TDataSource)(nil),                // 1: NAlice.NAliceApi.TDataSource
-	(*TScenarioBaseRequest)(nil),       // 2: NAlice.NAliceApi.TScenarioBaseRequest
-	(*TScenarioRunRequest)(nil),        // 3: NAlice.NAliceApi.TScenarioRunRequest
-	(*TScenarioApplyRequest)(nil),      // 4: NAlice.NAliceApi.TScenarioApplyRequest
-	(*TRuntimeSettings)(nil),           // 5: NAlice.NAliceApi.TRuntimeSettings
-	(*TExactCapability)(nil),           // 6: NAlice.NAliceApi.TExactCapability
-	(*TExactTypedSemanticFrame)(nil),   // 7: NAlice.NAliceApi.TExactTypedSemanticFrame
-	(*TLocalScenarioRunRequest)(nil),   // 8: NAlice.NAliceApi.TLocalScenarioRunRequest
-	(*TLocalScenarioApplyRequest)(nil), // 9: NAlice.NAliceApi.TLocalScenarioApplyRequest
-	nil,                                // 10: NAlice.NAliceApi.TScenarioRunRequest.DataSourcesEntry
-	nil,                                // 11: NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntry
-	(*frames.TSemanticFrame)(nil),      // 12: NAlice.NAliceApi.TSemanticFrame
-	(*blackbox.TBlackBoxUserInfo)(nil), // 13: NAlice.TBlackBoxUserInfo
-	(*protos.TClientInfoProto)(nil),    // 14: NAlice.TClientInfoProto
-	(*device_state.TDeviceState)(nil),  // 15: NAlice.NAliceApi.TDeviceState
-	(*structpb.Struct)(nil),            // 16: google.protobuf.Struct
-	(*anypb.Any)(nil),                  // 17: google.protobuf.Any
+	(*TInput)(nil),                                 // 0: NAlice.NAliceApi.TInput
+	(*TDataSource)(nil),                            // 1: NAlice.NAliceApi.TDataSource
+	(*TScenarioBaseRequest)(nil),                   // 2: NAlice.NAliceApi.TScenarioBaseRequest
+	(*TScenarioRunRequest)(nil),                    // 3: NAlice.NAliceApi.TScenarioRunRequest
+	(*TScenarioApplyRequest)(nil),                  // 4: NAlice.NAliceApi.TScenarioApplyRequest
+	(*TExactCapability)(nil),                       // 5: NAlice.NAliceApi.TExactCapability
+	(*TExactTypedSemanticFrame)(nil),               // 6: NAlice.NAliceApi.TExactTypedSemanticFrame
+	(*TLocalScenarioRunRequest)(nil),               // 7: NAlice.NAliceApi.TLocalScenarioRunRequest
+	(*TLocalScenarioApplyRequest)(nil),             // 8: NAlice.NAliceApi.TLocalScenarioApplyRequest
+	(*TRuntimeSettings)(nil),                       // 9: NAlice.NAliceApi.TRuntimeSettings
+	(*TScenarioRunRequest_DataSourcesEntry)(nil),   // 10: NAlice.NAliceApi.TScenarioRunRequest.DataSourcesEntry
+	(*TScenarioApplyRequest_DataSourcesEntry)(nil), // 11: NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntry
+	(*frames.TSemanticFrame)(nil),                  // 12: NAlice.NAliceApi.TSemanticFrame
+	(*blackbox.TBlackBoxUserInfo)(nil),             // 13: NAlice.TBlackBoxUserInfo
+	(*protos.TClientInfoProto)(nil),                // 14: NAlice.TClientInfoProto
+	(*device_state.TDeviceState)(nil),              // 15: NAlice.NAliceApi.TDeviceState
+	(*structpb.Struct)(nil),                        // 16: google.protobuf.Struct
+	(*anypb.Any)(nil),                              // 17: google.protobuf.Any
 }
 var file_alice_protos_api_alicekit_scenarios_protocol_request_proto_depIdxs = []int32{
 	12, // 0: NAlice.NAliceApi.TInput.SemanticFrames:type_name -> NAlice.NAliceApi.TSemanticFrame
@@ -716,16 +821,16 @@ var file_alice_protos_api_alicekit_scenarios_protocol_request_proto_depIdxs = []
 	17, // 9: NAlice.NAliceApi.TScenarioApplyRequest.Arguments:type_name -> google.protobuf.Any
 	0,  // 10: NAlice.NAliceApi.TScenarioApplyRequest.Input:type_name -> NAlice.NAliceApi.TInput
 	11, // 11: NAlice.NAliceApi.TScenarioApplyRequest.DataSources:type_name -> NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntry
-	16, // 12: NAlice.NAliceApi.TRuntimeSettings.Payload:type_name -> google.protobuf.Struct
-	17, // 13: NAlice.NAliceApi.TExactCapability.Capability:type_name -> google.protobuf.Any
-	17, // 14: NAlice.NAliceApi.TExactTypedSemanticFrame.SemanticFrame:type_name -> google.protobuf.Any
-	3,  // 15: NAlice.NAliceApi.TLocalScenarioRunRequest.ScenarioRunRequest:type_name -> NAlice.NAliceApi.TScenarioRunRequest
-	6,  // 16: NAlice.NAliceApi.TLocalScenarioRunRequest.Capabilities:type_name -> NAlice.NAliceApi.TExactCapability
-	7,  // 17: NAlice.NAliceApi.TLocalScenarioRunRequest.SemanticFrames:type_name -> NAlice.NAliceApi.TExactTypedSemanticFrame
-	5,  // 18: NAlice.NAliceApi.TLocalScenarioRunRequest.RuntimeSettings:type_name -> NAlice.NAliceApi.TRuntimeSettings
-	4,  // 19: NAlice.NAliceApi.TLocalScenarioApplyRequest.ScenarioApplyRequest:type_name -> NAlice.NAliceApi.TScenarioApplyRequest
-	6,  // 20: NAlice.NAliceApi.TLocalScenarioApplyRequest.Capabilities:type_name -> NAlice.NAliceApi.TExactCapability
-	7,  // 21: NAlice.NAliceApi.TLocalScenarioApplyRequest.SemanticFrames:type_name -> NAlice.NAliceApi.TExactTypedSemanticFrame
+	17, // 12: NAlice.NAliceApi.TExactCapability.Capability:type_name -> google.protobuf.Any
+	17, // 13: NAlice.NAliceApi.TExactTypedSemanticFrame.SemanticFrame:type_name -> google.protobuf.Any
+	3,  // 14: NAlice.NAliceApi.TLocalScenarioRunRequest.ScenarioRunRequest:type_name -> NAlice.NAliceApi.TScenarioRunRequest
+	5,  // 15: NAlice.NAliceApi.TLocalScenarioRunRequest.Capabilities:type_name -> NAlice.NAliceApi.TExactCapability
+	6,  // 16: NAlice.NAliceApi.TLocalScenarioRunRequest.SemanticFrames:type_name -> NAlice.NAliceApi.TExactTypedSemanticFrame
+	9,  // 17: NAlice.NAliceApi.TLocalScenarioRunRequest.RuntimeSettings:type_name -> NAlice.NAliceApi.TRuntimeSettings
+	4,  // 18: NAlice.NAliceApi.TLocalScenarioApplyRequest.ScenarioApplyRequest:type_name -> NAlice.NAliceApi.TScenarioApplyRequest
+	5,  // 19: NAlice.NAliceApi.TLocalScenarioApplyRequest.Capabilities:type_name -> NAlice.NAliceApi.TExactCapability
+	6,  // 20: NAlice.NAliceApi.TLocalScenarioApplyRequest.SemanticFrames:type_name -> NAlice.NAliceApi.TExactTypedSemanticFrame
+	16, // 21: NAlice.NAliceApi.TRuntimeSettings.Payload:type_name -> google.protobuf.Struct
 	1,  // 22: NAlice.NAliceApi.TScenarioRunRequest.DataSourcesEntry.value:type_name -> NAlice.NAliceApi.TDataSource
 	1,  // 23: NAlice.NAliceApi.TScenarioApplyRequest.DataSourcesEntry.value:type_name -> NAlice.NAliceApi.TDataSource
 	24, // [24:24] is the sub-list for method output_type

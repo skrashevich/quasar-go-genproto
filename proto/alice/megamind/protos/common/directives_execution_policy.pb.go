@@ -74,8 +74,8 @@ const file_alice_megamind_protos_common_directives_execution_policy_proto_rawDes
 	">alice/megamind/protos/common/directives_execution_policy.proto\x12\x06NAlice*?\n" +
 	"\x1aEDirectivesExecutionPolicy\x12\x10\n" +
 	"\fBeforeSpeech\x10\x00\x12\x0f\n" +
-	"\vAfterSpeech\x10\x01Br\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x19DirectivesExecutionPolicyZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\vAfterSpeech\x10\x01B\x91\x01\n" +
+	"&ru.yandex.alice.megamind.protos.commonB\x19DirectivesExecutionPolicyZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_directives_execution_policy_proto_rawDescOnce sync.Once

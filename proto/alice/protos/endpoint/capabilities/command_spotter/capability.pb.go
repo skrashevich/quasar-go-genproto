@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/command_spotter/capability.proto
 
-package commandspotterpb
+package command_spotter
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -280,9 +280,9 @@ func (TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose) EnumDes
 
 type TCommandSpotterCapability struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TCommandSpotterCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TCommandSpotterCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TCommandSpotterCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TCommandSpotterCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -376,7 +376,7 @@ func (*TCommandSpotterCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TCommandSpotterCapability_TState struct {
 	state               protoimpl.MessageState                   `protogen:"open.v1"`
-	EnabledFastCommands []TCommandSpotterCapability_EFastCommand `protobuf:"varint,1,rep,packed,name=EnabledFastCommands,json=enabled_fast_commands,proto3,enum=NAlice.TCommandSpotterCapability_EFastCommand" json:"EnabledFastCommands,omitempty"`
+	EnabledFastCommands []TCommandSpotterCapability_EFastCommand `protobuf:"varint,1,rep,packed,name=EnabledFastCommands,proto3,enum=NAlice.TCommandSpotterCapability_EFastCommand" json:"EnabledFastCommands,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -419,13 +419,12 @@ func (x *TCommandSpotterCapability_TState) GetEnabledFastCommands() []TCommandSp
 }
 
 type TCommandSpotterCapability_TEnableCommandPhrasesDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/command_spotter/capability.proto.
-	Purpose       TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose `protobuf:"varint,2,opt,name=Purpose,json=purpose,proto3,enum=NAlice.TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose" json:"Purpose,omitempty"`
-	Phrases       []TCommandSpotterCapability_EPhraseType                           `protobuf:"varint,3,rep,packed,name=Phrases,json=phrases,proto3,enum=NAlice.TCommandSpotterCapability_EPhraseType" json:"Phrases,omitempty"`
-	Threshold     TCommandSpotterCapability_EThresholdType                          `protobuf:"varint,4,opt,name=Threshold,json=threshold,proto3,enum=NAlice.TCommandSpotterCapability_EThresholdType" json:"Threshold,omitempty"`
-	Intent        TCommandSpotterCapability_EDirectiveIntent                        `protobuf:"varint,5,opt,name=Intent,json=intent,proto3,enum=NAlice.TCommandSpotterCapability_EDirectiveIntent" json:"Intent,omitempty"`
+	state         protoimpl.MessageState                                            `protogen:"open.v1"`
+	Name          string                                                            `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Purpose       TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose `protobuf:"varint,2,opt,name=Purpose,proto3,enum=NAlice.TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose" json:"Purpose,omitempty"`
+	Phrases       []TCommandSpotterCapability_EPhraseType                           `protobuf:"varint,3,rep,packed,name=Phrases,proto3,enum=NAlice.TCommandSpotterCapability_EPhraseType" json:"Phrases,omitempty"`
+	Threshold     TCommandSpotterCapability_EThresholdType                          `protobuf:"varint,4,opt,name=Threshold,proto3,enum=NAlice.TCommandSpotterCapability_EThresholdType" json:"Threshold,omitempty"`
+	Intent        TCommandSpotterCapability_EDirectiveIntent                        `protobuf:"varint,5,opt,name=Intent,proto3,enum=NAlice.TCommandSpotterCapability_EDirectiveIntent" json:"Intent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -467,7 +466,6 @@ func (x *TCommandSpotterCapability_TEnableCommandPhrasesDirective) GetName() str
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/command_spotter/capability.proto.
 func (x *TCommandSpotterCapability_TEnableCommandPhrasesDirective) GetPurpose() TCommandSpotterCapability_TEnableCommandPhrasesDirective_EPurpose {
 	if x != nil {
 		return x.Purpose
@@ -498,9 +496,9 @@ func (x *TCommandSpotterCapability_TEnableCommandPhrasesDirective) GetIntent() T
 
 type TCommandSpotterCapability_TDisableCommandPhrasesDirective struct {
 	state         protoimpl.MessageState                     `protogen:"open.v1"`
-	Name          string                                     `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Intent        TCommandSpotterCapability_EDirectiveIntent `protobuf:"varint,2,opt,name=Intent,json=intent,proto3,enum=NAlice.TCommandSpotterCapability_EDirectiveIntent" json:"Intent,omitempty"`
-	Phrases       []TCommandSpotterCapability_EPhraseType    `protobuf:"varint,3,rep,packed,name=Phrases,json=phrases,proto3,enum=NAlice.TCommandSpotterCapability_EPhraseType" json:"Phrases,omitempty"`
+	Name          string                                     `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Intent        TCommandSpotterCapability_EDirectiveIntent `protobuf:"varint,2,opt,name=Intent,proto3,enum=NAlice.TCommandSpotterCapability_EDirectiveIntent" json:"Intent,omitempty"`
+	Phrases       []TCommandSpotterCapability_EPhraseType    `protobuf:"varint,3,rep,packed,name=Phrases,proto3,enum=NAlice.TCommandSpotterCapability_EPhraseType" json:"Phrases,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -560,32 +558,30 @@ var File_alice_protos_endpoint_capabilities_command_spotter_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_command_spotter_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/command_spotter/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7\f\n" +
-	"\x19TCommandSpotterCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12]\n" +
+	"Calice/protos/endpoint/capabilities/command_spotter/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa1\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2-.NAlice.TCommandSpotterCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12I\n" +
-	"\x05State\x18\x03 \x01(\v2(.NAlice.TCommandSpotterCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x87\x01\n" +
-	"\x06TState\x12}\n" +
-	"\x13EnabledFastCommands\x18\x01 \x03(\x0e2..NAlice.TCommandSpotterCapability.EFastCommandB\x19\xaa\xdd\x1b\x15enabled_fast_commandsR\x15enabled_fast_commands\x1a\x96\x04\n" +
-	"\x1eTEnableCommandPhrasesDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12r\n" +
-	"\aPurpose\x18\x02 \x01(\x0e2I.NAlice.TCommandSpotterCapability.TEnableCommandPhrasesDirective.EPurposeB\r\xaa\xdd\x1b\apurpose\x18\x01R\apurpose\x12T\n" +
-	"\aPhrases\x18\x03 \x03(\x0e2-.NAlice.TCommandSpotterCapability.EPhraseTypeB\v\xaa\xdd\x1b\aphrasesR\aphrases\x12]\n" +
-	"\tThreshold\x18\x04 \x01(\x0e20.NAlice.TCommandSpotterCapability.EThresholdTypeB\r\xaa\xdd\x1b\tthresholdR\tthreshold\x12V\n" +
-	"\x06Intent\x18\x05 \x01(\x0e22.NAlice.TCommandSpotterCapability.EDirectiveIntentB\n" +
-	"\xaa\xdd\x1b\x06intentR\x06intent\"&\n" +
+	"\x19TCommandSpotterCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12M\n" +
+	"\n" +
+	"Parameters\x18\x02 \x01(\v2-.NAlice.TCommandSpotterCapability.TParametersR\n" +
+	"Parameters\x12>\n" +
+	"\x05State\x18\x03 \x01(\v2(.NAlice.TCommandSpotterCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aj\n" +
+	"\x06TState\x12`\n" +
+	"\x13EnabledFastCommands\x18\x01 \x03(\x0e2..NAlice.TCommandSpotterCapability.EFastCommandR\x13EnabledFastCommands\x1a\xa6\x03\n" +
+	"\x1eTEnableCommandPhrasesDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12c\n" +
+	"\aPurpose\x18\x02 \x01(\x0e2I.NAlice.TCommandSpotterCapability.TEnableCommandPhrasesDirective.EPurposeR\aPurpose\x12G\n" +
+	"\aPhrases\x18\x03 \x03(\x0e2-.NAlice.TCommandSpotterCapability.EPhraseTypeR\aPhrases\x12N\n" +
+	"\tThreshold\x18\x04 \x01(\x0e20.NAlice.TCommandSpotterCapability.EThresholdTypeR\tThreshold\x12J\n" +
+	"\x06Intent\x18\x05 \x01(\x0e22.NAlice.TCommandSpotterCapability.EDirectiveIntentR\x06Intent\"&\n" +
 	"\bEPurpose\x12\r\n" +
 	"\tUndefined\x10\x00\x12\v\n" +
-	"\aNextTTS\x10\x01:-\x92\x82\x19 enable_command_phrases_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa5\x01\x1a\x9d\x02\n" +
-	"\x1fTDisableCommandPhrasesDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12V\n" +
-	"\x06Intent\x18\x02 \x01(\x0e22.NAlice.TCommandSpotterCapability.EDirectiveIntentB\n" +
-	"\xaa\xdd\x1b\x06intentR\x06intent\x12T\n" +
-	"\aPhrases\x18\x03 \x03(\x0e2-.NAlice.TCommandSpotterCapability.EPhraseTypeB\v\xaa\xdd\x1b\aphrasesR\aphrases:.\x92\x82\x19!disable_command_phrases_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc2\x01\"&\n" +
+	"\aNextTTS\x10\x01\x1a\xca\x01\n" +
+	"\x1fTDisableCommandPhrasesDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12J\n" +
+	"\x06Intent\x18\x02 \x01(\x0e22.NAlice.TCommandSpotterCapability.EDirectiveIntentR\x06Intent\x12G\n" +
+	"\aPhrases\x18\x03 \x03(\x0e2-.NAlice.TCommandSpotterCapability.EPhraseTypeR\aPhrases\"&\n" +
 	"\vEPhraseType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04Stop\x10\x01\"8\n" +
@@ -608,8 +604,9 @@ const file_alice_protos_endpoint_capabilities_command_spotter_capability_proto_r
 	"\x05Light\x10\a\x12\x06\n" +
 	"\x02Tv\x10\b\x12\x0e\n" +
 	"\n" +
-	"CallAnswer\x10\t:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c:B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13CommandSpotterProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/command_spotter;commandspotterpbb\x06proto3"
+	"CallAnswer\x10\tB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/command_spotter\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_command_spotter_capability_proto_rawDescOnce sync.Once

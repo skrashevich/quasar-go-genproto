@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screen_on_off/capability.proto
 
-package screenonoffpb
+package screen_on_off
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -283,8 +283,8 @@ const file_alice_protos_endpoint_capabilities_screen_on_off_capability_proto_raw
 	"\n" +
 	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TScreenOnOffCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xd6\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbd\x02B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aScreenOnOffCapabilityProtoP\x01ZOa.yandex-team.ru/alice/protos/endpoint/capabilities/screen_on_off;screenonoffpbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xd6\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbd\x02B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aScreenOnOffCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screen_on_offb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screen_on_off_capability_proto_rawDescOnce sync.Once

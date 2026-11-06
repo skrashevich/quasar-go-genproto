@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/video_call/capability.proto
 
-package videocallpb
+package video_call
 
 import (
 	video_call "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/video_call"
@@ -125,9 +125,9 @@ func (TVideoCallCapability_TProviderCall_EState) EnumDescriptor() ([]byte, []int
 
 type TVideoCallCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TVideoCallCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TVideoCallCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TVideoCallCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TVideoCallCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -221,10 +221,10 @@ func (*TVideoCallCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TVideoCallCapability_TState struct {
 	state          protoimpl.MessageState                 `protogen:"open.v1"`
-	ProviderStates []*TVideoCallCapability_TProviderState `protobuf:"bytes,1,rep,name=ProviderStates,json=provider_states,proto3" json:"ProviderStates,omitempty"`
-	Incoming       []*TVideoCallCapability_TProviderCall  `protobuf:"bytes,2,rep,name=Incoming,json=incoming,proto3" json:"Incoming,omitempty"`
-	Current        *TVideoCallCapability_TProviderCall    `protobuf:"bytes,3,opt,name=Current,json=current,proto3" json:"Current,omitempty"`
-	Outgoing       *TVideoCallCapability_TProviderCall    `protobuf:"bytes,4,opt,name=Outgoing,json=outgoing,proto3" json:"Outgoing,omitempty"`
+	ProviderStates []*TVideoCallCapability_TProviderState `protobuf:"bytes,1,rep,name=ProviderStates,proto3" json:"ProviderStates,omitempty"`
+	Incoming       []*TVideoCallCapability_TProviderCall  `protobuf:"bytes,2,rep,name=Incoming,proto3" json:"Incoming,omitempty"`
+	Current        *TVideoCallCapability_TProviderCall    `protobuf:"bytes,3,opt,name=Current,proto3" json:"Current,omitempty"`
+	Outgoing       *TVideoCallCapability_TProviderCall    `protobuf:"bytes,4,opt,name=Outgoing,proto3" json:"Outgoing,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -348,7 +348,7 @@ type isTVideoCallCapability_TProviderState_ProviderState interface {
 }
 
 type TVideoCallCapability_TProviderState_TelegramProviderState struct {
-	TelegramProviderState *TVideoCallCapability_TTelegramProviderState `protobuf:"bytes,1,opt,name=TelegramProviderState,json=telegram_provider_state,proto3,oneof"`
+	TelegramProviderState *TVideoCallCapability_TTelegramProviderState `protobuf:"bytes,1,opt,name=TelegramProviderState,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TProviderState_TelegramProviderState) isTVideoCallCapability_TProviderState_ProviderState() {
@@ -356,8 +356,8 @@ func (*TVideoCallCapability_TProviderState_TelegramProviderState) isTVideoCallCa
 
 type TVideoCallCapability_TTelegramProviderState struct {
 	state         protoimpl.MessageState                                            `protogen:"open.v1"`
-	Login         *TVideoCallCapability_TTelegramProviderState_TLogin               `protobuf:"bytes,1,opt,name=Login,json=login,proto3" json:"Login,omitempty"`
-	ContactSync   *TVideoCallCapability_TTelegramProviderState_TContactSyncProgress `protobuf:"bytes,2,opt,name=ContactSync,json=contact_sync,proto3" json:"ContactSync,omitempty"`
+	Login         *TVideoCallCapability_TTelegramProviderState_TLogin               `protobuf:"bytes,1,opt,name=Login,proto3" json:"Login,omitempty"`
+	ContactSync   *TVideoCallCapability_TTelegramProviderState_TContactSyncProgress `protobuf:"bytes,2,opt,name=ContactSync,proto3" json:"ContactSync,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -408,8 +408,8 @@ func (x *TVideoCallCapability_TTelegramProviderState) GetContactSync() *TVideoCa
 
 type TVideoCallCapability_TTelegramVideoCallOwnerData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CallId        string                 `protobuf:"bytes,1,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	UserId        string                 `protobuf:"bytes,2,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
+	CallId        string                 `protobuf:"bytes,1,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=UserId,proto3" json:"UserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -460,7 +460,7 @@ func (x *TVideoCallCapability_TTelegramVideoCallOwnerData) GetUserId() string {
 
 type TVideoCallCapability_TProviderCall struct {
 	state protoimpl.MessageState                    `protogen:"open.v1"`
-	State TVideoCallCapability_TProviderCall_EState `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.TVideoCallCapability_TProviderCall_EState" json:"State,omitempty"`
+	State TVideoCallCapability_TProviderCall_EState `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.TVideoCallCapability_TProviderCall_EState" json:"State,omitempty"`
 	// Types that are valid to be assigned to ProviderCallData:
 	//
 	//	*TVideoCallCapability_TProviderCall_TelegramCallData
@@ -527,7 +527,7 @@ type isTVideoCallCapability_TProviderCall_ProviderCallData interface {
 }
 
 type TVideoCallCapability_TProviderCall_TelegramCallData struct {
-	TelegramCallData *TVideoCallCapability_TProviderCall_TTelegramCallData `protobuf:"bytes,2,opt,name=TelegramCallData,json=telegram_call_data,proto3,oneof"`
+	TelegramCallData *TVideoCallCapability_TProviderCall_TTelegramCallData `protobuf:"bytes,2,opt,name=TelegramCallData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TProviderCall_TelegramCallData) isTVideoCallCapability_TProviderCall_ProviderCallData() {
@@ -535,7 +535,7 @@ func (*TVideoCallCapability_TProviderCall_TelegramCallData) isTVideoCallCapabili
 
 type TVideoCallCapability_TStartVideoCallLoginDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TStartVideoCallLoginDirective_TelegramStartLoginData
@@ -602,7 +602,7 @@ type isTVideoCallCapability_TStartVideoCallLoginDirective_ProviderData interface
 }
 
 type TVideoCallCapability_TStartVideoCallLoginDirective_TelegramStartLoginData struct {
-	TelegramStartLoginData *TVideoCallCapability_TStartVideoCallLoginDirective_TTelegramStartLoginData `protobuf:"bytes,1,opt,name=TelegramStartLoginData,json=telegram_start_login_data,proto3,oneof"`
+	TelegramStartLoginData *TVideoCallCapability_TStartVideoCallLoginDirective_TTelegramStartLoginData `protobuf:"bytes,1,opt,name=TelegramStartLoginData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TStartVideoCallLoginDirective_TelegramStartLoginData) isTVideoCallCapability_TStartVideoCallLoginDirective_ProviderData() {
@@ -610,7 +610,7 @@ func (*TVideoCallCapability_TStartVideoCallLoginDirective_TelegramStartLoginData
 
 type TVideoCallCapability_TVideoCallLogoutDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TVideoCallLogoutDirective_TelegramLogoutData
@@ -677,7 +677,7 @@ type isTVideoCallCapability_TVideoCallLogoutDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TVideoCallLogoutDirective_TelegramLogoutData struct {
-	TelegramLogoutData *TVideoCallCapability_TVideoCallLogoutDirective_TTelegramLogoutData `protobuf:"bytes,1,opt,name=TelegramLogoutData,json=telegram_logout_data,proto3,oneof"`
+	TelegramLogoutData *TVideoCallCapability_TVideoCallLogoutDirective_TTelegramLogoutData `protobuf:"bytes,1,opt,name=TelegramLogoutData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TVideoCallLogoutDirective_TelegramLogoutData) isTVideoCallCapability_TVideoCallLogoutDirective_ProviderData() {
@@ -685,7 +685,7 @@ func (*TVideoCallCapability_TVideoCallLogoutDirective_TelegramLogoutData) isTVid
 
 type TVideoCallCapability_TStartVideoCallDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TStartVideoCallDirective_TelegramStartVideoCallData
@@ -752,7 +752,7 @@ type isTVideoCallCapability_TStartVideoCallDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TStartVideoCallDirective_TelegramStartVideoCallData struct {
-	TelegramStartVideoCallData *TVideoCallCapability_TStartVideoCallDirective_TTelegramStartVideoCallData `protobuf:"bytes,1,opt,name=TelegramStartVideoCallData,json=telegram_start_video_call_data,proto3,oneof"`
+	TelegramStartVideoCallData *TVideoCallCapability_TStartVideoCallDirective_TTelegramStartVideoCallData `protobuf:"bytes,1,opt,name=TelegramStartVideoCallData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TStartVideoCallDirective_TelegramStartVideoCallData) isTVideoCallCapability_TStartVideoCallDirective_ProviderData() {
@@ -760,7 +760,7 @@ func (*TVideoCallCapability_TStartVideoCallDirective_TelegramStartVideoCallData)
 
 type TVideoCallCapability_TProcessIncomingVideoCallDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TProcessIncomingVideoCallDirective_TelegramProcessIncomingVideoCallData
@@ -827,7 +827,7 @@ type isTVideoCallCapability_TProcessIncomingVideoCallDirective_ProviderData inte
 }
 
 type TVideoCallCapability_TProcessIncomingVideoCallDirective_TelegramProcessIncomingVideoCallData struct {
-	TelegramProcessIncomingVideoCallData *TVideoCallCapability_TProcessIncomingVideoCallDirective_TProcessIncomingVideoCallData `protobuf:"bytes,1,opt,name=TelegramProcessIncomingVideoCallData,json=telegram_process_incoming_video_call_data,proto3,oneof"`
+	TelegramProcessIncomingVideoCallData *TVideoCallCapability_TProcessIncomingVideoCallDirective_TProcessIncomingVideoCallData `protobuf:"bytes,1,opt,name=TelegramProcessIncomingVideoCallData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TProcessIncomingVideoCallDirective_TelegramProcessIncomingVideoCallData) isTVideoCallCapability_TProcessIncomingVideoCallDirective_ProviderData() {
@@ -835,7 +835,7 @@ func (*TVideoCallCapability_TProcessIncomingVideoCallDirective_TelegramProcessIn
 
 type TVideoCallCapability_TAcceptVideoCallDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TAcceptVideoCallDirective_TelegramAcceptVideoCallData
@@ -902,7 +902,7 @@ type isTVideoCallCapability_TAcceptVideoCallDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TAcceptVideoCallDirective_TelegramAcceptVideoCallData struct {
-	TelegramAcceptVideoCallData *TVideoCallCapability_TAcceptVideoCallDirective_TTelegramAcceptVideoCallData `protobuf:"bytes,1,opt,name=TelegramAcceptVideoCallData,json=telegram_accept_video_call_data,proto3,oneof"`
+	TelegramAcceptVideoCallData *TVideoCallCapability_TAcceptVideoCallDirective_TTelegramAcceptVideoCallData `protobuf:"bytes,1,opt,name=TelegramAcceptVideoCallData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TAcceptVideoCallDirective_TelegramAcceptVideoCallData) isTVideoCallCapability_TAcceptVideoCallDirective_ProviderData() {
@@ -910,7 +910,7 @@ func (*TVideoCallCapability_TAcceptVideoCallDirective_TelegramAcceptVideoCallDat
 
 type TVideoCallCapability_TDiscardVideoCallDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TDiscardVideoCallDirective_TelegramDiscardVideoCallData
@@ -977,7 +977,7 @@ type isTVideoCallCapability_TDiscardVideoCallDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TDiscardVideoCallDirective_TelegramDiscardVideoCallData struct {
-	TelegramDiscardVideoCallData *TVideoCallCapability_TDiscardVideoCallDirective_TTelegramDiscardVideoCallData `protobuf:"bytes,1,opt,name=TelegramDiscardVideoCallData,json=telegram_discard_video_call_data,proto3,oneof"`
+	TelegramDiscardVideoCallData *TVideoCallCapability_TDiscardVideoCallDirective_TTelegramDiscardVideoCallData `protobuf:"bytes,1,opt,name=TelegramDiscardVideoCallData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TDiscardVideoCallDirective_TelegramDiscardVideoCallData) isTVideoCallCapability_TDiscardVideoCallDirective_ProviderData() {
@@ -985,7 +985,7 @@ func (*TVideoCallCapability_TDiscardVideoCallDirective_TelegramDiscardVideoCallD
 
 type TVideoCallCapability_TMuteMicDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TMuteMicDirective_TelegramMuteMicData
@@ -1052,7 +1052,7 @@ type isTVideoCallCapability_TMuteMicDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TMuteMicDirective_TelegramMuteMicData struct {
-	TelegramMuteMicData *TVideoCallCapability_TMuteMicDirective_TTelegramMuteMicData `protobuf:"bytes,1,opt,name=TelegramMuteMicData,json=telegram_mute_mic_data,proto3,oneof"`
+	TelegramMuteMicData *TVideoCallCapability_TMuteMicDirective_TTelegramMuteMicData `protobuf:"bytes,1,opt,name=TelegramMuteMicData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TMuteMicDirective_TelegramMuteMicData) isTVideoCallCapability_TMuteMicDirective_ProviderData() {
@@ -1060,7 +1060,7 @@ func (*TVideoCallCapability_TMuteMicDirective_TelegramMuteMicData) isTVideoCallC
 
 type TVideoCallCapability_TUnmuteMicDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TUnmuteMicDirective_TelegramUnmuteMicData
@@ -1127,7 +1127,7 @@ type isTVideoCallCapability_TUnmuteMicDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TUnmuteMicDirective_TelegramUnmuteMicData struct {
-	TelegramUnmuteMicData *TVideoCallCapability_TUnmuteMicDirective_TTelegramUnmuteMicData `protobuf:"bytes,1,opt,name=TelegramUnmuteMicData,json=telegram_unmute_mic_data,proto3,oneof"`
+	TelegramUnmuteMicData *TVideoCallCapability_TUnmuteMicDirective_TTelegramUnmuteMicData `protobuf:"bytes,1,opt,name=TelegramUnmuteMicData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TUnmuteMicDirective_TelegramUnmuteMicData) isTVideoCallCapability_TUnmuteMicDirective_ProviderData() {
@@ -1135,7 +1135,7 @@ func (*TVideoCallCapability_TUnmuteMicDirective_TelegramUnmuteMicData) isTVideoC
 
 type TVideoCallCapability_TTurnOnVideoDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TTurnOnVideoDirective_TelegramMuteTurnOnVideoData
@@ -1202,7 +1202,7 @@ type isTVideoCallCapability_TTurnOnVideoDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TTurnOnVideoDirective_TelegramMuteTurnOnVideoData struct {
-	TelegramMuteTurnOnVideoData *TVideoCallCapability_TTurnOnVideoDirective_TTelegramTurnOnVideoData `protobuf:"bytes,1,opt,name=TelegramMuteTurnOnVideoData,json=telegram_turn_on_video_data,proto3,oneof"`
+	TelegramMuteTurnOnVideoData *TVideoCallCapability_TTurnOnVideoDirective_TTelegramTurnOnVideoData `protobuf:"bytes,1,opt,name=TelegramMuteTurnOnVideoData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TTurnOnVideoDirective_TelegramMuteTurnOnVideoData) isTVideoCallCapability_TTurnOnVideoDirective_ProviderData() {
@@ -1210,7 +1210,7 @@ func (*TVideoCallCapability_TTurnOnVideoDirective_TelegramMuteTurnOnVideoData) i
 
 type TVideoCallCapability_TTurnOffVideoDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TTurnOffVideoDirective_TelegramMuteTurnOffVideoData
@@ -1277,7 +1277,7 @@ type isTVideoCallCapability_TTurnOffVideoDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TTurnOffVideoDirective_TelegramMuteTurnOffVideoData struct {
-	TelegramMuteTurnOffVideoData *TVideoCallCapability_TTurnOffVideoDirective_TTelegramTurnOffVideoData `protobuf:"bytes,1,opt,name=TelegramMuteTurnOffVideoData,json=telegram_turn_off_video_data,proto3,oneof"`
+	TelegramMuteTurnOffVideoData *TVideoCallCapability_TTurnOffVideoDirective_TTelegramTurnOffVideoData `protobuf:"bytes,1,opt,name=TelegramMuteTurnOffVideoData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TTurnOffVideoDirective_TelegramMuteTurnOffVideoData) isTVideoCallCapability_TTurnOffVideoDirective_ProviderData() {
@@ -1285,7 +1285,7 @@ func (*TVideoCallCapability_TTurnOffVideoDirective_TelegramMuteTurnOffVideoData)
 
 type TVideoCallCapability_TTurnOnAutoCropDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TTurnOnAutoCropDirective_TelegramTurnOnAutoCropData
@@ -1352,7 +1352,7 @@ type isTVideoCallCapability_TTurnOnAutoCropDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TTurnOnAutoCropDirective_TelegramTurnOnAutoCropData struct {
-	TelegramTurnOnAutoCropData *TVideoCallCapability_TTurnOnAutoCropDirective_TTelegramTurnOnAutoCropData `protobuf:"bytes,1,opt,name=TelegramTurnOnAutoCropData,json=telegram_turn_on_auto_crop_data,proto3,oneof"`
+	TelegramTurnOnAutoCropData *TVideoCallCapability_TTurnOnAutoCropDirective_TTelegramTurnOnAutoCropData `protobuf:"bytes,1,opt,name=TelegramTurnOnAutoCropData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TTurnOnAutoCropDirective_TelegramTurnOnAutoCropData) isTVideoCallCapability_TTurnOnAutoCropDirective_ProviderData() {
@@ -1360,7 +1360,7 @@ func (*TVideoCallCapability_TTurnOnAutoCropDirective_TelegramTurnOnAutoCropData)
 
 type TVideoCallCapability_TTurnOffAutoCropDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TTurnOffAutoCropDirective_TelegramTurnOffAutoCropData
@@ -1427,7 +1427,7 @@ type isTVideoCallCapability_TTurnOffAutoCropDirective_ProviderData interface {
 }
 
 type TVideoCallCapability_TTurnOffAutoCropDirective_TelegramTurnOffAutoCropData struct {
-	TelegramTurnOffAutoCropData *TVideoCallCapability_TTurnOffAutoCropDirective_TTelegramTurnOffAutoCropData `protobuf:"bytes,1,opt,name=TelegramTurnOffAutoCropData,json=telegram_turn_off_auto_crop_data,proto3,oneof"`
+	TelegramTurnOffAutoCropData *TVideoCallCapability_TTurnOffAutoCropDirective_TTelegramTurnOffAutoCropData `protobuf:"bytes,1,opt,name=TelegramTurnOffAutoCropData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TTurnOffAutoCropDirective_TelegramTurnOffAutoCropData) isTVideoCallCapability_TTurnOffAutoCropDirective_ProviderData() {
@@ -1435,7 +1435,7 @@ func (*TVideoCallCapability_TTurnOffAutoCropDirective_TelegramTurnOffAutoCropDat
 
 type TVideoCallCapability_TSetActionOnCallEndDirective struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name  string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	// Types that are valid to be assigned to ProviderData:
 	//
 	//	*TVideoCallCapability_TSetActionOnCallEndDirective_TelegramSetActionOnCallEndData
@@ -1502,24 +1502,23 @@ type isTVideoCallCapability_TSetActionOnCallEndDirective_ProviderData interface 
 }
 
 type TVideoCallCapability_TSetActionOnCallEndDirective_TelegramSetActionOnCallEndData struct {
-	TelegramSetActionOnCallEndData *TVideoCallCapability_TSetActionOnCallEndDirective_TTelegramSetActionOnCallEndData `protobuf:"bytes,1,opt,name=TelegramSetActionOnCallEndData,json=telegram_set_action_on_call_end_data,proto3,oneof"`
+	TelegramSetActionOnCallEndData *TVideoCallCapability_TSetActionOnCallEndDirective_TTelegramSetActionOnCallEndData `protobuf:"bytes,1,opt,name=TelegramSetActionOnCallEndData,proto3,oneof"`
 }
 
 func (*TVideoCallCapability_TSetActionOnCallEndDirective_TelegramSetActionOnCallEndData) isTVideoCallCapability_TSetActionOnCallEndDirective_ProviderData() {
 }
 
 type TVideoCallCapability_TTelegramProviderState_TLogin struct {
-	state                      protoimpl.MessageState                                    `protogen:"open.v1"`
-	UserId                     string                                                    `protobuf:"bytes,1,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
-	State                      TVideoCallCapability_TTelegramProviderState_TLogin_EState `protobuf:"varint,2,opt,name=State,json=state,proto3,enum=NAlice.TVideoCallCapability_TTelegramProviderState_TLogin_EState" json:"State,omitempty"`
-	FullContactsUploadFinished bool                                                      `protobuf:"varint,3,opt,name=FullContactsUploadFinished,json=full_contacts_upload_finished,proto3" json:"FullContactsUploadFinished,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/video_call/capability.proto.
-	RecentContacts []*TVideoCallCapability_TTelegramProviderState_TRecentContactData `protobuf:"bytes,4,rep,name=RecentContacts,json=recent_contacts,proto3" json:"RecentContacts,omitempty"`
-	DisplayName    string                                                            `protobuf:"bytes,5,opt,name=DisplayName,json=display_name,proto3" json:"DisplayName,omitempty"`
-	Login          string                                                            `protobuf:"bytes,6,opt,name=Login,json=login,proto3" json:"Login,omitempty"`
-	Recents        []*video_call.TRecentCall                                         `protobuf:"bytes,7,rep,name=Recents,json=recents,proto3" json:"Recents,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state                      protoimpl.MessageState                                            `protogen:"open.v1"`
+	UserId                     string                                                            `protobuf:"bytes,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	State                      TVideoCallCapability_TTelegramProviderState_TLogin_EState         `protobuf:"varint,2,opt,name=State,proto3,enum=NAlice.TVideoCallCapability_TTelegramProviderState_TLogin_EState" json:"State,omitempty"`
+	FullContactsUploadFinished bool                                                              `protobuf:"varint,3,opt,name=FullContactsUploadFinished,proto3" json:"FullContactsUploadFinished,omitempty"`
+	RecentContacts             []*TVideoCallCapability_TTelegramProviderState_TRecentContactData `protobuf:"bytes,4,rep,name=RecentContacts,proto3" json:"RecentContacts,omitempty"`
+	DisplayName                string                                                            `protobuf:"bytes,5,opt,name=DisplayName,proto3" json:"DisplayName,omitempty"`
+	Login                      string                                                            `protobuf:"bytes,6,opt,name=Login,proto3" json:"Login,omitempty"`
+	Recents                    []*video_call.TRecentCall                                         `protobuf:"bytes,7,rep,name=Recents,proto3" json:"Recents,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
 }
 
 func (x *TVideoCallCapability_TTelegramProviderState_TLogin) Reset() {
@@ -1573,7 +1572,6 @@ func (x *TVideoCallCapability_TTelegramProviderState_TLogin) GetFullContactsUplo
 	return false
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/video_call/capability.proto.
 func (x *TVideoCallCapability_TTelegramProviderState_TLogin) GetRecentContacts() []*TVideoCallCapability_TTelegramProviderState_TRecentContactData {
 	if x != nil {
 		return x.RecentContacts
@@ -1640,7 +1638,7 @@ func (*TVideoCallCapability_TTelegramProviderState_TContactSyncProgress) Descrip
 
 type TVideoCallCapability_TTelegramProviderState_TRecentContactData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1684,12 +1682,12 @@ func (x *TVideoCallCapability_TTelegramProviderState_TRecentContactData) GetUser
 
 type TVideoCallCapability_TProviderCall_TTelegramCallData struct {
 	state           protoimpl.MessageState                                               `protogen:"open.v1"`
-	CallOwnerData   *TVideoCallCapability_TTelegramVideoCallOwnerData                    `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	Recipient       *TVideoCallCapability_TProviderCall_TTelegramCallData_TRecipientData `protobuf:"bytes,2,opt,name=Recipient,json=recipient,proto3" json:"Recipient,omitempty"`
-	MicMuted        bool                                                                 `protobuf:"varint,3,opt,name=MicMuted,json=mic_muted,proto3" json:"MicMuted,omitempty"`
-	VideoEnabled    bool                                                                 `protobuf:"varint,4,opt,name=VideoEnabled,json=video_enabled,proto3" json:"VideoEnabled,omitempty"`
-	AudioCall       bool                                                                 `protobuf:"varint,5,opt,name=AudioCall,json=audio_call,proto3" json:"AudioCall,omitempty"`
-	AutoCropEnabled bool                                                                 `protobuf:"varint,6,opt,name=AutoCropEnabled,json=auto_crop_enabled,proto3" json:"AutoCropEnabled,omitempty"`
+	CallOwnerData   *TVideoCallCapability_TTelegramVideoCallOwnerData                    `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	Recipient       *TVideoCallCapability_TProviderCall_TTelegramCallData_TRecipientData `protobuf:"bytes,2,opt,name=Recipient,proto3" json:"Recipient,omitempty"`
+	MicMuted        bool                                                                 `protobuf:"varint,3,opt,name=MicMuted,proto3" json:"MicMuted,omitempty"`
+	VideoEnabled    bool                                                                 `protobuf:"varint,4,opt,name=VideoEnabled,proto3" json:"VideoEnabled,omitempty"`
+	AudioCall       bool                                                                 `protobuf:"varint,5,opt,name=AudioCall,proto3" json:"AudioCall,omitempty"`
+	AutoCropEnabled bool                                                                 `protobuf:"varint,6,opt,name=AutoCropEnabled,proto3" json:"AutoCropEnabled,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1768,10 +1766,10 @@ func (x *TVideoCallCapability_TProviderCall_TTelegramCallData) GetAutoCropEnable
 
 type TVideoCallCapability_TProviderCall_TTelegramCallData_TRecipientData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
-	DisplayName   string                 `protobuf:"bytes,2,opt,name=DisplayName,json=display_name,proto3" json:"DisplayName,omitempty"`
-	MicMuted      bool                   `protobuf:"varint,3,opt,name=MicMuted,json=mic_muted,proto3" json:"MicMuted,omitempty"`
-	VideoEnabled  bool                   `protobuf:"varint,4,opt,name=VideoEnabled,json=video_enabled,proto3" json:"VideoEnabled,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,2,opt,name=DisplayName,proto3" json:"DisplayName,omitempty"`
+	MicMuted      bool                   `protobuf:"varint,3,opt,name=MicMuted,proto3" json:"MicMuted,omitempty"`
+	VideoEnabled  bool                   `protobuf:"varint,4,opt,name=VideoEnabled,proto3" json:"VideoEnabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1836,8 +1834,8 @@ func (x *TVideoCallCapability_TProviderCall_TTelegramCallData_TRecipientData) Ge
 
 type TVideoCallCapability_TStartVideoCallLoginDirective_TTelegramStartLoginData struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Id             string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	OnFailCallback *structpb.Struct       `protobuf:"bytes,2,opt,name=OnFailCallback,json=on_fail_callback,proto3,oneof" json:"OnFailCallback,omitempty"`
+	Id             string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	OnFailCallback *structpb.Struct       `protobuf:"bytes,2,opt,name=OnFailCallback,proto3,oneof" json:"OnFailCallback,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1888,7 +1886,7 @@ func (x *TVideoCallCapability_TStartVideoCallLoginDirective_TTelegramStartLoginD
 
 type TVideoCallCapability_TVideoCallLogoutDirective_TTelegramLogoutData struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	OnFailCallback *structpb.Struct       `protobuf:"bytes,1,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	OnFailCallback *structpb.Struct       `protobuf:"bytes,1,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1932,14 +1930,14 @@ func (x *TVideoCallCapability_TVideoCallLogoutDirective_TTelegramLogoutData) Get
 
 type TVideoCallCapability_TStartVideoCallDirective_TTelegramStartVideoCallData struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	Id                  string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	UserId              string                 `protobuf:"bytes,2,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
-	RecipientUserId     string                 `protobuf:"bytes,3,opt,name=RecipientUserId,json=recipient_user_id,proto3" json:"RecipientUserId,omitempty"`
-	VideoEnabled        bool                   `protobuf:"varint,7,opt,name=VideoEnabled,json=video_enabled,proto3" json:"VideoEnabled,omitempty"`
-	OnAcceptedCallback  *structpb.Struct       `protobuf:"bytes,4,opt,name=OnAcceptedCallback,json=on_accepted_callback,proto3" json:"OnAcceptedCallback,omitempty"`
-	OnDiscardedCallback *structpb.Struct       `protobuf:"bytes,5,opt,name=OnDiscardedCallback,json=on_discarded_callback,proto3" json:"OnDiscardedCallback,omitempty"`
-	OnFailCallback      *structpb.Struct       `protobuf:"bytes,6,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
-	OnEndedCallback     *structpb.Struct       `protobuf:"bytes,8,opt,name=OnEndedCallback,json=on_ended_callback,proto3" json:"OnEndedCallback,omitempty"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	UserId              string                 `protobuf:"bytes,2,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	RecipientUserId     string                 `protobuf:"bytes,3,opt,name=RecipientUserId,proto3" json:"RecipientUserId,omitempty"`
+	VideoEnabled        bool                   `protobuf:"varint,7,opt,name=VideoEnabled,proto3" json:"VideoEnabled,omitempty"`
+	OnAcceptedCallback  *structpb.Struct       `protobuf:"bytes,4,opt,name=OnAcceptedCallback,proto3" json:"OnAcceptedCallback,omitempty"`
+	OnDiscardedCallback *structpb.Struct       `protobuf:"bytes,5,opt,name=OnDiscardedCallback,proto3" json:"OnDiscardedCallback,omitempty"`
+	OnFailCallback      *structpb.Struct       `protobuf:"bytes,6,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
+	OnEndedCallback     *structpb.Struct       `protobuf:"bytes,8,opt,name=OnEndedCallback,proto3" json:"OnEndedCallback,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -2032,9 +2030,9 @@ func (x *TVideoCallCapability_TStartVideoCallDirective_TTelegramStartVideoCallDa
 
 type TVideoCallCapability_TProcessIncomingVideoCallDirective_TProcessIncomingVideoCallData struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	CallId          string                 `protobuf:"bytes,1,opt,name=CallId,json=call_id,proto3" json:"CallId,omitempty"`
-	UserId          string                 `protobuf:"bytes,2,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
-	OnEndedCallback *structpb.Struct       `protobuf:"bytes,3,opt,name=OnEndedCallback,json=on_ended_callback,proto3" json:"OnEndedCallback,omitempty"`
+	CallId          string                 `protobuf:"bytes,1,opt,name=CallId,proto3" json:"CallId,omitempty"`
+	UserId          string                 `protobuf:"bytes,2,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	OnEndedCallback *structpb.Struct       `protobuf:"bytes,3,opt,name=OnEndedCallback,proto3" json:"OnEndedCallback,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -2093,9 +2091,9 @@ func (x *TVideoCallCapability_TProcessIncomingVideoCallDirective_TProcessIncomin
 
 type TVideoCallCapability_TAcceptVideoCallDirective_TTelegramAcceptVideoCallData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2153,9 +2151,9 @@ func (x *TVideoCallCapability_TAcceptVideoCallDirective_TTelegramAcceptVideoCall
 
 type TVideoCallCapability_TDiscardVideoCallDirective_TTelegramDiscardVideoCallData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2214,9 +2212,9 @@ func (x *TVideoCallCapability_TDiscardVideoCallDirective_TTelegramDiscardVideoCa
 
 type TVideoCallCapability_TMuteMicDirective_TTelegramMuteMicData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2274,9 +2272,9 @@ func (x *TVideoCallCapability_TMuteMicDirective_TTelegramMuteMicData) GetOnFailC
 
 type TVideoCallCapability_TUnmuteMicDirective_TTelegramUnmuteMicData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2334,9 +2332,9 @@ func (x *TVideoCallCapability_TUnmuteMicDirective_TTelegramUnmuteMicData) GetOnF
 
 type TVideoCallCapability_TTurnOnVideoDirective_TTelegramTurnOnVideoData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2394,9 +2392,9 @@ func (x *TVideoCallCapability_TTurnOnVideoDirective_TTelegramTurnOnVideoData) Ge
 
 type TVideoCallCapability_TTurnOffVideoDirective_TTelegramTurnOffVideoData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2454,9 +2452,9 @@ func (x *TVideoCallCapability_TTurnOffVideoDirective_TTelegramTurnOffVideoData) 
 
 type TVideoCallCapability_TTurnOnAutoCropDirective_TTelegramTurnOnAutoCropData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2514,9 +2512,9 @@ func (x *TVideoCallCapability_TTurnOnAutoCropDirective_TTelegramTurnOnAutoCropDa
 
 type TVideoCallCapability_TTurnOffAutoCropDirective_TTelegramTurnOffAutoCropData struct {
 	state             protoimpl.MessageState                            `protogen:"open.v1"`
-	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,json=call_owner_data,proto3" json:"CallOwnerData,omitempty"`
-	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,json=on_success_callback,proto3" json:"OnSuccessCallback,omitempty"`
-	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,json=on_fail_callback,proto3" json:"OnFailCallback,omitempty"`
+	CallOwnerData     *TVideoCallCapability_TTelegramVideoCallOwnerData `protobuf:"bytes,1,opt,name=CallOwnerData,proto3" json:"CallOwnerData,omitempty"`
+	OnSuccessCallback *structpb.Struct                                  `protobuf:"bytes,2,opt,name=OnSuccessCallback,proto3" json:"OnSuccessCallback,omitempty"`
+	OnFailCallback    *structpb.Struct                                  `protobuf:"bytes,3,opt,name=OnFailCallback,proto3" json:"OnFailCallback,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2574,7 +2572,7 @@ func (x *TVideoCallCapability_TTurnOffAutoCropDirective_TTelegramTurnOffAutoCrop
 
 type TVideoCallCapability_TSetActionOnCallEndDirective_TTelegramSetActionOnCallEndData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Action        *anypb.Any             `protobuf:"bytes,1,opt,name=Action,json=action,proto3" json:"Action,omitempty"`
+	Action        *anypb.Any             `protobuf:"bytes,1,opt,name=Action,proto3" json:"Action,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2621,174 +2619,170 @@ var File_alice_protos_endpoint_capabilities_video_call_capability_proto protoref
 
 const file_alice_protos_endpoint_capabilities_video_call_capability_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/endpoint/capabilities/video_call/capability.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a google/protobuf/descriptor.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a2alice/protos/data/scenario/video_call/recent.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfbW\n" +
-	"\x14TVideoCallCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	">alice/protos/endpoint/capabilities/video_call/capability.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a google/protobuf/descriptor.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a2alice/protos/data/scenario/video_call/recent.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe3>\n" +
+	"\x14TVideoCallCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TVideoCallCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TVideoCallCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xf8\x02\n" +
-	"\x06TState\x12i\n" +
-	"\x0eProviderStates\x18\x01 \x03(\v2+.NAlice.TVideoCallCapability.TProviderStateB\x13\xaa\xdd\x1b\x0fprovider_statesR\x0fprovider_states\x12T\n" +
-	"\bIncoming\x18\x02 \x03(\v2*.NAlice.TVideoCallCapability.TProviderCallB\f\xaa\xdd\x1b\bincomingR\bincoming\x12Q\n" +
-	"\aCurrent\x18\x03 \x01(\v2*.NAlice.TVideoCallCapability.TProviderCallB\v\xaa\xdd\x1b\acurrentR\acurrent\x12T\n" +
-	"\bOutgoing\x18\x04 \x01(\v2*.NAlice.TVideoCallCapability.TProviderCallB\f\xaa\xdd\x1b\boutgoingR\boutgoing:\x04\xa8\xdd\x1b\x04\x1a\xc8\x01\n" +
-	"\x0eTProviderState\x12\x8a\x01\n" +
-	"\x15TelegramProviderState\x18\x01 \x01(\v23.NAlice.TVideoCallCapability.TTelegramProviderStateB\x1b\xaa\xdd\x1b\x17telegram_provider_stateH\x00R\x17telegram_provider_state:\x04\xa8\xdd\x1b\x04B#\n" +
-	"\rProviderState\x12\x12\xaa\xdd\x1b\x0eprovider_state\x1a\xa3\a\n" +
-	"\x16TTelegramProviderState\x12[\n" +
-	"\x05Login\x18\x01 \x01(\v2:.NAlice.TVideoCallCapability.TTelegramProviderState.TLoginB\t\xaa\xdd\x1b\x05loginR\x05login\x12}\n" +
-	"\vContactSync\x18\x02 \x01(\v2H.NAlice.TVideoCallCapability.TTelegramProviderState.TContactSyncProgressB\x10\xaa\xdd\x1b\fcontact_syncR\fcontact_sync\x1a\xc6\x04\n" +
-	"\x06TLogin\x12$\n" +
-	"\x06UserId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id\x12b\n" +
-	"\x05State\x18\x02 \x01(\x0e2A.NAlice.TVideoCallCapability.TTelegramProviderState.TLogin.EStateB\t\xaa\xdd\x1b\x05stateR\x05state\x12d\n" +
-	"\x1aFullContactsUploadFinished\x18\x03 \x01(\bB!\xaa\xdd\x1b\x1dfull_contacts_upload_finishedR\x1dfull_contacts_upload_finished\x12\x86\x01\n" +
-	"\x0eRecentContacts\x18\x04 \x03(\v2F.NAlice.TVideoCallCapability.TTelegramProviderState.TRecentContactDataB\x15\xaa\xdd\x1b\x0frecent_contacts\x18\x01R\x0frecent_contacts\x123\n" +
-	"\vDisplayName\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\fdisplay_nameR\fdisplay_name\x12\x1f\n" +
-	"\x05Login\x18\x06 \x01(\tB\t\xaa\xdd\x1b\x05loginR\x05login\x12@\n" +
-	"\aRecents\x18\a \x03(\v2\x19.NAlice.NData.TRecentCallB\v\xaa\xdd\x1b\arecentsR\arecents\"%\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TVideoCallCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TVideoCallCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xb3\x02\n" +
+	"\x06TState\x12S\n" +
+	"\x0eProviderStates\x18\x01 \x03(\v2+.NAlice.TVideoCallCapability.TProviderStateR\x0eProviderStates\x12F\n" +
+	"\bIncoming\x18\x02 \x03(\v2*.NAlice.TVideoCallCapability.TProviderCallR\bIncoming\x12D\n" +
+	"\aCurrent\x18\x03 \x01(\v2*.NAlice.TVideoCallCapability.TProviderCallR\aCurrent\x12F\n" +
+	"\bOutgoing\x18\x04 \x01(\v2*.NAlice.TVideoCallCapability.TProviderCallR\bOutgoing\x1a\x8e\x01\n" +
+	"\x0eTProviderState\x12k\n" +
+	"\x15TelegramProviderState\x18\x01 \x01(\v23.NAlice.TVideoCallCapability.TTelegramProviderStateH\x00R\x15TelegramProviderStateB\x0f\n" +
+	"\rProviderState\x1a\xdc\x05\n" +
+	"\x16TTelegramProviderState\x12P\n" +
+	"\x05Login\x18\x01 \x01(\v2:.NAlice.TVideoCallCapability.TTelegramProviderState.TLoginR\x05Login\x12j\n" +
+	"\vContactSync\x18\x02 \x01(\v2H.NAlice.TVideoCallCapability.TTelegramProviderState.TContactSyncProgressR\vContactSync\x1a\xbd\x03\n" +
+	"\x06TLogin\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\tR\x06UserId\x12W\n" +
+	"\x05State\x18\x02 \x01(\x0e2A.NAlice.TVideoCallCapability.TTelegramProviderState.TLogin.EStateR\x05State\x12>\n" +
+	"\x1aFullContactsUploadFinished\x18\x03 \x01(\bR\x1aFullContactsUploadFinished\x12n\n" +
+	"\x0eRecentContacts\x18\x04 \x03(\v2F.NAlice.TVideoCallCapability.TTelegramProviderState.TRecentContactDataR\x0eRecentContacts\x12 \n" +
+	"\vDisplayName\x18\x05 \x01(\tR\vDisplayName\x12\x14\n" +
+	"\x05Login\x18\x06 \x01(\tR\x05Login\x123\n" +
+	"\aRecents\x18\a \x03(\v2\x19.NAlice.NData.TRecentCallR\aRecents\"%\n" +
 	"\x06EState\x12\x0e\n" +
 	"\n" +
 	"InProgress\x10\x00\x12\v\n" +
-	"\aSuccess\x10\x01:\x04\xa8\xdd\x1b\x04\x1a\x1c\n" +
-	"\x14TContactSyncProgress:\x04\xa8\xdd\x1b\x04\x1a@\n" +
-	"\x12TRecentContactData\x12$\n" +
-	"\x06UserId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\x1ao\n" +
-	"\x1bTTelegramVideoCallOwnerData\x12$\n" +
-	"\x06CallId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12$\n" +
-	"\x06UserId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id:\x04\xa8\xdd\x1b\x04\x1a\x8d\b\n" +
-	"\rTProviderCall\x12R\n" +
-	"\x05State\x18\x01 \x01(\x0e21.NAlice.TVideoCallCapability.TProviderCall.EStateB\t\xaa\xdd\x1b\x05stateR\x05state\x12\x84\x01\n" +
-	"\x10TelegramCallData\x18\x02 \x01(\v2<.NAlice.TVideoCallCapability.TProviderCall.TTelegramCallDataB\x16\xaa\xdd\x1b\x12telegram_call_dataH\x00R\x12telegram_call_data\x1a\xb8\x05\n" +
-	"\x11TTelegramCallData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12x\n" +
-	"\tRecipient\x18\x02 \x01(\v2K.NAlice.TVideoCallCapability.TProviderCall.TTelegramCallData.TRecipientDataB\r\xaa\xdd\x1b\trecipientR\trecipient\x12*\n" +
-	"\bMicMuted\x18\x03 \x01(\bB\r\xaa\xdd\x1b\tmic_mutedR\tmic_muted\x126\n" +
-	"\fVideoEnabled\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rvideo_enabledR\rvideo_enabled\x12-\n" +
-	"\tAudioCall\x18\x05 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"audio_callR\n" +
-	"audio_call\x12A\n" +
-	"\x0fAutoCropEnabled\x18\x06 \x01(\bB\x15\xaa\xdd\x1b\x11auto_crop_enabledR\x11auto_crop_enabled\x1a\xd5\x01\n" +
-	"\x0eTRecipientData\x12$\n" +
-	"\x06UserId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id\x123\n" +
-	"\vDisplayName\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fdisplay_nameR\fdisplay_name\x12*\n" +
-	"\bMicMuted\x18\x03 \x01(\bB\r\xaa\xdd\x1b\tmic_mutedR\tmic_muted\x126\n" +
-	"\fVideoEnabled\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rvideo_enabledR\rvideo_enabled:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"4\n" +
+	"\aSuccess\x10\x01\x1a\x16\n" +
+	"\x14TContactSyncProgress\x1a,\n" +
+	"\x12TRecentContactData\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\tR\x06UserId\x1aM\n" +
+	"\x1bTTelegramVideoCallOwnerData\x12\x16\n" +
+	"\x06CallId\x18\x01 \x01(\tR\x06CallId\x12\x16\n" +
+	"\x06UserId\x18\x02 \x01(\tR\x06UserId\x1a\x84\x06\n" +
+	"\rTProviderCall\x12G\n" +
+	"\x05State\x18\x01 \x01(\x0e21.NAlice.TVideoCallCapability.TProviderCall.EStateR\x05State\x12j\n" +
+	"\x10TelegramCallData\x18\x02 \x01(\v2<.NAlice.TVideoCallCapability.TProviderCall.TTelegramCallDataH\x00R\x10TelegramCallData\x1a\xf3\x03\n" +
+	"\x11TTelegramCallData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12i\n" +
+	"\tRecipient\x18\x02 \x01(\v2K.NAlice.TVideoCallCapability.TProviderCall.TTelegramCallData.TRecipientDataR\tRecipient\x12\x1a\n" +
+	"\bMicMuted\x18\x03 \x01(\bR\bMicMuted\x12\"\n" +
+	"\fVideoEnabled\x18\x04 \x01(\bR\fVideoEnabled\x12\x1c\n" +
+	"\tAudioCall\x18\x05 \x01(\bR\tAudioCall\x12(\n" +
+	"\x0fAutoCropEnabled\x18\x06 \x01(\bR\x0fAutoCropEnabled\x1a\x8a\x01\n" +
+	"\x0eTRecipientData\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\tR\x06UserId\x12 \n" +
+	"\vDisplayName\x18\x02 \x01(\tR\vDisplayName\x12\x1a\n" +
+	"\bMicMuted\x18\x03 \x01(\bR\bMicMuted\x12\"\n" +
+	"\fVideoEnabled\x18\x04 \x01(\bR\fVideoEnabled\"4\n" +
 	"\x06EState\x12\v\n" +
 	"\aRinging\x10\x00\x12\f\n" +
 	"\bAccepted\x10\x01\x12\x0f\n" +
-	"\vEstablished\x10\x02:\x04\xa8\xdd\x1b\x04B*\n" +
-	"\x10ProviderCallData\x12\x16\xaa\xdd\x1b\x12provider_call_data\x1a\xef\x03\n" +
-	"\x1dTStartVideoCallLoginDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xae\x01\n" +
-	"\x16TelegramStartLoginData\x18\x01 \x01(\v2R.NAlice.TVideoCallCapability.TStartVideoCallLoginDirective.TTelegramStartLoginDataB\x1d\xaa\xdd\x1b\x19telegram_start_login_dataH\x00R\x19telegram_start_login_data\x1a\xac\x01\n" +
-	"\x17TTelegramStartLoginData\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12`\n" +
-	"\x0eOnFailCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackH\x00R\x10on_fail_callback\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x11\n" +
-	"\x0f_OnFailCallback:,\x92\x82\x19 start_video_call_login_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x14B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\x9b\x03\n" +
-	"\x19TVideoCallLogoutDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x98\x01\n" +
-	"\x12TelegramLogoutData\x18\x01 \x01(\v2J.NAlice.TVideoCallCapability.TVideoCallLogoutDirective.TTelegramLogoutDataB\x18\xaa\xdd\x1b\x14telegram_logout_dataH\x00R\x14telegram_logout_data\x1ax\n" +
-	"\x13TTelegramLogoutData\x12[\n" +
-	"\x0eOnFailCallback\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:'\x92\x82\x19\x1bvideo_call_logout_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cUB!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xb3\a\n" +
-	"\x18TStartVideoCallDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xbb\x01\n" +
-	"\x1aTelegramStartVideoCallData\x18\x01 \x01(\v2Q.NAlice.TVideoCallCapability.TStartVideoCallDirective.TTelegramStartVideoCallDataB\"\xaa\xdd\x1b\x1etelegram_start_video_call_dataH\x00R\x1etelegram_start_video_call_data\x1a\xee\x04\n" +
-	"\x1bTTelegramStartVideoCallData\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12$\n" +
-	"\x06UserId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id\x12A\n" +
-	"\x0fRecipientUserId\x18\x03 \x01(\tB\x15\xaa\xdd\x1b\x11recipient_user_idR\x11recipient_user_id\x126\n" +
-	"\fVideoEnabled\x18\a \x01(\bB\x11\xaa\xdd\x1b\rvideo_enabledR\rvideo_enabled\x12g\n" +
-	"\x12OnAcceptedCallback\x18\x04 \x01(\v2\x17.google.protobuf.StructB\x1c\xa0\xdd\x1b\x05\xaa\xdd\x1b\x14on_accepted_callbackR\x14on_accepted_callback\x12j\n" +
-	"\x13OnDiscardedCallback\x18\x05 \x01(\v2\x17.google.protobuf.StructB\x1d\xa0\xdd\x1b\x05\xaa\xdd\x1b\x15on_discarded_callbackR\x15on_discarded_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x06 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback\x12^\n" +
-	"\x0fOnEndedCallback\x18\b \x01(\v2\x17.google.protobuf.StructB\x19\xa0\xdd\x1b\x05\xaa\xdd\x1b\x11on_ended_callbackR\x11on_ended_callback:\x04\xa8\xdd\x1b\x04:&\x92\x82\x19\x1astart_video_call_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x15B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xd6\x04\n" +
-	"\"TProcessIncomingVideoCallDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xe5\x01\n" +
-	"$TelegramProcessIncomingVideoCallData\x18\x01 \x01(\v2].NAlice.TVideoCallCapability.TProcessIncomingVideoCallDirective.TProcessIncomingVideoCallDataB+\xaa\xdd\x1b'telegram_process_income_video_call_dataH\x00R)telegram_process_incoming_video_call_data\x1a\xd1\x01\n" +
-	"\x1dTProcessIncomingVideoCallData\x12$\n" +
-	"\x06CallId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acall_idR\acall_id\x12$\n" +
-	"\x06UserId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id\x12^\n" +
-	"\x0fOnEndedCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x19\xa0\xdd\x1b\x05\xaa\xdd\x1b\x11on_ended_callbackR\x11on_ended_callback:\x04\xa8\xdd\x1b\x04:2\x92\x82\x19%process_incoming_video_call_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xca\x02B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xaa\x05\n" +
-	"\x19TAcceptVideoCallDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xc0\x01\n" +
-	"\x1bTelegramAcceptVideoCallData\x18\x01 \x01(\v2S.NAlice.TVideoCallCapability.TAcceptVideoCallDirective.TTelegramAcceptVideoCallDataB#\xaa\xdd\x1b\x1ftelegram_accept_video_call_dataH\x00R\x1ftelegram_accept_video_call_data\x1a\xde\x02\n" +
-	"\x1cTTelegramAcceptVideoCallData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:'\x92\x82\x19\x1baccept_video_call_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x16B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xb2\x05\n" +
-	"\x1aTDiscardVideoCallDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xc5\x01\n" +
-	"\x1cTelegramDiscardVideoCallData\x18\x01 \x01(\v2U.NAlice.TVideoCallCapability.TDiscardVideoCallDirective.TTelegramDiscardVideoCallDataB$\xaa\xdd\x1b telegram_discard_video_call_dataH\x00R telegram_discard_video_call_data\x1a\xdf\x02\n" +
-	"\x1dTTelegramDiscardVideoCallData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:(\x92\x82\x19\x1cdiscard_video_call_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x17B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xf2\x04\n" +
-	"\x11TMuteMicDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x96\x01\n" +
-	"\x13TelegramMuteMicData\x18\x01 \x01(\v2C.NAlice.TVideoCallCapability.TMuteMicDirective.TTelegramMuteMicDataB\x1a\xaa\xdd\x1b\x16telegram_mute_mic_dataH\x00R\x16telegram_mute_mic_data\x1a\xd6\x02\n" +
-	"\x14TTelegramMuteMicData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:)\x92\x82\x19\x1dvideo_call_mute_mic_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c*B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\x82\x05\n" +
-	"\x13TUnmuteMicDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xa0\x01\n" +
-	"\x15TelegramUnmuteMicData\x18\x01 \x01(\v2G.NAlice.TVideoCallCapability.TUnmuteMicDirective.TTelegramUnmuteMicDataB\x1c\xaa\xdd\x1b\x18telegram_unmute_mic_dataH\x00R\x18telegram_unmute_mic_data\x1a\xd8\x02\n" +
-	"\x16TTelegramUnmuteMicData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:+\x92\x82\x19\x1fvideo_call_unmute_mic_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c+B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\x99\x05\n" +
-	"\x15TTurnOnVideoDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xb0\x01\n" +
-	"\x1bTelegramMuteTurnOnVideoData\x18\x01 \x01(\v2K.NAlice.TVideoCallCapability.TTurnOnVideoDirective.TTelegramTurnOnVideoDataB\x1f\xaa\xdd\x1b\x1btelegram_turn_on_video_dataH\x00R\x1btelegram_turn_on_video_data\x1a\xda\x02\n" +
-	"\x18TTelegramTurnOnVideoData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:.\x92\x82\x19\"video_call_turn_on_video_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c,B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xa1\x05\n" +
-	"\x16TTurnOffVideoDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xb5\x01\n" +
-	"\x1cTelegramMuteTurnOffVideoData\x18\x01 \x01(\v2M.NAlice.TVideoCallCapability.TTurnOffVideoDirective.TTelegramTurnOffVideoDataB \xaa\xdd\x1b\x1ctelegram_turn_off_video_dataH\x00R\x1ctelegram_turn_off_video_data\x1a\xdb\x02\n" +
-	"\x19TTelegramTurnOffVideoData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:/\x92\x82\x19#video_call_turn_off_video_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c-B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xb1\x05\n" +
-	"\x18TTurnOnAutoCropDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xbd\x01\n" +
-	"\x1aTelegramTurnOnAutoCropData\x18\x01 \x01(\v2Q.NAlice.TVideoCallCapability.TTurnOnAutoCropDirective.TTelegramTurnOnAutoCropDataB#\xaa\xdd\x1b\x1ftelegram_turn_on_auto_crop_dataH\x00R\x1ftelegram_turn_on_auto_crop_data\x1a\xdd\x02\n" +
-	"\x1bTTelegramTurnOnAutoCropData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:3\x92\x82\x19&video_call_turn_on_auto_crop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd4\x01B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xb9\x05\n" +
-	"\x19TTurnOffAutoCropDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xc2\x01\n" +
-	"\x1bTelegramTurnOffAutoCropData\x18\x01 \x01(\v2S.NAlice.TVideoCallCapability.TTurnOffAutoCropDirective.TTelegramTurnOffAutoCropDataB$\xaa\xdd\x1b telegram_turn_off_auto_crop_dataH\x00R telegram_turn_off_auto_crop_data\x1a\xde\x02\n" +
-	"\x1cTTelegramTurnOffAutoCropData\x12u\n" +
-	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataB\x13\xaa\xdd\x1b\x0fcall_owner_dataR\x0fcall_owner_data\x12d\n" +
-	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x1b\xa0\xdd\x1b\x05\xaa\xdd\x1b\x13on_success_callbackR\x13on_success_callback\x12[\n" +
-	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructB\x18\xa0\xdd\x1b\x05\xaa\xdd\x1b\x10on_fail_callbackR\x10on_fail_callback:\x04\xa8\xdd\x1b\x04:4\x92\x82\x19'video_call_turn_off_auto_crop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd5\x01B!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data\x1a\xd2\x03\n" +
-	"\x1cTSetActionOnCallEndDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xd3\x01\n" +
-	"\x1eTelegramSetActionOnCallEndData\x18\x01 \x01(\v2Y.NAlice.TVideoCallCapability.TSetActionOnCallEndDirective.TTelegramSetActionOnCallEndDataB(\xaa\xdd\x1b$telegram_set_action_on_call_end_dataH\x00R$telegram_set_action_on_call_end_data\x1aa\n" +
-	"\x1fTTelegramSetActionOnCallEndData\x128\n" +
-	"\x06Action\x18\x01 \x01(\v2\x14.google.protobuf.AnyB\n" +
-	"\xaa\xdd\x1b\x06actionR\x06action:\x04\xa8\xdd\x1b\x04:7\x92\x82\x19+video_call_set_action_on_call_end_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cPB!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_data:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\n" +
-	"B\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18VideoCallCapabilityProtoP\x01ZJa.yandex-team.ru/alice/protos/endpoint/capabilities/video_call;videocallpbb\x06proto3"
+	"\vEstablished\x10\x02B\x12\n" +
+	"\x10ProviderCallData\x1a\xd8\x02\n" +
+	"\x1dTStartVideoCallLoginDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x8c\x01\n" +
+	"\x16TelegramStartLoginData\x18\x01 \x01(\v2R.NAlice.TVideoCallCapability.TStartVideoCallLoginDirective.TTelegramStartLoginDataH\x00R\x16TelegramStartLoginData\x1a\x82\x01\n" +
+	"\x17TTelegramStartLoginData\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12D\n" +
+	"\x0eOnFailCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructH\x00R\x0eOnFailCallback\x88\x01\x01B\x11\n" +
+	"\x0f_OnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\x96\x02\n" +
+	"\x19TVideoCallLogoutDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12|\n" +
+	"\x12TelegramLogoutData\x18\x01 \x01(\v2J.NAlice.TVideoCallCapability.TVideoCallLogoutDirective.TTelegramLogoutDataH\x00R\x12TelegramLogoutData\x1aV\n" +
+	"\x13TTelegramLogoutData\x12?\n" +
+	"\x0eOnFailCallback\x18\x01 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\x83\x05\n" +
+	"\x18TStartVideoCallDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x93\x01\n" +
+	"\x1aTelegramStartVideoCallData\x18\x01 \x01(\v2Q.NAlice.TVideoCallCapability.TStartVideoCallDirective.TTelegramStartVideoCallDataH\x00R\x1aTelegramStartVideoCallData\x1a\xab\x03\n" +
+	"\x1bTTelegramStartVideoCallData\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x16\n" +
+	"\x06UserId\x18\x02 \x01(\tR\x06UserId\x12(\n" +
+	"\x0fRecipientUserId\x18\x03 \x01(\tR\x0fRecipientUserId\x12\"\n" +
+	"\fVideoEnabled\x18\a \x01(\bR\fVideoEnabled\x12G\n" +
+	"\x12OnAcceptedCallback\x18\x04 \x01(\v2\x17.google.protobuf.StructR\x12OnAcceptedCallback\x12I\n" +
+	"\x13OnDiscardedCallback\x18\x05 \x01(\v2\x17.google.protobuf.StructR\x13OnDiscardedCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x06 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallback\x12A\n" +
+	"\x0fOnEndedCallback\x18\b \x01(\v2\x17.google.protobuf.StructR\x0fOnEndedCallbackB\x0e\n" +
+	"\fProviderData\x1a\x94\x03\n" +
+	"\"TProcessIncomingVideoCallDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\xb3\x01\n" +
+	"$TelegramProcessIncomingVideoCallData\x18\x01 \x01(\v2].NAlice.TVideoCallCapability.TProcessIncomingVideoCallDirective.TProcessIncomingVideoCallDataH\x00R$TelegramProcessIncomingVideoCallData\x1a\x92\x01\n" +
+	"\x1dTProcessIncomingVideoCallData\x12\x16\n" +
+	"\x06CallId\x18\x01 \x01(\tR\x06CallId\x12\x16\n" +
+	"\x06UserId\x18\x02 \x01(\tR\x06UserId\x12A\n" +
+	"\x0fOnEndedCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0fOnEndedCallbackB\x0e\n" +
+	"\fProviderData\x1a\xe3\x03\n" +
+	"\x19TAcceptVideoCallDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x97\x01\n" +
+	"\x1bTelegramAcceptVideoCallData\x18\x01 \x01(\v2S.NAlice.TVideoCallCapability.TAcceptVideoCallDirective.TTelegramAcceptVideoCallDataH\x00R\x1bTelegramAcceptVideoCallData\x1a\x86\x02\n" +
+	"\x1cTTelegramAcceptVideoCallData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xe9\x03\n" +
+	"\x1aTDiscardVideoCallDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x9b\x01\n" +
+	"\x1cTelegramDiscardVideoCallData\x18\x01 \x01(\v2U.NAlice.TVideoCallCapability.TDiscardVideoCallDirective.TTelegramDiscardVideoCallDataH\x00R\x1cTelegramDiscardVideoCallData\x1a\x87\x02\n" +
+	"\x1dTTelegramDiscardVideoCallData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xb2\x03\n" +
+	"\x11TMuteMicDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12w\n" +
+	"\x13TelegramMuteMicData\x18\x01 \x01(\v2C.NAlice.TVideoCallCapability.TMuteMicDirective.TTelegramMuteMicDataH\x00R\x13TelegramMuteMicData\x1a\xfe\x01\n" +
+	"\x14TTelegramMuteMicData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xbe\x03\n" +
+	"\x13TUnmuteMicDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x7f\n" +
+	"\x15TelegramUnmuteMicData\x18\x01 \x01(\v2G.NAlice.TVideoCallCapability.TUnmuteMicDirective.TTelegramUnmuteMicDataH\x00R\x15TelegramUnmuteMicData\x1a\x80\x02\n" +
+	"\x16TTelegramUnmuteMicData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xd3\x03\n" +
+	"\x15TTurnOnVideoDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x8f\x01\n" +
+	"\x1bTelegramMuteTurnOnVideoData\x18\x01 \x01(\v2K.NAlice.TVideoCallCapability.TTurnOnVideoDirective.TTelegramTurnOnVideoDataH\x00R\x1bTelegramMuteTurnOnVideoData\x1a\x82\x02\n" +
+	"\x18TTelegramTurnOnVideoData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xd9\x03\n" +
+	"\x16TTurnOffVideoDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x93\x01\n" +
+	"\x1cTelegramMuteTurnOffVideoData\x18\x01 \x01(\v2M.NAlice.TVideoCallCapability.TTurnOffVideoDirective.TTelegramTurnOffVideoDataH\x00R\x1cTelegramMuteTurnOffVideoData\x1a\x83\x02\n" +
+	"\x19TTelegramTurnOffVideoData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xdd\x03\n" +
+	"\x18TTurnOnAutoCropDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x93\x01\n" +
+	"\x1aTelegramTurnOnAutoCropData\x18\x01 \x01(\v2Q.NAlice.TVideoCallCapability.TTurnOnAutoCropDirective.TTelegramTurnOnAutoCropDataH\x00R\x1aTelegramTurnOnAutoCropData\x1a\x85\x02\n" +
+	"\x1bTTelegramTurnOnAutoCropData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xe3\x03\n" +
+	"\x19TTurnOffAutoCropDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x97\x01\n" +
+	"\x1bTelegramTurnOffAutoCropData\x18\x01 \x01(\v2S.NAlice.TVideoCallCapability.TTurnOffAutoCropDirective.TTelegramTurnOffAutoCropDataH\x00R\x1bTelegramTurnOffAutoCropData\x1a\x86\x02\n" +
+	"\x1cTTelegramTurnOffAutoCropData\x12^\n" +
+	"\rCallOwnerData\x18\x01 \x01(\v28.NAlice.TVideoCallCapability.TTelegramVideoCallOwnerDataR\rCallOwnerData\x12E\n" +
+	"\x11OnSuccessCallback\x18\x02 \x01(\v2\x17.google.protobuf.StructR\x11OnSuccessCallback\x12?\n" +
+	"\x0eOnFailCallback\x18\x03 \x01(\v2\x17.google.protobuf.StructR\x0eOnFailCallbackB\x0e\n" +
+	"\fProviderData\x1a\xba\x02\n" +
+	"\x1cTSetActionOnCallEndDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\xa3\x01\n" +
+	"\x1eTelegramSetActionOnCallEndData\x18\x01 \x01(\v2Y.NAlice.TVideoCallCapability.TSetActionOnCallEndDirective.TTelegramSetActionOnCallEndDataH\x00R\x1eTelegramSetActionOnCallEndData\x1aO\n" +
+	"\x1fTTelegramSetActionOnCallEndData\x12,\n" +
+	"\x06Action\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\x06ActionB\x0e\n" +
+	"\fProviderDataB\xb4\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_call\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_call_capability_proto_rawDescOnce sync.Once

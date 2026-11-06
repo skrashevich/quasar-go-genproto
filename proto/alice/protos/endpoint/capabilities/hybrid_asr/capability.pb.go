@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/hybrid_asr/capability.proto
 
-package hybrid_asrpb
+package hybrid_asr
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -284,8 +284,8 @@ const file_alice_protos_endpoint_capabilities_hybrid_asr_capability_proto_rawDes
 	"\x16PreparedHybridPartials\x18\x01 \x03(\tB\x1c\xaa\xdd\x1b\x18prepared_hybrid_partialsR\x18prepared_hybrid_partials:\x04\xa8\xdd\x1b\x04\x1a\x8a\x01\n" +
 	"\x17TRecognitionResultEvent\x12%\n" +
 	"\aPartial\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apartialR\apartial\x12>\n" +
-	"\x0eEndOfUtterance\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10end_of_utteranceR\x10end_of_utterance:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c+:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c-B\x8b\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eHybridAsrProtoZKa.yandex-team.ru/alice/protos/endpoint/capabilities/hybrid_asr;hybrid_asrpbb\x06proto3"
+	"\x0eEndOfUtterance\x18\x02 \x01(\bB\x14\xaa\xdd\x1b\x10end_of_utteranceR\x10end_of_utterance:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c+:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c-B\x9d\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eHybridAsrProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/hybrid_asrb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_hybrid_asr_capability_proto_rawDescOnce sync.Once

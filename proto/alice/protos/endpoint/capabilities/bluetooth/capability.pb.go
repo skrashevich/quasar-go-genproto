@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/bluetooth/capability.proto
 
-package bluetoothpb
+package bluetooth
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -75,9 +75,9 @@ func (TBluetoothCapability_ERole) EnumDescriptor() ([]byte, []int) {
 
 type TBluetoothCapability struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBluetoothCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBluetoothCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta       `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBluetoothCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBluetoothCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -135,10 +135,10 @@ func (x *TBluetoothCapability) GetState() *TBluetoothCapability_TState {
 
 type TBluetoothCapability_TConnectedDevice struct {
 	state          protoimpl.MessageState     `protogen:"open.v1"`
-	Role           TBluetoothCapability_ERole `protobuf:"varint,1,opt,name=Role,json=role,proto3,enum=NAlice.TBluetoothCapability_ERole" json:"Role,omitempty"`
-	Name           string                     `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Address        string                     `protobuf:"bytes,3,opt,name=Address,json=address,proto3" json:"Address,omitempty"`
-	ConnectionTime uint64                     `protobuf:"varint,4,opt,name=ConnectionTime,json=connection_time,proto3" json:"ConnectionTime,omitempty"`
+	Role           TBluetoothCapability_ERole `protobuf:"varint,1,opt,name=Role,proto3,enum=NAlice.TBluetoothCapability_ERole" json:"Role,omitempty"`
+	Name           string                     `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Address        string                     `protobuf:"bytes,3,opt,name=Address,proto3" json:"Address,omitempty"`
+	ConnectionTime uint64                     `protobuf:"varint,4,opt,name=ConnectionTime,proto3" json:"ConnectionTime,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -239,10 +239,10 @@ func (*TBluetoothCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TBluetoothCapability_TState struct {
 	state            protoimpl.MessageState                   `protogen:"open.v1"`
-	ConnectedDevices []*TBluetoothCapability_TConnectedDevice `protobuf:"bytes,2,rep,name=ConnectedDevices,json=connected_devices,proto3" json:"ConnectedDevices,omitempty"`
-	Playing          bool                                     `protobuf:"varint,3,opt,name=Playing,json=playing,proto3" json:"Playing,omitempty"`
-	Discoverable     bool                                     `protobuf:"varint,4,opt,name=Discoverable,json=discoverable,proto3" json:"Discoverable,omitempty"`
-	Volume           *uint32                                  `protobuf:"varint,5,opt,name=Volume,json=volume,proto3,oneof" json:"Volume,omitempty"`
+	ConnectedDevices []*TBluetoothCapability_TConnectedDevice `protobuf:"bytes,2,rep,name=ConnectedDevices,proto3" json:"ConnectedDevices,omitempty"`
+	Playing          bool                                     `protobuf:"varint,3,opt,name=Playing,proto3" json:"Playing,omitempty"`
+	Discoverable     bool                                     `protobuf:"varint,4,opt,name=Discoverable,proto3" json:"Discoverable,omitempty"`
+	Volume           *uint32                                  `protobuf:"varint,5,opt,name=Volume,proto3,oneof" json:"Volume,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -307,8 +307,8 @@ func (x *TBluetoothCapability_TState) GetVolume() uint32 {
 
 type TBluetoothCapability_TConnectBluetoothDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Address       string                 `protobuf:"bytes,1,opt,name=Address,json=address,proto3" json:"Address,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Address       string                 `protobuf:"bytes,1,opt,name=Address,proto3" json:"Address,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -359,7 +359,7 @@ func (x *TBluetoothCapability_TConnectBluetoothDirective) GetAddress() string {
 
 type TBluetoothCapability_TDisconnectBluetoothDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -441,38 +441,37 @@ var File_alice_protos_endpoint_capabilities_bluetooth_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_bluetooth_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/bluetooth/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9d\t\n" +
-	"\x14TBluetoothCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12X\n" +
+	"=alice/protos/endpoint/capabilities/bluetooth/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbb\x06\n" +
+	"\x14TBluetoothCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12H\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2(.NAlice.TBluetoothCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12D\n" +
-	"\x05State\x18\x03 \x01(\v2#.NAlice.TBluetoothCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xdd\x01\n" +
-	"\x10TConnectedDevice\x12@\n" +
-	"\x04Role\x18\x01 \x01(\x0e2\".NAlice.TBluetoothCapability.ERoleB\b\xaa\xdd\x1b\x04roleR\x04role\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aAddress\x18\x03 \x01(\tB\v\xaa\xdd\x1b\aaddressR\aaddress\x12<\n" +
-	"\x0eConnectionTime\x18\x04 \x01(\x04B\x13\xaa\xdd\x1b\x0fconnection_timeR\x0fconnection_time:\x04\xa8\xdd\x1b\x04\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xa9\x02\n" +
-	"\x06TState\x12q\n" +
-	"\x10ConnectedDevices\x18\x02 \x03(\v2-.NAlice.TBluetoothCapability.TConnectedDeviceB\x15\xaa\xdd\x1b\x11connected_devicesR\x11connected_devices\x12%\n" +
-	"\aPlaying\x18\x03 \x01(\bB\v\xaa\xdd\x1b\aplayingR\aplaying\x124\n" +
-	"\fDiscoverable\x18\x04 \x01(\bB\x10\xaa\xdd\x1b\fdiscoverableR\fdiscoverable\x12'\n" +
-	"\x06Volume\x18\x05 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06volumeH\x00R\x06volume\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\a_VolumeJ\x04\b\x01\x10\x02R\x0fConnectedDevice\x1a\x8c\x01\n" +
-	"\x1aTConnectBluetoothDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aAddress\x18\x01 \x01(\tB\v\xaa\xdd\x1b\aaddressR\aaddress:(\x92\x82\x19\x1bconnect_bluetooth_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdb\x01\x1ak\n" +
-	"\x1dTDisconnectBluetoothDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:+\x92\x82\x19\x1edisconnect_bluetooth_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xde\x01\x1aM\n" +
-	"\x1dTForgetPairedDevicesDirective:,\x92\x82\x19\x1fforget_paired_devices_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xac\x03\"6\n" +
+	"Parameters\x18\x02 \x01(\v2(.NAlice.TBluetoothCapability.TParametersR\n" +
+	"Parameters\x129\n" +
+	"\x05State\x18\x03 \x01(\v2#.NAlice.TBluetoothCapability.TStateR\x05State\x1a\xa0\x01\n" +
+	"\x10TConnectedDevice\x126\n" +
+	"\x04Role\x18\x01 \x01(\x0e2\".NAlice.TBluetoothCapability.ERoleR\x04Role\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12\x18\n" +
+	"\aAddress\x18\x03 \x01(\tR\aAddress\x12&\n" +
+	"\x0eConnectionTime\x18\x04 \x01(\x04R\x0eConnectionTime\x1a\r\n" +
+	"\vTParameters\x1a\xe0\x01\n" +
+	"\x06TState\x12Y\n" +
+	"\x10ConnectedDevices\x18\x02 \x03(\v2-.NAlice.TBluetoothCapability.TConnectedDeviceR\x10ConnectedDevices\x12\x18\n" +
+	"\aPlaying\x18\x03 \x01(\bR\aPlaying\x12\"\n" +
+	"\fDiscoverable\x18\x04 \x01(\bR\fDiscoverable\x12\x1b\n" +
+	"\x06Volume\x18\x05 \x01(\rH\x00R\x06Volume\x88\x01\x01B\t\n" +
+	"\a_VolumeJ\x04\b\x01\x10\x02R\x0fConnectedDevice\x1aK\n" +
+	"\x1aTConnectBluetoothDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x18\n" +
+	"\aAddress\x18\x01 \x01(\tR\aAddress\x1a4\n" +
+	"\x1dTDisconnectBluetoothDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a\x1f\n" +
+	"\x1dTForgetPairedDevicesDirective\"6\n" +
 	"\x05ERole\x12\r\n" +
 	"\tROLE_NONE\x10\x00\x12\r\n" +
 	"\tROLE_SINK\x10\x01\x12\x0f\n" +
-	"\vROLE_SOURCE\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cLB\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18BluetoothCapabilityProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/bluetooth;bluetoothpbb\x06proto3"
+	"\vROLE_SOURCE\x10\x02B\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/bluetooth\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_bluetooth_capability_proto_rawDescOnce sync.Once

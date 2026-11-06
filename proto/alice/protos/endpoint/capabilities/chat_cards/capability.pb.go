@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/chat_cards/capability.proto
 
-package chatcardspb
+package chat_cards
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -259,8 +259,8 @@ const file_alice_protos_endpoint_capabilities_chat_cards_capability_proto_rawDes
 	"\bModeCard\x10\a\x12\x1d\n" +
 	"\x19NeuroStructuredBlocksCard\x10\b\x12\x0e\n" +
 	"\n" +
-	"RichUICard\x10\t:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc2\x02B\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18ChatCardsCapabilityProtoP\x01ZJa.yandex-team.ru/alice/protos/endpoint/capabilities/chat_cards;chatcardspbb\x06proto3"
+	"RichUICard\x10\t:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc2\x02B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18ChatCardsCapabilityProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/chat_cardsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_chat_cards_capability_proto_rawDescOnce sync.Once

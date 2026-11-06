@@ -397,14 +397,14 @@ func (x *RequestVoiceprint) GetDeviceManufacturer() string {
 }
 
 type BiometryResultForClient struct {
-	state                            protoimpl.MessageState `protogen:"open.v1"`
-	RequestId                        *string                `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
-	ConsumedSamplesCount             *uint64                `protobuf:"varint,2,opt,name=consumed_samples_count,json=consumedSamplesCount" json:"consumed_samples_count,omitempty"`
-	LastChunkReceived                *bool                  `protobuf:"varint,3,opt,name=last_chunk_received,json=lastChunkReceived" json:"last_chunk_received,omitempty"`
-	RequestVoiceprint                []*RequestVoiceprint   `protobuf:"bytes,4,rep,name=request_voiceprint,json=requestVoiceprint" json:"request_voiceprint,omitempty"`
-	ExperimentalVoiceprint           []*RequestVoiceprint   `protobuf:"bytes,5,rep,name=experimental_voiceprint,json=experimentalVoiceprint" json:"experimental_voiceprint,omitempty"`
-	PreferredCompatibilityTag        *string                `protobuf:"bytes,6,opt,name=preferred_compatibility_tag,json=preferredCompatibilityTag" json:"preferred_compatibility_tag,omitempty"`
-	CompatibilityTagToGuestThreshold map[string]float64     `protobuf:"bytes,7,rep,name=compatibility_tag_to_guest_threshold,json=compatibilityTagToGuestThreshold" json:"compatibility_tag_to_guest_threshold,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value"`
+	state                            protoimpl.MessageState                                           `protogen:"open.v1"`
+	RequestId                        *string                                                          `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
+	ConsumedSamplesCount             *uint64                                                          `protobuf:"varint,2,opt,name=consumed_samples_count,json=consumedSamplesCount" json:"consumed_samples_count,omitempty"`
+	LastChunkReceived                *bool                                                            `protobuf:"varint,3,opt,name=last_chunk_received,json=lastChunkReceived" json:"last_chunk_received,omitempty"`
+	RequestVoiceprint                []*RequestVoiceprint                                             `protobuf:"bytes,4,rep,name=request_voiceprint,json=requestVoiceprint" json:"request_voiceprint,omitempty"`
+	ExperimentalVoiceprint           []*RequestVoiceprint                                             `protobuf:"bytes,5,rep,name=experimental_voiceprint,json=experimentalVoiceprint" json:"experimental_voiceprint,omitempty"`
+	PreferredCompatibilityTag        *string                                                          `protobuf:"bytes,6,opt,name=preferred_compatibility_tag,json=preferredCompatibilityTag" json:"preferred_compatibility_tag,omitempty"`
+	CompatibilityTagToGuestThreshold []*BiometryResultForClient_CompatibilityTagToGuestThresholdEntry `protobuf:"bytes,7,rep,name=compatibility_tag_to_guest_threshold,json=compatibilityTagToGuestThreshold" json:"compatibility_tag_to_guest_threshold,omitempty"`
 	unknownFields                    protoimpl.UnknownFields
 	sizeCache                        protoimpl.SizeCache
 }
@@ -481,7 +481,7 @@ func (x *BiometryResultForClient) GetPreferredCompatibilityTag() string {
 	return ""
 }
 
-func (x *BiometryResultForClient) GetCompatibilityTagToGuestThreshold() map[string]float64 {
+func (x *BiometryResultForClient) GetCompatibilityTagToGuestThreshold() []*BiometryResultForClient_CompatibilityTagToGuestThresholdEntry {
 	if x != nil {
 		return x.CompatibilityTagToGuestThreshold
 	}
@@ -746,10 +746,10 @@ func (x *TEnrollmentAudios) GetIsPseudo() bool {
 
 type TEnrollmentVoiceprintsInfo struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	CompatibilityTag *string                `protobuf:"bytes,1,opt,name=compatibility_tag" json:"compatibility_tag,omitempty"`
+	CompatibilityTag *string                `protobuf:"bytes,1,opt,name=compatibility_tag,json=compatibilityTag" json:"compatibility_tag,omitempty"`
 	Cnt              *uint32                `protobuf:"varint,2,opt,name=cnt" json:"cnt,omitempty"`
 	Timestamp        *int64                 `protobuf:"varint,3,opt,name=timestamp" json:"timestamp,omitempty"`
-	PseudoRequestIds []string               `protobuf:"bytes,5,rep,name=pseudo_request_ids" json:"pseudo_request_ids,omitempty"`
+	PseudoRequestIds []string               `protobuf:"bytes,5,rep,name=pseudo_request_ids,json=pseudoRequestIds" json:"pseudo_request_ids,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -814,9 +814,9 @@ func (x *TEnrollmentVoiceprintsInfo) GetPseudoRequestIds() []string {
 
 type TEnrollmentInfo struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	PersonId      *string                       `protobuf:"bytes,1,opt,name=person_id" json:"person_id,omitempty"`
+	PersonId      *string                       `protobuf:"bytes,1,opt,name=person_id,json=personId" json:"person_id,omitempty"`
 	Voiceprints   []*TEnrollmentVoiceprintsInfo `protobuf:"bytes,3,rep,name=voiceprints" json:"voiceprints,omitempty"`
-	DeviceId      *string                       `protobuf:"bytes,4,opt,name=device_id" json:"device_id,omitempty"`
+	DeviceId      *string                       `protobuf:"bytes,4,opt,name=device_id,json=deviceId" json:"device_id,omitempty"`
 	Timestamp     *int64                        `protobuf:"varint,5,opt,name=timestamp" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -882,14 +882,14 @@ func (x *TEnrollmentInfo) GetTimestamp() int64 {
 
 type DetectionDebugInfo struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
-	PersonIds               []string               `protobuf:"bytes,1,rep,name=person_ids" json:"person_ids,omitempty"`
-	RawScores               []float64              `protobuf:"fixed64,2,rep,name=raw_scores" json:"raw_scores,omitempty"`
+	PersonIds               []string               `protobuf:"bytes,1,rep,name=person_ids,json=personIds" json:"person_ids,omitempty"`
+	RawScores               []float64              `protobuf:"fixed64,2,rep,name=raw_scores,json=rawScores" json:"raw_scores,omitempty"`
 	Probabilities           []float64              `protobuf:"fixed64,3,rep,name=probabilities" json:"probabilities,omitempty"`
-	GuestThreshold          *float64               `protobuf:"fixed64,4,opt,name=guest_threshold" json:"guest_threshold,omitempty"`
+	GuestThreshold          *float64               `protobuf:"fixed64,4,opt,name=guest_threshold,json=guestThreshold" json:"guest_threshold,omitempty"`
 	Mode                    *string                `protobuf:"bytes,5,opt,name=mode" json:"mode,omitempty"`
-	ConfidenceThreshold     *float64               `protobuf:"fixed64,6,opt,name=confidence_threshold" json:"confidence_threshold,omitempty"`
-	ConfidenceDiffThreshold *float64               `protobuf:"fixed64,7,opt,name=confidence_diff_threshold" json:"confidence_diff_threshold,omitempty"`
-	ContextScoring          *ContextScoring        `protobuf:"bytes,8,opt,name=context_scoring" json:"context_scoring,omitempty"`
+	ConfidenceThreshold     *float64               `protobuf:"fixed64,6,opt,name=confidence_threshold,json=confidenceThreshold" json:"confidence_threshold,omitempty"`
+	ConfidenceDiffThreshold *float64               `protobuf:"fixed64,7,opt,name=confidence_diff_threshold,json=confidenceDiffThreshold" json:"confidence_diff_threshold,omitempty"`
+	ContextScoring          *ContextScoring        `protobuf:"bytes,8,opt,name=context_scoring,json=contextScoring" json:"context_scoring,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -982,13 +982,13 @@ func (x *DetectionDebugInfo) GetContextScoring() *ContextScoring {
 
 type ContextScoring struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
-	MaxTimeDiffSeconds       *int32                 `protobuf:"varint,1,opt,name=max_time_diff_seconds" json:"max_time_diff_seconds,omitempty"`
-	MinEmbeddingCosine       *float64               `protobuf:"fixed64,2,opt,name=min_embedding_cosine" json:"min_embedding_cosine,omitempty"`
+	MaxTimeDiffSeconds       *int32                 `protobuf:"varint,1,opt,name=max_time_diff_seconds,json=maxTimeDiffSeconds" json:"max_time_diff_seconds,omitempty"`
+	MinEmbeddingCosine       *float64               `protobuf:"fixed64,2,opt,name=min_embedding_cosine,json=minEmbeddingCosine" json:"min_embedding_cosine,omitempty"`
 	Lambda                   *float64               `protobuf:"fixed64,3,opt,name=lambda" json:"lambda,omitempty"`
-	UseExpFormula            *bool                  `protobuf:"varint,4,opt,name=use_exp_formula" json:"use_exp_formula,omitempty"`
-	PreviousScores           []float64              `protobuf:"fixed64,5,rep,name=previous_scores" json:"previous_scores,omitempty"`
-	CurrentScores            []float64              `protobuf:"fixed64,6,rep,name=current_scores" json:"current_scores,omitempty"`
-	EmbeddingCurrPrevSimilar *float64               `protobuf:"fixed64,7,opt,name=embedding_curr_prev_similar" json:"embedding_curr_prev_similar,omitempty"`
+	UseExpFormula            *bool                  `protobuf:"varint,4,opt,name=use_exp_formula,json=useExpFormula" json:"use_exp_formula,omitempty"`
+	PreviousScores           []float64              `protobuf:"fixed64,5,rep,name=previous_scores,json=previousScores" json:"previous_scores,omitempty"`
+	CurrentScores            []float64              `protobuf:"fixed64,6,rep,name=current_scores,json=currentScores" json:"current_scores,omitempty"`
+	EmbeddingCurrPrevSimilar *float64               `protobuf:"fixed64,7,opt,name=embedding_curr_prev_similar,json=embeddingCurrPrevSimilar" json:"embedding_curr_prev_similar,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -1077,7 +1077,7 @@ type AgeResult struct {
 	Age           *AgeResult_EAge           `protobuf:"varint,1,opt,name=age,enum=YabioOndeviceProtobuf.AgeResult_EAge" json:"age,omitempty"`
 	Score         *float64                  `protobuf:"fixed64,2,opt,name=score" json:"score,omitempty"`
 	Confidence    *AgeResult_EAgeConfidence `protobuf:"varint,4,opt,name=confidence,enum=YabioOndeviceProtobuf.AgeResult_EAgeConfidence" json:"confidence,omitempty"`
-	ModelVersion  *string                   `protobuf:"bytes,3,opt,name=model_version" json:"model_version,omitempty"`
+	ModelVersion  *string                   `protobuf:"bytes,3,opt,name=model_version,json=modelVersion" json:"model_version,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1144,7 +1144,7 @@ type GenderResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Gender        *GenderResult_EGender  `protobuf:"varint,1,opt,name=gender,enum=YabioOndeviceProtobuf.GenderResult_EGender" json:"gender,omitempty"`
 	Score         *float64               `protobuf:"fixed64,2,opt,name=score" json:"score,omitempty"`
-	ModelVersion  *string                `protobuf:"bytes,3,opt,name=model_version" json:"model_version,omitempty"`
+	ModelVersion  *string                `protobuf:"bytes,3,opt,name=model_version,json=modelVersion" json:"model_version,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1202,18 +1202,18 @@ func (x *GenderResult) GetModelVersion() string {
 
 type MatchResult struct {
 	state                          protoimpl.MessageState `protogen:"open.v1"`
-	MatchedPersonId                *string                `protobuf:"bytes,1,opt,name=matched_person_id" json:"matched_person_id,omitempty"`
-	DetectionDebugInfo             *DetectionDebugInfo    `protobuf:"bytes,2,opt,name=detection_debug_info" json:"detection_debug_info,omitempty"`
-	SamplesCountUsedToComputeMatch *uint64                `protobuf:"varint,3,opt,name=samples_count_used_to_compute_match" json:"samples_count_used_to_compute_match,omitempty"`
-	CompatibilityTagUsedInMatching *string                `protobuf:"bytes,5,opt,name=compatibility_tag_used_in_matching" json:"compatibility_tag_used_in_matching,omitempty"`
+	MatchedPersonId                *string                `protobuf:"bytes,1,opt,name=matched_person_id,json=matchedPersonId" json:"matched_person_id,omitempty"`
+	DetectionDebugInfo             *DetectionDebugInfo    `protobuf:"bytes,2,opt,name=detection_debug_info,json=detectionDebugInfo" json:"detection_debug_info,omitempty"`
+	SamplesCountUsedToComputeMatch *uint64                `protobuf:"varint,3,opt,name=samples_count_used_to_compute_match,json=samplesCountUsedToComputeMatch" json:"samples_count_used_to_compute_match,omitempty"`
+	CompatibilityTagUsedInMatching *string                `protobuf:"bytes,5,opt,name=compatibility_tag_used_in_matching,json=compatibilityTagUsedInMatching" json:"compatibility_tag_used_in_matching,omitempty"`
 	Errors                         *string                `protobuf:"bytes,7,opt,name=errors" json:"errors,omitempty"`
-	ReceivedAudioSizeInBytes       *uint64                `protobuf:"varint,8,opt,name=received_audio_size_in_bytes" json:"received_audio_size_in_bytes,omitempty"`
-	MatchTime                      *string                `protobuf:"bytes,9,opt,name=match_time" json:"match_time,omitempty"`
-	LocalLastChunkReceived         *bool                  `protobuf:"varint,10,opt,name=local_last_chunk_received" json:"local_last_chunk_received,omitempty"`
-	MatchConfidence                *EMatchConfidence      `protobuf:"varint,12,opt,name=match_confidence,enum=YabioOndeviceProtobuf.EMatchConfidence" json:"match_confidence,omitempty"`
-	AgeResult                      *AgeResult             `protobuf:"bytes,13,opt,name=age_result" json:"age_result,omitempty"`
-	GenderResult                   *GenderResult          `protobuf:"bytes,14,opt,name=gender_result" json:"gender_result,omitempty"`
-	ConfidenceLevel_10             *uint32                `protobuf:"varint,15,opt,name=confidence_level_10" json:"confidence_level_10,omitempty"`
+	ReceivedAudioSizeInBytes       *uint64                `protobuf:"varint,8,opt,name=received_audio_size_in_bytes,json=receivedAudioSizeInBytes" json:"received_audio_size_in_bytes,omitempty"`
+	MatchTime                      *string                `protobuf:"bytes,9,opt,name=match_time,json=matchTime" json:"match_time,omitempty"`
+	LocalLastChunkReceived         *bool                  `protobuf:"varint,10,opt,name=local_last_chunk_received,json=localLastChunkReceived" json:"local_last_chunk_received,omitempty"`
+	MatchConfidence                *EMatchConfidence      `protobuf:"varint,12,opt,name=match_confidence,json=matchConfidence,enum=YabioOndeviceProtobuf.EMatchConfidence" json:"match_confidence,omitempty"`
+	AgeResult                      *AgeResult             `protobuf:"bytes,13,opt,name=age_result,json=ageResult" json:"age_result,omitempty"`
+	GenderResult                   *GenderResult          `protobuf:"bytes,14,opt,name=gender_result,json=genderResult" json:"gender_result,omitempty"`
+	ConfidenceLevel_10             *uint32                `protobuf:"varint,15,opt,name=confidence_level_10,json=confidenceLevel10" json:"confidence_level_10,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -1334,8 +1334,8 @@ func (x *MatchResult) GetConfidenceLevel_10() uint32 {
 
 type MatchingInfo struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	LastUsedMatchingResult *MatchResult           `protobuf:"bytes,1,opt,name=last_used_matching_result" json:"last_used_matching_result,omitempty"`
-	UniqueMatchingResults  []*MatchResult         `protobuf:"bytes,2,rep,name=unique_matching_results" json:"unique_matching_results,omitempty"`
+	LastUsedMatchingResult *MatchResult           `protobuf:"bytes,1,opt,name=last_used_matching_result,json=lastUsedMatchingResult" json:"last_used_matching_result,omitempty"`
+	UniqueMatchingResults  []*MatchResult         `protobuf:"bytes,2,rep,name=unique_matching_results,json=uniqueMatchingResults" json:"unique_matching_results,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -1387,8 +1387,8 @@ func (x *MatchingInfo) GetUniqueMatchingResults() []*MatchResult {
 type ProcessingInfo struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Rtf             *float64               `protobuf:"fixed64,1,opt,name=rtf" json:"rtf,omitempty"`
-	AudioDurationMs *float64               `protobuf:"fixed64,2,opt,name=audio_duration_ms" json:"audio_duration_ms,omitempty"`
-	LatencyMs       *float64               `protobuf:"fixed64,3,opt,name=latency_ms" json:"latency_ms,omitempty"`
+	AudioDurationMs *float64               `protobuf:"fixed64,2,opt,name=audio_duration_ms,json=audioDurationMs" json:"audio_duration_ms,omitempty"`
+	LatencyMs       *float64               `protobuf:"fixed64,3,opt,name=latency_ms,json=latencyMs" json:"latency_ms,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1498,16 +1498,16 @@ func (x *OndeviceBioSessionInfo) GetRequest() *ProcessingInfo {
 
 type RequestDiagnosticData struct {
 	state                        protoimpl.MessageState  `protogen:"open.v1"`
-	StartTime                    *string                 `protobuf:"bytes,1,opt,name=start_time" json:"start_time,omitempty"`
-	EndTime                      *string                 `protobuf:"bytes,2,opt,name=end_time" json:"end_time,omitempty"`
-	SvnVersion                   *string                 `protobuf:"bytes,3,opt,name=svn_version" json:"svn_version,omitempty"`
-	ReceivedAudioSizeInBytes     *uint32                 `protobuf:"varint,4,opt,name=received_audio_size_in_bytes" json:"received_audio_size_in_bytes,omitempty"`
-	EnrollmentsInfo              []*TEnrollmentInfo      `protobuf:"bytes,5,rep,name=enrollments_info" json:"enrollments_info,omitempty"`
-	IsEnrollmentActive           *bool                   `protobuf:"varint,6,opt,name=is_enrollment_active" json:"is_enrollment_active,omitempty"`
-	MatchingInfo                 *MatchingInfo           `protobuf:"bytes,9,opt,name=matching_info" json:"matching_info,omitempty"`
-	OndeviceBioSessionInfo       *OndeviceBioSessionInfo `protobuf:"bytes,10,opt,name=ondevice_bio_session_info" json:"ondevice_bio_session_info,omitempty"`
-	MatchWasReplacedByRandomUser *bool                   `protobuf:"varint,11,opt,name=match_was_replaced_by_random_user" json:"match_was_replaced_by_random_user,omitempty"`
-	AdditionalInfo               *string                 `protobuf:"bytes,12,opt,name=additional_info" json:"additional_info,omitempty"`
+	StartTime                    *string                 `protobuf:"bytes,1,opt,name=start_time,json=startTime" json:"start_time,omitempty"`
+	EndTime                      *string                 `protobuf:"bytes,2,opt,name=end_time,json=endTime" json:"end_time,omitempty"`
+	SvnVersion                   *string                 `protobuf:"bytes,3,opt,name=svn_version,json=svnVersion" json:"svn_version,omitempty"`
+	ReceivedAudioSizeInBytes     *uint32                 `protobuf:"varint,4,opt,name=received_audio_size_in_bytes,json=receivedAudioSizeInBytes" json:"received_audio_size_in_bytes,omitempty"`
+	EnrollmentsInfo              []*TEnrollmentInfo      `protobuf:"bytes,5,rep,name=enrollments_info,json=enrollmentsInfo" json:"enrollments_info,omitempty"`
+	IsEnrollmentActive           *bool                   `protobuf:"varint,6,opt,name=is_enrollment_active,json=isEnrollmentActive" json:"is_enrollment_active,omitempty"`
+	MatchingInfo                 *MatchingInfo           `protobuf:"bytes,9,opt,name=matching_info,json=matchingInfo" json:"matching_info,omitempty"`
+	OndeviceBioSessionInfo       *OndeviceBioSessionInfo `protobuf:"bytes,10,opt,name=ondevice_bio_session_info,json=ondeviceBioSessionInfo" json:"ondevice_bio_session_info,omitempty"`
+	MatchWasReplacedByRandomUser *bool                   `protobuf:"varint,11,opt,name=match_was_replaced_by_random_user,json=matchWasReplacedByRandomUser" json:"match_was_replaced_by_random_user,omitempty"`
+	AdditionalInfo               *string                 `protobuf:"bytes,12,opt,name=additional_info,json=additionalInfo" json:"additional_info,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -1612,6 +1612,58 @@ func (x *RequestDiagnosticData) GetAdditionalInfo() string {
 	return ""
 }
 
+type BiometryResultForClient_CompatibilityTagToGuestThresholdEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *float64               `protobuf:"fixed64,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) Reset() {
+	*x = BiometryResultForClient_CompatibilityTagToGuestThresholdEntry{}
+	mi := &file_voicetech_bio_ondevice_proto_api_bio_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) ProtoMessage() {}
+
+func (x *BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_voicetech_bio_ondevice_proto_api_bio_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BiometryResultForClient_CompatibilityTagToGuestThresholdEntry.ProtoReflect.Descriptor instead.
+func (*BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) Descriptor() ([]byte, []int) {
+	return file_voicetech_bio_ondevice_proto_api_bio_proto_rawDescGZIP(), []int{1, 0}
+}
+
+func (x *BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *BiometryResultForClient_CompatibilityTagToGuestThresholdEntry) GetValue() float64 {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return 0
+}
+
 var File_voicetech_bio_ondevice_proto_api_bio_proto protoreflect.FileDescriptor
 
 const file_voicetech_bio_ondevice_proto_api_bio_proto_rawDesc = "" +
@@ -1634,7 +1686,7 @@ const file_voicetech_bio_ondevice_proto_api_bio_proto_rawDesc = "" +
 	"\x04text\x18\v \x01(\tR\x04text\x12!\n" +
 	"\fdevice_model\x18\f \x01(\tR\vdeviceModel\x12\x1b\n" +
 	"\tdevice_id\x18\r \x01(\tR\bdeviceId\x12/\n" +
-	"\x13device_manufacturer\x18\x0e \x01(\tR\x12deviceManufacturer\"\x96\x05\n" +
+	"\x13device_manufacturer\x18\x0e \x01(\tR\x12deviceManufacturer\"\x92\x05\n" +
 	"\x17BiometryResultForClient\x12\x1d\n" +
 	"\n" +
 	"request_id\x18\x01 \x01(\tR\trequestId\x124\n" +
@@ -1643,10 +1695,10 @@ const file_voicetech_bio_ondevice_proto_api_bio_proto_rawDesc = "" +
 	"\x12request_voiceprint\x18\x04 \x03(\v2(.YabioOndeviceProtobuf.RequestVoiceprintR\x11requestVoiceprint\x12a\n" +
 	"\x17experimental_voiceprint\x18\x05 \x03(\v2(.YabioOndeviceProtobuf.RequestVoiceprintR\x16experimentalVoiceprint\x12>\n" +
 	"\x1bpreferred_compatibility_tag\x18\x06 \x01(\tR\x19preferredCompatibilityTag\x12\xa4\x01\n" +
-	"$compatibility_tag_to_guest_threshold\x18\a \x03(\v2T.YabioOndeviceProtobuf.BiometryResultForClient.CompatibilityTagToGuestThresholdEntryR compatibilityTagToGuestThreshold\x1aS\n" +
+	"$compatibility_tag_to_guest_threshold\x18\a \x03(\v2T.YabioOndeviceProtobuf.BiometryResultForClient.CompatibilityTagToGuestThresholdEntryR compatibilityTagToGuestThreshold\x1aO\n" +
 	"%CompatibilityTagToGuestThresholdEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value:\x028\x01\"\xdd\x01\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value\"\xdd\x01\n" +
 	"\vTEnrollment\x12J\n" +
 	"\vVoiceprints\x18\x01 \x03(\v2(.YabioOndeviceProtobuf.RequestVoiceprintR\vVoiceprints\x12\x1b\n" +
 	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId\x12\x1c\n" +
@@ -1665,107 +1717,103 @@ const file_voicetech_bio_ondevice_proto_api_bio_proto_rawDesc = "" +
 	"\x06audios\x18\x01 \x03(\v2'.YabioOndeviceProtobuf.TEnrollmentAudioR\x06audios\x12\x1b\n" +
 	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId\x12\x1c\n" +
 	"\ttimestamp\x18\x03 \x01(\x03R\ttimestamp\x12\x1b\n" +
-	"\tis_pseudo\x18\x04 \x01(\bR\bisPseudo\"\xaa\x01\n" +
-	"\x1aTEnrollmentVoiceprintsInfo\x12,\n" +
-	"\x11compatibility_tag\x18\x01 \x01(\tR\x11compatibility_tag\x12\x10\n" +
+	"\tis_pseudo\x18\x04 \x01(\bR\bisPseudo\"\xa7\x01\n" +
+	"\x1aTEnrollmentVoiceprintsInfo\x12+\n" +
+	"\x11compatibility_tag\x18\x01 \x01(\tR\x10compatibilityTag\x12\x10\n" +
 	"\x03cnt\x18\x02 \x01(\rR\x03cnt\x12\x1c\n" +
-	"\ttimestamp\x18\x03 \x01(\x03R\ttimestamp\x12.\n" +
-	"\x12pseudo_request_ids\x18\x05 \x03(\tR\x12pseudo_request_ids\"\xc6\x01\n" +
-	"\x0fTEnrollmentInfo\x12\x1c\n" +
-	"\tperson_id\x18\x01 \x01(\tR\tperson_id\x12S\n" +
-	"\vvoiceprints\x18\x03 \x03(\v21.YabioOndeviceProtobuf.TEnrollmentVoiceprintsInfoR\vvoiceprints\x12\x1c\n" +
-	"\tdevice_id\x18\x04 \x01(\tR\tdevice_id\x12\x1c\n" +
-	"\ttimestamp\x18\x05 \x01(\x03R\ttimestampJ\x04\b\x02\x10\x03\"\xfb\x02\n" +
-	"\x12DetectionDebugInfo\x12\x1e\n" +
+	"\ttimestamp\x18\x03 \x01(\x03R\ttimestamp\x12,\n" +
+	"\x12pseudo_request_ids\x18\x05 \x03(\tR\x10pseudoRequestIds\"\xc4\x01\n" +
+	"\x0fTEnrollmentInfo\x12\x1b\n" +
+	"\tperson_id\x18\x01 \x01(\tR\bpersonId\x12S\n" +
+	"\vvoiceprints\x18\x03 \x03(\v21.YabioOndeviceProtobuf.TEnrollmentVoiceprintsInfoR\vvoiceprints\x12\x1b\n" +
+	"\tdevice_id\x18\x04 \x01(\tR\bdeviceId\x12\x1c\n" +
+	"\ttimestamp\x18\x05 \x01(\x03R\ttimestampJ\x04\b\x02\x10\x03\"\xf4\x02\n" +
+	"\x12DetectionDebugInfo\x12\x1d\n" +
 	"\n" +
-	"person_ids\x18\x01 \x03(\tR\n" +
-	"person_ids\x12\x1e\n" +
+	"person_ids\x18\x01 \x03(\tR\tpersonIds\x12\x1d\n" +
 	"\n" +
-	"raw_scores\x18\x02 \x03(\x01R\n" +
-	"raw_scores\x12$\n" +
-	"\rprobabilities\x18\x03 \x03(\x01R\rprobabilities\x12(\n" +
-	"\x0fguest_threshold\x18\x04 \x01(\x01R\x0fguest_threshold\x12\x12\n" +
-	"\x04mode\x18\x05 \x01(\tR\x04mode\x122\n" +
-	"\x14confidence_threshold\x18\x06 \x01(\x01R\x14confidence_threshold\x12<\n" +
-	"\x19confidence_diff_threshold\x18\a \x01(\x01R\x19confidence_diff_threshold\x12O\n" +
-	"\x0fcontext_scoring\x18\b \x01(\v2%.YabioOndeviceProtobuf.ContextScoringR\x0fcontext_scoring\"\xd0\x02\n" +
-	"\x0eContextScoring\x124\n" +
-	"\x15max_time_diff_seconds\x18\x01 \x01(\x05R\x15max_time_diff_seconds\x122\n" +
-	"\x14min_embedding_cosine\x18\x02 \x01(\x01R\x14min_embedding_cosine\x12\x16\n" +
-	"\x06lambda\x18\x03 \x01(\x01R\x06lambda\x12(\n" +
-	"\x0fuse_exp_formula\x18\x04 \x01(\bR\x0fuse_exp_formula\x12(\n" +
-	"\x0fprevious_scores\x18\x05 \x03(\x01R\x0fprevious_scores\x12&\n" +
-	"\x0ecurrent_scores\x18\x06 \x03(\x01R\x0ecurrent_scores\x12@\n" +
-	"\x1bembedding_curr_prev_similar\x18\a \x01(\x01R\x1bembedding_curr_prev_similar\"\x94\x02\n" +
+	"raw_scores\x18\x02 \x03(\x01R\trawScores\x12$\n" +
+	"\rprobabilities\x18\x03 \x03(\x01R\rprobabilities\x12'\n" +
+	"\x0fguest_threshold\x18\x04 \x01(\x01R\x0eguestThreshold\x12\x12\n" +
+	"\x04mode\x18\x05 \x01(\tR\x04mode\x121\n" +
+	"\x14confidence_threshold\x18\x06 \x01(\x01R\x13confidenceThreshold\x12:\n" +
+	"\x19confidence_diff_threshold\x18\a \x01(\x01R\x17confidenceDiffThreshold\x12N\n" +
+	"\x0fcontext_scoring\x18\b \x01(\v2%.YabioOndeviceProtobuf.ContextScoringR\x0econtextScoring\"\xc4\x02\n" +
+	"\x0eContextScoring\x121\n" +
+	"\x15max_time_diff_seconds\x18\x01 \x01(\x05R\x12maxTimeDiffSeconds\x120\n" +
+	"\x14min_embedding_cosine\x18\x02 \x01(\x01R\x12minEmbeddingCosine\x12\x16\n" +
+	"\x06lambda\x18\x03 \x01(\x01R\x06lambda\x12&\n" +
+	"\x0fuse_exp_formula\x18\x04 \x01(\bR\ruseExpFormula\x12'\n" +
+	"\x0fprevious_scores\x18\x05 \x03(\x01R\x0epreviousScores\x12%\n" +
+	"\x0ecurrent_scores\x18\x06 \x03(\x01R\rcurrentScores\x12=\n" +
+	"\x1bembedding_curr_prev_similar\x18\a \x01(\x01R\x18embeddingCurrPrevSimilar\"\x93\x02\n" +
 	"\tAgeResult\x127\n" +
 	"\x03age\x18\x01 \x01(\x0e2%.YabioOndeviceProtobuf.AgeResult.EAgeR\x03age\x12\x14\n" +
 	"\x05score\x18\x02 \x01(\x01R\x05score\x12O\n" +
 	"\n" +
 	"confidence\x18\x04 \x01(\x0e2/.YabioOndeviceProtobuf.AgeResult.EAgeConfidenceR\n" +
-	"confidence\x12$\n" +
-	"\rmodel_version\x18\x03 \x01(\tR\rmodel_version\"#\n" +
+	"confidence\x12#\n" +
+	"\rmodel_version\x18\x03 \x01(\tR\fmodelVersion\"#\n" +
 	"\x0eEAgeConfidence\x12\a\n" +
 	"\x03low\x10\x00\x12\b\n" +
 	"\x04high\x10\x01\"\x1c\n" +
 	"\x04EAge\x12\t\n" +
 	"\x05adult\x10\x00\x12\t\n" +
-	"\x05child\x10\x01\"\xb0\x01\n" +
+	"\x05child\x10\x01\"\xaf\x01\n" +
 	"\fGenderResult\x12C\n" +
 	"\x06gender\x18\x01 \x01(\x0e2+.YabioOndeviceProtobuf.GenderResult.EGenderR\x06gender\x12\x14\n" +
-	"\x05score\x18\x02 \x01(\x01R\x05score\x12$\n" +
-	"\rmodel_version\x18\x03 \x01(\tR\rmodel_version\"\x1f\n" +
+	"\x05score\x18\x02 \x01(\x01R\x05score\x12#\n" +
+	"\rmodel_version\x18\x03 \x01(\tR\fmodelVersion\"\x1f\n" +
 	"\aEGender\x12\b\n" +
 	"\x04male\x10\x00\x12\n" +
 	"\n" +
-	"\x06female\x10\x01\"\x9c\x06\n" +
-	"\vMatchResult\x12,\n" +
-	"\x11matched_person_id\x18\x01 \x01(\tR\x11matched_person_id\x12]\n" +
-	"\x14detection_debug_info\x18\x02 \x01(\v2).YabioOndeviceProtobuf.DetectionDebugInfoR\x14detection_debug_info\x12P\n" +
-	"#samples_count_used_to_compute_match\x18\x03 \x01(\x04R#samples_count_used_to_compute_match\x12N\n" +
-	"\"compatibility_tag_used_in_matching\x18\x05 \x01(\tR\"compatibility_tag_used_in_matching\x12\x16\n" +
-	"\x06errors\x18\a \x01(\tR\x06errors\x12B\n" +
-	"\x1creceived_audio_size_in_bytes\x18\b \x01(\x04R\x1creceived_audio_size_in_bytes\x12\x1e\n" +
+	"\x06female\x10\x01\"\x82\x06\n" +
+	"\vMatchResult\x12*\n" +
+	"\x11matched_person_id\x18\x01 \x01(\tR\x0fmatchedPersonId\x12[\n" +
+	"\x14detection_debug_info\x18\x02 \x01(\v2).YabioOndeviceProtobuf.DetectionDebugInfoR\x12detectionDebugInfo\x12K\n" +
+	"#samples_count_used_to_compute_match\x18\x03 \x01(\x04R\x1esamplesCountUsedToComputeMatch\x12J\n" +
+	"\"compatibility_tag_used_in_matching\x18\x05 \x01(\tR\x1ecompatibilityTagUsedInMatching\x12\x16\n" +
+	"\x06errors\x18\a \x01(\tR\x06errors\x12>\n" +
+	"\x1creceived_audio_size_in_bytes\x18\b \x01(\x04R\x18receivedAudioSizeInBytes\x12\x1d\n" +
 	"\n" +
-	"match_time\x18\t \x01(\tR\n" +
-	"match_time\x12<\n" +
+	"match_time\x18\t \x01(\tR\tmatchTime\x129\n" +
 	"\x19local_last_chunk_received\x18\n" +
-	" \x01(\bR\x19local_last_chunk_received\x12S\n" +
-	"\x10match_confidence\x18\f \x01(\x0e2'.YabioOndeviceProtobuf.EMatchConfidenceR\x10match_confidence\x12@\n" +
+	" \x01(\bR\x16localLastChunkReceived\x12R\n" +
+	"\x10match_confidence\x18\f \x01(\x0e2'.YabioOndeviceProtobuf.EMatchConfidenceR\x0fmatchConfidence\x12?\n" +
 	"\n" +
-	"age_result\x18\r \x01(\v2 .YabioOndeviceProtobuf.AgeResultR\n" +
-	"age_result\x12I\n" +
-	"\rgender_result\x18\x0e \x01(\v2#.YabioOndeviceProtobuf.GenderResultR\rgender_result\x120\n" +
-	"\x13confidence_level_10\x18\x0f \x01(\rR\x13confidence_level_10J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\v\x10\f\"\xd4\x01\n" +
-	"\fMatchingInfo\x12`\n" +
-	"\x19last_used_matching_result\x18\x01 \x01(\v2\".YabioOndeviceProtobuf.MatchResultR\x19last_used_matching_result\x12\\\n" +
-	"\x17unique_matching_results\x18\x02 \x03(\v2\".YabioOndeviceProtobuf.MatchResultR\x17unique_matching_resultsJ\x04\b\x03\x10\x04\"p\n" +
+	"age_result\x18\r \x01(\v2 .YabioOndeviceProtobuf.AgeResultR\tageResult\x12H\n" +
+	"\rgender_result\x18\x0e \x01(\v2#.YabioOndeviceProtobuf.GenderResultR\fgenderResult\x12.\n" +
+	"\x13confidence_level_10\x18\x0f \x01(\rR\x11confidenceLevel10J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\v\x10\f\"\xcf\x01\n" +
+	"\fMatchingInfo\x12]\n" +
+	"\x19last_used_matching_result\x18\x01 \x01(\v2\".YabioOndeviceProtobuf.MatchResultR\x16lastUsedMatchingResult\x12Z\n" +
+	"\x17unique_matching_results\x18\x02 \x03(\v2\".YabioOndeviceProtobuf.MatchResultR\x15uniqueMatchingResultsJ\x04\b\x03\x10\x04\"m\n" +
 	"\x0eProcessingInfo\x12\x10\n" +
-	"\x03rtf\x18\x01 \x01(\x01R\x03rtf\x12,\n" +
-	"\x11audio_duration_ms\x18\x02 \x01(\x01R\x11audio_duration_ms\x12\x1e\n" +
+	"\x03rtf\x18\x01 \x01(\x01R\x03rtf\x12*\n" +
+	"\x11audio_duration_ms\x18\x02 \x01(\x01R\x0faudioDurationMs\x12\x1d\n" +
 	"\n" +
-	"latency_ms\x18\x03 \x01(\x01R\n" +
-	"latency_ms\"\xac\x01\n" +
+	"latency_ms\x18\x03 \x01(\x01R\tlatencyMs\"\xac\x01\n" +
 	"\x16OndeviceBioSessionInfo\x12?\n" +
 	"\aspotter\x18\x04 \x01(\v2%.YabioOndeviceProtobuf.ProcessingInfoR\aspotter\x12?\n" +
-	"\arequest\x18\x05 \x01(\v2%.YabioOndeviceProtobuf.ProcessingInfoR\arequestJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04\"\xfd\x04\n" +
-	"\x15RequestDiagnosticData\x12\x1e\n" +
+	"\arequest\x18\x05 \x01(\v2%.YabioOndeviceProtobuf.ProcessingInfoR\arequestJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04\"\xe9\x04\n" +
+	"\x15RequestDiagnosticData\x12\x1d\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\tR\n" +
-	"start_time\x12\x1a\n" +
-	"\bend_time\x18\x02 \x01(\tR\bend_time\x12 \n" +
-	"\vsvn_version\x18\x03 \x01(\tR\vsvn_version\x12B\n" +
-	"\x1creceived_audio_size_in_bytes\x18\x04 \x01(\rR\x1creceived_audio_size_in_bytes\x12R\n" +
-	"\x10enrollments_info\x18\x05 \x03(\v2&.YabioOndeviceProtobuf.TEnrollmentInfoR\x10enrollments_info\x122\n" +
-	"\x14is_enrollment_active\x18\x06 \x01(\bR\x14is_enrollment_active\x12I\n" +
-	"\rmatching_info\x18\t \x01(\v2#.YabioOndeviceProtobuf.MatchingInfoR\rmatching_info\x12k\n" +
+	"start_time\x18\x01 \x01(\tR\tstartTime\x12\x19\n" +
+	"\bend_time\x18\x02 \x01(\tR\aendTime\x12\x1f\n" +
+	"\vsvn_version\x18\x03 \x01(\tR\n" +
+	"svnVersion\x12>\n" +
+	"\x1creceived_audio_size_in_bytes\x18\x04 \x01(\rR\x18receivedAudioSizeInBytes\x12Q\n" +
+	"\x10enrollments_info\x18\x05 \x03(\v2&.YabioOndeviceProtobuf.TEnrollmentInfoR\x0fenrollmentsInfo\x120\n" +
+	"\x14is_enrollment_active\x18\x06 \x01(\bR\x12isEnrollmentActive\x12H\n" +
+	"\rmatching_info\x18\t \x01(\v2#.YabioOndeviceProtobuf.MatchingInfoR\fmatchingInfo\x12h\n" +
 	"\x19ondevice_bio_session_info\x18\n" +
-	" \x01(\v2-.YabioOndeviceProtobuf.OndeviceBioSessionInfoR\x19ondevice_bio_session_info\x12L\n" +
-	"!match_was_replaced_by_random_user\x18\v \x01(\bR!match_was_replaced_by_random_user\x12(\n" +
-	"\x0fadditional_info\x18\f \x01(\tR\x0fadditional_infoJ\x04\b\a\x10\bJ\x04\b\b\x10\t*4\n" +
+	" \x01(\v2-.YabioOndeviceProtobuf.OndeviceBioSessionInfoR\x16ondeviceBioSessionInfo\x12G\n" +
+	"!match_was_replaced_by_random_user\x18\v \x01(\bR\x1cmatchWasReplacedByRandomUser\x12'\n" +
+	"\x0fadditional_info\x18\f \x01(\tR\x0eadditionalInfoJ\x04\b\a\x10\bJ\x04\b\b\x10\t*4\n" +
 	"\x10EMatchConfidence\x12\r\n" +
 	"\tundefined\x10\x00\x12\a\n" +
 	"\x03low\x10\x01\x12\b\n" +
-	"\x04high\x10\x02"
+	"\x04high\x10\x02B\xeb\x01\n" +
+	"\x19com.YabioOndeviceProtobufB\bBioProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/voicetech/bio/ondevice/proto_api\xa2\x02\x03YXX\xaa\x02\x15YabioOndeviceProtobuf\xca\x02\x15YabioOndeviceProtobuf\xe2\x02!YabioOndeviceProtobuf\\GPBMetadata\xea\x02\x15YabioOndeviceProtobuf"
 
 var (
 	file_voicetech_bio_ondevice_proto_api_bio_proto_rawDescOnce sync.Once
@@ -1803,7 +1851,7 @@ var file_voicetech_bio_ondevice_proto_api_bio_proto_goTypes = []any{
 	(*ProcessingInfo)(nil),             // 18: YabioOndeviceProtobuf.ProcessingInfo
 	(*OndeviceBioSessionInfo)(nil),     // 19: YabioOndeviceProtobuf.OndeviceBioSessionInfo
 	(*RequestDiagnosticData)(nil),      // 20: YabioOndeviceProtobuf.RequestDiagnosticData
-	nil,                                // 21: YabioOndeviceProtobuf.BiometryResultForClient.CompatibilityTagToGuestThresholdEntry
+	(*BiometryResultForClient_CompatibilityTagToGuestThresholdEntry)(nil), // 21: YabioOndeviceProtobuf.BiometryResultForClient.CompatibilityTagToGuestThresholdEntry
 }
 var file_voicetech_bio_ondevice_proto_api_bio_proto_depIdxs = []int32{
 	4,  // 0: YabioOndeviceProtobuf.BiometryResultForClient.request_voiceprint:type_name -> YabioOndeviceProtobuf.RequestVoiceprint

@@ -25,22 +25,19 @@ const (
 type TAnalyticsTrackingModule_EOrigin int32
 
 const (
-	TAnalyticsTrackingModule_Undefined TAnalyticsTrackingModule_EOrigin = 0
-	TAnalyticsTrackingModule_Web       TAnalyticsTrackingModule_EOrigin = 1
-	TAnalyticsTrackingModule_Scenario  TAnalyticsTrackingModule_EOrigin = 2
-	// Deprecated: Marked as deprecated in alice/protos/api/request_parts/atm.proto.
+	TAnalyticsTrackingModule_Undefined     TAnalyticsTrackingModule_EOrigin = 0
+	TAnalyticsTrackingModule_Web           TAnalyticsTrackingModule_EOrigin = 1
+	TAnalyticsTrackingModule_Scenario      TAnalyticsTrackingModule_EOrigin = 2
 	TAnalyticsTrackingModule_SmartSpeaker  TAnalyticsTrackingModule_EOrigin = 3
 	TAnalyticsTrackingModule_RemoteControl TAnalyticsTrackingModule_EOrigin = 4
 	TAnalyticsTrackingModule_Proactivity   TAnalyticsTrackingModule_EOrigin = 5
 	TAnalyticsTrackingModule_Cast          TAnalyticsTrackingModule_EOrigin = 6
 	TAnalyticsTrackingModule_Timetable     TAnalyticsTrackingModule_EOrigin = 7
 	TAnalyticsTrackingModule_Push          TAnalyticsTrackingModule_EOrigin = 8
-	// Deprecated: Marked as deprecated in alice/protos/api/request_parts/atm.proto.
-	TAnalyticsTrackingModule_SearchApp  TAnalyticsTrackingModule_EOrigin = 9
-	TAnalyticsTrackingModule_ThisClient TAnalyticsTrackingModule_EOrigin = 10
-	// Deprecated: Marked as deprecated in alice/protos/api/request_parts/atm.proto.
-	TAnalyticsTrackingModule_SmartTv TAnalyticsTrackingModule_EOrigin = 11
-	TAnalyticsTrackingModule_VAD     TAnalyticsTrackingModule_EOrigin = 12
+	TAnalyticsTrackingModule_SearchApp     TAnalyticsTrackingModule_EOrigin = 9
+	TAnalyticsTrackingModule_ThisClient    TAnalyticsTrackingModule_EOrigin = 10
+	TAnalyticsTrackingModule_SmartTv       TAnalyticsTrackingModule_EOrigin = 11
+	TAnalyticsTrackingModule_VAD           TAnalyticsTrackingModule_EOrigin = 12
 )
 
 // Enum value maps for TAnalyticsTrackingModule_EOrigin.
@@ -105,12 +102,11 @@ func (TAnalyticsTrackingModule_EOrigin) EnumDescriptor() ([]byte, []int) {
 }
 
 type TAnalyticsTrackingModule struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/api/request_parts/atm.proto.
-	ProductScenario string                           `protobuf:"bytes,1,opt,name=ProductScenario,json=product_scenario,proto3" json:"ProductScenario,omitempty"`
-	Origin          TAnalyticsTrackingModule_EOrigin `protobuf:"varint,2,opt,name=Origin,json=origin,proto3,enum=NAlice.TAnalyticsTrackingModule_EOrigin" json:"Origin,omitempty"`
-	Purpose         string                           `protobuf:"bytes,3,opt,name=Purpose,json=purpose,proto3" json:"Purpose,omitempty"`
-	OriginInfo      string                           `protobuf:"bytes,4,opt,name=OriginInfo,json=origin_info,proto3" json:"OriginInfo,omitempty"`
+	state           protoimpl.MessageState           `protogen:"open.v1"`
+	ProductScenario string                           `protobuf:"bytes,1,opt,name=ProductScenario,proto3" json:"ProductScenario,omitempty"`
+	Origin          TAnalyticsTrackingModule_EOrigin `protobuf:"varint,2,opt,name=Origin,proto3,enum=NAlice.TAnalyticsTrackingModule_EOrigin" json:"Origin,omitempty"`
+	Purpose         string                           `protobuf:"bytes,3,opt,name=Purpose,proto3" json:"Purpose,omitempty"`
+	OriginInfo      string                           `protobuf:"bytes,4,opt,name=OriginInfo,proto3" json:"OriginInfo,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -145,7 +141,6 @@ func (*TAnalyticsTrackingModule) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_request_parts_atm_proto_rawDescGZIP(), []int{0}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/request_parts/atm.proto.
 func (x *TAnalyticsTrackingModule) GetProductScenario() string {
 	if x != nil {
 		return x.ProductScenario
@@ -178,31 +173,32 @@ var File_alice_protos_api_request_parts_atm_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_request_parts_atm_proto_rawDesc = "" +
 	"\n" +
-	"(alice/protos/api/request_parts/atm.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd6\x03\n" +
-	"\x18TAnalyticsTrackingModule\x12A\n" +
-	"\x0fProductScenario\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x10product_scenario\x18\x01R\x10product_scenario\x12L\n" +
-	"\x06Origin\x18\x02 \x01(\x0e2(.NAlice.TAnalyticsTrackingModule.EOriginB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12%\n" +
-	"\aPurpose\x18\x03 \x01(\tB\v\xaa\xdd\x1b\apurposeR\apurpose\x120\n" +
+	"(alice/protos/api/request_parts/atm.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x80\x03\n" +
+	"\x18TAnalyticsTrackingModule\x12(\n" +
+	"\x0fProductScenario\x18\x01 \x01(\tR\x0fProductScenario\x12@\n" +
+	"\x06Origin\x18\x02 \x01(\x0e2(.NAlice.TAnalyticsTrackingModule.EOriginR\x06Origin\x12\x18\n" +
+	"\aPurpose\x18\x03 \x01(\tR\aPurpose\x12\x1e\n" +
 	"\n" +
-	"OriginInfo\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vorigin_infoR\vorigin_info\"\xc9\x01\n" +
+	"OriginInfo\x18\x04 \x01(\tR\n" +
+	"OriginInfo\"\xbd\x01\n" +
 	"\aEOrigin\x12\r\n" +
 	"\tUndefined\x10\x00\x12\a\n" +
 	"\x03Web\x10\x01\x12\f\n" +
-	"\bScenario\x10\x02\x12\x14\n" +
-	"\fSmartSpeaker\x10\x03\x1a\x02\b\x01\x12\x11\n" +
+	"\bScenario\x10\x02\x12\x10\n" +
+	"\fSmartSpeaker\x10\x03\x12\x11\n" +
 	"\rRemoteControl\x10\x04\x12\x0f\n" +
 	"\vProactivity\x10\x05\x12\b\n" +
 	"\x04Cast\x10\x06\x12\r\n" +
 	"\tTimetable\x10\a\x12\b\n" +
-	"\x04Push\x10\b\x12\x11\n" +
-	"\tSearchApp\x10\t\x1a\x02\b\x01\x12\x0e\n" +
+	"\x04Push\x10\b\x12\r\n" +
+	"\tSearchApp\x10\t\x12\x0e\n" +
 	"\n" +
 	"ThisClient\x10\n" +
-	"\x12\x0f\n" +
-	"\aSmartTv\x10\v\x1a\x02\b\x01\x12\a\n" +
-	"\x03VAD\x10\f:\x04\xa8\xdd\x1b\x04B[\n" +
-	"(ru.yandex.alice.protos.api.request_partsZ/a.yandex-team.ru/alice/protos/api/request_partsb\x06proto3"
+	"\x12\v\n" +
+	"\aSmartTv\x10\v\x12\a\n" +
+	"\x03VAD\x10\fB\x9e\x01\n" +
+	"\n" +
+	"com.NAliceB\bAtmProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/request_parts\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_request_parts_atm_proto_rawDescOnce sync.Once

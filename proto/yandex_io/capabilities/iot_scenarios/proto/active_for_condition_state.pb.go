@@ -24,8 +24,8 @@ const (
 
 type TActiveForConditionState struct {
 	state                      protoimpl.MessageState       `protogen:"open.v1"`
-	SubconditionTriggerTimeSec uint64                       `protobuf:"varint,1,opt,name=SubconditionTriggerTimeSec,json=subcondition_trigger_time_sec,proto3" json:"SubconditionTriggerTimeSec,omitempty"`
-	TriggeredCondition         *iot.TLocalScenarioCondition `protobuf:"bytes,2,opt,name=TriggeredCondition,json=triggered_condition,proto3" json:"TriggeredCondition,omitempty"`
+	SubconditionTriggerTimeSec uint64                       `protobuf:"varint,1,opt,name=SubconditionTriggerTimeSec,proto3" json:"SubconditionTriggerTimeSec,omitempty"`
+	TriggeredCondition         *iot.TLocalScenarioCondition `protobuf:"bytes,2,opt,name=TriggeredCondition,proto3" json:"TriggeredCondition,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -78,10 +78,11 @@ var File_yandex_io_capabilities_iot_scenarios_proto_active_for_condition_state_p
 
 const file_yandex_io_capabilities_iot_scenarios_proto_active_for_condition_state_proto_rawDesc = "" +
 	"\n" +
-	"Kyandex_io/capabilities/iot_scenarios/proto/active_for_condition_state.proto\x12\fquasar.proto\x1a$alice/protos/data/iot/scenario.proto\"\xb4\x01\n" +
-	"\x18TActiveForConditionState\x12A\n" +
-	"\x1aSubconditionTriggerTimeSec\x18\x01 \x01(\x04R\x1dsubcondition_trigger_time_sec\x12U\n" +
-	"\x12TriggeredCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x13triggered_conditionb\x06proto3"
+	"Kyandex_io/capabilities/iot_scenarios/proto/active_for_condition_state.proto\x12\fquasar.proto\x1a$alice/protos/data/iot/scenario.proto\"\xb0\x01\n" +
+	"\x18TActiveForConditionState\x12>\n" +
+	"\x1aSubconditionTriggerTimeSec\x18\x01 \x01(\x04R\x1aSubconditionTriggerTimeSec\x12T\n" +
+	"\x12TriggeredCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x12TriggeredConditionB\xdd\x01\n" +
+	"\x10com.quasar.protoB\x1cActiveForConditionStateProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/iot_scenarios/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_capabilities_iot_scenarios_proto_active_for_condition_state_proto_rawDescOnce sync.Once

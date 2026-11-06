@@ -45,8 +45,8 @@ const file_alice_megamind_protos_scenarios_directives_common_extensions_proto_ra
 	"Balice/megamind/protos/scenarios/directives/common/extensions.proto\x12\x11NAlice.NScenarios\x1a google/protobuf/descriptor.proto:?\n" +
 	"\n" +
 	"OuterField\x12\x1d.google.protobuf.FieldOptions\x18\xa3\x90\x03 \x01(\bR\n" +
-	"OuterFieldB\x92\x01\n" +
-	";ru.yandex.alice.megamind.protos.scenarios.directives.commonB\x0fExtensionsProtoZBa.yandex-team.ru/alice/megamind/protos/scenarios/directives/commonb\x06proto3"
+	"OuterFieldB\xb1\x01\n" +
+	";ru.yandex.alice.megamind.protos.scenarios.directives.commonB\x0fExtensionsProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/directives/commonb\x06proto3"
 
 var file_alice_megamind_protos_scenarios_directives_common_extensions_proto_goTypes = []any{
 	(*descriptorpb.FieldOptions)(nil), // 0: google.protobuf.FieldOptions

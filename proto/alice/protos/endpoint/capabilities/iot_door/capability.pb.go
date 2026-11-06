@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_door/capability.proto
 
-package door
+package iot_door
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -354,8 +354,8 @@ const file_alice_protos_endpoint_capabilities_iot_door_capability_proto_rawDesc 
 	"\x13TIotDoorClosedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cl\x1a\x1d\n" +
 	"\x11TIotDoorAjarEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cm\x1a\x1f\n" +
 	"\x13TIotDoorLockedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cn\x1a\x1d\n" +
-	"\x11TIotDoorRangEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1co:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xaa\x01B\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!TIotServiceabilityCapabilityProtoP\x01ZAa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_door;doorb\x06proto3"
+	"\x11TIotDoorRangEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1co:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xaa\x01B\xb0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!TIotServiceabilityCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_doorb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_door_capability_proto_rawDescOnce sync.Once

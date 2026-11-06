@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_planar_view/capability.proto
 
-package planar_viewpb
+package iot_planar_view
 
 import (
 	iot "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot"
@@ -28,9 +28,9 @@ const (
 
 type TIotPlanarViewCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotPlanarViewCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotPlanarViewCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotPlanarViewCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotPlanarViewCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,9 +124,9 @@ func (*TIotPlanarViewCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotPlanarViewCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bounds        *iot.TBounds           `protobuf:"bytes,1,opt,name=Bounds,json=bounds,proto3" json:"Bounds,omitempty"`
-	Basis         *iot.TBasis            `protobuf:"bytes,2,opt,name=Basis,json=basis,proto3" json:"Basis,omitempty"`
-	Grid          *iot.TGrid             `protobuf:"bytes,3,opt,name=Grid,json=grid,proto3,oneof" json:"Grid,omitempty"`
+	Bounds        *iot.TBounds           `protobuf:"bytes,1,opt,name=Bounds,proto3" json:"Bounds,omitempty"`
+	Basis         *iot.TBasis            `protobuf:"bytes,2,opt,name=Basis,proto3" json:"Basis,omitempty"`
+	Grid          *iot.TGrid             `protobuf:"bytes,3,opt,name=Grid,proto3,oneof" json:"Grid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -184,7 +184,7 @@ func (x *TIotPlanarViewCapability_TState) GetGrid() *iot.TGrid {
 
 type TIotPlanarViewCapability_TIotSetPlanarViewBasisDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Basis         *iot.TBasis            `protobuf:"bytes,1,opt,name=Basis,json=basis,proto3" json:"Basis,omitempty"`
+	Basis         *iot.TBasis            `protobuf:"bytes,1,opt,name=Basis,proto3" json:"Basis,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -228,7 +228,7 @@ func (x *TIotPlanarViewCapability_TIotSetPlanarViewBasisDirective) GetBasis() *i
 
 type TIotPlanarViewCapability_TIotSetPlanarViewGridDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Grid          *iot.TGrid             `protobuf:"bytes,1,opt,name=Grid,json=grid,proto3" json:"Grid,omitempty"`
+	Grid          *iot.TGrid             `protobuf:"bytes,1,opt,name=Grid,proto3" json:"Grid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -272,7 +272,7 @@ func (x *TIotPlanarViewCapability_TIotSetPlanarViewGridDirective) GetGrid() *iot
 
 type TIotPlanarViewCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Capability    *TIotPlanarViewCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotPlanarViewCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,31 +318,29 @@ var File_alice_protos_endpoint_capabilities_iot_planar_view_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_iot_planar_view_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/iot_planar_view/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\xe0\x06\n" +
-	"\x18TIotPlanarViewCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Calice/protos/endpoint/capabilities/iot_planar_view/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a$alice/protos/data/iot/geometry.proto\"\xee\x04\n" +
+	"\x18TIotPlanarViewCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotPlanarViewCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotPlanarViewCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xbe\x01\n" +
-	"\x06TState\x128\n" +
-	"\x06Bounds\x18\x01 \x01(\v2\x14.NAlice.NIot.TBoundsB\n" +
-	"\xaa\xdd\x1b\x06boundsR\x06bounds\x124\n" +
-	"\x05Basis\x18\x02 \x01(\v2\x13.NAlice.NIot.TBasisB\t\xaa\xdd\x1b\x05basisR\x05basis\x125\n" +
-	"\x04Grid\x18\x03 \x01(\v2\x12.NAlice.NIot.TGridB\b\xaa\xdd\x1b\x04gridH\x00R\x04grid\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Grid\x1a\x89\x01\n" +
-	"\x1fTIotSetPlanarViewBasisDirective\x124\n" +
-	"\x05Basis\x18\x01 \x01(\v2\x13.NAlice.NIot.TBasisB\t\xaa\xdd\x1b\x05basisR\x05basis:0\x92\x82\x19#iot_set_planar_view_basis_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb0\x03\x1a\x83\x01\n" +
-	"\x1eTIotSetPlanarViewGridDirective\x120\n" +
-	"\x04Grid\x18\x01 \x01(\v2\x12.NAlice.NIot.TGridB\b\xaa\xdd\x1b\x04gridR\x04grid:/\x92\x82\x19\"iot_set_planar_view_grid_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbc\x04\x1ap\n" +
-	"\x11TUpdateStateEvent\x12P\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotPlanarViewCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotPlanarViewCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\x97\x01\n" +
+	"\x06TState\x12,\n" +
+	"\x06Bounds\x18\x01 \x01(\v2\x14.NAlice.NIot.TBoundsR\x06Bounds\x12)\n" +
+	"\x05Basis\x18\x02 \x01(\v2\x13.NAlice.NIot.TBasisR\x05Basis\x12+\n" +
+	"\x04Grid\x18\x03 \x01(\v2\x12.NAlice.NIot.TGridH\x00R\x04Grid\x88\x01\x01B\a\n" +
+	"\x05_Grid\x1aL\n" +
+	"\x1fTIotSetPlanarViewBasisDirective\x12)\n" +
+	"\x05Basis\x18\x01 \x01(\v2\x13.NAlice.NIot.TBasisR\x05Basis\x1aH\n" +
+	"\x1eTIotSetPlanarViewGridDirective\x12&\n" +
+	"\x04Grid\x18\x01 \x01(\v2\x12.NAlice.NIot.TGridR\x04Grid\x1aU\n" +
+	"\x11TUpdateStateEvent\x12@\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2 .NAlice.TIotPlanarViewCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x89\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9a\x01B\xa2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dTIotPlanarViewCapabilityProtoP\x01ZQa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_planar_view;planar_viewpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2 .NAlice.TIotPlanarViewCapabilityR\n" +
+	"CapabilityB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_planar_view\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_planar_view_capability_proto_rawDescOnce sync.Once

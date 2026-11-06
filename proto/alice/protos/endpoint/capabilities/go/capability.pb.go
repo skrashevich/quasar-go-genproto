@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/go/capability.proto
 
-package gospb
+package _go
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -254,8 +254,8 @@ const file_alice_protos_endpoint_capabilities_go_capability_proto_rawDesc = "" +
 	"\bDelivery\x10\x03\x12\v\n" +
 	"\aGrocery\x10\x04\x12\n" +
 	"\n" +
-	"\x06Market\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbd\x01B\x7f\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11GoCapabilityProtoZ<a.yandex-team.ru/alice/protos/endpoint/capabilities/go;gospbb\x06proto3"
+	"\x06Market\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbd\x01B\x98\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11GoCapabilityProtoZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/gob\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_go_capability_proto_rawDescOnce sync.Once

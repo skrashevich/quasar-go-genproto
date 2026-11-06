@@ -108,7 +108,8 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_ThreadInfo_proto_
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
 	"\x04type\x18\x03 \x01(\x05R\x04type\x12\x14\n" +
 	"\x05state\x18\x04 \x01(\x05R\x05state\x12+\n" +
-	"\x03cpu\x18\x05 \x01(\v2\x19.yandex.dsp.info.CpuUsageR\x03cpub\x06proto3"
+	"\x03cpu\x18\x05 \x01(\v2\x19.yandex.dsp.info.CpuUsageR\x03cpuB\xe9\x01\n" +
+	"\x13com.yandex.dsp.infoB\x0fThreadInfoProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos/info\xa2\x02\x03YDI\xaa\x02\x0fYandex.Dsp.Info\xca\x02\x0fYandex\\Dsp\\Info\xe2\x02\x1bYandex\\Dsp\\Info\\GPBMetadata\xea\x02\x11Yandex::Dsp::Infob\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_ThreadInfo_proto_rawDescOnce sync.Once

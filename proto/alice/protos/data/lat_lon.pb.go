@@ -24,9 +24,9 @@ const (
 
 type TLatLon struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Latitude      float64                `protobuf:"fixed64,1,opt,name=Latitude,json=latitude,proto3" json:"Latitude,omitempty"`
-	Longitude     float64                `protobuf:"fixed64,2,opt,name=Longitude,json=longitude,proto3" json:"Longitude,omitempty"`
-	Accuracy      float64                `protobuf:"fixed64,3,opt,name=Accuracy,json=accuracy,proto3" json:"Accuracy,omitempty"`
+	Latitude      float64                `protobuf:"fixed64,1,opt,name=Latitude,proto3" json:"Latitude,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,2,opt,name=Longitude,proto3" json:"Longitude,omitempty"`
+	Accuracy      float64                `protobuf:"fixed64,3,opt,name=Accuracy,proto3" json:"Accuracy,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -86,12 +86,12 @@ var File_alice_protos_data_lat_lon_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_lat_lon_proto_rawDesc = "" +
 	"\n" +
-	"\x1falice/protos/data/lat_lon.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x01\n" +
-	"\aTLatLon\x12(\n" +
-	"\bLatitude\x18\x01 \x01(\x01B\f\xaa\xdd\x1b\blatitudeR\blatitude\x12+\n" +
-	"\tLongitude\x18\x02 \x01(\x01B\r\xaa\xdd\x1b\tlongitudeR\tlongitude\x12(\n" +
-	"\bAccuracy\x18\x03 \x01(\x01B\f\xaa\xdd\x1b\baccuracyR\baccuracy:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\x1falice/protos/data/lat_lon.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"_\n" +
+	"\aTLatLon\x12\x1a\n" +
+	"\bLatitude\x18\x01 \x01(\x01R\bLatitude\x12\x1c\n" +
+	"\tLongitude\x18\x02 \x01(\x01R\tLongitude\x12\x1a\n" +
+	"\bAccuracy\x18\x03 \x01(\x01R\bAccuracyB\xb3\x01\n" +
+	"\x10com.NAlice.NDataB\vLatLonProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_lat_lon_proto_rawDescOnce sync.Once

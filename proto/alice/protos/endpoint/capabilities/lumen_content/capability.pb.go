@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/lumen_content/capability.proto
 
-package lumencontentpb
+package lumen_content
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -308,8 +308,8 @@ const file_alice_protos_endpoint_capabilities_lumen_content_capability_proto_raw
 	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x16\n" +
 	"\x02Id\x18\x02 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x19\n" +
 	"\x03Url\x18\x03 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url\x12>\n" +
-	"\aDetails\x18\x04 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\adetailsR\adetails:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc7\x02B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bLumenContentCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/lumen_content;lumencontentpbb\x06proto3"
+	"\aDetails\x18\x04 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\adetailsR\adetails:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc7\x02B\xad\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bLumenContentCapabilityProtoZ`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/lumen_contentb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_lumen_content_capability_proto_rawDescOnce sync.Once

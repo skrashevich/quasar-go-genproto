@@ -324,8 +324,8 @@ const file_alice_state_compact_proto_rawDesc = "" +
 	"\x04NONE\x10\x06\"W\n" +
 	"\x13VinsResponseCompact\x12#\n" +
 	"\routput_speech\x18\x01 \x01(\tR\foutputSpeech\x12\x1b\n" +
-	"\ttext_only\x18\x03 \x01(\bR\btextOnlyB2\n" +
-	"\x17com.yandex.quark.protosB\x17AliceStateCompactProtos"
+	"\ttext_only\x18\x03 \x01(\bR\btextOnlyBc\n" +
+	"\x17com.yandex.quark.protosB\x17AliceStateCompactProtosZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_alice_state_compact_proto_rawDescOnce sync.Once

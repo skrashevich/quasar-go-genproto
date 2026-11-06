@@ -261,7 +261,7 @@ const file_yandex_io_protos_satellite_audio_source_proto_rawDesc = "" +
 	"ErrorEvent\x1aG\n" +
 	"\x0eAudioDataEvent\x125\n" +
 	"\x04data\x18\x01 \x01(\v2!.quasar.proto.IOAudioChannelsDataR\x04dataB\a\n" +
-	"\x05eventb\x06proto3"
+	"\x05eventBLZJgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/satelliteb\x06proto3"
 
 var (
 	file_yandex_io_protos_satellite_audio_source_proto_rawDescOnce sync.Once

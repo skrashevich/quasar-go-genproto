@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/onboarding_frame/onboarding_frame.proto
 
-package onboardingframe
+package onboarding_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -134,15 +134,15 @@ type isTOnboardingTypeSlot_Value interface {
 }
 
 type TOnboardingTypeSlot_TypeValue struct {
-	TypeValue TOnboardingTypeSlot_EValue `protobuf:"varint,1,opt,name=TypeValue,json=type_value,proto3,enum=NAlice.TOnboardingTypeSlot_EValue,oneof"`
+	TypeValue TOnboardingTypeSlot_EValue `protobuf:"varint,1,opt,name=TypeValue,proto3,enum=NAlice.TOnboardingTypeSlot_EValue,oneof"`
 }
 
 func (*TOnboardingTypeSlot_TypeValue) isTOnboardingTypeSlot_Value() {}
 
 type TOnboardingGetGreetingsSemanticFrame struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	OnboardingType *TOnboardingTypeSlot   `protobuf:"bytes,1,opt,name=OnboardingType,json=onboarding_type,proto3" json:"OnboardingType,omitempty"`
-	IsTextExpected *common.TBoolSlot      `protobuf:"bytes,2,opt,name=IsTextExpected,json=is_text_expected,proto3" json:"IsTextExpected,omitempty"`
+	OnboardingType *TOnboardingTypeSlot   `protobuf:"bytes,1,opt,name=OnboardingType,proto3" json:"OnboardingType,omitempty"`
+	IsTextExpected *common.TBoolSlot      `protobuf:"bytes,2,opt,name=IsTextExpected,proto3" json:"IsTextExpected,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -193,7 +193,7 @@ func (x *TOnboardingGetGreetingsSemanticFrame) GetIsTextExpected() *common.TBool
 
 type TOnboardingGetPromoSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PromoId       *common.TStringSlot    `protobuf:"bytes,1,opt,name=PromoId,json=promo_id,proto3" json:"PromoId,omitempty"`
+	PromoId       *common.TStringSlot    `protobuf:"bytes,1,opt,name=PromoId,proto3" json:"PromoId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -273,7 +273,7 @@ func (*TOnboardingStartingConfigureSuccessSemanticFrame) Descriptor() ([]byte, [
 
 type TOnboardingStartingCriticalUpdateSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsFirstSetup  *common.TBoolSlot      `protobuf:"bytes,1,opt,name=IsFirstSetup,json=is_first_setup,proto3" json:"IsFirstSetup,omitempty"`
+	IsFirstSetup  *common.TBoolSlot      `protobuf:"bytes,1,opt,name=IsFirstSetup,proto3" json:"IsFirstSetup,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -353,8 +353,8 @@ func (*TOnboardingAddNetworkSuccessSemanticFrame) Descriptor() ([]byte, []int) {
 
 type TOnboardingWhatCanYouDoSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PhraseIndex   *common.TUInt32Slot    `protobuf:"bytes,1,opt,name=PhraseIndex,json=phrase_index,proto3" json:"PhraseIndex,omitempty"`
-	RequiredTag   *common.TStringSlot    `protobuf:"bytes,2,opt,name=RequiredTag,json=required_tag,proto3" json:"RequiredTag,omitempty"`
+	PhraseIndex   *common.TUInt32Slot    `protobuf:"bytes,1,opt,name=PhraseIndex,proto3" json:"PhraseIndex,omitempty"`
+	RequiredTag   *common.TStringSlot    `protobuf:"bytes,2,opt,name=RequiredTag,proto3" json:"RequiredTag,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -407,30 +407,28 @@ var File_alice_megamind_protos_scenarios_frames_onboarding_frame_onboarding_fram
 
 const file_alice_megamind_protos_scenarios_frames_onboarding_frame_onboarding_frame_proto_rawDesc = "" +
 	"\n" +
-	"Nalice/megamind/protos/scenarios/frames/onboarding_frame/onboarding_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcb\x01\n" +
-	"\x13TOnboardingTypeSlot\x12a\n" +
-	"\tTypeValue\x18\x01 \x01(\x0e2\".NAlice.TOnboardingTypeSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"type_value\u0085\x1c\n" +
-	"type_valueH\x00R\n" +
-	"type_value\"7\n" +
+	"Nalice/megamind/protos/scenarios/frames/onboarding_frame/onboarding_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9b\x01\n" +
+	"\x13TOnboardingTypeSlot\x12B\n" +
+	"\tTypeValue\x18\x01 \x01(\x0e2\".NAlice.TOnboardingTypeSlot.EValueH\x00R\tTypeValue\"7\n" +
 	"\x06EValue\x12\v\n" +
 	"\aunknown\x10\x00\x12\x11\n" +
 	"\rfirst_session\x10\x01\x12\r\n" +
-	"\tsmart_cam\x10\x02:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xa3\x02\n" +
-	"$TOnboardingGetGreetingsSemanticFrame\x12l\n" +
-	"\x0eOnboardingType\x18\x01 \x01(\v2\x1b.NAlice.TOnboardingTypeSlotB&\xaa\xdd\x1b\x0fonboarding_type\xba\x85\x1c\x0fonboarding_typeR\x0fonboarding_type\x12e\n" +
-	"\x0eIsTextExpected\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotB(\xaa\xdd\x1b\x10is_text_expected\xba\x85\x1c\x10is_text_expectedR\x10is_text_expected:&\xa8\xdd\x1b\x04\x9a\xff\x1b\x1ealice.onboarding.get_greetings\"\x90\x01\n" +
-	" TOnboardingGetPromoSemanticFrame\x12H\n" +
-	"\aPromoId\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\bpromo_id\xba\x85\x1c\bpromo_idR\bpromo_id:\"\xa8\xdd\x1b\x04\x9a\xff\x1b\x1aalice.onboarding.get_promo\"g\n" +
-	"0TOnboardingStartingConfigureSuccessSemanticFrame:3\xa8\xdd\x1b\x04\x9a\xff\x1b+alice.onboarding.starting_configure_success\"\xc2\x01\n" +
-	".TOnboardingStartingCriticalUpdateSemanticFrame\x12]\n" +
-	"\fIsFirstSetup\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB$\xaa\xdd\x1b\x0eis_first_setup\xba\x85\x1c\x0eis_first_setupR\x0eis_first_setup:1\xa8\xdd\x1b\x04\x9a\xff\x1b)alice.onboarding.starting_critical_update\"Y\n" +
-	")TOnboardingAddNetworkSuccessSemanticFrame:,\xa8\xdd\x1b\x04\x9a\xff\x1b$alice.onboarding.add_network_success\"\x84\x02\n" +
-	"$TOnboardingWhatCanYouDoSemanticFrame\x12X\n" +
-	"\vPhraseIndex\x18\x01 \x01(\v2\x13.NAlice.TUInt32SlotB \xaa\xdd\x1b\fphrase_index\xba\x85\x1c\fphrase_indexR\fphrase_index\x12X\n" +
-	"\vRequiredTag\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB \xaa\xdd\x1b\frequired_tag\xba\x85\x1c\frequired_tagR\frequired_tag:(\xa8\xdd\x1b\x04\x9a\xff\x1b alice.onboarding.what_can_you_doB\xb0\x01\n" +
-	"Aru.yandex.alice.megamind.protos.scenarios.frames.onboarding_frameB\x0fFrameOnboardingP\x01ZXa.yandex-team.ru/alice/megamind/protos/scenarios/frames/onboarding_frame;onboardingframeb\x06proto3"
+	"\tsmart_cam\x10\x02B\a\n" +
+	"\x05Value\"\xa6\x01\n" +
+	"$TOnboardingGetGreetingsSemanticFrame\x12C\n" +
+	"\x0eOnboardingType\x18\x01 \x01(\v2\x1b.NAlice.TOnboardingTypeSlotR\x0eOnboardingType\x129\n" +
+	"\x0eIsTextExpected\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotR\x0eIsTextExpected\"Q\n" +
+	" TOnboardingGetPromoSemanticFrame\x12-\n" +
+	"\aPromoId\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\aPromoId\"2\n" +
+	"0TOnboardingStartingConfigureSuccessSemanticFrame\"g\n" +
+	".TOnboardingStartingCriticalUpdateSemanticFrame\x125\n" +
+	"\fIsFirstSetup\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\fIsFirstSetup\"+\n" +
+	")TOnboardingAddNetworkSuccessSemanticFrame\"\x94\x01\n" +
+	"$TOnboardingWhatCanYouDoSemanticFrame\x125\n" +
+	"\vPhraseIndex\x18\x01 \x01(\v2\x13.NAlice.TUInt32SlotR\vPhraseIndex\x125\n" +
+	"\vRequiredTag\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\vRequiredTagB\xc3\x01\n" +
+	"\n" +
+	"com.NAliceB\x14OnboardingFrameProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/onboarding_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_onboarding_frame_onboarding_frame_proto_rawDescOnce sync.Once

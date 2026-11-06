@@ -168,8 +168,8 @@ const file_alice_protos_endpoint_capabilities_personal_device_capability_proto_r
 	"parameters\x12I\n" +
 	"\x05State\x18\x03 \x01(\v2(.NAlice.TPersonalDeviceCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf2\x01B\xa2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dPersonalDeviceCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/personal_device;personal_deviceb\x06proto3"
+	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf2\x01B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dPersonalDeviceCapabilityProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/personal_deviceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_personal_device_capability_proto_rawDescOnce sync.Once

@@ -1501,8 +1501,8 @@ const file_alice_protos_data_scenario_order_order_proto_rawDesc = "" +
 	"\x15EN_COURIER_IS_COMMING\x10\x01\x12\x17\n" +
 	"\x13EN_ORDER_BEING_LATE\x10\x02\x12\x15\n" +
 	"\x11EN_ORDER_CANCELED\x10\x03\x12\x1b\n" +
-	"\x17EN_ORDER_UNDER_THE_DOOR\x10\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.orderZ1a.yandex-team.ru/alice/protos/data/scenario/orderb\x06proto3"
+	"\x17EN_ORDER_UNDER_THE_DOOR\x10\x04B~\n" +
+	"*ru.yandex.alice.protos.data.scenario.orderZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/orderb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_order_order_proto_rawDescOnce sync.Once

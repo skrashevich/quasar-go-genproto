@@ -24,13 +24,11 @@ const (
 )
 
 type TDiv2Patch struct {
-	state           protoimpl.MessageState          `protogen:"open.v1"`
-	Templates       string                          `protobuf:"bytes,4,opt,name=Templates,json=templates,proto3" json:"Templates,omitempty"`
-	GlobalTemplates map[string]*TDiv2Patch_Template `protobuf:"bytes,6,rep,name=GlobalTemplates,json=global_templates,proto3" json:"GlobalTemplates,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
-	CardName string `protobuf:"bytes,2,opt,name=CardName,json=card_name,proto3" json:"CardName,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
-	CardId string `protobuf:"bytes,3,opt,name=CardId,json=card_id,proto3" json:"CardId,omitempty"`
+	state           protoimpl.MessageState             `protogen:"open.v1"`
+	Templates       string                             `protobuf:"bytes,4,opt,name=Templates,proto3" json:"Templates,omitempty"`
+	GlobalTemplates []*TDiv2Patch_GlobalTemplatesEntry `protobuf:"bytes,6,rep,name=GlobalTemplates,proto3" json:"GlobalTemplates,omitempty"`
+	CardName        string                             `protobuf:"bytes,2,opt,name=CardName,proto3" json:"CardName,omitempty"`
+	CardId          string                             `protobuf:"bytes,3,opt,name=CardId,proto3" json:"CardId,omitempty"`
 	// Types that are valid to be assigned to Div2PatchBody:
 	//
 	//	*TDiv2Patch_Body
@@ -77,14 +75,13 @@ func (x *TDiv2Patch) GetTemplates() string {
 	return ""
 }
 
-func (x *TDiv2Patch) GetGlobalTemplates() map[string]*TDiv2Patch_Template {
+func (x *TDiv2Patch) GetGlobalTemplates() []*TDiv2Patch_GlobalTemplatesEntry {
 	if x != nil {
 		return x.GlobalTemplates
 	}
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
 func (x *TDiv2Patch) GetCardName() string {
 	if x != nil {
 		return x.CardName
@@ -92,7 +89,6 @@ func (x *TDiv2Patch) GetCardName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
 func (x *TDiv2Patch) GetCardId() string {
 	if x != nil {
 		return x.CardId
@@ -107,7 +103,6 @@ func (x *TDiv2Patch) GetDiv2PatchBody() isTDiv2Patch_Div2PatchBody {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
 func (x *TDiv2Patch) GetBody() *structpb.Struct {
 	if x != nil {
 		if x, ok := x.Div2PatchBody.(*TDiv2Patch_Body); ok {
@@ -131,12 +126,11 @@ type isTDiv2Patch_Div2PatchBody interface {
 }
 
 type TDiv2Patch_Body struct {
-	// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
-	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,json=body,proto3,oneof"`
+	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,proto3,oneof"`
 }
 
 type TDiv2Patch_StringBody struct {
-	StringBody string `protobuf:"bytes,5,opt,name=StringBody,json=string_body,proto3,oneof"`
+	StringBody string `protobuf:"bytes,5,opt,name=StringBody,proto3,oneof"`
 }
 
 func (*TDiv2Patch_Body) isTDiv2Patch_Div2PatchBody() {}
@@ -191,7 +185,6 @@ func (x *TDiv2Patch_Template) GetTemplateBody() isTDiv2Patch_Template_TemplateBo
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
 func (x *TDiv2Patch_Template) GetBody() *structpb.Struct {
 	if x != nil {
 		if x, ok := x.TemplateBody.(*TDiv2Patch_Template_Body); ok {
@@ -215,44 +208,96 @@ type isTDiv2Patch_Template_TemplateBody interface {
 }
 
 type TDiv2Patch_Template_Body struct {
-	// Deprecated: Marked as deprecated in alice/protos/div/div2patch.proto.
-	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,json=body,proto3,oneof"`
+	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,proto3,oneof"`
 }
 
 type TDiv2Patch_Template_StringBody struct {
-	StringBody string `protobuf:"bytes,2,opt,name=StringBody,json=string_body,proto3,oneof"`
+	StringBody string `protobuf:"bytes,2,opt,name=StringBody,proto3,oneof"`
 }
 
 func (*TDiv2Patch_Template_Body) isTDiv2Patch_Template_TemplateBody() {}
 
 func (*TDiv2Patch_Template_StringBody) isTDiv2Patch_Template_TemplateBody() {}
 
+type TDiv2Patch_GlobalTemplatesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TDiv2Patch_Template   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDiv2Patch_GlobalTemplatesEntry) Reset() {
+	*x = TDiv2Patch_GlobalTemplatesEntry{}
+	mi := &file_alice_protos_div_div2patch_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDiv2Patch_GlobalTemplatesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDiv2Patch_GlobalTemplatesEntry) ProtoMessage() {}
+
+func (x *TDiv2Patch_GlobalTemplatesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_div_div2patch_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDiv2Patch_GlobalTemplatesEntry.ProtoReflect.Descriptor instead.
+func (*TDiv2Patch_GlobalTemplatesEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_div_div2patch_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *TDiv2Patch_GlobalTemplatesEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TDiv2Patch_GlobalTemplatesEntry) GetValue() *TDiv2Patch_Template {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_div_div2patch_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div2patch_proto_rawDesc = "" +
 	"\n" +
-	" alice/protos/div/div2patch.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x94\x05\n" +
+	" alice/protos/div/div2patch.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xdd\x03\n" +
 	"\n" +
-	"TDiv2Patch\x12+\n" +
-	"\tTemplates\x18\x04 \x01(\tB\r\xaa\xdd\x1b\ttemplatesR\ttemplates\x12h\n" +
-	"\x0fGlobalTemplates\x18\x06 \x03(\v2'.NAlice.TDiv2Patch.GlobalTemplatesEntryB\x14\xaa\xdd\x1b\x10global_templatesR\x10global_templates\x12,\n" +
-	"\bCardName\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\tcard_name\x18\x01R\tcard_name\x12&\n" +
-	"\x06CardId\x18\x03 \x01(\tB\r\xaa\xdd\x1b\acard_id\x18\x01R\acard_id\x129\n" +
-	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructB\n" +
-	"\xaa\xdd\x1b\x04body\x18\x01H\x00R\x04body\x122\n" +
+	"TDiv2Patch\x12\x1c\n" +
+	"\tTemplates\x18\x04 \x01(\tR\tTemplates\x12Q\n" +
+	"\x0fGlobalTemplates\x18\x06 \x03(\v2'.NAlice.TDiv2Patch.GlobalTemplatesEntryR\x0fGlobalTemplates\x12\x1a\n" +
+	"\bCardName\x18\x02 \x01(\tR\bCardName\x12\x16\n" +
+	"\x06CardId\x18\x03 \x01(\tR\x06CardId\x12-\n" +
+	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x04Body\x12 \n" +
 	"\n" +
-	"StringBody\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vstring_bodyH\x00R\vstring_body\x1a\x9c\x01\n" +
-	"\bTemplate\x129\n" +
-	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructB\n" +
-	"\xaa\xdd\x1b\x04body\x18\x01H\x00R\x04body\x122\n" +
+	"StringBody\x18\x05 \x01(\tH\x00R\n" +
+	"StringBody\x1ak\n" +
+	"\bTemplate\x12-\n" +
+	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x04Body\x12 \n" +
 	"\n" +
-	"StringBody\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vstring_bodyH\x00R\vstring_bodyB!\n" +
-	"\fTemplateBody\x12\x11\xaa\xdd\x1b\rtemplate_body\x1a_\n" +
+	"StringBody\x18\x02 \x01(\tH\x00R\n" +
+	"StringBodyB\x0e\n" +
+	"\fTemplateBody\x1a[\n" +
 	"\x14GlobalTemplatesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x121\n" +
-	"\x05value\x18\x02 \x01(\v2\x1b.NAlice.TDiv2Patch.TemplateR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04B$\n" +
-	"\rDiv2PatchBody\x12\x13\xaa\xdd\x1b\x0fdiv2_patch_bodyBO\n" +
-	"\x1aru.yandex.alice.protos.divB\x0eDiv2PatchProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\x05value\x18\x02 \x01(\v2\x1b.NAlice.TDiv2Patch.TemplateR\x05valueB\x0f\n" +
+	"\rDiv2PatchBodyB\x96\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eDiv2patchProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div2patch_proto_rawDescOnce sync.Once
@@ -268,10 +313,10 @@ func file_alice_protos_div_div2patch_proto_rawDescGZIP() []byte {
 
 var file_alice_protos_div_div2patch_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_protos_div_div2patch_proto_goTypes = []any{
-	(*TDiv2Patch)(nil),          // 0: NAlice.TDiv2Patch
-	(*TDiv2Patch_Template)(nil), // 1: NAlice.TDiv2Patch.Template
-	nil,                         // 2: NAlice.TDiv2Patch.GlobalTemplatesEntry
-	(*structpb.Struct)(nil),     // 3: google.protobuf.Struct
+	(*TDiv2Patch)(nil),                      // 0: NAlice.TDiv2Patch
+	(*TDiv2Patch_Template)(nil),             // 1: NAlice.TDiv2Patch.Template
+	(*TDiv2Patch_GlobalTemplatesEntry)(nil), // 2: NAlice.TDiv2Patch.GlobalTemplatesEntry
+	(*structpb.Struct)(nil),                 // 3: google.protobuf.Struct
 }
 var file_alice_protos_div_div2patch_proto_depIdxs = []int32{
 	2, // 0: NAlice.TDiv2Patch.GlobalTemplates:type_name -> NAlice.TDiv2Patch.GlobalTemplatesEntry

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/best_price/capability.proto
 
-package best_pricepb
+package best_price
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -365,8 +365,8 @@ const file_alice_protos_endpoint_capabilities_best_price_capability_proto_rawDes
 	"\tEPageType\x12\x11\n" +
 	"\rUndefinedPage\x10\x00\x12\v\n" +
 	"\aProduct\x10\x01\x12\t\n" +
-	"\x05Other\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc6\x01B\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18BestPriceCapabilityProtoZKa.yandex-team.ru/alice/protos/endpoint/capabilities/best_price;best_pricepbb\x06proto3"
+	"\x05Other\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc6\x01B\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18BestPriceCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/best_priceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_best_price_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/fm_radio/capability.proto
 
-package fm_radiopb
+package fm_radio
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -252,8 +252,8 @@ const file_alice_protos_endpoint_capabilities_fm_radio_capability_proto_rawDesc 
 	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
 	"\n" +
 	"IsFavorite\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vis_favoriteR\vis_favorite\x12\x16\n" +
-	"\x02Id\x18\x04 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8c\x01B\x8f\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16FmRadioCapabilityProtoZGa.yandex-team.ru/alice/protos/endpoint/capabilities/fm_radio;fm_radiopbb\x06proto3"
+	"\x02Id\x18\x04 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8c\x01B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16FmRadioCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/fm_radiob\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_fm_radio_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/light_sequence/capability.proto
 
-package lightsequencepb
+package light_sequence
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TLightSequenceCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TLightSequenceCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TLightSequenceCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TLightSequenceCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TLightSequenceCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,9 +123,9 @@ func (*TLightSequenceCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TLightSequenceCapability_TStep struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Brightness       float64                `protobuf:"fixed64,3,opt,name=Brightness,json=brightness,proto3" json:"Brightness,omitempty"`
-	TransitionTimeMs uint32                 `protobuf:"varint,4,opt,name=TransitionTimeMs,json=transition_time_ms,proto3" json:"TransitionTimeMs,omitempty"`
-	DurationMs       uint32                 `protobuf:"varint,5,opt,name=DurationMs,json=duration_ms,proto3" json:"DurationMs,omitempty"`
+	Brightness       float64                `protobuf:"fixed64,3,opt,name=Brightness,proto3" json:"Brightness,omitempty"`
+	TransitionTimeMs uint32                 `protobuf:"varint,4,opt,name=TransitionTimeMs,proto3" json:"TransitionTimeMs,omitempty"`
+	DurationMs       uint32                 `protobuf:"varint,5,opt,name=DurationMs,proto3" json:"DurationMs,omitempty"`
 	// Types that are valid to be assigned to Color:
 	//
 	//	*TLightSequenceCapability_TStep_HueSaturation
@@ -216,11 +216,11 @@ type isTLightSequenceCapability_TStep_Color interface {
 }
 
 type TLightSequenceCapability_TStep_HueSaturation struct {
-	HueSaturation *endpoint.THueAndSaturation `protobuf:"bytes,1,opt,name=HueSaturation,json=hue_saturation,proto3,oneof"`
+	HueSaturation *endpoint.THueAndSaturation `protobuf:"bytes,1,opt,name=HueSaturation,proto3,oneof"`
 }
 
 type TLightSequenceCapability_TStep_TemperatureK struct {
-	TemperatureK uint64 `protobuf:"varint,2,opt,name=TemperatureK,json=temperature_k,proto3,oneof"`
+	TemperatureK uint64 `protobuf:"varint,2,opt,name=TemperatureK,proto3,oneof"`
 }
 
 func (*TLightSequenceCapability_TStep_HueSaturation) isTLightSequenceCapability_TStep_Color() {}
@@ -229,8 +229,8 @@ func (*TLightSequenceCapability_TStep_TemperatureK) isTLightSequenceCapability_T
 
 type TLightSequenceCapability_TSequence struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Id            string                            `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Steps         []*TLightSequenceCapability_TStep `protobuf:"bytes,2,rep,name=Steps,json=steps,proto3" json:"Steps,omitempty"`
+	Id            string                            `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Steps         []*TLightSequenceCapability_TStep `protobuf:"bytes,2,rep,name=Steps,proto3" json:"Steps,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -281,7 +281,7 @@ func (x *TLightSequenceCapability_TSequence) GetSteps() []*TLightSequenceCapabil
 
 type TLightSequenceCapability_TState struct {
 	state          protoimpl.MessageState              `protogen:"open.v1"`
-	ActiveSequence *TLightSequenceCapability_TSequence `protobuf:"bytes,1,opt,name=ActiveSequence,json=active_sequence,proto3" json:"ActiveSequence,omitempty"`
+	ActiveSequence *TLightSequenceCapability_TSequence `protobuf:"bytes,1,opt,name=ActiveSequence,proto3" json:"ActiveSequence,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -325,8 +325,8 @@ func (x *TLightSequenceCapability_TState) GetActiveSequence() *TLightSequenceCap
 
 type TLightSequenceCapability_TStartLightSequenceDirective struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Name          string                              `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Sequence      *TLightSequenceCapability_TSequence `protobuf:"bytes,1,opt,name=Sequence,json=sequence,proto3" json:"Sequence,omitempty"`
+	Name          string                              `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Sequence      *TLightSequenceCapability_TSequence `protobuf:"bytes,1,opt,name=Sequence,proto3" json:"Sequence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -377,8 +377,8 @@ func (x *TLightSequenceCapability_TStartLightSequenceDirective) GetSequence() *T
 
 type TLightSequenceCapability_TStopLightSequenceDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SequenceID    string                 `protobuf:"bytes,1,opt,name=SequenceID,json=sequence_id,proto3" json:"SequenceID,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SequenceID    string                 `protobuf:"bytes,1,opt,name=SequenceID,proto3" json:"SequenceID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -429,7 +429,7 @@ func (x *TLightSequenceCapability_TStopLightSequenceDirective) GetSequenceID() s
 
 type TLightSequenceCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Capability    *TLightSequenceCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TLightSequenceCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -475,45 +475,44 @@ var File_alice_protos_endpoint_capabilities_light_sequence_capability_proto prot
 
 const file_alice_protos_endpoint_capabilities_light_sequence_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/light_sequence/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7\n" +
+	"Balice/protos/endpoint/capabilities/light_sequence/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xae\a\n" +
+	"\x18TLightSequenceCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"\x18TLightSequenceCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TLightSequenceCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TLightSequenceCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xe5\x01\n" +
+	"\x05TStep\x12\x1e\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TLightSequenceCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TLightSequenceCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xdb\x02\n" +
-	"\x05TStep\x12.\n" +
+	"Brightness\x18\x03 \x01(\x01R\n" +
+	"Brightness\x12*\n" +
+	"\x10TransitionTimeMs\x18\x04 \x01(\rR\x10TransitionTimeMs\x12\x1e\n" +
 	"\n" +
-	"Brightness\x18\x03 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"brightnessR\n" +
-	"brightness\x12D\n" +
-	"\x10TransitionTimeMs\x18\x04 \x01(\rB\x16\xaa\xdd\x1b\x12transition_time_msR\x12transition_time_ms\x120\n" +
+	"DurationMs\x18\x05 \x01(\rR\n" +
+	"DurationMs\x12A\n" +
+	"\rHueSaturation\x18\x01 \x01(\v2\x19.NAlice.THueAndSaturationH\x00R\rHueSaturation\x12$\n" +
+	"\fTemperatureK\x18\x02 \x01(\x04H\x00R\fTemperatureKB\a\n" +
+	"\x05Color\x1aY\n" +
+	"\tTSequence\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12<\n" +
+	"\x05Steps\x18\x02 \x03(\v2&.NAlice.TLightSequenceCapability.TStepR\x05Steps\x1a\\\n" +
+	"\x06TState\x12R\n" +
+	"\x0eActiveSequence\x18\x01 \x01(\v2*.NAlice.TLightSequenceCapability.TSequenceR\x0eActiveSequence\x1a{\n" +
+	"\x1cTStartLightSequenceDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12F\n" +
+	"\bSequence\x18\x01 \x01(\v2*.NAlice.TLightSequenceCapability.TSequenceR\bSequence\x1aR\n" +
+	"\x1bTStopLightSequenceDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1e\n" +
 	"\n" +
-	"DurationMs\x18\x05 \x01(\rB\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12V\n" +
-	"\rHueSaturation\x18\x01 \x01(\v2\x19.NAlice.THueAndSaturationB\x12\xaa\xdd\x1b\x0ehue_saturationH\x00R\x0ehue_saturation\x128\n" +
-	"\fTemperatureK\x18\x02 \x01(\x04B\x11\xaa\xdd\x1b\rtemperature_kH\x00R\rtemperature_k:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Color\x12\t\xaa\xdd\x1b\x05color\x1ar\n" +
-	"\tTSequence\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12G\n" +
-	"\x05Steps\x18\x02 \x03(\v2&.NAlice.TLightSequenceCapability.TStepB\t\xaa\xdd\x1b\x05stepsR\x05steps:\x04\xa8\xdd\x1b\x04\x1ax\n" +
-	"\x06TState\x12h\n" +
-	"\x0eActiveSequence\x18\x01 \x01(\v2*.NAlice.TLightSequenceCapability.TSequenceB\x13\xaa\xdd\x1b\x0factive_sequenceR\x0factive_sequence:\x04\xa8\xdd\x1b\x04\x1a\xc0\x01\n" +
-	"\x1cTStartLightSequenceDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12T\n" +
-	"\bSequence\x18\x01 \x01(\v2*.NAlice.TLightSequenceCapability.TSequenceB\f\xaa\xdd\x1b\bsequenceR\bsequence:+\x92\x82\x19\x1estart_light_sequence_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc6\x01\x1a\x9a\x01\n" +
-	"\x1bTStopLightSequenceDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"SequenceID\x18\x01 \x01(\tR\n" +
+	"SequenceID\x1aU\n" +
+	"\x11TUpdateStateEvent\x12@\n" +
 	"\n" +
-	"SequenceID\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vsequence_idR\vsequence_id:*\x92\x82\x19\x1dstop_light_sequence_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc7\x01\x1ao\n" +
-	"\x11TUpdateStateEvent\x12P\n" +
+	"Capability\x18\x01 \x01(\v2 .NAlice.TLightSequenceCapabilityR\n" +
+	"CapabilityB\xb8\x01\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2 .NAlice.TLightSequenceCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c1:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cFB\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cLightSequenceCapabilityProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/light_sequence;lightsequencepbb\x06proto3"
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/light_sequence\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_light_sequence_capability_proto_rawDescOnce sync.Once

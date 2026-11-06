@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: smart_devices/libs/zigbee/model/proto/backend.proto
 
-package zigbeemodelpb
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -71,10 +71,10 @@ func (ServerContainer_NetworkType) EnumDescriptor() ([]byte, []int) {
 }
 
 type ServerContainer struct {
-	state         protoimpl.MessageState      `protogen:"open.v1"`
-	NetworkType   ServerContainer_NetworkType `protobuf:"varint,1,opt,name=network_type,json=networkType,proto3,enum=proto.ServerContainer_NetworkType" json:"network_type,omitempty"`
-	NetworkData   []byte                      `protobuf:"bytes,2,opt,name=network_data,json=networkData,proto3" json:"network_data,omitempty"`
-	Devices       map[string]*ZigbeeDevice    `protobuf:"bytes,3,rep,name=devices,proto3" json:"devices,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	NetworkType   ServerContainer_NetworkType     `protobuf:"varint,1,opt,name=network_type,json=networkType,proto3,enum=proto.ServerContainer_NetworkType" json:"network_type,omitempty"`
+	NetworkData   []byte                          `protobuf:"bytes,2,opt,name=network_data,json=networkData,proto3" json:"network_data,omitempty"`
+	Devices       []*ServerContainer_DevicesEntry `protobuf:"bytes,3,rep,name=devices,proto3" json:"devices,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,9 +123,61 @@ func (x *ServerContainer) GetNetworkData() []byte {
 	return nil
 }
 
-func (x *ServerContainer) GetDevices() map[string]*ZigbeeDevice {
+func (x *ServerContainer) GetDevices() []*ServerContainer_DevicesEntry {
 	if x != nil {
 		return x.Devices
+	}
+	return nil
+}
+
+type ServerContainer_DevicesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *ZigbeeDevice          `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ServerContainer_DevicesEntry) Reset() {
+	*x = ServerContainer_DevicesEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_backend_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ServerContainer_DevicesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ServerContainer_DevicesEntry) ProtoMessage() {}
+
+func (x *ServerContainer_DevicesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_backend_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ServerContainer_DevicesEntry.ProtoReflect.Descriptor instead.
+func (*ServerContainer_DevicesEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_backend_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *ServerContainer_DevicesEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *ServerContainer_DevicesEntry) GetValue() *ZigbeeDevice {
+	if x != nil {
+		return x.Value
 	}
 	return nil
 }
@@ -134,18 +186,19 @@ var File_smart_devices_libs_zigbee_model_proto_backend_proto protoreflect.FileDe
 
 const file_smart_devices_libs_zigbee_model_proto_backend_proto_rawDesc = "" +
 	"\n" +
-	"3smart_devices/libs/zigbee/model/proto/backend.proto\x12\x05proto\x1a2smart_devices/libs/zigbee/model/proto/device.proto\"\xcc\x02\n" +
+	"3smart_devices/libs/zigbee/model/proto/backend.proto\x12\x05proto\x1a2smart_devices/libs/zigbee/model/proto/device.proto\"\xc8\x02\n" +
 	"\x0fServerContainer\x12E\n" +
 	"\fnetwork_type\x18\x01 \x01(\x0e2\".proto.ServerContainer.NetworkTypeR\vnetworkType\x12!\n" +
 	"\fnetwork_data\x18\x02 \x01(\fR\vnetworkData\x12=\n" +
-	"\adevices\x18\x03 \x03(\v2#.proto.ServerContainer.DevicesEntryR\adevices\x1aO\n" +
+	"\adevices\x18\x03 \x03(\v2#.proto.ServerContainer.DevicesEntryR\adevices\x1aK\n" +
 	"\fDevicesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12)\n" +
-	"\x05value\x18\x02 \x01(\v2\x13.proto.ZigbeeDeviceR\x05value:\x028\x01\"?\n" +
+	"\x05value\x18\x02 \x01(\v2\x13.proto.ZigbeeDeviceR\x05value\"?\n" +
 	"\vNetworkType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\t\n" +
 	"\x05PLAIN\x10\x01\x12\x18\n" +
-	"\x14DEVICE_KEY_ENCRYPTED\x10\x02BFZDa.yandex-team.ru/smart_devices/libs/zigbee/model/proto;zigbeemodelpbb\x06proto3"
+	"\x14DEVICE_KEY_ENCRYPTED\x10\x02B\xa4\x01\n" +
+	"\tcom.protoB\fBackendProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/zigbee/model/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_zigbee_model_proto_backend_proto_rawDescOnce sync.Once
@@ -162,10 +215,10 @@ func file_smart_devices_libs_zigbee_model_proto_backend_proto_rawDescGZIP() []by
 var file_smart_devices_libs_zigbee_model_proto_backend_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_smart_devices_libs_zigbee_model_proto_backend_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_smart_devices_libs_zigbee_model_proto_backend_proto_goTypes = []any{
-	(ServerContainer_NetworkType)(0), // 0: proto.ServerContainer.NetworkType
-	(*ServerContainer)(nil),          // 1: proto.ServerContainer
-	nil,                              // 2: proto.ServerContainer.DevicesEntry
-	(*ZigbeeDevice)(nil),             // 3: proto.ZigbeeDevice
+	(ServerContainer_NetworkType)(0),     // 0: proto.ServerContainer.NetworkType
+	(*ServerContainer)(nil),              // 1: proto.ServerContainer
+	(*ServerContainer_DevicesEntry)(nil), // 2: proto.ServerContainer.DevicesEntry
+	(*ZigbeeDevice)(nil),                 // 3: proto.ZigbeeDevice
 }
 var file_smart_devices_libs_zigbee_model_proto_backend_proto_depIdxs = []int32{
 	0, // 0: proto.ServerContainer.network_type:type_name -> proto.ServerContainer.NetworkType

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_air_quality/capability.proto
 
-package iotairqualitypb
+package iot_air_quality
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -87,9 +87,9 @@ func (TIotAirQualityCapability_EAirQuality) EnumDescriptor() ([]byte, []int) {
 
 type TIotAirQualityCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotAirQualityCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotAirQualityCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotAirQualityCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotAirQualityCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -183,7 +183,7 @@ func (*TIotAirQualityCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotAirQualityCapability_TState struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	AirQuality    TIotAirQualityCapability_EAirQuality `protobuf:"varint,1,opt,name=AirQuality,json=air_quality,proto3,enum=NAlice.TIotAirQualityCapability_EAirQuality" json:"AirQuality,omitempty"`
+	AirQuality    TIotAirQualityCapability_EAirQuality `protobuf:"varint,1,opt,name=AirQuality,proto3,enum=NAlice.TIotAirQualityCapability_EAirQuality" json:"AirQuality,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -227,7 +227,7 @@ func (x *TIotAirQualityCapability_TState) GetAirQuality() TIotAirQualityCapabili
 
 type TIotAirQualityCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Capability    *TIotAirQualityCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotAirQualityCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -273,23 +273,22 @@ var File_alice_protos_endpoint_capabilities_iot_air_quality_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_iot_air_quality_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/iot_air_quality/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe5\x04\n" +
-	"\x18TIotAirQualityCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Calice/protos/endpoint/capabilities/iot_air_quality/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfd\x03\n" +
+	"\x18TIotAirQualityCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotAirQualityCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotAirQualityCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1an\n" +
-	"\x06TState\x12^\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TIotAirQualityCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TIotAirQualityCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aV\n" +
+	"\x06TState\x12L\n" +
 	"\n" +
-	"AirQuality\x18\x01 \x01(\x0e2,.NAlice.TIotAirQualityCapability.EAirQualityB\x0f\xaa\xdd\x1b\vair_qualityR\vair_quality:\x04\xa8\xdd\x1b\x04\x1ao\n" +
-	"\x11TUpdateStateEvent\x12P\n" +
+	"AirQuality\x18\x01 \x01(\x0e2,.NAlice.TIotAirQualityCapability.EAirQualityR\n" +
+	"AirQuality\x1aU\n" +
+	"\x11TUpdateStateEvent\x12@\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2 .NAlice.TIotAirQualityCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\\\"g\n" +
+	"Capability\x18\x01 \x01(\v2 .NAlice.TIotAirQualityCapabilityR\n" +
+	"Capability\"g\n" +
 	"\vEAirQuality\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04Good\x10\x01\x12\b\n" +
@@ -297,8 +296,9 @@ const file_alice_protos_endpoint_capabilities_iot_air_quality_capability_proto_r
 	"\bModerate\x10\x03\x12\b\n" +
 	"\x04Poor\x10\x04\x12\f\n" +
 	"\bVeryPoor\x10\x05\x12\x11\n" +
-	"\rExtremelyPoor\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9c\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cIotAirQualityCapabilityProtoP\x01ZSa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_air_quality;iotairqualitypbb\x06proto3"
+	"\rExtremelyPoor\x10\x06B\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_air_quality\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_air_quality_capability_proto_rawDescOnce sync.Once

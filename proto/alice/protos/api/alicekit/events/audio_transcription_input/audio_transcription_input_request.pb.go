@@ -73,13 +73,13 @@ func (TAudioTranscriptionInputRequest_TStartStream_EStreamType) EnumDescriptor()
 }
 
 type TAudioTranscriptionInputRequest struct {
-	state       protoimpl.MessageState         `protogen:"open.v1"`
-	Experiments *experiments.TExperimentsProto `protobuf:"bytes,3,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
 	// Types that are valid to be assigned to Request:
 	//
 	//	*TAudioTranscriptionInputRequest_StartStream
 	//	*TAudioTranscriptionInputRequest_GracefulStop
 	Request       isTAudioTranscriptionInputRequest_Request `protobuf_oneof:"Request"`
+	Experiments   *experiments.TExperimentsProto            `protobuf:"bytes,3,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -114,13 +114,6 @@ func (*TAudioTranscriptionInputRequest) Descriptor() ([]byte, []int) {
 	return file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TAudioTranscriptionInputRequest) GetExperiments() *experiments.TExperimentsProto {
-	if x != nil {
-		return x.Experiments
-	}
-	return nil
-}
-
 func (x *TAudioTranscriptionInputRequest) GetRequest() isTAudioTranscriptionInputRequest_Request {
 	if x != nil {
 		return x.Request
@@ -146,16 +139,23 @@ func (x *TAudioTranscriptionInputRequest) GetGracefulStop() *TAudioTranscription
 	return nil
 }
 
+func (x *TAudioTranscriptionInputRequest) GetExperiments() *experiments.TExperimentsProto {
+	if x != nil {
+		return x.Experiments
+	}
+	return nil
+}
+
 type isTAudioTranscriptionInputRequest_Request interface {
 	isTAudioTranscriptionInputRequest_Request()
 }
 
 type TAudioTranscriptionInputRequest_StartStream struct {
-	StartStream *TAudioTranscriptionInputRequest_TStartStream `protobuf:"bytes,1,opt,name=StartStream,json=start_stream,proto3,oneof"`
+	StartStream *TAudioTranscriptionInputRequest_TStartStream `protobuf:"bytes,1,opt,name=StartStream,proto3,oneof"`
 }
 
 type TAudioTranscriptionInputRequest_GracefulStop struct {
-	GracefulStop *TAudioTranscriptionInputRequest_TGracefulStop `protobuf:"bytes,2,opt,name=GracefulStop,json=graceful_stop,proto3,oneof"`
+	GracefulStop *TAudioTranscriptionInputRequest_TGracefulStop `protobuf:"bytes,2,opt,name=GracefulStop,proto3,oneof"`
 }
 
 func (*TAudioTranscriptionInputRequest_StartStream) isTAudioTranscriptionInputRequest_Request() {}
@@ -223,22 +223,21 @@ type isTAudioTranscriptionInputRequest_TEncodingParams_Params interface {
 }
 
 type TAudioTranscriptionInputRequest_TEncodingParams_Opus struct {
-	Opus *TAudioTranscriptionInputRequest_TEncodingParams_TOpusParams `protobuf:"bytes,1,opt,name=Opus,json=opus,proto3,oneof"`
+	Opus *TAudioTranscriptionInputRequest_TEncodingParams_TOpusParams `protobuf:"bytes,1,opt,name=Opus,proto3,oneof"`
 }
 
 func (*TAudioTranscriptionInputRequest_TEncodingParams_Opus) isTAudioTranscriptionInputRequest_TEncodingParams_Params() {
 }
 
 type TAudioTranscriptionInputRequest_TStartStream struct {
-	state                 protoimpl.MessageState                           `protogen:"open.v1"`
-	PersonIdToPuidMapping map[string]string                                `protobuf:"bytes,3,rep,name=PersonIdToPuidMapping,json=person_id_to_puid_mapping,proto3" json:"PersonIdToPuidMapping,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	EncodingParams        *TAudioTranscriptionInputRequest_TEncodingParams `protobuf:"bytes,1,opt,name=EncodingParams,json=encoding_params,proto3,oneof" json:"EncodingParams,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto.
-	DeviceId      *string                                                   `protobuf:"bytes,4,opt,name=DeviceId,json=device_id,proto3,oneof" json:"DeviceId,omitempty"`
-	SourceId      *string                                                   `protobuf:"bytes,5,opt,name=SourceId,json=source_id,proto3,oneof" json:"SourceId,omitempty"`
-	StreamType    *TAudioTranscriptionInputRequest_TStartStream_EStreamType `protobuf:"varint,6,opt,name=StreamType,json=stream_type,proto3,enum=NAlice.NAliceApi.TAudioTranscriptionInputRequest_TStartStream_EStreamType,oneof" json:"StreamType,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                 protoimpl.MessageState                                                     `protogen:"open.v1"`
+	PersonIdToPuidMapping []*TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry `protobuf:"bytes,3,rep,name=PersonIdToPuidMapping,proto3" json:"PersonIdToPuidMapping,omitempty"`
+	EncodingParams        *TAudioTranscriptionInputRequest_TEncodingParams                           `protobuf:"bytes,1,opt,name=EncodingParams,proto3,oneof" json:"EncodingParams,omitempty"`
+	DeviceId              *string                                                                    `protobuf:"bytes,4,opt,name=DeviceId,proto3,oneof" json:"DeviceId,omitempty"`
+	SourceId              *string                                                                    `protobuf:"bytes,5,opt,name=SourceId,json=source_id,proto3,oneof" json:"SourceId,omitempty"`
+	StreamType            *TAudioTranscriptionInputRequest_TStartStream_EStreamType                  `protobuf:"varint,6,opt,name=StreamType,json=stream_type,proto3,enum=NAlice.NAliceApi.TAudioTranscriptionInputRequest_TStartStream_EStreamType,oneof" json:"StreamType,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *TAudioTranscriptionInputRequest_TStartStream) Reset() {
@@ -271,7 +270,7 @@ func (*TAudioTranscriptionInputRequest_TStartStream) Descriptor() ([]byte, []int
 	return file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *TAudioTranscriptionInputRequest_TStartStream) GetPersonIdToPuidMapping() map[string]string {
+func (x *TAudioTranscriptionInputRequest_TStartStream) GetPersonIdToPuidMapping() []*TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry {
 	if x != nil {
 		return x.PersonIdToPuidMapping
 	}
@@ -285,7 +284,6 @@ func (x *TAudioTranscriptionInputRequest_TStartStream) GetEncodingParams() *TAud
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto.
 func (x *TAudioTranscriptionInputRequest_TStartStream) GetDeviceId() string {
 	if x != nil && x.DeviceId != nil {
 		return *x.DeviceId
@@ -309,7 +307,7 @@ func (x *TAudioTranscriptionInputRequest_TStartStream) GetStreamType() TAudioTra
 
 type TAudioTranscriptionInputRequest_TGracefulStop struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	AudioEndTimestampMs *uint64                `protobuf:"varint,1,opt,name=AudioEndTimestampMs,json=audio_end_timestamp_ms,proto3,oneof" json:"AudioEndTimestampMs,omitempty"`
+	AudioEndTimestampMs *uint64                `protobuf:"varint,1,opt,name=AudioEndTimestampMs,proto3,oneof" json:"AudioEndTimestampMs,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -387,42 +385,95 @@ func (*TAudioTranscriptionInputRequest_TEncodingParams_TOpusParams) Descriptor()
 	return file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDescGZIP(), []int{0, 0, 0}
 }
 
+type TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) Reset() {
+	*x = TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry{}
+	mi := &file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) ProtoMessage() {}
+
+func (x *TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry.ProtoReflect.Descriptor instead.
+func (*TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDescGZIP(), []int{0, 1, 0}
+}
+
+func (x *TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDesc = "" +
 	"\n" +
-	"balice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto\x12\x10NAlice.NAliceApi\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdd\v\n" +
-	"\x1fTAudioTranscriptionInputRequest\x12L\n" +
-	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12u\n" +
-	"\vStartStream\x18\x01 \x01(\v2>.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStreamB\x10\xaa\xdd\x1b\fstart_streamH\x00R\fstart_stream\x12y\n" +
-	"\fGracefulStop\x18\x02 \x01(\v2?.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStopB\x11\xaa\xdd\x1b\rgraceful_stopH\x00R\rgraceful_stop\x1a\xa5\x01\n" +
-	"\x0fTEncodingParams\x12m\n" +
-	"\x04Opus\x18\x01 \x01(\v2M.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.TOpusParamsB\b\xaa\xdd\x1b\x04opusH\x00R\x04opus\x1a\x13\n" +
-	"\vTOpusParams:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06Params\x1a\xad\x06\n" +
-	"\fTStartStream\x12\xb2\x01\n" +
-	"\x15PersonIdToPuidMapping\x18\x03 \x03(\v2Y.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMappingEntryB\x1d\xaa\xdd\x1b\x19person_id_to_puid_mappingR\x19person_id_to_puid_mapping\x12\x84\x01\n" +
-	"\x0eEncodingParams\x18\x01 \x01(\v2A.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParamsB\x13\xaa\xdd\x1b\x0fencoding_paramsH\x00R\x0fencoding_params\x88\x01\x01\x121\n" +
-	"\bDeviceId\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\tdevice_id\x18\x01H\x01R\tdevice_id\x88\x01\x01\x12/\n" +
+	"balice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\"\x91\n" +
+	"\n" +
+	"\x1fTAudioTranscriptionInputRequest\x12b\n" +
+	"\vStartStream\x18\x01 \x01(\v2>.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStreamH\x00R\vStartStream\x12e\n" +
+	"\fGracefulStop\x18\x02 \x01(\v2?.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStopH\x00R\fGracefulStop\x12L\n" +
+	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x1a\x8f\x01\n" +
+	"\x0fTEncodingParams\x12c\n" +
+	"\x04Opus\x18\x01 \x01(\v2M.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.TOpusParamsH\x00R\x04Opus\x1a\r\n" +
+	"\vTOpusParamsB\b\n" +
+	"\x06Params\x1a\xd7\x05\n" +
+	"\fTStartStream\x12\x8f\x01\n" +
+	"\x15PersonIdToPuidMapping\x18\x03 \x03(\v2Y.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMappingEntryR\x15PersonIdToPuidMapping\x12n\n" +
+	"\x0eEncodingParams\x18\x01 \x01(\v2A.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParamsH\x00R\x0eEncodingParams\x88\x01\x01\x12\x1f\n" +
+	"\bDeviceId\x18\x04 \x01(\tH\x01R\bDeviceId\x88\x01\x01\x12/\n" +
 	"\bSourceId\x18\x05 \x01(\tB\r\xaa\xdd\x1b\tsource_idH\x02R\tsource_id\x88\x01\x01\x12\x81\x01\n" +
 	"\n" +
-	"StreamType\x18\x06 \x01(\x0e2J.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.EStreamTypeB\x0f\xaa\xdd\x1b\vstream_typeH\x03R\vstream_type\x88\x01\x01\x1aH\n" +
+	"StreamType\x18\x06 \x01(\x0e2J.NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.EStreamTypeB\x0f\xaa\xdd\x1b\vstream_typeH\x03R\vstream_type\x88\x01\x01\x1aD\n" +
 	"\x1aPersonIdToPuidMappingEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\\\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\\\n" +
 	"\vEStreamType\x12\x17\n" +
 	"\x13STREAM_TYPE_UNKNOWN\x10\x00\x12\x18\n" +
 	"\x14STREAM_TYPE_REALTIME\x10\x01\x12\x1a\n" +
-	"\x16STREAM_TYPE_HISTORICAL\x10\x02:\x04\xa8\xdd\x1b\x04B\x11\n" +
+	"\x16STREAM_TYPE_HISTORICAL\x10\x02B\x11\n" +
 	"\x0f_EncodingParamsB\v\n" +
 	"\t_DeviceIdB\v\n" +
 	"\t_SourceIdB\r\n" +
-	"\v_StreamTypeJ\x04\b\x02\x10\x03R\tSessionId\x1a\x83\x01\n" +
-	"\rTGracefulStop\x12T\n" +
-	"\x13AudioEndTimestampMs\x18\x01 \x01(\x04B\x1a\xaa\xdd\x1b\x16audio_end_timestamp_msH\x00R\x16audio_end_timestamp_ms\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\x14_AudioEndTimestampMs:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aRequest\x12\v\xaa\xdd\x1b\arequestB\xb5\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.audio_transcription_inputB\x1eAudioTranscriptionInputRequestP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/audio_transcription_inputb\x06proto3"
+	"\v_StreamTypeJ\x04\b\x02\x10\x03R\tSessionId\x1a^\n" +
+	"\rTGracefulStop\x125\n" +
+	"\x13AudioEndTimestampMs\x18\x01 \x01(\x04H\x00R\x13AudioEndTimestampMs\x88\x01\x01B\x16\n" +
+	"\x14_AudioEndTimestampMsB\t\n" +
+	"\aRequestB\x88\x02\n" +
+	"\x14com.NAlice.NAliceApiB#AudioTranscriptionInputRequestProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/audio_transcription_input\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_rawDescOnce sync.Once
@@ -439,19 +490,19 @@ func file_alice_protos_api_alicekit_events_audio_transcription_input_audio_trans
 var file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_goTypes = []any{
-	(TAudioTranscriptionInputRequest_TStartStream_EStreamType)(0),       // 0: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.EStreamType
-	(*TAudioTranscriptionInputRequest)(nil),                             // 1: NAlice.NAliceApi.TAudioTranscriptionInputRequest
-	(*TAudioTranscriptionInputRequest_TEncodingParams)(nil),             // 2: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams
-	(*TAudioTranscriptionInputRequest_TStartStream)(nil),                // 3: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream
-	(*TAudioTranscriptionInputRequest_TGracefulStop)(nil),               // 4: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStop
-	(*TAudioTranscriptionInputRequest_TEncodingParams_TOpusParams)(nil), // 5: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.TOpusParams
-	nil,                                   // 6: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMappingEntry
-	(*experiments.TExperimentsProto)(nil), // 7: NAlice.TExperimentsProto
+	(TAudioTranscriptionInputRequest_TStartStream_EStreamType)(0),                   // 0: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.EStreamType
+	(*TAudioTranscriptionInputRequest)(nil),                                         // 1: NAlice.NAliceApi.TAudioTranscriptionInputRequest
+	(*TAudioTranscriptionInputRequest_TEncodingParams)(nil),                         // 2: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams
+	(*TAudioTranscriptionInputRequest_TStartStream)(nil),                            // 3: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream
+	(*TAudioTranscriptionInputRequest_TGracefulStop)(nil),                           // 4: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStop
+	(*TAudioTranscriptionInputRequest_TEncodingParams_TOpusParams)(nil),             // 5: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.TOpusParams
+	(*TAudioTranscriptionInputRequest_TStartStream_PersonIdToPuidMappingEntry)(nil), // 6: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMappingEntry
+	(*experiments.TExperimentsProto)(nil),                                           // 7: NAlice.TExperimentsProto
 }
 var file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_request_proto_depIdxs = []int32{
-	7, // 0: NAlice.NAliceApi.TAudioTranscriptionInputRequest.Experiments:type_name -> NAlice.TExperimentsProto
-	3, // 1: NAlice.NAliceApi.TAudioTranscriptionInputRequest.StartStream:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream
-	4, // 2: NAlice.NAliceApi.TAudioTranscriptionInputRequest.GracefulStop:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStop
+	3, // 0: NAlice.NAliceApi.TAudioTranscriptionInputRequest.StartStream:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream
+	4, // 1: NAlice.NAliceApi.TAudioTranscriptionInputRequest.GracefulStop:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TGracefulStop
+	7, // 2: NAlice.NAliceApi.TAudioTranscriptionInputRequest.Experiments:type_name -> NAlice.TExperimentsProto
 	5, // 3: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.Opus:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams.TOpusParams
 	6, // 4: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMapping:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.PersonIdToPuidMappingEntry
 	2, // 5: NAlice.NAliceApi.TAudioTranscriptionInputRequest.TStartStream.EncodingParams:type_name -> NAlice.NAliceApi.TAudioTranscriptionInputRequest.TEncodingParams

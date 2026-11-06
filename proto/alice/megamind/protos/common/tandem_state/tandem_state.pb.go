@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/common/tandem_state/tandem_state.proto
 
-package tandemstatepb
+package tandem_state
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -24,7 +24,7 @@ const (
 
 type TTandemState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Connected     bool                   `protobuf:"varint,1,opt,name=Connected,json=connected,proto3" json:"Connected,omitempty"`
+	Connected     bool                   `protobuf:"varint,1,opt,name=Connected,proto3" json:"Connected,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,10 +70,11 @@ var File_alice_megamind_protos_common_tandem_state_tandem_state_proto protorefle
 
 const file_alice_megamind_protos_common_tandem_state_tandem_state_proto_rawDesc = "" +
 	"\n" +
-	"<alice/megamind/protos/common/tandem_state/tandem_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"A\n" +
-	"\fTTandemState\x12+\n" +
-	"\tConnected\x18\x01 \x01(\bB\r\xaa\xdd\x1b\tconnectedR\tconnected:\x04\xa8\xdd\x1b\x04B\x91\x01\n" +
-	"3ru.yandex.alice.megamind.protos.common.tandem_stateB\x10TandemStateProtoZHa.yandex-team.ru/alice/megamind/protos/common/tandem_state;tandemstatepbb\x06proto3"
+	"<alice/megamind/protos/common/tandem_state/tandem_state.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\",\n" +
+	"\fTTandemState\x12\x1c\n" +
+	"\tConnected\x18\x01 \x01(\bR\tConnectedB\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x10TandemStateProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common/tandem_state\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_tandem_state_tandem_state_proto_rawDescOnce sync.Once

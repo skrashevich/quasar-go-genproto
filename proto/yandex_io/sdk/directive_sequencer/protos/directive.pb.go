@@ -44,19 +44,19 @@ type Directive struct {
 	DirectiveId             *string                    `protobuf:"bytes,21,opt,name=directive_id,json=directiveId" json:"directive_id,omitempty"`
 	BlockSubsequentPrefetch *bool                      `protobuf:"varint,22,opt,name=block_subsequent_prefetch,json=blockSubsequentPrefetch" json:"block_subsequent_prefetch,omitempty"`
 	PersId                  *string                    `protobuf:"bytes,23,opt,name=pers_id,json=persId" json:"pers_id,omitempty"`
-	Tags                    map[string]string          `protobuf:"bytes,26,rep,name=tags" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Tags                    []*Directive_TagsEntry     `protobuf:"bytes,26,rep,name=tags" json:"tags,omitempty"`
 	SourceInfo              *source.TSourceInfo        `protobuf:"bytes,27,opt,name=source_info,json=sourceInfo" json:"source_info,omitempty"`
 	AttachToMultiroom       *bool                      `protobuf:"varint,28,opt,name=attach_to_multiroom,json=attachToMultiroom" json:"attach_to_multiroom,omitempty"`
-	DialogId                *string                    `protobuf:"bytes,29,opt,name=dialog_id,json=dialogId" json:"dialog_id,omitempty"`
-	DialogType              *dialog_type.EDialogType   `protobuf:"varint,30,opt,name=dialog_type,json=dialogType,enum=NAlice.NData.EDialogType" json:"dialog_type,omitempty"`
-	IsParallel              *bool                      `protobuf:"varint,31,opt,name=is_parallel,json=isParallel,def=0" json:"is_parallel,omitempty"`
 	RoomDeviceIds           []string                   `protobuf:"bytes,15,rep,name=room_device_ids,json=roomDeviceIds" json:"room_device_ids,omitempty"`
 	MultiroomSessionId      *string                    `protobuf:"bytes,16,opt,name=multiroom_session_id,json=multiroomSessionId" json:"multiroom_session_id,omitempty"`
 	// Types that are valid to be assigned to PayloadType:
 	//
 	//	*Directive_JsonPayload
 	//	*Directive_RawPayload
-	PayloadType   isDirective_PayloadType `protobuf_oneof:"payload_type"`
+	PayloadType   isDirective_PayloadType  `protobuf_oneof:"payload_type"`
+	DialogId      *string                  `protobuf:"bytes,29,opt,name=dialog_id,json=dialogId" json:"dialog_id,omitempty"`
+	DialogType    *dialog_type.EDialogType `protobuf:"varint,30,opt,name=dialog_type,json=dialogType,enum=NAlice.NData.EDialogType" json:"dialog_type,omitempty"`
+	IsParallel    *bool                    `protobuf:"varint,31,opt,name=is_parallel,json=isParallel,def=0" json:"is_parallel,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -226,7 +226,7 @@ func (x *Directive) GetPersId() string {
 	return ""
 }
 
-func (x *Directive) GetTags() map[string]string {
+func (x *Directive) GetTags() []*Directive_TagsEntry {
 	if x != nil {
 		return x.Tags
 	}
@@ -245,27 +245,6 @@ func (x *Directive) GetAttachToMultiroom() bool {
 		return *x.AttachToMultiroom
 	}
 	return false
-}
-
-func (x *Directive) GetDialogId() string {
-	if x != nil && x.DialogId != nil {
-		return *x.DialogId
-	}
-	return ""
-}
-
-func (x *Directive) GetDialogType() dialog_type.EDialogType {
-	if x != nil && x.DialogType != nil {
-		return *x.DialogType
-	}
-	return dialog_type.EDialogType(0)
-}
-
-func (x *Directive) GetIsParallel() bool {
-	if x != nil && x.IsParallel != nil {
-		return *x.IsParallel
-	}
-	return Default_Directive_IsParallel
 }
 
 func (x *Directive) GetRoomDeviceIds() []string {
@@ -307,6 +286,27 @@ func (x *Directive) GetRawPayload() []byte {
 	return nil
 }
 
+func (x *Directive) GetDialogId() string {
+	if x != nil && x.DialogId != nil {
+		return *x.DialogId
+	}
+	return ""
+}
+
+func (x *Directive) GetDialogType() dialog_type.EDialogType {
+	if x != nil && x.DialogType != nil {
+		return *x.DialogType
+	}
+	return dialog_type.EDialogType(0)
+}
+
+func (x *Directive) GetIsParallel() bool {
+	if x != nil && x.IsParallel != nil {
+		return *x.IsParallel
+	}
+	return Default_Directive_IsParallel
+}
+
 type isDirective_PayloadType interface {
 	isDirective_PayloadType()
 }
@@ -323,11 +323,63 @@ func (*Directive_JsonPayload) isDirective_PayloadType() {}
 
 func (*Directive_RawPayload) isDirective_PayloadType() {}
 
+type Directive_TagsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           *string                `protobuf:"bytes,1,opt,name=key" json:"key,omitempty"`
+	Value         *string                `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Directive_TagsEntry) Reset() {
+	*x = Directive_TagsEntry{}
+	mi := &file_yandex_io_sdk_directive_sequencer_protos_directive_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Directive_TagsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Directive_TagsEntry) ProtoMessage() {}
+
+func (x *Directive_TagsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_sdk_directive_sequencer_protos_directive_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Directive_TagsEntry.ProtoReflect.Descriptor instead.
+func (*Directive_TagsEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_sdk_directive_sequencer_protos_directive_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *Directive_TagsEntry) GetKey() string {
+	if x != nil && x.Key != nil {
+		return *x.Key
+	}
+	return ""
+}
+
+func (x *Directive_TagsEntry) GetValue() string {
+	if x != nil && x.Value != nil {
+		return *x.Value
+	}
+	return ""
+}
+
 var File_yandex_io_sdk_directive_sequencer_protos_directive_proto protoreflect.FileDescriptor
 
 const file_yandex_io_sdk_directive_sequencer_protos_directive_proto_rawDesc = "" +
 	"\n" +
-	"8yandex_io/sdk/directive_sequencer/protos/directive.proto\x12\fquasar.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a$alice/protos/api/source/source.proto\"\xe9\t\n" +
+	"8yandex_io/sdk/directive_sequencer/protos/directive.proto\x12\fquasar.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a$alice/protos/api/source/source.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\"\xe5\t\n" +
 	"\tDirective\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x124\n" +
 	"\x16analytics_context_name\x18\x02 \x01(\tR\x14analyticsContextName\x12\x12\n" +
@@ -353,22 +405,22 @@ const file_yandex_io_sdk_directive_sequencer_protos_directive_proto_rawDesc = ""
 	"\x04tags\x18\x1a \x03(\v2!.quasar.proto.Directive.TagsEntryR\x04tags\x12>\n" +
 	"\vsource_info\x18\x1b \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoR\n" +
 	"sourceInfo\x12.\n" +
-	"\x13attach_to_multiroom\x18\x1c \x01(\bR\x11attachToMultiroom\x12\x1b\n" +
-	"\tdialog_id\x18\x1d \x01(\tR\bdialogId\x12:\n" +
-	"\vdialog_type\x18\x1e \x01(\x0e2\x19.NAlice.NData.EDialogTypeR\n" +
-	"dialogType\x12&\n" +
-	"\vis_parallel\x18\x1f \x01(\b:\x05falseR\n" +
-	"isParallel\x12&\n" +
+	"\x13attach_to_multiroom\x18\x1c \x01(\bR\x11attachToMultiroom\x12&\n" +
 	"\x0froom_device_ids\x18\x0f \x03(\tR\rroomDeviceIds\x120\n" +
 	"\x14multiroom_session_id\x18\x10 \x01(\tR\x12multiroomSessionId\x12#\n" +
 	"\fjson_payload\x18\x06 \x01(\tH\x00R\vjsonPayload\x12!\n" +
 	"\vraw_payload\x18\x19 \x01(\fH\x00R\n" +
-	"rawPayload\x1a7\n" +
+	"rawPayload\x12\x1b\n" +
+	"\tdialog_id\x18\x1d \x01(\tR\bdialogId\x12:\n" +
+	"\vdialog_type\x18\x1e \x01(\x0e2\x19.NAlice.NData.EDialogTypeR\n" +
+	"dialogType\x12&\n" +
+	"\vis_parallel\x18\x1f \x01(\b:\x05falseR\n" +
+	"isParallel\x1a3\n" +
 	"\tTagsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x0e\n" +
-	"\fpayload_typeJ\x04\b\r\x10\x0eJ\x04\b\x11\x10\x12J\x04\b\x18\x10\x19R\achannelB+\n" +
-	"\x19ru.yandex.quasar.protobufB\x0eDirectiveProto"
+	"\x05value\x18\x02 \x01(\tR\x05valueB\x0e\n" +
+	"\fpayload_typeJ\x04\b\r\x10\x0eJ\x04\b\x11\x10\x12J\x04\b\x18\x10\x19R\achannelB\xcd\x01\n" +
+	"\x10com.quasar.protoB\x0eDirectiveProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/directive_sequencer/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_sdk_directive_sequencer_protos_directive_proto_rawDescOnce sync.Once
@@ -385,7 +437,7 @@ func file_yandex_io_sdk_directive_sequencer_protos_directive_proto_rawDescGZIP()
 var file_yandex_io_sdk_directive_sequencer_protos_directive_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_yandex_io_sdk_directive_sequencer_protos_directive_proto_goTypes = []any{
 	(*Directive)(nil),                 // 0: quasar.proto.Directive
-	nil,                               // 1: quasar.proto.Directive.TagsEntry
+	(*Directive_TagsEntry)(nil),       // 1: quasar.proto.Directive.TagsEntry
 	(*event_source.TEventSource)(nil), // 2: NAlice.TEventSource
 	(*source.TSourceInfo)(nil),        // 3: NAlice.NAliceApi.TSourceInfo
 	(dialog_type.EDialogType)(0),      // 4: NAlice.NData.EDialogType

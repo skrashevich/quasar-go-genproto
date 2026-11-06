@@ -24,18 +24,18 @@ const (
 
 type TScenarioCounteractivationFeatures struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
-	HasScreenRelatedAnswer  bool                   `protobuf:"varint,1,opt,name=HasScreenRelatedAnswer,json=has_screen_related_answer,proto3" json:"HasScreenRelatedAnswer,omitempty"`
-	CurrentlyPlayingRelated bool                   `protobuf:"varint,2,opt,name=CurrentlyPlayingRelated,json=currently_playing_related,proto3" json:"CurrentlyPlayingRelated,omitempty"`
-	PreferBetterAcoustics   bool                   `protobuf:"varint,3,opt,name=PreferBetterAcoustics,json=prefer_better_acoustics,proto3" json:"PreferBetterAcoustics,omitempty"`
-	HasSuitableAlarmState   bool                   `protobuf:"varint,4,opt,name=HasSuitableAlarmState,json=has_suitable_alarm_state,proto3" json:"HasSuitableAlarmState,omitempty"`
-	IsPlayerStopCommand     bool                   `protobuf:"varint,5,opt,name=IsPlayerStopCommand,json=is_player_stop_command,proto3" json:"IsPlayerStopCommand,omitempty"`
-	IsActiveCall            bool                   `protobuf:"varint,7,opt,name=IsActiveCall,json=is_active_call,proto3" json:"IsActiveCall,omitempty"`
-	IsIrrelevant            bool                   `protobuf:"varint,8,opt,name=IsIrrelevant,json=is_irrelevant,proto3" json:"IsIrrelevant,omitempty"`
-	IsGeneralConversation   bool                   `protobuf:"varint,9,opt,name=IsGeneralConversation,json=is_general_conversation,proto3" json:"IsGeneralConversation,omitempty"`
+	HasScreenRelatedAnswer  bool                   `protobuf:"varint,1,opt,name=HasScreenRelatedAnswer,proto3" json:"HasScreenRelatedAnswer,omitempty"`
+	CurrentlyPlayingRelated bool                   `protobuf:"varint,2,opt,name=CurrentlyPlayingRelated,proto3" json:"CurrentlyPlayingRelated,omitempty"`
+	PreferBetterAcoustics   bool                   `protobuf:"varint,3,opt,name=PreferBetterAcoustics,proto3" json:"PreferBetterAcoustics,omitempty"`
+	HasSuitableAlarmState   bool                   `protobuf:"varint,4,opt,name=HasSuitableAlarmState,proto3" json:"HasSuitableAlarmState,omitempty"`
+	IsPlayerStopCommand     bool                   `protobuf:"varint,5,opt,name=IsPlayerStopCommand,proto3" json:"IsPlayerStopCommand,omitempty"`
+	IsActiveCall            bool                   `protobuf:"varint,7,opt,name=IsActiveCall,proto3" json:"IsActiveCall,omitempty"`
 	// Types that are valid to be assigned to OptionalSecondsSinceLastPlayback:
 	//
 	//	*TScenarioCounteractivationFeatures_SecondsSinceLastPlayback
 	OptionalSecondsSinceLastPlayback isTScenarioCounteractivationFeatures_OptionalSecondsSinceLastPlayback `protobuf_oneof:"OptionalSecondsSinceLastPlayback"`
+	IsIrrelevant                     bool                                                                  `protobuf:"varint,8,opt,name=IsIrrelevant,json=is_irrelevant,proto3" json:"IsIrrelevant,omitempty"`
+	IsGeneralConversation            bool                                                                  `protobuf:"varint,9,opt,name=IsGeneralConversation,json=is_general_conversation,proto3" json:"IsGeneralConversation,omitempty"`
 	unknownFields                    protoimpl.UnknownFields
 	sizeCache                        protoimpl.SizeCache
 }
@@ -112,20 +112,6 @@ func (x *TScenarioCounteractivationFeatures) GetIsActiveCall() bool {
 	return false
 }
 
-func (x *TScenarioCounteractivationFeatures) GetIsIrrelevant() bool {
-	if x != nil {
-		return x.IsIrrelevant
-	}
-	return false
-}
-
-func (x *TScenarioCounteractivationFeatures) GetIsGeneralConversation() bool {
-	if x != nil {
-		return x.IsGeneralConversation
-	}
-	return false
-}
-
 func (x *TScenarioCounteractivationFeatures) GetOptionalSecondsSinceLastPlayback() isTScenarioCounteractivationFeatures_OptionalSecondsSinceLastPlayback {
 	if x != nil {
 		return x.OptionalSecondsSinceLastPlayback
@@ -142,12 +128,26 @@ func (x *TScenarioCounteractivationFeatures) GetSecondsSinceLastPlayback() float
 	return 0
 }
 
+func (x *TScenarioCounteractivationFeatures) GetIsIrrelevant() bool {
+	if x != nil {
+		return x.IsIrrelevant
+	}
+	return false
+}
+
+func (x *TScenarioCounteractivationFeatures) GetIsGeneralConversation() bool {
+	if x != nil {
+		return x.IsGeneralConversation
+	}
+	return false
+}
+
 type isTScenarioCounteractivationFeatures_OptionalSecondsSinceLastPlayback interface {
 	isTScenarioCounteractivationFeatures_OptionalSecondsSinceLastPlayback()
 }
 
 type TScenarioCounteractivationFeatures_SecondsSinceLastPlayback struct {
-	SecondsSinceLastPlayback float64 `protobuf:"fixed64,6,opt,name=SecondsSinceLastPlayback,json=seconds_since_last_playback,proto3,oneof"`
+	SecondsSinceLastPlayback float64 `protobuf:"fixed64,6,opt,name=SecondsSinceLastPlayback,proto3,oneof"`
 }
 
 func (*TScenarioCounteractivationFeatures_SecondsSinceLastPlayback) isTScenarioCounteractivationFeatures_OptionalSecondsSinceLastPlayback() {
@@ -157,19 +157,19 @@ var File_alice_protos_data_counteractivation_scenario_counteractivation_features
 
 const file_alice_protos_data_counteractivation_scenario_counteractivation_features_proto_rawDesc = "" +
 	"\n" +
-	"Malice/protos/data/counteractivation/scenario_counteractivation_features.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd3\x06\n" +
-	"\"TScenarioCounteractivationFeatures\x12X\n" +
-	"\x16HasScreenRelatedAnswer\x18\x01 \x01(\bB\x1d\xaa\xdd\x1b\x19has_screen_related_answerR\x19has_screen_related_answer\x12Y\n" +
-	"\x17CurrentlyPlayingRelated\x18\x02 \x01(\bB\x1d\xaa\xdd\x1b\x19currently_playing_relatedR\x19currently_playing_related\x12S\n" +
-	"\x15PreferBetterAcoustics\x18\x03 \x01(\bB\x1b\xaa\xdd\x1b\x17prefer_better_acousticsR\x17prefer_better_acoustics\x12U\n" +
-	"\x15HasSuitableAlarmState\x18\x04 \x01(\bB\x1c\xaa\xdd\x1b\x18has_suitable_alarm_stateR\x18has_suitable_alarm_state\x12O\n" +
-	"\x13IsPlayerStopCommand\x18\x05 \x01(\bB\x1a\xaa\xdd\x1b\x16is_player_stop_commandR\x16is_player_stop_command\x128\n" +
-	"\fIsActiveCall\x18\a \x01(\bB\x12\xaa\xdd\x1b\x0eis_active_callR\x0eis_active_call\x126\n" +
+	"Malice/protos/data/counteractivation/scenario_counteractivation_features.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc7\x04\n" +
+	"\"TScenarioCounteractivationFeatures\x126\n" +
+	"\x16HasScreenRelatedAnswer\x18\x01 \x01(\bR\x16HasScreenRelatedAnswer\x128\n" +
+	"\x17CurrentlyPlayingRelated\x18\x02 \x01(\bR\x17CurrentlyPlayingRelated\x124\n" +
+	"\x15PreferBetterAcoustics\x18\x03 \x01(\bR\x15PreferBetterAcoustics\x124\n" +
+	"\x15HasSuitableAlarmState\x18\x04 \x01(\bR\x15HasSuitableAlarmState\x120\n" +
+	"\x13IsPlayerStopCommand\x18\x05 \x01(\bR\x13IsPlayerStopCommand\x12\"\n" +
+	"\fIsActiveCall\x18\a \x01(\bR\fIsActiveCall\x12<\n" +
+	"\x18SecondsSinceLastPlayback\x18\x06 \x01(\x01H\x00R\x18SecondsSinceLastPlayback\x126\n" +
 	"\fIsIrrelevant\x18\b \x01(\bB\x11\xaa\xdd\x1b\ris_irrelevantR\ris_irrelevant\x12S\n" +
-	"\x15IsGeneralConversation\x18\t \x01(\bB\x1b\xaa\xdd\x1b\x17is_general_conversationR\x17is_general_conversation\x12`\n" +
-	"\x18SecondsSinceLastPlayback\x18\x06 \x01(\x01B\x1f\xaa\xdd\x1b\x1bseconds_since_last_playbackH\x00R\x1bseconds_since_last_playback:\x04\xa8\xdd\x1b\x04BL\n" +
-	" OptionalSecondsSinceLastPlayback\x12(\xaa\xdd\x1b$optional_seconds_since_last_playbackB\x8d\x01\n" +
-	"-ru.yandex.alice.protos.data.counteractivationB&ScenarioCounteractivationFeaturesProtoZ4a.yandex-team.ru/alice/protos/data/counteractivationb\x06proto3"
+	"\x15IsGeneralConversation\x18\t \x01(\bB\x1b\xaa\xdd\x1b\x17is_general_conversationR\x17is_general_conversationB\"\n" +
+	" OptionalSecondsSinceLastPlaybackB\xe0\x01\n" +
+	"\x10com.NAlice.NDataB&ScenarioCounteractivationFeaturesProtoP\x01ZSgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/counteractivation\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_counteractivation_scenario_counteractivation_features_proto_rawDescOnce sync.Once

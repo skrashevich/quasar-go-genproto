@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/tab_content/capability.proto
 
-package tab_contentpb
+package tab_content
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -1399,8 +1399,8 @@ const file_alice_protos_endpoint_capabilities_tab_content_capability_proto_rawDe
 	"\x12GoogleDocsProvider\x10\x03\x12\x16\n" +
 	"\x12YandexDocsProvider\x10\x04\x12\x11\n" +
 	"\rVideoProvider\x10\x05\x12\x16\n" +
-	"\x12BookReaderProvider\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb9\x01B\x98\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19TabContentCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/tab_content;tab_contentpbb\x06proto3"
+	"\x12BookReaderProvider\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb9\x01B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19TabContentCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/tab_contentb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_tab_content_capability_proto_rawDescOnce sync.Once

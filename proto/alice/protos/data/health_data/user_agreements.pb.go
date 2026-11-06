@@ -78,8 +78,8 @@ const file_alice_protos_data_health_data_user_agreements_proto_rawDesc = "" +
 	"\x0eEUserAgreement\x12\x1c\n" +
 	"\x18UNDEFINED_USER_AGREEMENT\x10\x00\x12\x15\n" +
 	"\x11HEALTH_DISCLAIMER\x10\x01\x12\x15\n" +
-	"\x11HEALTH_DATA_USAGE\x10\x02BZ\n" +
-	"&ru.yandex.alice.protos.data.healthdataP\x01Z.a.yandex-team.ru/alice/protos/data/health_datab\x06proto3"
+	"\x11HEALTH_DATA_USAGE\x10\x02By\n" +
+	"&ru.yandex.alice.protos.data.healthdataP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/health_datab\x06proto3"
 
 var (
 	file_alice_protos_data_health_data_user_agreements_proto_rawDescOnce sync.Once

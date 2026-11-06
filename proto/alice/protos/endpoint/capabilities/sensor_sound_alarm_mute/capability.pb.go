@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/sensor_sound_alarm_mute/capability.proto
 
-package sensor_sound_alarm_mutepb
+package sensor_sound_alarm_mute
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TSensorSoundAlarmMuteCapability struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                  `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSensorSoundAlarmMuteCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSensorSoundAlarmMuteCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                  `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSensorSoundAlarmMuteCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSensorSoundAlarmMuteCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TSensorSoundAlarmMuteCapability_TParameters) Descriptor() ([]byte, []int)
 
 type TSensorSoundAlarmMuteCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Mute          bool                   `protobuf:"varint,1,opt,name=Mute,json=mute,proto3" json:"Mute,omitempty"`
+	Mute          bool                   `protobuf:"varint,1,opt,name=Mute,proto3" json:"Mute,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,8 +167,8 @@ func (x *TSensorSoundAlarmMuteCapability_TState) GetMute() bool {
 
 type TSensorSoundAlarmMuteCapability_TMuteDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Mute          bool                   `protobuf:"varint,1,opt,name=Mute,json=mute,proto3" json:"Mute,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Mute          bool                   `protobuf:"varint,1,opt,name=Mute,proto3" json:"Mute,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (x *TSensorSoundAlarmMuteCapability_TMuteDirective) GetMute() bool {
 
 type TSensorSoundAlarmMuteCapability_TToggleDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,7 +263,7 @@ func (x *TSensorSoundAlarmMuteCapability_TToggleDirective) GetName() string {
 
 type TSensorSoundAlarmMuteCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Capability    *TSensorSoundAlarmMuteCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TSensorSoundAlarmMuteCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -309,28 +309,27 @@ var File_alice_protos_endpoint_capabilities_sensor_sound_alarm_mute_capability_p
 
 const file_alice_protos_endpoint_capabilities_sensor_sound_alarm_mute_capability_proto_rawDesc = "" +
 	"\n" +
-	"Kalice/protos/endpoint/capabilities/sensor_sound_alarm_mute/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbe\x05\n" +
-	"\x1fTSensorSoundAlarmMuteCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12c\n" +
+	"Kalice/protos/endpoint/capabilities/sensor_sound_alarm_mute/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xda\x03\n" +
+	"\x1fTSensorSoundAlarmMuteCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12S\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v23.NAlice.TSensorSoundAlarmMuteCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12O\n" +
-	"\x05State\x18\x03 \x01(\v2..NAlice.TSensorSoundAlarmMuteCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a,\n" +
-	"\x06TState\x12\x1c\n" +
-	"\x04Mute\x18\x01 \x01(\bB\b\xaa\xdd\x1b\x04muteR\x04mute:\x04\xa8\xdd\x1b\x04\x1a}\n" +
-	"\x0eTMuteDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Mute\x18\x01 \x01(\bB\b\xaa\xdd\x1b\x04muteR\x04mute:.\x92\x82\x19!sensor_sound_alarm_mute_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc8\x01\x1ah\n" +
-	"\x10TToggleDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:5\x92\x82\x19(toggle_sensor_sound_alarm_mute_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc9\x01\x1av\n" +
-	"\x11TUpdateStateEvent\x12W\n" +
+	"Parameters\x18\x02 \x01(\v23.NAlice.TSensorSoundAlarmMuteCapability.TParametersR\n" +
+	"Parameters\x12D\n" +
+	"\x05State\x18\x03 \x01(\v2..NAlice.TSensorSoundAlarmMuteCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\x1c\n" +
+	"\x06TState\x12\x12\n" +
+	"\x04Mute\x18\x01 \x01(\bR\x04Mute\x1a9\n" +
+	"\x0eTMuteDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Mute\x18\x01 \x01(\bR\x04Mute\x1a'\n" +
+	"\x10TToggleDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a\\\n" +
+	"\x11TUpdateStateEvent\x12G\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2'.NAlice.TSensorSoundAlarmMuteCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c2:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cGB\xbc\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB#SensorSoundAlarmMuteCapabilityProtoP\x01Zea.yandex-team.ru/alice/protos/endpoint/capabilities/sensor_sound_alarm_mute;sensor_sound_alarm_mutepbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2'.NAlice.TSensorSoundAlarmMuteCapabilityR\n" +
+	"CapabilityB\xc1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/sensor_sound_alarm_mute\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_sensor_sound_alarm_mute_capability_proto_rawDescOnce sync.Once

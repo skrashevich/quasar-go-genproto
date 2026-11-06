@@ -52,15 +52,15 @@ const (
 )
 
 type TServerMessage struct {
-	state        protoimpl.MessageState           `protogen:"open.v1"`
-	Timings      *TServerMessage_TTimings         `protobuf:"bytes,3,opt,name=Timings,json=timings,proto3" json:"Timings,omitempty"`
-	Streaming    *streaming.TStreaming            `protobuf:"bytes,4,opt,name=Streaming,json=streaming,proto3" json:"Streaming,omitempty"`
-	MessageGroup *message_group.TMessageGroupInfo `protobuf:"bytes,5,opt,name=MessageGroup,json=message_group,proto3" json:"MessageGroup,omitempty"`
+	state     protoimpl.MessageState   `protogen:"open.v1"`
+	Timings   *TServerMessage_TTimings `protobuf:"bytes,3,opt,name=Timings,proto3" json:"Timings,omitempty"`
+	Streaming *streaming.TStreaming    `protobuf:"bytes,4,opt,name=Streaming,proto3" json:"Streaming,omitempty"`
 	// Types that are valid to be assigned to Message:
 	//
 	//	*TServerMessage_Event
 	//	*TServerMessage_StreamControl
-	Message       isTServerMessage_Message `protobuf_oneof:"Message"`
+	Message       isTServerMessage_Message         `protobuf_oneof:"Message"`
+	MessageGroup  *message_group.TMessageGroupInfo `protobuf:"bytes,5,opt,name=MessageGroup,json=message_group,proto3" json:"MessageGroup,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -109,13 +109,6 @@ func (x *TServerMessage) GetStreaming() *streaming.TStreaming {
 	return nil
 }
 
-func (x *TServerMessage) GetMessageGroup() *message_group.TMessageGroupInfo {
-	if x != nil {
-		return x.MessageGroup
-	}
-	return nil
-}
-
 func (x *TServerMessage) GetMessage() isTServerMessage_Message {
 	if x != nil {
 		return x.Message
@@ -141,16 +134,23 @@ func (x *TServerMessage) GetStreamControl() *stream_control.TStreamControl {
 	return nil
 }
 
+func (x *TServerMessage) GetMessageGroup() *message_group.TMessageGroupInfo {
+	if x != nil {
+		return x.MessageGroup
+	}
+	return nil
+}
+
 type isTServerMessage_Message interface {
 	isTServerMessage_Message()
 }
 
 type TServerMessage_Event struct {
-	Event *TServerMessage_TEvent `protobuf:"bytes,1,opt,name=Event,json=event,proto3,oneof"`
+	Event *TServerMessage_TEvent `protobuf:"bytes,1,opt,name=Event,proto3,oneof"`
 }
 
 type TServerMessage_StreamControl struct {
-	StreamControl *stream_control.TStreamControl `protobuf:"bytes,2,opt,name=StreamControl,json=stream_control,proto3,oneof"`
+	StreamControl *stream_control.TStreamControl `protobuf:"bytes,2,opt,name=StreamControl,proto3,oneof"`
 }
 
 func (*TServerMessage_Event) isTServerMessage_Message() {}
@@ -159,7 +159,7 @@ func (*TServerMessage_StreamControl) isTServerMessage_Message() {}
 
 type TServerMessage_TEvent struct {
 	state  protoimpl.MessageState     `protogen:"open.v1"`
-	Header *event_header.TEventHeader `protobuf:"bytes,1,opt,name=Header,json=header,proto3" json:"Header,omitempty"`
+	Header *event_header.TEventHeader `protobuf:"bytes,1,opt,name=Header,proto3" json:"Header,omitempty"`
 	// Types that are valid to be assigned to Event:
 	//
 	//	*TServerMessage_TEvent_AliceResponse
@@ -456,95 +456,95 @@ type isTServerMessage_TEvent_Event interface {
 }
 
 type TServerMessage_TEvent_AliceResponse struct {
-	AliceResponse *alice_response.TAliceResponseProto `protobuf:"bytes,2,opt,name=AliceResponse,json=alice_response,proto3,oneof"`
+	AliceResponse *alice_response.TAliceResponseProto `protobuf:"bytes,2,opt,name=AliceResponse,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_DeferredAliceResponse struct {
-	DeferredAliceResponse *streaming1.TDeferedAliceResponseProto `protobuf:"bytes,3,opt,name=DeferredAliceResponse,json=deferred_alice_response,proto3,oneof"`
+	DeferredAliceResponse *streaming1.TDeferedAliceResponseProto `protobuf:"bytes,3,opt,name=DeferredAliceResponse,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_GoAway struct {
-	GoAway *go_away.TGoAway `protobuf:"bytes,4,opt,name=GoAway,json=go_away,proto3,oneof"`
+	GoAway *go_away.TGoAway `protobuf:"bytes,4,opt,name=GoAway,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_Push struct {
-	Push *push.TPush `protobuf:"bytes,5,opt,name=Push,json=push,proto3,oneof"`
+	Push *push.TPush `protobuf:"bytes,5,opt,name=Push,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_SyncPush struct {
-	SyncPush *sync_push.TSyncPush `protobuf:"bytes,8,opt,name=SyncPush,json=sync_push,proto3,oneof"`
+	SyncPush *sync_push.TSyncPush `protobuf:"bytes,8,opt,name=SyncPush,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_EventException struct {
-	EventException *event_exception.TEventException `protobuf:"bytes,9,opt,name=EventException,json=event_exception,proto3,oneof"`
+	EventException *event_exception.TEventException `protobuf:"bytes,9,opt,name=EventException,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_InputStartAck struct {
-	InputStartAck *input_start_ack.TInputStartAck `protobuf:"bytes,10,opt,name=InputStartAck,json=input_start_ack,proto3,oneof"`
+	InputStartAck *input_start_ack.TInputStartAck `protobuf:"bytes,10,opt,name=InputStartAck,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_LogAck struct {
-	LogAck *log_ack.TLogAck `protobuf:"bytes,11,opt,name=LogAck,json=log_ack,proto3,oneof"`
+	LogAck *log_ack.TLogAck `protobuf:"bytes,11,opt,name=LogAck,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_Ping struct {
-	Ping *ping.TPing `protobuf:"bytes,12,opt,name=Ping,json=ping,proto3,oneof"`
+	Ping *ping.TPing `protobuf:"bytes,12,opt,name=Ping,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_AsrResult struct {
-	AsrResult *asr_result.TAsrResult `protobuf:"bytes,13,opt,name=AsrResult,json=asr_result,proto3,oneof"`
+	AsrResult *asr_result.TAsrResult `protobuf:"bytes,13,opt,name=AsrResult,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_TtsSpeak struct {
-	TtsSpeak *tts_speak.TTtsSpeak `protobuf:"bytes,14,opt,name=TtsSpeak,json=tts_speak,proto3,oneof"`
+	TtsSpeak *tts_speak.TTtsSpeak `protobuf:"bytes,14,opt,name=TtsSpeak,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_ServerRequestReady struct {
-	ServerRequestReady *server_request_ready.TServerRequestReady `protobuf:"bytes,15,opt,name=ServerRequestReady,json=server_request_ready,proto3,oneof"`
+	ServerRequestReady *server_request_ready.TServerRequestReady `protobuf:"bytes,15,opt,name=ServerRequestReady,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_SpotterValidation struct {
-	SpotterValidation *spotter_validation.TSpotterValidation `protobuf:"bytes,16,opt,name=SpotterValidation,json=spotter_validation,proto3,oneof"`
+	SpotterValidation *spotter_validation.TSpotterValidation `protobuf:"bytes,16,opt,name=SpotterValidation,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_InvalidAuth struct {
-	InvalidAuth *invalid_auth.TInvalidAuth `protobuf:"bytes,17,opt,name=InvalidAuth,json=invalid_auth,proto3,oneof"`
+	InvalidAuth *invalid_auth.TInvalidAuth `protobuf:"bytes,17,opt,name=InvalidAuth,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_TtsTimings struct {
-	TtsTimings *tts_timings.TTtsTimings `protobuf:"bytes,18,opt,name=TtsTimings,json=tts_timings,proto3,oneof"`
+	TtsTimings *tts_timings.TTtsTimings `protobuf:"bytes,18,opt,name=TtsTimings,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_AsrMusicResult struct {
-	AsrMusicResult *asr_music_result.TAsrMusicResult `protobuf:"bytes,19,opt,name=AsrMusicResult,json=asr_music_result,proto3,oneof"`
+	AsrMusicResult *asr_music_result.TAsrMusicResult `protobuf:"bytes,19,opt,name=AsrMusicResult,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_DataProxyRequest struct {
-	DataProxyRequest *data_proxy_request.TDataProxyRequest `protobuf:"bytes,22,opt,name=DataProxyRequest,json=data_proxy_request,proto3,oneof"`
+	DataProxyRequest *data_proxy_request.TDataProxyRequest `protobuf:"bytes,22,opt,name=DataProxyRequest,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_FileUploadResponse struct {
-	FileUploadResponse *file_upload_response.TFileUploadResponse `protobuf:"bytes,23,opt,name=FileUploadResponse,json=file_upload_response,proto3,oneof"`
+	FileUploadResponse *file_upload_response.TFileUploadResponse `protobuf:"bytes,23,opt,name=FileUploadResponse,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_SynchronizeStateResponse struct {
-	SynchronizeStateResponse *synchronize_state_response.TSynchronizeStateResponse `protobuf:"bytes,24,opt,name=SynchronizeStateResponse,json=synchronize_state_response,proto3,oneof"`
+	SynchronizeStateResponse *synchronize_state_response.TSynchronizeStateResponse `protobuf:"bytes,24,opt,name=SynchronizeStateResponse,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_SpeechControl struct {
-	SpeechControl *speech_control.TSpeechControl `protobuf:"bytes,25,opt,name=SpeechControl,json=speech_control,proto3,oneof"`
+	SpeechControl *speech_control.TSpeechControl `protobuf:"bytes,25,opt,name=SpeechControl,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_ServerSubscriptionState struct {
-	ServerSubscriptionState *server_subscription_state.TServerSubscriptionState `protobuf:"bytes,32,opt,name=ServerSubscriptionState,json=server_subscription_state,proto3,oneof"`
+	ServerSubscriptionState *server_subscription_state.TServerSubscriptionState `protobuf:"bytes,32,opt,name=ServerSubscriptionState,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_RequestStatAck struct {
-	RequestStatAck *request_stat_ack.TRequestStatAck `protobuf:"bytes,36,opt,name=RequestStatAck,json=request_stat_ack,proto3,oneof"`
+	RequestStatAck *request_stat_ack.TRequestStatAck `protobuf:"bytes,36,opt,name=RequestStatAck,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_AudioTranscriptionInputResponse struct {
-	AudioTranscriptionInputResponse *audio_transcription_input.TAudioTranscriptionInputResponse `protobuf:"bytes,38,opt,name=AudioTranscriptionInputResponse,json=audio_transcription_input_response,proto3,oneof"`
+	AudioTranscriptionInputResponse *audio_transcription_input.TAudioTranscriptionInputResponse `protobuf:"bytes,38,opt,name=AudioTranscriptionInputResponse,proto3,oneof"`
 }
 
 type TServerMessage_TEvent_ChunkAck struct {
@@ -601,7 +601,7 @@ func (*TServerMessage_TEvent_ChunkAck) isTServerMessage_TEvent_Event() {}
 
 type TServerMessage_TTimings struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SendingTime   *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=SendingTime,json=sending_time,proto3" json:"SendingTime,omitempty"`
+	SendingTime   *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=SendingTime,proto3" json:"SendingTime,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -647,49 +647,47 @@ var File_alice_protos_api_alicekit_protocol_server_server_message_proto protoref
 
 const file_alice_protos_api_alicekit_protocol_server_server_message_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/api/alicekit/protocol/server/server_message.proto\x12\x10NAlice.NAliceApi\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1aHalice/protos/api/alicekit/events/asr_music_result/asr_music_result.proto\x1a<alice/protos/api/alicekit/events/asr_result/asr_result.proto\x1a:alice/protos/api/alicekit/events/chunk_ack/chunk_ack.proto\x1acalice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_response.proto\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1aIalice/protos/api/alicekit/events/common/message_group/message_group.proto\x1aAalice/protos/api/alicekit/events/common/streaming/streaming.proto\x1aLalice/protos/api/alicekit/events/data_proxy_request/data_proxy_request.proto\x1aFalice/protos/api/alicekit/events/event_exception/event_exception.proto\x1aPalice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x1a6alice/protos/api/alicekit/events/go_away/go_away.proto\x1aFalice/protos/api/alicekit/events/input_start_ack/input_start_ack.proto\x1a@alice/protos/api/alicekit/events/invalid_auth/invalid_auth.proto\x1a6alice/protos/api/alicekit/events/log_ack/log_ack.proto\x1a0alice/protos/api/alicekit/events/ping/ping.proto\x1a0alice/protos/api/alicekit/events/push/push.proto\x1aHalice/protos/api/alicekit/events/request_stat_ack/request_stat_ack.proto\x1aPalice/protos/api/alicekit/events/server_request_ready/server_request_ready.proto\x1aZalice/protos/api/alicekit/events/server_subscription_state/server_subscription_state.proto\x1aDalice/protos/api/alicekit/events/speech_control/speech_control.proto\x1aLalice/protos/api/alicekit/events/spotter_validation/spotter_validation.proto\x1aDalice/protos/api/alicekit/events/stream_control/stream_control.proto\x1a:alice/protos/api/alicekit/events/sync_push/sync_push.proto\x1a\\alice/protos/api/alicekit/events/synchronize_state_response/synchronize_state_response.proto\x1a:alice/protos/api/alicekit/events/tts_speak/tts_speak.proto\x1a>alice/protos/api/alicekit/events/tts_timings/tts_timings.proto\x1a;alice/protos/api/alicekit/streaming/deffered_response.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xec\x1a\n" +
-	"\x0eTServerMessage\x12P\n" +
-	"\aTimings\x18\x03 \x01(\v2).NAlice.NAliceApi.TServerMessage.TTimingsB\v\xaa\xdd\x1b\atimingsR\atimings\x12I\n" +
-	"\tStreaming\x18\x04 \x01(\v2\x1c.NAlice.NAliceApi.TStreamingB\r\xaa\xdd\x1b\tstreamingR\tstreaming\x12[\n" +
-	"\fMessageGroup\x18\x05 \x01(\v2#.NAlice.NAliceApi.TMessageGroupInfoB\x11\xaa\xdd\x1b\rmessage_groupR\rmessage_group\x12J\n" +
-	"\x05Event\x18\x01 \x01(\v2'.NAlice.NAliceApi.TServerMessage.TEventB\t\xaa\xdd\x1b\x05eventH\x00R\x05event\x12]\n" +
-	"\rStreamControl\x18\x02 \x01(\v2 .NAlice.NAliceApi.TStreamControlB\x12\xaa\xdd\x1b\x0estream_controlH\x00R\x0estream_control\x1a\xb9\x16\n" +
-	"\x06TEvent\x12B\n" +
-	"\x06Header\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header\x12b\n" +
-	"\rAliceResponse\x18\x02 \x01(\v2%.NAlice.NAliceApi.TAliceResponseProtoB\x12\xaa\xdd\x1b\x0ealice_responseH\x00R\x0ealice_response\x12\x83\x01\n" +
-	"\x15DeferredAliceResponse\x18\x03 \x01(\v2,.NAlice.NAliceApi.TDeferedAliceResponseProtoB\x1b\xaa\xdd\x1b\x17deferred_alice_responseH\x00R\x17deferred_alice_response\x12A\n" +
-	"\x06GoAway\x18\x04 \x01(\v2\x19.NAlice.NAliceApi.TGoAwayB\v\xaa\xdd\x1b\ago_awayH\x00R\ago_away\x127\n" +
-	"\x04Push\x18\x05 \x01(\v2\x17.NAlice.NAliceApi.TPushB\b\xaa\xdd\x1b\x04pushH\x00R\x04push\x12I\n" +
-	"\bSyncPush\x18\b \x01(\v2\x1b.NAlice.NAliceApi.TSyncPushB\r\xaa\xdd\x1b\tsync_pushH\x00R\tsync_push\x12a\n" +
-	"\x0eEventException\x18\t \x01(\v2!.NAlice.NAliceApi.TEventExceptionB\x13\xaa\xdd\x1b\x0fevent_exceptionH\x00R\x0fevent_exception\x12_\n" +
+	">alice/protos/api/alicekit/protocol/server/server_message.proto\x12\x10NAlice.NAliceApi\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1aHalice/protos/api/alicekit/events/asr_music_result/asr_music_result.proto\x1a<alice/protos/api/alicekit/events/asr_result/asr_result.proto\x1acalice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_response.proto\x1aGalice/protos/api/alicekit/events/common/event_header/event_header.proto\x1aAalice/protos/api/alicekit/events/common/streaming/streaming.proto\x1aLalice/protos/api/alicekit/events/data_proxy_request/data_proxy_request.proto\x1aFalice/protos/api/alicekit/events/event_exception/event_exception.proto\x1aPalice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x1a6alice/protos/api/alicekit/events/go_away/go_away.proto\x1aFalice/protos/api/alicekit/events/input_start_ack/input_start_ack.proto\x1a@alice/protos/api/alicekit/events/invalid_auth/invalid_auth.proto\x1a6alice/protos/api/alicekit/events/log_ack/log_ack.proto\x1a0alice/protos/api/alicekit/events/ping/ping.proto\x1a0alice/protos/api/alicekit/events/push/push.proto\x1aHalice/protos/api/alicekit/events/request_stat_ack/request_stat_ack.proto\x1aPalice/protos/api/alicekit/events/server_request_ready/server_request_ready.proto\x1aZalice/protos/api/alicekit/events/server_subscription_state/server_subscription_state.proto\x1aDalice/protos/api/alicekit/events/speech_control/speech_control.proto\x1aLalice/protos/api/alicekit/events/spotter_validation/spotter_validation.proto\x1aDalice/protos/api/alicekit/events/stream_control/stream_control.proto\x1a:alice/protos/api/alicekit/events/sync_push/sync_push.proto\x1a\\alice/protos/api/alicekit/events/synchronize_state_response/synchronize_state_response.proto\x1a:alice/protos/api/alicekit/events/tts_speak/tts_speak.proto\x1a>alice/protos/api/alicekit/events/tts_timings/tts_timings.proto\x1a;alice/protos/api/alicekit/streaming/deffered_response.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aIalice/protos/api/alicekit/events/common/message_group/message_group.proto\x1a:alice/protos/api/alicekit/events/chunk_ack/chunk_ack.proto\"\xe4\x15\n" +
+	"\x0eTServerMessage\x12C\n" +
+	"\aTimings\x18\x03 \x01(\v2).NAlice.NAliceApi.TServerMessage.TTimingsR\aTimings\x12:\n" +
+	"\tStreaming\x18\x04 \x01(\v2\x1c.NAlice.NAliceApi.TStreamingR\tStreaming\x12?\n" +
+	"\x05Event\x18\x01 \x01(\v2'.NAlice.NAliceApi.TServerMessage.TEventH\x00R\x05Event\x12H\n" +
+	"\rStreamControl\x18\x02 \x01(\v2 .NAlice.NAliceApi.TStreamControlH\x00R\rStreamControl\x12[\n" +
+	"\fMessageGroup\x18\x05 \x01(\v2#.NAlice.NAliceApi.TMessageGroupInfoB\x11\xaa\xdd\x1b\rmessage_groupR\rmessage_group\x1a\x93\x12\n" +
+	"\x06TEvent\x126\n" +
+	"\x06Header\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TEventHeaderR\x06Header\x12M\n" +
+	"\rAliceResponse\x18\x02 \x01(\v2%.NAlice.NAliceApi.TAliceResponseProtoH\x00R\rAliceResponse\x12d\n" +
+	"\x15DeferredAliceResponse\x18\x03 \x01(\v2,.NAlice.NAliceApi.TDeferedAliceResponseProtoH\x00R\x15DeferredAliceResponse\x123\n" +
+	"\x06GoAway\x18\x04 \x01(\v2\x19.NAlice.NAliceApi.TGoAwayH\x00R\x06GoAway\x12-\n" +
+	"\x04Push\x18\x05 \x01(\v2\x17.NAlice.NAliceApi.TPushH\x00R\x04Push\x129\n" +
+	"\bSyncPush\x18\b \x01(\v2\x1b.NAlice.NAliceApi.TSyncPushH\x00R\bSyncPush\x12K\n" +
+	"\x0eEventException\x18\t \x01(\v2!.NAlice.NAliceApi.TEventExceptionH\x00R\x0eEventException\x12H\n" +
 	"\rInputStartAck\x18\n" +
-	" \x01(\v2 .NAlice.NAliceApi.TInputStartAckB\x13\xaa\xdd\x1b\x0finput_start_ackH\x00R\x0finput_start_ack\x12A\n" +
-	"\x06LogAck\x18\v \x01(\v2\x19.NAlice.NAliceApi.TLogAckB\v\xaa\xdd\x1b\alog_ackH\x00R\alog_ack\x127\n" +
-	"\x04Ping\x18\f \x01(\v2\x17.NAlice.NAliceApi.TPingB\b\xaa\xdd\x1b\x04pingH\x00R\x04ping\x12M\n" +
-	"\tAsrResult\x18\r \x01(\v2\x1c.NAlice.NAliceApi.TAsrResultB\x0e\xaa\xdd\x1b\n" +
-	"asr_resultH\x00R\n" +
-	"asr_result\x12I\n" +
-	"\bTtsSpeak\x18\x0e \x01(\v2\x1b.NAlice.NAliceApi.TTtsSpeakB\r\xaa\xdd\x1b\ttts_speakH\x00R\ttts_speak\x12s\n" +
-	"\x12ServerRequestReady\x18\x0f \x01(\v2%.NAlice.NAliceApi.TServerRequestReadyB\x18\xaa\xdd\x1b\x14server_request_readyH\x00R\x14server_request_ready\x12m\n" +
-	"\x11SpotterValidation\x18\x10 \x01(\v2$.NAlice.NAliceApi.TSpotterValidationB\x16\xaa\xdd\x1b\x12spotter_validationH\x00R\x12spotter_validation\x12U\n" +
-	"\vInvalidAuth\x18\x11 \x01(\v2\x1e.NAlice.NAliceApi.TInvalidAuthB\x10\xaa\xdd\x1b\finvalid_authH\x00R\finvalid_auth\x12Q\n" +
+	" \x01(\v2 .NAlice.NAliceApi.TInputStartAckH\x00R\rInputStartAck\x123\n" +
+	"\x06LogAck\x18\v \x01(\v2\x19.NAlice.NAliceApi.TLogAckH\x00R\x06LogAck\x12-\n" +
+	"\x04Ping\x18\f \x01(\v2\x17.NAlice.NAliceApi.TPingH\x00R\x04Ping\x12<\n" +
+	"\tAsrResult\x18\r \x01(\v2\x1c.NAlice.NAliceApi.TAsrResultH\x00R\tAsrResult\x129\n" +
+	"\bTtsSpeak\x18\x0e \x01(\v2\x1b.NAlice.NAliceApi.TTtsSpeakH\x00R\bTtsSpeak\x12W\n" +
+	"\x12ServerRequestReady\x18\x0f \x01(\v2%.NAlice.NAliceApi.TServerRequestReadyH\x00R\x12ServerRequestReady\x12T\n" +
+	"\x11SpotterValidation\x18\x10 \x01(\v2$.NAlice.NAliceApi.TSpotterValidationH\x00R\x11SpotterValidation\x12B\n" +
+	"\vInvalidAuth\x18\x11 \x01(\v2\x1e.NAlice.NAliceApi.TInvalidAuthH\x00R\vInvalidAuth\x12?\n" +
 	"\n" +
-	"TtsTimings\x18\x12 \x01(\v2\x1d.NAlice.NAliceApi.TTtsTimingsB\x0f\xaa\xdd\x1b\vtts_timingsH\x00R\vtts_timings\x12c\n" +
-	"\x0eAsrMusicResult\x18\x13 \x01(\v2!.NAlice.NAliceApi.TAsrMusicResultB\x14\xaa\xdd\x1b\x10asr_music_resultH\x00R\x10asr_music_result\x12k\n" +
-	"\x10DataProxyRequest\x18\x16 \x01(\v2#.NAlice.NAliceApi.TDataProxyRequestB\x16\xaa\xdd\x1b\x12data_proxy_requestH\x00R\x12data_proxy_request\x12s\n" +
-	"\x12FileUploadResponse\x18\x17 \x01(\v2%.NAlice.NAliceApi.TFileUploadResponseB\x18\xaa\xdd\x1b\x14file_upload_responseH\x00R\x14file_upload_response\x12\x8b\x01\n" +
-	"\x18SynchronizeStateResponse\x18\x18 \x01(\v2+.NAlice.NAliceApi.TSynchronizeStateResponseB\x1e\xaa\xdd\x1b\x1asynchronize_state_responseH\x00R\x1asynchronize_state_response\x12]\n" +
-	"\rSpeechControl\x18\x19 \x01(\v2 .NAlice.NAliceApi.TSpeechControlB\x12\xaa\xdd\x1b\x0espeech_controlH\x00R\x0espeech_control\x12\x87\x01\n" +
-	"\x17ServerSubscriptionState\x18  \x01(\v2*.NAlice.NAliceApi.TServerSubscriptionStateB\x1d\xaa\xdd\x1b\x19server_subscription_stateH\x00R\x19server_subscription_state\x12c\n" +
-	"\x0eRequestStatAck\x18$ \x01(\v2!.NAlice.NAliceApi.TRequestStatAckB\x14\xaa\xdd\x1b\x10request_stat_ackH\x00R\x10request_stat_ack\x12\xa9\x01\n" +
-	"\x1fAudioTranscriptionInputResponse\x18& \x01(\v22.NAlice.NAliceApi.TAudioTranscriptionInputResponseB&\xaa\xdd\x1b\"audio_transcription_input_responseH\x00R\"audio_transcription_input_response\x12I\n" +
-	"\bChunkAck\x18' \x01(\v2\x1b.NAlice.NAliceApi.TChunkAckB\r\xaa\xdd\x1b\tchunk_ackH\x00R\tchunk_ack:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Event\x12\t\xaa\xdd\x1b\x05eventJ\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b%\x10&R\x0fMatchVoicePrintR\x11UpdateVoicePrintsR\x18DataProxyConnectResponseR\x0fDataProxyOutputR\x1dIotCloudTechnicalPushResponseR\x1bIotCloudEventsBatchResponseR\tDebugLogsR\x18IotCloudLogBatchResponseR\x1eIotCloudTelemetryBatchResponseR\x14DialogHistoryMessageR$IotCloudGeneralQuasarRequestResponseR\x13IotCloudOtaResponseR\rDialogControlR\x1aGeneralHttpRequestResponse\x1a[\n" +
-	"\bTTimings\x12O\n" +
-	"\vSendingTime\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x10\xaa\xdd\x1b\fsending_timeR\fsending_time:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aMessage\x12\v\xaa\xdd\x1b\amessageB\x82\x01\n" +
-	"3ru.yandex.alice.protos.api.alicekit.protocol.serverB\rServerMessageP\x01Z:a.yandex-team.ru/alice/protos/api/alicekit/protocol/serverb\x06proto3"
+	"TtsTimings\x18\x12 \x01(\v2\x1d.NAlice.NAliceApi.TTtsTimingsH\x00R\n" +
+	"TtsTimings\x12K\n" +
+	"\x0eAsrMusicResult\x18\x13 \x01(\v2!.NAlice.NAliceApi.TAsrMusicResultH\x00R\x0eAsrMusicResult\x12Q\n" +
+	"\x10DataProxyRequest\x18\x16 \x01(\v2#.NAlice.NAliceApi.TDataProxyRequestH\x00R\x10DataProxyRequest\x12W\n" +
+	"\x12FileUploadResponse\x18\x17 \x01(\v2%.NAlice.NAliceApi.TFileUploadResponseH\x00R\x12FileUploadResponse\x12i\n" +
+	"\x18SynchronizeStateResponse\x18\x18 \x01(\v2+.NAlice.NAliceApi.TSynchronizeStateResponseH\x00R\x18SynchronizeStateResponse\x12H\n" +
+	"\rSpeechControl\x18\x19 \x01(\v2 .NAlice.NAliceApi.TSpeechControlH\x00R\rSpeechControl\x12f\n" +
+	"\x17ServerSubscriptionState\x18  \x01(\v2*.NAlice.NAliceApi.TServerSubscriptionStateH\x00R\x17ServerSubscriptionState\x12K\n" +
+	"\x0eRequestStatAck\x18$ \x01(\v2!.NAlice.NAliceApi.TRequestStatAckH\x00R\x0eRequestStatAck\x12~\n" +
+	"\x1fAudioTranscriptionInputResponse\x18& \x01(\v22.NAlice.NAliceApi.TAudioTranscriptionInputResponseH\x00R\x1fAudioTranscriptionInputResponse\x12I\n" +
+	"\bChunkAck\x18' \x01(\v2\x1b.NAlice.NAliceApi.TChunkAckB\r\xaa\xdd\x1b\tchunk_ackH\x00R\tchunk_ackB\a\n" +
+	"\x05EventJ\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b%\x10&R\x0fMatchVoicePrintR\x11UpdateVoicePrintsR\x18DataProxyConnectResponseR\x0fDataProxyOutputR\x1dIotCloudTechnicalPushResponseR\x1bIotCloudEventsBatchResponseR\tDebugLogsR\x18IotCloudLogBatchResponseR\x1eIotCloudTelemetryBatchResponseR\x14DialogHistoryMessageR$IotCloudGeneralQuasarRequestResponseR\x13IotCloudOtaResponseR\rDialogControlR\x1aGeneralHttpRequestResponse\x1aH\n" +
+	"\bTTimings\x12<\n" +
+	"\vSendingTime\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\vSendingTimeB\t\n" +
+	"\aMessageB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12ServerMessageProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/protocol/server\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_protocol_server_server_message_proto_rawDescOnce sync.Once
@@ -709,8 +707,8 @@ var file_alice_protos_api_alicekit_protocol_server_server_message_proto_goTypes 
 	(*TServerMessage_TEvent)(nil),                                      // 1: NAlice.NAliceApi.TServerMessage.TEvent
 	(*TServerMessage_TTimings)(nil),                                    // 2: NAlice.NAliceApi.TServerMessage.TTimings
 	(*streaming.TStreaming)(nil),                                       // 3: NAlice.NAliceApi.TStreaming
-	(*message_group.TMessageGroupInfo)(nil),                            // 4: NAlice.NAliceApi.TMessageGroupInfo
-	(*stream_control.TStreamControl)(nil),                              // 5: NAlice.NAliceApi.TStreamControl
+	(*stream_control.TStreamControl)(nil),                              // 4: NAlice.NAliceApi.TStreamControl
+	(*message_group.TMessageGroupInfo)(nil),                            // 5: NAlice.NAliceApi.TMessageGroupInfo
 	(*event_header.TEventHeader)(nil),                                  // 6: NAlice.NAliceApi.TEventHeader
 	(*alice_response.TAliceResponseProto)(nil),                         // 7: NAlice.NAliceApi.TAliceResponseProto
 	(*streaming1.TDeferedAliceResponseProto)(nil),                      // 8: NAlice.NAliceApi.TDeferedAliceResponseProto
@@ -741,9 +739,9 @@ var file_alice_protos_api_alicekit_protocol_server_server_message_proto_goTypes 
 var file_alice_protos_api_alicekit_protocol_server_server_message_proto_depIdxs = []int32{
 	2,  // 0: NAlice.NAliceApi.TServerMessage.Timings:type_name -> NAlice.NAliceApi.TServerMessage.TTimings
 	3,  // 1: NAlice.NAliceApi.TServerMessage.Streaming:type_name -> NAlice.NAliceApi.TStreaming
-	4,  // 2: NAlice.NAliceApi.TServerMessage.MessageGroup:type_name -> NAlice.NAliceApi.TMessageGroupInfo
-	1,  // 3: NAlice.NAliceApi.TServerMessage.Event:type_name -> NAlice.NAliceApi.TServerMessage.TEvent
-	5,  // 4: NAlice.NAliceApi.TServerMessage.StreamControl:type_name -> NAlice.NAliceApi.TStreamControl
+	1,  // 2: NAlice.NAliceApi.TServerMessage.Event:type_name -> NAlice.NAliceApi.TServerMessage.TEvent
+	4,  // 3: NAlice.NAliceApi.TServerMessage.StreamControl:type_name -> NAlice.NAliceApi.TStreamControl
+	5,  // 4: NAlice.NAliceApi.TServerMessage.MessageGroup:type_name -> NAlice.NAliceApi.TMessageGroupInfo
 	6,  // 5: NAlice.NAliceApi.TServerMessage.TEvent.Header:type_name -> NAlice.NAliceApi.TEventHeader
 	7,  // 6: NAlice.NAliceApi.TServerMessage.TEvent.AliceResponse:type_name -> NAlice.NAliceApi.TAliceResponseProto
 	8,  // 7: NAlice.NAliceApi.TServerMessage.TEvent.DeferredAliceResponse:type_name -> NAlice.NAliceApi.TDeferedAliceResponseProto

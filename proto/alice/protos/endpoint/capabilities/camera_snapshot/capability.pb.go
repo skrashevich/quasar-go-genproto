@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/camera_snapshot/capability.proto
 
-package camera_snapshotpb
+package camera_snapshot
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -377,8 +377,8 @@ const file_alice_protos_endpoint_capabilities_camera_snapshot_capability_proto_r
 	"\a_Height\"(\n" +
 	"\aEFormat\x12\x0f\n" +
 	"\vFMT_UNKNOWN\x10\x00\x12\f\n" +
-	"\bFMT_JPEG\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9d\x01B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dCameraSnapshotCapabilityProtoP\x01ZUa.yandex-team.ru/alice/protos/endpoint/capabilities/camera_snapshot;camera_snapshotpbb\x06proto3"
+	"\bFMT_JPEG\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9d\x01B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dCameraSnapshotCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/camera_snapshotb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_camera_snapshot_capability_proto_rawDescOnce sync.Once

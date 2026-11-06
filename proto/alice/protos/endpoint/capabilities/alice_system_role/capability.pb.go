@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_system_role/capability.proto
 
-package alicesystemrolepb
+package alice_system_role
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_alice_system_role_capability_proto
 	"\x05State\x18\x03 \x01(\v2).NAlice.TAliceSystemRoleCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aZ\n" +
 	"\x06TState\x12J\n" +
-	"\x12IsDefaultAssistant\x18\x01 \x01(\bB\x18\xaa\xdd\x1b\x14is_default_assistantR\x14is_default_assistant:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa9\x02B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AliceSystemRoleProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_system_role;alicesystemrolepbb\x06proto3"
+	"\x12IsDefaultAssistant\x18\x01 \x01(\bB\x18\xaa\xdd\x1b\x14is_default_assistantR\x14is_default_assistant:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa9\x02B\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AliceSystemRoleProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_system_roleb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_system_role_capability_proto_rawDescOnce sync.Once

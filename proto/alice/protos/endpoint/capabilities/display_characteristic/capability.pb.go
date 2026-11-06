@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/display_characteristic/capability.proto
 
-package displaycharacteristicpb
+package display_characteristic
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -378,8 +378,8 @@ const file_alice_protos_endpoint_capabilities_display_characteristic_capability_
 	"\x13DYNAMIC_RANGE_HDR10\x10\x02\x12\x1b\n" +
 	"\x17DYNAMIC_RANGE_HDR10PLUS\x10\x03\x12\x14\n" +
 	"\x10DYNAMIC_RANGE_DV\x10\x04\x12\x15\n" +
-	"\x11DYNAMIC_RANGE_HLG\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb3\x02B\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aDisplayCharacteristicProtoP\x01Zba.yandex-team.ru/alice/protos/endpoint/capabilities/display_characteristic;displaycharacteristicpbb\x06proto3"
+	"\x11DYNAMIC_RANGE_HLG\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb3\x02B\xb7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aDisplayCharacteristicProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/display_characteristicb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_display_characteristic_capability_proto_rawDescOnce sync.Once

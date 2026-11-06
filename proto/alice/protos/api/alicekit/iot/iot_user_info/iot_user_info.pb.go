@@ -62,9 +62,9 @@ var File_alice_protos_api_alicekit_iot_iot_user_info_iot_user_info_proto protore
 
 const file_alice_protos_api_alicekit_iot_iot_user_info_iot_user_info_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/api/alicekit/iot/iot_user_info/iot_user_info.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x14\n" +
-	"\fTIoTUserInfo:\x04\xa8\xdd\x1b\x04B\x89\x01\n" +
-	"5ru.yandex.alice.protos.api.alicekit.iot.iot_user_infoB\x10IoTUserInfoProtoP\x01Z<a.yandex-team.ru/alice/protos/api/alicekit/iot/iot_user_infob\x06proto3"
+	"?alice/protos/api/alicekit/iot/iot_user_info/iot_user_info.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x0e\n" +
+	"\fTIoTUserInfoB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10IotUserInfoProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/iot/iot_user_info\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_iot_iot_user_info_iot_user_info_proto_rawDescOnce sync.Once

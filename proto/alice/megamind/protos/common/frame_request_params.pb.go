@@ -110,8 +110,8 @@ const file_alice_megamind_protos_common_frame_request_params_proto_rawDesc = "" 
 	"\n" +
 	"IsParallel\x18\x03 \x01(\bB\x0f\xaa\xdd\x1b\vis_parallelR\vis_parallel\x12X\n" +
 	"\vRequestType\x18\x04 \x01(\x0e2#.NAlice.TRequestParams.ERequestTypeB\x10\xaa\xdd\x1b\frequest_typeR\frequest_type\x12{\n" +
-	"!EnableOutputSpeechScenarioControl\x18\x05 \x01(\bB)\xaa\xdd\x1b%enable_output_speech_scenario_controlR%enable_output_speech_scenario_control:\x04\xa8\xdd\x1b\x04BW\n" +
-	"&ru.yandex.alice.megamind.protos.commonZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"!EnableOutputSpeechScenarioControl\x18\x05 \x01(\bB)\xaa\xdd\x1b%enable_output_speech_scenario_controlR%enable_output_speech_scenario_control:\x04\xa8\xdd\x1b\x04Bv\n" +
+	"&ru.yandex.alice.megamind.protos.commonZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_frame_request_params_proto_rawDescOnce sync.Once

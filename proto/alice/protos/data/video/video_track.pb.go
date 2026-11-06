@@ -193,8 +193,8 @@ const file_alice_protos_data_video_video_track_proto_rawDesc = "" +
 	"\x0eVideoTrackType\x10\x01\x12\x12\n" +
 	"\x0eAudioTrackType\x10\x02\x12\x16\n" +
 	"\x12SubtitlesTrackType\x10\x03\x12\x12\n" +
-	"\x0eSpeedTrackType\x10\x04B^\n" +
-	"!ru.yandex.alice.protos.data.videoB\x0fVideoTrackProtoZ(a.yandex-team.ru/alice/protos/data/videob\x06proto3"
+	"\x0eSpeedTrackType\x10\x04B}\n" +
+	"!ru.yandex.alice.protos.data.videoB\x0fVideoTrackProtoZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/videob\x06proto3"
 
 var (
 	file_alice_protos_data_video_video_track_proto_rawDescOnce sync.Once

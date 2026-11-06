@@ -247,8 +247,8 @@ const file_yandex_io_scaffolding_proto_config_proto_rawDesc = "" +
 	"\vPathsConfig\x12!\n" +
 	"\fworkdir_path\x18\x01 \x01(\tR\vworkdirPathJ\x04\b\x02\x10\x03J\x04\b\x03\x10\x04\"1\n" +
 	"\fLimitsConfig\x12!\n" +
-	"\ffileno_limit\x18\x01 \x01(\x04R\vfilenoLimitB$\n" +
-	"\"ru.yandex.quasar.scaffolding.proto"
+	"\ffileno_limit\x18\x01 \x01(\x04R\vfilenoLimitBq\n" +
+	"\"ru.yandex.quasar.scaffolding.protoZKgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/scaffolding/proto"
 
 var (
 	file_yandex_io_scaffolding_proto_config_proto_rawDescOnce sync.Once

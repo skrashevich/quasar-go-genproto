@@ -25,8 +25,8 @@ const (
 
 type TExternalEntityDescription struct {
 	state         protoimpl.MessageState                    `protogen:"open.v1"`
-	Name          string                                    `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Items         []*TExternalEntityDescription_TEntityItem `protobuf:"bytes,2,rep,name=Items,json=items,proto3" json:"Items,omitempty"`
+	Name          string                                    `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Items         []*TExternalEntityDescription_TEntityItem `protobuf:"bytes,2,rep,name=Items,proto3" json:"Items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -77,8 +77,8 @@ func (x *TExternalEntityDescription) GetItems() []*TExternalEntityDescription_TE
 
 type TExternalEntityDescription_TEntityItem struct {
 	state   protoimpl.MessageState                                      `protogen:"open.v1"`
-	Value   *TExternalEntityDescription_TEntityItem_TEntityValue        `protobuf:"bytes,1,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
-	Phrases []*TExternalEntityDescription_TEntityItem_TEntityItemPhrase `protobuf:"bytes,2,rep,name=Phrases,json=phrases,proto3" json:"Phrases,omitempty"`
+	Value   *TExternalEntityDescription_TEntityItem_TEntityValue        `protobuf:"bytes,1,opt,name=Value,proto3" json:"Value,omitempty"`
+	Phrases []*TExternalEntityDescription_TEntityItem_TEntityItemPhrase `protobuf:"bytes,2,rep,name=Phrases,proto3" json:"Phrases,omitempty"`
 	// Types that are valid to be assigned to Meta:
 	//
 	//	*TExternalEntityDescription_TEntityItem_VideoMeta
@@ -182,19 +182,19 @@ type isTExternalEntityDescription_TEntityItem_Meta interface {
 }
 
 type TExternalEntityDescription_TEntityItem_VideoMeta struct {
-	VideoMeta *entity_meta.TVideoGalleryItemMeta `protobuf:"bytes,3,opt,name=VideoMeta,json=video_meta,proto3,oneof"`
+	VideoMeta *entity_meta.TVideoGalleryItemMeta `protobuf:"bytes,3,opt,name=VideoMeta,proto3,oneof"`
 }
 
 type TExternalEntityDescription_TEntityItem_TvChannelMeta struct {
-	TvChannelMeta *entity_meta.TTvChannelItemMeta `protobuf:"bytes,4,opt,name=TvChannelMeta,json=tv_channel_meta,proto3,oneof"`
+	TvChannelMeta *entity_meta.TTvChannelItemMeta `protobuf:"bytes,4,opt,name=TvChannelMeta,proto3,oneof"`
 }
 
 type TExternalEntityDescription_TEntityItem_RecentTvItemMeta struct {
-	RecentTvItemMeta *entity_meta.TRecentTvItemMeta `protobuf:"bytes,5,opt,name=RecentTvItemMeta,json=recent_tv_item_meta,proto3,oneof"`
+	RecentTvItemMeta *entity_meta.TRecentTvItemMeta `protobuf:"bytes,5,opt,name=RecentTvItemMeta,proto3,oneof"`
 }
 
 type TExternalEntityDescription_TEntityItem_RemindersMeta struct {
-	RemindersMeta *entity_meta.TRemindersMeta `protobuf:"bytes,6,opt,name=RemindersMeta,json=reminders_meta,proto3,oneof"`
+	RemindersMeta *entity_meta.TRemindersMeta `protobuf:"bytes,6,opt,name=RemindersMeta,proto3,oneof"`
 }
 
 func (*TExternalEntityDescription_TEntityItem_VideoMeta) isTExternalEntityDescription_TEntityItem_Meta() {
@@ -211,7 +211,7 @@ func (*TExternalEntityDescription_TEntityItem_RemindersMeta) isTExternalEntityDe
 
 type TExternalEntityDescription_TEntityItem_TEntityItemPhrase struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Phrase        string                 `protobuf:"bytes,1,opt,name=Phrase,json=phrase,proto3" json:"Phrase,omitempty"`
+	Phrase        string                 `protobuf:"bytes,1,opt,name=Phrase,proto3" json:"Phrase,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -255,7 +255,7 @@ func (x *TExternalEntityDescription_TEntityItem_TEntityItemPhrase) GetPhrase() s
 
 type TExternalEntityDescription_TEntityItem_TEntityValue struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	StringValue   string                 `protobuf:"bytes,1,opt,name=StringValue,json=string_value,proto3" json:"StringValue,omitempty"`
+	StringValue   string                 `protobuf:"bytes,1,opt,name=StringValue,proto3" json:"StringValue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -301,26 +301,23 @@ var File_alice_protos_data_external_entity_description_proto protoreflect.FileDe
 
 const file_alice_protos_data_external_entity_description_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/data/external_entity_description.proto\x12\fNAlice.NData\x1a;alice/protos/data/entity_meta/recent_tv_item_nlu_meta.proto\x1a7alice/protos/data/entity_meta/tv_channel_nlu_meta.proto\x1a2alice/protos/data/entity_meta/video_nlu_meta.proto\x1a2alice/protos/data/entity_meta/reminders_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x85\a\n" +
-	"\x1aTExternalEntityDescription\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12U\n" +
-	"\x05Items\x18\x02 \x03(\v24.NAlice.NData.TExternalEntityDescription.TEntityItemB\t\xaa\xdd\x1b\x05itemsR\x05items\x1a\xeb\x05\n" +
-	"\vTEntityItem\x12b\n" +
-	"\x05Value\x18\x01 \x01(\v2A.NAlice.NData.TExternalEntityDescription.TEntityItem.TEntityValueB\t\xaa\xdd\x1b\x05valueR\x05value\x12m\n" +
-	"\aPhrases\x18\x02 \x03(\v2F.NAlice.NData.TExternalEntityDescription.TEntityItem.TEntityItemPhraseB\v\xaa\xdd\x1b\aphrasesR\aphrases\x12N\n" +
-	"\tVideoMeta\x18\x03 \x01(\v2\x1d.NAlice.TVideoGalleryItemMetaB\x0e\xaa\xdd\x1b\n" +
-	"video_metaH\x00R\n" +
-	"video_meta\x12Y\n" +
-	"\rTvChannelMeta\x18\x04 \x01(\v2\x1a.NAlice.TTvChannelItemMetaB\x13\xaa\xdd\x1b\x0ftv_channel_metaH\x00R\x0ftv_channel_meta\x12c\n" +
-	"\x10RecentTvItemMeta\x18\x05 \x01(\v2\x19.NAlice.TRecentTvItemMetaB\x17\xaa\xdd\x1b\x13recent_tv_item_metaH\x00R\x13recent_tv_item_meta\x12W\n" +
-	"\rRemindersMeta\x18\x06 \x01(\v2\x16.NAlice.TRemindersMetaB\x16\xa0\xdd\x1b\x05\xaa\xdd\x1b\x0ereminders_metaH\x00R\x0ereminders_meta\x1a=\n" +
-	"\x11TEntityItemPhrase\x12\"\n" +
-	"\x06Phrase\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06phraseR\x06phrase:\x04\xa8\xdd\x1b\x04\x1aI\n" +
-	"\fTEntityValue\x123\n" +
-	"\vStringValue\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fstring_valueR\fstring_value:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Meta\x12\b\xaa\xdd\x1b\x04meta:\x04\xa8\xdd\x1b\x04Ba\n" +
-	"\x1bru.yandex.alice.protos.dataB\x1eExternalEntityDescriptionProtoZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"3alice/protos/data/external_entity_description.proto\x12\fNAlice.NData\x1a;alice/protos/data/entity_meta/recent_tv_item_nlu_meta.proto\x1a7alice/protos/data/entity_meta/tv_channel_nlu_meta.proto\x1a2alice/protos/data/entity_meta/video_nlu_meta.proto\x1a2alice/protos/data/entity_meta/reminders_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xba\x05\n" +
+	"\x1aTExternalEntityDescription\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12J\n" +
+	"\x05Items\x18\x02 \x03(\v24.NAlice.NData.TExternalEntityDescription.TEntityItemR\x05Items\x1a\xbb\x04\n" +
+	"\vTEntityItem\x12W\n" +
+	"\x05Value\x18\x01 \x01(\v2A.NAlice.NData.TExternalEntityDescription.TEntityItem.TEntityValueR\x05Value\x12`\n" +
+	"\aPhrases\x18\x02 \x03(\v2F.NAlice.NData.TExternalEntityDescription.TEntityItem.TEntityItemPhraseR\aPhrases\x12=\n" +
+	"\tVideoMeta\x18\x03 \x01(\v2\x1d.NAlice.TVideoGalleryItemMetaH\x00R\tVideoMeta\x12B\n" +
+	"\rTvChannelMeta\x18\x04 \x01(\v2\x1a.NAlice.TTvChannelItemMetaH\x00R\rTvChannelMeta\x12G\n" +
+	"\x10RecentTvItemMeta\x18\x05 \x01(\v2\x19.NAlice.TRecentTvItemMetaH\x00R\x10RecentTvItemMeta\x12>\n" +
+	"\rRemindersMeta\x18\x06 \x01(\v2\x16.NAlice.TRemindersMetaH\x00R\rRemindersMeta\x1a+\n" +
+	"\x11TEntityItemPhrase\x12\x16\n" +
+	"\x06Phrase\x18\x01 \x01(\tR\x06Phrase\x1a0\n" +
+	"\fTEntityValue\x12 \n" +
+	"\vStringValue\x18\x01 \x01(\tR\vStringValueB\x06\n" +
+	"\x04MetaB\xc6\x01\n" +
+	"\x10com.NAlice.NDataB\x1eExternalEntityDescriptionProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_external_entity_description_proto_rawDescOnce sync.Once

@@ -25,7 +25,7 @@ const (
 
 type TClientSubscriptionState struct {
 	state             protoimpl.MessageState                       `protogen:"open.v1"`
-	Subscriptions     []*TClientSubscriptionState_TSubscription    `protobuf:"bytes,1,rep,name=Subscriptions,json=subscriptions,proto3" json:"Subscriptions,omitempty"`
+	Subscriptions     []*TClientSubscriptionState_TSubscription    `protobuf:"bytes,1,rep,name=Subscriptions,proto3" json:"Subscriptions,omitempty"`
 	AdditionalOptions *TClientSubscriptionState_TAdditionalOptions `protobuf:"bytes,2,opt,name=AdditionalOptions,json=additional_options,proto3" json:"AdditionalOptions,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -77,8 +77,8 @@ func (x *TClientSubscriptionState) GetAdditionalOptions() *TClientSubscriptionSt
 
 type TClientSubscriptionState_TSubscription struct {
 	state         protoimpl.MessageState                         `protogen:"open.v1"`
-	Id            string                                         `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	State         *TClientSubscriptionState_TSubscription_TState `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Id            string                                         `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	State         *TClientSubscriptionState_TSubscription_TState `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -242,11 +242,11 @@ type isTClientSubscriptionState_TSubscription_TState_State interface {
 }
 
 type TClientSubscriptionState_TSubscription_TState_Ping struct {
-	Ping *TClientSubscriptionState_TSubscription_TState_TPing `protobuf:"bytes,1,opt,name=Ping,json=ping,proto3,oneof"`
+	Ping *TClientSubscriptionState_TSubscription_TState_TPing `protobuf:"bytes,1,opt,name=Ping,proto3,oneof"`
 }
 
 type TClientSubscriptionState_TSubscription_TState_FullContent struct {
-	FullContent *TClientSubscriptionState_TSubscription_TState_TFullContent `protobuf:"bytes,2,opt,name=FullContent,json=full_content,proto3,oneof"`
+	FullContent *TClientSubscriptionState_TSubscription_TState_TFullContent `protobuf:"bytes,2,opt,name=FullContent,proto3,oneof"`
 }
 
 func (*TClientSubscriptionState_TSubscription_TState_Ping) isTClientSubscriptionState_TSubscription_TState_State() {
@@ -331,22 +331,22 @@ var File_alice_protos_api_alicekit_events_client_subscription_state_client_subsc
 
 const file_alice_protos_api_alicekit_events_client_subscription_state_client_subscription_state_proto_rawDesc = "" +
 	"\n" +
-	"Zalice/protos/api/alicekit/events/client_subscription_state/client_subscription_state.proto\x12\x10NAlice.NAliceApi\x1a7alice/protos/api/incognito_mode/incognito_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd3\x06\n" +
-	"\x18TClientSubscriptionState\x12q\n" +
-	"\rSubscriptions\x18\x01 \x03(\v28.NAlice.NAliceApi.TClientSubscriptionState.TSubscriptionB\x11\xaa\xdd\x1b\rsubscriptionsR\rsubscriptions\x12\x84\x01\n" +
-	"\x11AdditionalOptions\x18\x02 \x01(\v2=.NAlice.NAliceApi.TClientSubscriptionState.TAdditionalOptionsB\x16\xaa\xdd\x1b\x12additional_optionsR\x12additional_options\x1a\xbb\x03\n" +
-	"\rTSubscription\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12`\n" +
-	"\x05State\x18\x02 \x01(\v2?.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xa9\x02\n" +
-	"\x06TState\x12e\n" +
-	"\x04Ping\x18\x01 \x01(\v2E.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TState.TPingB\b\xaa\xdd\x1b\x04pingH\x00R\x04ping\x12\x83\x01\n" +
-	"\vFullContent\x18\x02 \x01(\v2L.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TState.TFullContentB\x10\xaa\xdd\x1b\ffull_contentH\x00R\ffull_content\x1a\r\n" +
-	"\x05TPing:\x04\xa8\xdd\x1b\x04\x1a\x14\n" +
-	"\fTFullContent:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05State:\x04\xa8\xdd\x1b\x04\x1ay\n" +
+	"Zalice/protos/api/alicekit/events/client_subscription_state/client_subscription_state.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a7alice/protos/api/incognito_mode/incognito_options.proto\"\xf1\x05\n" +
+	"\x18TClientSubscriptionState\x12^\n" +
+	"\rSubscriptions\x18\x01 \x03(\v28.NAlice.NAliceApi.TClientSubscriptionState.TSubscriptionR\rSubscriptions\x12\x84\x01\n" +
+	"\x11AdditionalOptions\x18\x02 \x01(\v2=.NAlice.NAliceApi.TClientSubscriptionState.TAdditionalOptionsB\x16\xaa\xdd\x1b\x12additional_optionsR\x12additional_options\x1a\xf2\x02\n" +
+	"\rTSubscription\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12U\n" +
+	"\x05State\x18\x02 \x01(\v2?.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TStateR\x05State\x1a\xf9\x01\n" +
+	"\x06TState\x12[\n" +
+	"\x04Ping\x18\x01 \x01(\v2E.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TState.TPingH\x00R\x04Ping\x12p\n" +
+	"\vFullContent\x18\x02 \x01(\v2L.NAlice.NAliceApi.TClientSubscriptionState.TSubscription.TState.TFullContentH\x00R\vFullContent\x1a\a\n" +
+	"\x05TPing\x1a\x0e\n" +
+	"\fTFullContentB\a\n" +
+	"\x05State\x1ay\n" +
 	"\x12TAdditionalOptions\x12]\n" +
-	"\x10IncognitoOptions\x18\x01 \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsR\x11incognito_options:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\xb3\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.client_subscription_stateB\x1cClientSubscriptionStateProtoP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/client_subscription_stateb\x06proto3"
+	"\x10IncognitoOptions\x18\x01 \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsR\x11incognito_options:\x04\xa8\xdd\x1b\x04B\x81\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1cClientSubscriptionStateProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/client_subscription_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_client_subscription_state_client_subscription_state_proto_rawDescOnce sync.Once

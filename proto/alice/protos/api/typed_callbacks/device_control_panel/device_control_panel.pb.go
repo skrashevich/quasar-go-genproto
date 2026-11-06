@@ -76,7 +76,7 @@ func (EDeviceBlockType) EnumDescriptor() ([]byte, []int) {
 
 type TDeviceControlPanelBlockData struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	DeviceBlockType EDeviceBlockType       `protobuf:"varint,5,opt,name=DeviceBlockType,json=device_block_type,proto3,enum=NAlice.EDeviceBlockType" json:"DeviceBlockType,omitempty"`
+	DeviceBlockType EDeviceBlockType       `protobuf:"varint,5,opt,name=DeviceBlockType,proto3,enum=NAlice.EDeviceBlockType" json:"DeviceBlockType,omitempty"`
 	// Types that are valid to be assigned to Reason:
 	//
 	//	*TDeviceControlPanelBlockData_ManualBlock
@@ -163,15 +163,15 @@ type isTDeviceControlPanelBlockData_Reason interface {
 }
 
 type TDeviceControlPanelBlockData_ManualBlock struct {
-	ManualBlock *TDeviceControlPanelBlockData_TManualBlock `protobuf:"bytes,2,opt,name=ManualBlock,json=manual_block,proto3,oneof"`
+	ManualBlock *TDeviceControlPanelBlockData_TManualBlock `protobuf:"bytes,2,opt,name=ManualBlock,proto3,oneof"`
 }
 
 type TDeviceControlPanelBlockData_ScheduledBlock struct {
-	ScheduledBlock *TDeviceControlPanelBlockData_TScheduledBlock `protobuf:"bytes,3,opt,name=ScheduledBlock,json=scheduled_block,proto3,oneof"`
+	ScheduledBlock *TDeviceControlPanelBlockData_TScheduledBlock `protobuf:"bytes,3,opt,name=ScheduledBlock,proto3,oneof"`
 }
 
 type TDeviceControlPanelBlockData_DailyLimitBlock struct {
-	DailyLimitBlock *TDeviceControlPanelBlockData_TDailyLimitBlock `protobuf:"bytes,4,opt,name=DailyLimitBlock,json=daily_limit_block,proto3,oneof"`
+	DailyLimitBlock *TDeviceControlPanelBlockData_TDailyLimitBlock `protobuf:"bytes,4,opt,name=DailyLimitBlock,proto3,oneof"`
 }
 
 func (*TDeviceControlPanelBlockData_ManualBlock) isTDeviceControlPanelBlockData_Reason() {}
@@ -182,7 +182,7 @@ func (*TDeviceControlPanelBlockData_DailyLimitBlock) isTDeviceControlPanelBlockD
 
 type TDeviceControlPanelBlockActivatedTypedCallback struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
+	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,proto3" json:"Data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -226,7 +226,7 @@ func (x *TDeviceControlPanelBlockActivatedTypedCallback) GetData() *TDeviceContr
 
 type TDeviceControlPanelBlockDeactivatedTypedCallback struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
+	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,proto3" json:"Data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -270,8 +270,8 @@ func (x *TDeviceControlPanelBlockDeactivatedTypedCallback) GetData() *TDeviceCon
 
 type TDeviceControlPanelBlockWarningTypedCallback struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,json=data,proto3" json:"Data,omitempty"`
-	TimeLeft      *durationpb.Duration          `protobuf:"bytes,2,opt,name=TimeLeft,json=time_left,proto3" json:"TimeLeft,omitempty"`
+	Data          *TDeviceControlPanelBlockData `protobuf:"bytes,1,opt,name=Data,proto3" json:"Data,omitempty"`
+	TimeLeft      *durationpb.Duration          `protobuf:"bytes,2,opt,name=TimeLeft,proto3" json:"TimeLeft,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -430,7 +430,7 @@ func (*TDeviceControlPanelBlockData_TManualBlock) Descriptor() ([]byte, []int) {
 
 type TDeviceControlPanelBlockData_TScheduledBlock struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	TimeInterval  *device_control_panel.TTimeInterval `protobuf:"bytes,1,opt,name=TimeInterval,json=time_interval,proto3" json:"TimeInterval,omitempty"`
+	TimeInterval  *device_control_panel.TTimeInterval `protobuf:"bytes,1,opt,name=TimeInterval,proto3" json:"TimeInterval,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -474,7 +474,7 @@ func (x *TDeviceControlPanelBlockData_TScheduledBlock) GetTimeInterval() *device
 
 type TDeviceControlPanelBlockData_TDailyLimitBlock struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DailyLimit    *durationpb.Duration   `protobuf:"bytes,1,opt,name=DailyLimit,json=daily_limit,proto3" json:"DailyLimit,omitempty"`
+	DailyLimit    *durationpb.Duration   `protobuf:"bytes,1,opt,name=DailyLimit,proto3" json:"DailyLimit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -520,33 +520,35 @@ var File_alice_protos_api_typed_callbacks_device_control_panel_device_control_pa
 
 const file_alice_protos_api_typed_callbacks_device_control_panel_device_control_panel_proto_rawDesc = "" +
 	"\n" +
-	"Palice/protos/api/typed_callbacks/device_control_panel/device_control_panel.proto\x12\x06NAlice\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1egoogle/protobuf/duration.proto\"\xcc\x04\n" +
-	"\x1cTDeviceControlPanelBlockData\x12D\n" +
-	"\x0fDeviceBlockType\x18\x05 \x01(\x0e2\x18.NAlice.EDeviceBlockTypeR\x11device_block_type\x12V\n" +
-	"\vManualBlock\x18\x02 \x01(\v21.NAlice.TDeviceControlPanelBlockData.TManualBlockH\x00R\fmanual_block\x12_\n" +
-	"\x0eScheduledBlock\x18\x03 \x01(\v24.NAlice.TDeviceControlPanelBlockData.TScheduledBlockH\x00R\x0fscheduled_block\x12c\n" +
-	"\x0fDailyLimitBlock\x18\x04 \x01(\v25.NAlice.TDeviceControlPanelBlockData.TDailyLimitBlockH\x00R\x11daily_limit_block\x1a\x0e\n" +
-	"\fTManualBlock\x1aM\n" +
-	"\x0fTScheduledBlock\x12:\n" +
-	"\fTimeInterval\x18\x01 \x01(\v2\x15.NAlice.TTimeIntervalR\rtime_interval\x1aN\n" +
-	"\x10TDailyLimitBlock\x12:\n" +
+	"Palice/protos/api/typed_callbacks/device_control_panel/device_control_panel.proto\x12\x06NAlice\x1a:alice/protos/data/device_control_panel/time_interval.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1egoogle/protobuf/duration.proto\"\xc4\x04\n" +
+	"\x1cTDeviceControlPanelBlockData\x12B\n" +
+	"\x0fDeviceBlockType\x18\x05 \x01(\x0e2\x18.NAlice.EDeviceBlockTypeR\x0fDeviceBlockType\x12U\n" +
+	"\vManualBlock\x18\x02 \x01(\v21.NAlice.TDeviceControlPanelBlockData.TManualBlockH\x00R\vManualBlock\x12^\n" +
+	"\x0eScheduledBlock\x18\x03 \x01(\v24.NAlice.TDeviceControlPanelBlockData.TScheduledBlockH\x00R\x0eScheduledBlock\x12a\n" +
+	"\x0fDailyLimitBlock\x18\x04 \x01(\v25.NAlice.TDeviceControlPanelBlockData.TDailyLimitBlockH\x00R\x0fDailyLimitBlock\x1a\x0e\n" +
+	"\fTManualBlock\x1aL\n" +
+	"\x0fTScheduledBlock\x129\n" +
+	"\fTimeInterval\x18\x01 \x01(\v2\x15.NAlice.TTimeIntervalR\fTimeInterval\x1aM\n" +
+	"\x10TDailyLimitBlock\x129\n" +
 	"\n" +
-	"DailyLimit\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\vdaily_limitB\b\n" +
-	"\x06ReasonJ\x04\b\x01\x10\x02R\tBlockType\"\xa1\x01\n" +
+	"DailyLimit\x18\x01 \x01(\v2\x19.google.protobuf.DurationR\n" +
+	"DailyLimitB\b\n" +
+	"\x06ReasonJ\x04\b\x01\x10\x02R\tBlockType\"j\n" +
 	".TDeviceControlPanelBlockActivatedTypedCallback\x128\n" +
-	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04data:5\xa8\xdd\x1b\x04\xba\xff\x1b-DeviceControlPanelBlockActivatedTypedCallback\"\xa5\x01\n" +
+	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04Data\"l\n" +
 	"0TDeviceControlPanelBlockDeactivatedTypedCallback\x128\n" +
-	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04data:7\xa8\xdd\x1b\x04\xba\xff\x1b/DeviceControlPanelBlockDeactivatedTypedCallback\"\xd5\x01\n" +
+	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04Data\"\x9f\x01\n" +
 	",TDeviceControlPanelBlockWarningTypedCallback\x128\n" +
-	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04data\x126\n" +
-	"\bTimeLeft\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\ttime_left:3\xa8\xdd\x1b\x04\xba\xff\x1b+DeviceControlPanelBlockWarningTypedCallback\"q\n" +
-	"3TDeviceControlPanelBlockCommandSpotterTypedCallback::\xa8\xdd\x1b\x04\xba\xff\x1b2DeviceControlPanelBlockCommandSpotterTypedCallback\"a\n" +
-	"+TDeviceControlPanelBlockButtonTypedCallback:2\xa8\xdd\x1b\x04\xba\xff\x1b*DeviceControlPanelBlockButtonTypedCallback*P\n" +
+	"\x04Data\x18\x01 \x01(\v2$.NAlice.TDeviceControlPanelBlockDataR\x04Data\x125\n" +
+	"\bTimeLeft\x18\x02 \x01(\v2\x19.google.protobuf.DurationR\bTimeLeft\"5\n" +
+	"3TDeviceControlPanelBlockCommandSpotterTypedCallback\"-\n" +
+	"+TDeviceControlPanelBlockButtonTypedCallback*P\n" +
 	"\x10EDeviceBlockType\x12\x10\n" +
 	"\fEDBT_UNKNOWN\x10\x00\x12\x14\n" +
 	"\x10EDBT_TOTAL_BLOCK\x10\x01\x12\x14\n" +
-	"\x10EDBT_VIDEO_BLOCK\x10\x02B\x8b\x01\n" +
-	"?ru.yandex.alice.protos.api.typed_callbacks.device_control_panelP\x01ZFa.yandex-team.ru/alice/protos/api/typed_callbacks/device_control_panelb\x06proto3"
+	"\x10EDBT_VIDEO_BLOCK\x10\x02B\xc4\x01\n" +
+	"\n" +
+	"com.NAliceB\x17DeviceControlPanelProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_device_control_panel_device_control_panel_proto_rawDescOnce sync.Once

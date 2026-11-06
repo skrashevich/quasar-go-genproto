@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/any_capability.proto
 
-package endpointpb
+package endpoint
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -24,8 +24,8 @@ const (
 
 type TAnyCapabilityHolder struct {
 	state          protoimpl.MessageState      `protogen:"open.v1"`
-	RawCapability  []byte                      `protobuf:"bytes,1,opt,name=RawCapability,json=raw_capability,proto3" json:"RawCapability,omitempty"`
-	CapabilityType TCapability_ECapabilityType `protobuf:"varint,2,opt,name=CapabilityType,json=capability_type,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
+	RawCapability  []byte                      `protobuf:"bytes,1,opt,name=RawCapability,proto3" json:"RawCapability,omitempty"`
+	CapabilityType TCapability_ECapabilityType `protobuf:"varint,2,opt,name=CapabilityType,proto3,enum=NAlice.TCapability_ECapabilityType" json:"CapabilityType,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -78,11 +78,12 @@ var File_alice_protos_endpoint_any_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_any_capability_proto_rawDesc = "" +
 	"\n" +
-	"*alice/protos/endpoint/any_capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xba\x01\n" +
-	"\x14TAnyCapabilityHolder\x129\n" +
-	"\rRawCapability\x18\x01 \x01(\fB\x12\xaa\xdd\x1b\x0eraw_capabilityR\x0eraw_capability\x12a\n" +
-	"\x0eCapabilityType\x18\x02 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeB\x13\xaa\xdd\x1b\x0fcapability_typeR\x0fcapability_type:\x04\xa8\xdd\x1b\x04Bh\n" +
-	"\x1fru.yandex.alice.protos.endpointB\x12AnyCapabilityProtoZ1a.yandex-team.ru/alice/protos/endpoint;endpointpbb\x06proto3"
+	"*alice/protos/endpoint/any_capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x89\x01\n" +
+	"\x14TAnyCapabilityHolder\x12$\n" +
+	"\rRawCapability\x18\x01 \x01(\fR\rRawCapability\x12K\n" +
+	"\x0eCapabilityType\x18\x02 \x01(\x0e2#.NAlice.TCapability.ECapabilityTypeR\x0eCapabilityTypeB\x9f\x01\n" +
+	"\n" +
+	"com.NAliceB\x12AnyCapabilityProtoP\x01ZEgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_any_capability_proto_rawDescOnce sync.Once

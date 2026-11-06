@@ -24,7 +24,7 @@ const (
 
 type TServerSubscriptionState struct {
 	state         protoimpl.MessageState                    `protogen:"open.v1"`
-	Subscriptions []*TServerSubscriptionState_TSubscription `protobuf:"bytes,1,rep,name=Subscriptions,json=subscriptions,proto3" json:"Subscriptions,omitempty"`
+	Subscriptions []*TServerSubscriptionState_TSubscription `protobuf:"bytes,1,rep,name=Subscriptions,proto3" json:"Subscriptions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -68,8 +68,8 @@ func (x *TServerSubscriptionState) GetSubscriptions() []*TServerSubscriptionStat
 
 type TServerSubscriptionState_TSubscription struct {
 	state         protoimpl.MessageState                         `protogen:"open.v1"`
-	Id            string                                         `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	State         *TServerSubscriptionState_TSubscription_TState `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Id            string                                         `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	State         *TServerSubscriptionState_TSubscription_TState `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -189,11 +189,11 @@ type isTServerSubscriptionState_TSubscription_TState_State interface {
 }
 
 type TServerSubscriptionState_TSubscription_TState_Active struct {
-	Active *TServerSubscriptionState_TSubscription_TState_TActive `protobuf:"bytes,1,opt,name=Active,json=active,proto3,oneof"`
+	Active *TServerSubscriptionState_TSubscription_TState_TActive `protobuf:"bytes,1,opt,name=Active,proto3,oneof"`
 }
 
 type TServerSubscriptionState_TSubscription_TState_Ready struct {
-	Ready *TServerSubscriptionState_TSubscription_TState_TReady `protobuf:"bytes,2,opt,name=Ready,json=ready,proto3,oneof"`
+	Ready *TServerSubscriptionState_TSubscription_TState_TReady `protobuf:"bytes,2,opt,name=Ready,proto3,oneof"`
 }
 
 func (*TServerSubscriptionState_TSubscription_TState_Active) isTServerSubscriptionState_TSubscription_TState_State() {
@@ -278,20 +278,19 @@ var File_alice_protos_api_alicekit_events_server_subscription_state_server_subsc
 
 const file_alice_protos_api_alicekit_events_server_subscription_state_server_subscription_state_proto_rawDesc = "" +
 	"\n" +
-	"Zalice/protos/api/alicekit/events/server_subscription_state/server_subscription_state.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xba\x04\n" +
-	"\x18TServerSubscriptionState\x12q\n" +
-	"\rSubscriptions\x18\x01 \x03(\v28.NAlice.NAliceApi.TServerSubscriptionState.TSubscriptionB\x11\xaa\xdd\x1b\rsubscriptionsR\rsubscriptions\x1a\xa4\x03\n" +
-	"\rTSubscription\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12`\n" +
-	"\x05State\x18\x02 \x01(\v2?.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x92\x02\n" +
-	"\x06TState\x12m\n" +
-	"\x06Active\x18\x01 \x01(\v2G.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TState.TActiveB\n" +
-	"\xaa\xdd\x1b\x06activeH\x00R\x06active\x12i\n" +
-	"\x05Ready\x18\x02 \x01(\v2F.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TState.TReadyB\t\xaa\xdd\x1b\x05readyH\x00R\x05ready\x1a\x0f\n" +
-	"\aTActive:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TReady:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05State:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\xb3\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.server_subscription_stateB\x1cServerSubscriptionStateProtoP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/server_subscription_stateb\x06proto3"
+	"Zalice/protos/api/alicekit/events/server_subscription_state/server_subscription_state.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdf\x03\n" +
+	"\x18TServerSubscriptionState\x12^\n" +
+	"\rSubscriptions\x18\x01 \x03(\v28.NAlice.NAliceApi.TServerSubscriptionState.TSubscriptionR\rSubscriptions\x1a\xe2\x02\n" +
+	"\rTSubscription\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12U\n" +
+	"\x05State\x18\x02 \x01(\v2?.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TStateR\x05State\x1a\xe9\x01\n" +
+	"\x06TState\x12a\n" +
+	"\x06Active\x18\x01 \x01(\v2G.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TState.TActiveH\x00R\x06Active\x12^\n" +
+	"\x05Ready\x18\x02 \x01(\v2F.NAlice.NAliceApi.TServerSubscriptionState.TSubscription.TState.TReadyH\x00R\x05Ready\x1a\t\n" +
+	"\aTActive\x1a\b\n" +
+	"\x06TReadyB\a\n" +
+	"\x05StateB\x81\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1cServerSubscriptionStateProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/server_subscription_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_server_subscription_state_server_subscription_state_proto_rawDescOnce sync.Once

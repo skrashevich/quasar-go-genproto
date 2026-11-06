@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/video_player_control/capability.proto
 
-package videoplayercontrolpb
+package video_player_control
 
 import (
 	video "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/video"
@@ -622,8 +622,8 @@ const file_alice_protos_endpoint_capabilities_video_player_control_capability_pr
 	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:'\x92\x82\x19\x1avideo_set_full_screen_mode\xa8\xdd\x1b\x04\xa8\xc8\x1c\x85\x02\x1a\xad\x01\n" +
 	"\x1bTSkipVideoFragmentDirective\x12*\n" +
 	"\bRewindTo\x18\x01 \x01(\rB\r\xaa\xdd\x1b\trewind_toR\trewind_to\x126\n" +
-	"\fFragmentType\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rfragment_typeR\rfragment_type:*\x92\x82\x19\x1dskip_video_fragment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaa\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c B\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!VideoPlayerControlCapabilityProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/video_player_control;videoplayercontrolpbb\x06proto3"
+	"\fFragmentType\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rfragment_typeR\rfragment_type:*\x92\x82\x19\x1dskip_video_fragment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaa\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!VideoPlayerControlCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_player_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_player_control_capability_proto_rawDescOnce sync.Once

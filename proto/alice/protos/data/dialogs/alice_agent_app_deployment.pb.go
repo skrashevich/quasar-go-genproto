@@ -78,8 +78,8 @@ const file_alice_protos_data_dialogs_alice_agent_app_deployment_proto_rawDesc = 
 	"\x18EAliceAgentAppDeployment\x12\x1a\n" +
 	"\x16DEPLOYMENT_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14DEPLOYMENT_PUBLISHED\x10\x01\x12\x14\n" +
-	"\x10DEPLOYMENT_DRAFT\x10\x02BS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\x10DEPLOYMENT_DRAFT\x10\x02Br\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_alice_agent_app_deployment_proto_rawDescOnce sync.Once

@@ -102,7 +102,7 @@ const file_alice_protos_data_video_centaur_film_purchase_details_proto_rawDesc =
 	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12H\n" +
 	"\n" +
 	"VhLicences\x18\x03 \x01(\v2\x16.NAlice.TVHLicenceInfoB\x0f\xaa\xdd\x1b\vvh_licensesR\vvh_licenses\x12W\n" +
-	"\vViewOptions\x18\x04 \x01(\v2\".NAlice.TOttVideoItem.TViewOptionsB\x10\xaa\xdd\x1b\fview_optionsR\fview_options:\x04\xa8\xdd\x1b\x04B2Z0a.yandex-team.ru/alice/protos/data/video/centaurb\x06proto3"
+	"\vViewOptions\x18\x04 \x01(\v2\".NAlice.TOttVideoItem.TViewOptionsB\x10\xaa\xdd\x1b\fview_optionsR\fview_options:\x04\xa8\xdd\x1b\x04BQZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/video/centaurb\x06proto3"
 
 var (
 	file_alice_protos_data_video_centaur_film_purchase_details_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_files/capability.proto
 
-package alicechatfilespb
+package alice_chat_files
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -287,8 +287,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_files_capability_proto_
 	"\n" +
 	"\x06CAMERA\x10\x00\x12\v\n" +
 	"\aGALLERY\x10\x02\x12\t\n" +
-	"\x05FILES\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd2\x01B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13AliceChatFilesProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_files;alicechatfilespbb\x06proto3"
+	"\x05FILES\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd2\x01B\xa8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13AliceChatFilesProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_filesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_files_capability_proto_rawDescOnce sync.Once

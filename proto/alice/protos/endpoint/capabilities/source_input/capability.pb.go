@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/source_input/capability.proto
 
-package srcinput
+package source_input
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -161,9 +161,9 @@ func (TSourceInputCapability_TSourceInput_EDeviceType) EnumDescriptor() ([]byte,
 
 type TSourceInputCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSourceInputCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSourceInputCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSourceInputCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSourceInputCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,15 +257,15 @@ func (*TSourceInputCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TSourceInputCapability_TSourceInput struct {
 	state                                   protoimpl.MessageState                          `protogen:"open.v1"`
-	IsConnected                             bool                                            `protobuf:"varint,2,opt,name=IsConnected,json=is_connected,proto3" json:"IsConnected,omitempty"`
-	SourceType                              TSourceInputCapability_TSourceInput_ESourceType `protobuf:"varint,3,opt,name=SourceType,json=source_type,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_ESourceType" json:"SourceType,omitempty"`
-	DeviceName                              string                                          `protobuf:"bytes,4,opt,name=DeviceName,json=device_name,proto3" json:"DeviceName,omitempty"`
-	DeviceType                              TSourceInputCapability_TSourceInput_EDeviceType `protobuf:"varint,5,opt,name=DeviceType,json=device_type,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_EDeviceType" json:"DeviceType,omitempty"`
-	SourceInputId                           string                                          `protobuf:"bytes,6,opt,name=SourceInputId,json=source_input_id,proto3" json:"SourceInputId,omitempty"`
-	InputName                               string                                          `protobuf:"bytes,7,opt,name=InputName,json=input_name,proto3" json:"InputName,omitempty"`
-	IsActive                                bool                                            `protobuf:"varint,8,opt,name=IsActive,json=is_active,proto3" json:"IsActive,omitempty"`
-	IsGamerCopilotModeEnabledByUserSettings bool                                            `protobuf:"varint,10,opt,name=IsGamerCopilotModeEnabledByUserSettings,json=is_gamer_copilot_mode_enabled_by_user_settings,proto3" json:"IsGamerCopilotModeEnabledByUserSettings,omitempty"`
-	IsVideoAvailable                        *bool                                           `protobuf:"varint,9,opt,name=IsVideoAvailable,json=is_video_available,proto3,oneof" json:"IsVideoAvailable,omitempty"`
+	IsConnected                             bool                                            `protobuf:"varint,2,opt,name=IsConnected,proto3" json:"IsConnected,omitempty"`
+	SourceType                              TSourceInputCapability_TSourceInput_ESourceType `protobuf:"varint,3,opt,name=SourceType,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_ESourceType" json:"SourceType,omitempty"`
+	DeviceName                              string                                          `protobuf:"bytes,4,opt,name=DeviceName,proto3" json:"DeviceName,omitempty"`
+	DeviceType                              TSourceInputCapability_TSourceInput_EDeviceType `protobuf:"varint,5,opt,name=DeviceType,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_EDeviceType" json:"DeviceType,omitempty"`
+	SourceInputId                           string                                          `protobuf:"bytes,6,opt,name=SourceInputId,proto3" json:"SourceInputId,omitempty"`
+	InputName                               string                                          `protobuf:"bytes,7,opt,name=InputName,proto3" json:"InputName,omitempty"`
+	IsActive                                bool                                            `protobuf:"varint,8,opt,name=IsActive,proto3" json:"IsActive,omitempty"`
+	IsGamerCopilotModeEnabledByUserSettings bool                                            `protobuf:"varint,10,opt,name=IsGamerCopilotModeEnabledByUserSettings,proto3" json:"IsGamerCopilotModeEnabledByUserSettings,omitempty"`
+	IsVideoAvailable                        *bool                                           `protobuf:"varint,9,opt,name=IsVideoAvailable,proto3,oneof" json:"IsVideoAvailable,omitempty"`
 	unknownFields                           protoimpl.UnknownFields
 	sizeCache                               protoimpl.SizeCache
 }
@@ -365,7 +365,7 @@ func (x *TSourceInputCapability_TSourceInput) GetIsVideoAvailable() bool {
 
 type TSourceInputCapability_TState struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	SourceInputs  []*TSourceInputCapability_TSourceInput `protobuf:"bytes,1,rep,name=SourceInputs,json=source_inputs,proto3" json:"SourceInputs,omitempty"`
+	SourceInputs  []*TSourceInputCapability_TSourceInput `protobuf:"bytes,1,rep,name=SourceInputs,proto3" json:"SourceInputs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -409,8 +409,8 @@ func (x *TSourceInputCapability_TState) GetSourceInputs() []*TSourceInputCapabil
 
 type TSourceInputCapability_TOpenSourceInputDirective struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	SourceInput   *TSourceInputCapability_TSourceInput `protobuf:"bytes,1,opt,name=SourceInput,json=input,proto3" json:"SourceInput,omitempty"`
-	Name          string                               `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	SourceInput   *TSourceInputCapability_TSourceInput `protobuf:"bytes,1,opt,name=SourceInput,proto3" json:"SourceInput,omitempty"`
+	Name          string                               `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -461,7 +461,7 @@ func (x *TSourceInputCapability_TOpenSourceInputDirective) GetName() string {
 
 type TSourceInputCapability_TOpenSourceInputsListDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -507,31 +507,32 @@ var File_alice_protos_endpoint_capabilities_source_input_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_source_input_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/source_input/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x89\r\n" +
-	"\x16TSourceInputCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"@alice/protos/endpoint/capabilities/source_input/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x92\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TSourceInputCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TSourceInputCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xf6\a\n" +
-	"\fTSourceInput\x123\n" +
-	"\vIsConnected\x18\x02 \x01(\bB\x10\xaa\xdd\x1b\fis_connectedR\fis_connected\x12i\n" +
+	"\x16TSourceInputCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"SourceType\x18\x03 \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.ESourceTypeB\x0f\xaa\xdd\x1b\vsource_typeR\vsource_type\x120\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TSourceInputCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TSourceInputCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\x9f\x06\n" +
+	"\fTSourceInput\x12 \n" +
+	"\vIsConnected\x18\x02 \x01(\bR\vIsConnected\x12W\n" +
 	"\n" +
-	"DeviceName\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vdevice_nameR\vdevice_name\x12i\n" +
+	"SourceType\x18\x03 \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.ESourceTypeR\n" +
+	"SourceType\x12\x1e\n" +
 	"\n" +
-	"DeviceType\x18\x05 \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.EDeviceTypeB\x0f\xaa\xdd\x1b\vdevice_typeR\vdevice_type\x12;\n" +
-	"\rSourceInputId\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\x0fsource_input_idR\x0fsource_input_id\x12-\n" +
-	"\tInputName\x18\a \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"input_nameR\n" +
-	"input_name\x12*\n" +
-	"\bIsActive\x18\b \x01(\bB\r\xaa\xdd\x1b\tis_activeR\tis_active\x12\x93\x01\n" +
+	"DeviceName\x18\x04 \x01(\tR\n" +
+	"DeviceName\x12W\n" +
+	"\n" +
+	"DeviceType\x18\x05 \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.EDeviceTypeR\n" +
+	"DeviceType\x12$\n" +
+	"\rSourceInputId\x18\x06 \x01(\tR\rSourceInputId\x12\x1c\n" +
+	"\tInputName\x18\a \x01(\tR\tInputName\x12\x1a\n" +
+	"\bIsActive\x18\b \x01(\bR\bIsActive\x12X\n" +
 	"'IsGamerCopilotModeEnabledByUserSettings\x18\n" +
-	" \x01(\bB2\xaa\xdd\x1b.is_gamer_copilot_mode_enabled_by_user_settingsR.is_gamer_copilot_mode_enabled_by_user_settings\x12I\n" +
-	"\x10IsVideoAvailable\x18\t \x01(\bB\x16\xaa\xdd\x1b\x12is_video_availableH\x00R\x12is_video_available\x88\x01\x01\"`\n" +
+	" \x01(\bR'IsGamerCopilotModeEnabledByUserSettings\x12/\n" +
+	"\x10IsVideoAvailable\x18\t \x01(\bH\x00R\x10IsVideoAvailable\x88\x01\x01\"`\n" +
 	"\vESourceType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x06\n" +
 	"\x02TV\x10\x01\x12\b\n" +
@@ -553,15 +554,16 @@ const file_alice_protos_endpoint_capabilities_source_input_capability_proto_rawD
 	"\rYandexStation\x10\a\x12\x12\n" +
 	"\x0eNintendoSwitch\x10\b\x12\v\n" +
 	"\aConsole\x10\tB\x13\n" +
-	"\x11_IsVideoAvailableJ\x04\b\x01\x10\x02R\aInputId\x1am\n" +
-	"\x06TState\x12c\n" +
-	"\fSourceInputs\x18\x01 \x03(\v2+.NAlice.TSourceInputCapability.TSourceInputB\x11\xaa\xdd\x1b\rsource_inputsR\rsource_inputs\x1a\xac\x01\n" +
-	"\x19TOpenSourceInputDirective\x12R\n" +
-	"\vSourceInput\x18\x01 \x01(\v2+.NAlice.TSourceInputCapability.TSourceInputB\t\xaa\xdd\x1b\x05inputR\x05input\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1d\x92\x82\x19\x11open_source_input\xa8\xdd\x1b\x04\xa8\xc8\x1ce\x1a\\\n" +
-	"\x1eTOpenSourceInputsListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1c\x92\x82\x19\x10open_source_list\xa8\xdd\x1b\x04\xa8\xc8\x1cf:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c&B\x95\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aSourceInputCapabilityProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/source_input;srcinputb\x06proto3"
+	"\x11_IsVideoAvailableJ\x04\b\x01\x10\x02R\aInputId\x1aY\n" +
+	"\x06TState\x12O\n" +
+	"\fSourceInputs\x18\x01 \x03(\v2+.NAlice.TSourceInputCapability.TSourceInputR\fSourceInputs\x1a~\n" +
+	"\x19TOpenSourceInputDirective\x12M\n" +
+	"\vSourceInput\x18\x01 \x01(\v2+.NAlice.TSourceInputCapability.TSourceInputR\vSourceInput\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1a4\n" +
+	"\x1eTOpenSourceInputsListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04NameB\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/source_input\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_source_input_capability_proto_rawDescOnce sync.Once

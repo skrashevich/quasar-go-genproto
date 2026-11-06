@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/vqe_audio_filter/capability.proto
 
-package vqe_audio_filterpb
+package vqe_audio_filter
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -169,8 +169,8 @@ const file_alice_protos_endpoint_capabilities_vqe_audio_filter_capability_proto_
 	"parameters\x12I\n" +
 	"\x05State\x18\x03 \x01(\v2(.NAlice.TVqeAudioFilterCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa0\x02B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dVqeAudioFilterCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/vqe_audio_filter;vqe_audio_filterpbb\x06proto3"
+	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa0\x02B\xb2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dVqeAudioFilterCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/vqe_audio_filterb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_vqe_audio_filter_capability_proto_rawDescOnce sync.Once

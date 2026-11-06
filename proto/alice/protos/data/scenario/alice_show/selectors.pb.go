@@ -236,8 +236,8 @@ const file_alice_protos_data_scenario_alice_show_selectors_proto_rawDesc = "" +
 	"\tUndefined\x10\x00\x12\f\n" +
 	"\bChildren\x10\x01\x12\t\n" +
 	"\x05Adult\x10\x02\x12\r\n" +
-	"\tAmbiguous\x10dBi\n" +
-	"/ru.yandex.alice.protos.data.scenario.alice_showZ6a.yandex-team.ru/alice/protos/data/scenario/alice_showb\x06proto3"
+	"\tAmbiguous\x10dB\x88\x01\n" +
+	"/ru.yandex.alice.protos.data.scenario.alice_showZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/alice_showb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_alice_show_selectors_proto_rawDescOnce sync.Once

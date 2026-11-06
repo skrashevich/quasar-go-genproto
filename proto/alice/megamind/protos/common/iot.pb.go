@@ -37427,8 +37427,8 @@ const file_alice_megamind_protos_common_iot_proto_rawDesc = "" +
 	"\x10ECustomSceneType\x12\x1a\n" +
 	"\x16UnknownCustomSceneType\x10\x00\x12 \n" +
 	"\x1cLightSequenceCustomSceneType\x10\x01\x12!\n" +
-	"\x1dColorAnimationCustomSceneType\x10\x02B\\\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x03IoTZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\x1dColorAnimationCustomSceneType\x10\x02B{\n" +
+	"&ru.yandex.alice.megamind.protos.commonB\x03IoTZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_iot_proto_rawDescOnce sync.Once

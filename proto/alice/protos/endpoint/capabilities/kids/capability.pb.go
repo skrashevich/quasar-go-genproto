@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/kids/capability.proto
 
-package kidspb
+package kids
 
 import (
 	directives "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/directives"
@@ -74,9 +74,9 @@ func (TKidsCapability_TState_EStateType) EnumDescriptor() ([]byte, []int) {
 
 type TKidsCapability struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta  `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TKidsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TKidsCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta  `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TKidsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TKidsCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -170,7 +170,7 @@ func (*TKidsCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TKidsCapability_TState struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	StateType     TKidsCapability_TState_EStateType `protobuf:"varint,1,opt,name=StateType,json=state_type,proto3,enum=NAlice.TKidsCapability_TState_EStateType" json:"StateType,omitempty"`
+	StateType     TKidsCapability_TState_EStateType `protobuf:"varint,1,opt,name=StateType,proto3,enum=NAlice.TKidsCapability_TState_EStateType" json:"StateType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -214,12 +214,12 @@ func (x *TKidsCapability_TState) GetStateType() TKidsCapability_TState_EStateTyp
 
 type TKidsCapability_TKidsStartAwakeningDirective struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
-	Name                      string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TrackUrl                  string                 `protobuf:"bytes,1,opt,name=TrackUrl,json=track_url,proto3" json:"TrackUrl,omitempty"`
-	Callback                  *directives.TDirective `protobuf:"bytes,5,opt,name=Callback,json=callback,proto3" json:"Callback,omitempty"`
-	InitialPercentVolumeLevel uint32                 `protobuf:"varint,2,opt,name=InitialPercentVolumeLevel,json=initial_percent_volume_level,proto3" json:"InitialPercentVolumeLevel,omitempty"`
-	FinalPercentVolumeLevel   uint32                 `protobuf:"varint,3,opt,name=FinalPercentVolumeLevel,json=final_percent_volume_level,proto3" json:"FinalPercentVolumeLevel,omitempty"`
-	TimeoutSeconds            uint32                 `protobuf:"varint,4,opt,name=TimeoutSeconds,json=timeout_seconds,proto3" json:"TimeoutSeconds,omitempty"`
+	Name                      string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TrackUrl                  string                 `protobuf:"bytes,1,opt,name=TrackUrl,proto3" json:"TrackUrl,omitempty"`
+	Callback                  *directives.TDirective `protobuf:"bytes,5,opt,name=Callback,proto3" json:"Callback,omitempty"`
+	InitialPercentVolumeLevel uint32                 `protobuf:"varint,2,opt,name=InitialPercentVolumeLevel,proto3" json:"InitialPercentVolumeLevel,omitempty"`
+	FinalPercentVolumeLevel   uint32                 `protobuf:"varint,3,opt,name=FinalPercentVolumeLevel,proto3" json:"FinalPercentVolumeLevel,omitempty"`
+	TimeoutSeconds            uint32                 `protobuf:"varint,4,opt,name=TimeoutSeconds,proto3" json:"TimeoutSeconds,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -298,7 +298,7 @@ func (x *TKidsCapability_TKidsStartAwakeningDirective) GetTimeoutSeconds() uint3
 
 type TKidsCapability_TKidsStopAwakeningDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -344,33 +344,31 @@ var File_alice_protos_endpoint_capabilities_kids_capability_proto protoreflect.F
 
 const file_alice_protos_endpoint_capabilities_kids_capability_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/endpoint/capabilities/kids/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcb\a\n" +
-	"\x0fTKidsCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12S\n" +
+	"8alice/protos/endpoint/capabilities/kids/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\x05\n" +
+	"\x0fTKidsCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12C\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2#.NAlice.TKidsCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12?\n" +
-	"\x05State\x18\x03 \x01(\v2\x1e.NAlice.TKidsCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x94\x01\n" +
-	"\x06TState\x12X\n" +
-	"\tStateType\x18\x01 \x01(\x0e2).NAlice.TKidsCapability.TState.EStateTypeB\x0e\xaa\xdd\x1b\n" +
-	"state_typeR\n" +
-	"state_type\"*\n" +
+	"Parameters\x18\x02 \x01(\v2#.NAlice.TKidsCapability.TParametersR\n" +
+	"Parameters\x124\n" +
+	"\x05State\x18\x03 \x01(\v2\x1e.NAlice.TKidsCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a}\n" +
+	"\x06TState\x12G\n" +
+	"\tStateType\x18\x01 \x01(\x0e2).NAlice.TKidsCapability.TState.EStateTypeR\tStateType\"*\n" +
 	"\n" +
 	"EStateType\x12\r\n" +
 	"\tUndefined\x10\x00\x12\r\n" +
-	"\tAwakening\x10\x01:\x04\xa8\xdd\x1b\x04\x1a\xd2\x03\n" +
-	"\x1cTKidsStartAwakeningDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bTrackUrl\x18\x01 \x01(\tB\r\xaa\xdd\x1b\ttrack_urlR\ttrack_url\x12F\n" +
-	"\bCallback\x18\x05 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB\f\xaa\xdd\x1b\bcallbackR\bcallback\x12a\n" +
-	"\x19InitialPercentVolumeLevel\x18\x02 \x01(\rB \xaa\xdd\x1b\x1cinitial_percent_volume_levelR\x1cinitial_percent_volume_level\x12[\n" +
-	"\x17FinalPercentVolumeLevel\x18\x03 \x01(\rB\x1e\xaa\xdd\x1b\x1afinal_percent_volume_levelR\x1afinal_percent_volume_level\x12<\n" +
-	"\x0eTimeoutSeconds\x18\x04 \x01(\rB\x13\xaa\xdd\x1b\x0ftimeout_secondsR\x0ftimeout_seconds:!\x92\x82\x19\x14kids_start_awakening\xa8\xdd\x1b\x04\xa8\xc8\x1c\xba\x01\x1a^\n" +
-	"\x1bTKidsStopAwakeningDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name: \x92\x82\x19\x13kids_stop_awakening\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbb\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c?Bz\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\tKidsProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/kids;kidspbb\x06proto3"
+	"\tAwakening\x10\x01\x1a\xa9\x02\n" +
+	"\x1cTKidsStartAwakeningDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1a\n" +
+	"\bTrackUrl\x18\x01 \x01(\tR\bTrackUrl\x128\n" +
+	"\bCallback\x18\x05 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\bCallback\x12<\n" +
+	"\x19InitialPercentVolumeLevel\x18\x02 \x01(\rR\x19InitialPercentVolumeLevel\x128\n" +
+	"\x17FinalPercentVolumeLevel\x18\x03 \x01(\rR\x17FinalPercentVolumeLevel\x12&\n" +
+	"\x0eTimeoutSeconds\x18\x04 \x01(\rR\x0eTimeoutSeconds\x1a2\n" +
+	"\x1bTKidsStopAwakeningDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04NameB\xae\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/kids\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_kids_capability_proto_rawDescOnce sync.Once

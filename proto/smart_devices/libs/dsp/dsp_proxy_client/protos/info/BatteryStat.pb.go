@@ -98,7 +98,8 @@ const file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_BatteryStat_proto
 	"\x03soc\x18\x01 \x01(\x05R\x03soc\x12\x18\n" +
 	"\acurrent\x18\x02 \x01(\x05R\acurrent\x12\x18\n" +
 	"\avoltage\x18\x03 \x01(\x05R\avoltage\x12 \n" +
-	"\vtemperature\x18\x04 \x01(\x05R\vtemperatureb\x06proto3"
+	"\vtemperature\x18\x04 \x01(\x05R\vtemperatureB\xea\x01\n" +
+	"\x13com.yandex.dsp.infoB\x10BatteryStatProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/dsp/dsp_proxy_client/protos/info\xa2\x02\x03YDI\xaa\x02\x0fYandex.Dsp.Info\xca\x02\x0fYandex\\Dsp\\Info\xe2\x02\x1bYandex\\Dsp\\Info\\GPBMetadata\xea\x02\x11Yandex::Dsp::Infob\x06proto3"
 
 var (
 	file_smart_devices_libs_dsp_dsp_proxy_client_protos_info_BatteryStat_proto_rawDescOnce sync.Once

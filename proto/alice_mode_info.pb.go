@@ -151,7 +151,7 @@ const file_alice_mode_info_proto_rawDesc = "" +
 	"\x03Pro\x10\x02\x12\f\n" +
 	"\bExternal\x10\x03\x12\x10\n" +
 	"\fDeepResearch\x10\x05\"\x04\b\x04\x10\x04B\v\n" +
-	"\t_HackModeb\x06proto3"
+	"\t_HackModeB1Z/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_alice_mode_info_proto_rawDescOnce sync.Once

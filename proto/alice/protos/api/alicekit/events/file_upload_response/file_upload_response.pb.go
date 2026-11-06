@@ -113,19 +113,19 @@ type isTFileUploadResponse_Response interface {
 }
 
 type TFileUploadResponse_FileUploadStart struct {
-	FileUploadStart *TFileUploadResponse_TFileUploadStart `protobuf:"bytes,1,opt,name=FileUploadStart,json=file_upload_start,proto3,oneof"`
+	FileUploadStart *TFileUploadResponse_TFileUploadStart `protobuf:"bytes,1,opt,name=FileUploadStart,proto3,oneof"`
 }
 
 type TFileUploadResponse_FileUploadContinue struct {
-	FileUploadContinue *TFileUploadResponse_TFileUploadContinue `protobuf:"bytes,2,opt,name=FileUploadContinue,json=file_upload_continue,proto3,oneof"`
+	FileUploadContinue *TFileUploadResponse_TFileUploadContinue `protobuf:"bytes,2,opt,name=FileUploadContinue,proto3,oneof"`
 }
 
 type TFileUploadResponse_FileUploadFinish struct {
-	FileUploadFinish *TFileUploadResponse_TFileUploadFinish `protobuf:"bytes,3,opt,name=FileUploadFinish,json=file_upload_finish,proto3,oneof"`
+	FileUploadFinish *TFileUploadResponse_TFileUploadFinish `protobuf:"bytes,3,opt,name=FileUploadFinish,proto3,oneof"`
 }
 
 type TFileUploadResponse_FileUploadError struct {
-	FileUploadError *TFileUploadResponse_TFileUploadError `protobuf:"bytes,4,opt,name=FileUploadError,json=file_upload_error,proto3,oneof"`
+	FileUploadError *TFileUploadResponse_TFileUploadError `protobuf:"bytes,4,opt,name=FileUploadError,proto3,oneof"`
 }
 
 func (*TFileUploadResponse_FileUploadStart) isTFileUploadResponse_Response() {}
@@ -138,8 +138,8 @@ func (*TFileUploadResponse_FileUploadError) isTFileUploadResponse_Response() {}
 
 type TFileUploadResponse_TFileUploadStart struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MinChunkSize  *uint64                `protobuf:"varint,1,opt,name=MinChunkSize,json=min_chunk_size,proto3,oneof" json:"MinChunkSize,omitempty"`
-	MaxChunkSize  *uint64                `protobuf:"varint,2,opt,name=MaxChunkSize,json=max_chunk_size,proto3,oneof" json:"MaxChunkSize,omitempty"`
+	MinChunkSize  *uint64                `protobuf:"varint,1,opt,name=MinChunkSize,proto3,oneof" json:"MinChunkSize,omitempty"`
+	MaxChunkSize  *uint64                `protobuf:"varint,2,opt,name=MaxChunkSize,proto3,oneof" json:"MaxChunkSize,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -226,12 +226,12 @@ func (*TFileUploadResponse_TFileUploadContinue) Descriptor() ([]byte, []int) {
 
 type TFileUploadResponse_TFileUploadFinish struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	FileGuid      *string                `protobuf:"bytes,1,opt,name=FileGuid,json=file_guid,proto3,oneof" json:"FileGuid,omitempty"`
-	PreviewUrl    *string                `protobuf:"bytes,2,opt,name=PreviewUrl,json=preview_url,proto3,oneof" json:"PreviewUrl,omitempty"`
-	Title         *string                `protobuf:"bytes,3,opt,name=Title,json=title,proto3,oneof" json:"Title,omitempty"`
-	MimeType      *string                `protobuf:"bytes,4,opt,name=MimeType,json=mime_type,proto3,oneof" json:"MimeType,omitempty"`
-	Extension     *string                `protobuf:"bytes,5,opt,name=Extension,json=extension,proto3,oneof" json:"Extension,omitempty"`
-	SizeBytes     *uint64                `protobuf:"varint,6,opt,name=SizeBytes,json=size_bytes,proto3,oneof" json:"SizeBytes,omitempty"`
+	FileGuid      *string                `protobuf:"bytes,1,opt,name=FileGuid,proto3,oneof" json:"FileGuid,omitempty"`
+	PreviewUrl    *string                `protobuf:"bytes,2,opt,name=PreviewUrl,proto3,oneof" json:"PreviewUrl,omitempty"`
+	Title         *string                `protobuf:"bytes,3,opt,name=Title,proto3,oneof" json:"Title,omitempty"`
+	MimeType      *string                `protobuf:"bytes,4,opt,name=MimeType,proto3,oneof" json:"MimeType,omitempty"`
+	Extension     *string                `protobuf:"bytes,5,opt,name=Extension,proto3,oneof" json:"Extension,omitempty"`
+	SizeBytes     *uint64                `protobuf:"varint,6,opt,name=SizeBytes,proto3,oneof" json:"SizeBytes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -389,15 +389,15 @@ type isTFileUploadResponse_TFileUploadError_Error interface {
 }
 
 type TFileUploadResponse_TFileUploadError_UnsupportedMimeType struct {
-	UnsupportedMimeType *TFileUploadResponse_TFileUploadError_TUnsupportedMimeType `protobuf:"bytes,1,opt,name=UnsupportedMimeType,json=unsupported_mime_type,proto3,oneof"`
+	UnsupportedMimeType *TFileUploadResponse_TFileUploadError_TUnsupportedMimeType `protobuf:"bytes,1,opt,name=UnsupportedMimeType,proto3,oneof"`
 }
 
 type TFileUploadResponse_TFileUploadError_InvalidFileSize struct {
-	InvalidFileSize *TFileUploadResponse_TFileUploadError_TInvalidFileSize `protobuf:"bytes,2,opt,name=InvalidFileSize,json=invalid_file_size,proto3,oneof"`
+	InvalidFileSize *TFileUploadResponse_TFileUploadError_TInvalidFileSize `protobuf:"bytes,2,opt,name=InvalidFileSize,proto3,oneof"`
 }
 
 type TFileUploadResponse_TFileUploadError_QuotaExceeded struct {
-	QuotaExceeded *TFileUploadResponse_TFileUploadError_TQuotaExceeded `protobuf:"bytes,3,opt,name=QuotaExceeded,json=quota_exceeded,proto3,oneof"`
+	QuotaExceeded *TFileUploadResponse_TFileUploadError_TQuotaExceeded `protobuf:"bytes,3,opt,name=QuotaExceeded,proto3,oneof"`
 }
 
 func (*TFileUploadResponse_TFileUploadError_UnsupportedMimeType) isTFileUploadResponse_TFileUploadError_Error() {
@@ -447,7 +447,7 @@ func (*TFileUploadResponse_TFileUploadError_TUnsupportedMimeType) Descriptor() (
 
 type TFileUploadResponse_TFileUploadError_TInvalidFileSize struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	MaxFileSize   *uint64                `protobuf:"varint,1,opt,name=MaxFileSize,json=max_file_size,proto3,oneof" json:"MaxFileSize,omitempty"`
+	MaxFileSize   *uint64                `protobuf:"varint,1,opt,name=MaxFileSize,proto3,oneof" json:"MaxFileSize,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -529,28 +529,27 @@ var File_alice_protos_api_alicekit_events_file_upload_response_file_upload_respo
 
 const file_alice_protos_api_alicekit_events_file_upload_response_file_upload_response_proto_rawDesc = "" +
 	"\n" +
-	"Palice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x87\x0e\n" +
-	"\x13TFileUploadResponse\x12{\n" +
-	"\x0fFileUploadStart\x18\x01 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadStartB\x15\xaa\xdd\x1b\x11file_upload_startH\x00R\x11file_upload_start\x12\x87\x01\n" +
-	"\x12FileUploadContinue\x18\x02 \x01(\v29.NAlice.NAliceApi.TFileUploadResponse.TFileUploadContinueB\x18\xaa\xdd\x1b\x14file_upload_continueH\x00R\x14file_upload_continue\x12\x7f\n" +
-	"\x10FileUploadFinish\x18\x03 \x01(\v27.NAlice.NAliceApi.TFileUploadResponse.TFileUploadFinishB\x16\xaa\xdd\x1b\x12file_upload_finishH\x00R\x12file_upload_finish\x12{\n" +
-	"\x0fFileUploadError\x18\x04 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadErrorB\x15\xaa\xdd\x1b\x11file_upload_errorH\x00R\x11file_upload_error\x1a\xb8\x01\n" +
-	"\x10TFileUploadStart\x12=\n" +
-	"\fMinChunkSize\x18\x01 \x01(\x04B\x12\xaa\xdd\x1b\x0emin_chunk_sizeH\x00R\x0emin_chunk_size\x88\x01\x01\x12=\n" +
-	"\fMaxChunkSize\x18\x02 \x01(\x04B\x12\xaa\xdd\x1b\x0emax_chunk_sizeH\x01R\x0emax_chunk_size\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0f\n" +
+	"Palice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x82\v\n" +
+	"\x13TFileUploadResponse\x12b\n" +
+	"\x0fFileUploadStart\x18\x01 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadStartH\x00R\x0fFileUploadStart\x12k\n" +
+	"\x12FileUploadContinue\x18\x02 \x01(\v29.NAlice.NAliceApi.TFileUploadResponse.TFileUploadContinueH\x00R\x12FileUploadContinue\x12e\n" +
+	"\x10FileUploadFinish\x18\x03 \x01(\v27.NAlice.NAliceApi.TFileUploadResponse.TFileUploadFinishH\x00R\x10FileUploadFinish\x12b\n" +
+	"\x0fFileUploadError\x18\x04 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadErrorH\x00R\x0fFileUploadError\x1a\x86\x01\n" +
+	"\x10TFileUploadStart\x12'\n" +
+	"\fMinChunkSize\x18\x01 \x01(\x04H\x00R\fMinChunkSize\x88\x01\x01\x12'\n" +
+	"\fMaxChunkSize\x18\x02 \x01(\x04H\x01R\fMaxChunkSize\x88\x01\x01B\x0f\n" +
 	"\r_MinChunkSizeB\x0f\n" +
-	"\r_MaxChunkSize\x1a\x1b\n" +
-	"\x13TFileUploadContinue:\x04\xa8\xdd\x1b\x04\x1a\x8d\x03\n" +
-	"\x11TFileUploadFinish\x12/\n" +
-	"\bFileGuid\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tfile_guidH\x00R\tfile_guid\x88\x01\x01\x125\n" +
+	"\r_MaxChunkSize\x1a\x15\n" +
+	"\x13TFileUploadContinue\x1a\xaa\x02\n" +
+	"\x11TFileUploadFinish\x12\x1f\n" +
+	"\bFileGuid\x18\x01 \x01(\tH\x00R\bFileGuid\x88\x01\x01\x12#\n" +
 	"\n" +
-	"PreviewUrl\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vpreview_urlH\x01R\vpreview_url\x88\x01\x01\x12$\n" +
-	"\x05Title\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x02R\x05title\x88\x01\x01\x12/\n" +
-	"\bMimeType\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tmime_typeH\x03R\tmime_type\x88\x01\x01\x120\n" +
-	"\tExtension\x18\x05 \x01(\tB\r\xaa\xdd\x1b\textensionH\x04R\textension\x88\x01\x01\x122\n" +
-	"\tSizeBytes\x18\x06 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"size_bytesH\x05R\n" +
-	"size_bytes\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"PreviewUrl\x18\x02 \x01(\tH\x01R\n" +
+	"PreviewUrl\x88\x01\x01\x12\x19\n" +
+	"\x05Title\x18\x03 \x01(\tH\x02R\x05Title\x88\x01\x01\x12\x1f\n" +
+	"\bMimeType\x18\x04 \x01(\tH\x03R\bMimeType\x88\x01\x01\x12!\n" +
+	"\tExtension\x18\x05 \x01(\tH\x04R\tExtension\x88\x01\x01\x12!\n" +
+	"\tSizeBytes\x18\x06 \x01(\x04H\x05R\tSizeBytes\x88\x01\x01B\v\n" +
 	"\t_FileGuidB\r\n" +
 	"\v_PreviewUrlB\b\n" +
 	"\x06_TitleB\v\n" +
@@ -558,20 +557,20 @@ const file_alice_protos_api_alicekit_events_file_upload_response_file_upload_res
 	"\n" +
 	"_ExtensionB\f\n" +
 	"\n" +
-	"_SizeBytes\x1a\xf0\x04\n" +
-	"\x10TFileUploadError\x12\x9c\x01\n" +
-	"\x13UnsupportedMimeType\x18\x01 \x01(\v2K.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TUnsupportedMimeTypeB\x19\xaa\xdd\x1b\x15unsupported_mime_typeH\x00R\x15unsupported_mime_type\x12\x8c\x01\n" +
-	"\x0fInvalidFileSize\x18\x02 \x01(\v2G.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TInvalidFileSizeB\x15\xaa\xdd\x1b\x11invalid_file_sizeH\x00R\x11invalid_file_size\x12\x82\x01\n" +
-	"\rQuotaExceeded\x18\x03 \x01(\v2E.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TQuotaExceededB\x12\xaa\xdd\x1b\x0equota_exceededH\x00R\x0equota_exceeded\x1a\x1c\n" +
-	"\x14TUnsupportedMimeType:\x04\xa8\xdd\x1b\x04\x1ad\n" +
-	"\x10TInvalidFileSize\x12:\n" +
-	"\vMaxFileSize\x18\x01 \x01(\x04B\x11\xaa\xdd\x1b\rmax_file_sizeH\x00R\rmax_file_size\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
-	"\f_MaxFileSize\x1a\x16\n" +
-	"\x0eTQuotaExceeded:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05Error:\x04\xa8\xdd\x1b\x04B\n" +
+	"_SizeBytes\x1a\xf5\x03\n" +
+	"\x10TFileUploadError\x12\x7f\n" +
+	"\x13UnsupportedMimeType\x18\x01 \x01(\v2K.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TUnsupportedMimeTypeH\x00R\x13UnsupportedMimeType\x12s\n" +
+	"\x0fInvalidFileSize\x18\x02 \x01(\v2G.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TInvalidFileSizeH\x00R\x0fInvalidFileSize\x12m\n" +
+	"\rQuotaExceeded\x18\x03 \x01(\v2E.NAlice.NAliceApi.TFileUploadResponse.TFileUploadError.TQuotaExceededH\x00R\rQuotaExceeded\x1a\x16\n" +
+	"\x14TUnsupportedMimeType\x1aI\n" +
+	"\x10TInvalidFileSize\x12%\n" +
+	"\vMaxFileSize\x18\x01 \x01(\x04H\x00R\vMaxFileSize\x88\x01\x01B\x0e\n" +
+	"\f_MaxFileSize\x1a\x10\n" +
+	"\x0eTQuotaExceededB\a\n" +
+	"\x05ErrorB\n" +
 	"\n" +
-	"\bResponseB\x9f\x01\n" +
-	"?ru.yandex.alice.protos.api.alicekit.events.file_upload_responseB\x12FileUploadResponseP\x01ZFa.yandex-team.ru/alice/protos/api/alicekit/events/file_upload_responseb\x06proto3"
+	"\bResponseB\xf7\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x17FileUploadResponseProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/file_upload_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_file_upload_response_file_upload_response_proto_rawDescOnce sync.Once

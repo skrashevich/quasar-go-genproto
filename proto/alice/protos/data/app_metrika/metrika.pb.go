@@ -25,8 +25,8 @@ const (
 
 type TAppMetrikaEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Payload       *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Payload       *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,11 +79,12 @@ var File_alice_protos_data_app_metrika_metrika_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_app_metrika_metrika_proto_rawDesc = "" +
 	"\n" +
-	"+alice/protos/data/app_metrika/metrika.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"v\n" +
-	"\x10TAppMetrikaEvent\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\apayloadR\apayload:\x04\xa8\xdd\x1b\x04Bi\n" +
-	"&ru.yandex.alice.protos.data.appmetrikaB\x0fAppMetricaProtoZ.a.yandex-team.ru/alice/protos/data/app_metrikab\x06proto3"
+	"+alice/protos/data/app_metrika/metrika.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"Y\n" +
+	"\x10TAppMetrikaEvent\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x121\n" +
+	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructR\aPayloadB\xa1\x01\n" +
+	"\n" +
+	"com.NAliceB\fMetrikaProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/app_metrika\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_app_metrika_metrika_proto_rawDescOnce sync.Once

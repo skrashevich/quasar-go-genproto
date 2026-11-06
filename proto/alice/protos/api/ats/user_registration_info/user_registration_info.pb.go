@@ -24,7 +24,7 @@ const (
 
 type TUserRegistrationInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AtsLogin      string                 `protobuf:"bytes,1,opt,name=AtsLogin,json=ats_login,proto3" json:"AtsLogin,omitempty"`
+	AtsLogin      string                 `protobuf:"bytes,1,opt,name=AtsLogin,proto3" json:"AtsLogin,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,10 +70,10 @@ var File_alice_protos_api_ats_user_registration_info_user_registration_info_prot
 
 const file_alice_protos_api_ats_user_registration_info_user_registration_info_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/ats/user_registration_info/user_registration_info.proto\x12\x10NAlice.NAts.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"C\n" +
-	"\x15TUserRegistrationInfo\x12*\n" +
-	"\bAtsLogin\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tats_loginR\tats_loginBw\n" +
-	"5ru.yandex.alice.protos.api.ats.user_registration_infoP\x01Z<a.yandex-team.ru/alice/protos/api/ats/user_registration_infob\x06proto3"
+	"Halice/protos/api/ats/user_registration_info/user_registration_info.proto\x12\x10NAlice.NAts.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"3\n" +
+	"\x15TUserRegistrationInfo\x12\x1a\n" +
+	"\bAtsLogin\x18\x01 \x01(\tR\bAtsLoginB\xf0\x01\n" +
+	"\x14com.NAlice.NAts.NApiB\x19UserRegistrationInfoProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/ats/user_registration_info\xa2\x02\x03NNN\xaa\x02\x10NAlice.NAts.NApi\xca\x02\x10NAlice\\NAts\\NApi\xe2\x02\x1cNAlice\\NAts\\NApi\\GPBMetadata\xea\x02\x12NAlice::NAts::NApib\x06proto3"
 
 var (
 	file_alice_protos_api_ats_user_registration_info_user_registration_info_proto_rawDescOnce sync.Once

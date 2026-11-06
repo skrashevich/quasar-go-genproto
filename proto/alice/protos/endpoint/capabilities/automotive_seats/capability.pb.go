@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_seats/capability.proto
 
-package automotive_seatspb
+package automotive_seats
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -462,8 +462,8 @@ const file_alice_protos_endpoint_capabilities_automotive_seats_capability_proto_
 	"\vEPropertyId\x12\x14\n" +
 	"\x10PROPERTY_UNKNOWN\x10\x00\x12\x1a\n" +
 	"\x16THREE_ROW_SEATING_MODE\x10\x01\x12\x0f\n" +
-	"\vBED_MODE_ON\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa3\x02B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAutomotiveSeatsCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_seats;automotive_seatspbb\x06proto3"
+	"\vBED_MODE_ON\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa3\x02B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAutomotiveSeatsCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_seatsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_seats_capability_proto_rawDescOnce sync.Once

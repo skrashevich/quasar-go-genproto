@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto
 
-package enrollmentheaderspb
+package enrollment_headers
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
@@ -73,11 +73,11 @@ func (EUserType) EnumDescriptor() ([]byte, []int) {
 
 type TEnrollmentHeader struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
-	PersonId                 string                 `protobuf:"bytes,1,opt,name=PersonId,json=person_id,proto3" json:"PersonId,omitempty"`
-	Version                  string                 `protobuf:"bytes,2,opt,name=Version,json=version,proto3" json:"Version,omitempty"`
-	UserType                 EUserType              `protobuf:"varint,3,opt,name=UserType,json=user_type,proto3,enum=NAlice.EUserType" json:"UserType,omitempty"`
-	EnrollmentSoundIsPresent bool                   `protobuf:"varint,4,opt,name=EnrollmentSoundIsPresent,json=enrollment_sound_is_present,proto3" json:"EnrollmentSoundIsPresent,omitempty"`
-	SupportsSharing          bool                   `protobuf:"varint,5,opt,name=SupportsSharing,json=supports_sharing,proto3" json:"SupportsSharing,omitempty"`
+	PersonId                 string                 `protobuf:"bytes,1,opt,name=PersonId,proto3" json:"PersonId,omitempty"`
+	Version                  string                 `protobuf:"bytes,2,opt,name=Version,proto3" json:"Version,omitempty"`
+	UserType                 EUserType              `protobuf:"varint,3,opt,name=UserType,proto3,enum=NAlice.EUserType" json:"UserType,omitempty"`
+	EnrollmentSoundIsPresent bool                   `protobuf:"varint,4,opt,name=EnrollmentSoundIsPresent,proto3" json:"EnrollmentSoundIsPresent,omitempty"`
+	SupportsSharing          bool                   `protobuf:"varint,5,opt,name=SupportsSharing,proto3" json:"SupportsSharing,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -149,7 +149,7 @@ func (x *TEnrollmentHeader) GetSupportsSharing() bool {
 
 type TEnrollmentHeaders struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Headers       []*TEnrollmentHeader   `protobuf:"bytes,1,rep,name=Headers,json=headers,proto3" json:"Headers,omitempty"`
+	Headers       []*TEnrollmentHeader   `protobuf:"bytes,1,rep,name=Headers,proto3" json:"Headers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,20 +195,21 @@ var File_alice_megamind_protos_guest_enrollment_headers_enrollment_headers_proto
 
 const file_alice_megamind_protos_guest_enrollment_headers_enrollment_headers_proto_rawDesc = "" +
 	"\n" +
-	"Galice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc6\x02\n" +
-	"\x11TEnrollmentHeader\x12*\n" +
-	"\bPersonId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tperson_idR\tperson_id\x12%\n" +
-	"\aVersion\x18\x02 \x01(\tB\v\xaa\xdd\x1b\aversionR\aversion\x12=\n" +
-	"\bUserType\x18\x03 \x01(\x0e2\x11.NAlice.EUserTypeB\r\xaa\xdd\x1b\tuser_typeR\tuser_type\x12^\n" +
-	"\x18EnrollmentSoundIsPresent\x18\x04 \x01(\bB\x1f\xaa\xdd\x1b\x1benrollment_sound_is_presentR\x1benrollment_sound_is_present\x12?\n" +
-	"\x0fSupportsSharing\x18\x05 \x01(\bB\x14\xaa\xdd\x1b\x10supports_sharingR\x10supports_sharing\"\\\n" +
-	"\x12TEnrollmentHeaders\x12@\n" +
-	"\aHeaders\x18\x01 \x03(\v2\x19.NAlice.TEnrollmentHeaderB\v\xaa\xdd\x1b\aheadersR\aheaders:\x04\xa8\xdd\x1b\x04*K\n" +
+	"Galice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xde\x01\n" +
+	"\x11TEnrollmentHeader\x12\x1a\n" +
+	"\bPersonId\x18\x01 \x01(\tR\bPersonId\x12\x18\n" +
+	"\aVersion\x18\x02 \x01(\tR\aVersion\x12-\n" +
+	"\bUserType\x18\x03 \x01(\x0e2\x11.NAlice.EUserTypeR\bUserType\x12:\n" +
+	"\x18EnrollmentSoundIsPresent\x18\x04 \x01(\bR\x18EnrollmentSoundIsPresent\x12(\n" +
+	"\x0fSupportsSharing\x18\x05 \x01(\bR\x0fSupportsSharing\"I\n" +
+	"\x12TEnrollmentHeaders\x123\n" +
+	"\aHeaders\x18\x01 \x03(\v2\x19.NAlice.TEnrollmentHeaderR\aHeaders*K\n" +
 	"\tEUserType\x12\t\n" +
 	"\x05OWNER\x10\x00\x12\t\n" +
 	"\x05GUEST\x10\x01\x12(\n" +
-	"$__SYSTEM_OWNER_DO_NOT_USE_AFTER_2021\x10dB\xa2\x01\n" +
-	"8ru.yandex.alice.megamind.protos.guest.enrollment_headersB\x11EnrollmentHeadersZSa.yandex-team.ru/alice/megamind/protos/guest/enrollment_headers;enrollmentheaderspbb\x06proto3"
+	"$__SYSTEM_OWNER_DO_NOT_USE_AFTER_2021\x10dB\xbc\x01\n" +
+	"\n" +
+	"com.NAliceB\x16EnrollmentHeadersProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/guest/enrollment_headers\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_guest_enrollment_headers_enrollment_headers_proto_rawDescOnce sync.Once

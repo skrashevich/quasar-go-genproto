@@ -79,8 +79,9 @@ const file_alice_protos_data_channel_channel_proto_rawDesc = "" +
 	"\x17UnknownDirectiveChannel\x10\x00\x12\n" +
 	"\n" +
 	"\x06Dialog\x10\x01\x12\v\n" +
-	"\aContent\x10\x02Bc\n" +
-	"#ru.yandex.alice.protos.data.channelB\x10DirectiveChannelZ*a.yandex-team.ru/alice/protos/data/channelb\x06proto3"
+	"\aContent\x10\x02B\x9d\x01\n" +
+	"\n" +
+	"com.NAliceB\fChannelProtoP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/channel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_channel_channel_proto_rawDescOnce sync.Once

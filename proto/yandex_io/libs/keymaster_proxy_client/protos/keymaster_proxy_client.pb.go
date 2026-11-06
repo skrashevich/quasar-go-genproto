@@ -885,7 +885,8 @@ const file_yandex_io_libs_keymaster_proxy_client_protos_keymaster_proxy_client_p
 	"\x14upgrade_key_response\x18\x05 \x01(\v27.quasar.keymaster_proxy_client.proto.UpgradeKeyResponseH\x00R\x12upgradeKeyResponse\x12n\n" +
 	"\x15generate_key_response\x18\x06 \x01(\v28.quasar.keymaster_proxy_client.proto.GenerateKeyResponseH\x00R\x13generateKeyResponseB\n" +
 	"\n" +
-	"\bresponse"
+	"\bresponseB\xc8\x02\n" +
+	"'com.quasar.keymaster_proxy_client.protoB\x19KeymasterProxyClientProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/yandex_io/libs/keymaster_proxy_client/protos\xa2\x02\x03QKP\xaa\x02!Quasar.KeymasterProxyClient.Proto\xca\x02!Quasar\\KeymasterProxyClient\\Proto\xe2\x02-Quasar\\KeymasterProxyClient\\Proto\\GPBMetadata\xea\x02#Quasar::KeymasterProxyClient::Proto"
 
 var (
 	file_yandex_io_libs_keymaster_proxy_client_protos_keymaster_proxy_client_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/events/any_capability_event.proto
 
-package eventspb
+package events
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -25,8 +25,8 @@ const (
 
 type TAnyCapabilityEventHolder struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	RawEvent      []byte                          `protobuf:"bytes,1,opt,name=RawEvent,json=raw_event,proto3" json:"RawEvent,omitempty"`
-	EventType     endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventType,json=event_type,proto3,enum=NAlice.TCapability_EEventType" json:"EventType,omitempty"`
+	RawEvent      []byte                          `protobuf:"bytes,1,opt,name=RawEvent,proto3" json:"RawEvent,omitempty"`
+	EventType     endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventType,proto3,enum=NAlice.TCapability_EEventType" json:"EventType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,13 +79,12 @@ var File_alice_protos_endpoint_events_any_capability_event_proto protoreflect.Fi
 
 const file_alice_protos_endpoint_events_any_capability_event_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/endpoint/events/any_capability_event.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9c\x01\n" +
-	"\x19TAnyCapabilityEventHolder\x12*\n" +
-	"\bRawEvent\x18\x01 \x01(\fB\r\xaa\xdd\x1b\traw_eventR\traw_event\x12M\n" +
-	"\tEventType\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeB\x0e\xaa\xdd\x1b\n" +
-	"event_typeR\n" +
-	"event_type:\x04\xa8\xdd\x1b\x04Bz\n" +
-	"&ru.yandex.alice.protos.endpoint.eventsB\x18AnyCapabilityEventsProtoZ6a.yandex-team.ru/alice/protos/endpoint/events;eventspbb\x06proto3"
+	"7alice/protos/endpoint/events/any_capability_event.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"u\n" +
+	"\x19TAnyCapabilityEventHolder\x12\x1a\n" +
+	"\bRawEvent\x18\x01 \x01(\fR\bRawEvent\x12<\n" +
+	"\tEventType\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeR\tEventTypeB\xab\x01\n" +
+	"\n" +
+	"com.NAliceB\x17AnyCapabilityEventProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/events\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_events_any_capability_event_proto_rawDescOnce sync.Once

@@ -192,8 +192,8 @@ const file_alice_protos_data_localization_localization_proto_rawDesc = "" +
 	"\fLOCALE_AR_EG\x10\x06\x12\x10\n" +
 	"\fLOCALE_UZ_UZ\x10\a\x12\x10\n" +
 	"\fLOCALE_AR_AE\x10\b\x12\x10\n" +
-	"\fLOCALE_KY_KG\x10\tB[\n" +
-	"(ru.yandex.alice.protos.data.localizationZ/a.yandex-team.ru/alice/protos/data/localizationb\x06proto3"
+	"\fLOCALE_KY_KG\x10\tB\xc6\x01\n" +
+	"\x10com.NAlice.NDataB\x11LocalizationProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/localization\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_localization_localization_proto_rawDescOnce sync.Once

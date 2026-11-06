@@ -303,8 +303,8 @@ const file_alice_protos_api_alicekit_events_audio_transcription_input_audio_tran
 	"\r_SegmentStateB\v\n" +
 	"\t_Timezone:\x04\xa8\xdd\x1b\x04B\x13\n" +
 	"\x11_BeginTimestampMsB\x11\n" +
-	"\x0f_EndTimestampMsB\xb2\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.audio_transcription_inputB\x1bAudioTranscriptionInputMetaP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/audio_transcription_inputb\x06proto3"
+	"\x0f_EndTimestampMsB\xd1\x01\n" +
+	"Dru.yandex.alice.protos.api.alicekit.events.audio_transcription_inputB\x1bAudioTranscriptionInputMetaP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/audio_transcription_inputb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_meta_proto_rawDescOnce sync.Once

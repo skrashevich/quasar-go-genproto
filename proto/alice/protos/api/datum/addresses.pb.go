@@ -71,8 +71,8 @@ func (EPassportLabels) EnumDescriptor() ([]byte, []int) {
 
 type TGeoPoint struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Longitude     float64                `protobuf:"fixed64,1,opt,name=Longitude,json=longitude,proto3" json:"Longitude,omitempty"`
-	Latitude      float64                `protobuf:"fixed64,2,opt,name=Latitude,json=latitude,proto3" json:"Latitude,omitempty"`
+	Longitude     float64                `protobuf:"fixed64,1,opt,name=Longitude,proto3" json:"Longitude,omitempty"`
+	Latitude      float64                `protobuf:"fixed64,2,opt,name=Latitude,proto3" json:"Latitude,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (x *TGeoPoint) GetLatitude() float64 {
 
 type TFullAddress struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	FullAddress   string                 `protobuf:"bytes,1,opt,name=FullAddress,json=full_address,proto3" json:"FullAddress,omitempty"`
+	FullAddress   string                 `protobuf:"bytes,1,opt,name=FullAddress,proto3" json:"FullAddress,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,8 +167,8 @@ func (x *TFullAddress) GetFullAddress() string {
 
 type TCustomLabel struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Tags          []string               `protobuf:"bytes,2,rep,name=Tags,json=tags,proto3" json:"Tags,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Tags          []string               `protobuf:"bytes,2,rep,name=Tags,proto3" json:"Tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,11 +318,11 @@ type isTUpdateDatumAddressRequest_LocationType interface {
 }
 
 type TUpdateDatumAddressRequest_Address struct {
-	Address *TFullAddress `protobuf:"bytes,1,opt,name=Address,json=address,proto3,oneof"`
+	Address *TFullAddress `protobuf:"bytes,1,opt,name=Address,proto3,oneof"`
 }
 
 type TUpdateDatumAddressRequest_GeoPoint struct {
-	GeoPoint *TGeoPoint `protobuf:"bytes,2,opt,name=GeoPoint,json=geo_point,proto3,oneof"`
+	GeoPoint *TGeoPoint `protobuf:"bytes,2,opt,name=GeoPoint,proto3,oneof"`
 }
 
 func (*TUpdateDatumAddressRequest_Address) isTUpdateDatumAddressRequest_LocationType() {}
@@ -334,11 +334,11 @@ type isTUpdateDatumAddressRequest_Label interface {
 }
 
 type TUpdateDatumAddressRequest_PassportLabel struct {
-	PassportLabel EPassportLabels `protobuf:"varint,3,opt,name=PassportLabel,json=passport_label,proto3,enum=NAlice.NDatumApi.EPassportLabels,oneof"`
+	PassportLabel EPassportLabels `protobuf:"varint,3,opt,name=PassportLabel,proto3,enum=NAlice.NDatumApi.EPassportLabels,oneof"`
 }
 
 type TUpdateDatumAddressRequest_AliceLabel struct {
-	AliceLabel *TCustomLabel `protobuf:"bytes,5,opt,name=AliceLabel,json=alice_label,proto3,oneof"`
+	AliceLabel *TCustomLabel `protobuf:"bytes,5,opt,name=AliceLabel,proto3,oneof"`
 }
 
 func (*TUpdateDatumAddressRequest_PassportLabel) isTUpdateDatumAddressRequest_Label() {}
@@ -347,25 +347,25 @@ func (*TUpdateDatumAddressRequest_AliceLabel) isTUpdateDatumAddressRequest_Label
 
 type TAdditionalAddressDetails struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	RegionId        *int32                 `protobuf:"varint,1,opt,name=RegionId,json=regionID,proto3,oneof" json:"RegionId,omitempty"`
-	PreciseRegionId *int32                 `protobuf:"varint,2,opt,name=PreciseRegionId,json=preciseRegionID,proto3,oneof" json:"PreciseRegionId,omitempty"`
-	Country         *string                `protobuf:"bytes,3,opt,name=Country,json=country,proto3,oneof" json:"Country,omitempty"`
-	Area            *string                `protobuf:"bytes,4,opt,name=Area,json=area,proto3,oneof" json:"Area,omitempty"`
-	ZipCode         *string                `protobuf:"bytes,5,opt,name=ZipCode,json=zipCode,proto3,oneof" json:"ZipCode,omitempty"`
-	City            *string                `protobuf:"bytes,6,opt,name=City,json=city,proto3,oneof" json:"City,omitempty"`
-	Metro           *string                `protobuf:"bytes,7,opt,name=Metro,json=metro,proto3,oneof" json:"Metro,omitempty"`
-	Street          *string                `protobuf:"bytes,8,opt,name=Street,json=street,proto3,oneof" json:"Street,omitempty"`
-	Building        *string                `protobuf:"bytes,9,opt,name=Building,json=building,proto3,oneof" json:"Building,omitempty"`
-	Intercom        *string                `protobuf:"bytes,10,opt,name=Intercom,json=intercom,proto3,oneof" json:"Intercom,omitempty"`
-	Floor           *string                `protobuf:"bytes,11,opt,name=Floor,json=floor,proto3,oneof" json:"Floor,omitempty"`
-	Room            *string                `protobuf:"bytes,12,opt,name=Room,json=room,proto3,oneof" json:"Room,omitempty"`
-	Comment         *string                `protobuf:"bytes,13,opt,name=Comment,json=comment,proto3,oneof" json:"Comment,omitempty"`
-	Block           *string                `protobuf:"bytes,14,opt,name=Block,json=block,proto3,oneof" json:"Block,omitempty"`
-	Estate          *string                `protobuf:"bytes,15,opt,name=Estate,json=estate,proto3,oneof" json:"Estate,omitempty"`
-	Wing            *string                `protobuf:"bytes,16,opt,name=Wing,json=wing,proto3,oneof" json:"Wing,omitempty"`
-	Region          *string                `protobuf:"bytes,17,opt,name=Region,json=region,proto3,oneof" json:"Region,omitempty"`
-	District        *string                `protobuf:"bytes,18,opt,name=District,json=district,proto3,oneof" json:"District,omitempty"`
-	Uri             *string                `protobuf:"bytes,19,opt,name=Uri,json=uri,proto3,oneof" json:"Uri,omitempty"`
+	RegionId        *int32                 `protobuf:"varint,1,opt,name=RegionId,proto3,oneof" json:"RegionId,omitempty"`
+	PreciseRegionId *int32                 `protobuf:"varint,2,opt,name=PreciseRegionId,proto3,oneof" json:"PreciseRegionId,omitempty"`
+	Country         *string                `protobuf:"bytes,3,opt,name=Country,proto3,oneof" json:"Country,omitempty"`
+	Area            *string                `protobuf:"bytes,4,opt,name=Area,proto3,oneof" json:"Area,omitempty"`
+	ZipCode         *string                `protobuf:"bytes,5,opt,name=ZipCode,proto3,oneof" json:"ZipCode,omitempty"`
+	City            *string                `protobuf:"bytes,6,opt,name=City,proto3,oneof" json:"City,omitempty"`
+	Metro           *string                `protobuf:"bytes,7,opt,name=Metro,proto3,oneof" json:"Metro,omitempty"`
+	Street          *string                `protobuf:"bytes,8,opt,name=Street,proto3,oneof" json:"Street,omitempty"`
+	Building        *string                `protobuf:"bytes,9,opt,name=Building,proto3,oneof" json:"Building,omitempty"`
+	Intercom        *string                `protobuf:"bytes,10,opt,name=Intercom,proto3,oneof" json:"Intercom,omitempty"`
+	Floor           *string                `protobuf:"bytes,11,opt,name=Floor,proto3,oneof" json:"Floor,omitempty"`
+	Room            *string                `protobuf:"bytes,12,opt,name=Room,proto3,oneof" json:"Room,omitempty"`
+	Comment         *string                `protobuf:"bytes,13,opt,name=Comment,proto3,oneof" json:"Comment,omitempty"`
+	Block           *string                `protobuf:"bytes,14,opt,name=Block,proto3,oneof" json:"Block,omitempty"`
+	Estate          *string                `protobuf:"bytes,15,opt,name=Estate,proto3,oneof" json:"Estate,omitempty"`
+	Wing            *string                `protobuf:"bytes,16,opt,name=Wing,proto3,oneof" json:"Wing,omitempty"`
+	Region          *string                `protobuf:"bytes,17,opt,name=Region,proto3,oneof" json:"Region,omitempty"`
+	District        *string                `protobuf:"bytes,18,opt,name=District,proto3,oneof" json:"District,omitempty"`
+	Uri             *string                `protobuf:"bytes,19,opt,name=Uri,proto3,oneof" json:"Uri,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -535,9 +535,9 @@ func (x *TAdditionalAddressDetails) GetUri() string {
 
 type TFullAddressInfo struct {
 	state                    protoimpl.MessageState     `protogen:"open.v1"`
-	AddressString            *TFullAddress              `protobuf:"bytes,1,opt,name=AddressString,json=address_string,proto3" json:"AddressString,omitempty"`
-	GeoPoint                 *TGeoPoint                 `protobuf:"bytes,2,opt,name=GeoPoint,json=geo_point,proto3" json:"GeoPoint,omitempty"`
-	AdditionalAddressDetails *TAdditionalAddressDetails `protobuf:"bytes,3,opt,name=AdditionalAddressDetails,json=additional_address_details,proto3" json:"AdditionalAddressDetails,omitempty"`
+	AddressString            *TFullAddress              `protobuf:"bytes,1,opt,name=AddressString,proto3" json:"AddressString,omitempty"`
+	GeoPoint                 *TGeoPoint                 `protobuf:"bytes,2,opt,name=GeoPoint,proto3" json:"GeoPoint,omitempty"`
+	AdditionalAddressDetails *TAdditionalAddressDetails `protobuf:"bytes,3,opt,name=AdditionalAddressDetails,proto3" json:"AdditionalAddressDetails,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -595,7 +595,7 @@ func (x *TFullAddressInfo) GetAdditionalAddressDetails() *TAdditionalAddressDeta
 
 type TDatumAddressesListItem struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
-	Address *TFullAddressInfo      `protobuf:"bytes,1,opt,name=Address,json=address,proto3" json:"Address,omitempty"`
+	Address *TFullAddressInfo      `protobuf:"bytes,1,opt,name=Address,proto3" json:"Address,omitempty"`
 	// Types that are valid to be assigned to Label:
 	//
 	//	*TDatumAddressesListItem_PassportLabel
@@ -672,11 +672,11 @@ type isTDatumAddressesListItem_Label interface {
 }
 
 type TDatumAddressesListItem_PassportLabel struct {
-	PassportLabel EPassportLabels `protobuf:"varint,2,opt,name=PassportLabel,json=passport_label,proto3,enum=NAlice.NDatumApi.EPassportLabels,oneof"`
+	PassportLabel EPassportLabels `protobuf:"varint,2,opt,name=PassportLabel,proto3,enum=NAlice.NDatumApi.EPassportLabels,oneof"`
 }
 
 type TDatumAddressesListItem_AliceLabel struct {
-	AliceLabel *TCustomLabel `protobuf:"bytes,3,opt,name=AliceLabel,json=alice_label,proto3,oneof"`
+	AliceLabel *TCustomLabel `protobuf:"bytes,3,opt,name=AliceLabel,proto3,oneof"`
 }
 
 func (*TDatumAddressesListItem_PassportLabel) isTDatumAddressesListItem_Label() {}
@@ -685,7 +685,7 @@ func (*TDatumAddressesListItem_AliceLabel) isTDatumAddressesListItem_Label() {}
 
 type TDatumAddressesList struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Items         []*TDatumAddressesListItem `protobuf:"bytes,1,rep,name=Items,json=items,proto3" json:"Items,omitempty"`
+	Items         []*TDatumAddressesListItem `protobuf:"bytes,1,rep,name=Items,proto3" json:"Items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -731,48 +731,46 @@ var File_alice_protos_api_datum_addresses_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_datum_addresses_proto_rawDesc = "" +
 	"\n" +
-	"&alice/protos/api/datum/addresses.proto\x12\x10NAlice.NDatumApi\x1a+alice/library/censor/protos/extension.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"p\n" +
-	"\tTGeoPoint\x12/\n" +
-	"\tLongitude\x18\x01 \x01(\x01B\x11\xaa\xdd\x1b\tlongitude\xa8\x8d'\x01R\tlongitude\x12,\n" +
-	"\bLatitude\x18\x02 \x01(\x01B\x10\xaa\xdd\x1b\blatitude\xa8\x8d'\x01R\blatitude:\x04\xa8\xdd\x1b\x04\"M\n" +
-	"\fTFullAddress\x127\n" +
-	"\vFullAddress\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\ffull_address\xa8\x8d'\x01R\ffull_address:\x04\xa8\xdd\x1b\x04\"P\n" +
-	"\fTCustomLabel\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Tags\x18\x02 \x03(\tB\b\xaa\xdd\x1b\x04tagsR\x04tags:\x04\xa8\xdd\x1b\x04\"\xb4\x03\n" +
-	"\x1aTUpdateDatumAddressRequest\x12G\n" +
-	"\aAddress\x18\x01 \x01(\v2\x1e.NAlice.NDatumApi.TFullAddressB\v\xaa\xdd\x1b\aaddressH\x00R\aaddress\x12I\n" +
-	"\bGeoPoint\x18\x02 \x01(\v2\x1b.NAlice.NDatumApi.TGeoPointB\r\xaa\xdd\x1b\tgeo_pointH\x00R\tgeo_point\x12^\n" +
-	"\rPassportLabel\x18\x03 \x01(\x0e2!.NAlice.NDatumApi.EPassportLabelsB\x12\xaa\xdd\x1b\x0epassport_labelH\x01R\x0epassport_label\x12R\n" +
+	"&alice/protos/api/datum/addresses.proto\x12\x10NAlice.NDatumApi\x1a+alice/library/censor/protos/extension.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"E\n" +
+	"\tTGeoPoint\x12\x1c\n" +
+	"\tLongitude\x18\x01 \x01(\x01R\tLongitude\x12\x1a\n" +
+	"\bLatitude\x18\x02 \x01(\x01R\bLatitude\"0\n" +
+	"\fTFullAddress\x12 \n" +
+	"\vFullAddress\x18\x01 \x01(\tR\vFullAddress\"6\n" +
+	"\fTCustomLabel\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Tags\x18\x02 \x03(\tR\x04Tags\"\xcc\x02\n" +
+	"\x1aTUpdateDatumAddressRequest\x12:\n" +
+	"\aAddress\x18\x01 \x01(\v2\x1e.NAlice.NDatumApi.TFullAddressH\x00R\aAddress\x129\n" +
+	"\bGeoPoint\x18\x02 \x01(\v2\x1b.NAlice.NDatumApi.TGeoPointH\x00R\bGeoPoint\x12I\n" +
+	"\rPassportLabel\x18\x03 \x01(\x0e2!.NAlice.NDatumApi.EPassportLabelsH\x01R\rPassportLabel\x12@\n" +
 	"\n" +
-	"AliceLabel\x18\x05 \x01(\v2\x1e.NAlice.NDatumApi.TCustomLabelB\x0f\xaa\xdd\x1b\valice_labelH\x01R\valice_label:\x04\xa8\xdd\x1b\x04B!\n" +
-	"\fLocationType\x12\x11\xaa\xdd\x1b\rlocation_typeB\x12\n" +
-	"\x05Label\x12\t\xaa\xdd\x1b\x05labelJ\x04\b\x04\x10\x05R\vCustomLabel\"\x99\b\n" +
-	"\x19TAdditionalAddressDetails\x12.\n" +
-	"\bRegionId\x18\x01 \x01(\x05B\r\xaa\xdd\x1b\tregion_idH\x00R\bregionID\x88\x01\x01\x12D\n" +
-	"\x0fPreciseRegionId\x18\x02 \x01(\x05B\x15\xaa\xdd\x1b\x11precise_region_idH\x01R\x0fpreciseRegionID\x88\x01\x01\x12*\n" +
-	"\aCountry\x18\x03 \x01(\tB\v\xaa\xdd\x1b\acountryH\x02R\acountry\x88\x01\x01\x12!\n" +
-	"\x04Area\x18\x04 \x01(\tB\b\xaa\xdd\x1b\x04areaH\x03R\x04area\x88\x01\x01\x12+\n" +
-	"\aZipCode\x18\x05 \x01(\tB\f\xaa\xdd\x1b\bzip_codeH\x04R\azipCode\x88\x01\x01\x12!\n" +
-	"\x04City\x18\x06 \x01(\tB\b\xaa\xdd\x1b\x04cityH\x05R\x04city\x88\x01\x01\x12$\n" +
-	"\x05Metro\x18\a \x01(\tB\t\xaa\xdd\x1b\x05metroH\x06R\x05metro\x88\x01\x01\x12'\n" +
-	"\x06Street\x18\b \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06streetH\aR\x06street\x88\x01\x01\x12-\n" +
-	"\bBuilding\x18\t \x01(\tB\f\xaa\xdd\x1b\bbuildingH\bR\bbuilding\x88\x01\x01\x12-\n" +
+	"AliceLabel\x18\x05 \x01(\v2\x1e.NAlice.NDatumApi.TCustomLabelH\x01R\n" +
+	"AliceLabelB\x0e\n" +
+	"\fLocationTypeB\a\n" +
+	"\x05LabelJ\x04\b\x04\x10\x05R\vCustomLabel\"\xa5\x06\n" +
+	"\x19TAdditionalAddressDetails\x12\x1f\n" +
+	"\bRegionId\x18\x01 \x01(\x05H\x00R\bRegionId\x88\x01\x01\x12-\n" +
+	"\x0fPreciseRegionId\x18\x02 \x01(\x05H\x01R\x0fPreciseRegionId\x88\x01\x01\x12\x1d\n" +
+	"\aCountry\x18\x03 \x01(\tH\x02R\aCountry\x88\x01\x01\x12\x17\n" +
+	"\x04Area\x18\x04 \x01(\tH\x03R\x04Area\x88\x01\x01\x12\x1d\n" +
+	"\aZipCode\x18\x05 \x01(\tH\x04R\aZipCode\x88\x01\x01\x12\x17\n" +
+	"\x04City\x18\x06 \x01(\tH\x05R\x04City\x88\x01\x01\x12\x19\n" +
+	"\x05Metro\x18\a \x01(\tH\x06R\x05Metro\x88\x01\x01\x12\x1b\n" +
+	"\x06Street\x18\b \x01(\tH\aR\x06Street\x88\x01\x01\x12\x1f\n" +
+	"\bBuilding\x18\t \x01(\tH\bR\bBuilding\x88\x01\x01\x12\x1f\n" +
 	"\bIntercom\x18\n" +
-	" \x01(\tB\f\xaa\xdd\x1b\bintercomH\tR\bintercom\x88\x01\x01\x12$\n" +
-	"\x05Floor\x18\v \x01(\tB\t\xaa\xdd\x1b\x05floorH\n" +
-	"R\x05floor\x88\x01\x01\x12!\n" +
-	"\x04Room\x18\f \x01(\tB\b\xaa\xdd\x1b\x04roomH\vR\x04room\x88\x01\x01\x12*\n" +
-	"\aComment\x18\r \x01(\tB\v\xaa\xdd\x1b\acommentH\fR\acomment\x88\x01\x01\x12$\n" +
-	"\x05Block\x18\x0e \x01(\tB\t\xaa\xdd\x1b\x05blockH\rR\x05block\x88\x01\x01\x12'\n" +
-	"\x06Estate\x18\x0f \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06estateH\x0eR\x06estate\x88\x01\x01\x12!\n" +
-	"\x04Wing\x18\x10 \x01(\tB\b\xaa\xdd\x1b\x04wingH\x0fR\x04wing\x88\x01\x01\x12'\n" +
-	"\x06Region\x18\x11 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06regionH\x10R\x06region\x88\x01\x01\x12-\n" +
-	"\bDistrict\x18\x12 \x01(\tB\f\xaa\xdd\x1b\bdistrictH\x11R\bdistrict\x88\x01\x01\x12\x1e\n" +
-	"\x03Uri\x18\x13 \x01(\tB\a\xaa\xdd\x1b\x03uriH\x12R\x03uri\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
+	" \x01(\tH\tR\bIntercom\x88\x01\x01\x12\x19\n" +
+	"\x05Floor\x18\v \x01(\tH\n" +
+	"R\x05Floor\x88\x01\x01\x12\x17\n" +
+	"\x04Room\x18\f \x01(\tH\vR\x04Room\x88\x01\x01\x12\x1d\n" +
+	"\aComment\x18\r \x01(\tH\fR\aComment\x88\x01\x01\x12\x19\n" +
+	"\x05Block\x18\x0e \x01(\tH\rR\x05Block\x88\x01\x01\x12\x1b\n" +
+	"\x06Estate\x18\x0f \x01(\tH\x0eR\x06Estate\x88\x01\x01\x12\x17\n" +
+	"\x04Wing\x18\x10 \x01(\tH\x0fR\x04Wing\x88\x01\x01\x12\x1b\n" +
+	"\x06Region\x18\x11 \x01(\tH\x10R\x06Region\x88\x01\x01\x12\x1f\n" +
+	"\bDistrict\x18\x12 \x01(\tH\x11R\bDistrict\x88\x01\x01\x12\x15\n" +
+	"\x03Uri\x18\x13 \x01(\tH\x12R\x03Uri\x88\x01\x01B\v\n" +
 	"\t_RegionIdB\x12\n" +
 	"\x10_PreciseRegionIdB\n" +
 	"\n" +
@@ -794,23 +792,24 @@ const file_alice_protos_api_datum_addresses_proto_rawDesc = "" +
 	"\x05_WingB\t\n" +
 	"\a_RegionB\v\n" +
 	"\t_DistrictB\x06\n" +
-	"\x04_Uri\"\xc8\x02\n" +
-	"\x10TFullAddressInfo\x12Y\n" +
-	"\rAddressString\x18\x01 \x01(\v2\x1e.NAlice.NDatumApi.TFullAddressB\x12\xaa\xdd\x1b\x0eaddress_stringR\x0eaddress_string\x12G\n" +
-	"\bGeoPoint\x18\x02 \x01(\v2\x1b.NAlice.NDatumApi.TGeoPointB\r\xaa\xdd\x1b\tgeo_pointR\tgeo_point\x12\x89\x01\n" +
-	"\x18AdditionalAddressDetails\x18\x03 \x01(\v2+.NAlice.NDatumApi.TAdditionalAddressDetailsB\x1e\xaa\xdd\x1b\x1aadditional_address_detailsR\x1aadditional_address_details:\x04\xa8\xdd\x1b\x04\"\xb2\x02\n" +
-	"\x17TDatumAddressesListItem\x12I\n" +
-	"\aAddress\x18\x01 \x01(\v2\".NAlice.NDatumApi.TFullAddressInfoB\v\xaa\xdd\x1b\aaddressR\aaddress\x12^\n" +
-	"\rPassportLabel\x18\x02 \x01(\x0e2!.NAlice.NDatumApi.EPassportLabelsB\x12\xaa\xdd\x1b\x0epassport_labelH\x00R\x0epassport_label\x12R\n" +
+	"\x04_Uri\"\xfa\x01\n" +
+	"\x10TFullAddressInfo\x12D\n" +
+	"\rAddressString\x18\x01 \x01(\v2\x1e.NAlice.NDatumApi.TFullAddressR\rAddressString\x127\n" +
+	"\bGeoPoint\x18\x02 \x01(\v2\x1b.NAlice.NDatumApi.TGeoPointR\bGeoPoint\x12g\n" +
+	"\x18AdditionalAddressDetails\x18\x03 \x01(\v2+.NAlice.NDatumApi.TAdditionalAddressDetailsR\x18AdditionalAddressDetails\"\xed\x01\n" +
+	"\x17TDatumAddressesListItem\x12<\n" +
+	"\aAddress\x18\x01 \x01(\v2\".NAlice.NDatumApi.TFullAddressInfoR\aAddress\x12I\n" +
+	"\rPassportLabel\x18\x02 \x01(\x0e2!.NAlice.NDatumApi.EPassportLabelsH\x00R\rPassportLabel\x12@\n" +
 	"\n" +
-	"AliceLabel\x18\x03 \x01(\v2\x1e.NAlice.NDatumApi.TCustomLabelB\x0f\xaa\xdd\x1b\valice_labelH\x00R\valice_label:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Label\x12\t\xaa\xdd\x1b\x05label\"g\n" +
-	"\x13TDatumAddressesList\x12J\n" +
-	"\x05Items\x18\x01 \x03(\v2).NAlice.NDatumApi.TDatumAddressesListItemB\t\xaa\xdd\x1b\x05itemsR\x05items:\x04\xa8\xdd\x1b\x04*%\n" +
+	"AliceLabel\x18\x03 \x01(\v2\x1e.NAlice.NDatumApi.TCustomLabelH\x00R\n" +
+	"AliceLabelB\a\n" +
+	"\x05Label\"V\n" +
+	"\x13TDatumAddressesList\x12?\n" +
+	"\x05Items\x18\x01 \x03(\v2).NAlice.NDatumApi.TDatumAddressesListItemR\x05Items*%\n" +
 	"\x0fEPassportLabels\x12\b\n" +
 	"\x04HOME\x10\x00\x12\b\n" +
-	"\x04WORK\x10\x01BK\n" +
-	" ru.yandex.alice.protos.api.datumZ'a.yandex-team.ru/alice/protos/api/datumb\x06proto3"
+	"\x04WORK\x10\x01B\xcf\x01\n" +
+	"\x14com.NAlice.NDatumApiB\x0eAddressesProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/datum\xa2\x02\x03NNX\xaa\x02\x10NAlice.NDatumApi\xca\x02\x10NAlice\\NDatumApi\xe2\x02\x1cNAlice\\NDatumApi\\GPBMetadata\xea\x02\x11NAlice::NDatumApib\x06proto3"
 
 var (
 	file_alice_protos_api_datum_addresses_proto_rawDescOnce sync.Once

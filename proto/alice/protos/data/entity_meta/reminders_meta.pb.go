@@ -25,7 +25,7 @@ const (
 
 type TRemindersMeta struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Reminders     []*reminders.TState_TReminder `protobuf:"bytes,1,rep,name=Reminders,json=reminders,proto3" json:"Reminders,omitempty"`
+	Reminders     []*reminders.TState_TReminder `protobuf:"bytes,1,rep,name=Reminders,proto3" json:"Reminders,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -71,10 +71,11 @@ var File_alice_protos_data_entity_meta_reminders_meta_proto protoreflect.FileDes
 
 const file_alice_protos_data_entity_meta_reminders_meta_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/data/entity_meta/reminders_meta.proto\x12\x06NAlice\x1a0alice/protos/data/scenario/reminders/state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"n\n" +
-	"\x0eTRemindersMeta\x12V\n" +
-	"\tReminders\x18\x01 \x03(\v2).NAlice.NData.NReminders.TState.TReminderB\r\xaa\xdd\x1b\tremindersR\treminders:\x04\xa8\xdd\x1b\x04BY\n" +
-	"'ru.yandex.alice.protos.data.entity_metaZ.a.yandex-team.ru/alice/protos/data/entity_metab\x06proto3"
+	"2alice/protos/data/entity_meta/reminders_meta.proto\x12\x06NAlice\x1a0alice/protos/data/scenario/reminders/state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"Y\n" +
+	"\x0eTRemindersMeta\x12G\n" +
+	"\tReminders\x18\x01 \x03(\v2).NAlice.NData.NReminders.TState.TReminderR\tRemindersB\xa7\x01\n" +
+	"\n" +
+	"com.NAliceB\x12RemindersMetaProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/entity_meta\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_entity_meta_reminders_meta_proto_rawDescOnce sync.Once

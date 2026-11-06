@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screen_brightness/capability.proto
 
-package screen_brightnesspb
+package screen_brightness
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -383,8 +383,8 @@ const file_alice_protos_endpoint_capabilities_screen_brightness_capability_proto
 	"\n" +
 	"Capability\x18\x01 \x01(\v2#.NAlice.TScreenBrightnessCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x9b\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cOB\xac\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fScreenBrightnessCapabilityProtoP\x01ZYa.yandex-team.ru/alice/protos/endpoint/capabilities/screen_brightness;screen_brightnesspbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x9b\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cOB\xb7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fScreenBrightnessCapabilityProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screen_brightnessb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screen_brightness_capability_proto_rawDescOnce sync.Once

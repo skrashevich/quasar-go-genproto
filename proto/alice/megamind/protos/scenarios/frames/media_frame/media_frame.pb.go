@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/media_frame/media_frame.proto
 
-package mediaframe
+package media_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -189,15 +189,15 @@ type isTPlayerTypeSlot_Value interface {
 }
 
 type TPlayerTypeSlot_PlayerTypeValue struct {
-	PlayerTypeValue TPlayerTypeSlot_EValue `protobuf:"varint,1,opt,name=PlayerTypeValue,json=player_type_value,proto3,enum=NAlice.TPlayerTypeSlot_EValue,oneof"`
+	PlayerTypeValue TPlayerTypeSlot_EValue `protobuf:"varint,1,opt,name=PlayerTypeValue,proto3,enum=NAlice.TPlayerTypeSlot_EValue,oneof"`
 }
 
 func (*TPlayerTypeSlot_PlayerTypeValue) isTPlayerTypeSlot_Value() {}
 
 type TPlayerNextTrackSemanticFrame struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	SetPause         *common.TBoolSlot      `protobuf:"bytes,1,opt,name=SetPause,json=set_pause,proto3" json:"SetPause,omitempty"`
-	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,2,opt,name=DisableAnimation,json=disable_animation,proto3" json:"DisableAnimation,omitempty"`
+	SetPause         *common.TBoolSlot      `protobuf:"bytes,1,opt,name=SetPause,proto3" json:"SetPause,omitempty"`
+	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,2,opt,name=DisableAnimation,proto3" json:"DisableAnimation,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -248,8 +248,8 @@ func (x *TPlayerNextTrackSemanticFrame) GetDisableAnimation() *common.TBoolSlot 
 
 type TPlayerPrevTrackSemanticFrame struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	SetPause         *common.TBoolSlot      `protobuf:"bytes,1,opt,name=SetPause,json=set_pause,proto3" json:"SetPause,omitempty"`
-	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,2,opt,name=DisableAnimation,json=disable_animation,proto3" json:"DisableAnimation,omitempty"`
+	SetPause         *common.TBoolSlot      `protobuf:"bytes,1,opt,name=SetPause,proto3" json:"SetPause,omitempty"`
+	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,2,opt,name=DisableAnimation,proto3" json:"DisableAnimation,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -300,11 +300,11 @@ func (x *TPlayerPrevTrackSemanticFrame) GetDisableAnimation() *common.TBoolSlot 
 
 type TPlayerPauseSemanticFrame struct {
 	state              protoimpl.MessageState  `protogen:"open.v1"`
-	LocationRoom       []*common.TLocationSlot `protobuf:"bytes,1,rep,name=LocationRoom,json=location_room,proto3" json:"LocationRoom,omitempty"`
-	LocationGroup      []*common.TLocationSlot `protobuf:"bytes,2,rep,name=LocationGroup,json=location_group,proto3" json:"LocationGroup,omitempty"`
-	LocationDevice     []*common.TLocationSlot `protobuf:"bytes,3,rep,name=LocationDevice,json=location_device,proto3" json:"LocationDevice,omitempty"`
-	LocationEverywhere *common.TLocationSlot   `protobuf:"bytes,4,opt,name=LocationEverywhere,json=location_everywhere,proto3" json:"LocationEverywhere,omitempty"`
-	IsOnlyAudio        *common.TBoolSlot       `protobuf:"bytes,5,opt,name=IsOnlyAudio,json=is_only_audio,proto3" json:"IsOnlyAudio,omitempty"`
+	LocationRoom       []*common.TLocationSlot `protobuf:"bytes,1,rep,name=LocationRoom,proto3" json:"LocationRoom,omitempty"`
+	LocationGroup      []*common.TLocationSlot `protobuf:"bytes,2,rep,name=LocationGroup,proto3" json:"LocationGroup,omitempty"`
+	LocationDevice     []*common.TLocationSlot `protobuf:"bytes,3,rep,name=LocationDevice,proto3" json:"LocationDevice,omitempty"`
+	LocationEverywhere *common.TLocationSlot   `protobuf:"bytes,4,opt,name=LocationEverywhere,proto3" json:"LocationEverywhere,omitempty"`
+	IsOnlyAudio        *common.TBoolSlot       `protobuf:"bytes,5,opt,name=IsOnlyAudio,proto3" json:"IsOnlyAudio,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -376,9 +376,9 @@ func (x *TPlayerPauseSemanticFrame) GetIsOnlyAudio() *common.TBoolSlot {
 
 type TPlayerContinueSemanticFrame struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	DisableNlg       *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
-	PlayerType       *TPlayerTypeSlot       `protobuf:"bytes,2,opt,name=PlayerType,json=player_type,proto3" json:"PlayerType,omitempty"`
-	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,3,opt,name=DisableAnimation,json=disable_animation,proto3" json:"DisableAnimation,omitempty"`
+	DisableNlg       *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
+	PlayerType       *TPlayerTypeSlot       `protobuf:"bytes,2,opt,name=PlayerType,proto3" json:"PlayerType,omitempty"`
+	DisableAnimation *common.TBoolSlot      `protobuf:"bytes,3,opt,name=DisableAnimation,proto3" json:"DisableAnimation,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -436,7 +436,7 @@ func (x *TPlayerContinueSemanticFrame) GetDisableAnimation() *common.TBoolSlot {
 
 type TPlayerShuffleSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
+	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -480,7 +480,7 @@ func (x *TPlayerShuffleSemanticFrame) GetDisableNlg() *common.TBoolSlot {
 
 type TPlayerUnshuffleSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
+	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -619,15 +619,15 @@ type isTRepeatModeSlot_Value interface {
 }
 
 type TRepeatModeSlot_EnumValue struct {
-	EnumValue TRepeatModeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,json=enum_value,proto3,enum=NAlice.TRepeatModeSlot_EValue,oneof"`
+	EnumValue TRepeatModeSlot_EValue `protobuf:"varint,1,opt,name=EnumValue,proto3,enum=NAlice.TRepeatModeSlot_EValue,oneof"`
 }
 
 func (*TRepeatModeSlot_EnumValue) isTRepeatModeSlot_Value() {}
 
 type TPlayerRepeatSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,json=disable_nlg,proto3" json:"DisableNlg,omitempty"`
-	Mode          *TRepeatModeSlot       `protobuf:"bytes,2,opt,name=Mode,json=mode,proto3" json:"Mode,omitempty"`
+	DisableNlg    *common.TBoolSlot      `protobuf:"bytes,1,opt,name=DisableNlg,proto3" json:"DisableNlg,omitempty"`
+	Mode          *TRepeatModeSlot       `protobuf:"bytes,2,opt,name=Mode,proto3" json:"Mode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -680,57 +680,59 @@ var File_alice_megamind_protos_scenarios_frames_media_frame_media_frame_proto pr
 
 const file_alice_megamind_protos_scenarios_frames_media_frame_media_frame_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/megamind/protos/scenarios/frames/media_frame/media_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe2\x01\n" +
-	"\x0fTPlayerTypeSlot\x12}\n" +
-	"\x0fPlayerTypeValue\x18\x01 \x01(\x0e2\x1e.NAlice.TPlayerTypeSlot.EValueB/\xa0\xdd\x1b\x05\xaa\xdd\x1b\x11player_type_value\u0085\x1c\x12custom.player_typeH\x00R\x11player_type_value\"6\n" +
+	"Dalice/megamind/protos/scenarios/frames/media_frame/media_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x01\n" +
+	"\x0fTPlayerTypeSlot\x12J\n" +
+	"\x0fPlayerTypeValue\x18\x01 \x01(\x0e2\x1e.NAlice.TPlayerTypeSlot.EValueH\x00R\x0fPlayerTypeValue\"6\n" +
 	"\x06EValue\x12\v\n" +
 	"\aunknown\x10\x00\x12\t\n" +
 	"\x05music\x10\x01\x12\t\n" +
 	"\x05video\x10\x02\x12\t\n" +
-	"\x05radio\x10\x03:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\x8f\x02\n" +
-	"\x1dTPlayerNextTrackSemanticFrame\x12J\n" +
-	"\bSetPause\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1a\xaa\xdd\x1b\tset_pause\xba\x85\x1c\tset_pauseR\tset_pause\x12j\n" +
-	"\x10DisableAnimation\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotB*\xaa\xdd\x1b\x11disable_animation\xba\x85\x1c\x11disable_animationR\x11disable_animation:6\xa8\xdd\x1b\x04\x9a\xff\x1b.personal_assistant.scenarios.player.next_track\"\x93\x02\n" +
-	"\x1dTPlayerPrevTrackSemanticFrame\x12J\n" +
-	"\bSetPause\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1a\xaa\xdd\x1b\tset_pause\xba\x85\x1c\tset_pauseR\tset_pause\x12j\n" +
-	"\x10DisableAnimation\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotB*\xaa\xdd\x1b\x11disable_animation\xba\x85\x1c\x11disable_animationR\x11disable_animation::\xa8\xdd\x1b\x04\x9a\xff\x1b2personal_assistant.scenarios.player.previous_track\"\xcd\x04\n" +
-	"\x19TPlayerPauseSemanticFrame\x12^\n" +
-	"\fLocationRoom\x18\x01 \x03(\v2\x15.NAlice.TLocationSlotB\"\xaa\xdd\x1b\rlocation_room\xba\x85\x1c\rlocation_roomR\rlocation_room\x12b\n" +
-	"\rLocationGroup\x18\x02 \x03(\v2\x15.NAlice.TLocationSlotB$\xaa\xdd\x1b\x0elocation_group\xba\x85\x1c\x0elocation_groupR\x0elocation_group\x12f\n" +
-	"\x0eLocationDevice\x18\x03 \x03(\v2\x15.NAlice.TLocationSlotB&\xaa\xdd\x1b\x0flocation_device\xba\x85\x1c\x0flocation_deviceR\x0flocation_device\x12v\n" +
-	"\x12LocationEverywhere\x18\x04 \x01(\v2\x15.NAlice.TLocationSlotB.\xaa\xdd\x1b\x13location_everywhere\xba\x85\x1c\x13location_everywhereR\x13location_everywhere\x12Y\n" +
-	"\vIsOnlyAudio\x18\x05 \x01(\v2\x11.NAlice.TBoolSlotB\"\xaa\xdd\x1b\ris_only_audio\xba\x85\x1c\ris_only_audioR\ris_only_audio:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.player.pause\"\xee\x02\n" +
-	"\x1cTPlayerContinueSemanticFrame\x12R\n" +
+	"\x05radio\x10\x03B\a\n" +
+	"\x05Value\"\x8d\x01\n" +
+	"\x1dTPlayerNextTrackSemanticFrame\x12-\n" +
+	"\bSetPause\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\bSetPause\x12=\n" +
+	"\x10DisableAnimation\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotR\x10DisableAnimation\"\x8d\x01\n" +
+	"\x1dTPlayerPrevTrackSemanticFrame\x12-\n" +
+	"\bSetPause\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\bSetPause\x12=\n" +
+	"\x10DisableAnimation\x18\x02 \x01(\v2\x11.NAlice.TBoolSlotR\x10DisableAnimation\"\xce\x02\n" +
+	"\x19TPlayerPauseSemanticFrame\x129\n" +
+	"\fLocationRoom\x18\x01 \x03(\v2\x15.NAlice.TLocationSlotR\fLocationRoom\x12;\n" +
+	"\rLocationGroup\x18\x02 \x03(\v2\x15.NAlice.TLocationSlotR\rLocationGroup\x12=\n" +
+	"\x0eLocationDevice\x18\x03 \x03(\v2\x15.NAlice.TLocationSlotR\x0eLocationDevice\x12E\n" +
+	"\x12LocationEverywhere\x18\x04 \x01(\v2\x15.NAlice.TLocationSlotR\x12LocationEverywhere\x123\n" +
+	"\vIsOnlyAudio\x18\x05 \x01(\v2\x11.NAlice.TBoolSlotR\vIsOnlyAudio\"\xc9\x01\n" +
+	"\x1cTPlayerContinueSemanticFrame\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg\x12X\n" +
+	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\x127\n" +
 	"\n" +
-	"PlayerType\x18\x02 \x01(\v2\x17.NAlice.TPlayerTypeSlotB\x1e\xaa\xdd\x1b\vplayer_type\xba\x85\x1c\vplayer_typeR\vplayer_type\x12j\n" +
-	"\x10DisableAnimation\x18\x03 \x01(\v2\x11.NAlice.TBoolSlotB*\xaa\xdd\x1b\x11disable_animation\xba\x85\x1c\x11disable_animationR\x11disable_animation:4\xa8\xdd\x1b\x04\x9a\xff\x1b,personal_assistant.scenarios.player.continue\"\xa6\x01\n" +
-	"\x1bTPlayerShuffleSemanticFrame\x12R\n" +
+	"PlayerType\x18\x02 \x01(\v2\x17.NAlice.TPlayerTypeSlotR\n" +
+	"PlayerType\x12=\n" +
+	"\x10DisableAnimation\x18\x03 \x01(\v2\x11.NAlice.TBoolSlotR\x10DisableAnimation\"P\n" +
+	"\x1bTPlayerShuffleSemanticFrame\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg:3\xa8\xdd\x1b\x04\x9a\xff\x1b+personal_assistant.scenarios.player.shuffle\"\xaa\x01\n" +
-	"\x1dTPlayerUnshuffleSemanticFrame\x12R\n" +
+	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\"R\n" +
+	"\x1dTPlayerUnshuffleSemanticFrame\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg:5\xa8\xdd\x1b\x04\x9a\xff\x1b-personal_assistant.scenarios.player.unshuffle\"P\n" +
-	"\x1aTPlayerReplaySemanticFrame:2\xa8\xdd\x1b\x04\x9a\xff\x1b*personal_assistant.scenarios.player.replay\"\xbd\x01\n" +
-	"\x0fTRepeatModeSlot\x12]\n" +
-	"\tEnumValue\x18\x01 \x01(\x0e2\x1e.NAlice.TRepeatModeSlot.EValueB\x1c\xaa\xdd\x1b\n" +
-	"enum_value\u0085\x1c\n" +
-	"enum_valueH\x00R\n" +
-	"enum_value\"1\n" +
+	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\"\x1c\n" +
+	"\x1aTPlayerReplaySemanticFrame\"\x8d\x01\n" +
+	"\x0fTRepeatModeSlot\x12>\n" +
+	"\tEnumValue\x18\x01 \x01(\x0e2\x1e.NAlice.TRepeatModeSlot.EValueH\x00R\tEnumValue\"1\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
 	"\x04None\x10\x01\x12\a\n" +
 	"\x03One\x10\x02\x12\a\n" +
-	"\x03All\x10\x03:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xe3\x01\n" +
-	"\x1aTPlayerRepeatSemanticFrame\x12R\n" +
+	"\x03All\x10\x03B\a\n" +
+	"\x05Value\"|\n" +
+	"\x1aTPlayerRepeatSemanticFrame\x121\n" +
 	"\n" +
-	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB\x1e\xaa\xdd\x1b\vdisable_nlg\xba\x85\x1c\vdisable_nlgR\vdisable_nlg\x12=\n" +
-	"\x04Mode\x18\x02 \x01(\v2\x17.NAlice.TRepeatModeSlotB\x10\xaa\xdd\x1b\x04mode\xba\x85\x1c\x04modeR\x04mode:2\xa8\xdd\x1b\x04\x9a\xff\x1b*personal_assistant.scenarios.player.repeatB\x9c\x01\n" +
-	"<ru.yandex.alice.megamind.protos.scenarios.frames.media_frameB\n" +
-	"FrameMediaP\x01ZNa.yandex-team.ru/alice/megamind/protos/scenarios/frames/media_frame;mediaframeb\x06proto3"
+	"DisableNlg\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\n" +
+	"DisableNlg\x12+\n" +
+	"\x04Mode\x18\x02 \x01(\v2\x17.NAlice.TRepeatModeSlotR\x04ModeB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fMediaFrameProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/media_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_media_frame_media_frame_proto_rawDescOnce sync.Once

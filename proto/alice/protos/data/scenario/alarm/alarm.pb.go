@@ -191,7 +191,7 @@ func (TAlarm_TAlarmAction_EExecutionMode) EnumDescriptor() ([]byte, []int) {
 
 type TDefaultSound struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	SoundType     TDefaultSound_ESoundType `protobuf:"varint,1,opt,name=SoundType,json=sound_type,proto3,enum=NAlice.NData.TDefaultSound_ESoundType" json:"SoundType,omitempty"`
+	SoundType     TDefaultSound_ESoundType `protobuf:"varint,1,opt,name=SoundType,proto3,enum=NAlice.NData.TDefaultSound_ESoundType" json:"SoundType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -235,8 +235,8 @@ func (x *TDefaultSound) GetSoundType() TDefaultSound_ESoundType {
 
 type TAlarmSoundSettings struct {
 	state          protoimpl.MessageState               `protogen:"open.v1"`
-	SoundLevelInfo *TAlarmSoundSettings_TSoundLevelInfo `protobuf:"bytes,1,opt,name=SoundLevelInfo,json=sound_level_info,proto3" json:"SoundLevelInfo,omitempty"`
-	MediaSettings  *TAlarmSoundSettings_TMediaSettings  `protobuf:"bytes,2,opt,name=MediaSettings,json=media_settings,proto3" json:"MediaSettings,omitempty"`
+	SoundLevelInfo *TAlarmSoundSettings_TSoundLevelInfo `protobuf:"bytes,1,opt,name=SoundLevelInfo,proto3" json:"SoundLevelInfo,omitempty"`
+	MediaSettings  *TAlarmSoundSettings_TMediaSettings  `protobuf:"bytes,2,opt,name=MediaSettings,proto3" json:"MediaSettings,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -287,18 +287,18 @@ func (x *TAlarmSoundSettings) GetMediaSettings() *TAlarmSoundSettings_TMediaSett
 
 type TAlarm struct {
 	state              protoimpl.MessageState   `protogen:"open.v1"`
-	AlarmId            string                   `protobuf:"bytes,1,opt,name=AlarmId,json=alarm_id,proto3" json:"AlarmId,omitempty"`
-	LocalTime          *TAlarm_TTime            `protobuf:"bytes,2,opt,name=LocalTime,json=local_time,proto3" json:"LocalTime,omitempty"`
-	Timezone           *data.TTimezone          `protobuf:"bytes,7,opt,name=Timezone,json=timezone,proto3" json:"Timezone,omitempty"`
-	CurrentlyPlaying   bool                     `protobuf:"varint,3,opt,name=CurrentlyPlaying,json=currently_playing,proto3" json:"CurrentlyPlaying,omitempty"`
-	ActivationDays     []*TAlarm_TActivationDay `protobuf:"bytes,5,rep,name=ActivationDays,json=activation_days,proto3" json:"ActivationDays,omitempty"`
-	AlarmActions       []*TAlarm_TAlarmAction   `protobuf:"bytes,6,rep,name=AlarmActions,json=alarm_actions,proto3" json:"AlarmActions,omitempty"`
-	AlarmSoundSettings *TAlarmSoundSettings     `protobuf:"bytes,8,opt,name=AlarmSoundSettings,json=alarm_sound_settings,proto3" json:"AlarmSoundSettings,omitempty"`
-	Disabled           bool                     `protobuf:"varint,9,opt,name=Disabled,json=disabled,proto3" json:"Disabled,omitempty"`
-	Title              string                   `protobuf:"bytes,10,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	EditTimestamp      uint64                   `protobuf:"varint,11,opt,name=EditTimestamp,json=edit_timestamp,proto3" json:"EditTimestamp,omitempty"`
-	SnoozeMetaInfo     *TAlarm_TSnoozeMetaInfo  `protobuf:"bytes,13,opt,name=SnoozeMetaInfo,json=snooze_meta_info,proto3" json:"SnoozeMetaInfo,omitempty"`
-	SnoozeTime         *uint32                  `protobuf:"varint,12,opt,name=SnoozeTime,json=snooze_time,proto3,oneof" json:"SnoozeTime,omitempty"`
+	AlarmId            string                   `protobuf:"bytes,1,opt,name=AlarmId,proto3" json:"AlarmId,omitempty"`
+	LocalTime          *TAlarm_TTime            `protobuf:"bytes,2,opt,name=LocalTime,proto3" json:"LocalTime,omitempty"`
+	Timezone           *data.TTimezone          `protobuf:"bytes,7,opt,name=Timezone,proto3" json:"Timezone,omitempty"`
+	CurrentlyPlaying   bool                     `protobuf:"varint,3,opt,name=CurrentlyPlaying,proto3" json:"CurrentlyPlaying,omitempty"`
+	ActivationDays     []*TAlarm_TActivationDay `protobuf:"bytes,5,rep,name=ActivationDays,proto3" json:"ActivationDays,omitempty"`
+	AlarmActions       []*TAlarm_TAlarmAction   `protobuf:"bytes,6,rep,name=AlarmActions,proto3" json:"AlarmActions,omitempty"`
+	AlarmSoundSettings *TAlarmSoundSettings     `protobuf:"bytes,8,opt,name=AlarmSoundSettings,proto3" json:"AlarmSoundSettings,omitempty"`
+	Disabled           bool                     `protobuf:"varint,9,opt,name=Disabled,proto3" json:"Disabled,omitempty"`
+	Title              string                   `protobuf:"bytes,10,opt,name=Title,proto3" json:"Title,omitempty"`
+	EditTimestamp      uint64                   `protobuf:"varint,11,opt,name=EditTimestamp,proto3" json:"EditTimestamp,omitempty"`
+	SnoozeMetaInfo     *TAlarm_TSnoozeMetaInfo  `protobuf:"bytes,13,opt,name=SnoozeMetaInfo,proto3" json:"SnoozeMetaInfo,omitempty"`
+	SnoozeTime         *uint32                  `protobuf:"varint,12,opt,name=SnoozeTime,proto3,oneof" json:"SnoozeTime,omitempty"`
 	ApproachingOffset  *uint32                  `protobuf:"varint,14,opt,name=ApproachingOffset,json=approaching_offset,proto3,oneof" json:"ApproachingOffset,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
@@ -427,7 +427,7 @@ func (x *TAlarm) GetApproachingOffset() uint32 {
 
 type TAlarmSoundSettings_TMediaSettings struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
-	RawInfo *structpb.Struct       `protobuf:"bytes,1,opt,name=RawInfo,json=raw_info,proto3" json:"RawInfo,omitempty"`
+	RawInfo *structpb.Struct       `protobuf:"bytes,1,opt,name=RawInfo,proto3" json:"RawInfo,omitempty"`
 	// Types that are valid to be assigned to Media:
 	//
 	//	*TAlarmSoundSettings_TMediaSettings_ServerAction
@@ -504,11 +504,11 @@ type isTAlarmSoundSettings_TMediaSettings_Media interface {
 }
 
 type TAlarmSoundSettings_TMediaSettings_ServerAction struct {
-	ServerAction *TAlarmSoundSettings_TMediaSettings_TServerAction `protobuf:"bytes,2,opt,name=ServerAction,json=server_action,proto3,oneof"`
+	ServerAction *TAlarmSoundSettings_TMediaSettings_TServerAction `protobuf:"bytes,2,opt,name=ServerAction,proto3,oneof"`
 }
 
 type TAlarmSoundSettings_TMediaSettings_DefaultSound struct {
-	DefaultSound *TDefaultSound `protobuf:"bytes,4,opt,name=DefaultSound,json=default_sound,proto3,oneof"`
+	DefaultSound *TDefaultSound `protobuf:"bytes,4,opt,name=DefaultSound,proto3,oneof"`
 }
 
 func (*TAlarmSoundSettings_TMediaSettings_ServerAction) isTAlarmSoundSettings_TMediaSettings_Media() {
@@ -519,11 +519,11 @@ func (*TAlarmSoundSettings_TMediaSettings_DefaultSound) isTAlarmSoundSettings_TM
 
 type TAlarmSoundSettings_TSoundLevelInfo struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	MinSoundLevel        uint32                 `protobuf:"varint,1,opt,name=MinSoundLevel,json=min_sound_level,proto3" json:"MinSoundLevel,omitempty"`
-	MaxSoundLevel        uint32                 `protobuf:"varint,2,opt,name=MaxSoundLevel,json=max_sound_level,proto3" json:"MaxSoundLevel,omitempty"`
-	VolumeStepMs         uint32                 `protobuf:"varint,3,opt,name=VolumeStepMs,json=volume_step_ms,proto3" json:"VolumeStepMs,omitempty"`
-	MinPercentSoundLevel float32                `protobuf:"fixed32,4,opt,name=MinPercentSoundLevel,json=min_percent_sound_level,proto3" json:"MinPercentSoundLevel,omitempty"`
-	MaxPercentSoundLevel float32                `protobuf:"fixed32,5,opt,name=MaxPercentSoundLevel,json=max_percent_sound_level,proto3" json:"MaxPercentSoundLevel,omitempty"`
+	MinSoundLevel        uint32                 `protobuf:"varint,1,opt,name=MinSoundLevel,proto3" json:"MinSoundLevel,omitempty"`
+	MaxSoundLevel        uint32                 `protobuf:"varint,2,opt,name=MaxSoundLevel,proto3" json:"MaxSoundLevel,omitempty"`
+	VolumeStepMs         uint32                 `protobuf:"varint,3,opt,name=VolumeStepMs,proto3" json:"VolumeStepMs,omitempty"`
+	MinPercentSoundLevel float32                `protobuf:"fixed32,4,opt,name=MinPercentSoundLevel,proto3" json:"MinPercentSoundLevel,omitempty"`
+	MaxPercentSoundLevel float32                `protobuf:"fixed32,5,opt,name=MaxPercentSoundLevel,proto3" json:"MaxPercentSoundLevel,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -595,9 +595,9 @@ func (x *TAlarmSoundSettings_TSoundLevelInfo) GetMaxPercentSoundLevel() float32 
 
 type TAlarmSoundSettings_TMediaSettings_TServerAction struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Name            string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Payload         *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
-	NotPrefetchable bool                   `protobuf:"varint,3,opt,name=NotPrefetchable,json=not_prefetchable,proto3" json:"NotPrefetchable,omitempty"`
+	Name            string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Payload         *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
+	NotPrefetchable bool                   `protobuf:"varint,3,opt,name=NotPrefetchable,proto3" json:"NotPrefetchable,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -655,9 +655,9 @@ func (x *TAlarmSoundSettings_TMediaSettings_TServerAction) GetNotPrefetchable() 
 
 type TAlarm_TDate struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Year          uint32                 `protobuf:"varint,1,opt,name=Year,json=year,proto3" json:"Year,omitempty"`
-	Month         uint32                 `protobuf:"varint,2,opt,name=Month,json=month,proto3" json:"Month,omitempty"`
-	Day           uint32                 `protobuf:"varint,3,opt,name=Day,json=day,proto3" json:"Day,omitempty"`
+	Year          uint32                 `protobuf:"varint,1,opt,name=Year,proto3" json:"Year,omitempty"`
+	Month         uint32                 `protobuf:"varint,2,opt,name=Month,proto3" json:"Month,omitempty"`
+	Day           uint32                 `protobuf:"varint,3,opt,name=Day,proto3" json:"Day,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -715,9 +715,9 @@ func (x *TAlarm_TDate) GetDay() uint32 {
 
 type TAlarm_TTime struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Hours         uint32                 `protobuf:"varint,1,opt,name=Hours,json=hours,proto3" json:"Hours,omitempty"`
-	Minutes       uint32                 `protobuf:"varint,2,opt,name=Minutes,json=minutes,proto3" json:"Minutes,omitempty"`
-	Seconds       uint32                 `protobuf:"varint,3,opt,name=Seconds,json=seconds,proto3" json:"Seconds,omitempty"`
+	Hours         uint32                 `protobuf:"varint,1,opt,name=Hours,proto3" json:"Hours,omitempty"`
+	Minutes       uint32                 `protobuf:"varint,2,opt,name=Minutes,proto3" json:"Minutes,omitempty"`
+	Seconds       uint32                 `protobuf:"varint,3,opt,name=Seconds,proto3" json:"Seconds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -844,11 +844,11 @@ type isTAlarm_TActivationDay_ActivationDay interface {
 }
 
 type TAlarm_TActivationDay_Weekday struct {
-	Weekday TAlarm_EWeekday `protobuf:"varint,1,opt,name=Weekday,json=weekday,proto3,enum=NAlice.NData.TAlarm_EWeekday,oneof"`
+	Weekday TAlarm_EWeekday `protobuf:"varint,1,opt,name=Weekday,proto3,enum=NAlice.NData.TAlarm_EWeekday,oneof"`
 }
 
 type TAlarm_TActivationDay_Date struct {
-	Date *TAlarm_TDate `protobuf:"bytes,2,opt,name=Date,json=date,proto3,oneof"`
+	Date *TAlarm_TDate `protobuf:"bytes,2,opt,name=Date,proto3,oneof"`
 }
 
 func (*TAlarm_TActivationDay_Weekday) isTAlarm_TActivationDay_ActivationDay() {}
@@ -857,9 +857,9 @@ func (*TAlarm_TActivationDay_Date) isTAlarm_TActivationDay_ActivationDay() {}
 
 type TAlarm_TAlarmAction struct {
 	state            protoimpl.MessageState             `protogen:"open.v1"`
-	SerializedAction string                             `protobuf:"bytes,1,opt,name=SerializedAction,json=serialized_action,proto3" json:"SerializedAction,omitempty"`
-	ExecutionMode    TAlarm_TAlarmAction_EExecutionMode `protobuf:"varint,2,opt,name=ExecutionMode,json=execution_mode,proto3,enum=NAlice.NData.TAlarm_TAlarmAction_EExecutionMode" json:"ExecutionMode,omitempty"`
-	OffsetSeconds    *uint32                            `protobuf:"varint,3,opt,name=OffsetSeconds,json=offset_seconds,proto3,oneof" json:"OffsetSeconds,omitempty"`
+	SerializedAction string                             `protobuf:"bytes,1,opt,name=SerializedAction,proto3" json:"SerializedAction,omitempty"`
+	ExecutionMode    TAlarm_TAlarmAction_EExecutionMode `protobuf:"varint,2,opt,name=ExecutionMode,proto3,enum=NAlice.NData.TAlarm_TAlarmAction_EExecutionMode" json:"ExecutionMode,omitempty"`
+	OffsetSeconds    *uint32                            `protobuf:"varint,3,opt,name=OffsetSeconds,proto3,oneof" json:"OffsetSeconds,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -917,7 +917,7 @@ func (x *TAlarm_TAlarmAction) GetOffsetSeconds() uint32 {
 
 type TAlarm_TSnoozeMetaInfo struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	SnoozedAlarmId string                 `protobuf:"bytes,1,opt,name=SnoozedAlarmId,json=snoozed_alarm_id,proto3" json:"SnoozedAlarmId,omitempty"`
+	SnoozedAlarmId string                 `protobuf:"bytes,1,opt,name=SnoozedAlarmId,proto3" json:"SnoozedAlarmId,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -963,77 +963,74 @@ var File_alice_protos_data_scenario_alarm_alarm_proto protoreflect.FileDescripto
 
 const file_alice_protos_data_scenario_alarm_alarm_proto_rawDesc = "" +
 	"\n" +
-	",alice/protos/data/scenario/alarm/alarm.proto\x12\fNAlice.NData\x1a alice/protos/data/timezone.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc4\x01\n" +
-	"\rTDefaultSound\x12U\n" +
-	"\tSoundType\x18\x01 \x01(\x0e2&.NAlice.NData.TDefaultSound.ESoundTypeB\x0e\xaa\xdd\x1b\n" +
-	"sound_typeR\n" +
-	"sound_type\"V\n" +
+	",alice/protos/data/scenario/alarm/alarm.proto\x12\fNAlice.NData\x1a alice/protos/data/timezone.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xad\x01\n" +
+	"\rTDefaultSound\x12D\n" +
+	"\tSoundType\x18\x01 \x01(\x0e2&.NAlice.NData.TDefaultSound.ESoundTypeR\tSoundType\"V\n" +
 	"\n" +
 	"ESoundType\x12\v\n" +
 	"\aDEFAULT\x10\x00\x12\x10\n" +
 	"\fEXPERIMENTAL\x10\x01\x12\t\n" +
 	"\x05BIRDS\x10\x02\x12\b\n" +
 	"\x04KIDS\x10\x03\x12\x14\n" +
-	"\x10ALARM_FROM_ALICE\x10\x04:\x04\xa8\xdd\x1b\x04\"\xfc\b\n" +
-	"\x13TAlarmSoundSettings\x12q\n" +
-	"\x0eSoundLevelInfo\x18\x01 \x01(\v21.NAlice.NData.TAlarmSoundSettings.TSoundLevelInfoB\x14\xaa\xdd\x1b\x10sound_level_infoR\x10sound_level_info\x12k\n" +
-	"\rMediaSettings\x18\x02 \x01(\v20.NAlice.NData.TAlarmSoundSettings.TMediaSettingsB\x12\xaa\xdd\x1b\x0emedia_settingsR\x0emedia_settings\x1a\x88\x04\n" +
-	"\x0eTMediaSettings\x12D\n" +
-	"\aRawInfo\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x10\xa0\xdd\x1b\x05\xaa\xdd\x1b\braw_infoR\braw_info\x12x\n" +
-	"\fServerAction\x18\x02 \x01(\v2>.NAlice.NData.TAlarmSoundSettings.TMediaSettings.TServerActionB\x11\xaa\xdd\x1b\rserver_actionH\x00R\rserver_action\x12U\n" +
-	"\fDefaultSound\x18\x04 \x01(\v2\x1b.NAlice.NData.TDefaultSoundB\x11\xaa\xdd\x1b\rdefault_soundH\x00R\rdefault_sound\x1a\xb8\x01\n" +
-	"\rTServerAction\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12B\n" +
-	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructB\x0f\xa0\xdd\x1b\x05\xaa\xdd\x1b\apayloadR\apayload\x12?\n" +
-	"\x0fNotPrefetchable\x18\x03 \x01(\bB\x14\xaa\xdd\x1b\x10not_prefetchableR\x10not_prefetchable:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\r\n" +
-	"\x05Media\x12\x04\xa0\xdd\x1b\fJ\x04\b\x03\x10\x04R\tMediaType\x1a\xf3\x02\n" +
-	"\x0fTSoundLevelInfo\x12;\n" +
-	"\rMinSoundLevel\x18\x01 \x01(\rB\x13\xaa\xdd\x1b\x0fmin_sound_levelR\x0fmin_sound_level\x12;\n" +
-	"\rMaxSoundLevel\x18\x02 \x01(\rB\x13\xaa\xdd\x1b\x0fmax_sound_levelR\x0fmax_sound_level\x128\n" +
-	"\fVolumeStepMs\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0evolume_step_msR\x0evolume_step_ms\x12R\n" +
-	"\x14MinPercentSoundLevel\x18\x04 \x01(\x02B\x1b\xaa\xdd\x1b\x17min_percent_sound_levelR\x17min_percent_sound_level\x12R\n" +
-	"\x14MaxPercentSoundLevel\x18\x05 \x01(\x02B\x1b\xaa\xdd\x1b\x17max_percent_sound_levelR\x17max_percent_sound_level:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\x94\x0f\n" +
-	"\x06TAlarm\x12'\n" +
-	"\aAlarmId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\balarm_idR\balarm_id\x12I\n" +
-	"\tLocalTime\x18\x02 \x01(\v2\x1a.NAlice.NData.TAlarm.TTimeB\x0e\xaa\xdd\x1b\n" +
-	"local_timeR\n" +
-	"local_time\x12A\n" +
-	"\bTimezone\x18\a \x01(\v2\x17.NAlice.NData.TTimezoneB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12B\n" +
-	"\x10CurrentlyPlaying\x18\x03 \x01(\bB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing\x12a\n" +
-	"\x0eActivationDays\x18\x05 \x03(\v2#.NAlice.NData.TAlarm.TActivationDayB\x13\xaa\xdd\x1b\x0factivation_daysR\x0factivation_days\x12Y\n" +
-	"\fAlarmActions\x18\x06 \x03(\v2!.NAlice.NData.TAlarm.TAlarmActionB\x11\xaa\xdd\x1b\ralarm_actionsR\ralarm_actions\x12m\n" +
-	"\x12AlarmSoundSettings\x18\b \x01(\v2!.NAlice.NData.TAlarmSoundSettingsB\x18\xaa\xdd\x1b\x14alarm_sound_settingsR\x14alarm_sound_settings\x12(\n" +
-	"\bDisabled\x18\t \x01(\bB\f\xaa\xdd\x1b\bdisabledR\bdisabled\x12\x1f\n" +
+	"\x10ALARM_FROM_ALICE\x10\x04\"\xc0\x06\n" +
+	"\x13TAlarmSoundSettings\x12Y\n" +
+	"\x0eSoundLevelInfo\x18\x01 \x01(\v21.NAlice.NData.TAlarmSoundSettings.TSoundLevelInfoR\x0eSoundLevelInfo\x12V\n" +
+	"\rMediaSettings\x18\x02 \x01(\v20.NAlice.NData.TAlarmSoundSettings.TMediaSettingsR\rMediaSettings\x1a\x89\x03\n" +
+	"\x0eTMediaSettings\x121\n" +
+	"\aRawInfo\x18\x01 \x01(\v2\x17.google.protobuf.StructR\aRawInfo\x12d\n" +
+	"\fServerAction\x18\x02 \x01(\v2>.NAlice.NData.TAlarmSoundSettings.TMediaSettings.TServerActionH\x00R\fServerAction\x12A\n" +
+	"\fDefaultSound\x18\x04 \x01(\v2\x1b.NAlice.NData.TDefaultSoundH\x00R\fDefaultSound\x1a\x80\x01\n" +
+	"\rTServerAction\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x121\n" +
+	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructR\aPayload\x12(\n" +
+	"\x0fNotPrefetchable\x18\x03 \x01(\bR\x0fNotPrefetchableB\a\n" +
+	"\x05MediaJ\x04\b\x03\x10\x04R\tMediaType\x1a\xe9\x01\n" +
+	"\x0fTSoundLevelInfo\x12$\n" +
+	"\rMinSoundLevel\x18\x01 \x01(\rR\rMinSoundLevel\x12$\n" +
+	"\rMaxSoundLevel\x18\x02 \x01(\rR\rMaxSoundLevel\x12\"\n" +
+	"\fVolumeStepMs\x18\x03 \x01(\rR\fVolumeStepMs\x122\n" +
+	"\x14MinPercentSoundLevel\x18\x04 \x01(\x02R\x14MinPercentSoundLevel\x122\n" +
+	"\x14MaxPercentSoundLevel\x18\x05 \x01(\x02R\x14MaxPercentSoundLevel\"\xc4\v\n" +
+	"\x06TAlarm\x12\x18\n" +
+	"\aAlarmId\x18\x01 \x01(\tR\aAlarmId\x128\n" +
+	"\tLocalTime\x18\x02 \x01(\v2\x1a.NAlice.NData.TAlarm.TTimeR\tLocalTime\x123\n" +
+	"\bTimezone\x18\a \x01(\v2\x17.NAlice.NData.TTimezoneR\bTimezone\x12*\n" +
+	"\x10CurrentlyPlaying\x18\x03 \x01(\bR\x10CurrentlyPlaying\x12K\n" +
+	"\x0eActivationDays\x18\x05 \x03(\v2#.NAlice.NData.TAlarm.TActivationDayR\x0eActivationDays\x12E\n" +
+	"\fAlarmActions\x18\x06 \x03(\v2!.NAlice.NData.TAlarm.TAlarmActionR\fAlarmActions\x12Q\n" +
+	"\x12AlarmSoundSettings\x18\b \x01(\v2!.NAlice.NData.TAlarmSoundSettingsR\x12AlarmSoundSettings\x12\x1a\n" +
+	"\bDisabled\x18\t \x01(\bR\bDisabled\x12\x14\n" +
 	"\x05Title\x18\n" +
-	" \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x129\n" +
-	"\rEditTimestamp\x18\v \x01(\x04B\x12\xaa\xdd\x1b\x0eedit_timestampR\x0eedit_timestamp\x12d\n" +
-	"\x0eSnoozeMetaInfo\x18\r \x01(\v2$.NAlice.NData.TAlarm.TSnoozeMetaInfoB\x14\xaa\xdd\x1b\x10snooze_meta_infoR\x10snooze_meta_info\x125\n" +
+	" \x01(\tR\x05Title\x12$\n" +
+	"\rEditTimestamp\x18\v \x01(\x04R\rEditTimestamp\x12L\n" +
+	"\x0eSnoozeMetaInfo\x18\r \x01(\v2$.NAlice.NData.TAlarm.TSnoozeMetaInfoR\x0eSnoozeMetaInfo\x12#\n" +
 	"\n" +
-	"SnoozeTime\x18\f \x01(\rB\x0f\xaa\xdd\x1b\vsnooze_timeH\x00R\vsnooze_time\x88\x01\x01\x12J\n" +
-	"\x11ApproachingOffset\x18\x0e \x01(\rB\x16\xaa\xdd\x1b\x12approaching_offsetH\x01R\x12approaching_offset\x88\x01\x01\x1ag\n" +
-	"\x05TDate\x12\x1c\n" +
-	"\x04Year\x18\x01 \x01(\rB\b\xaa\xdd\x1b\x04yearR\x04year\x12\x1f\n" +
-	"\x05Month\x18\x02 \x01(\rB\t\xaa\xdd\x1b\x05monthR\x05month\x12\x19\n" +
-	"\x03Day\x18\x03 \x01(\rB\a\xaa\xdd\x1b\x03dayR\x03day:\x04\xa8\xdd\x1b\x04\x1a|\n" +
-	"\x05TTime\x12\x1f\n" +
-	"\x05Hours\x18\x01 \x01(\rB\t\xaa\xdd\x1b\x05hoursR\x05hours\x12%\n" +
-	"\aMinutes\x18\x02 \x01(\rB\v\xaa\xdd\x1b\aminutesR\aminutes\x12%\n" +
-	"\aSeconds\x18\x03 \x01(\rB\v\xaa\xdd\x1b\asecondsR\aseconds:\x04\xa8\xdd\x1b\x04\x1a\xbf\x01\n" +
-	"\x0eTActivationDay\x12F\n" +
-	"\aWeekday\x18\x01 \x01(\x0e2\x1d.NAlice.NData.TAlarm.EWeekdayB\v\xaa\xdd\x1b\aweekdayH\x00R\aweekday\x12:\n" +
-	"\x04Date\x18\x02 \x01(\v2\x1a.NAlice.NData.TAlarm.TDateB\b\xaa\xdd\x1b\x04dateH\x00R\x04date:\x04\xa8\xdd\x1b\x04B#\n" +
-	"\rActivationDay\x12\x12\xaa\xdd\x1b\x0eactivation_day\x1a\xc4\x02\n" +
-	"\fTAlarmAction\x12B\n" +
-	"\x10SerializedAction\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\x11serialized_actionR\x11serialized_action\x12k\n" +
-	"\rExecutionMode\x18\x02 \x01(\x0e20.NAlice.NData.TAlarm.TAlarmAction.EExecutionModeB\x12\xaa\xdd\x1b\x0eexecution_modeR\x0eexecution_mode\x12>\n" +
-	"\rOffsetSeconds\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0eoffset_secondsH\x00R\x0eoffset_seconds\x88\x01\x01\"+\n" +
+	"SnoozeTime\x18\f \x01(\rH\x00R\n" +
+	"SnoozeTime\x88\x01\x01\x12J\n" +
+	"\x11ApproachingOffset\x18\x0e \x01(\rB\x16\xaa\xdd\x1b\x12approaching_offsetH\x01R\x12approaching_offset\x88\x01\x01\x1aC\n" +
+	"\x05TDate\x12\x12\n" +
+	"\x04Year\x18\x01 \x01(\rR\x04Year\x12\x14\n" +
+	"\x05Month\x18\x02 \x01(\rR\x05Month\x12\x10\n" +
+	"\x03Day\x18\x03 \x01(\rR\x03Day\x1aQ\n" +
+	"\x05TTime\x12\x14\n" +
+	"\x05Hours\x18\x01 \x01(\rR\x05Hours\x12\x18\n" +
+	"\aMinutes\x18\x02 \x01(\rR\aMinutes\x12\x18\n" +
+	"\aSeconds\x18\x03 \x01(\rR\aSeconds\x1a\x8e\x01\n" +
+	"\x0eTActivationDay\x129\n" +
+	"\aWeekday\x18\x01 \x01(\x0e2\x1d.NAlice.NData.TAlarm.EWeekdayH\x00R\aWeekday\x120\n" +
+	"\x04Date\x18\x02 \x01(\v2\x1a.NAlice.NData.TAlarm.TDateH\x00R\x04DateB\x0f\n" +
+	"\rActivationDay\x1a\xfc\x01\n" +
+	"\fTAlarmAction\x12*\n" +
+	"\x10SerializedAction\x18\x01 \x01(\tR\x10SerializedAction\x12V\n" +
+	"\rExecutionMode\x18\x02 \x01(\x0e20.NAlice.NData.TAlarm.TAlarmAction.EExecutionModeR\rExecutionMode\x12)\n" +
+	"\rOffsetSeconds\x18\x03 \x01(\rH\x00R\rOffsetSeconds\x88\x01\x01\"+\n" +
 	"\x0eEExecutionMode\x12\n" +
 	"\n" +
 	"\x06ALWAYS\x10\x00\x12\r\n" +
-	"\tNON_MEDIA\x10\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x0e_OffsetSeconds\x1aW\n" +
-	"\x0fTSnoozeMetaInfo\x12>\n" +
-	"\x0eSnoozedAlarmId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10snoozed_alarm_idR\x10snoozed_alarm_id:\x04\xa8\xdd\x1b\x04\"p\n" +
+	"\tNON_MEDIA\x10\x01B\x10\n" +
+	"\x0e_OffsetSeconds\x1a9\n" +
+	"\x0fTSnoozeMetaInfo\x12&\n" +
+	"\x0eSnoozedAlarmId\x18\x01 \x01(\tR\x0eSnoozedAlarmId\"p\n" +
 	"\bEWeekday\x12\b\n" +
 	"\x04NONE\x10\x00\x12\n" +
 	"\n" +
@@ -1045,10 +1042,11 @@ const file_alice_protos_data_scenario_alarm_alarm_proto_rawDesc = "" +
 	"\x06FRIDAY\x10\x05\x12\f\n" +
 	"\bSATURDAY\x10\x06\x12\n" +
 	"\n" +
-	"\x06SUNDAY\x10\a:\x04\xa8\xdd\x1b\x04B\r\n" +
+	"\x06SUNDAY\x10\aB\r\n" +
 	"\v_SnoozeTimeB\x14\n" +
-	"\x12_ApproachingOffsetJ\x04\b\x04\x10\x05R\aEnabledB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.alarmZ1a.yandex-team.ru/alice/protos/data/scenario/alarmb\x06proto3"
+	"\x12_ApproachingOffsetJ\x04\b\x04\x10\x05R\aEnabledB\xc1\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"AlarmProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/alarm\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_alarm_alarm_proto_rawDescOnce sync.Once

@@ -494,9 +494,9 @@ const file_alice_megamind_protos_common_iot_sparsed_proto_rawDesc = "" +
 	"\x13TResidentialComplex\x12\x16\n" +
 	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
 	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12(\n" +
-	"\bTimezone\x18\x03 \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bc\n" +
+	"\bTimezone\x18\x03 \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x82\x01\n" +
 	"&ru.yandex.alice.megamind.protos.commonB\n" +
-	"IoTSparsedZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"IoTSparsedZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_iot_sparsed_proto_rawDescOnce sync.Once

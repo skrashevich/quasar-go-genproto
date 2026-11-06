@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_pro/capability.proto
 
-package alicepropb
+package alice_pro
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -73,9 +73,9 @@ func (TAliceProCapability_ESubscriptionStatus) EnumDescriptor() ([]byte, []int) 
 
 type TAliceProCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAliceProCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAliceProCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAliceProCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAliceProCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -169,7 +169,7 @@ func (*TAliceProCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TAliceProCapability_TState struct {
 	state              protoimpl.MessageState                  `protogen:"open.v1"`
-	SubscriptionStatus TAliceProCapability_ESubscriptionStatus `protobuf:"varint,1,opt,name=SubscriptionStatus,json=subscription_status,proto3,enum=NAlice.TAliceProCapability_ESubscriptionStatus" json:"SubscriptionStatus,omitempty"`
+	SubscriptionStatus TAliceProCapability_ESubscriptionStatus `protobuf:"varint,1,opt,name=SubscriptionStatus,proto3,enum=NAlice.TAliceProCapability_ESubscriptionStatus" json:"SubscriptionStatus,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -213,7 +213,7 @@ func (x *TAliceProCapability_TState) GetSubscriptionStatus() TAliceProCapability
 
 type TAliceProCapability_TOpenProPurchaseScreenDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -331,25 +331,25 @@ var File_alice_protos_endpoint_capabilities_alice_pro_capability_proto protorefl
 
 const file_alice_protos_endpoint_capabilities_alice_pro_capability_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/endpoint/capabilities/alice_pro/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xef\x05\n" +
-	"\x13TAliceProCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"=alice/protos/endpoint/capabilities/alice_pro/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xff\x03\n" +
+	"\x13TAliceProCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TAliceProCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TAliceProCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x89\x01\n" +
-	"\x06TState\x12y\n" +
-	"\x12SubscriptionStatus\x18\x01 \x01(\x0e2/.NAlice.TAliceProCapability.ESubscriptionStatusB\x17\xaa\xdd\x1b\x13subscription_statusR\x13subscription_status:\x04\xa8\xdd\x1b\x04\x1ap\n" +
-	"\x1fTOpenProPurchaseScreenDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:/\x92\x82\x19\"open_pro_purchase_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf4\x02\x1aS\n" +
-	" TForceSubscriptionCheckDirective:/\x92\x82\x19\"force_subscription_check_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x90\x03\x1aL\n" +
-	"\x1cTShowAliceProBannerDirective:,\x92\x82\x19\x1fshow_alice_pro_banner_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa0\x03\"A\n" +
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TAliceProCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TAliceProCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1ai\n" +
+	"\x06TState\x12_\n" +
+	"\x12SubscriptionStatus\x18\x01 \x01(\x0e2/.NAlice.TAliceProCapability.ESubscriptionStatusR\x12SubscriptionStatus\x1a5\n" +
+	"\x1fTOpenProPurchaseScreenDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a\"\n" +
+	" TForceSubscriptionCheckDirective\x1a\x1e\n" +
+	"\x1cTShowAliceProBannerDirective\"A\n" +
 	"\x13ESubscriptionStatus\x12\x12\n" +
 	"\x0eNoSubscription\x10\x00\x12\x16\n" +
-	"\x12SubscriptionActive\x10\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cJB\x87\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\rAliceProProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_pro;alicepropbb\x06proto3"
+	"\x12SubscriptionActive\x10\x01B\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_pro\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_pro_capability_proto_rawDescOnce sync.Once

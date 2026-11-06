@@ -672,8 +672,8 @@ const file_alice_protos_api_rpc_kids_tv_limits_kids_tv_limits_proto_rawDesc = ""
 	"\rTProlongation\x12K\n" +
 	"\x13ProlongationSeconds\x18\x01 \x01(\rB\x18\xaa\xdd\x1b\x14prolongation_secondsR\x14prolongation_seconds:\x04\xa8\xdd\x1b\x04B\x12\n" +
 	"\x05Event\x12\t\xaa\xdd\x1b\x05event\"(\n" +
-	" TLimitProlongationAnswerResponse:\x04\xa8\xdd\x1b\x04Bs\n" +
-	"-ru.yandex.alice.protos.api.rpc.kids_tv_limitsB\fKidsTvLimitsZ4a.yandex-team.ru/alice/protos/api/rpc/kids_tv_limitsb\x06proto3"
+	" TLimitProlongationAnswerResponse:\x04\xa8\xdd\x1b\x04B\x92\x01\n" +
+	"-ru.yandex.alice.protos.api.rpc.kids_tv_limitsB\fKidsTvLimitsZSgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/kids_tv_limitsb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_kids_tv_limits_kids_tv_limits_proto_rawDescOnce sync.Once

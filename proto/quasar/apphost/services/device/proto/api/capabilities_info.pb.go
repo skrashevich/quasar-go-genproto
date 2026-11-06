@@ -240,8 +240,8 @@ func (x *TEndpointsCapabilitiesInfoRequest) GetDeviceIds() []string {
 }
 
 type TEndpointsCapabilitiesInfoResponse struct {
-	state                               protoimpl.MessageState                 `protogen:"open.v1"`
-	EndpointsCapabilitiesInfoByDeviceId map[string]*TEndpointsCapabilitiesInfo `protobuf:"bytes,1,rep,name=EndpointsCapabilitiesInfoByDeviceId,proto3" json:"EndpointsCapabilitiesInfoByDeviceId,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state                               protoimpl.MessageState                                                         `protogen:"open.v1"`
+	EndpointsCapabilitiesInfoByDeviceId []*TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry `protobuf:"bytes,1,rep,name=EndpointsCapabilitiesInfoByDeviceId,proto3" json:"EndpointsCapabilitiesInfoByDeviceId,omitempty"`
 	unknownFields                       protoimpl.UnknownFields
 	sizeCache                           protoimpl.SizeCache
 }
@@ -276,9 +276,61 @@ func (*TEndpointsCapabilitiesInfoResponse) Descriptor() ([]byte, []int) {
 	return file_quasar_apphost_services_device_proto_api_capabilities_info_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *TEndpointsCapabilitiesInfoResponse) GetEndpointsCapabilitiesInfoByDeviceId() map[string]*TEndpointsCapabilitiesInfo {
+func (x *TEndpointsCapabilitiesInfoResponse) GetEndpointsCapabilitiesInfoByDeviceId() []*TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry {
 	if x != nil {
 		return x.EndpointsCapabilitiesInfoByDeviceId
+	}
+	return nil
+}
+
+type TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Key           string                      `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TEndpointsCapabilitiesInfo `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) Reset() {
+	*x = TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry{}
+	mi := &file_quasar_apphost_services_device_proto_api_capabilities_info_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) ProtoMessage() {}
+
+func (x *TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_quasar_apphost_services_device_proto_api_capabilities_info_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry.ProtoReflect.Descriptor instead.
+func (*TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) Descriptor() ([]byte, []int) {
+	return file_quasar_apphost_services_device_proto_api_capabilities_info_proto_rawDescGZIP(), []int{4, 0}
+}
+
+func (x *TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry) GetValue() *TEndpointsCapabilitiesInfo {
+	if x != nil {
+		return x.Value
 	}
 	return nil
 }
@@ -304,13 +356,13 @@ const file_quasar_apphost_services_device_proto_api_capabilities_info_proto_rawD
 	"\x1aTEndpointsCapabilitiesInfo\x12T\n" +
 	"\tEndpoints\x18\x01 \x03(\v26.NQuasar.NDeviceService.NApi.TEndpointCapabilitiesInfoR\tEndpoints\"A\n" +
 	"!TEndpointsCapabilitiesInfoRequest\x12\x1c\n" +
-	"\tDeviceIds\x18\x01 \x03(\tR\tDeviceIds\"\xf3\x02\n" +
+	"\tDeviceIds\x18\x01 \x03(\tR\tDeviceIds\"\xef\x02\n" +
 	"\"TEndpointsCapabilitiesInfoResponse\x12\xba\x01\n" +
-	"#EndpointsCapabilitiesInfoByDeviceId\x18\x01 \x03(\v2h.NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoResponse.EndpointsCapabilitiesInfoByDeviceIdEntryR#EndpointsCapabilitiesInfoByDeviceId\x1a\x8f\x01\n" +
+	"#EndpointsCapabilitiesInfoByDeviceId\x18\x01 \x03(\v2h.NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoResponse.EndpointsCapabilitiesInfoByDeviceIdEntryR#EndpointsCapabilitiesInfoByDeviceId\x1a\x8b\x01\n" +
 	"(EndpointsCapabilitiesInfoByDeviceIdEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12M\n" +
-	"\x05value\x18\x02 \x01(\v27.NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoR\x05value:\x028\x01Bo\n" +
-	"2ru.yandex.quasar.apphost.services.device.proto.apiZ9a.yandex-team.ru/quasar/apphost/services/device/proto/apib\x06proto3"
+	"\x05value\x18\x02 \x01(\v27.NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoR\x05valueB\xa0\x02\n" +
+	"\x1fcom.NQuasar.NDeviceService.NApiB\x15CapabilitiesInfoProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/quasar/apphost/services/device/proto/api\xa2\x02\x03NNN\xaa\x02\x1bNQuasar.NDeviceService.NApi\xca\x02\x1bNQuasar\\NDeviceService\\NApi\xe2\x02'NQuasar\\NDeviceService\\NApi\\GPBMetadata\xea\x02\x1dNQuasar::NDeviceService::NApib\x06proto3"
 
 var (
 	file_quasar_apphost_services_device_proto_api_capabilities_info_proto_rawDescOnce sync.Once
@@ -331,11 +383,11 @@ var file_quasar_apphost_services_device_proto_api_capabilities_info_proto_goType
 	(*TEndpointsCapabilitiesInfo)(nil),         // 2: NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfo
 	(*TEndpointsCapabilitiesInfoRequest)(nil),  // 3: NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoRequest
 	(*TEndpointsCapabilitiesInfoResponse)(nil), // 4: NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoResponse
-	nil, // 5: NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoResponse.EndpointsCapabilitiesInfoByDeviceIdEntry
-	(endpoint.TCapability_ECapabilityType)(0), // 6: NAlice.TCapability.ECapabilityType
-	(*anypb.Any)(nil),                         // 7: google.protobuf.Any
-	(*endpoint.TCapability_TMeta)(nil),        // 8: NAlice.TCapability.TMeta
-	(*endpoint.TEndpoint_TMeta)(nil),          // 9: NAlice.TEndpoint.TMeta
+	(*TEndpointsCapabilitiesInfoResponse_EndpointsCapabilitiesInfoByDeviceIdEntry)(nil), // 5: NQuasar.NDeviceService.NApi.TEndpointsCapabilitiesInfoResponse.EndpointsCapabilitiesInfoByDeviceIdEntry
+	(endpoint.TCapability_ECapabilityType)(0),                                           // 6: NAlice.TCapability.ECapabilityType
+	(*anypb.Any)(nil),                  // 7: google.protobuf.Any
+	(*endpoint.TCapability_TMeta)(nil), // 8: NAlice.TCapability.TMeta
+	(*endpoint.TEndpoint_TMeta)(nil),   // 9: NAlice.TEndpoint.TMeta
 }
 var file_quasar_apphost_services_device_proto_api_capabilities_info_proto_depIdxs = []int32{
 	6, // 0: NQuasar.NDeviceService.NApi.TCapabilityInfo.CapabilityType:type_name -> NAlice.TCapability.ECapabilityType

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_host/capability.proto
 
-package alicechathostpb
+package alice_chat_host
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -215,8 +215,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_host_capability_proto_r
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aZ\n" +
 	"\x15TDismissChatDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x16dismiss_chat_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfb\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8e\x02B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x12AliceChatHostProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_host;alicechathostpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x16dismiss_chat_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfb\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8e\x02B\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x12AliceChatHostProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_hostb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_host_capability_proto_rawDescOnce sync.Once

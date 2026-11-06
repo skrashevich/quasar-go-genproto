@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_native_auth/capability.proto
 
-package alicechatnativeauthpb
+package alice_chat_native_auth
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -317,8 +317,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_native_auth_capability_
 	"\x16TNativeLogoutDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1a\x92\x82\x19\rnative_logout\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x05\x1aa\n" +
 	"\x1dTNativeDeleteAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\"\x92\x82\x19\x15native_delete_account\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb4\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xca\x01B\xb4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AliceChatNativeAuthCapabilityProtoZ`a.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_native_auth;alicechatnativeauthpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\"\x92\x82\x19\x15native_delete_account\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb4\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xca\x01B\xbd\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AliceChatNativeAuthCapabilityProtoZigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_native_authb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_native_auth_capability_proto_rawDescOnce sync.Once

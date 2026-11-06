@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/jeeves/capability.proto
 
-package jeevespb
+package jeeves
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_jeeves_capability_proto_rawDesc = 
 	"\x05State\x18\x03 \x01(\v2 .NAlice.TJeevesCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aT\n" +
 	"\x06TState\x12D\n" +
-	"\x10EnabledPluginIds\x18\x01 \x03(\tB\x16\xaa\xdd\x1b\x12enabled_plugin_idsR\x12enabled_plugin_ids:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb2\x02B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15JeevesCapabilityProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/jeeves;jeevespbb\x06proto3"
+	"\x10EnabledPluginIds\x18\x01 \x03(\tB\x16\xaa\xdd\x1b\x12enabled_plugin_idsR\x12enabled_plugin_ids:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb2\x02B\xa0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15JeevesCapabilityProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/jeevesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_jeeves_capability_proto_rawDescOnce sync.Once

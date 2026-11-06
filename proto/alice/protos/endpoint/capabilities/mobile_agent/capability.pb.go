@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/mobile_agent/capability.proto
 
-package mobileagentpb
+package mobile_agent
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -487,8 +487,8 @@ const file_alice_protos_endpoint_capabilities_mobile_agent_capability_proto_rawD
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
 	"\aCommand\x18\x02 \x01(\tB\v\xaa\xdd\x1b\acommandR\acommand\x12M\n" +
 	"\x10DoNotUseUserLogs\x18\x03 \x01(\bB\x18\xaa\xdd\x1b\x14do_not_use_user_logsH\x00R\x14do_not_use_user_logs\x88\x01\x01:)\x92\x82\x19\x1cstart_mobile_agent_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xed\x04B\x13\n" +
-	"\x11_DoNotUseUserLogs:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x82\x02B\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aMobileAgentCapabilityProtoP\x01ZNa.yandex-team.ru/alice/protos/endpoint/capabilities/mobile_agent;mobileagentpbb\x06proto3"
+	"\x11_DoNotUseUserLogs:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x82\x02B\xad\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aMobileAgentCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/mobile_agentb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_mobile_agent_capability_proto_rawDescOnce sync.Once

@@ -74,8 +74,8 @@ const file_alice_protos_api_alicekit_common_tts_options_client_tts_options_proto
 	"\x11TClientTtsOptions\x12,\n" +
 	"\aVoiceId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bvoice_idH\x00R\bvoice_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\n" +
 	"\n" +
-	"\b_VoiceIdB\x8a\x01\n" +
-	"6ru.yandex.alice.protos.api.alicekit.common.tts_optionsB\x0fTtsOptionsProtoP\x01Z=a.yandex-team.ru/alice/protos/api/alicekit/common/tts_optionsb\x06proto3"
+	"\b_VoiceIdB\xa9\x01\n" +
+	"6ru.yandex.alice.protos.api.alicekit.common.tts_optionsB\x0fTtsOptionsProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/tts_optionsb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_common_tts_options_client_tts_options_proto_rawDescOnce sync.Once

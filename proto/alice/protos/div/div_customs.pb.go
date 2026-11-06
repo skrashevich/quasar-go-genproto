@@ -97,8 +97,8 @@ func (*TDivIndicator) Descriptor() ([]byte, []int) {
 
 type TDivCustoms struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DivVideo      *TDivVideo             `protobuf:"bytes,1,opt,name=DivVideo,json=div_video,proto3" json:"DivVideo,omitempty"`
-	DivIndicator  *TDivIndicator         `protobuf:"bytes,2,opt,name=DivIndicator,json=div_indicator,proto3" json:"DivIndicator,omitempty"`
+	DivVideo      *TDivVideo             `protobuf:"bytes,1,opt,name=DivVideo,proto3" json:"DivVideo,omitempty"`
+	DivIndicator  *TDivIndicator         `protobuf:"bytes,2,opt,name=DivIndicator,proto3" json:"DivIndicator,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -151,13 +151,14 @@ var File_alice_protos_div_div_customs_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div_customs_proto_rawDesc = "" +
 	"\n" +
-	"\"alice/protos/div/div_customs.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x11\n" +
-	"\tTDivVideo:\x04\xa8\xdd\x1b\x04\"\x15\n" +
-	"\rTDivIndicator:\x04\xa8\xdd\x1b\x04\"\xb7\x01\n" +
-	"\vTDivCustoms\x12F\n" +
-	"\bDivVideo\x18\x01 \x01(\v2\x11.NAlice.TDivVideoB\x16\xaa\xdd\x1b\tdiv_video\xca\xff\x1b\x05videoR\tdiv_video\x12Z\n" +
-	"\fDivIndicator\x18\x02 \x01(\v2\x15.NAlice.TDivIndicatorB\x1e\xaa\xdd\x1b\rdiv_indicator\xca\xff\x1b\tindicatorR\rdiv_indicator:\x04\xa8\xdd\x1b\x04BP\n" +
-	"\x1aru.yandex.alice.protos.divB\x0fDivCustomsProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\"alice/protos/div/div_customs.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\v\n" +
+	"\tTDivVideo\"\x0f\n" +
+	"\rTDivIndicator\"w\n" +
+	"\vTDivCustoms\x12-\n" +
+	"\bDivVideo\x18\x01 \x01(\v2\x11.NAlice.TDivVideoR\bDivVideo\x129\n" +
+	"\fDivIndicator\x18\x02 \x01(\v2\x15.NAlice.TDivIndicatorR\fDivIndicatorB\x97\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fDivCustomsProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div_customs_proto_rawDescOnce sync.Once

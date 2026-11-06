@@ -123,8 +123,9 @@ const file_alice_protos_data_scenario_draw_picture_generation_mode_proto_rawDesc
 	"\x05Remix\x10\x01\x12\v\n" +
 	"\aEditing\x10\x02\x12\r\n" +
 	"\tCombining\x10\x03\x12\t\n" +
-	"\x05Video\x10\x04Bm\n" +
-	"1ru.yandex.alice.protos.data.scenario.draw_pictureZ8a.yandex-team.ru/alice/protos/data/scenario/draw_pictureb\x06proto3"
+	"\x05Video\x10\x04B\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x13GenerationModeProtoP\x01ZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/draw_picture\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_draw_picture_generation_mode_proto_rawDescOnce sync.Once

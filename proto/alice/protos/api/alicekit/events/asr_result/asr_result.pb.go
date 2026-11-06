@@ -25,10 +25,10 @@ const (
 
 type TAsrResult struct {
 	state                 protoimpl.MessageState         `protogen:"open.v1"`
-	Recognition           []*common.TAsrRecognition      `protobuf:"bytes,4,rep,name=Recognition,json=recognition,proto3" json:"Recognition,omitempty"`
-	ResponseCode          *common.EAsrResponseCode       `protobuf:"varint,1,opt,name=ResponseCode,json=responseCode,proto3,enum=NAlice.NAliceApi.EAsrResponseCode,oneof" json:"ResponseCode,omitempty"`
-	MessagesCount         *uint32                        `protobuf:"varint,2,opt,name=MessagesCount,json=messagesCount,proto3,oneof" json:"MessagesCount,omitempty"`
-	EndOfUtt              *bool                          `protobuf:"varint,3,opt,name=EndOfUtt,json=endOfUtt,proto3,oneof" json:"EndOfUtt,omitempty"`
+	Recognition           []*common.TAsrRecognition      `protobuf:"bytes,4,rep,name=Recognition,proto3" json:"Recognition,omitempty"`
+	ResponseCode          *common.EAsrResponseCode       `protobuf:"varint,1,opt,name=ResponseCode,proto3,enum=NAlice.NAliceApi.EAsrResponseCode,oneof" json:"ResponseCode,omitempty"`
+	MessagesCount         *uint32                        `protobuf:"varint,2,opt,name=MessagesCount,proto3,oneof" json:"MessagesCount,omitempty"`
+	EndOfUtt              *bool                          `protobuf:"varint,3,opt,name=EndOfUtt,proto3,oneof" json:"EndOfUtt,omitempty"`
 	AggregatedRecognition *common.TAggregatedRecognition `protobuf:"bytes,15,opt,name=AggregatedRecognition,json=aggregatedRecognition,proto3,oneof" json:"AggregatedRecognition,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
@@ -103,20 +103,19 @@ var File_alice_protos_api_alicekit_events_asr_result_asr_result_proto protorefle
 
 const file_alice_protos_api_alicekit_events_asr_result_asr_result_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/api/alicekit/events/asr_result/asr_result.proto\x12\x10NAlice.NAliceApi\x1aDalice/protos/api/alicekit/events/asr_result/common/recognition.proto\x1aFalice/protos/api/alicekit/events/asr_result/common/response_code.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x83\x04\n" +
+	"<alice/protos/api/alicekit/events/asr_result/asr_result.proto\x12\x10NAlice.NAliceApi\x1aDalice/protos/api/alicekit/events/asr_result/common/recognition.proto\x1aFalice/protos/api/alicekit/events/asr_result/common/response_code.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb5\x03\n" +
 	"\n" +
-	"TAsrResult\x12T\n" +
-	"\vRecognition\x18\x04 \x03(\v2!.NAlice.NAliceApi.TAsrRecognitionB\x0f\xaa\xdd\x1b\vrecognitionR\vrecognition\x12^\n" +
-	"\fResponseCode\x18\x01 \x01(\x0e2\".NAlice.NAliceApi.EAsrResponseCodeB\x11\xaa\xdd\x1b\rresponse_codeH\x00R\fresponseCode\x88\x01\x01\x12=\n" +
-	"\rMessagesCount\x18\x02 \x01(\rB\x12\xaa\xdd\x1b\x0emessages_countH\x01R\rmessagesCount\x88\x01\x01\x12/\n" +
-	"\bEndOfUtt\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"end_of_uttH\x02R\bendOfUtt\x88\x01\x01\x12\x7f\n" +
-	"\x15AggregatedRecognition\x18\x0f \x01(\v2(.NAlice.NAliceApi.TAggregatedRecognitionB\x1a\xaa\xdd\x1b\x16aggregated_recognitionH\x03R\x15aggregatedRecognition\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0f\n" +
+	"TAsrResult\x12C\n" +
+	"\vRecognition\x18\x04 \x03(\v2!.NAlice.NAliceApi.TAsrRecognitionR\vRecognition\x12K\n" +
+	"\fResponseCode\x18\x01 \x01(\x0e2\".NAlice.NAliceApi.EAsrResponseCodeH\x00R\fResponseCode\x88\x01\x01\x12)\n" +
+	"\rMessagesCount\x18\x02 \x01(\rH\x01R\rMessagesCount\x88\x01\x01\x12\x1f\n" +
+	"\bEndOfUtt\x18\x03 \x01(\bH\x02R\bEndOfUtt\x88\x01\x01\x12\x7f\n" +
+	"\x15AggregatedRecognition\x18\x0f \x01(\v2(.NAlice.NAliceApi.TAggregatedRecognitionB\x1a\xaa\xdd\x1b\x16aggregated_recognitionH\x03R\x15aggregatedRecognition\x88\x01\x01B\x0f\n" +
 	"\r_ResponseCodeB\x10\n" +
 	"\x0e_MessagesCountB\v\n" +
 	"\t_EndOfUttB\x18\n" +
-	"\x16_AggregatedRecognitionB\x82\x01\n" +
-	"5ru.yandex.alice.protos.api.alicekit.events.asr_resultB\tAsrResultP\x01Z<a.yandex-team.ru/alice/protos/api/alicekit/events/asr_resultb\x06proto3"
+	"\x16_AggregatedRecognitionB\xe4\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0eAsrResultProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/asr_result\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_asr_result_asr_result_proto_rawDescOnce sync.Once

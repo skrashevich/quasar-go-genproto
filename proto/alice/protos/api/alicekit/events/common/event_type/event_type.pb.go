@@ -358,8 +358,8 @@ const file_alice_protos_api_alicekit_events_common_event_type_event_type_proto_r
 	"\x1fAudioTranscriptionInputResponse\x10C\x12\x11\n" +
 	"\rFinishRequest\x10D\x12\x17\n" +
 	"\x13DeferredTtsGenerate\x10E\x12\f\n" +
-	"\bChunkAck\x10FB\x85\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.common.event_typeP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/common/event_typeb\x06proto3"
+	"\bChunkAck\x10FB\xeb\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0eEventTypeProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/event_type\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_event_type_event_type_proto_rawDescOnce sync.Once

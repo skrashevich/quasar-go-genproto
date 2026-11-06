@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/clock/capability.proto
 
-package clockpb
+package clock
 
 import (
 	time "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/time"
@@ -28,9 +28,9 @@ const (
 
 type TClockCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TClockCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TClockCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TClockCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TClockCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,8 +124,8 @@ func (*TClockCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TClockCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Format        *time.TTimeFormat      `protobuf:"bytes,1,opt,name=Format,json=format,proto3" json:"Format,omitempty"`
-	IsShown       bool                   `protobuf:"varint,2,opt,name=IsShown,json=is_shown,proto3" json:"IsShown,omitempty"`
+	Format        *time.TTimeFormat      `protobuf:"bytes,1,opt,name=Format,proto3" json:"Format,omitempty"`
+	IsShown       bool                   `protobuf:"varint,2,opt,name=IsShown,proto3" json:"IsShown,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -176,7 +176,7 @@ func (x *TClockCapability_TState) GetIsShown() bool {
 
 type TClockCapability_TShowClockDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -220,7 +220,7 @@ func (x *TClockCapability_TShowClockDirective) GetName() string {
 
 type TClockCapability_THideClockDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -266,26 +266,23 @@ var File_alice_protos_endpoint_capabilities_clock_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_clock_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/clock/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a(alice/protos/data/time/time_format.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x04\n" +
-	"\x10TClockCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/clock/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a(alice/protos/data/time/time_format.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfa\x02\n" +
+	"\x10TClockCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TClockCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TClockCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1av\n" +
-	"\x06TState\x12=\n" +
-	"\x06Format\x18\x01 \x01(\v2\x19.NAlice.NData.TTimeFormatB\n" +
-	"\xaa\xdd\x1b\x06formatR\x06format\x12'\n" +
-	"\aIsShown\x18\x02 \x01(\bB\f\xaa\xdd\x1b\bis_shownR\bis_shown:\x04\xa8\xdd\x1b\x04\x1aL\n" +
-	"\x13TShowClockDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x17\x92\x82\x19\n" +
-	"show_clock\xa8\xdd\x1b\x04\xa8\xc8\x1c\x99\x02\x1aL\n" +
-	"\x13THideClockDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x17\x92\x82\x19\n" +
-	"hide_clock\xa8\xdd\x1b\x04\xa8\xc8\x1c\x98\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cdB\x89\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14ClockCapabilityProtoP\x01ZAa.yandex-team.ru/alice/protos/endpoint/capabilities/clock;clockpbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TClockCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TClockCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aU\n" +
+	"\x06TState\x121\n" +
+	"\x06Format\x18\x01 \x01(\v2\x19.NAlice.NData.TTimeFormatR\x06Format\x12\x18\n" +
+	"\aIsShown\x18\x02 \x01(\bR\aIsShown\x1a)\n" +
+	"\x13TShowClockDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a)\n" +
+	"\x13THideClockDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04NameB\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/clock\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_clock_capability_proto_rawDescOnce sync.Once

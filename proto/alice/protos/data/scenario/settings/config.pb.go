@@ -125,8 +125,8 @@ const file_alice_protos_data_scenario_settings_config_proto_rawDesc = "" +
 	"\x0fEReasoningModel\x12\x17\n" +
 	"\x13ChooseAutomatically\x10\x00\x12\x16\n" +
 	"\x12YaGpt5ProReasoning\x10\x01\x12\x06\n" +
-	"\x02R1\x10\x02:\x04\xa8\xdd\x1b\x04Be\n" +
-	"-ru.yandex.alice.protos.data.scenario.settingsZ4a.yandex-team.ru/alice/protos/data/scenario/settingsb\x06proto3"
+	"\x02R1\x10\x02:\x04\xa8\xdd\x1b\x04B\x84\x01\n" +
+	"-ru.yandex.alice.protos.data.scenario.settingsZSgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/settingsb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_settings_config_proto_rawDescOnce sync.Once

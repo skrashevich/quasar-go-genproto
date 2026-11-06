@@ -117,8 +117,8 @@ const file_alice_protos_api_alicekit_events_invalid_auth_credential_status_crede
 	"\x0fNEOLITE_SESSION\x10\t\x12\x1c\n" +
 	"\x18BORIGIN_MISMATCH_SESSION\x10\n" +
 	"\x12\f\n" +
-	"\aUNKNOWN\x10\xff\x01B\x9f\x01\n" +
-	"Iru.yandex.alice.protos.api.alicekit.events.invalid_auth.credential_statusP\x01ZPa.yandex-team.ru/alice/protos/api/alicekit/events/invalid_auth/credential_statusb\x06proto3"
+	"\aUNKNOWN\x10\xff\x01B\xff\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x15CredentialStatusProtoP\x01Zogithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/invalid_auth/credential_status\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_invalid_auth_credential_status_credential_status_proto_rawDescOnce sync.Once

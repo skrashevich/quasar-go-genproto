@@ -100,8 +100,8 @@ const file_alice_library_client_protos_promo_type_proto_rawDesc = "" +
 	"\x12PT_RED_PERSONALITY\x10\x04\x12\x18\n" +
 	"\x14PT_BEIGE_PERSONALITY\x10\x05\x12\x19\n" +
 	"\x15PT_YELLOW_PERSONALITY\x10\x06\x12\x17\n" +
-	"\x13PT_PINK_PERSONALITY\x10\aBU\n" +
-	"%ru.yandex.alice.library.client.protosZ,a.yandex-team.ru/alice/library/client/protosb\x06proto3"
+	"\x13PT_PINK_PERSONALITY\x10\aBt\n" +
+	"%ru.yandex.alice.library.client.protosZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protosb\x06proto3"
 
 var (
 	file_alice_library_client_protos_promo_type_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_tires/capability.proto
 
-package automotive_tirespb
+package automotive_tires
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -724,8 +724,8 @@ const file_alice_protos_endpoint_capabilities_automotive_tires_capability_proto_
 	"\x0fWHEEL_LEFT_REAR\x10\x03\x12\x14\n" +
 	"\x10WHEEL_RIGHT_REAR\x10\x04\x12\x15\n" +
 	"\x11WHEEL_MIDDLE_LEFT\x10\x05\x12\x16\n" +
-	"\x12WHEEL_MIDDLE_RIGHT\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa8\x02B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAutomotiveTiresCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_tires;automotive_tirespbb\x06proto3"
+	"\x12WHEEL_MIDDLE_RIGHT\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa8\x02B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eAutomotiveTiresCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_tiresb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_tires_capability_proto_rawDescOnce sync.Once

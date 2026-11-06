@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/mcp/external_mcp_skill_capability.proto
 
-package mcppb
+package mcp
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -392,8 +392,8 @@ const file_alice_protos_endpoint_capabilities_mcp_external_mcp_skill_capability_
 	"\vEServerType\x12\r\n" +
 	"\tUNDEFINED\x10\x00\x12\a\n" +
 	"\x03SSE\x10\x01\x12\x13\n" +
-	"\x0fSTREAMABLE_HTTP\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd3\x01B\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fExternalMcpSkillCapabilityProtoZ=a.yandex-team.ru/alice/protos/endpoint/capabilities/mcp;mcppbb\x06proto3"
+	"\x0fSTREAMABLE_HTTP\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd3\x01B\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fExternalMcpSkillCapabilityProtoZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/mcpb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_mcp_external_mcp_skill_capability_proto_rawDescOnce sync.Once

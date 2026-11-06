@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/cover/capability.proto
 
-package coverpb
+package cover
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -897,9 +897,9 @@ const file_alice_protos_endpoint_capabilities_cover_capability_proto_rawDesc = "
 	"\n" +
 	"\x06Opened\x10\x01\x12\n" +
 	"\n" +
-	"\x06Closed\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1bB}\n" +
+	"\x06Closed\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1bB\x94\x01\n" +
 	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"CoverProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/cover;coverpbb\x06proto3"
+	"CoverProtoZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/coverb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_cover_capability_proto_rawDescOnce sync.Once

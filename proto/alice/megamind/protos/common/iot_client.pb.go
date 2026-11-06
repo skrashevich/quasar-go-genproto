@@ -27,11 +27,11 @@ const (
 
 type TIoTClientUserInfo struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Rooms         []*location.TUserRoom            `protobuf:"bytes,1,rep,name=Rooms,json=rooms,proto3" json:"Rooms,omitempty"`
-	Groups        []*location.TUserGroup           `protobuf:"bytes,2,rep,name=Groups,json=groups,proto3" json:"Groups,omitempty"`
-	Devices       []*TIoTClientUserInfo_TDevice    `protobuf:"bytes,3,rep,name=Devices,json=devices,proto3" json:"Devices,omitempty"`
-	Households    []*TIoTClientUserInfo_THousehold `protobuf:"bytes,4,rep,name=Households,json=households,proto3" json:"Households,omitempty"`
-	Aggregates    []*endpoint.TAggregate           `protobuf:"bytes,5,rep,name=Aggregates,json=aggregates,proto3" json:"Aggregates,omitempty"`
+	Rooms         []*location.TUserRoom            `protobuf:"bytes,1,rep,name=Rooms,proto3" json:"Rooms,omitempty"`
+	Groups        []*location.TUserGroup           `protobuf:"bytes,2,rep,name=Groups,proto3" json:"Groups,omitempty"`
+	Devices       []*TIoTClientUserInfo_TDevice    `protobuf:"bytes,3,rep,name=Devices,proto3" json:"Devices,omitempty"`
+	Households    []*TIoTClientUserInfo_THousehold `protobuf:"bytes,4,rep,name=Households,proto3" json:"Households,omitempty"`
+	Aggregates    []*endpoint.TAggregate           `protobuf:"bytes,5,rep,name=Aggregates,proto3" json:"Aggregates,omitempty"`
 	Scenarios     []*TIoTClientUserInfo_TScenario  `protobuf:"bytes,6,rep,name=Scenarios,json=scenarios,proto3" json:"Scenarios,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -111,18 +111,18 @@ func (x *TIoTClientUserInfo) GetScenarios() []*TIoTClientUserInfo_TScenario {
 
 type TIoTClientUserInfo_TDevice struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Id            string                    `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name          string                    `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Aliases       []string                  `protobuf:"bytes,3,rep,name=Aliases,json=aliases,proto3" json:"Aliases,omitempty"`
-	Type          device.EUserDeviceType    `protobuf:"varint,4,opt,name=Type,json=type,proto3,enum=NAlice.EUserDeviceType" json:"Type,omitempty"`
-	ExternalId    string                    `protobuf:"bytes,6,opt,name=ExternalId,json=external_id,proto3" json:"ExternalId,omitempty"`
-	SkillId       string                    `protobuf:"bytes,8,opt,name=SkillId,json=skill_id,proto3" json:"SkillId,omitempty"`
-	RoomId        string                    `protobuf:"bytes,9,opt,name=RoomId,json=room_id,proto3" json:"RoomId,omitempty"`
-	GroupIds      []string                  `protobuf:"bytes,10,rep,name=GroupIds,json=group_ids,proto3" json:"GroupIds,omitempty"`
-	DeviceInfo    *device.TUserDeviceInfo   `protobuf:"bytes,13,opt,name=DeviceInfo,json=device_info,proto3" json:"DeviceInfo,omitempty"`
-	HouseholdId   string                    `protobuf:"bytes,18,opt,name=HouseholdId,json=household_id,proto3" json:"HouseholdId,omitempty"`
-	StatusInfo    *device.TDeviceStatusInfo `protobuf:"bytes,29,opt,name=StatusInfo,json=status_info,proto3" json:"StatusInfo,omitempty"`
-	Endpoint      *endpoint.TEndpoint       `protobuf:"bytes,30,opt,name=Endpoint,json=endpoint,proto3" json:"Endpoint,omitempty"`
+	Id            string                    `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name          string                    `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Aliases       []string                  `protobuf:"bytes,3,rep,name=Aliases,proto3" json:"Aliases,omitempty"`
+	Type          device.EUserDeviceType    `protobuf:"varint,4,opt,name=Type,proto3,enum=NAlice.EUserDeviceType" json:"Type,omitempty"`
+	ExternalId    string                    `protobuf:"bytes,6,opt,name=ExternalId,proto3" json:"ExternalId,omitempty"`
+	SkillId       string                    `protobuf:"bytes,8,opt,name=SkillId,proto3" json:"SkillId,omitempty"`
+	RoomId        string                    `protobuf:"bytes,9,opt,name=RoomId,proto3" json:"RoomId,omitempty"`
+	GroupIds      []string                  `protobuf:"bytes,10,rep,name=GroupIds,proto3" json:"GroupIds,omitempty"`
+	DeviceInfo    *device.TUserDeviceInfo   `protobuf:"bytes,13,opt,name=DeviceInfo,proto3" json:"DeviceInfo,omitempty"`
+	HouseholdId   string                    `protobuf:"bytes,18,opt,name=HouseholdId,proto3" json:"HouseholdId,omitempty"`
+	StatusInfo    *device.TDeviceStatusInfo `protobuf:"bytes,29,opt,name=StatusInfo,proto3" json:"StatusInfo,omitempty"`
+	Endpoint      *endpoint.TEndpoint       `protobuf:"bytes,30,opt,name=Endpoint,proto3" json:"Endpoint,omitempty"`
 	RenderInfo    *device.TDeviceRenderInfo `protobuf:"bytes,33,opt,name=RenderInfo,json=render_info,proto3" json:"RenderInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -251,9 +251,9 @@ func (x *TIoTClientUserInfo_TDevice) GetRenderInfo() *device.TDeviceRenderInfo {
 
 type TIoTClientUserInfo_THousehold struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Id            string                   `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name          string                   `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SharingInfo   *device.TUserSharingInfo `protobuf:"bytes,6,opt,name=SharingInfo,json=sharing_info,proto3" json:"SharingInfo,omitempty"`
+	Id            string                   `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name          string                   `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	SharingInfo   *device.TUserSharingInfo `protobuf:"bytes,6,opt,name=SharingInfo,proto3" json:"SharingInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -373,50 +373,51 @@ var File_alice_megamind_protos_common_iot_client_proto protoreflect.FileDescript
 
 const file_alice_megamind_protos_common_iot_client_proto_rawDesc = "" +
 	"\n" +
-	"-alice/megamind/protos/common/iot_client.proto\x12\x06NAlice\x1a#alice/protos/data/device/info.proto\x1a&alice/protos/data/location/group.proto\x1a%alice/protos/data/location/room.proto\x1a%alice/protos/endpoint/aggregate.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x88\v\n" +
-	"\x12TIoTClientUserInfo\x122\n" +
-	"\x05Rooms\x18\x01 \x03(\v2\x11.NAlice.TUserRoomB\t\xaa\xdd\x1b\x05roomsR\x05rooms\x126\n" +
-	"\x06Groups\x18\x02 \x03(\v2\x12.NAlice.TUserGroupB\n" +
-	"\xaa\xdd\x1b\x06groupsR\x06groups\x12I\n" +
-	"\aDevices\x18\x03 \x03(\v2\".NAlice.TIoTClientUserInfo.TDeviceB\v\xaa\xdd\x1b\adevicesR\adevices\x12U\n" +
+	"-alice/megamind/protos/common/iot_client.proto\x12\x06NAlice\x1a#alice/protos/data/device/info.proto\x1a&alice/protos/data/location/group.proto\x1a%alice/protos/data/location/room.proto\x1a%alice/protos/endpoint/aggregate.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc1\b\n" +
+	"\x12TIoTClientUserInfo\x12'\n" +
+	"\x05Rooms\x18\x01 \x03(\v2\x11.NAlice.TUserRoomR\x05Rooms\x12*\n" +
+	"\x06Groups\x18\x02 \x03(\v2\x12.NAlice.TUserGroupR\x06Groups\x12<\n" +
+	"\aDevices\x18\x03 \x03(\v2\".NAlice.TIoTClientUserInfo.TDeviceR\aDevices\x12E\n" +
 	"\n" +
-	"Households\x18\x04 \x03(\v2%.NAlice.TIoTClientUserInfo.THouseholdB\x0e\xaa\xdd\x1b\n" +
-	"householdsR\n" +
-	"households\x12B\n" +
+	"Households\x18\x04 \x03(\v2%.NAlice.TIoTClientUserInfo.THouseholdR\n" +
+	"Households\x122\n" +
 	"\n" +
-	"Aggregates\x18\x05 \x03(\v2\x12.NAlice.TAggregateB\x0e\xaa\xdd\x1b\n" +
-	"aggregatesR\n" +
-	"aggregates\x12Q\n" +
-	"\tScenarios\x18\x06 \x03(\v2$.NAlice.TIoTClientUserInfo.TScenarioB\r\xaa\xdd\x1b\tscenariosR\tscenarios\x1a\xc5\x05\n" +
-	"\aTDevice\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12%\n" +
-	"\aAliases\x18\x03 \x03(\tB\v\xaa\xdd\x1b\aaliasesR\aaliases\x125\n" +
-	"\x04Type\x18\x04 \x01(\x0e2\x17.NAlice.EUserDeviceTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x120\n" +
+	"Aggregates\x18\x05 \x03(\v2\x12.NAlice.TAggregateR\n" +
+	"Aggregates\x12Q\n" +
+	"\tScenarios\x18\x06 \x03(\v2$.NAlice.TIoTClientUserInfo.TScenarioB\r\xaa\xdd\x1b\tscenariosR\tscenarios\x1a\xf4\x03\n" +
+	"\aTDevice\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12\x18\n" +
+	"\aAliases\x18\x03 \x03(\tR\aAliases\x12+\n" +
+	"\x04Type\x18\x04 \x01(\x0e2\x17.NAlice.EUserDeviceTypeR\x04Type\x12\x1e\n" +
 	"\n" +
-	"ExternalId\x18\x06 \x01(\tB\x0f\xaa\xdd\x1b\vexternal_idR\vexternal_id\x12'\n" +
-	"\aSkillId\x18\b \x01(\tB\f\xaa\xdd\x1b\bskill_idR\bskill_id\x12$\n" +
-	"\x06RoomId\x18\t \x01(\tB\v\xaa\xdd\x1b\aroom_idR\aroom_id\x12*\n" +
+	"ExternalId\x18\x06 \x01(\tR\n" +
+	"ExternalId\x12\x18\n" +
+	"\aSkillId\x18\b \x01(\tR\aSkillId\x12\x16\n" +
+	"\x06RoomId\x18\t \x01(\tR\x06RoomId\x12\x1a\n" +
 	"\bGroupIds\x18\n" +
-	" \x03(\tB\r\xaa\xdd\x1b\tgroup_idsR\tgroup_ids\x12I\n" +
+	" \x03(\tR\bGroupIds\x127\n" +
 	"\n" +
-	"DeviceInfo\x18\r \x01(\v2\x17.NAlice.TUserDeviceInfoB\x0f\xaa\xdd\x1b\vdevice_infoR\vdevice_info\x123\n" +
-	"\vHouseholdId\x18\x12 \x01(\tB\x10\xaa\xdd\x1b\fhousehold_idR\fhousehold_id\x12K\n" +
+	"DeviceInfo\x18\r \x01(\v2\x17.NAlice.TUserDeviceInfoR\n" +
+	"DeviceInfo\x12 \n" +
+	"\vHouseholdId\x18\x12 \x01(\tR\vHouseholdId\x129\n" +
 	"\n" +
-	"StatusInfo\x18\x1d \x01(\v2\x19.NAlice.TDeviceStatusInfoB\x0f\xaa\xdd\x1b\vstatus_infoR\vstatus_info\x12;\n" +
-	"\bEndpoint\x18\x1e \x01(\v2\x11.NAlice.TEndpointB\f\xaa\xdd\x1b\bendpointR\bendpoint\x12K\n" +
+	"StatusInfo\x18\x1d \x01(\v2\x19.NAlice.TDeviceStatusInfoR\n" +
+	"StatusInfo\x12-\n" +
+	"\bEndpoint\x18\x1e \x01(\v2\x11.NAlice.TEndpointR\bEndpoint\x12K\n" +
 	"\n" +
-	"RenderInfo\x18! \x01(\v2\x19.NAlice.TDeviceRenderInfoB\x0f\xaa\xdd\x1b\vrender_infoR\vrender_info:\x04\xa8\xdd\x1b\x04J\x04\b\"\x10#R\x16ForceServerInteraction\x1a\x97\x01\n" +
+	"RenderInfo\x18! \x01(\v2\x19.NAlice.TDeviceRenderInfoB\x0f\xaa\xdd\x1b\vrender_infoR\vrender_info\x1al\n" +
 	"\n" +
-	"THousehold\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12M\n" +
-	"\vSharingInfo\x18\x06 \x01(\v2\x18.NAlice.TUserSharingInfoB\x10\xaa\xdd\x1b\fsharing_infoR\fsharing_info:\x04\xa8\xdd\x1b\x04\x1ae\n" +
+	"THousehold\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12:\n" +
+	"\vSharingInfo\x18\x06 \x01(\v2\x18.NAlice.TUserSharingInfoR\vSharingInfo\x1ae\n" +
 	"\tTScenario\x12\x16\n" +
 	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
 	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Icon\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04iconR\x04icon:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04Bj\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x11IoTClientUserInfoZ-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"\x04Icon\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04iconR\x04icon:\x04\xa8\xdd\x1b\x04B\xa2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eIotClientProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_iot_client_proto_rawDescOnce sync.Once

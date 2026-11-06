@@ -82,8 +82,8 @@ const file_yandex_io_capabilities_alarm_alarm_storage_proto_storage_proto_rawDes
 	">yandex_io/capabilities/alarm/alarm_storage/proto/storage.proto\x12\fquasar.proto\x1a,alice/protos/data/scenario/alarm/alarm.proto\x1a,alice/protos/data/scenario/timer/timer.proto\"\x81\x01\n" +
 	"\fAlarmStorage\x12,\n" +
 	"\x06alarms\x18\x03 \x03(\v2\x14.NAlice.NData.TAlarmR\x06alarms\x127\n" +
-	"\x06timers\x18\x04 \x03(\v2\x1f.NAlice.NData.TTimerDescriptionR\x06timersJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03B$\n" +
-	"\x19ru.yandex.quasar.protobufB\aStorage"
+	"\x06timers\x18\x04 \x03(\v2\x1f.NAlice.NData.TTimerDescriptionR\x06timersJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03B\xd3\x01\n" +
+	"\x10com.quasar.protoB\fStorageProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/alarm/alarm_storage/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_capabilities_alarm_alarm_storage_proto_storage_proto_rawDescOnce sync.Once

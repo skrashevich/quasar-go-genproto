@@ -27,9 +27,9 @@ const (
 
 type TFirmwareCapability struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TFirmwareCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TFirmwareCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta      `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TFirmwareCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TFirmwareCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -159,7 +159,7 @@ func (*TFirmwareCapability_TState) Descriptor() ([]byte, []int) {
 
 type TFirmwareCapability_TCheckFirmwareUpdateDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -205,19 +205,19 @@ var File_alice_protos_endpoint_capabilities_firmware_capability_proto protorefle
 
 const file_alice_protos_endpoint_capabilities_firmware_capability_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/endpoint/capabilities/firmware/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xff\x02\n" +
-	"\x13TFirmwareCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12W\n" +
+	"<alice/protos/endpoint/capabilities/firmware/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x02\n" +
+	"\x13TFirmwareCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12G\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2'.NAlice.TFirmwareCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12C\n" +
-	"\x05State\x18\x03 \x01(\v2\".NAlice.TFirmwareCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1ab\n" +
-	"\x1dTCheckFirmwareUpdateDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\"\x92\x82\x19\x15check_firmware_update\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe9\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cPB\x84\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\rFirmwareProtoZEa.yandex-team.ru/alice/protos/endpoint/capabilities/firmware;firmwareb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2'.NAlice.TFirmwareCapability.TParametersR\n" +
+	"Parameters\x128\n" +
+	"\x05State\x18\x03 \x01(\v2\".NAlice.TFirmwareCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\b\n" +
+	"\x06TState\x1a4\n" +
+	"\x1dTCheckFirmwareUpdateDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04NameB\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/firmware\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_firmware_capability_proto_rawDescOnce sync.Once

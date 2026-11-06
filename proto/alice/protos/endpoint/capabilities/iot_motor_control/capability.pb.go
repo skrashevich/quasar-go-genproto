@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_motor_control/capability.proto
 
-package iotmotorcontrolpb
+package iot_motor_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -79,9 +79,9 @@ func (TIotMotorControlCapability_EState) EnumDescriptor() ([]byte, []int) {
 
 type TIotMotorControlCapability struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotMotorControlCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotMotorControlCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotMotorControlCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotMotorControlCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,7 +175,7 @@ func (*TIotMotorControlCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotMotorControlCapability_TState struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	State         TIotMotorControlCapability_EState `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.TIotMotorControlCapability_EState" json:"State,omitempty"`
+	State         TIotMotorControlCapability_EState `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.TIotMotorControlCapability_EState" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (x *TIotMotorControlCapability_TState) GetState() TIotMotorControlCapabilit
 
 type TIotMotorControlCapability_TMotorControlOpenDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,7 +263,7 @@ func (x *TIotMotorControlCapability_TMotorControlOpenDirective) GetName() string
 
 type TIotMotorControlCapability_TMotorControlCloseDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -307,7 +307,7 @@ func (x *TIotMotorControlCapability_TMotorControlCloseDirective) GetName() strin
 
 type TIotMotorControlCapability_TMotorControlStopDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -349,60 +349,16 @@ func (x *TIotMotorControlCapability_TMotorControlStopDirective) GetName() string
 	return ""
 }
 
-type TIotMotorControlCapability_TMotorControlToggleDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TIotMotorControlCapability_TMotorControlToggleDirective) Reset() {
-	*x = TIotMotorControlCapability_TMotorControlToggleDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotMotorControlCapability_TMotorControlToggleDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotMotorControlCapability_TMotorControlToggleDirective) ProtoMessage() {}
-
-func (x *TIotMotorControlCapability_TMotorControlToggleDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotMotorControlCapability_TMotorControlToggleDirective.ProtoReflect.Descriptor instead.
-func (*TIotMotorControlCapability_TMotorControlToggleDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDescGZIP(), []int{0, 5}
-}
-
-func (x *TIotMotorControlCapability_TMotorControlToggleDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
 type TIotMotorControlCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Capability    *TIotMotorControlCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotMotorControlCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotMotorControlCapability_TUpdateStateEvent) Reset() {
 	*x = TIotMotorControlCapability_TUpdateStateEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -414,7 +370,7 @@ func (x *TIotMotorControlCapability_TUpdateStateEvent) String() string {
 func (*TIotMotorControlCapability_TUpdateStateEvent) ProtoMessage() {}
 
 func (x *TIotMotorControlCapability_TUpdateStateEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -427,7 +383,7 @@ func (x *TIotMotorControlCapability_TUpdateStateEvent) ProtoReflect() protorefle
 
 // Deprecated: Use TIotMotorControlCapability_TUpdateStateEvent.ProtoReflect.Descriptor instead.
 func (*TIotMotorControlCapability_TUpdateStateEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDescGZIP(), []int{0, 6}
+	return file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDescGZIP(), []int{0, 5}
 }
 
 func (x *TIotMotorControlCapability_TUpdateStateEvent) GetCapability() *TIotMotorControlCapability {
@@ -437,42 +393,85 @@ func (x *TIotMotorControlCapability_TUpdateStateEvent) GetCapability() *TIotMoto
 	return nil
 }
 
+type TIotMotorControlCapability_TMotorControlToggleDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIotMotorControlCapability_TMotorControlToggleDirective) Reset() {
+	*x = TIotMotorControlCapability_TMotorControlToggleDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotMotorControlCapability_TMotorControlToggleDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotMotorControlCapability_TMotorControlToggleDirective) ProtoMessage() {}
+
+func (x *TIotMotorControlCapability_TMotorControlToggleDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotMotorControlCapability_TMotorControlToggleDirective.ProtoReflect.Descriptor instead.
+func (*TIotMotorControlCapability_TMotorControlToggleDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDescGZIP(), []int{0, 6}
+}
+
+func (x *TIotMotorControlCapability_TMotorControlToggleDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 var File_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDesc = "" +
 	"\n" +
-	"Ealice/protos/endpoint/capabilities/iot_motor_control/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd7\a\n" +
-	"\x1aTIotMotorControlCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12^\n" +
+	"Ealice/protos/endpoint/capabilities/iot_motor_control/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd6\x05\n" +
+	"\x1aTIotMotorControlCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12N\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2..NAlice.TIotMotorControlCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12J\n" +
-	"\x05State\x18\x03 \x01(\v2).NAlice.TIotMotorControlCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aZ\n" +
-	"\x06TState\x12J\n" +
-	"\x05State\x18\x01 \x01(\x0e2).NAlice.TIotMotorControlCapability.EStateB\t\xaa\xdd\x1b\x05stateR\x05state:\x04\xa8\xdd\x1b\x04\x1af\n" +
-	"\x1aTMotorControlOpenDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:)\x92\x82\x19\x1cmotor_control_open_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe1\x03\x1ah\n" +
-	"\x1bTMotorControlCloseDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:*\x92\x82\x19\x1dmotor_control_close_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe2\x03\x1af\n" +
-	"\x1aTMotorControlStopDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:)\x92\x82\x19\x1cmotor_control_stop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe3\x03\x1aj\n" +
+	"Parameters\x18\x02 \x01(\v2..NAlice.TIotMotorControlCapability.TParametersR\n" +
+	"Parameters\x12?\n" +
+	"\x05State\x18\x03 \x01(\v2).NAlice.TIotMotorControlCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aI\n" +
+	"\x06TState\x12?\n" +
+	"\x05State\x18\x01 \x01(\x0e2).NAlice.TIotMotorControlCapability.EStateR\x05State\x1a1\n" +
+	"\x1aTMotorControlOpenDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a2\n" +
+	"\x1bTMotorControlCloseDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a1\n" +
+	"\x1aTMotorControlStopDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1aW\n" +
+	"\x11TUpdateStateEvent\x12B\n" +
+	"\n" +
+	"Capability\x18\x01 \x01(\v2\".NAlice.TIotMotorControlCapabilityR\n" +
+	"Capability\x1aj\n" +
 	"\x1cTMotorControlToggleDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:+\x92\x82\x19\x1emotor_control_toggle_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa0\x05\x1aq\n" +
-	"\x11TUpdateStateEvent\x12R\n" +
-	"\n" +
-	"Capability\x18\x01 \x01(\v2\".NAlice.TIotMotorControlCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cx\"?\n" +
+	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:+\x92\x82\x19\x1emotor_control_toggle_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa0\x05\"?\n" +
 	"\x06EState\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\n" +
 	"\n" +
 	"\x06OPENED\x10\x01\x12\x10\n" +
 	"\fINTERMEDIATE\x10\x02\x12\n" +
 	"\n" +
-	"\x06CLOSED\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb6\x01B\xa7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eIotMotorControlCapabilityProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_motor_control;iotmotorcontrolpbb\x06proto3"
+	"\x06CLOSED\x10\x03B\xbb\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_motor_control\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_rawDescOnce sync.Once
@@ -496,8 +495,8 @@ var file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_g
 	(*TIotMotorControlCapability_TMotorControlOpenDirective)(nil),   // 4: NAlice.TIotMotorControlCapability.TMotorControlOpenDirective
 	(*TIotMotorControlCapability_TMotorControlCloseDirective)(nil),  // 5: NAlice.TIotMotorControlCapability.TMotorControlCloseDirective
 	(*TIotMotorControlCapability_TMotorControlStopDirective)(nil),   // 6: NAlice.TIotMotorControlCapability.TMotorControlStopDirective
-	(*TIotMotorControlCapability_TMotorControlToggleDirective)(nil), // 7: NAlice.TIotMotorControlCapability.TMotorControlToggleDirective
-	(*TIotMotorControlCapability_TUpdateStateEvent)(nil),            // 8: NAlice.TIotMotorControlCapability.TUpdateStateEvent
+	(*TIotMotorControlCapability_TUpdateStateEvent)(nil),            // 7: NAlice.TIotMotorControlCapability.TUpdateStateEvent
+	(*TIotMotorControlCapability_TMotorControlToggleDirective)(nil), // 8: NAlice.TIotMotorControlCapability.TMotorControlToggleDirective
 	(*endpoint.TCapability_TMeta)(nil),                              // 9: NAlice.TCapability.TMeta
 }
 var file_alice_protos_endpoint_capabilities_iot_motor_control_capability_proto_depIdxs = []int32{

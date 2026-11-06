@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_haptic/capability.proto
 
-package alicechathapticspb
+package alice_chat_haptic
 
 import (
 	aliceapp_native_settings "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/aliceapp_native_settings"
@@ -342,8 +342,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_haptic_capability_proto
 	"\vEHapticType\x12\x10\n" +
 	"\fEFFECT_CLICK\x10\x00\x12\x16\n" +
 	"\x12EFFECT_HEAVY_CLICK\x10\x02\x12\x16\n" +
-	"\x12EFFECT_LIGHT_CLICK\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc1\x01B\x9e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AliceChathapticProtoZXa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_haptic;alicechathapticspbb\x06proto3"
+	"\x12EFFECT_LIGHT_CLICK\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc1\x01B\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AliceChathapticProtoZdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_hapticb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_haptic_capability_proto_rawDescOnce sync.Once

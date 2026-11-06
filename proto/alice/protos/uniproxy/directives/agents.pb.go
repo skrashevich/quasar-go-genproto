@@ -25,7 +25,7 @@ const (
 
 type TSwitchToAgentModeDirective struct {
 	state             protoimpl.MessageState     `protogen:"open.v1"`
-	AgentStartRequest *agents.TAgentStartRequest `protobuf:"bytes,1,opt,name=AgentStartRequest,json=agent_start_request,proto3" json:"AgentStartRequest,omitempty"`
+	AgentStartRequest *agents.TAgentStartRequest `protobuf:"bytes,1,opt,name=AgentStartRequest,proto3" json:"AgentStartRequest,omitempty"`
 	IsMirrorOnly      bool                       `protobuf:"varint,2,opt,name=IsMirrorOnly,json=is_mirror_only,proto3" json:"IsMirrorOnly,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -79,11 +79,11 @@ var File_alice_protos_uniproxy_directives_agents_proto protoreflect.FileDescript
 
 const file_alice_protos_uniproxy_directives_agents_proto_rawDesc = "" +
 	"\n" +
-	"-alice/protos/uniproxy/directives/agents.proto\x12\x1aNAlice.NUniproxyDirectives\x1a*alice/protos/data/agents/agent_start.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc2\x01\n" +
-	"\x1bTSwitchToAgentModeDirective\x12c\n" +
-	"\x11AgentStartRequest\x18\x01 \x01(\v2\x1a.NAlice.TAgentStartRequestB\x17\xaa\xdd\x1b\x13agent_start_requestR\x13agent_start_request\x128\n" +
-	"\fIsMirrorOnly\x18\x02 \x01(\bB\x12\xaa\xdd\x1b\x0eis_mirror_onlyR\x0eis_mirror_only:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.uniproxy.directivesZ1a.yandex-team.ru/alice/protos/uniproxy/directivesb\x06proto3"
+	"-alice/protos/uniproxy/directives/agents.proto\x12\x1aNAlice.NUniproxyDirectives\x1a*alice/protos/data/agents/agent_start.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa1\x01\n" +
+	"\x1bTSwitchToAgentModeDirective\x12H\n" +
+	"\x11AgentStartRequest\x18\x01 \x01(\v2\x1a.NAlice.TAgentStartRequestR\x11AgentStartRequest\x128\n" +
+	"\fIsMirrorOnly\x18\x02 \x01(\bB\x12\xaa\xdd\x1b\x0eis_mirror_onlyR\x0eis_mirror_onlyB\x88\x02\n" +
+	"\x1ecom.NAlice.NUniproxyDirectivesB\vAgentsProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/uniproxy/directives\xa2\x02\x03NNX\xaa\x02\x1aNAlice.NUniproxyDirectives\xca\x02\x1aNAlice\\NUniproxyDirectives\xe2\x02&NAlice\\NUniproxyDirectives\\GPBMetadata\xea\x02\x1bNAlice::NUniproxyDirectivesb\x06proto3"
 
 var (
 	file_alice_protos_uniproxy_directives_agents_proto_rawDescOnce sync.Once

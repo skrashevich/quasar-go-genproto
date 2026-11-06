@@ -88,7 +88,7 @@ func (TDayOfWeek_EDayOfWeek) EnumDescriptor() ([]byte, []int) {
 
 type TDayOfWeek struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DayOfWeek     TDayOfWeek_EDayOfWeek  `protobuf:"varint,1,opt,name=DayOfWeek,json=day_of_week,proto3,enum=NAlice.NData.TDayOfWeek_EDayOfWeek" json:"DayOfWeek,omitempty"`
+	DayOfWeek     TDayOfWeek_EDayOfWeek  `protobuf:"varint,1,opt,name=DayOfWeek,proto3,enum=NAlice.NData.TDayOfWeek_EDayOfWeek" json:"DayOfWeek,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -134,10 +134,10 @@ var File_alice_protos_data_date_day_of_week_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_date_day_of_week_proto_rawDesc = "" +
 	"\n" +
-	"(alice/protos/data/date/day_of_week.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdc\x01\n" +
+	"(alice/protos/data/date/day_of_week.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3\x01\n" +
 	"\n" +
-	"TDayOfWeek\x12T\n" +
-	"\tDayOfWeek\x18\x01 \x01(\x0e2#.NAlice.NData.TDayOfWeek.EDayOfWeekB\x0f\xaa\xdd\x1b\vday_of_weekR\vday_of_week\"r\n" +
+	"TDayOfWeek\x12A\n" +
+	"\tDayOfWeek\x18\x01 \x01(\x0e2#.NAlice.NData.TDayOfWeek.EDayOfWeekR\tDayOfWeek\"r\n" +
 	"\n" +
 	"EDayOfWeek\x12\b\n" +
 	"\x04None\x10\x00\x12\n" +
@@ -150,8 +150,8 @@ const file_alice_protos_data_date_day_of_week_proto_rawDesc = "" +
 	"\x06Friday\x10\x05\x12\f\n" +
 	"\bSaturday\x10\x06\x12\n" +
 	"\n" +
-	"\x06Sunday\x10\a:\x04\xa8\xdd\x1b\x04BK\n" +
-	" ru.yandex.alice.protos.data.dateZ'a.yandex-team.ru/alice/protos/data/dateb\x06proto3"
+	"\x06Sunday\x10\aB\xbb\x01\n" +
+	"\x10com.NAlice.NDataB\x0eDayOfWeekProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/date\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_date_day_of_week_proto_rawDescOnce sync.Once

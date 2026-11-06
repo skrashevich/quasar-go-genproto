@@ -117,8 +117,8 @@ const file_execute_action_options_proto_rawDesc = "" +
 	"\x14ExecuteActionOptions\x12\\\n" +
 	"\x10uniproxy_options\x18\x01 \x01(\v21.QuarkProtos.ExecuteActionOptions.UniproxyOptionsR\x0funiproxyOptions\x1a4\n" +
 	"\x0fUniproxyOptions\x12!\n" +
-	"\fuse_database\x18\x01 \x01(\bR\vuseDatabaseB\x18\n" +
-	"\x16com.yandex.quark.protob\x06proto3"
+	"\fuse_database\x18\x01 \x01(\bR\vuseDatabaseBI\n" +
+	"\x16com.yandex.quark.protoZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_execute_action_options_proto_rawDescOnce sync.Once

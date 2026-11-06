@@ -82,8 +82,8 @@ const file_alice_protos_data_scenario_music_config_proto_rawDesc = "" +
 	"\vTUserConfig\x12<\n" +
 	"\x0eAnnounceTracks\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fannounce_tracksR\x0fannounce_tracks\x12>\n" +
 	"\rShuffleArtist\x18\x02 \x01(\bB\x12\xaa\xdd\x1b\x0eshuffle_artistH\x00R\x0eshuffle_artist\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x0e_ShuffleArtistB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\x0e_ShuffleArtistB~\n" +
+	"*ru.yandex.alice.protos.data.scenario.musicZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/musicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_config_proto_rawDescOnce sync.Once

@@ -74,8 +74,8 @@ const file_alice_protos_api_alicekit_events_server_chunk_meta_server_chunk_meta_
 	"Jalice/protos/api/alicekit/events/server_chunk_meta/server_chunk_meta.proto\x12\x10NAlice.NAliceApi\x1aGalice/protos/api/alicekit/events/common/chunk_header/chunk_header.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\\\n" +
 	"\x10TServerChunkMeta\x12B\n" +
 	"\x06Header\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TChunkHeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header:\x04\xa8\xdd\x1b\x04B\x96\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.server_chunk_metaB\x0fServerChunkMetaP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/server_chunk_metab\x06proto3"
+	"\xaa\xdd\x1b\x06headerR\x06header:\x04\xa8\xdd\x1b\x04B\xb5\x01\n" +
+	"<ru.yandex.alice.protos.api.alicekit.events.server_chunk_metaB\x0fServerChunkMetaP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/server_chunk_metab\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_server_chunk_meta_server_chunk_meta_proto_rawDescOnce sync.Once

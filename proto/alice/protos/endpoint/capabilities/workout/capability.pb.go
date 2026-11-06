@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/workout/capability.proto
 
-package workoutpb
+package workout
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -727,8 +727,8 @@ const file_alice_protos_endpoint_capabilities_workout_capability_proto_rawDesc =
 	"\tFolkDance\x10e\x12\x0f\n" +
 	"\vOtherDances\x10f\x12\x11\n" +
 	"\rSquareDancing\x10g\x12\x0f\n" +
-	"\vSocialDance\x10h:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x98\x02B\x8f\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16WorkoutCapabilityProtoP\x01ZEa.yandex-team.ru/alice/protos/endpoint/capabilities/workout;workoutpbb\x06proto3"
+	"\vSocialDance\x10h:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x98\x02B\xa4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16WorkoutCapabilityProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/workoutb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_workout_capability_proto_rawDescOnce sync.Once

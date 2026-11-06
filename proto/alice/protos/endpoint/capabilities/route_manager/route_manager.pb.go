@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/route_manager/route_manager.proto
 
-package routemanagercapabilitiespb
+package route_manager
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -491,8 +491,8 @@ const file_alice_protos_endpoint_capabilities_route_manager_route_manager_proto_
 	"\x0eTShowDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:(\x92\x82\x19\x1croute_manager_show_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1a\x1aa\n" +
 	"\x12TContinueDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19 route_manager_continue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1c:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\vB\xab\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dRouteManagerCapabilitiesProtoZ\\a.yandex-team.ru/alice/protos/endpoint/capabilities/route_manager;routemanagercapabilitiespbb\x06proto3"
+	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19 route_manager_continue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1c:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\vB\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dRouteManagerCapabilitiesProtoZ`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/route_managerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_route_manager_route_manager_proto_rawDescOnce sync.Once

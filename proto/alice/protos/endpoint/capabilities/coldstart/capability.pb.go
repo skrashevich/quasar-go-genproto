@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/coldstart/capability.proto
 
-package coldstartpb
+package coldstart
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -225,8 +225,8 @@ const file_alice_protos_endpoint_capabilities_coldstart_capability_proto_rawDesc
 	"\x06TState\x12q\n" +
 	"\x1fSupportColdstartRecommendations\x18\x01 \x01(\bB%\xaa\xdd\x1b!support_coldstart_recommendationsR!support_coldstart_recommendations:\x04\xa8\xdd\x1b\x04\x1a}\n" +
 	"&TOpenColdstartRecommendationsDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:5\x92\x82\x19(open_coldstart_recommendations_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cUB\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18ColdstartCapabilityProtoZIa.yandex-team.ru/alice/protos/endpoint/capabilities/coldstart;coldstartpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:5\x92\x82\x19(open_coldstart_recommendations_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cUB\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18ColdstartCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/coldstartb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_coldstart_capability_proto_rawDescOnce sync.Once

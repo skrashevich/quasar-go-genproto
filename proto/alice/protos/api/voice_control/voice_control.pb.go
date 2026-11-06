@@ -27,9 +27,9 @@ const (
 
 type TVoiceControl struct {
 	state                        protoimpl.MessageState             `protogen:"open.v1"`
-	ActivationConditions         []*TActivationCondition            `protobuf:"bytes,1,rep,name=ActivationConditions,json=activation_conditions,proto3" json:"ActivationConditions,omitempty"`
-	Actions                      []*common.TConditionalAction       `protobuf:"bytes,2,rep,name=Actions,json=actions,proto3" json:"Actions,omitempty"`
-	ExternalEntitiesDescriptions []*data.TExternalEntityDescription `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,json=external_entities_descriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
+	ActivationConditions         []*TActivationCondition            `protobuf:"bytes,1,rep,name=ActivationConditions,proto3" json:"ActivationConditions,omitempty"`
+	Actions                      []*common.TConditionalAction       `protobuf:"bytes,2,rep,name=Actions,proto3" json:"Actions,omitempty"`
+	ExternalEntitiesDescriptions []*data.TExternalEntityDescription `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -87,9 +87,9 @@ func (x *TVoiceControl) GetExternalEntitiesDescriptions() []*data.TExternalEntit
 
 type TUnstructuredVoiceControl struct {
 	state                        protoimpl.MessageState  `protogen:"open.v1"`
-	ActivationConditions         []*TActivationCondition `protobuf:"bytes,1,rep,name=ActivationConditions,json=activation_conditions,proto3" json:"ActivationConditions,omitempty"`
-	Actions                      []*structpb.Struct      `protobuf:"bytes,2,rep,name=Actions,json=actions,proto3" json:"Actions,omitempty"`
-	ExternalEntitiesDescriptions []*structpb.Struct      `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,json=external_entities_descriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
+	ActivationConditions         []*TActivationCondition `protobuf:"bytes,1,rep,name=ActivationConditions,proto3" json:"ActivationConditions,omitempty"`
+	Actions                      []*structpb.Struct      `protobuf:"bytes,2,rep,name=Actions,proto3" json:"Actions,omitempty"`
+	ExternalEntitiesDescriptions []*structpb.Struct      `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -147,9 +147,9 @@ func (x *TUnstructuredVoiceControl) GetExternalEntitiesDescriptions() []*structp
 
 type TBinaryVoiceControl struct {
 	state                        protoimpl.MessageState  `protogen:"open.v1"`
-	ActivationConditions         []*TActivationCondition `protobuf:"bytes,1,rep,name=ActivationConditions,json=activation_conditions,proto3" json:"ActivationConditions,omitempty"`
-	Actions                      [][]byte                `protobuf:"bytes,2,rep,name=Actions,json=actions,proto3" json:"Actions,omitempty"`
-	ExternalEntitiesDescriptions [][]byte                `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,json=external_entities_descriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
+	ActivationConditions         []*TActivationCondition `protobuf:"bytes,1,rep,name=ActivationConditions,proto3" json:"ActivationConditions,omitempty"`
+	Actions                      [][]byte                `protobuf:"bytes,2,rep,name=Actions,proto3" json:"Actions,omitempty"`
+	ExternalEntitiesDescriptions [][]byte                `protobuf:"bytes,3,rep,name=ExternalEntitiesDescriptions,proto3" json:"ExternalEntitiesDescriptions,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -276,11 +276,11 @@ type isTActivationCondition_ConditionType interface {
 }
 
 type TActivationCondition_VisibleCondition struct {
-	VisibleCondition *TVisibleCondition `protobuf:"bytes,1,opt,name=VisibleCondition,json=visible_condition,proto3,oneof"`
+	VisibleCondition *TVisibleCondition `protobuf:"bytes,1,opt,name=VisibleCondition,proto3,oneof"`
 }
 
 type TActivationCondition_AlwaysTrueCondition struct {
-	AlwaysTrueCondition *TAlwaysTrueCondition `protobuf:"bytes,2,opt,name=AlwaysTrueCondition,json=always_true_condition,proto3,oneof"`
+	AlwaysTrueCondition *TAlwaysTrueCondition `protobuf:"bytes,2,opt,name=AlwaysTrueCondition,proto3,oneof"`
 }
 
 func (*TActivationCondition_VisibleCondition) isTActivationCondition_ConditionType() {}
@@ -289,7 +289,7 @@ func (*TActivationCondition_AlwaysTrueCondition) isTActivationCondition_Conditio
 
 type TVisibleCondition struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	VisibleShare  float64                `protobuf:"fixed64,1,opt,name=VisibleShare,json=visible_share,proto3" json:"VisibleShare,omitempty"`
+	VisibleShare  float64                `protobuf:"fixed64,1,opt,name=VisibleShare,proto3" json:"VisibleShare,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -371,27 +371,28 @@ var File_alice_protos_api_voice_control_voice_control_proto protoreflect.FileDes
 
 const file_alice_protos_api_voice_control_voice_control_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/api/voice_control/voice_control.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a5alice/megamind/protos/common/conditional_action.proto\x1a3alice/protos/data/external_entity_description.proto\"\xd5\x02\n" +
-	"\rTVoiceControl\x12l\n" +
-	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionB\x19\xaa\xdd\x1b\x15activation_conditionsR\x15activation_conditions\x12A\n" +
-	"\aActions\x18\x02 \x03(\v2\x1a.NAlice.TConditionalActionB\v\xaa\xdd\x1b\aactionsR\aactions\x12\x92\x01\n" +
-	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\v2(.NAlice.NData.TExternalEntityDescriptionB\"\xaa\xdd\x1b\x1eexternal_entities_descriptionsR\x1eexternal_entities_descriptions\"\xcd\x02\n" +
-	"\x19TUnstructuredVoiceControl\x12l\n" +
-	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionB\x19\xaa\xdd\x1b\x15activation_conditionsR\x15activation_conditions\x12>\n" +
-	"\aActions\x18\x02 \x03(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\aactionsR\aactions\x12\x81\x01\n" +
-	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\v2\x17.google.protobuf.StructB\"\xaa\xdd\x1b\x1eexternal_entities_descriptionsR\x1eexternal_entities_descriptions\"\x94\x02\n" +
-	"\x13TBinaryVoiceControl\x12l\n" +
-	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionB\x19\xaa\xdd\x1b\x15activation_conditionsR\x15activation_conditions\x12%\n" +
-	"\aActions\x18\x02 \x03(\fB\v\xaa\xdd\x1b\aactionsR\aactions\x12h\n" +
-	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\fB\"\xaa\xdd\x1b\x1eexternal_entities_descriptionsR\x1eexternal_entities_descriptions\"\x8b\x02\n" +
-	"\x14TActivationCondition\x12_\n" +
-	"\x10VisibleCondition\x18\x01 \x01(\v2\x19.NAlice.TVisibleConditionB\x15\xaa\xdd\x1b\x11visible_conditionH\x00R\x11visible_condition\x12m\n" +
-	"\x13AlwaysTrueCondition\x18\x02 \x01(\v2\x1c.NAlice.TAlwaysTrueConditionB\x19\xaa\xdd\x1b\x15always_true_conditionH\x00R\x15always_true_conditionB#\n" +
-	"\rConditionType\x12\x12\xaa\xdd\x1b\x0econdition_type\"K\n" +
-	"\x11TVisibleCondition\x126\n" +
-	"\fVisibleShare\x18\x01 \x01(\x01B\x11\xaa\xdd\x1b\rvisible_shareR\rvisible_share\"\x16\n" +
-	"\x14TAlwaysTrueConditionB\\\n" +
-	"'ru.yandex.alice.protos.api.voicecontrolP\x01Z/a.yandex-team.ru/alice/protos/api/voice_controlb\x06proto3"
+	"2alice/protos/api/voice_control/voice_control.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a5alice/megamind/protos/common/conditional_action.proto\x1a3alice/protos/data/external_entity_description.proto\"\x85\x02\n" +
+	"\rTVoiceControl\x12P\n" +
+	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionR\x14ActivationConditions\x124\n" +
+	"\aActions\x18\x02 \x03(\v2\x1a.NAlice.TConditionalActionR\aActions\x12l\n" +
+	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\v2(.NAlice.NData.TExternalEntityDescriptionR\x1cExternalEntitiesDescriptions\"\xfd\x01\n" +
+	"\x19TUnstructuredVoiceControl\x12P\n" +
+	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionR\x14ActivationConditions\x121\n" +
+	"\aActions\x18\x02 \x03(\v2\x17.google.protobuf.StructR\aActions\x12[\n" +
+	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\v2\x17.google.protobuf.StructR\x1cExternalEntitiesDescriptions\"\xc5\x01\n" +
+	"\x13TBinaryVoiceControl\x12P\n" +
+	"\x14ActivationConditions\x18\x01 \x03(\v2\x1c.NAlice.TActivationConditionR\x14ActivationConditions\x12\x18\n" +
+	"\aActions\x18\x02 \x03(\fR\aActions\x12B\n" +
+	"\x1cExternalEntitiesDescriptions\x18\x03 \x03(\fR\x1cExternalEntitiesDescriptions\"\xc2\x01\n" +
+	"\x14TActivationCondition\x12G\n" +
+	"\x10VisibleCondition\x18\x01 \x01(\v2\x19.NAlice.TVisibleConditionH\x00R\x10VisibleCondition\x12P\n" +
+	"\x13AlwaysTrueCondition\x18\x02 \x01(\v2\x1c.NAlice.TAlwaysTrueConditionH\x00R\x13AlwaysTrueConditionB\x0f\n" +
+	"\rConditionType\"7\n" +
+	"\x11TVisibleCondition\x12\"\n" +
+	"\fVisibleShare\x18\x01 \x01(\x01R\fVisibleShare\"\x16\n" +
+	"\x14TAlwaysTrueConditionB\xa7\x01\n" +
+	"\n" +
+	"com.NAliceB\x11VoiceControlProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/voice_control\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_voice_control_voice_control_proto_rawDescOnce sync.Once

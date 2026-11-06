@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/search/capability.proto
 
-package searchpb
+package search
 
 import (
 	common_multisearch "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/common_multisearch"
@@ -394,8 +394,8 @@ const file_alice_protos_endpoint_capabilities_search_capability_proto_rawDesc = 
 	"\x10SearchResultData\x18\x02 \x01(\v2\x1b.NAlice.TTvSearchResultDataB\x11\xaa\xdd\x1b\rsearch_resultR\rsearch_result\x12\x1c\n" +
 	"\x04Name\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12A\n" +
 	"\x0eHostFiltration\x18\x04 \x01(\tB\x13\xaa\xdd\x1b\x0fhost_filtrationH\x00R\x0fhost_filtration\x88\x01\x01:\x17\x92\x82\x19\vopen_search\xa8\xdd\x1b\x04\xa8\xc8\x1c@B\x11\n" +
-	"\x0f_HostFiltration:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1cB\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15SearchCapabilityProtoZCa.yandex-team.ru/alice/protos/endpoint/capabilities/search;searchpbb\x06proto3"
+	"\x0f_HostFiltration:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1cB\xa0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15SearchCapabilityProtoZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/searchb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_search_capability_proto_rawDescOnce sync.Once

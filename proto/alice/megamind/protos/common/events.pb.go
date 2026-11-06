@@ -161,8 +161,8 @@ func (TBiometryClassification_EConfidence) EnumDescriptor() ([]byte, []int) {
 
 type TFileDescription struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Guid          *string                `protobuf:"bytes,1,opt,name=Guid,json=guid" json:"Guid,omitempty"`
-	ImageCrop     *files.TImageCrop      `protobuf:"bytes,2,opt,name=ImageCrop,json=image_crop" json:"ImageCrop,omitempty"`
+	Guid          *string                `protobuf:"bytes,1,opt,name=Guid" json:"Guid,omitempty"`
+	ImageCrop     *files.TImageCrop      `protobuf:"bytes,2,opt,name=ImageCrop" json:"ImageCrop,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -212,13 +212,12 @@ func (x *TFileDescription) GetImageCrop() *files.TImageCrop {
 }
 
 type TAsrResult struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/megamind/protos/common/events.proto.
-	Utterance     *string                 `protobuf:"bytes,1,opt,name=Utterance,json=utterance" json:"Utterance,omitempty"`
-	Confidence    *float64                `protobuf:"fixed64,2,opt,name=Confidence,json=confidence" json:"Confidence,omitempty"`
-	Words         []*TAsrResult_TWord     `protobuf:"bytes,3,rep,name=Words,json=words" json:"Words,omitempty"`
-	Normalized    *string                 `protobuf:"bytes,4,opt,name=Normalized,json=normalized" json:"Normalized,omitempty"`
-	AccentInfo    *TAsrResult_TAccentInfo `protobuf:"bytes,5,opt,name=AccentInfo,json=accent_info" json:"AccentInfo,omitempty"`
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Utterance     *string                 `protobuf:"bytes,1,opt,name=Utterance" json:"Utterance,omitempty"`
+	Confidence    *float64                `protobuf:"fixed64,2,opt,name=Confidence" json:"Confidence,omitempty"`
+	Words         []*TAsrResult_TWord     `protobuf:"bytes,3,rep,name=Words" json:"Words,omitempty"`
+	Normalized    *string                 `protobuf:"bytes,4,opt,name=Normalized" json:"Normalized,omitempty"`
+	AccentInfo    *TAsrResult_TAccentInfo `protobuf:"bytes,5,opt,name=AccentInfo" json:"AccentInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -253,7 +252,6 @@ func (*TAsrResult) Descriptor() ([]byte, []int) {
 	return file_alice_megamind_protos_common_events_proto_rawDescGZIP(), []int{1}
 }
 
-// Deprecated: Marked as deprecated in alice/megamind/protos/common/events.proto.
 func (x *TAsrResult) GetUtterance() string {
 	if x != nil && x.Utterance != nil {
 		return *x.Utterance
@@ -291,7 +289,7 @@ func (x *TAsrResult) GetAccentInfo() *TAsrResult_TAccentInfo {
 
 type TPreEouInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Confidence    *float32               `protobuf:"fixed32,1,opt,name=Confidence,json=confidence" json:"Confidence,omitempty"`
+	Confidence    *float32               `protobuf:"fixed32,1,opt,name=Confidence" json:"Confidence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -335,7 +333,7 @@ func (x *TPreEouInfo) GetConfidence() float32 {
 
 type TImageInputData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ImgUrl        *string                `protobuf:"bytes,1,opt,name=ImgUrl,json=img_url" json:"ImgUrl,omitempty"`
+	ImgUrl        *string                `protobuf:"bytes,1,opt,name=ImgUrl" json:"ImgUrl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -379,9 +377,9 @@ func (x *TImageInputData) GetImgUrl() string {
 
 type TMusicResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          *TMusicResult_TData    `protobuf:"bytes,1,opt,name=Data,json=data" json:"Data,omitempty"`
-	Result        *string                `protobuf:"bytes,2,opt,name=Result,json=result" json:"Result,omitempty"`
-	ErrorText     *string                `protobuf:"bytes,3,opt,name=ErrorText,json=error_text" json:"ErrorText,omitempty"`
+	Data          *TMusicResult_TData    `protobuf:"bytes,1,opt,name=Data" json:"Data,omitempty"`
+	Result        *string                `protobuf:"bytes,2,opt,name=Result" json:"Result,omitempty"`
+	ErrorText     *string                `protobuf:"bytes,3,opt,name=ErrorText" json:"ErrorText,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -439,12 +437,12 @@ func (x *TMusicResult) GetErrorText() string {
 
 type TBiometryScoring struct {
 	state          protoimpl.MessageState             `protogen:"open.v1"`
-	Scores         []*TBiometryScoring_TScore         `protobuf:"bytes,1,rep,name=Scores,json=scores" json:"Scores,omitempty"`
-	ScoresWithMode []*TBiometryScoring_TScoreWithMode `protobuf:"bytes,2,rep,name=ScoresWithMode,json=scores_with_mode" json:"ScoresWithMode,omitempty"`
-	Status         *string                            `protobuf:"bytes,3,opt,name=Status,json=status" json:"Status,omitempty"`
-	RequestId      *string                            `protobuf:"bytes,4,opt,name=RequestId,json=request_id" json:"RequestId,omitempty"`
-	GroupId        *string                            `protobuf:"bytes,5,opt,name=GroupId,json=group_id" json:"GroupId,omitempty"`
-	PartialNumber  *int64                             `protobuf:"varint,6,opt,name=PartialNumber,json=partial_number" json:"PartialNumber,omitempty"`
+	Scores         []*TBiometryScoring_TScore         `protobuf:"bytes,1,rep,name=Scores" json:"Scores,omitempty"`
+	ScoresWithMode []*TBiometryScoring_TScoreWithMode `protobuf:"bytes,2,rep,name=ScoresWithMode" json:"ScoresWithMode,omitempty"`
+	Status         *string                            `protobuf:"bytes,3,opt,name=Status" json:"Status,omitempty"`
+	RequestId      *string                            `protobuf:"bytes,4,opt,name=RequestId" json:"RequestId,omitempty"`
+	GroupId        *string                            `protobuf:"bytes,5,opt,name=GroupId" json:"GroupId,omitempty"`
+	PartialNumber  *int64                             `protobuf:"varint,6,opt,name=PartialNumber" json:"PartialNumber,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -523,10 +521,10 @@ func (x *TBiometryScoring) GetPartialNumber() int64 {
 
 type TBiometryClassification struct {
 	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Status        *string                                          `protobuf:"bytes,1,opt,name=Status,json=status" json:"Status,omitempty"`
-	Scores        []*TBiometryClassification_TClassificationResult `protobuf:"bytes,2,rep,name=Scores,json=scores" json:"Scores,omitempty"`
-	Simple        []*TBiometryClassification_TClassificationSimple `protobuf:"bytes,3,rep,name=Simple,json=simple" json:"Simple,omitempty"`
-	PartialNumber *int64                                           `protobuf:"varint,4,opt,name=PartialNumber,json=partial_number" json:"PartialNumber,omitempty"`
+	Status        *string                                          `protobuf:"bytes,1,opt,name=Status" json:"Status,omitempty"`
+	Scores        []*TBiometryClassification_TClassificationResult `protobuf:"bytes,2,rep,name=Scores" json:"Scores,omitempty"`
+	Simple        []*TBiometryClassification_TClassificationSimple `protobuf:"bytes,3,rep,name=Simple" json:"Simple,omitempty"`
+	PartialNumber *int64                                           `protobuf:"varint,4,opt,name=PartialNumber" json:"PartialNumber,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -591,7 +589,7 @@ func (x *TBiometryClassification) GetPartialNumber() int64 {
 
 type TFilesInput struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Files         []*TFileDescription    `protobuf:"bytes,1,rep,name=Files,json=files" json:"Files,omitempty"`
+	Files         []*TFileDescription    `protobuf:"bytes,1,rep,name=Files" json:"Files,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -635,27 +633,27 @@ func (x *TFilesInput) GetFiles() []*TFileDescription {
 
 type TEvent struct {
 	state                          protoimpl.MessageState   `protogen:"open.v1"`
-	Type                           *EEventType              `protobuf:"varint,1,opt,name=Type,json=type,enum=NAlice.EEventType" json:"Type,omitempty"`
-	HypothesisNumber               *uint32                  `protobuf:"varint,2,opt,name=HypothesisNumber,json=hypothesis_number" json:"HypothesisNumber,omitempty"`
-	EndOfUtterance                 *bool                    `protobuf:"varint,3,opt,name=EndOfUtterance,json=end_of_utterance" json:"EndOfUtterance,omitempty"`
-	AsrResult                      []*TAsrResult            `protobuf:"bytes,4,rep,name=AsrResult,json=asr_result" json:"AsrResult,omitempty"`
-	OriginalZeroAsrHypothesisIndex *uint32                  `protobuf:"varint,15,opt,name=OriginalZeroAsrHypothesisIndex,json=original_zero_asr_hypothesis_index" json:"OriginalZeroAsrHypothesisIndex,omitempty"`
-	Text                           *string                  `protobuf:"bytes,5,opt,name=Text,json=text" json:"Text,omitempty"`
-	Data                           *TImageInputData         `protobuf:"bytes,6,opt,name=Data,json=data" json:"Data,omitempty"`
-	MusicResult                    *TMusicResult            `protobuf:"bytes,7,opt,name=MusicResult,json=music_result" json:"MusicResult,omitempty"`
-	Name                           *string                  `protobuf:"bytes,9,opt,name=Name,json=name" json:"Name,omitempty"`
-	IgnoreAnswer                   *bool                    `protobuf:"varint,10,opt,name=IgnoreAnswer,json=ignore_answer" json:"IgnoreAnswer,omitempty"`
-	BiometryScoring                *TBiometryScoring        `protobuf:"bytes,11,opt,name=BiometryScoring,json=biometry_scoring" json:"BiometryScoring,omitempty"`
-	BiometryClassification         *TBiometryClassification `protobuf:"bytes,12,opt,name=BiometryClassification,json=biometry_classification" json:"BiometryClassification,omitempty"`
-	IsWarmUp                       *bool                    `protobuf:"varint,13,opt,name=IsWarmUp,json=is_warmup" json:"IsWarmUp,omitempty"`
-	AsrCoreDebug                   *string                  `protobuf:"bytes,14,opt,name=AsrCoreDebug,json=asr_core_debug" json:"AsrCoreDebug,omitempty"`
-	AsrWhisper                     *bool                    `protobuf:"varint,16,opt,name=AsrWhisper,json=asr_whisper" json:"AsrWhisper,omitempty"`
-	AsrDurationProcessedAudio      *uint64                  `protobuf:"varint,17,opt,name=AsrDurationProcessedAudio,json=asr_duration_processed_audio" json:"AsrDurationProcessedAudio,omitempty"`
-	HybridAsrPartial               *string                  `protobuf:"bytes,18,opt,name=HybridAsrPartial,json=hybrid_asr_partial" json:"HybridAsrPartial,omitempty"`
-	SaveToHistory                  *bool                    `protobuf:"varint,20,opt,name=SaveToHistory,json=save_to_history,def=1" json:"SaveToHistory,omitempty"`
-	AttachedFiles                  []*TFileDescription      `protobuf:"bytes,21,rep,name=AttachedFiles,json=attached_files" json:"AttachedFiles,omitempty"`
-	FilesInput                     *TFilesInput             `protobuf:"bytes,22,opt,name=FilesInput,json=files_input" json:"FilesInput,omitempty"`
-	PreEouInfo                     *TPreEouInfo             `protobuf:"bytes,23,opt,name=PreEouInfo,json=pre_eou_info" json:"PreEouInfo,omitempty"`
+	Type                           *EEventType              `protobuf:"varint,1,opt,name=Type,enum=NAlice.EEventType" json:"Type,omitempty"`
+	HypothesisNumber               *uint32                  `protobuf:"varint,2,opt,name=HypothesisNumber" json:"HypothesisNumber,omitempty"`
+	EndOfUtterance                 *bool                    `protobuf:"varint,3,opt,name=EndOfUtterance" json:"EndOfUtterance,omitempty"`
+	AsrResult                      []*TAsrResult            `protobuf:"bytes,4,rep,name=AsrResult" json:"AsrResult,omitempty"`
+	OriginalZeroAsrHypothesisIndex *uint32                  `protobuf:"varint,15,opt,name=OriginalZeroAsrHypothesisIndex" json:"OriginalZeroAsrHypothesisIndex,omitempty"`
+	Text                           *string                  `protobuf:"bytes,5,opt,name=Text" json:"Text,omitempty"`
+	Data                           *TImageInputData         `protobuf:"bytes,6,opt,name=Data" json:"Data,omitempty"`
+	MusicResult                    *TMusicResult            `protobuf:"bytes,7,opt,name=MusicResult" json:"MusicResult,omitempty"`
+	Name                           *string                  `protobuf:"bytes,9,opt,name=Name" json:"Name,omitempty"`
+	IgnoreAnswer                   *bool                    `protobuf:"varint,10,opt,name=IgnoreAnswer" json:"IgnoreAnswer,omitempty"`
+	BiometryScoring                *TBiometryScoring        `protobuf:"bytes,11,opt,name=BiometryScoring" json:"BiometryScoring,omitempty"`
+	BiometryClassification         *TBiometryClassification `protobuf:"bytes,12,opt,name=BiometryClassification" json:"BiometryClassification,omitempty"`
+	IsWarmUp                       *bool                    `protobuf:"varint,13,opt,name=IsWarmUp" json:"IsWarmUp,omitempty"`
+	AsrCoreDebug                   *string                  `protobuf:"bytes,14,opt,name=AsrCoreDebug" json:"AsrCoreDebug,omitempty"`
+	AsrWhisper                     *bool                    `protobuf:"varint,16,opt,name=AsrWhisper" json:"AsrWhisper,omitempty"`
+	AsrDurationProcessedAudio      *uint64                  `protobuf:"varint,17,opt,name=AsrDurationProcessedAudio" json:"AsrDurationProcessedAudio,omitempty"`
+	HybridAsrPartial               *string                  `protobuf:"bytes,18,opt,name=HybridAsrPartial" json:"HybridAsrPartial,omitempty"`
+	SaveToHistory                  *bool                    `protobuf:"varint,20,opt,name=SaveToHistory,def=1" json:"SaveToHistory,omitempty"`
+	AttachedFiles                  []*TFileDescription      `protobuf:"bytes,21,rep,name=AttachedFiles" json:"AttachedFiles,omitempty"`
+	FilesInput                     *TFilesInput             `protobuf:"bytes,22,opt,name=FilesInput" json:"FilesInput,omitempty"`
+	PreEouInfo                     *TPreEouInfo             `protobuf:"bytes,23,opt,name=PreEouInfo" json:"PreEouInfo,omitempty"`
 	// Types that are valid to be assigned to PayloadType:
 	//
 	//	*TEvent_Payload
@@ -877,11 +875,11 @@ type isTEvent_PayloadType interface {
 }
 
 type TEvent_Payload struct {
-	Payload *structpb.Struct `protobuf:"bytes,8,opt,name=Payload,json=payload,oneof"`
+	Payload *structpb.Struct `protobuf:"bytes,8,opt,name=Payload,oneof"`
 }
 
 type TEvent_PayloadRaw struct {
-	PayloadRaw []byte `protobuf:"bytes,24,opt,name=PayloadRaw,json=payload_raw,oneof"`
+	PayloadRaw []byte `protobuf:"bytes,24,opt,name=PayloadRaw,oneof"`
 }
 
 func (*TEvent_Payload) isTEvent_PayloadType() {}
@@ -890,8 +888,8 @@ func (*TEvent_PayloadRaw) isTEvent_PayloadType() {}
 
 type TAsrResult_TWord struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Value         *string                `protobuf:"bytes,1,opt,name=Value,json=value" json:"Value,omitempty"`
-	Confidence    *float64               `protobuf:"fixed64,2,opt,name=Confidence,json=confidence" json:"Confidence,omitempty"`
+	Value         *string                `protobuf:"bytes,1,opt,name=Value" json:"Value,omitempty"`
+	Confidence    *float64               `protobuf:"fixed64,2,opt,name=Confidence" json:"Confidence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -942,7 +940,7 @@ func (x *TAsrResult_TWord) GetConfidence() float64 {
 
 type TAsrResult_TAccentInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Words         []string               `protobuf:"bytes,1,rep,name=Words,json=words" json:"Words,omitempty"`
+	Words         []string               `protobuf:"bytes,1,rep,name=Words" json:"Words,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -986,10 +984,10 @@ func (x *TAsrResult_TAccentInfo) GetWords() []string {
 
 type TMusicResult_TData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Match         *structpb.Struct       `protobuf:"bytes,1,opt,name=Match,json=match" json:"Match,omitempty"`
-	RecognitionId *string                `protobuf:"bytes,3,opt,name=RecognitionId,json=recognitionId" json:"RecognitionId,omitempty"`
-	Engine        *string                `protobuf:"bytes,4,opt,name=Engine,json=engine" json:"Engine,omitempty"`
-	Url           *string                `protobuf:"bytes,5,opt,name=Url,json=url" json:"Url,omitempty"`
+	Match         *structpb.Struct       `protobuf:"bytes,1,opt,name=Match" json:"Match,omitempty"`
+	RecognitionId *string                `protobuf:"bytes,3,opt,name=RecognitionId" json:"RecognitionId,omitempty"`
+	Engine        *string                `protobuf:"bytes,4,opt,name=Engine" json:"Engine,omitempty"`
+	Url           *string                `protobuf:"bytes,5,opt,name=Url" json:"Url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1054,8 +1052,8 @@ func (x *TMusicResult_TData) GetUrl() string {
 
 type TBiometryScoring_TScore struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        *string                `protobuf:"bytes,1,opt,name=UserId,json=user_id" json:"UserId,omitempty"`
-	Score         *float64               `protobuf:"fixed64,2,opt,name=Score,json=score" json:"Score,omitempty"`
+	UserId        *string                `protobuf:"bytes,1,opt,name=UserId" json:"UserId,omitempty"`
+	Score         *float64               `protobuf:"fixed64,2,opt,name=Score" json:"Score,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1106,8 +1104,8 @@ func (x *TBiometryScoring_TScore) GetScore() float64 {
 
 type TBiometryScoring_TScoreWithMode struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Mode          *string                    `protobuf:"bytes,1,opt,name=Mode,json=mode" json:"Mode,omitempty"`
-	Scores        []*TBiometryScoring_TScore `protobuf:"bytes,2,rep,name=Scores,json=scores" json:"Scores,omitempty"`
+	Mode          *string                    `protobuf:"bytes,1,opt,name=Mode" json:"Mode,omitempty"`
+	Scores        []*TBiometryScoring_TScore `protobuf:"bytes,2,rep,name=Scores" json:"Scores,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1158,9 +1156,9 @@ func (x *TBiometryScoring_TScoreWithMode) GetScores() []*TBiometryScoring_TScore
 
 type TBiometryClassification_TClassificationResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ClassName     *string                `protobuf:"bytes,1,opt,name=ClassName,json=classname" json:"ClassName,omitempty"`
-	Confidence    *float64               `protobuf:"fixed64,2,opt,name=Confidence,json=confidence" json:"Confidence,omitempty"`
-	Tag           *string                `protobuf:"bytes,3,opt,name=Tag,json=tag" json:"Tag,omitempty"`
+	ClassName     *string                `protobuf:"bytes,1,opt,name=ClassName" json:"ClassName,omitempty"`
+	Confidence    *float64               `protobuf:"fixed64,2,opt,name=Confidence" json:"Confidence,omitempty"`
+	Tag           *string                `protobuf:"bytes,3,opt,name=Tag" json:"Tag,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1218,9 +1216,9 @@ func (x *TBiometryClassification_TClassificationResult) GetTag() string {
 
 type TBiometryClassification_TClassificationSimple struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	ClassName     *string                              `protobuf:"bytes,1,opt,name=ClassName,json=classname" json:"ClassName,omitempty"`
-	Tag           *string                              `protobuf:"bytes,2,opt,name=Tag,json=tag" json:"Tag,omitempty"`
-	Confidence    *TBiometryClassification_EConfidence `protobuf:"varint,3,opt,name=Confidence,json=confidence,enum=NAlice.TBiometryClassification_EConfidence" json:"Confidence,omitempty"`
+	ClassName     *string                              `protobuf:"bytes,1,opt,name=ClassName" json:"ClassName,omitempty"`
+	Tag           *string                              `protobuf:"bytes,2,opt,name=Tag" json:"Tag,omitempty"`
+	Confidence    *TBiometryClassification_EConfidence `protobuf:"varint,3,opt,name=Confidence,enum=NAlice.TBiometryClassification_EConfidence" json:"Confidence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1280,131 +1278,114 @@ var File_alice_megamind_protos_common_events_proto protoreflect.FileDescriptor
 
 const file_alice_megamind_protos_common_events_proto_rawDesc = "" +
 	"\n" +
-	")alice/megamind/protos/common/events.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a'alice/protos/api/files/image_crop.proto\x1a\x1cgoogle/protobuf/struct.proto\"y\n" +
-	"\x10TFileDescription\x12\x1c\n" +
-	"\x04Guid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid\x12A\n" +
-	"\tImageCrop\x18\x02 \x01(\v2\x12.NAlice.TImageCropB\x0e\xaa\xdd\x1b\n" +
-	"image_cropR\n" +
-	"image_crop:\x04\xa8\xdd\x1b\x04\"\xe8\x03\n" +
+	")alice/megamind/protos/common/events.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a'alice/protos/api/files/image_crop.proto\x1a\x1cgoogle/protobuf/struct.proto\"X\n" +
+	"\x10TFileDescription\x12\x12\n" +
+	"\x04Guid\x18\x01 \x01(\tR\x04Guid\x120\n" +
+	"\tImageCrop\x18\x02 \x01(\v2\x12.NAlice.TImageCropR\tImageCrop\"\xbe\x02\n" +
 	"\n" +
-	"TAsrResult\x129\n" +
-	"\tUtterance\x18\x01 \x01(\tB\x1b\xaa\xdd\x1b\tutterance\xa8\x8d'\x01\xa8\x8d'\x02\xf8\x91*\x03\x18\x01R\tutterance\x12.\n" +
+	"TAsrResult\x12\x1c\n" +
+	"\tUtterance\x18\x01 \x01(\tR\tUtterance\x12\x1e\n" +
 	"\n" +
-	"Confidence\x18\x02 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence\x129\n" +
-	"\x05Words\x18\x03 \x03(\v2\x18.NAlice.TAsrResult.TWordB\t\xaa\xdd\x1b\x05wordsR\x05words\x126\n" +
+	"Confidence\x18\x02 \x01(\x01R\n" +
+	"Confidence\x12.\n" +
+	"\x05Words\x18\x03 \x03(\v2\x18.NAlice.TAsrResult.TWordR\x05Words\x12\x1e\n" +
 	"\n" +
-	"Normalized\x18\x04 \x01(\tB\x16\xaa\xdd\x1b\n" +
-	"normalized\xa8\x8d'\x01\xa8\x8d'\x02R\n" +
-	"normalized\x12P\n" +
+	"Normalized\x18\x04 \x01(\tR\n" +
+	"Normalized\x12>\n" +
 	"\n" +
-	"AccentInfo\x18\x05 \x01(\v2\x1e.NAlice.TAsrResult.TAccentInfoB\x0f\xaa\xdd\x1b\vaccent_infoR\vaccent_info\x1af\n" +
-	"\x05TWord\x12'\n" +
-	"\x05Value\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\x05value\xa8\x8d'\x01\xa8\x8d'\x02R\x05value\x12.\n" +
+	"AccentInfo\x18\x05 \x01(\v2\x1e.NAlice.TAsrResult.TAccentInfoR\n" +
+	"AccentInfo\x1a=\n" +
+	"\x05TWord\x12\x14\n" +
+	"\x05Value\x18\x01 \x01(\tR\x05Value\x12\x1e\n" +
 	"\n" +
-	"Confidence\x18\x02 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence:\x04\xa8\xdd\x1b\x04\x1a<\n" +
-	"\vTAccentInfo\x12'\n" +
-	"\x05Words\x18\x01 \x03(\tB\x11\xaa\xdd\x1b\x05words\xa8\x8d'\x01\xa8\x8d'\x02R\x05words:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"C\n" +
-	"\vTPreEouInfo\x12.\n" +
+	"Confidence\x18\x02 \x01(\x01R\n" +
+	"Confidence\x1a#\n" +
+	"\vTAccentInfo\x12\x14\n" +
+	"\x05Words\x18\x01 \x03(\tR\x05Words\"-\n" +
+	"\vTPreEouInfo\x12\x1e\n" +
 	"\n" +
-	"Confidence\x18\x01 \x01(\x02B\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence:\x04\xa8\xdd\x1b\x04\"E\n" +
-	"\x0fTImageInputData\x12,\n" +
-	"\x06ImgUrl\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\aimg_url\xa8\x8d'\x01\xa8\x8d'\x02R\aimg_url:\x04\xa8\xdd\x1b\x04\"\xee\x02\n" +
-	"\fTMusicResult\x128\n" +
-	"\x04Data\x18\x01 \x01(\v2\x1a.NAlice.TMusicResult.TDataB\b\xaa\xdd\x1b\x04dataR\x04data\x12\"\n" +
-	"\x06Result\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06resultR\x06result\x12-\n" +
-	"\tErrorText\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"error_textR\n" +
-	"error_text\x1a\xca\x01\n" +
-	"\x05TData\x12<\n" +
-	"\x05Match\x18\x01 \x01(\v2\x17.google.protobuf.StructB\r\xa0\xdd\x1b\x05\xaa\xdd\x1b\x05matchR\x05match\x128\n" +
-	"\rRecognitionId\x18\x03 \x01(\tB\x12\xaa\xdd\x1b\x0erecognition_idR\rrecognitionId\x12\"\n" +
-	"\x06Engine\x18\x04 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06engineR\x06engine\x12\x19\n" +
-	"\x03Url\x18\x05 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03:\x04\xa8\xdd\x1b\x04\"\xcf\x04\n" +
-	"\x10TBiometryScoring\x12C\n" +
-	"\x06Scores\x18\x01 \x03(\v2\x1f.NAlice.TBiometryScoring.TScoreB\n" +
-	"\xaa\xdd\x1b\x06scoresR\x06scores\x12g\n" +
-	"\x0eScoresWithMode\x18\x02 \x03(\v2'.NAlice.TBiometryScoring.TScoreWithModeB\x14\xaa\xdd\x1b\x10scores_with_modeR\x10scores_with_mode\x12\"\n" +
-	"\x06Status\x18\x03 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12-\n" +
-	"\tRequestId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12'\n" +
-	"\aGroupId\x18\x05 \x01(\tB\f\xaa\xdd\x1b\bgroup_idR\bgroup_id\x129\n" +
-	"\rPartialNumber\x18\x06 \x01(\x03B\x12\xaa\xdd\x1b\x0epartial_numberR\x0epartial_number\x1aU\n" +
-	"\x06TScore\x12$\n" +
-	"\x06UserId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_id\x12\x1f\n" +
-	"\x05Score\x18\x02 \x01(\x01B\t\xaa\xdd\x1b\x05scoreR\x05score:\x04\xa8\xdd\x1b\x04\x1ay\n" +
-	"\x0eTScoreWithMode\x12\x1c\n" +
-	"\x04Mode\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04modeR\x04mode\x12C\n" +
-	"\x06Scores\x18\x02 \x03(\v2\x1f.NAlice.TBiometryScoring.TScoreB\n" +
-	"\xaa\xdd\x1b\x06scoresR\x06scores:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\xb3\x05\n" +
-	"\x17TBiometryClassification\x12\"\n" +
-	"\x06Status\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12Y\n" +
-	"\x06Scores\x18\x02 \x03(\v25.NAlice.TBiometryClassification.TClassificationResultB\n" +
-	"\xaa\xdd\x1b\x06scoresR\x06scores\x12Y\n" +
-	"\x06Simple\x18\x03 \x03(\v25.NAlice.TBiometryClassification.TClassificationSimpleB\n" +
-	"\xaa\xdd\x1b\x06simpleR\x06simple\x129\n" +
-	"\rPartialNumber\x18\x04 \x01(\x03B\x12\xaa\xdd\x1b\x0epartial_numberR\x0epartial_number\x1a\x95\x01\n" +
-	"\x15TClassificationResult\x12+\n" +
-	"\tClassName\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tclassnameR\tclassname\x12.\n" +
+	"Confidence\x18\x01 \x01(\x02R\n" +
+	"Confidence\")\n" +
+	"\x0fTImageInputData\x12\x16\n" +
+	"\x06ImgUrl\x18\x01 \x01(\tR\x06ImgUrl\"\x83\x02\n" +
+	"\fTMusicResult\x12.\n" +
+	"\x04Data\x18\x01 \x01(\v2\x1a.NAlice.TMusicResult.TDataR\x04Data\x12\x16\n" +
+	"\x06Result\x18\x02 \x01(\tR\x06Result\x12\x1c\n" +
+	"\tErrorText\x18\x03 \x01(\tR\tErrorText\x1a\x8c\x01\n" +
+	"\x05TData\x12-\n" +
+	"\x05Match\x18\x01 \x01(\v2\x17.google.protobuf.StructR\x05Match\x12$\n" +
+	"\rRecognitionId\x18\x03 \x01(\tR\rRecognitionId\x12\x16\n" +
+	"\x06Engine\x18\x04 \x01(\tR\x06Engine\x12\x10\n" +
+	"\x03Url\x18\x05 \x01(\tR\x03UrlJ\x04\b\x02\x10\x03\"\xa9\x03\n" +
+	"\x10TBiometryScoring\x127\n" +
+	"\x06Scores\x18\x01 \x03(\v2\x1f.NAlice.TBiometryScoring.TScoreR\x06Scores\x12O\n" +
+	"\x0eScoresWithMode\x18\x02 \x03(\v2'.NAlice.TBiometryScoring.TScoreWithModeR\x0eScoresWithMode\x12\x16\n" +
+	"\x06Status\x18\x03 \x01(\tR\x06Status\x12\x1c\n" +
+	"\tRequestId\x18\x04 \x01(\tR\tRequestId\x12\x18\n" +
+	"\aGroupId\x18\x05 \x01(\tR\aGroupId\x12$\n" +
+	"\rPartialNumber\x18\x06 \x01(\x03R\rPartialNumber\x1a6\n" +
+	"\x06TScore\x12\x16\n" +
+	"\x06UserId\x18\x01 \x01(\tR\x06UserId\x12\x14\n" +
+	"\x05Score\x18\x02 \x01(\x01R\x05Score\x1a]\n" +
+	"\x0eTScoreWithMode\x12\x12\n" +
+	"\x04Mode\x18\x01 \x01(\tR\x04Mode\x127\n" +
+	"\x06Scores\x18\x02 \x03(\v2\x1f.NAlice.TBiometryScoring.TScoreR\x06Scores\"\x97\x04\n" +
+	"\x17TBiometryClassification\x12\x16\n" +
+	"\x06Status\x18\x01 \x01(\tR\x06Status\x12M\n" +
+	"\x06Scores\x18\x02 \x03(\v25.NAlice.TBiometryClassification.TClassificationResultR\x06Scores\x12M\n" +
+	"\x06Simple\x18\x03 \x03(\v25.NAlice.TBiometryClassification.TClassificationSimpleR\x06Simple\x12$\n" +
+	"\rPartialNumber\x18\x04 \x01(\x03R\rPartialNumber\x1ag\n" +
+	"\x15TClassificationResult\x12\x1c\n" +
+	"\tClassName\x18\x01 \x01(\tR\tClassName\x12\x1e\n" +
 	"\n" +
-	"Confidence\x18\x02 \x01(\x01B\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence\x12\x19\n" +
-	"\x03Tag\x18\x03 \x01(\tB\a\xaa\xdd\x1b\x03tagR\x03tag:\x04\xa8\xdd\x1b\x04\x1a\xc2\x01\n" +
-	"\x15TClassificationSimple\x12+\n" +
-	"\tClassName\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tclassnameR\tclassname\x12\x19\n" +
-	"\x03Tag\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03tagR\x03tag\x12[\n" +
+	"Confidence\x18\x02 \x01(\x01R\n" +
+	"Confidence\x12\x10\n" +
+	"\x03Tag\x18\x03 \x01(\tR\x03Tag\x1a\x94\x01\n" +
+	"\x15TClassificationSimple\x12\x1c\n" +
+	"\tClassName\x18\x01 \x01(\tR\tClassName\x12\x10\n" +
+	"\x03Tag\x18\x02 \x01(\tR\x03Tag\x12K\n" +
 	"\n" +
-	"Confidence\x18\x03 \x01(\x0e2+.NAlice.TBiometryClassification.EConfidenceB\x0e\xaa\xdd\x1b\n" +
-	"confidenceR\n" +
-	"confidence:\x04\xa8\xdd\x1b\x04\" \n" +
+	"Confidence\x18\x03 \x01(\x0e2+.NAlice.TBiometryClassification.EConfidenceR\n" +
+	"Confidence\" \n" +
 	"\vEConfidence\x12\a\n" +
 	"\x03low\x10\x00\x12\b\n" +
-	"\x04high\x10\x01:\x04\xa8\xdd\x1b\x04\"N\n" +
-	"\vTFilesInput\x129\n" +
-	"\x05Files\x18\x01 \x03(\v2\x18.NAlice.TFileDescriptionB\t\xaa\xdd\x1b\x05filesR\x05files:\x04\xa8\xdd\x1b\x04\"\xd3\f\n" +
-	"\x06TEvent\x120\n" +
-	"\x04Type\x18\x01 \x01(\x0e2\x12.NAlice.EEventTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12B\n" +
-	"\x10HypothesisNumber\x18\x02 \x01(\rB\x15\xaa\xdd\x1b\x11hypothesis_numberR\x11hypothesis_number\x12>\n" +
-	"\x0eEndOfUtterance\x18\x03 \x01(\bB\x14\xaa\xdd\x1b\x10end_of_utteranceR\x10end_of_utterance\x12A\n" +
-	"\tAsrResult\x18\x04 \x03(\v2\x12.NAlice.TAsrResultB\x0e\xaa\xdd\x1b\n" +
-	"asr_resultR\n" +
-	"asr_result\x12r\n" +
-	"\x1eOriginalZeroAsrHypothesisIndex\x18\x0f \x01(\rB&\xaa\xdd\x1b\"original_zero_asr_hypothesis_indexR\"original_zero_asr_hypothesis_index\x12$\n" +
-	"\x04Text\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\x04text\xa8\x8d'\x01\xa8\x8d'\x02R\x04text\x125\n" +
-	"\x04Data\x18\x06 \x01(\v2\x17.NAlice.TImageInputDataB\b\xaa\xdd\x1b\x04dataR\x04data\x12I\n" +
-	"\vMusicResult\x18\a \x01(\v2\x14.NAlice.TMusicResultB\x10\xaa\xdd\x1b\fmusic_resultR\fmusic_result\x12\x1c\n" +
-	"\x04Name\x18\t \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x126\n" +
+	"\x04high\x10\x01\"=\n" +
+	"\vTFilesInput\x12.\n" +
+	"\x05Files\x18\x01 \x03(\v2\x18.NAlice.TFileDescriptionR\x05Files\"\xd2\b\n" +
+	"\x06TEvent\x12&\n" +
+	"\x04Type\x18\x01 \x01(\x0e2\x12.NAlice.EEventTypeR\x04Type\x12*\n" +
+	"\x10HypothesisNumber\x18\x02 \x01(\rR\x10HypothesisNumber\x12&\n" +
+	"\x0eEndOfUtterance\x18\x03 \x01(\bR\x0eEndOfUtterance\x120\n" +
+	"\tAsrResult\x18\x04 \x03(\v2\x12.NAlice.TAsrResultR\tAsrResult\x12F\n" +
+	"\x1eOriginalZeroAsrHypothesisIndex\x18\x0f \x01(\rR\x1eOriginalZeroAsrHypothesisIndex\x12\x12\n" +
+	"\x04Text\x18\x05 \x01(\tR\x04Text\x12+\n" +
+	"\x04Data\x18\x06 \x01(\v2\x17.NAlice.TImageInputDataR\x04Data\x126\n" +
+	"\vMusicResult\x18\a \x01(\v2\x14.NAlice.TMusicResultR\vMusicResult\x12\x12\n" +
+	"\x04Name\x18\t \x01(\tR\x04Name\x12\"\n" +
 	"\fIgnoreAnswer\x18\n" +
-	" \x01(\bB\x11\xaa\xdd\x1b\rignore_answerR\rignore_answer\x12Y\n" +
-	"\x0fBiometryScoring\x18\v \x01(\v2\x18.NAlice.TBiometryScoringB\x14\xaa\xdd\x1b\x10biometry_scoringR\x10biometry_scoring\x12u\n" +
-	"\x16BiometryClassification\x18\f \x01(\v2\x1f.NAlice.TBiometryClassificationB\x1b\xaa\xdd\x1b\x17biometry_classificationR\x17biometry_classification\x12*\n" +
-	"\bIsWarmUp\x18\r \x01(\bB\r\xaa\xdd\x1b\tis_warmupR\tis_warmup\x12D\n" +
-	"\fAsrCoreDebug\x18\x0e \x01(\tB\x1e\xaa\xdd\x1b\x0easr_core_debug\xa8\x8d'\x01\xa8\x8d'\x02\xf8\x91*\x03R\x0easr_core_debug\x120\n" +
+	" \x01(\bR\fIgnoreAnswer\x12B\n" +
+	"\x0fBiometryScoring\x18\v \x01(\v2\x18.NAlice.TBiometryScoringR\x0fBiometryScoring\x12W\n" +
+	"\x16BiometryClassification\x18\f \x01(\v2\x1f.NAlice.TBiometryClassificationR\x16BiometryClassification\x12\x1a\n" +
+	"\bIsWarmUp\x18\r \x01(\bR\bIsWarmUp\x12\"\n" +
+	"\fAsrCoreDebug\x18\x0e \x01(\tR\fAsrCoreDebug\x12\x1e\n" +
 	"\n" +
-	"AsrWhisper\x18\x10 \x01(\bB\x0f\xaa\xdd\x1b\vasr_whisperR\vasr_whisper\x12a\n" +
-	"\x19AsrDurationProcessedAudio\x18\x11 \x01(\x04B \xaa\xdd\x1b\x1casr_duration_processed_audioR\x1casr_duration_processed_audio\x12D\n" +
-	"\x10HybridAsrPartial\x18\x12 \x01(\tB\x16\xaa\xdd\x1b\x12hybrid_asr_partialR\x12hybrid_asr_partial\x12A\n" +
-	"\rSaveToHistory\x18\x14 \x01(\b:\x04trueB\x13\xaa\xdd\x1b\x0fsave_to_historyR\x0fsave_to_history\x12S\n" +
-	"\rAttachedFiles\x18\x15 \x03(\v2\x18.NAlice.TFileDescriptionB\x12\xaa\xdd\x1b\x0eattached_filesR\x0eattached_files\x12E\n" +
+	"AsrWhisper\x18\x10 \x01(\bR\n" +
+	"AsrWhisper\x12<\n" +
+	"\x19AsrDurationProcessedAudio\x18\x11 \x01(\x04R\x19AsrDurationProcessedAudio\x12*\n" +
+	"\x10HybridAsrPartial\x18\x12 \x01(\tR\x10HybridAsrPartial\x12*\n" +
+	"\rSaveToHistory\x18\x14 \x01(\b:\x04trueR\rSaveToHistory\x12>\n" +
+	"\rAttachedFiles\x18\x15 \x03(\v2\x18.NAlice.TFileDescriptionR\rAttachedFiles\x123\n" +
 	"\n" +
-	"FilesInput\x18\x16 \x01(\v2\x13.NAlice.TFilesInputB\x0f\xaa\xdd\x1b\vfiles_inputR\vfiles_input\x12G\n" +
+	"FilesInput\x18\x16 \x01(\v2\x13.NAlice.TFilesInputR\n" +
+	"FilesInput\x123\n" +
 	"\n" +
-	"PreEouInfo\x18\x17 \x01(\v2\x13.NAlice.TPreEouInfoB\x10\xaa\xdd\x1b\fpre_eou_infoR\fpre_eou_info\x12D\n" +
-	"\aPayload\x18\b \x01(\v2\x17.google.protobuf.StructB\x0f\xa0\xdd\x1b\x05\xaa\xdd\x1b\apayloadH\x00R\apayload\x126\n" +
+	"PreEouInfo\x18\x17 \x01(\v2\x13.NAlice.TPreEouInfoR\n" +
+	"PreEouInfo\x123\n" +
+	"\aPayload\x18\b \x01(\v2\x17.google.protobuf.StructH\x00R\aPayload\x12 \n" +
 	"\n" +
-	"PayloadRaw\x18\x18 \x01(\fB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\vpayload_rawH\x00R\vpayload_raw:\x04\xa8\xdd\x1b\x04B\x13\n" +
-	"\vPayloadType\x12\x04\xa0\xdd\x1b\f*\xb8\x01\n" +
+	"PayloadRaw\x18\x18 \x01(\fH\x00R\n" +
+	"PayloadRawB\r\n" +
+	"\vPayloadType*\xb8\x01\n" +
 	"\n" +
 	"EEventType\x12\x0f\n" +
 	"\vvoice_input\x10\x01\x12\x0e\n" +
@@ -1417,8 +1398,9 @@ const file_alice_megamind_protos_common_events_proto_rawDesc = "" +
 	"\x19hybrid_asr_partial_result\x10\a\x12\x0e\n" +
 	"\n" +
 	"file_input\x10\b\x12\x10\n" +
-	"\fspeech_input\x10\tB_\n" +
-	"&ru.yandex.alice.megamind.protos.commonB\x06EventsZ-a.yandex-team.ru/alice/megamind/protos/common"
+	"\fspeech_input\x10\tB\x9f\x01\n" +
+	"\n" +
+	"com.NAliceB\vEventsProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAlice"
 
 var (
 	file_alice_megamind_protos_common_events_proto_rawDescOnce sync.Once

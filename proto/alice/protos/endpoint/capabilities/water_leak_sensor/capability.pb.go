@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/water_leak_sensor/capability.proto
 
-package waterleaksensorpb
+package water_leak_sensor
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -28,9 +28,9 @@ const (
 
 type TWaterLeakSensorCapability struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TWaterLeakSensorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TWaterLeakSensorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TWaterLeakSensorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TWaterLeakSensorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,7 +124,7 @@ func (*TWaterLeakSensorCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TWaterLeakSensorCapability_TState struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,json=last_event,proto3" json:"LastEvent,omitempty"`
+	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,proto3" json:"LastEvent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -168,7 +168,7 @@ func (x *TWaterLeakSensorCapability_TState) GetLastEvent() *events.TTypedCapabil
 
 type TWaterLeakSensorCapability_TResetLeakDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -212,7 +212,7 @@ func (x *TWaterLeakSensorCapability_TResetLeakDirective) GetName() string {
 
 type TWaterLeakSensorCapability_TTriggerLeakDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	SourceName    *string                `protobuf:"bytes,1,opt,name=SourceName,json=source_name,proto3,oneof" json:"SourceName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -336,7 +336,7 @@ func (*TWaterLeakSensorCapability_TWaterLeakSensorDryEvent) Descriptor() ([]byte
 
 type TWaterLeakSensorCapability_TCondition struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -382,33 +382,30 @@ var File_alice_protos_endpoint_capabilities_water_leak_sensor_capability_proto p
 
 const file_alice_protos_endpoint_capabilities_water_leak_sensor_capability_proto_rawDesc = "" +
 	"\n" +
-	"Ealice/protos/endpoint/capabilities/water_leak_sensor/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa0\x06\n" +
-	"\x1aTWaterLeakSensorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12^\n" +
+	"Ealice/protos/endpoint/capabilities/water_leak_sensor/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x04\n" +
+	"\x1aTWaterLeakSensorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12N\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2..NAlice.TWaterLeakSensorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12J\n" +
-	"\x05State\x18\x03 \x01(\v2).NAlice.TWaterLeakSensorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\\\n" +
-	"\x06TState\x12L\n" +
-	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventB\x0e\xaa\xdd\x1b\n" +
-	"last_eventR\n" +
-	"last_event:\x04\xa8\xdd\x1b\x04\x1aW\n" +
-	"\x13TResetLeakDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14reset_leak_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc2\x04\x1a\xa1\x01\n" +
-	"\x15TTriggerLeakDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
+	"Parameters\x18\x02 \x01(\v2..NAlice.TWaterLeakSensorCapability.TParametersR\n" +
+	"Parameters\x12?\n" +
+	"\x05State\x18\x03 \x01(\v2).NAlice.TWaterLeakSensorCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aE\n" +
+	"\x06TState\x12;\n" +
+	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventR\tLastEvent\x1a*\n" +
+	"\x13TResetLeakDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1ar\n" +
+	"\x15TTriggerLeakDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x125\n" +
 	"\n" +
-	"SourceName\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vsource_nameH\x00R\vsource_name\x88\x01\x01:#\x92\x82\x19\x16trigger_leak_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xc8\x04B\r\n" +
-	"\v_SourceName\x1a%\n" +
-	"\x19TWaterLeakSensorLeakEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\b\x1a$\n" +
-	"\x18TWaterLeakSensorDryEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\t\x1aV\n" +
+	"SourceName\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vsource_nameH\x00R\vsource_name\x88\x01\x01B\r\n" +
+	"\v_SourceName\x1a\x1b\n" +
+	"\x19TWaterLeakSensorLeakEvent\x1a\x1a\n" +
+	"\x18TWaterLeakSensorDryEvent\x1aD\n" +
 	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x0eB\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14WaterLeakSensorProtoZWa.yandex-team.ru/alice/protos/endpoint/capabilities/water_leak_sensor;waterleaksensorpbb\x06proto3"
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06EventsB\xbb\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/water_leak_sensor\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_water_leak_sensor_capability_proto_rawDescOnce sync.Once

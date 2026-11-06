@@ -24,7 +24,7 @@ const (
 
 type TEventException struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Error         *TEventException_TError `protobuf:"bytes,1,opt,name=Error,json=error,proto3" json:"Error,omitempty"`
+	Error         *TEventException_TError `protobuf:"bytes,1,opt,name=Error,proto3" json:"Error,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -68,7 +68,7 @@ func (x *TEventException) GetError() *TEventException_TError {
 
 type TEventException_TError struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ErrorMessage  string                 `protobuf:"bytes,1,opt,name=ErrorMessage,json=message,proto3" json:"ErrorMessage,omitempty"`
+	ErrorMessage  string                 `protobuf:"bytes,1,opt,name=ErrorMessage,proto3" json:"ErrorMessage,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -114,12 +114,12 @@ var File_alice_protos_api_alicekit_events_event_exception_event_exception_proto 
 
 const file_alice_protos_api_alicekit_events_event_exception_event_exception_proto_rawDesc = "" +
 	"\n" +
-	"Falice/protos/api/alicekit/events/event_exception/event_exception.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x01\n" +
-	"\x0fTEventException\x12I\n" +
-	"\x05Error\x18\x01 \x01(\v2(.NAlice.NAliceApi.TEventException.TErrorB\t\xaa\xdd\x1b\x05errorR\x05error\x1a:\n" +
-	"\x06TError\x12*\n" +
-	"\fErrorMessage\x18\x01 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x91\x01\n" +
-	":ru.yandex.alice.protos.api.alicekit.events.event_exceptionB\x0eEventExceptionP\x01ZAa.yandex-team.ru/alice/protos/api/alicekit/events/event_exceptionb\x06proto3"
+	"Falice/protos/api/alicekit/events/event_exception/event_exception.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x7f\n" +
+	"\x0fTEventException\x12>\n" +
+	"\x05Error\x18\x01 \x01(\v2(.NAlice.NAliceApi.TEventException.TErrorR\x05Error\x1a,\n" +
+	"\x06TError\x12\"\n" +
+	"\fErrorMessage\x18\x01 \x01(\tR\fErrorMessageB\xee\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13EventExceptionProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/event_exception\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_event_exception_event_exception_proto_rawDescOnce sync.Once

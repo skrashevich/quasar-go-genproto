@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: smart_devices/libs/zigbee/model/proto/device.proto
 
-package zigbeemodelpb
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -91,14 +91,14 @@ func (x *ZigbeeDevice) GetLastSeenChannel() uint32 {
 }
 
 type ZigbeeDevice_DeviceInfo struct {
-	state              protoimpl.MessageState            `protogen:"open.v1"`
-	Endpoints          map[uint32]*ZigbeeDevice_Endpoint `protobuf:"bytes,6,rep,name=endpoints,proto3" json:"endpoints,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ApplicationVersion *uint32                           `protobuf:"varint,1,opt,name=application_version,json=applicationVersion,proto3,oneof" json:"application_version,omitempty"`
-	StackVersion       *uint32                           `protobuf:"varint,2,opt,name=stack_version,json=stackVersion,proto3,oneof" json:"stack_version,omitempty"`
-	HwVersion          *uint32                           `protobuf:"varint,3,opt,name=hw_version,json=hwVersion,proto3,oneof" json:"hw_version,omitempty"`
-	ManufacturerName   *string                           `protobuf:"bytes,4,opt,name=manufacturer_name,json=manufacturerName,proto3,oneof" json:"manufacturer_name,omitempty"`
-	ModelIdentifier    *string                           `protobuf:"bytes,5,opt,name=model_identifier,json=modelIdentifier,proto3,oneof" json:"model_identifier,omitempty"`
-	SerialNumber       *string                           `protobuf:"bytes,7,opt,name=serial_number,json=serialNumber,proto3,oneof" json:"serial_number,omitempty"`
+	state              protoimpl.MessageState                    `protogen:"open.v1"`
+	Endpoints          []*ZigbeeDevice_DeviceInfo_EndpointsEntry `protobuf:"bytes,6,rep,name=endpoints,proto3" json:"endpoints,omitempty"`
+	ApplicationVersion *uint32                                   `protobuf:"varint,1,opt,name=application_version,json=applicationVersion,proto3,oneof" json:"application_version,omitempty"`
+	StackVersion       *uint32                                   `protobuf:"varint,2,opt,name=stack_version,json=stackVersion,proto3,oneof" json:"stack_version,omitempty"`
+	HwVersion          *uint32                                   `protobuf:"varint,3,opt,name=hw_version,json=hwVersion,proto3,oneof" json:"hw_version,omitempty"`
+	ManufacturerName   *string                                   `protobuf:"bytes,4,opt,name=manufacturer_name,json=manufacturerName,proto3,oneof" json:"manufacturer_name,omitempty"`
+	ModelIdentifier    *string                                   `protobuf:"bytes,5,opt,name=model_identifier,json=modelIdentifier,proto3,oneof" json:"model_identifier,omitempty"`
+	SerialNumber       *string                                   `protobuf:"bytes,7,opt,name=serial_number,json=serialNumber,proto3,oneof" json:"serial_number,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -133,7 +133,7 @@ func (*ZigbeeDevice_DeviceInfo) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 0}
 }
 
-func (x *ZigbeeDevice_DeviceInfo) GetEndpoints() map[uint32]*ZigbeeDevice_Endpoint {
+func (x *ZigbeeDevice_DeviceInfo) GetEndpoints() []*ZigbeeDevice_DeviceInfo_EndpointsEntry {
 	if x != nil {
 		return x.Endpoints
 	}
@@ -183,8 +183,8 @@ func (x *ZigbeeDevice_DeviceInfo) GetSerialNumber() string {
 }
 
 type ZigbeeDevice_Endpoint struct {
-	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Clusters      map[uint32]*ZigbeeDevice_Cluster `protobuf:"bytes,1,rep,name=clusters,proto3" json:"clusters,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Clusters      []*ZigbeeDevice_Endpoint_ClustersEntry `protobuf:"bytes,1,rep,name=clusters,proto3" json:"clusters,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (*ZigbeeDevice_Endpoint) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *ZigbeeDevice_Endpoint) GetClusters() map[uint32]*ZigbeeDevice_Cluster {
+func (x *ZigbeeDevice_Endpoint) GetClusters() []*ZigbeeDevice_Endpoint_ClustersEntry {
 	if x != nil {
 		return x.Clusters
 	}
@@ -279,10 +279,9 @@ func (x *ZigbeeDevice_Attribute) GetManufacturerCode() uint32 {
 }
 
 type ZigbeeDevice_Cluster struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in smart_devices/libs/zigbee/model/proto/device.proto.
-	LegacyAttributes map[uint32][]byte                  `protobuf:"bytes,1,rep,name=LegacyAttributes,proto3" json:"LegacyAttributes,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Attributes       map[uint32]*ZigbeeDevice_Attribute `protobuf:"bytes,2,rep,name=Attributes,proto3" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state            protoimpl.MessageState                        `protogen:"open.v1"`
+	LegacyAttributes []*ZigbeeDevice_Cluster_LegacyAttributesEntry `protobuf:"bytes,1,rep,name=LegacyAttributes,proto3" json:"LegacyAttributes,omitempty"`
+	Attributes       []*ZigbeeDevice_Cluster_AttributesEntry       `protobuf:"bytes,2,rep,name=Attributes,proto3" json:"Attributes,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -317,15 +316,14 @@ func (*ZigbeeDevice_Cluster) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 3}
 }
 
-// Deprecated: Marked as deprecated in smart_devices/libs/zigbee/model/proto/device.proto.
-func (x *ZigbeeDevice_Cluster) GetLegacyAttributes() map[uint32][]byte {
+func (x *ZigbeeDevice_Cluster) GetLegacyAttributes() []*ZigbeeDevice_Cluster_LegacyAttributesEntry {
 	if x != nil {
 		return x.LegacyAttributes
 	}
 	return nil
 }
 
-func (x *ZigbeeDevice_Cluster) GetAttributes() map[uint32]*ZigbeeDevice_Attribute {
+func (x *ZigbeeDevice_Cluster) GetAttributes() []*ZigbeeDevice_Cluster_AttributesEntry {
 	if x != nil {
 		return x.Attributes
 	}
@@ -333,10 +331,10 @@ func (x *ZigbeeDevice_Cluster) GetAttributes() map[uint32]*ZigbeeDevice_Attribut
 }
 
 type ZigbeeDevice_DeviceConfig struct {
-	state                protoimpl.MessageState `protogen:"open.v1"`
-	RemovedEndpoints     []uint32               `protobuf:"varint,1,rep,packed,name=removed_endpoints,json=removedEndpoints,proto3" json:"removed_endpoints,omitempty"`
-	EndpointFingerprints map[uint32][]byte      `protobuf:"bytes,2,rep,name=endpoint_fingerprints,json=endpointFingerprints,proto3" json:"endpoint_fingerprints,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	PassiveTimeoutSec    *uint32                `protobuf:"varint,3,opt,name=PassiveTimeoutSec,proto3,oneof" json:"PassiveTimeoutSec,omitempty"`
+	state                protoimpl.MessageState                                 `protogen:"open.v1"`
+	RemovedEndpoints     []uint32                                               `protobuf:"varint,1,rep,packed,name=removed_endpoints,json=removedEndpoints,proto3" json:"removed_endpoints,omitempty"`
+	EndpointFingerprints []*ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry `protobuf:"bytes,2,rep,name=endpoint_fingerprints,json=endpointFingerprints,proto3" json:"endpoint_fingerprints,omitempty"`
+	PassiveTimeoutSec    *uint32                                                `protobuf:"varint,3,opt,name=PassiveTimeoutSec,proto3,oneof" json:"PassiveTimeoutSec,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -378,7 +376,7 @@ func (x *ZigbeeDevice_DeviceConfig) GetRemovedEndpoints() []uint32 {
 	return nil
 }
 
-func (x *ZigbeeDevice_DeviceConfig) GetEndpointFingerprints() map[uint32][]byte {
+func (x *ZigbeeDevice_DeviceConfig) GetEndpointFingerprints() []*ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry {
 	if x != nil {
 		return x.EndpointFingerprints
 	}
@@ -392,16 +390,276 @@ func (x *ZigbeeDevice_DeviceConfig) GetPassiveTimeoutSec() uint32 {
 	return 0
 }
 
+type ZigbeeDevice_DeviceInfo_EndpointsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *ZigbeeDevice_Endpoint `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZigbeeDevice_DeviceInfo_EndpointsEntry) Reset() {
+	*x = ZigbeeDevice_DeviceInfo_EndpointsEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZigbeeDevice_DeviceInfo_EndpointsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZigbeeDevice_DeviceInfo_EndpointsEntry) ProtoMessage() {}
+
+func (x *ZigbeeDevice_DeviceInfo_EndpointsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZigbeeDevice_DeviceInfo_EndpointsEntry.ProtoReflect.Descriptor instead.
+func (*ZigbeeDevice_DeviceInfo_EndpointsEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 0, 0}
+}
+
+func (x *ZigbeeDevice_DeviceInfo_EndpointsEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *ZigbeeDevice_DeviceInfo_EndpointsEntry) GetValue() *ZigbeeDevice_Endpoint {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type ZigbeeDevice_Endpoint_ClustersEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *ZigbeeDevice_Cluster  `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZigbeeDevice_Endpoint_ClustersEntry) Reset() {
+	*x = ZigbeeDevice_Endpoint_ClustersEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZigbeeDevice_Endpoint_ClustersEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZigbeeDevice_Endpoint_ClustersEntry) ProtoMessage() {}
+
+func (x *ZigbeeDevice_Endpoint_ClustersEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZigbeeDevice_Endpoint_ClustersEntry.ProtoReflect.Descriptor instead.
+func (*ZigbeeDevice_Endpoint_ClustersEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 1, 0}
+}
+
+func (x *ZigbeeDevice_Endpoint_ClustersEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *ZigbeeDevice_Endpoint_ClustersEntry) GetValue() *ZigbeeDevice_Cluster {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type ZigbeeDevice_Cluster_LegacyAttributesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         []byte                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZigbeeDevice_Cluster_LegacyAttributesEntry) Reset() {
+	*x = ZigbeeDevice_Cluster_LegacyAttributesEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZigbeeDevice_Cluster_LegacyAttributesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZigbeeDevice_Cluster_LegacyAttributesEntry) ProtoMessage() {}
+
+func (x *ZigbeeDevice_Cluster_LegacyAttributesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZigbeeDevice_Cluster_LegacyAttributesEntry.ProtoReflect.Descriptor instead.
+func (*ZigbeeDevice_Cluster_LegacyAttributesEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 3, 0}
+}
+
+func (x *ZigbeeDevice_Cluster_LegacyAttributesEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *ZigbeeDevice_Cluster_LegacyAttributesEntry) GetValue() []byte {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type ZigbeeDevice_Cluster_AttributesEntry struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Key           uint32                  `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *ZigbeeDevice_Attribute `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZigbeeDevice_Cluster_AttributesEntry) Reset() {
+	*x = ZigbeeDevice_Cluster_AttributesEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZigbeeDevice_Cluster_AttributesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZigbeeDevice_Cluster_AttributesEntry) ProtoMessage() {}
+
+func (x *ZigbeeDevice_Cluster_AttributesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZigbeeDevice_Cluster_AttributesEntry.ProtoReflect.Descriptor instead.
+func (*ZigbeeDevice_Cluster_AttributesEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 3, 1}
+}
+
+func (x *ZigbeeDevice_Cluster_AttributesEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *ZigbeeDevice_Cluster_AttributesEntry) GetValue() *ZigbeeDevice_Attribute {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           uint32                 `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         []byte                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) Reset() {
+	*x = ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry{}
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) ProtoMessage() {}
+
+func (x *ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry.ProtoReflect.Descriptor instead.
+func (*ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP(), []int{0, 4, 0}
+}
+
+func (x *ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry) GetValue() []byte {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_smart_devices_libs_zigbee_model_proto_device_proto protoreflect.FileDescriptor
 
 const file_smart_devices_libs_zigbee_model_proto_device_proto_rawDesc = "" +
 	"\n" +
-	"2smart_devices/libs/zigbee/model/proto/device.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd7\r\n" +
+	"2smart_devices/libs/zigbee/model/proto/device.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xbf\r\n" +
 	"\fZigbeeDevice\x122\n" +
 	"\x04info\x18\x01 \x01(\v2\x1e.proto.ZigbeeDevice.DeviceInfoR\x04info\x127\n" +
 	"\tlast_seen\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\blastSeen\x128\n" +
 	"\x06config\x18\x03 \x01(\v2 .proto.ZigbeeDevice.DeviceConfigR\x06config\x12*\n" +
-	"\x11last_seen_channel\x18\x04 \x01(\rR\x0flastSeenChannel\x1a\xbb\x04\n" +
+	"\x11last_seen_channel\x18\x04 \x01(\rR\x0flastSeenChannel\x1a\xb7\x04\n" +
 	"\n" +
 	"DeviceInfo\x12K\n" +
 	"\tendpoints\x18\x06 \x03(\v2-.proto.ZigbeeDevice.DeviceInfo.EndpointsEntryR\tendpoints\x124\n" +
@@ -411,44 +669,45 @@ const file_smart_devices_libs_zigbee_model_proto_device_proto_rawDesc = "" +
 	"hw_version\x18\x03 \x01(\rH\x02R\thwVersion\x88\x01\x01\x120\n" +
 	"\x11manufacturer_name\x18\x04 \x01(\tH\x03R\x10manufacturerName\x88\x01\x01\x12.\n" +
 	"\x10model_identifier\x18\x05 \x01(\tH\x04R\x0fmodelIdentifier\x88\x01\x01\x12(\n" +
-	"\rserial_number\x18\a \x01(\tH\x05R\fserialNumber\x88\x01\x01\x1aZ\n" +
+	"\rserial_number\x18\a \x01(\tH\x05R\fserialNumber\x88\x01\x01\x1aV\n" +
 	"\x0eEndpointsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x122\n" +
-	"\x05value\x18\x02 \x01(\v2\x1c.proto.ZigbeeDevice.EndpointR\x05value:\x028\x01B\x16\n" +
+	"\x05value\x18\x02 \x01(\v2\x1c.proto.ZigbeeDevice.EndpointR\x05valueB\x16\n" +
 	"\x14_application_versionB\x10\n" +
 	"\x0e_stack_versionB\r\n" +
 	"\v_hw_versionB\x14\n" +
 	"\x12_manufacturer_nameB\x13\n" +
 	"\x11_model_identifierB\x10\n" +
-	"\x0e_serial_number\x1a\xac\x01\n" +
+	"\x0e_serial_number\x1a\xa8\x01\n" +
 	"\bEndpoint\x12F\n" +
-	"\bclusters\x18\x01 \x03(\v2*.proto.ZigbeeDevice.Endpoint.ClustersEntryR\bclusters\x1aX\n" +
+	"\bclusters\x18\x01 \x03(\v2*.proto.ZigbeeDevice.Endpoint.ClustersEntryR\bclusters\x1aT\n" +
 	"\rClustersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x121\n" +
-	"\x05value\x18\x02 \x01(\v2\x1b.proto.ZigbeeDevice.ClusterR\x05value:\x028\x01\x1ag\n" +
+	"\x05value\x18\x02 \x01(\v2\x1b.proto.ZigbeeDevice.ClusterR\x05value\x1ag\n" +
 	"\tAttribute\x12\x14\n" +
 	"\x05Value\x18\x01 \x01(\fR\x05Value\x12/\n" +
 	"\x10ManufacturerCode\x18\x02 \x01(\rH\x00R\x10ManufacturerCode\x88\x01\x01B\x13\n" +
-	"\x11_ManufacturerCode\x1a\xdc\x02\n" +
-	"\aCluster\x12a\n" +
-	"\x10LegacyAttributes\x18\x01 \x03(\v21.proto.ZigbeeDevice.Cluster.LegacyAttributesEntryB\x02\x18\x01R\x10LegacyAttributes\x12K\n" +
+	"\x11_ManufacturerCode\x1a\xd0\x02\n" +
+	"\aCluster\x12]\n" +
+	"\x10LegacyAttributes\x18\x01 \x03(\v21.proto.ZigbeeDevice.Cluster.LegacyAttributesEntryR\x10LegacyAttributes\x12K\n" +
 	"\n" +
 	"Attributes\x18\x02 \x03(\v2+.proto.ZigbeeDevice.Cluster.AttributesEntryR\n" +
-	"Attributes\x1aC\n" +
+	"Attributes\x1a?\n" +
 	"\x15LegacyAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01\x1a\\\n" +
+	"\x05value\x18\x02 \x01(\fR\x05value\x1aX\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x123\n" +
-	"\x05value\x18\x02 \x01(\v2\x1d.proto.ZigbeeDevice.AttributeR\x05value:\x028\x01\x1a\xbe\x02\n" +
+	"\x05value\x18\x02 \x01(\v2\x1d.proto.ZigbeeDevice.AttributeR\x05value\x1a\xba\x02\n" +
 	"\fDeviceConfig\x12+\n" +
 	"\x11removed_endpoints\x18\x01 \x03(\rR\x10removedEndpoints\x12o\n" +
 	"\x15endpoint_fingerprints\x18\x02 \x03(\v2:.proto.ZigbeeDevice.DeviceConfig.EndpointFingerprintsEntryR\x14endpointFingerprints\x121\n" +
-	"\x11PassiveTimeoutSec\x18\x03 \x01(\rH\x00R\x11PassiveTimeoutSec\x88\x01\x01\x1aG\n" +
+	"\x11PassiveTimeoutSec\x18\x03 \x01(\rH\x00R\x11PassiveTimeoutSec\x88\x01\x01\x1aC\n" +
 	"\x19EndpointFingerprintsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01B\x14\n" +
-	"\x12_PassiveTimeoutSecBFZDa.yandex-team.ru/smart_devices/libs/zigbee/model/proto;zigbeemodelpbb\x06proto3"
+	"\x05value\x18\x02 \x01(\fR\x05valueB\x14\n" +
+	"\x12_PassiveTimeoutSecB\xa3\x01\n" +
+	"\tcom.protoB\vDeviceProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/zigbee/model/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescOnce sync.Once
@@ -464,18 +723,18 @@ func file_smart_devices_libs_zigbee_model_proto_device_proto_rawDescGZIP() []byt
 
 var file_smart_devices_libs_zigbee_model_proto_device_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_smart_devices_libs_zigbee_model_proto_device_proto_goTypes = []any{
-	(*ZigbeeDevice)(nil),              // 0: proto.ZigbeeDevice
-	(*ZigbeeDevice_DeviceInfo)(nil),   // 1: proto.ZigbeeDevice.DeviceInfo
-	(*ZigbeeDevice_Endpoint)(nil),     // 2: proto.ZigbeeDevice.Endpoint
-	(*ZigbeeDevice_Attribute)(nil),    // 3: proto.ZigbeeDevice.Attribute
-	(*ZigbeeDevice_Cluster)(nil),      // 4: proto.ZigbeeDevice.Cluster
-	(*ZigbeeDevice_DeviceConfig)(nil), // 5: proto.ZigbeeDevice.DeviceConfig
-	nil,                               // 6: proto.ZigbeeDevice.DeviceInfo.EndpointsEntry
-	nil,                               // 7: proto.ZigbeeDevice.Endpoint.ClustersEntry
-	nil,                               // 8: proto.ZigbeeDevice.Cluster.LegacyAttributesEntry
-	nil,                               // 9: proto.ZigbeeDevice.Cluster.AttributesEntry
-	nil,                               // 10: proto.ZigbeeDevice.DeviceConfig.EndpointFingerprintsEntry
-	(*timestamppb.Timestamp)(nil),     // 11: google.protobuf.Timestamp
+	(*ZigbeeDevice)(nil),                                        // 0: proto.ZigbeeDevice
+	(*ZigbeeDevice_DeviceInfo)(nil),                             // 1: proto.ZigbeeDevice.DeviceInfo
+	(*ZigbeeDevice_Endpoint)(nil),                               // 2: proto.ZigbeeDevice.Endpoint
+	(*ZigbeeDevice_Attribute)(nil),                              // 3: proto.ZigbeeDevice.Attribute
+	(*ZigbeeDevice_Cluster)(nil),                                // 4: proto.ZigbeeDevice.Cluster
+	(*ZigbeeDevice_DeviceConfig)(nil),                           // 5: proto.ZigbeeDevice.DeviceConfig
+	(*ZigbeeDevice_DeviceInfo_EndpointsEntry)(nil),              // 6: proto.ZigbeeDevice.DeviceInfo.EndpointsEntry
+	(*ZigbeeDevice_Endpoint_ClustersEntry)(nil),                 // 7: proto.ZigbeeDevice.Endpoint.ClustersEntry
+	(*ZigbeeDevice_Cluster_LegacyAttributesEntry)(nil),          // 8: proto.ZigbeeDevice.Cluster.LegacyAttributesEntry
+	(*ZigbeeDevice_Cluster_AttributesEntry)(nil),                // 9: proto.ZigbeeDevice.Cluster.AttributesEntry
+	(*ZigbeeDevice_DeviceConfig_EndpointFingerprintsEntry)(nil), // 10: proto.ZigbeeDevice.DeviceConfig.EndpointFingerprintsEntry
+	(*timestamppb.Timestamp)(nil),                               // 11: google.protobuf.Timestamp
 }
 var file_smart_devices_libs_zigbee_model_proto_device_proto_depIdxs = []int32{
 	1,  // 0: proto.ZigbeeDevice.info:type_name -> proto.ZigbeeDevice.DeviceInfo

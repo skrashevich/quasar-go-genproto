@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/smart_volume/capability.proto
 
-package smart_volumepb
+package smart_volume
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TSmartVolumeCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSmartVolumeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSmartVolumeCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSmartVolumeCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSmartVolumeCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TSmartVolumeCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TSmartVolumeCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -205,19 +205,19 @@ var File_alice_protos_endpoint_capabilities_smart_volume_capability_proto protor
 
 const file_alice_protos_endpoint_capabilities_smart_volume_capability_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/endpoint/capabilities/smart_volume/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x98\x03\n" +
-	"\x16TSmartVolumeCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"@alice/protos/endpoint/capabilities/smart_volume/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa3\x02\n" +
+	"\x16TSmartVolumeCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TSmartVolumeCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TSmartVolumeCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a5\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1aK\n" +
-	"\x1cTProcessSmartVolumeDirective:+\x92\x82\x19\x1eprocess_smart_volume_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd6\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1caB\x91\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10SmartVolumeProtoZOa.yandex-team.ru/alice/protos/endpoint/capabilities/smart_volume;smart_volumepbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TSmartVolumeCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TSmartVolumeCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\"\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a\x1e\n" +
+	"\x1cTProcessSmartVolumeDirectiveB\xb6\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/smart_volume\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_smart_volume_capability_proto_rawDescOnce sync.Once

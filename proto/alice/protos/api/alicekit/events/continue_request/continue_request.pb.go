@@ -24,7 +24,7 @@ const (
 
 type TContinueRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	RequestMessageId string                 `protobuf:"bytes,1,opt,name=RequestMessageId,json=requestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	RequestMessageId string                 `protobuf:"bytes,1,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -70,10 +70,10 @@ var File_alice_protos_api_alicekit_events_continue_request_continue_request_prot
 
 const file_alice_protos_api_alicekit_events_continue_request_continue_request_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/alicekit/events/continue_request/continue_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"Z\n" +
-	"\x10TContinueRequest\x12@\n" +
-	"\x10RequestMessageId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10requestMessageIdR\x10requestMessageId:\x04\xa8\xdd\x1b\x04B\x94\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.continue_requestB\x0fContinueRequestP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/continue_requestb\x06proto3"
+	"Halice/protos/api/alicekit/events/continue_request/continue_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\">\n" +
+	"\x10TContinueRequest\x12*\n" +
+	"\x10RequestMessageId\x18\x01 \x01(\tR\x10RequestMessageIdB\xf0\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x14ContinueRequestProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/continue_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_continue_request_continue_request_proto_rawDescOnce sync.Once

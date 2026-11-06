@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_discovery/capability.proto
 
-package iotdiscoverypb
+package iot_discovery
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -414,9 +414,9 @@ func (TIotDiscoveryCapability_EMatterErrorType) EnumDescriptor() ([]byte, []int)
 
 type TIotDiscoveryCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotDiscoveryCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotDiscoveryCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotDiscoveryCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotDiscoveryCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -474,9 +474,9 @@ func (x *TIotDiscoveryCapability) GetState() *TIotDiscoveryCapability_TState {
 
 type TIotDiscoveryCapability_TParameters struct {
 	state                 protoimpl.MessageState              `protogen:"open.v1"`
-	SupportedProtocols    []TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=SupportedProtocols,json=supported_protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"SupportedProtocols,omitempty"`
-	IsMatterBulkSupported bool                                `protobuf:"varint,2,opt,name=IsMatterBulkSupported,json=is_matter_bulk_supported,proto3" json:"IsMatterBulkSupported,omitempty"`
-	MatterParametersVer   uint32                              `protobuf:"varint,3,opt,name=MatterParametersVer,json=matter_parameters_ver,proto3" json:"MatterParametersVer,omitempty"`
+	SupportedProtocols    []TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=SupportedProtocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"SupportedProtocols,omitempty"`
+	IsMatterBulkSupported bool                                `protobuf:"varint,2,opt,name=IsMatterBulkSupported,proto3" json:"IsMatterBulkSupported,omitempty"`
+	MatterParametersVer   uint32                              `protobuf:"varint,3,opt,name=MatterParametersVer,proto3" json:"MatterParametersVer,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -534,8 +534,8 @@ func (x *TIotDiscoveryCapability_TParameters) GetMatterParametersVer() uint32 {
 
 type TIotDiscoveryCapability_TProtocolStatus struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
-	Status        TIotDiscoveryCapability_EStatus   `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.TIotDiscoveryCapability_EStatus" json:"Status,omitempty"`
+	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
+	Status        TIotDiscoveryCapability_EStatus   `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.TIotDiscoveryCapability_EStatus" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -586,8 +586,8 @@ func (x *TIotDiscoveryCapability_TProtocolStatus) GetStatus() TIotDiscoveryCapab
 
 type TIotDiscoveryCapability_TState struct {
 	state                 protoimpl.MessageState                     `protogen:"open.v1"`
-	IsDiscoveryInProgress bool                                       `protobuf:"varint,1,opt,name=IsDiscoveryInProgress,json=is_discovery_in_progress,proto3" json:"IsDiscoveryInProgress,omitempty"`
-	Statuses              []*TIotDiscoveryCapability_TProtocolStatus `protobuf:"bytes,2,rep,name=Statuses,json=statuses,proto3" json:"Statuses,omitempty"`
+	IsDiscoveryInProgress bool                                       `protobuf:"varint,1,opt,name=IsDiscoveryInProgress,proto3" json:"IsDiscoveryInProgress,omitempty"`
+	Statuses              []*TIotDiscoveryCapability_TProtocolStatus `protobuf:"bytes,2,rep,name=Statuses,proto3" json:"Statuses,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -638,7 +638,7 @@ func (x *TIotDiscoveryCapability_TState) GetStatuses() []*TIotDiscoveryCapabilit
 
 type TIotDiscoveryCapability_TProtocolParameters struct {
 	state    protoimpl.MessageState            `protogen:"open.v1"`
-	Protocol TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
+	Protocol TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
 	// Types that are valid to be assigned to Parameters:
 	//
 	//	*TIotDiscoveryCapability_TProtocolParameters_ZigbeeParameters
@@ -745,23 +745,23 @@ type isTIotDiscoveryCapability_TProtocolParameters_Parameters interface {
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_ZigbeeParameters struct {
-	ZigbeeParameters *TIotDiscoveryCapability_TProtocolParameters_TZigbeeParameters `protobuf:"bytes,2,opt,name=ZigbeeParameters,json=zigbee_parameters,proto3,oneof"`
+	ZigbeeParameters *TIotDiscoveryCapability_TProtocolParameters_TZigbeeParameters `protobuf:"bytes,2,opt,name=ZigbeeParameters,proto3,oneof"`
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_MatterParameters struct {
-	MatterParameters *TIotDiscoveryCapability_TProtocolParameters_TMatterParameters `protobuf:"bytes,3,opt,name=MatterParameters,json=matter_parameters,proto3,oneof"`
+	MatterParameters *TIotDiscoveryCapability_TProtocolParameters_TMatterParameters `protobuf:"bytes,3,opt,name=MatterParameters,proto3,oneof"`
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_MatterBulkParameters struct {
-	MatterBulkParameters *TIotDiscoveryCapability_TProtocolParameters_TMatterBulkParameters `protobuf:"bytes,4,opt,name=MatterBulkParameters,json=matter_bulk_parameters,proto3,oneof"`
+	MatterBulkParameters *TIotDiscoveryCapability_TProtocolParameters_TMatterBulkParameters `protobuf:"bytes,4,opt,name=MatterBulkParameters,proto3,oneof"`
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_MatterParametersV3 struct {
-	MatterParametersV3 *TIotDiscoveryCapability_TProtocolParameters_TMatterParametersV3 `protobuf:"bytes,5,opt,name=MatterParametersV3,json=matter_transport_v3,proto3,oneof"`
+	MatterParametersV3 *TIotDiscoveryCapability_TProtocolParameters_TMatterParametersV3 `protobuf:"bytes,5,opt,name=MatterParametersV3,proto3,oneof"`
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_ZenohParameters struct {
-	ZenohParameters *TIotDiscoveryCapability_TProtocolParameters_TZenohParameters `protobuf:"bytes,6,opt,name=ZenohParameters,json=zenoh_parameters,proto3,oneof"`
+	ZenohParameters *TIotDiscoveryCapability_TProtocolParameters_TZenohParameters `protobuf:"bytes,6,opt,name=ZenohParameters,proto3,oneof"`
 }
 
 func (*TIotDiscoveryCapability_TProtocolParameters_ZigbeeParameters) isTIotDiscoveryCapability_TProtocolParameters_Parameters() {
@@ -781,8 +781,8 @@ func (*TIotDiscoveryCapability_TProtocolParameters_ZenohParameters) isTIotDiscov
 
 type TIotDiscoveryCapability_TNetwork struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
-	NetworkBase64 *wrapperspb.StringValue           `protobuf:"bytes,2,opt,name=NetworkBase64,json=network_base64,proto3" json:"NetworkBase64,omitempty"`
+	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
+	NetworkBase64 *wrapperspb.StringValue           `protobuf:"bytes,2,opt,name=NetworkBase64,proto3" json:"NetworkBase64,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -831,88 +831,21 @@ func (x *TIotDiscoveryCapability_TNetwork) GetNetworkBase64() *wrapperspb.String
 	return nil
 }
 
-type TIotDiscoveryCapability_TDistributedCommissioningParameters struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Types that are valid to be assigned to Parameters:
-	//
-	//	*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters
-	Parameters    isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters `protobuf_oneof:"Parameters"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) Reset() {
-	*x = TIotDiscoveryCapability_TDistributedCommissioningParameters{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotDiscoveryCapability_TDistributedCommissioningParameters) ProtoMessage() {}
-
-func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotDiscoveryCapability_TDistributedCommissioningParameters.ProtoReflect.Descriptor instead.
-func (*TIotDiscoveryCapability_TDistributedCommissioningParameters) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 5}
-}
-
-func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) GetParameters() isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters {
-	if x != nil {
-		return x.Parameters
-	}
-	return nil
-}
-
-func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) GetMatterParameters() *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters {
-	if x != nil {
-		if x, ok := x.Parameters.(*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters); ok {
-			return x.MatterParameters
-		}
-	}
-	return nil
-}
-
-type isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters interface {
-	isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters()
-}
-
-type TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters struct {
-	MatterParameters *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters `protobuf:"bytes,1,opt,name=MatterParameters,json=matter_parameters,proto3,oneof"`
-}
-
-func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters) isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters() {
-}
-
 type TIotDiscoveryCapability_TNetworks struct {
 	state               protoimpl.MessageState              `protogen:"open.v1"`
-	ZigbeeNetwork       *wrapperspb.BytesValue              `protobuf:"bytes,1,opt,name=ZigbeeNetwork,json=zigbee_network,proto3" json:"ZigbeeNetwork,omitempty"`
-	ZigbeeNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,2,opt,name=ZigbeeNetworkBase64,json=zigbee_network_base64,proto3" json:"ZigbeeNetworkBase64,omitempty"`
-	MatterNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,3,opt,name=MatterNetworkBase64,json=matter_network_base64,proto3" json:"MatterNetworkBase64,omitempty"`
-	ThreadNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,4,opt,name=ThreadNetworkBase64,json=thread_network_base64,proto3" json:"ThreadNetworkBase64,omitempty"`
-	ZenohNetworkBase64  *wrapperspb.StringValue             `protobuf:"bytes,6,opt,name=ZenohNetworkBase64,json=zenoh_network_base64,proto3" json:"ZenohNetworkBase64,omitempty"`
-	Networks            []*TIotDiscoveryCapability_TNetwork `protobuf:"bytes,5,rep,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
+	ZigbeeNetwork       *wrapperspb.BytesValue              `protobuf:"bytes,1,opt,name=ZigbeeNetwork,proto3" json:"ZigbeeNetwork,omitempty"`
+	ZigbeeNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,2,opt,name=ZigbeeNetworkBase64,proto3" json:"ZigbeeNetworkBase64,omitempty"`
+	MatterNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,3,opt,name=MatterNetworkBase64,proto3" json:"MatterNetworkBase64,omitempty"`
+	ThreadNetworkBase64 *wrapperspb.StringValue             `protobuf:"bytes,4,opt,name=ThreadNetworkBase64,proto3" json:"ThreadNetworkBase64,omitempty"`
+	ZenohNetworkBase64  *wrapperspb.StringValue             `protobuf:"bytes,6,opt,name=ZenohNetworkBase64,proto3" json:"ZenohNetworkBase64,omitempty"`
+	Networks            []*TIotDiscoveryCapability_TNetwork `protobuf:"bytes,5,rep,name=Networks,proto3" json:"Networks,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TNetworks) Reset() {
 	*x = TIotDiscoveryCapability_TNetworks{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -924,7 +857,7 @@ func (x *TIotDiscoveryCapability_TNetworks) String() string {
 func (*TIotDiscoveryCapability_TNetworks) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TNetworks) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -937,7 +870,7 @@ func (x *TIotDiscoveryCapability_TNetworks) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use TIotDiscoveryCapability_TNetworks.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TNetworks) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 6}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 5}
 }
 
 func (x *TIotDiscoveryCapability_TNetworks) GetZigbeeNetwork() *wrapperspb.BytesValue {
@@ -984,15 +917,15 @@ func (x *TIotDiscoveryCapability_TNetworks) GetNetworks() []*TIotDiscoveryCapabi
 
 type TIotDiscoveryCapability_TEndpointInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Protocol      endpoint.EProtocol     `protobuf:"varint,2,opt,name=Protocol,json=protocol,proto3,enum=NAlice.EProtocol" json:"Protocol,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Protocol      endpoint.EProtocol     `protobuf:"varint,2,opt,name=Protocol,proto3,enum=NAlice.EProtocol" json:"Protocol,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TEndpointInfo) Reset() {
 	*x = TIotDiscoveryCapability_TEndpointInfo{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[8]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1004,7 +937,7 @@ func (x *TIotDiscoveryCapability_TEndpointInfo) String() string {
 func (*TIotDiscoveryCapability_TEndpointInfo) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TEndpointInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[8]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1017,7 +950,7 @@ func (x *TIotDiscoveryCapability_TEndpointInfo) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use TIotDiscoveryCapability_TEndpointInfo.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TEndpointInfo) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 7}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 6}
 }
 
 func (x *TIotDiscoveryCapability_TEndpointInfo) GetId() string {
@@ -1035,22 +968,21 @@ func (x *TIotDiscoveryCapability_TEndpointInfo) GetProtocol() endpoint.EProtocol
 }
 
 type TIotDiscoveryCapability_TStartDiscoveryDirective struct {
-	state     protoimpl.MessageState              `protogen:"open.v1"`
-	Name      string                              `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Protocols []TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,json=protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
-	TimeoutMs uint32                              `protobuf:"varint,2,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
-	DeviceLimit        uint32                                         `protobuf:"varint,4,opt,name=DeviceLimit,json=device_limit,proto3" json:"DeviceLimit,omitempty"`
-	ProtocolParameters []*TIotDiscoveryCapability_TProtocolParameters `protobuf:"bytes,5,rep,name=ProtocolParameters,json=protocol_parameters,proto3" json:"ProtocolParameters,omitempty"`
-	SessionId          string                                         `protobuf:"bytes,6,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
-	Mode               TIotDiscoveryCapability_EMode                  `protobuf:"varint,7,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
+	state              protoimpl.MessageState                         `protogen:"open.v1"`
+	Name               string                                         `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Protocols          []TIotDiscoveryCapability_TProtocol            `protobuf:"varint,1,rep,packed,name=Protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
+	TimeoutMs          uint32                                         `protobuf:"varint,2,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
+	DeviceLimit        uint32                                         `protobuf:"varint,4,opt,name=DeviceLimit,proto3" json:"DeviceLimit,omitempty"`
+	ProtocolParameters []*TIotDiscoveryCapability_TProtocolParameters `protobuf:"bytes,5,rep,name=ProtocolParameters,proto3" json:"ProtocolParameters,omitempty"`
+	SessionId          string                                         `protobuf:"bytes,6,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
+	Mode               TIotDiscoveryCapability_EMode                  `protobuf:"varint,7,opt,name=Mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) Reset() {
 	*x = TIotDiscoveryCapability_TStartDiscoveryDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[9]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1062,7 +994,7 @@ func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) String() string {
 func (*TIotDiscoveryCapability_TStartDiscoveryDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[9]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1075,7 +1007,7 @@ func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) ProtoReflect() protor
 
 // Deprecated: Use TIotDiscoveryCapability_TStartDiscoveryDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TStartDiscoveryDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 8}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 7}
 }
 
 func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) GetName() string {
@@ -1099,7 +1031,6 @@ func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) GetTimeoutMs() uint32
 	return 0
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
 func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) GetDeviceLimit() uint32 {
 	if x != nil {
 		return x.DeviceLimit
@@ -1130,15 +1061,15 @@ func (x *TIotDiscoveryCapability_TStartDiscoveryDirective) GetMode() TIotDiscove
 
 type TIotDiscoveryCapability_TCancelDiscoveryDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SessionId     string                 `protobuf:"bytes,1,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	SessionId     string                 `protobuf:"bytes,1,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) Reset() {
 	*x = TIotDiscoveryCapability_TCancelDiscoveryDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[10]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1150,7 +1081,7 @@ func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) String() string {
 func (*TIotDiscoveryCapability_TCancelDiscoveryDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[10]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1163,7 +1094,7 @@ func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) ProtoReflect() proto
 
 // Deprecated: Use TIotDiscoveryCapability_TCancelDiscoveryDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TCancelDiscoveryDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 9}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 8}
 }
 
 func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) GetSessionId() string {
@@ -1180,81 +1111,20 @@ func (x *TIotDiscoveryCapability_TCancelDiscoveryDirective) GetName() string {
 	return ""
 }
 
-type TIotDiscoveryCapability_TDiscoveryContinueDirective struct {
-	state              protoimpl.MessageState                                                   `protogen:"open.v1"`
-	SessionId          string                                                                   `protobuf:"bytes,1,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
-	ProtocolParameters *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters `protobuf:"bytes,2,opt,name=ProtocolParameters,json=protocol_parameters,proto3" json:"ProtocolParameters,omitempty"`
-	Name               string                                                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
-}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) Reset() {
-	*x = TIotDiscoveryCapability_TDiscoveryContinueDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotDiscoveryCapability_TDiscoveryContinueDirective) ProtoMessage() {}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotDiscoveryCapability_TDiscoveryContinueDirective.ProtoReflect.Descriptor instead.
-func (*TIotDiscoveryCapability_TDiscoveryContinueDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 10}
-}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetSessionId() string {
-	if x != nil {
-		return x.SessionId
-	}
-	return ""
-}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetProtocolParameters() *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters {
-	if x != nil {
-		return x.ProtocolParameters
-	}
-	return nil
-}
-
-func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
 type TIotDiscoveryCapability_TFinishDiscoveryDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
-	AcceptedIds       []string                                 `protobuf:"bytes,1,rep,name=AcceptedIds,json=accepted_ids,proto3" json:"AcceptedIds,omitempty"`
-	AcceptedEndpoints []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,2,rep,name=AcceptedEndpoints,json=accepted_endpoints,proto3" json:"AcceptedEndpoints,omitempty"`
-	SystemInfo        string                                   `protobuf:"bytes,3,opt,name=SystemInfo,json=system_info,proto3" json:"SystemInfo,omitempty"`
-	CallbackId        uint32                                   `protobuf:"varint,4,opt,name=CallbackId,json=callback_id,proto3" json:"CallbackId,omitempty"`
+	state             protoimpl.MessageState                   `protogen:"open.v1"`
+	Name              string                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AcceptedIds       []string                                 `protobuf:"bytes,1,rep,name=AcceptedIds,proto3" json:"AcceptedIds,omitempty"`
+	AcceptedEndpoints []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,2,rep,name=AcceptedEndpoints,proto3" json:"AcceptedEndpoints,omitempty"`
+	SystemInfo        string                                   `protobuf:"bytes,3,opt,name=SystemInfo,proto3" json:"SystemInfo,omitempty"`
+	CallbackId        uint32                                   `protobuf:"varint,4,opt,name=CallbackId,proto3" json:"CallbackId,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) Reset() {
 	*x = TIotDiscoveryCapability_TFinishDiscoveryDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[12]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1266,7 +1136,7 @@ func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) String() string {
 func (*TIotDiscoveryCapability_TFinishDiscoveryDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[12]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1279,7 +1149,7 @@ func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) ProtoReflect() proto
 
 // Deprecated: Use TIotDiscoveryCapability_TFinishDiscoveryDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TFinishDiscoveryDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 11}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 9}
 }
 
 func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) GetName() string {
@@ -1289,7 +1159,6 @@ func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
 func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) GetAcceptedIds() []string {
 	if x != nil {
 		return x.AcceptedIds
@@ -1319,20 +1188,19 @@ func (x *TIotDiscoveryCapability_TFinishDiscoveryDirective) GetCallbackId() uint
 }
 
 type TIotDiscoveryCapability_TFinishSystemDiscoveryDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
-	AcceptedIds       []string                                 `protobuf:"bytes,1,rep,name=AcceptedIds,json=accepted_ids,proto3" json:"AcceptedIds,omitempty"`
-	AcceptedEndpoints []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,2,rep,name=AcceptedEndpoints,json=accepted_endpoints,proto3" json:"AcceptedEndpoints,omitempty"`
-	SystemInfo        string                                   `protobuf:"bytes,3,opt,name=SystemInfo,json=system_info,proto3" json:"SystemInfo,omitempty"`
-	CallbackId        uint32                                   `protobuf:"varint,4,opt,name=CallbackId,json=callback_id,proto3" json:"CallbackId,omitempty"`
+	state             protoimpl.MessageState                   `protogen:"open.v1"`
+	Name              string                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AcceptedIds       []string                                 `protobuf:"bytes,1,rep,name=AcceptedIds,proto3" json:"AcceptedIds,omitempty"`
+	AcceptedEndpoints []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,2,rep,name=AcceptedEndpoints,proto3" json:"AcceptedEndpoints,omitempty"`
+	SystemInfo        string                                   `protobuf:"bytes,3,opt,name=SystemInfo,proto3" json:"SystemInfo,omitempty"`
+	CallbackId        uint32                                   `protobuf:"varint,4,opt,name=CallbackId,proto3" json:"CallbackId,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) Reset() {
 	*x = TIotDiscoveryCapability_TFinishSystemDiscoveryDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[13]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1344,7 +1212,7 @@ func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) String() strin
 func (*TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[13]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1357,7 +1225,7 @@ func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) ProtoReflect()
 
 // Deprecated: Use TIotDiscoveryCapability_TFinishSystemDiscoveryDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 12}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 10}
 }
 
 func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) GetName() string {
@@ -1367,7 +1235,6 @@ func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) GetName() stri
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
 func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) GetAcceptedIds() []string {
 	if x != nil {
 		return x.AcceptedIds
@@ -1398,18 +1265,18 @@ func (x *TIotDiscoveryCapability_TFinishSystemDiscoveryDirective) GetCallbackId(
 
 type TIotDiscoveryCapability_TStartTuyaBroadcastDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SSID          string                 `protobuf:"bytes,1,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
-	Token         string                 `protobuf:"bytes,3,opt,name=Token,json=token,proto3" json:"Token,omitempty"`
-	Cipher        string                 `protobuf:"bytes,4,opt,name=Cipher,json=cipher,proto3" json:"Cipher,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SSID          string                 `protobuf:"bytes,1,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
+	Token         string                 `protobuf:"bytes,3,opt,name=Token,proto3" json:"Token,omitempty"`
+	Cipher        string                 `protobuf:"bytes,4,opt,name=Cipher,proto3" json:"Cipher,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) Reset() {
 	*x = TIotDiscoveryCapability_TStartTuyaBroadcastDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[14]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1421,7 +1288,7 @@ func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) String() string {
 func (*TIotDiscoveryCapability_TStartTuyaBroadcastDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[14]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1434,7 +1301,7 @@ func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) ProtoReflect() pr
 
 // Deprecated: Use TIotDiscoveryCapability_TStartTuyaBroadcastDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TStartTuyaBroadcastDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 13}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 11}
 }
 
 func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) GetName() string {
@@ -1474,15 +1341,15 @@ func (x *TIotDiscoveryCapability_TStartTuyaBroadcastDirective) GetCipher() strin
 
 type TIotDiscoveryCapability_TRestoreNetworksDirective struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Name          string                             `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Networks      *TIotDiscoveryCapability_TNetworks `protobuf:"bytes,1,opt,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
+	Name          string                             `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Networks      *TIotDiscoveryCapability_TNetworks `protobuf:"bytes,1,opt,name=Networks,proto3" json:"Networks,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) Reset() {
 	*x = TIotDiscoveryCapability_TRestoreNetworksDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[15]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1494,7 +1361,7 @@ func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) String() string {
 func (*TIotDiscoveryCapability_TRestoreNetworksDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[15]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1507,7 +1374,7 @@ func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) ProtoReflect() proto
 
 // Deprecated: Use TIotDiscoveryCapability_TRestoreNetworksDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TRestoreNetworksDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 14}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 12}
 }
 
 func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) GetName() string {
@@ -1526,15 +1393,15 @@ func (x *TIotDiscoveryCapability_TRestoreNetworksDirective) GetNetworks() *TIotD
 
 type TIotDiscoveryCapability_TForgetDevicesDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	DeviceIds     []string               `protobuf:"bytes,1,rep,name=DeviceIds,json=device_ids,proto3" json:"DeviceIds,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	DeviceIds     []string               `protobuf:"bytes,1,rep,name=DeviceIds,proto3" json:"DeviceIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TForgetDevicesDirective) Reset() {
 	*x = TIotDiscoveryCapability_TForgetDevicesDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[16]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1546,7 +1413,7 @@ func (x *TIotDiscoveryCapability_TForgetDevicesDirective) String() string {
 func (*TIotDiscoveryCapability_TForgetDevicesDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TForgetDevicesDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[16]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1559,7 +1426,7 @@ func (x *TIotDiscoveryCapability_TForgetDevicesDirective) ProtoReflect() protore
 
 // Deprecated: Use TIotDiscoveryCapability_TForgetDevicesDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TForgetDevicesDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 15}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 13}
 }
 
 func (x *TIotDiscoveryCapability_TForgetDevicesDirective) GetName() string {
@@ -1578,15 +1445,15 @@ func (x *TIotDiscoveryCapability_TForgetDevicesDirective) GetDeviceIds() []strin
 
 type TIotDiscoveryCapability_TDeleteNetworksDirective struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Name          string                              `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Protocols     []TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,json=protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
+	Name          string                              `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Protocols     []TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) Reset() {
 	*x = TIotDiscoveryCapability_TDeleteNetworksDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[17]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1598,7 +1465,7 @@ func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) String() string {
 func (*TIotDiscoveryCapability_TDeleteNetworksDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[17]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1611,7 +1478,7 @@ func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) ProtoReflect() protor
 
 // Deprecated: Use TIotDiscoveryCapability_TDeleteNetworksDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TDeleteNetworksDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 16}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 14}
 }
 
 func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) GetName() string {
@@ -1630,16 +1497,16 @@ func (x *TIotDiscoveryCapability_TDeleteNetworksDirective) GetProtocols() []TIot
 
 type TIotDiscoveryCapability_TEnableNetworkDirective struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Name          string                            `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
-	Enabled       bool                              `protobuf:"varint,2,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Name          string                            `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Protocol      TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
+	Enabled       bool                              `protobuf:"varint,2,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TEnableNetworkDirective) Reset() {
 	*x = TIotDiscoveryCapability_TEnableNetworkDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[18]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1651,7 +1518,7 @@ func (x *TIotDiscoveryCapability_TEnableNetworkDirective) String() string {
 func (*TIotDiscoveryCapability_TEnableNetworkDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TEnableNetworkDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[18]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1664,7 +1531,7 @@ func (x *TIotDiscoveryCapability_TEnableNetworkDirective) ProtoReflect() protore
 
 // Deprecated: Use TIotDiscoveryCapability_TEnableNetworkDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TEnableNetworkDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 17}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 15}
 }
 
 func (x *TIotDiscoveryCapability_TEnableNetworkDirective) GetName() string {
@@ -1690,15 +1557,15 @@ func (x *TIotDiscoveryCapability_TEnableNetworkDirective) GetEnabled() bool {
 
 type TIotDiscoveryCapability_TSyncEndpointsDirective struct {
 	state         protoimpl.MessageState                   `protogen:"open.v1"`
-	Name          string                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Endpoints     []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,1,rep,name=Endpoints,json=endpoints,proto3" json:"Endpoints,omitempty"`
+	Name          string                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Endpoints     []*TIotDiscoveryCapability_TEndpointInfo `protobuf:"bytes,1,rep,name=Endpoints,proto3" json:"Endpoints,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) Reset() {
 	*x = TIotDiscoveryCapability_TSyncEndpointsDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[19]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1710,7 +1577,7 @@ func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) String() string {
 func (*TIotDiscoveryCapability_TSyncEndpointsDirective) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[19]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1723,7 +1590,7 @@ func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) ProtoReflect() protore
 
 // Deprecated: Use TIotDiscoveryCapability_TSyncEndpointsDirective.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TSyncEndpointsDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 18}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 16}
 }
 
 func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) GetName() string {
@@ -1742,15 +1609,15 @@ func (x *TIotDiscoveryCapability_TSyncEndpointsDirective) GetEndpoints() []*TIot
 
 type TIotDiscoveryCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Capability    *TIotDiscoveryCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
-	SessionId     string                   `protobuf:"bytes,2,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
+	Capability    *TIotDiscoveryCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
+	SessionId     string                   `protobuf:"bytes,2,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TIotDiscoveryCapability_TUpdateStateEvent) Reset() {
 	*x = TIotDiscoveryCapability_TUpdateStateEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[20]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1762,7 +1629,7 @@ func (x *TIotDiscoveryCapability_TUpdateStateEvent) String() string {
 func (*TIotDiscoveryCapability_TUpdateStateEvent) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TUpdateStateEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[20]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1775,7 +1642,7 @@ func (x *TIotDiscoveryCapability_TUpdateStateEvent) ProtoReflect() protoreflect.
 
 // Deprecated: Use TIotDiscoveryCapability_TUpdateStateEvent.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TUpdateStateEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 19}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 17}
 }
 
 func (x *TIotDiscoveryCapability_TUpdateStateEvent) GetCapability() *TIotDiscoveryCapability {
@@ -1794,9 +1661,9 @@ func (x *TIotDiscoveryCapability_TUpdateStateEvent) GetSessionId() string {
 
 type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent struct {
 	state             protoimpl.MessageState        `protogen:"open.v1"`
-	FoundDevicesCount uint32                        `protobuf:"varint,1,opt,name=FoundDevicesCount,json=found_devices_count,proto3" json:"FoundDevicesCount,omitempty"`
-	SessionId         string                        `protobuf:"bytes,3,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
-	Mode              TIotDiscoveryCapability_EMode `protobuf:"varint,4,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
+	FoundDevicesCount uint32                        `protobuf:"varint,1,opt,name=FoundDevicesCount,proto3" json:"FoundDevicesCount,omitempty"`
+	SessionId         string                        `protobuf:"bytes,3,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
+	Mode              TIotDiscoveryCapability_EMode `protobuf:"varint,4,opt,name=Mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
 	// Types that are valid to be assigned to Result:
 	//
 	//	*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Matter
@@ -1807,7 +1674,7 @@ type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent struct {
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) Reset() {
 	*x = TIotDiscoveryCapability_TIotDiscoveryCompleteEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1819,7 +1686,7 @@ func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) String() string {
 func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1832,7 +1699,7 @@ func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) ProtoReflect() prot
 
 // Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryCompleteEvent.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 18}
 }
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent) GetFoundDevicesCount() uint32 {
@@ -1877,7 +1744,7 @@ type isTIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Result interface {
 }
 
 type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Matter struct {
-	Matter *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult `protobuf:"bytes,2,opt,name=Matter,json=matter,proto3,oneof"`
+	Matter *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult `protobuf:"bytes,2,opt,name=Matter,proto3,oneof"`
 }
 
 func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Matter) isTIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Result() {
@@ -1885,8 +1752,8 @@ func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Matter) isTIotDiscover
 
 type TIotDiscoveryCapability_TIotDiscoveryProgressEvent struct {
 	state     protoimpl.MessageState            `protogen:"open.v1"`
-	Protocol  TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,json=protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
-	SessionId string                            `protobuf:"bytes,4,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
+	Protocol  TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,opt,name=Protocol,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocol,omitempty"`
+	SessionId string                            `protobuf:"bytes,4,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
 	// Types that are valid to be assigned to DiscoveryStage:
 	//
 	//	*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_MatterDiscoveryStage
@@ -1898,7 +1765,7 @@ type TIotDiscoveryCapability_TIotDiscoveryProgressEvent struct {
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) Reset() {
 	*x = TIotDiscoveryCapability_TIotDiscoveryProgressEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[22]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1910,7 +1777,7 @@ func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) String() string {
 func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[22]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1923,7 +1790,7 @@ func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) ProtoReflect() prot
 
 // Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryProgressEvent.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 21}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 19}
 }
 
 func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) GetProtocol() TIotDiscoveryCapability_TProtocol {
@@ -1947,7 +1814,6 @@ func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) GetDiscoveryStage()
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
 func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent) GetMatterDiscoveryStage() TIotDiscoveryCapability_EMatterDiscoveryStage {
 	if x != nil {
 		if x, ok := x.DiscoveryStage.(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_MatterDiscoveryStage); ok {
@@ -1971,18 +1837,144 @@ type isTIotDiscoveryCapability_TIotDiscoveryProgressEvent_DiscoveryStage interfa
 }
 
 type TIotDiscoveryCapability_TIotDiscoveryProgressEvent_MatterDiscoveryStage struct {
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/iot_discovery/capability.proto.
-	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,2,opt,name=MatterDiscoveryStage,json=matter_discovery_stage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage,oneof"`
+	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,2,opt,name=MatterDiscoveryStage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage,oneof"`
 }
 
 type TIotDiscoveryCapability_TIotDiscoveryProgressEvent_ExtendedMatterDiscoveryStage struct {
-	ExtendedMatterDiscoveryStage *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage `protobuf:"bytes,3,opt,name=ExtendedMatterDiscoveryStage,json=extended_matter_discovery_stage,proto3,oneof"`
+	ExtendedMatterDiscoveryStage *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage `protobuf:"bytes,3,opt,name=ExtendedMatterDiscoveryStage,proto3,oneof"`
 }
 
 func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_MatterDiscoveryStage) isTIotDiscoveryCapability_TIotDiscoveryProgressEvent_DiscoveryStage() {
 }
 
 func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_ExtendedMatterDiscoveryStage) isTIotDiscoveryCapability_TIotDiscoveryProgressEvent_DiscoveryStage() {
+}
+
+type TIotDiscoveryCapability_TDistributedCommissioningParameters struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Parameters:
+	//
+	//	*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters
+	Parameters    isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters `protobuf_oneof:"Parameters"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) Reset() {
+	*x = TIotDiscoveryCapability_TDistributedCommissioningParameters{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotDiscoveryCapability_TDistributedCommissioningParameters) ProtoMessage() {}
+
+func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotDiscoveryCapability_TDistributedCommissioningParameters.ProtoReflect.Descriptor instead.
+func (*TIotDiscoveryCapability_TDistributedCommissioningParameters) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20}
+}
+
+func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) GetParameters() isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters {
+	if x != nil {
+		return x.Parameters
+	}
+	return nil
+}
+
+func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters) GetMatterParameters() *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters {
+	if x != nil {
+		if x, ok := x.Parameters.(*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters); ok {
+			return x.MatterParameters
+		}
+	}
+	return nil
+}
+
+type isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters interface {
+	isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters()
+}
+
+type TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters struct {
+	MatterParameters *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters `protobuf:"bytes,1,opt,name=MatterParameters,json=matter_parameters,proto3,oneof"`
+}
+
+func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters) isTIotDiscoveryCapability_TDistributedCommissioningParameters_Parameters() {
+}
+
+type TIotDiscoveryCapability_TDiscoveryContinueDirective struct {
+	state              protoimpl.MessageState                                                   `protogen:"open.v1"`
+	SessionId          string                                                                   `protobuf:"bytes,1,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
+	ProtocolParameters *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters `protobuf:"bytes,2,opt,name=ProtocolParameters,json=protocol_parameters,proto3" json:"ProtocolParameters,omitempty"`
+	Name               string                                                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) Reset() {
+	*x = TIotDiscoveryCapability_TDiscoveryContinueDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotDiscoveryCapability_TDiscoveryContinueDirective) ProtoMessage() {}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotDiscoveryCapability_TDiscoveryContinueDirective.ProtoReflect.Descriptor instead.
+func (*TIotDiscoveryCapability_TDiscoveryContinueDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 21}
+}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetSessionId() string {
+	if x != nil {
+		return x.SessionId
+	}
+	return ""
+}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetProtocolParameters() *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters {
+	if x != nil {
+		return x.ProtocolParameters
+	}
+	return nil
+}
+
+func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
 }
 
 type TIotDiscoveryCapability_TDistributedCommissioningInitializedEvent struct {
@@ -2039,7 +2031,7 @@ func (x *TIotDiscoveryCapability_TDistributedCommissioningInitializedEvent) GetP
 
 type TIotDiscoveryCapability_TProtocolParameters_TZigbeeParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DeviceLimit   uint32                 `protobuf:"varint,1,opt,name=DeviceLimit,json=device_limit,proto3" json:"DeviceLimit,omitempty"`
+	DeviceLimit   uint32                 `protobuf:"varint,1,opt,name=DeviceLimit,proto3" json:"DeviceLimit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2083,9 +2075,9 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TZigbeeParameters) GetDevic
 
 type TIotDiscoveryCapability_TProtocolParameters_TMatterParameters struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	SetupCodePayload string                 `protobuf:"bytes,1,opt,name=SetupCodePayload,json=setup_code_payload,proto3" json:"SetupCodePayload,omitempty"`
-	SSID             string                 `protobuf:"bytes,2,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password         string                 `protobuf:"bytes,3,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
+	SetupCodePayload string                 `protobuf:"bytes,1,opt,name=SetupCodePayload,proto3" json:"SetupCodePayload,omitempty"`
+	SSID             string                 `protobuf:"bytes,2,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password         string                 `protobuf:"bytes,3,opt,name=Password,proto3" json:"Password,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -2143,9 +2135,9 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TMatterParameters) GetPassw
 
 type TIotDiscoveryCapability_TProtocolParameters_TMatterBulkParameters struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	SetupCodePayloads []string               `protobuf:"bytes,1,rep,name=SetupCodePayloads,json=setup_code_payloads,proto3" json:"SetupCodePayloads,omitempty"`
-	SSID              string                 `protobuf:"bytes,2,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password          string                 `protobuf:"bytes,3,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
+	SetupCodePayloads []string               `protobuf:"bytes,1,rep,name=SetupCodePayloads,proto3" json:"SetupCodePayloads,omitempty"`
+	SSID              string                 `protobuf:"bytes,2,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password          string                 `protobuf:"bytes,3,opt,name=Password,proto3" json:"Password,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2203,8 +2195,8 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TMatterBulkParameters) GetP
 
 type TIotDiscoveryCapability_TProtocolParameters_TDeviceParameters struct {
 	state            protoimpl.MessageState                   `protogen:"open.v1"`
-	SetupCodePayload string                                   `protobuf:"bytes,1,opt,name=SetupCodePayload,json=setup_code_payload,proto3" json:"SetupCodePayload,omitempty"`
-	Transport        TIotDiscoveryCapability_TMatterTransport `protobuf:"varint,2,opt,name=Transport,json=transport,proto3,enum=NAlice.TIotDiscoveryCapability_TMatterTransport" json:"Transport,omitempty"`
+	SetupCodePayload string                                   `protobuf:"bytes,1,opt,name=SetupCodePayload,proto3" json:"SetupCodePayload,omitempty"`
+	Transport        TIotDiscoveryCapability_TMatterTransport `protobuf:"varint,2,opt,name=Transport,proto3,enum=NAlice.TIotDiscoveryCapability_TMatterTransport" json:"Transport,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -2255,8 +2247,8 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TDeviceParameters) GetTrans
 
 type TIotDiscoveryCapability_TProtocolParameters_TWiFiTransportParameters struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SSID          string                 `protobuf:"bytes,1,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
+	SSID          string                 `protobuf:"bytes,1,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2343,7 +2335,7 @@ func (*TIotDiscoveryCapability_TProtocolParameters_TThreadTransportParameters) D
 
 type TIotDiscoveryCapability_TProtocolParameters_TTransportParameters struct {
 	state     protoimpl.MessageState                   `protogen:"open.v1"`
-	Transport TIotDiscoveryCapability_TMatterTransport `protobuf:"varint,1,opt,name=Transport,json=transport,proto3,enum=NAlice.TIotDiscoveryCapability_TMatterTransport" json:"Transport,omitempty"`
+	Transport TIotDiscoveryCapability_TMatterTransport `protobuf:"varint,1,opt,name=Transport,proto3,enum=NAlice.TIotDiscoveryCapability_TMatterTransport" json:"Transport,omitempty"`
 	// Types that are valid to be assigned to Parameters:
 	//
 	//	*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_WiFiParameters
@@ -2420,11 +2412,11 @@ type isTIotDiscoveryCapability_TProtocolParameters_TTransportParameters_Paramete
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_WiFiParameters struct {
-	WiFiParameters *TIotDiscoveryCapability_TProtocolParameters_TWiFiTransportParameters `protobuf:"bytes,2,opt,name=WiFiParameters,json=wifi_parameters,proto3,oneof"`
+	WiFiParameters *TIotDiscoveryCapability_TProtocolParameters_TWiFiTransportParameters `protobuf:"bytes,2,opt,name=WiFiParameters,proto3,oneof"`
 }
 
 type TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_ThreadParameters struct {
-	ThreadParameters *TIotDiscoveryCapability_TProtocolParameters_TThreadTransportParameters `protobuf:"bytes,3,opt,name=ThreadParameters,json=thread_parameters,proto3,oneof"`
+	ThreadParameters *TIotDiscoveryCapability_TProtocolParameters_TThreadTransportParameters `protobuf:"bytes,3,opt,name=ThreadParameters,proto3,oneof"`
 }
 
 func (*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_WiFiParameters) isTIotDiscoveryCapability_TProtocolParameters_TTransportParameters_Parameters() {
@@ -2435,8 +2427,8 @@ func (*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_ThreadPa
 
 type TIotDiscoveryCapability_TProtocolParameters_TMatterParametersV3 struct {
 	state                      protoimpl.MessageState                                              `protogen:"open.v1"`
-	DevicesParameters          []*TIotDiscoveryCapability_TProtocolParameters_TDeviceParameters    `protobuf:"bytes,1,rep,name=DevicesParameters,json=devices_parameters,proto3" json:"DevicesParameters,omitempty"`
-	TransportsParameters       []*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters `protobuf:"bytes,2,rep,name=TransportsParameters,json=transports_parameters,proto3" json:"TransportsParameters,omitempty"`
+	DevicesParameters          []*TIotDiscoveryCapability_TProtocolParameters_TDeviceParameters    `protobuf:"bytes,1,rep,name=DevicesParameters,proto3" json:"DevicesParameters,omitempty"`
+	TransportsParameters       []*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters `protobuf:"bytes,2,rep,name=TransportsParameters,proto3" json:"TransportsParameters,omitempty"`
 	SupportsPhoneCommissioning bool                                                                `protobuf:"varint,3,opt,name=SupportsPhoneCommissioning,json=supports_phone_commissioning,proto3" json:"SupportsPhoneCommissioning,omitempty"`
 	ClientApiVersion           uint32                                                              `protobuf:"varint,4,opt,name=ClientApiVersion,json=client_api_version,proto3" json:"ClientApiVersion,omitempty"`
 	unknownFields              protoimpl.UnknownFields
@@ -2503,8 +2495,8 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TMatterParametersV3) GetCli
 
 type TIotDiscoveryCapability_TProtocolParameters_TZenohParameters struct {
 	state         protoimpl.MessageState                                 `protogen:"open.v1"`
-	PeerDeviceID  string                                                 `protobuf:"bytes,1,opt,name=PeerDeviceID,json=peer_device_id,proto3" json:"PeerDeviceID,omitempty"`
-	Security      *TIotDiscoveryCapability_TProtocolParameters_TSecurity `protobuf:"bytes,2,opt,name=Security,json=security,proto3" json:"Security,omitempty"`
+	PeerDeviceID  string                                                 `protobuf:"bytes,1,opt,name=PeerDeviceID,proto3" json:"PeerDeviceID,omitempty"`
+	Security      *TIotDiscoveryCapability_TProtocolParameters_TSecurity `protobuf:"bytes,2,opt,name=Security,proto3" json:"Security,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2555,8 +2547,8 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TZenohParameters) GetSecuri
 
 type TIotDiscoveryCapability_TProtocolParameters_TSecurity struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PSKID         string                 `protobuf:"bytes,1,opt,name=PSKID,json=psk_id,proto3" json:"PSKID,omitempty"`
-	PSK           string                 `protobuf:"bytes,2,opt,name=PSK,json=psk,proto3" json:"PSK,omitempty"`
+	PSKID         string                 `protobuf:"bytes,1,opt,name=PSKID,proto3" json:"PSKID,omitempty"`
+	PSK           string                 `protobuf:"bytes,2,opt,name=PSK,proto3" json:"PSK,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2605,6 +2597,179 @@ func (x *TIotDiscoveryCapability_TProtocolParameters_TSecurity) GetPSK() string 
 	return ""
 }
 
+type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult struct {
+	state           protoimpl.MessageState                                                                  `protogen:"open.v1"`
+	DevicePairingId string                                                                                  `protobuf:"bytes,1,opt,name=DevicePairingId,proto3" json:"DevicePairingId,omitempty"`
+	Error           *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError `protobuf:"bytes,2,opt,name=Error,proto3,oneof" json:"Error,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) Reset() {
+	*x = TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) ProtoMessage() {}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult.ProtoReflect.Descriptor instead.
+func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 18, 0}
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) GetDevicePairingId() string {
+	if x != nil {
+		return x.DevicePairingId
+	}
+	return ""
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) GetError() *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError {
+	if x != nil {
+		return x.Error
+	}
+	return nil
+}
+
+type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError struct {
+	state                protoimpl.MessageState                        `protogen:"open.v1"`
+	Code                 uint32                                        `protobuf:"varint,1,opt,name=Code,proto3" json:"Code,omitempty"`
+	Details              string                                        `protobuf:"bytes,2,opt,name=Details,proto3" json:"Details,omitempty"`
+	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,3,opt,name=MatterDiscoveryStage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage" json:"MatterDiscoveryStage,omitempty"`
+	ErrorType            TIotDiscoveryCapability_EMatterErrorType      `protobuf:"varint,4,opt,name=ErrorType,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterErrorType" json:"ErrorType,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) Reset() {
+	*x = TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) ProtoMessage() {
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError.ProtoReflect.Descriptor instead.
+func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 18, 0, 0}
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetCode() uint32 {
+	if x != nil {
+		return x.Code
+	}
+	return 0
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetDetails() string {
+	if x != nil {
+		return x.Details
+	}
+	return ""
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetMatterDiscoveryStage() TIotDiscoveryCapability_EMatterDiscoveryStage {
+	if x != nil {
+		return x.MatterDiscoveryStage
+	}
+	return TIotDiscoveryCapability_STAGE_UNKNOWN
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetErrorType() TIotDiscoveryCapability_EMatterErrorType {
+	if x != nil {
+		return x.ErrorType
+	}
+	return TIotDiscoveryCapability_UNKNOWN_ERROR
+}
+
+type TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage struct {
+	state                protoimpl.MessageState                        `protogen:"open.v1"`
+	DevicePairingId      string                                        `protobuf:"bytes,1,opt,name=DevicePairingId,proto3" json:"DevicePairingId,omitempty"`
+	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,2,opt,name=MatterDiscoveryStage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage" json:"MatterDiscoveryStage,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) Reset() {
+	*x = TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage{}
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) ProtoMessage() {}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage.ProtoReflect.Descriptor instead.
+func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 19, 0}
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) GetDevicePairingId() string {
+	if x != nil {
+		return x.DevicePairingId
+	}
+	return ""
+}
+
+func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) GetMatterDiscoveryStage() TIotDiscoveryCapability_EMatterDiscoveryStage {
+	if x != nil {
+		return x.MatterDiscoveryStage
+	}
+	return TIotDiscoveryCapability_STAGE_UNKNOWN
+}
+
 type TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters struct {
 	state             protoimpl.MessageState                                                                             `protogen:"open.v1"`
 	ChipData          map[string][]byte                                                                                  `protobuf:"bytes,2,rep,name=ChipData,json=chip_data,proto3" json:"ChipData,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -2615,7 +2780,7 @@ type TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParamete
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters) Reset() {
 	*x = TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[34]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2628,7 +2793,7 @@ func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParame
 }
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[34]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2641,7 +2806,7 @@ func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterPara
 
 // Deprecated: Use TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 5, 0}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20, 0}
 }
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters) GetChipData() map[string][]byte {
@@ -2668,7 +2833,7 @@ type TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParamete
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters) Reset() {
 	*x = TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[35]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2681,7 +2846,7 @@ func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParame
 }
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[35]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2694,7 +2859,7 @@ func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterPara
 
 // Deprecated: Use TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 5, 0, 0}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20, 0, 0}
 }
 
 func (x *TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters) GetNodeId() uint64 {
@@ -2724,7 +2889,7 @@ type TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters str
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters) Reset() {
 	*x = TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[37]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2736,7 +2901,7 @@ func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters
 func (*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters) ProtoMessage() {}
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[37]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2749,7 +2914,7 @@ func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters
 
 // Deprecated: Use TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 10, 0}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 21, 0}
 }
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters) GetProtocol() TIotDiscoveryCapability_TProtocol {
@@ -2798,7 +2963,7 @@ type TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMa
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters) Reset() {
 	*x = TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[38]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2811,7 +2976,7 @@ func (*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_T
 }
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[38]
+	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2824,7 +2989,7 @@ func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters
 
 // Deprecated: Use TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters.ProtoReflect.Descriptor instead.
 func (*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 10, 0, 0}
+	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 21, 0, 0}
 }
 
 func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters) GetNodeId() uint64 {
@@ -2855,251 +3020,165 @@ func (x *TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters
 	return 0
 }
 
-type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult struct {
-	state           protoimpl.MessageState                                                                  `protogen:"open.v1"`
-	DevicePairingId string                                                                                  `protobuf:"bytes,1,opt,name=DevicePairingId,json=device_pairing_id,proto3" json:"DevicePairingId,omitempty"`
-	Error           *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError `protobuf:"bytes,2,opt,name=Error,json=error,proto3,oneof" json:"Error,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) Reset() {
-	*x = TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[39]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) ProtoMessage() {}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[39]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult.ProtoReflect.Descriptor instead.
-func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20, 0}
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) GetDevicePairingId() string {
-	if x != nil {
-		return x.DevicePairingId
-	}
-	return ""
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult) GetError() *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError {
-	if x != nil {
-		return x.Error
-	}
-	return nil
-}
-
-type TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError struct {
-	state                protoimpl.MessageState                        `protogen:"open.v1"`
-	Code                 uint32                                        `protobuf:"varint,1,opt,name=Code,json=code,proto3" json:"Code,omitempty"`
-	Details              string                                        `protobuf:"bytes,2,opt,name=Details,json=details,proto3" json:"Details,omitempty"`
-	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,3,opt,name=MatterDiscoveryStage,json=matter_discovery_stage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage" json:"MatterDiscoveryStage,omitempty"`
-	ErrorType            TIotDiscoveryCapability_EMatterErrorType      `protobuf:"varint,4,opt,name=ErrorType,json=error_type,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterErrorType" json:"ErrorType,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) Reset() {
-	*x = TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[40]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) ProtoMessage() {
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[40]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError.ProtoReflect.Descriptor instead.
-func (*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 20, 0, 0}
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetCode() uint32 {
-	if x != nil {
-		return x.Code
-	}
-	return 0
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetDetails() string {
-	if x != nil {
-		return x.Details
-	}
-	return ""
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetMatterDiscoveryStage() TIotDiscoveryCapability_EMatterDiscoveryStage {
-	if x != nil {
-		return x.MatterDiscoveryStage
-	}
-	return TIotDiscoveryCapability_STAGE_UNKNOWN
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError) GetErrorType() TIotDiscoveryCapability_EMatterErrorType {
-	if x != nil {
-		return x.ErrorType
-	}
-	return TIotDiscoveryCapability_UNKNOWN_ERROR
-}
-
-type TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage struct {
-	state                protoimpl.MessageState                        `protogen:"open.v1"`
-	DevicePairingId      string                                        `protobuf:"bytes,1,opt,name=DevicePairingId,json=device_pairing_id,proto3" json:"DevicePairingId,omitempty"`
-	MatterDiscoveryStage TIotDiscoveryCapability_EMatterDiscoveryStage `protobuf:"varint,2,opt,name=MatterDiscoveryStage,json=matter_discovery_stage,proto3,enum=NAlice.TIotDiscoveryCapability_EMatterDiscoveryStage" json:"MatterDiscoveryStage,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) Reset() {
-	*x = TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage{}
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[41]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) ProtoMessage() {}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[41]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage.ProtoReflect.Descriptor instead.
-func (*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescGZIP(), []int{0, 21, 0}
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) GetDevicePairingId() string {
-	if x != nil {
-		return x.DevicePairingId
-	}
-	return ""
-}
-
-func (x *TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage) GetMatterDiscoveryStage() TIotDiscoveryCapability_EMatterDiscoveryStage {
-	if x != nil {
-		return x.MatterDiscoveryStage
-	}
-	return TIotDiscoveryCapability_STAGE_UNKNOWN
-}
-
 var File_alice_protos_endpoint_capabilities_iot_discovery_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3_\n" +
-	"\x17TIotDiscoveryCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Aalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa3L\n" +
+	"\x17TIotDiscoveryCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotDiscoveryCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotDiscoveryCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xae\x02\n" +
-	"\vTParameters\x12s\n" +
-	"\x12SupportedProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\x17\xaa\xdd\x1b\x13supported_protocolsR\x13supported_protocols\x12U\n" +
-	"\x15IsMatterBulkSupported\x18\x02 \x01(\bB\x1c\xaa\xdd\x1b\x18is_matter_bulk_supportedR\x18is_matter_bulk_supported\x12M\n" +
-	"\x13MatterParametersVer\x18\x03 \x01(\rB\x19\xaa\xdd\x1b\x15matter_parameters_verR\x15matter_parameters_ver:\x04\xa8\xdd\x1b\x04\x1a\xb9\x01\n" +
-	"\x0fTProtocolStatus\x12S\n" +
-	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12K\n" +
-	"\x06Status\x18\x02 \x01(\x0e2'.NAlice.TIotDiscoveryCapability.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status:\x04\xa8\xdd\x1b\x04\x1a\xc0\x01\n" +
-	"\x06TState\x12U\n" +
-	"\x15IsDiscoveryInProgress\x18\x01 \x01(\bB\x1c\xaa\xdd\x1b\x18is_discovery_in_progressR\x18is_discovery_in_progress\x12Y\n" +
-	"\bStatuses\x18\x02 \x03(\v2/.NAlice.TIotDiscoveryCapability.TProtocolStatusB\f\xaa\xdd\x1b\bstatusesR\bstatuses:\x04\xa8\xdd\x1b\x04\x1a\x99\x16\n" +
-	"\x13TProtocolParameters\x12S\n" +
-	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12\x8b\x01\n" +
-	"\x10ZigbeeParameters\x18\x02 \x01(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TZigbeeParametersB\x15\xaa\xdd\x1b\x11zigbee_parametersH\x00R\x11zigbee_parameters\x12\x8b\x01\n" +
-	"\x10MatterParameters\x18\x03 \x01(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersB\x15\xaa\xdd\x1b\x11matter_parametersH\x00R\x11matter_parameters\x12\x9d\x01\n" +
-	"\x14MatterBulkParameters\x18\x04 \x01(\v2I.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterBulkParametersB\x1a\xaa\xdd\x1b\x16matter_bulk_parametersH\x00R\x16matter_bulk_parameters\x12\x93\x01\n" +
-	"\x12MatterParametersV3\x18\x05 \x01(\v2G.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersV3B\x17\xaa\xdd\x1b\x13matter_transport_v3H\x00R\x13matter_transport_v3\x12\x87\x01\n" +
-	"\x0fZenohParameters\x18\x06 \x01(\v2D.NAlice.TIotDiscoveryCapability.TProtocolParameters.TZenohParametersB\x14\xaa\xdd\x1b\x10zenoh_parametersH\x00R\x10zenoh_parameters\x1aN\n" +
-	"\x11TZigbeeParameters\x123\n" +
-	"\vDeviceLimit\x18\x01 \x01(\rB\x10\xaa\xdd\x1b\fdevice_limitR\fdevice_limit:\x04\xa8\xdd\x1b\x04\x1a\xaf\x01\n" +
-	"\x11TMatterParameters\x12D\n" +
-	"\x10SetupCodePayload\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12setup_code_payloadR\x12setup_code_payload\x12\x1c\n" +
-	"\x04SSID\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x120\n" +
-	"\bPassword\x18\x03 \x01(\tB\x14\xaa\xdd\x1b\bpassword\xa8\x8d'\x01\xf8\x91*\x02R\bpassword:\x04\xa8\xdd\x1b\x04\x1a\xb6\x01\n" +
-	"\x15TMatterBulkParameters\x12G\n" +
-	"\x11SetupCodePayloads\x18\x01 \x03(\tB\x17\xaa\xdd\x1b\x13setup_code_payloadsR\x13setup_code_payloads\x12\x1c\n" +
-	"\x04SSID\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x120\n" +
-	"\bPassword\x18\x03 \x01(\tB\x14\xaa\xdd\x1b\bpassword\xa8\x8d'\x01\xf8\x91*\x02R\bpassword:\x04\xa8\xdd\x1b\x04\x1a\xbe\x01\n" +
-	"\x11TDeviceParameters\x12D\n" +
-	"\x10SetupCodePayload\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12setup_code_payloadR\x12setup_code_payload\x12]\n" +
-	"\tTransport\x18\x02 \x01(\x0e20.NAlice.TIotDiscoveryCapability.TMatterTransportB\r\xaa\xdd\x1b\ttransportR\ttransport:\x04\xa8\xdd\x1b\x04\x1ap\n" +
-	"\x18TWiFiTransportParameters\x12\x1c\n" +
-	"\x04SSID\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x120\n" +
-	"\bPassword\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\bpassword\xa8\x8d'\x01\xf8\x91*\x02R\bpassword:\x04\xa8\xdd\x1b\x04\x1a\"\n" +
-	"\x1aTThreadTransportParameters:\x04\xa8\xdd\x1b\x04\x1a\xb9\x03\n" +
-	"\x14TTransportParameters\x12]\n" +
-	"\tTransport\x18\x01 \x01(\x0e20.NAlice.TIotDiscoveryCapability.TMatterTransportB\r\xaa\xdd\x1b\ttransportR\ttransport\x12\x8c\x01\n" +
-	"\x0eWiFiParameters\x18\x02 \x01(\v2L.NAlice.TIotDiscoveryCapability.TProtocolParameters.TWiFiTransportParametersB\x13\xaa\xdd\x1b\x0fwifi_parametersH\x00R\x0fwifi_parameters\x12\x94\x01\n" +
-	"\x10ThreadParameters\x18\x03 \x01(\v2N.NAlice.TIotDiscoveryCapability.TProtocolParameters.TThreadTransportParametersB\x15\xaa\xdd\x1b\x11thread_parametersH\x00R\x11thread_parametersB\x1c\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotDiscoveryCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotDiscoveryCapability.TStateR\x05State\x1a\xd0\x01\n" +
+	"\vTParameters\x12Y\n" +
+	"\x12SupportedProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\x12SupportedProtocols\x124\n" +
+	"\x15IsMatterBulkSupported\x18\x02 \x01(\bR\x15IsMatterBulkSupported\x120\n" +
+	"\x13MatterParametersVer\x18\x03 \x01(\rR\x13MatterParametersVer\x1a\x99\x01\n" +
+	"\x0fTProtocolStatus\x12E\n" +
+	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\bProtocol\x12?\n" +
+	"\x06Status\x18\x02 \x01(\x0e2'.NAlice.TIotDiscoveryCapability.EStatusR\x06Status\x1a\x8b\x01\n" +
+	"\x06TState\x124\n" +
+	"\x15IsDiscoveryInProgress\x18\x01 \x01(\bR\x15IsDiscoveryInProgress\x12K\n" +
+	"\bStatuses\x18\x02 \x03(\v2/.NAlice.TIotDiscoveryCapability.TProtocolStatusR\bStatuses\x1a\xc8\x11\n" +
+	"\x13TProtocolParameters\x12E\n" +
+	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\bProtocol\x12s\n" +
+	"\x10ZigbeeParameters\x18\x02 \x01(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TZigbeeParametersH\x00R\x10ZigbeeParameters\x12s\n" +
+	"\x10MatterParameters\x18\x03 \x01(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersH\x00R\x10MatterParameters\x12\x7f\n" +
+	"\x14MatterBulkParameters\x18\x04 \x01(\v2I.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterBulkParametersH\x00R\x14MatterBulkParameters\x12y\n" +
+	"\x12MatterParametersV3\x18\x05 \x01(\v2G.NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersV3H\x00R\x12MatterParametersV3\x12p\n" +
+	"\x0fZenohParameters\x18\x06 \x01(\v2D.NAlice.TIotDiscoveryCapability.TProtocolParameters.TZenohParametersH\x00R\x0fZenohParameters\x1a5\n" +
+	"\x11TZigbeeParameters\x12 \n" +
+	"\vDeviceLimit\x18\x01 \x01(\rR\vDeviceLimit\x1ao\n" +
+	"\x11TMatterParameters\x12*\n" +
+	"\x10SetupCodePayload\x18\x01 \x01(\tR\x10SetupCodePayload\x12\x12\n" +
+	"\x04SSID\x18\x02 \x01(\tR\x04SSID\x12\x1a\n" +
+	"\bPassword\x18\x03 \x01(\tR\bPassword\x1au\n" +
+	"\x15TMatterBulkParameters\x12,\n" +
+	"\x11SetupCodePayloads\x18\x01 \x03(\tR\x11SetupCodePayloads\x12\x12\n" +
+	"\x04SSID\x18\x02 \x01(\tR\x04SSID\x12\x1a\n" +
+	"\bPassword\x18\x03 \x01(\tR\bPassword\x1a\x8f\x01\n" +
+	"\x11TDeviceParameters\x12*\n" +
+	"\x10SetupCodePayload\x18\x01 \x01(\tR\x10SetupCodePayload\x12N\n" +
+	"\tTransport\x18\x02 \x01(\x0e20.NAlice.TIotDiscoveryCapability.TMatterTransportR\tTransport\x1aJ\n" +
+	"\x18TWiFiTransportParameters\x12\x12\n" +
+	"\x04SSID\x18\x01 \x01(\tR\x04SSID\x12\x1a\n" +
+	"\bPassword\x18\x02 \x01(\tR\bPassword\x1a\x1c\n" +
+	"\x1aTThreadTransportParameters\x1a\xea\x02\n" +
+	"\x14TTransportParameters\x12N\n" +
+	"\tTransport\x18\x01 \x01(\x0e20.NAlice.TIotDiscoveryCapability.TMatterTransportR\tTransport\x12v\n" +
+	"\x0eWiFiParameters\x18\x02 \x01(\v2L.NAlice.TIotDiscoveryCapability.TProtocolParameters.TWiFiTransportParametersH\x00R\x0eWiFiParameters\x12|\n" +
+	"\x10ThreadParameters\x18\x03 \x01(\v2N.NAlice.TIotDiscoveryCapability.TProtocolParameters.TThreadTransportParametersH\x00R\x10ThreadParametersB\f\n" +
 	"\n" +
-	"Parameters\x12\x0e\xaa\xdd\x1b\n" +
-	"parameters\x1a\xef\x03\n" +
-	"\x13TMatterParametersV3\x12\x8c\x01\n" +
-	"\x11DevicesParameters\x18\x01 \x03(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TDeviceParametersB\x16\xaa\xdd\x1b\x12devices_parametersR\x12devices_parameters\x12\x98\x01\n" +
-	"\x14TransportsParameters\x18\x02 \x03(\v2H.NAlice.TIotDiscoveryCapability.TProtocolParameters.TTransportParametersB\x19\xaa\xdd\x1b\x15transports_parametersR\x15transports_parameters\x12b\n" +
+	"Parameters\x1a\xb2\x03\n" +
+	"\x13TMatterParametersV3\x12s\n" +
+	"\x11DevicesParameters\x18\x01 \x03(\v2E.NAlice.TIotDiscoveryCapability.TProtocolParameters.TDeviceParametersR\x11DevicesParameters\x12|\n" +
+	"\x14TransportsParameters\x18\x02 \x03(\v2H.NAlice.TIotDiscoveryCapability.TProtocolParameters.TTransportParametersR\x14TransportsParameters\x12b\n" +
 	"\x1aSupportsPhoneCommissioning\x18\x03 \x01(\bB \xaa\xdd\x1b\x1csupports_phone_commissioningR\x1csupports_phone_commissioning\x12D\n" +
-	"\x10ClientApiVersion\x18\x04 \x01(\rB\x16\xaa\xdd\x1b\x12client_api_versionR\x12client_api_version:\x04\xa8\xdd\x1b\x04\x1a\x99\x01\n" +
-	"\x10TZenohParameters\x12$\n" +
-	"\fPeerDeviceID\x18\x01 \x01(\tR\x0epeer_device_id\x12Y\n" +
-	"\bSecurity\x18\x02 \x01(\v2=.NAlice.TIotDiscoveryCapability.TProtocolParameters.TSecurityR\bsecurity:\x04\xa8\xdd\x1b\x04\x1aQ\n" +
-	"\tTSecurity\x12!\n" +
-	"\x05PSKID\x18\x01 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06psk_idR\x06psk_id\x12!\n" +
-	"\x03PSK\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\x03psk\xa8\x8d'\x01\xf8\x91*\x02R\x03psk:\x04\xa8\xdd\x1b\x04B\x1c\n" +
+	"\x10ClientApiVersion\x18\x04 \x01(\rB\x16\xaa\xdd\x1b\x12client_api_versionR\x12client_api_version\x1a\x91\x01\n" +
+	"\x10TZenohParameters\x12\"\n" +
+	"\fPeerDeviceID\x18\x01 \x01(\tR\fPeerDeviceID\x12Y\n" +
+	"\bSecurity\x18\x02 \x01(\v2=.NAlice.TIotDiscoveryCapability.TProtocolParameters.TSecurityR\bSecurity\x1a3\n" +
+	"\tTSecurity\x12\x14\n" +
+	"\x05PSKID\x18\x01 \x01(\tR\x05PSKID\x12\x10\n" +
+	"\x03PSK\x18\x02 \x01(\tR\x03PSKB\f\n" +
 	"\n" +
-	"Parameters\x12\x0e\xaa\xdd\x1b\n" +
-	"parameters\x1a\xb8\x01\n" +
-	"\bTNetwork\x12S\n" +
-	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12W\n" +
-	"\rNetworkBase64\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueB\x12\xaa\xdd\x1b\x0enetwork_base64R\x0enetwork_base64\x1a\xaa\x06\n" +
+	"Parameters\x1a\x95\x01\n" +
+	"\bTNetwork\x12E\n" +
+	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\bProtocol\x12B\n" +
+	"\rNetworkBase64\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueR\rNetworkBase64\x1a\xd2\x03\n" +
+	"\tTNetworks\x12A\n" +
+	"\rZigbeeNetwork\x18\x01 \x01(\v2\x1b.google.protobuf.BytesValueR\rZigbeeNetwork\x12N\n" +
+	"\x13ZigbeeNetworkBase64\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueR\x13ZigbeeNetworkBase64\x12N\n" +
+	"\x13MatterNetworkBase64\x18\x03 \x01(\v2\x1c.google.protobuf.StringValueR\x13MatterNetworkBase64\x12N\n" +
+	"\x13ThreadNetworkBase64\x18\x04 \x01(\v2\x1c.google.protobuf.StringValueR\x13ThreadNetworkBase64\x12L\n" +
+	"\x12ZenohNetworkBase64\x18\x06 \x01(\v2\x1c.google.protobuf.StringValueR\x12ZenohNetworkBase64\x12D\n" +
+	"\bNetworks\x18\x05 \x03(\v2(.NAlice.TIotDiscoveryCapability.TNetworkR\bNetworks\x1aN\n" +
+	"\rTEndpointInfo\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12-\n" +
+	"\bProtocol\x18\x02 \x01(\x0e2\x11.NAlice.EProtocolR\bProtocol\x1a\x8e\x03\n" +
+	"\x18TStartDiscoveryDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12G\n" +
+	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\tProtocols\x12\x1c\n" +
+	"\tTimeoutMs\x18\x02 \x01(\rR\tTimeoutMs\x12 \n" +
+	"\vDeviceLimit\x18\x04 \x01(\rR\vDeviceLimit\x12c\n" +
+	"\x12ProtocolParameters\x18\x05 \x03(\v23.NAlice.TIotDiscoveryCapability.TProtocolParametersR\x12ProtocolParameters\x12\x1c\n" +
+	"\tSessionId\x18\x06 \x01(\tR\tSessionId\x129\n" +
+	"\x04Mode\x18\a \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeR\x04ModeJ\x04\b\x03\x10\x04R\x10DiscoveryContext\x1aN\n" +
+	"\x19TCancelDiscoveryDirective\x12\x1c\n" +
+	"\tSessionId\x18\x01 \x01(\tR\tSessionId\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a\xef\x01\n" +
+	"\x19TFinishDiscoveryDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vAcceptedIds\x18\x01 \x03(\tR\vAcceptedIds\x12[\n" +
+	"\x11AcceptedEndpoints\x18\x02 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoR\x11AcceptedEndpoints\x12\x1e\n" +
+	"\n" +
+	"SystemInfo\x18\x03 \x01(\tR\n" +
+	"SystemInfo\x12\x1e\n" +
+	"\n" +
+	"CallbackId\x18\x04 \x01(\rR\n" +
+	"CallbackId\x1a\xf5\x01\n" +
+	"\x1fTFinishSystemDiscoveryDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vAcceptedIds\x18\x01 \x03(\tR\vAcceptedIds\x12[\n" +
+	"\x11AcceptedEndpoints\x18\x02 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoR\x11AcceptedEndpoints\x12\x1e\n" +
+	"\n" +
+	"SystemInfo\x18\x03 \x01(\tR\n" +
+	"SystemInfo\x12\x1e\n" +
+	"\n" +
+	"CallbackId\x18\x04 \x01(\rR\n" +
+	"CallbackId\x1a\x91\x01\n" +
+	"\x1cTStartTuyaBroadcastDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04SSID\x18\x01 \x01(\tR\x04SSID\x12\x1a\n" +
+	"\bPassword\x18\x02 \x01(\tR\bPassword\x12\x14\n" +
+	"\x05Token\x18\x03 \x01(\tR\x05Token\x12\x16\n" +
+	"\x06Cipher\x18\x04 \x01(\tR\x06Cipher\x1aw\n" +
+	"\x19TRestoreNetworksDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12E\n" +
+	"\bNetworks\x18\x01 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksR\bNetworks\x1aL\n" +
+	"\x17TForgetDevicesDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1c\n" +
+	"\tDeviceIds\x18\x01 \x03(\tR\tDeviceIds\x1ax\n" +
+	"\x18TDeleteNetworksDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12G\n" +
+	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\tProtocols\x1a\x8f\x01\n" +
+	"\x17TEnableNetworkDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12E\n" +
+	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\bProtocol\x12\x18\n" +
+	"\aEnabled\x18\x02 \x01(\bR\aEnabled\x1a{\n" +
+	"\x17TSyncEndpointsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12K\n" +
+	"\tEndpoints\x18\x01 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoR\tEndpoints\x1ar\n" +
+	"\x11TUpdateStateEvent\x12?\n" +
+	"\n" +
+	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotDiscoveryCapabilityR\n" +
+	"Capability\x12\x1c\n" +
+	"\tSessionId\x18\x02 \x01(\tR\tSessionId\x1a\xde\x05\n" +
+	"\x1aTIotDiscoveryCompleteEvent\x12,\n" +
+	"\x11FoundDevicesCount\x18\x01 \x01(\rR\x11FoundDevicesCount\x12\x1c\n" +
+	"\tSessionId\x18\x03 \x01(\tR\tSessionId\x129\n" +
+	"\x04Mode\x18\x04 \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeR\x04Mode\x12k\n" +
+	"\x06Matter\x18\x02 \x01(\v2Q.NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResultH\x00R\x06Matter\x1a\xc1\x03\n" +
+	"\x16TMatterDiscoveryResult\x12(\n" +
+	"\x0fDevicePairingId\x18\x01 \x01(\tR\x0fDevicePairingId\x12y\n" +
+	"\x05Error\x18\x02 \x01(\v2^.NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterErrorH\x00R\x05Error\x88\x01\x01\x1a\xf7\x01\n" +
+	"\fTMatterError\x12\x12\n" +
+	"\x04Code\x18\x01 \x01(\rR\x04Code\x12\x18\n" +
+	"\aDetails\x18\x02 \x01(\tR\aDetails\x12i\n" +
+	"\x14MatterDiscoveryStage\x18\x03 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageR\x14MatterDiscoveryStage\x12N\n" +
+	"\tErrorType\x18\x04 \x01(\x0e20.NAlice.TIotDiscoveryCapability.EMatterErrorTypeR\tErrorTypeB\b\n" +
+	"\x06_ErrorB\b\n" +
+	"\x06Result\x1a\xc8\x04\n" +
+	"\x1aTIotDiscoveryProgressEvent\x12E\n" +
+	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\bProtocol\x12\x1c\n" +
+	"\tSessionId\x18\x04 \x01(\tR\tSessionId\x12k\n" +
+	"\x14MatterDiscoveryStage\x18\x02 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageH\x00R\x14MatterDiscoveryStage\x12\x96\x01\n" +
+	"\x1cExtendedMatterDiscoveryStage\x18\x03 \x01(\v2P.NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStageH\x00R\x1cExtendedMatterDiscoveryStage\x1a\xac\x01\n" +
+	"\x15TMatterDiscoveryStage\x12(\n" +
+	"\x0fDevicePairingId\x18\x01 \x01(\tR\x0fDevicePairingId\x12i\n" +
+	"\x14MatterDiscoveryStage\x18\x02 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageR\x14MatterDiscoveryStageB\x10\n" +
+	"\x0eDiscoveryStage\x1a\xaa\x06\n" +
 	"#TDistributedCommissioningParameters\x12\x9b\x01\n" +
 	"\x10MatterParameters\x18\x01 \x01(\v2U.NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParametersB\x15\xaa\xdd\x1b\x11matter_parametersH\x00R\x11matter_parameters\x1a\xc0\x04\n" +
 	"\x11TMatterParameters\x12\x97\x01\n" +
@@ -3113,34 +3192,7 @@ const file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_raw
 	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x0fReservedNodeIds:\x04\xa8\xdd\x1b\x04B\x1c\n" +
 	"\n" +
 	"Parameters\x12\x0e\xaa\xdd\x1b\n" +
-	"parameters\x1a\xee\x04\n" +
-	"\tTNetworks\x12V\n" +
-	"\rZigbeeNetwork\x18\x01 \x01(\v2\x1b.google.protobuf.BytesValueB\x12\xaa\xdd\x1b\x0ezigbee_networkR\x0ezigbee_network\x12k\n" +
-	"\x13ZigbeeNetworkBase64\x18\x02 \x01(\v2\x1c.google.protobuf.StringValueB\x19\xaa\xdd\x1b\x15zigbee_network_base64R\x15zigbee_network_base64\x12k\n" +
-	"\x13MatterNetworkBase64\x18\x03 \x01(\v2\x1c.google.protobuf.StringValueB\x19\xaa\xdd\x1b\x15matter_network_base64R\x15matter_network_base64\x12k\n" +
-	"\x13ThreadNetworkBase64\x18\x04 \x01(\v2\x1c.google.protobuf.StringValueB\x19\xaa\xdd\x1b\x15thread_network_base64R\x15thread_network_base64\x12h\n" +
-	"\x12ZenohNetworkBase64\x18\x06 \x01(\v2\x1c.google.protobuf.StringValueB\x18\xaa\xdd\x1b\x14zenoh_network_base64R\x14zenoh_network_base64\x12R\n" +
-	"\bNetworks\x18\x05 \x03(\v2(.NAlice.TIotDiscoveryCapability.TNetworkB\f\xaa\xdd\x1b\bnetworksR\bnetworks:\x04\xa8\xdd\x1b\x04\x1aj\n" +
-	"\rTEndpointInfo\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12;\n" +
-	"\bProtocol\x18\x02 \x01(\x0e2\x11.NAlice.EProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol:\x04\xa8\xdd\x1b\x04\x1a\xad\x04\n" +
-	"\x18TStartDiscoveryDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12V\n" +
-	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\r\xaa\xdd\x1b\tprotocolsR\tprotocols\x12-\n" +
-	"\tTimeoutMs\x18\x02 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms\x125\n" +
-	"\vDeviceLimit\x18\x04 \x01(\rB\x12\xaa\xdd\x1b\fdevice_limit\x18\x01R\fdevice_limit\x12}\n" +
-	"\x12ProtocolParameters\x18\x05 \x03(\v23.NAlice.TIotDiscoveryCapability.TProtocolParametersB\x17\xaa\xdd\x1b\x13protocol_parametersR\x13protocol_parameters\x12-\n" +
-	"\tSessionId\x18\x06 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12C\n" +
-	"\x04Mode\x18\a \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:)\x92\x82\x19\x1diot_start_discovery_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x02J\x04\b\x03\x10\x04R\x10DiscoveryContext\x1a\x95\x01\n" +
-	"\x19TCancelDiscoveryDirective\x12-\n" +
-	"\tSessionId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:*\x92\x82\x19\x1eiot_cancel_discovery_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x0e\x1a\xad\x06\n" +
+	"parameters\x1a\xad\x06\n" +
 	"\x1bTDiscoveryContinueDirective\x12-\n" +
 	"\tSessionId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"session_idR\n" +
@@ -3158,89 +3210,7 @@ const file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_raw
 	"\x05Stage\x18\x04 \x01(\rB\t\xaa\xdd\x1b\x05stageR\x05stage:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x1c\n" +
 	"\n" +
 	"Parameters\x12\x0e\xaa\xdd\x1b\n" +
-	"parameters:-\x92\x82\x19 iot_discovery_continue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe0\x05\x1a\xf7\x02\n" +
-	"\x19TFinishDiscoveryDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\vAcceptedIds\x18\x01 \x03(\tB\x12\xaa\xdd\x1b\faccepted_ids\x18\x01R\faccepted_ids\x12t\n" +
-	"\x11AcceptedEndpoints\x18\x02 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoB\x16\xaa\xdd\x1b\x12accepted_endpointsR\x12accepted_endpoints\x120\n" +
-	"\n" +
-	"SystemInfo\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vsystem_infoR\vsystem_info\x120\n" +
-	"\n" +
-	"CallbackId\x18\x04 \x01(\rB\x0f\xaa\xdd\x1b\vcallback_idR\vcallback_id:*\x92\x82\x19\x1eiot_finish_discovery_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x03\x1a\x85\x03\n" +
-	"\x1fTFinishSystemDiscoveryDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x125\n" +
-	"\vAcceptedIds\x18\x01 \x03(\tB\x12\xaa\xdd\x1b\faccepted_ids\x18\x01R\faccepted_ids\x12t\n" +
-	"\x11AcceptedEndpoints\x18\x02 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoB\x16\xaa\xdd\x1b\x12accepted_endpointsR\x12accepted_endpoints\x120\n" +
-	"\n" +
-	"SystemInfo\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vsystem_infoR\vsystem_info\x120\n" +
-	"\n" +
-	"CallbackId\x18\x04 \x01(\rB\x0f\xaa\xdd\x1b\vcallback_idR\vcallback_id:2\x92\x82\x19%iot_finish_system_discovery_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xec\x01\x1a\xfa\x01\n" +
-	"\x1cTStartTuyaBroadcastDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04SSID\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04ssidR\x04ssid\x12(\n" +
-	"\bPassword\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bpasswordR\bpassword\x12\x1f\n" +
-	"\x05Token\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05tokenR\x05token\x12\"\n" +
-	"\x06Cipher\x18\x04 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06cipherR\x06cipher:.\x92\x82\x19\"iot_start_tuya_broadcast_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\n" +
-	"\x1a\xbb\x01\n" +
-	"\x19TRestoreNetworksDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\bNetworks\x18\x01 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksB\f\xaa\xdd\x1b\bnetworksR\bnetworks:*\x92\x82\x19\x1eiot_restore_networks_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\r\x1a\x95\x01\n" +
-	"\x17TForgetDevicesDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x121\n" +
-	"\tDeviceIds\x18\x01 \x03(\tB\x12\xaa\xdd\x1b\n" +
-	"device_ids\xf8\x91*\x03R\n" +
-	"device_ids:(\x92\x82\x19\x1ciot_forget_devices_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x04\x1a\xbc\x01\n" +
-	"\x18TDeleteNetworksDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12V\n" +
-	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\r\xaa\xdd\x1b\tprotocolsR\tprotocols:)\x92\x82\x19\x1diot_delete_networks_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x0f\x1a\xde\x01\n" +
-	"\x17TEnableNetworkDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12%\n" +
-	"\aEnabled\x18\x02 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:(\x92\x82\x19\x1ciot_enable_network_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1b\x1a\xbf\x01\n" +
-	"\x17TSyncEndpointsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12Z\n" +
-	"\tEndpoints\x18\x01 \x03(\v2-.NAlice.TIotDiscoveryCapability.TEndpointInfoB\r\xaa\xdd\x1b\tendpointsR\tendpoints:)\x92\x82\x19\x1ciot_sync_endpoints_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x01\x1a\x9d\x01\n" +
-	"\x11TUpdateStateEvent\x12O\n" +
-	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotDiscoveryCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability\x12-\n" +
-	"\tSessionId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x1e\x1a\xae\a\n" +
-	"\x1aTIotDiscoveryCompleteEvent\x12G\n" +
-	"\x11FoundDevicesCount\x18\x01 \x01(\rB\x17\xaa\xdd\x1b\x13found_devices_countR\x13found_devices_count\x12-\n" +
-	"\tSessionId\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12C\n" +
-	"\x04Mode\x18\x04 \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode\x12w\n" +
-	"\x06Matter\x18\x02 \x01(\v2Q.NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResultB\n" +
-	"\xaa\xdd\x1b\x06matterH\x00R\x06matter\x1a\xb9\x04\n" +
-	"\x16TMatterDiscoveryResult\x12A\n" +
-	"\x0fDevicePairingId\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\x11device_pairing_idR\x11device_pairing_id\x12\x84\x01\n" +
-	"\x05Error\x18\x02 \x01(\v2^.NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterErrorB\t\xaa\xdd\x1b\x05errorH\x00R\x05error\x88\x01\x01\x1a\xc4\x02\n" +
-	"\fTMatterError\x12\x1c\n" +
-	"\x04Code\x18\x01 \x01(\rB\b\xaa\xdd\x1b\x04codeR\x04code\x12%\n" +
-	"\aDetails\x18\x02 \x01(\tB\v\xaa\xdd\x1b\adetailsR\adetails\x12\x87\x01\n" +
-	"\x14MatterDiscoveryStage\x18\x03 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageB\x1a\xaa\xdd\x1b\x16matter_discovery_stageR\x16matter_discovery_stage\x12_\n" +
-	"\tErrorType\x18\x04 \x01(\x0e20.NAlice.TIotDiscoveryCapability.EMatterErrorTypeB\x0e\xaa\xdd\x1b\n" +
-	"error_typeR\n" +
-	"error_type:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06_Error:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x1fB\x14\n" +
-	"\x06Result\x12\n" +
-	"\xaa\xdd\x1b\x06result\x1a\x8e\x06\n" +
-	"\x1aTIotDiscoveryProgressEvent\x12S\n" +
-	"\bProtocol\x18\x01 \x01(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\f\xaa\xdd\x1b\bprotocolR\bprotocol\x12-\n" +
-	"\tSessionId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12\x8b\x01\n" +
-	"\x14MatterDiscoveryStage\x18\x02 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageB\x1c\xaa\xdd\x1b\x16matter_discovery_stage\x18\x01H\x00R\x16matter_discovery_stage\x12\xbe\x01\n" +
-	"\x1cExtendedMatterDiscoveryStage\x18\x03 \x01(\v2P.NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStageB#\xaa\xdd\x1b\x1fextended_matter_discovery_stageH\x00R\x1fextended_matter_discovery_stage\x1a\xea\x01\n" +
-	"\x15TMatterDiscoveryStage\x12A\n" +
-	"\x0fDevicePairingId\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\x11device_pairing_idR\x11device_pairing_id\x12\x87\x01\n" +
-	"\x14MatterDiscoveryStage\x18\x02 \x01(\x0e25.NAlice.TIotDiscoveryCapability.EMatterDiscoveryStageB\x1a\xaa\xdd\x1b\x16matter_discovery_stageR\x16matter_discovery_stage:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xdf\x01B%\n" +
-	"\x0eDiscoveryStage\x12\x13\xaa\xdd\x1b\x0fdiscovery_stage\x1a\xda\x01\n" +
+	"parameters:-\x92\x82\x19 iot_discovery_continue_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe0\x05\x1a\xda\x01\n" +
 	")TDistributedCommissioningInitializedEvent\x12-\n" +
 	"\tSessionId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"session_idR\n" +
@@ -3309,8 +3279,9 @@ const file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_raw
 	"\x10PROVIDER_FAILURE\x10\x04\x12\x15\n" +
 	"\x11PROVIDER_DISABLED\x10\x05\x12\x17\n" +
 	"\x13NO_WIFI_CREDENTIALS\x10\x06\x12!\n" +
-	"\x1dNO_THREAD_OPERATIONAL_DATASET\x10\a:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x02B\x9f\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bIotDiscoveryCapabilityProtoP\x01ZPa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_discovery;iotdiscoverypbb\x06proto3"
+	"\x1dNO_THREAD_OPERATIONAL_DATASET\x10\aB\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_discovery\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_rawDescOnce sync.Once
@@ -3339,23 +3310,23 @@ var file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_goTyp
 	(*TIotDiscoveryCapability_TState)(nil),                                                                  // 9: NAlice.TIotDiscoveryCapability.TState
 	(*TIotDiscoveryCapability_TProtocolParameters)(nil),                                                     // 10: NAlice.TIotDiscoveryCapability.TProtocolParameters
 	(*TIotDiscoveryCapability_TNetwork)(nil),                                                                // 11: NAlice.TIotDiscoveryCapability.TNetwork
-	(*TIotDiscoveryCapability_TDistributedCommissioningParameters)(nil),                                     // 12: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters
-	(*TIotDiscoveryCapability_TNetworks)(nil),                                                               // 13: NAlice.TIotDiscoveryCapability.TNetworks
-	(*TIotDiscoveryCapability_TEndpointInfo)(nil),                                                           // 14: NAlice.TIotDiscoveryCapability.TEndpointInfo
-	(*TIotDiscoveryCapability_TStartDiscoveryDirective)(nil),                                                // 15: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective
-	(*TIotDiscoveryCapability_TCancelDiscoveryDirective)(nil),                                               // 16: NAlice.TIotDiscoveryCapability.TCancelDiscoveryDirective
-	(*TIotDiscoveryCapability_TDiscoveryContinueDirective)(nil),                                             // 17: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective
-	(*TIotDiscoveryCapability_TFinishDiscoveryDirective)(nil),                                               // 18: NAlice.TIotDiscoveryCapability.TFinishDiscoveryDirective
-	(*TIotDiscoveryCapability_TFinishSystemDiscoveryDirective)(nil),                                         // 19: NAlice.TIotDiscoveryCapability.TFinishSystemDiscoveryDirective
-	(*TIotDiscoveryCapability_TStartTuyaBroadcastDirective)(nil),                                            // 20: NAlice.TIotDiscoveryCapability.TStartTuyaBroadcastDirective
-	(*TIotDiscoveryCapability_TRestoreNetworksDirective)(nil),                                               // 21: NAlice.TIotDiscoveryCapability.TRestoreNetworksDirective
-	(*TIotDiscoveryCapability_TForgetDevicesDirective)(nil),                                                 // 22: NAlice.TIotDiscoveryCapability.TForgetDevicesDirective
-	(*TIotDiscoveryCapability_TDeleteNetworksDirective)(nil),                                                // 23: NAlice.TIotDiscoveryCapability.TDeleteNetworksDirective
-	(*TIotDiscoveryCapability_TEnableNetworkDirective)(nil),                                                 // 24: NAlice.TIotDiscoveryCapability.TEnableNetworkDirective
-	(*TIotDiscoveryCapability_TSyncEndpointsDirective)(nil),                                                 // 25: NAlice.TIotDiscoveryCapability.TSyncEndpointsDirective
-	(*TIotDiscoveryCapability_TUpdateStateEvent)(nil),                                                       // 26: NAlice.TIotDiscoveryCapability.TUpdateStateEvent
-	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent)(nil),                                              // 27: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent
-	(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent)(nil),                                              // 28: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent
+	(*TIotDiscoveryCapability_TNetworks)(nil),                                                               // 12: NAlice.TIotDiscoveryCapability.TNetworks
+	(*TIotDiscoveryCapability_TEndpointInfo)(nil),                                                           // 13: NAlice.TIotDiscoveryCapability.TEndpointInfo
+	(*TIotDiscoveryCapability_TStartDiscoveryDirective)(nil),                                                // 14: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective
+	(*TIotDiscoveryCapability_TCancelDiscoveryDirective)(nil),                                               // 15: NAlice.TIotDiscoveryCapability.TCancelDiscoveryDirective
+	(*TIotDiscoveryCapability_TFinishDiscoveryDirective)(nil),                                               // 16: NAlice.TIotDiscoveryCapability.TFinishDiscoveryDirective
+	(*TIotDiscoveryCapability_TFinishSystemDiscoveryDirective)(nil),                                         // 17: NAlice.TIotDiscoveryCapability.TFinishSystemDiscoveryDirective
+	(*TIotDiscoveryCapability_TStartTuyaBroadcastDirective)(nil),                                            // 18: NAlice.TIotDiscoveryCapability.TStartTuyaBroadcastDirective
+	(*TIotDiscoveryCapability_TRestoreNetworksDirective)(nil),                                               // 19: NAlice.TIotDiscoveryCapability.TRestoreNetworksDirective
+	(*TIotDiscoveryCapability_TForgetDevicesDirective)(nil),                                                 // 20: NAlice.TIotDiscoveryCapability.TForgetDevicesDirective
+	(*TIotDiscoveryCapability_TDeleteNetworksDirective)(nil),                                                // 21: NAlice.TIotDiscoveryCapability.TDeleteNetworksDirective
+	(*TIotDiscoveryCapability_TEnableNetworkDirective)(nil),                                                 // 22: NAlice.TIotDiscoveryCapability.TEnableNetworkDirective
+	(*TIotDiscoveryCapability_TSyncEndpointsDirective)(nil),                                                 // 23: NAlice.TIotDiscoveryCapability.TSyncEndpointsDirective
+	(*TIotDiscoveryCapability_TUpdateStateEvent)(nil),                                                       // 24: NAlice.TIotDiscoveryCapability.TUpdateStateEvent
+	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent)(nil),                                              // 25: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent
+	(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent)(nil),                                              // 26: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent
+	(*TIotDiscoveryCapability_TDistributedCommissioningParameters)(nil),                                     // 27: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters
+	(*TIotDiscoveryCapability_TDiscoveryContinueDirective)(nil),                                             // 28: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective
 	(*TIotDiscoveryCapability_TDistributedCommissioningInitializedEvent)(nil),                               // 29: NAlice.TIotDiscoveryCapability.TDistributedCommissioningInitializedEvent
 	(*TIotDiscoveryCapability_TProtocolParameters_TZigbeeParameters)(nil),                                   // 30: NAlice.TIotDiscoveryCapability.TProtocolParameters.TZigbeeParameters
 	(*TIotDiscoveryCapability_TProtocolParameters_TMatterParameters)(nil),                                   // 31: NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParameters
@@ -3367,14 +3338,14 @@ var file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_goTyp
 	(*TIotDiscoveryCapability_TProtocolParameters_TMatterParametersV3)(nil),                                 // 37: NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersV3
 	(*TIotDiscoveryCapability_TProtocolParameters_TZenohParameters)(nil),                                    // 38: NAlice.TIotDiscoveryCapability.TProtocolParameters.TZenohParameters
 	(*TIotDiscoveryCapability_TProtocolParameters_TSecurity)(nil),                                           // 39: NAlice.TIotDiscoveryCapability.TProtocolParameters.TSecurity
-	(*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters)(nil),                   // 40: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters
-	(*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters)(nil), // 41: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.TDeviceParameters
-	nil, // 42: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipDataEntry
-	(*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters)(nil),                   // 43: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters
-	(*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters)(nil), // 44: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.TMatterParameters
-	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult)(nil),                 // 45: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult
-	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError)(nil),    // 46: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError
-	(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage)(nil),                  // 47: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage
+	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult)(nil),                       // 40: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult
+	(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_TMatterDiscoveryResult_TMatterError)(nil),          // 41: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError
+	(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_TMatterDiscoveryStage)(nil),                        // 42: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage
+	(*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters)(nil),                   // 43: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters
+	(*TIotDiscoveryCapability_TDistributedCommissioningParameters_TMatterParameters_TDeviceParameters)(nil), // 44: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.TDeviceParameters
+	nil, // 45: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipDataEntry
+	(*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters)(nil),                   // 46: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters
+	(*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_TMatterParameters)(nil), // 47: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.TMatterParameters
 	(*endpoint.TCapability_TMeta)(nil), // 48: NAlice.TCapability.TMeta
 	(*wrapperspb.StringValue)(nil),     // 49: google.protobuf.StringValue
 	(*wrapperspb.BytesValue)(nil),      // 50: google.protobuf.BytesValue
@@ -3396,31 +3367,31 @@ var file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_depId
 	38, // 12: NAlice.TIotDiscoveryCapability.TProtocolParameters.ZenohParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters.TZenohParameters
 	0,  // 13: NAlice.TIotDiscoveryCapability.TNetwork.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
 	49, // 14: NAlice.TIotDiscoveryCapability.TNetwork.NetworkBase64:type_name -> google.protobuf.StringValue
-	40, // 15: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.MatterParameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters
-	50, // 16: NAlice.TIotDiscoveryCapability.TNetworks.ZigbeeNetwork:type_name -> google.protobuf.BytesValue
-	49, // 17: NAlice.TIotDiscoveryCapability.TNetworks.ZigbeeNetworkBase64:type_name -> google.protobuf.StringValue
-	49, // 18: NAlice.TIotDiscoveryCapability.TNetworks.MatterNetworkBase64:type_name -> google.protobuf.StringValue
-	49, // 19: NAlice.TIotDiscoveryCapability.TNetworks.ThreadNetworkBase64:type_name -> google.protobuf.StringValue
-	49, // 20: NAlice.TIotDiscoveryCapability.TNetworks.ZenohNetworkBase64:type_name -> google.protobuf.StringValue
-	11, // 21: NAlice.TIotDiscoveryCapability.TNetworks.Networks:type_name -> NAlice.TIotDiscoveryCapability.TNetwork
-	51, // 22: NAlice.TIotDiscoveryCapability.TEndpointInfo.Protocol:type_name -> NAlice.EProtocol
-	0,  // 23: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.Protocols:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
-	10, // 24: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.ProtocolParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters
-	3,  // 25: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.Mode:type_name -> NAlice.TIotDiscoveryCapability.EMode
-	43, // 26: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.ProtocolParameters:type_name -> NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters
-	14, // 27: NAlice.TIotDiscoveryCapability.TFinishDiscoveryDirective.AcceptedEndpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
-	14, // 28: NAlice.TIotDiscoveryCapability.TFinishSystemDiscoveryDirective.AcceptedEndpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
-	13, // 29: NAlice.TIotDiscoveryCapability.TRestoreNetworksDirective.Networks:type_name -> NAlice.TIotDiscoveryCapability.TNetworks
-	0,  // 30: NAlice.TIotDiscoveryCapability.TDeleteNetworksDirective.Protocols:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
-	0,  // 31: NAlice.TIotDiscoveryCapability.TEnableNetworkDirective.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
-	14, // 32: NAlice.TIotDiscoveryCapability.TSyncEndpointsDirective.Endpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
-	6,  // 33: NAlice.TIotDiscoveryCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TIotDiscoveryCapability
-	3,  // 34: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.Mode:type_name -> NAlice.TIotDiscoveryCapability.EMode
-	45, // 35: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.Matter:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult
-	0,  // 36: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
-	4,  // 37: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
-	47, // 38: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.ExtendedMatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage
-	12, // 39: NAlice.TIotDiscoveryCapability.TDistributedCommissioningInitializedEvent.Parameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters
+	50, // 15: NAlice.TIotDiscoveryCapability.TNetworks.ZigbeeNetwork:type_name -> google.protobuf.BytesValue
+	49, // 16: NAlice.TIotDiscoveryCapability.TNetworks.ZigbeeNetworkBase64:type_name -> google.protobuf.StringValue
+	49, // 17: NAlice.TIotDiscoveryCapability.TNetworks.MatterNetworkBase64:type_name -> google.protobuf.StringValue
+	49, // 18: NAlice.TIotDiscoveryCapability.TNetworks.ThreadNetworkBase64:type_name -> google.protobuf.StringValue
+	49, // 19: NAlice.TIotDiscoveryCapability.TNetworks.ZenohNetworkBase64:type_name -> google.protobuf.StringValue
+	11, // 20: NAlice.TIotDiscoveryCapability.TNetworks.Networks:type_name -> NAlice.TIotDiscoveryCapability.TNetwork
+	51, // 21: NAlice.TIotDiscoveryCapability.TEndpointInfo.Protocol:type_name -> NAlice.EProtocol
+	0,  // 22: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.Protocols:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
+	10, // 23: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.ProtocolParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters
+	3,  // 24: NAlice.TIotDiscoveryCapability.TStartDiscoveryDirective.Mode:type_name -> NAlice.TIotDiscoveryCapability.EMode
+	13, // 25: NAlice.TIotDiscoveryCapability.TFinishDiscoveryDirective.AcceptedEndpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
+	13, // 26: NAlice.TIotDiscoveryCapability.TFinishSystemDiscoveryDirective.AcceptedEndpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
+	12, // 27: NAlice.TIotDiscoveryCapability.TRestoreNetworksDirective.Networks:type_name -> NAlice.TIotDiscoveryCapability.TNetworks
+	0,  // 28: NAlice.TIotDiscoveryCapability.TDeleteNetworksDirective.Protocols:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
+	0,  // 29: NAlice.TIotDiscoveryCapability.TEnableNetworkDirective.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
+	13, // 30: NAlice.TIotDiscoveryCapability.TSyncEndpointsDirective.Endpoints:type_name -> NAlice.TIotDiscoveryCapability.TEndpointInfo
+	6,  // 31: NAlice.TIotDiscoveryCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TIotDiscoveryCapability
+	3,  // 32: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.Mode:type_name -> NAlice.TIotDiscoveryCapability.EMode
+	40, // 33: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.Matter:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult
+	0,  // 34: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
+	4,  // 35: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
+	42, // 36: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.ExtendedMatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage
+	43, // 37: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.MatterParameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters
+	46, // 38: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.ProtocolParameters:type_name -> NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters
+	27, // 39: NAlice.TIotDiscoveryCapability.TDistributedCommissioningInitializedEvent.Parameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters
 	1,  // 40: NAlice.TIotDiscoveryCapability.TProtocolParameters.TDeviceParameters.Transport:type_name -> NAlice.TIotDiscoveryCapability.TMatterTransport
 	1,  // 41: NAlice.TIotDiscoveryCapability.TProtocolParameters.TTransportParameters.Transport:type_name -> NAlice.TIotDiscoveryCapability.TMatterTransport
 	34, // 42: NAlice.TIotDiscoveryCapability.TProtocolParameters.TTransportParameters.WiFiParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters.TWiFiTransportParameters
@@ -3428,14 +3399,14 @@ var file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_depId
 	33, // 44: NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersV3.DevicesParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters.TDeviceParameters
 	36, // 45: NAlice.TIotDiscoveryCapability.TProtocolParameters.TMatterParametersV3.TransportsParameters:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters.TTransportParameters
 	39, // 46: NAlice.TIotDiscoveryCapability.TProtocolParameters.TZenohParameters.Security:type_name -> NAlice.TIotDiscoveryCapability.TProtocolParameters.TSecurity
-	42, // 47: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipData:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipDataEntry
-	41, // 48: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.DevicesParameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.TDeviceParameters
-	0,  // 49: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
-	44, // 50: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.MatterParameters:type_name -> NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.TMatterParameters
-	46, // 51: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.Error:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError
-	4,  // 52: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
-	5,  // 53: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError.ErrorType:type_name -> NAlice.TIotDiscoveryCapability.EMatterErrorType
-	4,  // 54: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
+	41, // 47: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.Error:type_name -> NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError
+	4,  // 48: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
+	5,  // 49: NAlice.TIotDiscoveryCapability.TIotDiscoveryCompleteEvent.TMatterDiscoveryResult.TMatterError.ErrorType:type_name -> NAlice.TIotDiscoveryCapability.EMatterErrorType
+	4,  // 50: NAlice.TIotDiscoveryCapability.TIotDiscoveryProgressEvent.TMatterDiscoveryStage.MatterDiscoveryStage:type_name -> NAlice.TIotDiscoveryCapability.EMatterDiscoveryStage
+	45, // 51: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipData:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.ChipDataEntry
+	44, // 52: NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.DevicesParameters:type_name -> NAlice.TIotDiscoveryCapability.TDistributedCommissioningParameters.TMatterParameters.TDeviceParameters
+	0,  // 53: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.Protocol:type_name -> NAlice.TIotDiscoveryCapability.TProtocol
+	47, // 54: NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.MatterParameters:type_name -> NAlice.TIotDiscoveryCapability.TDiscoveryContinueDirective.TProtocolParameters.TMatterParameters
 	55, // [55:55] is the sub-list for method output_type
 	55, // [55:55] is the sub-list for method input_type
 	55, // [55:55] is the sub-list for extension type_name
@@ -3455,24 +3426,24 @@ func file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_init
 		(*TIotDiscoveryCapability_TProtocolParameters_MatterParametersV3)(nil),
 		(*TIotDiscoveryCapability_TProtocolParameters_ZenohParameters)(nil),
 	}
-	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[6].OneofWrappers = []any{
-		(*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters)(nil),
-	}
-	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21].OneofWrappers = []any{
+	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[19].OneofWrappers = []any{
 		(*TIotDiscoveryCapability_TIotDiscoveryCompleteEvent_Matter)(nil),
 	}
-	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[22].OneofWrappers = []any{
+	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[20].OneofWrappers = []any{
 		(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_MatterDiscoveryStage)(nil),
 		(*TIotDiscoveryCapability_TIotDiscoveryProgressEvent_ExtendedMatterDiscoveryStage)(nil),
+	}
+	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[21].OneofWrappers = []any{
+		(*TIotDiscoveryCapability_TDistributedCommissioningParameters_MatterParameters)(nil),
 	}
 	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[30].OneofWrappers = []any{
 		(*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_WiFiParameters)(nil),
 		(*TIotDiscoveryCapability_TProtocolParameters_TTransportParameters_ThreadParameters)(nil),
 	}
-	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[37].OneofWrappers = []any{
+	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[34].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[40].OneofWrappers = []any{
 		(*TIotDiscoveryCapability_TDiscoveryContinueDirective_TProtocolParameters_MatterParameters)(nil),
 	}
-	file_alice_protos_endpoint_capabilities_iot_discovery_capability_proto_msgTypes[39].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

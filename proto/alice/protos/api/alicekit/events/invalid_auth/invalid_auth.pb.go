@@ -94,11 +94,11 @@ type isTInvalidAuth_CredentialInfo interface {
 }
 
 type TInvalidAuth_TokenInfo struct {
-	TokenInfo *TInvalidAuth_TCredentialInfo `protobuf:"bytes,1,opt,name=TokenInfo,json=tokenInfo,proto3,oneof"`
+	TokenInfo *TInvalidAuth_TCredentialInfo `protobuf:"bytes,1,opt,name=TokenInfo,proto3,oneof"`
 }
 
 type TInvalidAuth_CookieInfo struct {
-	CookieInfo *TInvalidAuth_TCredentialInfo `protobuf:"bytes,2,opt,name=CookieInfo,json=cookieInfo,proto3,oneof"`
+	CookieInfo *TInvalidAuth_TCredentialInfo `protobuf:"bytes,2,opt,name=CookieInfo,proto3,oneof"`
 }
 
 func (*TInvalidAuth_TokenInfo) isTInvalidAuth_CredentialInfo() {}
@@ -107,8 +107,8 @@ func (*TInvalidAuth_CookieInfo) isTInvalidAuth_CredentialInfo() {}
 
 type TInvalidAuth_TCredentialInfo struct {
 	state            protoimpl.MessageState              `protogen:"open.v1"`
-	CredentialValue  string                              `protobuf:"bytes,1,opt,name=CredentialValue,json=credentialValue,proto3" json:"CredentialValue,omitempty"`
-	CredentialStatus credential_status.ECredentialStatus `protobuf:"varint,2,opt,name=CredentialStatus,json=credentialStatus,proto3,enum=NAlice.NAliceApi.ECredentialStatus" json:"CredentialStatus,omitempty"`
+	CredentialValue  string                              `protobuf:"bytes,1,opt,name=CredentialValue,proto3" json:"CredentialValue,omitempty"`
+	CredentialStatus credential_status.ECredentialStatus `protobuf:"varint,2,opt,name=CredentialStatus,proto3,enum=NAlice.NAliceApi.ECredentialStatus" json:"CredentialStatus,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -161,18 +161,17 @@ var File_alice_protos_api_alicekit_events_invalid_auth_invalid_auth_proto protor
 
 const file_alice_protos_api_alicekit_events_invalid_auth_invalid_auth_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/api/alicekit/events/invalid_auth/invalid_auth.proto\x12\x10NAlice.NAliceApi\x1aWalice/protos/api/alicekit/events/invalid_auth/credential_status/credential_status.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xab\x03\n" +
-	"\fTInvalidAuth\x12^\n" +
-	"\tTokenInfo\x18\x01 \x01(\v2..NAlice.NAliceApi.TInvalidAuth.TCredentialInfoB\x0e\xaa\xdd\x1b\n" +
-	"token_infoH\x00R\ttokenInfo\x12a\n" +
+	"@alice/protos/api/alicekit/events/invalid_auth/invalid_auth.proto\x12\x10NAlice.NAliceApi\x1aWalice/protos/api/alicekit/events/invalid_auth/credential_status/credential_status.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x02\n" +
+	"\fTInvalidAuth\x12N\n" +
+	"\tTokenInfo\x18\x01 \x01(\v2..NAlice.NAliceApi.TInvalidAuth.TCredentialInfoH\x00R\tTokenInfo\x12P\n" +
 	"\n" +
-	"CookieInfo\x18\x02 \x01(\v2..NAlice.NAliceApi.TInvalidAuth.TCredentialInfoB\x0f\xaa\xdd\x1b\vcookie_infoH\x00R\n" +
-	"cookieInfo\x1a\xbf\x01\n" +
-	"\x0fTCredentialInfo\x12>\n" +
-	"\x0fCredentialValue\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10credential_valueR\x0fcredentialValue\x12f\n" +
-	"\x10CredentialStatus\x18\x02 \x01(\x0e2#.NAlice.NAliceApi.ECredentialStatusB\x15\xaa\xdd\x1b\x11credential_statusR\x10credentialStatus:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x0eCredentialInfoB\x88\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.events.invalid_authB\vInvalidAuthP\x01Z>a.yandex-team.ru/alice/protos/api/alicekit/events/invalid_authb\x06proto3"
+	"CookieInfo\x18\x02 \x01(\v2..NAlice.NAliceApi.TInvalidAuth.TCredentialInfoH\x00R\n" +
+	"CookieInfo\x1a\x8c\x01\n" +
+	"\x0fTCredentialInfo\x12(\n" +
+	"\x0fCredentialValue\x18\x01 \x01(\tR\x0fCredentialValue\x12O\n" +
+	"\x10CredentialStatus\x18\x02 \x01(\x0e2#.NAlice.NAliceApi.ECredentialStatusR\x10CredentialStatusB\x10\n" +
+	"\x0eCredentialInfoB\xe8\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10InvalidAuthProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/invalid_auth\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_invalid_auth_invalid_auth_proto_rawDescOnce sync.Once

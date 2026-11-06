@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_custom_locality/capability.proto
 
-package iotcustomlocalitypb
+package iot_custom_locality
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -502,8 +502,8 @@ const file_alice_protos_endpoint_capabilities_iot_custom_locality_capability_pro
 	"\x0eEBindingStatus\x12\x1a\n" +
 	"\x16BINDING_STATUS_UNKNOWN\x10\x00\x12\x1a\n" +
 	"\x16BINDING_STATUS_SUCCESS\x10\x01\x12\x17\n" +
-	"\x13BINDING_STATUS_FAIL\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb2\x01B\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB IotCustomLocalityCapabilityProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_custom_locality;iotcustomlocalitypbb\x06proto3"
+	"\x13BINDING_STATUS_FAIL\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb2\x01B\xb8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB IotCustomLocalityCapabilityProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_custom_localityb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_custom_locality_capability_proto_rawDescOnce sync.Once

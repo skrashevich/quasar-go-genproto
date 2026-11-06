@@ -156,8 +156,8 @@ const file_alice_protos_api_alicekit_events_sync_push_sync_request_get_device_st
 	"\x16TGetDeviceStateOptions\x1a\x1d\n" +
 	"\x1bTGetEnvironmentStateOptionsB\x18\n" +
 	"\x16_GetDeviceStateOptionsB\x1d\n" +
-	"\x1b_GetEnvironmentStateOptionsB\xc1\x01\n" +
-	"Rru.yandex.alice.protos.api.alicekit.events.sync_push.sync_request.get_device_stateB\x0eGetDeviceStateP\x01ZYa.yandex-team.ru/alice/protos/api/alicekit/events/sync_push/sync_request/get_device_stateb\x06proto3"
+	"\x1b_GetEnvironmentStateOptionsB\x86\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x13GetDeviceStateProtoP\x01Zxgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push/sync_request/get_device_state\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_sync_request_get_device_state_get_device_state_proto_rawDescOnce sync.Once

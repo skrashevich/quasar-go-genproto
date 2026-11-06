@@ -22,9 +22,9 @@ const (
 )
 
 type MatterNetworkDump struct {
-	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Devices       map[string]*MatterDevice `protobuf:"bytes,1,rep,name=devices,proto3" json:"devices,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	ChipData      map[string][]byte        `protobuf:"bytes,2,rep,name=chip_data,json=chipData,proto3" json:"chip_data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Devices       []*MatterNetworkDump_DevicesEntry  `protobuf:"bytes,1,rep,name=devices,proto3" json:"devices,omitempty"`
+	ChipData      []*MatterNetworkDump_ChipDataEntry `protobuf:"bytes,2,rep,name=chip_data,json=chipData,proto3" json:"chip_data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,16 +59,120 @@ func (*MatterNetworkDump) Descriptor() ([]byte, []int) {
 	return file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MatterNetworkDump) GetDevices() map[string]*MatterDevice {
+func (x *MatterNetworkDump) GetDevices() []*MatterNetworkDump_DevicesEntry {
 	if x != nil {
 		return x.Devices
 	}
 	return nil
 }
 
-func (x *MatterNetworkDump) GetChipData() map[string][]byte {
+func (x *MatterNetworkDump) GetChipData() []*MatterNetworkDump_ChipDataEntry {
 	if x != nil {
 		return x.ChipData
+	}
+	return nil
+}
+
+type MatterNetworkDump_DevicesEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *MatterDevice          `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatterNetworkDump_DevicesEntry) Reset() {
+	*x = MatterNetworkDump_DevicesEntry{}
+	mi := &file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatterNetworkDump_DevicesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatterNetworkDump_DevicesEntry) ProtoMessage() {}
+
+func (x *MatterNetworkDump_DevicesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatterNetworkDump_DevicesEntry.ProtoReflect.Descriptor instead.
+func (*MatterNetworkDump_DevicesEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDescGZIP(), []int{0, 0}
+}
+
+func (x *MatterNetworkDump_DevicesEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *MatterNetworkDump_DevicesEntry) GetValue() *MatterDevice {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type MatterNetworkDump_ChipDataEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         []byte                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MatterNetworkDump_ChipDataEntry) Reset() {
+	*x = MatterNetworkDump_ChipDataEntry{}
+	mi := &file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MatterNetworkDump_ChipDataEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MatterNetworkDump_ChipDataEntry) ProtoMessage() {}
+
+func (x *MatterNetworkDump_ChipDataEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MatterNetworkDump_ChipDataEntry.ProtoReflect.Descriptor instead.
+func (*MatterNetworkDump_ChipDataEntry) Descriptor() ([]byte, []int) {
+	return file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *MatterNetworkDump_ChipDataEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *MatterNetworkDump_ChipDataEntry) GetValue() []byte {
+	if x != nil {
+		return x.Value
 	}
 	return nil
 }
@@ -77,16 +181,17 @@ var File_smart_devices_libs_matter_model_proto_matter_network_dump_proto protore
 
 const file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDesc = "" +
 	"\n" +
-	"?smart_devices/libs/matter/model/proto/matter_network_dump.proto\x12\x05proto\x1a2smart_devices/libs/matter/model/proto/device.proto\"\xa7\x02\n" +
+	"?smart_devices/libs/matter/model/proto/matter_network_dump.proto\x12\x05proto\x1a2smart_devices/libs/matter/model/proto/device.proto\"\x9f\x02\n" +
 	"\x11MatterNetworkDump\x12?\n" +
 	"\adevices\x18\x01 \x03(\v2%.proto.MatterNetworkDump.DevicesEntryR\adevices\x12C\n" +
-	"\tchip_data\x18\x02 \x03(\v2&.proto.MatterNetworkDump.ChipDataEntryR\bchipData\x1aO\n" +
+	"\tchip_data\x18\x02 \x03(\v2&.proto.MatterNetworkDump.ChipDataEntryR\bchipData\x1aK\n" +
 	"\fDevicesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12)\n" +
-	"\x05value\x18\x02 \x01(\v2\x13.proto.MatterDeviceR\x05value:\x028\x01\x1a;\n" +
+	"\x05value\x18\x02 \x01(\v2\x13.proto.MatterDeviceR\x05value\x1a7\n" +
 	"\rChipDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01b\x06proto3"
+	"\x05value\x18\x02 \x01(\fR\x05valueB\xae\x01\n" +
+	"\tcom.protoB\x16MatterNetworkDumpProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/matter/model/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDescOnce sync.Once
@@ -102,10 +207,10 @@ func file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_rawDes
 
 var file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_goTypes = []any{
-	(*MatterNetworkDump)(nil), // 0: proto.MatterNetworkDump
-	nil,                       // 1: proto.MatterNetworkDump.DevicesEntry
-	nil,                       // 2: proto.MatterNetworkDump.ChipDataEntry
-	(*MatterDevice)(nil),      // 3: proto.MatterDevice
+	(*MatterNetworkDump)(nil),               // 0: proto.MatterNetworkDump
+	(*MatterNetworkDump_DevicesEntry)(nil),  // 1: proto.MatterNetworkDump.DevicesEntry
+	(*MatterNetworkDump_ChipDataEntry)(nil), // 2: proto.MatterNetworkDump.ChipDataEntry
+	(*MatterDevice)(nil),                    // 3: proto.MatterDevice
 }
 var file_smart_devices_libs_matter_model_proto_matter_network_dump_proto_depIdxs = []int32{
 	1, // 0: proto.MatterNetworkDump.devices:type_name -> proto.MatterNetworkDump.DevicesEntry

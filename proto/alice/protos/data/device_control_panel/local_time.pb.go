@@ -85,9 +85,9 @@ func (TDayOfWeek_EDayOfWeek) EnumDescriptor() ([]byte, []int) {
 
 type TLocalTime struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Hour          uint32                 `protobuf:"varint,1,opt,name=Hour,json=hour,proto3" json:"Hour,omitempty"`
-	Minute        uint32                 `protobuf:"varint,2,opt,name=Minute,json=minute,proto3" json:"Minute,omitempty"`
-	Second        uint32                 `protobuf:"varint,3,opt,name=Second,json=second,proto3" json:"Second,omitempty"`
+	Hour          uint32                 `protobuf:"varint,1,opt,name=Hour,proto3" json:"Hour,omitempty"`
+	Minute        uint32                 `protobuf:"varint,2,opt,name=Minute,proto3" json:"Minute,omitempty"`
+	Second        uint32                 `protobuf:"varint,3,opt,name=Second,proto3" json:"Second,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -145,7 +145,7 @@ func (x *TLocalTime) GetSecond() uint32 {
 
 type TDayOfWeek struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DayOfWeek     TDayOfWeek_EDayOfWeek  `protobuf:"varint,1,opt,name=DayOfWeek,json=day_of_week,proto3,enum=NAlice.TDayOfWeek_EDayOfWeek" json:"DayOfWeek,omitempty"`
+	DayOfWeek     TDayOfWeek_EDayOfWeek  `protobuf:"varint,1,opt,name=DayOfWeek,proto3,enum=NAlice.TDayOfWeek_EDayOfWeek" json:"DayOfWeek,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -191,17 +191,15 @@ var File_alice_protos_data_device_control_panel_local_time_proto protoreflect.Fi
 
 const file_alice_protos_data_device_control_panel_local_time_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/data/device_control_panel/local_time.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"x\n" +
+	"7alice/protos/data/device_control_panel/local_time.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"P\n" +
 	"\n" +
-	"TLocalTime\x12\x1c\n" +
-	"\x04Hour\x18\x01 \x01(\rB\b\xaa\xdd\x1b\x04hourR\x04hour\x12\"\n" +
-	"\x06Minute\x18\x02 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06minuteR\x06minute\x12\"\n" +
-	"\x06Second\x18\x03 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06secondR\x06second:\x04\xa8\xdd\x1b\x04\"\xcc\x01\n" +
+	"TLocalTime\x12\x12\n" +
+	"\x04Hour\x18\x01 \x01(\rR\x04Hour\x12\x16\n" +
+	"\x06Minute\x18\x02 \x01(\rR\x06Minute\x12\x16\n" +
+	"\x06Second\x18\x03 \x01(\rR\x06Second\"\xb3\x01\n" +
 	"\n" +
-	"TDayOfWeek\x12N\n" +
-	"\tDayOfWeek\x18\x01 \x01(\x0e2\x1d.NAlice.TDayOfWeek.EDayOfWeekB\x0f\xaa\xdd\x1b\vday_of_weekR\vday_of_week\"h\n" +
+	"TDayOfWeek\x12;\n" +
+	"\tDayOfWeek\x18\x01 \x01(\x0e2\x1d.NAlice.TDayOfWeek.EDayOfWeekR\tDayOfWeek\"h\n" +
 	"\n" +
 	"EDayOfWeek\x12\n" +
 	"\n" +
@@ -213,8 +211,9 @@ const file_alice_protos_data_device_control_panel_local_time_proto_rawDesc = "" 
 	"\bthursday\x10\x04\x12\n" +
 	"\n" +
 	"\x06friday\x10\x05\x12\f\n" +
-	"\bsaturday\x10\x06:\x04\xa8\xdd\x1b\x04B{\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x0eLocalTimeProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	"\bsaturday\x10\x06B\xac\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eLocalTimeProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_local_time_proto_rawDescOnce sync.Once

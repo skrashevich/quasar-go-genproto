@@ -24,7 +24,7 @@ const (
 
 type TProviderContactList struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	ContactData   []*TProviderContactData `protobuf:"bytes,1,rep,name=ContactData,json=contact_data,proto3" json:"ContactData,omitempty"`
+	ContactData   []*TProviderContactData `protobuf:"bytes,1,rep,name=ContactData,proto3" json:"ContactData,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -127,15 +127,15 @@ type isTProviderContactData_ProviderData interface {
 }
 
 type TProviderContactData_TelegramContactData struct {
-	TelegramContactData *TProviderContactData_TTelegramContactData `protobuf:"bytes,1,opt,name=TelegramContactData,json=telegram_contact_data,proto3,oneof"`
+	TelegramContactData *TProviderContactData_TTelegramContactData `protobuf:"bytes,1,opt,name=TelegramContactData,proto3,oneof"`
 }
 
 func (*TProviderContactData_TelegramContactData) isTProviderContactData_ProviderData() {}
 
 type TProviderContactData_TTelegramContactData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DisplayName   string                 `protobuf:"bytes,1,opt,name=DisplayName,json=display_name,proto3" json:"DisplayName,omitempty"`
-	UserId        string                 `protobuf:"bytes,2,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,1,opt,name=DisplayName,proto3" json:"DisplayName,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=UserId,proto3" json:"UserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,16 +188,16 @@ var File_alice_protos_data_video_call_video_call_proto protoreflect.FileDescript
 
 const file_alice_protos_data_video_call_video_call_proto_rawDesc = "" +
 	"\n" +
-	"-alice/protos/data/video_call/video_call.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"o\n" +
-	"\x14TProviderContactList\x12W\n" +
-	"\vContactData\x18\x01 \x03(\v2\".NAlice.NData.TProviderContactDataB\x10\xaa\xdd\x1b\fcontact_dataR\fcontact_data\"\xc9\x02\n" +
-	"\x14TProviderContactData\x12\x88\x01\n" +
-	"\x13TelegramContactData\x18\x01 \x01(\v27.NAlice.NData.TProviderContactData.TTelegramContactDataB\x19\xaa\xdd\x1b\x15telegram_contact_dataH\x00R\x15telegram_contact_data\x1a\x82\x01\n" +
-	"\x14TTelegramContactData\x123\n" +
-	"\vDisplayName\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fdisplay_nameR\fdisplay_name\x12$\n" +
-	"\x06UserId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\auser_idR\auser_idJ\x04\b\x03\x10\x04R\tLookupKeyB!\n" +
-	"\fProviderData\x12\x11\xaa\xdd\x1b\rprovider_dataBW\n" +
-	"&ru.yandex.alice.protos.data.video_callZ-a.yandex-team.ru/alice/protos/data/video_callb\x06proto3"
+	"-alice/protos/data/video_call/video_call.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\\\n" +
+	"\x14TProviderContactList\x12D\n" +
+	"\vContactData\x18\x01 \x03(\v2\".NAlice.NData.TProviderContactDataR\vContactData\"\xf6\x01\n" +
+	"\x14TProviderContactData\x12k\n" +
+	"\x13TelegramContactData\x18\x01 \x01(\v27.NAlice.NData.TProviderContactData.TTelegramContactDataH\x00R\x13TelegramContactData\x1aa\n" +
+	"\x14TTelegramContactData\x12 \n" +
+	"\vDisplayName\x18\x01 \x01(\tR\vDisplayName\x12\x16\n" +
+	"\x06UserId\x18\x02 \x01(\tR\x06UserIdJ\x04\b\x03\x10\x04R\tLookupKeyB\x0e\n" +
+	"\fProviderDataB\xc1\x01\n" +
+	"\x10com.NAlice.NDataB\x0eVideoCallProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/video_call\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_video_call_video_call_proto_rawDescOnce sync.Once

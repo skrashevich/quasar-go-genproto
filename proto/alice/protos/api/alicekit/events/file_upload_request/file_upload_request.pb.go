@@ -95,11 +95,11 @@ type isTFileUploadRequest_Request interface {
 }
 
 type TFileUploadRequest_FileUploadStart struct {
-	FileUploadStart *TFileUploadRequest_TFileUploadStart `protobuf:"bytes,1,opt,name=FileUploadStart,json=file_upload_start,proto3,oneof"`
+	FileUploadStart *TFileUploadRequest_TFileUploadStart `protobuf:"bytes,1,opt,name=FileUploadStart,proto3,oneof"`
 }
 
 type TFileUploadRequest_ChunkUploadFinish struct {
-	ChunkUploadFinish *TFileUploadRequest_TChunkUploadFinish `protobuf:"bytes,2,opt,name=ChunkUploadFinish,json=chunk_upload_finish,proto3,oneof"`
+	ChunkUploadFinish *TFileUploadRequest_TChunkUploadFinish `protobuf:"bytes,2,opt,name=ChunkUploadFinish,proto3,oneof"`
 }
 
 func (*TFileUploadRequest_FileUploadStart) isTFileUploadRequest_Request() {}
@@ -108,14 +108,14 @@ func (*TFileUploadRequest_ChunkUploadFinish) isTFileUploadRequest_Request() {}
 
 type TFileUploadRequest_TFileUploadStart struct {
 	state                                   protoimpl.MessageState   `protogen:"open.v1"`
-	SpecialEventOnInvalidFileMimeTypeOrSize bool                     `protobuf:"varint,10000,opt,name=SpecialEventOnInvalidFileMimeTypeOrSize,json=special_event_on_invalid_file_mime_type_or_size,proto3" json:"SpecialEventOnInvalidFileMimeTypeOrSize,omitempty"`
-	Title                                   *string                  `protobuf:"bytes,1,opt,name=Title,json=title,proto3,oneof" json:"Title,omitempty"`
-	MimeType                                *string                  `protobuf:"bytes,2,opt,name=MimeType,json=mime_type,proto3,oneof" json:"MimeType,omitempty"`
-	Size                                    *uint64                  `protobuf:"varint,3,opt,name=Size,json=size,proto3,oneof" json:"Size,omitempty"`
+	SpecialEventOnInvalidFileMimeTypeOrSize bool                     `protobuf:"varint,10000,opt,name=SpecialEventOnInvalidFileMimeTypeOrSize,proto3" json:"SpecialEventOnInvalidFileMimeTypeOrSize,omitempty"`
+	Title                                   *string                  `protobuf:"bytes,1,opt,name=Title,proto3,oneof" json:"Title,omitempty"`
+	MimeType                                *string                  `protobuf:"bytes,2,opt,name=MimeType,proto3,oneof" json:"MimeType,omitempty"`
+	Size                                    *uint64                  `protobuf:"varint,3,opt,name=Size,proto3,oneof" json:"Size,omitempty"`
+	OAuthToken                              *string                  `protobuf:"bytes,100,opt,name=OAuthToken,proto3,oneof" json:"OAuthToken,omitempty"`
 	Origin                                  *files.TFileInfo_EOrigin `protobuf:"varint,4,opt,name=Origin,json=origin,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EOrigin,oneof" json:"Origin,omitempty"`
 	AppId                                   *string                  `protobuf:"bytes,5,opt,name=AppId,json=app_id,proto3,oneof" json:"AppId,omitempty"`
 	DialogAppId                             *string                  `protobuf:"bytes,6,opt,name=DialogAppId,json=dialog_app_id,proto3,oneof" json:"DialogAppId,omitempty"`
-	OAuthToken                              *string                  `protobuf:"bytes,100,opt,name=OAuthToken,json=oauth_token,proto3,oneof" json:"OAuthToken,omitempty"`
 	unknownFields                           protoimpl.UnknownFields
 	sizeCache                               protoimpl.SizeCache
 }
@@ -178,6 +178,13 @@ func (x *TFileUploadRequest_TFileUploadStart) GetSize() uint64 {
 	return 0
 }
 
+func (x *TFileUploadRequest_TFileUploadStart) GetOAuthToken() string {
+	if x != nil && x.OAuthToken != nil {
+		return *x.OAuthToken
+	}
+	return ""
+}
+
 func (x *TFileUploadRequest_TFileUploadStart) GetOrigin() files.TFileInfo_EOrigin {
 	if x != nil && x.Origin != nil {
 		return *x.Origin
@@ -199,16 +206,9 @@ func (x *TFileUploadRequest_TFileUploadStart) GetDialogAppId() string {
 	return ""
 }
 
-func (x *TFileUploadRequest_TFileUploadStart) GetOAuthToken() string {
-	if x != nil && x.OAuthToken != nil {
-		return *x.OAuthToken
-	}
-	return ""
-}
-
 type TFileUploadRequest_TChunkUploadFinish struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsLast        *bool                  `protobuf:"varint,1,opt,name=IsLast,json=is_last,proto3,oneof" json:"IsLast,omitempty"`
+	IsLast        *bool                  `protobuf:"varint,1,opt,name=IsLast,proto3,oneof" json:"IsLast,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -254,34 +254,35 @@ var File_alice_protos_api_alicekit_events_file_upload_request_file_upload_reques
 
 const file_alice_protos_api_alicekit_events_file_upload_request_file_upload_request_proto_rawDesc = "" +
 	"\n" +
-	"Nalice/protos/api/alicekit/events/file_upload_request/file_upload_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a+alice/library/censor/protos/extension.proto\x1a&alice/protos/api/files/file_info.proto\"\xed\a\n" +
-	"\x12TFileUploadRequest\x12z\n" +
-	"\x0fFileUploadStart\x18\x01 \x01(\v25.NAlice.NAliceApi.TFileUploadRequest.TFileUploadStartB\x15\xaa\xdd\x1b\x11file_upload_startH\x00R\x11file_upload_start\x12\x82\x01\n" +
-	"\x11ChunkUploadFinish\x18\x02 \x01(\v27.NAlice.NAliceApi.TFileUploadRequest.TChunkUploadFinishB\x17\xaa\xdd\x1b\x13chunk_upload_finishH\x00R\x13chunk_upload_finish\x1a\xf2\x04\n" +
-	"\x10TFileUploadStart\x12\x96\x01\n" +
-	"'SpecialEventOnInvalidFileMimeTypeOrSize\x18\x90N \x01(\bB3\xaa\xdd\x1b/special_event_on_invalid_file_mime_type_or_sizeR/special_event_on_invalid_file_mime_type_or_size\x12$\n" +
-	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleH\x00R\x05title\x88\x01\x01\x12/\n" +
-	"\bMimeType\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tmime_typeH\x01R\tmime_type\x88\x01\x01\x12!\n" +
-	"\x04Size\x18\x03 \x01(\x04B\b\xaa\xdd\x1b\x04sizeH\x02R\x04size\x88\x01\x01\x12N\n" +
-	"\x06Origin\x18\x04 \x01(\x0e2%.NAlice.NApi.NFiles.TFileInfo.EOriginB\n" +
-	"\xaa\xdd\x1b\x06originH\x03R\x06origin\x88\x01\x01\x12&\n" +
-	"\x05AppId\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06app_idH\x04R\x06app_id\x88\x01\x01\x12:\n" +
-	"\vDialogAppId\x18\x06 \x01(\tB\x11\xaa\xdd\x1b\rdialog_app_idH\x05R\rdialog_app_id\x88\x01\x01\x12=\n" +
+	"Nalice/protos/api/alicekit/events/file_upload_request/file_upload_request.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1a+alice/library/censor/protos/extension.proto\x1a&alice/protos/api/files/file_info.proto\"\x9b\x06\n" +
+	"\x12TFileUploadRequest\x12a\n" +
+	"\x0fFileUploadStart\x18\x01 \x01(\v25.NAlice.NAliceApi.TFileUploadRequest.TFileUploadStartH\x00R\x0fFileUploadStart\x12g\n" +
+	"\x11ChunkUploadFinish\x18\x02 \x01(\v27.NAlice.NAliceApi.TFileUploadRequest.TChunkUploadFinishH\x00R\x11ChunkUploadFinish\x1a\xef\x03\n" +
+	"\x10TFileUploadStart\x12Y\n" +
+	"'SpecialEventOnInvalidFileMimeTypeOrSize\x18\x90N \x01(\bR'SpecialEventOnInvalidFileMimeTypeOrSize\x12\x19\n" +
+	"\x05Title\x18\x01 \x01(\tH\x00R\x05Title\x88\x01\x01\x12\x1f\n" +
+	"\bMimeType\x18\x02 \x01(\tH\x01R\bMimeType\x88\x01\x01\x12\x17\n" +
+	"\x04Size\x18\x03 \x01(\x04H\x02R\x04Size\x88\x01\x01\x12#\n" +
 	"\n" +
-	"OAuthToken\x18d \x01(\tB\x17\xaa\xdd\x1b\voauth_token\xa8\x8d'\x01\xa8\x8d'\x04H\x06R\voauth_token\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\b\n" +
+	"OAuthToken\x18d \x01(\tH\x03R\n" +
+	"OAuthToken\x88\x01\x01\x12N\n" +
+	"\x06Origin\x18\x04 \x01(\x0e2%.NAlice.NApi.NFiles.TFileInfo.EOriginB\n" +
+	"\xaa\xdd\x1b\x06originH\x04R\x06origin\x88\x01\x01\x12&\n" +
+	"\x05AppId\x18\x05 \x01(\tB\n" +
+	"\xaa\xdd\x1b\x06app_idH\x05R\x06app_id\x88\x01\x01\x12:\n" +
+	"\vDialogAppId\x18\x06 \x01(\tB\x11\xaa\xdd\x1b\rdialog_app_idH\x06R\rdialog_app_id\x88\x01\x01B\b\n" +
 	"\x06_TitleB\v\n" +
 	"\t_MimeTypeB\a\n" +
-	"\x05_SizeB\t\n" +
+	"\x05_SizeB\r\n" +
+	"\v_OAuthTokenB\t\n" +
 	"\a_OriginB\b\n" +
 	"\x06_AppIdB\x0e\n" +
-	"\f_DialogAppIdB\r\n" +
-	"\v_OAuthToken\x1aP\n" +
-	"\x12TChunkUploadFinish\x12)\n" +
-	"\x06IsLast\x18\x01 \x01(\bB\v\xaa\xdd\x1b\ais_lastH\x00R\ais_last\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\a_IsLast:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\aRequestB\x9c\x01\n" +
-	">ru.yandex.alice.protos.api.alicekit.events.file_upload_requestB\x11FileUploadRequestP\x01ZEa.yandex-team.ru/alice/protos/api/alicekit/events/file_upload_requestb\x06proto3"
+	"\f_DialogAppId\x1a<\n" +
+	"\x12TChunkUploadFinish\x12\x1b\n" +
+	"\x06IsLast\x18\x01 \x01(\bH\x00R\x06IsLast\x88\x01\x01B\t\n" +
+	"\a_IsLastB\t\n" +
+	"\aRequestB\xf5\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x16FileUploadRequestProtoP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/file_upload_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_file_upload_request_file_upload_request_proto_rawDescOnce sync.Once

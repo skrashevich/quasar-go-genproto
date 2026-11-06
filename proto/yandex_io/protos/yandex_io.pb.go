@@ -230,6 +230,7 @@ type IOEvent struct {
 	OnAudioClientEvent          *AudioClientEvent                 `protobuf:"bytes,56,opt,name=on_audio_client_event,json=onAudioClientEvent" json:"on_audio_client_event,omitempty"`
 	BrickStatus                 *BrickStatus                      `protobuf:"varint,58,opt,name=brick_status,json=brickStatus,enum=quasar.proto.BrickStatus" json:"brick_status,omitempty"`
 	BrickInfo                   *BrickInfo                        `protobuf:"bytes,66,opt,name=brick_info,json=brickInfo" json:"brick_info,omitempty"`
+	PushNotification            *PushNotification                 `protobuf:"bytes,59,opt,name=push_notification,json=pushNotification" json:"push_notification,omitempty"`
 	RegistrationResult          *RegistrationResult               `protobuf:"bytes,60,opt,name=registration_result,json=registrationResult" json:"registration_result,omitempty"`
 	DirectivesPreprocessRequest *DirectiveList                    `protobuf:"bytes,77,opt,name=directives_preprocess_request,json=directivesPreprocessRequest" json:"directives_preprocess_request,omitempty"`
 	DeviceGroupState            *DeviceGroupState                 `protobuf:"bytes,63,opt,name=device_group_state,json=deviceGroupState" json:"device_group_state,omitempty"`
@@ -407,6 +408,13 @@ func (x *IOEvent) GetBrickInfo() *BrickInfo {
 	return nil
 }
 
+func (x *IOEvent) GetPushNotification() *PushNotification {
+	if x != nil {
+		return x.PushNotification
+	}
+	return nil
+}
+
 func (x *IOEvent) GetRegistrationResult() *RegistrationResult {
 	if x != nil {
 		return x.RegistrationResult
@@ -487,19 +495,17 @@ func (x *SupportedFeatures) GetFeatures() []string {
 }
 
 type IOControlCommand struct {
-	state                       protoimpl.MessageState                        `protogen:"open.v1"`
-	SetSetupMode                *EmptyMessage                                 `protobuf:"bytes,1,opt,name=set_setup_mode,json=setSetupMode" json:"set_setup_mode,omitempty"`
-	StopSetupMode               *EmptyMessage                                 `protobuf:"bytes,11,opt,name=stop_setup_mode,json=stopSetupMode" json:"stop_setup_mode,omitempty"`
-	ToggleSetupMode             *EmptyMessage                                 `protobuf:"bytes,12,opt,name=toggle_setup_mode,json=toggleSetupMode" json:"toggle_setup_mode,omitempty"`
-	SetHostApplicationMessage   *string                                       `protobuf:"bytes,7,opt,name=set_host_application_message,json=setHostApplicationMessage" json:"set_host_application_message,omitempty"`
-	AllowInitConfigurationState *EmptyMessage                                 `protobuf:"bytes,17,opt,name=allow_init_configuration_state,json=allowInitConfigurationState" json:"allow_init_configuration_state,omitempty"`
-	Authenticate                *string                                       `protobuf:"bytes,22,opt,name=authenticate" json:"authenticate,omitempty"`
-	ChangeAccount               *string                                       `protobuf:"bytes,23,opt,name=change_account,json=changeAccount" json:"change_account,omitempty"`
-	AllowUpdate                 *IOControlCommand_AllowUpdate                 `protobuf:"bytes,25,opt,name=allow_update,json=allowUpdate" json:"allow_update,omitempty"`
-	RegisterDeviceInBackend     *IOControlCommand_RegisterDeviceInBackendInfo `protobuf:"bytes,54,opt,name=register_device_in_backend,json=registerDeviceInBackend" json:"register_device_in_backend,omitempty"`
-	// Deprecated: Marked as deprecated in yandex_io/protos/yandex_io.proto.
-	ProvideUserAccountInfo *IOControlCommand_UserAccountInfo `protobuf:"bytes,44,opt,name=provide_user_account_info,json=provideUserAccountInfo" json:"provide_user_account_info,omitempty"`
-	// Deprecated: Marked as deprecated in yandex_io/protos/yandex_io.proto.
+	state                        protoimpl.MessageState                          `protogen:"open.v1"`
+	SetSetupMode                 *EmptyMessage                                   `protobuf:"bytes,1,opt,name=set_setup_mode,json=setSetupMode" json:"set_setup_mode,omitempty"`
+	StopSetupMode                *EmptyMessage                                   `protobuf:"bytes,11,opt,name=stop_setup_mode,json=stopSetupMode" json:"stop_setup_mode,omitempty"`
+	ToggleSetupMode              *EmptyMessage                                   `protobuf:"bytes,12,opt,name=toggle_setup_mode,json=toggleSetupMode" json:"toggle_setup_mode,omitempty"`
+	SetHostApplicationMessage    *string                                         `protobuf:"bytes,7,opt,name=set_host_application_message,json=setHostApplicationMessage" json:"set_host_application_message,omitempty"`
+	AllowInitConfigurationState  *EmptyMessage                                   `protobuf:"bytes,17,opt,name=allow_init_configuration_state,json=allowInitConfigurationState" json:"allow_init_configuration_state,omitempty"`
+	Authenticate                 *string                                         `protobuf:"bytes,22,opt,name=authenticate" json:"authenticate,omitempty"`
+	ChangeAccount                *string                                         `protobuf:"bytes,23,opt,name=change_account,json=changeAccount" json:"change_account,omitempty"`
+	AllowUpdate                  *IOControlCommand_AllowUpdate                   `protobuf:"bytes,25,opt,name=allow_update,json=allowUpdate" json:"allow_update,omitempty"`
+	RegisterDeviceInBackend      *IOControlCommand_RegisterDeviceInBackendInfo   `protobuf:"bytes,54,opt,name=register_device_in_backend,json=registerDeviceInBackend" json:"register_device_in_backend,omitempty"`
+	ProvideUserAccountInfo       *IOControlCommand_UserAccountInfo               `protobuf:"bytes,44,opt,name=provide_user_account_info,json=provideUserAccountInfo" json:"provide_user_account_info,omitempty"`
 	ProvideActiveUserAccountInfo *IOControlCommand_UserAccountInfo               `protobuf:"bytes,82,opt,name=provide_active_user_account_info,json=provideActiveUserAccountInfo" json:"provide_active_user_account_info,omitempty"`
 	UserAccountList              *UserAccountList                                `protobuf:"bytes,94,opt,name=user_account_list,json=userAccountList" json:"user_account_list,omitempty"`
 	RevokeUserAccountInfo        *EmptyMessage                                   `protobuf:"bytes,52,opt,name=revoke_user_account_info,json=revokeUserAccountInfo" json:"revoke_user_account_info,omitempty"`
@@ -615,7 +621,6 @@ func (x *IOControlCommand) GetRegisterDeviceInBackend() *IOControlCommand_Regist
 	return nil
 }
 
-// Deprecated: Marked as deprecated in yandex_io/protos/yandex_io.proto.
 func (x *IOControlCommand) GetProvideUserAccountInfo() *IOControlCommand_UserAccountInfo {
 	if x != nil {
 		return x.ProvideUserAccountInfo
@@ -623,7 +628,6 @@ func (x *IOControlCommand) GetProvideUserAccountInfo() *IOControlCommand_UserAcc
 	return nil
 }
 
-// Deprecated: Marked as deprecated in yandex_io/protos/yandex_io.proto.
 func (x *IOControlCommand) GetProvideActiveUserAccountInfo() *IOControlCommand_UserAccountInfo {
 	if x != nil {
 		return x.ProvideActiveUserAccountInfo
@@ -1804,6 +1808,58 @@ func (x *UserOptionsList) GetUsersOptions() []*user.TUserOptions {
 	return nil
 }
 
+type FilePlayerCapabilityEvent struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RequestId        *string                `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
+	AudioClientEvent *AudioClientEvent      `protobuf:"bytes,2,opt,name=audio_client_event,json=audioClientEvent" json:"audio_client_event,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *FilePlayerCapabilityEvent) Reset() {
+	*x = FilePlayerCapabilityEvent{}
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FilePlayerCapabilityEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FilePlayerCapabilityEvent) ProtoMessage() {}
+
+func (x *FilePlayerCapabilityEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FilePlayerCapabilityEvent.ProtoReflect.Descriptor instead.
+func (*FilePlayerCapabilityEvent) Descriptor() ([]byte, []int) {
+	return file_yandex_io_protos_yandex_io_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *FilePlayerCapabilityEvent) GetRequestId() string {
+	if x != nil && x.RequestId != nil {
+		return *x.RequestId
+	}
+	return ""
+}
+
+func (x *FilePlayerCapabilityEvent) GetAudioClientEvent() *AudioClientEvent {
+	if x != nil {
+		return x.AudioClientEvent
+	}
+	return nil
+}
+
 type IOEvent_SetupError struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RequestId     *string                `protobuf:"bytes,1,opt,name=request_id,json=requestId" json:"request_id,omitempty"`
@@ -1815,7 +1871,7 @@ type IOEvent_SetupError struct {
 
 func (x *IOEvent_SetupError) Reset() {
 	*x = IOEvent_SetupError{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[21]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1827,7 +1883,7 @@ func (x *IOEvent_SetupError) String() string {
 func (*IOEvent_SetupError) ProtoMessage() {}
 
 func (x *IOEvent_SetupError) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[21]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1874,7 +1930,7 @@ type IOEvent_LastUpdateInfo struct {
 
 func (x *IOEvent_LastUpdateInfo) Reset() {
 	*x = IOEvent_LastUpdateInfo{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[22]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1886,7 +1942,7 @@ func (x *IOEvent_LastUpdateInfo) String() string {
 func (*IOEvent_LastUpdateInfo) ProtoMessage() {}
 
 func (x *IOEvent_LastUpdateInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[22]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1925,7 +1981,7 @@ type IOEvent_BluetoothState struct {
 
 func (x *IOEvent_BluetoothState) Reset() {
 	*x = IOEvent_BluetoothState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[23]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1937,7 +1993,7 @@ func (x *IOEvent_BluetoothState) String() string {
 func (*IOEvent_BluetoothState) ProtoMessage() {}
 
 func (x *IOEvent_BluetoothState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[23]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1971,7 +2027,7 @@ type IOEvent_AlarmsState struct {
 
 func (x *IOEvent_AlarmsState) Reset() {
 	*x = IOEvent_AlarmsState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[24]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1983,7 +2039,7 @@ func (x *IOEvent_AlarmsState) String() string {
 func (*IOEvent_AlarmsState) ProtoMessage() {}
 
 func (x *IOEvent_AlarmsState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[24]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2029,7 +2085,7 @@ type IOEvent_ReminderState struct {
 
 func (x *IOEvent_ReminderState) Reset() {
 	*x = IOEvent_ReminderState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[25]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2041,7 +2097,7 @@ func (x *IOEvent_ReminderState) String() string {
 func (*IOEvent_ReminderState) ProtoMessage() {}
 
 func (x *IOEvent_ReminderState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[25]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2073,7 +2129,7 @@ type IOEvent_NtpdState struct {
 
 func (x *IOEvent_NtpdState) Reset() {
 	*x = IOEvent_NtpdState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[26]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2085,7 +2141,7 @@ func (x *IOEvent_NtpdState) String() string {
 func (*IOEvent_NtpdState) ProtoMessage() {}
 
 func (x *IOEvent_NtpdState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[26]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2119,7 +2175,7 @@ type IOEvent_TimersTimingsState struct {
 
 func (x *IOEvent_TimersTimingsState) Reset() {
 	*x = IOEvent_TimersTimingsState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2131,7 +2187,7 @@ func (x *IOEvent_TimersTimingsState) String() string {
 func (*IOEvent_TimersTimingsState) ProtoMessage() {}
 
 func (x *IOEvent_TimersTimingsState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[27]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2177,7 +2233,7 @@ type IOEvent_DoNotDisturbState struct {
 
 func (x *IOEvent_DoNotDisturbState) Reset() {
 	*x = IOEvent_DoNotDisturbState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2189,7 +2245,7 @@ func (x *IOEvent_DoNotDisturbState) String() string {
 func (*IOEvent_DoNotDisturbState) ProtoMessage() {}
 
 func (x *IOEvent_DoNotDisturbState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[28]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2233,7 +2289,7 @@ type IOEvent_SDKState struct {
 
 func (x *IOEvent_SDKState) Reset() {
 	*x = IOEvent_SDKState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2245,7 +2301,7 @@ func (x *IOEvent_SDKState) String() string {
 func (*IOEvent_SDKState) ProtoMessage() {}
 
 func (x *IOEvent_SDKState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[29]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2363,7 +2419,7 @@ type IOEvent_AuthenticationStatus struct {
 
 func (x *IOEvent_AuthenticationStatus) Reset() {
 	*x = IOEvent_AuthenticationStatus{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2375,7 +2431,7 @@ func (x *IOEvent_AuthenticationStatus) String() string {
 func (*IOEvent_AuthenticationStatus) ProtoMessage() {}
 
 func (x *IOEvent_AuthenticationStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[30]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2418,7 +2474,7 @@ type IOEvent_Spectrum struct {
 	RunningTimeNs    *uint64                 `protobuf:"varint,1,opt,name=running_time_ns,json=runningTimeNs" json:"running_time_ns,omitempty"`
 	DurationNs       *uint64                 `protobuf:"varint,2,opt,name=duration_ns,json=durationNs" json:"duration_ns,omitempty"`
 	Rate             *uint32                 `protobuf:"varint,3,opt,name=rate" json:"rate,omitempty"`
-	Magnitudes       []float32               `protobuf:"fixed32,4,rep,packed,name=magnitudes" json:"magnitudes,omitempty"`
+	Magnitudes       []float32               `protobuf:"fixed32,4,rep,name=magnitudes" json:"magnitudes,omitempty"`
 	Threshold        *int32                  `protobuf:"varint,5,opt,name=threshold" json:"threshold,omitempty"`
 	PlayerInstanceId *int64                  `protobuf:"varint,7,opt,name=player_instance_id,json=playerInstanceId" json:"player_instance_id,omitempty"`
 	Type             *IOEvent_Spectrum_Type  `protobuf:"varint,8,opt,name=type,enum=quasar.proto.IOEvent_Spectrum_Type,def=0" json:"type,omitempty"`
@@ -2433,7 +2489,7 @@ const (
 
 func (x *IOEvent_Spectrum) Reset() {
 	*x = IOEvent_Spectrum{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2445,7 +2501,7 @@ func (x *IOEvent_Spectrum) String() string {
 func (*IOEvent_Spectrum) ProtoMessage() {}
 
 func (x *IOEvent_Spectrum) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[31]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2527,7 +2583,7 @@ type IOEvent_StartingConfigureSuccess struct {
 
 func (x *IOEvent_StartingConfigureSuccess) Reset() {
 	*x = IOEvent_StartingConfigureSuccess{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2539,7 +2595,7 @@ func (x *IOEvent_StartingConfigureSuccess) String() string {
 func (*IOEvent_StartingConfigureSuccess) ProtoMessage() {}
 
 func (x *IOEvent_StartingConfigureSuccess) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[32]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2578,7 +2634,7 @@ type IOEvent_AuthCodeRequest struct {
 
 func (x *IOEvent_AuthCodeRequest) Reset() {
 	*x = IOEvent_AuthCodeRequest{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2590,7 +2646,7 @@ func (x *IOEvent_AuthCodeRequest) String() string {
 func (*IOEvent_AuthCodeRequest) ProtoMessage() {}
 
 func (x *IOEvent_AuthCodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[33]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2623,7 +2679,7 @@ type IOEvent_BluetoothState_SinkState struct {
 
 func (x *IOEvent_BluetoothState_SinkState) Reset() {
 	*x = IOEvent_BluetoothState_SinkState{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[34]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2635,7 +2691,7 @@ func (x *IOEvent_BluetoothState_SinkState) String() string {
 func (*IOEvent_BluetoothState_SinkState) ProtoMessage() {}
 
 func (x *IOEvent_BluetoothState_SinkState) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[34]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2679,7 +2735,7 @@ const (
 
 func (x *IOControlCommand_PlayPause) Reset() {
 	*x = IOControlCommand_PlayPause{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2691,7 +2747,7 @@ func (x *IOControlCommand_PlayPause) String() string {
 func (*IOControlCommand_PlayPause) ProtoMessage() {}
 
 func (x *IOControlCommand_PlayPause) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[35]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2724,7 +2780,7 @@ type IOControlCommand_AllowUpdate struct {
 
 func (x *IOControlCommand_AllowUpdate) Reset() {
 	*x = IOControlCommand_AllowUpdate{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2736,7 +2792,7 @@ func (x *IOControlCommand_AllowUpdate) String() string {
 func (*IOControlCommand_AllowUpdate) ProtoMessage() {}
 
 func (x *IOControlCommand_AllowUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[36]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2777,7 +2833,7 @@ type IOControlCommand_RegisterDeviceInBackendInfo struct {
 
 func (x *IOControlCommand_RegisterDeviceInBackendInfo) Reset() {
 	*x = IOControlCommand_RegisterDeviceInBackendInfo{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2789,7 +2845,7 @@ func (x *IOControlCommand_RegisterDeviceInBackendInfo) String() string {
 func (*IOControlCommand_RegisterDeviceInBackendInfo) ProtoMessage() {}
 
 func (x *IOControlCommand_RegisterDeviceInBackendInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[37]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2837,7 +2893,7 @@ type IOControlCommand_UserAccountInfo struct {
 
 func (x *IOControlCommand_UserAccountInfo) Reset() {
 	*x = IOControlCommand_UserAccountInfo{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2849,7 +2905,7 @@ func (x *IOControlCommand_UserAccountInfo) String() string {
 func (*IOControlCommand_UserAccountInfo) ProtoMessage() {}
 
 func (x *IOControlCommand_UserAccountInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[38]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2897,7 +2953,7 @@ type IOControlCommand_CallMessage struct {
 
 func (x *IOControlCommand_CallMessage) Reset() {
 	*x = IOControlCommand_CallMessage{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2909,7 +2965,7 @@ func (x *IOControlCommand_CallMessage) String() string {
 func (*IOControlCommand_CallMessage) ProtoMessage() {}
 
 func (x *IOControlCommand_CallMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[39]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2956,7 +3012,7 @@ type IOControlCommand_VinsResponseWrapper struct {
 
 func (x *IOControlCommand_VinsResponseWrapper) Reset() {
 	*x = IOControlCommand_VinsResponseWrapper{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[40]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2968,7 +3024,7 @@ func (x *IOControlCommand_VinsResponseWrapper) String() string {
 func (*IOControlCommand_VinsResponseWrapper) ProtoMessage() {}
 
 func (x *IOControlCommand_VinsResponseWrapper) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[40]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3011,7 +3067,7 @@ type IOControlCommand_SetupCredentials struct {
 
 func (x *IOControlCommand_SetupCredentials) Reset() {
 	*x = IOControlCommand_SetupCredentials{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3023,7 +3079,7 @@ func (x *IOControlCommand_SetupCredentials) String() string {
 func (*IOControlCommand_SetupCredentials) ProtoMessage() {}
 
 func (x *IOControlCommand_SetupCredentials) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[41]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3083,7 +3139,7 @@ type IOControlCommand_AuthCodeResponse struct {
 
 func (x *IOControlCommand_AuthCodeResponse) Reset() {
 	*x = IOControlCommand_AuthCodeResponse{}
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3095,7 +3151,7 @@ func (x *IOControlCommand_AuthCodeResponse) String() string {
 func (*IOControlCommand_AuthCodeResponse) ProtoMessage() {}
 
 func (x *IOControlCommand_AuthCodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[42]
+	mi := &file_yandex_io_protos_yandex_io_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3122,7 +3178,7 @@ var File_yandex_io_protos_yandex_io_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\n" +
-	" yandex_io/protos/yandex_io.proto\x12\fquasar.proto\x1a\"yandex_io/protos/alice_state.proto\x1a#yandex_io/protos/fast_command.proto\x1a$yandex_io/protos/model_objects.proto\x1a\x1fyandex_io/protos/remoting.proto\x1a-alice/library/client/protos/client_info.proto\x1a+alice/megamind/protos/common/location.proto\x1a(alice/megamind/protos/user/options.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a3alice/protos/data/external_entity_description.proto\x1a9voicetech/library/channel_types/proto/channel_types.proto\"\x88$\n" +
+	" yandex_io/protos/yandex_io.proto\x12\fquasar.proto\x1a\"yandex_io/protos/alice_state.proto\x1a#yandex_io/protos/fast_command.proto\x1a$yandex_io/protos/model_objects.proto\x1a\x1fyandex_io/protos/remoting.proto\x1a-alice/library/client/protos/client_info.proto\x1a+alice/megamind/protos/common/location.proto\x1a(alice/megamind/protos/user/options.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a3alice/protos/data/external_entity_description.proto\x1a9voicetech/library/channel_types/proto/channel_types.proto\"\xb8$\n" +
 	"\aIOEvent\x12+\n" +
 	"\x0eon_start_setup\x18\x01 \x01(\b:\x05falseR\fonStartSetup\x12Z\n" +
 	"\x1con_sound_data_transfer_start\x18\x02 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x18onSoundDataTransferStart\x12S\n" +
@@ -3143,7 +3199,8 @@ const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\x15on_audio_client_event\x188 \x01(\v2\x1e.quasar.proto.AudioClientEventR\x12onAudioClientEvent\x12<\n" +
 	"\fbrick_status\x18: \x01(\x0e2\x19.quasar.proto.BrickStatusR\vbrickStatus\x126\n" +
 	"\n" +
-	"brick_info\x18B \x01(\v2\x17.quasar.proto.BrickInfoR\tbrickInfo\x12Q\n" +
+	"brick_info\x18B \x01(\v2\x17.quasar.proto.BrickInfoR\tbrickInfo\x12K\n" +
+	"\x11push_notification\x18; \x01(\v2\x1e.quasar.proto.PushNotificationR\x10pushNotification\x12Q\n" +
 	"\x13registration_result\x18< \x01(\v2 .quasar.proto.RegistrationResultR\x12registrationResult\x12_\n" +
 	"\x1ddirectives_preprocess_request\x18M \x01(\v2\x1b.quasar.proto.DirectiveListR\x1bdirectivesPreprocessRequest\x12L\n" +
 	"\x12device_group_state\x18? \x01(\v2\x1e.quasar.proto.DeviceGroupStateR\x10deviceGroupState\x12[\n" +
@@ -3209,15 +3266,15 @@ const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\n" +
 	"oauth_code\x18\x01 \x01(\tR\toauthCode\x12\x13\n" +
 	"\x05is_ok\x18\x02 \x01(\bR\x04isOk\x12\x1a\n" +
-	"\bresponse\x18\x03 \x01(\tR\bresponse\x1a\xb6\x03\n" +
+	"\bresponse\x18\x03 \x01(\tR\bresponse\x1a\xb2\x03\n" +
 	"\bSpectrum\x12:\n" +
 	"\x05event\x18\x06 \x01(\x0e2$.quasar.proto.IOEvent.Spectrum.EventR\x05event\x12&\n" +
 	"\x0frunning_time_ns\x18\x01 \x01(\x04R\rrunningTimeNs\x12\x1f\n" +
 	"\vduration_ns\x18\x02 \x01(\x04R\n" +
 	"durationNs\x12\x12\n" +
-	"\x04rate\x18\x03 \x01(\rR\x04rate\x12\"\n" +
+	"\x04rate\x18\x03 \x01(\rR\x04rate\x12\x1e\n" +
 	"\n" +
-	"magnitudes\x18\x04 \x03(\x02B\x02\x10\x01R\n" +
+	"magnitudes\x18\x04 \x03(\x02R\n" +
 	"magnitudes\x12\x1c\n" +
 	"\tthreshold\x18\x05 \x01(\x05R\tthreshold\x12,\n" +
 	"\x12player_instance_id\x18\a \x01(\x03R\x10playerInstanceId\x12>\n" +
@@ -3238,9 +3295,9 @@ const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\n" +
 	"request_id\x18\x02 \x01(\tR\trequestId\x1a#\n" +
 	"\x0fAuthCodeRequest\x12\x10\n" +
-	"\x03uid\x18\x01 \x01(\tR\x03uidJ\x04\b\x06\x10\x13J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x19\x10\x1aJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b!\x10\"J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b+\x10,J\x04\b,\x10-J\x04\b-\x10.J\x04\b1\x102J\x04\b2\x103J\x04\b5\x106J\x04\b9\x10:J\x04\b=\x10>J\x04\b>\x10?J\x04\bC\x10DJ\x04\bD\x10EJ\x04\bE\x10FJ\x04\bF\x10GJ\x04\bG\x10HJ\x04\bH\x10IJ\x04\bI\x10JJ\x04\bJ\x10KJ\x04\bK\x10LJ\x04\bL\x10MJ\x04\b;\x10<R\x11push_notification\"/\n" +
+	"\x03uid\x18\x01 \x01(\tR\x03uidJ\x04\b\x06\x10\x13J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x19\x10\x1aJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b!\x10\"J\x04\b&\x10'J\x04\b'\x10(J\x04\b(\x10)J\x04\b)\x10*J\x04\b+\x10,J\x04\b,\x10-J\x04\b-\x10.J\x04\b1\x102J\x04\b2\x103J\x04\b5\x106J\x04\b9\x10:J\x04\b=\x10>J\x04\b>\x10?J\x04\bC\x10DJ\x04\bD\x10EJ\x04\bE\x10FJ\x04\bF\x10GJ\x04\bG\x10HJ\x04\bH\x10IJ\x04\bI\x10JJ\x04\bJ\x10KJ\x04\bK\x10LJ\x04\bL\x10M\"/\n" +
 	"\x11SupportedFeatures\x12\x1a\n" +
-	"\bfeatures\x18\x01 \x03(\tR\bfeatures\"\x80\x1a\n" +
+	"\bfeatures\x18\x01 \x03(\tR\bfeatures\"\xf8\x19\n" +
 	"\x10IOControlCommand\x12@\n" +
 	"\x0eset_setup_mode\x18\x01 \x01(\v2\x1a.quasar.proto.EmptyMessageR\fsetSetupMode\x12B\n" +
 	"\x0fstop_setup_mode\x18\v \x01(\v2\x1a.quasar.proto.EmptyMessageR\rstopSetupMode\x12F\n" +
@@ -3250,9 +3307,9 @@ const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\fauthenticate\x18\x16 \x01(\tR\fauthenticate\x12%\n" +
 	"\x0echange_account\x18\x17 \x01(\tR\rchangeAccount\x12M\n" +
 	"\fallow_update\x18\x19 \x01(\v2*.quasar.proto.IOControlCommand.AllowUpdateR\vallowUpdate\x12w\n" +
-	"\x1aregister_device_in_backend\x186 \x01(\v2:.quasar.proto.IOControlCommand.RegisterDeviceInBackendInfoR\x17registerDeviceInBackend\x12m\n" +
-	"\x19provide_user_account_info\x18, \x01(\v2..quasar.proto.IOControlCommand.UserAccountInfoB\x02\x18\x01R\x16provideUserAccountInfo\x12z\n" +
-	" provide_active_user_account_info\x18R \x01(\v2..quasar.proto.IOControlCommand.UserAccountInfoB\x02\x18\x01R\x1cprovideActiveUserAccountInfo\x12I\n" +
+	"\x1aregister_device_in_backend\x186 \x01(\v2:.quasar.proto.IOControlCommand.RegisterDeviceInBackendInfoR\x17registerDeviceInBackend\x12i\n" +
+	"\x19provide_user_account_info\x18, \x01(\v2..quasar.proto.IOControlCommand.UserAccountInfoR\x16provideUserAccountInfo\x12v\n" +
+	" provide_active_user_account_info\x18R \x01(\v2..quasar.proto.IOControlCommand.UserAccountInfoR\x1cprovideActiveUserAccountInfo\x12I\n" +
 	"\x11user_account_list\x18^ \x01(\v2\x1d.quasar.proto.UserAccountListR\x0fuserAccountList\x12S\n" +
 	"\x18revoke_user_account_info\x184 \x01(\v2\x1a.quasar.proto.EmptyMessageR\x15revokeUserAccountInfo\x12g\n" +
 	"\x17media_device_identifier\x18K \x01(\v2/.NAlice.TClientInfoProto.TMediaDeviceIdentifierR\x15mediaDeviceIdentifier\x12<\n" +
@@ -3381,8 +3438,12 @@ const file_yandex_io_protos_yandex_io_proto_rawDesc = "" +
 	"\x13active_actions_json\x18\x01 \x01(\tR\x11activeActionsJson\x12K\n" +
 	"\"external_entities_description_json\x18\x02 \x01(\tR\x1fexternalEntitiesDescriptionJson\"L\n" +
 	"\x0fUserOptionsList\x129\n" +
-	"\rusers_options\x18\x01 \x03(\v2\x14.NAlice.TUserOptionsR\fusersOptionsB%\n" +
-	"\x19ru.yandex.quasar.protobufB\bYandexIO"
+	"\rusers_options\x18\x01 \x03(\v2\x14.NAlice.TUserOptionsR\fusersOptions\"\x88\x01\n" +
+	"\x19FilePlayerCapabilityEvent\x12\x1d\n" +
+	"\n" +
+	"request_id\x18\x01 \x01(\tR\trequestId\x12L\n" +
+	"\x12audio_client_event\x18\x02 \x01(\v2\x1e.quasar.proto.AudioClientEventR\x10audioClientEventB\xb4\x01\n" +
+	"\x10com.quasar.protoB\rYandexIoProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_yandex_io_proto_rawDescOnce sync.Once
@@ -3397,7 +3458,7 @@ func file_yandex_io_protos_yandex_io_proto_rawDescGZIP() []byte {
 }
 
 var file_yandex_io_protos_yandex_io_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_yandex_io_protos_yandex_io_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
+var file_yandex_io_protos_yandex_io_proto_msgTypes = make([]protoimpl.MessageInfo, 44)
 var file_yandex_io_protos_yandex_io_proto_goTypes = []any{
 	(IOEvent_SDKState_NotificationState)(0),                // 0: quasar.proto.IOEvent.SDKState.NotificationState
 	(IOEvent_Spectrum_Event)(0),                            // 1: quasar.proto.IOEvent.Spectrum.Event
@@ -3423,149 +3484,153 @@ var file_yandex_io_protos_yandex_io_proto_goTypes = []any{
 	(*UserAccountList)(nil),                                // 21: quasar.proto.UserAccountList
 	(*VoiceButtonsInfo)(nil),                               // 22: quasar.proto.VoiceButtonsInfo
 	(*UserOptionsList)(nil),                                // 23: quasar.proto.UserOptionsList
-	(*IOEvent_SetupError)(nil),                             // 24: quasar.proto.IOEvent.SetupError
-	(*IOEvent_LastUpdateInfo)(nil),                         // 25: quasar.proto.IOEvent.LastUpdateInfo
-	(*IOEvent_BluetoothState)(nil),                         // 26: quasar.proto.IOEvent.BluetoothState
-	(*IOEvent_AlarmsState)(nil),                            // 27: quasar.proto.IOEvent.AlarmsState
-	(*IOEvent_ReminderState)(nil),                          // 28: quasar.proto.IOEvent.ReminderState
-	(*IOEvent_NtpdState)(nil),                              // 29: quasar.proto.IOEvent.NtpdState
-	(*IOEvent_TimersTimingsState)(nil),                     // 30: quasar.proto.IOEvent.TimersTimingsState
-	(*IOEvent_DoNotDisturbState)(nil),                      // 31: quasar.proto.IOEvent.DoNotDisturbState
-	(*IOEvent_SDKState)(nil),                               // 32: quasar.proto.IOEvent.SDKState
-	(*IOEvent_AuthenticationStatus)(nil),                   // 33: quasar.proto.IOEvent.AuthenticationStatus
-	(*IOEvent_Spectrum)(nil),                               // 34: quasar.proto.IOEvent.Spectrum
-	(*IOEvent_StartingConfigureSuccess)(nil),               // 35: quasar.proto.IOEvent.StartingConfigureSuccess
-	(*IOEvent_AuthCodeRequest)(nil),                        // 36: quasar.proto.IOEvent.AuthCodeRequest
-	(*IOEvent_BluetoothState_SinkState)(nil),               // 37: quasar.proto.IOEvent.BluetoothState.SinkState
-	(*IOControlCommand_PlayPause)(nil),                     // 38: quasar.proto.IOControlCommand.PlayPause
-	(*IOControlCommand_AllowUpdate)(nil),                   // 39: quasar.proto.IOControlCommand.AllowUpdate
-	(*IOControlCommand_RegisterDeviceInBackendInfo)(nil),   // 40: quasar.proto.IOControlCommand.RegisterDeviceInBackendInfo
-	(*IOControlCommand_UserAccountInfo)(nil),               // 41: quasar.proto.IOControlCommand.UserAccountInfo
-	(*IOControlCommand_CallMessage)(nil),                   // 42: quasar.proto.IOControlCommand.CallMessage
-	(*IOControlCommand_VinsResponseWrapper)(nil),           // 43: quasar.proto.IOControlCommand.VinsResponseWrapper
-	(*IOControlCommand_SetupCredentials)(nil),              // 44: quasar.proto.IOControlCommand.SetupCredentials
-	(*IOControlCommand_AuthCodeResponse)(nil),              // 45: quasar.proto.IOControlCommand.AuthCodeResponse
-	(*EmptyMessage)(nil),                                   // 46: quasar.proto.EmptyMessage
-	(MediaContentType)(0),                                  // 47: quasar.proto.MediaContentType
-	(*AppState)(nil),                                       // 48: quasar.proto.AppState
-	(*AudioClientEvent)(nil),                               // 49: quasar.proto.AudioClientEvent
-	(BrickStatus)(0),                                       // 50: quasar.proto.BrickStatus
-	(*BrickInfo)(nil),                                      // 51: quasar.proto.BrickInfo
-	(*RegistrationResult)(nil),                             // 52: quasar.proto.RegistrationResult
-	(*DeviceGroupState)(nil),                               // 53: quasar.proto.DeviceGroupState
-	(*GlagolDiscoveryResult)(nil),                          // 54: quasar.proto.GlagolDiscoveryResult
-	(*protos.TClientInfoProto_TMediaDeviceIdentifier)(nil), // 55: NAlice.TClientInfoProto.TMediaDeviceIdentifier
-	(*device_state.TDeviceStatePart)(nil),                  // 56: NAlice.NAliceApi.TDeviceStatePart
-	(*Timezone)(nil),                                       // 57: quasar.proto.Timezone
-	(*common.TLocation)(nil),                               // 58: NAlice.TLocation
-	(*WifiList)(nil),                                       // 59: quasar.proto.WifiList
-	(*EqualizerConfig)(nil),                                // 60: quasar.proto.EqualizerConfig
-	(proto.AudioInputChannelType)(0),                       // 61: voicetech.AudioInputChannelType
-	(SoundFormat_Type)(0),                                  // 62: quasar.proto.SoundFormat.Type
-	(*data.TExternalEntityDescription)(nil),                // 63: NAlice.NData.TExternalEntityDescription
-	(*directives.TDirective)(nil),                          // 64: NAlice.NAliceApi.TDirective
-	(*event_source.TEventSource)(nil),                      // 65: NAlice.TEventSource
-	(*user.TUserOptions)(nil),                              // 66: NAlice.TUserOptions
-	(*AliceState)(nil),                                     // 67: quasar.proto.AliceState
-	(ConfigurationState)(0),                                // 68: quasar.proto.ConfigurationState
-	(*UpdateState)(nil),                                    // 69: quasar.proto.UpdateState
-	(*CalldSessionState)(nil),                              // 70: quasar.proto.CalldSessionState
-	(*AllStartupSettings)(nil),                             // 71: quasar.proto.AllStartupSettings
-	(*VinsResponse)(nil),                                   // 72: quasar.proto.VinsResponse
-	(WifiType)(0),                                          // 73: quasar.proto.WifiType
+	(*FilePlayerCapabilityEvent)(nil),                      // 24: quasar.proto.FilePlayerCapabilityEvent
+	(*IOEvent_SetupError)(nil),                             // 25: quasar.proto.IOEvent.SetupError
+	(*IOEvent_LastUpdateInfo)(nil),                         // 26: quasar.proto.IOEvent.LastUpdateInfo
+	(*IOEvent_BluetoothState)(nil),                         // 27: quasar.proto.IOEvent.BluetoothState
+	(*IOEvent_AlarmsState)(nil),                            // 28: quasar.proto.IOEvent.AlarmsState
+	(*IOEvent_ReminderState)(nil),                          // 29: quasar.proto.IOEvent.ReminderState
+	(*IOEvent_NtpdState)(nil),                              // 30: quasar.proto.IOEvent.NtpdState
+	(*IOEvent_TimersTimingsState)(nil),                     // 31: quasar.proto.IOEvent.TimersTimingsState
+	(*IOEvent_DoNotDisturbState)(nil),                      // 32: quasar.proto.IOEvent.DoNotDisturbState
+	(*IOEvent_SDKState)(nil),                               // 33: quasar.proto.IOEvent.SDKState
+	(*IOEvent_AuthenticationStatus)(nil),                   // 34: quasar.proto.IOEvent.AuthenticationStatus
+	(*IOEvent_Spectrum)(nil),                               // 35: quasar.proto.IOEvent.Spectrum
+	(*IOEvent_StartingConfigureSuccess)(nil),               // 36: quasar.proto.IOEvent.StartingConfigureSuccess
+	(*IOEvent_AuthCodeRequest)(nil),                        // 37: quasar.proto.IOEvent.AuthCodeRequest
+	(*IOEvent_BluetoothState_SinkState)(nil),               // 38: quasar.proto.IOEvent.BluetoothState.SinkState
+	(*IOControlCommand_PlayPause)(nil),                     // 39: quasar.proto.IOControlCommand.PlayPause
+	(*IOControlCommand_AllowUpdate)(nil),                   // 40: quasar.proto.IOControlCommand.AllowUpdate
+	(*IOControlCommand_RegisterDeviceInBackendInfo)(nil),   // 41: quasar.proto.IOControlCommand.RegisterDeviceInBackendInfo
+	(*IOControlCommand_UserAccountInfo)(nil),               // 42: quasar.proto.IOControlCommand.UserAccountInfo
+	(*IOControlCommand_CallMessage)(nil),                   // 43: quasar.proto.IOControlCommand.CallMessage
+	(*IOControlCommand_VinsResponseWrapper)(nil),           // 44: quasar.proto.IOControlCommand.VinsResponseWrapper
+	(*IOControlCommand_SetupCredentials)(nil),              // 45: quasar.proto.IOControlCommand.SetupCredentials
+	(*IOControlCommand_AuthCodeResponse)(nil),              // 46: quasar.proto.IOControlCommand.AuthCodeResponse
+	(*EmptyMessage)(nil),                                   // 47: quasar.proto.EmptyMessage
+	(MediaContentType)(0),                                  // 48: quasar.proto.MediaContentType
+	(*AppState)(nil),                                       // 49: quasar.proto.AppState
+	(*AudioClientEvent)(nil),                               // 50: quasar.proto.AudioClientEvent
+	(BrickStatus)(0),                                       // 51: quasar.proto.BrickStatus
+	(*BrickInfo)(nil),                                      // 52: quasar.proto.BrickInfo
+	(*PushNotification)(nil),                               // 53: quasar.proto.PushNotification
+	(*RegistrationResult)(nil),                             // 54: quasar.proto.RegistrationResult
+	(*DeviceGroupState)(nil),                               // 55: quasar.proto.DeviceGroupState
+	(*GlagolDiscoveryResult)(nil),                          // 56: quasar.proto.GlagolDiscoveryResult
+	(*protos.TClientInfoProto_TMediaDeviceIdentifier)(nil), // 57: NAlice.TClientInfoProto.TMediaDeviceIdentifier
+	(*device_state.TDeviceStatePart)(nil),                  // 58: NAlice.NAliceApi.TDeviceStatePart
+	(*Timezone)(nil),                                       // 59: quasar.proto.Timezone
+	(*common.TLocation)(nil),                               // 60: NAlice.TLocation
+	(*WifiList)(nil),                                       // 61: quasar.proto.WifiList
+	(*EqualizerConfig)(nil),                                // 62: quasar.proto.EqualizerConfig
+	(proto.AudioInputChannelType)(0),                       // 63: voicetech.AudioInputChannelType
+	(SoundFormat_Type)(0),                                  // 64: quasar.proto.SoundFormat.Type
+	(*data.TExternalEntityDescription)(nil),                // 65: NAlice.NData.TExternalEntityDescription
+	(*directives.TDirective)(nil),                          // 66: NAlice.NAliceApi.TDirective
+	(*event_source.TEventSource)(nil),                      // 67: NAlice.TEventSource
+	(*user.TUserOptions)(nil),                              // 68: NAlice.TUserOptions
+	(*AliceState)(nil),                                     // 69: quasar.proto.AliceState
+	(ConfigurationState)(0),                                // 70: quasar.proto.ConfigurationState
+	(*UpdateState)(nil),                                    // 71: quasar.proto.UpdateState
+	(*CalldSessionState)(nil),                              // 72: quasar.proto.CalldSessionState
+	(*AllStartupSettings)(nil),                             // 73: quasar.proto.AllStartupSettings
+	(*VinsResponse)(nil),                                   // 74: quasar.proto.VinsResponse
+	(WifiType)(0),                                          // 75: quasar.proto.WifiType
 }
 var file_yandex_io_protos_yandex_io_proto_depIdxs = []int32{
-	46, // 0: quasar.proto.IOEvent.on_sound_data_transfer_start:type_name -> quasar.proto.EmptyMessage
-	46, // 1: quasar.proto.IOEvent.on_connecting_to_network:type_name -> quasar.proto.EmptyMessage
-	24, // 2: quasar.proto.IOEvent.on_setup_error:type_name -> quasar.proto.IOEvent.SetupError
-	46, // 3: quasar.proto.IOEvent.on_finish_setup:type_name -> quasar.proto.EmptyMessage
-	46, // 4: quasar.proto.IOEvent.on_conversation_error:type_name -> quasar.proto.EmptyMessage
-	47, // 5: quasar.proto.IOEvent.on_media_error:type_name -> quasar.proto.MediaContentType
-	25, // 6: quasar.proto.IOEvent.last_update_info:type_name -> quasar.proto.IOEvent.LastUpdateInfo
-	32, // 7: quasar.proto.IOEvent.sdk_state:type_name -> quasar.proto.IOEvent.SDKState
-	33, // 8: quasar.proto.IOEvent.authentication_status:type_name -> quasar.proto.IOEvent.AuthenticationStatus
-	34, // 9: quasar.proto.IOEvent.spectrum:type_name -> quasar.proto.IOEvent.Spectrum
-	35, // 10: quasar.proto.IOEvent.starting_configure_success:type_name -> quasar.proto.IOEvent.StartingConfigureSuccess
-	48, // 11: quasar.proto.IOEvent.on_music_state_changed:type_name -> quasar.proto.AppState
-	49, // 12: quasar.proto.IOEvent.on_audio_client_event:type_name -> quasar.proto.AudioClientEvent
-	50, // 13: quasar.proto.IOEvent.brick_status:type_name -> quasar.proto.BrickStatus
-	51, // 14: quasar.proto.IOEvent.brick_info:type_name -> quasar.proto.BrickInfo
-	52, // 15: quasar.proto.IOEvent.registration_result:type_name -> quasar.proto.RegistrationResult
-	18, // 16: quasar.proto.IOEvent.directives_preprocess_request:type_name -> quasar.proto.DirectiveList
-	53, // 17: quasar.proto.IOEvent.device_group_state:type_name -> quasar.proto.DeviceGroupState
-	54, // 18: quasar.proto.IOEvent.glagol_discovery_result:type_name -> quasar.proto.GlagolDiscoveryResult
-	36, // 19: quasar.proto.IOEvent.issue_auth_code_request:type_name -> quasar.proto.IOEvent.AuthCodeRequest
-	46, // 20: quasar.proto.IOControlCommand.set_setup_mode:type_name -> quasar.proto.EmptyMessage
-	46, // 21: quasar.proto.IOControlCommand.stop_setup_mode:type_name -> quasar.proto.EmptyMessage
-	46, // 22: quasar.proto.IOControlCommand.toggle_setup_mode:type_name -> quasar.proto.EmptyMessage
-	46, // 23: quasar.proto.IOControlCommand.allow_init_configuration_state:type_name -> quasar.proto.EmptyMessage
-	39, // 24: quasar.proto.IOControlCommand.allow_update:type_name -> quasar.proto.IOControlCommand.AllowUpdate
-	40, // 25: quasar.proto.IOControlCommand.register_device_in_backend:type_name -> quasar.proto.IOControlCommand.RegisterDeviceInBackendInfo
-	41, // 26: quasar.proto.IOControlCommand.provide_user_account_info:type_name -> quasar.proto.IOControlCommand.UserAccountInfo
-	41, // 27: quasar.proto.IOControlCommand.provide_active_user_account_info:type_name -> quasar.proto.IOControlCommand.UserAccountInfo
-	21, // 28: quasar.proto.IOControlCommand.user_account_list:type_name -> quasar.proto.UserAccountList
-	46, // 29: quasar.proto.IOControlCommand.revoke_user_account_info:type_name -> quasar.proto.EmptyMessage
-	55, // 30: quasar.proto.IOControlCommand.media_device_identifier:type_name -> NAlice.TClientInfoProto.TMediaDeviceIdentifier
-	48, // 31: quasar.proto.IOControlCommand.send_app_state:type_name -> quasar.proto.AppState
-	42, // 32: quasar.proto.IOControlCommand.call_message:type_name -> quasar.proto.IOControlCommand.CallMessage
-	56, // 33: quasar.proto.IOControlCommand.provide_device_state:type_name -> NAlice.NAliceApi.TDeviceStatePart
-	57, // 34: quasar.proto.IOControlCommand.timezone:type_name -> quasar.proto.Timezone
-	58, // 35: quasar.proto.IOControlCommand.location:type_name -> NAlice.TLocation
-	59, // 36: quasar.proto.IOControlCommand.wifi_list:type_name -> quasar.proto.WifiList
-	18, // 37: quasar.proto.IOControlCommand.directives_preprocess_response:type_name -> quasar.proto.DirectiveList
-	43, // 38: quasar.proto.IOControlCommand.vins_response:type_name -> quasar.proto.IOControlCommand.VinsResponseWrapper
-	16, // 39: quasar.proto.IOControlCommand.directive_entity_list:type_name -> quasar.proto.DirectiveEntityList
-	60, // 40: quasar.proto.IOControlCommand.equalizer_config:type_name -> quasar.proto.EqualizerConfig
-	44, // 41: quasar.proto.IOControlCommand.setup_credentials:type_name -> quasar.proto.IOControlCommand.SetupCredentials
-	19, // 42: quasar.proto.IOControlCommand.external_directives:type_name -> quasar.proto.ExternalDirectives
-	45, // 43: quasar.proto.IOControlCommand.issue_auth_code_response:type_name -> quasar.proto.IOControlCommand.AuthCodeResponse
-	61, // 44: quasar.proto.IOAudioChannelData.type:type_name -> voicetech.AudioInputChannelType
-	62, // 45: quasar.proto.IOAudioChannelData.format:type_name -> quasar.proto.SoundFormat.Type
-	7,  // 46: quasar.proto.IOAudioChannelData.tags:type_name -> quasar.proto.SoundBufferTag
-	8,  // 47: quasar.proto.IOAudioChannelsData.channels:type_name -> quasar.proto.IOAudioChannelData
-	61, // 48: quasar.proto.ProducedChannelInfo.type:type_name -> voicetech.AudioInputChannelType
-	10, // 49: quasar.proto.ProducedChannelsInfo.channels:type_name -> quasar.proto.ProducedChannelInfo
-	46, // 50: quasar.proto.IOChannelRequest.request_main:type_name -> quasar.proto.EmptyMessage
-	46, // 51: quasar.proto.IOChannelRequest.request_all:type_name -> quasar.proto.EmptyMessage
-	46, // 52: quasar.proto.IOChannelRequest.request_vqe:type_name -> quasar.proto.EmptyMessage
-	46, // 53: quasar.proto.IOChannelRequest.request_raw:type_name -> quasar.proto.EmptyMessage
-	46, // 54: quasar.proto.IOChannelRequest.request_com:type_name -> quasar.proto.EmptyMessage
-	46, // 55: quasar.proto.IOChannelRequest.unsubscribe:type_name -> quasar.proto.EmptyMessage
-	46, // 56: quasar.proto.IOHubMessage.retrieve_state:type_name -> quasar.proto.EmptyMessage
-	15, // 57: quasar.proto.DirectiveEntityList.directives:type_name -> quasar.proto.DirectiveEntity
-	63, // 58: quasar.proto.EntityDescriptionList.entities:type_name -> NAlice.NData.TExternalEntityDescription
-	64, // 59: quasar.proto.DirectiveList.directives:type_name -> NAlice.NAliceApi.TDirective
-	18, // 60: quasar.proto.ExternalDirectives.directive_list:type_name -> quasar.proto.DirectiveList
-	65, // 61: quasar.proto.ExternalDirectives.event_source:type_name -> NAlice.TEventSource
-	20, // 62: quasar.proto.UserAccountList.accounts:type_name -> quasar.proto.UserAccount
-	66, // 63: quasar.proto.UserOptionsList.users_options:type_name -> NAlice.TUserOptions
-	37, // 64: quasar.proto.IOEvent.BluetoothState.sink_state:type_name -> quasar.proto.IOEvent.BluetoothState.SinkState
-	67, // 65: quasar.proto.IOEvent.SDKState.alice_state:type_name -> quasar.proto.AliceState
-	26, // 66: quasar.proto.IOEvent.SDKState.bluetooth_state:type_name -> quasar.proto.IOEvent.BluetoothState
-	27, // 67: quasar.proto.IOEvent.SDKState.alarms_state:type_name -> quasar.proto.IOEvent.AlarmsState
-	30, // 68: quasar.proto.IOEvent.SDKState.timers_timings:type_name -> quasar.proto.IOEvent.TimersTimingsState
-	68, // 69: quasar.proto.IOEvent.SDKState.configuration_state:type_name -> quasar.proto.ConfigurationState
-	69, // 70: quasar.proto.IOEvent.SDKState.update_state:type_name -> quasar.proto.UpdateState
-	48, // 71: quasar.proto.IOEvent.SDKState.app_state:type_name -> quasar.proto.AppState
-	28, // 72: quasar.proto.IOEvent.SDKState.reminder_state:type_name -> quasar.proto.IOEvent.ReminderState
-	0,  // 73: quasar.proto.IOEvent.SDKState.notification_state:type_name -> quasar.proto.IOEvent.SDKState.NotificationState
-	70, // 74: quasar.proto.IOEvent.SDKState.calld_state:type_name -> quasar.proto.CalldSessionState
-	29, // 75: quasar.proto.IOEvent.SDKState.ntpd_state:type_name -> quasar.proto.IOEvent.NtpdState
-	71, // 76: quasar.proto.IOEvent.SDKState.all_startup_settings:type_name -> quasar.proto.AllStartupSettings
-	31, // 77: quasar.proto.IOEvent.SDKState.do_not_disturb_state:type_name -> quasar.proto.IOEvent.DoNotDisturbState
-	1,  // 78: quasar.proto.IOEvent.Spectrum.event:type_name -> quasar.proto.IOEvent.Spectrum.Event
-	2,  // 79: quasar.proto.IOEvent.Spectrum.type:type_name -> quasar.proto.IOEvent.Spectrum.Type
-	46, // 80: quasar.proto.IOControlCommand.CallMessage.accept_incoming:type_name -> quasar.proto.EmptyMessage
-	46, // 81: quasar.proto.IOControlCommand.CallMessage.decline_incoming:type_name -> quasar.proto.EmptyMessage
-	46, // 82: quasar.proto.IOControlCommand.CallMessage.decline_current:type_name -> quasar.proto.EmptyMessage
-	72, // 83: quasar.proto.IOControlCommand.VinsResponseWrapper.vins_response:type_name -> quasar.proto.VinsResponse
-	65, // 84: quasar.proto.IOControlCommand.VinsResponseWrapper.event_source:type_name -> NAlice.TEventSource
-	73, // 85: quasar.proto.IOControlCommand.SetupCredentials.wifi_type:type_name -> quasar.proto.WifiType
-	86, // [86:86] is the sub-list for method output_type
-	86, // [86:86] is the sub-list for method input_type
-	86, // [86:86] is the sub-list for extension type_name
-	86, // [86:86] is the sub-list for extension extendee
-	0,  // [0:86] is the sub-list for field type_name
+	47, // 0: quasar.proto.IOEvent.on_sound_data_transfer_start:type_name -> quasar.proto.EmptyMessage
+	47, // 1: quasar.proto.IOEvent.on_connecting_to_network:type_name -> quasar.proto.EmptyMessage
+	25, // 2: quasar.proto.IOEvent.on_setup_error:type_name -> quasar.proto.IOEvent.SetupError
+	47, // 3: quasar.proto.IOEvent.on_finish_setup:type_name -> quasar.proto.EmptyMessage
+	47, // 4: quasar.proto.IOEvent.on_conversation_error:type_name -> quasar.proto.EmptyMessage
+	48, // 5: quasar.proto.IOEvent.on_media_error:type_name -> quasar.proto.MediaContentType
+	26, // 6: quasar.proto.IOEvent.last_update_info:type_name -> quasar.proto.IOEvent.LastUpdateInfo
+	33, // 7: quasar.proto.IOEvent.sdk_state:type_name -> quasar.proto.IOEvent.SDKState
+	34, // 8: quasar.proto.IOEvent.authentication_status:type_name -> quasar.proto.IOEvent.AuthenticationStatus
+	35, // 9: quasar.proto.IOEvent.spectrum:type_name -> quasar.proto.IOEvent.Spectrum
+	36, // 10: quasar.proto.IOEvent.starting_configure_success:type_name -> quasar.proto.IOEvent.StartingConfigureSuccess
+	49, // 11: quasar.proto.IOEvent.on_music_state_changed:type_name -> quasar.proto.AppState
+	50, // 12: quasar.proto.IOEvent.on_audio_client_event:type_name -> quasar.proto.AudioClientEvent
+	51, // 13: quasar.proto.IOEvent.brick_status:type_name -> quasar.proto.BrickStatus
+	52, // 14: quasar.proto.IOEvent.brick_info:type_name -> quasar.proto.BrickInfo
+	53, // 15: quasar.proto.IOEvent.push_notification:type_name -> quasar.proto.PushNotification
+	54, // 16: quasar.proto.IOEvent.registration_result:type_name -> quasar.proto.RegistrationResult
+	18, // 17: quasar.proto.IOEvent.directives_preprocess_request:type_name -> quasar.proto.DirectiveList
+	55, // 18: quasar.proto.IOEvent.device_group_state:type_name -> quasar.proto.DeviceGroupState
+	56, // 19: quasar.proto.IOEvent.glagol_discovery_result:type_name -> quasar.proto.GlagolDiscoveryResult
+	37, // 20: quasar.proto.IOEvent.issue_auth_code_request:type_name -> quasar.proto.IOEvent.AuthCodeRequest
+	47, // 21: quasar.proto.IOControlCommand.set_setup_mode:type_name -> quasar.proto.EmptyMessage
+	47, // 22: quasar.proto.IOControlCommand.stop_setup_mode:type_name -> quasar.proto.EmptyMessage
+	47, // 23: quasar.proto.IOControlCommand.toggle_setup_mode:type_name -> quasar.proto.EmptyMessage
+	47, // 24: quasar.proto.IOControlCommand.allow_init_configuration_state:type_name -> quasar.proto.EmptyMessage
+	40, // 25: quasar.proto.IOControlCommand.allow_update:type_name -> quasar.proto.IOControlCommand.AllowUpdate
+	41, // 26: quasar.proto.IOControlCommand.register_device_in_backend:type_name -> quasar.proto.IOControlCommand.RegisterDeviceInBackendInfo
+	42, // 27: quasar.proto.IOControlCommand.provide_user_account_info:type_name -> quasar.proto.IOControlCommand.UserAccountInfo
+	42, // 28: quasar.proto.IOControlCommand.provide_active_user_account_info:type_name -> quasar.proto.IOControlCommand.UserAccountInfo
+	21, // 29: quasar.proto.IOControlCommand.user_account_list:type_name -> quasar.proto.UserAccountList
+	47, // 30: quasar.proto.IOControlCommand.revoke_user_account_info:type_name -> quasar.proto.EmptyMessage
+	57, // 31: quasar.proto.IOControlCommand.media_device_identifier:type_name -> NAlice.TClientInfoProto.TMediaDeviceIdentifier
+	49, // 32: quasar.proto.IOControlCommand.send_app_state:type_name -> quasar.proto.AppState
+	43, // 33: quasar.proto.IOControlCommand.call_message:type_name -> quasar.proto.IOControlCommand.CallMessage
+	58, // 34: quasar.proto.IOControlCommand.provide_device_state:type_name -> NAlice.NAliceApi.TDeviceStatePart
+	59, // 35: quasar.proto.IOControlCommand.timezone:type_name -> quasar.proto.Timezone
+	60, // 36: quasar.proto.IOControlCommand.location:type_name -> NAlice.TLocation
+	61, // 37: quasar.proto.IOControlCommand.wifi_list:type_name -> quasar.proto.WifiList
+	18, // 38: quasar.proto.IOControlCommand.directives_preprocess_response:type_name -> quasar.proto.DirectiveList
+	44, // 39: quasar.proto.IOControlCommand.vins_response:type_name -> quasar.proto.IOControlCommand.VinsResponseWrapper
+	16, // 40: quasar.proto.IOControlCommand.directive_entity_list:type_name -> quasar.proto.DirectiveEntityList
+	62, // 41: quasar.proto.IOControlCommand.equalizer_config:type_name -> quasar.proto.EqualizerConfig
+	45, // 42: quasar.proto.IOControlCommand.setup_credentials:type_name -> quasar.proto.IOControlCommand.SetupCredentials
+	19, // 43: quasar.proto.IOControlCommand.external_directives:type_name -> quasar.proto.ExternalDirectives
+	46, // 44: quasar.proto.IOControlCommand.issue_auth_code_response:type_name -> quasar.proto.IOControlCommand.AuthCodeResponse
+	63, // 45: quasar.proto.IOAudioChannelData.type:type_name -> voicetech.AudioInputChannelType
+	64, // 46: quasar.proto.IOAudioChannelData.format:type_name -> quasar.proto.SoundFormat.Type
+	7,  // 47: quasar.proto.IOAudioChannelData.tags:type_name -> quasar.proto.SoundBufferTag
+	8,  // 48: quasar.proto.IOAudioChannelsData.channels:type_name -> quasar.proto.IOAudioChannelData
+	63, // 49: quasar.proto.ProducedChannelInfo.type:type_name -> voicetech.AudioInputChannelType
+	10, // 50: quasar.proto.ProducedChannelsInfo.channels:type_name -> quasar.proto.ProducedChannelInfo
+	47, // 51: quasar.proto.IOChannelRequest.request_main:type_name -> quasar.proto.EmptyMessage
+	47, // 52: quasar.proto.IOChannelRequest.request_all:type_name -> quasar.proto.EmptyMessage
+	47, // 53: quasar.proto.IOChannelRequest.request_vqe:type_name -> quasar.proto.EmptyMessage
+	47, // 54: quasar.proto.IOChannelRequest.request_raw:type_name -> quasar.proto.EmptyMessage
+	47, // 55: quasar.proto.IOChannelRequest.request_com:type_name -> quasar.proto.EmptyMessage
+	47, // 56: quasar.proto.IOChannelRequest.unsubscribe:type_name -> quasar.proto.EmptyMessage
+	47, // 57: quasar.proto.IOHubMessage.retrieve_state:type_name -> quasar.proto.EmptyMessage
+	15, // 58: quasar.proto.DirectiveEntityList.directives:type_name -> quasar.proto.DirectiveEntity
+	65, // 59: quasar.proto.EntityDescriptionList.entities:type_name -> NAlice.NData.TExternalEntityDescription
+	66, // 60: quasar.proto.DirectiveList.directives:type_name -> NAlice.NAliceApi.TDirective
+	18, // 61: quasar.proto.ExternalDirectives.directive_list:type_name -> quasar.proto.DirectiveList
+	67, // 62: quasar.proto.ExternalDirectives.event_source:type_name -> NAlice.TEventSource
+	20, // 63: quasar.proto.UserAccountList.accounts:type_name -> quasar.proto.UserAccount
+	68, // 64: quasar.proto.UserOptionsList.users_options:type_name -> NAlice.TUserOptions
+	50, // 65: quasar.proto.FilePlayerCapabilityEvent.audio_client_event:type_name -> quasar.proto.AudioClientEvent
+	38, // 66: quasar.proto.IOEvent.BluetoothState.sink_state:type_name -> quasar.proto.IOEvent.BluetoothState.SinkState
+	69, // 67: quasar.proto.IOEvent.SDKState.alice_state:type_name -> quasar.proto.AliceState
+	27, // 68: quasar.proto.IOEvent.SDKState.bluetooth_state:type_name -> quasar.proto.IOEvent.BluetoothState
+	28, // 69: quasar.proto.IOEvent.SDKState.alarms_state:type_name -> quasar.proto.IOEvent.AlarmsState
+	31, // 70: quasar.proto.IOEvent.SDKState.timers_timings:type_name -> quasar.proto.IOEvent.TimersTimingsState
+	70, // 71: quasar.proto.IOEvent.SDKState.configuration_state:type_name -> quasar.proto.ConfigurationState
+	71, // 72: quasar.proto.IOEvent.SDKState.update_state:type_name -> quasar.proto.UpdateState
+	49, // 73: quasar.proto.IOEvent.SDKState.app_state:type_name -> quasar.proto.AppState
+	29, // 74: quasar.proto.IOEvent.SDKState.reminder_state:type_name -> quasar.proto.IOEvent.ReminderState
+	0,  // 75: quasar.proto.IOEvent.SDKState.notification_state:type_name -> quasar.proto.IOEvent.SDKState.NotificationState
+	72, // 76: quasar.proto.IOEvent.SDKState.calld_state:type_name -> quasar.proto.CalldSessionState
+	30, // 77: quasar.proto.IOEvent.SDKState.ntpd_state:type_name -> quasar.proto.IOEvent.NtpdState
+	73, // 78: quasar.proto.IOEvent.SDKState.all_startup_settings:type_name -> quasar.proto.AllStartupSettings
+	32, // 79: quasar.proto.IOEvent.SDKState.do_not_disturb_state:type_name -> quasar.proto.IOEvent.DoNotDisturbState
+	1,  // 80: quasar.proto.IOEvent.Spectrum.event:type_name -> quasar.proto.IOEvent.Spectrum.Event
+	2,  // 81: quasar.proto.IOEvent.Spectrum.type:type_name -> quasar.proto.IOEvent.Spectrum.Type
+	47, // 82: quasar.proto.IOControlCommand.CallMessage.accept_incoming:type_name -> quasar.proto.EmptyMessage
+	47, // 83: quasar.proto.IOControlCommand.CallMessage.decline_incoming:type_name -> quasar.proto.EmptyMessage
+	47, // 84: quasar.proto.IOControlCommand.CallMessage.decline_current:type_name -> quasar.proto.EmptyMessage
+	74, // 85: quasar.proto.IOControlCommand.VinsResponseWrapper.vins_response:type_name -> quasar.proto.VinsResponse
+	67, // 86: quasar.proto.IOControlCommand.VinsResponseWrapper.event_source:type_name -> NAlice.TEventSource
+	75, // 87: quasar.proto.IOControlCommand.SetupCredentials.wifi_type:type_name -> quasar.proto.WifiType
+	88, // [88:88] is the sub-list for method output_type
+	88, // [88:88] is the sub-list for method input_type
+	88, // [88:88] is the sub-list for extension type_name
+	88, // [88:88] is the sub-list for extension extendee
+	0,  // [0:88] is the sub-list for field type_name
 }
 
 func init() { file_yandex_io_protos_yandex_io_proto_init() }
@@ -3587,7 +3652,7 @@ func file_yandex_io_protos_yandex_io_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_yandex_io_protos_yandex_io_proto_rawDesc), len(file_yandex_io_protos_yandex_io_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   43,
+			NumMessages:   44,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

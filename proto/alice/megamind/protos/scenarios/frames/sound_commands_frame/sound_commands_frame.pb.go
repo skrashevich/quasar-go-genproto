@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/sound_commands_frame/sound_commands_frame.proto
 
-package soundcommandsframe
+package sound_commands_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -105,15 +105,15 @@ type isTSoundAbsoluteChangeSlot_Value interface {
 }
 
 type TSoundAbsoluteChangeSlot_NumLevelValue struct {
-	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,json=num_level_value,proto3,oneof"`
+	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,proto3,oneof"`
 }
 
 type TSoundAbsoluteChangeSlot_FloatLevelValue struct {
-	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,json=float_level_value,proto3,oneof"`
+	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,proto3,oneof"`
 }
 
 type TSoundAbsoluteChangeSlot_CustomLevelValue struct {
-	CustomLevelValue string `protobuf:"bytes,3,opt,name=CustomLevelValue,json=custom_level_value,proto3,oneof"`
+	CustomLevelValue string `protobuf:"bytes,3,opt,name=CustomLevelValue,proto3,oneof"`
 }
 
 func (*TSoundAbsoluteChangeSlot_NumLevelValue) isTSoundAbsoluteChangeSlot_Value() {}
@@ -193,11 +193,11 @@ type isTSoundRelativeChangeSlot_Value interface {
 }
 
 type TSoundRelativeChangeSlot_NumLevelValue struct {
-	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,json=num_level_value,proto3,oneof"`
+	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,proto3,oneof"`
 }
 
 type TSoundRelativeChangeSlot_FloatLevelValue struct {
-	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,json=float_level_value,proto3,oneof"`
+	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,proto3,oneof"`
 }
 
 func (*TSoundRelativeChangeSlot_NumLevelValue) isTSoundRelativeChangeSlot_Value() {}
@@ -285,15 +285,15 @@ type isTSoundPercentageChangeSlot_Value interface {
 }
 
 type TSoundPercentageChangeSlot_NumLevelValue struct {
-	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,json=num_level_value,proto3,oneof"`
+	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,proto3,oneof"`
 }
 
 type TSoundPercentageChangeSlot_FloatLevelValue struct {
-	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,json=float_level_value,proto3,oneof"`
+	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,proto3,oneof"`
 }
 
 type TSoundPercentageChangeSlot_PercentLevelValue struct {
-	PercentLevelValue float32 `protobuf:"fixed32,3,opt,name=PercentLevelValue,json=percent_level_value,proto3,oneof"`
+	PercentLevelValue float32 `protobuf:"fixed32,3,opt,name=PercentLevelValue,proto3,oneof"`
 }
 
 func (*TSoundPercentageChangeSlot_NumLevelValue) isTSoundPercentageChangeSlot_Value() {}
@@ -363,18 +363,18 @@ type isTSoundDegreeChangeSlot_Value interface {
 }
 
 type TSoundDegreeChangeSlot_DegreeValue struct {
-	DegreeValue string `protobuf:"bytes,1,opt,name=DegreeValue,json=degree_value,proto3,oneof"`
+	DegreeValue string `protobuf:"bytes,1,opt,name=DegreeValue,proto3,oneof"`
 }
 
 func (*TSoundDegreeChangeSlot_DegreeValue) isTSoundDegreeChangeSlot_Value() {}
 
 type TSoundLouderSemanticFrame struct {
 	state                   protoimpl.MessageState      `protogen:"open.v1"`
-	RepeatInterruptedPhrase *common.TBoolSlot           `protobuf:"bytes,1,opt,name=RepeatInterruptedPhrase,json=repeat_interrupted_phrase,proto3" json:"RepeatInterruptedPhrase,omitempty"`
-	AbsoluteChange          *TSoundAbsoluteChangeSlot   `protobuf:"bytes,2,opt,name=AbsoluteChange,json=absolute_change,proto3" json:"AbsoluteChange,omitempty"`
-	RelativeChange          *TSoundRelativeChangeSlot   `protobuf:"bytes,3,opt,name=RelativeChange,json=relative_change,proto3" json:"RelativeChange,omitempty"`
-	PercentageChange        *TSoundPercentageChangeSlot `protobuf:"bytes,4,opt,name=PercentageChange,json=percentage_change,proto3" json:"PercentageChange,omitempty"`
-	DegreeChange            *TSoundDegreeChangeSlot     `protobuf:"bytes,5,opt,name=DegreeChange,json=degree_change,proto3" json:"DegreeChange,omitempty"`
+	RepeatInterruptedPhrase *common.TBoolSlot           `protobuf:"bytes,1,opt,name=RepeatInterruptedPhrase,proto3" json:"RepeatInterruptedPhrase,omitempty"`
+	AbsoluteChange          *TSoundAbsoluteChangeSlot   `protobuf:"bytes,2,opt,name=AbsoluteChange,proto3" json:"AbsoluteChange,omitempty"`
+	RelativeChange          *TSoundRelativeChangeSlot   `protobuf:"bytes,3,opt,name=RelativeChange,proto3" json:"RelativeChange,omitempty"`
+	PercentageChange        *TSoundPercentageChangeSlot `protobuf:"bytes,4,opt,name=PercentageChange,proto3" json:"PercentageChange,omitempty"`
+	DegreeChange            *TSoundDegreeChangeSlot     `protobuf:"bytes,5,opt,name=DegreeChange,proto3" json:"DegreeChange,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -446,11 +446,11 @@ func (x *TSoundLouderSemanticFrame) GetDegreeChange() *TSoundDegreeChangeSlot {
 
 type TSoundQuiterSemanticFrame struct {
 	state                   protoimpl.MessageState      `protogen:"open.v1"`
-	RepeatInterruptedPhrase *common.TBoolSlot           `protobuf:"bytes,1,opt,name=RepeatInterruptedPhrase,json=repeat_interrupted_phrase,proto3" json:"RepeatInterruptedPhrase,omitempty"`
-	AbsoluteChange          *TSoundAbsoluteChangeSlot   `protobuf:"bytes,2,opt,name=AbsoluteChange,json=absolute_change,proto3" json:"AbsoluteChange,omitempty"`
-	RelativeChange          *TSoundRelativeChangeSlot   `protobuf:"bytes,3,opt,name=RelativeChange,json=relative_change,proto3" json:"RelativeChange,omitempty"`
-	PercentageChange        *TSoundPercentageChangeSlot `protobuf:"bytes,4,opt,name=PercentageChange,json=percentage_change,proto3" json:"PercentageChange,omitempty"`
-	DegreeChange            *TSoundDegreeChangeSlot     `protobuf:"bytes,5,opt,name=DegreeChange,json=degree_change,proto3" json:"DegreeChange,omitempty"`
+	RepeatInterruptedPhrase *common.TBoolSlot           `protobuf:"bytes,1,opt,name=RepeatInterruptedPhrase,proto3" json:"RepeatInterruptedPhrase,omitempty"`
+	AbsoluteChange          *TSoundAbsoluteChangeSlot   `protobuf:"bytes,2,opt,name=AbsoluteChange,proto3" json:"AbsoluteChange,omitempty"`
+	RelativeChange          *TSoundRelativeChangeSlot   `protobuf:"bytes,3,opt,name=RelativeChange,proto3" json:"RelativeChange,omitempty"`
+	PercentageChange        *TSoundPercentageChangeSlot `protobuf:"bytes,4,opt,name=PercentageChange,proto3" json:"PercentageChange,omitempty"`
+	DegreeChange            *TSoundDegreeChangeSlot     `protobuf:"bytes,5,opt,name=DegreeChange,proto3" json:"DegreeChange,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -693,23 +693,23 @@ type isTSoundLevelSlot_Value interface {
 }
 
 type TSoundLevelSlot_NumLevelValue struct {
-	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,json=num_level_value,proto3,oneof"`
+	NumLevelValue int32 `protobuf:"varint,1,opt,name=NumLevelValue,proto3,oneof"`
 }
 
 type TSoundLevelSlot_FloatLevelValue struct {
-	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,json=float_level_value,proto3,oneof"`
+	FloatLevelValue float32 `protobuf:"fixed32,2,opt,name=FloatLevelValue,proto3,oneof"`
 }
 
 type TSoundLevelSlot_CustomLevelValue struct {
-	CustomLevelValue string `protobuf:"bytes,3,opt,name=CustomLevelValue,json=custom_level_value,proto3,oneof"`
+	CustomLevelValue string `protobuf:"bytes,3,opt,name=CustomLevelValue,proto3,oneof"`
 }
 
 type TSoundLevelSlot_CustomVolumeSettings struct {
-	CustomVolumeSettings string `protobuf:"bytes,4,opt,name=CustomVolumeSettings,json=custom_volume_settings,proto3,oneof"`
+	CustomVolumeSettings string `protobuf:"bytes,4,opt,name=CustomVolumeSettings,proto3,oneof"`
 }
 
 type TSoundLevelSlot_PercentLevelValue struct {
-	PercentLevelValue float32 `protobuf:"fixed32,5,opt,name=PercentLevelValue,json=percent_level_value,proto3,oneof"`
+	PercentLevelValue float32 `protobuf:"fixed32,5,opt,name=PercentLevelValue,proto3,oneof"`
 }
 
 func (*TSoundLevelSlot_NumLevelValue) isTSoundLevelSlot_Value() {}
@@ -724,8 +724,8 @@ func (*TSoundLevelSlot_PercentLevelValue) isTSoundLevelSlot_Value() {}
 
 type TSoundSetLevelSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Level         *TSoundLevelSlot       `protobuf:"bytes,1,opt,name=Level,json=level,proto3" json:"Level,omitempty"`
-	Denominator   *common.TSysNumSlot    `protobuf:"bytes,2,opt,name=Denominator,json=denominator,proto3" json:"Denominator,omitempty"`
+	Level         *TSoundLevelSlot       `protobuf:"bytes,1,opt,name=Level,proto3" json:"Level,omitempty"`
+	Denominator   *common.TSysNumSlot    `protobuf:"bytes,2,opt,name=Denominator,proto3" json:"Denominator,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -778,49 +778,50 @@ var File_alice_megamind_protos_scenarios_frames_sound_commands_frame_sound_comma
 
 const file_alice_megamind_protos_scenarios_frames_sound_commands_frame_sound_commands_frame_proto_rawDesc = "" +
 	"\n" +
-	"Valice/megamind/protos/scenarios/frames/sound_commands_frame/sound_commands_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\x02\n" +
-	"\x18TSoundAbsoluteChangeSlot\x12H\n" +
-	"\rNumLevelValue\x18\x01 \x01(\x05B\x1e\xaa\xdd\x1b\x0fnum_level_value\u0085\x1c\asys.numH\x00R\x0fnum_level_value\x12P\n" +
-	"\x0fFloatLevelValue\x18\x02 \x01(\x02B\"\xaa\xdd\x1b\x11float_level_value\u0085\x1c\tsys.floatH\x00R\x11float_level_value\x12W\n" +
-	"\x10CustomLevelValue\x18\x03 \x01(\tB'\xaa\xdd\x1b\x12custom_level_value\u0085\x1c\rcustom.numberH\x00R\x12custom_level_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xd0\x01\n" +
-	"\x18TSoundRelativeChangeSlot\x12H\n" +
-	"\rNumLevelValue\x18\x01 \x01(\x05B\x1e\xaa\xdd\x1b\x0fnum_level_value\u0085\x1c\asys.numH\x00R\x0fnum_level_value\x12P\n" +
-	"\x0fFloatLevelValue\x18\x02 \x01(\x02B\"\xaa\xdd\x1b\x11float_level_value\u0085\x1c\tsys.floatH\x00R\x11float_level_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xb2\x02\n" +
-	"\x1aTSoundPercentageChangeSlot\x12H\n" +
-	"\rNumLevelValue\x18\x01 \x01(\x05B\x1e\xaa\xdd\x1b\x0fnum_level_value\u0085\x1c\asys.numH\x00R\x0fnum_level_value\x12P\n" +
-	"\x0fFloatLevelValue\x18\x02 \x01(\x02B\"\xaa\xdd\x1b\x11float_level_value\u0085\x1c\tsys.floatH\x00R\x11float_level_value\x12^\n" +
-	"\x11PercentLevelValue\x18\x03 \x01(\x02B,\xaa\xdd\x1b\x13percent_level_value\u0085\x1c\x11sys.percent_valueH\x00R\x13percent_level_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"z\n" +
-	"\x16TSoundDegreeChangeSlot\x12F\n" +
-	"\vDegreeValue\x18\x01 \x01(\tB!\xaa\xdd\x1b\fdegree_value\u0085\x1c\rcustom.degreeH\x00R\fdegree_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xa6\x05\n" +
-	"\x19TSoundLouderSemanticFrame\x12\x89\x01\n" +
-	"\x17RepeatInterruptedPhrase\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB:\xaa\xdd\x1b\x19repeat_interrupted_phrase\xba\x85\x1c\x19repeat_interrupted_phraseR\x19repeat_interrupted_phrase\x12q\n" +
-	"\x0eAbsoluteChange\x18\x02 \x01(\v2 .NAlice.TSoundAbsoluteChangeSlotB&\xaa\xdd\x1b\x0fabsolute_change\xba\x85\x1c\x0fabsolute_changeR\x0fabsolute_change\x12q\n" +
-	"\x0eRelativeChange\x18\x03 \x01(\v2 .NAlice.TSoundRelativeChangeSlotB&\xaa\xdd\x1b\x0frelative_change\xba\x85\x1c\x0frelative_changeR\x0frelative_change\x12{\n" +
-	"\x10PercentageChange\x18\x04 \x01(\v2\".NAlice.TSoundPercentageChangeSlotB*\xaa\xdd\x1b\x11percentage_change\xba\x85\x1c\x11percentage_changeR\x11percentage_change\x12g\n" +
-	"\fDegreeChange\x18\x05 \x01(\v2\x1e.NAlice.TSoundDegreeChangeSlotB\"\xaa\xdd\x1b\rdegree_change\xba\x85\x1c\rdegree_changeR\rdegree_change:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.sound.louder\"\xa6\x05\n" +
-	"\x19TSoundQuiterSemanticFrame\x12\x89\x01\n" +
-	"\x17RepeatInterruptedPhrase\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotB:\xaa\xdd\x1b\x19repeat_interrupted_phrase\xba\x85\x1c\x19repeat_interrupted_phraseR\x19repeat_interrupted_phrase\x12q\n" +
-	"\x0eAbsoluteChange\x18\x02 \x01(\v2 .NAlice.TSoundAbsoluteChangeSlotB&\xaa\xdd\x1b\x0fabsolute_change\xba\x85\x1c\x0fabsolute_changeR\x0fabsolute_change\x12q\n" +
-	"\x0eRelativeChange\x18\x03 \x01(\v2 .NAlice.TSoundRelativeChangeSlotB&\xaa\xdd\x1b\x0frelative_change\xba\x85\x1c\x0frelative_changeR\x0frelative_change\x12{\n" +
-	"\x10PercentageChange\x18\x04 \x01(\v2\".NAlice.TSoundPercentageChangeSlotB*\xaa\xdd\x1b\x11percentage_change\xba\x85\x1c\x11percentage_changeR\x11percentage_change\x12g\n" +
-	"\fDegreeChange\x18\x05 \x01(\v2\x1e.NAlice.TSoundDegreeChangeSlotB\"\xaa\xdd\x1b\rdegree_change\xba\x85\x1c\rdegree_changeR\rdegree_change:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.sound.quiter\"J\n" +
-	"\x17TSoundMuteSemanticFrame:/\xa8\xdd\x1b\x04\x9a\xff\x1b'personal_assistant.scenarios.sound.mute\"N\n" +
-	"\x19TSoundUnmuteSemanticFrame:1\xa8\xdd\x1b\x04\x9a\xff\x1b)personal_assistant.scenarios.sound.unmute\"\xed\x03\n" +
-	"\x0fTSoundLevelSlot\x12H\n" +
-	"\rNumLevelValue\x18\x01 \x01(\x05B\x1e\xaa\xdd\x1b\x0fnum_level_value\u0085\x1c\asys.numH\x00R\x0fnum_level_value\x12P\n" +
-	"\x0fFloatLevelValue\x18\x02 \x01(\x02B\"\xaa\xdd\x1b\x11float_level_value\u0085\x1c\tsys.floatH\x00R\x11float_level_value\x12W\n" +
-	"\x10CustomLevelValue\x18\x03 \x01(\tB'\xaa\xdd\x1b\x12custom_level_value\u0085\x1c\rcustom.numberH\x00R\x12custom_level_value\x12k\n" +
-	"\x14CustomVolumeSettings\x18\x04 \x01(\tB3\xaa\xdd\x1b\x16custom_volume_settings\u0085\x1c\x15custom.volume_settingH\x00R\x16custom_volume_settings\x12^\n" +
-	"\x11PercentLevelValue\x18\x05 \x01(\x02B,\xaa\xdd\x1b\x13percent_level_value\u0085\x1c\x11sys.percent_valueH\x00R\x13percent_level_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xed\x01\n" +
-	"\x1bTSoundSetLevelSemanticFrame\x12A\n" +
-	"\x05Level\x18\x01 \x01(\v2\x17.NAlice.TSoundLevelSlotB\x12\xaa\xdd\x1b\x05level\xba\x85\x1c\x05levelR\x05level\x12U\n" +
-	"\vDenominator\x18\x02 \x01(\v2\x13.NAlice.TSysNumSlotB\x1e\xaa\xdd\x1b\vdenominator\xba\x85\x1c\vdenominatorR\vdenominator:4\xa8\xdd\x1b\x04\x9a\xff\x1b,personal_assistant.scenarios.sound.set_levelB\xbe\x01\n" +
-	"Eru.yandex.alice.megamind.protos.scenarios.frames.sound_commands_frameB\x12FrameSoundCommandsP\x01Z_a.yandex-team.ru/alice/megamind/protos/scenarios/frames/sound_commands_frame;soundcommandsframeb\x06proto3"
+	"Valice/megamind/protos/scenarios/frames/sound_commands_frame/sound_commands_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x01\n" +
+	"\x18TSoundAbsoluteChangeSlot\x12&\n" +
+	"\rNumLevelValue\x18\x01 \x01(\x05H\x00R\rNumLevelValue\x12*\n" +
+	"\x0fFloatLevelValue\x18\x02 \x01(\x02H\x00R\x0fFloatLevelValue\x12,\n" +
+	"\x10CustomLevelValue\x18\x03 \x01(\tH\x00R\x10CustomLevelValueB\a\n" +
+	"\x05Value\"w\n" +
+	"\x18TSoundRelativeChangeSlot\x12&\n" +
+	"\rNumLevelValue\x18\x01 \x01(\x05H\x00R\rNumLevelValue\x12*\n" +
+	"\x0fFloatLevelValue\x18\x02 \x01(\x02H\x00R\x0fFloatLevelValueB\a\n" +
+	"\x05Value\"\xa9\x01\n" +
+	"\x1aTSoundPercentageChangeSlot\x12&\n" +
+	"\rNumLevelValue\x18\x01 \x01(\x05H\x00R\rNumLevelValue\x12*\n" +
+	"\x0fFloatLevelValue\x18\x02 \x01(\x02H\x00R\x0fFloatLevelValue\x12.\n" +
+	"\x11PercentLevelValue\x18\x03 \x01(\x02H\x00R\x11PercentLevelValueB\a\n" +
+	"\x05Value\"E\n" +
+	"\x16TSoundDegreeChangeSlot\x12\"\n" +
+	"\vDegreeValue\x18\x01 \x01(\tH\x00R\vDegreeValueB\a\n" +
+	"\x05Value\"\x90\x03\n" +
+	"\x19TSoundLouderSemanticFrame\x12K\n" +
+	"\x17RepeatInterruptedPhrase\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\x17RepeatInterruptedPhrase\x12H\n" +
+	"\x0eAbsoluteChange\x18\x02 \x01(\v2 .NAlice.TSoundAbsoluteChangeSlotR\x0eAbsoluteChange\x12H\n" +
+	"\x0eRelativeChange\x18\x03 \x01(\v2 .NAlice.TSoundRelativeChangeSlotR\x0eRelativeChange\x12N\n" +
+	"\x10PercentageChange\x18\x04 \x01(\v2\".NAlice.TSoundPercentageChangeSlotR\x10PercentageChange\x12B\n" +
+	"\fDegreeChange\x18\x05 \x01(\v2\x1e.NAlice.TSoundDegreeChangeSlotR\fDegreeChange\"\x90\x03\n" +
+	"\x19TSoundQuiterSemanticFrame\x12K\n" +
+	"\x17RepeatInterruptedPhrase\x18\x01 \x01(\v2\x11.NAlice.TBoolSlotR\x17RepeatInterruptedPhrase\x12H\n" +
+	"\x0eAbsoluteChange\x18\x02 \x01(\v2 .NAlice.TSoundAbsoluteChangeSlotR\x0eAbsoluteChange\x12H\n" +
+	"\x0eRelativeChange\x18\x03 \x01(\v2 .NAlice.TSoundRelativeChangeSlotR\x0eRelativeChange\x12N\n" +
+	"\x10PercentageChange\x18\x04 \x01(\v2\".NAlice.TSoundPercentageChangeSlotR\x10PercentageChange\x12B\n" +
+	"\fDegreeChange\x18\x05 \x01(\v2\x1e.NAlice.TSoundDegreeChangeSlotR\fDegreeChange\"\x19\n" +
+	"\x17TSoundMuteSemanticFrame\"\x1b\n" +
+	"\x19TSoundUnmuteSemanticFrame\"\x82\x02\n" +
+	"\x0fTSoundLevelSlot\x12&\n" +
+	"\rNumLevelValue\x18\x01 \x01(\x05H\x00R\rNumLevelValue\x12*\n" +
+	"\x0fFloatLevelValue\x18\x02 \x01(\x02H\x00R\x0fFloatLevelValue\x12,\n" +
+	"\x10CustomLevelValue\x18\x03 \x01(\tH\x00R\x10CustomLevelValue\x124\n" +
+	"\x14CustomVolumeSettings\x18\x04 \x01(\tH\x00R\x14CustomVolumeSettings\x12.\n" +
+	"\x11PercentLevelValue\x18\x05 \x01(\x02H\x00R\x11PercentLevelValueB\a\n" +
+	"\x05Value\"\x83\x01\n" +
+	"\x1bTSoundSetLevelSemanticFrame\x12-\n" +
+	"\x05Level\x18\x01 \x01(\v2\x17.NAlice.TSoundLevelSlotR\x05Level\x125\n" +
+	"\vDenominator\x18\x02 \x01(\v2\x13.NAlice.TSysNumSlotR\vDenominatorB\xca\x01\n" +
+	"\n" +
+	"com.NAliceB\x17SoundCommandsFrameProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/sound_commands_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_sound_commands_frame_sound_commands_frame_proto_rawDescOnce sync.Once

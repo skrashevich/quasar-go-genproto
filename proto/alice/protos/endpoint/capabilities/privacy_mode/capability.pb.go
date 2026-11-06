@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/privacy_mode/capability.proto
 
-package privacymodepb
+package privacy_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -464,8 +464,8 @@ const file_alice_protos_endpoint_capabilities_privacy_mode_capability_proto_rawD
 	"\n" +
 	"NoneSource\x10\x00\x12\x12\n" +
 	"\x0eSoftwareSource\x10\x01\x12\x12\n" +
-	"\x0eHardwareSource\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x87\x01B\x9a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPrivacyModeCapabilityProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/privacy_mode;privacymodepbb\x06proto3"
+	"\x0eHardwareSource\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x87\x01B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPrivacyModeCapabilityProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/privacy_modeb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_privacy_mode_capability_proto_rawDescOnce sync.Once

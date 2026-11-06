@@ -24,8 +24,8 @@ const (
 
 type TTtsInterruptionTimings struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Timings       []*TTtsInterruptionTimings_TTiming `protobuf:"bytes,1,rep,name=Timings,json=timings,proto3" json:"Timings,omitempty"`
-	TriggerMs     uint64                             `protobuf:"varint,2,opt,name=TriggerMs,json=trigger_ms,proto3" json:"TriggerMs,omitempty"`
+	Timings       []*TTtsInterruptionTimings_TTiming `protobuf:"bytes,1,rep,name=Timings,proto3" json:"Timings,omitempty"`
+	TriggerMs     uint64                             `protobuf:"varint,2,opt,name=TriggerMs,proto3" json:"TriggerMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,9 +76,9 @@ func (x *TTtsInterruptionTimings) GetTriggerMs() uint64 {
 
 type TTtsInterruptionTimings_TTiming struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Word          string                 `protobuf:"bytes,1,opt,name=Word,json=word,proto3" json:"Word,omitempty"`
-	StartMs       uint64                 `protobuf:"varint,2,opt,name=StartMs,json=start_ms,proto3" json:"StartMs,omitempty"`
-	FinishMs      uint64                 `protobuf:"varint,3,opt,name=FinishMs,json=finish_ms,proto3" json:"FinishMs,omitempty"`
+	Word          string                 `protobuf:"bytes,1,opt,name=Word,proto3" json:"Word,omitempty"`
+	StartMs       uint64                 `protobuf:"varint,2,opt,name=StartMs,proto3" json:"StartMs,omitempty"`
+	FinishMs      uint64                 `protobuf:"varint,3,opt,name=FinishMs,proto3" json:"FinishMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -138,17 +138,16 @@ var File_alice_protos_data_tts_interruption_timings_tts_interruption_timings_pro
 
 const file_alice_protos_data_tts_interruption_timings_tts_interruption_timings_proto_rawDesc = "" +
 	"\n" +
-	"Ialice/protos/data/tts_interruption_timings/tts_interruption_timings.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa3\x02\n" +
-	"\x17TTtsInterruptionTimings\x12N\n" +
-	"\aTimings\x18\x01 \x03(\v2'.NAlice.TTtsInterruptionTimings.TTimingB\v\xaa\xdd\x1b\atimingsR\atimings\x12-\n" +
-	"\tTriggerMs\x18\x02 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"trigger_msR\n" +
-	"trigger_ms\x1a\x82\x01\n" +
-	"\aTTiming\x12\x1c\n" +
-	"\x04Word\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04wordR\x04word\x12'\n" +
-	"\aStartMs\x18\x02 \x01(\x04B\f\xaa\xdd\x1b\bstart_msR\bstart_ms\x12*\n" +
-	"\bFinishMs\x18\x03 \x01(\x04B\r\xaa\xdd\x1b\tfinish_msR\tfinish_ms:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x90\x01\n" +
-	"4ru.yandex.alice.protos.data.tts_interruption_timingsB\x1bTtsInterruptionTimingsProtoZ;a.yandex-team.ru/alice/protos/data/tts_interruption_timingsb\x06proto3"
+	"Ialice/protos/data/tts_interruption_timings/tts_interruption_timings.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcf\x01\n" +
+	"\x17TTtsInterruptionTimings\x12A\n" +
+	"\aTimings\x18\x01 \x03(\v2'.NAlice.TTtsInterruptionTimings.TTimingR\aTimings\x12\x1c\n" +
+	"\tTriggerMs\x18\x02 \x01(\x04R\tTriggerMs\x1aS\n" +
+	"\aTTiming\x12\x12\n" +
+	"\x04Word\x18\x01 \x01(\tR\x04Word\x12\x18\n" +
+	"\aStartMs\x18\x02 \x01(\x04R\aStartMs\x12\x1a\n" +
+	"\bFinishMs\x18\x03 \x01(\x04R\bFinishMsB\xbd\x01\n" +
+	"\n" +
+	"com.NAliceB\x1bTtsInterruptionTimingsProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tts_interruption_timings\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_tts_interruption_timings_tts_interruption_timings_proto_rawDescOnce sync.Once

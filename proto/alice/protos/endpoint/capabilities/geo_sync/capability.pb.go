@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/geo_sync/capability.proto
 
-package geosyncpb
+package geo_sync
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -29,9 +29,9 @@ const (
 
 type TGeoSyncCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TGeoSyncCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TGeoSyncCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TGeoSyncCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TGeoSyncCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -125,11 +125,11 @@ func (*TGeoSyncCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TGeoSyncCapability_TState struct {
 	state            protoimpl.MessageState            `protogen:"open.v1"`
-	Location         *data.TLatLon                     `protobuf:"bytes,1,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
-	LaasRealLocation *data.TLatLon                     `protobuf:"bytes,5,opt,name=LaasRealLocation,json=laas_real_location,proto3" json:"LaasRealLocation,omitempty"`
-	Timezone         *data.TTimezone                   `protobuf:"bytes,2,opt,name=Timezone,json=timezone,proto3" json:"Timezone,omitempty"`
-	TimezoneIsLocked bool                              `protobuf:"varint,3,opt,name=TimezoneIsLocked,json=timezone_is_locked,proto3" json:"TimezoneIsLocked,omitempty"`
-	NextTimezone     *TGeoSyncCapability_TNextTimezone `protobuf:"bytes,4,opt,name=NextTimezone,json=next_timezone,proto3" json:"NextTimezone,omitempty"`
+	Location         *data.TLatLon                     `protobuf:"bytes,1,opt,name=Location,proto3" json:"Location,omitempty"`
+	LaasRealLocation *data.TLatLon                     `protobuf:"bytes,5,opt,name=LaasRealLocation,proto3" json:"LaasRealLocation,omitempty"`
+	Timezone         *data.TTimezone                   `protobuf:"bytes,2,opt,name=Timezone,proto3" json:"Timezone,omitempty"`
+	TimezoneIsLocked bool                              `protobuf:"varint,3,opt,name=TimezoneIsLocked,proto3" json:"TimezoneIsLocked,omitempty"`
+	NextTimezone     *TGeoSyncCapability_TNextTimezone `protobuf:"bytes,4,opt,name=NextTimezone,proto3" json:"NextTimezone,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -201,9 +201,9 @@ func (x *TGeoSyncCapability_TState) GetNextTimezone() *TGeoSyncCapability_TNextT
 
 type TGeoSyncCapability_TSetLocationDirective struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Location         *data.TLatLon          `protobuf:"bytes,1,opt,name=Location,json=location,proto3" json:"Location,omitempty"`
-	LaasRealLocation *data.TLatLon          `protobuf:"bytes,3,opt,name=LaasRealLocation,json=laas_real_location,proto3" json:"LaasRealLocation,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Location         *data.TLatLon          `protobuf:"bytes,1,opt,name=Location,proto3" json:"Location,omitempty"`
+	LaasRealLocation *data.TLatLon          `protobuf:"bytes,3,opt,name=LaasRealLocation,proto3" json:"LaasRealLocation,omitempty"`
+	Name             string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -261,9 +261,9 @@ func (x *TGeoSyncCapability_TSetLocationDirective) GetName() string {
 
 type TGeoSyncCapability_TSetTimezoneDirective struct {
 	state         protoimpl.MessageState                                  `protogen:"open.v1"`
-	Timezone      *data.TTimezone                                         `protobuf:"bytes,1,opt,name=Timezone,json=timezone,proto3" json:"Timezone,omitempty"`
-	Name          string                                                  `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	NextTimezone  *TGeoSyncCapability_TSetTimezoneDirective_TNextTimezone `protobuf:"bytes,4,opt,name=NextTimezone,json=next_timezone,proto3" json:"NextTimezone,omitempty"`
+	Timezone      *data.TTimezone                                         `protobuf:"bytes,1,opt,name=Timezone,proto3" json:"Timezone,omitempty"`
+	Name          string                                                  `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	NextTimezone  *TGeoSyncCapability_TSetTimezoneDirective_TNextTimezone `protobuf:"bytes,4,opt,name=NextTimezone,proto3" json:"NextTimezone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -321,8 +321,8 @@ func (x *TGeoSyncCapability_TSetTimezoneDirective) GetNextTimezone() *TGeoSyncCa
 
 type TGeoSyncCapability_TNextTimezone struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	SwitchTimestamp *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=SwitchTimestamp,json=switch_timestamp,proto3" json:"SwitchTimestamp,omitempty"`
-	Timezone        *data.TTimezone        `protobuf:"bytes,2,opt,name=Timezone,json=timezone,proto3" json:"Timezone,omitempty"`
+	SwitchTimestamp *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=SwitchTimestamp,proto3" json:"SwitchTimestamp,omitempty"`
+	Timezone        *data.TTimezone        `protobuf:"bytes,2,opt,name=Timezone,proto3" json:"Timezone,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -373,8 +373,8 @@ func (x *TGeoSyncCapability_TNextTimezone) GetTimezone() *data.TTimezone {
 
 type TGeoSyncCapability_TSetGmtDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Epoch         *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Epoch,json=epoch,proto3" json:"Epoch,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Epoch         *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Epoch,proto3" json:"Epoch,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -425,8 +425,8 @@ func (x *TGeoSyncCapability_TSetGmtDirective) GetName() string {
 
 type TGeoSyncCapability_TSetTimezoneDirective_TNextTimezone struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Epoch         *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Epoch,json=epoch,proto3" json:"Epoch,omitempty"`
-	Timezone      *data.TTimezone        `protobuf:"bytes,2,opt,name=Timezone,json=timezone,proto3" json:"Timezone,omitempty"`
+	Epoch         *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=Epoch,proto3" json:"Epoch,omitempty"`
+	Timezone      *data.TTimezone        `protobuf:"bytes,2,opt,name=Timezone,proto3" json:"Timezone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -479,39 +479,39 @@ var File_alice_protos_endpoint_capabilities_geo_sync_capability_proto protorefle
 
 const file_alice_protos_endpoint_capabilities_geo_sync_capability_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/endpoint/capabilities/geo_sync/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1falice/protos/data/lat_lon.proto\x1a alice/protos/data/timezone.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe9\f\n" +
-	"\x12TGeoSyncCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	"<alice/protos/endpoint/capabilities/geo_sync/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1falice/protos/data/lat_lon.proto\x1a alice/protos/data/timezone.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcd\t\n" +
+	"\x12TGeoSyncCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TGeoSyncCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TGeoSyncCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x97\x03\n" +
-	"\x06TState\x12?\n" +
-	"\bLocation\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonB\f\xaa\xdd\x1b\blocationR\blocation\x12[\n" +
-	"\x10LaasRealLocation\x18\x05 \x01(\v2\x15.NAlice.NData.TLatLonB\x16\xaa\xdd\x1b\x12laas_real_locationR\x12laas_real_location\x12A\n" +
-	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12D\n" +
-	"\x10TimezoneIsLocked\x18\x03 \x01(\bB\x16\xaa\xdd\x1b\x12timezone_is_lockedR\x12timezone_is_locked\x12`\n" +
-	"\fNextTimezone\x18\x04 \x01(\v2(.NAlice.TGeoSyncCapability.TNextTimezoneB\x11\xaa\xdd\x1b\rnext_timezoneR\rnext_timezone:\x04\xa8\xdd\x1b\x04\x1a\xed\x01\n" +
-	"\x15TSetLocationDirective\x12?\n" +
-	"\bLocation\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonB\f\xaa\xdd\x1b\blocationR\blocation\x12[\n" +
-	"\x10LaasRealLocation\x18\x03 \x01(\v2\x15.NAlice.NData.TLatLonB\x16\xaa\xdd\x1b\x12laas_real_locationR\x12laas_real_location\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x18\x92\x82\x19\fset_location\xa8\xdd\x1b\x04\xa8\xc8\x1cQ\x1a\x9c\x03\n" +
-	"\x15TSetTimezoneDirective\x12A\n" +
-	"\bTimezone\x18\x01 \x01(\v2\x17.NAlice.NData.TTimezoneB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12v\n" +
-	"\fNextTimezone\x18\x04 \x01(\v2>.NAlice.TGeoSyncCapability.TSetTimezoneDirective.TNextTimezoneB\x11\xaa\xdd\x1b\rnext_timezoneR\rnext_timezone\x1a\x8f\x01\n" +
-	"\rTNextTimezone\x12;\n" +
-	"\x05Epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\t\xaa\xdd\x1b\x05epochR\x05epoch\x12A\n" +
-	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneB\f\xaa\xdd\x1b\btimezoneR\btimezone:\x18\x92\x82\x19\fset_timezone\xa8\xdd\x1b\x04\xa8\xc8\x1cR\x1a\xaf\x01\n" +
-	"\rTNextTimezone\x12[\n" +
-	"\x0fSwitchTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\x14\xaa\xdd\x1b\x10switch_timestampR\x10switch_timestamp\x12A\n" +
-	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneB\f\xaa\xdd\x1b\btimezoneR\btimezone\x1a\x83\x01\n" +
-	"\x10TSetGmtDirective\x12;\n" +
-	"\x05Epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\t\xaa\xdd\x1b\x05epochR\x05epoch\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x14\x92\x82\x19\aset_gmt\xa8\xdd\x1b\x04\xa8\xc8\x1c\x82\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x1fB\x84\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\fGeoSyncProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/geo_sync;geosyncpbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TGeoSyncCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TGeoSyncCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xad\x02\n" +
+	"\x06TState\x121\n" +
+	"\bLocation\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonR\bLocation\x12A\n" +
+	"\x10LaasRealLocation\x18\x05 \x01(\v2\x15.NAlice.NData.TLatLonR\x10LaasRealLocation\x123\n" +
+	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneR\bTimezone\x12*\n" +
+	"\x10TimezoneIsLocked\x18\x03 \x01(\bR\x10TimezoneIsLocked\x12L\n" +
+	"\fNextTimezone\x18\x04 \x01(\v2(.NAlice.TGeoSyncCapability.TNextTimezoneR\fNextTimezone\x1a\xa1\x01\n" +
+	"\x15TSetLocationDirective\x121\n" +
+	"\bLocation\x18\x01 \x01(\v2\x15.NAlice.NData.TLatLonR\bLocation\x12A\n" +
+	"\x10LaasRealLocation\x18\x03 \x01(\v2\x15.NAlice.NData.TLatLonR\x10LaasRealLocation\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1a\xbc\x02\n" +
+	"\x15TSetTimezoneDirective\x123\n" +
+	"\bTimezone\x18\x01 \x01(\v2\x17.NAlice.NData.TTimezoneR\bTimezone\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12b\n" +
+	"\fNextTimezone\x18\x04 \x01(\v2>.NAlice.TGeoSyncCapability.TSetTimezoneDirective.TNextTimezoneR\fNextTimezone\x1av\n" +
+	"\rTNextTimezone\x120\n" +
+	"\x05Epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05Epoch\x123\n" +
+	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneR\bTimezone\x1a\x8a\x01\n" +
+	"\rTNextTimezone\x12D\n" +
+	"\x0fSwitchTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x0fSwitchTimestamp\x123\n" +
+	"\bTimezone\x18\x02 \x01(\v2\x17.NAlice.NData.TTimezoneR\bTimezone\x1aX\n" +
+	"\x10TSetGmtDirective\x120\n" +
+	"\x05Epoch\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05Epoch\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04NameB\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/geo_sync\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_geo_sync_capability_proto_rawDescOnce sync.Once

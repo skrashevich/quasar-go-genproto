@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/pay/capability.proto
 
-package paypb
+package pay
 
 import (
 	avatar "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/avatar"
@@ -469,8 +469,8 @@ const file_alice_protos_endpoint_capabilities_pay_capability_proto_rawDesc = "" 
 	"\x05MUSIC\x10\x02\x12\t\n" +
 	"\x05VIDEO\x10\x03\x12\t\n" +
 	"\x05SPORT\x10\x04\x12\x15\n" +
-	"\x11AVOD_CONTENT_CARD\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa6\x01Bo\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesP\x01Z=a.yandex-team.ru/alice/protos/endpoint/capabilities/pay;paypbb\x06proto3"
+	"\x11AVOD_CONTENT_CARD\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa6\x01B\x88\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/payb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_pay_capability_proto_rawDescOnce sync.Once

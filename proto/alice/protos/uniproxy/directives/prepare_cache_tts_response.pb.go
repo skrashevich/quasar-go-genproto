@@ -25,8 +25,8 @@ const (
 
 type TTtsLanguageInfo struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	MainRequestLanguage *language.ELang        `protobuf:"varint,1,opt,name=MainRequestLanguage,json=main_request_language,proto3,enum=NAlice.ELang,oneof" json:"MainRequestLanguage,omitempty"`
-	EffectiveLanguage   *language.ELang        `protobuf:"varint,2,opt,name=EffectiveLanguage,json=effective_language,proto3,enum=NAlice.ELang,oneof" json:"EffectiveLanguage,omitempty"`
+	MainRequestLanguage *language.ELang        `protobuf:"varint,1,opt,name=MainRequestLanguage,proto3,enum=NAlice.ELang,oneof" json:"MainRequestLanguage,omitempty"`
+	EffectiveLanguage   *language.ELang        `protobuf:"varint,2,opt,name=EffectiveLanguage,proto3,enum=NAlice.ELang,oneof" json:"EffectiveLanguage,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -77,8 +77,8 @@ func (x *TTtsLanguageInfo) GetEffectiveLanguage() language.ELang {
 
 type TPrepareCacheTtsResponseContextSaveDirective struct {
 	state                            protoimpl.MessageState                                 `protogen:"open.v1"`
-	PrepareCacheTtsResponseDirective *TPrepareCacheTtsResponseContextSaveDirective_TRequest `protobuf:"bytes,1,opt,name=PrepareCacheTtsResponseDirective,json=prepare_cache_tts_response_directive,proto3" json:"PrepareCacheTtsResponseDirective,omitempty"`
-	TtsLanguageInfo                  *TTtsLanguageInfo                                      `protobuf:"bytes,2,opt,name=TtsLanguageInfo,json=tts_language_info,proto3,oneof" json:"TtsLanguageInfo,omitempty"`
+	PrepareCacheTtsResponseDirective *TPrepareCacheTtsResponseContextSaveDirective_TRequest `protobuf:"bytes,1,opt,name=PrepareCacheTtsResponseDirective,proto3" json:"PrepareCacheTtsResponseDirective,omitempty"`
+	TtsLanguageInfo                  *TTtsLanguageInfo                                      `protobuf:"bytes,2,opt,name=TtsLanguageInfo,proto3,oneof" json:"TtsLanguageInfo,omitempty"`
 	unknownFields                    protoimpl.UnknownFields
 	sizeCache                        protoimpl.SizeCache
 }
@@ -129,8 +129,8 @@ func (x *TPrepareCacheTtsResponseContextSaveDirective) GetTtsLanguageInfo() *TTt
 
 type TPrepareCacheTtsResponseContextSaveDirective_TRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ttl           uint64                 `protobuf:"varint,2,opt,name=Ttl,json=ttl,proto3" json:"Ttl,omitempty"`
-	Text          *string                `protobuf:"bytes,1,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	Ttl           uint64                 `protobuf:"varint,2,opt,name=Ttl,proto3" json:"Ttl,omitempty"`
+	Text          *string                `protobuf:"bytes,1,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -183,21 +183,21 @@ var File_alice_protos_uniproxy_directives_prepare_cache_tts_response_proto proto
 
 const file_alice_protos_uniproxy_directives_prepare_cache_tts_response_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/uniproxy/directives/prepare_cache_tts_response.proto\x12\x1aNAlice.NUniproxyDirectives\x1a&yt/yt_proto/yt/formats/extension.proto\x1a)alice/protos/data/language/language.proto\"\x84\x02\n" +
-	"\x10TTtsLanguageInfo\x12a\n" +
-	"\x13MainRequestLanguage\x18\x01 \x01(\x0e2\r.NAlice.ELangB\x19\xaa\xdd\x1b\x15main_request_languageH\x00R\x15main_request_language\x88\x01\x01\x12Y\n" +
-	"\x11EffectiveLanguage\x18\x02 \x01(\x0e2\r.NAlice.ELangB\x16\xaa\xdd\x1b\x12effective_languageH\x01R\x12effective_language\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x16\n" +
+	"Aalice/protos/uniproxy/directives/prepare_cache_tts_response.proto\x12\x1aNAlice.NUniproxyDirectives\x1a&yt/yt_proto/yt/formats/extension.proto\x1a)alice/protos/data/language/language.proto\"\xc8\x01\n" +
+	"\x10TTtsLanguageInfo\x12D\n" +
+	"\x13MainRequestLanguage\x18\x01 \x01(\x0e2\r.NAlice.ELangH\x00R\x13MainRequestLanguage\x88\x01\x01\x12@\n" +
+	"\x11EffectiveLanguage\x18\x02 \x01(\x0e2\r.NAlice.ELangH\x01R\x11EffectiveLanguage\x88\x01\x01B\x16\n" +
 	"\x14_MainRequestLanguageB\x14\n" +
-	"\x12_EffectiveLanguage\"\xe5\x03\n" +
-	",TPrepareCacheTtsResponseContextSaveDirective\x12\xcb\x01\n" +
-	" PrepareCacheTtsResponseDirective\x18\x01 \x01(\v2Q.NAlice.NUniproxyDirectives.TPrepareCacheTtsResponseContextSaveDirective.TRequestB(\xaa\xdd\x1b$prepare_cache_tts_response_directiveR$prepare_cache_tts_response_directive\x12t\n" +
-	"\x0fTtsLanguageInfo\x18\x02 \x01(\v2,.NAlice.NUniproxyDirectives.TTtsLanguageInfoB\x15\xaa\xdd\x1b\x11tts_language_infoH\x00R\x11tts_language_info\x88\x01\x01\x1aW\n" +
-	"\bTRequest\x12\x19\n" +
-	"\x03Ttl\x18\x02 \x01(\x04B\a\xaa\xdd\x1b\x03ttlR\x03ttl\x12!\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Text:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x10_TtsLanguageInfoB_\n" +
-	"*ru.yandex.alice.protos.uniproxy.directivesZ1a.yandex-team.ru/alice/protos/uniproxy/directivesb\x06proto3"
+	"\x12_EffectiveLanguage\"\xff\x02\n" +
+	",TPrepareCacheTtsResponseContextSaveDirective\x12\x9d\x01\n" +
+	" PrepareCacheTtsResponseDirective\x18\x01 \x01(\v2Q.NAlice.NUniproxyDirectives.TPrepareCacheTtsResponseContextSaveDirective.TRequestR PrepareCacheTtsResponseDirective\x12[\n" +
+	"\x0fTtsLanguageInfo\x18\x02 \x01(\v2,.NAlice.NUniproxyDirectives.TTtsLanguageInfoH\x00R\x0fTtsLanguageInfo\x88\x01\x01\x1a>\n" +
+	"\bTRequest\x12\x10\n" +
+	"\x03Ttl\x18\x02 \x01(\x04R\x03Ttl\x12\x17\n" +
+	"\x04Text\x18\x01 \x01(\tH\x00R\x04Text\x88\x01\x01B\a\n" +
+	"\x05_TextB\x12\n" +
+	"\x10_TtsLanguageInfoB\x99\x02\n" +
+	"\x1ecom.NAlice.NUniproxyDirectivesB\x1cPrepareCacheTtsResponseProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/uniproxy/directives\xa2\x02\x03NNX\xaa\x02\x1aNAlice.NUniproxyDirectives\xca\x02\x1aNAlice\\NUniproxyDirectives\xe2\x02&NAlice\\NUniproxyDirectives\\GPBMetadata\xea\x02\x1bNAlice::NUniproxyDirectivesb\x06proto3"
 
 var (
 	file_alice_protos_uniproxy_directives_prepare_cache_tts_response_proto_rawDescOnce sync.Once

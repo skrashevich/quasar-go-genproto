@@ -26,6 +26,7 @@ jobs:
           UPSTREAM_REVISION: ${{ inputs.revision }}
         run: python3 scripts/update-protos.py --revision "$UPSTREAM_REVISION"
       - run: python3 scripts/update-protos.py --check
+      - run: sh scripts/check-compat.sh
       - run: go test ./...
       - run: go vet ./...
       - name: Commit and push changed schemas and bindings

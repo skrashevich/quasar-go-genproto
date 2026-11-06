@@ -82,8 +82,8 @@ const file_alice_protos_data_dialogs_channel_proto_rawDesc = "" +
 	"\x0eUnknownChannel\x10\x00\x12\t\n" +
 	"\x05TvApp\x10\x01\x12\x12\n" +
 	"\x0eSmartScreenApp\x10\x02\x12\v\n" +
-	"\aAutoApp\x10\x03BS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\aAutoApp\x10\x03Br\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_channel_proto_rawDescOnce sync.Once

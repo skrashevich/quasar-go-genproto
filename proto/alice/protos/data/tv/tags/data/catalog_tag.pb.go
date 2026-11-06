@@ -227,9 +227,9 @@ const file_alice_protos_data_tv_tags_data_catalog_tag_proto_rawDesc = "" +
 	"\n" +
 	"\x06TT_TOP\x10\b:\x04\xa8\xdd\x1b\x04\"p\n" +
 	"\fTCatalogTags\x12Z\n" +
-	"\x0fCatalogTagValue\x18\x01 \x03(\v2\x17.NAlice.NTv.TCatalogTagB\x15\xaa\xdd\x1b\x11catalog_tag_valueR\x11catalog_tag_value:\x04\xa8\xdd\x1b\x04Bg\n" +
+	"\x0fCatalogTagValue\x18\x01 \x03(\v2\x17.NAlice.NTv.TCatalogTagB\x15\xaa\xdd\x1b\x11catalog_tag_valueR\x11catalog_tag_value:\x04\xa8\xdd\x1b\x04B\x86\x01\n" +
 	"(ru.yandex.alice.protos.data.tv.tags.dataB\n" +
-	"CatalogTagZ/a.yandex-team.ru/alice/protos/data/tv/tags/datab\x06proto3"
+	"CatalogTagZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/tags/datab\x06proto3"
 
 var (
 	file_alice_protos_data_tv_tags_data_catalog_tag_proto_rawDescOnce sync.Once

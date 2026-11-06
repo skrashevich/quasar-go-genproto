@@ -25,7 +25,7 @@ const (
 
 type TIotCloudTelemetryBatchRequest struct {
 	state          protoimpl.MessageState   `protogen:"open.v1"`
-	TelemetryBatch *TIotCloudTelemetryBatch `protobuf:"bytes,1,opt,name=TelemetryBatch,json=telemetry_batch,proto3" json:"TelemetryBatch,omitempty"`
+	TelemetryBatch *TIotCloudTelemetryBatch `protobuf:"bytes,1,opt,name=TelemetryBatch,proto3" json:"TelemetryBatch,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -69,10 +69,10 @@ func (x *TIotCloudTelemetryBatchRequest) GetTelemetryBatch() *TIotCloudTelemetry
 
 type TIotCloudTelemetryEvent struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Name          string                            `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Value         *TIotCloudTelemetryEvent_TValue   `protobuf:"bytes,2,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
-	Fields        []*TIotCloudTelemetryEvent_TField `protobuf:"bytes,3,rep,name=Fields,json=fields,proto3" json:"Fields,omitempty"`
-	Timestamp     *timestamppb.Timestamp            `protobuf:"bytes,4,opt,name=Timestamp,json=timestamp,proto3,oneof" json:"Timestamp,omitempty"`
+	Name          string                            `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Value         *TIotCloudTelemetryEvent_TValue   `protobuf:"bytes,2,opt,name=Value,proto3" json:"Value,omitempty"`
+	Fields        []*TIotCloudTelemetryEvent_TField `protobuf:"bytes,3,rep,name=Fields,proto3" json:"Fields,omitempty"`
+	Timestamp     *timestamppb.Timestamp            `protobuf:"bytes,4,opt,name=Timestamp,proto3,oneof" json:"Timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -137,7 +137,7 @@ func (x *TIotCloudTelemetryEvent) GetTimestamp() *timestamppb.Timestamp {
 
 type TIotCloudTelemetryBatch struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Events        []*TIotCloudTelemetryEvent `protobuf:"bytes,1,rep,name=Events,json=events,proto3" json:"Events,omitempty"`
+	Events        []*TIotCloudTelemetryEvent `protobuf:"bytes,1,rep,name=Events,proto3" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -181,7 +181,7 @@ func (x *TIotCloudTelemetryBatch) GetEvents() []*TIotCloudTelemetryEvent {
 
 type TIotCloudTelemetryEvent_TField struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Key   string                 `protobuf:"bytes,1,opt,name=Key,json=key,proto3" json:"Key,omitempty"`
+	Key   string                 `protobuf:"bytes,1,opt,name=Key,proto3" json:"Key,omitempty"`
 	// Types that are valid to be assigned to Value:
 	//
 	//	*TIotCloudTelemetryEvent_TField_StringValue
@@ -248,7 +248,7 @@ type isTIotCloudTelemetryEvent_TField_Value interface {
 }
 
 type TIotCloudTelemetryEvent_TField_StringValue struct {
-	StringValue string `protobuf:"bytes,2,opt,name=StringValue,json=string_value,proto3,oneof"`
+	StringValue string `protobuf:"bytes,2,opt,name=StringValue,proto3,oneof"`
 }
 
 func (*TIotCloudTelemetryEvent_TField_StringValue) isTIotCloudTelemetryEvent_TField_Value() {}
@@ -324,11 +324,11 @@ type isTIotCloudTelemetryEvent_TValue_Value interface {
 }
 
 type TIotCloudTelemetryEvent_TValue_CounterValue struct {
-	CounterValue float64 `protobuf:"fixed64,1,opt,name=CounterValue,json=counter_value,proto3,oneof"`
+	CounterValue float64 `protobuf:"fixed64,1,opt,name=CounterValue,proto3,oneof"`
 }
 
 type TIotCloudTelemetryEvent_TValue_StringValue struct {
-	StringValue string `protobuf:"bytes,2,opt,name=StringValue,json=string_value,proto3,oneof"`
+	StringValue string `protobuf:"bytes,2,opt,name=StringValue,proto3,oneof"`
 }
 
 func (*TIotCloudTelemetryEvent_TValue_CounterValue) isTIotCloudTelemetryEvent_TValue_Value() {}
@@ -339,29 +339,27 @@ var File_alice_protos_api_iot_cloud_events_telemetry_batch_request_proto protore
 
 const file_alice_protos_api_iot_cloud_events_telemetry_batch_request_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/api/iot_cloud/events/telemetry_batch/request.proto\x12\x10NAlice.NIotCloud\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8f\x01\n" +
-	"\x1eTIotCloudTelemetryBatchRequest\x12g\n" +
-	"\x0eTelemetryBatch\x18\x01 \x01(\v2).NAlice.NIotCloud.TIotCloudTelemetryBatchB\x13\xaa\xdd\x1b\x0ftelemetry_batchR\x0ftelemetry_batch:\x04\xa8\xdd\x1b\x04\"\xac\x04\n" +
-	"\x17TIotCloudTelemetryEvent\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12Q\n" +
-	"\x05Value\x18\x02 \x01(\v20.NAlice.NIotCloud.TIotCloudTelemetryEvent.TValueB\t\xaa\xdd\x1b\x05valueR\x05value\x12T\n" +
-	"\x06Fields\x18\x03 \x03(\v20.NAlice.NIotCloud.TIotCloudTelemetryEvent.TFieldB\n" +
-	"\xaa\xdd\x1b\x06fieldsR\x06fields\x12L\n" +
-	"\tTimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampB\r\xaa\xdd\x1b\ttimestampH\x00R\ttimestamp\x88\x01\x01\x1ac\n" +
-	"\x06TField\x12\x19\n" +
-	"\x03Key\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03keyR\x03key\x125\n" +
-	"\vStringValue\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fstring_valueH\x00R\fstring_valueB\a\n" +
-	"\x05Value\x1a\x82\x01\n" +
-	"\x06TValue\x128\n" +
-	"\fCounterValue\x18\x01 \x01(\x01B\x11\xaa\xdd\x1b\rcounter_valueH\x00R\rcounter_value\x125\n" +
-	"\vStringValue\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fstring_valueH\x00R\fstring_valueB\a\n" +
-	"\x05Value:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"?alice/protos/api/iot_cloud/events/telemetry_batch/request.proto\x12\x10NAlice.NIotCloud\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"s\n" +
+	"\x1eTIotCloudTelemetryBatchRequest\x12Q\n" +
+	"\x0eTelemetryBatch\x18\x01 \x01(\v2).NAlice.NIotCloud.TIotCloudTelemetryBatchR\x0eTelemetryBatch\"\xb2\x03\n" +
+	"\x17TIotCloudTelemetryEvent\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12F\n" +
+	"\x05Value\x18\x02 \x01(\v20.NAlice.NIotCloud.TIotCloudTelemetryEvent.TValueR\x05Value\x12H\n" +
+	"\x06Fields\x18\x03 \x03(\v20.NAlice.NIotCloud.TIotCloudTelemetryEvent.TFieldR\x06Fields\x12=\n" +
+	"\tTimestamp\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x00R\tTimestamp\x88\x01\x01\x1aG\n" +
+	"\x06TField\x12\x10\n" +
+	"\x03Key\x18\x01 \x01(\tR\x03Key\x12\"\n" +
+	"\vStringValue\x18\x02 \x01(\tH\x00R\vStringValueB\a\n" +
+	"\x05Value\x1a[\n" +
+	"\x06TValue\x12$\n" +
+	"\fCounterValue\x18\x01 \x01(\x01H\x00R\fCounterValue\x12\"\n" +
+	"\vStringValue\x18\x02 \x01(\tH\x00R\vStringValueB\a\n" +
+	"\x05ValueB\f\n" +
 	"\n" +
-	"_Timestamp\"h\n" +
-	"\x17TIotCloudTelemetryBatch\x12M\n" +
-	"\x06Events\x18\x01 \x03(\v2).NAlice.NIotCloud.TIotCloudTelemetryEventB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06eventsB\xa2\x01\n" +
-	";ru.yandex.alice.protos.api.iot_cloud.events.telemetry_batchB\x1dIotCloudTelemetryBatchRequestP\x01ZBa.yandex-team.ru/alice/protos/api/iot_cloud/events/telemetry_batchb\x06proto3"
+	"_Timestamp\"\\\n" +
+	"\x17TIotCloudTelemetryBatch\x12A\n" +
+	"\x06Events\x18\x01 \x03(\v2).NAlice.NIotCloud.TIotCloudTelemetryEventR\x06EventsB\xe8\x01\n" +
+	"\x14com.NAlice.NIotCloudB\fRequestProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_cloud/events/telemetry_batch\xa2\x02\x03NNX\xaa\x02\x10NAlice.NIotCloud\xca\x02\x10NAlice\\NIotCloud\xe2\x02\x1cNAlice\\NIotCloud\\GPBMetadata\xea\x02\x11NAlice::NIotCloudb\x06proto3"
 
 var (
 	file_alice_protos_api_iot_cloud_events_telemetry_batch_request_proto_rawDescOnce sync.Once

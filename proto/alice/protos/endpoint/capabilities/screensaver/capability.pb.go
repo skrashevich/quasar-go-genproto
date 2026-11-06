@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/screensaver/capability.proto
 
-package screensaverpb
+package screensaver
 
 import (
 	voice_control "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/voice_control"
@@ -283,9 +283,9 @@ func (TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition) EnumDes
 
 type TScreensaverCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TScreensaverCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TScreensaverCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TScreensaverCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TScreensaverCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -343,11 +343,11 @@ func (x *TScreensaverCapability) GetState() *TScreensaverCapability_TState {
 
 type TScreensaverCapability_TParameters struct {
 	state                          protoimpl.MessageState             `protogen:"open.v1"`
-	Resolution                     TScreensaverCapability_EResolution `protobuf:"varint,1,opt,name=Resolution,json=resolution,proto3,enum=NAlice.TScreensaverCapability_EResolution" json:"Resolution,omitempty"`
-	SupportedDivExtensions         *div.TDivExtensions                `protobuf:"bytes,2,opt,name=SupportedDivExtensions,json=supported_div_extensions,proto3" json:"SupportedDivExtensions,omitempty"`
-	IsLottieAnimatedClockSupported bool                               `protobuf:"varint,3,opt,name=IsLottieAnimatedClockSupported,json=is_lottie_animated_clock_supported,proto3" json:"IsLottieAnimatedClockSupported,omitempty"`
-	IsMusicWidgetSupported         bool                               `protobuf:"varint,4,opt,name=IsMusicWidgetSupported,json=is_music_widget_supported,proto3" json:"IsMusicWidgetSupported,omitempty"`
-	IsRequestingLightweightThemes  bool                               `protobuf:"varint,5,opt,name=IsRequestingLightweightThemes,json=is_requesting_lightweight_themes,proto3" json:"IsRequestingLightweightThemes,omitempty"`
+	Resolution                     TScreensaverCapability_EResolution `protobuf:"varint,1,opt,name=Resolution,proto3,enum=NAlice.TScreensaverCapability_EResolution" json:"Resolution,omitempty"`
+	SupportedDivExtensions         *div.TDivExtensions                `protobuf:"bytes,2,opt,name=SupportedDivExtensions,proto3" json:"SupportedDivExtensions,omitempty"`
+	IsLottieAnimatedClockSupported bool                               `protobuf:"varint,3,opt,name=IsLottieAnimatedClockSupported,proto3" json:"IsLottieAnimatedClockSupported,omitempty"`
+	IsMusicWidgetSupported         bool                               `protobuf:"varint,4,opt,name=IsMusicWidgetSupported,proto3" json:"IsMusicWidgetSupported,omitempty"`
+	IsRequestingLightweightThemes  bool                               `protobuf:"varint,5,opt,name=IsRequestingLightweightThemes,proto3" json:"IsRequestingLightweightThemes,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -419,7 +419,7 @@ func (x *TScreensaverCapability_TParameters) GetIsRequestingLightweightThemes() 
 
 type TScreensaverCapability_TScreensaverContentMeta struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Description   string                 `protobuf:"bytes,1,opt,name=Description,json=description,proto3" json:"Description,omitempty"`
+	Description   string                 `protobuf:"bytes,1,opt,name=Description,proto3" json:"Description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -463,9 +463,9 @@ func (x *TScreensaverCapability_TScreensaverContentMeta) GetDescription() string
 
 type TScreensaverCapability_TState struct {
 	state                  protoimpl.MessageState                           `protogen:"open.v1"`
-	ScreensaverState       TScreensaverCapability_TState_EScreensaverState  `protobuf:"varint,1,opt,name=ScreensaverState,json=screensaver_state,proto3,enum=NAlice.TScreensaverCapability_TState_EScreensaverState" json:"ScreensaverState,omitempty"`
-	ScreensaverStatus      TScreensaverCapability_TState_EScreensaverStatus `protobuf:"varint,3,opt,name=ScreensaverStatus,json=screensaver_status,proto3,enum=NAlice.TScreensaverCapability_TState_EScreensaverStatus" json:"ScreensaverStatus,omitempty"`
-	CurrentScreensaverMeta *TScreensaverCapability_TScreensaverContentMeta  `protobuf:"bytes,4,opt,name=CurrentScreensaverMeta,json=current_screensaver_meta,proto3" json:"CurrentScreensaverMeta,omitempty"`
+	ScreensaverState       TScreensaverCapability_TState_EScreensaverState  `protobuf:"varint,1,opt,name=ScreensaverState,proto3,enum=NAlice.TScreensaverCapability_TState_EScreensaverState" json:"ScreensaverState,omitempty"`
+	ScreensaverStatus      TScreensaverCapability_TState_EScreensaverStatus `protobuf:"varint,3,opt,name=ScreensaverStatus,proto3,enum=NAlice.TScreensaverCapability_TState_EScreensaverStatus" json:"ScreensaverStatus,omitempty"`
+	CurrentScreensaverMeta *TScreensaverCapability_TScreensaverContentMeta  `protobuf:"bytes,4,opt,name=CurrentScreensaverMeta,proto3" json:"CurrentScreensaverMeta,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -523,7 +523,7 @@ func (x *TScreensaverCapability_TState) GetCurrentScreensaverMeta() *TScreensave
 
 type TScreensaverCapability_TOpenScreensaverDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -567,10 +567,10 @@ func (x *TScreensaverCapability_TOpenScreensaverDirective) GetName() string {
 
 type TScreensaverCapability_TLoadScreensaversDirective struct {
 	state             protoimpl.MessageState                                                `protogen:"open.v1"`
-	Name              string                                                                `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ScreensaverItems  []*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem `protobuf:"bytes,2,rep,name=ScreensaverItems,json=screensaver_items,proto3" json:"ScreensaverItems,omitempty"`
-	Resolution        TScreensaverCapability_EResolution                                    `protobuf:"varint,3,opt,name=Resolution,json=resolution,proto3,enum=NAlice.TScreensaverCapability_EResolution" json:"Resolution,omitempty"`
-	NewHighlight      int32                                                                 `protobuf:"varint,4,opt,name=NewHighlight,json=new_highlight,proto3" json:"NewHighlight,omitempty"`
+	Name              string                                                                `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	ScreensaverItems  []*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem `protobuf:"bytes,2,rep,name=ScreensaverItems,proto3" json:"ScreensaverItems,omitempty"`
+	Resolution        TScreensaverCapability_EResolution                                    `protobuf:"varint,3,opt,name=Resolution,proto3,enum=NAlice.TScreensaverCapability_EResolution" json:"Resolution,omitempty"`
+	NewHighlight      int32                                                                 `protobuf:"varint,4,opt,name=NewHighlight,proto3" json:"NewHighlight,omitempty"`
 	HasDynamicContent bool                                                                  `protobuf:"varint,5,opt,name=HasDynamicContent,json=has_dynamic_content,proto3" json:"HasDynamicContent,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
@@ -643,7 +643,7 @@ func (x *TScreensaverCapability_TLoadScreensaversDirective) GetHasDynamicContent
 
 type TScreensaverCapability_TCloseScreensaverDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -687,9 +687,9 @@ func (x *TScreensaverCapability_TCloseScreensaverDirective) GetName() string {
 
 type TScreensaverCapability_TLoadScreensaversDirective_TMediaItem struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Url           string                            `protobuf:"bytes,1,opt,name=Url,json=url,proto3" json:"Url,omitempty"`
-	MediaType     TScreensaverCapability_EMediaType `protobuf:"varint,2,opt,name=MediaType,json=media_type,proto3,enum=NAlice.TScreensaverCapability_EMediaType" json:"MediaType,omitempty"`
-	Id            string                            `protobuf:"bytes,3,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Url           string                            `protobuf:"bytes,1,opt,name=Url,proto3" json:"Url,omitempty"`
+	MediaType     TScreensaverCapability_EMediaType `protobuf:"varint,2,opt,name=MediaType,proto3,enum=NAlice.TScreensaverCapability_EMediaType" json:"MediaType,omitempty"`
+	Id            string                            `protobuf:"bytes,3,opt,name=Id,proto3" json:"Id,omitempty"`
 	HasSound      bool                              `protobuf:"varint,4,opt,name=HasSound,json=has_sound,proto3" json:"HasSound,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -753,141 +753,13 @@ func (x *TScreensaverCapability_TLoadScreensaversDirective_TMediaItem) GetHasSou
 	return false
 }
 
-type TScreensaverCapability_TLoadScreensaversDirective_TInformers struct {
-	state         protoimpl.MessageState                                            `protogen:"open.v1"`
-	ShowTime      bool                                                              `protobuf:"varint,1,opt,name=ShowTime,json=show_time,proto3" json:"ShowTime,omitempty"`
-	ShowDate      bool                                                              `protobuf:"varint,2,opt,name=ShowDate,json=show_date,proto3" json:"ShowDate,omitempty"`
-	ShowWeather   bool                                                              `protobuf:"varint,3,opt,name=ShowWeather,json=show_weather,proto3" json:"ShowWeather,omitempty"`
-	Position      TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition `protobuf:"varint,4,opt,name=Position,json=position,proto3,enum=NAlice.TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition" json:"Position,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) Reset() {
-	*x = TScreensaverCapability_TLoadScreensaversDirective_TInformers{}
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TScreensaverCapability_TLoadScreensaversDirective_TInformers) ProtoMessage() {}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TScreensaverCapability_TLoadScreensaversDirective_TInformers.ProtoReflect.Descriptor instead.
-func (*TScreensaverCapability_TLoadScreensaversDirective_TInformers) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 1}
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowTime() bool {
-	if x != nil {
-		return x.ShowTime
-	}
-	return false
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowDate() bool {
-	if x != nil {
-		return x.ShowDate
-	}
-	return false
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowWeather() bool {
-	if x != nil {
-		return x.ShowWeather
-	}
-	return false
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetPosition() TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition {
-	if x != nil {
-		return x.Position
-	}
-	return TScreensaverCapability_TLoadScreensaversDirective_UnknownWidgetPosition
-}
-
-type TScreensaverCapability_TLoadScreensaversDirective_TWidget struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=widget_id,proto3" json:"Id,omitempty"`
-	Type          string                 `protobuf:"bytes,2,opt,name=Type,json=widget_type,proto3" json:"Type,omitempty"`
-	ImageUrl      string                 `protobuf:"bytes,5,opt,name=ImageUrl,json=image_url,proto3" json:"ImageUrl,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) Reset() {
-	*x = TScreensaverCapability_TLoadScreensaversDirective_TWidget{}
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[9]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TScreensaverCapability_TLoadScreensaversDirective_TWidget) ProtoMessage() {}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[9]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TScreensaverCapability_TLoadScreensaversDirective_TWidget.ProtoReflect.Descriptor instead.
-func (*TScreensaverCapability_TLoadScreensaversDirective_TWidget) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 2}
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
-
-func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetImageUrl() string {
-	if x != nil {
-		return x.ImageUrl
-	}
-	return ""
-}
-
 type TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem struct {
 	state               protoimpl.MessageState                                        `protogen:"open.v1"`
-	Overlay             *div.TDiv2Card                                                `protobuf:"bytes,1,opt,name=Overlay,json=overlay,proto3" json:"Overlay,omitempty"`
-	MediaItem           *TScreensaverCapability_TLoadScreensaversDirective_TMediaItem `protobuf:"bytes,2,opt,name=MediaItem,json=media_item,proto3" json:"MediaItem,omitempty"`
-	VoiceControls       []*voice_control.TVoiceControl                                `protobuf:"bytes,3,rep,name=VoiceControls,json=voice_controls,proto3" json:"VoiceControls,omitempty"`
-	ContentMeta         *TScreensaverCapability_TScreensaverContentMeta               `protobuf:"bytes,4,opt,name=ContentMeta,json=content_meta,proto3" json:"ContentMeta,omitempty"`
-	ShowDurationSeconds uint64                                                        `protobuf:"varint,5,opt,name=ShowDurationSeconds,json=show_duration_seconds,proto3" json:"ShowDurationSeconds,omitempty"`
+	Overlay             *div.TDiv2Card                                                `protobuf:"bytes,1,opt,name=Overlay,proto3" json:"Overlay,omitempty"`
+	MediaItem           *TScreensaverCapability_TLoadScreensaversDirective_TMediaItem `protobuf:"bytes,2,opt,name=MediaItem,proto3" json:"MediaItem,omitempty"`
+	VoiceControls       []*voice_control.TVoiceControl                                `protobuf:"bytes,3,rep,name=VoiceControls,proto3" json:"VoiceControls,omitempty"`
+	ContentMeta         *TScreensaverCapability_TScreensaverContentMeta               `protobuf:"bytes,4,opt,name=ContentMeta,proto3" json:"ContentMeta,omitempty"`
+	ShowDurationSeconds uint64                                                        `protobuf:"varint,5,opt,name=ShowDurationSeconds,proto3" json:"ShowDurationSeconds,omitempty"`
 	Suggests            []string                                                      `protobuf:"bytes,6,rep,name=Suggests,json=suggests,proto3" json:"Suggests,omitempty"`
 	Informers           *TScreensaverCapability_TLoadScreensaversDirective_TInformers `protobuf:"bytes,7,opt,name=Informers,json=informers,proto3" json:"Informers,omitempty"`
 	Widgets             []*TScreensaverCapability_TLoadScreensaversDirective_TWidget  `protobuf:"bytes,8,rep,name=Widgets,json=widgets,proto3" json:"Widgets,omitempty"`
@@ -897,7 +769,7 @@ type TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem struct {
 
 func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) Reset() {
 	*x = TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem{}
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[10]
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -909,7 +781,7 @@ func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) Str
 func (*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) ProtoMessage() {}
 
 func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[10]
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -922,7 +794,7 @@ func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) Pro
 
 // Deprecated: Use TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem.ProtoReflect.Descriptor instead.
 func (*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 3}
+	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 1}
 }
 
 func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) GetOverlay() *div.TDiv2Card {
@@ -981,33 +853,159 @@ func (x *TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem) Get
 	return nil
 }
 
+type TScreensaverCapability_TLoadScreensaversDirective_TInformers struct {
+	state         protoimpl.MessageState                                            `protogen:"open.v1"`
+	ShowTime      bool                                                              `protobuf:"varint,1,opt,name=ShowTime,json=show_time,proto3" json:"ShowTime,omitempty"`
+	ShowDate      bool                                                              `protobuf:"varint,2,opt,name=ShowDate,json=show_date,proto3" json:"ShowDate,omitempty"`
+	ShowWeather   bool                                                              `protobuf:"varint,3,opt,name=ShowWeather,json=show_weather,proto3" json:"ShowWeather,omitempty"`
+	Position      TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition `protobuf:"varint,4,opt,name=Position,json=position,proto3,enum=NAlice.TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition" json:"Position,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) Reset() {
+	*x = TScreensaverCapability_TLoadScreensaversDirective_TInformers{}
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TScreensaverCapability_TLoadScreensaversDirective_TInformers) ProtoMessage() {}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TScreensaverCapability_TLoadScreensaversDirective_TInformers.ProtoReflect.Descriptor instead.
+func (*TScreensaverCapability_TLoadScreensaversDirective_TInformers) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 2}
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowTime() bool {
+	if x != nil {
+		return x.ShowTime
+	}
+	return false
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowDate() bool {
+	if x != nil {
+		return x.ShowDate
+	}
+	return false
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetShowWeather() bool {
+	if x != nil {
+		return x.ShowWeather
+	}
+	return false
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TInformers) GetPosition() TScreensaverCapability_TLoadScreensaversDirective_EWidgetPosition {
+	if x != nil {
+		return x.Position
+	}
+	return TScreensaverCapability_TLoadScreensaversDirective_UnknownWidgetPosition
+}
+
+type TScreensaverCapability_TLoadScreensaversDirective_TWidget struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=widget_id,proto3" json:"Id,omitempty"`
+	Type          string                 `protobuf:"bytes,2,opt,name=Type,json=widget_type,proto3" json:"Type,omitempty"`
+	ImageUrl      string                 `protobuf:"bytes,5,opt,name=ImageUrl,json=image_url,proto3" json:"ImageUrl,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) Reset() {
+	*x = TScreensaverCapability_TLoadScreensaversDirective_TWidget{}
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TScreensaverCapability_TLoadScreensaversDirective_TWidget) ProtoMessage() {}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_screensaver_capability_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TScreensaverCapability_TLoadScreensaversDirective_TWidget.ProtoReflect.Descriptor instead.
+func (*TScreensaverCapability_TLoadScreensaversDirective_TWidget) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescGZIP(), []int{0, 4, 3}
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TScreensaverCapability_TLoadScreensaversDirective_TWidget) GetImageUrl() string {
+	if x != nil {
+		return x.ImageUrl
+	}
+	return ""
+}
+
 var File_alice_protos_endpoint_capabilities_screensaver_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/screensaver/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a2alice/protos/api/voice_control/voice_control.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a%alice/protos/div/div_extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1falice/protos/div/div2card.proto\"\xcb\x1c\n" +
-	"\x16TScreensaverCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"?alice/protos/endpoint/capabilities/screensaver/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a2alice/protos/api/voice_control/voice_control.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a%alice/protos/div/div_extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1falice/protos/div/div2card.proto\"\xc9\x17\n" +
+	"\x16TScreensaverCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TScreensaverCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TScreensaverCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x9c\x04\n" +
-	"\vTParameters\x12Z\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TScreensaverCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TScreensaverCapability.TStateR\x05State\x1a\xef\x02\n" +
+	"\vTParameters\x12J\n" +
 	"\n" +
-	"Resolution\x18\x01 \x01(\x0e2*.NAlice.TScreensaverCapability.EResolutionB\x0e\xaa\xdd\x1b\n" +
-	"resolutionR\n" +
-	"resolution\x12n\n" +
-	"\x16SupportedDivExtensions\x18\x02 \x01(\v2\x16.NAlice.TDivExtensionsB\x1c\xaa\xdd\x1b\x18supported_div_extensionsR\x18supported_div_extensions\x12r\n" +
-	"\x1eIsLottieAnimatedClockSupported\x18\x03 \x01(\bB&\xaa\xdd\x1b\"is_lottie_animated_clock_supportedR\"is_lottie_animated_clock_supported\x12X\n" +
-	"\x16IsMusicWidgetSupported\x18\x04 \x01(\bB\x1d\xaa\xdd\x1b\x19is_music_widget_supportedR\x19is_music_widget_supported\x12m\n" +
-	"\x1dIsRequestingLightweightThemes\x18\x05 \x01(\bB$\xaa\xdd\x1b is_requesting_lightweight_themesR is_requesting_lightweight_themes:\x04\xa8\xdd\x1b\x04\x1aL\n" +
-	"\x17TScreensaverContentMeta\x121\n" +
-	"\vDescription\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x1a\xbc\x04\n" +
-	"\x06TState\x12{\n" +
-	"\x10ScreensaverState\x18\x01 \x01(\x0e27.NAlice.TScreensaverCapability.TState.EScreensaverStateB\x15\xaa\xdd\x1b\x11screensaver_stateR\x11screensaver_state\x12\x7f\n" +
-	"\x11ScreensaverStatus\x18\x03 \x01(\x0e28.NAlice.TScreensaverCapability.TState.EScreensaverStatusB\x16\xaa\xdd\x1b\x12screensaver_statusR\x12screensaver_status\x12\x8e\x01\n" +
-	"\x16CurrentScreensaverMeta\x18\x04 \x01(\v26.NAlice.TScreensaverCapability.TScreensaverContentMetaB\x1c\xaa\xdd\x1b\x18current_screensaver_metaR\x18current_screensaver_meta\"I\n" +
+	"Resolution\x18\x01 \x01(\x0e2*.NAlice.TScreensaverCapability.EResolutionR\n" +
+	"Resolution\x12N\n" +
+	"\x16SupportedDivExtensions\x18\x02 \x01(\v2\x16.NAlice.TDivExtensionsR\x16SupportedDivExtensions\x12F\n" +
+	"\x1eIsLottieAnimatedClockSupported\x18\x03 \x01(\bR\x1eIsLottieAnimatedClockSupported\x126\n" +
+	"\x16IsMusicWidgetSupported\x18\x04 \x01(\bR\x16IsMusicWidgetSupported\x12D\n" +
+	"\x1dIsRequestingLightweightThemes\x18\x05 \x01(\bR\x1dIsRequestingLightweightThemes\x1a;\n" +
+	"\x17TScreensaverContentMeta\x12 \n" +
+	"\vDescription\x18\x01 \x01(\tR\vDescription\x1a\xe4\x03\n" +
+	"\x06TState\x12c\n" +
+	"\x10ScreensaverState\x18\x01 \x01(\x0e27.NAlice.TScreensaverCapability.TState.EScreensaverStateR\x10ScreensaverState\x12f\n" +
+	"\x11ScreensaverStatus\x18\x03 \x01(\x0e28.NAlice.TScreensaverCapability.TState.EScreensaverStatusR\x11ScreensaverStatus\x12n\n" +
+	"\x16CurrentScreensaverMeta\x18\x04 \x01(\v26.NAlice.TScreensaverCapability.TScreensaverContentMetaR\x16CurrentScreensaverMeta\"I\n" +
 	"\x11EScreensaverState\x12\x10\n" +
 	"\fUnknownState\x10\x00\x12\f\n" +
 	"\bInactive\x10\x01\x12\x14\n" +
@@ -1015,27 +1013,33 @@ const file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDe
 	"\x12EScreensaverStatus\x12\x11\n" +
 	"\rUnknownStatus\x10\x00\x12\t\n" +
 	"\x05Shown\x10\x01\x12\f\n" +
-	"\bNotShown\x10\x02:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\n" +
-	"Resolution\x1aW\n" +
-	"\x19TOpenScreensaverDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1c\x92\x82\x19\x10open_screensaver\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1d\x1a\xd1\x0e\n" +
-	"\x1aTLoadScreensaversDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x8e\x01\n" +
-	"\x10ScreensaverItems\x18\x02 \x03(\v2J.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItemB\x15\xaa\xdd\x1b\x11screensaver_itemsR\x11screensaver_items\x12Z\n" +
+	"\bNotShown\x10\x02J\x04\b\x02\x10\x03R\n" +
+	"Resolution\x1a/\n" +
+	"\x19TOpenScreensaverDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a\xe6\f\n" +
+	"\x1aTLoadScreensaversDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12v\n" +
+	"\x10ScreensaverItems\x18\x02 \x03(\v2J.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItemR\x10ScreensaverItems\x12J\n" +
 	"\n" +
-	"Resolution\x18\x03 \x01(\x0e2*.NAlice.TScreensaverCapability.EResolutionB\x0e\xaa\xdd\x1b\n" +
-	"resolutionR\n" +
-	"resolution\x126\n" +
-	"\fNewHighlight\x18\x04 \x01(\x05B\x11\xaa\xdd\x1b\rnew_highlightR\rnew_highlight\x12G\n" +
-	"\x11HasDynamicContent\x18\x05 \x01(\bB\x17\xaa\xdd\x1b\x13has_dynamic_contentR\x13has_dynamic_content\x1a\xc5\x01\n" +
+	"Resolution\x18\x03 \x01(\x0e2*.NAlice.TScreensaverCapability.EResolutionR\n" +
+	"Resolution\x12\"\n" +
+	"\fNewHighlight\x18\x04 \x01(\x05R\fNewHighlight\x12G\n" +
+	"\x11HasDynamicContent\x18\x05 \x01(\bB\x17\xaa\xdd\x1b\x13has_dynamic_contentR\x13has_dynamic_content\x1a\xa3\x01\n" +
 	"\n" +
-	"TMediaItem\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url\x12X\n" +
-	"\tMediaType\x18\x02 \x01(\x0e2).NAlice.TScreensaverCapability.EMediaTypeB\x0e\xaa\xdd\x1b\n" +
-	"media_typeR\n" +
-	"media_type\x12\x16\n" +
-	"\x02Id\x18\x03 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12*\n" +
-	"\bHasSound\x18\x04 \x01(\bB\r\xaa\xdd\x1b\thas_soundR\thas_sound\x1a\x8e\x02\n" +
+	"TMediaItem\x12\x10\n" +
+	"\x03Url\x18\x01 \x01(\tR\x03Url\x12G\n" +
+	"\tMediaType\x18\x02 \x01(\x0e2).NAlice.TScreensaverCapability.EMediaTypeR\tMediaType\x12\x0e\n" +
+	"\x02Id\x18\x03 \x01(\tR\x02Id\x12*\n" +
+	"\bHasSound\x18\x04 \x01(\bB\r\xaa\xdd\x1b\thas_soundR\thas_sound\x1a\xf3\x04\n" +
+	"\x10TScreensaverItem\x12+\n" +
+	"\aOverlay\x18\x01 \x01(\v2\x11.NAlice.TDiv2CardR\aOverlay\x12b\n" +
+	"\tMediaItem\x18\x02 \x01(\v2D.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItemR\tMediaItem\x12;\n" +
+	"\rVoiceControls\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlR\rVoiceControls\x12X\n" +
+	"\vContentMeta\x18\x04 \x01(\v26.NAlice.TScreensaverCapability.TScreensaverContentMetaR\vContentMeta\x120\n" +
+	"\x13ShowDurationSeconds\x18\x05 \x01(\x04R\x13ShowDurationSeconds\x12(\n" +
+	"\bSuggests\x18\x06 \x03(\tB\f\xaa\xdd\x1b\bsuggestsR\bsuggests\x12q\n" +
+	"\tInformers\x18\a \x01(\v2D.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformersB\r\xaa\xdd\x1b\tinformersR\tinformers\x12h\n" +
+	"\aWidgets\x18\b \x03(\v2A.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidgetB\v\xaa\xdd\x1b\awidgetsR\awidgets\x1a\x8e\x02\n" +
 	"\n" +
 	"TInformers\x12*\n" +
 	"\bShowTime\x18\x01 \x01(\bB\r\xaa\xdd\x1b\tshow_timeR\tshow_time\x12*\n" +
@@ -1045,24 +1049,13 @@ const file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDe
 	"\aTWidget\x12$\n" +
 	"\x02Id\x18\x01 \x01(\tB\r\xaa\xdd\x1b\twidget_idR\twidget_id\x12*\n" +
 	"\x04Type\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vwidget_typeR\vwidget_type\x12*\n" +
-	"\bImageUrl\x18\x05 \x01(\tB\r\xaa\xdd\x1b\timage_urlR\timage_url\x1a\xd6\x05\n" +
-	"\x10TScreensaverItem\x128\n" +
-	"\aOverlay\x18\x01 \x01(\v2\x11.NAlice.TDiv2CardB\v\xaa\xdd\x1b\aoverlayR\aoverlay\x12s\n" +
-	"\tMediaItem\x18\x02 \x01(\v2D.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItemB\x0e\xaa\xdd\x1b\n" +
-	"media_itemR\n" +
-	"media_item\x12P\n" +
-	"\rVoiceControls\x18\x03 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls\x12k\n" +
-	"\vContentMeta\x18\x04 \x01(\v26.NAlice.TScreensaverCapability.TScreensaverContentMetaB\x10\xaa\xdd\x1b\fcontent_metaR\fcontent_meta\x12M\n" +
-	"\x13ShowDurationSeconds\x18\x05 \x01(\x04B\x19\xaa\xdd\x1b\x15show_duration_secondsR\x15show_duration_seconds\x12(\n" +
-	"\bSuggests\x18\x06 \x03(\tB\f\xaa\xdd\x1b\bsuggestsR\bsuggests\x12q\n" +
-	"\tInformers\x18\a \x01(\v2D.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformersB\r\xaa\xdd\x1b\tinformersR\tinformers\x12h\n" +
-	"\aWidgets\x18\b \x03(\v2A.NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidgetB\v\xaa\xdd\x1b\awidgetsR\awidgets\"L\n" +
+	"\bImageUrl\x18\x05 \x01(\tB\r\xaa\xdd\x1b\timage_urlR\timage_url\"L\n" +
 	"\x0fEWidgetPosition\x12\x19\n" +
 	"\x15UnknownWidgetPosition\x10\x00\x12\f\n" +
 	"\bStartTop\x10\x01\x12\x10\n" +
-	"\fCenterBottom\x10\x02:\x1d\x92\x82\x19\x11load_screensavers\xa8\xdd\x1b\x04\xa8\xc8\x1cV\x1aZ\n" +
-	"\x1aTCloseScreensaverDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x1e\x92\x82\x19\x11close_screensaver\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe2\x01\"@\n" +
+	"\fCenterBottom\x10\x02\x1a0\n" +
+	"\x1aTCloseScreensaverDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\"@\n" +
 	"\vEResolution\x12\x0e\n" +
 	"\n" +
 	"UnknownRes\x10\x00\x12\x06\n" +
@@ -1075,8 +1068,9 @@ const file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDe
 	"\vUnknownType\x10\x00\x12\t\n" +
 	"\x05Image\x10\x01\x12\t\n" +
 	"\x05Video\x10\x02\x12\x1e\n" +
-	"\x1aLottieAnimatedClockArchive\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x14B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aScreensaverCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/screensaver;screensaverpbb\x06proto3"
+	"\x1aLottieAnimatedClockArchive\x10\x03B\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/screensaver\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_screensaver_capability_proto_rawDescOnce sync.Once
@@ -1106,9 +1100,9 @@ var file_alice_protos_endpoint_capabilities_screensaver_capability_proto_goTypes
 	(*TScreensaverCapability_TLoadScreensaversDirective)(nil),                  // 10: NAlice.TScreensaverCapability.TLoadScreensaversDirective
 	(*TScreensaverCapability_TCloseScreensaverDirective)(nil),                  // 11: NAlice.TScreensaverCapability.TCloseScreensaverDirective
 	(*TScreensaverCapability_TLoadScreensaversDirective_TMediaItem)(nil),       // 12: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItem
-	(*TScreensaverCapability_TLoadScreensaversDirective_TInformers)(nil),       // 13: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers
-	(*TScreensaverCapability_TLoadScreensaversDirective_TWidget)(nil),          // 14: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidget
-	(*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem)(nil), // 15: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem
+	(*TScreensaverCapability_TLoadScreensaversDirective_TScreensaverItem)(nil), // 13: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem
+	(*TScreensaverCapability_TLoadScreensaversDirective_TInformers)(nil),       // 14: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers
+	(*TScreensaverCapability_TLoadScreensaversDirective_TWidget)(nil),          // 15: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidget
 	(*endpoint.TCapability_TMeta)(nil),                                         // 16: NAlice.TCapability.TMeta
 	(*div.TDivExtensions)(nil),                                                 // 17: NAlice.TDivExtensions
 	(*div.TDiv2Card)(nil),                                                      // 18: NAlice.TDiv2Card
@@ -1123,16 +1117,16 @@ var file_alice_protos_endpoint_capabilities_screensaver_capability_proto_depIdxs
 	2,  // 5: NAlice.TScreensaverCapability.TState.ScreensaverState:type_name -> NAlice.TScreensaverCapability.TState.EScreensaverState
 	3,  // 6: NAlice.TScreensaverCapability.TState.ScreensaverStatus:type_name -> NAlice.TScreensaverCapability.TState.EScreensaverStatus
 	7,  // 7: NAlice.TScreensaverCapability.TState.CurrentScreensaverMeta:type_name -> NAlice.TScreensaverCapability.TScreensaverContentMeta
-	15, // 8: NAlice.TScreensaverCapability.TLoadScreensaversDirective.ScreensaverItems:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem
+	13, // 8: NAlice.TScreensaverCapability.TLoadScreensaversDirective.ScreensaverItems:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem
 	0,  // 9: NAlice.TScreensaverCapability.TLoadScreensaversDirective.Resolution:type_name -> NAlice.TScreensaverCapability.EResolution
 	1,  // 10: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItem.MediaType:type_name -> NAlice.TScreensaverCapability.EMediaType
-	4,  // 11: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers.Position:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.EWidgetPosition
-	18, // 12: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Overlay:type_name -> NAlice.TDiv2Card
-	12, // 13: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.MediaItem:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItem
-	19, // 14: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.VoiceControls:type_name -> NAlice.TVoiceControl
-	7,  // 15: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.ContentMeta:type_name -> NAlice.TScreensaverCapability.TScreensaverContentMeta
-	13, // 16: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Informers:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers
-	14, // 17: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Widgets:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidget
+	18, // 11: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Overlay:type_name -> NAlice.TDiv2Card
+	12, // 12: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.MediaItem:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TMediaItem
+	19, // 13: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.VoiceControls:type_name -> NAlice.TVoiceControl
+	7,  // 14: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.ContentMeta:type_name -> NAlice.TScreensaverCapability.TScreensaverContentMeta
+	14, // 15: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Informers:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers
+	15, // 16: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TScreensaverItem.Widgets:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.TWidget
+	4,  // 17: NAlice.TScreensaverCapability.TLoadScreensaversDirective.TInformers.Position:type_name -> NAlice.TScreensaverCapability.TLoadScreensaversDirective.EWidgetPosition
 	18, // [18:18] is the sub-list for method output_type
 	18, // [18:18] is the sub-list for method input_type
 	18, // [18:18] is the sub-list for extension type_name

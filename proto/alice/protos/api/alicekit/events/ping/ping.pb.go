@@ -24,9 +24,9 @@ const (
 
 type TPing struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
-	Timestamp               uint32                 `protobuf:"varint,1,opt,name=Timestamp,json=timestamp,proto3" json:"Timestamp,omitempty"`
-	PingTimeoutMilliSeconds uint32                 `protobuf:"varint,2,opt,name=PingTimeoutMilliSeconds,json=ping_timeout_milliseconds,proto3" json:"PingTimeoutMilliSeconds,omitempty"`
-	PongTimeoutMilliSeconds uint32                 `protobuf:"varint,3,opt,name=PongTimeoutMilliSeconds,json=pong_timeout_milliseconds,proto3" json:"PongTimeoutMilliSeconds,omitempty"`
+	Timestamp               uint32                 `protobuf:"varint,1,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
+	PingTimeoutMilliSeconds uint32                 `protobuf:"varint,2,opt,name=PingTimeoutMilliSeconds,proto3" json:"PingTimeoutMilliSeconds,omitempty"`
+	PongTimeoutMilliSeconds uint32                 `protobuf:"varint,3,opt,name=PongTimeoutMilliSeconds,proto3" json:"PongTimeoutMilliSeconds,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -86,12 +86,12 @@ var File_alice_protos_api_alicekit_events_ping_ping_proto protoreflect.FileDescr
 
 const file_alice_protos_api_alicekit_events_ping_ping_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/api/alicekit/events/ping/ping.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf0\x01\n" +
-	"\x05TPing\x12+\n" +
-	"\tTimestamp\x18\x01 \x01(\rB\r\xaa\xdd\x1b\ttimestampR\ttimestamp\x12Y\n" +
-	"\x17PingTimeoutMilliSeconds\x18\x02 \x01(\rB\x1d\xaa\xdd\x1b\x19ping_timeout_millisecondsR\x19ping_timeout_milliseconds\x12Y\n" +
-	"\x17PongTimeoutMilliSeconds\x18\x03 \x01(\rB\x1d\xaa\xdd\x1b\x19pong_timeout_millisecondsR\x19pong_timeout_milliseconds:\x04\xa8\xdd\x1b\x04Bq\n" +
-	"/ru.yandex.alice.protos.api.alicekit.events.pingB\x04PingP\x01Z6a.yandex-team.ru/alice/protos/api/alicekit/events/pingb\x06proto3"
+	"0alice/protos/api/alicekit/events/ping/ping.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\x01\n" +
+	"\x05TPing\x12\x1c\n" +
+	"\tTimestamp\x18\x01 \x01(\rR\tTimestamp\x128\n" +
+	"\x17PingTimeoutMilliSeconds\x18\x02 \x01(\rR\x17PingTimeoutMilliSeconds\x128\n" +
+	"\x17PongTimeoutMilliSeconds\x18\x03 \x01(\rR\x17PongTimeoutMilliSecondsB\xd9\x01\n" +
+	"\x14com.NAlice.NAliceApiB\tPingProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/ping\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_ping_ping_proto_rawDescOnce sync.Once

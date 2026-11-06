@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/range_check/capability.proto
 
-package rangecheckpb
+package range_check
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TRangeCheckCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TRangeCheckCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TRangeCheckCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TRangeCheckCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TRangeCheckCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TRangeCheckCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TRangeCheckCapability_TState struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,json=last_event,proto3" json:"LastEvent,omitempty"`
+	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,proto3" json:"LastEvent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -205,21 +205,19 @@ var File_alice_protos_endpoint_capabilities_range_check_capability_proto protore
 
 const file_alice_protos_endpoint_capabilities_range_check_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/range_check/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8d\x03\n" +
-	"\x15TRangeCheckCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
+	"?alice/protos/endpoint/capabilities/range_check/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb7\x02\n" +
+	"\x15TRangeCheckCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.TRangeCheckCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.TRangeCheckCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\\\n" +
-	"\x06TState\x12L\n" +
-	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventB\x0e\xaa\xdd\x1b\n" +
-	"last_eventR\n" +
-	"last_event:\x04\xa8\xdd\x1b\x04\x1a\x1c\n" +
-	"\x10TRangeCheckEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x13:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x10B\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0fRangeCheckProtoZLa.yandex-team.ru/alice/protos/endpoint/capabilities/range_check;rangecheckpbb\x06proto3"
+	"Parameters\x18\x02 \x01(\v2).NAlice.TRangeCheckCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.TRangeCheckCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aE\n" +
+	"\x06TState\x12;\n" +
+	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventR\tLastEvent\x1a\x12\n" +
+	"\x10TRangeCheckEventB\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/range_check\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_range_check_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/iot_frame/iot_frame.proto
 
-package iotframe
+package iot_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -141,7 +141,7 @@ type isTIotNetworksSlot_Value interface {
 }
 
 type TIotNetworksSlot_NetworksValue struct {
-	NetworksValue *iot_discovery.TIotDiscoveryCapability_TNetworks `protobuf:"bytes,1,opt,name=NetworksValue,json=networks_value,proto3,oneof"`
+	NetworksValue *iot_discovery.TIotDiscoveryCapability_TNetworks `protobuf:"bytes,1,opt,name=NetworksValue,proto3,oneof"`
 }
 
 func (*TIotNetworksSlot_NetworksValue) isTIotNetworksSlot_Value() {}
@@ -207,14 +207,14 @@ type isTRestoreIotNetworksTypeSlot_Value interface {
 }
 
 type TRestoreIotNetworksTypeSlot_RestoreTypeValue struct {
-	RestoreTypeValue TRestoreIotNetworksTypeSlot_EValue `protobuf:"varint,1,opt,name=RestoreTypeValue,json=restore_type_value,proto3,enum=NAlice.TRestoreIotNetworksTypeSlot_EValue,oneof"`
+	RestoreTypeValue TRestoreIotNetworksTypeSlot_EValue `protobuf:"varint,1,opt,name=RestoreTypeValue,proto3,enum=NAlice.TRestoreIotNetworksTypeSlot_EValue,oneof"`
 }
 
 func (*TRestoreIotNetworksTypeSlot_RestoreTypeValue) isTRestoreIotNetworksTypeSlot_Value() {}
 
 type TRestoreIotNetworksSemanticFrame struct {
 	state                  protoimpl.MessageState         `protogen:"open.v1"`
-	RestoreIotNetworkTypes []*TRestoreIotNetworksTypeSlot `protobuf:"bytes,1,rep,name=RestoreIotNetworkTypes,json=restore_iot_network_types,proto3" json:"RestoreIotNetworkTypes,omitempty"`
+	RestoreIotNetworkTypes []*TRestoreIotNetworksTypeSlot `protobuf:"bytes,1,rep,name=RestoreIotNetworkTypes,proto3" json:"RestoreIotNetworkTypes,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -258,7 +258,7 @@ func (x *TRestoreIotNetworksSemanticFrame) GetRestoreIotNetworkTypes() []*TResto
 
 type TSaveIotNetworksSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Networks      *TIotNetworksSlot      `protobuf:"bytes,1,opt,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
+	Networks      *TIotNetworksSlot      `protobuf:"bytes,1,opt,name=Networks,proto3" json:"Networks,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -302,10 +302,10 @@ func (x *TSaveIotNetworksSemanticFrame) GetNetworks() *TIotNetworksSlot {
 
 type TIoTDiscoveryStartSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SSID          *common.TStringSlot    `protobuf:"bytes,1,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password      *common.TStringSlot    `protobuf:"bytes,2,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
-	DeviceType    *common.TStringSlot    `protobuf:"bytes,3,opt,name=DeviceType,json=device_type,proto3" json:"DeviceType,omitempty"`
-	TimeoutMs     *common.TUInt32Slot    `protobuf:"bytes,4,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	SSID          *common.TStringSlot    `protobuf:"bytes,1,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password      *common.TStringSlot    `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
+	DeviceType    *common.TStringSlot    `protobuf:"bytes,3,opt,name=DeviceType,proto3" json:"DeviceType,omitempty"`
+	TimeoutMs     *common.TUInt32Slot    `protobuf:"bytes,4,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -370,9 +370,9 @@ func (x *TIoTDiscoveryStartSemanticFrame) GetTimeoutMs() *common.TUInt32Slot {
 
 type TIoTDiscoveryFailureSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutMs     *common.TUInt32Slot    `protobuf:"bytes,1,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
-	Reason        *common.TStringSlot    `protobuf:"bytes,2,opt,name=Reason,json=reason,proto3" json:"Reason,omitempty"`
-	DeviceType    *common.TStringSlot    `protobuf:"bytes,3,opt,name=DeviceType,json=device_type,proto3" json:"DeviceType,omitempty"`
+	TimeoutMs     *common.TUInt32Slot    `protobuf:"bytes,1,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
+	Reason        *common.TStringSlot    `protobuf:"bytes,2,opt,name=Reason,proto3" json:"Reason,omitempty"`
+	DeviceType    *common.TStringSlot    `protobuf:"bytes,3,opt,name=DeviceType,proto3" json:"DeviceType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -430,8 +430,8 @@ func (x *TIoTDiscoveryFailureSemanticFrame) GetDeviceType() *common.TStringSlot 
 
 type TStartIotTuyaBroadcastSemanticFrame struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SSID          *common.TStringSlot    `protobuf:"bytes,1,opt,name=SSID,json=ssid,proto3" json:"SSID,omitempty"`
-	Password      *common.TStringSlot    `protobuf:"bytes,2,opt,name=Password,json=password,proto3" json:"Password,omitempty"`
+	SSID          *common.TStringSlot    `protobuf:"bytes,1,opt,name=SSID,proto3" json:"SSID,omitempty"`
+	Password      *common.TStringSlot    `protobuf:"bytes,2,opt,name=Password,proto3" json:"Password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -484,44 +484,41 @@ var File_alice_megamind_protos_scenarios_frames_iot_frame_iot_frame_proto protor
 
 const file_alice_megamind_protos_scenarios_frames_iot_frame_iot_frame_proto_rawDesc = "" +
 	"\n" +
-	"@alice/megamind/protos/scenarios/frames/iot_frame/iot_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1aAalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xab\x01\n" +
-	"\x10TIotNetworksSlot\x12}\n" +
-	"\rNetworksValue\x18\x01 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksB)\xaa\xdd\x1b\x0enetworks_value\u0085\x1c\x13custom.iot.networksH\x00R\x0enetworks_value:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xcb\x02\n" +
-	"\x1bTRestoreIotNetworksTypeSlot\x12\x88\x01\n" +
-	"\x10RestoreTypeValue\x18\x01 \x01(\x0e2*.NAlice.TRestoreIotNetworksTypeSlot.EValueB,\xaa\xdd\x1b\x12restore_type_value\u0085\x1c\x12restore_type_valueH\x00R\x12restore_type_value\"\x86\x01\n" +
+	"@alice/megamind/protos/scenarios/frames/iot_frame/iot_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1aAalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"n\n" +
+	"\x10TIotNetworksSlot\x12Q\n" +
+	"\rNetworksValue\x18\x01 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksH\x00R\rNetworksValueB\a\n" +
+	"\x05Value\"\x89\x02\n" +
+	"\x1bTRestoreIotNetworksTypeSlot\x12X\n" +
+	"\x10RestoreTypeValue\x18\x01 \x01(\x0e2*.NAlice.TRestoreIotNetworksTypeSlot.EValueH\x00R\x10RestoreTypeValue\"\x86\x01\n" +
 	"\x06EValue\x12\x19\n" +
 	"\x15RestoreZigbeeNetworks\x10\x00\x12\x11\n" +
 	"\rSyncEndpoints\x10\x01\x12\x19\n" +
 	"\x15RestoreMatterNetworks\x10\x02\x12\x19\n" +
 	"\x15RestoreThreadNetworks\x10\x03\x12\x18\n" +
-	"\x14RestoreZenohNetworks\x10\x04:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xed\x01\n" +
-	" TRestoreIotNetworksSemanticFrame\x12\x9a\x01\n" +
-	"\x16RestoreIotNetworkTypes\x18\x01 \x03(\v2#.NAlice.TRestoreIotNetworksTypeSlotB:\xaa\xdd\x1b\x19restore_iot_network_types\xba\x85\x1c\x19restore_iot_network_typesR\x19restore_iot_network_types:,\xa8\xdd\x1b\x04\x9a\xff\x1b$alice.iot.discovery.restore_networks\"\x9a\x01\n" +
-	"\x1dTSaveIotNetworksSemanticFrame\x12N\n" +
-	"\bNetworks\x18\x01 \x01(\v2\x18.NAlice.TIotNetworksSlotB\x18\xaa\xdd\x1b\bnetworks\xba\x85\x1c\bnetworksR\bnetworks:)\xa8\xdd\x1b\x04\x9a\xff\x1b!alice.iot.discovery.save_networks\"\xfb\x02\n" +
-	"\x1fTIoTDiscoveryStartSemanticFrame\x129\n" +
-	"\x04SSID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB\x10\xaa\xdd\x1b\x04ssid\xba\x85\x1c\x04ssidR\x04ssid\x12I\n" +
-	"\bPassword\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\bpassword\xba\x85\x1c\bpasswordR\bpassword\x12T\n" +
+	"\x14RestoreZenohNetworks\x10\x04B\a\n" +
+	"\x05Value\"\x7f\n" +
+	" TRestoreIotNetworksSemanticFrame\x12[\n" +
+	"\x16RestoreIotNetworkTypes\x18\x01 \x03(\v2#.NAlice.TRestoreIotNetworksTypeSlotR\x16RestoreIotNetworkTypes\"U\n" +
+	"\x1dTSaveIotNetworksSemanticFrame\x124\n" +
+	"\bNetworks\x18\x01 \x01(\v2\x18.NAlice.TIotNetworksSlotR\bNetworks\"\xe3\x01\n" +
+	"\x1fTIoTDiscoveryStartSemanticFrame\x12'\n" +
+	"\x04SSID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x04SSID\x12/\n" +
+	"\bPassword\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\bPassword\x123\n" +
 	"\n" +
-	"DeviceType\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB\x1e\xaa\xdd\x1b\vdevice_type\xba\x85\x1c\vdevice_typeR\vdevice_type\x12P\n" +
-	"\tTimeoutMs\x18\x04 \x01(\v2\x13.NAlice.TUInt32SlotB\x1c\xaa\xdd\x1b\n" +
-	"timeout_ms\xba\x85\x1c\n" +
-	"timeout_msR\n" +
-	"timeout_ms:*\xa8\xdd\x1b\x04\x9a\xff\x1b\"alice.iot.voice_discovery.start.v2\"\xbc\x02\n" +
-	"!TIoTDiscoveryFailureSemanticFrame\x12P\n" +
-	"\tTimeoutMs\x18\x01 \x01(\v2\x13.NAlice.TUInt32SlotB\x1c\xaa\xdd\x1b\n" +
-	"timeout_ms\xba\x85\x1c\n" +
-	"timeout_msR\n" +
-	"timeout_ms\x12A\n" +
-	"\x06Reason\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB\x14\xaa\xdd\x1b\x06reason\xba\x85\x1c\x06reasonR\x06reason\x12T\n" +
+	"DeviceType\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\n" +
+	"DeviceType\x121\n" +
+	"\tTimeoutMs\x18\x04 \x01(\v2\x13.NAlice.TUInt32SlotR\tTimeoutMs\"\xb8\x01\n" +
+	"!TIoTDiscoveryFailureSemanticFrame\x121\n" +
+	"\tTimeoutMs\x18\x01 \x01(\v2\x13.NAlice.TUInt32SlotR\tTimeoutMs\x12+\n" +
+	"\x06Reason\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\x06Reason\x123\n" +
 	"\n" +
-	"DeviceType\x18\x03 \x01(\v2\x13.NAlice.TStringSlotB\x1e\xaa\xdd\x1b\vdevice_type\xba\x85\x1c\vdevice_typeR\vdevice_type:,\xa8\xdd\x1b\x04\x9a\xff\x1b$alice.iot.voice_discovery.failure.v2\"\xdd\x01\n" +
-	"#TStartIotTuyaBroadcastSemanticFrame\x129\n" +
-	"\x04SSID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotB\x10\xaa\xdd\x1b\x04ssid\xba\x85\x1c\x04ssidR\x04ssid\x12I\n" +
-	"\bPassword\x18\x02 \x01(\v2\x13.NAlice.TStringSlotB\x18\xaa\xdd\x1b\bpassword\xba\x85\x1c\bpasswordR\bpassword:0\xa8\xdd\x1b\x04\x9a\xff\x1b(alice.iot.discovery.start_tuya_broadcastB\x94\x01\n" +
-	":ru.yandex.alice.megamind.protos.scenarios.frames.iot_frameB\bFrameIotP\x01ZJa.yandex-team.ru/alice/megamind/protos/scenarios/frames/iot_frame;iotframeb\x06proto3"
+	"DeviceType\x18\x03 \x01(\v2\x13.NAlice.TStringSlotR\n" +
+	"DeviceType\"\x7f\n" +
+	"#TStartIotTuyaBroadcastSemanticFrame\x12'\n" +
+	"\x04SSID\x18\x01 \x01(\v2\x13.NAlice.TStringSlotR\x04SSID\x12/\n" +
+	"\bPassword\x18\x02 \x01(\v2\x13.NAlice.TStringSlotR\bPasswordB\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\rIotFrameProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/iot_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_iot_frame_iot_frame_proto_rawDescOnce sync.Once

@@ -29,7 +29,7 @@ type TDataProxyInput struct {
 	//
 	//	*TDataProxyInput_DataProxyResponse
 	Response      isTDataProxyInput_Response `protobuf_oneof:"Response"`
-	InteractionId *string                    `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3,oneof" json:"InteractionId,omitempty"`
+	InteractionId *string                    `protobuf:"bytes,1,opt,name=InteractionId,proto3,oneof" json:"InteractionId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -92,7 +92,7 @@ type isTDataProxyInput_Response interface {
 }
 
 type TDataProxyInput_DataProxyResponse struct {
-	DataProxyResponse *data_proxy.TDataProxyResponse `protobuf:"bytes,2,opt,name=DataProxyResponse,json=data_proxy_response,proto3,oneof"`
+	DataProxyResponse *data_proxy.TDataProxyResponse `protobuf:"bytes,2,opt,name=DataProxyResponse,proto3,oneof"`
 }
 
 func (*TDataProxyInput_DataProxyResponse) isTDataProxyInput_Response() {}
@@ -101,14 +101,14 @@ var File_alice_protos_api_alicekit_events_data_proxy_input_data_proxy_input_prot
 
 const file_alice_protos_api_alicekit_events_data_proxy_input_data_proxy_input_proto_rawDesc = "" +
 	"\n" +
-	"Halice/protos/api/alicekit/events/data_proxy_input/data_proxy_input.proto\x12\x10NAlice.NAliceApi\x1aLalice/protos/api/alicekit/events/common/data_proxy/data_proxy_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe6\x01\n" +
-	"\x0fTDataProxyInput\x12o\n" +
-	"\x11DataProxyResponse\x18\x02 \x01(\v2$.NAlice.NAliceApi.TDataProxyResponseB\x17\xaa\xdd\x1b\x13data_proxy_responseH\x00R\x13data_proxy_response\x12>\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idH\x01R\x0einteraction_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\n" +
+	"Halice/protos/api/alicekit/events/data_proxy_input/data_proxy_input.proto\x12\x10NAlice.NAliceApi\x1aLalice/protos/api/alicekit/events/common/data_proxy/data_proxy_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\x01\n" +
+	"\x0fTDataProxyInput\x12T\n" +
+	"\x11DataProxyResponse\x18\x02 \x01(\v2$.NAlice.NAliceApi.TDataProxyResponseH\x00R\x11DataProxyResponse\x12)\n" +
+	"\rInteractionId\x18\x01 \x01(\tH\x01R\rInteractionId\x88\x01\x01B\n" +
 	"\n" +
 	"\bResponseB\x10\n" +
-	"\x0e_InteractionIdB\x93\x01\n" +
-	";ru.yandex.alice.protos.api.alicekit.events.data_proxy_inputB\x0eDataProxyInputP\x01ZBa.yandex-team.ru/alice/protos/api/alicekit/events/data_proxy_inputb\x06proto3"
+	"\x0e_InteractionIdB\xef\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x13DataProxyInputProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/data_proxy_input\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_data_proxy_input_data_proxy_input_proto_rawDescOnce sync.Once

@@ -172,8 +172,8 @@ func (TTimerStateDivExternalSource_EState) EnumDescriptor() ([]byte, []int) {
 
 type TDivExternalVariable struct {
 	state      protoimpl.MessageState            `protogen:"open.v1"`
-	Name       string                            `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	StartValue *TDivExternalVariable_TStartValue `protobuf:"bytes,2,opt,name=StartValue,json=start_value,proto3" json:"StartValue,omitempty"`
+	Name       string                            `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	StartValue *TDivExternalVariable_TStartValue `protobuf:"bytes,2,opt,name=StartValue,proto3" json:"StartValue,omitempty"`
 	// Types that are valid to be assigned to Source:
 	//
 	//	*TDivExternalVariable_ClockTimeSource
@@ -417,75 +417,75 @@ type isTDivExternalVariable_Source interface {
 }
 
 type TDivExternalVariable_ClockTimeSource struct {
-	ClockTimeSource *TClockTimeDivExternalSource `protobuf:"bytes,3,opt,name=ClockTimeSource,json=clock_time,proto3,oneof"`
+	ClockTimeSource *TClockTimeDivExternalSource `protobuf:"bytes,3,opt,name=ClockTimeSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_TimerStateSource struct {
-	TimerStateSource *TTimerStateDivExternalSource `protobuf:"bytes,4,opt,name=TimerStateSource,json=timer_state,proto3,oneof"`
+	TimerStateSource *TTimerStateDivExternalSource `protobuf:"bytes,4,opt,name=TimerStateSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_TimerRemainingFormattedSource struct {
-	TimerRemainingFormattedSource *TTimerRemainingFormattedDivExternalSource `protobuf:"bytes,5,opt,name=TimerRemainingFormattedSource,json=timer_remaining_formatted,proto3,oneof"`
+	TimerRemainingFormattedSource *TTimerRemainingFormattedDivExternalSource `protobuf:"bytes,5,opt,name=TimerRemainingFormattedSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotOnOffSource struct {
-	IotOnOffSource *TIotOnOffDivExternalSource `protobuf:"bytes,6,opt,name=IotOnOffSource,json=iot_on_off,proto3,oneof"`
+	IotOnOffSource *TIotOnOffDivExternalSource `protobuf:"bytes,6,opt,name=IotOnOffSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotLevelSource struct {
-	IotLevelSource *TIotLevelDivExternalSource `protobuf:"bytes,7,opt,name=IotLevelSource,json=iot_level,proto3,oneof"`
+	IotLevelSource *TIotLevelDivExternalSource `protobuf:"bytes,7,opt,name=IotLevelSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotBatteryPercentageSource struct {
-	IotBatteryPercentageSource *TIotBatteryPercentageDivExternalSource `protobuf:"bytes,8,opt,name=IotBatteryPercentageSource,json=iot_battery_percentage,proto3,oneof"`
+	IotBatteryPercentageSource *TIotBatteryPercentageDivExternalSource `protobuf:"bytes,8,opt,name=IotBatteryPercentageSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotBatteryVoltageSource struct {
-	IotBatteryVoltageSource *TIotBatteryVoltageDivExternalSource `protobuf:"bytes,9,opt,name=IotBatteryVoltageSource,json=iot_battery_voltage,proto3,oneof"`
+	IotBatteryVoltageSource *TIotBatteryVoltageDivExternalSource `protobuf:"bytes,9,opt,name=IotBatteryVoltageSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotMotionSource struct {
-	IotMotionSource *TIotMotionExternalSource `protobuf:"bytes,10,opt,name=IotMotionSource,json=iot_motion,proto3,oneof"`
+	IotMotionSource *TIotMotionExternalSource `protobuf:"bytes,10,opt,name=IotMotionSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotButtonEventSource struct {
-	IotButtonEventSource *TIotButtonEventExternalSource `protobuf:"bytes,11,opt,name=IotButtonEventSource,json=iot_button_event,proto3,oneof"`
+	IotButtonEventSource *TIotButtonEventExternalSource `protobuf:"bytes,11,opt,name=IotButtonEventSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotButtonEventTimeSource struct {
-	IotButtonEventTimeSource *TIotButtonEventTimeExternalSource `protobuf:"bytes,12,opt,name=IotButtonEventTimeSource,json=iot_button_event_time,proto3,oneof"`
+	IotButtonEventTimeSource *TIotButtonEventTimeExternalSource `protobuf:"bytes,12,opt,name=IotButtonEventTimeSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotWaterLeakSensorEventSource struct {
-	IotWaterLeakSensorEventSource *TIotWaterLeakSensorEventExternalSource `protobuf:"bytes,13,opt,name=IotWaterLeakSensorEventSource,json=iot_water_leak_sensor_event,proto3,oneof"`
+	IotWaterLeakSensorEventSource *TIotWaterLeakSensorEventExternalSource `protobuf:"bytes,13,opt,name=IotWaterLeakSensorEventSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotWaterLeakSensorEventTimeSource struct {
-	IotWaterLeakSensorEventTimeSource *TIotWaterLeakSensorEventTimeExternalSource `protobuf:"bytes,14,opt,name=IotWaterLeakSensorEventTimeSource,json=iot_water_leak_sensor_event_time,proto3,oneof"`
+	IotWaterLeakSensorEventTimeSource *TIotWaterLeakSensorEventTimeExternalSource `protobuf:"bytes,14,opt,name=IotWaterLeakSensorEventTimeSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotOpenSensorEventSource struct {
-	IotOpenSensorEventSource *TIotOpenSensorEventExternalSource `protobuf:"bytes,15,opt,name=IotOpenSensorEventSource,json=iot_open_sensor_event,proto3,oneof"`
+	IotOpenSensorEventSource *TIotOpenSensorEventExternalSource `protobuf:"bytes,15,opt,name=IotOpenSensorEventSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotOpenSensorEventTimeSource struct {
-	IotOpenSensorEventTimeSource *TIotOpenSensorEventTimeExternalSource `protobuf:"bytes,16,opt,name=IotOpenSensorEventTimeSource,json=iot_open_sensor_event_time,proto3,oneof"`
+	IotOpenSensorEventTimeSource *TIotOpenSensorEventTimeExternalSource `protobuf:"bytes,16,opt,name=IotOpenSensorEventTimeSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotOpeningSensorEventSource struct {
-	IotOpeningSensorEventSource *TIotOpeningSensorEventExternalSource `protobuf:"bytes,17,opt,name=IotOpeningSensorEventSource,json=iot_opening_sensor_event,proto3,oneof"`
+	IotOpeningSensorEventSource *TIotOpeningSensorEventExternalSource `protobuf:"bytes,17,opt,name=IotOpeningSensorEventSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotOpeningSensorEventTimeSource struct {
-	IotOpeningSensorEventTimeSource *TIotOpeningSensorEventTimeExternalSource `protobuf:"bytes,18,opt,name=IotOpeningSensorEventTimeSource,json=iot_opening_sensor_event_time,proto3,oneof"`
+	IotOpeningSensorEventTimeSource *TIotOpeningSensorEventTimeExternalSource `protobuf:"bytes,18,opt,name=IotOpeningSensorEventTimeSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotMotionEventSource struct {
-	IotMotionEventSource *TIotMotionEventExternalSource `protobuf:"bytes,19,opt,name=IotMotionEventSource,json=iot_motion_event,proto3,oneof"`
+	IotMotionEventSource *TIotMotionEventExternalSource `protobuf:"bytes,19,opt,name=IotMotionEventSource,proto3,oneof"`
 }
 
 type TDivExternalVariable_IotMotionEventTimeSource struct {
-	IotMotionEventTimeSource *TIotMotionEventTimeExternalSource `protobuf:"bytes,20,opt,name=IotMotionEventTimeSource,json=iot_motion_event_time,proto3,oneof"`
+	IotMotionEventTimeSource *TIotMotionEventTimeExternalSource `protobuf:"bytes,20,opt,name=IotMotionEventTimeSource,proto3,oneof"`
 }
 
 func (*TDivExternalVariable_ClockTimeSource) isTDivExternalVariable_Source() {}
@@ -526,7 +526,7 @@ func (*TDivExternalVariable_IotMotionEventTimeSource) isTDivExternalVariable_Sou
 
 type TClockTimeDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Pattern       string                 `protobuf:"bytes,2,opt,name=Pattern,json=pattern,proto3" json:"Pattern,omitempty"`
+	Pattern       string                 `protobuf:"bytes,2,opt,name=Pattern,proto3" json:"Pattern,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -570,7 +570,7 @@ func (x *TClockTimeDivExternalSource) GetPattern() string {
 
 type TTimerStateDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -614,7 +614,7 @@ func (x *TTimerStateDivExternalSource) GetTimerId() string {
 
 type TTimerRemainingFormattedDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,json=timer_id,proto3" json:"TimerId,omitempty"`
+	TimerId       string                 `protobuf:"bytes,2,opt,name=TimerId,proto3" json:"TimerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -658,7 +658,7 @@ func (x *TTimerRemainingFormattedDivExternalSource) GetTimerId() string {
 
 type TIotOnOffDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -702,8 +702,8 @@ func (x *TIotOnOffDivExternalSource) GetEndpointId() string {
 
 type TIotLevelDivExternalSource struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	EndpointId    string                           `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	Instance      level.TLevelCapability_EInstance `protobuf:"varint,2,opt,name=Instance,json=instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
+	EndpointId    string                           `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	Instance      level.TLevelCapability_EInstance `protobuf:"varint,2,opt,name=Instance,proto3,enum=NAlice.TLevelCapability_EInstance" json:"Instance,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -754,7 +754,7 @@ func (x *TIotLevelDivExternalSource) GetInstance() level.TLevelCapability_EInsta
 
 type TIotBatteryPercentageDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -798,7 +798,7 @@ func (x *TIotBatteryPercentageDivExternalSource) GetEndpointId() string {
 
 type TIotBatteryVoltageDivExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -842,7 +842,7 @@ func (x *TIotBatteryVoltageDivExternalSource) GetEndpointId() string {
 
 type TIotMotionExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -886,7 +886,7 @@ func (x *TIotMotionExternalSource) GetEndpointId() string {
 
 type TIotMotionEventExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -930,7 +930,7 @@ func (x *TIotMotionEventExternalSource) GetEndpointId() string {
 
 type TIotMotionEventTimeExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -974,7 +974,7 @@ func (x *TIotMotionEventTimeExternalSource) GetEndpointId() string {
 
 type TIotButtonEventExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1018,7 +1018,7 @@ func (x *TIotButtonEventExternalSource) GetEndpointId() string {
 
 type TIotButtonEventTimeExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1062,7 +1062,7 @@ func (x *TIotButtonEventTimeExternalSource) GetEndpointId() string {
 
 type TIotWaterLeakSensorEventExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1106,7 +1106,7 @@ func (x *TIotWaterLeakSensorEventExternalSource) GetEndpointId() string {
 
 type TIotWaterLeakSensorEventTimeExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1148,10 +1148,9 @@ func (x *TIotWaterLeakSensorEventTimeExternalSource) GetEndpointId() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div_external_variable_sources.proto.
 type TIotOpenSensorEventExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1193,10 +1192,9 @@ func (x *TIotOpenSensorEventExternalSource) GetEndpointId() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div_external_variable_sources.proto.
 type TIotOpenSensorEventTimeExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1240,7 +1238,7 @@ func (x *TIotOpenSensorEventTimeExternalSource) GetEndpointId() string {
 
 type TIotOpeningSensorEventExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1284,7 +1282,7 @@ func (x *TIotOpeningSensorEventExternalSource) GetEndpointId() string {
 
 type TIotOpeningSensorEventTimeExternalSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1417,19 +1415,19 @@ type isTDivExternalVariable_TStartValue_Value interface {
 }
 
 type TDivExternalVariable_TStartValue_Integer struct {
-	Integer int64 `protobuf:"varint,1,opt,name=Integer,json=integer,proto3,oneof"`
+	Integer int64 `protobuf:"varint,1,opt,name=Integer,proto3,oneof"`
 }
 
 type TDivExternalVariable_TStartValue_String_ struct {
-	String_ string `protobuf:"bytes,2,opt,name=String,json=string,proto3,oneof"`
+	String_ string `protobuf:"bytes,2,opt,name=String,proto3,oneof"`
 }
 
 type TDivExternalVariable_TStartValue_Double struct {
-	Double float64 `protobuf:"fixed64,3,opt,name=Double,json=double,proto3,oneof"`
+	Double float64 `protobuf:"fixed64,3,opt,name=Double,proto3,oneof"`
 }
 
 type TDivExternalVariable_TStartValue_Boolean struct {
-	Boolean bool `protobuf:"varint,4,opt,name=Boolean,json=boolean,proto3,oneof"`
+	Boolean bool `protobuf:"varint,4,opt,name=Boolean,proto3,oneof"`
 }
 
 func (*TDivExternalVariable_TStartValue_Integer) isTDivExternalVariable_TStartValue_Value() {}
@@ -1461,45 +1459,37 @@ var File_alice_protos_div_div_external_variable_sources_proto protoreflect.FileD
 
 const file_alice_protos_div_div_external_variable_sources_proto_rawDesc = "" +
 	"\n" +
-	"4alice/protos/div/div_external_variable_sources.proto\x12\x06NAlice\x1a9alice/protos/endpoint/capabilities/level/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a google/protobuf/descriptor.proto\"\xbc\x19\n" +
-	"\x14TDivExternalVariable\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12Z\n" +
+	"4alice/protos/div/div_external_variable_sources.proto\x12\x06NAlice\x1a9alice/protos/endpoint/capabilities/level/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a google/protobuf/descriptor.proto\"\xe3\x14\n" +
+	"\x14TDivExternalVariable\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12H\n" +
 	"\n" +
-	"StartValue\x18\x02 \x01(\v2(.NAlice.TDivExternalVariable.TStartValueB\x0f\xaa\xdd\x1b\vstart_valueR\vstart_value\x12_\n" +
-	"\x0fClockTimeSource\x18\x03 \x01(\v2#.NAlice.TClockTimeDivExternalSourceB\x13\xaa\xdd\x1b\n" +
-	"clock_time\x80\xbe\x92\x01\x01H\x00R\n" +
-	"clock_time\x12c\n" +
-	"\x10TimerStateSource\x18\x04 \x01(\v2$.NAlice.TTimerStateDivExternalSourceB\x14\xaa\xdd\x1b\vtimer_state\x80\xbe\x92\x01\x02H\x00R\vtimer_state\x12\x99\x01\n" +
-	"\x1dTimerRemainingFormattedSource\x18\x05 \x01(\v21.NAlice.TTimerRemainingFormattedDivExternalSourceB\"\xaa\xdd\x1b\x19timer_remaining_formatted\x80\xbe\x92\x01\x03H\x00R\x19timer_remaining_formatted\x12]\n" +
-	"\x0eIotOnOffSource\x18\x06 \x01(\v2\".NAlice.TIotOnOffDivExternalSourceB\x13\xaa\xdd\x1b\n" +
-	"iot_on_off\x80\xbe\x92\x01\x04H\x00R\n" +
-	"iot_on_off\x12[\n" +
-	"\x0eIotLevelSource\x18\a \x01(\v2\".NAlice.TIotLevelDivExternalSourceB\x12\xaa\xdd\x1b\tiot_level\x80\xbe\x92\x01\x05H\x00R\tiot_level\x12\x8d\x01\n" +
-	"\x1aIotBatteryPercentageSource\x18\b \x01(\v2..NAlice.TIotBatteryPercentageDivExternalSourceB\x1f\xaa\xdd\x1b\x16iot_battery_percentage\x80\xbe\x92\x01\x06H\x00R\x16iot_battery_percentage\x12\x81\x01\n" +
-	"\x17IotBatteryVoltageSource\x18\t \x01(\v2+.NAlice.TIotBatteryVoltageDivExternalSourceB\x1c\xaa\xdd\x1b\x13iot_battery_voltage\x80\xbe\x92\x01\aH\x00R\x13iot_battery_voltage\x12\\\n" +
+	"StartValue\x18\x02 \x01(\v2(.NAlice.TDivExternalVariable.TStartValueR\n" +
+	"StartValue\x12O\n" +
+	"\x0fClockTimeSource\x18\x03 \x01(\v2#.NAlice.TClockTimeDivExternalSourceH\x00R\x0fClockTimeSource\x12R\n" +
+	"\x10TimerStateSource\x18\x04 \x01(\v2$.NAlice.TTimerStateDivExternalSourceH\x00R\x10TimerStateSource\x12y\n" +
+	"\x1dTimerRemainingFormattedSource\x18\x05 \x01(\v21.NAlice.TTimerRemainingFormattedDivExternalSourceH\x00R\x1dTimerRemainingFormattedSource\x12L\n" +
+	"\x0eIotOnOffSource\x18\x06 \x01(\v2\".NAlice.TIotOnOffDivExternalSourceH\x00R\x0eIotOnOffSource\x12L\n" +
+	"\x0eIotLevelSource\x18\a \x01(\v2\".NAlice.TIotLevelDivExternalSourceH\x00R\x0eIotLevelSource\x12p\n" +
+	"\x1aIotBatteryPercentageSource\x18\b \x01(\v2..NAlice.TIotBatteryPercentageDivExternalSourceH\x00R\x1aIotBatteryPercentageSource\x12g\n" +
+	"\x17IotBatteryVoltageSource\x18\t \x01(\v2+.NAlice.TIotBatteryVoltageDivExternalSourceH\x00R\x17IotBatteryVoltageSource\x12L\n" +
 	"\x0fIotMotionSource\x18\n" +
-	" \x01(\v2 .NAlice.TIotMotionExternalSourceB\x13\xaa\xdd\x1b\n" +
-	"iot_motion\x80\xbe\x92\x01\bH\x00R\n" +
-	"iot_motion\x12r\n" +
-	"\x14IotButtonEventSource\x18\v \x01(\v2%.NAlice.TIotButtonEventExternalSourceB\x19\xaa\xdd\x1b\x10iot_button_event\x80\xbe\x92\x01\tH\x00R\x10iot_button_event\x12\x84\x01\n" +
-	"\x18IotButtonEventTimeSource\x18\f \x01(\v2).NAlice.TIotButtonEventTimeExternalSourceB\x1e\xaa\xdd\x1b\x15iot_button_event_time\x80\xbe\x92\x01\n" +
-	"H\x00R\x15iot_button_event_time\x12\x9a\x01\n" +
-	"\x1dIotWaterLeakSensorEventSource\x18\r \x01(\v2..NAlice.TIotWaterLeakSensorEventExternalSourceB$\xaa\xdd\x1b\x1biot_water_leak_sensor_event\x80\xbe\x92\x01\vH\x00R\x1biot_water_leak_sensor_event\x12\xac\x01\n" +
-	"!IotWaterLeakSensorEventTimeSource\x18\x0e \x01(\v22.NAlice.TIotWaterLeakSensorEventTimeExternalSourceB)\xaa\xdd\x1b iot_water_leak_sensor_event_time\x80\xbe\x92\x01\fH\x00R iot_water_leak_sensor_event_time\x12\x84\x01\n" +
-	"\x18IotOpenSensorEventSource\x18\x0f \x01(\v2).NAlice.TIotOpenSensorEventExternalSourceB\x1e\xaa\xdd\x1b\x15iot_open_sensor_event\x80\xbe\x92\x01\rH\x00R\x15iot_open_sensor_event\x12\x96\x01\n" +
-	"\x1cIotOpenSensorEventTimeSource\x18\x10 \x01(\v2-.NAlice.TIotOpenSensorEventTimeExternalSourceB#\xaa\xdd\x1b\x1aiot_open_sensor_event_time\x80\xbe\x92\x01\x0eH\x00R\x1aiot_open_sensor_event_time\x12\x90\x01\n" +
-	"\x1bIotOpeningSensorEventSource\x18\x11 \x01(\v2,.NAlice.TIotOpeningSensorEventExternalSourceB!\xaa\xdd\x1b\x18iot_opening_sensor_event\x80\xbe\x92\x01\x0fH\x00R\x18iot_opening_sensor_event\x12\xa2\x01\n" +
-	"\x1fIotOpeningSensorEventTimeSource\x18\x12 \x01(\v20.NAlice.TIotOpeningSensorEventTimeExternalSourceB&\xaa\xdd\x1b\x1diot_opening_sensor_event_time\x80\xbe\x92\x01\x10H\x00R\x1diot_opening_sensor_event_time\x12r\n" +
-	"\x14IotMotionEventSource\x18\x13 \x01(\v2%.NAlice.TIotMotionEventExternalSourceB\x19\xaa\xdd\x1b\x10iot_motion_event\x80\xbe\x92\x01\x11H\x00R\x10iot_motion_event\x12\x84\x01\n" +
-	"\x18IotMotionEventTimeSource\x18\x14 \x01(\v2).NAlice.TIotMotionEventTimeExternalSourceB\x1e\xaa\xdd\x1b\x15iot_motion_event_time\x80\xbe\x92\x01\x12H\x00R\x15iot_motion_event_time\x1a\xbf\x01\n" +
-	"\vTStartValue\x12'\n" +
-	"\aInteger\x18\x01 \x01(\x03B\v\xaa\xdd\x1b\aintegerH\x00R\ainteger\x12$\n" +
-	"\x06String\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06stringH\x00R\x06string\x12$\n" +
-	"\x06Double\x18\x03 \x01(\x01B\n" +
-	"\xaa\xdd\x1b\x06doubleH\x00R\x06double\x12'\n" +
-	"\aBoolean\x18\x04 \x01(\bB\v\xaa\xdd\x1b\abooleanH\x00R\abooleanB\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xb6\x03\n" +
+	" \x01(\v2 .NAlice.TIotMotionExternalSourceH\x00R\x0fIotMotionSource\x12[\n" +
+	"\x14IotButtonEventSource\x18\v \x01(\v2%.NAlice.TIotButtonEventExternalSourceH\x00R\x14IotButtonEventSource\x12g\n" +
+	"\x18IotButtonEventTimeSource\x18\f \x01(\v2).NAlice.TIotButtonEventTimeExternalSourceH\x00R\x18IotButtonEventTimeSource\x12v\n" +
+	"\x1dIotWaterLeakSensorEventSource\x18\r \x01(\v2..NAlice.TIotWaterLeakSensorEventExternalSourceH\x00R\x1dIotWaterLeakSensorEventSource\x12\x82\x01\n" +
+	"!IotWaterLeakSensorEventTimeSource\x18\x0e \x01(\v22.NAlice.TIotWaterLeakSensorEventTimeExternalSourceH\x00R!IotWaterLeakSensorEventTimeSource\x12g\n" +
+	"\x18IotOpenSensorEventSource\x18\x0f \x01(\v2).NAlice.TIotOpenSensorEventExternalSourceH\x00R\x18IotOpenSensorEventSource\x12s\n" +
+	"\x1cIotOpenSensorEventTimeSource\x18\x10 \x01(\v2-.NAlice.TIotOpenSensorEventTimeExternalSourceH\x00R\x1cIotOpenSensorEventTimeSource\x12p\n" +
+	"\x1bIotOpeningSensorEventSource\x18\x11 \x01(\v2,.NAlice.TIotOpeningSensorEventExternalSourceH\x00R\x1bIotOpeningSensorEventSource\x12|\n" +
+	"\x1fIotOpeningSensorEventTimeSource\x18\x12 \x01(\v20.NAlice.TIotOpeningSensorEventTimeExternalSourceH\x00R\x1fIotOpeningSensorEventTimeSource\x12[\n" +
+	"\x14IotMotionEventSource\x18\x13 \x01(\v2%.NAlice.TIotMotionEventExternalSourceH\x00R\x14IotMotionEventSource\x12g\n" +
+	"\x18IotMotionEventTimeSource\x18\x14 \x01(\v2).NAlice.TIotMotionEventTimeExternalSourceH\x00R\x18IotMotionEventTimeSource\x1a\x82\x01\n" +
+	"\vTStartValue\x12\x1a\n" +
+	"\aInteger\x18\x01 \x01(\x03H\x00R\aInteger\x12\x18\n" +
+	"\x06String\x18\x02 \x01(\tH\x00R\x06String\x12\x18\n" +
+	"\x06Double\x18\x03 \x01(\x01H\x00R\x06Double\x12\x1a\n" +
+	"\aBoolean\x18\x04 \x01(\bH\x00R\aBooleanB\a\n" +
+	"\x05Value\"\xb6\x03\n" +
 	"\vESourceType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\r\n" +
 	"\tClockTime\x10\x01\x12\x0e\n" +
@@ -1524,68 +1514,83 @@ const file_alice_protos_div_div_external_variable_sources_proto_rawDesc = "" +
 	"\x12IotMotionEventTime\x10\x122i\n" +
 	"\n" +
 	"sourceType\x12\x1d.google.protobuf.FieldOptions\x18\xe0\xa7\x12 \x01(\x0e2(.NAlice.TDivExternalVariable.ESourceTypeR\n" +
-	"sourceType:\x04\xa8\xdd\x1b\x04B\x14\n" +
-	"\x06Source\x12\n" +
-	"\xaa\xdd\x1b\x06source\"J\n" +
-	"\x1bTClockTimeDivExternalSource\x12%\n" +
-	"\aPattern\x18\x02 \x01(\tB\v\xaa\xdd\x1b\apatternR\apattern:\x04\xa8\xdd\x1b\x04\"y\n" +
-	"\x1cTTimerStateDivExternalSource\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id\"*\n" +
+	"sourceTypeB\b\n" +
+	"\x06Source\"7\n" +
+	"\x1bTClockTimeDivExternalSource\x12\x18\n" +
+	"\aPattern\x18\x02 \x01(\tR\aPattern\"d\n" +
+	"\x1cTTimerStateDivExternalSource\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\"*\n" +
 	"\x06EState\x12\b\n" +
 	"\x04Idle\x10\x00\x12\n" +
 	"\n" +
 	"\x06Active\x10\x01\x12\n" +
 	"\n" +
-	"\x06Paused\x10\x02:\x04\xa8\xdd\x1b\x04\"Z\n" +
-	")TTimerRemainingFormattedDivExternalSource\x12'\n" +
-	"\aTimerId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimer_idR\btimer_id:\x04\xa8\xdd\x1b\x04\"T\n" +
-	"\x1aTIotOnOffDivExternalSource\x120\n" +
+	"\x06Paused\x10\x02\"E\n" +
+	")TTimerRemainingFormattedDivExternalSource\x12\x18\n" +
+	"\aTimerId\x18\x02 \x01(\tR\aTimerId\"<\n" +
+	"\x1aTIotOnOffDivExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"\xa2\x01\n" +
-	"\x1aTIotLevelDivExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"|\n" +
+	"\x1aTIotLevelDivExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12L\n" +
-	"\bInstance\x18\x02 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceB\f\xaa\xdd\x1b\binstanceR\binstance:\x04\xa8\xdd\x1b\x04\"`\n" +
-	"&TIotBatteryPercentageDivExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12>\n" +
+	"\bInstance\x18\x02 \x01(\x0e2\".NAlice.TLevelCapability.EInstanceR\bInstance\"H\n" +
+	"&TIotBatteryPercentageDivExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"]\n" +
-	"#TIotBatteryVoltageDivExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"E\n" +
+	"#TIotBatteryVoltageDivExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"R\n" +
-	"\x18TIotMotionExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\":\n" +
+	"\x18TIotMotionExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"W\n" +
-	"\x1dTIotMotionEventExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"?\n" +
+	"\x1dTIotMotionEventExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"[\n" +
-	"!TIotMotionEventTimeExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"C\n" +
+	"!TIotMotionEventTimeExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"W\n" +
-	"\x1dTIotButtonEventExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"?\n" +
+	"\x1dTIotButtonEventExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"[\n" +
-	"!TIotButtonEventTimeExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"C\n" +
+	"!TIotButtonEventTimeExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"`\n" +
-	"&TIotWaterLeakSensorEventExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"H\n" +
+	"&TIotWaterLeakSensorEventExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"d\n" +
-	"*TIotWaterLeakSensorEventTimeExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"L\n" +
+	"*TIotWaterLeakSensorEventTimeExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"]\n" +
-	"!TIotOpenSensorEventExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"C\n" +
+	"!TIotOpenSensorEventExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x06\xa8\xdd\x1b\x04\x18\x01\"a\n" +
-	"%TIotOpenSensorEventTimeExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"G\n" +
+	"%TIotOpenSensorEventTimeExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x06\xa8\xdd\x1b\x04\x18\x01\"^\n" +
-	"$TIotOpeningSensorEventExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"F\n" +
+	"$TIotOpeningSensorEventExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04\"b\n" +
-	"(TIotOpeningSensorEventTimeExternalSource\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\"J\n" +
+	"(TIotOpeningSensorEventTimeExternalSource\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id:\x04\xa8\xdd\x1b\x04B?\n" +
-	"\x1aru.yandex.alice.protos.divZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointIdB\xa7\x01\n" +
+	"\n" +
+	"com.NAliceB\x1fDivExternalVariableSourcesProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div_external_variable_sources_proto_rawDescOnce sync.Once

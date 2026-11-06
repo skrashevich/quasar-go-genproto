@@ -72,10 +72,10 @@ func (TSyncPush_ESyncPushClientType) EnumDescriptor() ([]byte, []int) {
 
 type TSyncPush struct {
 	state               protoimpl.MessageState         `protogen:"open.v1"`
-	PushId              string                         `protobuf:"bytes,1,opt,name=PushId,json=push_id,proto3" json:"PushId,omitempty"`
-	SyncRequest         *sync_request.TSyncRequest     `protobuf:"bytes,3,opt,name=SyncRequest,json=sync_request,proto3" json:"SyncRequest,omitempty"`
-	AnalyticsMetaInfo   *common.TAnalyticsMetaInfo     `protobuf:"bytes,4,opt,name=AnalyticsMetaInfo,json=analytics_meta_info,proto3" json:"AnalyticsMetaInfo,omitempty"`
-	DeduplicationPushId *string                        `protobuf:"bytes,2,opt,name=DeduplicationPushId,json=deduplication_push_id,proto3,oneof" json:"DeduplicationPushId,omitempty"`
+	PushId              string                         `protobuf:"bytes,1,opt,name=PushId,proto3" json:"PushId,omitempty"`
+	SyncRequest         *sync_request.TSyncRequest     `protobuf:"bytes,3,opt,name=SyncRequest,proto3" json:"SyncRequest,omitempty"`
+	AnalyticsMetaInfo   *common.TAnalyticsMetaInfo     `protobuf:"bytes,4,opt,name=AnalyticsMetaInfo,proto3" json:"AnalyticsMetaInfo,omitempty"`
+	DeduplicationPushId *string                        `protobuf:"bytes,2,opt,name=DeduplicationPushId,proto3,oneof" json:"DeduplicationPushId,omitempty"`
 	SyncPushClientType  *TSyncPush_ESyncPushClientType `protobuf:"varint,5,opt,name=SyncPushClientType,json=sync_push_client_type,proto3,enum=NAlice.NAliceApi.TSyncPush_ESyncPushClientType,oneof" json:"SyncPushClientType,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
@@ -150,19 +150,19 @@ var File_alice_protos_api_alicekit_events_sync_push_sync_push_proto protoreflect
 
 const file_alice_protos_api_alicekit_events_sync_push_sync_push_proto_rawDesc = "" +
 	"\n" +
-	":alice/protos/api/alicekit/events/sync_push/sync_push.proto\x12\x10NAlice.NAliceApi\x1aJalice/protos/api/alicekit/events/sync_push/sync_request/sync_request.proto\x1a8alice/protos/api/matrix/common/analytics_meta_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xae\x04\n" +
-	"\tTSyncPush\x12$\n" +
-	"\x06PushId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apush_idR\apush_id\x12S\n" +
-	"\vSyncRequest\x18\x03 \x01(\v2\x1e.NAlice.NAliceApi.TSyncRequestB\x10\xaa\xdd\x1b\fsync_requestR\fsync_request\x12i\n" +
-	"\x11AnalyticsMetaInfo\x18\x04 \x01(\v2 .NMatrix.NApi.TAnalyticsMetaInfoB\x17\xaa\xdd\x1b\x13analytics_meta_infoR\x13analytics_meta_info\x12R\n" +
-	"\x13DeduplicationPushId\x18\x02 \x01(\tB\x19\xaa\xdd\x1b\x15deduplication_push_idH\x00R\x15deduplication_push_id\x88\x01\x01\x12\x82\x01\n" +
+	":alice/protos/api/alicekit/events/sync_push/sync_push.proto\x12\x10NAlice.NAliceApi\x1aJalice/protos/api/alicekit/events/sync_push/sync_request/sync_request.proto\x1a8alice/protos/api/matrix/common/analytics_meta_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcf\x03\n" +
+	"\tTSyncPush\x12\x16\n" +
+	"\x06PushId\x18\x01 \x01(\tR\x06PushId\x12@\n" +
+	"\vSyncRequest\x18\x03 \x01(\v2\x1e.NAlice.NAliceApi.TSyncRequestR\vSyncRequest\x12N\n" +
+	"\x11AnalyticsMetaInfo\x18\x04 \x01(\v2 .NMatrix.NApi.TAnalyticsMetaInfoR\x11AnalyticsMetaInfo\x125\n" +
+	"\x13DeduplicationPushId\x18\x02 \x01(\tH\x00R\x13DeduplicationPushId\x88\x01\x01\x12\x82\x01\n" +
 	"\x12SyncPushClientType\x18\x05 \x01(\x0e2/.NAlice.NAliceApi.TSyncPush.ESyncPushClientTypeB\x19\xaa\xdd\x1b\x15sync_push_client_typeH\x01R\x15sync_push_client_type\x88\x01\x01\"-\n" +
 	"\x13ESyncPushClientType\x12\b\n" +
 	"\x04sync\x10\x00\x12\f\n" +
-	"\bsync_iot\x10\x01:\x04\xa8\xdd\x1b\x04B\x16\n" +
+	"\bsync_iot\x10\x01B\x16\n" +
 	"\x14_DeduplicationPushIdB\x15\n" +
-	"\x13_SyncPushClientTypeB\x7f\n" +
-	"4ru.yandex.alice.protos.api.alicekit.events.sync_pushB\bSyncPushP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/events/sync_pushb\x06proto3"
+	"\x13_SyncPushClientTypeB\xe2\x01\n" +
+	"\x14com.NAlice.NAliceApiB\rSyncPushProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_sync_push_proto_rawDescOnce sync.Once

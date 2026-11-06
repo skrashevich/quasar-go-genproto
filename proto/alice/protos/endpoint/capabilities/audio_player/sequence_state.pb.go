@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/audio_player/sequence_state.proto
 
-package audioplayerpb
+package audio_player
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -28,11 +28,11 @@ const (
 
 type TAudioPlayerSequenceState struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Queue            []*TSequenceItem       `protobuf:"bytes,1,rep,name=Queue,json=queue,proto3" json:"Queue,omitempty"`
-	History          []*TSequenceItem       `protobuf:"bytes,2,rep,name=History,json=history,proto3" json:"History,omitempty"`
-	CurrentItem      *TSequenceItem         `protobuf:"bytes,3,opt,name=CurrentItem,json=current_item,proto3" json:"CurrentItem,omitempty"`
-	MetaStorage      *music.TMetaStorage    `protobuf:"bytes,4,opt,name=MetaStorage,json=meta_storage,proto3" json:"MetaStorage,omitempty"`
-	CallbacksStorage *TCallbacksStorage     `protobuf:"bytes,5,opt,name=CallbacksStorage,json=callbacks_storage,proto3" json:"CallbacksStorage,omitempty"`
+	Queue            []*TSequenceItem       `protobuf:"bytes,1,rep,name=Queue,proto3" json:"Queue,omitempty"`
+	History          []*TSequenceItem       `protobuf:"bytes,2,rep,name=History,proto3" json:"History,omitempty"`
+	CurrentItem      *TSequenceItem         `protobuf:"bytes,3,opt,name=CurrentItem,proto3" json:"CurrentItem,omitempty"`
+	MetaStorage      *music.TMetaStorage    `protobuf:"bytes,4,opt,name=MetaStorage,proto3" json:"MetaStorage,omitempty"`
+	CallbacksStorage *TCallbacksStorage     `protobuf:"bytes,5,opt,name=CallbacksStorage,proto3" json:"CallbacksStorage,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -104,8 +104,8 @@ func (x *TAudioPlayerSequenceState) GetCallbacksStorage() *TCallbacksStorage {
 
 type TSequenceItem struct {
 	state             protoimpl.MessageState       `protogen:"open.v1"`
-	MusicProvider     music_provider.MusicProvider `protobuf:"varint,101,opt,name=MusicProvider,json=music_provider,proto3,enum=Alice.Music.MusicProvider" json:"MusicProvider,omitempty"`
-	OperatingFeatures *music.TOperatingFeatures    `protobuf:"bytes,102,opt,name=OperatingFeatures,json=operating_features,proto3" json:"OperatingFeatures,omitempty"`
+	MusicProvider     music_provider.MusicProvider `protobuf:"varint,101,opt,name=MusicProvider,proto3,enum=Alice.Music.MusicProvider" json:"MusicProvider,omitempty"`
+	OperatingFeatures *music.TOperatingFeatures    `protobuf:"bytes,102,opt,name=OperatingFeatures,proto3" json:"OperatingFeatures,omitempty"`
 	// Types that are valid to be assigned to SequenceItem:
 	//
 	//	*TSequenceItem_Track
@@ -239,31 +239,31 @@ type isTSequenceItem_SequenceItem interface {
 }
 
 type TSequenceItem_Track struct {
-	Track *TSequenceItem_TTrack `protobuf:"bytes,1,opt,name=Track,json=track,proto3,oneof"`
+	Track *TSequenceItem_TTrack `protobuf:"bytes,1,opt,name=Track,proto3,oneof"`
 }
 
 type TSequenceItem_Album struct {
-	Album *TSequenceItem_TAlbum `protobuf:"bytes,2,opt,name=Album,json=album,proto3,oneof"`
+	Album *TSequenceItem_TAlbum `protobuf:"bytes,2,opt,name=Album,proto3,oneof"`
 }
 
 type TSequenceItem_Artist struct {
-	Artist *TSequenceItem_TArtist `protobuf:"bytes,3,opt,name=Artist,json=artist,proto3,oneof"`
+	Artist *TSequenceItem_TArtist `protobuf:"bytes,3,opt,name=Artist,proto3,oneof"`
 }
 
 type TSequenceItem_Playlist struct {
-	Playlist *TSequenceItem_TPlaylist `protobuf:"bytes,4,opt,name=Playlist,json=playlist,proto3,oneof"`
+	Playlist *TSequenceItem_TPlaylist `protobuf:"bytes,4,opt,name=Playlist,proto3,oneof"`
 }
 
 type TSequenceItem_Recommendations struct {
-	Recommendations *TSequenceItem_TRecommendations `protobuf:"bytes,5,opt,name=Recommendations,json=recommendations,proto3,oneof"`
+	Recommendations *TSequenceItem_TRecommendations `protobuf:"bytes,5,opt,name=Recommendations,proto3,oneof"`
 }
 
 type TSequenceItem_FmRadio struct {
-	FmRadio *TSequenceItem_TFmRadio `protobuf:"bytes,6,opt,name=FmRadio,json=fm_radio,proto3,oneof"`
+	FmRadio *TSequenceItem_TFmRadio `protobuf:"bytes,6,opt,name=FmRadio,proto3,oneof"`
 }
 
 type TSequenceItem_Generative struct {
-	Generative *TSequenceItem_TGenerative `protobuf:"bytes,7,opt,name=Generative,json=generative,proto3,oneof"`
+	Generative *TSequenceItem_TGenerative `protobuf:"bytes,7,opt,name=Generative,proto3,oneof"`
 }
 
 func (*TSequenceItem_Track) isTSequenceItem_SequenceItem() {}
@@ -281,8 +281,8 @@ func (*TSequenceItem_FmRadio) isTSequenceItem_SequenceItem() {}
 func (*TSequenceItem_Generative) isTSequenceItem_SequenceItem() {}
 
 type TCallbacksStorage struct {
-	state         protoimpl.MessageState                          `protogen:"open.v1"`
-	Callbacks     map[string]*TCallbacksStorage_TCallbackPayloads `protobuf:"bytes,1,rep,name=Callbacks,json=callbacks,proto3" json:"Callbacks,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Callbacks     []*TCallbacksStorage_CallbacksEntry `protobuf:"bytes,1,rep,name=Callbacks,proto3" json:"Callbacks,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,7 +317,7 @@ func (*TCallbacksStorage) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *TCallbacksStorage) GetCallbacks() map[string]*TCallbacksStorage_TCallbackPayloads {
+func (x *TCallbacksStorage) GetCallbacks() []*TCallbacksStorage_CallbacksEntry {
 	if x != nil {
 		return x.Callbacks
 	}
@@ -326,9 +326,9 @@ func (x *TCallbacksStorage) GetCallbacks() map[string]*TCallbacksStorage_TCallba
 
 type TSequenceItem_TContainerQueue struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	CurrentTrack  *TSequenceItem_TTrack   `protobuf:"bytes,1,opt,name=CurrentTrack,json=current_track,proto3" json:"CurrentTrack,omitempty"`
-	TracksBefore  []*TSequenceItem_TTrack `protobuf:"bytes,2,rep,name=TracksBefore,json=tracks_before,proto3" json:"TracksBefore,omitempty"`
-	TracksAfter   []*TSequenceItem_TTrack `protobuf:"bytes,3,rep,name=TracksAfter,json=tracks_after,proto3" json:"TracksAfter,omitempty"`
+	CurrentTrack  *TSequenceItem_TTrack   `protobuf:"bytes,1,opt,name=CurrentTrack,proto3" json:"CurrentTrack,omitempty"`
+	TracksBefore  []*TSequenceItem_TTrack `protobuf:"bytes,2,rep,name=TracksBefore,proto3" json:"TracksBefore,omitempty"`
+	TracksAfter   []*TSequenceItem_TTrack `protobuf:"bytes,3,rep,name=TracksAfter,proto3" json:"TracksAfter,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -386,14 +386,14 @@ func (x *TSequenceItem_TContainerQueue) GetTracksAfter() []*TSequenceItem_TTrack
 
 type TSequenceItem_TMusicContainer struct {
 	state          protoimpl.MessageState         `protogen:"open.v1"`
-	Id             string                         `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Uuid           string                         `protobuf:"bytes,2,opt,name=Uuid,json=uuid,proto3" json:"Uuid,omitempty"`
-	Queue          *TSequenceItem_TContainerQueue `protobuf:"bytes,5,opt,name=Queue,json=queue,proto3" json:"Queue,omitempty"`
-	IsShuffled     bool                           `protobuf:"varint,6,opt,name=IsShuffled,json=is_shuffled,proto3" json:"IsShuffled,omitempty"`
-	RepeatType     music_provider.RepeatType      `protobuf:"varint,7,opt,name=RepeatType,json=repeat_type,proto3,enum=Alice.Music.RepeatType" json:"RepeatType,omitempty"`
-	LikeStatus     music_provider.LikeStatus      `protobuf:"varint,8,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
-	StartPosition  *uint32                        `protobuf:"varint,3,opt,name=StartPosition,json=start_position,proto3,oneof" json:"StartPosition,omitempty"`
-	FinishPosition *uint32                        `protobuf:"varint,4,opt,name=FinishPosition,json=finish_position,proto3,oneof" json:"FinishPosition,omitempty"`
+	Id             string                         `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Uuid           string                         `protobuf:"bytes,2,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Queue          *TSequenceItem_TContainerQueue `protobuf:"bytes,5,opt,name=Queue,proto3" json:"Queue,omitempty"`
+	IsShuffled     bool                           `protobuf:"varint,6,opt,name=IsShuffled,proto3" json:"IsShuffled,omitempty"`
+	RepeatType     music_provider.RepeatType      `protobuf:"varint,7,opt,name=RepeatType,proto3,enum=Alice.Music.RepeatType" json:"RepeatType,omitempty"`
+	LikeStatus     music_provider.LikeStatus      `protobuf:"varint,8,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	StartPosition  *uint32                        `protobuf:"varint,3,opt,name=StartPosition,proto3,oneof" json:"StartPosition,omitempty"`
+	FinishPosition *uint32                        `protobuf:"varint,4,opt,name=FinishPosition,proto3,oneof" json:"FinishPosition,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -486,10 +486,10 @@ func (x *TSequenceItem_TMusicContainer) GetFinishPosition() uint32 {
 
 type TSequenceItem_TTrackParameters struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Bpm               uint32                 `protobuf:"varint,1,opt,name=Bpm,json=bpm,proto3" json:"Bpm,omitempty"`
-	Hue               uint32                 `protobuf:"varint,2,opt,name=Hue,json=hue,proto3" json:"Hue,omitempty"`
-	Energy            float32                `protobuf:"fixed32,3,opt,name=Energy,json=energy,proto3" json:"Energy,omitempty"`
-	UserCollectionHue uint32                 `protobuf:"varint,4,opt,name=UserCollectionHue,json=user_collection_hue,proto3" json:"UserCollectionHue,omitempty"`
+	Bpm               uint32                 `protobuf:"varint,1,opt,name=Bpm,proto3" json:"Bpm,omitempty"`
+	Hue               uint32                 `protobuf:"varint,2,opt,name=Hue,proto3" json:"Hue,omitempty"`
+	Energy            float32                `protobuf:"fixed32,3,opt,name=Energy,proto3" json:"Energy,omitempty"`
+	UserCollectionHue uint32                 `protobuf:"varint,4,opt,name=UserCollectionHue,proto3" json:"UserCollectionHue,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -554,10 +554,10 @@ func (x *TSequenceItem_TTrackParameters) GetUserCollectionHue() uint32 {
 
 type TSequenceItem_TDerivedColors struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Accent        string                 `protobuf:"bytes,1,opt,name=Accent,json=accent,proto3" json:"Accent,omitempty"`
-	Average       string                 `protobuf:"bytes,2,opt,name=Average,json=average,proto3" json:"Average,omitempty"`
-	MiniPlayer    string                 `protobuf:"bytes,3,opt,name=MiniPlayer,json=mini_player,proto3" json:"MiniPlayer,omitempty"`
-	WaveText      string                 `protobuf:"bytes,4,opt,name=WaveText,json=wave_text,proto3" json:"WaveText,omitempty"`
+	Accent        string                 `protobuf:"bytes,1,opt,name=Accent,proto3" json:"Accent,omitempty"`
+	Average       string                 `protobuf:"bytes,2,opt,name=Average,proto3" json:"Average,omitempty"`
+	MiniPlayer    string                 `protobuf:"bytes,3,opt,name=MiniPlayer,proto3" json:"MiniPlayer,omitempty"`
+	WaveText      string                 `protobuf:"bytes,4,opt,name=WaveText,proto3" json:"WaveText,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -622,13 +622,13 @@ func (x *TSequenceItem_TDerivedColors) GetWaveText() string {
 
 type TSequenceItem_TTrack struct {
 	state              protoimpl.MessageState          `protogen:"open.v1"`
-	Id                 string                          `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Uuid               string                          `protobuf:"bytes,2,opt,name=Uuid,json=uuid,proto3" json:"Uuid,omitempty"`
-	LikeStatus         music_provider.LikeStatus       `protobuf:"varint,3,opt,name=LikeStatus,json=like_status,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
-	RepeatType         music_provider.RepeatType       `protobuf:"varint,4,opt,name=RepeatType,json=repeat_type,proto3,enum=Alice.Music.RepeatType" json:"RepeatType,omitempty"`
-	HasAvailableLyrics bool                            `protobuf:"varint,5,opt,name=HasAvailableLyrics,json=has_available_lyrics,proto3" json:"HasAvailableLyrics,omitempty"`
-	TrackParameters    *TSequenceItem_TTrackParameters `protobuf:"bytes,6,opt,name=TrackParameters,json=track_parameters,proto3,oneof" json:"TrackParameters,omitempty"`
-	DerivedColors      *TSequenceItem_TDerivedColors   `protobuf:"bytes,7,opt,name=DerivedColors,json=derived_colors,proto3,oneof" json:"DerivedColors,omitempty"`
+	Id                 string                          `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Uuid               string                          `protobuf:"bytes,2,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	LikeStatus         music_provider.LikeStatus       `protobuf:"varint,3,opt,name=LikeStatus,proto3,enum=Alice.Music.LikeStatus" json:"LikeStatus,omitempty"`
+	RepeatType         music_provider.RepeatType       `protobuf:"varint,4,opt,name=RepeatType,proto3,enum=Alice.Music.RepeatType" json:"RepeatType,omitempty"`
+	HasAvailableLyrics bool                            `protobuf:"varint,5,opt,name=HasAvailableLyrics,proto3" json:"HasAvailableLyrics,omitempty"`
+	TrackParameters    *TSequenceItem_TTrackParameters `protobuf:"bytes,6,opt,name=TrackParameters,proto3,oneof" json:"TrackParameters,omitempty"`
+	DerivedColors      *TSequenceItem_TDerivedColors   `protobuf:"bytes,7,opt,name=DerivedColors,proto3,oneof" json:"DerivedColors,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -714,7 +714,7 @@ func (x *TSequenceItem_TTrack) GetDerivedColors() *TSequenceItem_TDerivedColors 
 
 type TSequenceItem_TAlbum struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,json=container,proto3" json:"Container,omitempty"`
+	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,proto3" json:"Container,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -758,7 +758,7 @@ func (x *TSequenceItem_TAlbum) GetContainer() *TSequenceItem_TMusicContainer {
 
 type TSequenceItem_TArtist struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,json=container,proto3" json:"Container,omitempty"`
+	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,proto3" json:"Container,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -802,7 +802,7 @@ func (x *TSequenceItem_TArtist) GetContainer() *TSequenceItem_TMusicContainer {
 
 type TSequenceItem_TPlaylist struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,json=container,proto3" json:"Container,omitempty"`
+	Container     *TSequenceItem_TMusicContainer `protobuf:"bytes,1,opt,name=Container,proto3" json:"Container,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -846,10 +846,10 @@ func (x *TSequenceItem_TPlaylist) GetContainer() *TSequenceItem_TMusicContainer 
 
 type TSequenceItem_TRecommendations struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Id            string                         `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Uuid          string                         `protobuf:"bytes,2,opt,name=Uuid,json=uuid,proto3" json:"Uuid,omitempty"`
-	Queue         *TSequenceItem_TContainerQueue `protobuf:"bytes,3,opt,name=Queue,json=queue,proto3" json:"Queue,omitempty"`
-	UseIchwill    bool                           `protobuf:"varint,4,opt,name=UseIchwill,json=use_ichwill,proto3" json:"UseIchwill,omitempty"`
+	Id            string                         `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Uuid          string                         `protobuf:"bytes,2,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Queue         *TSequenceItem_TContainerQueue `protobuf:"bytes,3,opt,name=Queue,proto3" json:"Queue,omitempty"`
+	UseIchwill    bool                           `protobuf:"varint,4,opt,name=UseIchwill,proto3" json:"UseIchwill,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -914,7 +914,7 @@ func (x *TSequenceItem_TRecommendations) GetUseIchwill() bool {
 
 type TSequenceItem_TFmRadio struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -958,7 +958,7 @@ func (x *TSequenceItem_TFmRadio) GetId() string {
 
 type TSequenceItem_TGenerative struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1002,23 +1002,23 @@ func (x *TSequenceItem_TGenerative) GetId() string {
 
 type TCallbacksStorage_TCallbackPayloads struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	MusicPlay          *structpb.Struct       `protobuf:"bytes,1,opt,name=MusicPlay,json=music_play,proto3" json:"MusicPlay,omitempty"`
-	Like               *structpb.Struct       `protobuf:"bytes,2,opt,name=Like,json=like,proto3,oneof" json:"Like,omitempty"`
-	Dislike            *structpb.Struct       `protobuf:"bytes,3,opt,name=Dislike,json=dislike,proto3,oneof" json:"Dislike,omitempty"`
-	UnDislike          *structpb.Struct       `protobuf:"bytes,4,opt,name=UnDislike,json=undislike,proto3,oneof" json:"UnDislike,omitempty"`
-	UnLike             *structpb.Struct       `protobuf:"bytes,5,opt,name=UnLike,json=unlike,proto3,oneof" json:"UnLike,omitempty"`
-	Next               *structpb.Struct       `protobuf:"bytes,6,opt,name=Next,json=next,proto3,oneof" json:"Next,omitempty"`
-	Previous           *structpb.Struct       `protobuf:"bytes,7,opt,name=Previous,json=previous,proto3,oneof" json:"Previous,omitempty"`
-	RepeatOne          *structpb.Struct       `protobuf:"bytes,8,opt,name=RepeatOne,json=repeat_one,proto3,oneof" json:"RepeatOne,omitempty"`
-	RepeatAll          *structpb.Struct       `protobuf:"bytes,9,opt,name=RepeatAll,json=repeat_all,proto3,oneof" json:"RepeatAll,omitempty"`
-	UnRepeat           *structpb.Struct       `protobuf:"bytes,10,opt,name=UnRepeat,json=unrepeat,proto3,oneof" json:"UnRepeat,omitempty"`
-	Shuffle            *structpb.Struct       `protobuf:"bytes,11,opt,name=Shuffle,json=shuffle,proto3,oneof" json:"Shuffle,omitempty"`
-	UnShuffle          *structpb.Struct       `protobuf:"bytes,12,opt,name=UnShuffle,json=unshuffle,proto3,oneof" json:"UnShuffle,omitempty"`
-	NextStopped        *structpb.Struct       `protobuf:"bytes,13,opt,name=NextStopped,json=next_stopped,proto3,oneof" json:"NextStopped,omitempty"`
-	PrevStopped        *structpb.Struct       `protobuf:"bytes,14,opt,name=PrevStopped,json=prev_stopped,proto3,oneof" json:"PrevStopped,omitempty"`
-	GetLyrics          *structpb.Struct       `protobuf:"bytes,15,opt,name=GetLyrics,json=get_lyrics,proto3,oneof" json:"GetLyrics,omitempty"`
-	EnableKaraokeMode  *structpb.Struct       `protobuf:"bytes,16,opt,name=EnableKaraokeMode,json=enable_karaoke_mode,proto3,oneof" json:"EnableKaraokeMode,omitempty"`
-	DisableKaraokeMode *structpb.Struct       `protobuf:"bytes,17,opt,name=DisableKaraokeMode,json=disable_karaoke_mode,proto3,oneof" json:"DisableKaraokeMode,omitempty"`
+	MusicPlay          *structpb.Struct       `protobuf:"bytes,1,opt,name=MusicPlay,proto3" json:"MusicPlay,omitempty"`
+	Like               *structpb.Struct       `protobuf:"bytes,2,opt,name=Like,proto3,oneof" json:"Like,omitempty"`
+	Dislike            *structpb.Struct       `protobuf:"bytes,3,opt,name=Dislike,proto3,oneof" json:"Dislike,omitempty"`
+	UnDislike          *structpb.Struct       `protobuf:"bytes,4,opt,name=UnDislike,proto3,oneof" json:"UnDislike,omitempty"`
+	UnLike             *structpb.Struct       `protobuf:"bytes,5,opt,name=UnLike,proto3,oneof" json:"UnLike,omitempty"`
+	Next               *structpb.Struct       `protobuf:"bytes,6,opt,name=Next,proto3,oneof" json:"Next,omitempty"`
+	Previous           *structpb.Struct       `protobuf:"bytes,7,opt,name=Previous,proto3,oneof" json:"Previous,omitempty"`
+	RepeatOne          *structpb.Struct       `protobuf:"bytes,8,opt,name=RepeatOne,proto3,oneof" json:"RepeatOne,omitempty"`
+	RepeatAll          *structpb.Struct       `protobuf:"bytes,9,opt,name=RepeatAll,proto3,oneof" json:"RepeatAll,omitempty"`
+	UnRepeat           *structpb.Struct       `protobuf:"bytes,10,opt,name=UnRepeat,proto3,oneof" json:"UnRepeat,omitempty"`
+	Shuffle            *structpb.Struct       `protobuf:"bytes,11,opt,name=Shuffle,proto3,oneof" json:"Shuffle,omitempty"`
+	UnShuffle          *structpb.Struct       `protobuf:"bytes,12,opt,name=UnShuffle,proto3,oneof" json:"UnShuffle,omitempty"`
+	NextStopped        *structpb.Struct       `protobuf:"bytes,13,opt,name=NextStopped,proto3,oneof" json:"NextStopped,omitempty"`
+	PrevStopped        *structpb.Struct       `protobuf:"bytes,14,opt,name=PrevStopped,proto3,oneof" json:"PrevStopped,omitempty"`
+	GetLyrics          *structpb.Struct       `protobuf:"bytes,15,opt,name=GetLyrics,proto3,oneof" json:"GetLyrics,omitempty"`
+	EnableKaraokeMode  *structpb.Struct       `protobuf:"bytes,16,opt,name=EnableKaraokeMode,proto3,oneof" json:"EnableKaraokeMode,omitempty"`
+	DisableKaraokeMode *structpb.Struct       `protobuf:"bytes,17,opt,name=DisableKaraokeMode,proto3,oneof" json:"DisableKaraokeMode,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1172,120 +1172,168 @@ func (x *TCallbacksStorage_TCallbackPayloads) GetDisableKaraokeMode() *structpb.
 	return nil
 }
 
+type TCallbacksStorage_CallbacksEntry struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Key           string                               `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TCallbacksStorage_TCallbackPayloads `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TCallbacksStorage_CallbacksEntry) Reset() {
+	*x = TCallbacksStorage_CallbacksEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TCallbacksStorage_CallbacksEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TCallbacksStorage_CallbacksEntry) ProtoMessage() {}
+
+func (x *TCallbacksStorage_CallbacksEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TCallbacksStorage_CallbacksEntry.ProtoReflect.Descriptor instead.
+func (*TCallbacksStorage_CallbacksEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_rawDescGZIP(), []int{2, 1}
+}
+
+func (x *TCallbacksStorage_CallbacksEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TCallbacksStorage_CallbacksEntry) GetValue() *TCallbacksStorage_TCallbackPayloads {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/endpoint/capabilities/audio_player/sequence_state.proto\x12\x06NAlice\x1a3alice/protos/data/scenario/music/meta_storage.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a;alice/protos/data/scenario/music/music_platform_queue.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\x9a\x03\n" +
-	"\x19TAudioPlayerSequenceState\x126\n" +
-	"\x05Queue\x18\x01 \x03(\v2\x15.NAlice.TSequenceItemB\t\xaa\xdd\x1b\x05queueR\x05queue\x12<\n" +
-	"\aHistory\x18\x02 \x03(\v2\x15.NAlice.TSequenceItemB\v\xaa\xdd\x1b\ahistoryR\ahistory\x12J\n" +
-	"\vCurrentItem\x18\x03 \x01(\v2\x15.NAlice.TSequenceItemB\x10\xaa\xdd\x1b\fcurrent_itemR\fcurrent_item\x12V\n" +
-	"\vMetaStorage\x18\x04 \x01(\v2!.NAlice.NData.NMusic.TMetaStorageB\x10\xaa\xdd\x1b\fmeta_storageR\fmeta_storage\x12]\n" +
-	"\x10CallbacksStorage\x18\x05 \x01(\v2\x19.NAlice.TCallbacksStorageB\x15\xaa\xdd\x1b\x11callbacks_storageR\x11callbacks_storage:\x04\xa8\xdd\x1b\x04\"\xc1\x17\n" +
-	"\rTSequenceItem\x12U\n" +
-	"\rMusicProvider\x18e \x01(\x0e2\x1a.Alice.Music.MusicProviderB\x12\xaa\xdd\x1b\x0emusic_providerR\x0emusic_provider\x12n\n" +
-	"\x11OperatingFeatures\x18f \x01(\v2'.NAlice.NData.NMusic.TOperatingFeaturesB\x16\xaa\xdd\x1b\x12operating_featuresR\x12operating_features\x12?\n" +
-	"\x05Track\x18\x01 \x01(\v2\x1c.NAlice.TSequenceItem.TTrackB\t\xaa\xdd\x1b\x05trackH\x00R\x05track\x12?\n" +
-	"\x05Album\x18\x02 \x01(\v2\x1c.NAlice.TSequenceItem.TAlbumB\t\xaa\xdd\x1b\x05albumH\x00R\x05album\x12C\n" +
-	"\x06Artist\x18\x03 \x01(\v2\x1d.NAlice.TSequenceItem.TArtistB\n" +
-	"\xaa\xdd\x1b\x06artistH\x00R\x06artist\x12K\n" +
-	"\bPlaylist\x18\x04 \x01(\v2\x1f.NAlice.TSequenceItem.TPlaylistB\f\xaa\xdd\x1b\bplaylistH\x00R\bplaylist\x12g\n" +
-	"\x0fRecommendations\x18\x05 \x01(\v2&.NAlice.TSequenceItem.TRecommendationsB\x13\xaa\xdd\x1b\x0frecommendationsH\x00R\x0frecommendations\x12I\n" +
-	"\aFmRadio\x18\x06 \x01(\v2\x1e.NAlice.TSequenceItem.TFmRadioB\f\xaa\xdd\x1b\bfm_radioH\x00R\bfm_radio\x12S\n" +
+	"Dalice/protos/endpoint/capabilities/audio_player/sequence_state.proto\x12\x06NAlice\x1a3alice/protos/data/scenario/music/meta_storage.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a;alice/protos/data/scenario/music/music_platform_queue.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xbe\x02\n" +
+	"\x19TAudioPlayerSequenceState\x12+\n" +
+	"\x05Queue\x18\x01 \x03(\v2\x15.NAlice.TSequenceItemR\x05Queue\x12/\n" +
+	"\aHistory\x18\x02 \x03(\v2\x15.NAlice.TSequenceItemR\aHistory\x127\n" +
+	"\vCurrentItem\x18\x03 \x01(\v2\x15.NAlice.TSequenceItemR\vCurrentItem\x12C\n" +
+	"\vMetaStorage\x18\x04 \x01(\v2!.NAlice.NData.NMusic.TMetaStorageR\vMetaStorage\x12E\n" +
+	"\x10CallbacksStorage\x18\x05 \x01(\v2\x19.NAlice.TCallbacksStorageR\x10CallbacksStorage\"\xac\x12\n" +
+	"\rTSequenceItem\x12@\n" +
+	"\rMusicProvider\x18e \x01(\x0e2\x1a.Alice.Music.MusicProviderR\rMusicProvider\x12U\n" +
+	"\x11OperatingFeatures\x18f \x01(\v2'.NAlice.NData.NMusic.TOperatingFeaturesR\x11OperatingFeatures\x124\n" +
+	"\x05Track\x18\x01 \x01(\v2\x1c.NAlice.TSequenceItem.TTrackH\x00R\x05Track\x124\n" +
+	"\x05Album\x18\x02 \x01(\v2\x1c.NAlice.TSequenceItem.TAlbumH\x00R\x05Album\x127\n" +
+	"\x06Artist\x18\x03 \x01(\v2\x1d.NAlice.TSequenceItem.TArtistH\x00R\x06Artist\x12=\n" +
+	"\bPlaylist\x18\x04 \x01(\v2\x1f.NAlice.TSequenceItem.TPlaylistH\x00R\bPlaylist\x12R\n" +
+	"\x0fRecommendations\x18\x05 \x01(\v2&.NAlice.TSequenceItem.TRecommendationsH\x00R\x0fRecommendations\x12:\n" +
+	"\aFmRadio\x18\x06 \x01(\v2\x1e.NAlice.TSequenceItem.TFmRadioH\x00R\aFmRadio\x12C\n" +
 	"\n" +
-	"Generative\x18\a \x01(\v2!.NAlice.TSequenceItem.TGenerativeB\x0e\xaa\xdd\x1b\n" +
-	"generativeH\x00R\n" +
-	"generative\x1a\x96\x02\n" +
-	"\x0fTContainerQueue\x12T\n" +
-	"\fCurrentTrack\x18\x01 \x01(\v2\x1c.NAlice.TSequenceItem.TTrackB\x11\xaa\xdd\x1b\rcurrent_trackR\rcurrent_track\x12T\n" +
-	"\fTracksBefore\x18\x02 \x03(\v2\x1c.NAlice.TSequenceItem.TTrackB\x11\xaa\xdd\x1b\rtracks_beforeR\rtracks_before\x12Q\n" +
-	"\vTracksAfter\x18\x03 \x03(\v2\x1c.NAlice.TSequenceItem.TTrackB\x10\xaa\xdd\x1b\ftracks_afterR\ftracks_after:\x04\xa8\xdd\x1b\x04\x1a\x89\x04\n" +
-	"\x0fTMusicContainer\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12 \n" +
-	"\x04Uuid\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03R\x04uuid\x12F\n" +
-	"\x05Queue\x18\x05 \x01(\v2%.NAlice.TSequenceItem.TContainerQueueB\t\xaa\xdd\x1b\x05queueR\x05queue\x120\n" +
+	"Generative\x18\a \x01(\v2!.NAlice.TSequenceItem.TGenerativeH\x00R\n" +
+	"Generative\x1a\xd5\x01\n" +
+	"\x0fTContainerQueue\x12@\n" +
+	"\fCurrentTrack\x18\x01 \x01(\v2\x1c.NAlice.TSequenceItem.TTrackR\fCurrentTrack\x12@\n" +
+	"\fTracksBefore\x18\x02 \x03(\v2\x1c.NAlice.TSequenceItem.TTrackR\fTracksBefore\x12>\n" +
+	"\vTracksAfter\x18\x03 \x03(\v2\x1c.NAlice.TSequenceItem.TTrackR\vTracksAfter\x1a\x81\x03\n" +
+	"\x0fTMusicContainer\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Uuid\x18\x02 \x01(\tR\x04Uuid\x12;\n" +
+	"\x05Queue\x18\x05 \x01(\v2%.NAlice.TSequenceItem.TContainerQueueR\x05Queue\x12\x1e\n" +
 	"\n" +
-	"IsShuffled\x18\x06 \x01(\bB\x0f\xaa\xdd\x1b\vis_shuffledR\vis_shuffled\x12I\n" +
+	"IsShuffled\x18\x06 \x01(\bR\n" +
+	"IsShuffled\x127\n" +
 	"\n" +
-	"RepeatType\x18\a \x01(\x0e2\x17.Alice.Music.RepeatTypeB\x0f\xaa\xdd\x1b\vrepeat_typeR\vrepeat_type\x12I\n" +
+	"RepeatType\x18\a \x01(\x0e2\x17.Alice.Music.RepeatTypeR\n" +
+	"RepeatType\x127\n" +
 	"\n" +
-	"LikeStatus\x18\b \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\x12>\n" +
-	"\rStartPosition\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0estart_positionH\x00R\x0estart_position\x88\x01\x01\x12A\n" +
-	"\x0eFinishPosition\x18\x04 \x01(\rB\x13\xaa\xdd\x1b\x0ffinish_positionH\x01R\x0ffinish_position\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
+	"LikeStatus\x18\b \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\x12)\n" +
+	"\rStartPosition\x18\x03 \x01(\rH\x00R\rStartPosition\x88\x01\x01\x12+\n" +
+	"\x0eFinishPosition\x18\x04 \x01(\rH\x01R\x0eFinishPosition\x88\x01\x01B\x10\n" +
 	"\x0e_StartPositionB\x11\n" +
-	"\x0f_FinishPosition\x1a~\n" +
+	"\x0f_FinishPosition\x1a|\n" +
 	"\x10TTrackParameters\x12\x10\n" +
-	"\x03Bpm\x18\x01 \x01(\rR\x03bpm\x12\x10\n" +
-	"\x03Hue\x18\x02 \x01(\rR\x03hue\x12\x16\n" +
-	"\x06Energy\x18\x03 \x01(\x02R\x06energy\x12.\n" +
-	"\x11UserCollectionHue\x18\x04 \x01(\rR\x13user_collection_hue\x1a\x80\x01\n" +
+	"\x03Bpm\x18\x01 \x01(\rR\x03Bpm\x12\x10\n" +
+	"\x03Hue\x18\x02 \x01(\rR\x03Hue\x12\x16\n" +
+	"\x06Energy\x18\x03 \x01(\x02R\x06Energy\x12,\n" +
+	"\x11UserCollectionHue\x18\x04 \x01(\rR\x11UserCollectionHue\x1a~\n" +
 	"\x0eTDerivedColors\x12\x16\n" +
-	"\x06Accent\x18\x01 \x01(\tR\x06accent\x12\x18\n" +
-	"\aAverage\x18\x02 \x01(\tR\aaverage\x12\x1f\n" +
+	"\x06Accent\x18\x01 \x01(\tR\x06Accent\x12\x18\n" +
+	"\aAverage\x18\x02 \x01(\tR\aAverage\x12\x1e\n" +
 	"\n" +
-	"MiniPlayer\x18\x03 \x01(\tR\vmini_player\x12\x1b\n" +
-	"\bWaveText\x18\x04 \x01(\tR\twave_text\x1a\xa4\x04\n" +
-	"\x06TTrack\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12 \n" +
-	"\x04Uuid\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03R\x04uuid\x12I\n" +
+	"MiniPlayer\x18\x03 \x01(\tR\n" +
+	"MiniPlayer\x12\x1a\n" +
+	"\bWaveText\x18\x04 \x01(\tR\bWaveText\x1a\x9c\x03\n" +
+	"\x06TTrack\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Uuid\x18\x02 \x01(\tR\x04Uuid\x127\n" +
 	"\n" +
-	"LikeStatus\x18\x03 \x01(\x0e2\x17.Alice.Music.LikeStatusB\x0f\xaa\xdd\x1b\vlike_statusR\vlike_status\x12I\n" +
+	"LikeStatus\x18\x03 \x01(\x0e2\x17.Alice.Music.LikeStatusR\n" +
+	"LikeStatus\x127\n" +
 	"\n" +
-	"RepeatType\x18\x04 \x01(\x0e2\x17.Alice.Music.RepeatTypeB\x0f\xaa\xdd\x1b\vrepeat_typeR\vrepeat_type\x12J\n" +
-	"\x12HasAvailableLyrics\x18\x05 \x01(\bB\x18\xaa\xdd\x1b\x14has_available_lyricsR\x14has_available_lyrics\x12l\n" +
-	"\x0fTrackParameters\x18\x06 \x01(\v2&.NAlice.TSequenceItem.TTrackParametersB\x14\xaa\xdd\x1b\x10track_parametersH\x00R\x10track_parameters\x88\x01\x01\x12d\n" +
-	"\rDerivedColors\x18\a \x01(\v2$.NAlice.TSequenceItem.TDerivedColorsB\x12\xaa\xdd\x1b\x0ederived_colorsH\x01R\x0ederived_colors\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x12\n" +
+	"RepeatType\x18\x04 \x01(\x0e2\x17.Alice.Music.RepeatTypeR\n" +
+	"RepeatType\x12.\n" +
+	"\x12HasAvailableLyrics\x18\x05 \x01(\bR\x12HasAvailableLyrics\x12U\n" +
+	"\x0fTrackParameters\x18\x06 \x01(\v2&.NAlice.TSequenceItem.TTrackParametersH\x00R\x0fTrackParameters\x88\x01\x01\x12O\n" +
+	"\rDerivedColors\x18\a \x01(\v2$.NAlice.TSequenceItem.TDerivedColorsH\x01R\rDerivedColors\x88\x01\x01B\x12\n" +
 	"\x10_TrackParametersB\x10\n" +
-	"\x0e_DerivedColors\x1ab\n" +
-	"\x06TAlbum\x12R\n" +
-	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerB\r\xaa\xdd\x1b\tcontainerR\tcontainer:\x04\xa8\xdd\x1b\x04\x1ac\n" +
-	"\aTArtist\x12R\n" +
-	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerB\r\xaa\xdd\x1b\tcontainerR\tcontainer:\x04\xa8\xdd\x1b\x04\x1ae\n" +
-	"\tTPlaylist\x12R\n" +
-	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerB\r\xaa\xdd\x1b\tcontainerR\tcontainer:\x04\xa8\xdd\x1b\x04\x1a\xcc\x01\n" +
-	"\x10TRecommendations\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12 \n" +
-	"\x04Uuid\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03R\x04uuid\x12F\n" +
-	"\x05Queue\x18\x03 \x01(\v2%.NAlice.TSequenceItem.TContainerQueueB\t\xaa\xdd\x1b\x05queueR\x05queue\x120\n" +
+	"\x0e_DerivedColors\x1aM\n" +
+	"\x06TAlbum\x12C\n" +
+	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerR\tContainer\x1aN\n" +
+	"\aTArtist\x12C\n" +
+	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerR\tContainer\x1aP\n" +
+	"\tTPlaylist\x12C\n" +
+	"\tContainer\x18\x01 \x01(\v2%.NAlice.TSequenceItem.TMusicContainerR\tContainer\x1a\x93\x01\n" +
+	"\x10TRecommendations\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Uuid\x18\x02 \x01(\tR\x04Uuid\x12;\n" +
+	"\x05Queue\x18\x03 \x01(\v2%.NAlice.TSequenceItem.TContainerQueueR\x05Queue\x12\x1e\n" +
 	"\n" +
-	"UseIchwill\x18\x04 \x01(\bB\x0f\xaa\xdd\x1b\vuse_ichwillR\vuse_ichwill:\x04\xa8\xdd\x1b\x04\x1a(\n" +
-	"\bTFmRadio\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\x04\xa8\xdd\x1b\x04\x1a+\n" +
-	"\vTGenerative\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B!\n" +
-	"\fSequenceItem\x12\x11\xaa\xdd\x1b\rsequence_item\"\xe9\r\n" +
-	"\x11TCallbacksStorage\x12U\n" +
-	"\tCallbacks\x18\x01 \x03(\v2(.NAlice.TCallbacksStorage.CallbacksEntryB\r\xaa\xdd\x1b\tcallbacksR\tcallbacks\x1a\x8b\f\n" +
-	"\x11TCallbackPayloads\x12F\n" +
-	"\tMusicPlay\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x0e\xaa\xdd\x1b\n" +
-	"music_playR\n" +
-	"music_play\x12:\n" +
-	"\x04Like\x18\x02 \x01(\v2\x17.google.protobuf.StructB\b\xaa\xdd\x1b\x04likeH\x00R\x04like\x88\x01\x01\x12C\n" +
-	"\aDislike\x18\x03 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\adislikeH\x01R\adislike\x88\x01\x01\x12I\n" +
-	"\tUnDislike\x18\x04 \x01(\v2\x17.google.protobuf.StructB\r\xaa\xdd\x1b\tundislikeH\x02R\tundislike\x88\x01\x01\x12@\n" +
-	"\x06UnLike\x18\x05 \x01(\v2\x17.google.protobuf.StructB\n" +
-	"\xaa\xdd\x1b\x06unlikeH\x03R\x06unlike\x88\x01\x01\x12:\n" +
-	"\x04Next\x18\x06 \x01(\v2\x17.google.protobuf.StructB\b\xaa\xdd\x1b\x04nextH\x04R\x04next\x88\x01\x01\x12F\n" +
-	"\bPrevious\x18\a \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bpreviousH\x05R\bprevious\x88\x01\x01\x12K\n" +
-	"\tRepeatOne\x18\b \x01(\v2\x17.google.protobuf.StructB\x0e\xaa\xdd\x1b\n" +
-	"repeat_oneH\x06R\n" +
-	"repeat_one\x88\x01\x01\x12K\n" +
-	"\tRepeatAll\x18\t \x01(\v2\x17.google.protobuf.StructB\x0e\xaa\xdd\x1b\n" +
-	"repeat_allH\aR\n" +
-	"repeat_all\x88\x01\x01\x12F\n" +
+	"UseIchwill\x18\x04 \x01(\bR\n" +
+	"UseIchwill\x1a\x1a\n" +
+	"\bTFmRadio\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x1a\x1d\n" +
+	"\vTGenerative\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02IdB\x0e\n" +
+	"\fSequenceItem\"\xb5\v\n" +
+	"\x11TCallbacksStorage\x12F\n" +
+	"\tCallbacks\x18\x01 \x03(\v2(.NAlice.TCallbacksStorage.CallbacksEntryR\tCallbacks\x1a\xf0\t\n" +
+	"\x11TCallbackPayloads\x125\n" +
+	"\tMusicPlay\x18\x01 \x01(\v2\x17.google.protobuf.StructR\tMusicPlay\x120\n" +
+	"\x04Like\x18\x02 \x01(\v2\x17.google.protobuf.StructH\x00R\x04Like\x88\x01\x01\x126\n" +
+	"\aDislike\x18\x03 \x01(\v2\x17.google.protobuf.StructH\x01R\aDislike\x88\x01\x01\x12:\n" +
+	"\tUnDislike\x18\x04 \x01(\v2\x17.google.protobuf.StructH\x02R\tUnDislike\x88\x01\x01\x124\n" +
+	"\x06UnLike\x18\x05 \x01(\v2\x17.google.protobuf.StructH\x03R\x06UnLike\x88\x01\x01\x120\n" +
+	"\x04Next\x18\x06 \x01(\v2\x17.google.protobuf.StructH\x04R\x04Next\x88\x01\x01\x128\n" +
+	"\bPrevious\x18\a \x01(\v2\x17.google.protobuf.StructH\x05R\bPrevious\x88\x01\x01\x12:\n" +
+	"\tRepeatOne\x18\b \x01(\v2\x17.google.protobuf.StructH\x06R\tRepeatOne\x88\x01\x01\x12:\n" +
+	"\tRepeatAll\x18\t \x01(\v2\x17.google.protobuf.StructH\aR\tRepeatAll\x88\x01\x01\x128\n" +
 	"\bUnRepeat\x18\n" +
-	" \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bunrepeatH\bR\bunrepeat\x88\x01\x01\x12C\n" +
-	"\aShuffle\x18\v \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\ashuffleH\tR\ashuffle\x88\x01\x01\x12I\n" +
-	"\tUnShuffle\x18\f \x01(\v2\x17.google.protobuf.StructB\r\xaa\xdd\x1b\tunshuffleH\n" +
-	"R\tunshuffle\x88\x01\x01\x12Q\n" +
-	"\vNextStopped\x18\r \x01(\v2\x17.google.protobuf.StructB\x10\xaa\xdd\x1b\fnext_stoppedH\vR\fnext_stopped\x88\x01\x01\x12Q\n" +
-	"\vPrevStopped\x18\x0e \x01(\v2\x17.google.protobuf.StructB\x10\xaa\xdd\x1b\fprev_stoppedH\fR\fprev_stopped\x88\x01\x01\x12K\n" +
-	"\tGetLyrics\x18\x0f \x01(\v2\x17.google.protobuf.StructB\x0e\xaa\xdd\x1b\n" +
-	"get_lyricsH\rR\n" +
-	"get_lyrics\x88\x01\x01\x12e\n" +
-	"\x11EnableKaraokeMode\x18\x10 \x01(\v2\x17.google.protobuf.StructB\x17\xaa\xdd\x1b\x13enable_karaoke_modeH\x0eR\x13enable_karaoke_mode\x88\x01\x01\x12h\n" +
-	"\x12DisableKaraokeMode\x18\x11 \x01(\v2\x17.google.protobuf.StructB\x18\xaa\xdd\x1b\x14disable_karaoke_modeH\x0fR\x14disable_karaoke_mode\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	" \x01(\v2\x17.google.protobuf.StructH\bR\bUnRepeat\x88\x01\x01\x126\n" +
+	"\aShuffle\x18\v \x01(\v2\x17.google.protobuf.StructH\tR\aShuffle\x88\x01\x01\x12:\n" +
+	"\tUnShuffle\x18\f \x01(\v2\x17.google.protobuf.StructH\n" +
+	"R\tUnShuffle\x88\x01\x01\x12>\n" +
+	"\vNextStopped\x18\r \x01(\v2\x17.google.protobuf.StructH\vR\vNextStopped\x88\x01\x01\x12>\n" +
+	"\vPrevStopped\x18\x0e \x01(\v2\x17.google.protobuf.StructH\fR\vPrevStopped\x88\x01\x01\x12:\n" +
+	"\tGetLyrics\x18\x0f \x01(\v2\x17.google.protobuf.StructH\rR\tGetLyrics\x88\x01\x01\x12J\n" +
+	"\x11EnableKaraokeMode\x18\x10 \x01(\v2\x17.google.protobuf.StructH\x0eR\x11EnableKaraokeMode\x88\x01\x01\x12L\n" +
+	"\x12DisableKaraokeMode\x18\x11 \x01(\v2\x17.google.protobuf.StructH\x0fR\x12DisableKaraokeMode\x88\x01\x01B\a\n" +
 	"\x05_LikeB\n" +
 	"\n" +
 	"\b_DislikeB\f\n" +
@@ -1308,11 +1356,12 @@ const file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_
 	"\n" +
 	"_GetLyricsB\x14\n" +
 	"\x12_EnableKaraokeModeB\x15\n" +
-	"\x13_DisableKaraokeMode\x1ai\n" +
+	"\x13_DisableKaraokeMode\x1ae\n" +
 	"\x0eCallbacksEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12A\n" +
-	"\x05value\x18\x02 \x01(\v2+.NAlice.TCallbacksStorage.TCallbackPayloadsR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04B~\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesZNa.yandex-team.ru/alice/protos/endpoint/capabilities/audio_player;audioplayerpbb\x06proto3"
+	"\x05value\x18\x02 \x01(\v2+.NAlice.TCallbacksStorage.TCallbackPayloadsR\x05valueB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x12SequenceStateProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/audio_player\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_rawDescOnce sync.Once
@@ -1343,13 +1392,13 @@ var file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_go
 	(*TSequenceItem_TFmRadio)(nil),              // 12: NAlice.TSequenceItem.TFmRadio
 	(*TSequenceItem_TGenerative)(nil),           // 13: NAlice.TSequenceItem.TGenerative
 	(*TCallbacksStorage_TCallbackPayloads)(nil), // 14: NAlice.TCallbacksStorage.TCallbackPayloads
-	nil,                               // 15: NAlice.TCallbacksStorage.CallbacksEntry
-	(*music.TMetaStorage)(nil),        // 16: NAlice.NData.NMusic.TMetaStorage
-	(music_provider.MusicProvider)(0), // 17: Alice.Music.MusicProvider
-	(*music.TOperatingFeatures)(nil),  // 18: NAlice.NData.NMusic.TOperatingFeatures
-	(music_provider.RepeatType)(0),    // 19: Alice.Music.RepeatType
-	(music_provider.LikeStatus)(0),    // 20: Alice.Music.LikeStatus
-	(*structpb.Struct)(nil),           // 21: google.protobuf.Struct
+	(*TCallbacksStorage_CallbacksEntry)(nil),    // 15: NAlice.TCallbacksStorage.CallbacksEntry
+	(*music.TMetaStorage)(nil),                  // 16: NAlice.NData.NMusic.TMetaStorage
+	(music_provider.MusicProvider)(0),           // 17: Alice.Music.MusicProvider
+	(*music.TOperatingFeatures)(nil),            // 18: NAlice.NData.NMusic.TOperatingFeatures
+	(music_provider.RepeatType)(0),              // 19: Alice.Music.RepeatType
+	(music_provider.LikeStatus)(0),              // 20: Alice.Music.LikeStatus
+	(*structpb.Struct)(nil),                     // 21: google.protobuf.Struct
 }
 var file_alice_protos_endpoint_capabilities_audio_player_sequence_state_proto_depIdxs = []int32{
 	1,  // 0: NAlice.TAudioPlayerSequenceState.Queue:type_name -> NAlice.TSequenceItem

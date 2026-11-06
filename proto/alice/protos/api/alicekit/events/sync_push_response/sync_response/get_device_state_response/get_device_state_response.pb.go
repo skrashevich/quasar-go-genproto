@@ -26,8 +26,8 @@ const (
 
 type TGetDeviceStateResponse struct {
 	state            protoimpl.MessageState               `protogen:"open.v1"`
-	DeviceState      *device_state.TDeviceState           `protobuf:"bytes,1,opt,name=DeviceState,json=device_state,proto3" json:"DeviceState,omitempty"`
-	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,2,opt,name=EnvironmentState,json=environment_state,proto3" json:"EnvironmentState,omitempty"`
+	DeviceState      *device_state.TDeviceState           `protobuf:"bytes,1,opt,name=DeviceState,proto3" json:"DeviceState,omitempty"`
+	EnvironmentState *environment_state.TEnvironmentState `protobuf:"bytes,2,opt,name=EnvironmentState,proto3" json:"EnvironmentState,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -80,11 +80,11 @@ var File_alice_protos_api_alicekit_events_sync_push_response_sync_response_get_d
 
 const file_alice_protos_api_alicekit_events_sync_push_response_sync_response_get_device_state_response_get_device_state_response_proto_rawDesc = "" +
 	"\n" +
-	"{alice/protos/api/alicekit/events/sync_push_response/sync_response/get_device_state_response/get_device_state_response.proto\x12\x10NAlice.NAliceApi\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdd\x01\n" +
-	"\x17TGetDeviceStateResponse\x12S\n" +
-	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateB\x10\xaa\xdd\x1b\fdevice_stateR\fdevice_state\x12g\n" +
-	"\x10EnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateB\x15\xaa\xdd\x1b\x11environment_stateR\x11environment_state:\x04\xa8\xdd\x1b\x04B\xef\x01\n" +
-	"eru.yandex.alice.protos.api.alicekit.events.sync_push_response.sync_response.get_device_state_responseB\x16GetDeviceStateResponseP\x01Zla.yandex-team.ru/alice/protos/api/alicekit/events/sync_push_response/sync_response/get_device_state_responseb\x06proto3"
+	"{alice/protos/api/alicekit/events/sync_push_response/sync_response/get_device_state_response/get_device_state_response.proto\x12\x10NAlice.NAliceApi\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xac\x01\n" +
+	"\x17TGetDeviceStateResponse\x12@\n" +
+	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateR\vDeviceState\x12O\n" +
+	"\x10EnvironmentState\x18\x02 \x01(\v2#.NAlice.NAliceApi.TEnvironmentStateR\x10EnvironmentStateB\xa2\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1bGetDeviceStateResponseProtoP\x01Z\x8b\x01github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push_response/sync_response/get_device_state_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_response_sync_response_get_device_state_response_get_device_state_response_proto_rawDescOnce sync.Once

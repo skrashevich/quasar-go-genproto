@@ -252,8 +252,8 @@ const file_alice_protos_data_tv_carousel_item_config_config_proto_rawDesc = "" +
 	"\x0ePlusAmediateka\x10\x06\x12\x0e\n" +
 	"\n" +
 	"NewEpisode\x10\a\x12\f\n" +
-	"\bDuration\x10\bB\x85\x01\n" +
-	"3ru.yandex.alice.protos.data.tv.carousel_item_configB\x12CarouselItemConfigZ:a.yandex-team.ru/alice/protos/data/tv/carousel_item_configb\x06proto3"
+	"\bDuration\x10\bB\xa4\x01\n" +
+	"3ru.yandex.alice.protos.data.tv.carousel_item_configB\x12CarouselItemConfigZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/carousel_item_configb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_carousel_item_config_config_proto_rawDescOnce sync.Once

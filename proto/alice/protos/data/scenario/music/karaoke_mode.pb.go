@@ -78,8 +78,8 @@ const file_alice_protos_data_scenario_music_karaoke_mode_proto_rawDesc = "" +
 	"\fEKaraokeMode\x12\r\n" +
 	"\tUndefined\x10\x00\x12\v\n" +
 	"\aEnabled\x10\x01\x12\f\n" +
-	"\bDisabled\x10\x02B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\bDisabled\x10\x02B\xeb\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x10KaraokeModeProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_karaoke_mode_proto_rawDescOnce sync.Once

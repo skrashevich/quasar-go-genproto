@@ -1170,7 +1170,7 @@ const file_alice_pro_state_proto_rawDesc = "" +
 	"\x1bSupportedFormatsParamsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12P\n" +
 	"\x05value\x18\x02 \x01(\v2:.quark.core.proto.TFileUploadParams.TSupportedFormatParamsR\x05value:\x028\x01B\x14\n" +
-	"\x12_MaxMultiFileCountb\x06proto3"
+	"\x12_MaxMultiFileCountB1Z/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_alice_pro_state_proto_rawDescOnce sync.Once

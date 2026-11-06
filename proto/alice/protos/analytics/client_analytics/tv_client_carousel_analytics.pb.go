@@ -84,8 +84,8 @@ const file_alice_protos_analytics_client_analytics_tv_client_carousel_analytics_
 	"\n" +
 	"CarouselId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vcarousel_idH\x01R\vcarousel_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
 	"\t_ScreenIdB\r\n" +
-	"\v_CarouselIdB\x8d\x01\n" +
-	"1ru.yandex.alice.protos.analytics.client_analyticsB\x1eTvClientCarouselAnalyticsProtoZ8a.yandex-team.ru/alice/protos/analytics/client_analyticsb\x06proto3"
+	"\v_CarouselIdB\xac\x01\n" +
+	"1ru.yandex.alice.protos.analytics.client_analyticsB\x1eTvClientCarouselAnalyticsProtoZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/analytics/client_analyticsb\x06proto3"
 
 var (
 	file_alice_protos_analytics_client_analytics_tv_client_carousel_analytics_proto_rawDescOnce sync.Once

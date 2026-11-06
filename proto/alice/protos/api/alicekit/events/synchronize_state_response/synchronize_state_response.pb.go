@@ -138,7 +138,7 @@ func (TSynchronizeStateResponse_TConnectionData_ECtype) EnumDescriptor() ([]byte
 type TSynchronizeStateResponse struct {
 	state          protoimpl.MessageState                     `protogen:"open.v1"`
 	SessionId      string                                     `protobuf:"bytes,1,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
-	ConnectionData *TSynchronizeStateResponse_TConnectionData `protobuf:"bytes,2,opt,name=ConnectionData,json=connection_data,proto3" json:"ConnectionData,omitempty"`
+	ConnectionData *TSynchronizeStateResponse_TConnectionData `protobuf:"bytes,2,opt,name=ConnectionData,proto3" json:"ConnectionData,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -189,8 +189,8 @@ func (x *TSynchronizeStateResponse) GetConnectionData() *TSynchronizeStateRespon
 
 type TSynchronizeStateResponse_TConnectionData struct {
 	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Geo           TSynchronizeStateResponse_TConnectionData_EGeo   `protobuf:"varint,1,opt,name=Geo,json=geo,proto3,enum=NAlice.NAliceApi.TSynchronizeStateResponse_TConnectionData_EGeo" json:"Geo,omitempty"`
-	Ctype         TSynchronizeStateResponse_TConnectionData_ECtype `protobuf:"varint,2,opt,name=Ctype,json=ctype,proto3,enum=NAlice.NAliceApi.TSynchronizeStateResponse_TConnectionData_ECtype" json:"Ctype,omitempty"`
+	Geo           TSynchronizeStateResponse_TConnectionData_EGeo   `protobuf:"varint,1,opt,name=Geo,proto3,enum=NAlice.NAliceApi.TSynchronizeStateResponse_TConnectionData_EGeo" json:"Geo,omitempty"`
+	Ctype         TSynchronizeStateResponse_TConnectionData_ECtype `protobuf:"varint,2,opt,name=Ctype,proto3,enum=NAlice.NAliceApi.TSynchronizeStateResponse_TConnectionData_ECtype" json:"Ctype,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -243,13 +243,13 @@ var File_alice_protos_api_alicekit_events_synchronize_state_response_synchronize
 
 const file_alice_protos_api_alicekit_events_synchronize_state_response_synchronize_state_response_proto_rawDesc = "" +
 	"\n" +
-	"\\alice/protos/api/alicekit/events/synchronize_state_response/synchronize_state_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbc\x04\n" +
-	"\x19TSynchronizeStateResponse\x12+\n" +
-	"\tSessionId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tSessionIdR\tSessionId\x12y\n" +
-	"\x0eConnectionData\x18\x02 \x01(\v2;.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionDataB\x13\xaa\xdd\x1b\x0fconnection_dataR\x0fconnection_data\x1a\xf0\x02\n" +
-	"\x0fTConnectionData\x12[\n" +
-	"\x03Geo\x18\x01 \x01(\x0e2@.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionData.EGeoB\a\xaa\xdd\x1b\x03geoR\x03geo\x12c\n" +
-	"\x05Ctype\x18\x02 \x01(\x0e2B.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionData.ECtypeB\t\xaa\xdd\x1b\x05ctypeR\x05ctype\".\n" +
+	"\\alice/protos/api/alicekit/events/synchronize_state_response/synchronize_state_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf7\x03\n" +
+	"\x19TSynchronizeStateResponse\x12\x1c\n" +
+	"\tSessionId\x18\x01 \x01(\tR\tSessionId\x12c\n" +
+	"\x0eConnectionData\x18\x02 \x01(\v2;.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionDataR\x0eConnectionData\x1a\xd6\x02\n" +
+	"\x0fTConnectionData\x12R\n" +
+	"\x03Geo\x18\x01 \x01(\x0e2@.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionData.EGeoR\x03Geo\x12X\n" +
+	"\x05Ctype\x18\x02 \x01(\x0e2B.NAlice.NAliceApi.TSynchronizeStateResponse.TConnectionData.ECtypeR\x05Ctype\".\n" +
 	"\x04EGeo\x12\v\n" +
 	"\aunknown\x10\x00\x12\a\n" +
 	"\x03sas\x10\x01\x12\a\n" +
@@ -263,8 +263,8 @@ const file_alice_protos_api_alicekit_events_synchronize_state_response_synchroni
 	"\x04beta\x10\x04\x12\r\n" +
 	"\tprestable\x10\x05\x12\x0e\n" +
 	"\n" +
-	"production\x10\x06:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\xb1\x01\n" +
-	"Eru.yandex.alice.protos.api.alicekit.events.synchronize_state_responseB\x18SynchronizeStateResponseP\x01ZLa.yandex-team.ru/alice/protos/api/alicekit/events/synchronize_state_responseb\x06proto3"
+	"production\x10\x06B\x83\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1dSynchronizeStateResponseProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/synchronize_state_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_synchronize_state_response_synchronize_state_response_proto_rawDescOnce sync.Once

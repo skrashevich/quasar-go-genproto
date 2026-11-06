@@ -162,8 +162,8 @@ func (*TIncomingCallReceivedTypedCallback) Descriptor() ([]byte, []int) {
 
 type TOutgoingDeviceCallTypedCallback struct {
 	state         protoimpl.MessageState                     `protogen:"open.v1"`
-	CallType      TOutgoingDeviceCallTypedCallback_ECallType `protobuf:"varint,1,opt,name=CallType,json=call_type,proto3,enum=NAlice.NScenarios.NCalls.TOutgoingDeviceCallTypedCallback_ECallType" json:"CallType,omitempty"`
-	DeviceId      string                                     `protobuf:"bytes,2,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
+	CallType      TOutgoingDeviceCallTypedCallback_ECallType `protobuf:"varint,1,opt,name=CallType,proto3,enum=NAlice.NScenarios.NCalls.TOutgoingDeviceCallTypedCallback_ECallType" json:"CallType,omitempty"`
+	DeviceId      string                                     `protobuf:"bytes,2,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -392,18 +392,18 @@ var File_alice_protos_api_typed_callbacks_calls_typed_callbacks_proto protorefle
 
 const file_alice_protos_api_typed_callbacks_calls_typed_callbacks_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/api/typed_callbacks/calls/typed_callbacks.proto\x12\x18NAlice.NScenarios.NCalls\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"O\n" +
-	"\"TIncomingCallReceivedTypedCallback:)\xa8\xdd\x1b\x04\xba\xff\x1b!IncomingCallReceivedTypedCallback\"\x9f\x02\n" +
-	" TOutgoingDeviceCallTypedCallback\x12p\n" +
-	"\bCallType\x18\x01 \x01(\x0e2D.NAlice.NScenarios.NCalls.TOutgoingDeviceCallTypedCallback.ECallTypeB\r\xaa\xdd\x1b\tcall_typeR\tcall_type\x12*\n" +
-	"\bDeviceId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tdevice_idR\tdevice_id\"4\n" +
+	"<alice/protos/api/typed_callbacks/calls/typed_callbacks.proto\x12\x18NAlice.NScenarios.NCalls\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"$\n" +
+	"\"TIncomingCallReceivedTypedCallback\"\xd6\x01\n" +
+	" TOutgoingDeviceCallTypedCallback\x12`\n" +
+	"\bCallType\x18\x01 \x01(\x0e2D.NAlice.NScenarios.NCalls.TOutgoingDeviceCallTypedCallback.ECallTypeR\bCallType\x12\x1a\n" +
+	"\bDeviceId\x18\x02 \x01(\tR\bDeviceId\"4\n" +
 	"\tECallType\x12\v\n" +
 	"\aDefault\x10\x00\x12\n" +
 	"\n" +
 	"\x06Dropin\x10\x01\x12\x0e\n" +
 	"\n" +
-	"Radionanny\x10\x02:'\xa8\xdd\x1b\x04\xba\xff\x1b\x1fOutgoingDeviceCallTypedCallback\"K\n" +
-	" TGetCallableDevicesTypedCallback:'\xa8\xdd\x1b\x04\xba\xff\x1b\x1fGetCallableDevicesTypedCallback\"\x92\x01\n" +
+	"Radionanny\x10\x02\"\"\n" +
+	" TGetCallableDevicesTypedCallback\"\x92\x01\n" +
 	"\x1dTPhoneLastCallContactCallback\x12\x1f\n" +
 	"\x05Phone\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05phoneR\x05phone\x12!\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameH\x00R\x04name\x88\x01\x01:$\xa8\xdd\x1b\x04\xba\xff\x1b\x1cPhoneLastCallContactCallbackB\a\n" +
@@ -419,8 +419,8 @@ const file_alice_protos_api_typed_callbacks_calls_typed_callbacks_proto_rawDesc 
 	"\x1dTPhoneContactSelectedCallback\x12-\n" +
 	"\tLookupKey\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"lookup_keyR\n" +
-	"lookup_key:$\xa8\xdd\x1b\x04\xba\xff\x1b\x1cPhoneContactSelectedCallbackBm\n" +
-	"0ru.yandex.alice.protos.api.typed_callbacks.callsP\x01Z7a.yandex-team.ru/alice/protos/api/typed_callbacks/callsb\x06proto3"
+	"lookup_key:$\xa8\xdd\x1b\x04\xba\xff\x1b\x1cPhoneContactSelectedCallbackB\x8d\x02\n" +
+	"\x1ccom.NAlice.NScenarios.NCallsB\x13TypedCallbacksProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/calls\xa2\x02\x03NNN\xaa\x02\x18NAlice.NScenarios.NCalls\xca\x02\x18NAlice\\NScenarios\\NCalls\xe2\x02$NAlice\\NScenarios\\NCalls\\GPBMetadata\xea\x02\x1aNAlice::NScenarios::NCallsb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_calls_typed_callbacks_proto_rawDescOnce sync.Once

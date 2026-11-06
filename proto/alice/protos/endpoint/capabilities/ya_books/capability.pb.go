@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/ya_books/capability.proto
 
-package ya_booksspb
+package ya_books
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -334,8 +334,8 @@ const file_alice_protos_endpoint_capabilities_ya_books_capability_proto_rawDesc 
 	"\bTextBook\x18\x02 \x01(\v2#.NAlice.TYaBooksCapability.TextBookB\r\xaa\xdd\x1b\ttext_bookR\ttext_book\x12S\n" +
 	"\tAudioBook\x18\x03 \x01(\v2$.NAlice.TYaBooksCapability.AudioBookB\x0e\xaa\xdd\x1b\n" +
 	"audio_bookR\n" +
-	"audio_book:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xef\x01B\x90\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16YaBooksCapabilityProtoZHa.yandex-team.ru/alice/protos/endpoint/capabilities/ya_books;ya_booksspbb\x06proto3"
+	"audio_book:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xef\x01B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x16YaBooksCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/ya_booksb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_ya_books_capability_proto_rawDescOnce sync.Once

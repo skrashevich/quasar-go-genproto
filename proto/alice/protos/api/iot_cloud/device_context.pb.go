@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/iot_cloud/device_context.proto
 
-package iotcloudpb
+package iot_cloud
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -134,7 +134,8 @@ const file_alice_protos_api_iot_cloud_device_context_proto_rawDesc = "" +
 	"\x04_PidB\x12\n" +
 	"\x10_FirmwareVersionB\x12\n" +
 	"\x10_QuasmodromGroupB\x15\n" +
-	"\x13_QuasmodromSubgroupB8Z6a.yandex-team.ru/alice/protos/api/iot_cloud;iotcloudpbb\x06proto3"
+	"\x13_QuasmodromSubgroupB\xd7\x01\n" +
+	"\x14com.NAlice.NIotCloudB\x12DeviceContextProtoP\x01ZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_cloud\xa2\x02\x03NNX\xaa\x02\x10NAlice.NIotCloud\xca\x02\x10NAlice\\NIotCloud\xe2\x02\x1cNAlice\\NIotCloud\\GPBMetadata\xea\x02\x11NAlice::NIotCloudb\x06proto3"
 
 var (
 	file_alice_protos_api_iot_cloud_device_context_proto_rawDescOnce sync.Once

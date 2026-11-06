@@ -24,10 +24,10 @@ const (
 
 type TImageCrop struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	X1            *float64               `protobuf:"fixed64,1,opt,name=X1,json=x1,proto3,oneof" json:"X1,omitempty"`
-	Y1            *float64               `protobuf:"fixed64,2,opt,name=Y1,json=y1,proto3,oneof" json:"Y1,omitempty"`
-	X2            *float64               `protobuf:"fixed64,3,opt,name=X2,json=x2,proto3,oneof" json:"X2,omitempty"`
-	Y2            *float64               `protobuf:"fixed64,4,opt,name=Y2,json=y2,proto3,oneof" json:"Y2,omitempty"`
+	X1            *float64               `protobuf:"fixed64,1,opt,name=X1,proto3,oneof" json:"X1,omitempty"`
+	Y1            *float64               `protobuf:"fixed64,2,opt,name=Y1,proto3,oneof" json:"Y1,omitempty"`
+	X2            *float64               `protobuf:"fixed64,3,opt,name=X2,proto3,oneof" json:"X2,omitempty"`
+	Y2            *float64               `protobuf:"fixed64,4,opt,name=Y2,proto3,oneof" json:"Y2,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -94,18 +94,19 @@ var File_alice_protos_api_files_image_crop_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_files_image_crop_proto_rawDesc = "" +
 	"\n" +
-	"'alice/protos/api/files/image_crop.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x01\n" +
+	"'alice/protos/api/files/image_crop.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"|\n" +
 	"\n" +
-	"TImageCrop\x12\x1b\n" +
-	"\x02X1\x18\x01 \x01(\x01B\x06\xaa\xdd\x1b\x02x1H\x00R\x02x1\x88\x01\x01\x12\x1b\n" +
-	"\x02Y1\x18\x02 \x01(\x01B\x06\xaa\xdd\x1b\x02y1H\x01R\x02y1\x88\x01\x01\x12\x1b\n" +
-	"\x02X2\x18\x03 \x01(\x01B\x06\xaa\xdd\x1b\x02x2H\x02R\x02x2\x88\x01\x01\x12\x1b\n" +
-	"\x02Y2\x18\x04 \x01(\x01B\x06\xaa\xdd\x1b\x02y2H\x03R\x02y2\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x05\n" +
+	"TImageCrop\x12\x13\n" +
+	"\x02X1\x18\x01 \x01(\x01H\x00R\x02X1\x88\x01\x01\x12\x13\n" +
+	"\x02Y1\x18\x02 \x01(\x01H\x01R\x02Y1\x88\x01\x01\x12\x13\n" +
+	"\x02X2\x18\x03 \x01(\x01H\x02R\x02X2\x88\x01\x01\x12\x13\n" +
+	"\x02Y2\x18\x04 \x01(\x01H\x03R\x02Y2\x88\x01\x01B\x05\n" +
 	"\x03_X1B\x05\n" +
 	"\x03_Y1B\x05\n" +
 	"\x03_X2B\x05\n" +
-	"\x03_Y2B[\n" +
-	" ru.yandex.alice.protos.api.filesB\x0eImageCropProtoZ'a.yandex-team.ru/alice/protos/api/filesb\x06proto3"
+	"\x03_Y2B\x9c\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eImageCropProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/files\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_files_image_crop_proto_rawDescOnce sync.Once

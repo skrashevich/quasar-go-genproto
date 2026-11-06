@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/travel_hotel/capability.proto
 
-package travel_hotelspb
+package travel_hotel
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_travel_hotel_capability_proto_rawD
 	"\x05State\x18\x03 \x01(\v2%.NAlice.TTravelHotelCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a;\n" +
 	"\x06TState\x12+\n" +
-	"\tPermalink\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tpermalinkR\tpermalink:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfa\x01B\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aTravelHotelCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/travel_hotel;travel_hotelspbb\x06proto3"
+	"\tPermalink\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tpermalinkR\tpermalink:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfa\x01B\xab\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aTravelHotelCapabilityProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/travel_hotelb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_travel_hotel_capability_proto_rawDescOnce sync.Once

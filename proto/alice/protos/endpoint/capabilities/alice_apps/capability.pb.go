@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_apps/capability.proto
 
-package aliceappspb
+package alice_apps
 
 import (
 	dialogs "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogs"
@@ -254,8 +254,8 @@ const file_alice_protos_endpoint_capabilities_alice_apps_capability_proto_rawDes
 	"\x13_SelectedDeployment\x1a|\n" +
 	"\x19TSelectAliceAppsDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:(\x92\x82\x19\x1bselect_alice_apps_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf0\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xeb\x01B\x85\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\tAliceAppsZJa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_apps;aliceappspbb\x06proto3"
+	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:(\x92\x82\x19\x1bselect_alice_apps_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf0\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xeb\x01B\x98\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\tAliceAppsZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_appsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_apps_capability_proto_rawDescOnce sync.Once

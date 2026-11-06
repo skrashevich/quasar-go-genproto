@@ -739,8 +739,8 @@ const file_alice_protos_data_scenario_centaur_my_screen_widgets_proto_rawDesc = 
 	"\x0fTWidgetPosition\x12\"\n" +
 	"\x06Column\x18\x01 \x01(\x05B\n" +
 	"\xaa\xdd\x1b\x06columnR\x06column\x12\x19\n" +
-	"\x03Row\x18\x02 \x01(\x05B\a\xaa\xdd\x1b\x03rowR\x03row:\x04\xa8\xdd\x1b\x04Bw\n" +
-	"6ru.yandex.alice.protos.data.scenario.centaur.my_screenZ=a.yandex-team.ru/alice/protos/data/scenario/centaur/my_screenb\x06proto3"
+	"\x03Row\x18\x02 \x01(\x05B\a\xaa\xdd\x1b\x03rowR\x03row:\x04\xa8\xdd\x1b\x04B\x96\x01\n" +
+	"6ru.yandex.alice.protos.data.scenario.centaur.my_screenZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/centaur/my_screenb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_centaur_my_screen_widgets_proto_rawDescOnce sync.Once

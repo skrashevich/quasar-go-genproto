@@ -216,8 +216,8 @@ const file_alice_protos_endpoint_capabilities_notes_capability_proto_rawDesc = "
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aV\n" +
 	"\x13TSyncNotesDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14sync_notes_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x86\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc9\x01B\x85\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14NotesCapabilityProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/notes;notesb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14sync_notes_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x86\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc9\x01B\x9e\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14NotesCapabilityProtoZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/notesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_notes_capability_proto_rawDescOnce sync.Once

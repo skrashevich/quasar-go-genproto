@@ -7,7 +7,6 @@
 package datum
 
 import (
-	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -25,7 +24,7 @@ const (
 
 type TDatumScopePersonalData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Addresses     *TDatumAddressesList   `protobuf:"bytes,1,opt,name=Addresses,json=addresses,proto3,oneof" json:"Addresses,omitempty"`
+	Addresses     *TDatumAddressesList   `protobuf:"bytes,1,opt,name=Addresses,proto3,oneof" json:"Addresses,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -69,8 +68,8 @@ func (x *TDatumScopePersonalData) GetAddresses() *TDatumAddressesList {
 
 type TDatumPersonalData struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Passport      *TDatumScopePersonalData `protobuf:"bytes,1,opt,name=Passport,json=passport,proto3,oneof" json:"Passport,omitempty"`
-	Alice         *TDatumScopePersonalData `protobuf:"bytes,2,opt,name=Alice,json=alice,proto3,oneof" json:"Alice,omitempty"`
+	Passport      *TDatumScopePersonalData `protobuf:"bytes,1,opt,name=Passport,proto3,oneof" json:"Passport,omitempty"`
+	Alice         *TDatumScopePersonalData `protobuf:"bytes,2,opt,name=Alice,proto3,oneof" json:"Alice,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,17 +122,17 @@ var File_alice_protos_api_datum_personal_data_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_datum_personal_data_proto_rawDesc = "" +
 	"\n" +
-	"*alice/protos/api/datum/personal_data.proto\x12\x10NAlice.NDatumApi\x1a&alice/protos/api/datum/addresses.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x86\x01\n" +
-	"\x17TDatumScopePersonalData\x12W\n" +
-	"\tAddresses\x18\x01 \x01(\v2%.NAlice.NDatumApi.TDatumAddressesListB\r\xaa\xdd\x1b\taddressesH\x00R\taddresses\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"*alice/protos/api/datum/personal_data.proto\x12\x10NAlice.NDatumApi\x1a&alice/protos/api/datum/addresses.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"q\n" +
+	"\x17TDatumScopePersonalData\x12H\n" +
+	"\tAddresses\x18\x01 \x01(\v2%.NAlice.NDatumApi.TDatumAddressesListH\x00R\tAddresses\x88\x01\x01B\f\n" +
 	"\n" +
-	"_Addresses\"\xe4\x01\n" +
-	"\x12TDatumPersonalData\x12\\\n" +
-	"\bPassport\x18\x01 \x01(\v2).NAlice.NDatumApi.TDatumScopePersonalDataB\x10\xaa\xdd\x1b\bpassport\xf8\x91*\x02H\x00R\bpassport\x88\x01\x01\x12S\n" +
-	"\x05Alice\x18\x02 \x01(\v2).NAlice.NDatumApi.TDatumScopePersonalDataB\r\xaa\xdd\x1b\x05alice\xf8\x91*\x02H\x01R\x05alice\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
+	"_Addresses\"\xbd\x01\n" +
+	"\x12TDatumPersonalData\x12J\n" +
+	"\bPassport\x18\x01 \x01(\v2).NAlice.NDatumApi.TDatumScopePersonalDataH\x00R\bPassport\x88\x01\x01\x12D\n" +
+	"\x05Alice\x18\x02 \x01(\v2).NAlice.NDatumApi.TDatumScopePersonalDataH\x01R\x05Alice\x88\x01\x01B\v\n" +
 	"\t_PassportB\b\n" +
-	"\x06_AliceBK\n" +
-	" ru.yandex.alice.protos.api.datumZ'a.yandex-team.ru/alice/protos/api/datumb\x06proto3"
+	"\x06_AliceB\xd2\x01\n" +
+	"\x14com.NAlice.NDatumApiB\x11PersonalDataProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/datum\xa2\x02\x03NNX\xaa\x02\x10NAlice.NDatumApi\xca\x02\x10NAlice\\NDatumApi\xe2\x02\x1cNAlice\\NDatumApi\\GPBMetadata\xea\x02\x11NAlice::NDatumApib\x06proto3"
 
 var (
 	file_alice_protos_api_datum_personal_data_proto_rawDescOnce sync.Once

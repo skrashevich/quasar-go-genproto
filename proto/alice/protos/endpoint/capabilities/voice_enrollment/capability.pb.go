@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/voice_enrollment/capability.proto
 
-package voiceenrollmentpb
+package voice_enrollment
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -30,9 +30,9 @@ const (
 
 type TVoiceEnrollmentCapability struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TVoiceEnrollmentCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TVoiceEnrollmentCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TVoiceEnrollmentCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TVoiceEnrollmentCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,7 +90,7 @@ func (x *TVoiceEnrollmentCapability) GetState() *TVoiceEnrollmentCapability_TSta
 
 type TVoiceEnrollmentCapability_TParameters struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	SupportsShareDirective bool                   `protobuf:"varint,1,opt,name=SupportsShareDirective,json=supports_share_directive,proto3" json:"SupportsShareDirective,omitempty"`
+	SupportsShareDirective bool                   `protobuf:"varint,1,opt,name=SupportsShareDirective,proto3" json:"SupportsShareDirective,omitempty"`
 	SuppressFinishResponse bool                   `protobuf:"varint,2,opt,name=SuppressFinishResponse,json=suppress_finish_response,proto3" json:"SuppressFinishResponse,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
@@ -186,8 +186,8 @@ func (x *TVoiceEnrollmentCapability_TState) GetEnrollmentInProgress() bool {
 
 type TVoiceEnrollmentCapability_TEnrollmentStartDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
-	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
+	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,proto3" json:"Puid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -238,8 +238,8 @@ func (x *TVoiceEnrollmentCapability_TEnrollmentStartDirective) GetPuid() uint64 
 
 type TVoiceEnrollmentCapability_TEnrollmentFinishDirective struct {
 	state                          protoimpl.MessageState `protogen:"open.v1"`
-	PersId                         string                 `protobuf:"bytes,1,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
-	SendGuestEnrollmentFinishFrame bool                   `protobuf:"varint,2,opt,name=SendGuestEnrollmentFinishFrame,json=send_guest_enrollment_finish_frame,proto3" json:"SendGuestEnrollmentFinishFrame,omitempty"`
+	PersId                         string                 `protobuf:"bytes,1,opt,name=PersId,proto3" json:"PersId,omitempty"`
+	SendGuestEnrollmentFinishFrame bool                   `protobuf:"varint,2,opt,name=SendGuestEnrollmentFinishFrame,proto3" json:"SendGuestEnrollmentFinishFrame,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -326,11 +326,11 @@ func (*TVoiceEnrollmentCapability_TEnrollmentCancelDirective) Descriptor() ([]by
 
 type TVoiceEnrollmentCapability_TEnrollmentShareDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Puid          uint64                 `protobuf:"varint,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	UserName      string                 `protobuf:"bytes,2,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
-	Gender        voiceprint.EGender     `protobuf:"varint,3,opt,name=Gender,json=gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
-	DeviceIds     []string               `protobuf:"bytes,4,rep,name=DeviceIds,json=device_ids,proto3" json:"DeviceIds,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Puid          uint64                 `protobuf:"varint,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	UserName      string                 `protobuf:"bytes,2,opt,name=UserName,proto3" json:"UserName,omitempty"`
+	Gender        voiceprint.EGender     `protobuf:"varint,3,opt,name=Gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
+	DeviceIds     []string               `protobuf:"bytes,4,rep,name=DeviceIds,proto3" json:"DeviceIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -404,38 +404,33 @@ var File_alice_protos_endpoint_capabilities_voice_enrollment_capability_proto pr
 
 const file_alice_protos_endpoint_capabilities_voice_enrollment_capability_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/endpoint/capabilities/voice_enrollment/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xda\n" +
+	"Dalice/protos/endpoint/capabilities/voice_enrollment/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xff\x06\n" +
+	"\x1aTVoiceEnrollmentCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12N\n" +
 	"\n" +
-	"\x1aTVoiceEnrollmentCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12^\n" +
-	"\n" +
-	"Parameters\x18\x02 \x01(\v2..NAlice.TVoiceEnrollmentCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12J\n" +
-	"\x05State\x18\x03 \x01(\v2).NAlice.TVoiceEnrollmentCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xc3\x01\n" +
-	"\vTParameters\x12V\n" +
-	"\x16SupportsShareDirective\x18\x01 \x01(\bB\x1c\xaa\xdd\x1b\x18supports_share_directiveR\x18supports_share_directive\x12V\n" +
-	"\x16SuppressFinishResponse\x18\x02 \x01(\bB\x1c\xaa\xdd\x1b\x18suppress_finish_responseR\x18suppress_finish_response:\x04\xa8\xdd\x1b\x04\x1a`\n" +
+	"Parameters\x18\x02 \x01(\v2..NAlice.TVoiceEnrollmentCapability.TParametersR\n" +
+	"Parameters\x12?\n" +
+	"\x05State\x18\x03 \x01(\v2).NAlice.TVoiceEnrollmentCapability.TStateR\x05State\x1a\x9d\x01\n" +
+	"\vTParameters\x126\n" +
+	"\x16SupportsShareDirective\x18\x01 \x01(\bR\x16SupportsShareDirective\x12V\n" +
+	"\x16SuppressFinishResponse\x18\x02 \x01(\bB\x1c\xaa\xdd\x1b\x18suppress_finish_responseR\x18suppress_finish_response\x1aZ\n" +
 	"\x06TState\x12P\n" +
-	"\x14EnrollmentInProgress\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16enrollment_in_progressR\x16enrollment_in_progress:\x04\xa8\xdd\x1b\x04\x1a\xa3\x01\n" +
-	"\x19TEnrollmentStartDirective\x12-\n" +
-	"\tTimeoutMs\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms\x12$\n" +
-	"\x04Puid\x18\x02 \x01(\x04B\x10\xaa\xdd\x1b\x04puid\xa8\x8d'\x02\xf8\x91*\x03R\x04puid:1\x92\x82\x19%enrollment_start_enrollment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cJ\x1a\xea\x01\n" +
-	"\x1aTEnrollmentFinishDirective\x12$\n" +
-	"\x06PersId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12r\n" +
-	"\x1eSendGuestEnrollmentFinishFrame\x18\x02 \x01(\bB&\xaa\xdd\x1b\"send_guest_enrollment_finish_frameR\"send_guest_enrollment_finish_frame:2\x92\x82\x19&enrollment_finish_enrollment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cL\x1aP\n" +
-	"\x1aTEnrollmentCancelDirective:2\x92\x82\x19&enrollment_cancel_enrollment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1cK\x1a\xbe\x02\n" +
-	"\x19TEnrollmentShareDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\x04B\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x12.\n" +
-	"\bUserName\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\tuser_name\xf8\x91*\x03R\tuser_name\x12I\n" +
-	"\x06Gender\x18\x03 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderB\x0e\xaa\xdd\x1b\x06gender\xf8\x91*\x03R\x06gender\x121\n" +
-	"\tDeviceIds\x18\x04 \x03(\tB\x12\xaa\xdd\x1b\n" +
-	"device_ids\xf8\x91*\x03R\n" +
-	"device_ids:2\x92\x82\x19%enrollment_share_enrollment_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd8\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8f\x01B\x9c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14VoiceEnrollmentProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/voice_enrollment;voiceenrollmentpbb\x06proto3"
+	"\x14EnrollmentInProgress\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16enrollment_in_progressR\x16enrollment_in_progress\x1aM\n" +
+	"\x19TEnrollmentStartDirective\x12\x1c\n" +
+	"\tTimeoutMs\x18\x01 \x01(\rR\tTimeoutMs\x12\x12\n" +
+	"\x04Puid\x18\x02 \x01(\x04R\x04Puid\x1a|\n" +
+	"\x1aTEnrollmentFinishDirective\x12\x16\n" +
+	"\x06PersId\x18\x01 \x01(\tR\x06PersId\x12F\n" +
+	"\x1eSendGuestEnrollmentFinishFrame\x18\x02 \x01(\bR\x1eSendGuestEnrollmentFinishFrame\x1a\x1c\n" +
+	"\x1aTEnrollmentCancelDirective\x1a\xb9\x01\n" +
+	"\x19TEnrollmentShareDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\x04R\x04Puid\x12\x1a\n" +
+	"\bUserName\x18\x02 \x01(\tR\bUserName\x129\n" +
+	"\x06Gender\x18\x03 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderR\x06Gender\x12\x1c\n" +
+	"\tDeviceIds\x18\x04 \x03(\tR\tDeviceIdsB\xba\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/voice_enrollment\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_voice_enrollment_capability_proto_rawDescOnce sync.Once

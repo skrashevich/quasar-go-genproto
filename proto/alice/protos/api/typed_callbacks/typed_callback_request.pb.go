@@ -26,9 +26,9 @@ const (
 
 type TTypedCallbackRequest struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Analytics     *request_parts.TAnalyticsTrackingModule `protobuf:"bytes,2,opt,name=Analytics,json=analytics,proto3" json:"Analytics,omitempty"`
-	Origin        *request_parts.TOrigin                  `protobuf:"bytes,3,opt,name=Origin,json=origin,proto3" json:"Origin,omitempty"`
-	RequestParams *request_parts.TRequestParams           `protobuf:"bytes,4,opt,name=RequestParams,json=request_params,proto3" json:"RequestParams,omitempty"`
+	Analytics     *request_parts.TAnalyticsTrackingModule `protobuf:"bytes,2,opt,name=Analytics,proto3" json:"Analytics,omitempty"`
+	Origin        *request_parts.TOrigin                  `protobuf:"bytes,3,opt,name=Origin,proto3" json:"Origin,omitempty"`
+	RequestParams *request_parts.TRequestParams           `protobuf:"bytes,4,opt,name=RequestParams,proto3" json:"RequestParams,omitempty"`
 	// Types that are valid to be assigned to CallbackPayload:
 	//
 	//	*TTypedCallbackRequest_TypedCallbackSerialized
@@ -105,7 +105,6 @@ func (x *TTypedCallbackRequest) GetTypedCallbackSerialized() []byte {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/typed_callbacks/typed_callback_request.proto.
 func (x *TTypedCallbackRequest) GetTypedCallbackStruct() *TTypedCallbackRequest_TStructSerialization {
 	if x != nil {
 		if x, ok := x.CallbackPayload.(*TTypedCallbackRequest_TypedCallbackStruct); ok {
@@ -120,12 +119,11 @@ type isTTypedCallbackRequest_CallbackPayload interface {
 }
 
 type TTypedCallbackRequest_TypedCallbackSerialized struct {
-	TypedCallbackSerialized []byte `protobuf:"bytes,1,opt,name=TypedCallbackSerialized,json=typed_callback_serialized,proto3,oneof"`
+	TypedCallbackSerialized []byte `protobuf:"bytes,1,opt,name=TypedCallbackSerialized,proto3,oneof"`
 }
 
 type TTypedCallbackRequest_TypedCallbackStruct struct {
-	// Deprecated: Marked as deprecated in alice/protos/api/typed_callbacks/typed_callback_request.proto.
-	TypedCallbackStruct *TTypedCallbackRequest_TStructSerialization `protobuf:"bytes,6,opt,name=TypedCallbackStruct,json=typed_callback_struct,proto3,oneof"`
+	TypedCallbackStruct *TTypedCallbackRequest_TStructSerialization `protobuf:"bytes,6,opt,name=TypedCallbackStruct,proto3,oneof"`
 }
 
 func (*TTypedCallbackRequest_TypedCallbackSerialized) isTTypedCallbackRequest_CallbackPayload() {}
@@ -134,8 +132,8 @@ func (*TTypedCallbackRequest_TypedCallbackStruct) isTTypedCallbackRequest_Callba
 
 type TTypedCallbackRequest_TStructSerialization struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	TypedCallbackName string                 `protobuf:"bytes,1,opt,name=TypedCallbackName,json=typed_callback_name,proto3" json:"TypedCallbackName,omitempty"`
-	Payload           *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	TypedCallbackName string                 `protobuf:"bytes,1,opt,name=TypedCallbackName,proto3" json:"TypedCallbackName,omitempty"`
+	Payload           *structpb.Struct       `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -188,19 +186,19 @@ var File_alice_protos_api_typed_callbacks_typed_callback_request_proto protorefl
 
 const file_alice_protos_api_typed_callbacks_typed_callback_request_proto_rawDesc = "" +
 	"\n" +
-	"=alice/protos/api/typed_callbacks/typed_callback_request.proto\x12\x06NAlice\x1a(alice/protos/api/request_parts/atm.proto\x1a+alice/protos/api/request_parts/origin.proto\x1a3alice/protos/api/request_parts/request_params.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xcf\x05\n" +
-	"\x15TTypedCallbackRequest\x12M\n" +
-	"\tAnalytics\x18\x02 \x01(\v2 .NAlice.TAnalyticsTrackingModuleB\r\xaa\xdd\x1b\tanalyticsR\tanalytics\x123\n" +
-	"\x06Origin\x18\x03 \x01(\v2\x0f.NAlice.TOriginB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12Q\n" +
-	"\rRequestParams\x18\x04 \x01(\v2\x16.NAlice.TRequestParamsB\x12\xaa\xdd\x1b\x0erequest_paramsR\x0erequest_params\x12[\n" +
-	"\x17TypedCallbackSerialized\x18\x01 \x01(\fB\x1d\xaa\xdd\x1b\x19typed_callback_serializedH\x00R\x19typed_callback_serialized\x12\x85\x01\n" +
-	"\x13TypedCallbackStruct\x18\x06 \x01(\v22.NAlice.TTypedCallbackRequest.TStructSerializationB\x1b\xaa\xdd\x1b\x15typed_callback_struct\x18\x01H\x00R\x15typed_callback_struct\x1a\xa5\x01\n" +
-	"\x14TStructSerialization\x12G\n" +
-	"\x11TypedCallbackName\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\x13typed_callback_nameR\x13typed_callback_name\x12>\n" +
-	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\apayloadR\apayload:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B'\n" +
-	"\x0fCallbackPayload\x12\x14\xaa\xdd\x1b\x10callback_payloadJ\x04\b\x05\x10\x06R\x1dTypedCallbackStructSerializedBz\n" +
-	"*ru.yandex.alice.protos.api.typed_callbacksB\x19TypedCallbackRequestProtoZ1a.yandex-team.ru/alice/protos/api/typed_callbacksb\x06proto3"
+	"=alice/protos/api/typed_callbacks/typed_callback_request.proto\x12\x06NAlice\x1a(alice/protos/api/request_parts/atm.proto\x1a+alice/protos/api/request_parts/origin.proto\x1a3alice/protos/api/request_parts/request_params.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x93\x04\n" +
+	"\x15TTypedCallbackRequest\x12>\n" +
+	"\tAnalytics\x18\x02 \x01(\v2 .NAlice.TAnalyticsTrackingModuleR\tAnalytics\x12'\n" +
+	"\x06Origin\x18\x03 \x01(\v2\x0f.NAlice.TOriginR\x06Origin\x12<\n" +
+	"\rRequestParams\x18\x04 \x01(\v2\x16.NAlice.TRequestParamsR\rRequestParams\x12:\n" +
+	"\x17TypedCallbackSerialized\x18\x01 \x01(\fH\x00R\x17TypedCallbackSerialized\x12f\n" +
+	"\x13TypedCallbackStruct\x18\x06 \x01(\v22.NAlice.TTypedCallbackRequest.TStructSerializationH\x00R\x13TypedCallbackStruct\x1aw\n" +
+	"\x14TStructSerialization\x12,\n" +
+	"\x11TypedCallbackName\x18\x01 \x01(\tR\x11TypedCallbackName\x121\n" +
+	"\aPayload\x18\x02 \x01(\v2\x17.google.protobuf.StructR\aPayloadB\x11\n" +
+	"\x0fCallbackPayloadJ\x04\b\x05\x10\x06R\x1dTypedCallbackStructSerializedB\xb1\x01\n" +
+	"\n" +
+	"com.NAliceB\x19TypedCallbackRequestProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_typed_callback_request_proto_rawDescOnce sync.Once

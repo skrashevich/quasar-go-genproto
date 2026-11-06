@@ -103,9 +103,9 @@ func (TGregorianDate_EMonth) EnumDescriptor() ([]byte, []int) {
 
 type TGregorianDate struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DayOfMonth    uint32                 `protobuf:"varint,1,opt,name=DayOfMonth,json=day_of_month,proto3" json:"DayOfMonth,omitempty"`
-	Month         TGregorianDate_EMonth  `protobuf:"varint,2,opt,name=Month,json=month,proto3,enum=NAlice.NData.TGregorianDate_EMonth" json:"Month,omitempty"`
-	Year          uint32                 `protobuf:"varint,3,opt,name=Year,json=year,proto3" json:"Year,omitempty"`
+	DayOfMonth    uint32                 `protobuf:"varint,1,opt,name=DayOfMonth,proto3" json:"DayOfMonth,omitempty"`
+	Month         TGregorianDate_EMonth  `protobuf:"varint,2,opt,name=Month,proto3,enum=NAlice.NData.TGregorianDate_EMonth" json:"Month,omitempty"`
+	Year          uint32                 `protobuf:"varint,3,opt,name=Year,proto3" json:"Year,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -165,12 +165,13 @@ var File_alice_protos_data_date_gregorian_date_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_date_gregorian_date_proto_rawDesc = "" +
 	"\n" +
-	"+alice/protos/data/date/gregorian_date.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd5\x02\n" +
-	"\x0eTGregorianDate\x122\n" +
+	"+alice/protos/data/date/gregorian_date.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa6\x02\n" +
+	"\x0eTGregorianDate\x12\x1e\n" +
 	"\n" +
-	"DayOfMonth\x18\x01 \x01(\rB\x10\xaa\xdd\x1b\fday_of_monthR\fday_of_month\x12D\n" +
-	"\x05Month\x18\x02 \x01(\x0e2#.NAlice.NData.TGregorianDate.EMonthB\t\xaa\xdd\x1b\x05monthR\x05month\x12\x1c\n" +
-	"\x04Year\x18\x03 \x01(\rB\b\xaa\xdd\x1b\x04yearR\x04year\"\xa4\x01\n" +
+	"DayOfMonth\x18\x01 \x01(\rR\n" +
+	"DayOfMonth\x129\n" +
+	"\x05Month\x18\x02 \x01(\x0e2#.NAlice.NData.TGregorianDate.EMonthR\x05Month\x12\x12\n" +
+	"\x04Year\x18\x03 \x01(\rR\x04Year\"\xa4\x01\n" +
 	"\x06EMonth\x12\b\n" +
 	"\x04None\x10\x00\x12\v\n" +
 	"\aJanuary\x10\x01\x12\f\n" +
@@ -186,8 +187,8 @@ const file_alice_protos_data_date_gregorian_date_proto_rawDesc = "" +
 	"\aOctober\x10\n" +
 	"\x12\f\n" +
 	"\bNovember\x10\v\x12\f\n" +
-	"\bDecember\x10\f:\x04\xa8\xdd\x1b\x04BK\n" +
-	" ru.yandex.alice.protos.data.dateZ'a.yandex-team.ru/alice/protos/data/dateb\x06proto3"
+	"\bDecember\x10\fB\xbf\x01\n" +
+	"\x10com.NAlice.NDataB\x12GregorianDateProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/date\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_date_gregorian_date_proto_rawDescOnce sync.Once

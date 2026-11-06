@@ -25,7 +25,7 @@ const (
 
 type TBrickStatusTypedCallback struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DisabledReason string                 `protobuf:"bytes,1,opt,name=DisabledReason,json=disabled_reason,proto3" json:"DisabledReason,omitempty"`
+	DisabledReason string                 `protobuf:"bytes,1,opt,name=DisabledReason,proto3" json:"DisabledReason,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -71,10 +71,11 @@ var File_alice_protos_api_typed_callbacks_brick_status_callback_brick_status_cal
 
 const file_alice_protos_api_typed_callbacks_brick_status_callback_brick_status_callback_proto_rawDesc = "" +
 	"\n" +
-	"Ralice/protos/api/typed_callbacks/brick_status_callback/brick_status_callback.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"f\n" +
-	"\x19TBrickStatusTypedCallback\x12'\n" +
-	"\x0eDisabledReason\x18\x01 \x01(\tR\x0fdisabled_reason: \xa8\xdd\x1b\x04\xba\xff\x1b\x18BrickStatusTypedCallbackB\x8d\x01\n" +
-	"@ru.yandex.alice.protos.api.typed_callbacks.brick_status_callbackP\x01ZGa.yandex-team.ru/alice/protos/api/typed_callbacks/brick_status_callbackb\x06proto3"
+	"Ralice/protos/api/typed_callbacks/brick_status_callback/brick_status_callback.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"C\n" +
+	"\x19TBrickStatusTypedCallback\x12&\n" +
+	"\x0eDisabledReason\x18\x01 \x01(\tR\x0eDisabledReasonB\xc6\x01\n" +
+	"\n" +
+	"com.NAliceB\x18BrickStatusCallbackProtoP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/brick_status_callback\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_brick_status_callback_brick_status_callback_proto_rawDescOnce sync.Once

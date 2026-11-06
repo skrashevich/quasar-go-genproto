@@ -24,19 +24,19 @@ const (
 
 type TContextLoadOptions struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	UseBlackbox            *bool                  `protobuf:"varint,1,opt,name=UseBlackbox,json=use_blackbox,proto3,oneof" json:"UseBlackbox,omitempty"`
-	UseCachalotMMSession   *bool                  `protobuf:"varint,2,opt,name=UseCachalotMMSession,json=use_cachalot_mm_session,proto3,oneof" json:"UseCachalotMMSession,omitempty"`
-	UseContacts            *bool                  `protobuf:"varint,3,opt,name=UseContacts,json=use_contacts,proto3,oneof" json:"UseContacts,omitempty"`
-	UseDatasync            *bool                  `protobuf:"varint,4,opt,name=UseDatasync,json=use_datasync,proto3,oneof" json:"UseDatasync,omitempty"`
-	UseFlagsJson           *bool                  `protobuf:"varint,5,opt,name=UseFlagsJson,json=use_flags_json,proto3,oneof" json:"UseFlagsJson,omitempty"`
-	UseIotUserInfo         *bool                  `protobuf:"varint,6,opt,name=UseIotUserInfo,json=use_iot_user_info,proto3,oneof" json:"UseIotUserInfo,omitempty"`
-	UseLaas                *bool                  `protobuf:"varint,7,opt,name=UseLaas,json=use_laas,proto3,oneof" json:"UseLaas,omitempty"`
-	UseMemento             *bool                  `protobuf:"varint,8,opt,name=UseMemento,json=use_memento,proto3,oneof" json:"UseMemento,omitempty"`
-	UseNotifications       *bool                  `protobuf:"varint,9,opt,name=UseNotifications,json=use_notifications,proto3,oneof" json:"UseNotifications,omitempty"`
-	UseMatrixOnlineDevices *bool                  `protobuf:"varint,10,opt,name=UseMatrixOnlineDevices,json=use_matrix_online_devices,proto3,oneof" json:"UseMatrixOnlineDevices,omitempty"`
-	UseDatumAddresses      *bool                  `protobuf:"varint,11,opt,name=UseDatumAddresses,json=use_datum_addresses,proto3,oneof" json:"UseDatumAddresses,omitempty"`
-	DisableRecentDialogs   *bool                  `protobuf:"varint,12,opt,name=DisableRecentDialogs,json=disable_recent_dialogs,proto3,oneof" json:"DisableRecentDialogs,omitempty"`
-	DisableUserFacts       *bool                  `protobuf:"varint,13,opt,name=DisableUserFacts,json=disable_user_facts,proto3,oneof" json:"DisableUserFacts,omitempty"`
+	UseBlackbox            *bool                  `protobuf:"varint,1,opt,name=UseBlackbox,proto3,oneof" json:"UseBlackbox,omitempty"`
+	UseCachalotMMSession   *bool                  `protobuf:"varint,2,opt,name=UseCachalotMMSession,proto3,oneof" json:"UseCachalotMMSession,omitempty"`
+	UseContacts            *bool                  `protobuf:"varint,3,opt,name=UseContacts,proto3,oneof" json:"UseContacts,omitempty"`
+	UseDatasync            *bool                  `protobuf:"varint,4,opt,name=UseDatasync,proto3,oneof" json:"UseDatasync,omitempty"`
+	UseFlagsJson           *bool                  `protobuf:"varint,5,opt,name=UseFlagsJson,proto3,oneof" json:"UseFlagsJson,omitempty"`
+	UseIotUserInfo         *bool                  `protobuf:"varint,6,opt,name=UseIotUserInfo,proto3,oneof" json:"UseIotUserInfo,omitempty"`
+	UseLaas                *bool                  `protobuf:"varint,7,opt,name=UseLaas,proto3,oneof" json:"UseLaas,omitempty"`
+	UseMemento             *bool                  `protobuf:"varint,8,opt,name=UseMemento,proto3,oneof" json:"UseMemento,omitempty"`
+	UseNotifications       *bool                  `protobuf:"varint,9,opt,name=UseNotifications,proto3,oneof" json:"UseNotifications,omitempty"`
+	UseMatrixOnlineDevices *bool                  `protobuf:"varint,10,opt,name=UseMatrixOnlineDevices,proto3,oneof" json:"UseMatrixOnlineDevices,omitempty"`
+	UseDatumAddresses      *bool                  `protobuf:"varint,11,opt,name=UseDatumAddresses,proto3,oneof" json:"UseDatumAddresses,omitempty"`
+	DisableRecentDialogs   *bool                  `protobuf:"varint,12,opt,name=DisableRecentDialogs,proto3,oneof" json:"DisableRecentDialogs,omitempty"`
+	DisableUserFacts       *bool                  `protobuf:"varint,13,opt,name=DisableUserFacts,proto3,oneof" json:"DisableUserFacts,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -166,24 +166,25 @@ var File_alice_protos_api_request_parts_context_load_options_proto protoreflect.
 
 const file_alice_protos_api_request_parts_context_load_options_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/api/request_parts/context_load_options.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa1\t\n" +
-	"\x13TContextLoadOptions\x128\n" +
-	"\vUseBlackbox\x18\x01 \x01(\bB\x10\xaa\xdd\x1b\fuse_blackboxH\x00R\fuse_blackbox\x88\x01\x01\x12W\n" +
-	"\x14UseCachalotMMSession\x18\x02 \x01(\bB\x1b\xaa\xdd\x1b\x17use_cachalot_mm_sessionH\x01R\x17use_cachalot_mm_session\x88\x01\x01\x128\n" +
-	"\vUseContacts\x18\x03 \x01(\bB\x10\xaa\xdd\x1b\fuse_contactsH\x02R\fuse_contacts\x88\x01\x01\x128\n" +
-	"\vUseDatasync\x18\x04 \x01(\bB\x10\xaa\xdd\x1b\fuse_datasyncH\x03R\fuse_datasync\x88\x01\x01\x12=\n" +
-	"\fUseFlagsJson\x18\x05 \x01(\bB\x12\xaa\xdd\x1b\x0euse_flags_jsonH\x04R\x0euse_flags_json\x88\x01\x01\x12E\n" +
-	"\x0eUseIotUserInfo\x18\x06 \x01(\bB\x15\xaa\xdd\x1b\x11use_iot_user_infoH\x05R\x11use_iot_user_info\x88\x01\x01\x12,\n" +
-	"\aUseLaas\x18\a \x01(\bB\f\xaa\xdd\x1b\buse_laasH\x06R\buse_laas\x88\x01\x01\x125\n" +
+	"9alice/protos/api/request_parts/context_load_options.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe4\x06\n" +
+	"\x13TContextLoadOptions\x12%\n" +
+	"\vUseBlackbox\x18\x01 \x01(\bH\x00R\vUseBlackbox\x88\x01\x01\x127\n" +
+	"\x14UseCachalotMMSession\x18\x02 \x01(\bH\x01R\x14UseCachalotMMSession\x88\x01\x01\x12%\n" +
+	"\vUseContacts\x18\x03 \x01(\bH\x02R\vUseContacts\x88\x01\x01\x12%\n" +
+	"\vUseDatasync\x18\x04 \x01(\bH\x03R\vUseDatasync\x88\x01\x01\x12'\n" +
+	"\fUseFlagsJson\x18\x05 \x01(\bH\x04R\fUseFlagsJson\x88\x01\x01\x12+\n" +
+	"\x0eUseIotUserInfo\x18\x06 \x01(\bH\x05R\x0eUseIotUserInfo\x88\x01\x01\x12\x1d\n" +
+	"\aUseLaas\x18\a \x01(\bH\x06R\aUseLaas\x88\x01\x01\x12#\n" +
 	"\n" +
-	"UseMemento\x18\b \x01(\bB\x0f\xaa\xdd\x1b\vuse_mementoH\aR\vuse_memento\x88\x01\x01\x12G\n" +
-	"\x10UseNotifications\x18\t \x01(\bB\x15\xaa\xdd\x1b\x11use_notificationsH\bR\x11use_notifications\x88\x01\x01\x12]\n" +
+	"UseMemento\x18\b \x01(\bH\aR\n" +
+	"UseMemento\x88\x01\x01\x12/\n" +
+	"\x10UseNotifications\x18\t \x01(\bH\bR\x10UseNotifications\x88\x01\x01\x12;\n" +
 	"\x16UseMatrixOnlineDevices\x18\n" +
-	" \x01(\bB\x1d\xaa\xdd\x1b\x19use_matrix_online_devicesH\tR\x19use_matrix_online_devices\x88\x01\x01\x12L\n" +
-	"\x11UseDatumAddresses\x18\v \x01(\bB\x17\xaa\xdd\x1b\x13use_datum_addressesH\n" +
-	"R\x13use_datum_addresses\x88\x01\x01\x12U\n" +
-	"\x14DisableRecentDialogs\x18\f \x01(\bB\x1a\xaa\xdd\x1b\x16disable_recent_dialogsH\vR\x16disable_recent_dialogs\x88\x01\x01\x12I\n" +
-	"\x10DisableUserFacts\x18\r \x01(\bB\x16\xaa\xdd\x1b\x12disable_user_factsH\fR\x12disable_user_facts\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
+	" \x01(\bH\tR\x16UseMatrixOnlineDevices\x88\x01\x01\x121\n" +
+	"\x11UseDatumAddresses\x18\v \x01(\bH\n" +
+	"R\x11UseDatumAddresses\x88\x01\x01\x127\n" +
+	"\x14DisableRecentDialogs\x18\f \x01(\bH\vR\x14DisableRecentDialogs\x88\x01\x01\x12/\n" +
+	"\x10DisableUserFacts\x18\r \x01(\bH\fR\x10DisableUserFacts\x88\x01\x01B\x0e\n" +
 	"\f_UseBlackboxB\x17\n" +
 	"\x15_UseCachalotMMSessionB\x0e\n" +
 	"\f_UseContactsB\x0e\n" +
@@ -197,8 +198,9 @@ const file_alice_protos_api_request_parts_context_load_options_proto_rawDesc = "
 	"\x17_UseMatrixOnlineDevicesB\x14\n" +
 	"\x12_UseDatumAddressesB\x17\n" +
 	"\x15_DisableRecentDialogsB\x13\n" +
-	"\x11_DisableUserFactsBo\n" +
-	"(ru.yandex.alice.protos.api.request_partsB\x12ContextLoadOptionsZ/a.yandex-team.ru/alice/protos/api/request_partsb\x06proto3"
+	"\x11_DisableUserFactsB\xad\x01\n" +
+	"\n" +
+	"com.NAliceB\x17ContextLoadOptionsProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/request_parts\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_request_parts_context_load_options_proto_rawDescOnce sync.Once

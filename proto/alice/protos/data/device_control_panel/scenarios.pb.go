@@ -24,8 +24,8 @@ const (
 
 type TTotalScenario struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,proto3" json:"Settings,omitempty"`
+	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,8 +76,8 @@ func (x *TTotalScenario) GetState() *TCommonScenarioState {
 
 type TVideoScenario struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,proto3" json:"Settings,omitempty"`
+	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -128,8 +128,8 @@ func (x *TVideoScenario) GetState() *TCommonScenarioState {
 
 type TTvChannelsScenario struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,proto3" json:"Settings,omitempty"`
+	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -180,8 +180,8 @@ func (x *TTvChannelsScenario) GetState() *TCommonScenarioState {
 
 type TInputControlScenario struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,proto3" json:"Settings,omitempty"`
+	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -232,8 +232,8 @@ func (x *TInputControlScenario) GetState() *TCommonScenarioState {
 
 type TExternalAppScenario struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Settings      *TCommonScenarioSettings `protobuf:"bytes,1,opt,name=Settings,proto3" json:"Settings,omitempty"`
+	State         *TCommonScenarioState    `protobuf:"bytes,2,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -286,23 +286,24 @@ var File_alice_protos_data_device_control_panel_scenarios_proto protoreflect.Fil
 
 const file_alice_protos_data_device_control_panel_scenarios_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/data/device_control_panel/scenarios.proto\x12\x06NAlice\x1aEalice/protos/data/device_control_panel/common_scenario_settings.proto\x1aBalice/protos/data/device_control_panel/common_scenario_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9a\x01\n" +
-	"\x0eTTotalScenario\x12I\n" +
-	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12=\n" +
-	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateB\t\xaa\xdd\x1b\x05stateR\x05state\"\x9a\x01\n" +
-	"\x0eTVideoScenario\x12I\n" +
-	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12=\n" +
-	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateB\t\xaa\xdd\x1b\x05stateR\x05state\"\x9f\x01\n" +
-	"\x13TTvChannelsScenario\x12I\n" +
-	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12=\n" +
-	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateB\t\xaa\xdd\x1b\x05stateR\x05state\"\xa1\x01\n" +
-	"\x15TInputControlScenario\x12I\n" +
-	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12=\n" +
-	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateB\t\xaa\xdd\x1b\x05stateR\x05state\"\xa0\x01\n" +
-	"\x14TExternalAppScenario\x12I\n" +
-	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12=\n" +
-	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateB\t\xaa\xdd\x1b\x05stateR\x05stateB{\n" +
-	"0ru.yandex.alice.protos.data.device_control_panelB\x0eScenariosProtoZ7a.yandex-team.ru/alice/protos/data/device_control_panelb\x06proto3"
+	"6alice/protos/data/device_control_panel/scenarios.proto\x12\x06NAlice\x1aEalice/protos/data/device_control_panel/common_scenario_settings.proto\x1aBalice/protos/data/device_control_panel/common_scenario_state.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x81\x01\n" +
+	"\x0eTTotalScenario\x12;\n" +
+	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsR\bSettings\x122\n" +
+	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateR\x05State\"\x81\x01\n" +
+	"\x0eTVideoScenario\x12;\n" +
+	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsR\bSettings\x122\n" +
+	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateR\x05State\"\x86\x01\n" +
+	"\x13TTvChannelsScenario\x12;\n" +
+	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsR\bSettings\x122\n" +
+	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateR\x05State\"\x88\x01\n" +
+	"\x15TInputControlScenario\x12;\n" +
+	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsR\bSettings\x122\n" +
+	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateR\x05State\"\x87\x01\n" +
+	"\x14TExternalAppScenario\x12;\n" +
+	"\bSettings\x18\x01 \x01(\v2\x1f.NAlice.TCommonScenarioSettingsR\bSettings\x122\n" +
+	"\x05State\x18\x02 \x01(\v2\x1c.NAlice.TCommonScenarioStateR\x05StateB\xac\x01\n" +
+	"\n" +
+	"com.NAliceB\x0eScenariosProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_control_panel\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_control_panel_scenarios_proto_rawDescOnce sync.Once

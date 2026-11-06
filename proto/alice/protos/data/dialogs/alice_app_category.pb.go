@@ -126,8 +126,8 @@ const file_alice_protos_data_dialogs_alice_app_category_proto_rawDesc = "" +
 	"\tEducation\x10\v\x12\n" +
 	"\n" +
 	"\x06Health\x10\f\x12\r\n" +
-	"\tPurchases\x10\rBS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\tPurchases\x10\rBr\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_alice_app_category_proto_rawDescOnce sync.Once

@@ -24,9 +24,9 @@ const (
 
 type TTtsTimings struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Timings       []*TTtsTimings_TTiming  `protobuf:"bytes,1,rep,name=Timings,json=timings,proto3" json:"Timings,omitempty"`
-	Utterance     *TTtsTimings_TUtterance `protobuf:"bytes,2,opt,name=Utterance,json=utterance,proto3" json:"Utterance,omitempty"`
-	FromCache     bool                    `protobuf:"varint,3,opt,name=FromCache,json=from_cache,proto3" json:"FromCache,omitempty"`
+	Timings       []*TTtsTimings_TTiming  `protobuf:"bytes,1,rep,name=Timings,proto3" json:"Timings,omitempty"`
+	Utterance     *TTtsTimings_TUtterance `protobuf:"bytes,2,opt,name=Utterance,proto3" json:"Utterance,omitempty"`
+	FromCache     bool                    `protobuf:"varint,3,opt,name=FromCache,proto3" json:"FromCache,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -84,9 +84,9 @@ func (x *TTtsTimings) GetFromCache() bool {
 
 type TTtsTimings_TTiming struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Time          float32                `protobuf:"fixed32,1,opt,name=Time,json=time,proto3" json:"Time,omitempty"`
-	Phoneme       string                 `protobuf:"bytes,2,opt,name=Phoneme,json=phoneme,proto3" json:"Phoneme,omitempty"`
-	Word          *string                `protobuf:"bytes,3,opt,name=Word,json=word,proto3,oneof" json:"Word,omitempty"`
+	Time          float32                `protobuf:"fixed32,1,opt,name=Time,proto3" json:"Time,omitempty"`
+	Phoneme       string                 `protobuf:"bytes,2,opt,name=Phoneme,proto3" json:"Phoneme,omitempty"`
+	Word          *string                `protobuf:"bytes,3,opt,name=Word,proto3,oneof" json:"Word,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -144,7 +144,7 @@ func (x *TTtsTimings_TTiming) GetWord() string {
 
 type TTtsTimings_TUtterance struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Words         []*TTtsTimings_TUtterance_Word `protobuf:"bytes,1,rep,name=Words,json=words,proto3" json:"Words,omitempty"`
+	Words         []*TTtsTimings_TUtterance_Word `protobuf:"bytes,1,rep,name=Words,proto3" json:"Words,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,8 +188,8 @@ func (x *TTtsTimings_TUtterance) GetWords() []*TTtsTimings_TUtterance_Word {
 
 type TTtsTimings_TUtterance_Word struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Word          string                 `protobuf:"bytes,1,opt,name=Word,json=word,proto3" json:"Word,omitempty"`
-	Phonemes      []string               `protobuf:"bytes,2,rep,name=Phonemes,json=phonemes,proto3" json:"Phonemes,omitempty"`
+	Word          string                 `protobuf:"bytes,1,opt,name=Word,proto3" json:"Word,omitempty"`
+	Phonemes      []string               `protobuf:"bytes,2,rep,name=Phonemes,proto3" json:"Phonemes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -242,26 +242,23 @@ var File_alice_protos_api_alicekit_events_tts_timings_tts_timings_proto protoref
 
 const file_alice_protos_api_alicekit_events_tts_timings_tts_timings_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/api/alicekit/events/tts_timings/tts_timings.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x04\n" +
-	"\vTTtsTimings\x12L\n" +
-	"\aTimings\x18\x01 \x03(\v2%.NAlice.NAliceApi.TTtsTimings.TTimingB\v\xaa\xdd\x1b\atimingsR\atimings\x12U\n" +
-	"\tUtterance\x18\x02 \x01(\v2(.NAlice.NAliceApi.TTtsTimings.TUtteranceB\r\xaa\xdd\x1b\tutteranceR\tutterance\x12-\n" +
-	"\tFromCache\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"from_cacheR\n" +
-	"from_cache\x1a\x80\x01\n" +
-	"\aTTiming\x12\x1c\n" +
-	"\x04Time\x18\x01 \x01(\x02B\b\xaa\xdd\x1b\x04timeR\x04time\x12%\n" +
-	"\aPhoneme\x18\x02 \x01(\tB\v\xaa\xdd\x1b\aphonemeR\aphoneme\x12!\n" +
-	"\x04Word\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04wordH\x00R\x04word\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Word\x1a\xb8\x01\n" +
+	">alice/protos/api/alicekit/events/tts_timings/tts_timings.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9b\x03\n" +
+	"\vTTtsTimings\x12?\n" +
+	"\aTimings\x18\x01 \x03(\v2%.NAlice.NAliceApi.TTtsTimings.TTimingR\aTimings\x12F\n" +
+	"\tUtterance\x18\x02 \x01(\v2(.NAlice.NAliceApi.TTtsTimings.TUtteranceR\tUtterance\x12\x1c\n" +
+	"\tFromCache\x18\x03 \x01(\bR\tFromCache\x1aY\n" +
+	"\aTTiming\x12\x12\n" +
+	"\x04Time\x18\x01 \x01(\x02R\x04Time\x12\x18\n" +
+	"\aPhoneme\x18\x02 \x01(\tR\aPhoneme\x12\x17\n" +
+	"\x04Word\x18\x03 \x01(\tH\x00R\x04Word\x88\x01\x01B\a\n" +
+	"\x05_Word\x1a\x89\x01\n" +
 	"\n" +
-	"TUtterance\x12N\n" +
-	"\x05Words\x18\x01 \x03(\v2-.NAlice.NAliceApi.TTtsTimings.TUtterance.WordB\t\xaa\xdd\x1b\x05wordsR\x05words\x1aT\n" +
-	"\x04Word\x12\x1c\n" +
-	"\x04Word\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04wordR\x04word\x12(\n" +
-	"\bPhonemes\x18\x02 \x03(\tB\f\xaa\xdd\x1b\bphonemesR\bphonemes:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x85\x01\n" +
-	"6ru.yandex.alice.protos.api.alicekit.events.tts_timingsB\n" +
-	"TtsTimingsP\x01Z=a.yandex-team.ru/alice/protos/api/alicekit/events/tts_timingsb\x06proto3"
+	"TUtterance\x12C\n" +
+	"\x05Words\x18\x01 \x03(\v2-.NAlice.NAliceApi.TTtsTimings.TUtterance.WordR\x05Words\x1a6\n" +
+	"\x04Word\x12\x12\n" +
+	"\x04Word\x18\x01 \x01(\tR\x04Word\x12\x1a\n" +
+	"\bPhonemes\x18\x02 \x03(\tR\bPhonemesB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x0fTtsTimingsProtoP\x01Z\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/tts_timings\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_tts_timings_tts_timings_proto_rawDescOnce sync.Once

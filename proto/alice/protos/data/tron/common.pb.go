@@ -480,8 +480,8 @@ const file_alice_protos_data_tron_common_proto_rawDesc = "" +
 	"\aTT_NONE\x10\x00\x12\r\n" +
 	"\tTT_SOURCE\x10\x01\x12\x16\n" +
 	"\x12TT_CONVERSATION_ID\x10\x02\x12\x0f\n" +
-	"\vTT_CATEGORY\x10\x03BK\n" +
-	" ru.yandex.alice.protos.data.tronZ'a.yandex-team.ru/alice/protos/data/tronb\x06proto3"
+	"\vTT_CATEGORY\x10\x03Bj\n" +
+	" ru.yandex.alice.protos.data.tronZFgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tronb\x06proto3"
 
 var (
 	file_alice_protos_data_tron_common_proto_rawDescOnce sync.Once

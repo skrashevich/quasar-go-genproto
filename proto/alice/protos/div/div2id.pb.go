@@ -24,8 +24,8 @@ const (
 
 type TDiv2Id struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CardName      string                 `protobuf:"bytes,1,opt,name=CardName,json=card_name,proto3" json:"CardName,omitempty"`
-	CardId        string                 `protobuf:"bytes,2,opt,name=CardId,json=card_id,proto3" json:"CardId,omitempty"`
+	CardName      string                 `protobuf:"bytes,1,opt,name=CardName,proto3" json:"CardName,omitempty"`
+	CardId        string                 `protobuf:"bytes,2,opt,name=CardId,proto3" json:"CardId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,11 +78,12 @@ var File_alice_protos_div_div2id_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div2id_proto_rawDesc = "" +
 	"\n" +
-	"\x1dalice/protos/div/div2id.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"a\n" +
-	"\aTDiv2Id\x12*\n" +
-	"\bCardName\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tcard_nameR\tcard_name\x12$\n" +
-	"\x06CardId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\acard_idR\acard_id:\x04\xa8\xdd\x1b\x04BL\n" +
-	"\x1aru.yandex.alice.protos.divB\vDiv2IdProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\x1dalice/protos/div/div2id.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"=\n" +
+	"\aTDiv2Id\x12\x1a\n" +
+	"\bCardName\x18\x01 \x01(\tR\bCardName\x12\x16\n" +
+	"\x06CardId\x18\x02 \x01(\tR\x06CardIdB\x93\x01\n" +
+	"\n" +
+	"com.NAliceB\vDiv2idProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div2id_proto_rawDescOnce sync.Once

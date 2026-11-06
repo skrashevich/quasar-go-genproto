@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: yandex_io/protos/capabilities/device_state_capability.proto
 
-package yandexiocapabilitiespb
+package capabilities
 
 import (
 	experiments "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common/experiments"
@@ -185,9 +185,9 @@ func (TDeviceStateCapability_TState_TUpdateStatus_EStatus) EnumDescriptor() ([]b
 
 type TDeviceStateCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TDeviceStateCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TDeviceStateCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TDeviceStateCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TDeviceStateCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -281,19 +281,19 @@ func (*TDeviceStateCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TDeviceStateCapability_TState struct {
 	state                    protoimpl.MessageState                                                      `protogen:"open.v1"`
-	DeviceState              *device_state.TDeviceState                                                  `protobuf:"bytes,1,opt,name=DeviceState,json=device_state,proto3" json:"DeviceState,omitempty"`
-	SupportedFeatures        []string                                                                    `protobuf:"bytes,3,rep,name=SupportedFeatures,json=supported_features,proto3" json:"SupportedFeatures,omitempty"`
-	UnsupportedFeatures      []string                                                                    `protobuf:"bytes,4,rep,name=UnsupportedFeatures,json=unsupported_features,proto3" json:"UnsupportedFeatures,omitempty"`
-	Experiments              *experiments.TExperimentsProto                                              `protobuf:"bytes,5,opt,name=Experiments,json=experiments,proto3" json:"Experiments,omitempty"`
-	EnrollmentHeaders        *enrollment_headers.TEnrollmentHeaders                                      `protobuf:"bytes,6,opt,name=EnrollmentHeaders,json=enrollment_headers,proto3" json:"EnrollmentHeaders,omitempty"`
-	EnvironmentDeviceInfo    *environment_state.TEnvironmentDeviceInfo                                   `protobuf:"bytes,8,opt,name=EnvironmentDeviceInfo,json=environment_device_info,proto3" json:"EnvironmentDeviceInfo,omitempty"`
-	BassOptions              *alice_request.TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions  `protobuf:"bytes,12,opt,name=BassOptions,json=bass_options,proto3" json:"BassOptions,omitempty"`
-	Permissions              []*alice_request.TAliceRequestProto_TRequest_TAdditionalOptions_TPermission `protobuf:"bytes,13,rep,name=Permissions,json=permissions,proto3" json:"Permissions,omitempty"`
-	BiometryOptions          *biometry.TOndeviceBiometryOptions                                          `protobuf:"bytes,14,opt,name=BiometryOptions,json=biometry_options,proto3" json:"BiometryOptions,omitempty"`
-	InternetConnectionStatus *TDeviceStateCapability_TState_TInternetConnectionStatus                    `protobuf:"bytes,15,opt,name=InternetConnectionStatus,json=internet_connection_status,proto3" json:"InternetConnectionStatus,omitempty"`
-	ConfigurationStatus      *TDeviceStateCapability_TState_TConfigurationStatus                         `protobuf:"bytes,16,opt,name=ConfigurationStatus,json=configuration_status,proto3" json:"ConfigurationStatus,omitempty"`
-	UpdateStatus             *TDeviceStateCapability_TState_TUpdateStatus                                `protobuf:"bytes,17,opt,name=UpdateStatus,json=update_status,proto3" json:"UpdateStatus,omitempty"`
-	ScreensaverState         *TDeviceStateCapability_TState_TScreensaverState                            `protobuf:"bytes,18,opt,name=ScreensaverState,json=screensaver_state,proto3" json:"ScreensaverState,omitempty"`
+	DeviceState              *device_state.TDeviceState                                                  `protobuf:"bytes,1,opt,name=DeviceState,proto3" json:"DeviceState,omitempty"`
+	SupportedFeatures        []string                                                                    `protobuf:"bytes,3,rep,name=SupportedFeatures,proto3" json:"SupportedFeatures,omitempty"`
+	UnsupportedFeatures      []string                                                                    `protobuf:"bytes,4,rep,name=UnsupportedFeatures,proto3" json:"UnsupportedFeatures,omitempty"`
+	Experiments              *experiments.TExperimentsProto                                              `protobuf:"bytes,5,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
+	EnrollmentHeaders        *enrollment_headers.TEnrollmentHeaders                                      `protobuf:"bytes,6,opt,name=EnrollmentHeaders,proto3" json:"EnrollmentHeaders,omitempty"`
+	EnvironmentDeviceInfo    *environment_state.TEnvironmentDeviceInfo                                   `protobuf:"bytes,8,opt,name=EnvironmentDeviceInfo,proto3" json:"EnvironmentDeviceInfo,omitempty"`
+	BassOptions              *alice_request.TAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions  `protobuf:"bytes,12,opt,name=BassOptions,proto3" json:"BassOptions,omitempty"`
+	Permissions              []*alice_request.TAliceRequestProto_TRequest_TAdditionalOptions_TPermission `protobuf:"bytes,13,rep,name=Permissions,proto3" json:"Permissions,omitempty"`
+	BiometryOptions          *biometry.TOndeviceBiometryOptions                                          `protobuf:"bytes,14,opt,name=BiometryOptions,proto3" json:"BiometryOptions,omitempty"`
+	InternetConnectionStatus *TDeviceStateCapability_TState_TInternetConnectionStatus                    `protobuf:"bytes,15,opt,name=InternetConnectionStatus,proto3" json:"InternetConnectionStatus,omitempty"`
+	ConfigurationStatus      *TDeviceStateCapability_TState_TConfigurationStatus                         `protobuf:"bytes,16,opt,name=ConfigurationStatus,proto3" json:"ConfigurationStatus,omitempty"`
+	UpdateStatus             *TDeviceStateCapability_TState_TUpdateStatus                                `protobuf:"bytes,17,opt,name=UpdateStatus,proto3" json:"UpdateStatus,omitempty"`
+	ScreensaverState         *TDeviceStateCapability_TState_TScreensaverState                            `protobuf:"bytes,18,opt,name=ScreensaverState,proto3" json:"ScreensaverState,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -735,29 +735,28 @@ var File_yandex_io_protos_capabilities_device_state_capability_proto protoreflec
 
 const file_yandex_io_protos_capabilities_device_state_capability_proto_rawDesc = "" +
 	"\n" +
-	";yandex_io/protos/capabilities/device_state_capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1a'alice/protos/api/biometry/options.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9a\x15\n" +
-	"\x16TDeviceStateCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	";yandex_io/protos/capabilities/device_state_capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a@alice/protos/api/alicekit/common/device_state/device_state.proto\x1aJalice/protos/api/alicekit/common/environment_state/environment_state.proto\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1a'alice/protos/api/biometry/options.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\x12\n" +
+	"\x16TDeviceStateCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TDeviceStateCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TDeviceStateCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x83\x13\n" +
-	"\x06TState\x12S\n" +
-	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateB\x10\xaa\xdd\x1b\fdevice_stateR\fdevice_state\x12E\n" +
-	"\x11SupportedFeatures\x18\x03 \x03(\tB\x16\xaa\xdd\x1b\x12supported_featuresR\x12supported_features\x12K\n" +
-	"\x13UnsupportedFeatures\x18\x04 \x03(\tB\x18\xaa\xdd\x1b\x14unsupported_featuresR\x14unsupported_features\x12L\n" +
-	"\vExperiments\x18\x05 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vexperiments\x12a\n" +
-	"\x11EnrollmentHeaders\x18\x06 \x01(\v2\x1a.NAlice.TEnrollmentHeadersB\x16\xaa\xdd\x1b\x12enrollment_headersR\x12enrollment_headers\x12}\n" +
-	"\x15EnvironmentDeviceInfo\x18\b \x01(\v2(.NAlice.NAliceApi.TEnvironmentDeviceInfoB\x1b\xaa\xdd\x1b\x17environment_device_infoR\x17environment_device_info\x12x\n" +
-	"\vBassOptions\x18\f \x01(\v2C.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsB\x10\xaa\xdd\x1b\fbass_optionsR\fbass_options\x12u\n" +
-	"\vPermissions\x18\r \x03(\v2B.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermissionB\x0f\xaa\xdd\x1b\vpermissionsR\vpermissions\x12a\n" +
-	"\x0fBiometryOptions\x18\x0e \x01(\v2 .NAlice.TOndeviceBiometryOptionsB\x14\xaa\xdd\x1b\x10biometry_optionsR\x10biometry_options\x12\x9d\x01\n" +
-	"\x18InternetConnectionStatus\x18\x0f \x01(\v2?.NAlice.TDeviceStateCapability.TState.TInternetConnectionStatusB\x1e\xaa\xdd\x1b\x1ainternet_connection_statusR\x1ainternet_connection_status\x12\x87\x01\n" +
-	"\x13ConfigurationStatus\x18\x10 \x01(\v2:.NAlice.TDeviceStateCapability.TState.TConfigurationStatusB\x18\xaa\xdd\x1b\x14configuration_statusR\x14configuration_status\x12k\n" +
-	"\fUpdateStatus\x18\x11 \x01(\v23.NAlice.TDeviceStateCapability.TState.TUpdateStatusB\x11\xaa\xdd\x1b\rupdate_statusR\rupdate_status\x12{\n" +
-	"\x10ScreensaverState\x18\x12 \x01(\v27.NAlice.TDeviceStateCapability.TState.TScreensaverStateB\x15\xaa\xdd\x1b\x11screensaver_stateR\x11screensaver_state\x1a\xc8\x04\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TDeviceStateCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TDeviceStateCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xc7\x10\n" +
+	"\x06TState\x12@\n" +
+	"\vDeviceState\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TDeviceStateR\vDeviceState\x12,\n" +
+	"\x11SupportedFeatures\x18\x03 \x03(\tR\x11SupportedFeatures\x120\n" +
+	"\x13UnsupportedFeatures\x18\x04 \x03(\tR\x13UnsupportedFeatures\x12;\n" +
+	"\vExperiments\x18\x05 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12H\n" +
+	"\x11EnrollmentHeaders\x18\x06 \x01(\v2\x1a.NAlice.TEnrollmentHeadersR\x11EnrollmentHeaders\x12^\n" +
+	"\x15EnvironmentDeviceInfo\x18\b \x01(\v2(.NAlice.NAliceApi.TEnvironmentDeviceInfoR\x15EnvironmentDeviceInfo\x12e\n" +
+	"\vBassOptions\x18\f \x01(\v2C.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsR\vBassOptions\x12d\n" +
+	"\vPermissions\x18\r \x03(\v2B.NAlice.TAliceRequestProto.TRequest.TAdditionalOptions.TPermissionR\vPermissions\x12J\n" +
+	"\x0fBiometryOptions\x18\x0e \x01(\v2 .NAlice.TOndeviceBiometryOptionsR\x0fBiometryOptions\x12{\n" +
+	"\x18InternetConnectionStatus\x18\x0f \x01(\v2?.NAlice.TDeviceStateCapability.TState.TInternetConnectionStatusR\x18InternetConnectionStatus\x12l\n" +
+	"\x13ConfigurationStatus\x18\x10 \x01(\v2:.NAlice.TDeviceStateCapability.TState.TConfigurationStatusR\x13ConfigurationStatus\x12W\n" +
+	"\fUpdateStatus\x18\x11 \x01(\v23.NAlice.TDeviceStateCapability.TState.TUpdateStatusR\fUpdateStatus\x12c\n" +
+	"\x10ScreensaverState\x18\x12 \x01(\v27.NAlice.TDeviceStateCapability.TState.TScreensaverStateR\x10ScreensaverState\x1a\xc8\x04\n" +
 	"\x19TInternetConnectionStatus\x12,\n" +
 	"\x11InternetReachable\x18\x03 \x01(\bR\x11InternetReachable\x12[\n" +
 	"\x04Wifi\x18\x01 \x01(\v2E.NAlice.TDeviceStateCapability.TState.TInternetConnectionStatus.TWifiH\x00R\x04Wifi\x12g\n" +
@@ -790,10 +789,11 @@ const file_yandex_io_protos_capabilities_device_state_capability_proto_rawDesc =
 	"\fHAS_CRITICAL\x10\x01\x12\x0f\n" +
 	"\vNO_CRITICAL\x10\x02\x1a'\n" +
 	"\x11TScreensaverState\x12\x12\n" +
-	"\x04IsOn\x18\x01 \x01(\bR\x04IsOn:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03J\x04\b\a\x10\bJ\x04\b\n" +
+	"\x04IsOn\x18\x01 \x01(\bR\x04IsOnJ\x04\b\x02\x10\x03J\x04\b\a\x10\bJ\x04\b\n" +
 	"\x10\vJ\x04\b\v\x10\fJ\x04\b\t\x10\n" +
-	"R\fNetworkState:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x11B\x8f\x01\n" +
-	"/ru.yandex.arcadia.yandex_io.protos.capabilitiesB\x15DeviceStateCapabilityZEa.yandex-team.ru/yandex_io/protos/capabilities;yandexiocapabilitiespbb\x06proto3"
+	"R\fNetworkStateB\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x1aDeviceStateCapabilityProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/capabilities\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_yandex_io_protos_capabilities_device_state_capability_proto_rawDescOnce sync.Once

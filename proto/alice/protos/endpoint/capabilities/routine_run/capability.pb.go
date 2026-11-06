@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/routine_run/capability.proto
 
-package routine_runpb
+package routine_run
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -270,8 +270,8 @@ const file_alice_protos_endpoint_capabilities_routine_run_capability_proto_rawDe
 	"\vDescription\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription\x121\n" +
 	"\vInstruction\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vinstructionR\vinstruction\x12*\n" +
 	"\bTimeZone\x18\x06 \x01(\tB\r\xaa\xdd\x1b\ttime_zoneR\ttime_zone:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd0\x02B\x98\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19RoutineRunCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/routine_run;routine_runpbb\x06proto3"
+	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xd0\x02B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19RoutineRunCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/routine_runb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_routine_run_capability_proto_rawDescOnce sync.Once

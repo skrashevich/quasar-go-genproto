@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/maps_agent/capability.proto
 
-package mapsagentpb
+package maps_agent
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -820,8 +820,8 @@ const file_alice_protos_endpoint_capabilities_maps_agent_capability_proto_rawDes
 	" \x01(\tB\n" +
 	"\xaa\xdd\x1b\x06log_idR\x06log_id\x12-\n" +
 	"\bCategory\x18\x06 \x01(\tB\f\xaa\xdd\x1b\bcategoryH\x00R\bcategory\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\v\n" +
-	"\t_Category:&\x92\x82\x19\x19show_agent_pins_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf1\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xee\x01B\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eMapsAgentProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/maps_agent;mapsagentpbb\x06proto3"
+	"\t_Category:&\x92\x82\x19\x19show_agent_pins_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf1\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xee\x01B\x9d\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eMapsAgentProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/maps_agentb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_maps_agent_capability_proto_rawDescOnce sync.Once

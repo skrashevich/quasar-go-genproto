@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/voice_enrollment_web/capability.proto
 
-package voiceenrollmentwebpb
+package voice_enrollment_web
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -542,8 +542,8 @@ const file_alice_protos_endpoint_capabilities_voice_enrollment_web_capability_pr
 	"\tCancelled\x10\x02\x12\x12\n" +
 	"\x0eAlreadyStarted\x10\x03\x12\x19\n" +
 	"\x15EnrollmentWithStation\x10\x04\x12\x10\n" +
-	"\fStorageError\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbc\x02B\xb0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!VoiceEnrollmentWebCapabilityProtoZ]a.yandex-team.ru/alice/protos/endpoint/capabilities/voice_enrollment_web;voiceenrollmentwebpbb\x06proto3"
+	"\fStorageError\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbc\x02B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!VoiceEnrollmentWebCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/voice_enrollment_webb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_voice_enrollment_web_capability_proto_rawDescOnce sync.Once

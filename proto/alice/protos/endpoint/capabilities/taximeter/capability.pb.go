@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/taximeter/capability.proto
 
-package taximeterspb
+package taximeter
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -254,8 +254,8 @@ const file_alice_protos_endpoint_capabilities_taximeter_capability_proto_rawDesc
 	"\bDeeplink\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bdeeplinkR\bdeeplink:\x04\xa8\xdd\x1b\x04\x1a7\n" +
 	"\tMetaEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf5\x01B\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TaximeterCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/taximeter;taximeterspbb\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf5\x01B\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18TaximeterCapabilityProtoZ\\github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/taximeterb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_taximeter_capability_proto_rawDescOnce sync.Once

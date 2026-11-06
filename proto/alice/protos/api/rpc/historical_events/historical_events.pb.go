@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/rpc/historical_events/historical_events.proto
 
-package historicaleventspb
+package historical_events
 
 import (
 	events "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/events"
@@ -25,7 +25,7 @@ const (
 
 type THistoricalEventsRequest struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Batch         []*events.TEndpointEvents `protobuf:"bytes,1,rep,name=Batch,json=batch,proto3" json:"Batch,omitempty"`
+	Batch         []*events.TEndpointEvents `protobuf:"bytes,1,rep,name=Batch,proto3" json:"Batch,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -107,11 +107,12 @@ var File_alice_protos_api_rpc_historical_events_historical_events_proto protoref
 
 const file_alice_protos_api_rpc_historical_events_historical_events_proto_rawDesc = "" +
 	"\n" +
-	">alice/protos/api/rpc/historical_events/historical_events.proto\x12\x06NAlice\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"Z\n" +
-	"\x18THistoricalEventsRequest\x128\n" +
-	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsB\t\xaa\xdd\x1b\x05batchR\x05batch:\x04\xa8\xdd\x1b\x04\"!\n" +
-	"\x19THistoricalEventsResponse:\x04\xa8\xdd\x1b\x04B\x90\x01\n" +
-	"0ru.yandex.alice.protos.api.rpc.historical_eventsB\x10HistoricalEventsZJa.yandex-team.ru/alice/protos/api/rpc/historical_events;historicaleventspbb\x06proto3"
+	">alice/protos/api/rpc/historical_events/historical_events.proto\x12\x06NAlice\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"I\n" +
+	"\x18THistoricalEventsRequest\x12-\n" +
+	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsR\x05Batch\"\x1b\n" +
+	"\x19THistoricalEventsResponseB\xb3\x01\n" +
+	"\n" +
+	"com.NAliceB\x15HistoricalEventsProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/historical_events\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_historical_events_historical_events_proto_rawDescOnce sync.Once

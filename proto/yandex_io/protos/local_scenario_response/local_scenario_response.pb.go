@@ -31,9 +31,9 @@ type TLocalScenarioResponse struct {
 	Directives                        []*directives.TDirective                              `protobuf:"bytes,2,rep,name=Directives,proto3" json:"Directives,omitempty"`
 	ScenarioAnalyticsInfo             *scenario_analytics_info.TScenarioAnalyticsInfo       `protobuf:"bytes,3,opt,name=ScenarioAnalyticsInfo,proto3" json:"ScenarioAnalyticsInfo,omitempty"`
 	ScenarioCounteractivationFeatures *counteractivation.TScenarioCounteractivationFeatures `protobuf:"bytes,4,opt,name=ScenarioCounteractivationFeatures,proto3" json:"ScenarioCounteractivationFeatures,omitempty"`
+	OutputSpeech                      *string                                               `protobuf:"bytes,1,opt,name=OutputSpeech,proto3,oneof" json:"OutputSpeech,omitempty"`
 	ApplyArguments                    *anypb.Any                                            `protobuf:"bytes,5,opt,name=ApplyArguments,proto3" json:"ApplyArguments,omitempty"`
 	Analytics                         *protocol.TLocalAnalytics                             `protobuf:"bytes,6,opt,name=Analytics,proto3" json:"Analytics,omitempty"`
-	OutputSpeech                      *string                                               `protobuf:"bytes,1,opt,name=OutputSpeech,proto3,oneof" json:"OutputSpeech,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -89,6 +89,13 @@ func (x *TLocalScenarioResponse) GetScenarioCounteractivationFeatures() *counter
 	return nil
 }
 
+func (x *TLocalScenarioResponse) GetOutputSpeech() string {
+	if x != nil && x.OutputSpeech != nil {
+		return *x.OutputSpeech
+	}
+	return ""
+}
+
 func (x *TLocalScenarioResponse) GetApplyArguments() *anypb.Any {
 	if x != nil {
 		return x.ApplyArguments
@@ -103,28 +110,22 @@ func (x *TLocalScenarioResponse) GetAnalytics() *protocol.TLocalAnalytics {
 	return nil
 }
 
-func (x *TLocalScenarioResponse) GetOutputSpeech() string {
-	if x != nil && x.OutputSpeech != nil {
-		return *x.OutputSpeech
-	}
-	return ""
-}
-
 var File_yandex_io_protos_local_scenario_response_local_scenario_response_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_local_scenario_response_local_scenario_response_proto_rawDesc = "" +
 	"\n" +
-	"Fyandex_io/protos/local_scenario_response/local_scenario_response.proto\x12\fquasar.proto\x1aYalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a;alice/protos/api/alicekit/scenarios/protocol/response.proto\x1aMalice/protos/data/counteractivation/scenario_counteractivation_features.proto\x1a\x19google/protobuf/any.proto\"\xef\x03\n" +
+	"Fyandex_io/protos/local_scenario_response/local_scenario_response.proto\x12\fquasar.proto\x1aYalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1aMalice/protos/data/counteractivation/scenario_counteractivation_features.proto\x1a\x19google/protobuf/any.proto\x1a;alice/protos/api/alicekit/scenarios/protocol/response.proto\"\xef\x03\n" +
 	"\x16TLocalScenarioResponse\x12<\n" +
 	"\n" +
 	"Directives\x18\x02 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
 	"Directives\x12^\n" +
 	"\x15ScenarioAnalyticsInfo\x18\x03 \x01(\v2(.NAlice.NAliceApi.TScenarioAnalyticsInfoR\x15ScenarioAnalyticsInfo\x12~\n" +
-	"!ScenarioCounteractivationFeatures\x18\x04 \x01(\v20.NAlice.NData.TScenarioCounteractivationFeaturesR!ScenarioCounteractivationFeatures\x12<\n" +
+	"!ScenarioCounteractivationFeatures\x18\x04 \x01(\v20.NAlice.NData.TScenarioCounteractivationFeaturesR!ScenarioCounteractivationFeatures\x12'\n" +
+	"\fOutputSpeech\x18\x01 \x01(\tH\x00R\fOutputSpeech\x88\x01\x01\x12<\n" +
 	"\x0eApplyArguments\x18\x05 \x01(\v2\x14.google.protobuf.AnyR\x0eApplyArguments\x12?\n" +
-	"\tAnalytics\x18\x06 \x01(\v2!.NAlice.NAliceApi.TLocalAnalyticsR\tAnalytics\x12'\n" +
-	"\fOutputSpeech\x18\x01 \x01(\tH\x00R\fOutputSpeech\x88\x01\x01B\x0f\n" +
-	"\r_OutputSpeechb\x06proto3"
+	"\tAnalytics\x18\x06 \x01(\v2!.NAlice.NAliceApi.TLocalAnalyticsR\tAnalyticsB\x0f\n" +
+	"\r_OutputSpeechB\xd9\x01\n" +
+	"\x10com.quasar.protoB\x1aLocalScenarioResponseProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/local_scenario_response\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_protos_local_scenario_response_local_scenario_response_proto_rawDescOnce sync.Once

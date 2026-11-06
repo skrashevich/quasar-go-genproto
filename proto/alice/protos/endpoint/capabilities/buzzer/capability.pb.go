@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/buzzer/capability.proto
 
-package buzzerpb
+package buzzer
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -352,8 +352,8 @@ const file_alice_protos_endpoint_capabilities_buzzer_capability_proto_rawDesc = 
 	"\x05Sound\x18\x01 \x01(\v2 .NAlice.TBuzzerCapability.TSoundB\t\xaa\xdd\x1b\x05soundR\x05sound:\"\x92\x82\x19\x15buzzer_play_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x82\x01\"%\n" +
 	"\fESoundFormat\x12\v\n" +
 	"\aUnknown\x10\x00\x12\b\n" +
-	"\x04Midi\x10\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c2B\x8c\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15BuzzerCapabilityProtoP\x01ZCa.yandex-team.ru/alice/protos/endpoint/capabilities/buzzer;buzzerpbb\x06proto3"
+	"\x04Midi\x10\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c2B\xa2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15BuzzerCapabilityProtoP\x01ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/buzzerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_buzzer_capability_proto_rawDescOnce sync.Once

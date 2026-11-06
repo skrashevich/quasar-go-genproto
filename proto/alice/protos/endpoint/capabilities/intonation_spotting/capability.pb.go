@@ -28,9 +28,9 @@ const (
 
 type TIntonationSpottingCapability struct {
 	state         protoimpl.MessageState                     `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIntonationSpottingCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIntonationSpottingCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIntonationSpottingCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIntonationSpottingCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -122,71 +122,11 @@ func (*TIntonationSpottingCapability_TParameters) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 0}
 }
 
-type TIntonationSpottingCapability_TSettings struct {
-	state                        protoimpl.MessageState `protogen:"open.v1"`
-	Enabled                      *bool                  `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3,oneof" json:"Enabled,omitempty"`
-	EnableTimeMs                 *uint32                `protobuf:"varint,2,opt,name=EnableTimeMs,json=enable_time_ms,proto3,oneof" json:"EnableTimeMs,omitempty"`
-	EnableIntonationInterruption *bool                  `protobuf:"varint,3,opt,name=EnableIntonationInterruption,json=enable_intonation_interruption,proto3,oneof" json:"EnableIntonationInterruption,omitempty"`
-	unknownFields                protoimpl.UnknownFields
-	sizeCache                    protoimpl.SizeCache
-}
-
-func (x *TIntonationSpottingCapability_TSettings) Reset() {
-	*x = TIntonationSpottingCapability_TSettings{}
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TIntonationSpottingCapability_TSettings) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TIntonationSpottingCapability_TSettings) ProtoMessage() {}
-
-func (x *TIntonationSpottingCapability_TSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TIntonationSpottingCapability_TSettings.ProtoReflect.Descriptor instead.
-func (*TIntonationSpottingCapability_TSettings) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 1}
-}
-
-func (x *TIntonationSpottingCapability_TSettings) GetEnabled() bool {
-	if x != nil && x.Enabled != nil {
-		return *x.Enabled
-	}
-	return false
-}
-
-func (x *TIntonationSpottingCapability_TSettings) GetEnableTimeMs() uint32 {
-	if x != nil && x.EnableTimeMs != nil {
-		return *x.EnableTimeMs
-	}
-	return 0
-}
-
-func (x *TIntonationSpottingCapability_TSettings) GetEnableIntonationInterruption() bool {
-	if x != nil && x.EnableIntonationInterruption != nil {
-		return *x.EnableIntonationInterruption
-	}
-	return false
-}
-
 type TIntonationSpottingCapability_TState struct {
 	state                       protoimpl.MessageState                   `protogen:"open.v1"`
-	IsIntonationSpottingEnabled bool                                     `protobuf:"varint,1,opt,name=IsIntonationSpottingEnabled,json=is_intonation_spotting_enabled,proto3" json:"IsIntonationSpottingEnabled,omitempty"`
-	Threshold                   spotter.ESpotterThresholdType            `protobuf:"varint,2,opt,name=Threshold,json=threshold,proto3,enum=NAlice.NData.ESpotterThresholdType" json:"Threshold,omitempty"`
-	EnablingReason              spotter.ESpotterEnablingReason           `protobuf:"varint,4,opt,name=EnablingReason,json=enabling_reason,proto3,enum=NAlice.NData.ESpotterEnablingReason" json:"EnablingReason,omitempty"`
+	IsIntonationSpottingEnabled bool                                     `protobuf:"varint,1,opt,name=IsIntonationSpottingEnabled,proto3" json:"IsIntonationSpottingEnabled,omitempty"`
+	Threshold                   spotter.ESpotterThresholdType            `protobuf:"varint,2,opt,name=Threshold,proto3,enum=NAlice.NData.ESpotterThresholdType" json:"Threshold,omitempty"`
+	EnablingReason              spotter.ESpotterEnablingReason           `protobuf:"varint,4,opt,name=EnablingReason,proto3,enum=NAlice.NData.ESpotterEnablingReason" json:"EnablingReason,omitempty"`
 	Settings                    *TIntonationSpottingCapability_TSettings `protobuf:"bytes,5,opt,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
@@ -194,7 +134,7 @@ type TIntonationSpottingCapability_TState struct {
 
 func (x *TIntonationSpottingCapability_TState) Reset() {
 	*x = TIntonationSpottingCapability_TState{}
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[3]
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -206,7 +146,7 @@ func (x *TIntonationSpottingCapability_TState) String() string {
 func (*TIntonationSpottingCapability_TState) ProtoMessage() {}
 
 func (x *TIntonationSpottingCapability_TState) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[3]
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -219,7 +159,7 @@ func (x *TIntonationSpottingCapability_TState) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use TIntonationSpottingCapability_TState.ProtoReflect.Descriptor instead.
 func (*TIntonationSpottingCapability_TState) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 2}
+	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *TIntonationSpottingCapability_TState) GetIsIntonationSpottingEnabled() bool {
@@ -252,18 +192,18 @@ func (x *TIntonationSpottingCapability_TState) GetSettings() *TIntonationSpottin
 
 type TIntonationSpottingCapability_TSetIntonationSpottingDirective struct {
 	state                    protoimpl.MessageState          `protogen:"open.v1"`
-	Name                     string                          `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EnableIntonationSpotting bool                            `protobuf:"varint,1,opt,name=EnableIntonationSpotting,json=enable_intonation_spotting,proto3" json:"EnableIntonationSpotting,omitempty"`
-	Threshold                spotter.ESpotterThresholdType   `protobuf:"varint,2,opt,name=Threshold,json=threshold,proto3,enum=NAlice.NData.ESpotterThresholdType" json:"Threshold,omitempty"`
-	EnablingReason           *spotter.ESpotterEnablingReason `protobuf:"varint,4,opt,name=EnablingReason,json=enabling_reason,proto3,enum=NAlice.NData.ESpotterEnablingReason,oneof" json:"EnablingReason,omitempty"`
-	EnableTimeMs             *uint32                         `protobuf:"varint,5,opt,name=EnableTimeMs,json=enable_time_ms,proto3,oneof" json:"EnableTimeMs,omitempty"`
+	Name                     string                          `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	EnableIntonationSpotting bool                            `protobuf:"varint,1,opt,name=EnableIntonationSpotting,proto3" json:"EnableIntonationSpotting,omitempty"`
+	Threshold                spotter.ESpotterThresholdType   `protobuf:"varint,2,opt,name=Threshold,proto3,enum=NAlice.NData.ESpotterThresholdType" json:"Threshold,omitempty"`
+	EnablingReason           *spotter.ESpotterEnablingReason `protobuf:"varint,4,opt,name=EnablingReason,proto3,enum=NAlice.NData.ESpotterEnablingReason,oneof" json:"EnablingReason,omitempty"`
+	EnableTimeMs             *uint32                         `protobuf:"varint,5,opt,name=EnableTimeMs,proto3,oneof" json:"EnableTimeMs,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
 
 func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) Reset() {
 	*x = TIntonationSpottingCapability_TSetIntonationSpottingDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[4]
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -275,7 +215,7 @@ func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) String()
 func (*TIntonationSpottingCapability_TSetIntonationSpottingDirective) ProtoMessage() {}
 
 func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[4]
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -288,7 +228,7 @@ func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) ProtoRef
 
 // Deprecated: Use TIntonationSpottingCapability_TSetIntonationSpottingDirective.ProtoReflect.Descriptor instead.
 func (*TIntonationSpottingCapability_TSetIntonationSpottingDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 3}
+	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) GetName() string {
@@ -324,6 +264,66 @@ func (x *TIntonationSpottingCapability_TSetIntonationSpottingDirective) GetEnabl
 		return *x.EnableTimeMs
 	}
 	return 0
+}
+
+type TIntonationSpottingCapability_TSettings struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Enabled                      *bool                  `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3,oneof" json:"Enabled,omitempty"`
+	EnableTimeMs                 *uint32                `protobuf:"varint,2,opt,name=EnableTimeMs,json=enable_time_ms,proto3,oneof" json:"EnableTimeMs,omitempty"`
+	EnableIntonationInterruption *bool                  `protobuf:"varint,3,opt,name=EnableIntonationInterruption,json=enable_intonation_interruption,proto3,oneof" json:"EnableIntonationInterruption,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *TIntonationSpottingCapability_TSettings) Reset() {
+	*x = TIntonationSpottingCapability_TSettings{}
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TIntonationSpottingCapability_TSettings) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TIntonationSpottingCapability_TSettings) ProtoMessage() {}
+
+func (x *TIntonationSpottingCapability_TSettings) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TIntonationSpottingCapability_TSettings.ProtoReflect.Descriptor instead.
+func (*TIntonationSpottingCapability_TSettings) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescGZIP(), []int{0, 3}
+}
+
+func (x *TIntonationSpottingCapability_TSettings) GetEnabled() bool {
+	if x != nil && x.Enabled != nil {
+		return *x.Enabled
+	}
+	return false
+}
+
+func (x *TIntonationSpottingCapability_TSettings) GetEnableTimeMs() uint32 {
+	if x != nil && x.EnableTimeMs != nil {
+		return *x.EnableTimeMs
+	}
+	return 0
+}
+
+func (x *TIntonationSpottingCapability_TSettings) GetEnableIntonationInterruption() bool {
+	if x != nil && x.EnableIntonationInterruption != nil {
+		return *x.EnableIntonationInterruption
+	}
+	return false
 }
 
 type TIntonationSpottingCapability_TSetIntonationSpottingSettingsDirective struct {
@@ -398,15 +398,27 @@ var File_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto
 
 const file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDesc = "" +
 	"\n" +
-	"Galice/protos/endpoint/capabilities/intonation_spotting/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a.alice/protos/data/spotter/threshold_type.proto\x1a/alice/protos/data/spotter/enabling_reason.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x87\x0f\n" +
-	"\x1dTIntonationSpottingCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12a\n" +
+	"Galice/protos/endpoint/capabilities/intonation_spotting/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a.alice/protos/data/spotter/threshold_type.proto\x1a/alice/protos/data/spotter/enabling_reason.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf3\f\n" +
+	"\x1dTIntonationSpottingCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12Q\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v21.NAlice.TIntonationSpottingCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12M\n" +
-	"\x05State\x18\x03 \x01(\v2,.NAlice.TIntonationSpottingCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xa9\x02\n" +
+	"Parameters\x18\x02 \x01(\v21.NAlice.TIntonationSpottingCapability.TParametersR\n" +
+	"Parameters\x12B\n" +
+	"\x05State\x18\x03 \x01(\v2,.NAlice.TIntonationSpottingCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xce\x02\n" +
+	"\x06TState\x12@\n" +
+	"\x1bIsIntonationSpottingEnabled\x18\x01 \x01(\bR\x1bIsIntonationSpottingEnabled\x12A\n" +
+	"\tThreshold\x18\x02 \x01(\x0e2#.NAlice.NData.ESpotterThresholdTypeR\tThreshold\x12L\n" +
+	"\x0eEnablingReason\x18\x04 \x01(\x0e2$.NAlice.NData.ESpotterEnablingReasonR\x0eEnablingReason\x12Y\n" +
+	"\bSettings\x18\x05 \x01(\v2/.NAlice.TIntonationSpottingCapability.TSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettingsJ\x04\b\x03\x10\x04R\x10ActivationReason\x1a\xed\x02\n" +
+	"\x1fTSetIntonationSpottingDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12:\n" +
+	"\x18EnableIntonationSpotting\x18\x01 \x01(\bR\x18EnableIntonationSpotting\x12A\n" +
+	"\tThreshold\x18\x02 \x01(\x0e2#.NAlice.NData.ESpotterThresholdTypeR\tThreshold\x12Q\n" +
+	"\x0eEnablingReason\x18\x04 \x01(\x0e2$.NAlice.NData.ESpotterEnablingReasonH\x00R\x0eEnablingReason\x88\x01\x01\x12'\n" +
+	"\fEnableTimeMs\x18\x05 \x01(\rH\x01R\fEnableTimeMs\x88\x01\x01B\x11\n" +
+	"\x0f_EnablingReasonB\x0f\n" +
+	"\r_EnableTimeMsJ\x04\b\x03\x10\x04R\x10ActivationReason\x1a\xa9\x02\n" +
 	"\tTSettings\x12*\n" +
 	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledH\x00R\aenabled\x88\x01\x01\x12=\n" +
 	"\fEnableTimeMs\x18\x02 \x01(\rB\x12\xaa\xdd\x1b\x0eenable_time_msH\x01R\x0eenable_time_ms\x88\x01\x01\x12m\n" +
@@ -414,20 +426,7 @@ const file_alice_protos_endpoint_capabilities_intonation_spotting_capability_pro
 	"\n" +
 	"\b_EnabledB\x0f\n" +
 	"\r_EnableTimeMsB\x1f\n" +
-	"\x1d_EnableIntonationInterruption\x1a\xa0\x03\n" +
-	"\x06TState\x12g\n" +
-	"\x1bIsIntonationSpottingEnabled\x18\x01 \x01(\bB\"\xaa\xdd\x1b\x1eis_intonation_spotting_enabledR\x1eis_intonation_spotting_enabled\x12P\n" +
-	"\tThreshold\x18\x02 \x01(\x0e2#.NAlice.NData.ESpotterThresholdTypeB\r\xaa\xdd\x1b\tthresholdR\tthreshold\x12b\n" +
-	"\x0eEnablingReason\x18\x04 \x01(\x0e2$.NAlice.NData.ESpotterEnablingReasonB\x13\xaa\xdd\x1b\x0fenabling_reasonR\x0fenabling_reason\x12Y\n" +
-	"\bSettings\x18\x05 \x01(\v2/.NAlice.TIntonationSpottingCapability.TSettingsB\f\xaa\xdd\x1b\bsettingsR\bsettings:\x04\xa8\xdd\x1b\x04J\x04\b\x03\x10\x04R\x10ActivationReason\x1a\xfa\x03\n" +
-	"\x1fTSetIntonationSpottingDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\\\n" +
-	"\x18EnableIntonationSpotting\x18\x01 \x01(\bB\x1e\xaa\xdd\x1b\x1aenable_intonation_spottingR\x1aenable_intonation_spotting\x12P\n" +
-	"\tThreshold\x18\x02 \x01(\x0e2#.NAlice.NData.ESpotterThresholdTypeB\r\xaa\xdd\x1b\tthresholdR\tthreshold\x12g\n" +
-	"\x0eEnablingReason\x18\x04 \x01(\x0e2$.NAlice.NData.ESpotterEnablingReasonB\x13\xaa\xdd\x1b\x0fenabling_reasonH\x00R\x0fenabling_reason\x88\x01\x01\x12=\n" +
-	"\fEnableTimeMs\x18\x05 \x01(\rB\x12\xaa\xdd\x1b\x0eenable_time_msH\x01R\x0eenable_time_ms\x88\x01\x01:$\x92\x82\x19\x17set_intonation_spotting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xef\x01B\x11\n" +
-	"\x0f_EnablingReasonB\x0f\n" +
-	"\r_EnableTimeMsJ\x04\b\x03\x10\x04R\x10ActivationReason\x1a\x8f\x03\n" +
+	"\x1d_EnableIntonationInterruption\x1a\x8f\x03\n" +
 	"'TSetIntonationSpottingSettingsDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
 	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledH\x00R\aenabled\x88\x01\x01\x12=\n" +
@@ -436,8 +435,9 @@ const file_alice_protos_endpoint_capabilities_intonation_spotting_capability_pro
 	"\n" +
 	"\b_EnabledB\x0f\n" +
 	"\r_EnableTimeMsB\x1f\n" +
-	"\x1d_EnableIntonationInterruption:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cSB\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17IntonationSpottingProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/intonation_spotting;intonation_spottingb\x06proto3"
+	"\x1d_EnableIntonationInterruptionB\xbd\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/intonation_spotting\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_rawDescOnce sync.Once
@@ -455,9 +455,9 @@ var file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto
 var file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_goTypes = []any{
 	(*TIntonationSpottingCapability)(nil),                                         // 0: NAlice.TIntonationSpottingCapability
 	(*TIntonationSpottingCapability_TParameters)(nil),                             // 1: NAlice.TIntonationSpottingCapability.TParameters
-	(*TIntonationSpottingCapability_TSettings)(nil),                               // 2: NAlice.TIntonationSpottingCapability.TSettings
-	(*TIntonationSpottingCapability_TState)(nil),                                  // 3: NAlice.TIntonationSpottingCapability.TState
-	(*TIntonationSpottingCapability_TSetIntonationSpottingDirective)(nil),         // 4: NAlice.TIntonationSpottingCapability.TSetIntonationSpottingDirective
+	(*TIntonationSpottingCapability_TState)(nil),                                  // 2: NAlice.TIntonationSpottingCapability.TState
+	(*TIntonationSpottingCapability_TSetIntonationSpottingDirective)(nil),         // 3: NAlice.TIntonationSpottingCapability.TSetIntonationSpottingDirective
+	(*TIntonationSpottingCapability_TSettings)(nil),                               // 4: NAlice.TIntonationSpottingCapability.TSettings
 	(*TIntonationSpottingCapability_TSetIntonationSpottingSettingsDirective)(nil), // 5: NAlice.TIntonationSpottingCapability.TSetIntonationSpottingSettingsDirective
 	(*endpoint.TCapability_TMeta)(nil),                                            // 6: NAlice.TCapability.TMeta
 	(spotter.ESpotterThresholdType)(0),                                            // 7: NAlice.NData.ESpotterThresholdType
@@ -466,10 +466,10 @@ var file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto
 var file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_depIdxs = []int32{
 	6, // 0: NAlice.TIntonationSpottingCapability.Meta:type_name -> NAlice.TCapability.TMeta
 	1, // 1: NAlice.TIntonationSpottingCapability.Parameters:type_name -> NAlice.TIntonationSpottingCapability.TParameters
-	3, // 2: NAlice.TIntonationSpottingCapability.State:type_name -> NAlice.TIntonationSpottingCapability.TState
+	2, // 2: NAlice.TIntonationSpottingCapability.State:type_name -> NAlice.TIntonationSpottingCapability.TState
 	7, // 3: NAlice.TIntonationSpottingCapability.TState.Threshold:type_name -> NAlice.NData.ESpotterThresholdType
 	8, // 4: NAlice.TIntonationSpottingCapability.TState.EnablingReason:type_name -> NAlice.NData.ESpotterEnablingReason
-	2, // 5: NAlice.TIntonationSpottingCapability.TState.Settings:type_name -> NAlice.TIntonationSpottingCapability.TSettings
+	4, // 5: NAlice.TIntonationSpottingCapability.TState.Settings:type_name -> NAlice.TIntonationSpottingCapability.TSettings
 	7, // 6: NAlice.TIntonationSpottingCapability.TSetIntonationSpottingDirective.Threshold:type_name -> NAlice.NData.ESpotterThresholdType
 	8, // 7: NAlice.TIntonationSpottingCapability.TSetIntonationSpottingDirective.EnablingReason:type_name -> NAlice.NData.ESpotterEnablingReason
 	8, // [8:8] is the sub-list for method output_type
@@ -484,7 +484,7 @@ func file_alice_protos_endpoint_capabilities_intonation_spotting_capability_prot
 	if File_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto != nil {
 		return
 	}
-	file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[2].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[3].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[4].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_intonation_spotting_capability_proto_msgTypes[5].OneofWrappers = []any{}
 	type x struct{}

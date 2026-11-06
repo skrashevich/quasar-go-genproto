@@ -95,9 +95,8 @@ const file_yandex_io_protos_alice_event_alice_event_proto_rawDesc = "" +
 	".yandex_io/protos/alice_event/alice_event.proto\x12\fquasar.proto\x1a>alice/protos/api/alicekit/protocol/server/server_message.proto\"c\n" +
 	"\vTAliceEvent\x12K\n" +
 	"\vServerEvent\x18\x01 \x01(\v2'.NAlice.NAliceApi.TServerMessage.TEventH\x00R\vServerEventB\a\n" +
-	"\x05EventBH\n" +
-	"8ru.yandex.alice.protos.api.alicekit.protocol.alice_eventB\n" +
-	"AliceEventP\x01b\x06proto3"
+	"\x05EventB\xc2\x01\n" +
+	"\x10com.quasar.protoB\x0fAliceEventProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/alice_event\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_protos_alice_event_alice_event_proto_rawDescOnce sync.Once

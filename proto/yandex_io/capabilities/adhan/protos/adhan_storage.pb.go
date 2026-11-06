@@ -139,8 +139,8 @@ const file_yandex_io_capabilities_adhan_protos_adhan_storage_proto_rawDesc = "" 
 	"\x05adhan\x18\x01 \x01(\v2\x14.NAlice.NData.TAdhanR\x05adhan\x12\x1e\n" +
 	"\n" +
 	"timestamps\x18\x02 \x03(\x04R\n" +
-	"timestampsB5\n" +
-	" ru.yandex.yandex_io.capabilitiesB\x11AdhanStorageProtob\x06proto3"
+	"timestampsB\xd6\x01\n" +
+	"\x13com.yandex_io.protoB\x11AdhanStorageProtoP\x01ZSgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/adhan/protos\xa2\x02\x03YPX\xaa\x02\x0eYandexIo.Proto\xca\x02\x0eYandexIo\\Proto\xe2\x02\x1aYandexIo\\Proto\\GPBMetadata\xea\x02\x0fYandexIo::Protob\x06proto3"
 
 var (
 	file_yandex_io_capabilities_adhan_protos_adhan_storage_proto_rawDescOnce sync.Once

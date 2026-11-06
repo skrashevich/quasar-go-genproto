@@ -1761,7 +1761,7 @@ const file_alice_protos_api_rpc_music_music_content_proto_rawDesc = "" +
 	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit:\x04\xa8\xdd\x1b\x04\"\xb5\x01\n" +
 	"%TGetMusicArtistSimilarArtistsResponse\x12Z\n" +
 	"\x0eSimilarArtists\x18\x01 \x03(\v2\x1c.NAlice.NMusic.NArpc.TArtistB\x13\xaa\xdd\x1b\x0fsimilar_artistsR\x0fsimilar_artists\x12*\n" +
-	"\bArtistId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tartist_idR\tartist_id:\x04\xa8\xdd\x1b\x04B-Z+a.yandex-team.ru/alice/protos/api/rpc/musicb\x06proto3"
+	"\bArtistId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tartist_idR\tartist_id:\x04\xa8\xdd\x1b\x04BLZJgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/musicb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_music_music_content_proto_rawDescOnce sync.Once

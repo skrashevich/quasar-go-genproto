@@ -83,9 +83,9 @@ func (TAdhan_EAdhanType) EnumDescriptor() ([]byte, []int) {
 
 type TAdhan struct {
 	state          protoimpl.MessageState   `protogen:"open.v1"`
-	AdhanId        string                   `protobuf:"bytes,1,opt,name=AdhanId,json=adhan_id,proto3" json:"AdhanId,omitempty"`
-	AdhanType      TAdhan_EAdhanType        `protobuf:"varint,2,opt,name=AdhanType,json=adhan_type,proto3,enum=NAlice.NData.TAdhan_EAdhanType" json:"AdhanType,omitempty"`
-	ActivationDays []*TAdhan_TActivationDay `protobuf:"bytes,3,rep,name=ActivationDays,json=activation_days,proto3" json:"ActivationDays,omitempty"`
+	AdhanId        string                   `protobuf:"bytes,1,opt,name=AdhanId,proto3" json:"AdhanId,omitempty"`
+	AdhanType      TAdhan_EAdhanType        `protobuf:"varint,2,opt,name=AdhanType,proto3,enum=NAlice.NData.TAdhan_EAdhanType" json:"AdhanType,omitempty"`
+	ActivationDays []*TAdhan_TActivationDay `protobuf:"bytes,3,rep,name=ActivationDays,proto3" json:"ActivationDays,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -143,8 +143,8 @@ func (x *TAdhan) GetActivationDays() []*TAdhan_TActivationDay {
 
 type TAdhanMuezzinSettings struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	FajrAdhanMelodyS3Url   string                 `protobuf:"bytes,1,opt,name=FajrAdhanMelodyS3Url,json=fajr_adhan_melody_s3_url,proto3" json:"FajrAdhanMelodyS3Url,omitempty"`
-	OtherAdhansMelodyS3Url string                 `protobuf:"bytes,2,opt,name=OtherAdhansMelodyS3Url,json=other_adhans_melody_s3_url,proto3" json:"OtherAdhansMelodyS3Url,omitempty"`
+	FajrAdhanMelodyS3Url   string                 `protobuf:"bytes,1,opt,name=FajrAdhanMelodyS3Url,proto3" json:"FajrAdhanMelodyS3Url,omitempty"`
+	OtherAdhansMelodyS3Url string                 `protobuf:"bytes,2,opt,name=OtherAdhansMelodyS3Url,proto3" json:"OtherAdhansMelodyS3Url,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -264,11 +264,11 @@ type isTAdhan_TActivationDay_ActivationDay interface {
 }
 
 type TAdhan_TActivationDay_Weekday struct {
-	Weekday *date.TDayOfWeek `protobuf:"bytes,1,opt,name=Weekday,json=weekday,proto3,oneof"`
+	Weekday *date.TDayOfWeek `protobuf:"bytes,1,opt,name=Weekday,proto3,oneof"`
 }
 
 type TAdhan_TActivationDay_Date struct {
-	Date *date.TGregorianDate `protobuf:"bytes,2,opt,name=Date,json=date,proto3,oneof"`
+	Date *date.TGregorianDate `protobuf:"bytes,2,opt,name=Date,proto3,oneof"`
 }
 
 func (*TAdhan_TActivationDay_Weekday) isTAdhan_TActivationDay_ActivationDay() {}
@@ -279,17 +279,15 @@ var File_alice_protos_data_scenario_adhan_adhan_proto protoreflect.FileDescripto
 
 const file_alice_protos_data_scenario_adhan_adhan_proto_rawDesc = "" +
 	"\n" +
-	",alice/protos/data/scenario/adhan/adhan.proto\x12\fNAlice.NData\x1a(alice/protos/data/date/day_of_week.proto\x1a+alice/protos/data/date/gregorian_date.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\x04\n" +
-	"\x06TAdhan\x12'\n" +
-	"\aAdhanId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\badhan_idR\badhan_id\x12N\n" +
-	"\tAdhanType\x18\x02 \x01(\x0e2\x1f.NAlice.NData.TAdhan.EAdhanTypeB\x0e\xaa\xdd\x1b\n" +
-	"adhan_typeR\n" +
-	"adhan_type\x12a\n" +
-	"\x0eActivationDays\x18\x03 \x03(\v2#.NAlice.NData.TAdhan.TActivationDayB\x13\xaa\xdd\x1b\x0factivation_daysR\x0factivation_days\x1a\xbc\x01\n" +
-	"\x0eTActivationDay\x12A\n" +
-	"\aWeekday\x18\x01 \x01(\v2\x18.NAlice.NData.TDayOfWeekB\v\xaa\xdd\x1b\aweekdayH\x00R\aweekday\x12<\n" +
-	"\x04Date\x18\x02 \x01(\v2\x1c.NAlice.NData.TGregorianDateB\b\xaa\xdd\x1b\x04dateH\x00R\x04date:\x04\xa8\xdd\x1b\x04B#\n" +
-	"\rActivationDay\x12\x12\xaa\xdd\x1b\x0eactivation_day\"\x84\x01\n" +
+	",alice/protos/data/scenario/adhan/adhan.proto\x12\fNAlice.NData\x1a(alice/protos/data/date/day_of_week.proto\x1a+alice/protos/data/date/gregorian_date.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc3\x03\n" +
+	"\x06TAdhan\x12\x18\n" +
+	"\aAdhanId\x18\x01 \x01(\tR\aAdhanId\x12=\n" +
+	"\tAdhanType\x18\x02 \x01(\x0e2\x1f.NAlice.NData.TAdhan.EAdhanTypeR\tAdhanType\x12K\n" +
+	"\x0eActivationDays\x18\x03 \x03(\v2#.NAlice.NData.TAdhan.TActivationDayR\x0eActivationDays\x1a\x8b\x01\n" +
+	"\x0eTActivationDay\x124\n" +
+	"\aWeekday\x18\x01 \x01(\v2\x18.NAlice.NData.TDayOfWeekH\x00R\aWeekday\x122\n" +
+	"\x04Date\x18\x02 \x01(\v2\x1c.NAlice.NData.TGregorianDateH\x00R\x04DateB\x0f\n" +
+	"\rActivationDay\"\x84\x01\n" +
 	"\n" +
 	"EAdhanType\x12\x14\n" +
 	"\x10UnknownAdhanType\x10\x00\x12\x11\n" +
@@ -297,11 +295,12 @@ const file_alice_protos_data_scenario_adhan_adhan_proto_rawDesc = "" +
 	"\x0eDhuhrAdhanType\x10\x02\x12\x10\n" +
 	"\fAsrAdhanType\x10\x03\x12\x14\n" +
 	"\x10MaghribAdhanType\x10\x04\x12\x11\n" +
-	"\rIshaAdhanType\x10\x05:\x04\xa8\xdd\x1b\x04\"\xcf\x01\n" +
-	"\x15TAdhanMuezzinSettings\x12T\n" +
-	"\x14FajrAdhanMelodyS3Url\x18\x01 \x01(\tB\x1c\xaa\xdd\x1b\x18fajr_adhan_melody_s3_urlR\x18fajr_adhan_melody_s3_url\x12Z\n" +
-	"\x16OtherAdhansMelodyS3Url\x18\x02 \x01(\tB\x1e\xaa\xdd\x1b\x1aother_adhans_melody_s3_urlR\x1aother_adhans_melody_s3_url:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.adhanZ1a.yandex-team.ru/alice/protos/data/scenario/adhanb\x06proto3"
+	"\rIshaAdhanType\x10\x05\"\x83\x01\n" +
+	"\x15TAdhanMuezzinSettings\x122\n" +
+	"\x14FajrAdhanMelodyS3Url\x18\x01 \x01(\tR\x14FajrAdhanMelodyS3Url\x126\n" +
+	"\x16OtherAdhansMelodyS3Url\x18\x02 \x01(\tR\x16OtherAdhansMelodyS3UrlB\xc1\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"AdhanProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/adhan\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_adhan_adhan_proto_rawDescOnce sync.Once

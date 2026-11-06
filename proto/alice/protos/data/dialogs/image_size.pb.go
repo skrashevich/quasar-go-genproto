@@ -83,8 +83,8 @@ const file_alice_protos_data_dialogs_image_size_proto_rawDesc = "" +
 	"\x12UNKNOWN_IMAGE_SIZE\x10\x00\x12\x10\n" +
 	"\fSIZE_144X144\x10\x01\x12\x10\n" +
 	"\fSIZE_124X124\x10\x02\x12\x11\n" +
-	"\rSIZE_1024X500\x10\x03BS\n" +
-	"#ru.yandex.alice.protos.data.dialogsP\x01Z*a.yandex-team.ru/alice/protos/data/dialogsb\x06proto3"
+	"\rSIZE_1024X500\x10\x03Br\n" +
+	"#ru.yandex.alice.protos.data.dialogsP\x01ZIgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_data_dialogs_image_size_proto_rawDescOnce sync.Once

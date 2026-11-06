@@ -25,7 +25,7 @@ const (
 
 type TCancelRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	RequestMessageId string                 `protobuf:"bytes,1,opt,name=RequestMessageId,json=requestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	RequestMessageId string                 `protobuf:"bytes,1,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
 	// Types that are valid to be assigned to Reason:
 	//
 	//	*TCancelRequest_UserStop
@@ -112,15 +112,15 @@ type isTCancelRequest_Reason interface {
 }
 
 type TCancelRequest_UserStop struct {
-	UserStop *TCancelRequest_TReasonUserStop `protobuf:"bytes,2,opt,name=UserStop,json=user_stop,proto3,oneof"`
+	UserStop *TCancelRequest_TReasonUserStop `protobuf:"bytes,2,opt,name=UserStop,proto3,oneof"`
 }
 
 type TCancelRequest_Interruption struct {
-	Interruption *TCancelRequest_TReasonInterruption `protobuf:"bytes,3,opt,name=Interruption,json=interruption,proto3,oneof"`
+	Interruption *TCancelRequest_TReasonInterruption `protobuf:"bytes,3,opt,name=Interruption,proto3,oneof"`
 }
 
 type TCancelRequest_LocalExecution struct {
-	LocalExecution *TCancelRequest_TReasonLocalExecution `protobuf:"bytes,4,opt,name=LocalExecution,json=local_execution,proto3,oneof"`
+	LocalExecution *TCancelRequest_TReasonLocalExecution `protobuf:"bytes,4,opt,name=LocalExecution,proto3,oneof"`
 }
 
 func (*TCancelRequest_UserStop) isTCancelRequest_Reason() {}
@@ -203,7 +203,7 @@ func (*TCancelRequest_TReasonInterruption) Descriptor() ([]byte, []int) {
 
 type TCancelRequest_TReasonLocalExecution struct {
 	state            protoimpl.MessageState                     `protogen:"open.v1"`
-	ScenarioResponse *local_scenario.TLocalScenarioResponseData `protobuf:"bytes,1,opt,name=ScenarioResponse,json=scenario_response,proto3" json:"ScenarioResponse,omitempty"`
+	ScenarioResponse *local_scenario.TLocalScenarioResponseData `protobuf:"bytes,1,opt,name=ScenarioResponse,proto3" json:"ScenarioResponse,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -249,19 +249,18 @@ var File_alice_protos_api_alicekit_events_cancel_request_cancel_request_proto pr
 
 const file_alice_protos_api_alicekit_events_cancel_request_cancel_request_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/cancel_request/cancel_request.proto\x12\x10NAlice.NAliceApi\x1a3alice/protos/api/local_scenario/response_data.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe5\x04\n" +
-	"\x0eTCancelRequest\x12@\n" +
-	"\x10RequestMessageId\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10requestMessageIdR\x10requestMessageId\x12^\n" +
-	"\bUserStop\x18\x02 \x01(\v20.NAlice.NAliceApi.TCancelRequest.TReasonUserStopB\r\xaa\xdd\x1b\tuser_stopH\x00R\tuser_stop\x12l\n" +
-	"\fInterruption\x18\x03 \x01(\v24.NAlice.NAliceApi.TCancelRequest.TReasonInterruptionB\x10\xaa\xdd\x1b\finterruptionH\x00R\finterruption\x12v\n" +
-	"\x0eLocalExecution\x18\x04 \x01(\v26.NAlice.NAliceApi.TCancelRequest.TReasonLocalExecutionB\x13\xaa\xdd\x1b\x0flocal_executionH\x00R\x0flocal_execution\x1a\x11\n" +
+	"Dalice/protos/api/alicekit/events/cancel_request/cancel_request.proto\x12\x10NAlice.NAliceApi\x1a3alice/protos/api/local_scenario/response_data.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xec\x03\n" +
+	"\x0eTCancelRequest\x12*\n" +
+	"\x10RequestMessageId\x18\x01 \x01(\tR\x10RequestMessageId\x12N\n" +
+	"\bUserStop\x18\x02 \x01(\v20.NAlice.NAliceApi.TCancelRequest.TReasonUserStopH\x00R\bUserStop\x12Z\n" +
+	"\fInterruption\x18\x03 \x01(\v24.NAlice.NAliceApi.TCancelRequest.TReasonInterruptionH\x00R\fInterruption\x12`\n" +
+	"\x0eLocalExecution\x18\x04 \x01(\v26.NAlice.NAliceApi.TCancelRequest.TReasonLocalExecutionH\x00R\x0eLocalExecution\x1a\x11\n" +
 	"\x0fTReasonUserStop\x1a\x15\n" +
-	"\x13TReasonInterruption\x1a\x84\x01\n" +
-	"\x15TReasonLocalExecution\x12k\n" +
-	"\x10ScenarioResponse\x18\x01 \x01(\v2'.NAlice.NApi.TLocalScenarioResponseDataB\x15\xaa\xdd\x1b\x11scenario_responseR\x11scenario_response:\x04\xa8\xdd\x1b\x04B\x14\n" +
-	"\x06Reason\x12\n" +
-	"\xaa\xdd\x1b\x06reasonB\x8e\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.events.cancel_requestB\rCancelRequestP\x01Z@a.yandex-team.ru/alice/protos/api/alicekit/events/cancel_requestb\x06proto3"
+	"\x13TReasonInterruption\x1al\n" +
+	"\x15TReasonLocalExecution\x12S\n" +
+	"\x10ScenarioResponse\x18\x01 \x01(\v2'.NAlice.NApi.TLocalScenarioResponseDataR\x10ScenarioResponseB\b\n" +
+	"\x06ReasonB\xec\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12CancelRequestProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/cancel_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_cancel_request_cancel_request_proto_rawDescOnce sync.Once

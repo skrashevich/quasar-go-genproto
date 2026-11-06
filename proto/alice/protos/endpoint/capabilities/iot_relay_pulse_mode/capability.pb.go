@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_relay_pulse_mode/capability.proto
 
-package iotrelaypulsemodepb
+package iot_relay_pulse_mode
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -287,8 +287,8 @@ const file_alice_protos_endpoint_capabilities_iot_relay_pulse_mode_capability_pr
 	"\n" +
 	"Capability\x18\x01 \x01(\v2$.NAlice.TIotRelayPulseModeCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cB:\b\xa8\xdd\x1b\x04\xa0\xc8\x1coB\xae\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB IotRelayPulseModeCapabilityProtoZ\\a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_relay_pulse_mode;iotrelaypulsemodepbb\x06proto3"
+	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cB:\b\xa8\xdd\x1b\x04\xa0\xc8\x1coB\xb9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB IotRelayPulseModeCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_relay_pulse_modeb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_relay_pulse_mode_capability_proto_rawDescOnce sync.Once

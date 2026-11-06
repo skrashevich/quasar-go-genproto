@@ -26,10 +26,10 @@ const (
 
 type TPush struct {
 	state               protoimpl.MessageState     `protogen:"open.v1"`
-	PushIds             []string                   `protobuf:"bytes,1,rep,name=PushIds,json=push_ids,proto3" json:"PushIds,omitempty"`
-	Directives          []*directives.TDirective   `protobuf:"bytes,3,rep,name=Directives,json=directives,proto3" json:"Directives,omitempty"`
-	AnalyticsMetaInfo   *common.TAnalyticsMetaInfo `protobuf:"bytes,4,opt,name=AnalyticsMetaInfo,json=analytics_meta_info,proto3" json:"AnalyticsMetaInfo,omitempty"`
-	DeduplicationPushId *string                    `protobuf:"bytes,2,opt,name=DeduplicationPushId,json=deduplication_push_id,proto3,oneof" json:"DeduplicationPushId,omitempty"`
+	PushIds             []string                   `protobuf:"bytes,1,rep,name=PushIds,proto3" json:"PushIds,omitempty"`
+	Directives          []*directives.TDirective   `protobuf:"bytes,3,rep,name=Directives,proto3" json:"Directives,omitempty"`
+	AnalyticsMetaInfo   *common.TAnalyticsMetaInfo `protobuf:"bytes,4,opt,name=AnalyticsMetaInfo,proto3" json:"AnalyticsMetaInfo,omitempty"`
+	DeduplicationPushId *string                    `protobuf:"bytes,2,opt,name=DeduplicationPushId,proto3,oneof" json:"DeduplicationPushId,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -96,17 +96,16 @@ var File_alice_protos_api_alicekit_events_push_push_proto protoreflect.FileDescr
 
 const file_alice_protos_api_alicekit_events_push_push_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/api/alicekit/events/push/push.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a8alice/protos/api/matrix/common/analytics_meta_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdb\x02\n" +
-	"\x05TPush\x12'\n" +
-	"\aPushIds\x18\x01 \x03(\tB\f\xaa\xdd\x1b\bpush_idsR\bpush_ids\x12L\n" +
+	"0alice/protos/api/alicekit/events/push/push.proto\x12\x10NAlice.NAliceApi\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a8alice/protos/api/matrix/common/analytics_meta_info.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfe\x01\n" +
+	"\x05TPush\x12\x18\n" +
+	"\aPushIds\x18\x01 \x03(\tR\aPushIds\x12<\n" +
 	"\n" +
-	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveB\x0e\xaa\xdd\x1b\n" +
-	"directivesR\n" +
-	"directives\x12i\n" +
-	"\x11AnalyticsMetaInfo\x18\x04 \x01(\v2 .NMatrix.NApi.TAnalyticsMetaInfoB\x17\xaa\xdd\x1b\x13analytics_meta_infoR\x13analytics_meta_info\x12R\n" +
-	"\x13DeduplicationPushId\x18\x02 \x01(\tB\x19\xaa\xdd\x1b\x15deduplication_push_idH\x00R\x15deduplication_push_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\x14_DeduplicationPushIdBq\n" +
-	"/ru.yandex.alice.protos.api.alicekit.events.pushB\x04PushP\x01Z6a.yandex-team.ru/alice/protos/api/alicekit/events/pushb\x06proto3"
+	"Directives\x18\x03 \x03(\v2\x1c.NAlice.NAliceApi.TDirectiveR\n" +
+	"Directives\x12N\n" +
+	"\x11AnalyticsMetaInfo\x18\x04 \x01(\v2 .NMatrix.NApi.TAnalyticsMetaInfoR\x11AnalyticsMetaInfo\x125\n" +
+	"\x13DeduplicationPushId\x18\x02 \x01(\tH\x00R\x13DeduplicationPushId\x88\x01\x01B\x16\n" +
+	"\x14_DeduplicationPushIdB\xd9\x01\n" +
+	"\x14com.NAlice.NAliceApiB\tPushProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/push\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_push_push_proto_rawDescOnce sync.Once

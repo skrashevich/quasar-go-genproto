@@ -35,8 +35,8 @@ const (
 
 type TSemanticFrame struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Name          string                  `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Slots         []*TSemanticFrame_TSlot `protobuf:"bytes,2,rep,name=Slots,json=slots,proto3" json:"Slots,omitempty"`
+	Name          string                  `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Slots         []*TSemanticFrame_TSlot `protobuf:"bytes,2,rep,name=Slots,proto3" json:"Slots,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -406,111 +406,111 @@ type isTTypedSemanticFrame_Type interface {
 }
 
 type TTypedSemanticFrame_GetCallerNameSemanticFrame struct {
-	GetCallerNameSemanticFrame *call_commands_frame.TGetCallerNameSemanticFrame `protobuf:"bytes,7,opt,name=GetCallerNameSemanticFrame,json=get_caller_name,proto3,oneof"`
+	GetCallerNameSemanticFrame *call_commands_frame.TGetCallerNameSemanticFrame `protobuf:"bytes,7,opt,name=GetCallerNameSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_MusicPlaySemanticFrame struct {
-	MusicPlaySemanticFrame *music_frame.TMusicPlaySemanticFrame `protobuf:"bytes,8,opt,name=MusicPlaySemanticFrame,json=music_play_semantic_frame,proto3,oneof"`
+	MusicPlaySemanticFrame *music_frame.TMusicPlaySemanticFrame `protobuf:"bytes,8,opt,name=MusicPlaySemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerNextTrackSemanticFrame struct {
-	PlayerNextTrackSemanticFrame *media_frame.TPlayerNextTrackSemanticFrame `protobuf:"bytes,16,opt,name=PlayerNextTrackSemanticFrame,json=player_next_track_semantic_frame,proto3,oneof"`
+	PlayerNextTrackSemanticFrame *media_frame.TPlayerNextTrackSemanticFrame `protobuf:"bytes,16,opt,name=PlayerNextTrackSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerPrevTrackSemanticFrame struct {
-	PlayerPrevTrackSemanticFrame *media_frame.TPlayerPrevTrackSemanticFrame `protobuf:"bytes,17,opt,name=PlayerPrevTrackSemanticFrame,json=player_prev_track_semantic_frame,proto3,oneof"`
+	PlayerPrevTrackSemanticFrame *media_frame.TPlayerPrevTrackSemanticFrame `protobuf:"bytes,17,opt,name=PlayerPrevTrackSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_IoTDiscoveryStartSemanticFrame struct {
-	IoTDiscoveryStartSemanticFrame *iot_frame.TIoTDiscoveryStartSemanticFrame `protobuf:"bytes,31,opt,name=IoTDiscoveryStartSemanticFrame,json=iot_discovery_start,proto3,oneof"`
+	IoTDiscoveryStartSemanticFrame *iot_frame.TIoTDiscoveryStartSemanticFrame `protobuf:"bytes,31,opt,name=IoTDiscoveryStartSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_IoTDiscoveryFailureSemanticFrame struct {
-	IoTDiscoveryFailureSemanticFrame *iot_frame.TIoTDiscoveryFailureSemanticFrame `protobuf:"bytes,33,opt,name=IoTDiscoveryFailureSemanticFrame,json=iot_discovery_failure,proto3,oneof"`
+	IoTDiscoveryFailureSemanticFrame *iot_frame.TIoTDiscoveryFailureSemanticFrame `protobuf:"bytes,33,opt,name=IoTDiscoveryFailureSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_OnboardingStartingCriticalUpdateSemanticFrame struct {
-	OnboardingStartingCriticalUpdateSemanticFrame *onboarding_frame.TOnboardingStartingCriticalUpdateSemanticFrame `protobuf:"bytes,36,opt,name=OnboardingStartingCriticalUpdateSemanticFrame,json=onboarding_starting_critical_update,proto3,oneof"`
+	OnboardingStartingCriticalUpdateSemanticFrame *onboarding_frame.TOnboardingStartingCriticalUpdateSemanticFrame `protobuf:"bytes,36,opt,name=OnboardingStartingCriticalUpdateSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_OnboardingStartingConfigureSuccessSemanticFrame struct {
-	OnboardingStartingConfigureSuccessSemanticFrame *onboarding_frame.TOnboardingStartingConfigureSuccessSemanticFrame `protobuf:"bytes,37,opt,name=OnboardingStartingConfigureSuccessSemanticFrame,json=onboarding_starting_configure_success,proto3,oneof"`
+	OnboardingStartingConfigureSuccessSemanticFrame *onboarding_frame.TOnboardingStartingConfigureSuccessSemanticFrame `protobuf:"bytes,37,opt,name=OnboardingStartingConfigureSuccessSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_RadioPlaySemanticFrame struct {
-	RadioPlaySemanticFrame *radio_frame.TRadioPlaySemanticFrame `protobuf:"bytes,38,opt,name=RadioPlaySemanticFrame,json=radio_play_semantic_frame,proto3,oneof"`
+	RadioPlaySemanticFrame *radio_frame.TRadioPlaySemanticFrame `protobuf:"bytes,38,opt,name=RadioPlaySemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_SoundLouderSemanticFrame struct {
-	SoundLouderSemanticFrame *sound_commands_frame.TSoundLouderSemanticFrame `protobuf:"bytes,42,opt,name=SoundLouderSemanticFrame,json=sound_louder_semantic_frame,proto3,oneof"`
+	SoundLouderSemanticFrame *sound_commands_frame.TSoundLouderSemanticFrame `protobuf:"bytes,42,opt,name=SoundLouderSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_SoundQuiterSemanticFrame struct {
-	SoundQuiterSemanticFrame *sound_commands_frame.TSoundQuiterSemanticFrame `protobuf:"bytes,43,opt,name=SoundQuiterSemanticFrame,json=sound_quiter_semantic_frame,proto3,oneof"`
+	SoundQuiterSemanticFrame *sound_commands_frame.TSoundQuiterSemanticFrame `protobuf:"bytes,43,opt,name=SoundQuiterSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerContinueSemanticFrame struct {
-	PlayerContinueSemanticFrame *media_frame.TPlayerContinueSemanticFrame `protobuf:"bytes,53,opt,name=PlayerContinueSemanticFrame,json=player_continue_semantic_frame,proto3,oneof"`
+	PlayerContinueSemanticFrame *media_frame.TPlayerContinueSemanticFrame `protobuf:"bytes,53,opt,name=PlayerContinueSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerShuffleSemanticFrame struct {
-	PlayerShuffleSemanticFrame *media_frame.TPlayerShuffleSemanticFrame `protobuf:"bytes,55,opt,name=PlayerShuffleSemanticFrame,json=player_shuffle_semantic_frame,proto3,oneof"`
+	PlayerShuffleSemanticFrame *media_frame.TPlayerShuffleSemanticFrame `protobuf:"bytes,55,opt,name=PlayerShuffleSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerReplaySemanticFrame struct {
-	PlayerReplaySemanticFrame *media_frame.TPlayerReplaySemanticFrame `protobuf:"bytes,56,opt,name=PlayerReplaySemanticFrame,json=player_replay_semantic_frame,proto3,oneof"`
+	PlayerReplaySemanticFrame *media_frame.TPlayerReplaySemanticFrame `protobuf:"bytes,56,opt,name=PlayerReplaySemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerRepeatSemanticFrame struct {
-	PlayerRepeatSemanticFrame *media_frame.TPlayerRepeatSemanticFrame `protobuf:"bytes,58,opt,name=PlayerRepeatSemanticFrame,json=player_repeat_semantic_frame,proto3,oneof"`
+	PlayerRepeatSemanticFrame *media_frame.TPlayerRepeatSemanticFrame `protobuf:"bytes,58,opt,name=PlayerRepeatSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_PlayerUnshuffleSemanticFrame struct {
-	PlayerUnshuffleSemanticFrame *media_frame.TPlayerUnshuffleSemanticFrame `protobuf:"bytes,64,opt,name=PlayerUnshuffleSemanticFrame,json=player_unshuffle_semantic_frame,proto3,oneof"`
+	PlayerUnshuffleSemanticFrame *media_frame.TPlayerUnshuffleSemanticFrame `protobuf:"bytes,64,opt,name=PlayerUnshuffleSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_StartIotTuyaBroadcastSemanticFrame struct {
-	StartIotTuyaBroadcastSemanticFrame *iot_frame.TStartIotTuyaBroadcastSemanticFrame `protobuf:"bytes,102,opt,name=StartIotTuyaBroadcastSemanticFrame,json=start_iot_tuya_broadcast_semantic_frame,proto3,oneof"`
+	StartIotTuyaBroadcastSemanticFrame *iot_frame.TStartIotTuyaBroadcastSemanticFrame `protobuf:"bytes,102,opt,name=StartIotTuyaBroadcastSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_RestoreIotNetworksSemanticFrame struct {
-	RestoreIotNetworksSemanticFrame *iot_frame.TRestoreIotNetworksSemanticFrame `protobuf:"bytes,104,opt,name=RestoreIotNetworksSemanticFrame,json=restore_iot_networks_semantic_frame,proto3,oneof"`
+	RestoreIotNetworksSemanticFrame *iot_frame.TRestoreIotNetworksSemanticFrame `protobuf:"bytes,104,opt,name=RestoreIotNetworksSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_SaveIotNetworksSemanticFrame struct {
-	SaveIotNetworksSemanticFrame *iot_frame.TSaveIotNetworksSemanticFrame `protobuf:"bytes,105,opt,name=SaveIotNetworksSemanticFrame,json=save_iot_networks_semantic_frame,proto3,oneof"`
+	SaveIotNetworksSemanticFrame *iot_frame.TSaveIotNetworksSemanticFrame `protobuf:"bytes,105,opt,name=SaveIotNetworksSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_GuestEnrollmentStartSemanticFrame struct {
-	GuestEnrollmentStartSemanticFrame *enrollment_frame.TGuestEnrollmentStartSemanticFrame `protobuf:"bytes,106,opt,name=GuestEnrollmentStartSemanticFrame,json=guest_enrollment_start_semantic_frame,proto3,oneof"`
+	GuestEnrollmentStartSemanticFrame *enrollment_frame.TGuestEnrollmentStartSemanticFrame `protobuf:"bytes,106,opt,name=GuestEnrollmentStartSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_EndpointEventsBatchSemanticFrame struct {
-	EndpointEventsBatchSemanticFrame *endpoint_events_frame.TEndpointEventsBatchSemanticFrame `protobuf:"bytes,127,opt,name=EndpointEventsBatchSemanticFrame,json=endpoint_events_batch_semantic_frame,proto3,oneof"`
+	EndpointEventsBatchSemanticFrame *endpoint_events_frame.TEndpointEventsBatchSemanticFrame `protobuf:"bytes,127,opt,name=EndpointEventsBatchSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_GetEqualizerSettingsSemanticFrame struct {
-	GetEqualizerSettingsSemanticFrame *music_frame.TGetEqualizerSettingsSemanticFrame `protobuf:"bytes,138,opt,name=GetEqualizerSettingsSemanticFrame,json=get_equalizer_settings_semantic_frame,proto3,oneof"`
+	GetEqualizerSettingsSemanticFrame *music_frame.TGetEqualizerSettingsSemanticFrame `protobuf:"bytes,138,opt,name=GetEqualizerSettingsSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_OnboardingGetGreetingsSemanticFrame struct {
-	OnboardingGetGreetingsSemanticFrame *onboarding_frame.TOnboardingGetGreetingsSemanticFrame `protobuf:"bytes,140,opt,name=OnboardingGetGreetingsSemanticFrame,json=onboarding_get_greetings_semantic_frame,proto3,oneof"`
+	OnboardingGetGreetingsSemanticFrame *onboarding_frame.TOnboardingGetGreetingsSemanticFrame `protobuf:"bytes,140,opt,name=OnboardingGetGreetingsSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_EnrollmentStatusSemanticFrame struct {
-	EnrollmentStatusSemanticFrame *enrollment_frame.TEnrollmentStatusSemanticFrame `protobuf:"bytes,156,opt,name=EnrollmentStatusSemanticFrame,json=multiaccount_enrollment_status_semantic_frame,proto3,oneof"`
+	EnrollmentStatusSemanticFrame *enrollment_frame.TEnrollmentStatusSemanticFrame `protobuf:"bytes,156,opt,name=EnrollmentStatusSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_GuestEnrollmentFinishSemanticFrame struct {
-	GuestEnrollmentFinishSemanticFrame *enrollment_frame.TGuestEnrollmentFinishSemanticFrame `protobuf:"bytes,165,opt,name=GuestEnrollmentFinishSemanticFrame,json=guest_enrollment_finish_semantic_frame,proto3,oneof"`
+	GuestEnrollmentFinishSemanticFrame *enrollment_frame.TGuestEnrollmentFinishSemanticFrame `protobuf:"bytes,165,opt,name=GuestEnrollmentFinishSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_VoiceActivityDetectorSemanticFrame struct {
-	VoiceActivityDetectorSemanticFrame *speech_activity_frame.TVoiceActivityDetectorSemanticFrame `protobuf:"bytes,263,opt,name=VoiceActivityDetectorSemanticFrame,json=voice_activity_detector_semantic_frame,proto3,oneof"`
+	VoiceActivityDetectorSemanticFrame *speech_activity_frame.TVoiceActivityDetectorSemanticFrame `protobuf:"bytes,263,opt,name=VoiceActivityDetectorSemanticFrame,proto3,oneof"`
 }
 
 type TTypedSemanticFrame_OnboardingAddNetworkSuccessSemanticFrame struct {
-	OnboardingAddNetworkSuccessSemanticFrame *onboarding_frame.TOnboardingAddNetworkSuccessSemanticFrame `protobuf:"bytes,368,opt,name=OnboardingAddNetworkSuccessSemanticFrame,json=onboarding_add_network_success_semantic_frame,proto3,oneof"`
+	OnboardingAddNetworkSuccessSemanticFrame *onboarding_frame.TOnboardingAddNetworkSuccessSemanticFrame `protobuf:"bytes,368,opt,name=OnboardingAddNetworkSuccessSemanticFrame,proto3,oneof"`
 }
 
 func (*TTypedSemanticFrame_GetCallerNameSemanticFrame) isTTypedSemanticFrame_Type() {}
@@ -571,9 +571,9 @@ func (*TTypedSemanticFrame_OnboardingAddNetworkSuccessSemanticFrame) isTTypedSem
 
 type TSemanticFrameRequestData struct {
 	state              protoimpl.MessageState                  `protogen:"open.v1"`
-	TypedSemanticFrame *TTypedSemanticFrame                    `protobuf:"bytes,1,opt,name=TypedSemanticFrame,json=typed_semantic_frame,proto3" json:"TypedSemanticFrame,omitempty"`
-	Analytics          *request_parts.TAnalyticsTrackingModule `protobuf:"bytes,2,opt,name=Analytics,json=analytics,proto3" json:"Analytics,omitempty"`
-	RequestParams      *request_parts.TRequestParams           `protobuf:"bytes,5,opt,name=RequestParams,json=request_params,proto3" json:"RequestParams,omitempty"`
+	TypedSemanticFrame *TTypedSemanticFrame                    `protobuf:"bytes,1,opt,name=TypedSemanticFrame,proto3" json:"TypedSemanticFrame,omitempty"`
+	Analytics          *request_parts.TAnalyticsTrackingModule `protobuf:"bytes,2,opt,name=Analytics,proto3" json:"Analytics,omitempty"`
+	RequestParams      *request_parts.TRequestParams           `protobuf:"bytes,5,opt,name=RequestParams,proto3" json:"RequestParams,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -631,9 +631,9 @@ func (x *TSemanticFrameRequestData) GetRequestParams() *request_parts.TRequestPa
 
 type TSemanticFrame_TSlot struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Type          string                 `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Value         string                 `protobuf:"bytes,3,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Type          string                 `protobuf:"bytes,2,opt,name=Type,proto3" json:"Type,omitempty"`
+	Value         string                 `protobuf:"bytes,3,opt,name=Value,proto3" json:"Value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -693,49 +693,50 @@ var File_alice_protos_api_alicekit_scenarios_frames_frame_proto protoreflect.Fil
 
 const file_alice_protos_api_alicekit_scenarios_frames_frame_proto_rawDesc = "" +
 	"\n" +
-	"6alice/protos/api/alicekit/scenarios/frames/frame.proto\x12\x10NAlice.NAliceApi\x1aTalice/megamind/protos/scenarios/frames/call_commands_frame/call_commands_frame.proto\x1aXalice/megamind/protos/scenarios/frames/endpoint_events_frame/endpoint_events_frame.proto\x1aNalice/megamind/protos/scenarios/frames/enrollment_frame/enrollment_frame.proto\x1a@alice/megamind/protos/scenarios/frames/iot_frame/iot_frame.proto\x1aDalice/megamind/protos/scenarios/frames/media_frame/media_frame.proto\x1aDalice/megamind/protos/scenarios/frames/music_frame/music_frame.proto\x1aNalice/megamind/protos/scenarios/frames/onboarding_frame/onboarding_frame.proto\x1aDalice/megamind/protos/scenarios/frames/radio_frame/radio_frame.proto\x1aValice/megamind/protos/scenarios/frames/sound_commands_frame/sound_commands_frame.proto\x1aXalice/megamind/protos/scenarios/frames/speech_activity_frame/speech_activity_frame.proto\x1a(alice/protos/api/request_parts/atm.proto\x1a3alice/protos/api/request_parts/request_params.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfe\x02\n" +
-	"\x0eTSemanticFrame\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12G\n" +
-	"\x05Slots\x18\x02 \x03(\v2&.NAlice.NAliceApi.TSemanticFrame.TSlotB\t\xaa\xdd\x1b\x05slotsR\x05slots\x1a\xb4\x01\n" +
-	"\x05TSlot\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Type\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1f\n" +
-	"\x05Value\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05valueR\x05value:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\rAcceptedTypesR\vIsRequestedR\n" +
-	"TypedValueR\bIsFilled:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aR\bEntitiesR\x12TypedSemanticFrameR\x18IsFromRephrasedUtterance\"\xcd!\n" +
-	"\x13TTypedSemanticFrame\x12o\n" +
-	"\x1aGetCallerNameSemanticFrame\x18\a \x01(\v2#.NAlice.TGetCallerNameSemanticFrameB\x13\xaa\xdd\x1b\x0fget_caller_nameH\x00R\x0fget_caller_name\x12{\n" +
-	"\x16MusicPlaySemanticFrame\x18\b \x01(\v2\x1f.NAlice.TMusicPlaySemanticFrameB\x1d\xaa\xdd\x1b\x19music_play_semantic_frameH\x00R\x19music_play_semantic_frame\x12\x95\x01\n" +
-	"\x1cPlayerNextTrackSemanticFrame\x18\x10 \x01(\v2%.NAlice.TPlayerNextTrackSemanticFrameB$\xaa\xdd\x1b player_next_track_semantic_frameH\x00R player_next_track_semantic_frame\x12\x95\x01\n" +
-	"\x1cPlayerPrevTrackSemanticFrame\x18\x11 \x01(\v2%.NAlice.TPlayerPrevTrackSemanticFrameB$\xaa\xdd\x1b player_prev_track_semantic_frameH\x00R player_prev_track_semantic_frame\x12\x7f\n" +
-	"\x1eIoTDiscoveryStartSemanticFrame\x18\x1f \x01(\v2'.NAlice.TIoTDiscoveryStartSemanticFrameB\x17\xaa\xdd\x1b\x13iot_discovery_startH\x00R\x13iot_discovery_start\x12\x87\x01\n" +
-	" IoTDiscoveryFailureSemanticFrame\x18! \x01(\v2).NAlice.TIoTDiscoveryFailureSemanticFrameB\x19\xaa\xdd\x1b\x15iot_discovery_failureH\x00R\x15iot_discovery_failure\x12\xbd\x01\n" +
-	"-OnboardingStartingCriticalUpdateSemanticFrame\x18$ \x01(\v26.NAlice.TOnboardingStartingCriticalUpdateSemanticFrameB'\xaa\xdd\x1b#onboarding_starting_critical_updateH\x00R#onboarding_starting_critical_update\x12\xc5\x01\n" +
-	"/OnboardingStartingConfigureSuccessSemanticFrame\x18% \x01(\v28.NAlice.TOnboardingStartingConfigureSuccessSemanticFrameB)\xaa\xdd\x1b%onboarding_starting_configure_successH\x00R%onboarding_starting_configure_success\x12{\n" +
-	"\x16RadioPlaySemanticFrame\x18& \x01(\v2\x1f.NAlice.TRadioPlaySemanticFrameB\x1d\xaa\xdd\x1b\x19radio_play_semantic_frameH\x00R\x19radio_play_semantic_frame\x12\x83\x01\n" +
-	"\x18SoundLouderSemanticFrame\x18* \x01(\v2!.NAlice.TSoundLouderSemanticFrameB\x1f\xaa\xdd\x1b\x1bsound_louder_semantic_frameH\x00R\x1bsound_louder_semantic_frame\x12\x83\x01\n" +
-	"\x18SoundQuiterSemanticFrame\x18+ \x01(\v2!.NAlice.TSoundQuiterSemanticFrameB\x1f\xaa\xdd\x1b\x1bsound_quiter_semantic_frameH\x00R\x1bsound_quiter_semantic_frame\x12\x8f\x01\n" +
-	"\x1bPlayerContinueSemanticFrame\x185 \x01(\v2$.NAlice.TPlayerContinueSemanticFrameB\"\xaa\xdd\x1b\x1eplayer_continue_semantic_frameH\x00R\x1eplayer_continue_semantic_frame\x12\x8b\x01\n" +
-	"\x1aPlayerShuffleSemanticFrame\x187 \x01(\v2#.NAlice.TPlayerShuffleSemanticFrameB!\xaa\xdd\x1b\x1dplayer_shuffle_semantic_frameH\x00R\x1dplayer_shuffle_semantic_frame\x12\x87\x01\n" +
-	"\x19PlayerReplaySemanticFrame\x188 \x01(\v2\".NAlice.TPlayerReplaySemanticFrameB \xaa\xdd\x1b\x1cplayer_replay_semantic_frameH\x00R\x1cplayer_replay_semantic_frame\x12\x87\x01\n" +
-	"\x19PlayerRepeatSemanticFrame\x18: \x01(\v2\".NAlice.TPlayerRepeatSemanticFrameB \xaa\xdd\x1b\x1cplayer_repeat_semantic_frameH\x00R\x1cplayer_repeat_semantic_frame\x12\x93\x01\n" +
-	"\x1cPlayerUnshuffleSemanticFrame\x18@ \x01(\v2%.NAlice.TPlayerUnshuffleSemanticFrameB#\xaa\xdd\x1b\x1fplayer_unshuffle_semantic_frameH\x00R\x1fplayer_unshuffle_semantic_frame\x12\xaf\x01\n" +
-	"\"StartIotTuyaBroadcastSemanticFrame\x18f \x01(\v2+.NAlice.TStartIotTuyaBroadcastSemanticFrameB+\xaa\xdd\x1b'start_iot_tuya_broadcast_semantic_frameH\x00R'start_iot_tuya_broadcast_semantic_frame\x12\xa1\x01\n" +
-	"\x1fRestoreIotNetworksSemanticFrame\x18h \x01(\v2(.NAlice.TRestoreIotNetworksSemanticFrameB'\xaa\xdd\x1b#restore_iot_networks_semantic_frameH\x00R#restore_iot_networks_semantic_frame\x12\x99\x01\n" +
-	"\x1cSaveIotNetworksSemanticFrame\x18i \x01(\v2%.NAlice.TSaveIotNetworksSemanticFrameB(\xa0\xdd\x1b\x05\xaa\xdd\x1b save_iot_networks_semantic_frameH\x00R save_iot_networks_semantic_frame\x12\xa9\x01\n" +
-	"!GuestEnrollmentStartSemanticFrame\x18j \x01(\v2*.NAlice.TGuestEnrollmentStartSemanticFrameB)\xaa\xdd\x1b%guest_enrollment_start_semantic_frameH\x00R%guest_enrollment_start_semantic_frame\x12\xa5\x01\n" +
-	" EndpointEventsBatchSemanticFrame\x18\x7f \x01(\v2).NAlice.TEndpointEventsBatchSemanticFrameB(\xaa\xdd\x1b$endpoint_events_batch_semantic_frameH\x00R$endpoint_events_batch_semantic_frame\x12\xaa\x01\n" +
-	"!GetEqualizerSettingsSemanticFrame\x18\x8a\x01 \x01(\v2*.NAlice.TGetEqualizerSettingsSemanticFrameB)\xaa\xdd\x1b%get_equalizer_settings_semantic_frameH\x00R%get_equalizer_settings_semantic_frame\x12\xb2\x01\n" +
-	"#OnboardingGetGreetingsSemanticFrame\x18\x8c\x01 \x01(\v2,.NAlice.TOnboardingGetGreetingsSemanticFrameB+\xaa\xdd\x1b'onboarding_get_greetings_semantic_frameH\x00R'onboarding_get_greetings_semantic_frame\x12\xb6\x01\n" +
-	"\x1dEnrollmentStatusSemanticFrame\x18\x9c\x01 \x01(\v2&.NAlice.TEnrollmentStatusSemanticFrameB5\xa0\xdd\x1b\x05\xaa\xdd\x1b-multiaccount_enrollment_status_semantic_frameH\x00R-multiaccount_enrollment_status_semantic_frame\x12\xb2\x01\n" +
-	"\"GuestEnrollmentFinishSemanticFrame\x18\xa5\x01 \x01(\v2+.NAlice.TGuestEnrollmentFinishSemanticFrameB.\xa0\xdd\x1b\x05\xaa\xdd\x1b&guest_enrollment_finish_semantic_frameH\x00R&guest_enrollment_finish_semantic_frame\x12\xae\x01\n" +
-	"\"VoiceActivityDetectorSemanticFrame\x18\x87\x02 \x01(\v2+.NAlice.TVoiceActivityDetectorSemanticFrameB*\xaa\xdd\x1b&voice_activity_detector_semantic_frameH\x00R&voice_activity_detector_semantic_frame\x12\xc8\x01\n" +
-	"(OnboardingAddNetworkSuccessSemanticFrame\x18\xf0\x02 \x01(\v21.NAlice.TOnboardingAddNetworkSuccessSemanticFrameB1\xaa\xdd\x1b-onboarding_add_network_success_semantic_frameH\x00R-onboarding_add_network_success_semantic_frame:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Type\x12\b\xaa\xdd\x1b\x04typeJ\b\bԻ\x03\x10ջ\x03\"\xe1\x02\n" +
-	"\x19TSemanticFrameRequestData\x12q\n" +
-	"\x12TypedSemanticFrame\x18\x01 \x01(\v2%.NAlice.NAliceApi.TTypedSemanticFrameB\x18\xaa\xdd\x1b\x14typed_semantic_frameR\x14typed_semantic_frame\x12M\n" +
-	"\tAnalytics\x18\x02 \x01(\v2 .NAlice.TAnalyticsTrackingModuleB\r\xaa\xdd\x1b\tanalyticsR\tanalytics\x12Q\n" +
-	"\rRequestParams\x18\x05 \x01(\v2\x16.NAlice.TRequestParamsB\x12\xaa\xdd\x1b\x0erequest_paramsR\x0erequest_paramsJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x06\x10\aR\x06OriginR\x06ParamsR\rOnChainFinishB\x89\x01\n" +
-	"4ru.yandex.alice.protos.api.alicekit.scenarios.framesB\x12SemanticFrameProtoP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/scenarios/framesb\x06proto3"
+	"6alice/protos/api/alicekit/scenarios/frames/frame.proto\x12\x10NAlice.NAliceApi\x1aTalice/megamind/protos/scenarios/frames/call_commands_frame/call_commands_frame.proto\x1aXalice/megamind/protos/scenarios/frames/endpoint_events_frame/endpoint_events_frame.proto\x1aNalice/megamind/protos/scenarios/frames/enrollment_frame/enrollment_frame.proto\x1a@alice/megamind/protos/scenarios/frames/iot_frame/iot_frame.proto\x1aDalice/megamind/protos/scenarios/frames/media_frame/media_frame.proto\x1aDalice/megamind/protos/scenarios/frames/music_frame/music_frame.proto\x1aNalice/megamind/protos/scenarios/frames/onboarding_frame/onboarding_frame.proto\x1aDalice/megamind/protos/scenarios/frames/radio_frame/radio_frame.proto\x1aValice/megamind/protos/scenarios/frames/sound_commands_frame/sound_commands_frame.proto\x1aXalice/megamind/protos/scenarios/frames/speech_activity_frame/speech_activity_frame.proto\x1a(alice/protos/api/request_parts/atm.proto\x1a3alice/protos/api/request_parts/request_params.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbe\x02\n" +
+	"\x0eTSemanticFrame\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12<\n" +
+	"\x05Slots\x18\x02 \x03(\v2&.NAlice.NAliceApi.TSemanticFrame.TSlotR\x05Slots\x1a\x8f\x01\n" +
+	"\x05TSlot\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Type\x18\x02 \x01(\tR\x04Type\x12\x14\n" +
+	"\x05Value\x18\x03 \x01(\tR\x05ValueJ\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\rAcceptedTypesR\vIsRequestedR\n" +
+	"TypedValueR\bIsFilledJ\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aR\bEntitiesR\x12TypedSemanticFrameR\x18IsFromRephrasedUtterance\"\xf6\x18\n" +
+	"\x13TTypedSemanticFrame\x12e\n" +
+	"\x1aGetCallerNameSemanticFrame\x18\a \x01(\v2#.NAlice.TGetCallerNameSemanticFrameH\x00R\x1aGetCallerNameSemanticFrame\x12Y\n" +
+	"\x16MusicPlaySemanticFrame\x18\b \x01(\v2\x1f.NAlice.TMusicPlaySemanticFrameH\x00R\x16MusicPlaySemanticFrame\x12k\n" +
+	"\x1cPlayerNextTrackSemanticFrame\x18\x10 \x01(\v2%.NAlice.TPlayerNextTrackSemanticFrameH\x00R\x1cPlayerNextTrackSemanticFrame\x12k\n" +
+	"\x1cPlayerPrevTrackSemanticFrame\x18\x11 \x01(\v2%.NAlice.TPlayerPrevTrackSemanticFrameH\x00R\x1cPlayerPrevTrackSemanticFrame\x12q\n" +
+	"\x1eIoTDiscoveryStartSemanticFrame\x18\x1f \x01(\v2'.NAlice.TIoTDiscoveryStartSemanticFrameH\x00R\x1eIoTDiscoveryStartSemanticFrame\x12w\n" +
+	" IoTDiscoveryFailureSemanticFrame\x18! \x01(\v2).NAlice.TIoTDiscoveryFailureSemanticFrameH\x00R IoTDiscoveryFailureSemanticFrame\x12\x9e\x01\n" +
+	"-OnboardingStartingCriticalUpdateSemanticFrame\x18$ \x01(\v26.NAlice.TOnboardingStartingCriticalUpdateSemanticFrameH\x00R-OnboardingStartingCriticalUpdateSemanticFrame\x12\xa4\x01\n" +
+	"/OnboardingStartingConfigureSuccessSemanticFrame\x18% \x01(\v28.NAlice.TOnboardingStartingConfigureSuccessSemanticFrameH\x00R/OnboardingStartingConfigureSuccessSemanticFrame\x12Y\n" +
+	"\x16RadioPlaySemanticFrame\x18& \x01(\v2\x1f.NAlice.TRadioPlaySemanticFrameH\x00R\x16RadioPlaySemanticFrame\x12_\n" +
+	"\x18SoundLouderSemanticFrame\x18* \x01(\v2!.NAlice.TSoundLouderSemanticFrameH\x00R\x18SoundLouderSemanticFrame\x12_\n" +
+	"\x18SoundQuiterSemanticFrame\x18+ \x01(\v2!.NAlice.TSoundQuiterSemanticFrameH\x00R\x18SoundQuiterSemanticFrame\x12h\n" +
+	"\x1bPlayerContinueSemanticFrame\x185 \x01(\v2$.NAlice.TPlayerContinueSemanticFrameH\x00R\x1bPlayerContinueSemanticFrame\x12e\n" +
+	"\x1aPlayerShuffleSemanticFrame\x187 \x01(\v2#.NAlice.TPlayerShuffleSemanticFrameH\x00R\x1aPlayerShuffleSemanticFrame\x12b\n" +
+	"\x19PlayerReplaySemanticFrame\x188 \x01(\v2\".NAlice.TPlayerReplaySemanticFrameH\x00R\x19PlayerReplaySemanticFrame\x12b\n" +
+	"\x19PlayerRepeatSemanticFrame\x18: \x01(\v2\".NAlice.TPlayerRepeatSemanticFrameH\x00R\x19PlayerRepeatSemanticFrame\x12k\n" +
+	"\x1cPlayerUnshuffleSemanticFrame\x18@ \x01(\v2%.NAlice.TPlayerUnshuffleSemanticFrameH\x00R\x1cPlayerUnshuffleSemanticFrame\x12}\n" +
+	"\"StartIotTuyaBroadcastSemanticFrame\x18f \x01(\v2+.NAlice.TStartIotTuyaBroadcastSemanticFrameH\x00R\"StartIotTuyaBroadcastSemanticFrame\x12t\n" +
+	"\x1fRestoreIotNetworksSemanticFrame\x18h \x01(\v2(.NAlice.TRestoreIotNetworksSemanticFrameH\x00R\x1fRestoreIotNetworksSemanticFrame\x12k\n" +
+	"\x1cSaveIotNetworksSemanticFrame\x18i \x01(\v2%.NAlice.TSaveIotNetworksSemanticFrameH\x00R\x1cSaveIotNetworksSemanticFrame\x12z\n" +
+	"!GuestEnrollmentStartSemanticFrame\x18j \x01(\v2*.NAlice.TGuestEnrollmentStartSemanticFrameH\x00R!GuestEnrollmentStartSemanticFrame\x12w\n" +
+	" EndpointEventsBatchSemanticFrame\x18\x7f \x01(\v2).NAlice.TEndpointEventsBatchSemanticFrameH\x00R EndpointEventsBatchSemanticFrame\x12{\n" +
+	"!GetEqualizerSettingsSemanticFrame\x18\x8a\x01 \x01(\v2*.NAlice.TGetEqualizerSettingsSemanticFrameH\x00R!GetEqualizerSettingsSemanticFrame\x12\x81\x01\n" +
+	"#OnboardingGetGreetingsSemanticFrame\x18\x8c\x01 \x01(\v2,.NAlice.TOnboardingGetGreetingsSemanticFrameH\x00R#OnboardingGetGreetingsSemanticFrame\x12o\n" +
+	"\x1dEnrollmentStatusSemanticFrame\x18\x9c\x01 \x01(\v2&.NAlice.TEnrollmentStatusSemanticFrameH\x00R\x1dEnrollmentStatusSemanticFrame\x12~\n" +
+	"\"GuestEnrollmentFinishSemanticFrame\x18\xa5\x01 \x01(\v2+.NAlice.TGuestEnrollmentFinishSemanticFrameH\x00R\"GuestEnrollmentFinishSemanticFrame\x12~\n" +
+	"\"VoiceActivityDetectorSemanticFrame\x18\x87\x02 \x01(\v2+.NAlice.TVoiceActivityDetectorSemanticFrameH\x00R\"VoiceActivityDetectorSemanticFrame\x12\x90\x01\n" +
+	"(OnboardingAddNetworkSuccessSemanticFrame\x18\xf0\x02 \x01(\v21.NAlice.TOnboardingAddNetworkSuccessSemanticFrameH\x00R(OnboardingAddNetworkSuccessSemanticFrameB\x06\n" +
+	"\x04TypeJ\b\bԻ\x03\x10ջ\x03\"\xa1\x02\n" +
+	"\x19TSemanticFrameRequestData\x12U\n" +
+	"\x12TypedSemanticFrame\x18\x01 \x01(\v2%.NAlice.NAliceApi.TTypedSemanticFrameR\x12TypedSemanticFrame\x12>\n" +
+	"\tAnalytics\x18\x02 \x01(\v2 .NAlice.TAnalyticsTrackingModuleR\tAnalytics\x12<\n" +
+	"\rRequestParams\x18\x05 \x01(\v2\x16.NAlice.TRequestParamsR\rRequestParamsJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x06\x10\aR\x06OriginR\x06ParamsR\rOnChainFinishB\xdf\x01\n" +
+	"\x14com.NAlice.NAliceApiB\n" +
+	"FrameProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/scenarios/frames\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_scenarios_frames_frame_proto_rawDescOnce sync.Once

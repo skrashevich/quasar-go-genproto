@@ -80,8 +80,8 @@ const file_alice_pro_trial_requests_api_response_proto_rawDesc = "" +
 	"+alice_pro_trial_requests_api_response.proto\x12\x0eQuarkJniProtos\"S\n" +
 	"\x1dAliceProTrialRequestsResponse\x12\x1c\n" +
 	"\tLeftCount\x18\x01 \x01(\x04R\tLeftCount\x12\x14\n" +
-	"\x05Limit\x18\x02 \x01(\x04R\x05LimitB\x1b\n" +
-	"\x19ru.yandex.quasar.protobuf"
+	"\x05Limit\x18\x02 \x01(\x04R\x05LimitBL\n" +
+	"\x19ru.yandex.quasar.protobufZ/github.com/skrashevich/quasar-go-genproto/proto"
 
 var (
 	file_alice_pro_trial_requests_api_response_proto_rawDescOnce sync.Once

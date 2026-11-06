@@ -25,9 +25,9 @@ const (
 
 type TDeviceControlTimesyncTypedCallback struct {
 	state         protoimpl.MessageState                             `protogen:"open.v1"`
-	SyncTimezone  *TDeviceControlTimesyncTypedCallback_TSyncTimezone `protobuf:"bytes,1,opt,name=SyncTimezone,json=sync_timezone,proto3" json:"SyncTimezone,omitempty"`
-	SyncGmt       *TDeviceControlTimesyncTypedCallback_TSyncGmt      `protobuf:"bytes,2,opt,name=SyncGmt,json=sync_gmt,proto3" json:"SyncGmt,omitempty"`
-	SyncLocation  *TDeviceControlTimesyncTypedCallback_TSyncLocation `protobuf:"bytes,3,opt,name=SyncLocation,json=sync_location,proto3" json:"SyncLocation,omitempty"`
+	SyncTimezone  *TDeviceControlTimesyncTypedCallback_TSyncTimezone `protobuf:"bytes,1,opt,name=SyncTimezone,proto3" json:"SyncTimezone,omitempty"`
+	SyncGmt       *TDeviceControlTimesyncTypedCallback_TSyncGmt      `protobuf:"bytes,2,opt,name=SyncGmt,proto3" json:"SyncGmt,omitempty"`
+	SyncLocation  *TDeviceControlTimesyncTypedCallback_TSyncLocation `protobuf:"bytes,3,opt,name=SyncLocation,proto3" json:"SyncLocation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,16 +195,17 @@ var File_alice_protos_api_typed_callbacks_device_control_callback_device_control
 
 const file_alice_protos_api_typed_callbacks_device_control_callback_device_control_callback_proto_rawDesc = "" +
 	"\n" +
-	"Valice/protos/api/typed_callbacks/device_control_callback/device_control_callback.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x03\n" +
-	"#TDeviceControlTimesyncTypedCallback\x12^\n" +
-	"\fSyncTimezone\x18\x01 \x01(\v29.NAlice.TDeviceControlTimesyncTypedCallback.TSyncTimezoneR\rsync_timezone\x12O\n" +
-	"\aSyncGmt\x18\x02 \x01(\v24.NAlice.TDeviceControlTimesyncTypedCallback.TSyncGmtR\bsync_gmt\x12^\n" +
-	"\fSyncLocation\x18\x03 \x01(\v29.NAlice.TDeviceControlTimesyncTypedCallback.TSyncLocationR\rsync_location\x1a\x0f\n" +
+	"Valice/protos/api/typed_callbacks/device_control_callback/device_control_callback.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe1\x02\n" +
+	"#TDeviceControlTimesyncTypedCallback\x12]\n" +
+	"\fSyncTimezone\x18\x01 \x01(\v29.NAlice.TDeviceControlTimesyncTypedCallback.TSyncTimezoneR\fSyncTimezone\x12N\n" +
+	"\aSyncGmt\x18\x02 \x01(\v24.NAlice.TDeviceControlTimesyncTypedCallback.TSyncGmtR\aSyncGmt\x12]\n" +
+	"\fSyncLocation\x18\x03 \x01(\v29.NAlice.TDeviceControlTimesyncTypedCallback.TSyncLocationR\fSyncLocation\x1a\x0f\n" +
 	"\rTSyncTimezone\x1a\n" +
 	"\n" +
 	"\bTSyncGmt\x1a\x0f\n" +
-	"\rTSyncLocation:*\xa8\xdd\x1b\x04\xba\xff\x1b\"DeviceControlTimesyncTypedCallbackB\x91\x01\n" +
-	"Bru.yandex.alice.protos.api.typed_callbacks.device_control_callbackP\x01ZIa.yandex-team.ru/alice/protos/api/typed_callbacks/device_control_callbackb\x06proto3"
+	"\rTSyncLocationB\xca\x01\n" +
+	"\n" +
+	"com.NAliceB\x1aDeviceControlCallbackProtoP\x01Zhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/device_control_callback\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_device_control_callback_device_control_callback_proto_rawDescOnce sync.Once

@@ -335,8 +335,8 @@ const file_alice_protos_data_health_data_health_metrics_proto_rawDesc = "" +
 	"\r_EndTimestampB\b\n" +
 	"\x06_StepsB\v\n" +
 	"\t_CaloriesB\x16\n" +
-	"\x14_ActivityTimeMinutesBZ\n" +
-	"&ru.yandex.alice.protos.data.healthdataP\x01Z.a.yandex-team.ru/alice/protos/data/health_datab\x06proto3"
+	"\x14_ActivityTimeMinutesBy\n" +
+	"&ru.yandex.alice.protos.data.healthdataP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/health_datab\x06proto3"
 
 var (
 	file_alice_protos_data_health_data_health_metrics_proto_rawDescOnce sync.Once

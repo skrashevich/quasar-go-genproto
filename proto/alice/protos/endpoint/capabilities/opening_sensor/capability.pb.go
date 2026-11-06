@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/opening_sensor/capability.proto
 
-package openingsensorpb
+package opening_sensor
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TOpeningSensorCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TOpeningSensorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TOpeningSensorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TOpeningSensorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TOpeningSensorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TOpeningSensorCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TOpeningSensorCapability_TState struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,json=last_event,proto3" json:"LastEvent,omitempty"`
+	LastEvent     *events.TTypedCapabilityEvent `protobuf:"bytes,1,opt,name=LastEvent,proto3" json:"LastEvent,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -239,7 +239,7 @@ func (*TOpeningSensorCapability_TOpeningSensorClosedEvent) Descriptor() ([]byte,
 
 type TOpeningSensorCapability_TCondition struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -285,26 +285,23 @@ var File_alice_protos_endpoint_capabilities_opening_sensor_capability_proto prot
 
 const file_alice_protos_endpoint_capabilities_opening_sensor_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/opening_sensor/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x04\n" +
-	"\x18TOpeningSensorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Balice/protos/endpoint/capabilities/opening_sensor/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a)alice/protos/endpoint/events/events.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xac\x03\n" +
+	"\x18TOpeningSensorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TOpeningSensorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TOpeningSensorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\\\n" +
-	"\x06TState\x12L\n" +
-	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventB\x0e\xaa\xdd\x1b\n" +
-	"last_eventR\n" +
-	"last_event:\x04\xa8\xdd\x1b\x04\x1a%\n" +
-	"\x19TOpeningSensorOpenedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\r\x1a%\n" +
-	"\x19TOpeningSensorClosedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c\x0e\x1aV\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TOpeningSensorCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TOpeningSensorCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aE\n" +
+	"\x06TState\x12;\n" +
+	"\tLastEvent\x18\x01 \x01(\v2\x1d.NAlice.TTypedCapabilityEventR\tLastEvent\x1a\x1b\n" +
+	"\x19TOpeningSensorOpenedEvent\x1a\x1b\n" +
+	"\x19TOpeningSensorClosedEvent\x1aD\n" +
 	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\fB\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x12OpeningSensorProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/opening_sensor;openingsensorpbb\x06proto3"
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06EventsB\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/opening_sensor\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_opening_sensor_capability_proto_rawDescOnce sync.Once

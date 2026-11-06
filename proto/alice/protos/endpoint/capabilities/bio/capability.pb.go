@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/bio/capability.proto
 
-package biopb
+package bio
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -75,14 +75,14 @@ func (x TBioCapability_TMultiaccountAddAccountDirective_ETokenType) Number() pro
 
 // Deprecated: Use TBioCapability_TMultiaccountAddAccountDirective_ETokenType.Descriptor instead.
 func (TBioCapability_TMultiaccountAddAccountDirective_ETokenType) EnumDescriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 6, 0}
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 3, 0}
 }
 
 type TBioCapability struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TBioCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TBioCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TBioCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TBioCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,8 +175,8 @@ func (*TBioCapability_TParameters) Descriptor() ([]byte, []int) {
 }
 
 type TBioCapability_TState struct {
-	state         protoimpl.MessageState                           `protogen:"open.v1"`
-	Enrollments   map[string]*enrollment_headers.TEnrollmentHeader `protobuf:"bytes,1,rep,name=Enrollments,json=enrollments,proto3" json:"Enrollments,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                    `protogen:"open.v1"`
+	Enrollments   []*TBioCapability_TState_EnrollmentsEntry `protobuf:"bytes,1,rep,name=Enrollments,proto3" json:"Enrollments,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -211,151 +211,11 @@ func (*TBioCapability_TState) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *TBioCapability_TState) GetEnrollments() map[string]*enrollment_headers.TEnrollmentHeader {
+func (x *TBioCapability_TState) GetEnrollments() []*TBioCapability_TState_EnrollmentsEntry {
 	if x != nil {
 		return x.Enrollments
 	}
 	return nil
-}
-
-type TBioCapability_TEnrollmentStartDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
-	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TBioCapability_TEnrollmentStartDirective) Reset() {
-	*x = TBioCapability_TEnrollmentStartDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TBioCapability_TEnrollmentStartDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TBioCapability_TEnrollmentStartDirective) ProtoMessage() {}
-
-func (x *TBioCapability_TEnrollmentStartDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TBioCapability_TEnrollmentStartDirective.ProtoReflect.Descriptor instead.
-func (*TBioCapability_TEnrollmentStartDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 2}
-}
-
-func (x *TBioCapability_TEnrollmentStartDirective) GetTimeoutMs() uint32 {
-	if x != nil {
-		return x.TimeoutMs
-	}
-	return 0
-}
-
-func (x *TBioCapability_TEnrollmentStartDirective) GetPuid() uint64 {
-	if x != nil {
-		return x.Puid
-	}
-	return 0
-}
-
-type TBioCapability_TEnrollmentCancelDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TBioCapability_TEnrollmentCancelDirective) Reset() {
-	*x = TBioCapability_TEnrollmentCancelDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TBioCapability_TEnrollmentCancelDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TBioCapability_TEnrollmentCancelDirective) ProtoMessage() {}
-
-func (x *TBioCapability_TEnrollmentCancelDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TBioCapability_TEnrollmentCancelDirective.ProtoReflect.Descriptor instead.
-func (*TBioCapability_TEnrollmentCancelDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 3}
-}
-
-type TBioCapability_TEnrollmentFinishDirective struct {
-	state                          protoimpl.MessageState `protogen:"open.v1"`
-	PersId                         string                 `protobuf:"bytes,1,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
-	SendGuestEnrollmentFinishFrame bool                   `protobuf:"varint,2,opt,name=SendGuestEnrollmentFinishFrame,json=send_guest_enrollment_finish_frame,proto3" json:"SendGuestEnrollmentFinishFrame,omitempty"`
-	unknownFields                  protoimpl.UnknownFields
-	sizeCache                      protoimpl.SizeCache
-}
-
-func (x *TBioCapability_TEnrollmentFinishDirective) Reset() {
-	*x = TBioCapability_TEnrollmentFinishDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TBioCapability_TEnrollmentFinishDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TBioCapability_TEnrollmentFinishDirective) ProtoMessage() {}
-
-func (x *TBioCapability_TEnrollmentFinishDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TBioCapability_TEnrollmentFinishDirective.ProtoReflect.Descriptor instead.
-func (*TBioCapability_TEnrollmentFinishDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 4}
-}
-
-func (x *TBioCapability_TEnrollmentFinishDirective) GetPersId() string {
-	if x != nil {
-		return x.PersId
-	}
-	return ""
-}
-
-func (x *TBioCapability_TEnrollmentFinishDirective) GetSendGuestEnrollmentFinishFrame() bool {
-	if x != nil {
-		return x.SendGuestEnrollmentFinishFrame
-	}
-	return false
 }
 
 type TBioCapability_TBioStartSoundEnrollmentDirective struct {
@@ -366,7 +226,7 @@ type TBioCapability_TBioStartSoundEnrollmentDirective struct {
 
 func (x *TBioCapability_TBioStartSoundEnrollmentDirective) Reset() {
 	*x = TBioCapability_TBioStartSoundEnrollmentDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -378,7 +238,7 @@ func (x *TBioCapability_TBioStartSoundEnrollmentDirective) String() string {
 func (*TBioCapability_TBioStartSoundEnrollmentDirective) ProtoMessage() {}
 
 func (x *TBioCapability_TBioStartSoundEnrollmentDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -391,25 +251,25 @@ func (x *TBioCapability_TBioStartSoundEnrollmentDirective) ProtoReflect() protor
 
 // Deprecated: Use TBioCapability_TBioStartSoundEnrollmentDirective.ProtoReflect.Descriptor instead.
 func (*TBioCapability_TBioStartSoundEnrollmentDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 5}
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 2}
 }
 
 type TBioCapability_TMultiaccountAddAccountDirective struct {
 	state               protoimpl.MessageState                                     `protogen:"open.v1"`
-	Name                string                                                     `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EncryptedCode       string                                                     `protobuf:"bytes,1,opt,name=EncryptedCode,json=encrypted_code,proto3" json:"EncryptedCode,omitempty"`
-	Signature           string                                                     `protobuf:"bytes,2,opt,name=Signature,json=signature,proto3" json:"Signature,omitempty"`
-	EncryptedSessionKey string                                                     `protobuf:"bytes,3,opt,name=EncryptedSessionKey,json=encrypted_session_key,proto3" json:"EncryptedSessionKey,omitempty"`
-	Puid                string                                                     `protobuf:"bytes,4,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	TokenType           TBioCapability_TMultiaccountAddAccountDirective_ETokenType `protobuf:"varint,5,opt,name=TokenType,json=token_type,proto3,enum=NAlice.TBioCapability_TMultiaccountAddAccountDirective_ETokenType" json:"TokenType,omitempty"`
-	UserType            string                                                     `protobuf:"bytes,6,opt,name=UserType,json=user_type,proto3" json:"UserType,omitempty"`
+	Name                string                                                     `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	EncryptedCode       string                                                     `protobuf:"bytes,1,opt,name=EncryptedCode,proto3" json:"EncryptedCode,omitempty"`
+	Signature           string                                                     `protobuf:"bytes,2,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	EncryptedSessionKey string                                                     `protobuf:"bytes,3,opt,name=EncryptedSessionKey,proto3" json:"EncryptedSessionKey,omitempty"`
+	Puid                string                                                     `protobuf:"bytes,4,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	TokenType           TBioCapability_TMultiaccountAddAccountDirective_ETokenType `protobuf:"varint,5,opt,name=TokenType,proto3,enum=NAlice.TBioCapability_TMultiaccountAddAccountDirective_ETokenType" json:"TokenType,omitempty"`
+	UserType            string                                                     `protobuf:"bytes,6,opt,name=UserType,proto3" json:"UserType,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TBioCapability_TMultiaccountAddAccountDirective) Reset() {
 	*x = TBioCapability_TMultiaccountAddAccountDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -421,7 +281,7 @@ func (x *TBioCapability_TMultiaccountAddAccountDirective) String() string {
 func (*TBioCapability_TMultiaccountAddAccountDirective) ProtoMessage() {}
 
 func (x *TBioCapability_TMultiaccountAddAccountDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[7]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +294,7 @@ func (x *TBioCapability_TMultiaccountAddAccountDirective) ProtoReflect() protore
 
 // Deprecated: Use TBioCapability_TMultiaccountAddAccountDirective.ProtoReflect.Descriptor instead.
 func (*TBioCapability_TMultiaccountAddAccountDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 6}
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 3}
 }
 
 func (x *TBioCapability_TMultiaccountAddAccountDirective) GetName() string {
@@ -488,15 +348,15 @@ func (x *TBioCapability_TMultiaccountAddAccountDirective) GetUserType() string {
 
 type TBioCapability_TMultiaccountRemoveAccountDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,proto3" json:"Puid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TBioCapability_TMultiaccountRemoveAccountDirective) Reset() {
 	*x = TBioCapability_TMultiaccountRemoveAccountDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[8]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -508,7 +368,7 @@ func (x *TBioCapability_TMultiaccountRemoveAccountDirective) String() string {
 func (*TBioCapability_TMultiaccountRemoveAccountDirective) ProtoMessage() {}
 
 func (x *TBioCapability_TMultiaccountRemoveAccountDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[8]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +381,7 @@ func (x *TBioCapability_TMultiaccountRemoveAccountDirective) ProtoReflect() prot
 
 // Deprecated: Use TBioCapability_TMultiaccountRemoveAccountDirective.ProtoReflect.Descriptor instead.
 func (*TBioCapability_TMultiaccountRemoveAccountDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 7}
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 4}
 }
 
 func (x *TBioCapability_TMultiaccountRemoveAccountDirective) GetName() string {
@@ -540,15 +400,15 @@ func (x *TBioCapability_TMultiaccountRemoveAccountDirective) GetPuid() uint64 {
 
 type TBioCapability_TMultiaccountRemoveAccountPersIdDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	PersId        string                 `protobuf:"bytes,2,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	PersId        string                 `protobuf:"bytes,2,opt,name=PersId,proto3" json:"PersId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) Reset() {
 	*x = TBioCapability_TMultiaccountRemoveAccountPersIdDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[9]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -560,7 +420,7 @@ func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) String() stri
 func (*TBioCapability_TMultiaccountRemoveAccountPersIdDirective) ProtoMessage() {}
 
 func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[9]
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -573,7 +433,7 @@ func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) ProtoReflect(
 
 // Deprecated: Use TBioCapability_TMultiaccountRemoveAccountPersIdDirective.ProtoReflect.Descriptor instead.
 func (*TBioCapability_TMultiaccountRemoveAccountPersIdDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 8}
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 5}
 }
 
 func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) GetName() string {
@@ -590,13 +450,153 @@ func (x *TBioCapability_TMultiaccountRemoveAccountPersIdDirective) GetPersId() s
 	return ""
 }
 
+type TBioCapability_TEnrollmentStartDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TimeoutMs     uint32                 `protobuf:"varint,1,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
+	Puid          uint64                 `protobuf:"varint,2,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TBioCapability_TEnrollmentStartDirective) Reset() {
+	*x = TBioCapability_TEnrollmentStartDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TBioCapability_TEnrollmentStartDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TBioCapability_TEnrollmentStartDirective) ProtoMessage() {}
+
+func (x *TBioCapability_TEnrollmentStartDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TBioCapability_TEnrollmentStartDirective.ProtoReflect.Descriptor instead.
+func (*TBioCapability_TEnrollmentStartDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 6}
+}
+
+func (x *TBioCapability_TEnrollmentStartDirective) GetTimeoutMs() uint32 {
+	if x != nil {
+		return x.TimeoutMs
+	}
+	return 0
+}
+
+func (x *TBioCapability_TEnrollmentStartDirective) GetPuid() uint64 {
+	if x != nil {
+		return x.Puid
+	}
+	return 0
+}
+
+type TBioCapability_TEnrollmentCancelDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TBioCapability_TEnrollmentCancelDirective) Reset() {
+	*x = TBioCapability_TEnrollmentCancelDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TBioCapability_TEnrollmentCancelDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TBioCapability_TEnrollmentCancelDirective) ProtoMessage() {}
+
+func (x *TBioCapability_TEnrollmentCancelDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TBioCapability_TEnrollmentCancelDirective.ProtoReflect.Descriptor instead.
+func (*TBioCapability_TEnrollmentCancelDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 7}
+}
+
+type TBioCapability_TEnrollmentFinishDirective struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	PersId                         string                 `protobuf:"bytes,1,opt,name=PersId,proto3" json:"PersId,omitempty"`
+	SendGuestEnrollmentFinishFrame bool                   `protobuf:"varint,2,opt,name=SendGuestEnrollmentFinishFrame,proto3" json:"SendGuestEnrollmentFinishFrame,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *TBioCapability_TEnrollmentFinishDirective) Reset() {
+	*x = TBioCapability_TEnrollmentFinishDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TBioCapability_TEnrollmentFinishDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TBioCapability_TEnrollmentFinishDirective) ProtoMessage() {}
+
+func (x *TBioCapability_TEnrollmentFinishDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TBioCapability_TEnrollmentFinishDirective.ProtoReflect.Descriptor instead.
+func (*TBioCapability_TEnrollmentFinishDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 8}
+}
+
+func (x *TBioCapability_TEnrollmentFinishDirective) GetPersId() string {
+	if x != nil {
+		return x.PersId
+	}
+	return ""
+}
+
+func (x *TBioCapability_TEnrollmentFinishDirective) GetSendGuestEnrollmentFinishFrame() bool {
+	if x != nil {
+		return x.SendGuestEnrollmentFinishFrame
+	}
+	return false
+}
+
 type TBioCapability_TShareEnrolledPersonDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Puid          uint64                 `protobuf:"varint,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	UserName      string                 `protobuf:"bytes,2,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
-	Gender        voiceprint.EGender     `protobuf:"varint,3,opt,name=Gender,json=gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
-	DeviceIds     []string               `protobuf:"bytes,4,rep,name=DeviceIds,json=device_ids,proto3" json:"DeviceIds,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Puid          uint64                 `protobuf:"varint,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	UserName      string                 `protobuf:"bytes,2,opt,name=UserName,proto3" json:"UserName,omitempty"`
+	Gender        voiceprint.EGender     `protobuf:"varint,3,opt,name=Gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
+	DeviceIds     []string               `protobuf:"bytes,4,rep,name=DeviceIds,proto3" json:"DeviceIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -668,13 +668,13 @@ func (x *TBioCapability_TShareEnrolledPersonDirective) GetDeviceIds() []string {
 
 type TBioCapability_TAddEnrolledPersonDirective struct {
 	state           protoimpl.MessageState       `protogen:"open.v1"`
-	Name            string                       `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Code            string                       `protobuf:"bytes,1,opt,name=Code,json=code,proto3" json:"Code,omitempty"`
-	PersId          string                       `protobuf:"bytes,3,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
-	UserName        string                       `protobuf:"bytes,4,opt,name=UserName,json=user_name,proto3" json:"UserName,omitempty"`
-	UserType        enrollment_headers.EUserType `protobuf:"varint,7,opt,name=UserType,json=user_type,proto3,enum=NAlice.EUserType" json:"UserType,omitempty"`
-	Gender          voiceprint.EGender           `protobuf:"varint,5,opt,name=Gender,json=gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
-	EnrollmentAudio []byte                       `protobuf:"bytes,6,opt,name=EnrollmentAudio,json=enrollment_audio,proto3" json:"EnrollmentAudio,omitempty"`
+	Name            string                       `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Code            string                       `protobuf:"bytes,1,opt,name=Code,proto3" json:"Code,omitempty"`
+	PersId          string                       `protobuf:"bytes,3,opt,name=PersId,proto3" json:"PersId,omitempty"`
+	UserName        string                       `protobuf:"bytes,4,opt,name=UserName,proto3" json:"UserName,omitempty"`
+	UserType        enrollment_headers.EUserType `protobuf:"varint,7,opt,name=UserType,proto3,enum=NAlice.EUserType" json:"UserType,omitempty"`
+	Gender          voiceprint.EGender           `protobuf:"varint,5,opt,name=Gender,proto3,enum=NAlice.NData.NVoiceprint.EGender" json:"Gender,omitempty"`
+	EnrollmentAudio []byte                       `protobuf:"bytes,6,opt,name=EnrollmentAudio,proto3" json:"EnrollmentAudio,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -758,75 +758,120 @@ func (x *TBioCapability_TAddEnrolledPersonDirective) GetEnrollmentAudio() []byte
 	return nil
 }
 
+type TBioCapability_TState_EnrollmentsEntry struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Key           string                                `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *enrollment_headers.TEnrollmentHeader `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TBioCapability_TState_EnrollmentsEntry) Reset() {
+	*x = TBioCapability_TState_EnrollmentsEntry{}
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TBioCapability_TState_EnrollmentsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TBioCapability_TState_EnrollmentsEntry) ProtoMessage() {}
+
+func (x *TBioCapability_TState_EnrollmentsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_bio_capability_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TBioCapability_TState_EnrollmentsEntry.ProtoReflect.Descriptor instead.
+func (*TBioCapability_TState_EnrollmentsEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescGZIP(), []int{0, 1, 0}
+}
+
+func (x *TBioCapability_TState_EnrollmentsEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TBioCapability_TState_EnrollmentsEntry) GetValue() *enrollment_headers.TEnrollmentHeader {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_endpoint_capabilities_bio_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/endpoint/capabilities/bio/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x14\n" +
-	"\x0eTBioCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12R\n" +
+	"7alice/protos/endpoint/capabilities/bio/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1aGalice/megamind/protos/guest/enrollment_headers/enrollment_headers.proto\x1a@alice/protos/data/scenario/voiceprint/personalization_data.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x97\r\n" +
+	"\x0eTBioCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12B\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2\".NAlice.TBioCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12>\n" +
-	"\x05State\x18\x03 \x01(\v2\x1d.NAlice.TBioCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xcc\x01\n" +
-	"\x06TState\x12a\n" +
-	"\vEnrollments\x18\x01 \x03(\v2..NAlice.TBioCapability.TState.EnrollmentsEntryB\x0f\xaa\xdd\x1b\venrollmentsR\venrollments\x1aY\n" +
+	"Parameters\x18\x02 \x01(\v2\".NAlice.TBioCapability.TParametersR\n" +
+	"Parameters\x123\n" +
+	"\x05State\x18\x03 \x01(\v2\x1d.NAlice.TBioCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xb1\x01\n" +
+	"\x06TState\x12P\n" +
+	"\vEnrollments\x18\x01 \x03(\v2..NAlice.TBioCapability.TState.EnrollmentsEntryR\vEnrollments\x1aU\n" +
 	"\x10EnrollmentsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12/\n" +
-	"\x05value\x18\x02 \x01(\v2\x19.NAlice.TEnrollmentHeaderR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\x1a\x8e\x01\n" +
-	"\x19TEnrollmentStartDirective\x12-\n" +
-	"\tTimeoutMs\x18\x01 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms\x12 \n" +
-	"\x04Puid\x18\x02 \x01(\x04B\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid: \x92\x82\x19\x14bio_enrollment_start\xa8\xdd\x1b\x04\xa8\xc8\x1cJ\x1a?\n" +
-	"\x1aTEnrollmentCancelDirective:!\x92\x82\x19\x15bio_enrollment_cancel\xa8\xdd\x1b\x04\xa8\xc8\x1cK\x1a\xd5\x01\n" +
-	"\x1aTEnrollmentFinishDirective\x12$\n" +
-	"\x06PersId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12r\n" +
-	"\x1eSendGuestEnrollmentFinishFrame\x18\x02 \x01(\bB&\xaa\xdd\x1b\"send_guest_enrollment_finish_frameR\"send_guest_enrollment_finish_frame:\x1d\x92\x82\x19\x11enrollment_finish\xa8\xdd\x1b\x04\xa8\xc8\x1cL\x1aK\n" +
-	"!TBioStartSoundEnrollmentDirective:&\x92\x82\x19\x1abio_start_sound_enrollment\xa8\xdd\x1b\x04\xa8\xc8\x1c.\x1a\xb1\x04\n" +
-	" TMultiaccountAddAccountDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12A\n" +
-	"\rEncryptedCode\x18\x01 \x01(\tB\x1a\xaa\xdd\x1b\x0eencrypted_code\xa8\x8d'\x02\xf8\x91*\x03R\x0eencrypted_code\x123\n" +
-	"\tSignature\x18\x02 \x01(\tB\x15\xaa\xdd\x1b\tsignature\xa8\x8d'\x02\xf8\x91*\x03R\tsignature\x12U\n" +
-	"\x13EncryptedSessionKey\x18\x03 \x01(\tB!\xaa\xdd\x1b\x15encrypted_session_key\xa8\x8d'\x02\xf8\x91*\x03R\x15encrypted_session_key\x12 \n" +
-	"\x04Puid\x18\x04 \x01(\tB\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x12q\n" +
-	"\tTokenType\x18\x05 \x01(\x0e2B.NAlice.TBioCapability.TMultiaccountAddAccountDirective.ETokenTypeB\x0e\xaa\xdd\x1b\n" +
-	"token_typeR\n" +
-	"token_type\x12*\n" +
-	"\bUserType\x18\x06 \x01(\tB\r\xaa\xdd\x1b\tuser_typeR\tuser_type\"5\n" +
+	"\x05value\x18\x02 \x01(\v2\x19.NAlice.TEnrollmentHeaderR\x05value\x1a#\n" +
+	"!TBioStartSoundEnrollmentDirective\x1a\xf6\x02\n" +
+	" TMultiaccountAddAccountDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12$\n" +
+	"\rEncryptedCode\x18\x01 \x01(\tR\rEncryptedCode\x12\x1c\n" +
+	"\tSignature\x18\x02 \x01(\tR\tSignature\x120\n" +
+	"\x13EncryptedSessionKey\x18\x03 \x01(\tR\x13EncryptedSessionKey\x12\x12\n" +
+	"\x04Puid\x18\x04 \x01(\tR\x04Puid\x12`\n" +
+	"\tTokenType\x18\x05 \x01(\x0e2B.NAlice.TBioCapability.TMultiaccountAddAccountDirective.ETokenTypeR\tTokenType\x12\x1a\n" +
+	"\bUserType\x18\x06 \x01(\tR\bUserType\"5\n" +
 	"\n" +
 	"ETokenType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
 	"\n" +
 	"\x06XToken\x10\x01\x12\x0e\n" +
 	"\n" +
-	"OAuthToken\x10\x02:'\x92\x82\x19\x1bmultiaccount_add_account_v2\xa8\xdd\x1b\x04\xa8\xc8\x1cH\x1a\x91\x01\n" +
-	"#TMultiaccountRemoveAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12 \n" +
-	"\x04Puid\x18\x02 \x01(\x04B\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid:*\x92\x82\x19\x1emultiaccount_remove_account_v2\xa8\xdd\x1b\x04\xa8\xc8\x1cI\x1a\x9c\x01\n" +
-	")TMultiaccountRemoveAccountPersIdDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12$\n" +
-	"\x06PersId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id:+\x92\x82\x19\x1emultiaccount_remove_account_v3\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd2\x01\x1a\xbc\x02\n" +
-	"\x1dTShareEnrolledPersonDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\x04B\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x12.\n" +
-	"\bUserName\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\tuser_name\xf8\x91*\x03R\tuser_name\x12I\n" +
-	"\x06Gender\x18\x03 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderB\x0e\xaa\xdd\x1b\x06gender\xf8\x91*\x03R\x06gender\x121\n" +
-	"\tDeviceIds\x18\x04 \x03(\tB\x12\xaa\xdd\x1b\n" +
-	"device_ids\xf8\x91*\x03R\n" +
-	"device_ids:,\x92\x82\x19\x1fshare_enrolled_person_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcd\x02\x1a\xab\x03\n" +
-	"\x1bTAddEnrolledPersonDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x1c\n" +
-	"\x04Code\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04codeR\x04code\x12$\n" +
-	"\x06PersId\x18\x03 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12*\n" +
-	"\bUserName\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tuser_nameR\tuser_name\x12=\n" +
-	"\bUserType\x18\a \x01(\x0e2\x11.NAlice.EUserTypeB\r\xaa\xdd\x1b\tuser_typeR\tuser_type\x12E\n" +
-	"\x06Gender\x18\x05 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderB\n" +
-	"\xaa\xdd\x1b\x06genderR\x06gender\x12?\n" +
-	"\x0fEnrollmentAudio\x18\x06 \x01(\fB\x14\xaa\xdd\x1b\x10enrollment_audioR\x10enrollment_audio:*\x92\x82\x19\x1dadd_enrolled_person_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xce\x02J\x04\b\x02\x10\x03R\x04Puid:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x13Bw\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\bBioProtoZ=a.yandex-team.ru/alice/protos/endpoint/capabilities/bio;biopbb\x06proto3"
+	"OAuthToken\x10\x02\x1aM\n" +
+	"#TMultiaccountRemoveAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Puid\x18\x02 \x01(\x04R\x04Puid\x1aW\n" +
+	")TMultiaccountRemoveAccountPersIdDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06PersId\x18\x02 \x01(\tR\x06PersId\x1a[\n" +
+	"\x19TEnrollmentStartDirective\x12\x1c\n" +
+	"\tTimeoutMs\x18\x01 \x01(\rR\tTimeoutMs\x12 \n" +
+	"\x04Puid\x18\x02 \x01(\x04B\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x1a\x1c\n" +
+	"\x1aTEnrollmentCancelDirective\x1a|\n" +
+	"\x1aTEnrollmentFinishDirective\x12\x16\n" +
+	"\x06PersId\x18\x01 \x01(\tR\x06PersId\x12F\n" +
+	"\x1eSendGuestEnrollmentFinishFrame\x18\x02 \x01(\bR\x1eSendGuestEnrollmentFinishFrame\x1a\xbd\x01\n" +
+	"\x1dTShareEnrolledPersonDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\x04R\x04Puid\x12\x1a\n" +
+	"\bUserName\x18\x02 \x01(\tR\bUserName\x129\n" +
+	"\x06Gender\x18\x03 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderR\x06Gender\x12\x1c\n" +
+	"\tDeviceIds\x18\x04 \x03(\tR\tDeviceIds\x1a\x9a\x02\n" +
+	"\x1bTAddEnrolledPersonDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x12\n" +
+	"\x04Code\x18\x01 \x01(\tR\x04Code\x12\x16\n" +
+	"\x06PersId\x18\x03 \x01(\tR\x06PersId\x12\x1a\n" +
+	"\bUserName\x18\x04 \x01(\tR\bUserName\x12-\n" +
+	"\bUserType\x18\a \x01(\x0e2\x11.NAlice.EUserTypeR\bUserType\x129\n" +
+	"\x06Gender\x18\x05 \x01(\x0e2!.NAlice.NData.NVoiceprint.EGenderR\x06Gender\x12(\n" +
+	"\x0fEnrollmentAudio\x18\x06 \x01(\fR\x0fEnrollmentAudioJ\x04\b\x02\x10\x03R\x04PuidB\xad\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/bio\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_bio_capability_proto_rawDescOnce sync.Once
@@ -847,20 +892,20 @@ var file_alice_protos_endpoint_capabilities_bio_capability_proto_goTypes = []any
 	(*TBioCapability)(nil),                                           // 1: NAlice.TBioCapability
 	(*TBioCapability_TParameters)(nil),                               // 2: NAlice.TBioCapability.TParameters
 	(*TBioCapability_TState)(nil),                                    // 3: NAlice.TBioCapability.TState
-	(*TBioCapability_TEnrollmentStartDirective)(nil),                 // 4: NAlice.TBioCapability.TEnrollmentStartDirective
-	(*TBioCapability_TEnrollmentCancelDirective)(nil),                // 5: NAlice.TBioCapability.TEnrollmentCancelDirective
-	(*TBioCapability_TEnrollmentFinishDirective)(nil),                // 6: NAlice.TBioCapability.TEnrollmentFinishDirective
-	(*TBioCapability_TBioStartSoundEnrollmentDirective)(nil),         // 7: NAlice.TBioCapability.TBioStartSoundEnrollmentDirective
-	(*TBioCapability_TMultiaccountAddAccountDirective)(nil),          // 8: NAlice.TBioCapability.TMultiaccountAddAccountDirective
-	(*TBioCapability_TMultiaccountRemoveAccountDirective)(nil),       // 9: NAlice.TBioCapability.TMultiaccountRemoveAccountDirective
-	(*TBioCapability_TMultiaccountRemoveAccountPersIdDirective)(nil), // 10: NAlice.TBioCapability.TMultiaccountRemoveAccountPersIdDirective
+	(*TBioCapability_TBioStartSoundEnrollmentDirective)(nil),         // 4: NAlice.TBioCapability.TBioStartSoundEnrollmentDirective
+	(*TBioCapability_TMultiaccountAddAccountDirective)(nil),          // 5: NAlice.TBioCapability.TMultiaccountAddAccountDirective
+	(*TBioCapability_TMultiaccountRemoveAccountDirective)(nil),       // 6: NAlice.TBioCapability.TMultiaccountRemoveAccountDirective
+	(*TBioCapability_TMultiaccountRemoveAccountPersIdDirective)(nil), // 7: NAlice.TBioCapability.TMultiaccountRemoveAccountPersIdDirective
+	(*TBioCapability_TEnrollmentStartDirective)(nil),                 // 8: NAlice.TBioCapability.TEnrollmentStartDirective
+	(*TBioCapability_TEnrollmentCancelDirective)(nil),                // 9: NAlice.TBioCapability.TEnrollmentCancelDirective
+	(*TBioCapability_TEnrollmentFinishDirective)(nil),                // 10: NAlice.TBioCapability.TEnrollmentFinishDirective
 	(*TBioCapability_TShareEnrolledPersonDirective)(nil),             // 11: NAlice.TBioCapability.TShareEnrolledPersonDirective
 	(*TBioCapability_TAddEnrolledPersonDirective)(nil),               // 12: NAlice.TBioCapability.TAddEnrolledPersonDirective
-	nil,                                // 13: NAlice.TBioCapability.TState.EnrollmentsEntry
-	(*endpoint.TCapability_TMeta)(nil), // 14: NAlice.TCapability.TMeta
-	(voiceprint.EGender)(0),            // 15: NAlice.NData.NVoiceprint.EGender
-	(enrollment_headers.EUserType)(0),  // 16: NAlice.EUserType
-	(*enrollment_headers.TEnrollmentHeader)(nil), // 17: NAlice.TEnrollmentHeader
+	(*TBioCapability_TState_EnrollmentsEntry)(nil),                   // 13: NAlice.TBioCapability.TState.EnrollmentsEntry
+	(*endpoint.TCapability_TMeta)(nil),                               // 14: NAlice.TCapability.TMeta
+	(voiceprint.EGender)(0),                                          // 15: NAlice.NData.NVoiceprint.EGender
+	(enrollment_headers.EUserType)(0),                                // 16: NAlice.EUserType
+	(*enrollment_headers.TEnrollmentHeader)(nil),                     // 17: NAlice.TEnrollmentHeader
 }
 var file_alice_protos_endpoint_capabilities_bio_capability_proto_depIdxs = []int32{
 	14, // 0: NAlice.TBioCapability.Meta:type_name -> NAlice.TCapability.TMeta

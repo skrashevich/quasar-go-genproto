@@ -304,8 +304,8 @@ const file_alice_ydb_orm_client_proto_types_object_proto_rawDesc = "" +
 	"\bTYdbUtf8\x12\x1e\n" +
 	"\n" +
 	"Utf8String\x18\x01 \x01(\tR\n" +
-	"Utf8StringB_\n" +
-	"*ru.yandex.alice.ydb_orm.client.proto.typesZ1a.yandex-team.ru/alice/ydb_orm/client/proto/typesb\x06proto3"
+	"Utf8StringB~\n" +
+	"*ru.yandex.alice.ydb_orm.client.proto.typesZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/ydb_orm/client/proto/typesb\x06proto3"
 
 var (
 	file_alice_ydb_orm_client_proto_types_object_proto_rawDescOnce sync.Once

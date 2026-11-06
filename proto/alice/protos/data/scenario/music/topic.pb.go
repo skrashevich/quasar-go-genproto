@@ -72,8 +72,8 @@ const file_alice_protos_data_scenario_music_topic_proto_rawDesc = "" +
 	"\n" +
 	",alice/protos/data/scenario/music/topic.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"5\n" +
 	"\x06TTopic\x12%\n" +
-	"\aPodcast\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apodcastR\apodcast:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\aPodcast\x18\x01 \x01(\tB\v\xaa\xdd\x1b\apodcastR\apodcast:\x04\xa8\xdd\x1b\x04B~\n" +
+	"*ru.yandex.alice.protos.data.scenario.musicZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/musicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_topic_proto_rawDescOnce sync.Once

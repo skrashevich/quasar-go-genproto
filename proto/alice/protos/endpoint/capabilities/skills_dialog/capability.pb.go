@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/skills_dialog/capability.proto
 
-package skillsdialogpb
+package skills_dialog
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -169,8 +169,8 @@ const file_alice_protos_endpoint_capabilities_skills_dialog_capability_proto_raw
 	"parameters\x12G\n" +
 	"\x05State\x18\x03 \x01(\v2&.NAlice.TSkillsDialogCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa4\x01B\x9e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cSkillsDialogsCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/skills_dialog;skillsdialogpbb\x06proto3"
+	"\x06TState:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa4\x01B\xae\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cSkillsDialogsCapabilityProtoZ`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/skills_dialogb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_skills_dialog_capability_proto_rawDescOnce sync.Once

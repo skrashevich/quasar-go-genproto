@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_error/execute_directive_error.proto
 
-package directiveerrorpb
+package execute_directive_error
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -120,8 +120,8 @@ const file_alice_protos_api_alicekit_events_sync_push_response_sync_response_exe
 	"\aUNKNOWN\x10\x00\x12\x15\n" +
 	"\x11PAYLOAD_TOO_LARGE\x10\x01\x12\x1a\n" +
 	"\x16STORAGE_LIMIT_EXCEEDED\x10\x02\x12\x0f\n" +
-	"\vBAD_PAYLOAD\x10\x03B\x80\x02\n" +
-	"cru.yandex.alice.protos.api.alicekit.events.sync_push_response.sync_response.execute_directive_errorB\x1aSyncResponseDirectiveErrorP\x01Z{a.yandex-team.ru/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_error;directiveerrorpbb\x06proto3"
+	"\vBAD_PAYLOAD\x10\x03B\x9f\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1aExecuteDirectiveErrorProtoP\x01Z\x89\x01github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_error\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_response_sync_response_execute_directive_error_execute_directive_error_proto_rawDescOnce sync.Once

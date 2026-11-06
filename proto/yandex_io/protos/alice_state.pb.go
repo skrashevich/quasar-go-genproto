@@ -177,9 +177,8 @@ func (AliceState_Error) EnumDescriptor() ([]byte, []int) {
 }
 
 type AliceState struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	State *AliceState_State      `protobuf:"varint,1,opt,name=state,enum=quasar.proto.AliceState_State" json:"state,omitempty"`
-	// Deprecated: Marked as deprecated in yandex_io/protos/alice_state.proto.
+	state                  protoimpl.MessageState     `protogen:"open.v1"`
+	State                  *AliceState_State          `protobuf:"varint,1,opt,name=state,enum=quasar.proto.AliceState_State" json:"state,omitempty"`
 	RecognizedPhrase       *string                    `protobuf:"bytes,2,opt,name=recognized_phrase,json=recognizedPhrase" json:"recognized_phrase,omitempty"`
 	VinsResponse           *VinsResponse              `protobuf:"bytes,3,opt,name=vins_response,json=vinsResponse" json:"vins_response,omitempty"`
 	HasStartupRequirements *bool                      `protobuf:"varint,5,opt,name=has_startup_requirements,json=hasStartupRequirements,def=0" json:"has_startup_requirements,omitempty"`
@@ -190,13 +189,12 @@ type AliceState struct {
 	EventSource            *event_source.TEventSource `protobuf:"bytes,10,opt,name=event_source,json=eventSource" json:"event_source,omitempty"`
 	IsConnected            *bool                      `protobuf:"varint,11,opt,name=is_connected,json=isConnected" json:"is_connected,omitempty"`
 	IsReminderActive       *bool                      `protobuf:"varint,12,opt,name=is_reminder_active,json=isReminderActive" json:"is_reminder_active,omitempty"`
-	// Deprecated: Marked as deprecated in yandex_io/protos/alice_state.proto.
-	TextState          *AliceState_TextState     `protobuf:"bytes,13,opt,name=text_state,json=textState" json:"text_state,omitempty"`
-	ResponseState      *AliceState_ResponseState `protobuf:"bytes,14,opt,name=response_state,json=responseState" json:"response_state,omitempty"`
-	RequestState       *AliceState_RequestState  `protobuf:"bytes,15,opt,name=request_state,json=requestState" json:"request_state,omitempty"`
-	SpotterConfiguring *bool                     `protobuf:"varint,16,opt,name=spotter_configuring,json=spotterConfiguring,def=0" json:"spotter_configuring,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	TextState              *AliceState_TextState      `protobuf:"bytes,13,opt,name=text_state,json=textState" json:"text_state,omitempty"`
+	ResponseState          *AliceState_ResponseState  `protobuf:"bytes,14,opt,name=response_state,json=responseState" json:"response_state,omitempty"`
+	RequestState           *AliceState_RequestState   `protobuf:"bytes,15,opt,name=request_state,json=requestState" json:"request_state,omitempty"`
+	SpotterConfiguring     *bool                      `protobuf:"varint,16,opt,name=spotter_configuring,json=spotterConfiguring,def=0" json:"spotter_configuring,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 // Default values for AliceState fields.
@@ -242,7 +240,6 @@ func (x *AliceState) GetState() AliceState_State {
 	return AliceState_IDLE
 }
 
-// Deprecated: Marked as deprecated in yandex_io/protos/alice_state.proto.
 func (x *AliceState) GetRecognizedPhrase() string {
 	if x != nil && x.RecognizedPhrase != nil {
 		return *x.RecognizedPhrase
@@ -313,7 +310,6 @@ func (x *AliceState) GetIsReminderActive() bool {
 	return false
 }
 
-// Deprecated: Marked as deprecated in yandex_io/protos/alice_state.proto.
 func (x *AliceState) GetTextState() *AliceState_TextState {
 	if x != nil {
 		return x.TextState
@@ -983,11 +979,11 @@ var File_yandex_io_protos_alice_state_proto protoreflect.FileDescriptor
 
 const file_yandex_io_protos_alice_state_proto_rawDesc = "" +
 	"\n" +
-	"\"yandex_io/protos/alice_state.proto\x12\fquasar.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"\xe5\x11\n" +
+	"\"yandex_io/protos/alice_state.proto\x12\fquasar.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"\xdd\x11\n" +
 	"\n" +
 	"AliceState\x124\n" +
-	"\x05state\x18\x01 \x01(\x0e2\x1e.quasar.proto.AliceState.StateR\x05state\x12/\n" +
-	"\x11recognized_phrase\x18\x02 \x01(\tB\x02\x18\x01R\x10recognizedPhrase\x12?\n" +
+	"\x05state\x18\x01 \x01(\x0e2\x1e.quasar.proto.AliceState.StateR\x05state\x12+\n" +
+	"\x11recognized_phrase\x18\x02 \x01(\tR\x10recognizedPhrase\x12?\n" +
 	"\rvins_response\x18\x03 \x01(\v2\x1a.quasar.proto.VinsResponseR\fvinsResponse\x12?\n" +
 	"\x18has_startup_requirements\x18\x05 \x01(\b:\x05falseR\x16hasStartupRequirements\x128\n" +
 	"\x18activation_spotter_model\x18\x06 \x01(\tR\x16activationSpotterModel\x12\x1d\n" +
@@ -1000,9 +996,9 @@ const file_yandex_io_protos_alice_state_proto_rawDesc = "" +
 	"\fevent_source\x18\n" +
 	" \x01(\v2\x14.NAlice.TEventSourceR\veventSource\x12!\n" +
 	"\fis_connected\x18\v \x01(\bR\visConnected\x12,\n" +
-	"\x12is_reminder_active\x18\f \x01(\bR\x10isReminderActive\x12E\n" +
+	"\x12is_reminder_active\x18\f \x01(\bR\x10isReminderActive\x12A\n" +
 	"\n" +
-	"text_state\x18\r \x01(\v2\".quasar.proto.AliceState.TextStateB\x02\x18\x01R\ttextState\x12M\n" +
+	"text_state\x18\r \x01(\v2\".quasar.proto.AliceState.TextStateR\ttextState\x12M\n" +
 	"\x0eresponse_state\x18\x0e \x01(\v2&.quasar.proto.AliceState.ResponseStateR\rresponseState\x12J\n" +
 	"\rrequest_state\x18\x0f \x01(\v2%.quasar.proto.AliceState.RequestStateR\frequestState\x126\n" +
 	"\x13spotter_configuring\x18\x10 \x01(\b:\x05falseR\x12spotterConfiguring\x1a\xc8\x02\n" +
@@ -1085,8 +1081,8 @@ const file_yandex_io_protos_alice_state_proto_rawDesc = "" +
 	"text_color\x18\x02 \x01(\tR\ttextColor\x12!\n" +
 	"\fborder_color\x18\x03 \x01(\tR\vborderColor\x12\x1d\n" +
 	"\n" +
-	"fill_color\x18\x04 \x01(\tR\tfillColorJ\x04\b\x06\x10\aJ\x04\b\a\x10\bB-\n" +
-	"\x19ru.yandex.quasar.protobufB\x10AliceStateProtos"
+	"fill_color\x18\x04 \x01(\tR\tfillColorJ\x04\b\x06\x10\aJ\x04\b\a\x10\bB\xb6\x01\n" +
+	"\x10com.quasar.protoB\x0fAliceStateProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_alice_state_proto_rawDescOnce sync.Once

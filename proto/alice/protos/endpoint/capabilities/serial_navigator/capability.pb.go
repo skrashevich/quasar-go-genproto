@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/serial_navigator/capability.proto
 
-package serialnavigatorpb
+package serial_navigator
 
 import (
 	tv "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv"
@@ -346,8 +346,8 @@ const file_alice_protos_endpoint_capabilities_serial_navigator_capability_proto_
 	"\vKinopoiskId\x18\x05 \x01(\tB\t\xaa\xdd\x1b\x05kp_idR\x05kp_id:\x19\x92\x82\x19\fshow_episode\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb0\x02\x1a\xa3\x01\n" +
 	"\x16TOpenPurchaseDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eProviderItemId\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10provider_item_idR\x10provider_item_id:+\x92\x82\x19\x1eserial_navigator_open_purchase\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c)B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eSerialNavigatorCapabilityProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/serial_navigator;serialnavigatorpbb\x06proto3"
+	"\x0eProviderItemId\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10provider_item_idR\x10provider_item_id:+\x92\x82\x19\x1eserial_navigator_open_purchase\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c)B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eSerialNavigatorCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/serial_navigatorb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_serial_navigator_capability_proto_rawDescOnce sync.Once

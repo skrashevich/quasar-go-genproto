@@ -104,7 +104,7 @@ type isTOrigin_OptionalDeviceId interface {
 }
 
 type TOrigin_DeviceId struct {
-	DeviceId string `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3,oneof"`
+	DeviceId string `protobuf:"bytes,1,opt,name=DeviceId,proto3,oneof"`
 }
 
 func (*TOrigin_DeviceId) isTOrigin_OptionalDeviceId() {}
@@ -114,7 +114,7 @@ type isTOrigin_OptionalUuid interface {
 }
 
 type TOrigin_Uuid struct {
-	Uuid string `protobuf:"bytes,2,opt,name=Uuid,json=uuid,proto3,oneof"`
+	Uuid string `protobuf:"bytes,2,opt,name=Uuid,proto3,oneof"`
 }
 
 func (*TOrigin_Uuid) isTOrigin_OptionalUuid() {}
@@ -123,13 +123,14 @@ var File_alice_protos_api_request_parts_origin_proto protoreflect.FileDescriptor
 
 const file_alice_protos_api_request_parts_origin_proto_rawDesc = "" +
 	"\n" +
-	"+alice/protos/api/request_parts/origin.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\xb4\x01\n" +
-	"\aTOrigin\x120\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\tdevice_id\xf8\x91*\x03H\x00R\tdevice_id\x12\"\n" +
-	"\x04Uuid\x18\x02 \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03H\x01R\x04uuid:\x04\xa8\xdd\x1b\x04B*\n" +
-	"\x10OptionalDeviceId\x12\x16\xaa\xdd\x1b\x12optional_device_idB!\n" +
-	"\fOptionalUuid\x12\x11\xaa\xdd\x1b\roptional_uuidB[\n" +
-	"(ru.yandex.alice.protos.api.request_partsZ/a.yandex-team.ru/alice/protos/api/request_partsb\x06proto3"
+	"+alice/protos/api/request_parts/origin.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"a\n" +
+	"\aTOrigin\x12\x1c\n" +
+	"\bDeviceId\x18\x01 \x01(\tH\x00R\bDeviceId\x12\x14\n" +
+	"\x04Uuid\x18\x02 \x01(\tH\x01R\x04UuidB\x12\n" +
+	"\x10OptionalDeviceIdB\x0e\n" +
+	"\fOptionalUuidB\xa1\x01\n" +
+	"\n" +
+	"com.NAliceB\vOriginProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/request_parts\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_request_parts_origin_proto_rawDescOnce sync.Once

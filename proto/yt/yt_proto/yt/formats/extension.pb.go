@@ -520,7 +520,8 @@ const file_yt_yt_proto_yt_formats_extension_proto_rawDesc = "" +
 	"\rmessage_flags\x12\x1f.google.protobuf.MessageOptions\x18ֻ\x03 \x03(\x0e2\x1d.NYT.EWrapperMessageFlag.EnumR\fmessageFlags:]\n" +
 	"\voneof_flags\x12\x1d.google.protobuf.OneofOptions\x18Ի\x03 \x03(\x0e2\x1b.NYT.EWrapperOneofFlag.EnumR\n" +
 	"oneofFlags:M\n" +
-	"\x12variant_field_name\x12\x1d.google.protobuf.OneofOptions\x18ջ\x03 \x01(\tR\x10variantFieldNameB)Z'a.yandex-team.ru/yt/yt_proto/yt/formats"
+	"\x12variant_field_name\x12\x1d.google.protobuf.OneofOptions\x18ջ\x03 \x01(\tR\x10variantFieldNameB\x8d\x01\n" +
+	"\acom.NYTB\x0eExtensionProtoP\x01ZFgithub.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats\xa2\x02\x03NXX\xaa\x02\x03NYT\xca\x02\x03NYT\xe2\x02\x0fNYT\\GPBMetadata\xea\x02\x03NYT"
 
 var (
 	file_yt_yt_proto_yt_formats_extension_proto_rawDescOnce sync.Once

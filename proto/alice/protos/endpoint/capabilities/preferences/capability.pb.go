@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/preferences/capability.proto
 
-package preferencespb
+package preferences
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -532,8 +532,8 @@ const file_alice_protos_endpoint_capabilities_preferences_capability_proto_rawDe
 	"\x10WE_ACCESS_DENIED\x10\x03\x12\x15\n" +
 	"\x11WE_INTERNAL_ERROR\x10\x04\x12\x13\n" +
 	"\x0fWE_INVALID_TYPE\x10\x05\x12\x18\n" +
-	"\x14WE_PAYLOAD_TOO_LARGE\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xea\x01B\x99\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPreferencesCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/preferences;preferencespbb\x06proto3"
+	"\x14WE_PAYLOAD_TOO_LARGE\x10\x06:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xea\x01B\xaa\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aPreferencesCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/preferencesb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_preferences_capability_proto_rawDescOnce sync.Once

@@ -25,7 +25,7 @@ const (
 
 type TDivVariable struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SupportsId    bool                   `protobuf:"varint,1,opt,name=supportsId,json=supports_id,proto3" json:"supportsId,omitempty"`
+	SupportsId    bool                   `protobuf:"varint,1,opt,name=supportsId,proto3" json:"supportsId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -69,9 +69,9 @@ func (x *TDivVariable) GetSupportsId() bool {
 
 type TDivVariables struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
-	IsAudioPlaying            *TDivVariable          `protobuf:"bytes,1,opt,name=IsAudioPlaying,json=is_audio_playing,proto3" json:"IsAudioPlaying,omitempty"`
-	IsRadioPlaying            *TDivVariable          `protobuf:"bytes,2,opt,name=IsRadioPlaying,json=is_radio_playing,proto3" json:"IsRadioPlaying,omitempty"`
-	IsAlicePartialTextVisible *TDivVariable          `protobuf:"bytes,3,opt,name=IsAlicePartialTextVisible,json=is_alice_partial_text_visible,proto3" json:"IsAlicePartialTextVisible,omitempty"`
+	IsAudioPlaying            *TDivVariable          `protobuf:"bytes,1,opt,name=IsAudioPlaying,proto3" json:"IsAudioPlaying,omitempty"`
+	IsRadioPlaying            *TDivVariable          `protobuf:"bytes,2,opt,name=IsRadioPlaying,proto3" json:"IsRadioPlaying,omitempty"`
+	IsAlicePartialTextVisible *TDivVariable          `protobuf:"bytes,3,opt,name=IsAlicePartialTextVisible,proto3" json:"IsAlicePartialTextVisible,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -131,15 +131,17 @@ var File_alice_protos_div_div_variables_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div_variables_proto_rawDesc = "" +
 	"\n" +
-	"$alice/protos/div/div_variables.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"F\n" +
-	"\fTDivVariable\x120\n" +
+	"$alice/protos/div/div_variables.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\".\n" +
+	"\fTDivVariable\x12\x1e\n" +
 	"\n" +
-	"supportsId\x18\x01 \x01(\bB\x0f\xaa\xdd\x1b\vsupports_idR\vsupports_id:\x04\xa8\xdd\x1b\x04\"\x86\x03\n" +
-	"\rTDivVariables\x12h\n" +
-	"\x0eIsAudioPlaying\x18\x01 \x01(\v2\x14.NAlice.TDivVariableB(\xaa\xdd\x1b\x10is_audio_playing\xca\xff\x1b\x10is_audio_playingR\x10is_audio_playing\x12h\n" +
-	"\x0eIsRadioPlaying\x18\x02 \x01(\v2\x14.NAlice.TDivVariableB(\xaa\xdd\x1b\x10is_radio_playing\xca\xff\x1b\x10is_radio_playingR\x10is_radio_playing\x12\x9a\x01\n" +
-	"\x19IsAlicePartialTextVisible\x18\x03 \x01(\v2\x14.NAlice.TDivVariableBB\xaa\xdd\x1b\x1dis_alice_partial_text_visible\xca\xff\x1b\x1dis_alice_partial_text_visibleR\x1dis_alice_partial_text_visible:\x04\xa8\xdd\x1b\x04BR\n" +
-	"\x1aru.yandex.alice.protos.divB\x11DivVariablesProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"supportsId\x18\x01 \x01(\bR\n" +
+	"supportsId\"\xdf\x01\n" +
+	"\rTDivVariables\x12<\n" +
+	"\x0eIsAudioPlaying\x18\x01 \x01(\v2\x14.NAlice.TDivVariableR\x0eIsAudioPlaying\x12<\n" +
+	"\x0eIsRadioPlaying\x18\x02 \x01(\v2\x14.NAlice.TDivVariableR\x0eIsRadioPlaying\x12R\n" +
+	"\x19IsAlicePartialTextVisible\x18\x03 \x01(\v2\x14.NAlice.TDivVariableR\x19IsAlicePartialTextVisibleB\x99\x01\n" +
+	"\n" +
+	"com.NAliceB\x11DivVariablesProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div_variables_proto_rawDescOnce sync.Once

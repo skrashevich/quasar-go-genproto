@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/jobs_surface_context/capability.proto
 
-package jobs_surface_contextpb
+package jobs_surface_context
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -293,8 +293,8 @@ const file_alice_protos_endpoint_capabilities_jobs_surface_context_capability_pr
 	"\x06Skills\x18\x06 \x03(\x04B\n" +
 	"\xaa\xdd\x1b\x06skillsR\x06skills\x12:\n" +
 	"\vIsFastTrack\x18\a \x01(\bB\x11\xaa\xdd\x1b\ris_fast_trackH\x00R\ris_fast_track\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
-	"\f_IsFastTrack:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc8\x02B\xb2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!JobsSurfaceContextCapabilityProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/jobs_surface_context;jobs_surface_contextpbb\x06proto3"
+	"\f_IsFastTrack:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc8\x02B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!JobsSurfaceContextCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/jobs_surface_contextb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_jobs_surface_context_capability_proto_rawDescOnce sync.Once

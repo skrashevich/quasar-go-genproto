@@ -71,7 +71,8 @@ const file_smart_devices_libs_openthread_models_proto_thread_network_dump_proto_
 	"\n" +
 	"Dsmart_devices/libs/openthread/models/proto/thread_network_dump.proto\x12\x05proto\"C\n" +
 	"\x11ThreadNetworkDump\x12.\n" +
-	"\x12OperationalDataset\x18\x01 \x01(\fR\x12OperationalDatasetb\x06proto3"
+	"\x12OperationalDataset\x18\x01 \x01(\fR\x12OperationalDatasetB\xb3\x01\n" +
+	"\tcom.protoB\x16ThreadNetworkDumpProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/smart_devices/libs/openthread/models/proto\xa2\x02\x03PXX\xaa\x02\x05Proto\xca\x02\x05Proto\xe2\x02\x11Proto\\GPBMetadata\xea\x02\x05Protob\x06proto3"
 
 var (
 	file_smart_devices_libs_openthread_models_proto_thread_network_dump_proto_rawDescOnce sync.Once

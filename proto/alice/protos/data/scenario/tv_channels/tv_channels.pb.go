@@ -27,8 +27,8 @@ const (
 
 type TProgramWrapper struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Program       *channels.TProgramItem         `protobuf:"bytes,1,opt,name=Program,json=program,proto3" json:"Program,omitempty"`
-	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,2,rep,name=VoiceControls,json=voice_controls,proto3" json:"VoiceControls,omitempty"`
+	Program       *channels.TProgramItem         `protobuf:"bytes,1,opt,name=Program,proto3" json:"Program,omitempty"`
+	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,2,rep,name=VoiceControls,proto3" json:"VoiceControls,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,9 +79,9 @@ func (x *TProgramWrapper) GetVoiceControls() []*voice_control.TVoiceControl {
 
 type TChannelWrapper struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Channel       *channels.TChannel             `protobuf:"bytes,1,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
-	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,2,rep,name=VoiceControls,json=voice_controls,proto3" json:"VoiceControls,omitempty"`
-	Programs      []*TProgramWrapper             `protobuf:"bytes,3,rep,name=Programs,json=programs,proto3" json:"Programs,omitempty"`
+	Channel       *channels.TChannel             `protobuf:"bytes,1,opt,name=Channel,proto3" json:"Channel,omitempty"`
+	VoiceControls []*voice_control.TVoiceControl `protobuf:"bytes,2,rep,name=VoiceControls,proto3" json:"VoiceControls,omitempty"`
+	Programs      []*TProgramWrapper             `protobuf:"bytes,3,rep,name=Programs,proto3" json:"Programs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -139,8 +139,8 @@ func (x *TChannelWrapper) GetPrograms() []*TProgramWrapper {
 
 type TTvGetChannelsResponse struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Categories      []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,json=categories,proto3" json:"Categories,omitempty"`
-	ChannelWrappers []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,json=channel_wrappers,proto3" json:"ChannelWrappers,omitempty"`
+	Categories      []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,proto3" json:"Categories,omitempty"`
+	ChannelWrappers []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,proto3" json:"ChannelWrappers,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -191,9 +191,9 @@ func (x *TTvGetChannelsResponse) GetChannelWrappers() []*TChannelWrapper {
 
 type TTvChannelsListData struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Categories       []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,json=categories,proto3" json:"Categories,omitempty"`
-	ChannelWrappers  []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,json=channel_wrappers,proto3" json:"ChannelWrappers,omitempty"`
-	CurrentlyPlaying *channels.TChannel     `protobuf:"bytes,3,opt,name=CurrentlyPlaying,json=currently_playing,proto3" json:"CurrentlyPlaying,omitempty"`
+	Categories       []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,proto3" json:"Categories,omitempty"`
+	ChannelWrappers  []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,proto3" json:"ChannelWrappers,omitempty"`
+	CurrentlyPlaying *channels.TChannel     `protobuf:"bytes,3,opt,name=CurrentlyPlaying,proto3" json:"CurrentlyPlaying,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -251,8 +251,8 @@ func (x *TTvChannelsListData) GetCurrentlyPlaying() *channels.TChannel {
 
 type TCentaurChannelsListData struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Categories      []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,json=categories,proto3" json:"Categories,omitempty"`
-	ChannelWrappers []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,json=channel_wrappers,proto3" json:"ChannelWrappers,omitempty"`
+	Categories      []*channels.TCategory  `protobuf:"bytes,1,rep,name=Categories,proto3" json:"Categories,omitempty"`
+	ChannelWrappers []*TChannelWrapper     `protobuf:"bytes,2,rep,name=ChannelWrappers,proto3" json:"ChannelWrappers,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -305,34 +305,31 @@ var File_alice_protos_data_scenario_tv_channels_tv_channels_proto protoreflect.F
 
 const file_alice_protos_data_scenario_tv_channels_tv_channels_proto_rawDesc = "" +
 	"\n" +
-	"8alice/protos/data/scenario/tv_channels/tv_channels.proto\x12\x18NAlice.NData.NTvChannels\x1a&yt/yt_proto/yt/formats/extension.proto\x1a2alice/protos/api/voice_control/voice_control.proto\x1a(alice/protos/extensions/extensions.proto\x1a*alice/protos/data/tv/channels/common.proto\"\xa4\x01\n" +
-	"\x0fTProgramWrapper\x12?\n" +
-	"\aProgram\x18\x01 \x01(\v2\x18.NAlice.NTv.TProgramItemB\v\xaa\xdd\x1b\aprogramR\aprogram\x12P\n" +
-	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls\"\xf5\x01\n" +
-	"\x0fTChannelWrapper\x12;\n" +
-	"\aChannel\x18\x01 \x01(\v2\x14.NAlice.NTv.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12P\n" +
-	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls\x12S\n" +
-	"\bPrograms\x18\x03 \x03(\v2).NAlice.NData.NTvChannels.TProgramWrapperB\f\xaa\xdd\x1b\bprogramsR\bprograms\"\x86\x02\n" +
-	"\x16TTvGetChannelsResponse\x12E\n" +
+	"8alice/protos/data/scenario/tv_channels/tv_channels.proto\x12\x18NAlice.NData.NTvChannels\x1a&yt/yt_proto/yt/formats/extension.proto\x1a2alice/protos/api/voice_control/voice_control.proto\x1a(alice/protos/extensions/extensions.proto\x1a*alice/protos/data/tv/channels/common.proto\"\x82\x01\n" +
+	"\x0fTProgramWrapper\x122\n" +
+	"\aProgram\x18\x01 \x01(\v2\x18.NAlice.NTv.TProgramItemR\aProgram\x12;\n" +
+	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlR\rVoiceControls\"\xc5\x01\n" +
+	"\x0fTChannelWrapper\x12.\n" +
+	"\aChannel\x18\x01 \x01(\v2\x14.NAlice.NTv.TChannelR\aChannel\x12;\n" +
+	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlR\rVoiceControls\x12E\n" +
+	"\bPrograms\x18\x03 \x03(\v2).NAlice.NData.NTvChannels.TProgramWrapperR\bPrograms\"\xa4\x01\n" +
+	"\x16TTvGetChannelsResponse\x125\n" +
 	"\n" +
-	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryB\x0e\xaa\xdd\x1b\n" +
-	"categoriesR\n" +
-	"categories\x12j\n" +
-	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperB\x14\xaa\xdd\x1b\x10channel_wrappersR\x10channel_wrappers:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioData\"\xdd\x02\n" +
-	"\x13TTvChannelsListData\x12E\n" +
+	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryR\n" +
+	"Categories\x12S\n" +
+	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperR\x0fChannelWrappers\"\xe3\x01\n" +
+	"\x13TTvChannelsListData\x125\n" +
 	"\n" +
-	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryB\x0e\xaa\xdd\x1b\n" +
-	"categoriesR\n" +
-	"categories\x12j\n" +
-	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperB\x14\xaa\xdd\x1b\x10channel_wrappersR\x10channel_wrappers\x12X\n" +
-	"\x10CurrentlyPlaying\x18\x03 \x01(\v2\x14.NAlice.NTv.TChannelB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioData\"\x88\x02\n" +
-	"\x18TCentaurChannelsListData\x12E\n" +
+	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryR\n" +
+	"Categories\x12S\n" +
+	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperR\x0fChannelWrappers\x12@\n" +
+	"\x10CurrentlyPlaying\x18\x03 \x01(\v2\x14.NAlice.NTv.TChannelR\x10CurrentlyPlaying\"\xa6\x01\n" +
+	"\x18TCentaurChannelsListData\x125\n" +
 	"\n" +
-	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryB\x0e\xaa\xdd\x1b\n" +
-	"categoriesR\n" +
-	"categories\x12j\n" +
-	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperB\x14\xaa\xdd\x1b\x10channel_wrappersR\x10channel_wrappers:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataBm\n" +
-	"0ru.yandex.alice.protos.data.scenario.tv_channelsP\x01Z7a.yandex-team.ru/alice/protos/data/scenario/tv_channelsb\x06proto3"
+	"Categories\x18\x01 \x03(\v2\x15.NAlice.NTv.TCategoryR\n" +
+	"Categories\x12S\n" +
+	"\x0fChannelWrappers\x18\x02 \x03(\v2).NAlice.NData.NTvChannels.TChannelWrapperR\x0fChannelWrappersB\x89\x02\n" +
+	"\x1ccom.NAlice.NData.NTvChannelsB\x0fTvChannelsProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/tv_channels\xa2\x02\x03NNN\xaa\x02\x18NAlice.NData.NTvChannels\xca\x02\x18NAlice\\NData\\NTvChannels\xe2\x02$NAlice\\NData\\NTvChannels\\GPBMetadata\xea\x02\x1aNAlice::NData::NTvChannelsb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_tv_channels_tv_channels_proto_rawDescOnce sync.Once

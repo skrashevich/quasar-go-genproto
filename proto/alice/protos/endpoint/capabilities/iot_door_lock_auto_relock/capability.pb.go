@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_door_lock_auto_relock/capability.proto
 
-package doorlockautorelock_fwpb
+package iot_door_lock_auto_relock
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -301,8 +301,8 @@ const file_alice_protos_endpoint_capabilities_iot_door_lock_auto_relock_capabili
 	"\n" +
 	"Capability\x18\x01 \x01(\v2%.NAlice.TDoorLockAutoRelockCapabilityB\x0e\xaa\xdd\x1b\n" +
 	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xbd\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8f\x02B\xba\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!DoorLockAutoRelockCapabilityProtoP\x01Zea.yandex-team.ru/alice/protos/endpoint/capabilities/iot_door_lock_auto_relock;doorlockautorelock_fwpbb\x06proto3"
+	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xbd\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x8f\x02B\xc1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!DoorLockAutoRelockCapabilityProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_door_lock_auto_relockb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_door_lock_auto_relock_capability_proto_rawDescOnce sync.Once

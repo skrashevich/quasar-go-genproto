@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/api/alicekit/client/alice_request/alice_request.proto
 
-package alicerequestpb
+package alice_request
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/common"
@@ -14,6 +14,7 @@ import (
 	tts_options "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/tts_options"
 	uniproxy_options "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/common/uniproxy_options"
 	incognito_mode "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/incognito_mode"
+	client_options "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/speech_mode/client_options"
 	mode "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/speech_mode/mode"
 	session "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/speech_mode/session"
 	typed_callbacks "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks"
@@ -36,11 +37,11 @@ const (
 
 type TClientAliceRequestProto struct {
 	state          protoimpl.MessageState             `protogen:"open.v1"`
-	Header         *TClientAliceRequestProto_THeader  `protobuf:"bytes,1,opt,name=Header,json=header,proto3" json:"Header,omitempty"`
-	Request        *TClientAliceRequestProto_TRequest `protobuf:"bytes,3,opt,name=Request,json=request,proto3" json:"Request,omitempty"`
-	EventSource    *event_source.TEventSource         `protobuf:"bytes,11,opt,name=EventSource,json=event_source,proto3" json:"EventSource,omitempty"`
-	Alice2Settings *alice_mode_info.TAlice2ModeInfo   `protobuf:"bytes,34,opt,name=Alice2Settings,json=alice_2_settings,proto3" json:"Alice2Settings,omitempty"`
-	Topic          *string                            `protobuf:"bytes,19,opt,name=Topic,json=topic,proto3,oneof" json:"Topic,omitempty"`
+	Header         *TClientAliceRequestProto_THeader  `protobuf:"bytes,1,opt,name=Header,proto3" json:"Header,omitempty"`
+	Request        *TClientAliceRequestProto_TRequest `protobuf:"bytes,3,opt,name=Request,proto3" json:"Request,omitempty"`
+	EventSource    *event_source.TEventSource         `protobuf:"bytes,11,opt,name=EventSource,proto3" json:"EventSource,omitempty"`
+	Alice2Settings *alice_mode_info.TAlice2ModeInfo   `protobuf:"bytes,34,opt,name=Alice2Settings,proto3" json:"Alice2Settings,omitempty"`
+	Topic          *string                            `protobuf:"bytes,19,opt,name=Topic,proto3,oneof" json:"Topic,omitempty"`
 	TtsOptions     *tts_options.TClientTtsOptions     `protobuf:"bytes,44,opt,name=TtsOptions,json=tts_options,proto3,oneof" json:"TtsOptions,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -120,8 +121,8 @@ func (x *TClientAliceRequestProto) GetTtsOptions() *tts_options.TClientTtsOption
 
 type TVoiceInput struct {
 	state          protoimpl.MessageState      `protogen:"open.v1"`
-	RequestPayload *TClientAliceRequestProto   `protobuf:"bytes,1,opt,name=RequestPayload,json=request_payload,proto3" json:"RequestPayload,omitempty"`
-	ClientOptions  *TVoiceInput_TClientOptions `protobuf:"bytes,2,opt,name=ClientOptions,json=client_options,proto3" json:"ClientOptions,omitempty"`
+	RequestPayload *TClientAliceRequestProto   `protobuf:"bytes,1,opt,name=RequestPayload,proto3" json:"RequestPayload,omitempty"`
+	ClientOptions  *TVoiceInput_TClientOptions `protobuf:"bytes,2,opt,name=ClientOptions,proto3" json:"ClientOptions,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -172,8 +173,8 @@ func (x *TVoiceInput) GetClientOptions() *TVoiceInput_TClientOptions {
 
 type TTextInput struct {
 	state          protoimpl.MessageState     `protogen:"open.v1"`
-	RequestPayload *TClientAliceRequestProto  `protobuf:"bytes,1,opt,name=RequestPayload,json=request_payload,proto3" json:"RequestPayload,omitempty"`
-	ClientOptions  *TTextInput_TClientOptions `protobuf:"bytes,2,opt,name=ClientOptions,json=client_options,proto3" json:"ClientOptions,omitempty"`
+	RequestPayload *TClientAliceRequestProto  `protobuf:"bytes,1,opt,name=RequestPayload,proto3" json:"RequestPayload,omitempty"`
+	ClientOptions  *TTextInput_TClientOptions `protobuf:"bytes,2,opt,name=ClientOptions,proto3" json:"ClientOptions,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -283,20 +284,21 @@ type isTAliceRequest_Request interface {
 }
 
 type TAliceRequest_VoiceInput struct {
-	VoiceInput *TVoiceInput `protobuf:"bytes,1,opt,name=VoiceInput,json=voice_input,proto3,oneof"`
+	VoiceInput *TVoiceInput `protobuf:"bytes,1,opt,name=VoiceInput,proto3,oneof"`
 }
 
 func (*TAliceRequest_VoiceInput) isTAliceRequest_Request() {}
 
 type TSpeechInput struct {
-	state                 protoimpl.MessageState                 `protogen:"open.v1"`
-	SpeechSession         *session.TSpeechSession                `protobuf:"bytes,1,opt,name=SpeechSession,json=speech_session,proto3" json:"SpeechSession,omitempty"`
-	SpeechModeOptions     *mode.TSpeechModeOptions               `protobuf:"bytes,4,opt,name=SpeechModeOptions,json=speech_mode_options,proto3" json:"SpeechModeOptions,omitempty"`
-	RequestPayload        *TSpeechInput_TRequestPayload          `protobuf:"bytes,3,opt,name=RequestPayload,json=request_payload,proto3" json:"RequestPayload,omitempty"`
-	FinishRequestCallback *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,5,opt,name=FinishRequestCallback,json=finish_request_callback,proto3" json:"FinishRequestCallback,omitempty"`
-	StartRequestCallback  *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,6,opt,name=StartRequestCallback,json=start_request_callback,proto3" json:"StartRequestCallback,omitempty"`
-	unknownFields         protoimpl.UnknownFields
-	sizeCache             protoimpl.SizeCache
+	state                   protoimpl.MessageState                   `protogen:"open.v1"`
+	SpeechSession           *session.TSpeechSession                  `protobuf:"bytes,1,opt,name=SpeechSession,proto3" json:"SpeechSession,omitempty"`
+	SpeechModeClientOptions *client_options.TSpeechModeClientOptions `protobuf:"bytes,2,opt,name=SpeechModeClientOptions,proto3" json:"SpeechModeClientOptions,omitempty"`
+	SpeechModeOptions       *mode.TSpeechModeOptions                 `protobuf:"bytes,4,opt,name=SpeechModeOptions,json=speech_mode_options,proto3" json:"SpeechModeOptions,omitempty"`
+	RequestPayload          *TSpeechInput_TRequestPayload            `protobuf:"bytes,3,opt,name=RequestPayload,json=request_payload,proto3" json:"RequestPayload,omitempty"`
+	FinishRequestCallback   *typed_callbacks.TTypedCallbackRequest   `protobuf:"bytes,5,opt,name=FinishRequestCallback,json=finish_request_callback,proto3" json:"FinishRequestCallback,omitempty"`
+	StartRequestCallback    *typed_callbacks.TTypedCallbackRequest   `protobuf:"bytes,6,opt,name=StartRequestCallback,json=start_request_callback,proto3" json:"StartRequestCallback,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *TSpeechInput) Reset() {
@@ -336,6 +338,13 @@ func (x *TSpeechInput) GetSpeechSession() *session.TSpeechSession {
 	return nil
 }
 
+func (x *TSpeechInput) GetSpeechModeClientOptions() *client_options.TSpeechModeClientOptions {
+	if x != nil {
+		return x.SpeechModeClientOptions
+	}
+	return nil
+}
+
 func (x *TSpeechInput) GetSpeechModeOptions() *mode.TSpeechModeOptions {
 	if x != nil {
 		return x.SpeechModeOptions
@@ -366,12 +375,12 @@ func (x *TSpeechInput) GetStartRequestCallback() *typed_callbacks.TTypedCallback
 
 type TClientAliceRequestProto_THeader struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	RequestId     *string                  `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3,oneof" json:"RequestId,omitempty"`
+	RequestId     *string                  `protobuf:"bytes,1,opt,name=RequestId,proto3,oneof" json:"RequestId,omitempty"`
+	DialogId      *string                  `protobuf:"bytes,4,opt,name=DialogId,proto3,oneof" json:"DialogId,omitempty"`
+	DialogType    *dialog_type.EDialogType `protobuf:"varint,8,opt,name=DialogType,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
+	FolderId      *string                  `protobuf:"bytes,10,opt,name=FolderId,proto3,oneof" json:"FolderId,omitempty"`
 	PrevReqId     *string                  `protobuf:"bytes,2,opt,name=PrevReqId,json=prev_req_id,proto3,oneof" json:"PrevReqId,omitempty"`
-	DialogId      *string                  `protobuf:"bytes,4,opt,name=DialogId,json=dialog_id,proto3,oneof" json:"DialogId,omitempty"`
-	DialogType    *dialog_type.EDialogType `protobuf:"varint,8,opt,name=DialogType,json=dialog_type,proto3,enum=NAlice.NData.EDialogType,oneof" json:"DialogType,omitempty"`
 	DialogShareId *string                  `protobuf:"bytes,9,opt,name=DialogShareId,json=dialog_share_id,proto3,oneof" json:"DialogShareId,omitempty"`
-	FolderId      *string                  `protobuf:"bytes,10,opt,name=FolderId,json=folder_id,proto3,oneof" json:"FolderId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -413,13 +422,6 @@ func (x *TClientAliceRequestProto_THeader) GetRequestId() string {
 	return ""
 }
 
-func (x *TClientAliceRequestProto_THeader) GetPrevReqId() string {
-	if x != nil && x.PrevReqId != nil {
-		return *x.PrevReqId
-	}
-	return ""
-}
-
 func (x *TClientAliceRequestProto_THeader) GetDialogId() string {
 	if x != nil && x.DialogId != nil {
 		return *x.DialogId
@@ -434,13 +436,6 @@ func (x *TClientAliceRequestProto_THeader) GetDialogType() dialog_type.EDialogTy
 	return dialog_type.EDialogType(0)
 }
 
-func (x *TClientAliceRequestProto_THeader) GetDialogShareId() string {
-	if x != nil && x.DialogShareId != nil {
-		return *x.DialogShareId
-	}
-	return ""
-}
-
 func (x *TClientAliceRequestProto_THeader) GetFolderId() string {
 	if x != nil && x.FolderId != nil {
 		return *x.FolderId
@@ -448,13 +443,27 @@ func (x *TClientAliceRequestProto_THeader) GetFolderId() string {
 	return ""
 }
 
+func (x *TClientAliceRequestProto_THeader) GetPrevReqId() string {
+	if x != nil && x.PrevReqId != nil {
+		return *x.PrevReqId
+	}
+	return ""
+}
+
+func (x *TClientAliceRequestProto_THeader) GetDialogShareId() string {
+	if x != nil && x.DialogShareId != nil {
+		return *x.DialogShareId
+	}
+	return ""
+}
+
 type TClientAliceRequestProto_TRequest struct {
 	state             protoimpl.MessageState                                `protogen:"open.v1"`
-	Event             *common.TEvent                                        `protobuf:"bytes,1,opt,name=Event,json=event,proto3" json:"Event,omitempty"`
+	Event             *common.TEvent                                        `protobuf:"bytes,1,opt,name=Event,proto3" json:"Event,omitempty"`
 	Experiments       *experiments.TExperimentsProto                        `protobuf:"bytes,3,opt,name=Experiments,proto3" json:"Experiments,omitempty"`
-	AdditionalOptions *TClientAliceRequestProto_TRequest_TAdditionalOptions `protobuf:"bytes,5,opt,name=AdditionalOptions,json=additional_options,proto3" json:"AdditionalOptions,omitempty"`
-	UniproxyOptions   *uniproxy_options.TUniproxyOptions                    `protobuf:"bytes,17,opt,name=UniproxyOptions,json=uniproxy_options,proto3" json:"UniproxyOptions,omitempty"`
-	VoiceSession      *bool                                                 `protobuf:"varint,6,opt,name=VoiceSession,json=voice_session,proto3,oneof" json:"VoiceSession,omitempty"`
+	AdditionalOptions *TClientAliceRequestProto_TRequest_TAdditionalOptions `protobuf:"bytes,5,opt,name=AdditionalOptions,proto3" json:"AdditionalOptions,omitempty"`
+	UniproxyOptions   *uniproxy_options.TUniproxyOptions                    `protobuf:"bytes,17,opt,name=UniproxyOptions,proto3" json:"UniproxyOptions,omitempty"`
+	VoiceSession      *bool                                                 `protobuf:"varint,6,opt,name=VoiceSession,proto3,oneof" json:"VoiceSession,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -526,9 +535,9 @@ func (x *TClientAliceRequestProto_TRequest) GetVoiceSession() bool {
 
 type TClientAliceRequestProto_TRequest_TAdditionalOptions struct {
 	state            protoimpl.MessageState                                             `protogen:"open.v1"`
-	BassOptions      *TClientAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions `protobuf:"bytes,3,opt,name=BassOptions,json=bass_options,proto3" json:"BassOptions,omitempty"`
-	GuestUserOptions *guest.TGuestOptions                                               `protobuf:"bytes,19,opt,name=GuestUserOptions,json=guest_user_options,proto3" json:"GuestUserOptions,omitempty"`
-	OriginDomain     *string                                                            `protobuf:"bytes,26,opt,name=OriginDomain,json=origin_domain,proto3,oneof" json:"OriginDomain,omitempty"`
+	BassOptions      *TClientAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions `protobuf:"bytes,3,opt,name=BassOptions,proto3" json:"BassOptions,omitempty"`
+	GuestUserOptions *guest.TGuestOptions                                               `protobuf:"bytes,19,opt,name=GuestUserOptions,proto3" json:"GuestUserOptions,omitempty"`
+	OriginDomain     *string                                                            `protobuf:"bytes,26,opt,name=OriginDomain,proto3,oneof" json:"OriginDomain,omitempty"`
 	IncognitoOptions *incognito_mode.TIncognitoOptions                                  `protobuf:"bytes,33,opt,name=IncognitoOptions,json=incognito_options,proto3,oneof" json:"IncognitoOptions,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -594,8 +603,8 @@ func (x *TClientAliceRequestProto_TRequest_TAdditionalOptions) GetIncognitoOptio
 
 type TClientAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	UserAgent         *string                `protobuf:"bytes,1,opt,name=UserAgent,json=user_agent,proto3,oneof" json:"UserAgent,omitempty"`
-	ScreenScaleFactor *float64               `protobuf:"fixed64,5,opt,name=ScreenScaleFactor,json=screen_scale_factor,proto3,oneof" json:"ScreenScaleFactor,omitempty"`
+	UserAgent         *string                `protobuf:"bytes,1,opt,name=UserAgent,proto3,oneof" json:"UserAgent,omitempty"`
+	ScreenScaleFactor *float64               `protobuf:"fixed64,5,opt,name=ScreenScaleFactor,proto3,oneof" json:"ScreenScaleFactor,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -646,8 +655,8 @@ func (x *TClientAliceRequestProto_TRequest_TAdditionalOptions_TBassOptions) GetS
 
 type TVoiceInput_TClientOptions struct {
 	state            protoimpl.MessageState                        `protogen:"open.v1"`
-	DisableJingle    bool                                          `protobuf:"varint,1,opt,name=DisableJingle,json=disable_jingle,proto3" json:"DisableJingle,omitempty"`
-	IsMusic          bool                                          `protobuf:"varint,2,opt,name=IsMusic,json=is_music,proto3" json:"IsMusic,omitempty"`
+	DisableJingle    bool                                          `protobuf:"varint,1,opt,name=DisableJingle,proto3" json:"DisableJingle,omitempty"`
+	IsMusic          bool                                          `protobuf:"varint,2,opt,name=IsMusic,proto3" json:"IsMusic,omitempty"`
 	OpenStreamPolicy *TVoiceInput_TClientOptions_TOpenStreamPolicy `protobuf:"bytes,3,opt,name=OpenStreamPolicy,json=open_stream_policy,proto3" json:"OpenStreamPolicy,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -809,11 +818,11 @@ func (*TVoiceInput_TClientOptions_TOpenStreamPolicy_TVadGate) Descriptor() ([]by
 
 type TTextInput_TClientOptions struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	Silent               bool                   `protobuf:"varint,1,opt,name=Silent,json=silent,proto3" json:"Silent,omitempty"`
-	Parallel             bool                   `protobuf:"varint,2,opt,name=Parallel,json=parallel,proto3" json:"Parallel,omitempty"`
-	IgnoreAnswer         bool                   `protobuf:"varint,3,opt,name=IgnoreAnswer,json=ignore_answer,proto3" json:"IgnoreAnswer,omitempty"`
-	PersId               string                 `protobuf:"bytes,4,opt,name=PersId,json=pers_id,proto3" json:"PersId,omitempty"`
-	IgnoreCriticalUpdate bool                   `protobuf:"varint,5,opt,name=IgnoreCriticalUpdate,json=ignore_critical_update,proto3" json:"IgnoreCriticalUpdate,omitempty"`
+	Silent               bool                   `protobuf:"varint,1,opt,name=Silent,proto3" json:"Silent,omitempty"`
+	Parallel             bool                   `protobuf:"varint,2,opt,name=Parallel,proto3" json:"Parallel,omitempty"`
+	IgnoreAnswer         bool                   `protobuf:"varint,3,opt,name=IgnoreAnswer,proto3" json:"IgnoreAnswer,omitempty"`
+	PersId               string                 `protobuf:"bytes,4,opt,name=PersId,proto3" json:"PersId,omitempty"`
+	IgnoreCriticalUpdate bool                   `protobuf:"varint,5,opt,name=IgnoreCriticalUpdate,proto3" json:"IgnoreCriticalUpdate,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -1059,96 +1068,93 @@ var File_alice_protos_api_alicekit_client_alice_request_alice_request_proto prot
 
 const file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/api/alicekit/client/alice_request/alice_request.proto\x12\x10NAlice.NAliceApi\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1aEalice/protos/api/alicekit/common/tts_options/client_tts_options.proto\x1aHalice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x1a7alice/protos/api/incognito_mode/incognito_options.proto\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a9alice/protos/api/speech_mode/session/speech_session.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a)alice/megamind/protos/common/events.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a/alice/megamind/protos/guest/guest_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xee\x18\n" +
-	"\x18TClientAliceRequestProto\x12V\n" +
-	"\x06Header\x18\x01 \x01(\v22.NAlice.NAliceApi.TClientAliceRequestProto.THeaderB\n" +
-	"\xaa\xdd\x1b\x06headerR\x06header\x12Z\n" +
-	"\aRequest\x18\x03 \x01(\v23.NAlice.NAliceApi.TClientAliceRequestProto.TRequestB\v\xaa\xdd\x1b\arequestR\arequest\x12I\n" +
-	"\vEventSource\x18\v \x01(\v2\x14.NAlice.TEventSourceB\x10\xaa\xdd\x1b\fevent_sourceR\fevent_source\x12h\n" +
-	"\x0eAlice2Settings\x18\" \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoB\x14\xaa\xdd\x1b\x10alice_2_settingsR\x10alice_2_settings\x12$\n" +
-	"\x05Topic\x18\x13 \x01(\tB\t\xaa\xdd\x1b\x05topicH\x00R\x05topic\x88\x01\x01\x12Z\n" +
+	"Balice/protos/api/alicekit/client/alice_request/alice_request.proto\x12\x10NAlice.NAliceApi\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1aHalice/protos/api/alicekit/common/uniproxy_options/uniproxy_options.proto\x1a@alice/protos/api/speech_mode/client_options/client_options.proto\x1a9alice/protos/api/speech_mode/session/speech_session.proto\x1a/alice/protos/data/dialog_type/dialog_type.proto\x1a1alice/protos/data/event_source/event_source.proto\x1a)alice/megamind/protos/common/events.proto\x1a:alice/megamind/protos/common/experiments/experiments.proto\x1a/alice/megamind/protos/guest/guest_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1aEalice/protos/api/alicekit/common/tts_options/client_tts_options.proto\x1a7alice/protos/api/incognito_mode/incognito_options.proto\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\"\xef\x15\n" +
+	"\x18TClientAliceRequestProto\x12J\n" +
+	"\x06Header\x18\x01 \x01(\v22.NAlice.NAliceApi.TClientAliceRequestProto.THeaderR\x06Header\x12M\n" +
+	"\aRequest\x18\x03 \x01(\v23.NAlice.NAliceApi.TClientAliceRequestProto.TRequestR\aRequest\x126\n" +
+	"\vEventSource\x18\v \x01(\v2\x14.NAlice.TEventSourceR\vEventSource\x12P\n" +
+	"\x0eAlice2Settings\x18\" \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoR\x0eAlice2Settings\x12\x19\n" +
+	"\x05Topic\x18\x13 \x01(\tH\x00R\x05Topic\x88\x01\x01\x12Z\n" +
 	"\n" +
-	"TtsOptions\x18, \x01(\v2#.NAlice.NAliceApi.TClientTtsOptionsB\x0f\xaa\xdd\x1b\vtts_optionsH\x01R\vtts_options\x88\x01\x01\x1a\x93\x04\n" +
-	"\aTHeader\x122\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idH\x00R\n" +
-	"request_id\x88\x01\x01\x124\n" +
-	"\tPrevReqId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vprev_req_idH\x01R\vprev_req_id\x88\x01\x01\x12/\n" +
-	"\bDialogId\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x02R\tdialog_id\x88\x01\x01\x12P\n" +
+	"TtsOptions\x18, \x01(\v2#.NAlice.NAliceApi.TClientTtsOptionsB\x0f\xaa\xdd\x1b\vtts_optionsH\x01R\vtts_options\x88\x01\x01\x1a\xca\x03\n" +
+	"\aTHeader\x12!\n" +
+	"\tRequestId\x18\x01 \x01(\tH\x00R\tRequestId\x88\x01\x01\x12\x1f\n" +
+	"\bDialogId\x18\x04 \x01(\tH\x01R\bDialogId\x88\x01\x01\x12>\n" +
 	"\n" +
-	"DialogType\x18\b \x01(\x0e2\x19.NAlice.NData.EDialogTypeB\x0f\xaa\xdd\x1b\vdialog_typeH\x03R\vdialog_type\x88\x01\x01\x12@\n" +
-	"\rDialogShareId\x18\t \x01(\tB\x13\xaa\xdd\x1b\x0fdialog_share_idH\x04R\x0fdialog_share_id\x88\x01\x01\x12/\n" +
+	"DialogType\x18\b \x01(\x0e2\x19.NAlice.NData.EDialogTypeH\x02R\n" +
+	"DialogType\x88\x01\x01\x12\x1f\n" +
 	"\bFolderId\x18\n" +
-	" \x01(\tB\r\xaa\xdd\x1b\tfolder_idH\x05R\tfolder_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	" \x01(\tH\x03R\bFolderId\x88\x01\x01\x124\n" +
+	"\tPrevReqId\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vprev_req_idH\x04R\vprev_req_id\x88\x01\x01\x12@\n" +
+	"\rDialogShareId\x18\t \x01(\tB\x13\xaa\xdd\x1b\x0fdialog_share_idH\x05R\x0fdialog_share_id\x88\x01\x01B\f\n" +
 	"\n" +
-	"_RequestIdB\f\n" +
-	"\n" +
-	"_PrevReqIdB\v\n" +
+	"_RequestIdB\v\n" +
 	"\t_DialogIdB\r\n" +
-	"\v_DialogTypeB\x10\n" +
-	"\x0e_DialogShareIdB\v\n" +
-	"\t_FolderIdJ\x04\b\x03\x10\x04J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\x0eSequenceNumberR\fRefMessageIdR\tSessionIdR\n" +
-	"RandomSeed\x1a\xc8\v\n" +
-	"\bTRequest\x12/\n" +
-	"\x05Event\x18\x01 \x01(\v2\x0e.NAlice.TEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12L\n" +
-	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoB\x0f\xaa\xdd\x1b\vexperimentsR\vExperiments\x12\x8d\x01\n" +
-	"\x11AdditionalOptions\x18\x05 \x01(\v2F.NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptionsB\x16\xaa\xdd\x1b\x12additional_optionsR\x12additional_options\x12c\n" +
-	"\x0fUniproxyOptions\x18\x11 \x01(\v2\".NAlice.NAliceApi.TUniproxyOptionsB\x14\xaa\xdd\x1b\x10uniproxy_optionsR\x10uniproxy_options\x12;\n" +
-	"\fVoiceSession\x18\x06 \x01(\bB\x11\xaa\xdd\x1b\rvoice_sessionH\x00R\rvoice_session\x88\x01\x01\x1a\x86\x05\n" +
-	"\x12TAdditionalOptions\x12\x88\x01\n" +
-	"\vBassOptions\x18\x03 \x01(\v2S.NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsB\x10\xaa\xdd\x1b\fbass_optionsR\fbass_options\x12[\n" +
-	"\x10GuestUserOptions\x18\x13 \x01(\v2\x15.NAlice.TGuestOptionsB\x16\xaa\xdd\x1b\x12guest_user_optionsR\x12guest_user_options\x12;\n" +
-	"\fOriginDomain\x18\x1a \x01(\tB\x11\xaa\xdd\x1b\rorigin_domainH\x00R\rorigin_domain\x88\x01\x01\x12b\n" +
-	"\x10IncognitoOptions\x18! \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsH\x01R\x11incognito_options\x88\x01\x01\x1a\xba\x01\n" +
-	"\fTBassOptions\x122\n" +
-	"\tUserAgent\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"user_agentH\x00R\n" +
-	"user_agent\x88\x01\x01\x12L\n" +
-	"\x11ScreenScaleFactor\x18\x05 \x01(\x01B\x17\xaa\xdd\x1b\x13screen_scale_factorH\x01R\x13screen_scale_factor\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"\v_DialogTypeB\v\n" +
+	"\t_FolderIdB\f\n" +
+	"\n" +
+	"_PrevReqIdB\x10\n" +
+	"\x0e_DialogShareIdJ\x04\b\x03\x10\x04J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bR\x0eSequenceNumberR\fRefMessageIdR\tSessionIdR\n" +
+	"RandomSeed\x1a\xe7\t\n" +
+	"\bTRequest\x12$\n" +
+	"\x05Event\x18\x01 \x01(\v2\x0e.NAlice.TEventR\x05Event\x12;\n" +
+	"\vExperiments\x18\x03 \x01(\v2\x19.NAlice.TExperimentsProtoR\vExperiments\x12t\n" +
+	"\x11AdditionalOptions\x18\x05 \x01(\v2F.NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptionsR\x11AdditionalOptions\x12L\n" +
+	"\x0fUniproxyOptions\x18\x11 \x01(\v2\".NAlice.NAliceApi.TUniproxyOptionsR\x0fUniproxyOptions\x12'\n" +
+	"\fVoiceSession\x18\x06 \x01(\bH\x00R\fVoiceSession\x88\x01\x01\x1a\x8c\x04\n" +
+	"\x12TAdditionalOptions\x12u\n" +
+	"\vBassOptions\x18\x03 \x01(\v2S.NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.TBassOptionsR\vBassOptions\x12A\n" +
+	"\x10GuestUserOptions\x18\x13 \x01(\v2\x15.NAlice.TGuestOptionsR\x10GuestUserOptions\x12'\n" +
+	"\fOriginDomain\x18\x1a \x01(\tH\x00R\fOriginDomain\x88\x01\x01\x12b\n" +
+	"\x10IncognitoOptions\x18! \x01(\v2\x19.NAlice.TIncognitoOptionsB\x15\xaa\xdd\x1b\x11incognito_optionsH\x01R\x11incognito_options\x88\x01\x01\x1a\x88\x01\n" +
+	"\fTBassOptions\x12!\n" +
+	"\tUserAgent\x18\x01 \x01(\tH\x00R\tUserAgent\x88\x01\x01\x121\n" +
+	"\x11ScreenScaleFactor\x18\x05 \x01(\x01H\x01R\x11ScreenScaleFactor\x88\x01\x01B\f\n" +
 	"\n" +
 	"_UserAgentB\x14\n" +
-	"\x12_ScreenScaleFactor:\x04\xa8\xdd\x1b\x04B\x0f\n" +
+	"\x12_ScreenScaleFactorB\x0f\n" +
 	"\r_OriginDomainB\x13\n" +
-	"\x11_IncognitoOptions:\x04\xa8\xdd\x1b\x04B\x0f\n" +
+	"\x11_IncognitoOptionsB\x0f\n" +
 	"\r_VoiceSessionJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
 	"\x10\vJ\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18R\bLocationR\vDeviceStateR\fResetSessionR\aTestIDsR\n" +
 	"LaasRegionR\x0fRawPersonalDataR\rSmartHomeInfoR\x11NotificationStateR\x0eActivationTypeR\x0fMegamindCookiesR\x10EnvironmentStateR\x0eDeviceStateRawR\x13EnvironmentStateRawR\n" +
-	"AsrOptionsR\x0fBiometryOptionsR\x10LaasRealLocationR\x11StickinessOptions:\x04\xa8\xdd\x1b\x04B\b\n" +
+	"AsrOptionsR\x0fBiometryOptionsR\x10LaasRealLocationR\x11StickinessOptionsB\b\n" +
 	"\x06_TopicB\r\n" +
 	"\v_TtsOptionsJ\x04\b\x02\x10\x03J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
 	"\x10\vJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x18\x10\x19J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b \x10!J\x04\b!\x10\"R\vApplicationR\aSessionR\vMementoDataR\x0fIoTUserInfoDataR\bContactsR\rContactsProtoR\tGuestDataR\rGuestUserDataR\x11EnrollmentHeadersR\bFirmwareR\x13VoiceInputMessageIdR\x17EnableSpotterValidationR\rSpotterPhraseR\x13EmbeddedSpotterInfoR\x04LangR\x0eDisableAntimatR\vPunctuationR\x06FormatR\x12RecognizeMusicOnlyR\x04TagsR\x12AdvancedAsrOptionsR\rOnlineDevicesR\x13QuasarDeviceConfigsR\x10BlackBoxUserInfoR\x11EmergencyContactsR\x12DialogHistoryBlockR\x11SubscriptionsInfoR\x0eActiveUserDataR\n" +
-	"Alice2Mode\"\x9e\x05\n" +
-	"\vTVoiceInput\x12h\n" +
-	"\x0eRequestPayload\x18\x01 \x01(\v2*.NAlice.NAliceApi.TClientAliceRequestProtoB\x13\xaa\xdd\x1b\x0frequest_payloadR\x0frequest_payload\x12g\n" +
-	"\rClientOptions\x18\x02 \x01(\v2,.NAlice.NAliceApi.TVoiceInput.TClientOptionsB\x12\xaa\xdd\x1b\x0eclient_optionsR\x0eclient_options\x1a\xb5\x03\n" +
-	"\x0eTClientOptions\x129\n" +
-	"\rDisableJingle\x18\x01 \x01(\bB\x12\xaa\xdd\x1b\x0edisable_jingleR\x0edisable_jingle\x12'\n" +
-	"\aIsMusic\x18\x02 \x01(\bB\f\xaa\xdd\x1b\bis_musicR\bis_music\x12\x84\x01\n" +
+	"Alice2Mode\"\xc3\x04\n" +
+	"\vTVoiceInput\x12R\n" +
+	"\x0eRequestPayload\x18\x01 \x01(\v2*.NAlice.NAliceApi.TClientAliceRequestProtoR\x0eRequestPayload\x12R\n" +
+	"\rClientOptions\x18\x02 \x01(\v2,.NAlice.NAliceApi.TVoiceInput.TClientOptionsR\rClientOptions\x1a\x8b\x03\n" +
+	"\x0eTClientOptions\x12$\n" +
+	"\rDisableJingle\x18\x01 \x01(\bR\rDisableJingle\x12\x18\n" +
+	"\aIsMusic\x18\x02 \x01(\bR\aIsMusic\x12\x84\x01\n" +
 	"\x10OpenStreamPolicy\x18\x03 \x01(\v2>.NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicyB\x16\xaa\xdd\x1b\x12open_stream_policyR\x12open_stream_policy\x1a\xb1\x01\n" +
 	"\x11TOpenStreamPolicy\x12r\n" +
 	"\aVadGate\x18\x01 \x01(\v2G.NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy.TVadGateB\f\xaa\xdd\x1b\bvad_gateH\x00R\bvad_gate\x1a\x10\n" +
 	"\bTVadGate:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Gate\x12\b\xaa\xdd\x1b\x04gate:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\xfb\x03\n" +
+	"\x04Gate\x12\b\xaa\xdd\x1b\x04gate\"\xea\x02\n" +
 	"\n" +
-	"TTextInput\x12h\n" +
-	"\x0eRequestPayload\x18\x01 \x01(\v2*.NAlice.NAliceApi.TClientAliceRequestProtoB\x13\xaa\xdd\x1b\x0frequest_payloadR\x0frequest_payload\x12f\n" +
-	"\rClientOptions\x18\x02 \x01(\v2+.NAlice.NAliceApi.TTextInput.TClientOptionsB\x12\xaa\xdd\x1b\x0eclient_optionsR\x0eclient_options\x1a\x94\x02\n" +
-	"\x0eTClientOptions\x12\"\n" +
-	"\x06Silent\x18\x01 \x01(\bB\n" +
-	"\xaa\xdd\x1b\x06silentR\x06silent\x12(\n" +
-	"\bParallel\x18\x02 \x01(\bB\f\xaa\xdd\x1b\bparallelR\bparallel\x126\n" +
-	"\fIgnoreAnswer\x18\x03 \x01(\bB\x11\xaa\xdd\x1b\rignore_answerR\rignore_answer\x12$\n" +
-	"\x06PersId\x18\x04 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12P\n" +
-	"\x14IgnoreCriticalUpdate\x18\x05 \x01(\bB\x1a\xaa\xdd\x1b\x16ignore_critical_updateR\x16ignore_critical_update:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\x80\x01\n" +
-	"\rTAliceRequest\x12Q\n" +
+	"TTextInput\x12R\n" +
+	"\x0eRequestPayload\x18\x01 \x01(\v2*.NAlice.NAliceApi.TClientAliceRequestProtoR\x0eRequestPayload\x12Q\n" +
+	"\rClientOptions\x18\x02 \x01(\v2+.NAlice.NAliceApi.TTextInput.TClientOptionsR\rClientOptions\x1a\xb4\x01\n" +
+	"\x0eTClientOptions\x12\x16\n" +
+	"\x06Silent\x18\x01 \x01(\bR\x06Silent\x12\x1a\n" +
+	"\bParallel\x18\x02 \x01(\bR\bParallel\x12\"\n" +
+	"\fIgnoreAnswer\x18\x03 \x01(\bR\fIgnoreAnswer\x12\x16\n" +
+	"\x06PersId\x18\x04 \x01(\tR\x06PersId\x122\n" +
+	"\x14IgnoreCriticalUpdate\x18\x05 \x01(\bR\x14IgnoreCriticalUpdate\"[\n" +
+	"\rTAliceRequest\x12?\n" +
 	"\n" +
-	"VoiceInput\x18\x01 \x01(\v2\x1d.NAlice.NAliceApi.TVoiceInputB\x0f\xaa\xdd\x1b\vvoice_inputH\x00R\vvoice_input:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aRequest\x12\v\xaa\xdd\x1b\arequest\"\x99\n" +
+	"VoiceInput\x18\x01 \x01(\v2\x1d.NAlice.NAliceApi.TVoiceInputH\x00R\n" +
+	"VoiceInputB\t\n" +
+	"\aRequest\"\xbb\n" +
 	"\n" +
-	"\fTSpeechInput\x12Q\n" +
-	"\rSpeechSession\x18\x01 \x01(\v2\x16.NAlice.TSpeechSessionB\x12\xaa\xdd\x1b\x0espeech_sessionR\x0espeech_session\x12c\n" +
+	"\fTSpeechInput\x12<\n" +
+	"\rSpeechSession\x18\x01 \x01(\v2\x16.NAlice.TSpeechSessionR\rSpeechSession\x12Z\n" +
+	"\x17SpeechModeClientOptions\x18\x02 \x01(\v2 .NAlice.TSpeechModeClientOptionsR\x17SpeechModeClientOptions\x12c\n" +
 	"\x11SpeechModeOptions\x18\x04 \x01(\v2\x1a.NAlice.TSpeechModeOptionsB\x17\xaa\xdd\x1b\x13speech_mode_optionsR\x13speech_mode_options\x12l\n" +
 	"\x0eRequestPayload\x18\x03 \x01(\v2..NAlice.NAliceApi.TSpeechInput.TRequestPayloadB\x13\xaa\xdd\x1b\x0frequest_payloadR\x0frequest_payload\x12r\n" +
 	"\x15FinishRequestCallback\x18\x05 \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\x1b\xaa\xdd\x1b\x17finish_request_callbackR\x17finish_request_callback\x12o\n" +
@@ -1174,8 +1180,8 @@ const file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_ra
 	"\bTRequest\x12c\n" +
 	"\x0fUniproxyOptions\x18\x11 \x01(\v2\".NAlice.NAliceApi.TUniproxyOptionsB\x14\xaa\xdd\x1b\x10uniproxy_optionsR\x10uniproxy_options:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\b\n" +
 	"\x06_TopicB\r\n" +
-	"\v_TtsOptions:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\x17SpeechModeClientOptionsB\x9a\x01\n" +
-	"8ru.yandex.alice.protos.api.alicekit.client.alice_requestB\fAliceRequestP\x01ZNa.yandex-team.ru/alice/protos/api/alicekit/client/alice_request;alicerequestpbb\x06proto3"
+	"\v_TtsOptionsB\xea\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x11AliceRequestProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/client/alice_request\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_rawDescOnce sync.Once
@@ -1211,14 +1217,15 @@ var file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_goTy
 	(*alice_mode_info.TAlice2ModeInfo)(nil),                                   // 17: NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
 	(*tts_options.TClientTtsOptions)(nil),                                     // 18: NAlice.NAliceApi.TClientTtsOptions
 	(*session.TSpeechSession)(nil),                                            // 19: NAlice.TSpeechSession
-	(*mode.TSpeechModeOptions)(nil),                                           // 20: NAlice.TSpeechModeOptions
-	(*typed_callbacks.TTypedCallbackRequest)(nil),                             // 21: NAlice.TTypedCallbackRequest
-	(dialog_type.EDialogType)(0),                                              // 22: NAlice.NData.EDialogType
-	(*common.TEvent)(nil),                                                     // 23: NAlice.TEvent
-	(*experiments.TExperimentsProto)(nil),                                     // 24: NAlice.TExperimentsProto
-	(*uniproxy_options.TUniproxyOptions)(nil),                                 // 25: NAlice.NAliceApi.TUniproxyOptions
-	(*guest.TGuestOptions)(nil),                                               // 26: NAlice.TGuestOptions
-	(*incognito_mode.TIncognitoOptions)(nil),                                  // 27: NAlice.TIncognitoOptions
+	(*client_options.TSpeechModeClientOptions)(nil),                           // 20: NAlice.TSpeechModeClientOptions
+	(*mode.TSpeechModeOptions)(nil),                                           // 21: NAlice.TSpeechModeOptions
+	(*typed_callbacks.TTypedCallbackRequest)(nil),                             // 22: NAlice.TTypedCallbackRequest
+	(dialog_type.EDialogType)(0),                                              // 23: NAlice.NData.EDialogType
+	(*common.TEvent)(nil),                                                     // 24: NAlice.TEvent
+	(*experiments.TExperimentsProto)(nil),                                     // 25: NAlice.TExperimentsProto
+	(*uniproxy_options.TUniproxyOptions)(nil),                                 // 26: NAlice.NAliceApi.TUniproxyOptions
+	(*guest.TGuestOptions)(nil),                                               // 27: NAlice.TGuestOptions
+	(*incognito_mode.TIncognitoOptions)(nil),                                  // 28: NAlice.TIncognitoOptions
 }
 var file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_depIdxs = []int32{
 	5,  // 0: NAlice.NAliceApi.TClientAliceRequestProto.Header:type_name -> NAlice.NAliceApi.TClientAliceRequestProto.THeader
@@ -1232,30 +1239,31 @@ var file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_depI
 	12, // 8: NAlice.NAliceApi.TTextInput.ClientOptions:type_name -> NAlice.NAliceApi.TTextInput.TClientOptions
 	1,  // 9: NAlice.NAliceApi.TAliceRequest.VoiceInput:type_name -> NAlice.NAliceApi.TVoiceInput
 	19, // 10: NAlice.NAliceApi.TSpeechInput.SpeechSession:type_name -> NAlice.TSpeechSession
-	20, // 11: NAlice.NAliceApi.TSpeechInput.SpeechModeOptions:type_name -> NAlice.TSpeechModeOptions
-	13, // 12: NAlice.NAliceApi.TSpeechInput.RequestPayload:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload
-	21, // 13: NAlice.NAliceApi.TSpeechInput.FinishRequestCallback:type_name -> NAlice.TTypedCallbackRequest
-	21, // 14: NAlice.NAliceApi.TSpeechInput.StartRequestCallback:type_name -> NAlice.TTypedCallbackRequest
-	22, // 15: NAlice.NAliceApi.TClientAliceRequestProto.THeader.DialogType:type_name -> NAlice.NData.EDialogType
-	23, // 16: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.Event:type_name -> NAlice.TEvent
-	24, // 17: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.Experiments:type_name -> NAlice.TExperimentsProto
-	7,  // 18: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.AdditionalOptions:type_name -> NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions
-	25, // 19: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.UniproxyOptions:type_name -> NAlice.NAliceApi.TUniproxyOptions
-	8,  // 20: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.BassOptions:type_name -> NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
-	26, // 21: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.GuestUserOptions:type_name -> NAlice.TGuestOptions
-	27, // 22: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.IncognitoOptions:type_name -> NAlice.TIncognitoOptions
-	10, // 23: NAlice.NAliceApi.TVoiceInput.TClientOptions.OpenStreamPolicy:type_name -> NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy
-	11, // 24: NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy.VadGate:type_name -> NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy.TVadGate
-	14, // 25: NAlice.NAliceApi.TSpeechInput.TRequestPayload.Header:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload.THeader
-	15, // 26: NAlice.NAliceApi.TSpeechInput.TRequestPayload.Request:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload.TRequest
-	18, // 27: NAlice.NAliceApi.TSpeechInput.TRequestPayload.TtsOptions:type_name -> NAlice.NAliceApi.TClientTtsOptions
-	22, // 28: NAlice.NAliceApi.TSpeechInput.TRequestPayload.THeader.DialogType:type_name -> NAlice.NData.EDialogType
-	25, // 29: NAlice.NAliceApi.TSpeechInput.TRequestPayload.TRequest.UniproxyOptions:type_name -> NAlice.NAliceApi.TUniproxyOptions
-	30, // [30:30] is the sub-list for method output_type
-	30, // [30:30] is the sub-list for method input_type
-	30, // [30:30] is the sub-list for extension type_name
-	30, // [30:30] is the sub-list for extension extendee
-	0,  // [0:30] is the sub-list for field type_name
+	20, // 11: NAlice.NAliceApi.TSpeechInput.SpeechModeClientOptions:type_name -> NAlice.TSpeechModeClientOptions
+	21, // 12: NAlice.NAliceApi.TSpeechInput.SpeechModeOptions:type_name -> NAlice.TSpeechModeOptions
+	13, // 13: NAlice.NAliceApi.TSpeechInput.RequestPayload:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload
+	22, // 14: NAlice.NAliceApi.TSpeechInput.FinishRequestCallback:type_name -> NAlice.TTypedCallbackRequest
+	22, // 15: NAlice.NAliceApi.TSpeechInput.StartRequestCallback:type_name -> NAlice.TTypedCallbackRequest
+	23, // 16: NAlice.NAliceApi.TClientAliceRequestProto.THeader.DialogType:type_name -> NAlice.NData.EDialogType
+	24, // 17: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.Event:type_name -> NAlice.TEvent
+	25, // 18: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.Experiments:type_name -> NAlice.TExperimentsProto
+	7,  // 19: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.AdditionalOptions:type_name -> NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions
+	26, // 20: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.UniproxyOptions:type_name -> NAlice.NAliceApi.TUniproxyOptions
+	8,  // 21: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.BassOptions:type_name -> NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.TBassOptions
+	27, // 22: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.GuestUserOptions:type_name -> NAlice.TGuestOptions
+	28, // 23: NAlice.NAliceApi.TClientAliceRequestProto.TRequest.TAdditionalOptions.IncognitoOptions:type_name -> NAlice.TIncognitoOptions
+	10, // 24: NAlice.NAliceApi.TVoiceInput.TClientOptions.OpenStreamPolicy:type_name -> NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy
+	11, // 25: NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy.VadGate:type_name -> NAlice.NAliceApi.TVoiceInput.TClientOptions.TOpenStreamPolicy.TVadGate
+	14, // 26: NAlice.NAliceApi.TSpeechInput.TRequestPayload.Header:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload.THeader
+	15, // 27: NAlice.NAliceApi.TSpeechInput.TRequestPayload.Request:type_name -> NAlice.NAliceApi.TSpeechInput.TRequestPayload.TRequest
+	18, // 28: NAlice.NAliceApi.TSpeechInput.TRequestPayload.TtsOptions:type_name -> NAlice.NAliceApi.TClientTtsOptions
+	23, // 29: NAlice.NAliceApi.TSpeechInput.TRequestPayload.THeader.DialogType:type_name -> NAlice.NData.EDialogType
+	26, // 30: NAlice.NAliceApi.TSpeechInput.TRequestPayload.TRequest.UniproxyOptions:type_name -> NAlice.NAliceApi.TUniproxyOptions
+	31, // [31:31] is the sub-list for method output_type
+	31, // [31:31] is the sub-list for method input_type
+	31, // [31:31] is the sub-list for extension type_name
+	31, // [31:31] is the sub-list for extension extendee
+	0,  // [0:31] is the sub-list for field type_name
 }
 
 func init() { file_alice_protos_api_alicekit_client_alice_request_alice_request_proto_init() }

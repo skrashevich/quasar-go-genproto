@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/file_upload/capability.proto
 
-package fileuploadpb
+package file_upload
 
 import (
 	file_upload_response "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/file_upload_response"
@@ -28,9 +28,9 @@ const (
 
 type TFileUploadCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TFileUploadCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TFileUploadCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TFileUploadCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TFileUploadCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -160,7 +160,7 @@ func (*TFileUploadCapability_TState) Descriptor() ([]byte, []int) {
 
 type TFileUploadCapability_TPollingOptions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutMs     uint64                 `protobuf:"varint,1,opt,name=TimeoutMs,json=timeout_ms,proto3" json:"TimeoutMs,omitempty"`
+	TimeoutMs     uint64                 `protobuf:"varint,1,opt,name=TimeoutMs,proto3" json:"TimeoutMs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -204,10 +204,10 @@ func (x *TFileUploadCapability_TPollingOptions) GetTimeoutMs() uint64 {
 
 type TFileUploadCapability_TFileDescription struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	InputSourceId string                   `protobuf:"bytes,1,opt,name=InputSourceId,json=input_source_id,proto3" json:"InputSourceId,omitempty"`
-	Title         string                   `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	MimeType      string                   `protobuf:"bytes,3,opt,name=MimeType,json=mime_type,proto3" json:"MimeType,omitempty"`
-	Size          uint64                   `protobuf:"varint,4,opt,name=Size,json=size,proto3" json:"Size,omitempty"`
+	InputSourceId string                   `protobuf:"bytes,1,opt,name=InputSourceId,proto3" json:"InputSourceId,omitempty"`
+	Title         string                   `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	MimeType      string                   `protobuf:"bytes,3,opt,name=MimeType,proto3" json:"MimeType,omitempty"`
+	Size          uint64                   `protobuf:"varint,4,opt,name=Size,proto3" json:"Size,omitempty"`
 	Origin        *files.TFileInfo_EOrigin `protobuf:"varint,5,opt,name=Origin,json=origin,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EOrigin,oneof" json:"Origin,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -280,10 +280,10 @@ func (x *TFileUploadCapability_TFileDescription) GetOrigin() files.TFileInfo_EOr
 
 type TFileUploadCapability_TStartFileUploadDirective struct {
 	state           protoimpl.MessageState                  `protogen:"open.v1"`
-	Name            string                                  `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	InteractionId   string                                  `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3" json:"InteractionId,omitempty"`
-	FileDescription *TFileUploadCapability_TFileDescription `protobuf:"bytes,2,opt,name=FileDescription,json=file_description,proto3" json:"FileDescription,omitempty"`
-	AutoPolling     *TFileUploadCapability_TPollingOptions  `protobuf:"bytes,3,opt,name=AutoPolling,json=auto_polling,proto3" json:"AutoPolling,omitempty"`
+	Name            string                                  `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	InteractionId   string                                  `protobuf:"bytes,1,opt,name=InteractionId,proto3" json:"InteractionId,omitempty"`
+	FileDescription *TFileUploadCapability_TFileDescription `protobuf:"bytes,2,opt,name=FileDescription,proto3" json:"FileDescription,omitempty"`
+	AutoPolling     *TFileUploadCapability_TPollingOptions  `protobuf:"bytes,3,opt,name=AutoPolling,proto3" json:"AutoPolling,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -348,10 +348,10 @@ func (x *TFileUploadCapability_TStartFileUploadDirective) GetAutoPolling() *TFil
 
 type TFileUploadCapability_TStartFilePollingDirective struct {
 	state          protoimpl.MessageState                 `protogen:"open.v1"`
-	Name           string                                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	InteractionId  string                                 `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3" json:"InteractionId,omitempty"`
-	FileGuids      []string                               `protobuf:"bytes,2,rep,name=FileGuids,json=file_guids,proto3" json:"FileGuids,omitempty"`
-	PollingOptions *TFileUploadCapability_TPollingOptions `protobuf:"bytes,3,opt,name=PollingOptions,json=polling_options,proto3" json:"PollingOptions,omitempty"`
+	Name           string                                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	InteractionId  string                                 `protobuf:"bytes,1,opt,name=InteractionId,proto3" json:"InteractionId,omitempty"`
+	FileGuids      []string                               `protobuf:"bytes,2,rep,name=FileGuids,proto3" json:"FileGuids,omitempty"`
+	PollingOptions *TFileUploadCapability_TPollingOptions `protobuf:"bytes,3,opt,name=PollingOptions,proto3" json:"PollingOptions,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -416,7 +416,7 @@ func (x *TFileUploadCapability_TStartFilePollingDirective) GetPollingOptions() *
 
 type TFileUploadCapability_TFileUploadStatusEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InteractionId string                 `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3" json:"InteractionId,omitempty"`
+	InteractionId string                 `protobuf:"bytes,1,opt,name=InteractionId,proto3" json:"InteractionId,omitempty"`
 	// Types that are valid to be assigned to Status:
 	//
 	//	*TFileUploadCapability_TFileUploadStatusEvent_UploadStart
@@ -503,15 +503,15 @@ type isTFileUploadCapability_TFileUploadStatusEvent_Status interface {
 }
 
 type TFileUploadCapability_TFileUploadStatusEvent_UploadStart struct {
-	UploadStart *TFileUploadCapability_TFileUploadStatusEvent_TUploadStart `protobuf:"bytes,2,opt,name=UploadStart,json=upload_start,proto3,oneof"`
+	UploadStart *TFileUploadCapability_TFileUploadStatusEvent_TUploadStart `protobuf:"bytes,2,opt,name=UploadStart,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFileUploadStatusEvent_UploadFinish struct {
-	UploadFinish *TFileUploadCapability_TFileUploadStatusEvent_TUploadFinish `protobuf:"bytes,3,opt,name=UploadFinish,json=upload_finish,proto3,oneof"`
+	UploadFinish *TFileUploadCapability_TFileUploadStatusEvent_TUploadFinish `protobuf:"bytes,3,opt,name=UploadFinish,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFileUploadStatusEvent_UploadError struct {
-	UploadError *TFileUploadCapability_TFileUploadStatusEvent_TUploadError `protobuf:"bytes,4,opt,name=UploadError,json=upload_error,proto3,oneof"`
+	UploadError *TFileUploadCapability_TFileUploadStatusEvent_TUploadError `protobuf:"bytes,4,opt,name=UploadError,proto3,oneof"`
 }
 
 func (*TFileUploadCapability_TFileUploadStatusEvent_UploadStart) isTFileUploadCapability_TFileUploadStatusEvent_Status() {
@@ -525,8 +525,8 @@ func (*TFileUploadCapability_TFileUploadStatusEvent_UploadError) isTFileUploadCa
 
 type TFileUploadCapability_TFilePollingStatusEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InteractionId string                 `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3" json:"InteractionId,omitempty"`
-	Guid          string                 `protobuf:"bytes,5,opt,name=Guid,json=guid,proto3" json:"Guid,omitempty"`
+	InteractionId string                 `protobuf:"bytes,1,opt,name=InteractionId,proto3" json:"InteractionId,omitempty"`
+	Guid          string                 `protobuf:"bytes,5,opt,name=Guid,proto3" json:"Guid,omitempty"`
 	// Types that are valid to be assigned to Status:
 	//
 	//	*TFileUploadCapability_TFilePollingStatusEvent_PollingStart
@@ -620,15 +620,15 @@ type isTFileUploadCapability_TFilePollingStatusEvent_Status interface {
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_PollingStart struct {
-	PollingStart *TFileUploadCapability_TFilePollingStatusEvent_TPollingStart `protobuf:"bytes,2,opt,name=PollingStart,json=polling_start,proto3,oneof"`
+	PollingStart *TFileUploadCapability_TFilePollingStatusEvent_TPollingStart `protobuf:"bytes,2,opt,name=PollingStart,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_PollingFinish struct {
-	PollingFinish *TFileUploadCapability_TFilePollingStatusEvent_TPollingFinish `protobuf:"bytes,3,opt,name=PollingFinish,json=polling_finish,proto3,oneof"`
+	PollingFinish *TFileUploadCapability_TFilePollingStatusEvent_TPollingFinish `protobuf:"bytes,3,opt,name=PollingFinish,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_PollingError struct {
-	PollingError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError `protobuf:"bytes,4,opt,name=PollingError,json=polling_error,proto3,oneof"`
+	PollingError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError `protobuf:"bytes,4,opt,name=PollingError,proto3,oneof"`
 }
 
 func (*TFileUploadCapability_TFilePollingStatusEvent_PollingStart) isTFileUploadCapability_TFilePollingStatusEvent_Status() {
@@ -678,7 +678,7 @@ func (*TFileUploadCapability_TFileUploadStatusEvent_TUploadStart) Descriptor() (
 
 type TFileUploadCapability_TFileUploadStatusEvent_TUploadFinish struct {
 	state            protoimpl.MessageState                                      `protogen:"open.v1"`
-	ProtocolResponse *file_upload_response.TFileUploadResponse_TFileUploadFinish `protobuf:"bytes,1,opt,name=ProtocolResponse,json=protocol_response,proto3" json:"ProtocolResponse,omitempty"`
+	ProtocolResponse *file_upload_response.TFileUploadResponse_TFileUploadFinish `protobuf:"bytes,1,opt,name=ProtocolResponse,proto3" json:"ProtocolResponse,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -791,11 +791,11 @@ type isTFileUploadCapability_TFileUploadStatusEvent_TUploadError_Error interface
 }
 
 type TFileUploadCapability_TFileUploadStatusEvent_TUploadError_ProtocolError struct {
-	ProtocolError *file_upload_response.TFileUploadResponse_TFileUploadError `protobuf:"bytes,1,opt,name=ProtocolError,json=protocol_error,proto3,oneof"`
+	ProtocolError *file_upload_response.TFileUploadResponse_TFileUploadError `protobuf:"bytes,1,opt,name=ProtocolError,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFileUploadStatusEvent_TUploadError_ClientError struct {
-	ClientError *TFileUploadCapability_TFileUploadStatusEvent_TUploadError_TClientError `protobuf:"bytes,2,opt,name=ClientError,json=client_error,proto3,oneof"`
+	ClientError *TFileUploadCapability_TFileUploadStatusEvent_TUploadError_TClientError `protobuf:"bytes,2,opt,name=ClientError,proto3,oneof"`
 }
 
 func (*TFileUploadCapability_TFileUploadStatusEvent_TUploadError_ProtocolError) isTFileUploadCapability_TFileUploadStatusEvent_TUploadError_Error() {
@@ -993,15 +993,15 @@ type isTFileUploadCapability_TFilePollingStatusEvent_TPollingError_Error interfa
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_TPollingError_PollingTimeout struct {
-	PollingTimeout *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingTimeout `protobuf:"bytes,1,opt,name=PollingTimeout,json=polling_timeout,proto3,oneof"`
+	PollingTimeout *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingTimeout `protobuf:"bytes,1,opt,name=PollingTimeout,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_TPollingError_ServerError struct {
-	ServerError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingServerError `protobuf:"bytes,2,opt,name=ServerError,json=server_error,proto3,oneof"`
+	ServerError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingServerError `protobuf:"bytes,2,opt,name=ServerError,proto3,oneof"`
 }
 
 type TFileUploadCapability_TFilePollingStatusEvent_TPollingError_ClientError struct {
-	ClientError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingClientError `protobuf:"bytes,3,opt,name=ClientError,json=client_error,proto3,oneof"`
+	ClientError *TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingClientError `protobuf:"bytes,3,opt,name=ClientError,proto3,oneof"`
 }
 
 func (*TFileUploadCapability_TFilePollingStatusEvent_TPollingError_PollingTimeout) isTFileUploadCapability_TFilePollingStatusEvent_TPollingError_Error() {
@@ -1051,7 +1051,7 @@ func (*TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingTimeo
 
 type TFileUploadCapability_TFilePollingStatusEvent_TPollingError_TPollingServerError struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Status        files.TFileInfo_EFileServiceStatus `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileServiceStatus" json:"Status,omitempty"`
+	Status        files.TFileInfo_EFileServiceStatus `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.NApi.NFiles.TFileInfo_EFileServiceStatus" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1135,74 +1135,69 @@ var File_alice_protos_endpoint_capabilities_file_upload_capability_proto protore
 
 const file_alice_protos_endpoint_capabilities_file_upload_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/file_upload/capability.proto\x12\x06NAlice\x1aPalice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x1a&alice/protos/api/files/file_info.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa1\x1b\n" +
-	"\x15TFileUploadCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
+	"?alice/protos/endpoint/capabilities/file_upload/capability.proto\x12\x06NAlice\x1aPalice/protos/api/alicekit/events/file_upload_response/file_upload_response.proto\x1a&alice/protos/api/files/file_info.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb3\x15\n" +
+	"\x15TFileUploadCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.TFileUploadCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.TFileUploadCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
-	"\x06TState:\x04\xa8\xdd\x1b\x04\x1aF\n" +
-	"\x0fTPollingOptions\x12-\n" +
-	"\tTimeoutMs\x18\x01 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"timeout_msR\n" +
-	"timeout_ms:\x04\xa8\xdd\x1b\x04\x1a\x9b\x02\n" +
-	"\x10TFileDescription\x12;\n" +
-	"\rInputSourceId\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\x0finput_source_idR\x0finput_source_id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12*\n" +
-	"\bMimeType\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tmime_typeR\tmime_type\x12\x1c\n" +
-	"\x04Size\x18\x04 \x01(\x04B\b\xaa\xdd\x1b\x04sizeR\x04size\x12N\n" +
+	"Parameters\x18\x02 \x01(\v2).NAlice.TFileUploadCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.TFileUploadCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\b\n" +
+	"\x06TState\x1a/\n" +
+	"\x0fTPollingOptions\x12\x1c\n" +
+	"\tTimeoutMs\x18\x01 \x01(\x04R\tTimeoutMs\x1a\xd9\x01\n" +
+	"\x10TFileDescription\x12$\n" +
+	"\rInputSourceId\x18\x01 \x01(\tR\rInputSourceId\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bMimeType\x18\x03 \x01(\tR\bMimeType\x12\x12\n" +
+	"\x04Size\x18\x04 \x01(\x04R\x04Size\x12N\n" +
 	"\x06Origin\x18\x05 \x01(\x0e2%.NAlice.NApi.NFiles.TFileInfo.EOriginB\n" +
-	"\xaa\xdd\x1b\x06originH\x00R\x06origin\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\t\n" +
-	"\a_Origin\x1a\xea\x02\n" +
-	"\x19TStartFileUploadDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x129\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idR\x0einteraction_id\x12o\n" +
-	"\x0fFileDescription\x18\x02 \x01(\v2..NAlice.TFileUploadCapability.TFileDescriptionB\x14\xaa\xdd\x1b\x10file_descriptionR\x10file_description\x12b\n" +
-	"\vAutoPolling\x18\x03 \x01(\v2-.NAlice.TFileUploadCapability.TPollingOptionsB\x10\xaa\xdd\x1b\fauto_pollingR\fauto_polling:\x1e\x92\x82\x19\x11start_file_upload\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcf\x03\x1a\xb3\x02\n" +
-	"\x1aTStartFilePollingDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x129\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idR\x0einteraction_id\x12-\n" +
-	"\tFileGuids\x18\x02 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"file_guidsR\n" +
-	"file_guids\x12k\n" +
-	"\x0ePollingOptions\x18\x03 \x01(\v2-.NAlice.TFileUploadCapability.TPollingOptionsB\x13\xaa\xdd\x1b\x0fpolling_optionsR\x0fpolling_options:\x1f\x92\x82\x19\x12start_file_polling\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x03\x1a\xb7\a\n" +
-	"\x16TFileUploadStatusEvent\x129\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idR\x0einteraction_id\x12x\n" +
-	"\vUploadStart\x18\x02 \x01(\v2A.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadStartB\x10\xaa\xdd\x1b\fupload_startH\x00R\fupload_start\x12|\n" +
-	"\fUploadFinish\x18\x03 \x01(\v2B.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadFinishB\x11\xaa\xdd\x1b\rupload_finishH\x00R\rupload_finish\x12x\n" +
-	"\vUploadError\x18\x04 \x01(\v2A.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadErrorB\x10\xaa\xdd\x1b\fupload_errorH\x00R\fupload_error\x1a\x14\n" +
-	"\fTUploadStart:\x04\xa8\xdd\x1b\x04\x1a\x92\x01\n" +
-	"\rTUploadFinish\x12{\n" +
-	"\x10ProtocolResponse\x18\x01 \x01(\v27.NAlice.NAliceApi.TFileUploadResponse.TFileUploadFinishB\x15\xaa\xdd\x1b\x11protocol_responseR\x11protocol_response:\x04\xa8\xdd\x1b\x04\x1a\xb0\x02\n" +
-	"\fTUploadError\x12s\n" +
-	"\rProtocolError\x18\x01 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadErrorB\x12\xaa\xdd\x1b\x0eprotocol_errorH\x00R\x0eprotocol_error\x12\x85\x01\n" +
-	"\vClientError\x18\x02 \x01(\v2N.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadError.TClientErrorB\x10\xaa\xdd\x1b\fclient_errorH\x00R\fclient_error\x1a\x14\n" +
-	"\fTClientError:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05Error:\b\xa8\xdd\x1b\x04\xb0\xc8\x1ciB\b\n" +
-	"\x06Status\x1a\xb9\t\n" +
-	"\x17TFilePollingStatusEvent\x129\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idR\x0einteraction_id\x12\x1c\n" +
-	"\x04Guid\x18\x05 \x01(\tB\b\xaa\xdd\x1b\x04guidR\x04guid\x12}\n" +
-	"\fPollingStart\x18\x02 \x01(\v2C.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingStartB\x11\xaa\xdd\x1b\rpolling_startH\x00R\rpolling_start\x12\x81\x01\n" +
-	"\rPollingFinish\x18\x03 \x01(\v2D.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingFinishB\x12\xaa\xdd\x1b\x0epolling_finishH\x00R\x0epolling_finish\x12}\n" +
-	"\fPollingError\x18\x04 \x01(\v2C.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingErrorB\x11\xaa\xdd\x1b\rpolling_errorH\x00R\rpolling_error\x1a\x15\n" +
-	"\rTPollingStart:\x04\xa8\xdd\x1b\x04\x1a\x16\n" +
-	"\x0eTPollingFinish:\x04\xa8\xdd\x1b\x04\x1a\xff\x04\n" +
-	"\rTPollingError\x12\x93\x01\n" +
-	"\x0ePollingTimeout\x18\x01 \x01(\v2S.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingTimeoutB\x13\xaa\xdd\x1b\x0fpolling_timeoutH\x00R\x0fpolling_timeout\x12\x8e\x01\n" +
-	"\vServerError\x18\x02 \x01(\v2W.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingServerErrorB\x10\xaa\xdd\x1b\fserver_errorH\x00R\fserver_error\x12\x8e\x01\n" +
-	"\vClientError\x18\x03 \x01(\v2W.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingClientErrorB\x10\xaa\xdd\x1b\fclient_errorH\x00R\fclient_error\x1a\x17\n" +
-	"\x0fTPollingTimeout:\x04\xa8\xdd\x1b\x04\x1aq\n" +
-	"\x13TPollingServerError\x12T\n" +
-	"\x06Status\x18\x01 \x01(\x0e20.NAlice.NApi.NFiles.TFileInfo.EFileServiceStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status:\x04\xa8\xdd\x1b\x04\x1a\x1b\n" +
-	"\x13TPollingClientError:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05Error:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cjB\b\n" +
-	"\x06Status:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa9\x01B\x8d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0fFileUploadProtoZLa.yandex-team.ru/alice/protos/endpoint/capabilities/file_upload;fileuploadpbb\x06proto3"
+	"\xaa\xdd\x1b\x06originH\x00R\x06origin\x88\x01\x01B\t\n" +
+	"\a_Origin\x1a\x81\x02\n" +
+	"\x19TStartFileUploadDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12$\n" +
+	"\rInteractionId\x18\x01 \x01(\tR\rInteractionId\x12X\n" +
+	"\x0fFileDescription\x18\x02 \x01(\v2..NAlice.TFileUploadCapability.TFileDescriptionR\x0fFileDescription\x12O\n" +
+	"\vAutoPolling\x18\x03 \x01(\v2-.NAlice.TFileUploadCapability.TPollingOptionsR\vAutoPolling\x1a\xcc\x01\n" +
+	"\x1aTStartFilePollingDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12$\n" +
+	"\rInteractionId\x18\x01 \x01(\tR\rInteractionId\x12\x1c\n" +
+	"\tFileGuids\x18\x02 \x03(\tR\tFileGuids\x12U\n" +
+	"\x0ePollingOptions\x18\x03 \x01(\v2-.NAlice.TFileUploadCapability.TPollingOptionsR\x0ePollingOptions\x1a\x84\x06\n" +
+	"\x16TFileUploadStatusEvent\x12$\n" +
+	"\rInteractionId\x18\x01 \x01(\tR\rInteractionId\x12e\n" +
+	"\vUploadStart\x18\x02 \x01(\v2A.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadStartH\x00R\vUploadStart\x12h\n" +
+	"\fUploadFinish\x18\x03 \x01(\v2B.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadFinishH\x00R\fUploadFinish\x12e\n" +
+	"\vUploadError\x18\x04 \x01(\v2A.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadErrorH\x00R\vUploadError\x1a\x0e\n" +
+	"\fTUploadStart\x1at\n" +
+	"\rTUploadFinish\x12c\n" +
+	"\x10ProtocolResponse\x18\x01 \x01(\v27.NAlice.NAliceApi.TFileUploadResponse.TFileUploadFinishR\x10ProtocolResponse\x1a\xfb\x01\n" +
+	"\fTUploadError\x12^\n" +
+	"\rProtocolError\x18\x01 \x01(\v26.NAlice.NAliceApi.TFileUploadResponse.TFileUploadErrorH\x00R\rProtocolError\x12r\n" +
+	"\vClientError\x18\x02 \x01(\v2N.NAlice.TFileUploadCapability.TFileUploadStatusEvent.TUploadError.TClientErrorH\x00R\vClientError\x1a\x0e\n" +
+	"\fTClientErrorB\a\n" +
+	"\x05ErrorB\b\n" +
+	"\x06Status\x1a\xe3\a\n" +
+	"\x17TFilePollingStatusEvent\x12$\n" +
+	"\rInteractionId\x18\x01 \x01(\tR\rInteractionId\x12\x12\n" +
+	"\x04Guid\x18\x05 \x01(\tR\x04Guid\x12i\n" +
+	"\fPollingStart\x18\x02 \x01(\v2C.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingStartH\x00R\fPollingStart\x12l\n" +
+	"\rPollingFinish\x18\x03 \x01(\v2D.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingFinishH\x00R\rPollingFinish\x12i\n" +
+	"\fPollingError\x18\x04 \x01(\v2C.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingErrorH\x00R\fPollingError\x1a\x0f\n" +
+	"\rTPollingStart\x1a\x10\n" +
+	"\x0eTPollingFinish\x1a\x9c\x04\n" +
+	"\rTPollingError\x12}\n" +
+	"\x0ePollingTimeout\x18\x01 \x01(\v2S.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingTimeoutH\x00R\x0ePollingTimeout\x12{\n" +
+	"\vServerError\x18\x02 \x01(\v2W.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingServerErrorH\x00R\vServerError\x12{\n" +
+	"\vClientError\x18\x03 \x01(\v2W.NAlice.TFileUploadCapability.TFilePollingStatusEvent.TPollingError.TPollingClientErrorH\x00R\vClientError\x1a\x11\n" +
+	"\x0fTPollingTimeout\x1a_\n" +
+	"\x13TPollingServerError\x12H\n" +
+	"\x06Status\x18\x01 \x01(\x0e20.NAlice.NApi.NFiles.TFileInfo.EFileServiceStatusR\x06Status\x1a\x15\n" +
+	"\x13TPollingClientErrorB\a\n" +
+	"\x05ErrorB\b\n" +
+	"\x06StatusB\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/file_upload\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_file_upload_capability_proto_rawDescOnce sync.Once

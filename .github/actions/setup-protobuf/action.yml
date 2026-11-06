@@ -17,3 +17,9 @@ runs:
         unzip -q "$archive" -d "$RUNNER_TEMP/protoc"
         echo "$RUNNER_TEMP/protoc/bin" >> "$GITHUB_PATH"
         GOTOOLCHAIN=go1.27.0 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
+    - name: Install the descriptor merge dependency
+      shell: bash
+      run: |
+        python3 -m venv "$RUNNER_TEMP/quasar-protobuf-python"
+        "$RUNNER_TEMP/quasar-protobuf-python/bin/pip" install -r "$GITHUB_WORKSPACE/scripts/requirements.txt"
+        echo "$RUNNER_TEMP/quasar-protobuf-python/bin" >> "$GITHUB_PATH"

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/stereo_pair/capability.proto
 
-package stereo_pairpb
+package stereo_pair
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -290,9 +290,9 @@ func (TStereoPairCapability_TStereoPairUserEvent_EEvent) EnumDescriptor() ([]byt
 
 type TStereoPairCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TStereoPairCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TStereoPairCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TStereoPairCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TStereoPairCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -386,11 +386,11 @@ func (*TStereoPairCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TStereoPairCapability_TState struct {
 	state             protoimpl.MessageState              `protogen:"open.v1"`
-	Role              TStereoPairCapability_ERole         `protobuf:"varint,1,opt,name=Role,json=role,proto3,enum=NAlice.TStereoPairCapability_ERole" json:"Role,omitempty"`
-	Channel           TStereoPairCapability_EChannel      `protobuf:"varint,2,opt,name=Channel,json=channel,proto3,enum=NAlice.TStereoPairCapability_EChannel" json:"Channel,omitempty"`
-	Connectivity      TStereoPairCapability_EConnectivity `protobuf:"varint,3,opt,name=Connectivity,json=connectivity,proto3,enum=NAlice.TStereoPairCapability_EConnectivity" json:"Connectivity,omitempty"`
-	Status            TStereoPairCapability_EStatus       `protobuf:"varint,4,opt,name=Status,json=status,proto3,enum=NAlice.TStereoPairCapability_EStatus" json:"Status,omitempty"`
-	PartnerEndpointId string                              `protobuf:"bytes,5,opt,name=PartnerEndpointId,json=partner_endpoint_id,proto3" json:"PartnerEndpointId,omitempty"`
+	Role              TStereoPairCapability_ERole         `protobuf:"varint,1,opt,name=Role,proto3,enum=NAlice.TStereoPairCapability_ERole" json:"Role,omitempty"`
+	Channel           TStereoPairCapability_EChannel      `protobuf:"varint,2,opt,name=Channel,proto3,enum=NAlice.TStereoPairCapability_EChannel" json:"Channel,omitempty"`
+	Connectivity      TStereoPairCapability_EConnectivity `protobuf:"varint,3,opt,name=Connectivity,proto3,enum=NAlice.TStereoPairCapability_EConnectivity" json:"Connectivity,omitempty"`
+	Status            TStereoPairCapability_EStatus       `protobuf:"varint,4,opt,name=Status,proto3,enum=NAlice.TStereoPairCapability_EStatus" json:"Status,omitempty"`
+	PartnerEndpointId string                              `protobuf:"bytes,5,opt,name=PartnerEndpointId,proto3" json:"PartnerEndpointId,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -633,23 +633,23 @@ type isTStereoPairCapability_TExecuteActionOnLeaderDirective_Action interface {
 }
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_StartConversationOnLeader struct {
-	StartConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TStartConversationOnLeader `protobuf:"bytes,1,opt,name=StartConversationOnLeader,json=start_conversation_on_leader,proto3,oneof"`
+	StartConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TStartConversationOnLeader `protobuf:"bytes,1,opt,name=StartConversationOnLeader,proto3,oneof"`
 }
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_StopConversationOnLeader struct {
-	StopConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TStopConversationOnLeader `protobuf:"bytes,2,opt,name=StopConversationOnLeader,json=stop_conversation_on_leader,proto3,oneof"`
+	StopConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TStopConversationOnLeader `protobuf:"bytes,2,opt,name=StopConversationOnLeader,proto3,oneof"`
 }
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_ToggleConversationOnLeader struct {
-	ToggleConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TToggleConversationOnLeader `protobuf:"bytes,3,opt,name=ToggleConversationOnLeader,json=toggle_conversation_on_leader,proto3,oneof"`
+	ToggleConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TToggleConversationOnLeader `protobuf:"bytes,3,opt,name=ToggleConversationOnLeader,proto3,oneof"`
 }
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_FinishConversationOnLeader struct {
-	FinishConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TFinishConversationOnLeader `protobuf:"bytes,4,opt,name=FinishConversationOnLeader,json=finish_conversation_on_leader,proto3,oneof"`
+	FinishConversationOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TFinishConversationOnLeader `protobuf:"bytes,4,opt,name=FinishConversationOnLeader,proto3,oneof"`
 }
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_CustomEventOnLeader struct {
-	CustomEventOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TCustomEventOnLeader `protobuf:"bytes,5,opt,name=CustomEventOnLeader,json=custom_event_on_leader,proto3,oneof"`
+	CustomEventOnLeader *TStereoPairCapability_TExecuteActionOnLeaderDirective_TCustomEventOnLeader `protobuf:"bytes,5,opt,name=CustomEventOnLeader,proto3,oneof"`
 }
 
 func (*TStereoPairCapability_TExecuteActionOnLeaderDirective_StartConversationOnLeader) isTStereoPairCapability_TExecuteActionOnLeaderDirective_Action() {
@@ -669,8 +669,8 @@ func (*TStereoPairCapability_TExecuteActionOnLeaderDirective_CustomEventOnLeader
 
 type TStereoPairCapability_TStereoPairUserEvent struct {
 	state         protoimpl.MessageState                            `protogen:"open.v1"`
-	Event         TStereoPairCapability_TStereoPairUserEvent_EEvent `protobuf:"varint,1,opt,name=Event,json=event,proto3,enum=NAlice.TStereoPairCapability_TStereoPairUserEvent_EEvent" json:"Event,omitempty"`
-	Payload       string                                            `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	Event         TStereoPairCapability_TStereoPairUserEvent_EEvent `protobuf:"varint,1,opt,name=Event,proto3,enum=NAlice.TStereoPairCapability_TStereoPairUserEvent_EEvent" json:"Event,omitempty"`
+	Payload       string                                            `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -869,7 +869,7 @@ func (*TStereoPairCapability_TExecuteActionOnLeaderDirective_TFinishConversation
 
 type TStereoPairCapability_TExecuteActionOnLeaderDirective_TCustomEventOnLeader struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -915,48 +915,45 @@ var File_alice_protos_endpoint_capabilities_stereo_pair_capability_proto protore
 
 const file_alice_protos_endpoint_capabilities_stereo_pair_capability_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/endpoint/capabilities/stereo_pair/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a google/protobuf/descriptor.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8a\x16\n" +
-	"\x15TStereoPairCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
+	"?alice/protos/endpoint/capabilities/stereo_pair/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a google/protobuf/descriptor.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdd\x11\n" +
+	"\x15TStereoPairCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.TStereoPairCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.TStereoPairCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x91\x03\n" +
-	"\x06TState\x12A\n" +
-	"\x04Role\x18\x01 \x01(\x0e2#.NAlice.TStereoPairCapability.ERoleB\b\xaa\xdd\x1b\x04roleR\x04role\x12M\n" +
-	"\aChannel\x18\x02 \x01(\x0e2&.NAlice.TStereoPairCapability.EChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12a\n" +
-	"\fConnectivity\x18\x03 \x01(\x0e2+.NAlice.TStereoPairCapability.EConnectivityB\x10\xaa\xdd\x1b\fconnectivityR\fconnectivity\x12I\n" +
-	"\x06Status\x18\x04 \x01(\x0e2%.NAlice.TStereoPairCapability.EStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12G\n" +
-	"\x11PartnerEndpointId\x18\x05 \x01(\tB\x17\xaa\xdd\x1b\x13partner_endpoint_idR\x13partner_endpoint_id\x1ac\n" +
-	",TStereoPairNoConnectionNotificationDirective:3\x92\x82\x19&stereo_pair_no_connection_notification\xa8\xdd\x1b\x04\xa8\xc8\x1c\x84\x04\x1ah\n" +
-	".TStereoPairPlayerNotReadyNotificationDirective:6\x92\x82\x19)stereo_pair_player_not_ready_notification\xa8\xdd\x1b\x04\xa8\xc8\x1c\x85\x04\x1a\xe1\t\n" +
-	"\x1fTExecuteActionOnLeaderDirective\x12\xbd\x01\n" +
-	"\x19StartConversationOnLeader\x18\x01 \x01(\v2X.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TStartConversationOnLeaderB \xaa\xdd\x1b\x1cstart_conversation_on_leaderH\x00R\x1cstart_conversation_on_leader\x12\xb9\x01\n" +
-	"\x18StopConversationOnLeader\x18\x02 \x01(\v2W.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TStopConversationOnLeaderB\x1f\xaa\xdd\x1b\x1bstop_conversation_on_leaderH\x00R\x1bstop_conversation_on_leader\x12\xc1\x01\n" +
-	"\x1aToggleConversationOnLeader\x18\x03 \x01(\v2Y.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TToggleConversationOnLeaderB!\xaa\xdd\x1b\x1dtoggle_conversation_on_leaderH\x00R\x1dtoggle_conversation_on_leader\x12\xc1\x01\n" +
-	"\x1aFinishConversationOnLeader\x18\x04 \x01(\v2Y.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TFinishConversationOnLeaderB!\xaa\xdd\x1b\x1dfinish_conversation_on_leaderH\x00R\x1dfinish_conversation_on_leader\x12\xa5\x01\n" +
-	"\x13CustomEventOnLeader\x18\x05 \x01(\v2R.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TCustomEventOnLeaderB\x1a\xaa\xdd\x1b\x16custom_event_on_leaderH\x00R\x16custom_event_on_leader\x1a\"\n" +
-	"\x1aTStartConversationOnLeader:\x04\xa8\xdd\x1b\x04\x1a!\n" +
-	"\x19TStopConversationOnLeader:\x04\xa8\xdd\x1b\x04\x1a#\n" +
-	"\x1bTToggleConversationOnLeader:\x04\xa8\xdd\x1b\x04\x1a#\n" +
-	"\x1bTFinishConversationOnLeader:\x04\xa8\xdd\x1b\x04\x1a:\n" +
-	"\x14TCustomEventOnLeader\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x04\xa8\xdd\x1b\x04:/\x92\x82\x19\"execute_action_on_leader_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd0\x04B\x14\n" +
-	"\x06Action\x12\n" +
-	"\xaa\xdd\x1b\x06action\x1a\xb1\x02\n" +
-	"\x14TStereoPairUserEvent\x12Z\n" +
-	"\x05Event\x18\x01 \x01(\x0e29.NAlice.TStereoPairCapability.TStereoPairUserEvent.EEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12%\n" +
-	"\aPayload\x18\x02 \x01(\tB\v\xaa\xdd\x1b\apayloadR\apayload\"\x8b\x01\n" +
+	"Parameters\x18\x02 \x01(\v2).NAlice.TStereoPairCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.TStereoPairCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xc1\x02\n" +
+	"\x06TState\x127\n" +
+	"\x04Role\x18\x01 \x01(\x0e2#.NAlice.TStereoPairCapability.ERoleR\x04Role\x12@\n" +
+	"\aChannel\x18\x02 \x01(\x0e2&.NAlice.TStereoPairCapability.EChannelR\aChannel\x12O\n" +
+	"\fConnectivity\x18\x03 \x01(\x0e2+.NAlice.TStereoPairCapability.EConnectivityR\fConnectivity\x12=\n" +
+	"\x06Status\x18\x04 \x01(\x0e2%.NAlice.TStereoPairCapability.EStatusR\x06Status\x12,\n" +
+	"\x11PartnerEndpointId\x18\x05 \x01(\tR\x11PartnerEndpointId\x1a.\n" +
+	",TStereoPairNoConnectionNotificationDirective\x1a0\n" +
+	".TStereoPairPlayerNotReadyNotificationDirective\x1a\xc8\a\n" +
+	"\x1fTExecuteActionOnLeaderDirective\x12\x98\x01\n" +
+	"\x19StartConversationOnLeader\x18\x01 \x01(\v2X.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TStartConversationOnLeaderH\x00R\x19StartConversationOnLeader\x12\x95\x01\n" +
+	"\x18StopConversationOnLeader\x18\x02 \x01(\v2W.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TStopConversationOnLeaderH\x00R\x18StopConversationOnLeader\x12\x9b\x01\n" +
+	"\x1aToggleConversationOnLeader\x18\x03 \x01(\v2Y.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TToggleConversationOnLeaderH\x00R\x1aToggleConversationOnLeader\x12\x9b\x01\n" +
+	"\x1aFinishConversationOnLeader\x18\x04 \x01(\v2Y.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TFinishConversationOnLeaderH\x00R\x1aFinishConversationOnLeader\x12\x86\x01\n" +
+	"\x13CustomEventOnLeader\x18\x05 \x01(\v2R.NAlice.TStereoPairCapability.TExecuteActionOnLeaderDirective.TCustomEventOnLeaderH\x00R\x13CustomEventOnLeader\x1a\x1c\n" +
+	"\x1aTStartConversationOnLeader\x1a\x1b\n" +
+	"\x19TStopConversationOnLeader\x1a\x1d\n" +
+	"\x1bTToggleConversationOnLeader\x1a\x1d\n" +
+	"\x1bTFinishConversationOnLeader\x1a*\n" +
+	"\x14TCustomEventOnLeader\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04NameB\b\n" +
+	"\x06Action\x1a\x8f\x02\n" +
+	"\x14TStereoPairUserEvent\x12O\n" +
+	"\x05Event\x18\x01 \x01(\x0e29.NAlice.TStereoPairCapability.TStereoPairUserEvent.EEventR\x05Event\x12\x18\n" +
+	"\aPayload\x18\x02 \x01(\tR\aPayload\"\x8b\x01\n" +
 	"\x06EEvent\x12\x13\n" +
 	"\x0fEVENT_UNDEFINED\x10\x00\x12\x0f\n" +
 	"\vEVENT_CLICK\x10\x01\x12\x14\n" +
 	"\x10EVENT_SWIPE_LEFT\x10\x02\x12\x15\n" +
 	"\x11EVENT_SWIPE_RIGHT\x10\x03\x12\x16\n" +
 	"\x12EVENT_DOUBLE_CLICK\x10\x04\x12\x16\n" +
-	"\x12EVENT_TRIPLE_CLICK\x10\x05:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c)\"?\n" +
+	"\x12EVENT_TRIPLE_CLICK\x10\x05\"?\n" +
 	"\x05ERole\x12\x12\n" +
 	"\x0eROLE_UNDEFINED\x10\x00\x12\x0f\n" +
 	"\vROLE_LEADER\x10\x01\x12\x11\n" +
@@ -975,8 +972,9 @@ const file_alice_protos_endpoint_capabilities_stereo_pair_capability_proto_rawDe
 	"\x10STATUS_UNDEFINED\x10\x00\x12\x12\n" +
 	"\x0eSTATUS_NO_SYNC\x10\x01\x12\x1c\n" +
 	"\x18STATUS_PARTNER_NOT_READY\x10\x02\x12\x10\n" +
-	"\fSTATUS_READY\x10\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c/B\x98\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19StereoPairCapabilityProtoZMa.yandex-team.ru/alice/protos/endpoint/capabilities/stereo_pair;stereo_pairpbb\x06proto3"
+	"\fSTATUS_READY\x10\x03B\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/stereo_pair\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_stereo_pair_capability_proto_rawDescOnce sync.Once

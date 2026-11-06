@@ -79,9 +79,9 @@ func (TDirective_TChannel_EType) EnumDescriptor() ([]byte, []int) {
 
 type TUniproxyDirectiveMeta struct {
 	state               protoimpl.MessageState      `protogen:"open.v1"`
-	Puid                string                      `protobuf:"bytes,1,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	DirectiveImportance common.EDirectiveImportance `protobuf:"varint,2,opt,name=DirectiveImportance,json=directive_importance,proto3,enum=EDirectiveImportance" json:"DirectiveImportance,omitempty"`
-	HashPuid            string                      `protobuf:"bytes,3,opt,name=HashPuid,json=hash_puid,proto3" json:"HashPuid,omitempty"`
+	Puid                string                      `protobuf:"bytes,1,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	DirectiveImportance common.EDirectiveImportance `protobuf:"varint,2,opt,name=DirectiveImportance,proto3,enum=EDirectiveImportance" json:"DirectiveImportance,omitempty"`
+	HashPuid            string                      `protobuf:"bytes,3,opt,name=HashPuid,proto3" json:"HashPuid,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -139,21 +139,20 @@ func (x *TUniproxyDirectiveMeta) GetHashPuid() string {
 
 type TDirective struct {
 	state                 protoimpl.MessageState              `protogen:"open.v1"`
-	Type                  string                              `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Name                  string                              `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AnalyticsType         string                              `protobuf:"bytes,3,opt,name=AnalyticsType,json=sub_name,proto3" json:"AnalyticsType,omitempty"`
-	IgnoreAnswer          bool                                `protobuf:"varint,4,opt,name=IgnoreAnswer,json=ignore_answer,proto3" json:"IgnoreAnswer,omitempty"`
-	RoomDeviceIds         []string                            `protobuf:"bytes,7,rep,name=RoomDeviceIds,json=room_device_ids,proto3" json:"RoomDeviceIds,omitempty"`
-	IsLedSilent           bool                                `protobuf:"varint,8,opt,name=IsLedSilent,json=is_led_silent,proto3" json:"IsLedSilent,omitempty"`
-	EndpointId            *wrapperspb.StringValue             `protobuf:"bytes,9,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	UniproxyDirectiveMeta *TUniproxyDirectiveMeta             `protobuf:"bytes,10,opt,name=UniproxyDirectiveMeta,json=uniproxy_directive_meta,proto3" json:"UniproxyDirectiveMeta,omitempty"`
-	IsParallel            bool                                `protobuf:"varint,11,opt,name=IsParallel,json=is_parallel,proto3" json:"IsParallel,omitempty"`
-	TimeBeforeDropMs      uint32                              `protobuf:"varint,12,opt,name=TimeBeforeDropMs,json=time_before_drop_ms,proto3" json:"TimeBeforeDropMs,omitempty"`
-	OnFinish              *TDirective_TOnFinishEvent          `protobuf:"bytes,14,opt,name=OnFinish,json=on_finish_event,proto3" json:"OnFinish,omitempty"`
-	SourceInfo            *source.TSourceInfo                 `protobuf:"bytes,17,opt,name=SourceInfo,json=source_info,proto3" json:"SourceInfo,omitempty"`
-	AttachToMultiroom     bool                                `protobuf:"varint,18,opt,name=AttachToMultiroom,json=attach_to_multiroom,proto3" json:"AttachToMultiroom,omitempty"`
-	DirectiveType         endpoint.TCapability_EDirectiveType `protobuf:"varint,20,opt,name=DirectiveType,json=directive_type,proto3,enum=NAlice.TCapability_EDirectiveType" json:"DirectiveType,omitempty"`
-	Channel               *TDirective_TChannel                `protobuf:"bytes,21,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
+	Type                  string                              `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Name                  string                              `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	AnalyticsType         string                              `protobuf:"bytes,3,opt,name=AnalyticsType,proto3" json:"AnalyticsType,omitempty"`
+	IgnoreAnswer          bool                                `protobuf:"varint,4,opt,name=IgnoreAnswer,proto3" json:"IgnoreAnswer,omitempty"`
+	RoomDeviceIds         []string                            `protobuf:"bytes,7,rep,name=RoomDeviceIds,proto3" json:"RoomDeviceIds,omitempty"`
+	IsLedSilent           bool                                `protobuf:"varint,8,opt,name=IsLedSilent,proto3" json:"IsLedSilent,omitempty"`
+	EndpointId            *wrapperspb.StringValue             `protobuf:"bytes,9,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	UniproxyDirectiveMeta *TUniproxyDirectiveMeta             `protobuf:"bytes,10,opt,name=UniproxyDirectiveMeta,proto3" json:"UniproxyDirectiveMeta,omitempty"`
+	IsParallel            bool                                `protobuf:"varint,11,opt,name=IsParallel,proto3" json:"IsParallel,omitempty"`
+	TimeBeforeDropMs      uint32                              `protobuf:"varint,12,opt,name=TimeBeforeDropMs,proto3" json:"TimeBeforeDropMs,omitempty"`
+	OnFinish              *TDirective_TOnFinishEvent          `protobuf:"bytes,14,opt,name=OnFinish,proto3" json:"OnFinish,omitempty"`
+	SourceInfo            *source.TSourceInfo                 `protobuf:"bytes,17,opt,name=SourceInfo,proto3" json:"SourceInfo,omitempty"`
+	AttachToMultiroom     bool                                `protobuf:"varint,18,opt,name=AttachToMultiroom,proto3" json:"AttachToMultiroom,omitempty"`
+	DirectiveType         endpoint.TCapability_EDirectiveType `protobuf:"varint,20,opt,name=DirectiveType,proto3,enum=NAlice.TCapability_EDirectiveType" json:"DirectiveType,omitempty"`
 	// Types that are valid to be assigned to PayloadType:
 	//
 	//	*TDirective_Payload
@@ -167,7 +166,8 @@ type TDirective struct {
 	//
 	//	*TDirective_PersId
 	OptionalPersId isTDirective_OptionalPersId `protobuf_oneof:"OptionalPersId"`
-	Id             *string                     `protobuf:"bytes,16,opt,name=Id,json=id,proto3,oneof" json:"Id,omitempty"`
+	Id             *string                     `protobuf:"bytes,16,opt,name=Id,proto3,oneof" json:"Id,omitempty"`
+	Channel        *TDirective_TChannel        `protobuf:"bytes,21,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -300,13 +300,6 @@ func (x *TDirective) GetDirectiveType() endpoint.TCapability_EDirectiveType {
 	return endpoint.TCapability_EDirectiveType(0)
 }
 
-func (x *TDirective) GetChannel() *TDirective_TChannel {
-	if x != nil {
-		return x.Channel
-	}
-	return nil
-}
-
 func (x *TDirective) GetPayloadType() isTDirective_PayloadType {
 	if x != nil {
 		return x.PayloadType
@@ -371,16 +364,23 @@ func (x *TDirective) GetId() string {
 	return ""
 }
 
+func (x *TDirective) GetChannel() *TDirective_TChannel {
+	if x != nil {
+		return x.Channel
+	}
+	return nil
+}
+
 type isTDirective_PayloadType interface {
 	isTDirective_PayloadType()
 }
 
 type TDirective_Payload struct {
-	Payload *structpb.Struct `protobuf:"bytes,5,opt,name=Payload,json=payload,proto3,oneof"`
+	Payload *structpb.Struct `protobuf:"bytes,5,opt,name=Payload,proto3,oneof"`
 }
 
 type TDirective_PayloadRaw struct {
-	PayloadRaw []byte `protobuf:"bytes,15,opt,name=PayloadRaw,json=payload_raw,proto3,oneof"`
+	PayloadRaw []byte `protobuf:"bytes,15,opt,name=PayloadRaw,proto3,oneof"`
 }
 
 func (*TDirective_Payload) isTDirective_PayloadType() {}
@@ -392,7 +392,7 @@ type isTDirective_OptionalMultiroomSessionId interface {
 }
 
 type TDirective_MultiroomSessionId struct {
-	MultiroomSessionId string `protobuf:"bytes,6,opt,name=MultiroomSessionId,json=multiroom_session_id,proto3,oneof"`
+	MultiroomSessionId string `protobuf:"bytes,6,opt,name=MultiroomSessionId,proto3,oneof"`
 }
 
 func (*TDirective_MultiroomSessionId) isTDirective_OptionalMultiroomSessionId() {}
@@ -402,14 +402,14 @@ type isTDirective_OptionalPersId interface {
 }
 
 type TDirective_PersId struct {
-	PersId string `protobuf:"bytes,13,opt,name=PersId,json=pers_id,proto3,oneof"`
+	PersId string `protobuf:"bytes,13,opt,name=PersId,proto3,oneof"`
 }
 
 func (*TDirective_PersId) isTDirective_OptionalPersId() {}
 
 type TProtobufUniproxyDirective struct {
 	state                 protoimpl.MessageState  `protogen:"open.v1"`
-	UniproxyDirectiveMeta *TUniproxyDirectiveMeta `protobuf:"bytes,2,opt,name=UniproxyDirectiveMeta,json=uniproxy_directive_meta,proto3" json:"UniproxyDirectiveMeta,omitempty"`
+	UniproxyDirectiveMeta *TUniproxyDirectiveMeta `protobuf:"bytes,2,opt,name=UniproxyDirectiveMeta,proto3" json:"UniproxyDirectiveMeta,omitempty"`
 	// Types that are valid to be assigned to Directives:
 	//
 	//	*TProtobufUniproxyDirective_ContextSaveDirective
@@ -486,11 +486,11 @@ type isTProtobufUniproxyDirective_Directives interface {
 }
 
 type TProtobufUniproxyDirective_ContextSaveDirective struct {
-	ContextSaveDirective *TProtobufUniproxyDirective_TContextSaveDirective `protobuf:"bytes,1,opt,name=ContextSaveDirective,json=context_save_directive,proto3,oneof"`
+	ContextSaveDirective *TProtobufUniproxyDirective_TContextSaveDirective `protobuf:"bytes,1,opt,name=ContextSaveDirective,proto3,oneof"`
 }
 
 type TProtobufUniproxyDirective_NonTransparentContextSaveDirective struct {
-	NonTransparentContextSaveDirective *TProtobufUniproxyDirective_TNonTransparentContextSaveDirective `protobuf:"bytes,3,opt,name=NonTransparentContextSaveDirective,json=non_transparent_context_save_directive,proto3,oneof"`
+	NonTransparentContextSaveDirective *TProtobufUniproxyDirective_TNonTransparentContextSaveDirective `protobuf:"bytes,3,opt,name=NonTransparentContextSaveDirective,proto3,oneof"`
 }
 
 func (*TProtobufUniproxyDirective_ContextSaveDirective) isTProtobufUniproxyDirective_Directives() {}
@@ -559,7 +559,7 @@ type isTDirective_TOnFinishEvent_Event interface {
 }
 
 type TDirective_TOnFinishEvent_TypedCallbackRequest struct {
-	TypedCallbackRequest *structpb.Struct `protobuf:"bytes,1,opt,name=TypedCallbackRequest,json=typed_callback_request,proto3,oneof"`
+	TypedCallbackRequest *structpb.Struct `protobuf:"bytes,1,opt,name=TypedCallbackRequest,proto3,oneof"`
 }
 
 func (*TDirective_TOnFinishEvent_TypedCallbackRequest) isTDirective_TOnFinishEvent_Event() {}
@@ -610,8 +610,8 @@ func (x *TDirective_TChannel) GetType() TDirective_TChannel_EType {
 
 type TProtobufUniproxyDirective_TContextSaveDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DirectiveId   string                 `protobuf:"bytes,1,opt,name=DirectiveId,json=directive_id,proto3" json:"DirectiveId,omitempty"`
-	Payload       *anypb.Any             `protobuf:"bytes,2,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	DirectiveId   string                 `protobuf:"bytes,1,opt,name=DirectiveId,proto3" json:"DirectiveId,omitempty"`
+	Payload       *anypb.Any             `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -741,15 +741,15 @@ type isTProtobufUniproxyDirective_TNonTransparentContextSaveDirective_Directive 
 }
 
 type TProtobufUniproxyDirective_TNonTransparentContextSaveDirective_UpdateDatumAddress struct {
-	UpdateDatumAddress *directives.TUpdateDatumAddressContextSaveDirective `protobuf:"bytes,1,opt,name=UpdateDatumAddress,json=update_datum_address,proto3,oneof"`
+	UpdateDatumAddress *directives.TUpdateDatumAddressContextSaveDirective `protobuf:"bytes,1,opt,name=UpdateDatumAddress,proto3,oneof"`
 }
 
 type TProtobufUniproxyDirective_TNonTransparentContextSaveDirective_PrepareCacheTtsResponse struct {
-	PrepareCacheTtsResponse *directives.TPrepareCacheTtsResponseContextSaveDirective `protobuf:"bytes,2,opt,name=PrepareCacheTtsResponse,json=prepare_cache_tts_response,proto3,oneof"`
+	PrepareCacheTtsResponse *directives.TPrepareCacheTtsResponseContextSaveDirective `protobuf:"bytes,2,opt,name=PrepareCacheTtsResponse,proto3,oneof"`
 }
 
 type TProtobufUniproxyDirective_TNonTransparentContextSaveDirective_SwitchToAgentMode struct {
-	SwitchToAgentMode *directives.TSwitchToAgentModeDirective `protobuf:"bytes,3,opt,name=SwitchToAgentMode,json=switch_to_agent_mode,proto3,oneof"`
+	SwitchToAgentMode *directives.TSwitchToAgentModeDirective `protobuf:"bytes,3,opt,name=SwitchToAgentMode,proto3,oneof"`
 }
 
 func (*TProtobufUniproxyDirective_TNonTransparentContextSaveDirective_UpdateDatumAddress) isTProtobufUniproxyDirective_TNonTransparentContextSaveDirective_Directive() {
@@ -765,67 +765,70 @@ var File_alice_megamind_protos_speechkit_directives_proto protoreflect.FileDescr
 
 const file_alice_megamind_protos_speechkit_directives_proto_rawDesc = "" +
 	"\n" +
-	"0alice/megamind/protos/speechkit/directives.proto\x12\x11NAlice.NSpeechKit\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a7alice/megamind/protos/common/directive_importance.proto\x1a$alice/protos/api/source/source.proto\x1a&alice/protos/endpoint/capability.proto\x1a-alice/protos/uniproxy/directives/agents.proto\x1a,alice/protos/uniproxy/directives/datum.proto\x1aAalice/protos/uniproxy/directives/prepare_cache_tts_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xd0\x01\n" +
-	"\x16TUniproxyDirectiveMeta\x12 \n" +
-	"\x04Puid\x18\x01 \x01(\tB\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid\x12b\n" +
-	"\x13DirectiveImportance\x18\x02 \x01(\x0e2\x15.EDirectiveImportanceB\x18\xaa\xdd\x1b\x14directive_importanceR\x14directive_importance\x12*\n" +
-	"\bHashPuid\x18\x03 \x01(\tB\r\xaa\xdd\x1b\thash_puidR\thash_puid:\x04\xa8\xdd\x1b\x04\"\xc8\r\n" +
+	"0alice/megamind/protos/speechkit/directives.proto\x12\x11NAlice.NSpeechKit\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a7alice/megamind/protos/common/directive_importance.proto\x1a$alice/protos/api/source/source.proto\x1a&alice/protos/endpoint/capability.proto\x1a-alice/protos/uniproxy/directives/agents.proto\x1a,alice/protos/uniproxy/directives/datum.proto\x1aAalice/protos/uniproxy/directives/prepare_cache_tts_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x19google/protobuf/any.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x91\x01\n" +
+	"\x16TUniproxyDirectiveMeta\x12\x12\n" +
+	"\x04Puid\x18\x01 \x01(\tR\x04Puid\x12G\n" +
+	"\x13DirectiveImportance\x18\x02 \x01(\x0e2\x15.EDirectiveImportanceR\x13DirectiveImportance\x12\x1a\n" +
+	"\bHashPuid\x18\x03 \x01(\tR\bHashPuid\"\xf3\t\n" +
 	"\n" +
-	"TDirective\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
-	"\rAnalyticsType\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bsub_nameR\bsub_name\x126\n" +
-	"\fIgnoreAnswer\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rignore_answerR\rignore_answer\x12?\n" +
-	"\rRoomDeviceIds\x18\a \x03(\tB\x17\xaa\xdd\x1b\x0froom_device_ids\xf8\x91*\x03R\x0froom_device_ids\x125\n" +
-	"\vIsLedSilent\x18\b \x01(\bB\x11\xaa\xdd\x1b\ris_led_silentR\ris_led_silent\x12N\n" +
+	"TDirective\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12$\n" +
+	"\rAnalyticsType\x18\x03 \x01(\tR\rAnalyticsType\x12\"\n" +
+	"\fIgnoreAnswer\x18\x04 \x01(\bR\fIgnoreAnswer\x12$\n" +
+	"\rRoomDeviceIds\x18\a \x03(\tR\rRoomDeviceIds\x12 \n" +
+	"\vIsLedSilent\x18\b \x01(\bR\vIsLedSilent\x12<\n" +
 	"\n" +
-	"EndpointId\x18\t \x01(\v2\x1c.google.protobuf.StringValueB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12~\n" +
+	"EndpointId\x18\t \x01(\v2\x1c.google.protobuf.StringValueR\n" +
+	"EndpointId\x12_\n" +
 	"\x15UniproxyDirectiveMeta\x18\n" +
-	" \x01(\v2).NAlice.NSpeechKit.TUniproxyDirectiveMetaB\x1b\xaa\xdd\x1b\x17uniproxy_directive_metaR\x17uniproxy_directive_meta\x120\n" +
+	" \x01(\v2).NAlice.NSpeechKit.TUniproxyDirectiveMetaR\x15UniproxyDirectiveMeta\x12\x1e\n" +
 	"\n" +
-	"IsParallel\x18\v \x01(\bB\x0f\xaa\xdd\x1b\vis_parallelR\vis_parallel\x12F\n" +
-	"\x10TimeBeforeDropMs\x18\f \x01(\rB\x17\xaa\xdd\x1b\x13time_before_drop_msR\x13time_before_drop_ms\x12d\n" +
-	"\bOnFinish\x18\x0e \x01(\v2,.NAlice.NSpeechKit.TDirective.TOnFinishEventB\x13\xaa\xdd\x1b\x0fon_finish_eventR\x0fon_finish_event\x12O\n" +
+	"IsParallel\x18\v \x01(\bR\n" +
+	"IsParallel\x12*\n" +
+	"\x10TimeBeforeDropMs\x18\f \x01(\rR\x10TimeBeforeDropMs\x12H\n" +
+	"\bOnFinish\x18\x0e \x01(\v2,.NAlice.NSpeechKit.TDirective.TOnFinishEventR\bOnFinish\x12=\n" +
 	"\n" +
-	"SourceInfo\x18\x11 \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoB\x0f\xaa\xdd\x1b\vsource_infoR\vsource_info\x12G\n" +
-	"\x11AttachToMultiroom\x18\x12 \x01(\bB\x17\xaa\xdd\x1b\x13attach_to_multiroomR\x13attach_to_multiroom\x12]\n" +
-	"\rDirectiveType\x18\x14 \x01(\x0e2\".NAlice.TCapability.EDirectiveTypeB\x12\xaa\xdd\x1b\x0edirective_typeR\x0edirective_type\x12M\n" +
-	"\aChannel\x18\x15 \x01(\v2&.NAlice.NSpeechKit.TDirective.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12H\n" +
-	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructB\x13\xa0\xdd\x1b\x05\xaa\xdd\x1b\apayload\xa8\x8d'\x02H\x00R\apayload\x12:\n" +
+	"SourceInfo\x18\x11 \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoR\n" +
+	"SourceInfo\x12,\n" +
+	"\x11AttachToMultiroom\x18\x12 \x01(\bR\x11AttachToMultiroom\x12H\n" +
+	"\rDirectiveType\x18\x14 \x01(\x0e2\".NAlice.TCapability.EDirectiveTypeR\rDirectiveType\x123\n" +
+	"\aPayload\x18\x05 \x01(\v2\x17.google.protobuf.StructH\x00R\aPayload\x12 \n" +
 	"\n" +
-	"PayloadRaw\x18\x0f \x01(\fB\x17\xa0\xdd\x1b\x05\xaa\xdd\x1b\vpayload_raw\xa8\x8d'\x02H\x00R\vpayload_raw\x12L\n" +
-	"\x12MultiroomSessionId\x18\x06 \x01(\tB\x18\xaa\xdd\x1b\x14multiroom_session_idH\x01R\x14multiroom_session_id\x12&\n" +
-	"\x06PersId\x18\r \x01(\tB\v\xaa\xdd\x1b\apers_idH\x02R\apers_id\x12\x1b\n" +
-	"\x02Id\x18\x10 \x01(\tB\x06\xaa\xdd\x1b\x02idH\x03R\x02id\x88\x01\x01\x1a\x9b\x01\n" +
-	"\x0eTOnFinishEvent\x12o\n" +
-	"\x14TypedCallbackRequest\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x1e\xa0\xdd\x1b\x05\xaa\xdd\x1b\x16typed_callback_requestH\x00R\x16typed_callback_request:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Event\x12\t\xaa\xdd\x1b\x05event\x1a~\n" +
+	"PayloadRaw\x18\x0f \x01(\fH\x00R\n" +
+	"PayloadRaw\x120\n" +
+	"\x12MultiroomSessionId\x18\x06 \x01(\tH\x01R\x12MultiroomSessionId\x12\x18\n" +
+	"\x06PersId\x18\r \x01(\tH\x02R\x06PersId\x12\x13\n" +
+	"\x02Id\x18\x10 \x01(\tH\x03R\x02Id\x88\x01\x01\x12M\n" +
+	"\aChannel\x18\x15 \x01(\v2&.NAlice.NSpeechKit.TDirective.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x1ah\n" +
+	"\x0eTOnFinishEvent\x12M\n" +
+	"\x14TypedCallbackRequest\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x14TypedCallbackRequestB\a\n" +
+	"\x05Event\x1a~\n" +
 	"\bTChannel\x12J\n" +
 	"\x04Type\x18\x01 \x01(\x0e2,.NAlice.NSpeechKit.TDirective.TChannel.ETypeB\b\xaa\xdd\x1b\x04typeR\x04type\" \n" +
 	"\x05EType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
 	"\n" +
-	"\x06Dialog\x10\x01:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x13\n" +
-	"\vPayloadType\x12\x04\xa0\xdd\x1b\fB\x1c\n" +
-	"\x1aOptionalMultiroomSessionIdB&\n" +
-	"\x0eOptionalPersId\x12\x14\xaa\xdd\x1b\x10optional_pers_idB\x05\n" +
-	"\x03_IdJ\b\bԻ\x03\x10ջ\x03\"\xd1\t\n" +
-	"\x1aTProtobufUniproxyDirective\x12~\n" +
-	"\x15UniproxyDirectiveMeta\x18\x02 \x01(\v2).NAlice.NSpeechKit.TUniproxyDirectiveMetaB\x1b\xaa\xdd\x1b\x17uniproxy_directive_metaR\x17uniproxy_directive_meta\x12\x97\x01\n" +
-	"\x14ContextSaveDirective\x18\x01 \x01(\v2C.NAlice.NSpeechKit.TProtobufUniproxyDirective.TContextSaveDirectiveB\x1a\xaa\xdd\x1b\x16context_save_directiveH\x00R\x16context_save_directive\x12\xd3\x01\n" +
-	"\"NonTransparentContextSaveDirective\x18\x03 \x01(\v2Q.NAlice.NSpeechKit.TProtobufUniproxyDirective.TNonTransparentContextSaveDirectiveB*\xaa\xdd\x1b&non_transparent_context_save_directiveH\x00R&non_transparent_context_save_directive\x1a\x8f\x01\n" +
-	"\x15TContextSaveDirective\x123\n" +
-	"\vDirectiveId\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fdirective_idR\fdirective_id\x12;\n" +
-	"\aPayload\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\v\xaa\xdd\x1b\apayloadR\apayload:\x04\xa8\xdd\x1b\x04\x1a\x8c\x04\n" +
-	"#TNonTransparentContextSaveDirective\x12\x91\x01\n" +
-	"\x12UpdateDatumAddress\x18\x01 \x01(\v2C.NAlice.NUniproxyDirectives.TUpdateDatumAddressContextSaveDirectiveB\x18\xaa\xdd\x1b\x14update_datum_addressH\x00R\x14update_datum_address\x12\xa7\x01\n" +
-	"\x17PrepareCacheTtsResponse\x18\x02 \x01(\v2H.NAlice.NUniproxyDirectives.TPrepareCacheTtsResponseContextSaveDirectiveB\x1e\xaa\xdd\x1b\x1aprepare_cache_tts_responseH\x00R\x1aprepare_cache_tts_response\x12\x84\x01\n" +
-	"\x11SwitchToAgentMode\x18\x03 \x01(\v27.NAlice.NUniproxyDirectives.TSwitchToAgentModeDirectiveB\x18\xaa\xdd\x1b\x14switch_to_agent_modeH\x00R\x14switch_to_agent_mode:\x04\xa8\xdd\x1b\x04B\x1a\n" +
-	"\tDirective\x12\r\xaa\xdd\x1b\tdirective:\x04\xa8\xdd\x1b\x04B\x1c\n" +
+	"\x06Dialog\x10\x01:\x04\xa8\xdd\x1b\x04B\r\n" +
+	"\vPayloadTypeB\x1c\n" +
+	"\x1aOptionalMultiroomSessionIdB\x10\n" +
+	"\x0eOptionalPersIdB\x05\n" +
+	"\x03_IdJ\b\bԻ\x03\x10ջ\x03\"\xb3\a\n" +
+	"\x1aTProtobufUniproxyDirective\x12_\n" +
+	"\x15UniproxyDirectiveMeta\x18\x02 \x01(\v2).NAlice.NSpeechKit.TUniproxyDirectiveMetaR\x15UniproxyDirectiveMeta\x12y\n" +
+	"\x14ContextSaveDirective\x18\x01 \x01(\v2C.NAlice.NSpeechKit.TProtobufUniproxyDirective.TContextSaveDirectiveH\x00R\x14ContextSaveDirective\x12\xa3\x01\n" +
+	"\"NonTransparentContextSaveDirective\x18\x03 \x01(\v2Q.NAlice.NSpeechKit.TProtobufUniproxyDirective.TNonTransparentContextSaveDirectiveH\x00R\"NonTransparentContextSaveDirective\x1ai\n" +
+	"\x15TContextSaveDirective\x12 \n" +
+	"\vDirectiveId\x18\x01 \x01(\tR\vDirectiveId\x12.\n" +
+	"\aPayload\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\aPayload\x1a\x99\x03\n" +
+	"#TNonTransparentContextSaveDirective\x12u\n" +
+	"\x12UpdateDatumAddress\x18\x01 \x01(\v2C.NAlice.NUniproxyDirectives.TUpdateDatumAddressContextSaveDirectiveH\x00R\x12UpdateDatumAddress\x12\x84\x01\n" +
+	"\x17PrepareCacheTtsResponse\x18\x02 \x01(\v2H.NAlice.NUniproxyDirectives.TPrepareCacheTtsResponseContextSaveDirectiveH\x00R\x17PrepareCacheTtsResponse\x12g\n" +
+	"\x11SwitchToAgentMode\x18\x03 \x01(\v27.NAlice.NUniproxyDirectives.TSwitchToAgentModeDirectiveH\x00R\x11SwitchToAgentModeB\v\n" +
+	"\tDirectiveB\f\n" +
 	"\n" +
-	"Directives\x12\x0e\xaa\xdd\x1b\n" +
-	"directivesB_\n" +
-	")ru.yandex.alice.megamind.protos.speechkitP\x01Z0a.yandex-team.ru/alice/megamind/protos/speechkitb\x06proto3"
+	"DirectivesB\xde\x01\n" +
+	"\x15com.NAlice.NSpeechKitB\x0fDirectivesProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/speechkit\xa2\x02\x03NNX\xaa\x02\x11NAlice.NSpeechKit\xca\x02\x11NAlice\\NSpeechKit\xe2\x02\x1dNAlice\\NSpeechKit\\GPBMetadata\xea\x02\x12NAlice::NSpeechKitb\x06proto3"
 
 var (
 	file_alice_megamind_protos_speechkit_directives_proto_rawDescOnce sync.Once
@@ -867,8 +870,8 @@ var file_alice_megamind_protos_speechkit_directives_proto_depIdxs = []int32{
 	4,  // 3: NAlice.NSpeechKit.TDirective.OnFinish:type_name -> NAlice.NSpeechKit.TDirective.TOnFinishEvent
 	10, // 4: NAlice.NSpeechKit.TDirective.SourceInfo:type_name -> NAlice.NAliceApi.TSourceInfo
 	11, // 5: NAlice.NSpeechKit.TDirective.DirectiveType:type_name -> NAlice.TCapability.EDirectiveType
-	5,  // 6: NAlice.NSpeechKit.TDirective.Channel:type_name -> NAlice.NSpeechKit.TDirective.TChannel
-	12, // 7: NAlice.NSpeechKit.TDirective.Payload:type_name -> google.protobuf.Struct
+	12, // 6: NAlice.NSpeechKit.TDirective.Payload:type_name -> google.protobuf.Struct
+	5,  // 7: NAlice.NSpeechKit.TDirective.Channel:type_name -> NAlice.NSpeechKit.TDirective.TChannel
 	1,  // 8: NAlice.NSpeechKit.TProtobufUniproxyDirective.UniproxyDirectiveMeta:type_name -> NAlice.NSpeechKit.TUniproxyDirectiveMeta
 	6,  // 9: NAlice.NSpeechKit.TProtobufUniproxyDirective.ContextSaveDirective:type_name -> NAlice.NSpeechKit.TProtobufUniproxyDirective.TContextSaveDirective
 	7,  // 10: NAlice.NSpeechKit.TProtobufUniproxyDirective.NonTransparentContextSaveDirective:type_name -> NAlice.NSpeechKit.TProtobufUniproxyDirective.TNonTransparentContextSaveDirective

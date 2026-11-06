@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/voice_activity_detector/capability.proto
 
-package voiceactivitydetectorpb
+package voice_activity_detector
 
 import (
 	typed_callbacks "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks"
@@ -27,9 +27,9 @@ const (
 
 type TVoiceActivityDetectorCapability struct {
 	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TVoiceActivityDetectorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TVoiceActivityDetectorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TVoiceActivityDetectorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TVoiceActivityDetectorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,7 +123,7 @@ func (*TVoiceActivityDetectorCapability_TParameters) Descriptor() ([]byte, []int
 
 type TVoiceActivityDetectorCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -167,14 +167,14 @@ func (x *TVoiceActivityDetectorCapability_TState) GetEnabled() bool {
 
 type TVoiceActivityDetectorCapability_TSetVadActionDirective struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Name          string                          `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Id            string                          `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	EventToDetect endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventToDetect,json=event_to_detect,proto3,enum=NAlice.TCapability_EEventType" json:"EventToDetect,omitempty"`
+	Name          string                          `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Id            string                          `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	EventToDetect endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventToDetect,proto3,enum=NAlice.TCapability_EEventType" json:"EventToDetect,omitempty"`
 	// Types that are valid to be assigned to Action:
 	//
 	//	*TVoiceActivityDetectorCapability_TSetVadActionDirective_TypedCallbackOnDetection
 	Action        isTVoiceActivityDetectorCapability_TSetVadActionDirective_Action `protobuf_oneof:"Action"`
-	TtlSeconds    *uint64                                                          `protobuf:"varint,3,opt,name=TtlSeconds,json=ttl_seconds,proto3,oneof" json:"TtlSeconds,omitempty"`
+	TtlSeconds    *uint64                                                          `protobuf:"varint,3,opt,name=TtlSeconds,proto3,oneof" json:"TtlSeconds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -258,7 +258,7 @@ type isTVoiceActivityDetectorCapability_TSetVadActionDirective_Action interface 
 }
 
 type TVoiceActivityDetectorCapability_TSetVadActionDirective_TypedCallbackOnDetection struct {
-	TypedCallbackOnDetection *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,4,opt,name=TypedCallbackOnDetection,json=typed_callback_on_detection,proto3,oneof"`
+	TypedCallbackOnDetection *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,4,opt,name=TypedCallbackOnDetection,proto3,oneof"`
 }
 
 func (*TVoiceActivityDetectorCapability_TSetVadActionDirective_TypedCallbackOnDetection) isTVoiceActivityDetectorCapability_TSetVadActionDirective_Action() {
@@ -374,7 +374,7 @@ func (*TVoiceActivityDetectorCapability_TSpeechFinishedRawEvent) Descriptor() ([
 
 type TVoiceActivityDetectorCapability_TCondition struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	Events        []endpoint.TCapability_EEventType `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -420,35 +420,34 @@ var File_alice_protos_endpoint_capabilities_voice_activity_detector_capability_p
 
 const file_alice_protos_endpoint_capabilities_voice_activity_detector_capability_proto_rawDesc = "" +
 	"\n" +
-	"Kalice/protos/endpoint/capabilities/voice_activity_detector/capability.proto\x12\x06NAlice\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdf\a\n" +
-	" TVoiceActivityDetectorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12d\n" +
+	"Kalice/protos/endpoint/capabilities/voice_activity_detector/capability.proto\x12\x06NAlice\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd5\x05\n" +
+	" TVoiceActivityDetectorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12T\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v24.NAlice.TVoiceActivityDetectorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12P\n" +
-	"\x05State\x18\x03 \x01(\v2/.NAlice.TVoiceActivityDetectorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a5\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a\xb0\x03\n" +
-	"\x16TSetVadActionDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12[\n" +
-	"\rEventToDetect\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeB\x13\xaa\xdd\x1b\x0fevent_to_detectR\x0fevent_to_detect\x12\x7f\n" +
-	"\x18TypedCallbackOnDetection\x18\x04 \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\x1f\xaa\xdd\x1b\x1btyped_callback_on_detectionH\x00R\x1btyped_callback_on_detection\x125\n" +
+	"Parameters\x18\x02 \x01(\v24.NAlice.TVoiceActivityDetectorCapability.TParametersR\n" +
+	"Parameters\x12E\n" +
+	"\x05State\x18\x03 \x01(\v2/.NAlice.TVoiceActivityDetectorCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\"\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a\x9e\x02\n" +
+	"\x16TSetVadActionDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12D\n" +
+	"\rEventToDetect\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeR\rEventToDetect\x12[\n" +
+	"\x18TypedCallbackOnDetection\x18\x04 \x01(\v2\x1d.NAlice.TTypedCallbackRequestH\x00R\x18TypedCallbackOnDetection\x12#\n" +
 	"\n" +
-	"TtlSeconds\x18\x03 \x01(\x04B\x0f\xaa\xdd\x1b\vttl_secondsH\x01R\vttl_seconds\x88\x01\x01:%\x92\x82\x19\x18set_vad_action_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x01B\x14\n" +
-	"\x06Action\x12\n" +
-	"\xaa\xdd\x1b\x06actionB\r\n" +
-	"\v_TtlSeconds\x1a \n" +
-	"\x14TSpeechFinishedEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c4\x1a\"\n" +
-	"\x16TSpeechStartedRawEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c=\x1a#\n" +
-	"\x17TSpeechFinishedRawEvent:\b\xa8\xdd\x1b\x04\xb0\xc8\x1c>\x1aV\n" +
+	"TtlSeconds\x18\x03 \x01(\x04H\x01R\n" +
+	"TtlSeconds\x88\x01\x01B\b\n" +
+	"\x06ActionB\r\n" +
+	"\v_TtlSeconds\x1a\x16\n" +
+	"\x14TSpeechFinishedEvent\x1a\x18\n" +
+	"\x16TSpeechStartedRawEvent\x1a\x19\n" +
+	"\x17TSpeechFinishedRawEvent\x1aD\n" +
 	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c@B\xbb\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB$VoiceActivityDetectorCapabilityProtoP\x01Zca.yandex-team.ru/alice/protos/endpoint/capabilities/voice_activity_detector;voiceactivitydetectorpbb\x06proto3"
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06EventsB\xc1\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/voice_activity_detector\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_voice_activity_detector_capability_proto_rawDescOnce sync.Once

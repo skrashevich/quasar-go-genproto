@@ -77,9 +77,9 @@ func (ELikeStatus) EnumDescriptor() ([]byte, []int) {
 
 type TDisclaimerInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          string                 `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=Description,json=description,proto3" json:"Description,omitempty"`
+	Type          string                 `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Description   string                 `protobuf:"bytes,3,opt,name=Description,proto3" json:"Description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -137,16 +137,16 @@ func (x *TDisclaimerInfo) GetDescription() string {
 
 type TAlbum struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Genre         string                 `protobuf:"bytes,3,opt,name=Genre,json=genre,proto3" json:"Genre,omitempty"`
-	CoverUri      string                 `protobuf:"bytes,4,opt,name=CoverUri,json=cover_uri,proto3" json:"CoverUri,omitempty"`
-	Artists       []*TArtist             `protobuf:"bytes,5,rep,name=Artists,json=artists,proto3" json:"Artists,omitempty"`
-	ReleaseYear   int32                  `protobuf:"varint,6,opt,name=ReleaseYear,json=release_year,proto3" json:"ReleaseYear,omitempty"`
-	Type          string                 `protobuf:"bytes,7,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	IsLiked       bool                   `protobuf:"varint,8,opt,name=IsLiked,json=like,proto3" json:"IsLiked,omitempty"`
-	LikesCount    uint32                 `protobuf:"varint,9,opt,name=LikesCount,json=likes_count,proto3" json:"LikesCount,omitempty"`
-	Disclaimers   []*TDisclaimerInfo     `protobuf:"bytes,10,rep,name=Disclaimers,json=disclaimers,proto3" json:"Disclaimers,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Genre         string                 `protobuf:"bytes,3,opt,name=Genre,proto3" json:"Genre,omitempty"`
+	CoverUri      string                 `protobuf:"bytes,4,opt,name=CoverUri,proto3" json:"CoverUri,omitempty"`
+	Artists       []*TArtist             `protobuf:"bytes,5,rep,name=Artists,proto3" json:"Artists,omitempty"`
+	ReleaseYear   int32                  `protobuf:"varint,6,opt,name=ReleaseYear,proto3" json:"ReleaseYear,omitempty"`
+	Type          string                 `protobuf:"bytes,7,opt,name=Type,proto3" json:"Type,omitempty"`
+	IsLiked       bool                   `protobuf:"varint,8,opt,name=IsLiked,proto3" json:"IsLiked,omitempty"`
+	LikesCount    uint32                 `protobuf:"varint,9,opt,name=LikesCount,proto3" json:"LikesCount,omitempty"`
+	Disclaimers   []*TDisclaimerInfo     `protobuf:"bytes,10,rep,name=Disclaimers,proto3" json:"Disclaimers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -253,12 +253,12 @@ func (x *TAlbum) GetDisclaimers() []*TDisclaimerInfo {
 
 type TPlaylist struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	CoverUri      string                 `protobuf:"bytes,5,opt,name=CoverUri,json=cover_uri,proto3" json:"CoverUri,omitempty"`
-	LikesCount    int32                  `protobuf:"varint,6,opt,name=LikesCount,json=likes_count,proto3" json:"LikesCount,omitempty"`
-	IsLiked       bool                   `protobuf:"varint,7,opt,name=IsLiked,json=like,proto3" json:"IsLiked,omitempty"`
-	TracksCount   uint32                 `protobuf:"varint,8,opt,name=TracksCount,json=tracks_count,proto3" json:"TracksCount,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	CoverUri      string                 `protobuf:"bytes,5,opt,name=CoverUri,proto3" json:"CoverUri,omitempty"`
+	LikesCount    int32                  `protobuf:"varint,6,opt,name=LikesCount,proto3" json:"LikesCount,omitempty"`
+	IsLiked       bool                   `protobuf:"varint,7,opt,name=IsLiked,proto3" json:"IsLiked,omitempty"`
+	TracksCount   uint32                 `protobuf:"varint,8,opt,name=TracksCount,proto3" json:"TracksCount,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -337,15 +337,15 @@ func (x *TPlaylist) GetTracksCount() uint32 {
 
 type TArtist struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Composer      bool                   `protobuf:"varint,3,opt,name=Composer,json=composer,proto3" json:"Composer,omitempty"`
-	IsVarious     bool                   `protobuf:"varint,4,opt,name=IsVarious,json=is_various,proto3" json:"IsVarious,omitempty"`
-	CoverUri      string                 `protobuf:"bytes,5,opt,name=CoverUri,json=cover_uri,proto3" json:"CoverUri,omitempty"`
-	Genre         []string               `protobuf:"bytes,6,rep,name=Genre,json=genre,proto3" json:"Genre,omitempty"`
-	IsLiked       bool                   `protobuf:"varint,7,opt,name=IsLiked,json=like,proto3" json:"IsLiked,omitempty"`
-	LikesCount    uint32                 `protobuf:"varint,8,opt,name=LikesCount,json=likes_count,proto3" json:"LikesCount,omitempty"`
-	Disclaimers   []*TDisclaimerInfo     `protobuf:"bytes,9,rep,name=Disclaimers,json=disclaimers,proto3" json:"Disclaimers,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Composer      bool                   `protobuf:"varint,3,opt,name=Composer,proto3" json:"Composer,omitempty"`
+	IsVarious     bool                   `protobuf:"varint,4,opt,name=IsVarious,proto3" json:"IsVarious,omitempty"`
+	CoverUri      string                 `protobuf:"bytes,5,opt,name=CoverUri,proto3" json:"CoverUri,omitempty"`
+	Genre         []string               `protobuf:"bytes,6,rep,name=Genre,proto3" json:"Genre,omitempty"`
+	IsLiked       bool                   `protobuf:"varint,7,opt,name=IsLiked,proto3" json:"IsLiked,omitempty"`
+	LikesCount    uint32                 `protobuf:"varint,8,opt,name=LikesCount,proto3" json:"LikesCount,omitempty"`
+	Disclaimers   []*TDisclaimerInfo     `protobuf:"bytes,9,rep,name=Disclaimers,proto3" json:"Disclaimers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -445,22 +445,22 @@ func (x *TArtist) GetDisclaimers() []*TDisclaimerInfo {
 
 type TTrack struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title              string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Subtype            string                 `protobuf:"bytes,3,opt,name=Subtype,json=subtype,proto3" json:"Subtype,omitempty"`
-	ArtImageUrl        string                 `protobuf:"bytes,4,opt,name=ArtImageUrl,json=art_image_url,proto3" json:"ArtImageUrl,omitempty"`
-	Album              *TAlbum                `protobuf:"bytes,5,opt,name=Album,json=album,proto3" json:"Album,omitempty"`
-	Artists            []*TArtist             `protobuf:"bytes,6,rep,name=Artists,json=artists,proto3" json:"Artists,omitempty"`
-	IsLiked            bool                   `protobuf:"varint,7,opt,name=IsLiked,json=like,proto3" json:"IsLiked,omitempty"`
-	IsDisliked         bool                   `protobuf:"varint,8,opt,name=IsDisliked,json=dislike,proto3" json:"IsDisliked,omitempty"`
-	DurationMs         uint32                 `protobuf:"varint,9,opt,name=DurationMs,json=duration_ms,proto3" json:"DurationMs,omitempty"`
-	ArtistId           string                 `protobuf:"bytes,10,opt,name=ArtistId,json=artist_id,proto3" json:"ArtistId,omitempty"`
-	AlbumId            string                 `protobuf:"bytes,11,opt,name=AlbumId,json=album_id,proto3" json:"AlbumId,omitempty"`
-	TrackId            string                 `protobuf:"bytes,12,opt,name=TrackId,json=track_id,proto3" json:"TrackId,omitempty"`
-	ShotText           string                 `protobuf:"bytes,13,opt,name=ShotText,json=shot_text,proto3" json:"ShotText,omitempty"`
-	HasAvailableLyrics bool                   `protobuf:"varint,14,opt,name=HasAvailableLyrics,json=has_available_lyrics,proto3" json:"HasAvailableLyrics,omitempty"`
-	Uuid               string                 `protobuf:"bytes,15,opt,name=Uuid,json=uuid,proto3" json:"Uuid,omitempty"`
-	Disclaimers        []*TDisclaimerInfo     `protobuf:"bytes,16,rep,name=Disclaimers,json=disclaimers,proto3" json:"Disclaimers,omitempty"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title              string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Subtype            string                 `protobuf:"bytes,3,opt,name=Subtype,proto3" json:"Subtype,omitempty"`
+	ArtImageUrl        string                 `protobuf:"bytes,4,opt,name=ArtImageUrl,proto3" json:"ArtImageUrl,omitempty"`
+	Album              *TAlbum                `protobuf:"bytes,5,opt,name=Album,proto3" json:"Album,omitempty"`
+	Artists            []*TArtist             `protobuf:"bytes,6,rep,name=Artists,proto3" json:"Artists,omitempty"`
+	IsLiked            bool                   `protobuf:"varint,7,opt,name=IsLiked,proto3" json:"IsLiked,omitempty"`
+	IsDisliked         bool                   `protobuf:"varint,8,opt,name=IsDisliked,proto3" json:"IsDisliked,omitempty"`
+	DurationMs         uint32                 `protobuf:"varint,9,opt,name=DurationMs,proto3" json:"DurationMs,omitempty"`
+	ArtistId           string                 `protobuf:"bytes,10,opt,name=ArtistId,proto3" json:"ArtistId,omitempty"`
+	AlbumId            string                 `protobuf:"bytes,11,opt,name=AlbumId,proto3" json:"AlbumId,omitempty"`
+	TrackId            string                 `protobuf:"bytes,12,opt,name=TrackId,proto3" json:"TrackId,omitempty"`
+	ShotText           string                 `protobuf:"bytes,13,opt,name=ShotText,proto3" json:"ShotText,omitempty"`
+	HasAvailableLyrics bool                   `protobuf:"varint,14,opt,name=HasAvailableLyrics,proto3" json:"HasAvailableLyrics,omitempty"`
+	Uuid               string                 `protobuf:"bytes,15,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Disclaimers        []*TDisclaimerInfo     `protobuf:"bytes,16,rep,name=Disclaimers,proto3" json:"Disclaimers,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -609,14 +609,14 @@ func (x *TTrack) GetDisclaimers() []*TDisclaimerInfo {
 
 type TPodcastEpisode struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title           string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	CoverUri        string                 `protobuf:"bytes,3,opt,name=CoverUri,json=cover_uri,proto3" json:"CoverUri,omitempty"`
-	PublicationDate string                 `protobuf:"bytes,4,opt,name=PublicationDate,json=publication_date,proto3" json:"PublicationDate,omitempty"`
-	Album           *TAlbum                `protobuf:"bytes,5,opt,name=Album,json=album,proto3" json:"Album,omitempty"`
-	Artists         []*TArtist             `protobuf:"bytes,6,rep,name=Artists,json=artists,proto3" json:"Artists,omitempty"`
-	DurationMs      uint32                 `protobuf:"varint,7,opt,name=DurationMs,json=duration_ms,proto3" json:"DurationMs,omitempty"`
-	IsLiked         bool                   `protobuf:"varint,8,opt,name=IsLiked,json=like,proto3" json:"IsLiked,omitempty"`
+	Id              string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	CoverUri        string                 `protobuf:"bytes,3,opt,name=CoverUri,proto3" json:"CoverUri,omitempty"`
+	PublicationDate string                 `protobuf:"bytes,4,opt,name=PublicationDate,proto3" json:"PublicationDate,omitempty"`
+	Album           *TAlbum                `protobuf:"bytes,5,opt,name=Album,proto3" json:"Album,omitempty"`
+	Artists         []*TArtist             `protobuf:"bytes,6,rep,name=Artists,proto3" json:"Artists,omitempty"`
+	DurationMs      uint32                 `protobuf:"varint,7,opt,name=DurationMs,proto3" json:"DurationMs,omitempty"`
+	IsLiked         bool                   `protobuf:"varint,8,opt,name=IsLiked,proto3" json:"IsLiked,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -709,10 +709,10 @@ func (x *TPodcastEpisode) GetIsLiked() bool {
 
 type TWave struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Subtitle      string                 `protobuf:"bytes,3,opt,name=Subtitle,json=subtitle,proto3" json:"Subtitle,omitempty"`
-	CoverUri      string                 `protobuf:"bytes,4,opt,name=CoverUri,json=cover_uri,proto3" json:"CoverUri,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Subtitle      string                 `protobuf:"bytes,3,opt,name=Subtitle,proto3" json:"Subtitle,omitempty"`
+	CoverUri      string                 `protobuf:"bytes,4,opt,name=CoverUri,proto3" json:"CoverUri,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -777,17 +777,16 @@ func (x *TWave) GetCoverUri() string {
 
 type TMusicBand struct {
 	state            protoimpl.MessageState  `protogen:"open.v1"`
-	Id               string                  `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Title            string                  `protobuf:"bytes,2,opt,name=Title,json=title,proto3" json:"Title,omitempty"`
-	Subtitle         string                  `protobuf:"bytes,3,opt,name=Subtitle,json=subtitle,proto3" json:"Subtitle,omitempty"`
-	GroupDescription string                  `protobuf:"bytes,4,opt,name=GroupDescription,json=group_description,proto3" json:"GroupDescription,omitempty"`
-	Logo             *TSingleImage_TImageRef `protobuf:"bytes,5,opt,name=Logo,json=logo,proto3" json:"Logo,omitempty"`
-	Year             int32                   `protobuf:"varint,6,opt,name=Year,json=year,proto3" json:"Year,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/data/scenario/objects/music.proto.
-	SearchUrl     string `protobuf:"bytes,7,opt,name=SearchUrl,json=search_url,proto3" json:"SearchUrl,omitempty"`
-	SearchRequest string `protobuf:"bytes,8,opt,name=SearchRequest,json=search_request,proto3" json:"SearchRequest,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Id               string                  `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Title            string                  `protobuf:"bytes,2,opt,name=Title,proto3" json:"Title,omitempty"`
+	Subtitle         string                  `protobuf:"bytes,3,opt,name=Subtitle,proto3" json:"Subtitle,omitempty"`
+	GroupDescription string                  `protobuf:"bytes,4,opt,name=GroupDescription,proto3" json:"GroupDescription,omitempty"`
+	Logo             *TSingleImage_TImageRef `protobuf:"bytes,5,opt,name=Logo,proto3" json:"Logo,omitempty"`
+	Year             int32                   `protobuf:"varint,6,opt,name=Year,proto3" json:"Year,omitempty"`
+	SearchUrl        string                  `protobuf:"bytes,7,opt,name=SearchUrl,proto3" json:"SearchUrl,omitempty"`
+	SearchRequest    string                  `protobuf:"bytes,8,opt,name=SearchRequest,proto3" json:"SearchRequest,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *TMusicBand) Reset() {
@@ -862,7 +861,6 @@ func (x *TMusicBand) GetYear() int32 {
 	return 0
 }
 
-// Deprecated: Marked as deprecated in alice/protos/data/scenario/objects/music.proto.
 func (x *TMusicBand) GetSearchUrl() string {
 	if x != nil {
 		return x.SearchUrl
@@ -879,7 +877,7 @@ func (x *TMusicBand) GetSearchRequest() string {
 
 type TMusicBands struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bands         []*TMusicBand          `protobuf:"bytes,1,rep,name=Bands,json=bands,proto3" json:"Bands,omitempty"`
+	Bands         []*TMusicBand          `protobuf:"bytes,1,rep,name=Bands,proto3" json:"Bands,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -923,7 +921,7 @@ func (x *TMusicBands) GetBands() []*TMusicBand {
 
 type TMusicAlbums struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Albums        []*TAlbum              `protobuf:"bytes,1,rep,name=Albums,json=albums,proto3" json:"Albums,omitempty"`
+	Albums        []*TAlbum              `protobuf:"bytes,1,rep,name=Albums,proto3" json:"Albums,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -967,7 +965,7 @@ func (x *TMusicAlbums) GetAlbums() []*TAlbum {
 
 type TMusicTracks struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Tracks        []*TTrack              `protobuf:"bytes,1,rep,name=Tracks,json=tracks,proto3" json:"Tracks,omitempty"`
+	Tracks        []*TTrack              `protobuf:"bytes,1,rep,name=Tracks,proto3" json:"Tracks,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1013,106 +1011,107 @@ var File_alice_protos_data_scenario_objects_music_proto protoreflect.FileDescrip
 
 const file_alice_protos_data_scenario_objects_music_proto_rawDesc = "" +
 	"\n" +
-	".alice/protos/data/scenario/objects/music.proto\x12\fNAlice.NData\x1a.alice/protos/data/scenario/objects/image.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"\x89\x01\n" +
-	"\x0fTDisclaimerInfo\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x121\n" +
-	"\vDescription\x18\x03 \x01(\tB\x0f\xaa\xdd\x1b\vdescriptionR\vdescription:\x04\xa8\xdd\x1b\x04\"\xca\x03\n" +
-	"\x06TAlbum\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12\x1f\n" +
-	"\x05Genre\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05genreR\x05genre\x12*\n" +
-	"\bCoverUri\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tcover_uriR\tcover_uri\x12<\n" +
-	"\aArtists\x18\x05 \x03(\v2\x15.NAlice.NData.TArtistB\v\xaa\xdd\x1b\aartistsR\aartists\x123\n" +
-	"\vReleaseYear\x18\x06 \x01(\x05B\x10\xaa\xdd\x1b\frelease_yearR\frelease_year\x12\x1c\n" +
-	"\x04Type\x18\a \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1f\n" +
-	"\aIsLiked\x18\b \x01(\bB\b\xaa\xdd\x1b\x04likeR\x04like\x120\n" +
+	".alice/protos/data/scenario/objects/music.proto\x12\fNAlice.NData\x1a.alice/protos/data/scenario/objects/image.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\"]\n" +
+	"\x0fTDisclaimerInfo\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12 \n" +
+	"\vDescription\x18\x03 \x01(\tR\vDescription\"\xc2\x02\n" +
+	"\x06TAlbum\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x14\n" +
+	"\x05Genre\x18\x03 \x01(\tR\x05Genre\x12\x1a\n" +
+	"\bCoverUri\x18\x04 \x01(\tR\bCoverUri\x12/\n" +
+	"\aArtists\x18\x05 \x03(\v2\x15.NAlice.NData.TArtistR\aArtists\x12 \n" +
+	"\vReleaseYear\x18\x06 \x01(\x05R\vReleaseYear\x12\x12\n" +
+	"\x04Type\x18\a \x01(\tR\x04Type\x12\x18\n" +
+	"\aIsLiked\x18\b \x01(\bR\aIsLiked\x12\x1e\n" +
 	"\n" +
-	"LikesCount\x18\t \x01(\rB\x0f\xaa\xdd\x1b\vlikes_countR\vlikes_count\x12P\n" +
+	"LikesCount\x18\t \x01(\rR\n" +
+	"LikesCount\x12?\n" +
 	"\vDisclaimers\x18\n" +
-	" \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers:\x04\xa8\xdd\x1b\x04\"\xfe\x01\n" +
-	"\tTPlaylist\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12*\n" +
-	"\bCoverUri\x18\x05 \x01(\tB\r\xaa\xdd\x1b\tcover_uriR\tcover_uri\x120\n" +
+	" \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoR\vDisclaimers\"\xa9\x01\n" +
+	"\tTPlaylist\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bCoverUri\x18\x05 \x01(\tR\bCoverUri\x12\x1e\n" +
 	"\n" +
-	"LikesCount\x18\x06 \x01(\x05B\x0f\xaa\xdd\x1b\vlikes_countR\vlikes_count\x12\x1f\n" +
-	"\aIsLiked\x18\a \x01(\bB\b\xaa\xdd\x1b\x04likeR\x04like\x123\n" +
-	"\vTracksCount\x18\b \x01(\rB\x10\xaa\xdd\x1b\ftracks_countR\ftracks_count:\x04\xa8\xdd\x1b\x04\"\x90\x03\n" +
-	"\aTArtist\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12(\n" +
-	"\bComposer\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bcomposerR\bcomposer\x12-\n" +
-	"\tIsVarious\x18\x04 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_variousR\n" +
-	"is_various\x12*\n" +
-	"\bCoverUri\x18\x05 \x01(\tB\r\xaa\xdd\x1b\tcover_uriR\tcover_uri\x12\x1f\n" +
-	"\x05Genre\x18\x06 \x03(\tB\t\xaa\xdd\x1b\x05genreR\x05genre\x12\x1f\n" +
-	"\aIsLiked\x18\a \x01(\bB\b\xaa\xdd\x1b\x04likeR\x04like\x120\n" +
+	"LikesCount\x18\x06 \x01(\x05R\n" +
+	"LikesCount\x12\x18\n" +
+	"\aIsLiked\x18\a \x01(\bR\aIsLiked\x12 \n" +
+	"\vTracksCount\x18\b \x01(\rR\vTracksCount\"\x94\x02\n" +
+	"\aTArtist\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12\x1a\n" +
+	"\bComposer\x18\x03 \x01(\bR\bComposer\x12\x1c\n" +
+	"\tIsVarious\x18\x04 \x01(\bR\tIsVarious\x12\x1a\n" +
+	"\bCoverUri\x18\x05 \x01(\tR\bCoverUri\x12\x14\n" +
+	"\x05Genre\x18\x06 \x03(\tR\x05Genre\x12\x18\n" +
+	"\aIsLiked\x18\a \x01(\bR\aIsLiked\x12\x1e\n" +
 	"\n" +
-	"LikesCount\x18\b \x01(\rB\x0f\xaa\xdd\x1b\vlikes_countR\vlikes_count\x12P\n" +
-	"\vDisclaimers\x18\t \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers:\x04\xa8\xdd\x1b\x04\"\x81\x06\n" +
-	"\x06TTrack\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12%\n" +
-	"\aSubtype\x18\x03 \x01(\tB\v\xaa\xdd\x1b\asubtypeR\asubtype\x125\n" +
-	"\vArtImageUrl\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\rart_image_urlR\rart_image_url\x125\n" +
-	"\x05Album\x18\x05 \x01(\v2\x14.NAlice.NData.TAlbumB\t\xaa\xdd\x1b\x05albumR\x05album\x12<\n" +
-	"\aArtists\x18\x06 \x03(\v2\x15.NAlice.NData.TArtistB\v\xaa\xdd\x1b\aartistsR\aartists\x12\x1f\n" +
-	"\aIsLiked\x18\a \x01(\bB\b\xaa\xdd\x1b\x04likeR\x04like\x12(\n" +
+	"LikesCount\x18\b \x01(\rR\n" +
+	"LikesCount\x12?\n" +
+	"\vDisclaimers\x18\t \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoR\vDisclaimers\"\x92\x04\n" +
+	"\x06TTrack\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x18\n" +
+	"\aSubtype\x18\x03 \x01(\tR\aSubtype\x12 \n" +
+	"\vArtImageUrl\x18\x04 \x01(\tR\vArtImageUrl\x12*\n" +
+	"\x05Album\x18\x05 \x01(\v2\x14.NAlice.NData.TAlbumR\x05Album\x12/\n" +
+	"\aArtists\x18\x06 \x03(\v2\x15.NAlice.NData.TArtistR\aArtists\x12\x18\n" +
+	"\aIsLiked\x18\a \x01(\bR\aIsLiked\x12\x1e\n" +
 	"\n" +
-	"IsDisliked\x18\b \x01(\bB\v\xaa\xdd\x1b\adislikeR\adislike\x120\n" +
+	"IsDisliked\x18\b \x01(\bR\n" +
+	"IsDisliked\x12\x1e\n" +
 	"\n" +
-	"DurationMs\x18\t \x01(\rB\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12*\n" +
+	"DurationMs\x18\t \x01(\rR\n" +
+	"DurationMs\x12\x1a\n" +
 	"\bArtistId\x18\n" +
-	" \x01(\tB\r\xaa\xdd\x1b\tartist_idR\tartist_id\x12'\n" +
-	"\aAlbumId\x18\v \x01(\tB\f\xaa\xdd\x1b\balbum_idR\balbum_id\x12'\n" +
-	"\aTrackId\x18\f \x01(\tB\f\xaa\xdd\x1b\btrack_idR\btrack_id\x12*\n" +
-	"\bShotText\x18\r \x01(\tB\r\xaa\xdd\x1b\tshot_textR\tshot_text\x12J\n" +
-	"\x12HasAvailableLyrics\x18\x0e \x01(\bB\x18\xaa\xdd\x1b\x14has_available_lyricsR\x14has_available_lyrics\x12 \n" +
-	"\x04Uuid\x18\x0f \x01(\tB\f\xaa\xdd\x1b\x04uuid\xf8\x91*\x03R\x04uuid\x12P\n" +
-	"\vDisclaimers\x18\x10 \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoB\x0f\xaa\xdd\x1b\vdisclaimersR\vdisclaimers:\x04\xa8\xdd\x1b\x04\"\x85\x03\n" +
-	"\x0fTPodcastEpisode\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12*\n" +
-	"\bCoverUri\x18\x03 \x01(\tB\r\xaa\xdd\x1b\tcover_uriR\tcover_uri\x12?\n" +
-	"\x0fPublicationDate\x18\x04 \x01(\tB\x14\xaa\xdd\x1b\x10publication_dateR\x10publication_date\x125\n" +
-	"\x05Album\x18\x05 \x01(\v2\x14.NAlice.NData.TAlbumB\t\xaa\xdd\x1b\x05albumR\x05album\x12<\n" +
-	"\aArtists\x18\x06 \x03(\v2\x15.NAlice.NData.TArtistB\v\xaa\xdd\x1b\aartistsR\aartists\x120\n" +
+	" \x01(\tR\bArtistId\x12\x18\n" +
+	"\aAlbumId\x18\v \x01(\tR\aAlbumId\x12\x18\n" +
+	"\aTrackId\x18\f \x01(\tR\aTrackId\x12\x1a\n" +
+	"\bShotText\x18\r \x01(\tR\bShotText\x12.\n" +
+	"\x12HasAvailableLyrics\x18\x0e \x01(\bR\x12HasAvailableLyrics\x12\x12\n" +
+	"\x04Uuid\x18\x0f \x01(\tR\x04Uuid\x12?\n" +
+	"\vDisclaimers\x18\x10 \x03(\v2\x1d.NAlice.NData.TDisclaimerInfoR\vDisclaimers\"\x94\x02\n" +
+	"\x0fTPodcastEpisode\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bCoverUri\x18\x03 \x01(\tR\bCoverUri\x12(\n" +
+	"\x0fPublicationDate\x18\x04 \x01(\tR\x0fPublicationDate\x12*\n" +
+	"\x05Album\x18\x05 \x01(\v2\x14.NAlice.NData.TAlbumR\x05Album\x12/\n" +
+	"\aArtists\x18\x06 \x03(\v2\x15.NAlice.NData.TArtistR\aArtists\x12\x1e\n" +
 	"\n" +
-	"DurationMs\x18\a \x01(\rB\x0f\xaa\xdd\x1b\vduration_msR\vduration_ms\x12\x1f\n" +
-	"\aIsLiked\x18\b \x01(\bB\b\xaa\xdd\x1b\x04likeR\x04like:\x04\xa8\xdd\x1b\x04\"\x9c\x01\n" +
-	"\x05TWave\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubtitle\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle\x12*\n" +
-	"\bCoverUri\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tcover_uriR\tcover_uri:\x04\xa8\xdd\x1b\x04\"\x81\x03\n" +
+	"DurationMs\x18\a \x01(\rR\n" +
+	"DurationMs\x12\x18\n" +
+	"\aIsLiked\x18\b \x01(\bR\aIsLiked\"e\n" +
+	"\x05TWave\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubtitle\x18\x03 \x01(\tR\bSubtitle\x12\x1a\n" +
+	"\bCoverUri\x18\x04 \x01(\tR\bCoverUri\"\x8c\x02\n" +
 	"\n" +
-	"TMusicBand\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Title\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12(\n" +
-	"\bSubtitle\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bsubtitleR\bsubtitle\x12B\n" +
-	"\x10GroupDescription\x18\x04 \x01(\tB\x15\xaa\xdd\x1b\x11group_descriptionR\x11group_description\x12B\n" +
-	"\x04Logo\x18\x05 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefB\b\xaa\xdd\x1b\x04logoR\x04logo\x12\x1c\n" +
-	"\x04Year\x18\x06 \x01(\x05B\b\xaa\xdd\x1b\x04yearR\x04year\x12/\n" +
-	"\tSearchUrl\x18\a \x01(\tB\x10\xaa\xdd\x1b\n" +
-	"search_url\x18\x01R\n" +
-	"search_url\x129\n" +
-	"\rSearchRequest\x18\b \x01(\tB\x12\xaa\xdd\x1b\x0esearch_requestR\x0esearch_request\"H\n" +
-	"\vTMusicBands\x129\n" +
-	"\x05Bands\x18\x01 \x03(\v2\x18.NAlice.NData.TMusicBandB\t\xaa\xdd\x1b\x05bandsR\x05bands\"H\n" +
-	"\fTMusicAlbums\x128\n" +
-	"\x06Albums\x18\x01 \x03(\v2\x14.NAlice.NData.TAlbumB\n" +
-	"\xaa\xdd\x1b\x06albumsR\x06albums\"H\n" +
-	"\fTMusicTracks\x128\n" +
-	"\x06Tracks\x18\x01 \x03(\v2\x14.NAlice.NData.TTrackB\n" +
-	"\xaa\xdd\x1b\x06tracksR\x06tracks*?\n" +
+	"TMusicBand\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x14\n" +
+	"\x05Title\x18\x02 \x01(\tR\x05Title\x12\x1a\n" +
+	"\bSubtitle\x18\x03 \x01(\tR\bSubtitle\x12*\n" +
+	"\x10GroupDescription\x18\x04 \x01(\tR\x10GroupDescription\x128\n" +
+	"\x04Logo\x18\x05 \x01(\v2$.NAlice.NData.TSingleImage.TImageRefR\x04Logo\x12\x12\n" +
+	"\x04Year\x18\x06 \x01(\x05R\x04Year\x12\x1c\n" +
+	"\tSearchUrl\x18\a \x01(\tR\tSearchUrl\x12$\n" +
+	"\rSearchRequest\x18\b \x01(\tR\rSearchRequest\"=\n" +
+	"\vTMusicBands\x12.\n" +
+	"\x05Bands\x18\x01 \x03(\v2\x18.NAlice.NData.TMusicBandR\x05Bands\"<\n" +
+	"\fTMusicAlbums\x12,\n" +
+	"\x06Albums\x18\x01 \x03(\v2\x14.NAlice.NData.TAlbumR\x06Albums\"<\n" +
+	"\fTMusicTracks\x12,\n" +
+	"\x06Tracks\x18\x01 \x03(\v2\x14.NAlice.NData.TTrackR\x06Tracks*?\n" +
 	"\vELikeStatus\x12\r\n" +
 	"\tUndefined\x10\x00\x12\b\n" +
 	"\x04None\x10\x01\x12\t\n" +
 	"\x05Liked\x10\x02\x12\f\n" +
-	"\bDisliked\x10\x03Bv\n" +
-	",ru.yandex.alice.protos.data.scenario.objectsB\x11MusicObjectsProtoZ3a.yandex-team.ru/alice/protos/data/scenario/objectsb\x06proto3"
+	"\bDisliked\x10\x03B\xc3\x01\n" +
+	"\x10com.NAlice.NDataB\n" +
+	"MusicProtoP\x01ZRgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/objects\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_objects_music_proto_rawDescOnce sync.Once

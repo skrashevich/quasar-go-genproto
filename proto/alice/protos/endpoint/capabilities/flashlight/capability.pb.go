@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/flashlight/capability.proto
 
-package flashlightpb
+package flashlight
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -375,8 +375,8 @@ const file_alice_protos_endpoint_capabilities_flashlight_capability_proto_rawDes
 	"\x12BRIGHTNESS_UNKNOWN\x10\x00\x12\x12\n" +
 	"\x0eBRIGHTNESS_LOW\x10\x01\x12\x15\n" +
 	"\x11BRIGHTNESS_MEDIUM\x10\x02\x12\x13\n" +
-	"\x0fBRIGHTNESS_HIGH\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbb\x02B\x96\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19FlashlightCapabilityProtoZKa.yandex-team.ru/alice/protos/endpoint/capabilities/flashlight;flashlightpbb\x06proto3"
+	"\x0fBRIGHTNESS_HIGH\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xbb\x02B\xa8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19FlashlightCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/flashlightb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_flashlight_capability_proto_rawDescOnce sync.Once

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/megamind/protos/scenarios/frames/speech_activity_frame/speech_activity_frame.proto
 
-package speechactivityframe
+package speech_activity_frame
 
 import (
 	common "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/common"
@@ -134,15 +134,15 @@ type isTSpeechActivityTypeSlot_Value interface {
 }
 
 type TSpeechActivityTypeSlot_SpeechActivityTypeValue struct {
-	SpeechActivityTypeValue TSpeechActivityTypeSlot_EValue `protobuf:"varint,1,opt,name=SpeechActivityTypeValue,json=speech_activity_type_value,proto3,enum=NAlice.TSpeechActivityTypeSlot_EValue,oneof"`
+	SpeechActivityTypeValue TSpeechActivityTypeSlot_EValue `protobuf:"varint,1,opt,name=SpeechActivityTypeValue,proto3,enum=NAlice.TSpeechActivityTypeSlot_EValue,oneof"`
 }
 
 func (*TSpeechActivityTypeSlot_SpeechActivityTypeValue) isTSpeechActivityTypeSlot_Value() {}
 
 type TVoiceActivityDetectorSemanticFrame struct {
 	state              protoimpl.MessageState   `protogen:"open.v1"`
-	SpeechActivityType *TSpeechActivityTypeSlot `protobuf:"bytes,1,opt,name=SpeechActivityType,json=speech_activity_type,proto3" json:"SpeechActivityType,omitempty"`
-	TimestampSeconds   *common.TInt64Slot       `protobuf:"bytes,2,opt,name=TimestampSeconds,json=timestamp_seconds,proto3" json:"TimestampSeconds,omitempty"`
+	SpeechActivityType *TSpeechActivityTypeSlot `protobuf:"bytes,1,opt,name=SpeechActivityType,proto3" json:"SpeechActivityType,omitempty"`
+	TimestampSeconds   *common.TInt64Slot       `protobuf:"bytes,2,opt,name=TimestampSeconds,proto3" json:"TimestampSeconds,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -195,18 +195,19 @@ var File_alice_megamind_protos_scenarios_frames_speech_activity_frame_speech_act
 
 const file_alice_megamind_protos_scenarios_frames_speech_activity_frame_speech_activity_frame_proto_rawDesc = "" +
 	"\n" +
-	"Xalice/megamind/protos/scenarios/frames/speech_activity_frame/speech_activity_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x02\n" +
-	"\x17TSpeechActivityTypeSlot\x12\xa8\x01\n" +
-	"\x17SpeechActivityTypeValue\x18\x01 \x01(\x0e2&.NAlice.TSpeechActivityTypeSlot.EValueBA\xa0\xdd\x1b\x05\xaa\xdd\x1b\x1aspeech_activity_type_value\u0085\x1c\x1bcustom.speech_activity_typeH\x00R\x1aspeech_activity_type_value\"0\n" +
+	"Xalice/megamind/protos/scenarios/frames/speech_activity_frame/speech_activity_frame.proto\x12\x06NAlice\x1a:alice/megamind/protos/scenarios/frames/common/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb8\x01\n" +
+	"\x17TSpeechActivityTypeSlot\x12b\n" +
+	"\x17SpeechActivityTypeValue\x18\x01 \x01(\x0e2&.NAlice.TSpeechActivityTypeSlot.EValueH\x00R\x17SpeechActivityTypeValue\"0\n" +
 	"\x06EValue\x12\v\n" +
 	"\aUnknown\x10\x00\x12\v\n" +
 	"\aStarted\x10\x01\x12\f\n" +
-	"\bFinished\x10\x02:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05value\"\xcd\x02\n" +
-	"#TVoiceActivityDetectorSemanticFrame\x12\x83\x01\n" +
-	"\x12SpeechActivityType\x18\x01 \x01(\v2\x1f.NAlice.TSpeechActivityTypeSlotB0\xaa\xdd\x1b\x14speech_activity_type\xba\x85\x1c\x14speech_activity_typeR\x14speech_activity_type\x12k\n" +
-	"\x10TimestampSeconds\x18\x02 \x01(\v2\x12.NAlice.TInt64SlotB*\xaa\xdd\x1b\x11timestamp_seconds\xba\x85\x1c\x11timestamp_secondsR\x11timestamp_seconds:3\xa8\xdd\x1b\x04\x9a\xff\x1b+alice.smart_speaker.voice_activity_detectorB\xc2\x01\n" +
-	"Fru.yandex.alice.megamind.protos.scenarios.frames.speech_activity_frameB\x13FrameSpeechActivityP\x01Zaa.yandex-team.ru/alice/megamind/protos/scenarios/frames/speech_activity_frame;speechactivityframeb\x06proto3"
+	"\bFinished\x10\x02B\a\n" +
+	"\x05Value\"\xb6\x01\n" +
+	"#TVoiceActivityDetectorSemanticFrame\x12O\n" +
+	"\x12SpeechActivityType\x18\x01 \x01(\v2\x1f.NAlice.TSpeechActivityTypeSlotR\x12SpeechActivityType\x12>\n" +
+	"\x10TimestampSeconds\x18\x02 \x01(\v2\x12.NAlice.TInt64SlotR\x10TimestampSecondsB\xcc\x01\n" +
+	"\n" +
+	"com.NAliceB\x18SpeechActivityFrameProtoP\x01Zlgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/scenarios/frames/speech_activity_frame\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_scenarios_frames_speech_activity_frame_speech_activity_frame_proto_rawDescOnce sync.Once

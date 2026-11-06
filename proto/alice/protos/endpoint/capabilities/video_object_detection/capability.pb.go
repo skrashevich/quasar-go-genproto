@@ -317,8 +317,8 @@ const file_alice_protos_endpoint_capabilities_video_object_detection_capability_
 	"\x14EObjectPresenceState\x12!\n" +
 	"\x1dOBJECT_PRESENCE_STATE_UNKNOWN\x10\x00\x12%\n" +
 	"!OBJECT_PRESENCE_STATE_NOT_PRESENT\x10\x01\x12!\n" +
-	"\x1dOBJECT_PRESENCE_STATE_PRESENT\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x91\x01B\xa9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14VideoObjectDetectionP\x01Zaa.yandex-team.ru/alice/protos/endpoint/capabilities/video_object_detection;video_object_detectionb\x06proto3"
+	"\x1dOBJECT_PRESENCE_STATE_PRESENT\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x91\x01B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14VideoObjectDetectionP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/video_object_detectionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_video_object_detection_capability_proto_rawDescOnce sync.Once

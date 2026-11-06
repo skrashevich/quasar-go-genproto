@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/camera_subscription/capability.proto
 
-package camerasubscriptionpb
+package camera_subscription
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -568,8 +568,8 @@ const file_alice_protos_endpoint_capabilities_camera_subscription_capability_pro
 	"\x13ESubscriptionStatus\x12\x1f\n" +
 	"\x1bSUBSCRIPTION_STATUS_UNKNOWN\x10\x00\x12 \n" +
 	"\x1cSUBSCRIPTION_STATUS_DISABLED\x10\x01\x12\x1e\n" +
-	"\x1aSUBSCRIPTION_STATUS_ACTIVE\x10\x02:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa0\x01B\xaf\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB!CameraSubscriptionCapabilityProtoZ\\a.yandex-team.ru/alice/protos/endpoint/capabilities/camera_subscription;camerasubscriptionpbb\x06proto3"
+	"\x1aSUBSCRIPTION_STATUS_ACTIVE\x10\x02:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa0\x01B\xb9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB!CameraSubscriptionCapabilityProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/camera_subscriptionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_camera_subscription_capability_proto_rawDescOnce sync.Once

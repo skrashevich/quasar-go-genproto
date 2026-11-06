@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_video_stream/capability.proto
 
-package videostreampb
+package iot_video_stream
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -664,8 +664,8 @@ const file_alice_protos_endpoint_capabilities_iot_video_stream_capability_proto_
 	"\x14VIDEO_RESOLUTION_480\x10\x01\x12\x19\n" +
 	"\x15VIDEO_RESOLUTION_1080\x10\x02\x12\x19\n" +
 	"\x15VIDEO_RESOLUTION_1440\x10\x03\x12\x19\n" +
-	"\x15VIDEO_RESOLUTION_AUTO\x10\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cxB\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eTIotVideoStreamCapabilityProtoP\x01ZRa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_video_stream;videostreampbb\x06proto3"
+	"\x15VIDEO_RESOLUTION_AUTO\x10\x04:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cxB\xb5\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eTIotVideoStreamCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_video_streamb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_video_stream_capability_proto_rawDescOnce sync.Once

@@ -24,33 +24,109 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ECredentialStatus int32
+
+const (
+	ECredentialStatus_CRED_STATUS_VALID                    ECredentialStatus = 0
+	ECredentialStatus_CRED_STATUS_NEED_RESET               ECredentialStatus = 1
+	ECredentialStatus_CRED_STATUS_EXPIRED                  ECredentialStatus = 2
+	ECredentialStatus_CRED_STATUS_NOAUTH                   ECredentialStatus = 3
+	ECredentialStatus_CRED_STATUS_DISABLED                 ECredentialStatus = 4
+	ECredentialStatus_CRED_STATUS_INVALID                  ECredentialStatus = 5
+	ECredentialStatus_CRED_STATUS_NEOLITE                  ECredentialStatus = 6
+	ECredentialStatus_CRED_STATUS_BORIGIN_MISMATCH         ECredentialStatus = 7
+	ECredentialStatus_CRED_STATUS_WRONG_GUARD              ECredentialStatus = 8
+	ECredentialStatus_CRED_STATUS_NEOLITE_SESSION          ECredentialStatus = 9
+	ECredentialStatus_CRED_STATUS_BORIGIN_MISMATCH_SESSION ECredentialStatus = 10
+	ECredentialStatus_CRED_STATUS_UNKNOWN                  ECredentialStatus = 255
+)
+
+// Enum value maps for ECredentialStatus.
+var (
+	ECredentialStatus_name = map[int32]string{
+		0:   "CRED_STATUS_VALID",
+		1:   "CRED_STATUS_NEED_RESET",
+		2:   "CRED_STATUS_EXPIRED",
+		3:   "CRED_STATUS_NOAUTH",
+		4:   "CRED_STATUS_DISABLED",
+		5:   "CRED_STATUS_INVALID",
+		6:   "CRED_STATUS_NEOLITE",
+		7:   "CRED_STATUS_BORIGIN_MISMATCH",
+		8:   "CRED_STATUS_WRONG_GUARD",
+		9:   "CRED_STATUS_NEOLITE_SESSION",
+		10:  "CRED_STATUS_BORIGIN_MISMATCH_SESSION",
+		255: "CRED_STATUS_UNKNOWN",
+	}
+	ECredentialStatus_value = map[string]int32{
+		"CRED_STATUS_VALID":                    0,
+		"CRED_STATUS_NEED_RESET":               1,
+		"CRED_STATUS_EXPIRED":                  2,
+		"CRED_STATUS_NOAUTH":                   3,
+		"CRED_STATUS_DISABLED":                 4,
+		"CRED_STATUS_INVALID":                  5,
+		"CRED_STATUS_NEOLITE":                  6,
+		"CRED_STATUS_BORIGIN_MISMATCH":         7,
+		"CRED_STATUS_WRONG_GUARD":              8,
+		"CRED_STATUS_NEOLITE_SESSION":          9,
+		"CRED_STATUS_BORIGIN_MISMATCH_SESSION": 10,
+		"CRED_STATUS_UNKNOWN":                  255,
+	}
+)
+
+func (x ECredentialStatus) Enum() *ECredentialStatus {
+	p := new(ECredentialStatus)
+	*p = x
+	return p
+}
+
+func (x ECredentialStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ECredentialStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_alice_megamind_protos_blackbox_blackbox_proto_enumTypes[0].Descriptor()
+}
+
+func (ECredentialStatus) Type() protoreflect.EnumType {
+	return &file_alice_megamind_protos_blackbox_blackbox_proto_enumTypes[0]
+}
+
+func (x ECredentialStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ECredentialStatus.Descriptor instead.
+func (ECredentialStatus) EnumDescriptor() ([]byte, []int) {
+	return file_alice_megamind_protos_blackbox_blackbox_proto_rawDescGZIP(), []int{0}
+}
+
 type TBlackBoxUserInfo struct {
 	state                          protoimpl.MessageState              `protogen:"open.v1"`
-	Uid                            string                              `protobuf:"bytes,1,opt,name=Uid,json=uid,proto3" json:"Uid,omitempty"`
-	Email                          string                              `protobuf:"bytes,2,opt,name=Email,json=email,proto3" json:"Email,omitempty"`
-	FirstName                      string                              `protobuf:"bytes,3,opt,name=FirstName,json=firstName,proto3" json:"FirstName,omitempty"`
-	LastName                       string                              `protobuf:"bytes,4,opt,name=LastName,json=lastName,proto3" json:"LastName,omitempty"`
-	Phone                          string                              `protobuf:"bytes,5,opt,name=Phone,json=phone,proto3" json:"Phone,omitempty"`
-	HasYandexPlus                  bool                                `protobuf:"varint,6,opt,name=HasYandexPlus,json=hasYandexPlus,proto3" json:"HasYandexPlus,omitempty"`
-	IsStaff                        bool                                `protobuf:"varint,7,opt,name=IsStaff,json=isStaff,proto3" json:"IsStaff,omitempty"`
-	IsBetaTester                   bool                                `protobuf:"varint,8,opt,name=IsBetaTester,json=isBetaTester,proto3" json:"IsBetaTester,omitempty"`
-	HasMusicSubscription           bool                                `protobuf:"varint,9,opt,name=HasMusicSubscription,json=hasMusicSubscription,proto3" json:"HasMusicSubscription,omitempty"`
-	MusicSubscriptionRegionId      uint64                              `protobuf:"varint,12,opt,name=MusicSubscriptionRegionId,json=musicSubscriptionRegionId,proto3" json:"MusicSubscriptionRegionId,omitempty"`
-	HasBookmate                    bool                                `protobuf:"varint,13,opt,name=HasBookmate,json=hasBookmate,proto3" json:"HasBookmate,omitempty"`
-	IsChildAccount                 bool                                `protobuf:"varint,14,opt,name=IsChildAccount,json=isChildAccount,proto3" json:"IsChildAccount,omitempty"`
-	HasAlicePro                    bool                                `protobuf:"varint,17,opt,name=HasAlicePro,json=hasAlicePro,proto3" json:"HasAlicePro,omitempty"`
-	OAuthTokenScopes               []string                            `protobuf:"bytes,20,rep,name=OAuthTokenScopes,json=oAuthTokenScopes,proto3" json:"OAuthTokenScopes,omitempty"`
-	KpSubscriptions                *TBlackBoxUserInfo_TKpSubscriptions `protobuf:"bytes,21,opt,name=KpSubscriptions,json=kp_subscriptions,proto3" json:"KpSubscriptions,omitempty"`
-	HavePassword                   bool                                `protobuf:"varint,22,opt,name=HavePassword,json=havePassword,proto3" json:"HavePassword,omitempty"`
-	IsFederal                      bool                                `protobuf:"varint,24,opt,name=IsFederal,json=isFederal,proto3" json:"IsFederal,omitempty"`
-	Organizations                  []string                            `protobuf:"bytes,25,rep,name=Organizations,json=organizations,proto3" json:"Organizations,omitempty"`
+	Uid                            string                              `protobuf:"bytes,1,opt,name=Uid,proto3" json:"Uid,omitempty"`
+	Email                          string                              `protobuf:"bytes,2,opt,name=Email,proto3" json:"Email,omitempty"`
+	FirstName                      string                              `protobuf:"bytes,3,opt,name=FirstName,proto3" json:"FirstName,omitempty"`
+	LastName                       string                              `protobuf:"bytes,4,opt,name=LastName,proto3" json:"LastName,omitempty"`
+	Phone                          string                              `protobuf:"bytes,5,opt,name=Phone,proto3" json:"Phone,omitempty"`
+	HasYandexPlus                  bool                                `protobuf:"varint,6,opt,name=HasYandexPlus,proto3" json:"HasYandexPlus,omitempty"`
+	IsStaff                        bool                                `protobuf:"varint,7,opt,name=IsStaff,proto3" json:"IsStaff,omitempty"`
+	IsBetaTester                   bool                                `protobuf:"varint,8,opt,name=IsBetaTester,proto3" json:"IsBetaTester,omitempty"`
+	HasMusicSubscription           bool                                `protobuf:"varint,9,opt,name=HasMusicSubscription,proto3" json:"HasMusicSubscription,omitempty"`
+	MusicSubscriptionRegionId      uint64                              `protobuf:"varint,12,opt,name=MusicSubscriptionRegionId,proto3" json:"MusicSubscriptionRegionId,omitempty"`
+	HasBookmate                    bool                                `protobuf:"varint,13,opt,name=HasBookmate,proto3" json:"HasBookmate,omitempty"`
+	IsChildAccount                 bool                                `protobuf:"varint,14,opt,name=IsChildAccount,proto3" json:"IsChildAccount,omitempty"`
+	HasAlicePro                    bool                                `protobuf:"varint,17,opt,name=HasAlicePro,proto3" json:"HasAlicePro,omitempty"`
+	OAuthTokenScopes               []string                            `protobuf:"bytes,20,rep,name=OAuthTokenScopes,proto3" json:"OAuthTokenScopes,omitempty"`
+	KpSubscriptions                *TBlackBoxUserInfo_TKpSubscriptions `protobuf:"bytes,21,opt,name=KpSubscriptions,proto3" json:"KpSubscriptions,omitempty"`
+	HavePassword                   bool                                `protobuf:"varint,22,opt,name=HavePassword,proto3" json:"HavePassword,omitempty"`
+	IsFederal                      bool                                `protobuf:"varint,24,opt,name=IsFederal,proto3" json:"IsFederal,omitempty"`
+	Organizations                  []string                            `protobuf:"bytes,25,rep,name=Organizations,proto3" json:"Organizations,omitempty"`
+	MusicRestriction               *string                             `protobuf:"bytes,15,opt,name=MusicRestriction,proto3,oneof" json:"MusicRestriction,omitempty"`
+	VideoRestriction               *string                             `protobuf:"bytes,16,opt,name=VideoRestriction,proto3,oneof" json:"VideoRestriction,omitempty"`
+	StaffLogin                     *string                             `protobuf:"bytes,18,opt,name=StaffLogin,proto3,oneof" json:"StaffLogin,omitempty"`
+	UserTicket                     *string                             `protobuf:"bytes,19,opt,name=UserTicket,proto3,oneof" json:"UserTicket,omitempty"`
+	AccountType                    *string                             `protobuf:"bytes,23,opt,name=AccountType,proto3,oneof" json:"AccountType,omitempty"`
 	Porganizations                 []string                            `protobuf:"bytes,26,rep,name=Porganizations,json=porganizations,proto3" json:"Porganizations,omitempty"`
 	IsIdentified                   bool                                `protobuf:"varint,30,opt,name=IsIdentified,json=is_identified,proto3" json:"IsIdentified,omitempty"`
-	MusicRestriction               *string                             `protobuf:"bytes,15,opt,name=MusicRestriction,json=musicRestriction,proto3,oneof" json:"MusicRestriction,omitempty"`
-	VideoRestriction               *string                             `protobuf:"bytes,16,opt,name=VideoRestriction,json=videoRestriction,proto3,oneof" json:"VideoRestriction,omitempty"`
-	StaffLogin                     *string                             `protobuf:"bytes,18,opt,name=StaffLogin,json=staffLogin,proto3,oneof" json:"StaffLogin,omitempty"`
-	UserTicket                     *string                             `protobuf:"bytes,19,opt,name=UserTicket,json=userTicket,proto3,oneof" json:"UserTicket,omitempty"`
-	AccountType                    *string                             `protobuf:"bytes,23,opt,name=AccountType,json=accountType,proto3,oneof" json:"AccountType,omitempty"`
 	AliceProEndTimeSeconds         *uint64                             `protobuf:"varint,27,opt,name=AliceProEndTimeSeconds,json=aliceProEndTimeSeconds,proto3,oneof" json:"AliceProEndTimeSeconds,omitempty"`
 	AliceLPBaseBoostEndTimeSeconds *uint64                             `protobuf:"varint,28,opt,name=AliceLPBaseBoostEndTimeSeconds,json=aliceLPBaseBoostEndTimeSeconds,proto3,oneof" json:"AliceLPBaseBoostEndTimeSeconds,omitempty"`
 	AliceNLBaseBoostEndTimeSeconds *uint64                             `protobuf:"varint,29,opt,name=AliceNLBaseBoostEndTimeSeconds,json=aliceNLBaseBoostEndTimeSeconds,proto3,oneof" json:"AliceNLBaseBoostEndTimeSeconds,omitempty"`
@@ -214,20 +290,6 @@ func (x *TBlackBoxUserInfo) GetOrganizations() []string {
 	return nil
 }
 
-func (x *TBlackBoxUserInfo) GetPorganizations() []string {
-	if x != nil {
-		return x.Porganizations
-	}
-	return nil
-}
-
-func (x *TBlackBoxUserInfo) GetIsIdentified() bool {
-	if x != nil {
-		return x.IsIdentified
-	}
-	return false
-}
-
 func (x *TBlackBoxUserInfo) GetMusicRestriction() string {
 	if x != nil && x.MusicRestriction != nil {
 		return *x.MusicRestriction
@@ -263,6 +325,20 @@ func (x *TBlackBoxUserInfo) GetAccountType() string {
 	return ""
 }
 
+func (x *TBlackBoxUserInfo) GetPorganizations() []string {
+	if x != nil {
+		return x.Porganizations
+	}
+	return nil
+}
+
+func (x *TBlackBoxUserInfo) GetIsIdentified() bool {
+	if x != nil {
+		return x.IsIdentified
+	}
+	return false
+}
+
 func (x *TBlackBoxUserInfo) GetAliceProEndTimeSeconds() uint64 {
 	if x != nil && x.AliceProEndTimeSeconds != nil {
 		return *x.AliceProEndTimeSeconds
@@ -286,12 +362,12 @@ func (x *TBlackBoxUserInfo) GetAliceNLBaseBoostEndTimeSeconds() uint64 {
 
 type TBlackBoxUserInfo_TKpSubscriptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	HasBasicKinopoisk bool                   `protobuf:"varint,1,opt,name=HasBasicKinopoisk,json=has_basic_kinopoisk,proto3" json:"HasBasicKinopoisk,omitempty"`
-	HasAmediateka     bool                   `protobuf:"varint,2,opt,name=HasAmediateka,json=has_amediateka,proto3" json:"HasAmediateka,omitempty"`
-	HasSuperPlus      bool                   `protobuf:"varint,3,opt,name=HasSuperPlus,json=has_super_plus,proto3" json:"HasSuperPlus,omitempty"`
-	HasKpStart        bool                   `protobuf:"varint,4,opt,name=HasKpStart,json=has_kp_start,proto3" json:"HasKpStart,omitempty"`
-	HasMatchPremier   bool                   `protobuf:"varint,5,opt,name=HasMatchPremier,json=has_match_premier,proto3" json:"HasMatchPremier,omitempty"`
-	HasMatchFootball  bool                   `protobuf:"varint,6,opt,name=HasMatchFootball,json=has_match_football,proto3" json:"HasMatchFootball,omitempty"`
+	HasBasicKinopoisk bool                   `protobuf:"varint,1,opt,name=HasBasicKinopoisk,proto3" json:"HasBasicKinopoisk,omitempty"`
+	HasAmediateka     bool                   `protobuf:"varint,2,opt,name=HasAmediateka,proto3" json:"HasAmediateka,omitempty"`
+	HasSuperPlus      bool                   `protobuf:"varint,3,opt,name=HasSuperPlus,proto3" json:"HasSuperPlus,omitempty"`
+	HasKpStart        bool                   `protobuf:"varint,4,opt,name=HasKpStart,proto3" json:"HasKpStart,omitempty"`
+	HasMatchPremier   bool                   `protobuf:"varint,5,opt,name=HasMatchPremier,proto3" json:"HasMatchPremier,omitempty"`
+	HasMatchFootball  bool                   `protobuf:"varint,6,opt,name=HasMatchFootball,proto3" json:"HasMatchFootball,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -372,50 +448,49 @@ var File_alice_megamind_protos_blackbox_blackbox_proto protoreflect.FileDescript
 
 const file_alice_megamind_protos_blackbox_blackbox_proto_rawDesc = "" +
 	"\n" +
-	"-alice/megamind/protos/blackbox/blackbox.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x91\x13\n" +
-	"\x11TBlackBoxUserInfo\x12%\n" +
-	"\x03Uid\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\x03uid\xa8\x8d'\x01\xa8\x8d'\x04\xf8\x91*\x03R\x03uid\x12+\n" +
-	"\x05Email\x18\x02 \x01(\tB\x15\xaa\xdd\x1b\x05email\xa8\x8d'\x01\xa8\x8d'\x04\xf8\x91*\x02R\x05email\x120\n" +
-	"\tFirstName\x18\x03 \x01(\tB\x12\xaa\xdd\x1b\n" +
-	"first_name\xf8\x91*\x02R\tfirstName\x12-\n" +
-	"\bLastName\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\tlast_name\xf8\x91*\x02R\blastName\x12+\n" +
-	"\x05Phone\x18\x05 \x01(\tB\x15\xaa\xdd\x1b\x05phone\xa8\x8d'\x01\xa8\x8d'\x04\xf8\x91*\x02R\x05phone\x129\n" +
-	"\rHasYandexPlus\x18\x06 \x01(\bB\x13\xaa\xdd\x1b\x0fhas_yandex_plusR\rhasYandexPlus\x12*\n" +
-	"\aIsStaff\x18\a \x01(\bB\x10\xaa\xdd\x1b\bis_staff\xf8\x91*\x03R\aisStaff\x126\n" +
-	"\fIsBetaTester\x18\b \x01(\bB\x12\xaa\xdd\x1b\x0eis_beta_testerR\fisBetaTester\x12N\n" +
-	"\x14HasMusicSubscription\x18\t \x01(\bB\x1a\xaa\xdd\x1b\x16has_music_subscriptionR\x14hasMusicSubscription\x12^\n" +
-	"\x19MusicSubscriptionRegionId\x18\f \x01(\x04B \xaa\xdd\x1b\x1cmusic_subscription_region_idR\x19musicSubscriptionRegionId\x122\n" +
-	"\vHasBookmate\x18\r \x01(\bB\x10\xaa\xdd\x1b\fhas_bookmateR\vhasBookmate\x12@\n" +
-	"\x0eIsChildAccount\x18\x0e \x01(\bB\x18\xaa\xdd\x1b\x10is_child_account\xf8\x91*\x03R\x0eisChildAccount\x123\n" +
-	"\vHasAlicePro\x18\x11 \x01(\bB\x11\xaa\xdd\x1b\rhas_alice_proR\vhasAlicePro\x12B\n" +
-	"\x10OAuthTokenScopes\x18\x14 \x03(\tB\x16\xaa\xdd\x1b\x12oauth_token_scopesR\x10oAuthTokenScopes\x12k\n" +
-	"\x0fKpSubscriptions\x18\x15 \x01(\v2*.NAlice.TBlackBoxUserInfo.TKpSubscriptionsB\x14\xaa\xdd\x1b\x10kp_subscriptionsR\x10kp_subscriptions\x125\n" +
-	"\fHavePassword\x18\x16 \x01(\bB\x11\xaa\xdd\x1b\rhave_passwordR\fhavePassword\x12,\n" +
-	"\tIsFederal\x18\x18 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"is_federalR\tisFederal\x127\n" +
-	"\rOrganizations\x18\x19 \x03(\tB\x11\xaa\xdd\x1b\rorganizationsR\rorganizations\x12:\n" +
+	"-alice/megamind/protos/blackbox/blackbox.proto\x12\x06NAlice\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x89\x0e\n" +
+	"\x11TBlackBoxUserInfo\x12\x10\n" +
+	"\x03Uid\x18\x01 \x01(\tR\x03Uid\x12\x14\n" +
+	"\x05Email\x18\x02 \x01(\tR\x05Email\x12\x1c\n" +
+	"\tFirstName\x18\x03 \x01(\tR\tFirstName\x12\x1a\n" +
+	"\bLastName\x18\x04 \x01(\tR\bLastName\x12\x14\n" +
+	"\x05Phone\x18\x05 \x01(\tR\x05Phone\x12$\n" +
+	"\rHasYandexPlus\x18\x06 \x01(\bR\rHasYandexPlus\x12\x18\n" +
+	"\aIsStaff\x18\a \x01(\bR\aIsStaff\x12\"\n" +
+	"\fIsBetaTester\x18\b \x01(\bR\fIsBetaTester\x122\n" +
+	"\x14HasMusicSubscription\x18\t \x01(\bR\x14HasMusicSubscription\x12<\n" +
+	"\x19MusicSubscriptionRegionId\x18\f \x01(\x04R\x19MusicSubscriptionRegionId\x12 \n" +
+	"\vHasBookmate\x18\r \x01(\bR\vHasBookmate\x12&\n" +
+	"\x0eIsChildAccount\x18\x0e \x01(\bR\x0eIsChildAccount\x12 \n" +
+	"\vHasAlicePro\x18\x11 \x01(\bR\vHasAlicePro\x12*\n" +
+	"\x10OAuthTokenScopes\x18\x14 \x03(\tR\x10OAuthTokenScopes\x12T\n" +
+	"\x0fKpSubscriptions\x18\x15 \x01(\v2*.NAlice.TBlackBoxUserInfo.TKpSubscriptionsR\x0fKpSubscriptions\x12\"\n" +
+	"\fHavePassword\x18\x16 \x01(\bR\fHavePassword\x12\x1c\n" +
+	"\tIsFederal\x18\x18 \x01(\bR\tIsFederal\x12$\n" +
+	"\rOrganizations\x18\x19 \x03(\tR\rOrganizations\x12/\n" +
+	"\x10MusicRestriction\x18\x0f \x01(\tH\x00R\x10MusicRestriction\x88\x01\x01\x12/\n" +
+	"\x10VideoRestriction\x18\x10 \x01(\tH\x01R\x10VideoRestriction\x88\x01\x01\x12#\n" +
+	"\n" +
+	"StaffLogin\x18\x12 \x01(\tH\x02R\n" +
+	"StaffLogin\x88\x01\x01\x12#\n" +
+	"\n" +
+	"UserTicket\x18\x13 \x01(\tH\x03R\n" +
+	"UserTicket\x88\x01\x01\x12%\n" +
+	"\vAccountType\x18\x17 \x01(\tH\x04R\vAccountType\x88\x01\x01\x12:\n" +
 	"\x0ePorganizations\x18\x1a \x03(\tB\x12\xaa\xdd\x1b\x0eporganizationsR\x0eporganizations\x12:\n" +
-	"\fIsIdentified\x18\x1e \x01(\bB\x15\xaa\xdd\x1b\ris_identified\xf8\x91*\x03R\ris_identified\x12F\n" +
-	"\x10MusicRestriction\x18\x0f \x01(\tB\x15\xaa\xdd\x1b\x11music_restrictionH\x00R\x10musicRestriction\x88\x01\x01\x12F\n" +
-	"\x10VideoRestriction\x18\x10 \x01(\tB\x15\xaa\xdd\x1b\x11video_restrictionH\x01R\x10videoRestriction\x88\x01\x01\x124\n" +
-	"\n" +
-	"StaffLogin\x18\x12 \x01(\tB\x0f\xaa\xdd\x1b\vstaff_loginH\x02R\n" +
-	"staffLogin\x88\x01\x01\x12@\n" +
-	"\n" +
-	"UserTicket\x18\x13 \x01(\tB\x1b\xaa\xdd\x1b\vuser_ticket\xa8\x8d'\x01\xa8\x8d'\x04\xf8\x91*\x02H\x03R\n" +
-	"userTicket\x88\x01\x01\x127\n" +
-	"\vAccountType\x18\x17 \x01(\tB\x10\xaa\xdd\x1b\faccount_typeH\x04R\vaccountType\x88\x01\x01\x12[\n" +
+	"\fIsIdentified\x18\x1e \x01(\bB\x15\xaa\xdd\x1b\ris_identified\xf8\x91*\x03R\ris_identified\x12[\n" +
 	"\x16AliceProEndTimeSeconds\x18\x1b \x01(\x04B\x1e\xaa\xdd\x1b\x1aalice_pro_end_time_secondsH\x05R\x16aliceProEndTimeSeconds\x88\x01\x01\x12u\n" +
 	"\x1eAliceLPBaseBoostEndTimeSeconds\x18\x1c \x01(\x04B(\xaa\xdd\x1b$alice_lp_base_boost_end_time_secondsH\x06R\x1ealiceLPBaseBoostEndTimeSeconds\x88\x01\x01\x12u\n" +
-	"\x1eAliceNLBaseBoostEndTimeSeconds\x18\x1d \x01(\x04B(\xaa\xdd\x1b$alice_nl_base_boost_end_time_secondsH\aR\x1ealiceNLBaseBoostEndTimeSeconds\x88\x01\x01\x1a\x8d\x03\n" +
-	"\x10TKpSubscriptions\x12G\n" +
-	"\x11HasBasicKinopoisk\x18\x01 \x01(\bB\x17\xaa\xdd\x1b\x13has_basic_kinopoiskR\x13has_basic_kinopoisk\x129\n" +
-	"\rHasAmediateka\x18\x02 \x01(\bB\x12\xaa\xdd\x1b\x0ehas_amediatekaR\x0ehas_amediateka\x128\n" +
-	"\fHasSuperPlus\x18\x03 \x01(\bB\x12\xaa\xdd\x1b\x0ehas_super_plusR\x0ehas_super_plus\x122\n" +
+	"\x1eAliceNLBaseBoostEndTimeSeconds\x18\x1d \x01(\x04B(\xaa\xdd\x1b$alice_nl_base_boost_end_time_secondsH\aR\x1ealiceNLBaseBoostEndTimeSeconds\x88\x01\x01\x1a\x80\x02\n" +
+	"\x10TKpSubscriptions\x12,\n" +
+	"\x11HasBasicKinopoisk\x18\x01 \x01(\bR\x11HasBasicKinopoisk\x12$\n" +
+	"\rHasAmediateka\x18\x02 \x01(\bR\rHasAmediateka\x12\"\n" +
+	"\fHasSuperPlus\x18\x03 \x01(\bR\fHasSuperPlus\x12\x1e\n" +
 	"\n" +
-	"HasKpStart\x18\x04 \x01(\bB\x10\xaa\xdd\x1b\fhas_kp_startR\fhas_kp_start\x12A\n" +
-	"\x0fHasMatchPremier\x18\x05 \x01(\bB\x15\xaa\xdd\x1b\x11has_match_premierR\x11has_match_premier\x12D\n" +
-	"\x10HasMatchFootball\x18\x06 \x01(\bB\x16\xaa\xdd\x1b\x12has_match_footballR\x12has_match_football:\x04\xa8\xdd\x1b\x04B\x13\n" +
+	"HasKpStart\x18\x04 \x01(\bR\n" +
+	"HasKpStart\x12(\n" +
+	"\x0fHasMatchPremier\x18\x05 \x01(\bR\x0fHasMatchPremier\x12*\n" +
+	"\x10HasMatchFootball\x18\x06 \x01(\bR\x10HasMatchFootballB\x13\n" +
 	"\x11_MusicRestrictionB\x13\n" +
 	"\x11_VideoRestrictionB\r\n" +
 	"\v_StaffLoginB\r\n" +
@@ -423,8 +498,23 @@ const file_alice_megamind_protos_blackbox_blackbox_proto_rawDesc = "" +
 	"\f_AccountTypeB\x19\n" +
 	"\x17_AliceProEndTimeSecondsB!\n" +
 	"\x1f_AliceLPBaseBoostEndTimeSecondsB!\n" +
-	"\x1f_AliceNLBaseBoostEndTimeSecondsBm\n" +
-	"(ru.yandex.alice.megamind.protos.blackboxB\x10BlackboxUserInfoZ/a.yandex-team.ru/alice/megamind/protos/blackboxb\x06proto3"
+	"\x1f_AliceNLBaseBoostEndTimeSeconds*\xe7\x02\n" +
+	"\x11ECredentialStatus\x12\x15\n" +
+	"\x11CRED_STATUS_VALID\x10\x00\x12\x1a\n" +
+	"\x16CRED_STATUS_NEED_RESET\x10\x01\x12\x17\n" +
+	"\x13CRED_STATUS_EXPIRED\x10\x02\x12\x16\n" +
+	"\x12CRED_STATUS_NOAUTH\x10\x03\x12\x18\n" +
+	"\x14CRED_STATUS_DISABLED\x10\x04\x12\x17\n" +
+	"\x13CRED_STATUS_INVALID\x10\x05\x12\x17\n" +
+	"\x13CRED_STATUS_NEOLITE\x10\x06\x12 \n" +
+	"\x1cCRED_STATUS_BORIGIN_MISMATCH\x10\a\x12\x1b\n" +
+	"\x17CRED_STATUS_WRONG_GUARD\x10\b\x12\x1f\n" +
+	"\x1bCRED_STATUS_NEOLITE_SESSION\x10\t\x12(\n" +
+	"$CRED_STATUS_BORIGIN_MISMATCH_SESSION\x10\n" +
+	"\x12\x18\n" +
+	"\x13CRED_STATUS_UNKNOWN\x10\xff\x01B\xa3\x01\n" +
+	"\n" +
+	"com.NAliceB\rBlackboxProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/blackbox\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_blackbox_blackbox_proto_rawDescOnce sync.Once
@@ -438,13 +528,15 @@ func file_alice_megamind_protos_blackbox_blackbox_proto_rawDescGZIP() []byte {
 	return file_alice_megamind_protos_blackbox_blackbox_proto_rawDescData
 }
 
+var file_alice_megamind_protos_blackbox_blackbox_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_alice_megamind_protos_blackbox_blackbox_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_alice_megamind_protos_blackbox_blackbox_proto_goTypes = []any{
-	(*TBlackBoxUserInfo)(nil),                  // 0: NAlice.TBlackBoxUserInfo
-	(*TBlackBoxUserInfo_TKpSubscriptions)(nil), // 1: NAlice.TBlackBoxUserInfo.TKpSubscriptions
+	(ECredentialStatus)(0),                     // 0: NAlice.ECredentialStatus
+	(*TBlackBoxUserInfo)(nil),                  // 1: NAlice.TBlackBoxUserInfo
+	(*TBlackBoxUserInfo_TKpSubscriptions)(nil), // 2: NAlice.TBlackBoxUserInfo.TKpSubscriptions
 }
 var file_alice_megamind_protos_blackbox_blackbox_proto_depIdxs = []int32{
-	1, // 0: NAlice.TBlackBoxUserInfo.KpSubscriptions:type_name -> NAlice.TBlackBoxUserInfo.TKpSubscriptions
+	2, // 0: NAlice.TBlackBoxUserInfo.KpSubscriptions:type_name -> NAlice.TBlackBoxUserInfo.TKpSubscriptions
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -463,13 +555,14 @@ func file_alice_megamind_protos_blackbox_blackbox_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_alice_megamind_protos_blackbox_blackbox_proto_rawDesc), len(file_alice_megamind_protos_blackbox_blackbox_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_alice_megamind_protos_blackbox_blackbox_proto_goTypes,
 		DependencyIndexes: file_alice_megamind_protos_blackbox_blackbox_proto_depIdxs,
+		EnumInfos:         file_alice_megamind_protos_blackbox_blackbox_proto_enumTypes,
 		MessageInfos:      file_alice_megamind_protos_blackbox_blackbox_proto_msgTypes,
 	}.Build()
 	File_alice_megamind_protos_blackbox_blackbox_proto = out.File

@@ -84,8 +84,8 @@ const file_alice_protos_api_alicekit_events_common_chunk_header_chunk_header_pro
 	"\vSubStreamId\x18\x02 \x01(\rB\x11\xaa\xdd\x1b\rsub_stream_idH\x01R\rsub_stream_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\n" +
 	"\n" +
 	"\b_ChunkIdB\x0e\n" +
-	"\f_SubStreamIdB\x96\x01\n" +
-	">ru.yandex.alice.protos.api.alicekit.events.common.chunk_headerB\vChunkHeaderP\x01ZEa.yandex-team.ru/alice/protos/api/alicekit/events/common/chunk_headerb\x06proto3"
+	"\f_SubStreamIdB\xb5\x01\n" +
+	">ru.yandex.alice.protos.api.alicekit.events.common.chunk_headerB\vChunkHeaderP\x01Zdgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/chunk_headerb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_chunk_header_chunk_header_proto_rawDescOnce sync.Once

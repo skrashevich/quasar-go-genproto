@@ -24,8 +24,8 @@ const (
 
 type TDevice struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Endpoints     []*endpoint.TEndpoint  `protobuf:"bytes,1,rep,name=Endpoints,json=endpoints,proto3" json:"Endpoints,omitempty"`
-	Aggregates    []*endpoint.TAggregate `protobuf:"bytes,2,rep,name=Aggregates,json=aggregates,proto3" json:"Aggregates,omitempty"`
+	Endpoints     []*endpoint.TEndpoint  `protobuf:"bytes,1,rep,name=Endpoints,proto3" json:"Endpoints,omitempty"`
+	Aggregates    []*endpoint.TAggregate `protobuf:"bytes,2,rep,name=Aggregates,proto3" json:"Aggregates,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,8 +76,8 @@ func (x *TDevice) GetAggregates() []*endpoint.TAggregate {
 
 type TDeviceDescription struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Device        *TDevice               `protobuf:"bytes,1,opt,name=Device,json=device,proto3" json:"Device,omitempty"`
-	HashSum       []byte                 `protobuf:"bytes,2,opt,name=HashSum,json=hash_sum,proto3" json:"HashSum,omitempty"`
+	Device        *TDevice               `protobuf:"bytes,1,opt,name=Device,proto3" json:"Device,omitempty"`
+	HashSum       []byte                 `protobuf:"bytes,2,opt,name=HashSum,proto3" json:"HashSum,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -132,13 +132,14 @@ const file_alice_protos_api_iot_device_device_proto_rawDesc = "" +
 	"\n" +
 	"(alice/protos/api/iot_device/device.proto\x12\vNAlice.NIot\x1a%alice/protos/endpoint/aggregate.proto\x1a$alice/protos/endpoint/endpoint.proto\"n\n" +
 	"\aTDevice\x12/\n" +
-	"\tEndpoints\x18\x01 \x03(\v2\x11.NAlice.TEndpointR\tendpoints\x122\n" +
+	"\tEndpoints\x18\x01 \x03(\v2\x11.NAlice.TEndpointR\tEndpoints\x122\n" +
 	"\n" +
 	"Aggregates\x18\x02 \x03(\v2\x12.NAlice.TAggregateR\n" +
-	"aggregates\"]\n" +
+	"Aggregates\"\\\n" +
 	"\x12TDeviceDescription\x12,\n" +
-	"\x06Device\x18\x01 \x01(\v2\x14.NAlice.NIot.TDeviceR\x06device\x12\x19\n" +
-	"\aHashSum\x18\x02 \x01(\fR\bhash_sumB.Z,a.yandex-team.ru/alice/protos/api/iot_deviceb\x06proto3"
+	"\x06Device\x18\x01 \x01(\v2\x14.NAlice.NIot.TDeviceR\x06Device\x12\x18\n" +
+	"\aHashSum\x18\x02 \x01(\fR\aHashSumB\xb8\x01\n" +
+	"\x0fcom.NAlice.NIotB\vDeviceProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/iot_device\xa2\x02\x03NNX\xaa\x02\vNAlice.NIot\xca\x02\vNAlice\\NIot\xe2\x02\x17NAlice\\NIot\\GPBMetadata\xea\x02\fNAlice::NIotb\x06proto3"
 
 var (
 	file_alice_protos_api_iot_device_device_proto_rawDescOnce sync.Once

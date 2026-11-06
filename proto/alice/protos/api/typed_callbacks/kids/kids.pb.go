@@ -74,7 +74,7 @@ func (EKidsAwakeningCallbackReason) EnumDescriptor() ([]byte, []int) {
 
 type TKidsAwakeningTypedCallback struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Reason        EKidsAwakeningCallbackReason `protobuf:"varint,1,opt,name=Reason,json=reason,proto3,enum=NAlice.EKidsAwakeningCallbackReason" json:"Reason,omitempty"`
+	Reason        EKidsAwakeningCallbackReason `protobuf:"varint,1,opt,name=Reason,proto3,enum=NAlice.EKidsAwakeningCallbackReason" json:"Reason,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -120,15 +120,15 @@ var File_alice_protos_api_typed_callbacks_kids_kids_proto protoreflect.FileDescr
 
 const file_alice_protos_api_typed_callbacks_kids_kids_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/api/typed_callbacks/kids/kids.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8b\x01\n" +
-	"\x1bTKidsAwakeningTypedCallback\x12H\n" +
-	"\x06Reason\x18\x01 \x01(\x0e2$.NAlice.EKidsAwakeningCallbackReasonB\n" +
-	"\xaa\xdd\x1b\x06reasonR\x06reason:\"\xa8\xdd\x1b\x04\xba\xff\x1b\x1aKidsAwakeningTypedCallback*Z\n" +
+	"0alice/protos/api/typed_callbacks/kids/kids.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"[\n" +
+	"\x1bTKidsAwakeningTypedCallback\x12<\n" +
+	"\x06Reason\x18\x01 \x01(\x0e2$.NAlice.EKidsAwakeningCallbackReasonR\x06Reason*Z\n" +
 	"\x1cEKidsAwakeningCallbackReason\x12\x10\n" +
 	"\fKACR_UNKNOWN\x10\x00\x12\x16\n" +
 	"\x12KACR_TRACK_FAILURE\x10\x01\x12\x10\n" +
-	"\fKACR_TIMEOUT\x10\x02Bk\n" +
-	"/ru.yandex.alice.protos.api.typed_callbacks.kidsP\x01Z6a.yandex-team.ru/alice/protos/api/typed_callbacks/kidsb\x06proto3"
+	"\fKACR_TIMEOUT\x10\x02B\xa6\x01\n" +
+	"\n" +
+	"com.NAliceB\tKidsProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/kids\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_kids_kids_proto_rawDescOnce sync.Once

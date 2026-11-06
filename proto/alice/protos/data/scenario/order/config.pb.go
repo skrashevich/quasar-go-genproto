@@ -72,8 +72,8 @@ const file_alice_protos_data_scenario_order_config_proto_rawDesc = "" +
 	"\n" +
 	"-alice/protos/data/scenario/order/config.proto\x12\x13NAlice.NData.NOrder\x1a&yt/yt_proto/yt/formats/extension.proto\"[\n" +
 	"\x16TOrderStatusUserConfig\x12;\n" +
-	"\rHideItemNames\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fhide_item_namesR\x0fhide_item_names:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.orderZ1a.yandex-team.ru/alice/protos/data/scenario/orderb\x06proto3"
+	"\rHideItemNames\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fhide_item_namesR\x0fhide_item_names:\x04\xa8\xdd\x1b\x04B~\n" +
+	"*ru.yandex.alice.protos.data.scenario.orderZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/orderb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_order_config_proto_rawDescOnce sync.Once

@@ -26,8 +26,8 @@ const (
 
 type TAliceAnalyticsInfo struct {
 	state                 protoimpl.MessageState                          `protogen:"open.v1"`
-	ScenarioAnalyticsInfo *scenario_analytics_info.TScenarioAnalyticsInfo `protobuf:"bytes,1,opt,name=ScenarioAnalyticsInfo,json=scenario_analytics_info,proto3" json:"ScenarioAnalyticsInfo,omitempty"`
-	MatchedSemanticFrames []*frames.TSemanticFrame                        `protobuf:"bytes,5,rep,name=MatchedSemanticFrames,json=matched_semantic_frames,proto3" json:"MatchedSemanticFrames,omitempty"`
+	ScenarioAnalyticsInfo *scenario_analytics_info.TScenarioAnalyticsInfo `protobuf:"bytes,1,opt,name=ScenarioAnalyticsInfo,proto3" json:"ScenarioAnalyticsInfo,omitempty"`
+	MatchedSemanticFrames []*frames.TSemanticFrame                        `protobuf:"bytes,5,rep,name=MatchedSemanticFrames,proto3" json:"MatchedSemanticFrames,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -80,11 +80,11 @@ var File_alice_protos_api_alicekit_analytics_alice_analytics_info_alice_analytic
 
 const file_alice_protos_api_alicekit_analytics_alice_analytics_info_alice_analytics_info_proto_rawDesc = "" +
 	"\n" +
-	"Salice/protos/api/alicekit/analytics/alice_analytics_info/alice_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aYalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x1a6alice/protos/api/alicekit/scenarios/frames/frame.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9d\x03\n" +
-	"\x13TAliceAnalyticsInfo\x12}\n" +
-	"\x15ScenarioAnalyticsInfo\x18\x01 \x01(\v2(.NAlice.NAliceApi.TScenarioAnalyticsInfoB\x1b\xaa\xdd\x1b\x17scenario_analytics_infoR\x17scenario_analytics_info\x12u\n" +
-	"\x15MatchedSemanticFrames\x18\x05 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameB\x1b\xaa\xdd\x1b\x17matched_semantic_framesR\x17matched_semantic_frames:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\fFrameActionsR\aVersionR\rSemanticFrameR\x0fParentRequestIdR\x19ParentProductScenarioNameR\x14ResponseFrameActionsB\xaa\x01\n" +
-	"Bru.yandex.alice.protos.api.alicekit.analytics.alice_analytics_infoB\x17AliceAnalyticsInfoProtoP\x01ZIa.yandex-team.ru/alice/protos/api/alicekit/analytics/alice_analytics_infob\x06proto3"
+	"Salice/protos/api/alicekit/analytics/alice_analytics_info/alice_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aYalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x1a6alice/protos/api/alicekit/scenarios/frames/frame.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd9\x02\n" +
+	"\x13TAliceAnalyticsInfo\x12^\n" +
+	"\x15ScenarioAnalyticsInfo\x18\x01 \x01(\v2(.NAlice.NAliceApi.TScenarioAnalyticsInfoR\x15ScenarioAnalyticsInfo\x12V\n" +
+	"\x15MatchedSemanticFrames\x18\x05 \x03(\v2 .NAlice.NAliceApi.TSemanticFrameR\x15MatchedSemanticFramesJ\x04\b\x04\x10\x05J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\fFrameActionsR\aVersionR\rSemanticFrameR\x0fParentRequestIdR\x19ParentProductScenarioNameR\x14ResponseFrameActionsB\xfa\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x17AliceAnalyticsInfoProtoP\x01Zhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/analytics/alice_analytics_info\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_analytics_alice_analytics_info_alice_analytics_info_proto_rawDescOnce sync.Once

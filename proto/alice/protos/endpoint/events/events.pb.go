@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/events/events.proto
 
-package eventspb
+package events
 
 import (
 	source "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/source"
@@ -28,12 +28,12 @@ const (
 
 type TCapabilityEvent struct {
 	state                protoimpl.MessageState                  `protogen:"open.v1"`
-	Timestamp            *timestamppb.Timestamp                  `protobuf:"bytes,1,opt,name=Timestamp,json=timestamp,proto3" json:"Timestamp,omitempty"`
-	Event                *anypb.Any                              `protobuf:"bytes,2,opt,name=Event,json=event,proto3" json:"Event,omitempty"`
-	IsLocal              bool                                    `protobuf:"varint,3,opt,name=IsLocal,json=is_local,proto3" json:"IsLocal,omitempty"`
-	NonRetryable         bool                                    `protobuf:"varint,4,opt,name=NonRetryable,json=non_retryable,proto3" json:"NonRetryable,omitempty"`
-	EnvironmentStateMode *TCapabilityEvent_TEnvironmentStateMode `protobuf:"bytes,6,opt,name=EnvironmentStateMode,json=environment_state_mode,proto3" json:"EnvironmentStateMode,omitempty"`
-	SourceInfo           *source.TSourceInfo                     `protobuf:"bytes,7,opt,name=SourceInfo,json=source_info,proto3" json:"SourceInfo,omitempty"`
+	Timestamp            *timestamppb.Timestamp                  `protobuf:"bytes,1,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
+	Event                *anypb.Any                              `protobuf:"bytes,2,opt,name=Event,proto3" json:"Event,omitempty"`
+	IsLocal              bool                                    `protobuf:"varint,3,opt,name=IsLocal,proto3" json:"IsLocal,omitempty"`
+	NonRetryable         bool                                    `protobuf:"varint,4,opt,name=NonRetryable,proto3" json:"NonRetryable,omitempty"`
+	EnvironmentStateMode *TCapabilityEvent_TEnvironmentStateMode `protobuf:"bytes,6,opt,name=EnvironmentStateMode,proto3" json:"EnvironmentStateMode,omitempty"`
+	SourceInfo           *source.TSourceInfo                     `protobuf:"bytes,7,opt,name=SourceInfo,proto3" json:"SourceInfo,omitempty"`
 	AnyEvent             *TAnyCapabilityEventHolder              `protobuf:"bytes,8,opt,name=AnyEvent,json=any_event,proto3" json:"AnyEvent,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
@@ -120,8 +120,8 @@ func (x *TCapabilityEvent) GetAnyEvent() *TAnyCapabilityEventHolder {
 
 type TEndpointCapabilityEvents struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	Events        []*TCapabilityEvent    `protobuf:"bytes,2,rep,name=Events,json=events,proto3" json:"Events,omitempty"`
+	EndpointId    string                 `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	Events        []*TCapabilityEvent    `protobuf:"bytes,2,rep,name=Events,proto3" json:"Events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,10 +172,10 @@ func (x *TEndpointCapabilityEvents) GetEvents() []*TCapabilityEvent {
 
 type TEndpointEvents struct {
 	state            protoimpl.MessageState      `protogen:"open.v1"`
-	EndpointId       string                      `protobuf:"bytes,1,opt,name=EndpointId,json=endpoint_id,proto3" json:"EndpointId,omitempty"`
-	EndpointStatus   *endpoint.TEndpoint_TStatus `protobuf:"bytes,2,opt,name=EndpointStatus,json=endpoint_status,proto3" json:"EndpointStatus,omitempty"`
-	CapabilityEvents []*TCapabilityEvent         `protobuf:"bytes,3,rep,name=CapabilityEvents,json=capability_events,proto3" json:"CapabilityEvents,omitempty"`
-	EndpointPlatform string                      `protobuf:"bytes,4,opt,name=EndpointPlatform,json=endpoint_platform,proto3" json:"EndpointPlatform,omitempty"`
+	EndpointId       string                      `protobuf:"bytes,1,opt,name=EndpointId,proto3" json:"EndpointId,omitempty"`
+	EndpointStatus   *endpoint.TEndpoint_TStatus `protobuf:"bytes,2,opt,name=EndpointStatus,proto3" json:"EndpointStatus,omitempty"`
+	CapabilityEvents []*TCapabilityEvent         `protobuf:"bytes,3,rep,name=CapabilityEvents,proto3" json:"CapabilityEvents,omitempty"`
+	EndpointPlatform string                      `protobuf:"bytes,4,opt,name=EndpointPlatform,proto3" json:"EndpointPlatform,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -240,7 +240,7 @@ func (x *TEndpointEvents) GetEndpointPlatform() string {
 
 type TEndpointEventsBatch struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Batch         []*TEndpointEvents     `protobuf:"bytes,1,rep,name=Batch,json=batch,proto3" json:"Batch,omitempty"`
+	Batch         []*TEndpointEvents     `protobuf:"bytes,1,rep,name=Batch,proto3" json:"Batch,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -284,8 +284,8 @@ func (x *TEndpointEventsBatch) GetBatch() []*TEndpointEvents {
 
 type TTypedCapabilityEvent struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Event         *TCapabilityEvent               `protobuf:"bytes,1,opt,name=Event,json=event,proto3" json:"Event,omitempty"`
-	EventType     endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventType,json=event_type,proto3,enum=NAlice.TCapability_EEventType" json:"EventType,omitempty"`
+	Event         *TCapabilityEvent               `protobuf:"bytes,1,opt,name=Event,proto3" json:"Event,omitempty"`
+	EventType     endpoint.TCapability_EEventType `protobuf:"varint,2,opt,name=EventType,proto3,enum=NAlice.TCapability_EEventType" json:"EventType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -336,10 +336,10 @@ func (x *TTypedCapabilityEvent) GetEventType() endpoint.TCapability_EEventType {
 
 type TCapabilityEvent_TEnvironmentStateMode struct {
 	state                     protoimpl.MessageState `protogen:"open.v1"`
-	IncludeLocalEndpoint      bool                   `protobuf:"varint,1,opt,name=IncludeLocalEndpoint,json=include_local_endpoint,proto3" json:"IncludeLocalEndpoint,omitempty"`
-	IncludeEmbeddedEndpoints  bool                   `protobuf:"varint,2,opt,name=IncludeEmbeddedEndpoints,json=include_embedded_endpoints,proto3" json:"IncludeEmbeddedEndpoints,omitempty"`
-	IncludeRemoteEndpoints    bool                   `protobuf:"varint,3,opt,name=IncludeRemoteEndpoints,json=include_remote_endpoints,proto3" json:"IncludeRemoteEndpoints,omitempty"`
-	IncludeRemoteCapabilities bool                   `protobuf:"varint,4,opt,name=IncludeRemoteCapabilities,json=include_remote_capabilities,proto3" json:"IncludeRemoteCapabilities,omitempty"`
+	IncludeLocalEndpoint      bool                   `protobuf:"varint,1,opt,name=IncludeLocalEndpoint,proto3" json:"IncludeLocalEndpoint,omitempty"`
+	IncludeEmbeddedEndpoints  bool                   `protobuf:"varint,2,opt,name=IncludeEmbeddedEndpoints,proto3" json:"IncludeEmbeddedEndpoints,omitempty"`
+	IncludeRemoteEndpoints    bool                   `protobuf:"varint,3,opt,name=IncludeRemoteEndpoints,proto3" json:"IncludeRemoteEndpoints,omitempty"`
+	IncludeRemoteCapabilities bool                   `protobuf:"varint,4,opt,name=IncludeRemoteCapabilities,proto3" json:"IncludeRemoteCapabilities,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -406,40 +406,41 @@ var File_alice_protos_endpoint_events_events_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_events_events_proto_rawDesc = "" +
 	"\n" +
-	")alice/protos/endpoint/events/events.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$alice/protos/api/source/source.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&alice/protos/endpoint/capability.proto\x1a7alice/protos/endpoint/events/any_capability_event.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc8\a\n" +
-	"\x10TCapabilityEvent\x12G\n" +
-	"\tTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampB\r\xaa\xdd\x1b\ttimestampR\ttimestamp\x125\n" +
-	"\x05Event\x18\x02 \x01(\v2\x14.google.protobuf.AnyB\t\xaa\xdd\x1b\x05eventR\x05event\x12'\n" +
-	"\aIsLocal\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bis_localR\bis_local\x126\n" +
-	"\fNonRetryable\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\rnon_retryableR\rnon_retryable\x12\x80\x01\n" +
-	"\x14EnvironmentStateMode\x18\x06 \x01(\v2..NAlice.TCapabilityEvent.TEnvironmentStateModeB\x1a\xaa\xdd\x1b\x16environment_state_modeR\x16environment_state_mode\x12O\n" +
+	")alice/protos/endpoint/events/events.proto\x12\x06NAlice\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a$alice/protos/api/source/source.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a7alice/protos/endpoint/events/any_capability_event.proto\"\xcb\x05\n" +
+	"\x10TCapabilityEvent\x128\n" +
+	"\tTimestamp\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tTimestamp\x12*\n" +
+	"\x05Event\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x05Event\x12\x18\n" +
+	"\aIsLocal\x18\x03 \x01(\bR\aIsLocal\x12\"\n" +
+	"\fNonRetryable\x18\x04 \x01(\bR\fNonRetryable\x12b\n" +
+	"\x14EnvironmentStateMode\x18\x06 \x01(\v2..NAlice.TCapabilityEvent.TEnvironmentStateModeR\x14EnvironmentStateMode\x12=\n" +
 	"\n" +
-	"SourceInfo\x18\a \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoB\x0f\xaa\xdd\x1b\vsource_infoR\vsource_info\x12M\n" +
-	"\bAnyEvent\x18\b \x01(\v2!.NAlice.TAnyCapabilityEventHolderB\r\xaa\xdd\x1b\tany_eventR\tany_event\x1a\x86\x03\n" +
-	"\x15TEnvironmentStateMode\x12P\n" +
-	"\x14IncludeLocalEndpoint\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16include_local_endpointR\x16include_local_endpoint\x12\\\n" +
-	"\x18IncludeEmbeddedEndpoints\x18\x02 \x01(\bB\x1e\xaa\xdd\x1b\x1ainclude_embedded_endpointsR\x1ainclude_embedded_endpoints\x12V\n" +
-	"\x16IncludeRemoteEndpoints\x18\x03 \x01(\bB\x1c\xaa\xdd\x1b\x18include_remote_endpointsR\x18include_remote_endpoints\x12_\n" +
-	"\x19IncludeRemoteCapabilities\x18\x04 \x01(\bB\x1f\xaa\xdd\x1b\x1binclude_remote_capabilitiesR\x1binclude_remote_capabilities:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04J\x04\b\x05\x10\x06R\x1bIsEnvironmentStateDependant\"\x91\x01\n" +
-	"\x19TEndpointCapabilityEvents\x120\n" +
+	"SourceInfo\x18\a \x01(\v2\x1d.NAlice.NAliceApi.TSourceInfoR\n" +
+	"SourceInfo\x12M\n" +
+	"\bAnyEvent\x18\b \x01(\v2!.NAlice.TAnyCapabilityEventHolderB\r\xaa\xdd\x1b\tany_eventR\tany_event\x1a\xfd\x01\n" +
+	"\x15TEnvironmentStateMode\x122\n" +
+	"\x14IncludeLocalEndpoint\x18\x01 \x01(\bR\x14IncludeLocalEndpoint\x12:\n" +
+	"\x18IncludeEmbeddedEndpoints\x18\x02 \x01(\bR\x18IncludeEmbeddedEndpoints\x126\n" +
+	"\x16IncludeRemoteEndpoints\x18\x03 \x01(\bR\x16IncludeRemoteEndpoints\x12<\n" +
+	"\x19IncludeRemoteCapabilities\x18\x04 \x01(\bR\x19IncludeRemoteCapabilitiesJ\x04\b\x05\x10\x06R\x1bIsEnvironmentStateDependant\"m\n" +
+	"\x19TEndpointCapabilityEvents\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12<\n" +
-	"\x06Events\x18\x02 \x03(\v2\x18.NAlice.TCapabilityEventB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events:\x04\xa8\xdd\x1b\x04\"\xc4\x02\n" +
-	"\x0fTEndpointEvents\x120\n" +
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x120\n" +
+	"\x06Events\x18\x02 \x03(\v2\x18.NAlice.TCapabilityEventR\x06Events\"\xe6\x01\n" +
+	"\x0fTEndpointEvents\x12\x1e\n" +
 	"\n" +
-	"EndpointId\x18\x01 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idR\vendpoint_id\x12W\n" +
-	"\x0eEndpointStatus\x18\x02 \x01(\v2\x19.NAlice.TEndpoint.TStatusB\x13\xaa\xdd\x1b\x0fendpoint_statusR\x0fendpoint_status\x12\\\n" +
-	"\x10CapabilityEvents\x18\x03 \x03(\v2\x18.NAlice.TCapabilityEventB\x15\xaa\xdd\x1b\x11capability_eventsR\x11capability_events\x12B\n" +
-	"\x10EndpointPlatform\x18\x04 \x01(\tB\x15\xaa\xdd\x1b\x11endpoint_platformR\x11endpoint_platform:\x04\xa8\xdd\x1b\x04\"V\n" +
-	"\x14TEndpointEventsBatch\x128\n" +
-	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsB\t\xaa\xdd\x1b\x05batchR\x05batch:\x04\xa8\xdd\x1b\x04\"\xa7\x01\n" +
-	"\x15TTypedCapabilityEvent\x129\n" +
-	"\x05Event\x18\x01 \x01(\v2\x18.NAlice.TCapabilityEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12M\n" +
-	"\tEventType\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeB\x0e\xaa\xdd\x1b\n" +
-	"event_typeR\n" +
-	"event_type:\x04\xa8\xdd\x1b\x04Bm\n" +
-	"&ru.yandex.alice.protos.endpoint.eventsB\vEventsProtoZ6a.yandex-team.ru/alice/protos/endpoint/events;eventspbb\x06proto3"
+	"EndpointId\x18\x01 \x01(\tR\n" +
+	"EndpointId\x12A\n" +
+	"\x0eEndpointStatus\x18\x02 \x01(\v2\x19.NAlice.TEndpoint.TStatusR\x0eEndpointStatus\x12D\n" +
+	"\x10CapabilityEvents\x18\x03 \x03(\v2\x18.NAlice.TCapabilityEventR\x10CapabilityEvents\x12*\n" +
+	"\x10EndpointPlatform\x18\x04 \x01(\tR\x10EndpointPlatform\"E\n" +
+	"\x14TEndpointEventsBatch\x12-\n" +
+	"\x05Batch\x18\x01 \x03(\v2\x17.NAlice.TEndpointEventsR\x05Batch\"\x85\x01\n" +
+	"\x15TTypedCapabilityEvent\x12.\n" +
+	"\x05Event\x18\x01 \x01(\v2\x18.NAlice.TCapabilityEventR\x05Event\x12<\n" +
+	"\tEventType\x18\x02 \x01(\x0e2\x1e.NAlice.TCapability.EEventTypeR\tEventTypeB\x9f\x01\n" +
+	"\n" +
+	"com.NAliceB\vEventsProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/events\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_events_events_proto_rawDescOnce sync.Once

@@ -131,8 +131,8 @@ const file_alice_protos_api_alicekit_events_common_message_group_message_group_p
 	"message_id\x12-\n" +
 	"\tRequestId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"request_idR\n" +
-	"request_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x9e\x01\n" +
-	"?ru.yandex.alice.protos.api.alicekit.events.common.message_groupB\x11MessageGroupProtoP\x01ZFa.yandex-team.ru/alice/protos/api/alicekit/events/common/message_groupb\x06proto3"
+	"request_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\xbd\x01\n" +
+	"?ru.yandex.alice.protos.api.alicekit.events.common.message_groupB\x11MessageGroupProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/common/message_groupb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_common_message_group_message_group_proto_rawDescOnce sync.Once

@@ -24,15 +24,14 @@ const (
 )
 
 type TDiv2Card struct {
-	state           protoimpl.MessageState         `protogen:"open.v1"`
-	HideBorders     bool                           `protobuf:"varint,2,opt,name=HideBorders,json=hide_borders,proto3" json:"HideBorders,omitempty"`
-	Text            string                         `protobuf:"bytes,3,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	GlobalTemplates map[string]*TDiv2Card_Template `protobuf:"bytes,4,rep,name=GlobalTemplates,json=global_templates,proto3" json:"GlobalTemplates,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
-	CardName          string                  `protobuf:"bytes,5,opt,name=CardName,json=card_name,proto3" json:"CardName,omitempty"`
-	Id                *TDiv2Id                `protobuf:"bytes,7,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Palette           *TDiv2Card_TDivPalette  `protobuf:"bytes,8,opt,name=Palette,json=palette,proto3" json:"Palette,omitempty"`
-	ExternalVariables []*TDivExternalVariable `protobuf:"bytes,9,rep,name=ExternalVariables,json=external_variables,proto3" json:"ExternalVariables,omitempty"`
+	state             protoimpl.MessageState            `protogen:"open.v1"`
+	HideBorders       bool                              `protobuf:"varint,2,opt,name=HideBorders,proto3" json:"HideBorders,omitempty"`
+	Text              string                            `protobuf:"bytes,3,opt,name=Text,proto3" json:"Text,omitempty"`
+	GlobalTemplates   []*TDiv2Card_GlobalTemplatesEntry `protobuf:"bytes,4,rep,name=GlobalTemplates,proto3" json:"GlobalTemplates,omitempty"`
+	CardName          string                            `protobuf:"bytes,5,opt,name=CardName,proto3" json:"CardName,omitempty"`
+	Id                *TDiv2Id                          `protobuf:"bytes,7,opt,name=Id,proto3" json:"Id,omitempty"`
+	Palette           *TDiv2Card_TDivPalette            `protobuf:"bytes,8,opt,name=Palette,proto3" json:"Palette,omitempty"`
+	ExternalVariables []*TDivExternalVariable           `protobuf:"bytes,9,rep,name=ExternalVariables,proto3" json:"ExternalVariables,omitempty"`
 	// Types that are valid to be assigned to Div2Body:
 	//
 	//	*TDiv2Card_Body
@@ -86,14 +85,13 @@ func (x *TDiv2Card) GetText() string {
 	return ""
 }
 
-func (x *TDiv2Card) GetGlobalTemplates() map[string]*TDiv2Card_Template {
+func (x *TDiv2Card) GetGlobalTemplates() []*TDiv2Card_GlobalTemplatesEntry {
 	if x != nil {
 		return x.GlobalTemplates
 	}
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
 func (x *TDiv2Card) GetCardName() string {
 	if x != nil {
 		return x.CardName
@@ -129,7 +127,6 @@ func (x *TDiv2Card) GetDiv2Body() isTDiv2Card_Div2Body {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
 func (x *TDiv2Card) GetBody() *structpb.Struct {
 	if x != nil {
 		if x, ok := x.Div2Body.(*TDiv2Card_Body); ok {
@@ -153,12 +150,11 @@ type isTDiv2Card_Div2Body interface {
 }
 
 type TDiv2Card_Body struct {
-	// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
-	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,json=body,proto3,oneof"`
+	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,proto3,oneof"`
 }
 
 type TDiv2Card_StringBody struct {
-	StringBody string `protobuf:"bytes,6,opt,name=StringBody,json=string_body,proto3,oneof"`
+	StringBody string `protobuf:"bytes,6,opt,name=StringBody,proto3,oneof"`
 }
 
 func (*TDiv2Card_Body) isTDiv2Card_Div2Body() {}
@@ -213,7 +209,6 @@ func (x *TDiv2Card_Template) GetTemplateBody() isTDiv2Card_Template_TemplateBody
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
 func (x *TDiv2Card_Template) GetBody() *structpb.Struct {
 	if x != nil {
 		if x, ok := x.TemplateBody.(*TDiv2Card_Template_Body); ok {
@@ -237,29 +232,80 @@ type isTDiv2Card_Template_TemplateBody interface {
 }
 
 type TDiv2Card_Template_Body struct {
-	// Deprecated: Marked as deprecated in alice/protos/div/div2card.proto.
-	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,json=body,proto3,oneof"`
+	Body *structpb.Struct `protobuf:"bytes,1,opt,name=Body,proto3,oneof"`
 }
 
 type TDiv2Card_Template_StringBody struct {
-	StringBody string `protobuf:"bytes,2,opt,name=StringBody,json=string_body,proto3,oneof"`
+	StringBody string `protobuf:"bytes,2,opt,name=StringBody,proto3,oneof"`
 }
 
 func (*TDiv2Card_Template_Body) isTDiv2Card_Template_TemplateBody() {}
 
 func (*TDiv2Card_Template_StringBody) isTDiv2Card_Template_TemplateBody() {}
 
-type TDiv2Card_TDivPalette struct {
+type TDiv2Card_GlobalTemplatesEntry struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Dark          map[string]string      `protobuf:"bytes,1,rep,name=Dark,json=dark,proto3" json:"Dark,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Light         map[string]string      `protobuf:"bytes,2,rep,name=Light,json=light,proto3" json:"Light,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TDiv2Card_Template    `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDiv2Card_GlobalTemplatesEntry) Reset() {
+	*x = TDiv2Card_GlobalTemplatesEntry{}
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDiv2Card_GlobalTemplatesEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDiv2Card_GlobalTemplatesEntry) ProtoMessage() {}
+
+func (x *TDiv2Card_GlobalTemplatesEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDiv2Card_GlobalTemplatesEntry.ProtoReflect.Descriptor instead.
+func (*TDiv2Card_GlobalTemplatesEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_div_div2card_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *TDiv2Card_GlobalTemplatesEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TDiv2Card_GlobalTemplatesEntry) GetValue() *TDiv2Card_Template {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
+type TDiv2Card_TDivPalette struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Dark          []*TDiv2Card_TDivPalette_DarkEntry  `protobuf:"bytes,1,rep,name=Dark,proto3" json:"Dark,omitempty"`
+	Light         []*TDiv2Card_TDivPalette_LightEntry `protobuf:"bytes,2,rep,name=Light,proto3" json:"Light,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TDiv2Card_TDivPalette) Reset() {
 	*x = TDiv2Card_TDivPalette{}
-	mi := &file_alice_protos_div_div2card_proto_msgTypes[2]
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -271,7 +317,7 @@ func (x *TDiv2Card_TDivPalette) String() string {
 func (*TDiv2Card_TDivPalette) ProtoMessage() {}
 
 func (x *TDiv2Card_TDivPalette) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_div_div2card_proto_msgTypes[2]
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -284,60 +330,167 @@ func (x *TDiv2Card_TDivPalette) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TDiv2Card_TDivPalette.ProtoReflect.Descriptor instead.
 func (*TDiv2Card_TDivPalette) Descriptor() ([]byte, []int) {
-	return file_alice_protos_div_div2card_proto_rawDescGZIP(), []int{0, 1}
+	return file_alice_protos_div_div2card_proto_rawDescGZIP(), []int{0, 2}
 }
 
-func (x *TDiv2Card_TDivPalette) GetDark() map[string]string {
+func (x *TDiv2Card_TDivPalette) GetDark() []*TDiv2Card_TDivPalette_DarkEntry {
 	if x != nil {
 		return x.Dark
 	}
 	return nil
 }
 
-func (x *TDiv2Card_TDivPalette) GetLight() map[string]string {
+func (x *TDiv2Card_TDivPalette) GetLight() []*TDiv2Card_TDivPalette_LightEntry {
 	if x != nil {
 		return x.Light
 	}
 	return nil
 }
 
+type TDiv2Card_TDivPalette_DarkEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDiv2Card_TDivPalette_DarkEntry) Reset() {
+	*x = TDiv2Card_TDivPalette_DarkEntry{}
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDiv2Card_TDivPalette_DarkEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDiv2Card_TDivPalette_DarkEntry) ProtoMessage() {}
+
+func (x *TDiv2Card_TDivPalette_DarkEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDiv2Card_TDivPalette_DarkEntry.ProtoReflect.Descriptor instead.
+func (*TDiv2Card_TDivPalette_DarkEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_div_div2card_proto_rawDescGZIP(), []int{0, 2, 0}
+}
+
+func (x *TDiv2Card_TDivPalette_DarkEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TDiv2Card_TDivPalette_DarkEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type TDiv2Card_TDivPalette_LightEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDiv2Card_TDivPalette_LightEntry) Reset() {
+	*x = TDiv2Card_TDivPalette_LightEntry{}
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDiv2Card_TDivPalette_LightEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDiv2Card_TDivPalette_LightEntry) ProtoMessage() {}
+
+func (x *TDiv2Card_TDivPalette_LightEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_div_div2card_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDiv2Card_TDivPalette_LightEntry.ProtoReflect.Descriptor instead.
+func (*TDiv2Card_TDivPalette_LightEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_div_div2card_proto_rawDescGZIP(), []int{0, 2, 1}
+}
+
+func (x *TDiv2Card_TDivPalette_LightEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TDiv2Card_TDivPalette_LightEntry) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
 var File_alice_protos_div_div2card_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div2card_proto_rawDesc = "" +
 	"\n" +
-	"\x1falice/protos/div/div2card.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1dalice/protos/div/div2id.proto\x1a4alice/protos/div/div_external_variable_sources.proto\"\xeb\b\n" +
-	"\tTDiv2Card\x12!\n" +
-	"\vHideBorders\x18\x02 \x01(\bR\fhide_borders\x12\x1c\n" +
-	"\x04Text\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12g\n" +
-	"\x0fGlobalTemplates\x18\x04 \x03(\v2&.NAlice.TDiv2Card.GlobalTemplatesEntryB\x14\xaa\xdd\x1b\x10global_templatesR\x10global_templates\x12,\n" +
-	"\bCardName\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\tcard_name\x18\x01R\tcard_name\x12'\n" +
-	"\x02Id\x18\a \x01(\v2\x0f.NAlice.TDiv2IdB\x06\xaa\xdd\x1b\x02idR\x02id\x12D\n" +
-	"\aPalette\x18\b \x01(\v2\x1d.NAlice.TDiv2Card.TDivPaletteB\v\xaa\xdd\x1b\apaletteR\apalette\x12c\n" +
-	"\x11ExternalVariables\x18\t \x03(\v2\x1c.NAlice.TDivExternalVariableB\x16\xaa\xdd\x1b\x12external_variablesR\x12external_variables\x12=\n" +
-	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructB\x0e\xa0\xdd\x1b\x05\xaa\xdd\x1b\x04body\x18\x01H\x00R\x04body\x122\n" +
+	"\x1falice/protos/div/div2card.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1dalice/protos/div/div2id.proto\x1a4alice/protos/div/div_external_variable_sources.proto\"\xf3\x06\n" +
+	"\tTDiv2Card\x12 \n" +
+	"\vHideBorders\x18\x02 \x01(\bR\vHideBorders\x12\x12\n" +
+	"\x04Text\x18\x03 \x01(\tR\x04Text\x12P\n" +
+	"\x0fGlobalTemplates\x18\x04 \x03(\v2&.NAlice.TDiv2Card.GlobalTemplatesEntryR\x0fGlobalTemplates\x12\x1a\n" +
+	"\bCardName\x18\x05 \x01(\tR\bCardName\x12\x1f\n" +
+	"\x02Id\x18\a \x01(\v2\x0f.NAlice.TDiv2IdR\x02Id\x127\n" +
+	"\aPalette\x18\b \x01(\v2\x1d.NAlice.TDiv2Card.TDivPaletteR\aPalette\x12J\n" +
+	"\x11ExternalVariables\x18\t \x03(\v2\x1c.NAlice.TDivExternalVariableR\x11ExternalVariables\x12-\n" +
+	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x04Body\x12 \n" +
 	"\n" +
-	"StringBody\x18\x06 \x01(\tB\x0f\xaa\xdd\x1b\vstring_bodyH\x00R\vstring_body\x1a\xa2\x01\n" +
-	"\bTemplate\x129\n" +
-	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructB\n" +
-	"\xaa\xdd\x1b\x04body\x18\x01H\x00R\x04body\x122\n" +
+	"StringBody\x18\x06 \x01(\tH\x00R\n" +
+	"StringBody\x1ak\n" +
+	"\bTemplate\x12-\n" +
+	"\x04Body\x18\x01 \x01(\v2\x17.google.protobuf.StructH\x00R\x04Body\x12 \n" +
 	"\n" +
-	"StringBody\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vstring_bodyH\x00R\vstring_body:\x04\xa8\xdd\x1b\x04B!\n" +
-	"\fTemplateBody\x12\x11\xaa\xdd\x1b\rtemplate_body\x1a\x98\x02\n" +
-	"\vTDivPalette\x12E\n" +
-	"\x04Dark\x18\x01 \x03(\v2'.NAlice.TDiv2Card.TDivPalette.DarkEntryB\b\xaa\xdd\x1b\x04darkR\x04dark\x12I\n" +
-	"\x05Light\x18\x02 \x03(\v2(.NAlice.TDiv2Card.TDivPalette.LightEntryB\t\xaa\xdd\x1b\x05lightR\x05light\x1a7\n" +
+	"StringBody\x18\x02 \x01(\tH\x00R\n" +
+	"StringBodyB\x0e\n" +
+	"\fTemplateBody\x1aZ\n" +
+	"\x14GlobalTemplatesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x120\n" +
+	"\x05value\x18\x02 \x01(\v2\x1a.NAlice.TDiv2Card.TemplateR\x05value\x1a\xf5\x01\n" +
+	"\vTDivPalette\x12;\n" +
+	"\x04Dark\x18\x01 \x03(\v2'.NAlice.TDiv2Card.TDivPalette.DarkEntryR\x04Dark\x12>\n" +
+	"\x05Light\x18\x02 \x03(\v2(.NAlice.TDiv2Card.TDivPalette.LightEntryR\x05Light\x1a3\n" +
 	"\tDarkEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a8\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\x1a4\n" +
 	"\n" +
 	"LightEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\x1a^\n" +
-	"\x14GlobalTemplatesEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x120\n" +
-	"\x05value\x18\x02 \x01(\v2\x1a.NAlice.TDiv2Card.TemplateR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04B\x19\n" +
-	"\bDiv2Body\x12\r\xaa\xdd\x1b\tdiv2_bodyBN\n" +
-	"\x1aru.yandex.alice.protos.divB\rDiv2CardProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05valueB\n" +
+	"\n" +
+	"\bDiv2BodyB\x95\x01\n" +
+	"\n" +
+	"com.NAliceB\rDiv2cardProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div2card_proto_rawDescOnce sync.Once
@@ -353,26 +506,26 @@ func file_alice_protos_div_div2card_proto_rawDescGZIP() []byte {
 
 var file_alice_protos_div_div2card_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_alice_protos_div_div2card_proto_goTypes = []any{
-	(*TDiv2Card)(nil),             // 0: NAlice.TDiv2Card
-	(*TDiv2Card_Template)(nil),    // 1: NAlice.TDiv2Card.Template
-	(*TDiv2Card_TDivPalette)(nil), // 2: NAlice.TDiv2Card.TDivPalette
-	nil,                           // 3: NAlice.TDiv2Card.GlobalTemplatesEntry
-	nil,                           // 4: NAlice.TDiv2Card.TDivPalette.DarkEntry
-	nil,                           // 5: NAlice.TDiv2Card.TDivPalette.LightEntry
-	(*TDiv2Id)(nil),               // 6: NAlice.TDiv2Id
-	(*TDivExternalVariable)(nil),  // 7: NAlice.TDivExternalVariable
-	(*structpb.Struct)(nil),       // 8: google.protobuf.Struct
+	(*TDiv2Card)(nil),                        // 0: NAlice.TDiv2Card
+	(*TDiv2Card_Template)(nil),               // 1: NAlice.TDiv2Card.Template
+	(*TDiv2Card_GlobalTemplatesEntry)(nil),   // 2: NAlice.TDiv2Card.GlobalTemplatesEntry
+	(*TDiv2Card_TDivPalette)(nil),            // 3: NAlice.TDiv2Card.TDivPalette
+	(*TDiv2Card_TDivPalette_DarkEntry)(nil),  // 4: NAlice.TDiv2Card.TDivPalette.DarkEntry
+	(*TDiv2Card_TDivPalette_LightEntry)(nil), // 5: NAlice.TDiv2Card.TDivPalette.LightEntry
+	(*TDiv2Id)(nil),                          // 6: NAlice.TDiv2Id
+	(*TDivExternalVariable)(nil),             // 7: NAlice.TDivExternalVariable
+	(*structpb.Struct)(nil),                  // 8: google.protobuf.Struct
 }
 var file_alice_protos_div_div2card_proto_depIdxs = []int32{
-	3, // 0: NAlice.TDiv2Card.GlobalTemplates:type_name -> NAlice.TDiv2Card.GlobalTemplatesEntry
+	2, // 0: NAlice.TDiv2Card.GlobalTemplates:type_name -> NAlice.TDiv2Card.GlobalTemplatesEntry
 	6, // 1: NAlice.TDiv2Card.Id:type_name -> NAlice.TDiv2Id
-	2, // 2: NAlice.TDiv2Card.Palette:type_name -> NAlice.TDiv2Card.TDivPalette
+	3, // 2: NAlice.TDiv2Card.Palette:type_name -> NAlice.TDiv2Card.TDivPalette
 	7, // 3: NAlice.TDiv2Card.ExternalVariables:type_name -> NAlice.TDivExternalVariable
 	8, // 4: NAlice.TDiv2Card.Body:type_name -> google.protobuf.Struct
 	8, // 5: NAlice.TDiv2Card.Template.Body:type_name -> google.protobuf.Struct
-	4, // 6: NAlice.TDiv2Card.TDivPalette.Dark:type_name -> NAlice.TDiv2Card.TDivPalette.DarkEntry
-	5, // 7: NAlice.TDiv2Card.TDivPalette.Light:type_name -> NAlice.TDiv2Card.TDivPalette.LightEntry
-	1, // 8: NAlice.TDiv2Card.GlobalTemplatesEntry.value:type_name -> NAlice.TDiv2Card.Template
+	1, // 6: NAlice.TDiv2Card.GlobalTemplatesEntry.value:type_name -> NAlice.TDiv2Card.Template
+	4, // 7: NAlice.TDiv2Card.TDivPalette.Dark:type_name -> NAlice.TDiv2Card.TDivPalette.DarkEntry
+	5, // 8: NAlice.TDiv2Card.TDivPalette.Light:type_name -> NAlice.TDiv2Card.TDivPalette.LightEntry
 	9, // [9:9] is the sub-list for method output_type
 	9, // [9:9] is the sub-list for method input_type
 	9, // [9:9] is the sub-list for extension type_name

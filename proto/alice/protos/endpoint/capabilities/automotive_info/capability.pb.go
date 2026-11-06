@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_info/capability.proto
 
-package automotive_infopb
+package automotive_info
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -1184,8 +1184,8 @@ const file_alice_protos_endpoint_capabilities_automotive_info_capability_proto_r
 	"\x18EBatteryHeatRunawayState\x12\x1f\n" +
 	"\x1bBATTERY_HEAT_RUNAWAY_NORMAL\x10\x00\x12&\n" +
 	"\"BATTERY_HEAT_RUNAWAY_WHILE_DRIVING\x10\x01\x12%\n" +
-	"!BATTERY_HEAT_RUNAWAY_WHILE_PARKED\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc3\x01B\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAutomotiveInfoCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_info;automotive_infopbb\x06proto3"
+	"!BATTERY_HEAT_RUNAWAY_WHILE_PARKED\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc3\x01B\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAutomotiveInfoCapabilityProtoZbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_infob\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_info_capability_proto_rawDescOnce sync.Once

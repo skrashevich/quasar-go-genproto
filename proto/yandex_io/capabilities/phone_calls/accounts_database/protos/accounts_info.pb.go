@@ -25,10 +25,10 @@ const (
 
 type TAccountInfo struct {
 	state          protoimpl.MessageState                                      `protogen:"open.v1"`
-	Credentials    *phone_calls.TPhoneCallsCapability_TCredentials             `protobuf:"bytes,2,opt,name=Credentials,json=credentials,proto3" json:"Credentials,omitempty"`
-	LifetimePolicy phone_calls.TPhoneCallsCapability_ELifetimePolicy           `protobuf:"varint,3,opt,name=LifetimePolicy,json=lifetime_policy,proto3,enum=NAlice.TPhoneCallsCapability_ELifetimePolicy" json:"LifetimePolicy,omitempty"`
-	AccountId      string                                                      `protobuf:"bytes,4,opt,name=AccountId,json=account_id,proto3" json:"AccountId,omitempty"`
-	Provider       phone_calls.TPhoneCallsCapability_ETelephoneServiceProvider `protobuf:"varint,5,opt,name=Provider,json=provider,proto3,enum=NAlice.TPhoneCallsCapability_ETelephoneServiceProvider" json:"Provider,omitempty"`
+	Credentials    *phone_calls.TPhoneCallsCapability_TCredentials             `protobuf:"bytes,2,opt,name=Credentials,proto3" json:"Credentials,omitempty"`
+	LifetimePolicy phone_calls.TPhoneCallsCapability_ELifetimePolicy           `protobuf:"varint,3,opt,name=LifetimePolicy,proto3,enum=NAlice.TPhoneCallsCapability_ELifetimePolicy" json:"LifetimePolicy,omitempty"`
+	AccountId      string                                                      `protobuf:"bytes,4,opt,name=AccountId,proto3" json:"AccountId,omitempty"`
+	Provider       phone_calls.TPhoneCallsCapability_ETelephoneServiceProvider `protobuf:"varint,5,opt,name=Provider,proto3,enum=NAlice.TPhoneCallsCapability_ETelephoneServiceProvider" json:"Provider,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -93,7 +93,7 @@ func (x *TAccountInfo) GetProvider() phone_calls.TPhoneCallsCapability_ETelephon
 
 type TAccountsInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccountsInfo  []*TAccountInfo        `protobuf:"bytes,1,rep,name=AccountsInfo,json=accounts_info,proto3" json:"AccountsInfo,omitempty"`
+	AccountsInfo  []*TAccountInfo        `protobuf:"bytes,1,rep,name=AccountsInfo,proto3" json:"AccountsInfo,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -139,17 +139,16 @@ var File_yandex_io_capabilities_phone_calls_accounts_database_protos_accounts_in
 
 const file_yandex_io_capabilities_phone_calls_accounts_database_protos_accounts_info_proto_rawDesc = "" +
 	"\n" +
-	"Oyandex_io/capabilities/phone_calls/accounts_database/protos/accounts_info.proto\x12\x06NAlice\x1a?alice/protos/endpoint/capabilities/phone_calls/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x88\x03\n" +
-	"\fTAccountInfo\x12]\n" +
-	"\vCredentials\x18\x02 \x01(\v2*.NAlice.TPhoneCallsCapability.TCredentialsB\x0f\xaa\xdd\x1b\vcredentialsR\vcredentials\x12k\n" +
-	"\x0eLifetimePolicy\x18\x03 \x01(\x0e2-.NAlice.TPhoneCallsCapability.ELifetimePolicyB\x13\xaa\xdd\x1b\x0flifetime_policyR\x0flifetime_policy\x12-\n" +
-	"\tAccountId\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"account_idR\n" +
-	"account_id\x12a\n" +
-	"\bProvider\x18\x05 \x01(\x0e27.NAlice.TPhoneCallsCapability.ETelephoneServiceProviderB\f\xaa\xdd\x1b\bproviderR\bprovider:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\x0eCredentialsKey\"c\n" +
-	"\rTAccountsInfo\x12L\n" +
-	"\fAccountsInfo\x18\x01 \x03(\v2\x14.NAlice.TAccountInfoB\x11\xaa\xdd\x1b\raccounts_infoR\raccounts_info:\x04\xa8\xdd\x1b\x04BT\n" +
-	"Eru.yandex.yandex_io.capabilities.phone_calls.accounts_database.protosB\vAccountInfob\x06proto3"
+	"Oyandex_io/capabilities/phone_calls/accounts_database/protos/accounts_info.proto\x12\x06NAlice\x1a?alice/protos/endpoint/capabilities/phone_calls/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbc\x02\n" +
+	"\fTAccountInfo\x12L\n" +
+	"\vCredentials\x18\x02 \x01(\v2*.NAlice.TPhoneCallsCapability.TCredentialsR\vCredentials\x12U\n" +
+	"\x0eLifetimePolicy\x18\x03 \x01(\x0e2-.NAlice.TPhoneCallsCapability.ELifetimePolicyR\x0eLifetimePolicy\x12\x1c\n" +
+	"\tAccountId\x18\x04 \x01(\tR\tAccountId\x12S\n" +
+	"\bProvider\x18\x05 \x01(\x0e27.NAlice.TPhoneCallsCapability.ETelephoneServiceProviderR\bProviderJ\x04\b\x01\x10\x02R\x0eCredentialsKey\"I\n" +
+	"\rTAccountsInfo\x128\n" +
+	"\fAccountsInfo\x18\x01 \x03(\v2\x14.NAlice.TAccountInfoR\fAccountsInfoB\xc4\x01\n" +
+	"\n" +
+	"com.NAliceB\x11AccountsInfoProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/phone_calls/accounts_database/protos\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_yandex_io_capabilities_phone_calls_accounts_database_protos_accounts_info_proto_rawDescOnce sync.Once

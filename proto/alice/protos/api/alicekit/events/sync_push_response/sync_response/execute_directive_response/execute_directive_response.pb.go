@@ -24,7 +24,7 @@ const (
 
 type TExecuteDirectiveResponse struct {
 	state           protoimpl.MessageState                      `protogen:"open.v1"`
-	ExecutionStatus *TExecuteDirectiveResponse_TExecutionStatus `protobuf:"bytes,1,opt,name=ExecutionStatus,json=execution_status,proto3" json:"ExecutionStatus,omitempty"`
+	ExecutionStatus *TExecuteDirectiveResponse_TExecutionStatus `protobuf:"bytes,1,opt,name=ExecutionStatus,proto3" json:"ExecutionStatus,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -147,15 +147,15 @@ type isTExecuteDirectiveResponse_TExecutionStatus_Status interface {
 }
 
 type TExecuteDirectiveResponse_TExecutionStatus_ExecutionStarted struct {
-	ExecutionStarted *TExecuteDirectiveResponse_TExecutionStatus_TExecutionStarted `protobuf:"bytes,1,opt,name=ExecutionStarted,json=execution_started,proto3,oneof"`
+	ExecutionStarted *TExecuteDirectiveResponse_TExecutionStatus_TExecutionStarted `protobuf:"bytes,1,opt,name=ExecutionStarted,proto3,oneof"`
 }
 
 type TExecuteDirectiveResponse_TExecutionStatus_ExecutionCompleted struct {
-	ExecutionCompleted *TExecuteDirectiveResponse_TExecutionStatus_TExecutionCompleted `protobuf:"bytes,2,opt,name=ExecutionCompleted,json=execution_completed,proto3,oneof"`
+	ExecutionCompleted *TExecuteDirectiveResponse_TExecutionStatus_TExecutionCompleted `protobuf:"bytes,2,opt,name=ExecutionCompleted,proto3,oneof"`
 }
 
 type TExecuteDirectiveResponse_TExecutionStatus_ExecutionFailed struct {
-	ExecutionFailed *TExecuteDirectiveResponse_TExecutionStatus_TExecutionFailed `protobuf:"bytes,3,opt,name=ExecutionFailed,json=execution_failed,proto3,oneof"`
+	ExecutionFailed *TExecuteDirectiveResponse_TExecutionStatus_TExecutionFailed `protobuf:"bytes,3,opt,name=ExecutionFailed,proto3,oneof"`
 }
 
 func (*TExecuteDirectiveResponse_TExecutionStatus_ExecutionStarted) isTExecuteDirectiveResponse_TExecutionStatus_Status() {
@@ -279,18 +279,18 @@ var File_alice_protos_api_alicekit_events_sync_push_response_sync_response_execu
 
 const file_alice_protos_api_alicekit_events_sync_push_response_sync_response_execute_directive_response_execute_directive_response_proto_rawDesc = "" +
 	"\n" +
-	"}alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_response/execute_directive_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xce\x05\n" +
-	"\x19TExecuteDirectiveResponse\x12}\n" +
-	"\x0fExecutionStatus\x18\x01 \x01(\v2<.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatusB\x14\xaa\xdd\x1b\x10execution_statusR\x10execution_status\x1a\xab\x04\n" +
-	"\x10TExecutionStatus\x12\x94\x01\n" +
-	"\x10ExecutionStarted\x18\x01 \x01(\v2N.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionStartedB\x15\xaa\xdd\x1b\x11execution_startedH\x00R\x11execution_started\x12\x9c\x01\n" +
-	"\x12ExecutionCompleted\x18\x02 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionCompletedB\x17\xaa\xdd\x1b\x13execution_completedH\x00R\x13execution_completed\x12\x90\x01\n" +
-	"\x0fExecutionFailed\x18\x03 \x01(\v2M.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionFailedB\x14\xaa\xdd\x1b\x10execution_failedH\x00R\x10execution_failed\x1a\x13\n" +
+	"}alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_response/execute_directive_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe0\x04\n" +
+	"\x19TExecuteDirectiveResponse\x12f\n" +
+	"\x0fExecutionStatus\x18\x01 \x01(\v2<.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatusR\x0fExecutionStatus\x1a\xda\x03\n" +
+	"\x10TExecutionStatus\x12|\n" +
+	"\x10ExecutionStarted\x18\x01 \x01(\v2N.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionStartedH\x00R\x10ExecutionStarted\x12\x82\x01\n" +
+	"\x12ExecutionCompleted\x18\x02 \x01(\v2P.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionCompletedH\x00R\x12ExecutionCompleted\x12y\n" +
+	"\x0fExecutionFailed\x18\x03 \x01(\v2M.NAlice.NAliceApi.TExecuteDirectiveResponse.TExecutionStatus.TExecutionFailedH\x00R\x0fExecutionFailed\x1a\x13\n" +
 	"\x11TExecutionStarted\x1a\x15\n" +
 	"\x13TExecutionCompleted\x1a\x12\n" +
-	"\x10TExecutionFailed:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06Status:\x04\xa8\xdd\x1b\x04B\xf3\x01\n" +
-	"fru.yandex.alice.protos.api.alicekit.events.sync_push_response.sync_response.execute_directive_responseB\x18ExecuteDirectiveResponseP\x01Zma.yandex-team.ru/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_responseb\x06proto3"
+	"\x10TExecutionFailedB\b\n" +
+	"\x06StatusB\xa5\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1dExecuteDirectiveResponseProtoP\x01Z\x8c\x01github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/sync_push_response/sync_response/execute_directive_response\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_sync_push_response_sync_response_execute_directive_response_execute_directive_response_proto_rawDescOnce sync.Once

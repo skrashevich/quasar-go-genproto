@@ -386,8 +386,8 @@ const file_div_proto_rawDesc = "" +
 	"\x15_DontAddToChatHistory\"<\n" +
 	"\x06TDivId\x12\x1a\n" +
 	"\bCardName\x18\x01 \x01(\tR\bCardName\x12\x16\n" +
-	"\x06CardId\x18\x02 \x01(\tR\x06CardIdB'\n" +
-	"\x16com.yandex.quark.protoB\rAliceDivProtob\x06proto3"
+	"\x06CardId\x18\x02 \x01(\tR\x06CardIdBX\n" +
+	"\x16com.yandex.quark.protoB\rAliceDivProtoZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_div_proto_rawDescOnce sync.Once

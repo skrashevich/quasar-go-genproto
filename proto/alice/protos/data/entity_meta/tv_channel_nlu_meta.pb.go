@@ -24,10 +24,10 @@ const (
 
 type TTvChannelItemMeta struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	ChannelTitle        string                 `protobuf:"bytes,1,opt,name=ChannelTitle,json=channel_title,proto3" json:"ChannelTitle,omitempty"`
-	ContentId           string                 `protobuf:"bytes,2,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
-	ChannelNumber       uint32                 `protobuf:"varint,3,opt,name=ChannelNumber,json=channel_number,proto3" json:"ChannelNumber,omitempty"`
-	CurrentProgramTitle string                 `protobuf:"bytes,4,opt,name=CurrentProgramTitle,json=current_program_title,proto3" json:"CurrentProgramTitle,omitempty"`
+	ChannelTitle        string                 `protobuf:"bytes,1,opt,name=ChannelTitle,proto3" json:"ChannelTitle,omitempty"`
+	ContentId           string                 `protobuf:"bytes,2,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
+	ChannelNumber       uint32                 `protobuf:"varint,3,opt,name=ChannelNumber,proto3" json:"ChannelNumber,omitempty"`
+	CurrentProgramTitle string                 `protobuf:"bytes,4,opt,name=CurrentProgramTitle,proto3" json:"CurrentProgramTitle,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -94,15 +94,14 @@ var File_alice_protos_data_entity_meta_tv_channel_nlu_meta_proto protoreflect.Fi
 
 const file_alice_protos_data_entity_meta_tv_channel_nlu_meta_proto_rawDesc = "" +
 	"\n" +
-	"7alice/protos/data/entity_meta/tv_channel_nlu_meta.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8b\x02\n" +
-	"\x12TTvChannelItemMeta\x126\n" +
-	"\fChannelTitle\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rchannel_titleR\rchannel_title\x12-\n" +
-	"\tContentId\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x129\n" +
-	"\rChannelNumber\x18\x03 \x01(\rB\x12\xaa\xdd\x1b\x0echannel_numberR\x0echannel_number\x12M\n" +
-	"\x13CurrentProgramTitle\x18\x04 \x01(\tB\x19\xaa\xdd\x1b\x15current_program_titleR\x15current_program_title:\x04\xa8\xdd\x1b\x04BY\n" +
-	"'ru.yandex.alice.protos.data.entity_metaZ.a.yandex-team.ru/alice/protos/data/entity_metab\x06proto3"
+	"7alice/protos/data/entity_meta/tv_channel_nlu_meta.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xae\x01\n" +
+	"\x12TTvChannelItemMeta\x12\"\n" +
+	"\fChannelTitle\x18\x01 \x01(\tR\fChannelTitle\x12\x1c\n" +
+	"\tContentId\x18\x02 \x01(\tR\tContentId\x12$\n" +
+	"\rChannelNumber\x18\x03 \x01(\rR\rChannelNumber\x120\n" +
+	"\x13CurrentProgramTitle\x18\x04 \x01(\tR\x13CurrentProgramTitleB\xaa\x01\n" +
+	"\n" +
+	"com.NAliceB\x15TvChannelNluMetaProtoP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/entity_meta\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_entity_meta_tv_channel_nlu_meta_proto_rawDescOnce sync.Once

@@ -199,8 +199,8 @@ const file_alice_protos_data_scenario_music_player_command_proto_rawDesc = "" +
 	"\rDisableLyrics\x10\x1c\x12\x15\n" +
 	"\x11EnableKaraokeMode\x10\x1d\x12\x16\n" +
 	"\x12DisableKaraokeMode\x10\x1e\x12\x11\n" +
-	"\rDisableRepeat\x10\x1fB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\rDisableRepeat\x10\x1fB~\n" +
+	"*ru.yandex.alice.protos.data.scenario.musicZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/musicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_player_command_proto_rawDescOnce sync.Once

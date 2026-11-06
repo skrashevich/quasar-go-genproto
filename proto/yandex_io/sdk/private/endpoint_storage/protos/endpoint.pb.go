@@ -358,12 +358,12 @@ const file_yandex_io_sdk_private_endpoint_storage_protos_endpoint_proto_rawDesc 
 	"\n" +
 	"capability\x18\x01 \x01(\v2\x18.quasar.proto.CapabilityR\n" +
 	"capability\x12!\n" +
-	"\fstorage_name\x18\x02 \x01(\tR\vstorageName*V\n" +
+	"\fstorage_name\x18\x02 \x01(\tR\vstorageName*P\n" +
 	"\fAudioChannel\x12\x13\n" +
 	"\x0fCONTENT_CHANNEL\x10\x00\x12\x12\n" +
 	"\x0eDIALOG_CHANNEL\x10\x01\x12\x17\n" +
-	"\x13MEDIA_ALARM_CHANNEL\x10\x02\"\x04\b\x03\x10\x03B-\n" +
-	"\x19ru.yandex.quasar.protobufB\x10EndpointSdkProto"
+	"\x13MEDIA_ALARM_CHANNEL\x10\x02B\xd1\x01\n" +
+	"\x10com.quasar.protoB\rEndpointProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/private/endpoint_storage/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_sdk_private_endpoint_storage_protos_endpoint_proto_rawDescOnce sync.Once

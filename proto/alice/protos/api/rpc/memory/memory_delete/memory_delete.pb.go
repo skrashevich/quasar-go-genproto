@@ -100,7 +100,7 @@ const file_alice_protos_api_rpc_memory_memory_delete_memory_delete_proto_rawDesc
 	"\n" +
 	"=alice/protos/api/rpc/memory/memory_delete/memory_delete.proto\x12\x0eNAlice.NMemory\x1a&yt/yt_proto/yt/formats/extension.proto\"\x1c\n" +
 	"\x14TMemoryDeleteRequest:\x04\xa8\xdd\x1b\x04\"\x1d\n" +
-	"\x15TMemoryDeleteResponse:\x04\xa8\xdd\x1b\x04B<Z:a.yandex-team.ru/alice/protos/api/rpc/memory/memory_deleteb\x06proto3"
+	"\x15TMemoryDeleteResponse:\x04\xa8\xdd\x1b\x04B[ZYgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/memory/memory_deleteb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_memory_memory_delete_memory_delete_proto_rawDescOnce sync.Once

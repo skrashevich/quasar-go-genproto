@@ -337,8 +337,8 @@ const file_alice_protos_data_scenario_suggests_suggests_proto_rawDesc = "" +
 	"\x05Title\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05titleR\x05title\x12\x1f\n" +
 	"\x05Query\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05queryR\x05query:\x04\xa8\xdd\x1b\x04B\x14\n" +
 	"\x06Action\x12\n" +
-	"\xaa\xdd\x1b\x06actionBe\n" +
-	"-ru.yandex.alice.protos.data.scenario.suggestsZ4a.yandex-team.ru/alice/protos/data/scenario/suggestsb\x06proto3"
+	"\xaa\xdd\x1b\x06actionB\x84\x01\n" +
+	"-ru.yandex.alice.protos.data.scenario.suggestsZSgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/suggestsb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_suggests_suggests_proto_rawDescOnce sync.Once

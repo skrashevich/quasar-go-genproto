@@ -63,9 +63,11 @@ var File_alice_protos_api_typed_callbacks_adhan_adhan_proto protoreflect.FileDes
 
 const file_alice_protos_api_typed_callbacks_adhan_adhan_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/api/typed_callbacks/adhan/adhan.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"[\n" +
-	"(TAdhanUpdateActivationTimesTypedCallback:/\xa8\xdd\x1b\x04\xba\xff\x1b'AdhanUpdateActivationTimesTypedCallbackBm\n" +
-	"0ru.yandex.alice.protos.api.typed_callbacks.adhanP\x01Z7a.yandex-team.ru/alice/protos/api/typed_callbacks/adhanb\x06proto3"
+	"2alice/protos/api/typed_callbacks/adhan/adhan.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"*\n" +
+	"(TAdhanUpdateActivationTimesTypedCallbackB\xa8\x01\n" +
+	"\n" +
+	"com.NAliceB\n" +
+	"AdhanProtoP\x01ZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/adhan\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_adhan_adhan_proto_rawDescOnce sync.Once

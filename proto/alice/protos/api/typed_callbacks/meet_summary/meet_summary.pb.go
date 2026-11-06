@@ -63,9 +63,10 @@ var File_alice_protos_api_typed_callbacks_meet_summary_meet_summary_proto protor
 
 const file_alice_protos_api_typed_callbacks_meet_summary_meet_summary_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/api/typed_callbacks/meet_summary/meet_summary.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"G\n" +
-	"\x1eTMeetSummaryStartTypedCallback:%\xa8\xdd\x1b\x04\xba\xff\x1b\x1dMeetSummaryStartTypedCallbackB{\n" +
-	"7ru.yandex.alice.protos.api.typed_callbacks.meet_summaryP\x01Z>a.yandex-team.ru/alice/protos/api/typed_callbacks/meet_summaryb\x06proto3"
+	"@alice/protos/api/typed_callbacks/meet_summary/meet_summary.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\" \n" +
+	"\x1eTMeetSummaryStartTypedCallbackB\xb5\x01\n" +
+	"\n" +
+	"com.NAliceB\x10MeetSummaryProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/meet_summary\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_meet_summary_meet_summary_proto_rawDescOnce sync.Once

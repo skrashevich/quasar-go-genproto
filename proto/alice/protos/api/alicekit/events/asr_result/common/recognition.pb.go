@@ -22,79 +22,19 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type TAggregatedRecognition struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Index          *uint64                `protobuf:"varint,1,opt,name=Index,json=index,proto3,oneof" json:"Index,omitempty"`
-	RecognizedText *string                `protobuf:"bytes,2,opt,name=RecognizedText,json=recognizedText,proto3,oneof" json:"RecognizedText,omitempty"`
-	IsFinal        *bool                  `protobuf:"varint,3,opt,name=IsFinal,json=isFinal,proto3,oneof" json:"IsFinal,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
-}
-
-func (x *TAggregatedRecognition) Reset() {
-	*x = TAggregatedRecognition{}
-	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAggregatedRecognition) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAggregatedRecognition) ProtoMessage() {}
-
-func (x *TAggregatedRecognition) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAggregatedRecognition.ProtoReflect.Descriptor instead.
-func (*TAggregatedRecognition) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *TAggregatedRecognition) GetIndex() uint64 {
-	if x != nil && x.Index != nil {
-		return *x.Index
-	}
-	return 0
-}
-
-func (x *TAggregatedRecognition) GetRecognizedText() string {
-	if x != nil && x.RecognizedText != nil {
-		return *x.RecognizedText
-	}
-	return ""
-}
-
-func (x *TAggregatedRecognition) GetIsFinal() bool {
-	if x != nil && x.IsFinal != nil {
-		return *x.IsFinal
-	}
-	return false
-}
-
 type TAsrRecognition struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Words         []*TAsrRecognition_TWord `protobuf:"bytes,2,rep,name=Words,json=words,proto3" json:"Words,omitempty"`
-	Confidence    *float32                 `protobuf:"fixed32,1,opt,name=Confidence,json=confidence,proto3,oneof" json:"Confidence,omitempty"`
-	Normalized    *string                  `protobuf:"bytes,3,opt,name=Normalized,json=normalized,proto3,oneof" json:"Normalized,omitempty"`
-	ParentModel   *string                  `protobuf:"bytes,4,opt,name=ParentModel,json=parentModel,proto3,oneof" json:"ParentModel,omitempty"`
+	Words         []*TAsrRecognition_TWord `protobuf:"bytes,2,rep,name=Words,proto3" json:"Words,omitempty"`
+	Confidence    *float32                 `protobuf:"fixed32,1,opt,name=Confidence,proto3,oneof" json:"Confidence,omitempty"`
+	Normalized    *string                  `protobuf:"bytes,3,opt,name=Normalized,proto3,oneof" json:"Normalized,omitempty"`
+	ParentModel   *string                  `protobuf:"bytes,4,opt,name=ParentModel,proto3,oneof" json:"ParentModel,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAsrRecognition) Reset() {
 	*x = TAsrRecognition{}
-	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[1]
+	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -106,7 +46,7 @@ func (x *TAsrRecognition) String() string {
 func (*TAsrRecognition) ProtoMessage() {}
 
 func (x *TAsrRecognition) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[1]
+	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -119,7 +59,7 @@ func (x *TAsrRecognition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TAsrRecognition.ProtoReflect.Descriptor instead.
 func (*TAsrRecognition) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{1}
+	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TAsrRecognition) GetWords() []*TAsrRecognition_TWord {
@@ -150,10 +90,70 @@ func (x *TAsrRecognition) GetParentModel() string {
 	return ""
 }
 
+type TAggregatedRecognition struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Index          *uint64                `protobuf:"varint,1,opt,name=Index,json=index,proto3,oneof" json:"Index,omitempty"`
+	RecognizedText *string                `protobuf:"bytes,2,opt,name=RecognizedText,json=recognizedText,proto3,oneof" json:"RecognizedText,omitempty"`
+	IsFinal        *bool                  `protobuf:"varint,3,opt,name=IsFinal,json=isFinal,proto3,oneof" json:"IsFinal,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *TAggregatedRecognition) Reset() {
+	*x = TAggregatedRecognition{}
+	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAggregatedRecognition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAggregatedRecognition) ProtoMessage() {}
+
+func (x *TAggregatedRecognition) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAggregatedRecognition.ProtoReflect.Descriptor instead.
+func (*TAggregatedRecognition) Descriptor() ([]byte, []int) {
+	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *TAggregatedRecognition) GetIndex() uint64 {
+	if x != nil && x.Index != nil {
+		return *x.Index
+	}
+	return 0
+}
+
+func (x *TAggregatedRecognition) GetRecognizedText() string {
+	if x != nil && x.RecognizedText != nil {
+		return *x.RecognizedText
+	}
+	return ""
+}
+
+func (x *TAggregatedRecognition) GetIsFinal() bool {
+	if x != nil && x.IsFinal != nil {
+		return *x.IsFinal
+	}
+	return false
+}
+
 type TAsrRecognition_TWord struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Value         *string                `protobuf:"bytes,1,opt,name=Value,json=value,proto3,oneof" json:"Value,omitempty"`
-	Confidence    *float32               `protobuf:"fixed32,2,opt,name=Confidence,json=confidence,proto3,oneof" json:"Confidence,omitempty"`
+	Value         *string                `protobuf:"bytes,1,opt,name=Value,proto3,oneof" json:"Value,omitempty"`
+	Confidence    *float32               `protobuf:"fixed32,2,opt,name=Confidence,proto3,oneof" json:"Confidence,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -185,7 +185,7 @@ func (x *TAsrRecognition_TWord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TAsrRecognition_TWord.ProtoReflect.Descriptor instead.
 func (*TAsrRecognition_TWord) Descriptor() ([]byte, []int) {
-	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{1, 0}
+	return file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescGZIP(), []int{0, 0}
 }
 
 func (x *TAsrRecognition_TWord) GetValue() string {
@@ -206,7 +206,26 @@ var File_alice_protos_api_alicekit_events_asr_result_common_recognition_proto pr
 
 const file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/asr_result/common/recognition.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdc\x01\n" +
+	"Dalice/protos/api/alicekit/events/asr_result/common/recognition.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd1\x02\n" +
+	"\x0fTAsrRecognition\x12=\n" +
+	"\x05Words\x18\x02 \x03(\v2'.NAlice.NAliceApi.TAsrRecognition.TWordR\x05Words\x12#\n" +
+	"\n" +
+	"Confidence\x18\x01 \x01(\x02H\x00R\n" +
+	"Confidence\x88\x01\x01\x12#\n" +
+	"\n" +
+	"Normalized\x18\x03 \x01(\tH\x01R\n" +
+	"Normalized\x88\x01\x01\x12%\n" +
+	"\vParentModel\x18\x04 \x01(\tH\x02R\vParentModel\x88\x01\x01\x1a`\n" +
+	"\x05TWord\x12\x19\n" +
+	"\x05Value\x18\x01 \x01(\tH\x00R\x05Value\x88\x01\x01\x12#\n" +
+	"\n" +
+	"Confidence\x18\x02 \x01(\x02H\x01R\n" +
+	"Confidence\x88\x01\x01B\b\n" +
+	"\x06_ValueB\r\n" +
+	"\v_ConfidenceB\r\n" +
+	"\v_ConfidenceB\r\n" +
+	"\v_NormalizedB\x0e\n" +
+	"\f_ParentModel\"\xdc\x01\n" +
 	"\x16TAggregatedRecognition\x12$\n" +
 	"\x05Index\x18\x01 \x01(\x04B\t\xaa\xdd\x1b\x05indexH\x00R\x05index\x88\x01\x01\x12@\n" +
 	"\x0eRecognizedText\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0frecognized_textH\x01R\x0erecognizedText\x88\x01\x01\x12+\n" +
@@ -214,30 +233,8 @@ const file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_
 	"\x06_IndexB\x11\n" +
 	"\x0f_RecognizedTextB\n" +
 	"\n" +
-	"\b_IsFinal\"\xb6\x03\n" +
-	"\x0fTAsrRecognition\x12H\n" +
-	"\x05Words\x18\x02 \x03(\v2'.NAlice.NAliceApi.TAsrRecognition.TWordB\t\xaa\xdd\x1b\x05wordsR\x05words\x123\n" +
-	"\n" +
-	"Confidence\x18\x01 \x01(\x02B\x0e\xaa\xdd\x1b\n" +
-	"confidenceH\x00R\n" +
-	"confidence\x88\x01\x01\x123\n" +
-	"\n" +
-	"Normalized\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"normalizedH\x01R\n" +
-	"normalized\x88\x01\x01\x127\n" +
-	"\vParentModel\x18\x04 \x01(\tB\x10\xaa\xdd\x1b\fparent_modelH\x02R\vparentModel\x88\x01\x01\x1a\x81\x01\n" +
-	"\x05TWord\x12$\n" +
-	"\x05Value\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05valueH\x00R\x05value\x88\x01\x01\x123\n" +
-	"\n" +
-	"Confidence\x18\x02 \x01(\x02B\x0e\xaa\xdd\x1b\n" +
-	"confidenceH\x01R\n" +
-	"confidence\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06_ValueB\r\n" +
-	"\v_Confidence:\x04\xa8\xdd\x1b\x04B\r\n" +
-	"\v_ConfidenceB\r\n" +
-	"\v_NormalizedB\x0e\n" +
-	"\f_ParentModelB\x9b\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.asr_result.commonB\x14AsrResultRecognitionP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/asr_result/commonb\x06proto3"
+	"\b_IsFinalB\xed\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10RecognitionProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/asr_result/common\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_rawDescOnce sync.Once
@@ -253,8 +250,8 @@ func file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_r
 
 var file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_goTypes = []any{
-	(*TAggregatedRecognition)(nil), // 0: NAlice.NAliceApi.TAggregatedRecognition
-	(*TAsrRecognition)(nil),        // 1: NAlice.NAliceApi.TAsrRecognition
+	(*TAsrRecognition)(nil),        // 0: NAlice.NAliceApi.TAsrRecognition
+	(*TAggregatedRecognition)(nil), // 1: NAlice.NAliceApi.TAggregatedRecognition
 	(*TAsrRecognition_TWord)(nil),  // 2: NAlice.NAliceApi.TAsrRecognition.TWord
 }
 var file_alice_protos_api_alicekit_events_asr_result_common_recognition_proto_depIdxs = []int32{

@@ -269,7 +269,7 @@ const file_alice_protos_data_video_centaur_season_series_details_proto_rawDesc =
 	"SeasonName\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vseason_nameR\vseason_name\x1a\x9e\x01\n" +
 	"\fTEpisodeInfo\x12<\n" +
 	"\aEpisode\x18\x01 \x01(\v2\x15.NAlice.TOttVideoItemB\v\xaa\xdd\x1b\aepisodeR\aepisode\x12P\n" +
-	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04B2Z0a.yandex-team.ru/alice/protos/data/video/centaurb\x06proto3"
+	"\rVoiceControls\x18\x02 \x03(\v2\x15.NAlice.TVoiceControlB\x12\xaa\xdd\x1b\x0evoice_controlsR\x0evoice_controls:\x04\xa8\xdd\x1b\x04BQZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/video/centaurb\x06proto3"
 
 var (
 	file_alice_protos_data_video_centaur_season_series_details_proto_rawDescOnce sync.Once

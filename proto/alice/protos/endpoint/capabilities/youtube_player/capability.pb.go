@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/youtube_player/capability.proto
 
-package youtubeplayerpb
+package youtube_player
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -482,8 +482,8 @@ const file_alice_protos_endpoint_capabilities_youtube_player_capability_proto_ra
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:,\x92\x82\x19\x1fyoutube_open_accounts_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf7\x01\x1ar\n" +
 	"\x18TOpenYoutubeUriDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
-	"\x03Uri\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03uriR\x03uri:\x1d\x92\x82\x19\x10open_youtube_uri\xa8\xdd\x1b\x04\xa8\xc8\x1c\x81\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cQB\xa2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cYoutubePlayerCapabilityProtoP\x01ZRa.yandex-team.ru/alice/protos/endpoint/capabilities/youtube_player;youtubeplayerpbb\x06proto3"
+	"\x03Uri\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03uriR\x03uri:\x1d\x92\x82\x19\x10open_youtube_uri\xa8\xdd\x1b\x04\xa8\xc8\x1c\x81\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cQB\xb1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cYoutubePlayerCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/youtube_playerb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_youtube_player_capability_proto_rawDescOnce sync.Once

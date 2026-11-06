@@ -90,7 +90,6 @@ const (
 	EUserDeviceType_HumidifierDeviceType                EUserDeviceType = 6
 	EUserDeviceType_VacuumCleanerDeviceType             EUserDeviceType = 7
 	EUserDeviceType_CookingDeviceType                   EUserDeviceType = 8
-	EUserDeviceType_ElectricGrillDeviceType             EUserDeviceType = 130
 	EUserDeviceType_KettleDeviceType                    EUserDeviceType = 9
 	EUserDeviceType_CoffeeMakerDeviceType               EUserDeviceType = 10
 	EUserDeviceType_ThermostatDeviceType                EUserDeviceType = 11
@@ -202,6 +201,7 @@ const (
 	EUserDeviceType_YandexStationBrukvaDeviceType       EUserDeviceType = 113
 	EUserDeviceType_YandexStationRepaDeviceType         EUserDeviceType = 114
 	EUserDeviceType_YandexNotaDeviceType                EUserDeviceType = 115
+	EUserDeviceType_ElectricGrillDeviceType             EUserDeviceType = 130
 	EUserDeviceType_PowerSourceUpsDeviceType            EUserDeviceType = 120
 	EUserDeviceType_YandexMonocleDeviceType             EUserDeviceType = 121
 	EUserDeviceType_YandexMonocleLiteDeviceType         EUserDeviceType = 122
@@ -230,7 +230,6 @@ var (
 		6:   "HumidifierDeviceType",
 		7:   "VacuumCleanerDeviceType",
 		8:   "CookingDeviceType",
-		130: "ElectricGrillDeviceType",
 		9:   "KettleDeviceType",
 		10:  "CoffeeMakerDeviceType",
 		11:  "ThermostatDeviceType",
@@ -342,6 +341,7 @@ var (
 		113: "YandexStationBrukvaDeviceType",
 		114: "YandexStationRepaDeviceType",
 		115: "YandexNotaDeviceType",
+		130: "ElectricGrillDeviceType",
 		120: "PowerSourceUpsDeviceType",
 		121: "YandexMonocleDeviceType",
 		122: "YandexMonocleLiteDeviceType",
@@ -367,7 +367,6 @@ var (
 		"HumidifierDeviceType":                6,
 		"VacuumCleanerDeviceType":             7,
 		"CookingDeviceType":                   8,
-		"ElectricGrillDeviceType":             130,
 		"KettleDeviceType":                    9,
 		"CoffeeMakerDeviceType":               10,
 		"ThermostatDeviceType":                11,
@@ -479,6 +478,7 @@ var (
 		"YandexStationBrukvaDeviceType":       113,
 		"YandexStationRepaDeviceType":         114,
 		"YandexNotaDeviceType":                115,
+		"ElectricGrillDeviceType":             130,
 		"PowerSourceUpsDeviceType":            120,
 		"YandexMonocleDeviceType":             121,
 		"YandexMonocleLiteDeviceType":         122,
@@ -525,11 +525,11 @@ func (EUserDeviceType) EnumDescriptor() ([]byte, []int) {
 
 type TDeviceStatusInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        EDeviceState           `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.EDeviceState" json:"Status,omitempty"`
-	Updated       float64                `protobuf:"fixed64,2,opt,name=Updated,json=updated,proto3" json:"Updated,omitempty"`
-	Reportable    bool                   `protobuf:"varint,3,opt,name=Reportable,json=reportable,proto3" json:"Reportable,omitempty"`
-	Changed       float64                `protobuf:"fixed64,4,opt,name=Changed,json=changed,proto3" json:"Changed,omitempty"`
-	ParentStatus  EDeviceState           `protobuf:"varint,5,opt,name=ParentStatus,json=parent_status,proto3,enum=NAlice.EDeviceState" json:"ParentStatus,omitempty"`
+	Status        EDeviceState           `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.EDeviceState" json:"Status,omitempty"`
+	Updated       float64                `protobuf:"fixed64,2,opt,name=Updated,proto3" json:"Updated,omitempty"`
+	Reportable    bool                   `protobuf:"varint,3,opt,name=Reportable,proto3" json:"Reportable,omitempty"`
+	Changed       float64                `protobuf:"fixed64,4,opt,name=Changed,proto3" json:"Changed,omitempty"`
+	ParentStatus  EDeviceState           `protobuf:"varint,5,opt,name=ParentStatus,proto3,enum=NAlice.EDeviceState" json:"ParentStatus,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -601,13 +601,13 @@ func (x *TDeviceStatusInfo) GetParentStatus() EDeviceState {
 
 type TUserDeviceInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Manufacturer  string                 `protobuf:"bytes,1,opt,name=Manufacturer,json=manufacturer,proto3" json:"Manufacturer,omitempty"`
-	Model         string                 `protobuf:"bytes,2,opt,name=Model,json=model,proto3" json:"Model,omitempty"`
-	HwVersion     string                 `protobuf:"bytes,3,opt,name=HwVersion,json=hw_version,proto3" json:"HwVersion,omitempty"`
-	SwVersion     string                 `protobuf:"bytes,4,opt,name=SwVersion,json=sw_version,proto3" json:"SwVersion,omitempty"`
-	ProductID     uint32                 `protobuf:"varint,5,opt,name=ProductID,json=product_id,proto3" json:"ProductID,omitempty"`
-	VendorID      uint32                 `protobuf:"varint,6,opt,name=VendorID,json=vendor_id,proto3" json:"VendorID,omitempty"`
-	SerialNumber  string                 `protobuf:"bytes,7,opt,name=SerialNumber,json=serial_number,proto3" json:"SerialNumber,omitempty"`
+	Manufacturer  string                 `protobuf:"bytes,1,opt,name=Manufacturer,proto3" json:"Manufacturer,omitempty"`
+	Model         string                 `protobuf:"bytes,2,opt,name=Model,proto3" json:"Model,omitempty"`
+	HwVersion     string                 `protobuf:"bytes,3,opt,name=HwVersion,proto3" json:"HwVersion,omitempty"`
+	SwVersion     string                 `protobuf:"bytes,4,opt,name=SwVersion,proto3" json:"SwVersion,omitempty"`
+	ProductID     uint32                 `protobuf:"varint,5,opt,name=ProductID,proto3" json:"ProductID,omitempty"`
+	VendorID      uint32                 `protobuf:"varint,6,opt,name=VendorID,proto3" json:"VendorID,omitempty"`
+	SerialNumber  string                 `protobuf:"bytes,7,opt,name=SerialNumber,proto3" json:"SerialNumber,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -691,62 +691,18 @@ func (x *TUserDeviceInfo) GetSerialNumber() string {
 	return ""
 }
 
-type TDeviceRenderInfo struct {
-	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Icon          *TDeviceRenderInfo_TIcon `protobuf:"bytes,1,opt,name=Icon,json=icon,proto3" json:"Icon,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TDeviceRenderInfo) Reset() {
-	*x = TDeviceRenderInfo{}
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TDeviceRenderInfo) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TDeviceRenderInfo) ProtoMessage() {}
-
-func (x *TDeviceRenderInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TDeviceRenderInfo.ProtoReflect.Descriptor instead.
-func (*TDeviceRenderInfo) Descriptor() ([]byte, []int) {
-	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *TDeviceRenderInfo) GetIcon() *TDeviceRenderInfo_TIcon {
-	if x != nil {
-		return x.Icon
-	}
-	return nil
-}
-
 type TUserQuasarInfo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,json=device_id,proto3" json:"DeviceId,omitempty"`
-	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,json=platform,proto3" json:"Platform,omitempty"`
-	QuasarColor   color.EColor           `protobuf:"varint,4,opt,name=QuasarColor,json=quasar_color,proto3,enum=NAlice.NData.EColor" json:"QuasarColor,omitempty"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=DeviceId,proto3" json:"DeviceId,omitempty"`
+	Platform      string                 `protobuf:"bytes,2,opt,name=Platform,proto3" json:"Platform,omitempty"`
+	QuasarColor   color.EColor           `protobuf:"varint,4,opt,name=QuasarColor,proto3,enum=NAlice.NData.EColor" json:"QuasarColor,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TUserQuasarInfo) Reset() {
 	*x = TUserQuasarInfo{}
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[3]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -758,7 +714,7 @@ func (x *TUserQuasarInfo) String() string {
 func (*TUserQuasarInfo) ProtoMessage() {}
 
 func (x *TUserQuasarInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[3]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -771,7 +727,7 @@ func (x *TUserQuasarInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TUserQuasarInfo.ProtoReflect.Descriptor instead.
 func (*TUserQuasarInfo) Descriptor() ([]byte, []int) {
-	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{3}
+	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *TUserQuasarInfo) GetDeviceId() string {
@@ -797,10 +753,10 @@ func (x *TUserQuasarInfo) GetQuasarColor() color.EColor {
 
 type TUserSharingInfo struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	OwnerID       uint64                  `protobuf:"varint,1,opt,name=OwnerID,json=owner_id,proto3" json:"OwnerID,omitempty"`
-	GuestID       uint64                  `protobuf:"varint,3,opt,name=GuestID,json=guest_id,proto3" json:"GuestID,omitempty"`
-	HouseholdID   string                  `protobuf:"bytes,2,opt,name=HouseholdID,json=household_id,proto3" json:"HouseholdID,omitempty"`
-	SubjectRoles  []*TUserSharingInfoRole `protobuf:"bytes,5,rep,name=SubjectRoles,json=subject_roles,proto3" json:"SubjectRoles,omitempty"`
+	OwnerID       uint64                  `protobuf:"varint,1,opt,name=OwnerID,proto3" json:"OwnerID,omitempty"`
+	GuestID       uint64                  `protobuf:"varint,3,opt,name=GuestID,proto3" json:"GuestID,omitempty"`
+	HouseholdID   string                  `protobuf:"bytes,2,opt,name=HouseholdID,proto3" json:"HouseholdID,omitempty"`
+	SubjectRoles  []*TUserSharingInfoRole `protobuf:"bytes,5,rep,name=SubjectRoles,proto3" json:"SubjectRoles,omitempty"`
 	HouseholdName string                  `protobuf:"bytes,6,opt,name=HouseholdName,json=household_name,proto3" json:"HouseholdName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -808,7 +764,7 @@ type TUserSharingInfo struct {
 
 func (x *TUserSharingInfo) Reset() {
 	*x = TUserSharingInfo{}
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[4]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -820,7 +776,7 @@ func (x *TUserSharingInfo) String() string {
 func (*TUserSharingInfo) ProtoMessage() {}
 
 func (x *TUserSharingInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[4]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -833,7 +789,7 @@ func (x *TUserSharingInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TUserSharingInfo.ProtoReflect.Descriptor instead.
 func (*TUserSharingInfo) Descriptor() ([]byte, []int) {
-	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{4}
+	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TUserSharingInfo) GetOwnerID() uint64 {
@@ -873,16 +829,16 @@ func (x *TUserSharingInfo) GetHouseholdName() string {
 
 type TUserSharingInfoRole struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          string                 `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
-	SubjectID     *string                `protobuf:"bytes,2,opt,name=SubjectID,json=subject_id,proto3,oneof" json:"SubjectID,omitempty"`
-	Subject       *string                `protobuf:"bytes,3,opt,name=Subject,json=subject,proto3,oneof" json:"Subject,omitempty"`
+	Type          string                 `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
+	SubjectID     *string                `protobuf:"bytes,2,opt,name=SubjectID,proto3,oneof" json:"SubjectID,omitempty"`
+	Subject       *string                `protobuf:"bytes,3,opt,name=Subject,proto3,oneof" json:"Subject,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TUserSharingInfoRole) Reset() {
 	*x = TUserSharingInfoRole{}
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[5]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -894,7 +850,7 @@ func (x *TUserSharingInfoRole) String() string {
 func (*TUserSharingInfoRole) ProtoMessage() {}
 
 func (x *TUserSharingInfoRole) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_data_device_info_proto_msgTypes[5]
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -907,7 +863,7 @@ func (x *TUserSharingInfoRole) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TUserSharingInfoRole.ProtoReflect.Descriptor instead.
 func (*TUserSharingInfoRole) Descriptor() ([]byte, []int) {
-	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{5}
+	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TUserSharingInfoRole) GetType() string {
@@ -929,6 +885,50 @@ func (x *TUserSharingInfoRole) GetSubject() string {
 		return *x.Subject
 	}
 	return ""
+}
+
+type TDeviceRenderInfo struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Icon          *TDeviceRenderInfo_TIcon `protobuf:"bytes,1,opt,name=Icon,json=icon,proto3" json:"Icon,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TDeviceRenderInfo) Reset() {
+	*x = TDeviceRenderInfo{}
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TDeviceRenderInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TDeviceRenderInfo) ProtoMessage() {}
+
+func (x *TDeviceRenderInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_device_info_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TDeviceRenderInfo.ProtoReflect.Descriptor instead.
+func (*TDeviceRenderInfo) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *TDeviceRenderInfo) GetIcon() *TDeviceRenderInfo_TIcon {
+	if x != nil {
+		return x.Icon
+	}
+	return nil
 }
 
 type TDeviceRenderInfo_TIcon struct {
@@ -966,7 +966,7 @@ func (x *TDeviceRenderInfo_TIcon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TDeviceRenderInfo_TIcon.ProtoReflect.Descriptor instead.
 func (*TDeviceRenderInfo_TIcon) Descriptor() ([]byte, []int) {
-	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{2, 0}
+	return file_alice_protos_data_device_info_proto_rawDescGZIP(), []int{5, 0}
 }
 
 func (x *TDeviceRenderInfo_TIcon) GetID() string {
@@ -987,56 +987,46 @@ var File_alice_protos_data_device_info_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_device_info_proto_rawDesc = "" +
 	"\n" +
-	"#alice/protos/data/device/info.proto\x12\x06NAlice\x1a#alice/protos/data/color/color.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x99\x02\n" +
-	"\x11TDeviceStatusInfo\x128\n" +
-	"\x06Status\x18\x01 \x01(\x0e2\x14.NAlice.EDeviceStateB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12%\n" +
-	"\aUpdated\x18\x02 \x01(\x01B\v\xaa\xdd\x1b\aupdatedR\aupdated\x12.\n" +
+	"#alice/protos/data/device/info.proto\x12\x06NAlice\x1a#alice/protos/data/color/color.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xcf\x01\n" +
+	"\x11TDeviceStatusInfo\x12,\n" +
+	"\x06Status\x18\x01 \x01(\x0e2\x14.NAlice.EDeviceStateR\x06Status\x12\x18\n" +
+	"\aUpdated\x18\x02 \x01(\x01R\aUpdated\x12\x1e\n" +
 	"\n" +
-	"Reportable\x18\x03 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"reportableR\n" +
-	"reportable\x12%\n" +
-	"\aChanged\x18\x04 \x01(\x01B\v\xaa\xdd\x1b\achangedR\achanged\x12L\n" +
-	"\fParentStatus\x18\x05 \x01(\x0e2\x14.NAlice.EDeviceStateB\x11\xaa\xdd\x1b\rparent_statusR\rparent_status\"\xdf\x02\n" +
-	"\x0fTUserDeviceInfo\x124\n" +
-	"\fManufacturer\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fmanufacturerR\fmanufacturer\x12\x1f\n" +
-	"\x05Model\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05modelR\x05model\x12-\n" +
-	"\tHwVersion\x18\x03 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"hw_versionR\n" +
-	"hw_version\x12-\n" +
-	"\tSwVersion\x18\x04 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"sw_versionR\n" +
-	"sw_version\x12-\n" +
-	"\tProductID\x18\x05 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"product_idR\n" +
-	"product_id\x12*\n" +
-	"\bVendorID\x18\x06 \x01(\rB\r\xaa\xdd\x1b\tvendor_idR\tvendor_id\x126\n" +
-	"\fSerialNumber\x18\a \x01(\tB\x11\xaa\xdd\x1b\rserial_numberR\rserial_number:\x04\xa8\xdd\x1b\x04\"\xa0\x01\n" +
+	"Reportable\x18\x03 \x01(\bR\n" +
+	"Reportable\x12\x18\n" +
+	"\aChanged\x18\x04 \x01(\x01R\aChanged\x128\n" +
+	"\fParentStatus\x18\x05 \x01(\x0e2\x14.NAlice.EDeviceStateR\fParentStatus\"\xe5\x01\n" +
+	"\x0fTUserDeviceInfo\x12\"\n" +
+	"\fManufacturer\x18\x01 \x01(\tR\fManufacturer\x12\x14\n" +
+	"\x05Model\x18\x02 \x01(\tR\x05Model\x12\x1c\n" +
+	"\tHwVersion\x18\x03 \x01(\tR\tHwVersion\x12\x1c\n" +
+	"\tSwVersion\x18\x04 \x01(\tR\tSwVersion\x12\x1c\n" +
+	"\tProductID\x18\x05 \x01(\rR\tProductID\x12\x1a\n" +
+	"\bVendorID\x18\x06 \x01(\rR\bVendorID\x12\"\n" +
+	"\fSerialNumber\x18\a \x01(\tR\fSerialNumber\"\x81\x01\n" +
+	"\x0fTUserQuasarInfo\x12\x1a\n" +
+	"\bDeviceId\x18\x01 \x01(\tR\bDeviceId\x12\x1a\n" +
+	"\bPlatform\x18\x02 \x01(\tR\bPlatform\x126\n" +
+	"\vQuasarColor\x18\x04 \x01(\x0e2\x14.NAlice.NData.EColorR\vQuasarColor\"\xf2\x01\n" +
+	"\x10TUserSharingInfo\x12\x18\n" +
+	"\aOwnerID\x18\x01 \x01(\x04R\aOwnerID\x12\x18\n" +
+	"\aGuestID\x18\x03 \x01(\x04R\aGuestID\x12 \n" +
+	"\vHouseholdID\x18\x02 \x01(\tR\vHouseholdID\x12@\n" +
+	"\fSubjectRoles\x18\x05 \x03(\v2\x1c.NAlice.TUserSharingInfoRoleR\fSubjectRoles\x129\n" +
+	"\rHouseholdName\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0ehousehold_nameR\x0ehousehold_nameJ\x04\b\x04\x10\x05R\x05Roles\"\x86\x01\n" +
+	"\x14TUserSharingInfoRole\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12!\n" +
+	"\tSubjectID\x18\x02 \x01(\tH\x00R\tSubjectID\x88\x01\x01\x12\x1d\n" +
+	"\aSubject\x18\x03 \x01(\tH\x01R\aSubject\x88\x01\x01B\f\n" +
+	"\n" +
+	"_SubjectIDB\n" +
+	"\n" +
+	"\b_Subject\"\xa0\x01\n" +
 	"\x11TDeviceRenderInfo\x12=\n" +
 	"\x04Icon\x18\x01 \x01(\v2\x1f.NAlice.TDeviceRenderInfo.TIconB\b\xaa\xdd\x1b\x04iconR\x04icon\x1aF\n" +
 	"\x05TIcon\x12\x16\n" +
 	"\x02ID\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1f\n" +
-	"\x05Color\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05colorR\x05color:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04\"\xb8\x01\n" +
-	"\x0fTUserQuasarInfo\x12*\n" +
-	"\bDeviceId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tdevice_idR\tdevice_id\x12(\n" +
-	"\bPlatform\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bplatformR\bplatform\x12I\n" +
-	"\vQuasarColor\x18\x04 \x01(\x0e2\x14.NAlice.NData.EColorB\x10\xaa\xdd\x1b\fquasar_colorR\fquasar_color:\x04\xa8\xdd\x1b\x04\"\xbd\x02\n" +
-	"\x10TUserSharingInfo\x12'\n" +
-	"\aOwnerID\x18\x01 \x01(\x04B\f\xaa\xdd\x1b\bowner_idR\bowner_id\x12'\n" +
-	"\aGuestID\x18\x03 \x01(\x04B\f\xaa\xdd\x1b\bguest_idR\bguest_id\x123\n" +
-	"\vHouseholdID\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fhousehold_idR\fhousehold_id\x12T\n" +
-	"\fSubjectRoles\x18\x05 \x03(\v2\x1c.NAlice.TUserSharingInfoRoleB\x11\xaa\xdd\x1b\rsubject_rolesR\rsubject_roles\x129\n" +
-	"\rHouseholdName\x18\x06 \x01(\tB\x12\xaa\xdd\x1b\x0ehousehold_nameR\x0ehousehold_name:\x04\xa8\xdd\x1b\x04J\x04\b\x04\x10\x05R\x05Roles\"\xb4\x01\n" +
-	"\x14TUserSharingInfoRole\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x122\n" +
-	"\tSubjectID\x18\x02 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"subject_idH\x00R\n" +
-	"subject_id\x88\x01\x01\x12*\n" +
-	"\aSubject\x18\x03 \x01(\tB\v\xaa\xdd\x1b\asubjectH\x01R\asubject\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
-	"\n" +
-	"_SubjectIDB\n" +
-	"\n" +
-	"\b_Subject*~\n" +
+	"\x05Color\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05colorR\x05color:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04*~\n" +
 	"\fEDeviceState\x12\x16\n" +
 	"\x12UnknownDeviceState\x10\x00\x12\x15\n" +
 	"\x11OnlineDeviceState\x10\x01\x12\x16\n" +
@@ -1053,8 +1043,7 @@ const file_alice_protos_data_device_info_proto_rawDesc = "" +
 	"\x12PurifierDeviceType\x10\x05\x12\x18\n" +
 	"\x14HumidifierDeviceType\x10\x06\x12\x1b\n" +
 	"\x17VacuumCleanerDeviceType\x10\a\x12\x15\n" +
-	"\x11CookingDeviceType\x10\b\x12\x1c\n" +
-	"\x17ElectricGrillDeviceType\x10\x82\x01\x12\x14\n" +
+	"\x11CookingDeviceType\x10\b\x12\x14\n" +
 	"\x10KettleDeviceType\x10\t\x12\x19\n" +
 	"\x15CoffeeMakerDeviceType\x10\n" +
 	"\x12\x18\n" +
@@ -1167,6 +1156,7 @@ const file_alice_protos_data_device_info_proto_rawDesc = "" +
 	"\x1dYandexStationBrukvaDeviceType\x10q\x12\x1f\n" +
 	"\x1bYandexStationRepaDeviceType\x10r\x12\x18\n" +
 	"\x14YandexNotaDeviceType\x10s\x12\x1c\n" +
+	"\x17ElectricGrillDeviceType\x10\x82\x01\x12\x1c\n" +
 	"\x18PowerSourceUpsDeviceType\x10x\x12\x1b\n" +
 	"\x17YandexMonocleDeviceType\x10y\x12\x1f\n" +
 	"\x1bYandexMonocleLiteDeviceType\x10z\x12\x17\n" +
@@ -1180,8 +1170,9 @@ const file_alice_protos_data_device_info_proto_rawDesc = "" +
 	"\x13BlueberryDeviceType\x10\x83\x01\x12%\n" +
 	" BlueberryLeftHeadphoneDeviceType\x10\x84\x01\x12&\n" +
 	"!BlueberryRightHeadphoneDeviceType\x10\x85\x01\x12\x1c\n" +
-	"\x17BlueberryCaseDeviceType\x10\x86\x01BU\n" +
-	"\"ru.yandex.alice.protos.data.deviceB\x04InfoZ)a.yandex-team.ru/alice/protos/data/deviceb\x06proto3"
+	"\x17BlueberryCaseDeviceType\x10\x86\x01B\x99\x01\n" +
+	"\n" +
+	"com.NAliceB\tInfoProtoP\x01ZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_device_info_proto_rawDescOnce sync.Once
@@ -1202,19 +1193,19 @@ var file_alice_protos_data_device_info_proto_goTypes = []any{
 	(EUserDeviceType)(0),            // 1: NAlice.EUserDeviceType
 	(*TDeviceStatusInfo)(nil),       // 2: NAlice.TDeviceStatusInfo
 	(*TUserDeviceInfo)(nil),         // 3: NAlice.TUserDeviceInfo
-	(*TDeviceRenderInfo)(nil),       // 4: NAlice.TDeviceRenderInfo
-	(*TUserQuasarInfo)(nil),         // 5: NAlice.TUserQuasarInfo
-	(*TUserSharingInfo)(nil),        // 6: NAlice.TUserSharingInfo
-	(*TUserSharingInfoRole)(nil),    // 7: NAlice.TUserSharingInfoRole
+	(*TUserQuasarInfo)(nil),         // 4: NAlice.TUserQuasarInfo
+	(*TUserSharingInfo)(nil),        // 5: NAlice.TUserSharingInfo
+	(*TUserSharingInfoRole)(nil),    // 6: NAlice.TUserSharingInfoRole
+	(*TDeviceRenderInfo)(nil),       // 7: NAlice.TDeviceRenderInfo
 	(*TDeviceRenderInfo_TIcon)(nil), // 8: NAlice.TDeviceRenderInfo.TIcon
 	(color.EColor)(0),               // 9: NAlice.NData.EColor
 }
 var file_alice_protos_data_device_info_proto_depIdxs = []int32{
 	0, // 0: NAlice.TDeviceStatusInfo.Status:type_name -> NAlice.EDeviceState
 	0, // 1: NAlice.TDeviceStatusInfo.ParentStatus:type_name -> NAlice.EDeviceState
-	8, // 2: NAlice.TDeviceRenderInfo.Icon:type_name -> NAlice.TDeviceRenderInfo.TIcon
-	9, // 3: NAlice.TUserQuasarInfo.QuasarColor:type_name -> NAlice.NData.EColor
-	7, // 4: NAlice.TUserSharingInfo.SubjectRoles:type_name -> NAlice.TUserSharingInfoRole
+	9, // 2: NAlice.TUserQuasarInfo.QuasarColor:type_name -> NAlice.NData.EColor
+	6, // 3: NAlice.TUserSharingInfo.SubjectRoles:type_name -> NAlice.TUserSharingInfoRole
+	8, // 4: NAlice.TDeviceRenderInfo.Icon:type_name -> NAlice.TDeviceRenderInfo.TIcon
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -1227,7 +1218,7 @@ func file_alice_protos_data_device_info_proto_init() {
 	if File_alice_protos_data_device_info_proto != nil {
 		return
 	}
-	file_alice_protos_data_device_info_proto_msgTypes[5].OneofWrappers = []any{}
+	file_alice_protos_data_device_info_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

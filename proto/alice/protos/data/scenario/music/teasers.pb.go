@@ -248,8 +248,8 @@ const file_alice_protos_data_scenario_music_teasers_proto_rawDesc = "" +
 	"\x10EMusicTeaserType\x12\v\n" +
 	"\aUnknown\x10\x00\x12\f\n" +
 	"\bPlaylist\x10\x01\x12\t\n" +
-	"\x05Album\x10\x02:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\x05Album\x10\x02:\x04\xa8\xdd\x1b\x04B~\n" +
+	"*ru.yandex.alice.protos.data.scenario.musicZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/musicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_teasers_proto_rawDescOnce sync.Once

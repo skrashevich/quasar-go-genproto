@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat/capability.proto
 
-package alicechatpb
+package alice_chat
 
 import (
 	api "github.com/skrashevich/quasar-go-genproto/proto/alice/cuttlefish/services/features_limiter/proto/api"
@@ -2633,8 +2633,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_capability_proto_rawDes
 	"\xaa\xdd\x1b\x06reasonR\x06reason\"5\n" +
 	"\aEReason\x12\r\n" +
 	"\tR_UNKNOWN\x10\x00\x12\x1b\n" +
-	"\x17R_LIMIT_ALMOST_EXCEEDED\x10\x01:$\x92\x82\x19\x17suggest_reask_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf2\x05:\b\xa8\xdd\x1b\x04\xa0\xc8\x1crB\x8a\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eAliceChatProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat;alicechatpbb\x06proto3"
+	"\x17R_LIMIT_ALMOST_EXCEEDED\x10\x01:$\x92\x82\x19\x17suggest_reask_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf2\x05:\b\xa8\xdd\x1b\x04\xa0\xc8\x1crB\x9d\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x0eAliceChatProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chatb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_capability_proto_rawDescOnce sync.Once

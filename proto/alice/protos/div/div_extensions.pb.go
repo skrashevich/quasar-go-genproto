@@ -205,11 +205,11 @@ func (*TTextWithShadowExtension) Descriptor() ([]byte, []int) {
 
 type TDivExtensions struct {
 	state                      protoimpl.MessageState       `protogen:"open.v1"`
-	ScrollableGalleryExtension *TScrollableGalleryExtension `protobuf:"bytes,1,opt,name=ScrollableGalleryExtension,json=scrollable_gallery_extension,proto3" json:"ScrollableGalleryExtension,omitempty"`
-	FocusExtension             *TFocusExtension             `protobuf:"bytes,2,opt,name=FocusExtension,json=focus_extension,proto3" json:"FocusExtension,omitempty"`
-	ClockTimeExtension         *TClockTimeExtension         `protobuf:"bytes,3,opt,name=ClockTimeExtension,json=clock_time_extension,proto3" json:"ClockTimeExtension,omitempty"`
-	ExpiringViewExtension      *TExpiringViewExtension      `protobuf:"bytes,4,opt,name=ExpiringViewExtension,json=expiring_view_extension,proto3" json:"ExpiringViewExtension,omitempty"`
-	TextWithShadowExtension    *TTextWithShadowExtension    `protobuf:"bytes,5,opt,name=TextWithShadowExtension,json=text_shadow_extension,proto3" json:"TextWithShadowExtension,omitempty"`
+	ScrollableGalleryExtension *TScrollableGalleryExtension `protobuf:"bytes,1,opt,name=ScrollableGalleryExtension,proto3" json:"ScrollableGalleryExtension,omitempty"`
+	FocusExtension             *TFocusExtension             `protobuf:"bytes,2,opt,name=FocusExtension,proto3" json:"FocusExtension,omitempty"`
+	ClockTimeExtension         *TClockTimeExtension         `protobuf:"bytes,3,opt,name=ClockTimeExtension,proto3" json:"ClockTimeExtension,omitempty"`
+	ExpiringViewExtension      *TExpiringViewExtension      `protobuf:"bytes,4,opt,name=ExpiringViewExtension,proto3" json:"ExpiringViewExtension,omitempty"`
+	TextWithShadowExtension    *TTextWithShadowExtension    `protobuf:"bytes,5,opt,name=TextWithShadowExtension,proto3" json:"TextWithShadowExtension,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -283,20 +283,20 @@ var File_alice_protos_div_div_extensions_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div_extensions_proto_rawDesc = "" +
 	"\n" +
-	"%alice/protos/div/div_extensions.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"#\n" +
-	"\x1bTScrollableGalleryExtension:\x04\xa8\xdd\x1b\x04\"\x17\n" +
-	"\x0fTFocusExtension:\x04\xa8\xdd\x1b\x04\"\x1b\n" +
-	"\x13TClockTimeExtension:\x04\xa8\xdd\x1b\x04\"\x1e\n" +
-	"\x16TExpiringViewExtension:\x04\xa8\xdd\x1b\x04\" \n" +
-	"\x18TTextWithShadowExtension:\x04\xa8\xdd\x1b\x04\"\xa1\x05\n" +
-	"\x0eTDivExtensions\x12\x9d\x01\n" +
-	"\x1aScrollableGalleryExtension\x18\x01 \x01(\v2#.NAlice.TScrollableGalleryExtensionB6\xaa\xdd\x1b\x1cscrollable_gallery_extension\xca\xff\x1b\x12scrollable_galleryR\x1cscrollable_gallery_extension\x12f\n" +
-	"\x0eFocusExtension\x18\x02 \x01(\v2\x17.NAlice.TFocusExtensionB$\xaa\xdd\x1b\x0ffocus_extension\xca\xff\x1b\rrequest_focusR\x0ffocus_extension\x12u\n" +
-	"\x12ClockTimeExtension\x18\x03 \x01(\v2\x1b.NAlice.TClockTimeExtensionB&\xaa\xdd\x1b\x14clock_time_extension\xca\xff\x1b\n" +
-	"clock_timeR\x14clock_time_extension\x12\x84\x01\n" +
-	"\x15ExpiringViewExtension\x18\x04 \x01(\v2\x1e.NAlice.TExpiringViewExtensionB,\xaa\xdd\x1b\x17expiring_view_extension\xca\xff\x1b\rexpiring_viewR\x17expiring_view_extension\x12\x82\x01\n" +
-	"\x17TextWithShadowExtension\x18\x05 \x01(\v2 .NAlice.TTextWithShadowExtensionB(\xaa\xdd\x1b\x15text_shadow_extension\xca\xff\x1b\vtext_shadowR\x15text_shadow_extension:\x04\xa8\xdd\x1b\x04BS\n" +
-	"\x1aru.yandex.alice.protos.divB\x12DivExtensionsProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"%alice/protos/div/div_extensions.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x1d\n" +
+	"\x1bTScrollableGalleryExtension\"\x11\n" +
+	"\x0fTFocusExtension\"\x15\n" +
+	"\x13TClockTimeExtension\"\x18\n" +
+	"\x16TExpiringViewExtension\"\x1a\n" +
+	"\x18TTextWithShadowExtension\"\xb5\x03\n" +
+	"\x0eTDivExtensions\x12c\n" +
+	"\x1aScrollableGalleryExtension\x18\x01 \x01(\v2#.NAlice.TScrollableGalleryExtensionR\x1aScrollableGalleryExtension\x12?\n" +
+	"\x0eFocusExtension\x18\x02 \x01(\v2\x17.NAlice.TFocusExtensionR\x0eFocusExtension\x12K\n" +
+	"\x12ClockTimeExtension\x18\x03 \x01(\v2\x1b.NAlice.TClockTimeExtensionR\x12ClockTimeExtension\x12T\n" +
+	"\x15ExpiringViewExtension\x18\x04 \x01(\v2\x1e.NAlice.TExpiringViewExtensionR\x15ExpiringViewExtension\x12Z\n" +
+	"\x17TextWithShadowExtension\x18\x05 \x01(\v2 .NAlice.TTextWithShadowExtensionR\x17TextWithShadowExtensionB\x9a\x01\n" +
+	"\n" +
+	"com.NAliceB\x12DivExtensionsProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div_extensions_proto_rawDescOnce sync.Once

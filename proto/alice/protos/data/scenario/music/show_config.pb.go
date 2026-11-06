@@ -24,10 +24,10 @@ const (
 
 type TAliceShowConfig struct {
 	state              protoimpl.MessageState                `protogen:"open.v1"`
-	FallbackPlaylistId *TAliceShowConfig_TFallbackPlaylistId `protobuf:"bytes,1,opt,name=FallbackPlaylistId,json=fallbackPlaylistId,proto3" json:"FallbackPlaylistId,omitempty"`
-	Id                 int32                                 `protobuf:"varint,2,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	MainPlaylist       string                                `protobuf:"bytes,3,opt,name=MainPlaylist,json=mainPlaylist,proto3" json:"MainPlaylist,omitempty"`
-	ShowParts          []*TAliceShowConfig_TShowPart         `protobuf:"bytes,4,rep,name=ShowParts,json=showParts,proto3" json:"ShowParts,omitempty"`
+	FallbackPlaylistId *TAliceShowConfig_TFallbackPlaylistId `protobuf:"bytes,1,opt,name=FallbackPlaylistId,proto3" json:"FallbackPlaylistId,omitempty"`
+	Id                 int32                                 `protobuf:"varint,2,opt,name=Id,proto3" json:"Id,omitempty"`
+	MainPlaylist       string                                `protobuf:"bytes,3,opt,name=MainPlaylist,proto3" json:"MainPlaylist,omitempty"`
+	ShowParts          []*TAliceShowConfig_TShowPart         `protobuf:"bytes,4,rep,name=ShowParts,proto3" json:"ShowParts,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -92,8 +92,8 @@ func (x *TAliceShowConfig) GetShowParts() []*TAliceShowConfig_TShowPart {
 
 type TAliceShowConfig_TFallbackPlaylistId struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uid           int32                  `protobuf:"varint,1,opt,name=Uid,json=uid,proto3" json:"Uid,omitempty"`
-	Kind          int32                  `protobuf:"varint,2,opt,name=Kind,json=kind,proto3" json:"Kind,omitempty"`
+	Uid           int32                  `protobuf:"varint,1,opt,name=Uid,proto3" json:"Uid,omitempty"`
+	Kind          int32                  `protobuf:"varint,2,opt,name=Kind,proto3" json:"Kind,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,31 +263,31 @@ type isTAliceShowConfig_TShowPart_ShowPart interface {
 }
 
 type TAliceShowConfig_TShowPart_OnBoarding struct {
-	OnBoarding *TAliceShowConfig_TShowPart_TOnBoarding `protobuf:"bytes,1,opt,name=OnBoarding,json=onBoarding,proto3,oneof"`
+	OnBoarding *TAliceShowConfig_TShowPart_TOnBoarding `protobuf:"bytes,1,opt,name=OnBoarding,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Playlist struct {
-	Playlist *TAliceShowConfig_TShowPart_TPlaylist `protobuf:"bytes,2,opt,name=Playlist,json=playlist,proto3,oneof"`
+	Playlist *TAliceShowConfig_TShowPart_TPlaylist `protobuf:"bytes,2,opt,name=Playlist,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Shot struct {
-	Shot *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,3,opt,name=Shot,json=shot,proto3,oneof"`
+	Shot *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,3,opt,name=Shot,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Parts struct {
-	Parts *TAliceShowConfig_TShowPart_TParts `protobuf:"bytes,4,opt,name=Parts,json=parts,proto3,oneof"`
+	Parts *TAliceShowConfig_TShowPart_TParts `protobuf:"bytes,4,opt,name=Parts,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Promo struct {
-	Promo *TAliceShowConfig_TShowPart_TPromo `protobuf:"bytes,5,opt,name=Promo,json=promo,proto3,oneof"`
+	Promo *TAliceShowConfig_TShowPart_TPromo `protobuf:"bytes,5,opt,name=Promo,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Tail struct {
-	Tail *TAliceShowConfig_TShowPart_TTail `protobuf:"bytes,6,opt,name=Tail,json=tail,proto3,oneof"`
+	Tail *TAliceShowConfig_TShowPart_TTail `protobuf:"bytes,6,opt,name=Tail,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_Podcast struct {
-	Podcast *TAliceShowConfig_TShowPart_TPodcast `protobuf:"bytes,7,opt,name=Podcast,json=podcast,proto3,oneof"`
+	Podcast *TAliceShowConfig_TShowPart_TPodcast `protobuf:"bytes,7,opt,name=Podcast,proto3,oneof"`
 }
 
 func (*TAliceShowConfig_TShowPart_OnBoarding) isTAliceShowConfig_TShowPart_ShowPart() {}
@@ -306,9 +306,9 @@ func (*TAliceShowConfig_TShowPart_Podcast) isTAliceShowConfig_TShowPart_ShowPart
 
 type TAliceShowConfig_TShowPart_TOnBoarding struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Selector      string                            `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	Greeting      *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,2,opt,name=Greeting,json=greeting,proto3" json:"Greeting,omitempty"`
-	OnBoarding    *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,3,opt,name=OnBoarding,json=onBoarding,proto3" json:"OnBoarding,omitempty"`
+	Selector      string                            `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	Greeting      *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,2,opt,name=Greeting,proto3" json:"Greeting,omitempty"`
+	OnBoarding    *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,3,opt,name=OnBoarding,proto3" json:"OnBoarding,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -366,9 +366,9 @@ func (x *TAliceShowConfig_TShowPart_TOnBoarding) GetOnBoarding() *TAliceShowConf
 
 type TAliceShowConfig_TShowPart_TPlaylist struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	Announce      string                 `protobuf:"bytes,2,opt,name=Announce,json=announce,proto3" json:"Announce,omitempty"`
-	TrackIndex    int32                  `protobuf:"varint,3,opt,name=TrackIndex,json=trackIndex,proto3" json:"TrackIndex,omitempty"`
+	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	Announce      string                 `protobuf:"bytes,2,opt,name=Announce,proto3" json:"Announce,omitempty"`
+	TrackIndex    int32                  `protobuf:"varint,3,opt,name=TrackIndex,proto3" json:"TrackIndex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -426,13 +426,13 @@ func (x *TAliceShowConfig_TShowPart_TPlaylist) GetTrackIndex() int32 {
 
 type TAliceShowConfig_TShowPart_TShot struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Selector         string                 `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	MandatoryGeo     bool                   `protobuf:"varint,2,opt,name=MandatoryGeo,json=mandatoryGeo,proto3" json:"MandatoryGeo,omitempty"`
-	MandatoryUid     bool                   `protobuf:"varint,3,opt,name=MandatoryUid,json=mandatoryUid,proto3" json:"MandatoryUid,omitempty"`
-	ShotType         string                 `protobuf:"bytes,4,opt,name=ShotType,json=shotType,proto3" json:"ShotType,omitempty"`
-	ShotSubType      string                 `protobuf:"bytes,5,opt,name=ShotSubType,json=shotSubType,proto3" json:"ShotSubType,omitempty"`
-	Tags             []string               `protobuf:"bytes,6,rep,name=Tags,json=tags,proto3" json:"Tags,omitempty"`
-	MandatoryHistory bool                   `protobuf:"varint,7,opt,name=MandatoryHistory,json=mandatoryHistory,proto3" json:"MandatoryHistory,omitempty"`
+	Selector         string                 `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	MandatoryGeo     bool                   `protobuf:"varint,2,opt,name=MandatoryGeo,proto3" json:"MandatoryGeo,omitempty"`
+	MandatoryUid     bool                   `protobuf:"varint,3,opt,name=MandatoryUid,proto3" json:"MandatoryUid,omitempty"`
+	ShotType         string                 `protobuf:"bytes,4,opt,name=ShotType,proto3" json:"ShotType,omitempty"`
+	ShotSubType      string                 `protobuf:"bytes,5,opt,name=ShotSubType,proto3" json:"ShotSubType,omitempty"`
+	Tags             []string               `protobuf:"bytes,6,rep,name=Tags,proto3" json:"Tags,omitempty"`
+	MandatoryHistory bool                   `protobuf:"varint,7,opt,name=MandatoryHistory,proto3" json:"MandatoryHistory,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -518,8 +518,8 @@ func (x *TAliceShowConfig_TShowPart_TShot) GetMandatoryHistory() bool {
 
 type TAliceShowConfig_TShowPart_TParts struct {
 	state         protoimpl.MessageState                          `protogen:"open.v1"`
-	Selector      string                                          `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	PartsItems    []*TAliceShowConfig_TShowPart_TParts_TPartsItem `protobuf:"bytes,3,rep,name=PartsItems,json=parts_items,proto3" json:"PartsItems,omitempty"`
+	Selector      string                                          `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	PartsItems    []*TAliceShowConfig_TShowPart_TParts_TPartsItem `protobuf:"bytes,3,rep,name=PartsItems,proto3" json:"PartsItems,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -570,8 +570,8 @@ func (x *TAliceShowConfig_TShowPart_TParts) GetPartsItems() []*TAliceShowConfig_
 
 type TAliceShowConfig_TShowPart_TPodcast struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	Group         string                 `protobuf:"bytes,2,opt,name=Group,json=group,proto3" json:"Group,omitempty"`
+	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	Group         string                 `protobuf:"bytes,2,opt,name=Group,proto3" json:"Group,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -622,7 +622,7 @@ func (x *TAliceShowConfig_TShowPart_TPodcast) GetGroup() string {
 
 type TAliceShowConfig_TShowPart_TPromo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
+	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -666,8 +666,8 @@ func (x *TAliceShowConfig_TShowPart_TPromo) GetSelector() string {
 
 type TAliceShowConfig_TShowPart_TTail struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,json=selector,proto3" json:"Selector,omitempty"`
-	StartFrom     int32                  `protobuf:"varint,2,opt,name=StartFrom,json=startFrom,proto3" json:"StartFrom,omitempty"`
+	Selector      string                 `protobuf:"bytes,1,opt,name=Selector,proto3" json:"Selector,omitempty"`
+	StartFrom     int32                  `protobuf:"varint,2,opt,name=StartFrom,proto3" json:"StartFrom,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -787,11 +787,11 @@ type isTAliceShowConfig_TShowPart_TParts_TPartsItem_TItem interface {
 }
 
 type TAliceShowConfig_TShowPart_TParts_TPartsItem_Shot struct {
-	Shot *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,1,opt,name=Shot,json=shot,proto3,oneof"`
+	Shot *TAliceShowConfig_TShowPart_TShot `protobuf:"bytes,1,opt,name=Shot,proto3,oneof"`
 }
 
 type TAliceShowConfig_TShowPart_TParts_TPartsItem_Playlist struct {
-	Playlist *TAliceShowConfig_TShowPart_TPlaylist `protobuf:"bytes,2,opt,name=Playlist,json=playlist,proto3,oneof"`
+	Playlist *TAliceShowConfig_TShowPart_TPlaylist `protobuf:"bytes,2,opt,name=Playlist,proto3,oneof"`
 }
 
 func (*TAliceShowConfig_TShowPart_TParts_TPartsItem_Shot) isTAliceShowConfig_TShowPart_TParts_TPartsItem_TItem() {
@@ -804,67 +804,66 @@ var File_alice_protos_data_scenario_music_show_config_proto protoreflect.FileDes
 
 const file_alice_protos_data_scenario_music_show_config_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/data/scenario/music/show_config.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdf\x13\n" +
-	"\x10TAliceShowConfig\x12\x83\x01\n" +
-	"\x12FallbackPlaylistId\x18\x01 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TFallbackPlaylistIdB\x18\xaa\xdd\x1b\x14fallback_playlist_idR\x12fallbackPlaylistId\x12\x16\n" +
-	"\x02Id\x18\x02 \x01(\x05B\x06\xaa\xdd\x1b\x02idR\x02id\x125\n" +
-	"\fMainPlaylist\x18\x03 \x01(\tB\x11\xaa\xdd\x1b\rmain_playlistR\fmainPlaylist\x12]\n" +
-	"\tShowParts\x18\x04 \x03(\v2/.NAlice.NData.NMusic.TAliceShowConfig.TShowPartB\x0e\xaa\xdd\x1b\n" +
-	"show_partsR\tshowParts\x1aN\n" +
-	"\x13TFallbackPlaylistId\x12\x19\n" +
-	"\x03Uid\x18\x01 \x01(\x05B\a\xaa\xdd\x1b\x03uidR\x03uid\x12\x1c\n" +
-	"\x04Kind\x18\x02 \x01(\x05B\b\xaa\xdd\x1b\x04kindR\x04kind\x1a\xc6\x10\n" +
-	"\tTShowPart\x12n\n" +
+	"2alice/protos/data/scenario/music/show_config.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc2\x0f\n" +
+	"\x10TAliceShowConfig\x12i\n" +
+	"\x12FallbackPlaylistId\x18\x01 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TFallbackPlaylistIdR\x12FallbackPlaylistId\x12\x0e\n" +
+	"\x02Id\x18\x02 \x01(\x05R\x02Id\x12\"\n" +
+	"\fMainPlaylist\x18\x03 \x01(\tR\fMainPlaylist\x12M\n" +
+	"\tShowParts\x18\x04 \x03(\v2/.NAlice.NData.NMusic.TAliceShowConfig.TShowPartR\tShowParts\x1a;\n" +
+	"\x13TFallbackPlaylistId\x12\x10\n" +
+	"\x03Uid\x18\x01 \x01(\x05R\x03Uid\x12\x12\n" +
+	"\x04Kind\x18\x02 \x01(\x05R\x04Kind\x1a\x82\r\n" +
+	"\tTShowPart\x12]\n" +
 	"\n" +
-	"OnBoarding\x18\x01 \x01(\v2;.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TOnBoardingB\x0f\xaa\xdd\x1b\von_boardingH\x00R\n" +
-	"onBoarding\x12e\n" +
-	"\bPlaylist\x18\x02 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPlaylistB\f\xaa\xdd\x1b\bplaylistH\x00R\bplaylist\x12U\n" +
-	"\x04Shot\x18\x03 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotB\b\xaa\xdd\x1b\x04shotH\x00R\x04shot\x12Y\n" +
-	"\x05Parts\x18\x04 \x01(\v26.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPartsB\t\xaa\xdd\x1b\x05partsH\x00R\x05parts\x12Y\n" +
-	"\x05Promo\x18\x05 \x01(\v26.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPromoB\t\xaa\xdd\x1b\x05promoH\x00R\x05promo\x12U\n" +
-	"\x04Tail\x18\x06 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TTailB\b\xaa\xdd\x1b\x04tailH\x00R\x04tail\x12a\n" +
-	"\aPodcast\x18\a \x01(\v28.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPodcastB\v\xaa\xdd\x1b\apodcastH\x00R\apodcast\x1a\x80\x02\n" +
-	"\vTOnBoarding\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x12_\n" +
-	"\bGreeting\x18\x02 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotB\f\xaa\xdd\x1b\bgreetingR\bgreeting\x12f\n" +
+	"OnBoarding\x18\x01 \x01(\v2;.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TOnBoardingH\x00R\n" +
+	"OnBoarding\x12W\n" +
+	"\bPlaylist\x18\x02 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPlaylistH\x00R\bPlaylist\x12K\n" +
+	"\x04Shot\x18\x03 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotH\x00R\x04Shot\x12N\n" +
+	"\x05Parts\x18\x04 \x01(\v26.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPartsH\x00R\x05Parts\x12N\n" +
+	"\x05Promo\x18\x05 \x01(\v26.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPromoH\x00R\x05Promo\x12K\n" +
+	"\x04Tail\x18\x06 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TTailH\x00R\x04Tail\x12T\n" +
+	"\aPodcast\x18\a \x01(\v28.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPodcastH\x00R\aPodcast\x1a\xd3\x01\n" +
+	"\vTOnBoarding\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12Q\n" +
+	"\bGreeting\x18\x02 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotR\bGreeting\x12U\n" +
 	"\n" +
-	"OnBoarding\x18\x03 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotB\x0f\xaa\xdd\x1b\von_boardingR\n" +
-	"onBoarding\x1a\x90\x01\n" +
-	"\tTPlaylist\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x12(\n" +
-	"\bAnnounce\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bannounceR\bannounce\x12/\n" +
+	"OnBoarding\x18\x03 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotR\n" +
+	"OnBoarding\x1ac\n" +
+	"\tTPlaylist\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12\x1a\n" +
+	"\bAnnounce\x18\x02 \x01(\tR\bAnnounce\x12\x1e\n" +
 	"\n" +
-	"TrackIndex\x18\x03 \x01(\x05B\x0f\xaa\xdd\x1b\vtrack_indexR\n" +
-	"trackIndex\x1a\xe0\x02\n" +
-	"\x05TShot\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x125\n" +
-	"\fMandatoryGeo\x18\x02 \x01(\bB\x11\xaa\xdd\x1b\rmandatory_geoR\fmandatoryGeo\x125\n" +
-	"\fMandatoryUid\x18\x03 \x01(\bB\x11\xaa\xdd\x1b\rmandatory_uidR\fmandatoryUid\x12)\n" +
-	"\bShotType\x18\x04 \x01(\tB\r\xaa\xdd\x1b\tshot_typeR\bshotType\x123\n" +
-	"\vShotSubType\x18\x05 \x01(\tB\x11\xaa\xdd\x1b\rshot_sub_typeR\vshotSubType\x12\x1c\n" +
-	"\x04Tags\x18\x06 \x03(\tB\b\xaa\xdd\x1b\x04tagsR\x04tags\x12A\n" +
-	"\x10MandatoryHistory\x18\a \x01(\bB\x15\xaa\xdd\x1b\x11mandatory_historyR\x10mandatoryHistory\x1a\x9a\x03\n" +
-	"\x06TParts\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x12s\n" +
+	"TrackIndex\x18\x03 \x01(\x05R\n" +
+	"TrackIndex\x1a\xe9\x01\n" +
+	"\x05TShot\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12\"\n" +
+	"\fMandatoryGeo\x18\x02 \x01(\bR\fMandatoryGeo\x12\"\n" +
+	"\fMandatoryUid\x18\x03 \x01(\bR\fMandatoryUid\x12\x1a\n" +
+	"\bShotType\x18\x04 \x01(\tR\bShotType\x12 \n" +
+	"\vShotSubType\x18\x05 \x01(\tR\vShotSubType\x12\x12\n" +
+	"\x04Tags\x18\x06 \x03(\tR\x04Tags\x12*\n" +
+	"\x10MandatoryHistory\x18\a \x01(\bR\x10MandatoryHistory\x1a\xd2\x02\n" +
+	"\x06TParts\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12a\n" +
 	"\n" +
-	"PartsItems\x18\x03 \x03(\v2A.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TParts.TPartsItemB\x0f\xaa\xdd\x1b\vparts_itemsR\vparts_items\x1a\xe3\x01\n" +
+	"PartsItems\x18\x03 \x03(\v2A.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TParts.TPartsItemR\n" +
+	"PartsItems\x1a\xbb\x01\n" +
 	"\n" +
-	"TPartsItem\x12U\n" +
-	"\x04Shot\x18\x01 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotB\b\xaa\xdd\x1b\x04shotH\x00R\x04shot\x12e\n" +
-	"\bPlaylist\x18\x02 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPlaylistB\f\xaa\xdd\x1b\bplaylistH\x00R\bplaylistB\x17\n" +
-	"\x05TItem\x12\x0e\xaa\xdd\x1b\n" +
-	"parts_itemJ\x04\b\x02\x10\x03R\x05Parts\x1aU\n" +
-	"\bTPodcast\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x12\x1f\n" +
-	"\x05Group\x18\x02 \x01(\tB\t\xaa\xdd\x1b\x05groupR\x05group\x1a2\n" +
-	"\x06TPromo\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x1a_\n" +
-	"\x05TTail\x12(\n" +
-	"\bSelector\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bselectorR\bselector\x12,\n" +
-	"\tStartFrom\x18\x02 \x01(\x05B\x0e\xaa\xdd\x1b\n" +
-	"start_fromR\tstartFromB\x19\n" +
-	"\bShowPart\x12\r\xaa\xdd\x1b\tshow_partB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"TPartsItem\x12K\n" +
+	"\x04Shot\x18\x01 \x01(\v25.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TShotH\x00R\x04Shot\x12W\n" +
+	"\bPlaylist\x18\x02 \x01(\v29.NAlice.NData.NMusic.TAliceShowConfig.TShowPart.TPlaylistH\x00R\bPlaylistB\a\n" +
+	"\x05TItemJ\x04\b\x02\x10\x03R\x05Parts\x1a<\n" +
+	"\bTPodcast\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12\x14\n" +
+	"\x05Group\x18\x02 \x01(\tR\x05Group\x1a$\n" +
+	"\x06TPromo\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x1aA\n" +
+	"\x05TTail\x12\x1a\n" +
+	"\bSelector\x18\x01 \x01(\tR\bSelector\x12\x1c\n" +
+	"\tStartFrom\x18\x02 \x01(\x05R\tStartFromB\n" +
+	"\n" +
+	"\bShowPartB\xea\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x0fShowConfigProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_show_config_proto_rawDescOnce sync.Once

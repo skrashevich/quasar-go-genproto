@@ -143,8 +143,8 @@ const file_alice_protos_api_matrix_common_notifications_proto_rawDesc = "" +
 	"\x1aEProactiveNotificationType\x12\x0f\n" +
 	"\vPNT_UNKNOWN\x10\x00\x12!\n" +
 	"\x1dPNT_YANDEX_LAVKA_ORDER_STATUS\x10\x01\x12%\n" +
-	"!PNT_YANDEX_MARKET_15_ORDER_STATUS\x10\x02B]\n" +
-	"(ru.yandex.alice.protos.api.matrix.commonP\x01Z/a.yandex-team.ru/alice/protos/api/matrix/commonb\x06proto3"
+	"!PNT_YANDEX_MARKET_15_ORDER_STATUS\x10\x02B|\n" +
+	"(ru.yandex.alice.protos.api.matrix.commonP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/matrix/commonb\x06proto3"
 
 var (
 	file_alice_protos_api_matrix_common_notifications_proto_rawDescOnce sync.Once

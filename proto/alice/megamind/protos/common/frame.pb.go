@@ -36848,9 +36848,9 @@ const file_alice_megamind_protos_common_frame_proto_rawDesc = "" +
 	"/TMusicPlayGenreBookRecommendationsSemanticFrame\x12l\n" +
 	"\x0eAudiobookGenre\x18\x01 \x01(\v2\x1b.NAlice.TAudiobookGenreSlotB&\xaa\xdd\x1b\x0faudiobook_genre\xba\x85\x1c\x0faudiobook_genreR\x0faudiobook_genre:3\xa8\xdd\x1b\x04\x9a\xff\x1b+alice.music.play_genre_book_recommendations\"[\n" +
 	"*TMusicPlayBookRecommendationsSemanticFrame:-\xa8\xdd\x1b\x04\x9a\xff\x1b%alice.music.play_book_recommendations\"M\n" +
-	" TStartFaceRecordingSemanticFrame:)\xa8\xdd\x1b\x04\x9a\xff\x1b!alice.faceid.start_face_recordingBe\n" +
+	" TStartFaceRecordingSemanticFrame:)\xa8\xdd\x1b\x04\x9a\xff\x1b!alice.faceid.start_face_recordingB\x84\x01\n" +
 	"&ru.yandex.alice.megamind.protos.commonB\n" +
-	"FrameProtoP\x01Z-a.yandex-team.ru/alice/megamind/protos/commonb\x06proto3"
+	"FrameProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/commonb\x06proto3"
 
 var (
 	file_alice_megamind_protos_common_frame_proto_rawDescOnce sync.Once

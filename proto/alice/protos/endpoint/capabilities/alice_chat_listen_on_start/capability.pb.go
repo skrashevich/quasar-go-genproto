@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_listen_on_start/capability.proto
 
-package alicechatlistenonstartpb
+package alice_chat_listen_on_start
 
 import (
 	aliceapp_native_settings "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/aliceapp_native_settings"
@@ -235,8 +235,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_listen_on_start_capabil
 	"\fSettingState\x18\x01 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:\x04\xa8\xdd\x1b\x04\x1a\x84\x02\n" +
 	"-TAliceChatListenOnStartToggleSettingDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12}\n" +
-	"\fSettingState\x18\x02 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:6\x92\x82\x19)alice_chat_listen_on_start_toggle_setting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa3\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x95\x02B\xb4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAliceChatListenOnStartProtoZga.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_listen_on_start;alicechatlistenonstartpbb\x06proto3"
+	"\fSettingState\x18\x02 \x01(\x0e2E.NAlice.NData.NAliceAppNativeSettings.EAliceNativeBinarySettingStatusB\x11\xaa\xdd\x1b\rsetting_stateR\rsetting_state:6\x92\x82\x19)alice_chat_listen_on_start_toggle_setting\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa3\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x95\x02B\xba\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bAliceChatListenOnStartProtoZmgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_listen_on_startb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_listen_on_start_capability_proto_rawDescOnce sync.Once

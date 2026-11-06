@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/face_recognition/capability.proto
 
-package face_recognitionpb
+package face_recognition
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/yt/extensions"
@@ -560,8 +560,8 @@ const file_alice_protos_endpoint_capabilities_face_recognition_capability_proto_
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
 	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url\x12$\n" +
 	"\x06PersId\x18\x02 \x01(\tB\v\xaa\xdd\x1b\apers_idR\apers_id\x12 \n" +
-	"\x04Puid\x18\x03 \x01(\tB\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid:1\x92\x82\x19$open_smart_home_confirm_qr_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9b\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x80\x01B\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19FaceRecognitionCapabilityP\x01ZWa.yandex-team.ru/alice/protos/endpoint/capabilities/face_recognition;face_recognitionpbb\x06proto3"
+	"\x04Puid\x18\x03 \x01(\tB\f\xaa\xdd\x1b\x04puid\xf8\x91*\x01R\x04puid:1\x92\x82\x19$open_smart_home_confirm_qr_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x9b\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x80\x01B\xb0\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19FaceRecognitionCapabilityP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/face_recognitionb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_face_recognition_capability_proto_rawDescOnce sync.Once

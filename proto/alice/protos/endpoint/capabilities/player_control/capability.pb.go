@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/player_control/capability.proto
 
-package player_controlpb
+package player_control
 
 import (
 	music_entities "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/music_entities"
@@ -3094,8 +3094,8 @@ const file_alice_protos_endpoint_capabilities_player_control_capability_proto_ra
 	"\x19ResultAwareActionUndoLike\x10\f\x12\x1b\n" +
 	"\x17ResultAwareActionReplay\x10\r\x12\x1c\n" +
 	"\x18ResultAwareActionDislike\x10\x0e\x12 \n" +
-	"\x1cResultAwareActionUndoDislike\x10\x0f:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x83\x01B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cPlayerControlCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/player_control;player_controlpbb\x06proto3"
+	"\x1cResultAwareActionUndoDislike\x10\x0f:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x83\x01B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cPlayerControlCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/player_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_player_control_capability_proto_rawDescOnce sync.Once

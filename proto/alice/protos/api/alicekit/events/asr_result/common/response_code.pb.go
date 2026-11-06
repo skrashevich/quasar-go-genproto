@@ -74,8 +74,8 @@ const file_alice_protos_api_alicekit_events_asr_result_common_response_code_prot
 	"Falice/protos/api/alicekit/events/asr_result/common/response_code.proto\x12\x10NAlice.NAliceApi*-\n" +
 	"\x10EAsrResponseCode\x12\x06\n" +
 	"\x02OK\x10\x00\x12\x11\n" +
-	"\rInternalError\x10\x01B\x85\x01\n" +
-	"<ru.yandex.alice.protos.api.alicekit.events.asr_result.commonP\x01ZCa.yandex-team.ru/alice/protos/api/alicekit/events/asr_result/commonb\x06proto3"
+	"\rInternalError\x10\x01B\xee\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x11ResponseCodeProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/asr_result/common\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_asr_result_common_response_code_proto_rawDescOnce sync.Once

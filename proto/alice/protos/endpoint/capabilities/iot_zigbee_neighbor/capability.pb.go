@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_zigbee_neighbor/capability.proto
 
-package iotzigbeeneighborpb
+package iot_zigbee_neighbor
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -394,8 +394,8 @@ const file_alice_protos_endpoint_capabilities_iot_zigbee_neighbor_capability_pro
 	"\n" +
 	"\x06Parent\x10\x01\x12\t\n" +
 	"\x05Child\x10\x02\x12\v\n" +
-	"\aSibling\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xba\x01B\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB IotZigbeeNeighborCapabilityProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_zigbee_neighbor;iotzigbeeneighborpbb\x06proto3"
+	"\aSibling\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xba\x01B\xb8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB IotZigbeeNeighborCapabilityProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_zigbee_neighborb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_zigbee_neighbor_capability_proto_rawDescOnce sync.Once

@@ -187,8 +187,8 @@ const file_alice_protos_data_device_notifications_notification_proto_rawDesc = "
 	"\x04Call\x10\x03B\a\n" +
 	"\x05_TextB\n" +
 	"\n" +
-	"\b_BigTextB{\n" +
-	"0ru.yandex.alice.protos.data.device_notificationsB\x0eScenariosProtoZ7a.yandex-team.ru/alice/protos/data/device_notificationsb\x06proto3"
+	"\b_BigTextB\x9a\x01\n" +
+	"0ru.yandex.alice.protos.data.device_notificationsB\x0eScenariosProtoZVgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/device_notificationsb\x06proto3"
 
 var (
 	file_alice_protos_data_device_notifications_notification_proto_rawDescOnce sync.Once

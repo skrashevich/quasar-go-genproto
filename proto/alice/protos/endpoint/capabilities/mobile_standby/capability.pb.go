@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/mobile_standby/capability.proto
 
-package mobilestandbypb
+package mobile_standby
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_mobile_standby_capability_proto_ra
 	"\x05State\x18\x03 \x01(\v2'.NAlice.TMobileStandbyCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\"\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02R\aEnabled\x1a5\n" +
 	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfb\x01B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cMobileStandbyCapabilityProtoZRa.yandex-team.ru/alice/protos/endpoint/capabilities/mobile_standby;mobilestandbypbb\x06proto3"
+	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xfb\x01B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cMobileStandbyCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/mobile_standbyb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_mobile_standby_capability_proto_rawDescOnce sync.Once

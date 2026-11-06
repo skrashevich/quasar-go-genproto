@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice/capability.proto
 
-package alicepb
+package alice
 
 import (
 	protos "github.com/skrashevich/quasar-go-genproto/proto/alice/library/client/protos"
@@ -184,9 +184,9 @@ func (TAliceCapability_TVocalizeDirective_ETtsSource) EnumDescriptor() ([]byte, 
 
 type TAliceCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAliceCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAliceCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAliceCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAliceCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -244,7 +244,7 @@ func (x *TAliceCapability) GetState() *TAliceCapability_TState {
 
 type TAliceCapability_TBlocker struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -323,16 +323,16 @@ func (*TAliceCapability_TParameters) Descriptor() ([]byte, []int) {
 }
 
 type TAliceCapability_TSpeechState struct {
-	state         protoimpl.MessageState                        `protogen:"open.v1"`
-	SpeechMode    *mode.TSpeechMode                             `protobuf:"bytes,4,opt,name=SpeechMode,json=speech_mode,proto3" json:"SpeechMode,omitempty"`
-	ActiveRequest *TAliceCapability_TSpeechState_TActiveRequest `protobuf:"bytes,6,opt,name=ActiveRequest,json=active_request,proto3" json:"ActiveRequest,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	SpeechMode *mode.TSpeechMode      `protobuf:"bytes,4,opt,name=SpeechMode,proto3" json:"SpeechMode,omitempty"`
 	// Types that are valid to be assigned to State:
 	//
 	//	*TAliceCapability_TSpeechState_Listening
 	//	*TAliceCapability_TSpeechState_Thinking
 	//	*TAliceCapability_TSpeechState_Speaking
 	//	*TAliceCapability_TSpeechState_Idle
-	State         isTAliceCapability_TSpeechState_State `protobuf_oneof:"State"`
+	State         isTAliceCapability_TSpeechState_State         `protobuf_oneof:"State"`
+	ActiveRequest *TAliceCapability_TSpeechState_TActiveRequest `protobuf:"bytes,6,opt,name=ActiveRequest,json=active_request,proto3" json:"ActiveRequest,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -370,13 +370,6 @@ func (*TAliceCapability_TSpeechState) Descriptor() ([]byte, []int) {
 func (x *TAliceCapability_TSpeechState) GetSpeechMode() *mode.TSpeechMode {
 	if x != nil {
 		return x.SpeechMode
-	}
-	return nil
-}
-
-func (x *TAliceCapability_TSpeechState) GetActiveRequest() *TAliceCapability_TSpeechState_TActiveRequest {
-	if x != nil {
-		return x.ActiveRequest
 	}
 	return nil
 }
@@ -424,24 +417,31 @@ func (x *TAliceCapability_TSpeechState) GetIdle() *TAliceCapability_TSpeechState
 	return nil
 }
 
+func (x *TAliceCapability_TSpeechState) GetActiveRequest() *TAliceCapability_TSpeechState_TActiveRequest {
+	if x != nil {
+		return x.ActiveRequest
+	}
+	return nil
+}
+
 type isTAliceCapability_TSpeechState_State interface {
 	isTAliceCapability_TSpeechState_State()
 }
 
 type TAliceCapability_TSpeechState_Listening struct {
-	Listening *TAliceCapability_TSpeechState_TListening `protobuf:"bytes,1,opt,name=Listening,json=listening,proto3,oneof"`
+	Listening *TAliceCapability_TSpeechState_TListening `protobuf:"bytes,1,opt,name=Listening,proto3,oneof"`
 }
 
 type TAliceCapability_TSpeechState_Thinking struct {
-	Thinking *TAliceCapability_TSpeechState_TThinking `protobuf:"bytes,2,opt,name=Thinking,json=thinking,proto3,oneof"`
+	Thinking *TAliceCapability_TSpeechState_TThinking `protobuf:"bytes,2,opt,name=Thinking,proto3,oneof"`
 }
 
 type TAliceCapability_TSpeechState_Speaking struct {
-	Speaking *TAliceCapability_TSpeechState_TSpeaking `protobuf:"bytes,3,opt,name=Speaking,json=speaking,proto3,oneof"`
+	Speaking *TAliceCapability_TSpeechState_TSpeaking `protobuf:"bytes,3,opt,name=Speaking,proto3,oneof"`
 }
 
 type TAliceCapability_TSpeechState_Idle struct {
-	Idle *TAliceCapability_TSpeechState_TIdle `protobuf:"bytes,5,opt,name=Idle,json=idle,proto3,oneof"`
+	Idle *TAliceCapability_TSpeechState_TIdle `protobuf:"bytes,5,opt,name=Idle,proto3,oneof"`
 }
 
 func (*TAliceCapability_TSpeechState_Listening) isTAliceCapability_TSpeechState_State() {}
@@ -454,8 +454,8 @@ func (*TAliceCapability_TSpeechState_Idle) isTAliceCapability_TSpeechState_State
 
 type TAliceCapability_TAliceState struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
-	ActiveRequest *TAliceCapability_TAliceState_TActiveRequest `protobuf:"bytes,5,opt,name=ActiveRequest,json=active_request,proto3" json:"ActiveRequest,omitempty"`
-	ActiveDialog  *dialog_state.TDialogState                   `protobuf:"bytes,6,opt,name=ActiveDialog,json=active_dialog,proto3" json:"ActiveDialog,omitempty"`
+	ActiveRequest *TAliceCapability_TAliceState_TActiveRequest `protobuf:"bytes,5,opt,name=ActiveRequest,proto3" json:"ActiveRequest,omitempty"`
+	ActiveDialog  *dialog_state.TDialogState                   `protobuf:"bytes,6,opt,name=ActiveDialog,proto3" json:"ActiveDialog,omitempty"`
 	// Types that are valid to be assigned to State:
 	//
 	//	*TAliceCapability_TAliceState_Listening
@@ -537,7 +537,6 @@ func (x *TAliceCapability_TAliceState) GetThinking() *TAliceCapability_TAliceSta
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/alice/capability.proto.
 func (x *TAliceCapability_TAliceState) GetSpeaking() *TAliceCapability_TAliceState_TSpeaking {
 	if x != nil {
 		if x, ok := x.State.(*TAliceCapability_TAliceState_Speaking); ok {
@@ -570,24 +569,23 @@ type isTAliceCapability_TAliceState_State interface {
 }
 
 type TAliceCapability_TAliceState_Listening struct {
-	Listening *TAliceCapability_TAliceState_TListening `protobuf:"bytes,1,opt,name=Listening,json=listening,proto3,oneof"`
+	Listening *TAliceCapability_TAliceState_TListening `protobuf:"bytes,1,opt,name=Listening,proto3,oneof"`
 }
 
 type TAliceCapability_TAliceState_Thinking struct {
-	Thinking *TAliceCapability_TAliceState_TThinking `protobuf:"bytes,2,opt,name=Thinking,json=thinking,proto3,oneof"`
+	Thinking *TAliceCapability_TAliceState_TThinking `protobuf:"bytes,2,opt,name=Thinking,proto3,oneof"`
 }
 
 type TAliceCapability_TAliceState_Speaking struct {
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/alice/capability.proto.
-	Speaking *TAliceCapability_TAliceState_TSpeaking `protobuf:"bytes,3,opt,name=Speaking,json=speaking,proto3,oneof"`
+	Speaking *TAliceCapability_TAliceState_TSpeaking `protobuf:"bytes,3,opt,name=Speaking,proto3,oneof"`
 }
 
 type TAliceCapability_TAliceState_Idle struct {
-	Idle *TAliceCapability_TAliceState_TIdle `protobuf:"bytes,4,opt,name=Idle,json=idle,proto3,oneof"`
+	Idle *TAliceCapability_TAliceState_TIdle `protobuf:"bytes,4,opt,name=Idle,proto3,oneof"`
 }
 
 type TAliceCapability_TAliceState_Responding struct {
-	Responding *TAliceCapability_TAliceState_TResponding `protobuf:"bytes,7,opt,name=Responding,json=responding,proto3,oneof"`
+	Responding *TAliceCapability_TAliceState_TResponding `protobuf:"bytes,7,opt,name=Responding,proto3,oneof"`
 }
 
 func (*TAliceCapability_TAliceState_Listening) isTAliceCapability_TAliceState_State() {}
@@ -602,7 +600,7 @@ func (*TAliceCapability_TAliceState_Responding) isTAliceCapability_TAliceState_S
 
 type TAliceCapability_TJingleState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	JingleEnabled bool                   `protobuf:"varint,1,opt,name=JingleEnabled,json=jingle_enabled,proto3" json:"JingleEnabled,omitempty"`
+	JingleEnabled bool                   `protobuf:"varint,1,opt,name=JingleEnabled,proto3" json:"JingleEnabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -646,13 +644,13 @@ func (x *TAliceCapability_TJingleState) GetJingleEnabled() bool {
 
 type TAliceCapability_TState struct {
 	state                  protoimpl.MessageState                            `protogen:"open.v1"`
-	TtsInterruptionTimings *tts_interruption_timings.TTtsInterruptionTimings `protobuf:"bytes,1,opt,name=TtsInterruptionTimings,json=tts_interruption_timings,proto3" json:"TtsInterruptionTimings,omitempty"`
-	Blockers               []*TAliceCapability_TBlocker                      `protobuf:"bytes,3,rep,name=Blockers,json=blockers,proto3" json:"Blockers,omitempty"`
-	ConnectionStatus       *connection.TConnectionStatus                     `protobuf:"bytes,5,opt,name=ConnectionStatus,json=connection_status,proto3" json:"ConnectionStatus,omitempty"`
-	SpeechState            *TAliceCapability_TSpeechState                    `protobuf:"bytes,6,opt,name=SpeechState,json=speech_state,proto3" json:"SpeechState,omitempty"`
-	AliceState             *TAliceCapability_TAliceState                     `protobuf:"bytes,7,opt,name=AliceState,json=alice_state,proto3" json:"AliceState,omitempty"`
-	Uuid                   *string                                           `protobuf:"bytes,2,opt,name=Uuid,json=uuid,proto3,oneof" json:"Uuid,omitempty"`
-	TtsState               *TAliceCapability_TState_ETtsState                `protobuf:"varint,4,opt,name=TtsState,json=tts_state,proto3,enum=NAlice.TAliceCapability_TState_ETtsState,oneof" json:"TtsState,omitempty"`
+	TtsInterruptionTimings *tts_interruption_timings.TTtsInterruptionTimings `protobuf:"bytes,1,opt,name=TtsInterruptionTimings,proto3" json:"TtsInterruptionTimings,omitempty"`
+	Blockers               []*TAliceCapability_TBlocker                      `protobuf:"bytes,3,rep,name=Blockers,proto3" json:"Blockers,omitempty"`
+	ConnectionStatus       *connection.TConnectionStatus                     `protobuf:"bytes,5,opt,name=ConnectionStatus,proto3" json:"ConnectionStatus,omitempty"`
+	SpeechState            *TAliceCapability_TSpeechState                    `protobuf:"bytes,6,opt,name=SpeechState,proto3" json:"SpeechState,omitempty"`
+	AliceState             *TAliceCapability_TAliceState                     `protobuf:"bytes,7,opt,name=AliceState,proto3" json:"AliceState,omitempty"`
+	Uuid                   *string                                           `protobuf:"bytes,2,opt,name=Uuid,proto3,oneof" json:"Uuid,omitempty"`
+	TtsState               *TAliceCapability_TState_ETtsState                `protobuf:"varint,4,opt,name=TtsState,proto3,enum=NAlice.TAliceCapability_TState_ETtsState,oneof" json:"TtsState,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -738,9 +736,9 @@ func (x *TAliceCapability_TState) GetTtsState() TAliceCapability_TState_ETtsStat
 
 type TAliceCapability_TGetEnvironmentStateOptions struct {
 	state                    protoimpl.MessageState `protogen:"open.v1"`
-	IncludeLocalEndpoints    bool                   `protobuf:"varint,1,opt,name=IncludeLocalEndpoints,json=include_local_endpoints,proto3" json:"IncludeLocalEndpoints,omitempty"`
-	IncludeEmbeddedEndpoints bool                   `protobuf:"varint,2,opt,name=IncludeEmbeddedEndpoints,json=include_embedded_endpoints,proto3" json:"IncludeEmbeddedEndpoints,omitempty"`
-	IncludeRemoteEndpoints   bool                   `protobuf:"varint,3,opt,name=IncludeRemoteEndpoints,json=include_remote_endpoints,proto3" json:"IncludeRemoteEndpoints,omitempty"`
+	IncludeLocalEndpoints    bool                   `protobuf:"varint,1,opt,name=IncludeLocalEndpoints,proto3" json:"IncludeLocalEndpoints,omitempty"`
+	IncludeEmbeddedEndpoints bool                   `protobuf:"varint,2,opt,name=IncludeEmbeddedEndpoints,proto3" json:"IncludeEmbeddedEndpoints,omitempty"`
+	IncludeRemoteEndpoints   bool                   `protobuf:"varint,3,opt,name=IncludeRemoteEndpoints,proto3" json:"IncludeRemoteEndpoints,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -798,7 +796,7 @@ func (x *TAliceCapability_TGetEnvironmentStateOptions) GetIncludeRemoteEndpoints
 
 type TAliceCapability_TBlockDirective struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Name          string                     `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                     `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	Blocker       *TAliceCapability_TBlocker `protobuf:"bytes,1,opt,name=Blocker,proto3" json:"Blocker,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -850,7 +848,7 @@ func (x *TAliceCapability_TBlockDirective) GetBlocker() *TAliceCapability_TBlock
 
 type TAliceCapability_TUnblockDirective struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Name          string                     `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                     `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	Blocker       *TAliceCapability_TBlocker `protobuf:"bytes,1,opt,name=Blocker,proto3" json:"Blocker,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -902,8 +900,8 @@ func (x *TAliceCapability_TUnblockDirective) GetBlocker() *TAliceCapability_TBlo
 
 type TAliceCapability_TUpdateTtsPlaceholderDirective struct {
 	state            protoimpl.MessageState                                             `protogen:"open.v1"`
-	Name             string                                                             `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	TaggedDirectives []*TAliceCapability_TUpdateTtsPlaceholderDirective_TaggedDirective `protobuf:"bytes,1,rep,name=TaggedDirectives,json=tagged_directives,proto3" json:"TaggedDirectives,omitempty"`
+	Name             string                                                             `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	TaggedDirectives []*TAliceCapability_TUpdateTtsPlaceholderDirective_TaggedDirective `protobuf:"bytes,1,rep,name=TaggedDirectives,proto3" json:"TaggedDirectives,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -954,9 +952,9 @@ func (x *TAliceCapability_TUpdateTtsPlaceholderDirective) GetTaggedDirectives() 
 
 type TAliceCapability_TVocalizeDirective struct {
 	state         protoimpl.MessageState                              `protogen:"open.v1"`
+	Text          *string                                             `protobuf:"bytes,1,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
+	SynthesisMode *TAliceCapability_TVocalizeDirective_ESynthesisMode `protobuf:"varint,2,opt,name=SynthesisMode,proto3,enum=NAlice.TAliceCapability_TVocalizeDirective_ESynthesisMode,oneof" json:"SynthesisMode,omitempty"`
 	TtsSource     TAliceCapability_TVocalizeDirective_ETtsSource      `protobuf:"varint,4,opt,name=TtsSource,json=tts_source,proto3,enum=NAlice.TAliceCapability_TVocalizeDirective_ETtsSource" json:"TtsSource,omitempty"`
-	Text          *string                                             `protobuf:"bytes,1,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
-	SynthesisMode *TAliceCapability_TVocalizeDirective_ESynthesisMode `protobuf:"varint,2,opt,name=SynthesisMode,json=synthesis_mode,proto3,enum=NAlice.TAliceCapability_TVocalizeDirective_ESynthesisMode,oneof" json:"SynthesisMode,omitempty"`
 	Voice         *string                                             `protobuf:"bytes,3,opt,name=Voice,json=voice,proto3,oneof" json:"Voice,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -992,13 +990,6 @@ func (*TAliceCapability_TVocalizeDirective) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 10}
 }
 
-func (x *TAliceCapability_TVocalizeDirective) GetTtsSource() TAliceCapability_TVocalizeDirective_ETtsSource {
-	if x != nil {
-		return x.TtsSource
-	}
-	return TAliceCapability_TVocalizeDirective_Server
-}
-
 func (x *TAliceCapability_TVocalizeDirective) GetText() string {
 	if x != nil && x.Text != nil {
 		return *x.Text
@@ -1013,6 +1004,13 @@ func (x *TAliceCapability_TVocalizeDirective) GetSynthesisMode() TAliceCapabilit
 	return TAliceCapability_TVocalizeDirective_Unknown
 }
 
+func (x *TAliceCapability_TVocalizeDirective) GetTtsSource() TAliceCapability_TVocalizeDirective_ETtsSource {
+	if x != nil {
+		return x.TtsSource
+	}
+	return TAliceCapability_TVocalizeDirective_Server
+}
+
 func (x *TAliceCapability_TVocalizeDirective) GetVoice() string {
 	if x != nil && x.Voice != nil {
 		return *x.Voice
@@ -1020,60 +1018,16 @@ func (x *TAliceCapability_TVocalizeDirective) GetVoice() string {
 	return ""
 }
 
-type TAliceCapability_TStartRecognizeDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lang          *string                `protobuf:"bytes,1,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TStartRecognizeDirective) Reset() {
-	*x = TAliceCapability_TStartRecognizeDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TStartRecognizeDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TStartRecognizeDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TStartRecognizeDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TStartRecognizeDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TStartRecognizeDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 11}
-}
-
-func (x *TAliceCapability_TStartRecognizeDirective) GetLang() string {
-	if x != nil && x.Lang != nil {
-		return *x.Lang
-	}
-	return ""
-}
-
 type TAliceCapability_TStartVoiceInputDirective struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	VoiceInput    *alice_request.TVoiceInput `protobuf:"bytes,1,opt,name=VoiceInput,json=voice_input,proto3" json:"VoiceInput,omitempty"`
+	VoiceInput    *alice_request.TVoiceInput `protobuf:"bytes,1,opt,name=VoiceInput,proto3" json:"VoiceInput,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TStartVoiceInputDirective) Reset() {
 	*x = TAliceCapability_TStartVoiceInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[13]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1085,7 +1039,7 @@ func (x *TAliceCapability_TStartVoiceInputDirective) String() string {
 func (*TAliceCapability_TStartVoiceInputDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStartVoiceInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[13]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1098,7 +1052,7 @@ func (x *TAliceCapability_TStartVoiceInputDirective) ProtoReflect() protoreflect
 
 // Deprecated: Use TAliceCapability_TStartVoiceInputDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStartVoiceInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 12}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 11}
 }
 
 func (x *TAliceCapability_TStartVoiceInputDirective) GetVoiceInput() *alice_request.TVoiceInput {
@@ -1110,14 +1064,14 @@ func (x *TAliceCapability_TStartVoiceInputDirective) GetVoiceInput() *alice_requ
 
 type TAliceCapability_TStopConversationDirective struct {
 	state         protoimpl.MessageState                                      `protogen:"open.v1"`
-	ClientOptions *TAliceCapability_TStopConversationDirective_TClientOptions `protobuf:"bytes,1,opt,name=ClientOptions,json=client_options,proto3" json:"ClientOptions,omitempty"`
+	ClientOptions *TAliceCapability_TStopConversationDirective_TClientOptions `protobuf:"bytes,1,opt,name=ClientOptions,proto3" json:"ClientOptions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TStopConversationDirective) Reset() {
 	*x = TAliceCapability_TStopConversationDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[14]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1129,7 +1083,7 @@ func (x *TAliceCapability_TStopConversationDirective) String() string {
 func (*TAliceCapability_TStopConversationDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStopConversationDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[14]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1142,7 +1096,7 @@ func (x *TAliceCapability_TStopConversationDirective) ProtoReflect() protoreflec
 
 // Deprecated: Use TAliceCapability_TStopConversationDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStopConversationDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 13}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 12}
 }
 
 func (x *TAliceCapability_TStopConversationDirective) GetClientOptions() *TAliceCapability_TStopConversationDirective_TClientOptions {
@@ -1154,14 +1108,14 @@ func (x *TAliceCapability_TStopConversationDirective) GetClientOptions() *TAlice
 
 type TAliceCapability_TStartTextInputDirective struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	TextInput     *alice_request.TTextInput `protobuf:"bytes,1,opt,name=TextInput,json=text_input,proto3" json:"TextInput,omitempty"`
+	TextInput     *alice_request.TTextInput `protobuf:"bytes,1,opt,name=TextInput,proto3" json:"TextInput,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TStartTextInputDirective) Reset() {
 	*x = TAliceCapability_TStartTextInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[15]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1173,7 +1127,7 @@ func (x *TAliceCapability_TStartTextInputDirective) String() string {
 func (*TAliceCapability_TStartTextInputDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStartTextInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[15]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1186,7 +1140,7 @@ func (x *TAliceCapability_TStartTextInputDirective) ProtoReflect() protoreflect.
 
 // Deprecated: Use TAliceCapability_TStartTextInputDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStartTextInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 14}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 13}
 }
 
 func (x *TAliceCapability_TStartTextInputDirective) GetTextInput() *alice_request.TTextInput {
@@ -1198,14 +1152,14 @@ func (x *TAliceCapability_TStartTextInputDirective) GetTextInput() *alice_reques
 
 type TAliceCapability_TSetActiveDialogDirective struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	DialogState   *dialog_state.TDialogState `protobuf:"bytes,1,opt,name=DialogState,json=dialog_state,proto3" json:"DialogState,omitempty"`
+	DialogState   *dialog_state.TDialogState `protobuf:"bytes,1,opt,name=DialogState,proto3" json:"DialogState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TSetActiveDialogDirective) Reset() {
 	*x = TAliceCapability_TSetActiveDialogDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[16]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1217,7 +1171,7 @@ func (x *TAliceCapability_TSetActiveDialogDirective) String() string {
 func (*TAliceCapability_TSetActiveDialogDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TSetActiveDialogDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[16]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1230,7 +1184,7 @@ func (x *TAliceCapability_TSetActiveDialogDirective) ProtoReflect() protoreflect
 
 // Deprecated: Use TAliceCapability_TSetActiveDialogDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSetActiveDialogDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 15}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 14}
 }
 
 func (x *TAliceCapability_TSetActiveDialogDirective) GetDialogState() *dialog_state.TDialogState {
@@ -1242,14 +1196,14 @@ func (x *TAliceCapability_TSetActiveDialogDirective) GetDialogState() *dialog_st
 
 type TAliceCapability_TCompleteStreamingResponseDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TCompleteStreamingResponseDirective) Reset() {
 	*x = TAliceCapability_TCompleteStreamingResponseDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[17]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1261,7 +1215,7 @@ func (x *TAliceCapability_TCompleteStreamingResponseDirective) String() string {
 func (*TAliceCapability_TCompleteStreamingResponseDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TCompleteStreamingResponseDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[17]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1274,7 +1228,7 @@ func (x *TAliceCapability_TCompleteStreamingResponseDirective) ProtoReflect() pr
 
 // Deprecated: Use TAliceCapability_TCompleteStreamingResponseDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TCompleteStreamingResponseDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 16}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 15}
 }
 
 func (x *TAliceCapability_TCompleteStreamingResponseDirective) GetRequestId() string {
@@ -1282,50 +1236,6 @@ func (x *TAliceCapability_TCompleteStreamingResponseDirective) GetRequestId() st
 		return x.RequestId
 	}
 	return ""
-}
-
-type TAliceCapability_TDialogChannelPlaceholderDirective struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	WrappedDirective []byte                 `protobuf:"bytes,1,opt,name=WrappedDirective,json=wrapped_directive,proto3,oneof" json:"WrappedDirective,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TDialogChannelPlaceholderDirective) Reset() {
-	*x = TAliceCapability_TDialogChannelPlaceholderDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[18]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TDialogChannelPlaceholderDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TDialogChannelPlaceholderDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TDialogChannelPlaceholderDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[18]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TDialogChannelPlaceholderDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TDialogChannelPlaceholderDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 17}
-}
-
-func (x *TAliceCapability_TDialogChannelPlaceholderDirective) GetWrappedDirective() []byte {
-	if x != nil {
-		return x.WrappedDirective
-	}
-	return nil
 }
 
 type TAliceCapability_TCompleteTtsResponseDirective struct {
@@ -1337,7 +1247,7 @@ type TAliceCapability_TCompleteTtsResponseDirective struct {
 
 func (x *TAliceCapability_TCompleteTtsResponseDirective) Reset() {
 	*x = TAliceCapability_TCompleteTtsResponseDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[19]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1349,7 +1259,7 @@ func (x *TAliceCapability_TCompleteTtsResponseDirective) String() string {
 func (*TAliceCapability_TCompleteTtsResponseDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TCompleteTtsResponseDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[19]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1362,7 +1272,7 @@ func (x *TAliceCapability_TCompleteTtsResponseDirective) ProtoReflect() protoref
 
 // Deprecated: Use TAliceCapability_TCompleteTtsResponseDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TCompleteTtsResponseDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 18}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 16}
 }
 
 func (x *TAliceCapability_TCompleteTtsResponseDirective) GetInvalidateAutoListen() bool {
@@ -1372,53 +1282,17 @@ func (x *TAliceCapability_TCompleteTtsResponseDirective) GetInvalidateAutoListen
 	return false
 }
 
-type TAliceCapability_TInvalidateAutoListenDirective struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TInvalidateAutoListenDirective) Reset() {
-	*x = TAliceCapability_TInvalidateAutoListenDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[20]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TInvalidateAutoListenDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TInvalidateAutoListenDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TInvalidateAutoListenDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[20]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TInvalidateAutoListenDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TInvalidateAutoListenDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 19}
-}
-
 type TAliceCapability_TStartSpeechInputDirective struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,json=speech_input,proto3" json:"SpeechInput,omitempty"`
+	Name          string                      `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,proto3" json:"SpeechInput,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TStartSpeechInputDirective) Reset() {
 	*x = TAliceCapability_TStartSpeechInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[21]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1430,7 +1304,7 @@ func (x *TAliceCapability_TStartSpeechInputDirective) String() string {
 func (*TAliceCapability_TStartSpeechInputDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStartSpeechInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[21]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1443,7 +1317,7 @@ func (x *TAliceCapability_TStartSpeechInputDirective) ProtoReflect() protoreflec
 
 // Deprecated: Use TAliceCapability_TStartSpeechInputDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStartSpeechInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 20}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 17}
 }
 
 func (x *TAliceCapability_TStartSpeechInputDirective) GetName() string {
@@ -1460,214 +1334,6 @@ func (x *TAliceCapability_TStartSpeechInputDirective) GetSpeechInput() *alice_re
 	return nil
 }
 
-type TAliceCapability_TSetSpeechModeOptionsDirective struct {
-	state             protoimpl.MessageState   `protogen:"open.v1"`
-	SpeechModeOptions *mode.TSpeechModeOptions `protobuf:"bytes,2,opt,name=SpeechModeOptions,json=speech_mode_options,proto3" json:"SpeechModeOptions,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSetSpeechModeOptionsDirective) Reset() {
-	*x = TAliceCapability_TSetSpeechModeOptionsDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[22]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSetSpeechModeOptionsDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSetSpeechModeOptionsDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TSetSpeechModeOptionsDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[22]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSetSpeechModeOptionsDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSetSpeechModeOptionsDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21}
-}
-
-func (x *TAliceCapability_TSetSpeechModeOptionsDirective) GetSpeechModeOptions() *mode.TSpeechModeOptions {
-	if x != nil {
-		return x.SpeechModeOptions
-	}
-	return nil
-}
-
-type TAliceCapability_TStartNoteInputDirective struct {
-	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,json=speech_input,proto3" json:"SpeechInput,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TStartNoteInputDirective) Reset() {
-	*x = TAliceCapability_TStartNoteInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[23]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TStartNoteInputDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TStartNoteInputDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TStartNoteInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[23]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TStartNoteInputDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TStartNoteInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 22}
-}
-
-func (x *TAliceCapability_TStartNoteInputDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *TAliceCapability_TStartNoteInputDirective) GetSpeechInput() *alice_request.TSpeechInput {
-	if x != nil {
-		return x.SpeechInput
-	}
-	return nil
-}
-
-type TAliceCapability_TFinishSpeechInputDirective struct {
-	state                protoimpl.MessageState                                       `protogen:"open.v1"`
-	Name                 string                                                       `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	FinishOptions        *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions `protobuf:"bytes,1,opt,name=FinishOptions,json=finish_options,proto3" json:"FinishOptions,omitempty"`
-	FinishRequestPayload *alice_request.TClientAliceRequestProto                      `protobuf:"bytes,2,opt,name=FinishRequestPayload,json=finish_request_payload,proto3" json:"FinishRequestPayload,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) Reset() {
-	*x = TAliceCapability_TFinishSpeechInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[24]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TFinishSpeechInputDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[24]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TFinishSpeechInputDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TFinishSpeechInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 23}
-}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) GetFinishOptions() *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions {
-	if x != nil {
-		return x.FinishOptions
-	}
-	return nil
-}
-
-func (x *TAliceCapability_TFinishSpeechInputDirective) GetFinishRequestPayload() *alice_request.TClientAliceRequestProto {
-	if x != nil {
-		return x.FinishRequestPayload
-	}
-	return nil
-}
-
-type TAliceCapability_TStartTranslateInputDirective struct {
-	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,json=speech_input,proto3" json:"SpeechInput,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TStartTranslateInputDirective) Reset() {
-	*x = TAliceCapability_TStartTranslateInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[25]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TStartTranslateInputDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TStartTranslateInputDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TStartTranslateInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[25]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TStartTranslateInputDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TStartTranslateInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 24}
-}
-
-func (x *TAliceCapability_TStartTranslateInputDirective) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *TAliceCapability_TStartTranslateInputDirective) GetSpeechInput() *alice_request.TSpeechInput {
-	if x != nil {
-		return x.SpeechInput
-	}
-	return nil
-}
-
 type TAliceCapability_TStartRecordInputDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -1676,7 +1342,7 @@ type TAliceCapability_TStartRecordInputDirective struct {
 
 func (x *TAliceCapability_TStartRecordInputDirective) Reset() {
 	*x = TAliceCapability_TStartRecordInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[26]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1688,7 +1354,7 @@ func (x *TAliceCapability_TStartRecordInputDirective) String() string {
 func (*TAliceCapability_TStartRecordInputDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStartRecordInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[26]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1701,19 +1367,19 @@ func (x *TAliceCapability_TStartRecordInputDirective) ProtoReflect() protoreflec
 
 // Deprecated: Use TAliceCapability_TStartRecordInputDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStartRecordInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 25}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 18}
 }
 
 type TAliceCapability_TSetJingleStateDirective struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	JingleState   *TAliceCapability_TJingleState `protobuf:"bytes,1,opt,name=JingleState,json=jingle_state,proto3" json:"JingleState,omitempty"`
+	JingleState   *TAliceCapability_TJingleState `protobuf:"bytes,1,opt,name=JingleState,proto3" json:"JingleState,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TSetJingleStateDirective) Reset() {
 	*x = TAliceCapability_TSetJingleStateDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[27]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1725,7 +1391,7 @@ func (x *TAliceCapability_TSetJingleStateDirective) String() string {
 func (*TAliceCapability_TSetJingleStateDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TSetJingleStateDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[27]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1738,7 +1404,7 @@ func (x *TAliceCapability_TSetJingleStateDirective) ProtoReflect() protoreflect.
 
 // Deprecated: Use TAliceCapability_TSetJingleStateDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSetJingleStateDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 26}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 19}
 }
 
 func (x *TAliceCapability_TSetJingleStateDirective) GetJingleState() *TAliceCapability_TJingleState {
@@ -1748,93 +1414,17 @@ func (x *TAliceCapability_TSetJingleStateDirective) GetJingleState() *TAliceCapa
 	return nil
 }
 
-type TAliceCapability_TSetUniProxySettingsDirective struct {
-	state                       protoimpl.MessageState                                    `protogen:"open.v1"`
-	Cookies                     []*TAliceCapability_TSetUniProxySettingsDirective_TCookie `protobuf:"bytes,3,rep,name=Cookies,json=cookies,proto3" json:"Cookies,omitempty"`
-	UniProxyClientAnalyticsInfo *protos.TClientAnalyticsInfoProto                         `protobuf:"bytes,6,opt,name=UniProxyClientAnalyticsInfo,json=uniproxy_client_analytics_info,proto3" json:"UniProxyClientAnalyticsInfo,omitempty"`
-	YexpCookie                  *string                                                   `protobuf:"bytes,2,opt,name=YexpCookie,json=yexp_cookie,proto3,oneof" json:"YexpCookie,omitempty"`
-	UniProxyUrl                 *string                                                   `protobuf:"bytes,4,opt,name=UniProxyUrl,json=uniproxy_url,proto3,oneof" json:"UniProxyUrl,omitempty"`
-	VinsUrl                     *string                                                   `protobuf:"bytes,5,opt,name=VinsUrl,json=vins_url,proto3,oneof" json:"VinsUrl,omitempty"`
-	unknownFields               protoimpl.UnknownFields
-	sizeCache                   protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) Reset() {
-	*x = TAliceCapability_TSetUniProxySettingsDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[28]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSetUniProxySettingsDirective) ProtoMessage() {}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[28]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSetUniProxySettingsDirective.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSetUniProxySettingsDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 27}
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) GetCookies() []*TAliceCapability_TSetUniProxySettingsDirective_TCookie {
-	if x != nil {
-		return x.Cookies
-	}
-	return nil
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) GetUniProxyClientAnalyticsInfo() *protos.TClientAnalyticsInfoProto {
-	if x != nil {
-		return x.UniProxyClientAnalyticsInfo
-	}
-	return nil
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) GetYexpCookie() string {
-	if x != nil && x.YexpCookie != nil {
-		return *x.YexpCookie
-	}
-	return ""
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) GetUniProxyUrl() string {
-	if x != nil && x.UniProxyUrl != nil {
-		return *x.UniProxyUrl
-	}
-	return ""
-}
-
-func (x *TAliceCapability_TSetUniProxySettingsDirective) GetVinsUrl() string {
-	if x != nil && x.VinsUrl != nil {
-		return *x.VinsUrl
-	}
-	return ""
-}
-
 type TAliceCapability_TStartDataInputDirective struct {
 	state                      protoimpl.MessageState                        `protogen:"open.v1"`
-	GetEnvironmentStateOptions *TAliceCapability_TGetEnvironmentStateOptions `protobuf:"bytes,2,opt,name=GetEnvironmentStateOptions,json=get_environment_state_options,proto3" json:"GetEnvironmentStateOptions,omitempty"`
-	InteractionId              *string                                       `protobuf:"bytes,1,opt,name=InteractionId,json=interaction_id,proto3,oneof" json:"InteractionId,omitempty"`
+	GetEnvironmentStateOptions *TAliceCapability_TGetEnvironmentStateOptions `protobuf:"bytes,2,opt,name=GetEnvironmentStateOptions,proto3" json:"GetEnvironmentStateOptions,omitempty"`
+	InteractionId              *string                                       `protobuf:"bytes,1,opt,name=InteractionId,proto3,oneof" json:"InteractionId,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TStartDataInputDirective) Reset() {
 	*x = TAliceCapability_TStartDataInputDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[29]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1846,7 +1436,7 @@ func (x *TAliceCapability_TStartDataInputDirective) String() string {
 func (*TAliceCapability_TStartDataInputDirective) ProtoMessage() {}
 
 func (x *TAliceCapability_TStartDataInputDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[29]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1859,7 +1449,7 @@ func (x *TAliceCapability_TStartDataInputDirective) ProtoReflect() protoreflect.
 
 // Deprecated: Use TAliceCapability_TStartDataInputDirective.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStartDataInputDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 28}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 20}
 }
 
 func (x *TAliceCapability_TStartDataInputDirective) GetGetEnvironmentStateOptions() *TAliceCapability_TGetEnvironmentStateOptions {
@@ -1878,7 +1468,7 @@ func (x *TAliceCapability_TStartDataInputDirective) GetInteractionId() string {
 
 type TAliceCapability_TRequestErrorEvent struct {
 	state     protoimpl.MessageState `protogen:"open.v1"`
-	RequestId string                 `protobuf:"bytes,10,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	RequestId string                 `protobuf:"bytes,10,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	// Types that are valid to be assigned to Error:
 	//
 	//	*TAliceCapability_TRequestErrorEvent_BlockError
@@ -1891,14 +1481,14 @@ type TAliceCapability_TRequestErrorEvent struct {
 	//	*TAliceCapability_TRequestErrorEvent_SpottingRejectedError
 	//	*TAliceCapability_TRequestErrorEvent_NoSpeechDetectedError
 	Error         isTAliceCapability_TRequestErrorEvent_Error `protobuf_oneof:"Error"`
-	Text          *string                                     `protobuf:"bytes,11,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	Text          *string                                     `protobuf:"bytes,11,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TAliceCapability_TRequestErrorEvent) Reset() {
 	*x = TAliceCapability_TRequestErrorEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1910,7 +1500,7 @@ func (x *TAliceCapability_TRequestErrorEvent) String() string {
 func (*TAliceCapability_TRequestErrorEvent) ProtoMessage() {}
 
 func (x *TAliceCapability_TRequestErrorEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1923,7 +1513,7 @@ func (x *TAliceCapability_TRequestErrorEvent) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use TAliceCapability_TRequestErrorEvent.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TRequestErrorEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21}
 }
 
 func (x *TAliceCapability_TRequestErrorEvent) GetRequestId() string {
@@ -2033,39 +1623,39 @@ type isTAliceCapability_TRequestErrorEvent_Error interface {
 }
 
 type TAliceCapability_TRequestErrorEvent_BlockError struct {
-	BlockError *TAliceCapability_TRequestErrorEvent_TBlockError `protobuf:"bytes,1,opt,name=BlockError,json=block_error,proto3,oneof"`
+	BlockError *TAliceCapability_TRequestErrorEvent_TBlockError `protobuf:"bytes,1,opt,name=BlockError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_ServerError struct {
-	ServerError *TAliceCapability_TRequestErrorEvent_TServerError `protobuf:"bytes,2,opt,name=ServerError,json=server_error,proto3,oneof"`
+	ServerError *TAliceCapability_TRequestErrorEvent_TServerError `protobuf:"bytes,2,opt,name=ServerError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_NetworkError struct {
-	NetworkError *TAliceCapability_TRequestErrorEvent_TNetworkError `protobuf:"bytes,3,opt,name=NetworkError,json=network_error,proto3,oneof"`
+	NetworkError *TAliceCapability_TRequestErrorEvent_TNetworkError `protobuf:"bytes,3,opt,name=NetworkError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_DeviceNotReadyError struct {
-	DeviceNotReadyError *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError `protobuf:"bytes,4,opt,name=DeviceNotReadyError,json=device_not_ready_error,proto3,oneof"`
+	DeviceNotReadyError *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError `protobuf:"bytes,4,opt,name=DeviceNotReadyError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_TimeoutError struct {
-	TimeoutError *TAliceCapability_TRequestErrorEvent_TTimeoutError `protobuf:"bytes,5,opt,name=TimeoutError,json=timeout_error,proto3,oneof"`
+	TimeoutError *TAliceCapability_TRequestErrorEvent_TTimeoutError `protobuf:"bytes,5,opt,name=TimeoutError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_AudioError struct {
-	AudioError *TAliceCapability_TRequestErrorEvent_TAudioError `protobuf:"bytes,6,opt,name=AudioError,json=audio_error,proto3,oneof"`
+	AudioError *TAliceCapability_TRequestErrorEvent_TAudioError `protobuf:"bytes,6,opt,name=AudioError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_InterruptedError struct {
-	InterruptedError *TAliceCapability_TRequestErrorEvent_TInterruptedError `protobuf:"bytes,7,opt,name=InterruptedError,json=interrupted_error,proto3,oneof"`
+	InterruptedError *TAliceCapability_TRequestErrorEvent_TInterruptedError `protobuf:"bytes,7,opt,name=InterruptedError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_SpottingRejectedError struct {
-	SpottingRejectedError *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError `protobuf:"bytes,8,opt,name=SpottingRejectedError,json=spotting_rejected_error,proto3,oneof"`
+	SpottingRejectedError *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError `protobuf:"bytes,8,opt,name=SpottingRejectedError,proto3,oneof"`
 }
 
 type TAliceCapability_TRequestErrorEvent_NoSpeechDetectedError struct {
-	NoSpeechDetectedError *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError `protobuf:"bytes,9,opt,name=NoSpeechDetectedError,json=no_speech_detected_error,proto3,oneof"`
+	NoSpeechDetectedError *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError `protobuf:"bytes,9,opt,name=NoSpeechDetectedError,proto3,oneof"`
 }
 
 func (*TAliceCapability_TRequestErrorEvent_BlockError) isTAliceCapability_TRequestErrorEvent_Error() {
@@ -2095,6 +1685,574 @@ func (*TAliceCapability_TRequestErrorEvent_SpottingRejectedError) isTAliceCapabi
 func (*TAliceCapability_TRequestErrorEvent_NoSpeechDetectedError) isTAliceCapability_TRequestErrorEvent_Error() {
 }
 
+type TAliceCapability_TStartRecognizeDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Lang          *string                `protobuf:"bytes,1,opt,name=Lang,json=lang,proto3,oneof" json:"Lang,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TStartRecognizeDirective) Reset() {
+	*x = TAliceCapability_TStartRecognizeDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TStartRecognizeDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TStartRecognizeDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TStartRecognizeDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TStartRecognizeDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TStartRecognizeDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 22}
+}
+
+func (x *TAliceCapability_TStartRecognizeDirective) GetLang() string {
+	if x != nil && x.Lang != nil {
+		return *x.Lang
+	}
+	return ""
+}
+
+type TAliceCapability_TDialogChannelPlaceholderDirective struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	WrappedDirective []byte                 `protobuf:"bytes,1,opt,name=WrappedDirective,json=wrapped_directive,proto3,oneof" json:"WrappedDirective,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TDialogChannelPlaceholderDirective) Reset() {
+	*x = TAliceCapability_TDialogChannelPlaceholderDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TDialogChannelPlaceholderDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TDialogChannelPlaceholderDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TDialogChannelPlaceholderDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TDialogChannelPlaceholderDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TDialogChannelPlaceholderDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 23}
+}
+
+func (x *TAliceCapability_TDialogChannelPlaceholderDirective) GetWrappedDirective() []byte {
+	if x != nil {
+		return x.WrappedDirective
+	}
+	return nil
+}
+
+type TAliceCapability_TInvalidateAutoListenDirective struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TInvalidateAutoListenDirective) Reset() {
+	*x = TAliceCapability_TInvalidateAutoListenDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TInvalidateAutoListenDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TInvalidateAutoListenDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TInvalidateAutoListenDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TInvalidateAutoListenDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TInvalidateAutoListenDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 24}
+}
+
+type TAliceCapability_TSetSpeechModeOptionsDirective struct {
+	state             protoimpl.MessageState   `protogen:"open.v1"`
+	SpeechModeOptions *mode.TSpeechModeOptions `protobuf:"bytes,2,opt,name=SpeechModeOptions,json=speech_mode_options,proto3" json:"SpeechModeOptions,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSetSpeechModeOptionsDirective) Reset() {
+	*x = TAliceCapability_TSetSpeechModeOptionsDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSetSpeechModeOptionsDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSetSpeechModeOptionsDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TSetSpeechModeOptionsDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSetSpeechModeOptionsDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSetSpeechModeOptionsDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 25}
+}
+
+func (x *TAliceCapability_TSetSpeechModeOptionsDirective) GetSpeechModeOptions() *mode.TSpeechModeOptions {
+	if x != nil {
+		return x.SpeechModeOptions
+	}
+	return nil
+}
+
+type TAliceCapability_TStartNoteInputDirective struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,json=speech_input,proto3" json:"SpeechInput,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TStartNoteInputDirective) Reset() {
+	*x = TAliceCapability_TStartNoteInputDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TStartNoteInputDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TStartNoteInputDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TStartNoteInputDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TStartNoteInputDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TStartNoteInputDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 26}
+}
+
+func (x *TAliceCapability_TStartNoteInputDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TAliceCapability_TStartNoteInputDirective) GetSpeechInput() *alice_request.TSpeechInput {
+	if x != nil {
+		return x.SpeechInput
+	}
+	return nil
+}
+
+type TAliceCapability_TFinishSpeechInputDirective struct {
+	state                protoimpl.MessageState                                       `protogen:"open.v1"`
+	Name                 string                                                       `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	FinishOptions        *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions `protobuf:"bytes,1,opt,name=FinishOptions,json=finish_options,proto3" json:"FinishOptions,omitempty"`
+	FinishRequestPayload *alice_request.TClientAliceRequestProto                      `protobuf:"bytes,2,opt,name=FinishRequestPayload,json=finish_request_payload,proto3" json:"FinishRequestPayload,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) Reset() {
+	*x = TAliceCapability_TFinishSpeechInputDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TFinishSpeechInputDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TFinishSpeechInputDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TFinishSpeechInputDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 27}
+}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) GetFinishOptions() *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions {
+	if x != nil {
+		return x.FinishOptions
+	}
+	return nil
+}
+
+func (x *TAliceCapability_TFinishSpeechInputDirective) GetFinishRequestPayload() *alice_request.TClientAliceRequestProto {
+	if x != nil {
+		return x.FinishRequestPayload
+	}
+	return nil
+}
+
+type TAliceCapability_TStartTranslateInputDirective struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Name          string                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	SpeechInput   *alice_request.TSpeechInput `protobuf:"bytes,1,opt,name=SpeechInput,json=speech_input,proto3" json:"SpeechInput,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TStartTranslateInputDirective) Reset() {
+	*x = TAliceCapability_TStartTranslateInputDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TStartTranslateInputDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TStartTranslateInputDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TStartTranslateInputDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TStartTranslateInputDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TStartTranslateInputDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 28}
+}
+
+func (x *TAliceCapability_TStartTranslateInputDirective) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *TAliceCapability_TStartTranslateInputDirective) GetSpeechInput() *alice_request.TSpeechInput {
+	if x != nil {
+		return x.SpeechInput
+	}
+	return nil
+}
+
+type TAliceCapability_TSetUniProxySettingsDirective struct {
+	state                       protoimpl.MessageState                                    `protogen:"open.v1"`
+	Cookies                     []*TAliceCapability_TSetUniProxySettingsDirective_TCookie `protobuf:"bytes,3,rep,name=Cookies,json=cookies,proto3" json:"Cookies,omitempty"`
+	UniProxyClientAnalyticsInfo *protos.TClientAnalyticsInfoProto                         `protobuf:"bytes,6,opt,name=UniProxyClientAnalyticsInfo,json=uniproxy_client_analytics_info,proto3" json:"UniProxyClientAnalyticsInfo,omitempty"`
+	YexpCookie                  *string                                                   `protobuf:"bytes,2,opt,name=YexpCookie,json=yexp_cookie,proto3,oneof" json:"YexpCookie,omitempty"`
+	UniProxyUrl                 *string                                                   `protobuf:"bytes,4,opt,name=UniProxyUrl,json=uniproxy_url,proto3,oneof" json:"UniProxyUrl,omitempty"`
+	VinsUrl                     *string                                                   `protobuf:"bytes,5,opt,name=VinsUrl,json=vins_url,proto3,oneof" json:"VinsUrl,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) Reset() {
+	*x = TAliceCapability_TSetUniProxySettingsDirective{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSetUniProxySettingsDirective) ProtoMessage() {}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSetUniProxySettingsDirective.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSetUniProxySettingsDirective) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29}
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) GetCookies() []*TAliceCapability_TSetUniProxySettingsDirective_TCookie {
+	if x != nil {
+		return x.Cookies
+	}
+	return nil
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) GetUniProxyClientAnalyticsInfo() *protos.TClientAnalyticsInfoProto {
+	if x != nil {
+		return x.UniProxyClientAnalyticsInfo
+	}
+	return nil
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) GetYexpCookie() string {
+	if x != nil && x.YexpCookie != nil {
+		return *x.YexpCookie
+	}
+	return ""
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) GetUniProxyUrl() string {
+	if x != nil && x.UniProxyUrl != nil {
+		return *x.UniProxyUrl
+	}
+	return ""
+}
+
+func (x *TAliceCapability_TSetUniProxySettingsDirective) GetVinsUrl() string {
+	if x != nil && x.VinsUrl != nil {
+		return *x.VinsUrl
+	}
+	return ""
+}
+
+type TAliceCapability_TSpeechState_TListening struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	VoicePower    float32                `protobuf:"fixed32,1,opt,name=VoicePower,proto3" json:"VoicePower,omitempty"`
+	Text          *string                `protobuf:"bytes,2,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSpeechState_TListening) Reset() {
+	*x = TAliceCapability_TSpeechState_TListening{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSpeechState_TListening) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSpeechState_TListening) ProtoMessage() {}
+
+func (x *TAliceCapability_TSpeechState_TListening) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSpeechState_TListening.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSpeechState_TListening) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 0}
+}
+
+func (x *TAliceCapability_TSpeechState_TListening) GetVoicePower() float32 {
+	if x != nil {
+		return x.VoicePower
+	}
+	return 0
+}
+
+func (x *TAliceCapability_TSpeechState_TListening) GetText() string {
+	if x != nil && x.Text != nil {
+		return *x.Text
+	}
+	return ""
+}
+
+type TAliceCapability_TSpeechState_TThinking struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSpeechState_TThinking) Reset() {
+	*x = TAliceCapability_TSpeechState_TThinking{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSpeechState_TThinking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSpeechState_TThinking) ProtoMessage() {}
+
+func (x *TAliceCapability_TSpeechState_TThinking) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSpeechState_TThinking.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSpeechState_TThinking) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 1}
+}
+
+type TAliceCapability_TSpeechState_TSpeaking struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSpeechState_TSpeaking) Reset() {
+	*x = TAliceCapability_TSpeechState_TSpeaking{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSpeechState_TSpeaking) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSpeechState_TSpeaking) ProtoMessage() {}
+
+func (x *TAliceCapability_TSpeechState_TSpeaking) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSpeechState_TSpeaking.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSpeechState_TSpeaking) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 2}
+}
+
+type TAliceCapability_TSpeechState_TIdle struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TSpeechState_TIdle) Reset() {
+	*x = TAliceCapability_TSpeechState_TIdle{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TSpeechState_TIdle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TSpeechState_TIdle) ProtoMessage() {}
+
+func (x *TAliceCapability_TSpeechState_TIdle) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TSpeechState_TIdle.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TSpeechState_TIdle) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 3}
+}
+
 type TAliceCapability_TSpeechState_TRequestState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IsFinal       bool                   `protobuf:"varint,3,opt,name=IsFinal,json=is_final,proto3" json:"IsFinal,omitempty"`
@@ -2105,7 +2263,7 @@ type TAliceCapability_TSpeechState_TRequestState struct {
 
 func (x *TAliceCapability_TSpeechState_TRequestState) Reset() {
 	*x = TAliceCapability_TSpeechState_TRequestState{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[31]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2117,7 +2275,7 @@ func (x *TAliceCapability_TSpeechState_TRequestState) String() string {
 func (*TAliceCapability_TSpeechState_TRequestState) ProtoMessage() {}
 
 func (x *TAliceCapability_TSpeechState_TRequestState) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[31]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2130,7 +2288,7 @@ func (x *TAliceCapability_TSpeechState_TRequestState) ProtoReflect() protoreflec
 
 // Deprecated: Use TAliceCapability_TSpeechState_TRequestState.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSpeechState_TRequestState) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 0}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 4}
 }
 
 func (x *TAliceCapability_TSpeechState_TRequestState) GetIsFinal() bool {
@@ -2159,7 +2317,7 @@ type TAliceCapability_TSpeechState_TResponseState struct {
 
 func (x *TAliceCapability_TSpeechState_TResponseState) Reset() {
 	*x = TAliceCapability_TSpeechState_TResponseState{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[32]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2171,7 +2329,7 @@ func (x *TAliceCapability_TSpeechState_TResponseState) String() string {
 func (*TAliceCapability_TSpeechState_TResponseState) ProtoMessage() {}
 
 func (x *TAliceCapability_TSpeechState_TResponseState) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[32]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2184,7 +2342,7 @@ func (x *TAliceCapability_TSpeechState_TResponseState) ProtoReflect() protorefle
 
 // Deprecated: Use TAliceCapability_TSpeechState_TResponseState.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSpeechState_TResponseState) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 1}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 5}
 }
 
 func (x *TAliceCapability_TSpeechState_TResponseState) GetIsFinal() bool {
@@ -2226,7 +2384,7 @@ type TAliceCapability_TSpeechState_TActiveRequest struct {
 
 func (x *TAliceCapability_TSpeechState_TActiveRequest) Reset() {
 	*x = TAliceCapability_TSpeechState_TActiveRequest{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[33]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2238,7 +2396,7 @@ func (x *TAliceCapability_TSpeechState_TActiveRequest) String() string {
 func (*TAliceCapability_TSpeechState_TActiveRequest) ProtoMessage() {}
 
 func (x *TAliceCapability_TSpeechState_TActiveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[33]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2251,7 +2409,7 @@ func (x *TAliceCapability_TSpeechState_TActiveRequest) ProtoReflect() protorefle
 
 // Deprecated: Use TAliceCapability_TSpeechState_TActiveRequest.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSpeechState_TActiveRequest) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 2}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 6}
 }
 
 func (x *TAliceCapability_TSpeechState_TActiveRequest) GetRequestId() string {
@@ -2275,164 +2433,12 @@ func (x *TAliceCapability_TSpeechState_TActiveRequest) GetResponseState() *TAlic
 	return nil
 }
 
-type TAliceCapability_TSpeechState_TListening struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	VoicePower    float32                `protobuf:"fixed32,1,opt,name=VoicePower,json=voice_power,proto3" json:"VoicePower,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSpeechState_TListening) Reset() {
-	*x = TAliceCapability_TSpeechState_TListening{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[34]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSpeechState_TListening) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSpeechState_TListening) ProtoMessage() {}
-
-func (x *TAliceCapability_TSpeechState_TListening) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[34]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSpeechState_TListening.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSpeechState_TListening) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 3}
-}
-
-func (x *TAliceCapability_TSpeechState_TListening) GetVoicePower() float32 {
-	if x != nil {
-		return x.VoicePower
-	}
-	return 0
-}
-
-type TAliceCapability_TSpeechState_TThinking struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSpeechState_TThinking) Reset() {
-	*x = TAliceCapability_TSpeechState_TThinking{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[35]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSpeechState_TThinking) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSpeechState_TThinking) ProtoMessage() {}
-
-func (x *TAliceCapability_TSpeechState_TThinking) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[35]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSpeechState_TThinking.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSpeechState_TThinking) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 4}
-}
-
-type TAliceCapability_TSpeechState_TSpeaking struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSpeechState_TSpeaking) Reset() {
-	*x = TAliceCapability_TSpeechState_TSpeaking{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[36]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSpeechState_TSpeaking) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSpeechState_TSpeaking) ProtoMessage() {}
-
-func (x *TAliceCapability_TSpeechState_TSpeaking) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[36]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSpeechState_TSpeaking.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSpeechState_TSpeaking) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 5}
-}
-
-type TAliceCapability_TSpeechState_TIdle struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TSpeechState_TIdle) Reset() {
-	*x = TAliceCapability_TSpeechState_TIdle{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[37]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TSpeechState_TIdle) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TSpeechState_TIdle) ProtoMessage() {}
-
-func (x *TAliceCapability_TSpeechState_TIdle) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[37]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TSpeechState_TIdle.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TSpeechState_TIdle) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 2, 6}
-}
-
 type TAliceCapability_TAliceState_TRequestState struct {
 	state                protoimpl.MessageState                                         `protogen:"open.v1"`
-	IsRecognitionStarted bool                                                           `protobuf:"varint,2,opt,name=IsRecognitionStarted,json=is_recognition_started,proto3" json:"IsRecognitionStarted,omitempty"`
-	IsFinal              bool                                                           `protobuf:"varint,3,opt,name=IsFinal,json=is_final,proto3" json:"IsFinal,omitempty"`
-	Files                []*TAliceCapability_TAliceState_TRequestState_TFileDescription `protobuf:"bytes,4,rep,name=Files,json=files,proto3" json:"Files,omitempty"`
-	Text                 *string                                                        `protobuf:"bytes,1,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	IsRecognitionStarted bool                                                           `protobuf:"varint,2,opt,name=IsRecognitionStarted,proto3" json:"IsRecognitionStarted,omitempty"`
+	IsFinal              bool                                                           `protobuf:"varint,3,opt,name=IsFinal,proto3" json:"IsFinal,omitempty"`
+	Files                []*TAliceCapability_TAliceState_TRequestState_TFileDescription `protobuf:"bytes,4,rep,name=Files,proto3" json:"Files,omitempty"`
+	Text                 *string                                                        `protobuf:"bytes,1,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -2497,15 +2503,15 @@ func (x *TAliceCapability_TAliceState_TRequestState) GetText() string {
 
 type TAliceCapability_TAliceState_TResponseState struct {
 	state             protoimpl.MessageState                                   `protogen:"open.v1"`
-	IsFinal           bool                                                     `protobuf:"varint,1,opt,name=IsFinal,json=is_final,proto3" json:"IsFinal,omitempty"`
-	IsCanceled        bool                                                     `protobuf:"varint,2,opt,name=IsCanceled,json=is_canceled,proto3" json:"IsCanceled,omitempty"`
-	Cards             []*cards.TCard                                           `protobuf:"bytes,4,rep,name=Cards,json=cards,proto3" json:"Cards,omitempty"`
-	Suggests          []*suggests.TSuggest                                     `protobuf:"bytes,5,rep,name=Suggests,json=suggests,proto3" json:"Suggests,omitempty"`
-	RequestAnnotation *annotations.TRequestAnnotation                          `protobuf:"bytes,6,opt,name=RequestAnnotation,json=request_annotation,proto3" json:"RequestAnnotation,omitempty"`
-	Alice2ModeInfo    *alice_mode_info.TAlice2ModeInfo                         `protobuf:"bytes,7,opt,name=Alice2ModeInfo,json=alice2_mode_info,proto3" json:"Alice2ModeInfo,omitempty"`
-	Alice2TrialState  *alice_mode_info.TAlice2TrialState                       `protobuf:"bytes,8,opt,name=Alice2TrialState,json=alice2_trial_state,proto3" json:"Alice2TrialState,omitempty"`
-	RequestRef        *TAliceCapability_TAliceState_TResponseState_TRequestRef `protobuf:"bytes,9,opt,name=RequestRef,json=request_ref,proto3" json:"RequestRef,omitempty"`
-	Text              *string                                                  `protobuf:"bytes,3,opt,name=Text,json=text,proto3,oneof" json:"Text,omitempty"`
+	IsFinal           bool                                                     `protobuf:"varint,1,opt,name=IsFinal,proto3" json:"IsFinal,omitempty"`
+	IsCanceled        bool                                                     `protobuf:"varint,2,opt,name=IsCanceled,proto3" json:"IsCanceled,omitempty"`
+	Cards             []*cards.TCard                                           `protobuf:"bytes,4,rep,name=Cards,proto3" json:"Cards,omitempty"`
+	Suggests          []*suggests.TSuggest                                     `protobuf:"bytes,5,rep,name=Suggests,proto3" json:"Suggests,omitempty"`
+	RequestAnnotation *annotations.TRequestAnnotation                          `protobuf:"bytes,6,opt,name=RequestAnnotation,proto3" json:"RequestAnnotation,omitempty"`
+	Alice2ModeInfo    *alice_mode_info.TAlice2ModeInfo                         `protobuf:"bytes,7,opt,name=Alice2ModeInfo,proto3" json:"Alice2ModeInfo,omitempty"`
+	Alice2TrialState  *alice_mode_info.TAlice2TrialState                       `protobuf:"bytes,8,opt,name=Alice2TrialState,proto3" json:"Alice2TrialState,omitempty"`
+	RequestRef        *TAliceCapability_TAliceState_TResponseState_TRequestRef `protobuf:"bytes,9,opt,name=RequestRef,proto3" json:"RequestRef,omitempty"`
+	Text              *string                                                  `protobuf:"bytes,3,opt,name=Text,proto3,oneof" json:"Text,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -2605,10 +2611,10 @@ func (x *TAliceCapability_TAliceState_TResponseState) GetText() string {
 
 type TAliceCapability_TAliceState_TActiveRequest struct {
 	state         protoimpl.MessageState                       `protogen:"open.v1"`
-	RequestId     string                                       `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
-	RequestState  *TAliceCapability_TAliceState_TRequestState  `protobuf:"bytes,3,opt,name=RequestState,json=request_state,proto3" json:"RequestState,omitempty"`
-	ResponseState *TAliceCapability_TAliceState_TResponseState `protobuf:"bytes,4,opt,name=ResponseState,json=response_state,proto3" json:"ResponseState,omitempty"`
-	DialogId      *string                                      `protobuf:"bytes,2,opt,name=DialogId,json=dialog_id,proto3,oneof" json:"DialogId,omitempty"`
+	RequestId     string                                       `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
+	RequestState  *TAliceCapability_TAliceState_TRequestState  `protobuf:"bytes,3,opt,name=RequestState,proto3" json:"RequestState,omitempty"`
+	ResponseState *TAliceCapability_TAliceState_TResponseState `protobuf:"bytes,4,opt,name=ResponseState,proto3" json:"ResponseState,omitempty"`
+	DialogId      *string                                      `protobuf:"bytes,2,opt,name=DialogId,proto3,oneof" json:"DialogId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2673,7 +2679,7 @@ func (x *TAliceCapability_TAliceState_TActiveRequest) GetDialogId() string {
 
 type TAliceCapability_TAliceState_TListening struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	VoicePower    float32                `protobuf:"fixed32,1,opt,name=VoicePower,json=voice_power,proto3" json:"VoicePower,omitempty"`
+	VoicePower    float32                `protobuf:"fixed32,1,opt,name=VoicePower,proto3" json:"VoicePower,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2825,7 +2831,7 @@ func (*TAliceCapability_TAliceState_TIdle) Descriptor() ([]byte, []int) {
 
 type TAliceCapability_TAliceState_TResponding struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Speaking      *TAliceCapability_TAliceState_TSpeaking `protobuf:"bytes,1,opt,name=Speaking,json=speaking,proto3" json:"Speaking,omitempty"`
+	Speaking      *TAliceCapability_TAliceState_TSpeaking `protobuf:"bytes,1,opt,name=Speaking,proto3" json:"Speaking,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2869,7 +2875,7 @@ func (x *TAliceCapability_TAliceState_TResponding) GetSpeaking() *TAliceCapabili
 
 type TAliceCapability_TAliceState_TRequestState_TFileDescription struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Guid          *string                `protobuf:"bytes,1,opt,name=Guid,json=guid,proto3,oneof" json:"Guid,omitempty"`
+	Guid          *string                `protobuf:"bytes,1,opt,name=Guid,proto3,oneof" json:"Guid,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2913,7 +2919,7 @@ func (x *TAliceCapability_TAliceState_TRequestState_TFileDescription) GetGuid() 
 
 type TAliceCapability_TAliceState_TResponseState_TRequestRef struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,json=request_id,proto3" json:"RequestId,omitempty"`
+	RequestId     string                 `protobuf:"bytes,1,opt,name=RequestId,proto3" json:"RequestId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2957,8 +2963,8 @@ func (x *TAliceCapability_TAliceState_TResponseState_TRequestRef) GetRequestId()
 
 type TAliceCapability_TUpdateTtsPlaceholderDirective_TaggedDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Tag           string                 `protobuf:"bytes,1,opt,name=Tag,json=tag,proto3" json:"Tag,omitempty"`
-	Directive     *directives.TDirective `protobuf:"bytes,2,opt,name=Directive,json=directive,proto3" json:"Directive,omitempty"`
+	Tag           string                 `protobuf:"bytes,1,opt,name=Tag,proto3" json:"Tag,omitempty"`
+	Directive     *directives.TDirective `protobuf:"bytes,2,opt,name=Directive,proto3" json:"Directive,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3009,8 +3015,8 @@ func (x *TAliceCapability_TUpdateTtsPlaceholderDirective_TaggedDirective) GetDir
 
 type TAliceCapability_TStopConversationDirective_TClientOptions struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	DisableJingle     bool                   `protobuf:"varint,1,opt,name=DisableJingle,json=disable_jingle,proto3" json:"DisableJingle,omitempty"`
-	DisableSendCancel bool                   `protobuf:"varint,2,opt,name=DisableSendCancel,json=disable_send_cancel,proto3" json:"DisableSendCancel,omitempty"`
+	DisableJingle     bool                   `protobuf:"varint,1,opt,name=DisableJingle,proto3" json:"DisableJingle,omitempty"`
+	DisableSendCancel bool                   `protobuf:"varint,2,opt,name=DisableSendCancel,proto3" json:"DisableSendCancel,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -3042,7 +3048,7 @@ func (x *TAliceCapability_TStopConversationDirective_TClientOptions) ProtoReflec
 
 // Deprecated: Use TAliceCapability_TStopConversationDirective_TClientOptions.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TStopConversationDirective_TClientOptions) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 13, 0}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 12, 0}
 }
 
 func (x *TAliceCapability_TStopConversationDirective_TClientOptions) GetDisableJingle() bool {
@@ -3059,6 +3065,338 @@ func (x *TAliceCapability_TStopConversationDirective_TClientOptions) GetDisableS
 	return false
 }
 
+type TAliceCapability_TRequestErrorEvent_TBlockError struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Blockers      []*TAliceCapability_TBlocker `protobuf:"bytes,1,rep,name=Blockers,proto3" json:"Blockers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TBlockError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TBlockError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TBlockError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TBlockError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TBlockError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TBlockError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TBlockError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 0}
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TBlockError) GetBlockers() []*TAliceCapability_TBlocker {
+	if x != nil {
+		return x.Blockers
+	}
+	return nil
+}
+
+type TAliceCapability_TRequestErrorEvent_TServerError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TServerError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TServerError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TServerError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TServerError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TServerError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TServerError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TServerError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 1}
+}
+
+type TAliceCapability_TRequestErrorEvent_TNetworkError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TNetworkError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TNetworkError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TNetworkError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TNetworkError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 2}
+}
+
+type TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 3}
+}
+
+type TAliceCapability_TRequestErrorEvent_TTimeoutError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TTimeoutError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TTimeoutError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TTimeoutError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TTimeoutError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 4}
+}
+
+type TAliceCapability_TRequestErrorEvent_TAudioError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TAudioError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TAudioError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TAudioError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TAudioError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TAudioError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TAudioError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TAudioError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 5}
+}
+
+type TAliceCapability_TRequestErrorEvent_TInterruptedError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TInterruptedError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TInterruptedError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TInterruptedError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TInterruptedError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 6}
+}
+
+type TAliceCapability_TRequestErrorEvent_TSpottingRejectedError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TSpottingRejectedError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TSpottingRejectedError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 7}
+}
+
+type TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) Reset() {
+	*x = TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError{}
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) ProtoMessage() {}
+
+func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError.ProtoReflect.Descriptor instead.
+func (*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 21, 8}
+}
+
 type TAliceCapability_TFinishSpeechInputDirective_TFinishOptions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SendRequest   bool                   `protobuf:"varint,1,opt,name=SendRequest,json=send_request,proto3" json:"SendRequest,omitempty"`
@@ -3068,7 +3406,7 @@ type TAliceCapability_TFinishSpeechInputDirective_TFinishOptions struct {
 
 func (x *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) Reset() {
 	*x = TAliceCapability_TFinishSpeechInputDirective_TFinishOptions{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[50]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3080,7 +3418,7 @@ func (x *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) String() s
 func (*TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) ProtoMessage() {}
 
 func (x *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[50]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3093,7 +3431,7 @@ func (x *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) ProtoRefle
 
 // Deprecated: Use TAliceCapability_TFinishSpeechInputDirective_TFinishOptions.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 23, 0}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 27, 0}
 }
 
 func (x *TAliceCapability_TFinishSpeechInputDirective_TFinishOptions) GetSendRequest() bool {
@@ -3113,7 +3451,7 @@ type TAliceCapability_TSetUniProxySettingsDirective_TCookie struct {
 
 func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) Reset() {
 	*x = TAliceCapability_TSetUniProxySettingsDirective_TCookie{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[51]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3125,7 +3463,7 @@ func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) String() string
 func (*TAliceCapability_TSetUniProxySettingsDirective_TCookie) ProtoMessage() {}
 
 func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[51]
+	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3138,7 +3476,7 @@ func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) ProtoReflect() 
 
 // Deprecated: Use TAliceCapability_TSetUniProxySettingsDirective_TCookie.ProtoReflect.Descriptor instead.
 func (*TAliceCapability_TSetUniProxySettingsDirective_TCookie) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 27, 0}
+	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 0}
 }
 
 func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) GetName() string {
@@ -3155,362 +3493,40 @@ func (x *TAliceCapability_TSetUniProxySettingsDirective_TCookie) GetValue() stri
 	return ""
 }
 
-type TAliceCapability_TRequestErrorEvent_TBlockError struct {
-	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Blockers      []*TAliceCapability_TBlocker `protobuf:"bytes,1,rep,name=Blockers,json=blockers,proto3" json:"Blockers,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TBlockError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TBlockError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[52]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TBlockError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TBlockError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TBlockError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[52]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TBlockError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TBlockError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 0}
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TBlockError) GetBlockers() []*TAliceCapability_TBlocker {
-	if x != nil {
-		return x.Blockers
-	}
-	return nil
-}
-
-type TAliceCapability_TRequestErrorEvent_TServerError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TServerError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TServerError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[53]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TServerError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TServerError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TServerError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[53]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TServerError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TServerError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 1}
-}
-
-type TAliceCapability_TRequestErrorEvent_TNetworkError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TNetworkError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[54]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TNetworkError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNetworkError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[54]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TNetworkError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TNetworkError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 2}
-}
-
-type TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[55]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[55]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 3}
-}
-
-type TAliceCapability_TRequestErrorEvent_TTimeoutError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TTimeoutError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[56]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TTimeoutError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TTimeoutError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[56]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TTimeoutError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TTimeoutError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 4}
-}
-
-type TAliceCapability_TRequestErrorEvent_TAudioError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TAudioError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TAudioError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[57]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TAudioError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TAudioError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TAudioError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[57]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TAudioError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TAudioError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 5}
-}
-
-type TAliceCapability_TRequestErrorEvent_TInterruptedError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TInterruptedError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[58]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TInterruptedError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TInterruptedError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[58]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TInterruptedError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TInterruptedError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 6}
-}
-
-type TAliceCapability_TRequestErrorEvent_TSpottingRejectedError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TSpottingRejectedError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[59]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[59]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TSpottingRejectedError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 7}
-}
-
-type TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) Reset() {
-	*x = TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError{}
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[60]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) ProtoMessage() {}
-
-func (x *TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[60]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError.ProtoReflect.Descriptor instead.
-func (*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescGZIP(), []int{0, 29, 8}
-}
-
 var File_alice_protos_endpoint_capabilities_alice_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/alice/capability.proto\x12\x06NAlice\x1a7alice/library/client/protos/client_analytics_info.proto\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1aBalice/protos/api/alicekit/client/alice_request/alice_request.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a-alice/protos/data/connection/connection.proto\x1a1alice/protos/data/dialog_state/dialog_state.proto\x1aIalice/protos/data/tts_interruption_timings/tts_interruption_timings.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe4\\\n" +
-	"\x10TAliceCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/alice/capability.proto\x12\x06NAlice\x1a7alice/protos/api/alicekit/annotations/annotations.proto\x1a*alice/protos/api/alicekit/cards/card.proto\x1aBalice/protos/api/alicekit/client/alice_request/alice_request.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1a0alice/protos/api/alicekit/suggests/suggest.proto\x1a6alice/protos/api/alice_mode_info/alice_mode_info.proto\x1a3alice/protos/api/speech_mode/mode/speech_mode.proto\x1a-alice/protos/data/connection/connection.proto\x1a1alice/protos/data/dialog_state/dialog_state.proto\x1aIalice/protos/data/tts_interruption_timings/tts_interruption_timings.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a7alice/library/client/protos/client_analytics_info.proto\"\xfdJ\n" +
+	"\x10TAliceCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TAliceCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAliceCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\"\n" +
-	"\bTBlocker\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xf3\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TAliceCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAliceCapability.TStateR\x05State\x1a\x1a\n" +
+	"\bTBlocker\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x1a\r\n" +
+	"\vTParameters\x1a\x87\n" +
 	"\n" +
-	"\fTSpeechState\x12E\n" +
+	"\fTSpeechState\x123\n" +
 	"\n" +
-	"SpeechMode\x18\x04 \x01(\v2\x13.NAlice.TSpeechModeB\x0f\xaa\xdd\x1b\vspeech_modeR\vspeech_mode\x12o\n" +
-	"\rActiveRequest\x18\x06 \x01(\v24.NAlice.TAliceCapability.TSpeechState.TActiveRequestB\x12\xaa\xdd\x1b\x0eactive_requestR\x0eactive_request\x12_\n" +
-	"\tListening\x18\x01 \x01(\v20.NAlice.TAliceCapability.TSpeechState.TListeningB\r\xaa\xdd\x1b\tlisteningH\x00R\tlistening\x12[\n" +
-	"\bThinking\x18\x02 \x01(\v2/.NAlice.TAliceCapability.TSpeechState.TThinkingB\f\xaa\xdd\x1b\bthinkingH\x00R\bthinking\x12[\n" +
-	"\bSpeaking\x18\x03 \x01(\v2/.NAlice.TAliceCapability.TSpeechState.TSpeakingB\f\xaa\xdd\x1b\bspeakingH\x00R\bspeaking\x12K\n" +
-	"\x04Idle\x18\x05 \x01(\v2+.NAlice.TAliceCapability.TSpeechState.TIdleB\b\xaa\xdd\x1b\x04idleH\x00R\x04idle\x1aj\n" +
+	"SpeechMode\x18\x04 \x01(\v2\x13.NAlice.TSpeechModeR\n" +
+	"SpeechMode\x12P\n" +
+	"\tListening\x18\x01 \x01(\v20.NAlice.TAliceCapability.TSpeechState.TListeningH\x00R\tListening\x12M\n" +
+	"\bThinking\x18\x02 \x01(\v2/.NAlice.TAliceCapability.TSpeechState.TThinkingH\x00R\bThinking\x12M\n" +
+	"\bSpeaking\x18\x03 \x01(\v2/.NAlice.TAliceCapability.TSpeechState.TSpeakingH\x00R\bSpeaking\x12A\n" +
+	"\x04Idle\x18\x05 \x01(\v2+.NAlice.TAliceCapability.TSpeechState.TIdleH\x00R\x04Idle\x12o\n" +
+	"\rActiveRequest\x18\x06 \x01(\v24.NAlice.TAliceCapability.TSpeechState.TActiveRequestB\x12\xaa\xdd\x1b\x0eactive_requestR\x0eactive_request\x1aN\n" +
+	"\n" +
+	"TListening\x12\x1e\n" +
+	"\n" +
+	"VoicePower\x18\x01 \x01(\x02R\n" +
+	"VoicePower\x12\x17\n" +
+	"\x04Text\x18\x02 \x01(\tH\x00R\x04Text\x88\x01\x01B\a\n" +
+	"\x05_Text\x1a\v\n" +
+	"\tTThinking\x1a\v\n" +
+	"\tTSpeaking\x1a\a\n" +
+	"\x05TIdle\x1aj\n" +
 	"\rTRequestState\x12'\n" +
 	"\aIsFinal\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bis_finalR\bis_final\x12!\n" +
 	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
@@ -3526,109 +3542,101 @@ const file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDesc = "
 	"request_idR\n" +
 	"request_id\x12k\n" +
 	"\fRequestState\x18\x01 \x01(\v23.NAlice.TAliceCapability.TSpeechState.TRequestStateB\x11\xaa\xdd\x1b\rrequest_stateR\rrequest_state\x12o\n" +
-	"\rResponseState\x18\x02 \x01(\v24.NAlice.TAliceCapability.TSpeechState.TResponseStateB\x12\xaa\xdd\x1b\x0eresponse_stateR\x0eresponse_state:\x04\xa8\xdd\x1b\x04\x1aP\n" +
+	"\rResponseState\x18\x02 \x01(\v24.NAlice.TAliceCapability.TSpeechState.TResponseStateB\x12\xaa\xdd\x1b\x0eresponse_stateR\x0eresponse_state:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\x05State\x1a\xe1\x0e\n" +
+	"\vTAliceState\x12Y\n" +
+	"\rActiveRequest\x18\x05 \x01(\v23.NAlice.TAliceCapability.TAliceState.TActiveRequestR\rActiveRequest\x128\n" +
+	"\fActiveDialog\x18\x06 \x01(\v2\x14.NAlice.TDialogStateR\fActiveDialog\x12O\n" +
+	"\tListening\x18\x01 \x01(\v2/.NAlice.TAliceCapability.TAliceState.TListeningH\x00R\tListening\x12L\n" +
+	"\bThinking\x18\x02 \x01(\v2..NAlice.TAliceCapability.TAliceState.TThinkingH\x00R\bThinking\x12L\n" +
+	"\bSpeaking\x18\x03 \x01(\v2..NAlice.TAliceCapability.TAliceState.TSpeakingH\x00R\bSpeaking\x12@\n" +
+	"\x04Idle\x18\x04 \x01(\v2*.NAlice.TAliceCapability.TAliceState.TIdleH\x00R\x04Idle\x12R\n" +
 	"\n" +
-	"TListening\x120\n" +
+	"Responding\x18\a \x01(\v20.NAlice.TAliceCapability.TAliceState.TRespondingH\x00R\n" +
+	"Responding\x1a\x90\x02\n" +
+	"\rTRequestState\x122\n" +
+	"\x14IsRecognitionStarted\x18\x02 \x01(\bR\x14IsRecognitionStarted\x12\x18\n" +
+	"\aIsFinal\x18\x03 \x01(\bR\aIsFinal\x12Y\n" +
+	"\x05Files\x18\x04 \x03(\v2C.NAlice.TAliceCapability.TAliceState.TRequestState.TFileDescriptionR\x05Files\x12\x17\n" +
+	"\x04Text\x18\x01 \x01(\tH\x00R\x04Text\x88\x01\x01\x1a4\n" +
+	"\x10TFileDescription\x12\x17\n" +
+	"\x04Guid\x18\x01 \x01(\tH\x00R\x04Guid\x88\x01\x01B\a\n" +
+	"\x05_GuidB\a\n" +
+	"\x05_Text\x1a\xdf\x04\n" +
+	"\x0eTResponseState\x12\x18\n" +
+	"\aIsFinal\x18\x01 \x01(\bR\aIsFinal\x12\x1e\n" +
 	"\n" +
-	"VoicePower\x18\x01 \x01(\x02B\x0f\xaa\xdd\x1b\vvoice_powerR\vvoice_power:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\x04Text\x1a\x11\n" +
-	"\tTThinking:\x04\xa8\xdd\x1b\x04\x1a\x11\n" +
-	"\tTSpeaking:\x04\xa8\xdd\x1b\x04\x1a\r\n" +
-	"\x05TIdle:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05State\x12\t\xaa\xdd\x1b\x05state\x1a\x80\x13\n" +
-	"\vTAliceState\x12n\n" +
-	"\rActiveRequest\x18\x05 \x01(\v23.NAlice.TAliceCapability.TAliceState.TActiveRequestB\x12\xaa\xdd\x1b\x0eactive_requestR\x0eactive_request\x12L\n" +
-	"\fActiveDialog\x18\x06 \x01(\v2\x14.NAlice.TDialogStateB\x11\xaa\xdd\x1b\ractive_dialogR\ractive_dialog\x12^\n" +
-	"\tListening\x18\x01 \x01(\v2/.NAlice.TAliceCapability.TAliceState.TListeningB\r\xaa\xdd\x1b\tlisteningH\x00R\tlistening\x12Z\n" +
-	"\bThinking\x18\x02 \x01(\v2..NAlice.TAliceCapability.TAliceState.TThinkingB\f\xaa\xdd\x1b\bthinkingH\x00R\bthinking\x12\\\n" +
-	"\bSpeaking\x18\x03 \x01(\v2..NAlice.TAliceCapability.TAliceState.TSpeakingB\x0e\xaa\xdd\x1b\bspeaking\x18\x01H\x00R\bspeaking\x12J\n" +
-	"\x04Idle\x18\x04 \x01(\v2*.NAlice.TAliceCapability.TAliceState.TIdleB\b\xaa\xdd\x1b\x04idleH\x00R\x04idle\x12b\n" +
+	"IsCanceled\x18\x02 \x01(\bR\n" +
+	"IsCanceled\x12-\n" +
+	"\x05Cards\x18\x04 \x03(\v2\x17.NAlice.NAliceApi.TCardR\x05Cards\x126\n" +
+	"\bSuggests\x18\x05 \x03(\v2\x1a.NAlice.NAliceApi.TSuggestR\bSuggests\x12R\n" +
+	"\x11RequestAnnotation\x18\x06 \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationR\x11RequestAnnotation\x12P\n" +
+	"\x0eAlice2ModeInfo\x18\a \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoR\x0eAlice2ModeInfo\x12V\n" +
+	"\x10Alice2TrialState\x18\b \x01(\v2*.NAlice.NApi.NAlice2Mode.TAlice2TrialStateR\x10Alice2TrialState\x12_\n" +
 	"\n" +
-	"Responding\x18\a \x01(\v20.NAlice.TAliceCapability.TAliceState.TRespondingB\x0e\xaa\xdd\x1b\n" +
-	"respondingH\x00R\n" +
-	"responding\x1a\xe8\x02\n" +
-	"\rTRequestState\x12P\n" +
-	"\x14IsRecognitionStarted\x18\x02 \x01(\bB\x1a\xaa\xdd\x1b\x16is_recognition_startedR\x16is_recognition_started\x12'\n" +
-	"\aIsFinal\x18\x03 \x01(\bB\f\xaa\xdd\x1b\bis_finalR\bis_final\x12d\n" +
-	"\x05Files\x18\x04 \x03(\v2C.NAlice.TAliceCapability.TAliceState.TRequestState.TFileDescriptionB\t\xaa\xdd\x1b\x05filesR\x05files\x12!\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01\x1aD\n" +
-	"\x10TFileDescription\x12!\n" +
-	"\x04Guid\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04guidH\x00R\x04guid\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Guid:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Text\x1a\x9d\x06\n" +
-	"\x0eTResponseState\x12'\n" +
-	"\aIsFinal\x18\x01 \x01(\bB\f\xaa\xdd\x1b\bis_finalR\bis_final\x120\n" +
+	"RequestRef\x18\t \x01(\v2?.NAlice.TAliceCapability.TAliceState.TResponseState.TRequestRefR\n" +
+	"RequestRef\x12\x17\n" +
+	"\x04Text\x18\x03 \x01(\tH\x00R\x04Text\x88\x01\x01\x1a+\n" +
+	"\vTRequestRef\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestIdB\a\n" +
+	"\x05_Text\x1a\x8f\x02\n" +
+	"\x0eTActiveRequest\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x12V\n" +
+	"\fRequestState\x18\x03 \x01(\v22.NAlice.TAliceCapability.TAliceState.TRequestStateR\fRequestState\x12Y\n" +
+	"\rResponseState\x18\x04 \x01(\v23.NAlice.TAliceCapability.TAliceState.TResponseStateR\rResponseState\x12\x1f\n" +
+	"\bDialogId\x18\x02 \x01(\tH\x00R\bDialogId\x88\x01\x01B\v\n" +
+	"\t_DialogId\x1a,\n" +
 	"\n" +
-	"IsCanceled\x18\x02 \x01(\bB\x0f\xaa\xdd\x1b\vis_canceledR\vis_canceled\x128\n" +
-	"\x05Cards\x18\x04 \x03(\v2\x17.NAlice.NAliceApi.TCardB\t\xaa\xdd\x1b\x05cardsR\x05cards\x12D\n" +
-	"\bSuggests\x18\x05 \x03(\v2\x1a.NAlice.NAliceApi.TSuggestB\f\xaa\xdd\x1b\bsuggestsR\bsuggests\x12k\n" +
-	"\x11RequestAnnotation\x18\x06 \x01(\v2$.NAlice.NAliceApi.TRequestAnnotationB\x16\xaa\xdd\x1b\x12request_annotationR\x12request_annotation\x12h\n" +
-	"\x0eAlice2ModeInfo\x18\a \x01(\v2(.NAlice.NApi.NAlice2Mode.TAlice2ModeInfoB\x14\xaa\xdd\x1b\x10alice2_mode_infoR\x10alice2_mode_info\x12p\n" +
-	"\x10Alice2TrialState\x18\b \x01(\v2*.NAlice.NApi.NAlice2Mode.TAlice2TrialStateB\x16\xaa\xdd\x1b\x12alice2_trial_stateR\x12alice2_trial_state\x12q\n" +
+	"TListening\x12\x1e\n" +
 	"\n" +
-	"RequestRef\x18\t \x01(\v2?.NAlice.TAliceCapability.TAliceState.TResponseState.TRequestRefB\x0f\xaa\xdd\x1b\vrequest_refR\vrequest_ref\x12!\n" +
-	"\x04Text\x18\x03 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01\x1aB\n" +
-	"\vTRequestRef\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\a\n" +
-	"\x05_Text\x1a\xd9\x02\n" +
-	"\x0eTActiveRequest\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12j\n" +
-	"\fRequestState\x18\x03 \x01(\v22.NAlice.TAliceCapability.TAliceState.TRequestStateB\x11\xaa\xdd\x1b\rrequest_stateR\rrequest_state\x12n\n" +
-	"\rResponseState\x18\x04 \x01(\v23.NAlice.TAliceCapability.TAliceState.TResponseStateB\x12\xaa\xdd\x1b\x0eresponse_stateR\x0eresponse_state\x12/\n" +
-	"\bDialogId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tdialog_idH\x00R\tdialog_id\x88\x01\x01B\v\n" +
-	"\t_DialogId\x1aD\n" +
+	"VoicePower\x18\x01 \x01(\x02R\n" +
+	"VoicePower\x1a\v\n" +
+	"\tTThinking\x1a\v\n" +
+	"\tTSpeaking\x1a\a\n" +
+	"\x05TIdle\x1aY\n" +
+	"\vTResponding\x12J\n" +
+	"\bSpeaking\x18\x01 \x01(\v2..NAlice.TAliceCapability.TAliceState.TSpeakingR\bSpeakingB\a\n" +
+	"\x05State\x1a4\n" +
+	"\fTJingleState\x12$\n" +
+	"\rJingleEnabled\x18\x01 \x01(\bR\rJingleEnabled\x1a\xb3\x04\n" +
+	"\x06TState\x12W\n" +
+	"\x16TtsInterruptionTimings\x18\x01 \x01(\v2\x1f.NAlice.TTtsInterruptionTimingsR\x16TtsInterruptionTimings\x12=\n" +
+	"\bBlockers\x18\x03 \x03(\v2!.NAlice.TAliceCapability.TBlockerR\bBlockers\x12E\n" +
+	"\x10ConnectionStatus\x18\x05 \x01(\v2\x19.NAlice.TConnectionStatusR\x10ConnectionStatus\x12G\n" +
+	"\vSpeechState\x18\x06 \x01(\v2%.NAlice.TAliceCapability.TSpeechStateR\vSpeechState\x12D\n" +
 	"\n" +
-	"TListening\x120\n" +
-	"\n" +
-	"VoicePower\x18\x01 \x01(\x02B\x0f\xaa\xdd\x1b\vvoice_powerR\vvoice_power:\x04\xa8\xdd\x1b\x04\x1a\x11\n" +
-	"\tTThinking:\x04\xa8\xdd\x1b\x04\x1a\x11\n" +
-	"\tTSpeaking:\x04\xa8\xdd\x1b\x04\x1a\r\n" +
-	"\x05TIdle:\x04\xa8\xdd\x1b\x04\x1am\n" +
-	"\vTResponding\x12X\n" +
-	"\bSpeaking\x18\x01 \x01(\v2..NAlice.TAliceCapability.TAliceState.TSpeakingB\f\xaa\xdd\x1b\bspeakingR\bspeaking:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05State\x12\t\xaa\xdd\x1b\x05state\x1aO\n" +
-	"\fTJingleState\x129\n" +
-	"\rJingleEnabled\x18\x01 \x01(\bB\x12\xaa\xdd\x1b\x0ejingle_enabledR\x0ejingle_enabled:\x04\xa8\xdd\x1b\x04\x1a\xbe\x05\n" +
-	"\x06TState\x12w\n" +
-	"\x16TtsInterruptionTimings\x18\x01 \x01(\v2\x1f.NAlice.TTtsInterruptionTimingsB\x1c\xaa\xdd\x1b\x18tts_interruption_timingsR\x18tts_interruption_timings\x12K\n" +
-	"\bBlockers\x18\x03 \x03(\v2!.NAlice.TAliceCapability.TBlockerB\f\xaa\xdd\x1b\bblockersR\bblockers\x12]\n" +
-	"\x10ConnectionStatus\x18\x05 \x01(\v2\x19.NAlice.TConnectionStatusB\x15\xaa\xdd\x1b\x11connection_statusR\x11connection_status\x12Z\n" +
-	"\vSpeechState\x18\x06 \x01(\v2%.NAlice.TAliceCapability.TSpeechStateB\x10\xaa\xdd\x1b\fspeech_stateR\fspeech_state\x12V\n" +
-	"\n" +
-	"AliceState\x18\a \x01(\v2$.NAlice.TAliceCapability.TAliceStateB\x0f\xaa\xdd\x1b\valice_stateR\valice_state\x12!\n" +
-	"\x04Uuid\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04uuidH\x00R\x04uuid\x88\x01\x01\x12Z\n" +
-	"\bTtsState\x18\x04 \x01(\x0e2).NAlice.TAliceCapability.TState.ETtsStateB\r\xaa\xdd\x1b\ttts_stateH\x01R\ttts_state\x88\x01\x01\"@\n" +
+	"AliceState\x18\a \x01(\v2$.NAlice.TAliceCapability.TAliceStateR\n" +
+	"AliceState\x12\x17\n" +
+	"\x04Uuid\x18\x02 \x01(\tH\x00R\x04Uuid\x88\x01\x01\x12J\n" +
+	"\bTtsState\x18\x04 \x01(\x0e2).NAlice.TAliceCapability.TState.ETtsStateH\x01R\bTtsState\x88\x01\x01\"@\n" +
 	"\tETtsState\x12\x13\n" +
 	"\x0fUnknownTtsState\x10\x00\x12\x0f\n" +
 	"\vNoActiveTts\x10\x01\x12\r\n" +
-	"\tActiveTts\x10\x02:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\tActiveTts\x10\x02B\a\n" +
 	"\x05_UuidB\v\n" +
-	"\t_TtsState\x1a\xae\x02\n" +
-	"\x1bTGetEnvironmentStateOptions\x12S\n" +
-	"\x15IncludeLocalEndpoints\x18\x01 \x01(\bB\x1b\xaa\xdd\x1b\x17include_local_endpointsR\x17include_local_endpoints\x12\\\n" +
-	"\x18IncludeEmbeddedEndpoints\x18\x02 \x01(\bB\x1e\xaa\xdd\x1b\x1ainclude_embedded_endpointsR\x1ainclude_embedded_endpoints\x12V\n" +
-	"\x16IncludeRemoteEndpoints\x18\x03 \x01(\bB\x1c\xaa\xdd\x1b\x18include_remote_endpointsR\x18include_remote_endpoints:\x04\xa8\xdd\x1b\x04\x1a\x9e\x01\n" +
-	"\x0fTBlockDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
-	"\aBlocker\x18\x01 \x01(\v2!.NAlice.TAliceCapability.TBlockerB\v\xaa\xdd\x1b\ablockerR\aBlocker:\"\x92\x82\x19\x15alice_block_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xae\x02\x1a\xa2\x01\n" +
-	"\x11TUnblockDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12H\n" +
-	"\aBlocker\x18\x01 \x01(\v2!.NAlice.TAliceCapability.TBlockerB\v\xaa\xdd\x1b\ablockerR\aBlocker:$\x92\x82\x19\x17alice_unblock_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaf\x02\x1a\xf1\x02\n" +
-	"\x1eTUpdateTtsPlaceholderDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x8b\x01\n" +
-	"\x10TaggedDirectives\x18\x01 \x03(\v2G.NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective.TaggedDirectiveB\x15\xaa\xdd\x1b\x11tagged_directivesR\x11tagged_directives\x1a}\n" +
-	"\x0fTaggedDirective\x12\x19\n" +
-	"\x03Tag\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03tagR\x03tag\x12I\n" +
-	"\tDirective\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveB\r\xaa\xdd\x1b\tdirectiveR\tdirective:\x04\xa8\xdd\x1b\x04:#\x92\x82\x19\x16update_tts_placeholder\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbd\x02\x1a\xf1\x03\n" +
-	"\x12TVocalizeDirective\x12e\n" +
+	"\t_TtsState\x1a\xc7\x01\n" +
+	"\x1bTGetEnvironmentStateOptions\x124\n" +
+	"\x15IncludeLocalEndpoints\x18\x01 \x01(\bR\x15IncludeLocalEndpoints\x12:\n" +
+	"\x18IncludeEmbeddedEndpoints\x18\x02 \x01(\bR\x18IncludeEmbeddedEndpoints\x126\n" +
+	"\x16IncludeRemoteEndpoints\x18\x03 \x01(\bR\x16IncludeRemoteEndpoints\x1ac\n" +
+	"\x0fTBlockDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12;\n" +
+	"\aBlocker\x18\x01 \x01(\v2!.NAlice.TAliceCapability.TBlockerR\aBlocker\x1ae\n" +
+	"\x11TUnblockDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12;\n" +
+	"\aBlocker\x18\x01 \x01(\v2!.NAlice.TAliceCapability.TBlockerR\aBlocker\x1a\x8b\x02\n" +
+	"\x1eTUpdateTtsPlaceholderDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12s\n" +
+	"\x10TaggedDirectives\x18\x01 \x03(\v2G.NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective.TaggedDirectiveR\x10TaggedDirectives\x1a_\n" +
+	"\x0fTaggedDirective\x12\x10\n" +
+	"\x03Tag\x18\x01 \x01(\tR\x03Tag\x12:\n" +
+	"\tDirective\x18\x02 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tDirective\x1a\xb1\x03\n" +
+	"\x12TVocalizeDirective\x12\x17\n" +
+	"\x04Text\x18\x01 \x01(\tH\x00R\x04Text\x88\x01\x01\x12e\n" +
+	"\rSynthesisMode\x18\x02 \x01(\x0e2:.NAlice.TAliceCapability.TVocalizeDirective.ESynthesisModeH\x01R\rSynthesisMode\x88\x01\x01\x12e\n" +
 	"\tTtsSource\x18\x04 \x01(\x0e26.NAlice.TAliceCapability.TVocalizeDirective.ETtsSourceB\x0e\xaa\xdd\x1b\n" +
 	"tts_sourceR\n" +
-	"tts_source\x12!\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textH\x00R\x04text\x88\x01\x01\x12z\n" +
-	"\rSynthesisMode\x18\x02 \x01(\x0e2:.NAlice.TAliceCapability.TVocalizeDirective.ESynthesisModeB\x12\xaa\xdd\x1b\x0esynthesis_modeH\x01R\x0esynthesis_mode\x88\x01\x01\x12$\n" +
+	"tts_source\x12$\n" +
 	"\x05Voice\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05voiceH\x02R\x05voice\x88\x01\x01\"8\n" +
 	"\x0eESynthesisMode\x12\v\n" +
 	"\aUnknown\x10\x00\x12\n" +
@@ -3641,40 +3649,73 @@ const file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDesc = "
 	"\x06Server\x10\x00\x12\t\n" +
 	"\x05Local\x10\x01\x12\n" +
 	"\n" +
-	"\x06Hybrid\x10\x02:\x1f\x92\x82\x19\x12vocalize_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xcc\x02B\a\n" +
+	"\x06Hybrid\x10\x02B\a\n" +
 	"\x05_TextB\x10\n" +
 	"\x0e_SynthesisModeB\b\n" +
-	"\x06_Voice\x1an\n" +
+	"\x06_Voice\x1aZ\n" +
+	"\x19TStartVoiceInputDirective\x12=\n" +
+	"\n" +
+	"VoiceInput\x18\x01 \x01(\v2\x1d.NAlice.NAliceApi.TVoiceInputR\n" +
+	"VoiceInput\x1a\xec\x01\n" +
+	"\x1aTStopConversationDirective\x12h\n" +
+	"\rClientOptions\x18\x01 \x01(\v2B.NAlice.TAliceCapability.TStopConversationDirective.TClientOptionsR\rClientOptions\x1ad\n" +
+	"\x0eTClientOptions\x12$\n" +
+	"\rDisableJingle\x18\x01 \x01(\bR\rDisableJingle\x12,\n" +
+	"\x11DisableSendCancel\x18\x02 \x01(\bR\x11DisableSendCancel\x1aV\n" +
+	"\x18TStartTextInputDirective\x12:\n" +
+	"\tTextInput\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TTextInputR\tTextInput\x1aS\n" +
+	"\x19TSetActiveDialogDirective\x126\n" +
+	"\vDialogState\x18\x01 \x01(\v2\x14.NAlice.TDialogStateR\vDialogState\x1aC\n" +
+	"#TCompleteStreamingResponseDirective\x12\x1c\n" +
+	"\tRequestId\x18\x01 \x01(\tR\tRequestId\x1aq\n" +
+	"\x1dTCompleteTtsResponseDirective\x12P\n" +
+	"\x14InvalidateAutoListen\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16invalidate_auto_listenR\x16invalidate_auto_listen\x1as\n" +
+	"\x1aTStartSpeechInputDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12@\n" +
+	"\vSpeechInput\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TSpeechInputR\vSpeechInput\x1a\x1c\n" +
+	"\x1aTStartRecordInputDirective\x1ac\n" +
+	"\x18TSetJingleStateDirective\x12G\n" +
+	"\vJingleState\x18\x01 \x01(\v2%.NAlice.TAliceCapability.TJingleStateR\vJingleState\x1a\xcd\x01\n" +
+	"\x18TStartDataInputDirective\x12t\n" +
+	"\x1aGetEnvironmentStateOptions\x18\x02 \x01(\v24.NAlice.TAliceCapability.TGetEnvironmentStateOptionsR\x1aGetEnvironmentStateOptions\x12)\n" +
+	"\rInteractionId\x18\x01 \x01(\tH\x00R\rInteractionId\x88\x01\x01B\x10\n" +
+	"\x0e_InteractionId\x1a\xfe\t\n" +
+	"\x12TRequestErrorEvent\x12\x1c\n" +
+	"\tRequestId\x18\n" +
+	" \x01(\tR\tRequestId\x12Y\n" +
+	"\n" +
+	"BlockError\x18\x01 \x01(\v27.NAlice.TAliceCapability.TRequestErrorEvent.TBlockErrorH\x00R\n" +
+	"BlockError\x12\\\n" +
+	"\vServerError\x18\x02 \x01(\v28.NAlice.TAliceCapability.TRequestErrorEvent.TServerErrorH\x00R\vServerError\x12_\n" +
+	"\fNetworkError\x18\x03 \x01(\v29.NAlice.TAliceCapability.TRequestErrorEvent.TNetworkErrorH\x00R\fNetworkError\x12t\n" +
+	"\x13DeviceNotReadyError\x18\x04 \x01(\v2@.NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyErrorH\x00R\x13DeviceNotReadyError\x12_\n" +
+	"\fTimeoutError\x18\x05 \x01(\v29.NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutErrorH\x00R\fTimeoutError\x12Y\n" +
+	"\n" +
+	"AudioError\x18\x06 \x01(\v27.NAlice.TAliceCapability.TRequestErrorEvent.TAudioErrorH\x00R\n" +
+	"AudioError\x12k\n" +
+	"\x10InterruptedError\x18\a \x01(\v2=.NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedErrorH\x00R\x10InterruptedError\x12z\n" +
+	"\x15SpottingRejectedError\x18\b \x01(\v2B.NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedErrorH\x00R\x15SpottingRejectedError\x12z\n" +
+	"\x15NoSpeechDetectedError\x18\t \x01(\v2B.NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedErrorH\x00R\x15NoSpeechDetectedError\x12\x17\n" +
+	"\x04Text\x18\v \x01(\tH\x01R\x04Text\x88\x01\x01\x1aL\n" +
+	"\vTBlockError\x12=\n" +
+	"\bBlockers\x18\x01 \x03(\v2!.NAlice.TAliceCapability.TBlockerR\bBlockers\x1a\x0e\n" +
+	"\fTServerError\x1a\x0f\n" +
+	"\rTNetworkError\x1a\x16\n" +
+	"\x14TDeviceNotReadyError\x1a\x0f\n" +
+	"\rTTimeoutError\x1a\r\n" +
+	"\vTAudioError\x1a\x13\n" +
+	"\x11TInterruptedError\x1a\x18\n" +
+	"\x16TSpottingRejectedError\x1a\x18\n" +
+	"\x16TNoSpeechDetectedErrorB\a\n" +
+	"\x05ErrorB\a\n" +
+	"\x05_Text\x1an\n" +
 	"\x18TStartRecognizeDirective\x12!\n" +
 	"\x04Lang\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04langH\x00R\x04lang\x88\x01\x01:&\x92\x82\x19\x19start_recognize_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xed\x05B\a\n" +
-	"\x05_Lang\x1a\x96\x01\n" +
-	"\x19TStartVoiceInputDirective\x12O\n" +
-	"\n" +
-	"VoiceInput\x18\x01 \x01(\v2\x1d.NAlice.NAliceApi.TVoiceInputB\x0f\xaa\xdd\x1b\vvoice_inputR\vvoice_input:(\x92\x82\x19\x1bstart_voice_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa8\x04\x1a\xe2\x02\n" +
-	"\x1aTStopConversationDirective\x12}\n" +
-	"\rClientOptions\x18\x01 \x01(\v2B.NAlice.TAliceCapability.TStopConversationDirective.TClientOptionsB\x12\xaa\xdd\x1b\x0eclient_optionsR\x0eclient_options\x1a\x9a\x01\n" +
-	"\x0eTClientOptions\x129\n" +
-	"\rDisableJingle\x18\x01 \x01(\bB\x12\xaa\xdd\x1b\x0edisable_jingleR\x0edisable_jingle\x12G\n" +
-	"\x11DisableSendCancel\x18\x02 \x01(\bB\x17\xaa\xdd\x1b\x13disable_send_cancelR\x13disable_send_cancel:\x04\xa8\xdd\x1b\x04:(\x92\x82\x19\x1bstop_conversation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb1\x04\x1a\x90\x01\n" +
-	"\x18TStartTextInputDirective\x12K\n" +
-	"\tTextInput\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TTextInputB\x0e\xaa\xdd\x1b\n" +
-	"text_inputR\n" +
-	"text_input:'\x92\x82\x19\x1astart_text_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb0\x04\x1a\x90\x01\n" +
-	"\x19TSetActiveDialogDirective\x12I\n" +
-	"\vDialogState\x18\x01 \x01(\v2\x14.NAlice.TDialogStateB\x10\xaa\xdd\x1b\fdialog_stateR\fdialog_state:(\x92\x82\x19\x1bset_active_dialog_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb9\x04\x1a\x88\x01\n" +
-	"#TCompleteStreamingResponseDirective\x12-\n" +
-	"\tRequestId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id:2\x92\x82\x19%complete_streaming_response_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbb\x04\x1a\xb5\x01\n" +
+	"\x05_Lang\x1a\xb5\x01\n" +
 	"\"TDialogChannelPlaceholderDirective\x12G\n" +
 	"\x10WrappedDirective\x18\x01 \x01(\fB\x15\xaa\xdd\x1b\x11wrapped_directiveH\x00R\x11wrapped_directive\x88\x01\x01:1\x92\x82\x19$dialog_channel_placeholder_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe9\x05B\x13\n" +
-	"\x11_WrappedDirective\x1a\x9f\x01\n" +
-	"\x1dTCompleteTtsResponseDirective\x12P\n" +
-	"\x14InvalidateAutoListen\x18\x01 \x01(\bB\x1a\xaa\xdd\x1b\x16invalidate_auto_listenR\x16invalidate_auto_listen:,\x92\x82\x19\x1fcomplete_tts_response_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd4\x04\x1aO\n" +
-	"\x1eTInvalidateAutoListenDirective:-\x92\x82\x19 invalidate_auto_listen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xab\x05\x1a\xbb\x01\n" +
-	"\x1aTStartSpeechInputDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\vSpeechInput\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TSpeechInputB\x10\xaa\xdd\x1b\fspeech_inputR\fspeech_input:)\x92\x82\x19\x1cstart_speech_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xee\x03\x1a\xcd\x01\n" +
+	"\x11_WrappedDirective\x1aO\n" +
+	"\x1eTInvalidateAutoListenDirective:-\x92\x82\x19 invalidate_auto_listen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xab\x05\x1a\xcd\x01\n" +
 	"\x1eTSetSpeechModeOptionsDirective\x12c\n" +
 	"\x11SpeechModeOptions\x18\x02 \x01(\v2\x1a.NAlice.TSpeechModeOptionsB\x17\xaa\xdd\x1b\x13speech_mode_optionsR\x13speech_mode_options:.\x92\x82\x19!set_speech_mode_options_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x04J\x04\b\x01\x10\x02R\x10VoiceModeOptions\x1a\xb7\x01\n" +
 	"\x18TStartNoteInputDirective\x12\x1d\n" +
@@ -3688,10 +3729,7 @@ const file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDesc = "
 	"\vSendRequest\x18\x01 \x01(\bB\x10\xaa\xdd\x1b\fsend_requestR\fsend_request:\x04\xa8\xdd\x1b\x04:*\x92\x82\x19\x1dfinish_speech_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe3\x04\x1a\xc1\x01\n" +
 	"\x1dTStartTranslateInputDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12S\n" +
-	"\vSpeechInput\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TSpeechInputB\x10\xaa\xdd\x1b\fspeech_inputR\fspeech_input:,\x92\x82\x19\x1fstart_translate_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xeb\x04\x1aG\n" +
-	"\x1aTStartRecordInputDirective:)\x92\x82\x19\x1cstart_record_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xfd\x03\x1a\x9f\x01\n" +
-	"\x18TSetJingleStateDirective\x12Z\n" +
-	"\vJingleState\x18\x01 \x01(\v2%.NAlice.TAliceCapability.TJingleStateB\x10\xaa\xdd\x1b\fjingle_stateR\fjingle_state:'\x92\x82\x19\x1aset_jingle_state_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xca\x04\x1a\xe9\x04\n" +
+	"\vSpeechInput\x18\x01 \x01(\v2\x1e.NAlice.NAliceApi.TSpeechInputB\x10\xaa\xdd\x1b\fspeech_inputR\fspeech_input:,\x92\x82\x19\x1fstart_translate_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xeb\x04\x1a\xe9\x04\n" +
 	"\x1dTSetUniProxySettingsDirective\x12e\n" +
 	"\aCookies\x18\x03 \x03(\v2>.NAlice.TAliceCapability.TSetUniProxySettingsDirective.TCookieB\v\xaa\xdd\x1b\acookiesR\acookies\x12\x8a\x01\n" +
 	"\x1bUniProxyClientAnalyticsInfo\x18\x06 \x01(\v2!.NAlice.TClientAnalyticsInfoProtoB\"\xaa\xdd\x1b\x1euniproxy_client_analytics_infoR\x1euniproxy_client_analytics_info\x125\n" +
@@ -3705,41 +3743,9 @@ const file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDesc = "
 	"\v_YexpCookieB\x0e\n" +
 	"\f_UniProxyUrlB\n" +
 	"\n" +
-	"\b_VinsUrlJ\x04\b\x01\x10\x02R\x06Cookie\x1a\xb8\x02\n" +
-	"\x18TStartDataInputDirective\x12\x9a\x01\n" +
-	"\x1aGetEnvironmentStateOptions\x18\x02 \x01(\v24.NAlice.TAliceCapability.TGetEnvironmentStateOptionsB!\xaa\xdd\x1b\x1dget_environment_state_optionsR\x1dget_environment_state_options\x12>\n" +
-	"\rInteractionId\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x0einteraction_idH\x00R\x0einteraction_id\x88\x01\x01:-\x92\x82\x19 alice_start_data_input_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x99\x03B\x10\n" +
-	"\x0e_InteractionId\x1a\xb3\f\n" +
-	"\x12TRequestErrorEvent\x12-\n" +
-	"\tRequestId\x18\n" +
-	" \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"request_idR\n" +
-	"request_id\x12k\n" +
+	"\b_VinsUrlJ\x04\b\x01\x10\x02R\x06CookieB\xaf\x01\n" +
 	"\n" +
-	"BlockError\x18\x01 \x01(\v27.NAlice.TAliceCapability.TRequestErrorEvent.TBlockErrorB\x0f\xaa\xdd\x1b\vblock_errorH\x00R\vblock_error\x12o\n" +
-	"\vServerError\x18\x02 \x01(\v28.NAlice.TAliceCapability.TRequestErrorEvent.TServerErrorB\x10\xaa\xdd\x1b\fserver_errorH\x00R\fserver_error\x12s\n" +
-	"\fNetworkError\x18\x03 \x01(\v29.NAlice.TAliceCapability.TRequestErrorEvent.TNetworkErrorB\x11\xaa\xdd\x1b\rnetwork_errorH\x00R\rnetwork_error\x12\x93\x01\n" +
-	"\x13DeviceNotReadyError\x18\x04 \x01(\v2@.NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyErrorB\x1a\xaa\xdd\x1b\x16device_not_ready_errorH\x00R\x16device_not_ready_error\x12s\n" +
-	"\fTimeoutError\x18\x05 \x01(\v29.NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutErrorB\x11\xaa\xdd\x1b\rtimeout_errorH\x00R\rtimeout_error\x12k\n" +
-	"\n" +
-	"AudioError\x18\x06 \x01(\v27.NAlice.TAliceCapability.TRequestErrorEvent.TAudioErrorB\x0f\xaa\xdd\x1b\vaudio_errorH\x00R\vaudio_error\x12\x83\x01\n" +
-	"\x10InterruptedError\x18\a \x01(\v2=.NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedErrorB\x15\xaa\xdd\x1b\x11interrupted_errorH\x00R\x11interrupted_error\x12\x99\x01\n" +
-	"\x15SpottingRejectedError\x18\b \x01(\v2B.NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedErrorB\x1b\xaa\xdd\x1b\x17spotting_rejected_errorH\x00R\x17spotting_rejected_error\x12\x9b\x01\n" +
-	"\x15NoSpeechDetectedError\x18\t \x01(\v2B.NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedErrorB\x1c\xaa\xdd\x1b\x18no_speech_detected_errorH\x00R\x18no_speech_detected_error\x12!\n" +
-	"\x04Text\x18\v \x01(\tB\b\xaa\xdd\x1b\x04textH\x01R\x04text\x88\x01\x01\x1aZ\n" +
-	"\vTBlockError\x12K\n" +
-	"\bBlockers\x18\x01 \x03(\v2!.NAlice.TAliceCapability.TBlockerB\f\xaa\xdd\x1b\bblockersR\bblockers\x1a\x0e\n" +
-	"\fTServerError\x1a\x0f\n" +
-	"\rTNetworkError\x1a\x16\n" +
-	"\x14TDeviceNotReadyError\x1a\x0f\n" +
-	"\rTTimeoutError\x1a\r\n" +
-	"\vTAudioError\x1a\x13\n" +
-	"\x11TInterruptedError\x1a\x18\n" +
-	"\x16TSpottingRejectedError\x1a\x18\n" +
-	"\x16TNoSpeechDetectedError:%\x92\x82\x19\x19alice_request_error_event\xa8\xdd\x1b\x04\xb0\xc8\x1cAB\x12\n" +
-	"\x05Error\x12\t\xaa\xdd\x1b\x05errorB\a\n" +
-	"\x05_Text:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c3B\x87\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x14AliceCapabilityProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/alice;alicepbb\x06proto3"
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_rawDescOnce sync.Once
@@ -3771,32 +3777,32 @@ var file_alice_protos_endpoint_capabilities_alice_capability_proto_goTypes = []a
 	(*TAliceCapability_TUnblockDirective)(nil),                              // 12: NAlice.TAliceCapability.TUnblockDirective
 	(*TAliceCapability_TUpdateTtsPlaceholderDirective)(nil),                 // 13: NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective
 	(*TAliceCapability_TVocalizeDirective)(nil),                             // 14: NAlice.TAliceCapability.TVocalizeDirective
-	(*TAliceCapability_TStartRecognizeDirective)(nil),                       // 15: NAlice.TAliceCapability.TStartRecognizeDirective
-	(*TAliceCapability_TStartVoiceInputDirective)(nil),                      // 16: NAlice.TAliceCapability.TStartVoiceInputDirective
-	(*TAliceCapability_TStopConversationDirective)(nil),                     // 17: NAlice.TAliceCapability.TStopConversationDirective
-	(*TAliceCapability_TStartTextInputDirective)(nil),                       // 18: NAlice.TAliceCapability.TStartTextInputDirective
-	(*TAliceCapability_TSetActiveDialogDirective)(nil),                      // 19: NAlice.TAliceCapability.TSetActiveDialogDirective
-	(*TAliceCapability_TCompleteStreamingResponseDirective)(nil),            // 20: NAlice.TAliceCapability.TCompleteStreamingResponseDirective
-	(*TAliceCapability_TDialogChannelPlaceholderDirective)(nil),             // 21: NAlice.TAliceCapability.TDialogChannelPlaceholderDirective
-	(*TAliceCapability_TCompleteTtsResponseDirective)(nil),                  // 22: NAlice.TAliceCapability.TCompleteTtsResponseDirective
-	(*TAliceCapability_TInvalidateAutoListenDirective)(nil),                 // 23: NAlice.TAliceCapability.TInvalidateAutoListenDirective
-	(*TAliceCapability_TStartSpeechInputDirective)(nil),                     // 24: NAlice.TAliceCapability.TStartSpeechInputDirective
-	(*TAliceCapability_TSetSpeechModeOptionsDirective)(nil),                 // 25: NAlice.TAliceCapability.TSetSpeechModeOptionsDirective
-	(*TAliceCapability_TStartNoteInputDirective)(nil),                       // 26: NAlice.TAliceCapability.TStartNoteInputDirective
-	(*TAliceCapability_TFinishSpeechInputDirective)(nil),                    // 27: NAlice.TAliceCapability.TFinishSpeechInputDirective
-	(*TAliceCapability_TStartTranslateInputDirective)(nil),                  // 28: NAlice.TAliceCapability.TStartTranslateInputDirective
-	(*TAliceCapability_TStartRecordInputDirective)(nil),                     // 29: NAlice.TAliceCapability.TStartRecordInputDirective
-	(*TAliceCapability_TSetJingleStateDirective)(nil),                       // 30: NAlice.TAliceCapability.TSetJingleStateDirective
-	(*TAliceCapability_TSetUniProxySettingsDirective)(nil),                  // 31: NAlice.TAliceCapability.TSetUniProxySettingsDirective
-	(*TAliceCapability_TStartDataInputDirective)(nil),                       // 32: NAlice.TAliceCapability.TStartDataInputDirective
-	(*TAliceCapability_TRequestErrorEvent)(nil),                             // 33: NAlice.TAliceCapability.TRequestErrorEvent
-	(*TAliceCapability_TSpeechState_TRequestState)(nil),                     // 34: NAlice.TAliceCapability.TSpeechState.TRequestState
-	(*TAliceCapability_TSpeechState_TResponseState)(nil),                    // 35: NAlice.TAliceCapability.TSpeechState.TResponseState
-	(*TAliceCapability_TSpeechState_TActiveRequest)(nil),                    // 36: NAlice.TAliceCapability.TSpeechState.TActiveRequest
-	(*TAliceCapability_TSpeechState_TListening)(nil),                        // 37: NAlice.TAliceCapability.TSpeechState.TListening
-	(*TAliceCapability_TSpeechState_TThinking)(nil),                         // 38: NAlice.TAliceCapability.TSpeechState.TThinking
-	(*TAliceCapability_TSpeechState_TSpeaking)(nil),                         // 39: NAlice.TAliceCapability.TSpeechState.TSpeaking
-	(*TAliceCapability_TSpeechState_TIdle)(nil),                             // 40: NAlice.TAliceCapability.TSpeechState.TIdle
+	(*TAliceCapability_TStartVoiceInputDirective)(nil),                      // 15: NAlice.TAliceCapability.TStartVoiceInputDirective
+	(*TAliceCapability_TStopConversationDirective)(nil),                     // 16: NAlice.TAliceCapability.TStopConversationDirective
+	(*TAliceCapability_TStartTextInputDirective)(nil),                       // 17: NAlice.TAliceCapability.TStartTextInputDirective
+	(*TAliceCapability_TSetActiveDialogDirective)(nil),                      // 18: NAlice.TAliceCapability.TSetActiveDialogDirective
+	(*TAliceCapability_TCompleteStreamingResponseDirective)(nil),            // 19: NAlice.TAliceCapability.TCompleteStreamingResponseDirective
+	(*TAliceCapability_TCompleteTtsResponseDirective)(nil),                  // 20: NAlice.TAliceCapability.TCompleteTtsResponseDirective
+	(*TAliceCapability_TStartSpeechInputDirective)(nil),                     // 21: NAlice.TAliceCapability.TStartSpeechInputDirective
+	(*TAliceCapability_TStartRecordInputDirective)(nil),                     // 22: NAlice.TAliceCapability.TStartRecordInputDirective
+	(*TAliceCapability_TSetJingleStateDirective)(nil),                       // 23: NAlice.TAliceCapability.TSetJingleStateDirective
+	(*TAliceCapability_TStartDataInputDirective)(nil),                       // 24: NAlice.TAliceCapability.TStartDataInputDirective
+	(*TAliceCapability_TRequestErrorEvent)(nil),                             // 25: NAlice.TAliceCapability.TRequestErrorEvent
+	(*TAliceCapability_TStartRecognizeDirective)(nil),                       // 26: NAlice.TAliceCapability.TStartRecognizeDirective
+	(*TAliceCapability_TDialogChannelPlaceholderDirective)(nil),             // 27: NAlice.TAliceCapability.TDialogChannelPlaceholderDirective
+	(*TAliceCapability_TInvalidateAutoListenDirective)(nil),                 // 28: NAlice.TAliceCapability.TInvalidateAutoListenDirective
+	(*TAliceCapability_TSetSpeechModeOptionsDirective)(nil),                 // 29: NAlice.TAliceCapability.TSetSpeechModeOptionsDirective
+	(*TAliceCapability_TStartNoteInputDirective)(nil),                       // 30: NAlice.TAliceCapability.TStartNoteInputDirective
+	(*TAliceCapability_TFinishSpeechInputDirective)(nil),                    // 31: NAlice.TAliceCapability.TFinishSpeechInputDirective
+	(*TAliceCapability_TStartTranslateInputDirective)(nil),                  // 32: NAlice.TAliceCapability.TStartTranslateInputDirective
+	(*TAliceCapability_TSetUniProxySettingsDirective)(nil),                  // 33: NAlice.TAliceCapability.TSetUniProxySettingsDirective
+	(*TAliceCapability_TSpeechState_TListening)(nil),                        // 34: NAlice.TAliceCapability.TSpeechState.TListening
+	(*TAliceCapability_TSpeechState_TThinking)(nil),                         // 35: NAlice.TAliceCapability.TSpeechState.TThinking
+	(*TAliceCapability_TSpeechState_TSpeaking)(nil),                         // 36: NAlice.TAliceCapability.TSpeechState.TSpeaking
+	(*TAliceCapability_TSpeechState_TIdle)(nil),                             // 37: NAlice.TAliceCapability.TSpeechState.TIdle
+	(*TAliceCapability_TSpeechState_TRequestState)(nil),                     // 38: NAlice.TAliceCapability.TSpeechState.TRequestState
+	(*TAliceCapability_TSpeechState_TResponseState)(nil),                    // 39: NAlice.TAliceCapability.TSpeechState.TResponseState
+	(*TAliceCapability_TSpeechState_TActiveRequest)(nil),                    // 40: NAlice.TAliceCapability.TSpeechState.TActiveRequest
 	(*TAliceCapability_TAliceState_TRequestState)(nil),                      // 41: NAlice.TAliceCapability.TAliceState.TRequestState
 	(*TAliceCapability_TAliceState_TResponseState)(nil),                     // 42: NAlice.TAliceCapability.TAliceState.TResponseState
 	(*TAliceCapability_TAliceState_TActiveRequest)(nil),                     // 43: NAlice.TAliceCapability.TAliceState.TActiveRequest
@@ -3809,17 +3815,17 @@ var file_alice_protos_endpoint_capabilities_alice_capability_proto_goTypes = []a
 	(*TAliceCapability_TAliceState_TResponseState_TRequestRef)(nil),         // 50: NAlice.TAliceCapability.TAliceState.TResponseState.TRequestRef
 	(*TAliceCapability_TUpdateTtsPlaceholderDirective_TaggedDirective)(nil), // 51: NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective.TaggedDirective
 	(*TAliceCapability_TStopConversationDirective_TClientOptions)(nil),      // 52: NAlice.TAliceCapability.TStopConversationDirective.TClientOptions
-	(*TAliceCapability_TFinishSpeechInputDirective_TFinishOptions)(nil),     // 53: NAlice.TAliceCapability.TFinishSpeechInputDirective.TFinishOptions
-	(*TAliceCapability_TSetUniProxySettingsDirective_TCookie)(nil),          // 54: NAlice.TAliceCapability.TSetUniProxySettingsDirective.TCookie
-	(*TAliceCapability_TRequestErrorEvent_TBlockError)(nil),                 // 55: NAlice.TAliceCapability.TRequestErrorEvent.TBlockError
-	(*TAliceCapability_TRequestErrorEvent_TServerError)(nil),                // 56: NAlice.TAliceCapability.TRequestErrorEvent.TServerError
-	(*TAliceCapability_TRequestErrorEvent_TNetworkError)(nil),               // 57: NAlice.TAliceCapability.TRequestErrorEvent.TNetworkError
-	(*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError)(nil),        // 58: NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyError
-	(*TAliceCapability_TRequestErrorEvent_TTimeoutError)(nil),               // 59: NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutError
-	(*TAliceCapability_TRequestErrorEvent_TAudioError)(nil),                 // 60: NAlice.TAliceCapability.TRequestErrorEvent.TAudioError
-	(*TAliceCapability_TRequestErrorEvent_TInterruptedError)(nil),           // 61: NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedError
-	(*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError)(nil),      // 62: NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedError
-	(*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError)(nil),      // 63: NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedError
+	(*TAliceCapability_TRequestErrorEvent_TBlockError)(nil),                 // 53: NAlice.TAliceCapability.TRequestErrorEvent.TBlockError
+	(*TAliceCapability_TRequestErrorEvent_TServerError)(nil),                // 54: NAlice.TAliceCapability.TRequestErrorEvent.TServerError
+	(*TAliceCapability_TRequestErrorEvent_TNetworkError)(nil),               // 55: NAlice.TAliceCapability.TRequestErrorEvent.TNetworkError
+	(*TAliceCapability_TRequestErrorEvent_TDeviceNotReadyError)(nil),        // 56: NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyError
+	(*TAliceCapability_TRequestErrorEvent_TTimeoutError)(nil),               // 57: NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutError
+	(*TAliceCapability_TRequestErrorEvent_TAudioError)(nil),                 // 58: NAlice.TAliceCapability.TRequestErrorEvent.TAudioError
+	(*TAliceCapability_TRequestErrorEvent_TInterruptedError)(nil),           // 59: NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedError
+	(*TAliceCapability_TRequestErrorEvent_TSpottingRejectedError)(nil),      // 60: NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedError
+	(*TAliceCapability_TRequestErrorEvent_TNoSpeechDetectedError)(nil),      // 61: NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedError
+	(*TAliceCapability_TFinishSpeechInputDirective_TFinishOptions)(nil),     // 62: NAlice.TAliceCapability.TFinishSpeechInputDirective.TFinishOptions
+	(*TAliceCapability_TSetUniProxySettingsDirective_TCookie)(nil),          // 63: NAlice.TAliceCapability.TSetUniProxySettingsDirective.TCookie
 	(*endpoint.TCapability_TMeta)(nil),                                      // 64: NAlice.TCapability.TMeta
 	(*mode.TSpeechMode)(nil),                                                // 65: NAlice.TSpeechMode
 	(*dialog_state.TDialogState)(nil),                                       // 66: NAlice.TDialogState
@@ -3843,11 +3849,11 @@ var file_alice_protos_endpoint_capabilities_alice_capability_proto_depIdxs = []i
 	5,  // 1: NAlice.TAliceCapability.Parameters:type_name -> NAlice.TAliceCapability.TParameters
 	9,  // 2: NAlice.TAliceCapability.State:type_name -> NAlice.TAliceCapability.TState
 	65, // 3: NAlice.TAliceCapability.TSpeechState.SpeechMode:type_name -> NAlice.TSpeechMode
-	36, // 4: NAlice.TAliceCapability.TSpeechState.ActiveRequest:type_name -> NAlice.TAliceCapability.TSpeechState.TActiveRequest
-	37, // 5: NAlice.TAliceCapability.TSpeechState.Listening:type_name -> NAlice.TAliceCapability.TSpeechState.TListening
-	38, // 6: NAlice.TAliceCapability.TSpeechState.Thinking:type_name -> NAlice.TAliceCapability.TSpeechState.TThinking
-	39, // 7: NAlice.TAliceCapability.TSpeechState.Speaking:type_name -> NAlice.TAliceCapability.TSpeechState.TSpeaking
-	40, // 8: NAlice.TAliceCapability.TSpeechState.Idle:type_name -> NAlice.TAliceCapability.TSpeechState.TIdle
+	34, // 4: NAlice.TAliceCapability.TSpeechState.Listening:type_name -> NAlice.TAliceCapability.TSpeechState.TListening
+	35, // 5: NAlice.TAliceCapability.TSpeechState.Thinking:type_name -> NAlice.TAliceCapability.TSpeechState.TThinking
+	36, // 6: NAlice.TAliceCapability.TSpeechState.Speaking:type_name -> NAlice.TAliceCapability.TSpeechState.TSpeaking
+	37, // 7: NAlice.TAliceCapability.TSpeechState.Idle:type_name -> NAlice.TAliceCapability.TSpeechState.TIdle
+	40, // 8: NAlice.TAliceCapability.TSpeechState.ActiveRequest:type_name -> NAlice.TAliceCapability.TSpeechState.TActiveRequest
 	43, // 9: NAlice.TAliceCapability.TAliceState.ActiveRequest:type_name -> NAlice.TAliceCapability.TAliceState.TActiveRequest
 	66, // 10: NAlice.TAliceCapability.TAliceState.ActiveDialog:type_name -> NAlice.TDialogState
 	44, // 11: NAlice.TAliceCapability.TAliceState.Listening:type_name -> NAlice.TAliceCapability.TAliceState.TListening
@@ -3864,35 +3870,35 @@ var file_alice_protos_endpoint_capabilities_alice_capability_proto_depIdxs = []i
 	4,  // 22: NAlice.TAliceCapability.TBlockDirective.Blocker:type_name -> NAlice.TAliceCapability.TBlocker
 	4,  // 23: NAlice.TAliceCapability.TUnblockDirective.Blocker:type_name -> NAlice.TAliceCapability.TBlocker
 	51, // 24: NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective.TaggedDirectives:type_name -> NAlice.TAliceCapability.TUpdateTtsPlaceholderDirective.TaggedDirective
-	2,  // 25: NAlice.TAliceCapability.TVocalizeDirective.TtsSource:type_name -> NAlice.TAliceCapability.TVocalizeDirective.ETtsSource
-	1,  // 26: NAlice.TAliceCapability.TVocalizeDirective.SynthesisMode:type_name -> NAlice.TAliceCapability.TVocalizeDirective.ESynthesisMode
+	1,  // 25: NAlice.TAliceCapability.TVocalizeDirective.SynthesisMode:type_name -> NAlice.TAliceCapability.TVocalizeDirective.ESynthesisMode
+	2,  // 26: NAlice.TAliceCapability.TVocalizeDirective.TtsSource:type_name -> NAlice.TAliceCapability.TVocalizeDirective.ETtsSource
 	69, // 27: NAlice.TAliceCapability.TStartVoiceInputDirective.VoiceInput:type_name -> NAlice.NAliceApi.TVoiceInput
 	52, // 28: NAlice.TAliceCapability.TStopConversationDirective.ClientOptions:type_name -> NAlice.TAliceCapability.TStopConversationDirective.TClientOptions
 	70, // 29: NAlice.TAliceCapability.TStartTextInputDirective.TextInput:type_name -> NAlice.NAliceApi.TTextInput
 	66, // 30: NAlice.TAliceCapability.TSetActiveDialogDirective.DialogState:type_name -> NAlice.TDialogState
 	71, // 31: NAlice.TAliceCapability.TStartSpeechInputDirective.SpeechInput:type_name -> NAlice.NAliceApi.TSpeechInput
-	72, // 32: NAlice.TAliceCapability.TSetSpeechModeOptionsDirective.SpeechModeOptions:type_name -> NAlice.TSpeechModeOptions
-	71, // 33: NAlice.TAliceCapability.TStartNoteInputDirective.SpeechInput:type_name -> NAlice.NAliceApi.TSpeechInput
-	53, // 34: NAlice.TAliceCapability.TFinishSpeechInputDirective.FinishOptions:type_name -> NAlice.TAliceCapability.TFinishSpeechInputDirective.TFinishOptions
-	73, // 35: NAlice.TAliceCapability.TFinishSpeechInputDirective.FinishRequestPayload:type_name -> NAlice.NAliceApi.TClientAliceRequestProto
-	71, // 36: NAlice.TAliceCapability.TStartTranslateInputDirective.SpeechInput:type_name -> NAlice.NAliceApi.TSpeechInput
-	8,  // 37: NAlice.TAliceCapability.TSetJingleStateDirective.JingleState:type_name -> NAlice.TAliceCapability.TJingleState
-	54, // 38: NAlice.TAliceCapability.TSetUniProxySettingsDirective.Cookies:type_name -> NAlice.TAliceCapability.TSetUniProxySettingsDirective.TCookie
-	74, // 39: NAlice.TAliceCapability.TSetUniProxySettingsDirective.UniProxyClientAnalyticsInfo:type_name -> NAlice.TClientAnalyticsInfoProto
-	10, // 40: NAlice.TAliceCapability.TStartDataInputDirective.GetEnvironmentStateOptions:type_name -> NAlice.TAliceCapability.TGetEnvironmentStateOptions
-	55, // 41: NAlice.TAliceCapability.TRequestErrorEvent.BlockError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TBlockError
-	56, // 42: NAlice.TAliceCapability.TRequestErrorEvent.ServerError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TServerError
-	57, // 43: NAlice.TAliceCapability.TRequestErrorEvent.NetworkError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TNetworkError
-	58, // 44: NAlice.TAliceCapability.TRequestErrorEvent.DeviceNotReadyError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyError
-	59, // 45: NAlice.TAliceCapability.TRequestErrorEvent.TimeoutError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutError
-	60, // 46: NAlice.TAliceCapability.TRequestErrorEvent.AudioError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TAudioError
-	61, // 47: NAlice.TAliceCapability.TRequestErrorEvent.InterruptedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedError
-	62, // 48: NAlice.TAliceCapability.TRequestErrorEvent.SpottingRejectedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedError
-	63, // 49: NAlice.TAliceCapability.TRequestErrorEvent.NoSpeechDetectedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedError
+	8,  // 32: NAlice.TAliceCapability.TSetJingleStateDirective.JingleState:type_name -> NAlice.TAliceCapability.TJingleState
+	10, // 33: NAlice.TAliceCapability.TStartDataInputDirective.GetEnvironmentStateOptions:type_name -> NAlice.TAliceCapability.TGetEnvironmentStateOptions
+	53, // 34: NAlice.TAliceCapability.TRequestErrorEvent.BlockError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TBlockError
+	54, // 35: NAlice.TAliceCapability.TRequestErrorEvent.ServerError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TServerError
+	55, // 36: NAlice.TAliceCapability.TRequestErrorEvent.NetworkError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TNetworkError
+	56, // 37: NAlice.TAliceCapability.TRequestErrorEvent.DeviceNotReadyError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TDeviceNotReadyError
+	57, // 38: NAlice.TAliceCapability.TRequestErrorEvent.TimeoutError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TTimeoutError
+	58, // 39: NAlice.TAliceCapability.TRequestErrorEvent.AudioError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TAudioError
+	59, // 40: NAlice.TAliceCapability.TRequestErrorEvent.InterruptedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TInterruptedError
+	60, // 41: NAlice.TAliceCapability.TRequestErrorEvent.SpottingRejectedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TSpottingRejectedError
+	61, // 42: NAlice.TAliceCapability.TRequestErrorEvent.NoSpeechDetectedError:type_name -> NAlice.TAliceCapability.TRequestErrorEvent.TNoSpeechDetectedError
+	72, // 43: NAlice.TAliceCapability.TSetSpeechModeOptionsDirective.SpeechModeOptions:type_name -> NAlice.TSpeechModeOptions
+	71, // 44: NAlice.TAliceCapability.TStartNoteInputDirective.SpeechInput:type_name -> NAlice.NAliceApi.TSpeechInput
+	62, // 45: NAlice.TAliceCapability.TFinishSpeechInputDirective.FinishOptions:type_name -> NAlice.TAliceCapability.TFinishSpeechInputDirective.TFinishOptions
+	73, // 46: NAlice.TAliceCapability.TFinishSpeechInputDirective.FinishRequestPayload:type_name -> NAlice.NAliceApi.TClientAliceRequestProto
+	71, // 47: NAlice.TAliceCapability.TStartTranslateInputDirective.SpeechInput:type_name -> NAlice.NAliceApi.TSpeechInput
+	63, // 48: NAlice.TAliceCapability.TSetUniProxySettingsDirective.Cookies:type_name -> NAlice.TAliceCapability.TSetUniProxySettingsDirective.TCookie
+	74, // 49: NAlice.TAliceCapability.TSetUniProxySettingsDirective.UniProxyClientAnalyticsInfo:type_name -> NAlice.TClientAnalyticsInfoProto
 	75, // 50: NAlice.TAliceCapability.TSpeechState.TResponseState.Cards:type_name -> NAlice.NAliceApi.TCard
 	76, // 51: NAlice.TAliceCapability.TSpeechState.TResponseState.Alice2ModeInfo:type_name -> NAlice.NApi.NAlice2Mode.TAlice2ModeInfo
-	34, // 52: NAlice.TAliceCapability.TSpeechState.TActiveRequest.RequestState:type_name -> NAlice.TAliceCapability.TSpeechState.TRequestState
-	35, // 53: NAlice.TAliceCapability.TSpeechState.TActiveRequest.ResponseState:type_name -> NAlice.TAliceCapability.TSpeechState.TResponseState
+	38, // 52: NAlice.TAliceCapability.TSpeechState.TActiveRequest.RequestState:type_name -> NAlice.TAliceCapability.TSpeechState.TRequestState
+	39, // 53: NAlice.TAliceCapability.TSpeechState.TActiveRequest.ResponseState:type_name -> NAlice.TAliceCapability.TSpeechState.TResponseState
 	49, // 54: NAlice.TAliceCapability.TAliceState.TRequestState.Files:type_name -> NAlice.TAliceCapability.TAliceState.TRequestState.TFileDescription
 	75, // 55: NAlice.TAliceCapability.TAliceState.TResponseState.Cards:type_name -> NAlice.NAliceApi.TCard
 	77, // 56: NAlice.TAliceCapability.TAliceState.TResponseState.Suggests:type_name -> NAlice.NAliceApi.TSuggest
@@ -3932,11 +3938,8 @@ func file_alice_protos_endpoint_capabilities_alice_capability_proto_init() {
 	}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[6].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[11].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[12].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[18].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[28].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[29].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30].OneofWrappers = []any{
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[21].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[22].OneofWrappers = []any{
 		(*TAliceCapability_TRequestErrorEvent_BlockError)(nil),
 		(*TAliceCapability_TRequestErrorEvent_ServerError)(nil),
 		(*TAliceCapability_TRequestErrorEvent_NetworkError)(nil),
@@ -3947,8 +3950,12 @@ func file_alice_protos_endpoint_capabilities_alice_capability_proto_init() {
 		(*TAliceCapability_TRequestErrorEvent_SpottingRejectedError)(nil),
 		(*TAliceCapability_TRequestErrorEvent_NoSpeechDetectedError)(nil),
 	}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[23].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[24].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[30].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[31].OneofWrappers = []any{}
-	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[32].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[35].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[36].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[38].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[39].OneofWrappers = []any{}
 	file_alice_protos_endpoint_capabilities_alice_capability_proto_msgTypes[40].OneofWrappers = []any{}

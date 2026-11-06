@@ -81,7 +81,8 @@ const file_yandex_io_protos_alice_response_alice_response_proto_rawDesc = "" +
 	"4yandex_io/protos/alice_response/alice_response.proto\x12\fquasar.proto\x1a\"yandex_io/protos/alice_state.proto\"\xb1\x01\n" +
 	"\x17TAliceResponseDirective\x12V\n" +
 	"\x12AliceResponseState\x18\x01 \x01(\v2&.quasar.proto.AliceState.ResponseStateR\x12AliceResponseState\x12>\n" +
-	"\fVinsResponse\x18\x02 \x01(\v2\x1a.quasar.proto.VinsResponseR\fVinsResponseb\x06proto3"
+	"\fVinsResponse\x18\x02 \x01(\v2\x1a.quasar.proto.VinsResponseR\fVinsResponseB\xc8\x01\n" +
+	"\x10com.quasar.protoB\x12AliceResponseProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/alice_response\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_protos_alice_response_alice_response_proto_rawDescOnce sync.Once

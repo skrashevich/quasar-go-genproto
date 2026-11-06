@@ -7,7 +7,7 @@
 package proto
 
 import (
-	directives "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/directives"
+	speechkit "github.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/speechkit"
 	iot "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/iot"
 	iot_scenarios "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_scenarios"
 	protos "github.com/skrashevich/quasar-go-genproto/proto/yandex_io/sdk/directive_sequencer/protos"
@@ -27,10 +27,10 @@ const (
 
 type TDirectiveLaunchInfo struct {
 	state         protoimpl.MessageState                                                                         `protogen:"open.v1"`
-	Directive     *directives.TDirective                                                                         `protobuf:"bytes,1,opt,name=Directive,json=directive,proto3" json:"Directive,omitempty"`
-	SdkDirective  *protos.Directive                                                                              `protobuf:"bytes,4,opt,name=SdkDirective,json=sdk_directive,proto3" json:"SdkDirective,omitempty"`
-	Status        iot_scenarios.TIotScenariosCapability_EStepStatus                                              `protobuf:"varint,2,opt,name=Status,json=status,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"Status,omitempty"`
-	Result        iot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus `protobuf:"varint,3,opt,name=Result,json=result,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus" json:"Result,omitempty"`
+	Directive     *speechkit.TDirective                                                                          `protobuf:"bytes,1,opt,name=Directive,proto3" json:"Directive,omitempty"`
+	SdkDirective  *protos.Directive                                                                              `protobuf:"bytes,4,opt,name=SdkDirective,proto3" json:"SdkDirective,omitempty"`
+	Status        iot_scenarios.TIotScenariosCapability_EStepStatus                                              `protobuf:"varint,2,opt,name=Status,proto3,enum=NAlice.TIotScenariosCapability_EStepStatus" json:"Status,omitempty"`
+	Result        iot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus `protobuf:"varint,3,opt,name=Result,proto3,enum=NAlice.NIot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus" json:"Result,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -65,7 +65,7 @@ func (*TDirectiveLaunchInfo) Descriptor() ([]byte, []int) {
 	return file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TDirectiveLaunchInfo) GetDirective() *directives.TDirective {
+func (x *TDirectiveLaunchInfo) GetDirective() *speechkit.TDirective {
 	if x != nil {
 		return x.Directive
 	}
@@ -95,9 +95,9 @@ func (x *TDirectiveLaunchInfo) GetResult() iot.TLocalScenario_TStepResult_TDirec
 
 type TOptionalDirectiveLaunchInfo struct {
 	state                        protoimpl.MessageState  `protogen:"open.v1"`
-	OptionalDirective            *directives.TDirective  `protobuf:"bytes,1,opt,name=OptionalDirective,json=optional_directive,proto3" json:"OptionalDirective,omitempty"`
-	OptionalSdkDirective         *protos.Directive       `protobuf:"bytes,3,opt,name=OptionalSdkDirective,json=optional_sdk_directive,proto3" json:"OptionalSdkDirective,omitempty"`
-	InternalDirectivesLaunchInfo []*TDirectiveLaunchInfo `protobuf:"bytes,2,rep,name=InternalDirectivesLaunchInfo,json=internal_directives_launch_info,proto3" json:"InternalDirectivesLaunchInfo,omitempty"`
+	OptionalDirective            *speechkit.TDirective   `protobuf:"bytes,1,opt,name=OptionalDirective,proto3" json:"OptionalDirective,omitempty"`
+	OptionalSdkDirective         *protos.Directive       `protobuf:"bytes,3,opt,name=OptionalSdkDirective,proto3" json:"OptionalSdkDirective,omitempty"`
+	InternalDirectivesLaunchInfo []*TDirectiveLaunchInfo `protobuf:"bytes,2,rep,name=InternalDirectivesLaunchInfo,proto3" json:"InternalDirectivesLaunchInfo,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -132,7 +132,7 @@ func (*TOptionalDirectiveLaunchInfo) Descriptor() ([]byte, []int) {
 	return file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *TOptionalDirectiveLaunchInfo) GetOptionalDirective() *directives.TDirective {
+func (x *TOptionalDirectiveLaunchInfo) GetOptionalDirective() *speechkit.TDirective {
 	if x != nil {
 		return x.OptionalDirective
 	}
@@ -155,7 +155,7 @@ func (x *TOptionalDirectiveLaunchInfo) GetInternalDirectivesLaunchInfo() []*TDir
 
 type TStepLaunchInfo struct {
 	state             protoimpl.MessageState  `protogen:"open.v1"`
-	SubstepLaunchInfo []*TDirectiveLaunchInfo `protobuf:"bytes,1,rep,name=SubstepLaunchInfo,json=substep_launch_info,proto3" json:"SubstepLaunchInfo,omitempty"`
+	SubstepLaunchInfo []*TDirectiveLaunchInfo `protobuf:"bytes,1,rep,name=SubstepLaunchInfo,proto3" json:"SubstepLaunchInfo,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -198,13 +198,13 @@ func (x *TStepLaunchInfo) GetSubstepLaunchInfo() []*TDirectiveLaunchInfo {
 }
 
 type TLaunchInfo struct {
-	state                        protoimpl.MessageState                   `protogen:"open.v1"`
-	StepLaunchInfo               []*TStepLaunchInfo                       `protobuf:"bytes,1,rep,name=StepLaunchInfo,json=step_launch_info,proto3" json:"StepLaunchInfo,omitempty"`
-	StepIndexToOptionalDirective map[uint32]*TOptionalDirectiveLaunchInfo `protobuf:"bytes,6,rep,name=StepIndexToOptionalDirective,json=step_index_to_optional_directive,proto3" json:"StepIndexToOptionalDirective,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	CurrentStepIndex             uint64                                   `protobuf:"varint,5,opt,name=CurrentStepIndex,json=current_step_index,proto3" json:"CurrentStepIndex,omitempty"`
-	TriggeredCondition           *iot.TLocalScenarioCondition             `protobuf:"bytes,2,opt,name=TriggeredCondition,json=triggered_condition,proto3" json:"TriggeredCondition,omitempty"`
-	LaunchStartTimeMs            uint64                                   `protobuf:"varint,3,opt,name=LaunchStartTimeMs,json=launch_start_time_ms,proto3" json:"LaunchStartTimeMs,omitempty"`
-	IsSaveLaunchProgressRequired bool                                     `protobuf:"varint,4,opt,name=IsSaveLaunchProgressRequired,json=is_save_launch_progress_required,proto3" json:"IsSaveLaunchProgressRequired,omitempty"`
+	state                        protoimpl.MessageState                           `protogen:"open.v1"`
+	StepLaunchInfo               []*TStepLaunchInfo                               `protobuf:"bytes,1,rep,name=StepLaunchInfo,proto3" json:"StepLaunchInfo,omitempty"`
+	StepIndexToOptionalDirective []*TLaunchInfo_StepIndexToOptionalDirectiveEntry `protobuf:"bytes,6,rep,name=StepIndexToOptionalDirective,proto3" json:"StepIndexToOptionalDirective,omitempty"`
+	CurrentStepIndex             uint64                                           `protobuf:"varint,5,opt,name=CurrentStepIndex,proto3" json:"CurrentStepIndex,omitempty"`
+	TriggeredCondition           *iot.TLocalScenarioCondition                     `protobuf:"bytes,2,opt,name=TriggeredCondition,proto3" json:"TriggeredCondition,omitempty"`
+	LaunchStartTimeMs            uint64                                           `protobuf:"varint,3,opt,name=LaunchStartTimeMs,proto3" json:"LaunchStartTimeMs,omitempty"`
+	IsSaveLaunchProgressRequired bool                                             `protobuf:"varint,4,opt,name=IsSaveLaunchProgressRequired,proto3" json:"IsSaveLaunchProgressRequired,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -246,7 +246,7 @@ func (x *TLaunchInfo) GetStepLaunchInfo() []*TStepLaunchInfo {
 	return nil
 }
 
-func (x *TLaunchInfo) GetStepIndexToOptionalDirective() map[uint32]*TOptionalDirectiveLaunchInfo {
+func (x *TLaunchInfo) GetStepIndexToOptionalDirective() []*TLaunchInfo_StepIndexToOptionalDirectiveEntry {
 	if x != nil {
 		return x.StepIndexToOptionalDirective
 	}
@@ -281,32 +281,85 @@ func (x *TLaunchInfo) GetIsSaveLaunchProgressRequired() bool {
 	return false
 }
 
+type TLaunchInfo_StepIndexToOptionalDirectiveEntry struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Key           uint32                        `protobuf:"varint,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TOptionalDirectiveLaunchInfo `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TLaunchInfo_StepIndexToOptionalDirectiveEntry) Reset() {
+	*x = TLaunchInfo_StepIndexToOptionalDirectiveEntry{}
+	mi := &file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TLaunchInfo_StepIndexToOptionalDirectiveEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TLaunchInfo_StepIndexToOptionalDirectiveEntry) ProtoMessage() {}
+
+func (x *TLaunchInfo_StepIndexToOptionalDirectiveEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TLaunchInfo_StepIndexToOptionalDirectiveEntry.ProtoReflect.Descriptor instead.
+func (*TLaunchInfo_StepIndexToOptionalDirectiveEntry) Descriptor() ([]byte, []int) {
+	return file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDescGZIP(), []int{3, 0}
+}
+
+func (x *TLaunchInfo_StepIndexToOptionalDirectiveEntry) GetKey() uint32 {
+	if x != nil {
+		return x.Key
+	}
+	return 0
+}
+
+func (x *TLaunchInfo_StepIndexToOptionalDirectiveEntry) GetValue() *TOptionalDirectiveLaunchInfo {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto protoreflect.FileDescriptor
 
 const file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDesc = "" +
 	"\n" +
-	"<yandex_io/capabilities/iot_scenarios/proto/launch_info.proto\x12\fquasar.proto\x1a4alice/protos/api/alicekit/directives/directive.proto\x1aAalice/protos/endpoint/capabilities/iot_scenarios/capability.proto\x1a$alice/protos/data/iot/scenario.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"\xd6\x02\n" +
-	"\x14TDirectiveLaunchInfo\x12:\n" +
-	"\tDirective\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\tdirective\x12<\n" +
-	"\fSdkDirective\x18\x04 \x01(\v2\x17.quasar.proto.DirectiveR\rsdk_directive\x12C\n" +
-	"\x06Status\x18\x02 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusR\x06status\x12\x7f\n" +
-	"\x06Result\x18\x03 \x01(\x0e2g.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatusR\x06result\"\xa5\x02\n" +
+	"<yandex_io/capabilities/iot_scenarios/proto/launch_info.proto\x12\fquasar.proto\x1a0alice/megamind/protos/speechkit/directives.proto\x1aAalice/protos/endpoint/capabilities/iot_scenarios/capability.proto\x1a$alice/protos/data/iot/scenario.proto\x1a8yandex_io/sdk/directive_sequencer/protos/directive.proto\"\xd6\x02\n" +
+	"\x14TDirectiveLaunchInfo\x12;\n" +
+	"\tDirective\x18\x01 \x01(\v2\x1d.NAlice.NSpeechKit.TDirectiveR\tDirective\x12;\n" +
+	"\fSdkDirective\x18\x04 \x01(\v2\x17.quasar.proto.DirectiveR\fSdkDirective\x12C\n" +
+	"\x06Status\x18\x02 \x01(\x0e2+.NAlice.TIotScenariosCapability.EStepStatusR\x06Status\x12\x7f\n" +
+	"\x06Result\x18\x03 \x01(\x0e2g.NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatusR\x06Result\"\xa0\x02\n" +
 	"\x1cTOptionalDirectiveLaunchInfo\x12K\n" +
-	"\x11OptionalDirective\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TDirectiveR\x12optional_directive\x12M\n" +
-	"\x14OptionalSdkDirective\x18\x03 \x01(\v2\x17.quasar.proto.DirectiveR\x16optional_sdk_directive\x12i\n" +
-	"\x1cInternalDirectivesLaunchInfo\x18\x02 \x03(\v2\".quasar.proto.TDirectiveLaunchInfoR\x1finternal_directives_launch_info\"e\n" +
-	"\x0fTStepLaunchInfo\x12R\n" +
-	"\x11SubstepLaunchInfo\x18\x01 \x03(\v2\".quasar.proto.TDirectiveLaunchInfoR\x13substep_launch_info\"\xd7\x04\n" +
-	"\vTLaunchInfo\x12G\n" +
-	"\x0eStepLaunchInfo\x18\x01 \x03(\v2\x1d.quasar.proto.TStepLaunchInfoR\x10step_launch_info\x12\x83\x01\n" +
-	"\x1cStepIndexToOptionalDirective\x18\x06 \x03(\v2;.quasar.proto.TLaunchInfo.StepIndexToOptionalDirectiveEntryR step_index_to_optional_directive\x12,\n" +
-	"\x10CurrentStepIndex\x18\x05 \x01(\x04R\x12current_step_index\x12U\n" +
-	"\x12TriggeredCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x13triggered_condition\x12/\n" +
-	"\x11LaunchStartTimeMs\x18\x03 \x01(\x04R\x14launch_start_time_ms\x12F\n" +
-	"\x1cIsSaveLaunchProgressRequired\x18\x04 \x01(\bR is_save_launch_progress_required\x1a{\n" +
+	"\x11OptionalDirective\x18\x01 \x01(\v2\x1d.NAlice.NSpeechKit.TDirectiveR\x11OptionalDirective\x12K\n" +
+	"\x14OptionalSdkDirective\x18\x03 \x01(\v2\x17.quasar.proto.DirectiveR\x14OptionalSdkDirective\x12f\n" +
+	"\x1cInternalDirectivesLaunchInfo\x18\x02 \x03(\v2\".quasar.proto.TDirectiveLaunchInfoR\x1cInternalDirectivesLaunchInfo\"c\n" +
+	"\x0fTStepLaunchInfo\x12P\n" +
+	"\x11SubstepLaunchInfo\x18\x01 \x03(\v2\".quasar.proto.TDirectiveLaunchInfoR\x11SubstepLaunchInfo\"\xc2\x04\n" +
+	"\vTLaunchInfo\x12E\n" +
+	"\x0eStepLaunchInfo\x18\x01 \x03(\v2\x1d.quasar.proto.TStepLaunchInfoR\x0eStepLaunchInfo\x12\x7f\n" +
+	"\x1cStepIndexToOptionalDirective\x18\x06 \x03(\v2;.quasar.proto.TLaunchInfo.StepIndexToOptionalDirectiveEntryR\x1cStepIndexToOptionalDirective\x12*\n" +
+	"\x10CurrentStepIndex\x18\x05 \x01(\x04R\x10CurrentStepIndex\x12T\n" +
+	"\x12TriggeredCondition\x18\x02 \x01(\v2$.NAlice.NIot.TLocalScenarioConditionR\x12TriggeredCondition\x12,\n" +
+	"\x11LaunchStartTimeMs\x18\x03 \x01(\x04R\x11LaunchStartTimeMs\x12B\n" +
+	"\x1cIsSaveLaunchProgressRequired\x18\x04 \x01(\bR\x1cIsSaveLaunchProgressRequired\x1aw\n" +
 	"!StepIndexToOptionalDirectiveEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12@\n" +
-	"\x05value\x18\x02 \x01(\v2*.quasar.proto.TOptionalDirectiveLaunchInfoR\x05value:\x028\x01b\x06proto3"
+	"\x05value\x18\x02 \x01(\v2*.quasar.proto.TOptionalDirectiveLaunchInfoR\x05valueB\xd0\x01\n" +
+	"\x10com.quasar.protoB\x0fLaunchInfoProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/capabilities/iot_scenarios/proto\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Protob\x06proto3"
 
 var (
 	file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDescOnce sync.Once
@@ -322,23 +375,23 @@ func file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_rawDescGZ
 
 var file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_goTypes = []any{
-	(*TDirectiveLaunchInfo)(nil),         // 0: quasar.proto.TDirectiveLaunchInfo
-	(*TOptionalDirectiveLaunchInfo)(nil), // 1: quasar.proto.TOptionalDirectiveLaunchInfo
-	(*TStepLaunchInfo)(nil),              // 2: quasar.proto.TStepLaunchInfo
-	(*TLaunchInfo)(nil),                  // 3: quasar.proto.TLaunchInfo
-	nil,                                  // 4: quasar.proto.TLaunchInfo.StepIndexToOptionalDirectiveEntry
-	(*directives.TDirective)(nil),        // 5: NAlice.NAliceApi.TDirective
-	(*protos.Directive)(nil),             // 6: quasar.proto.Directive
-	(iot_scenarios.TIotScenariosCapability_EStepStatus)(0),                                              // 7: NAlice.TIotScenariosCapability.EStepStatus
+	(*TDirectiveLaunchInfo)(nil),                           // 0: quasar.proto.TDirectiveLaunchInfo
+	(*TOptionalDirectiveLaunchInfo)(nil),                   // 1: quasar.proto.TOptionalDirectiveLaunchInfo
+	(*TStepLaunchInfo)(nil),                                // 2: quasar.proto.TStepLaunchInfo
+	(*TLaunchInfo)(nil),                                    // 3: quasar.proto.TLaunchInfo
+	(*TLaunchInfo_StepIndexToOptionalDirectiveEntry)(nil),  // 4: quasar.proto.TLaunchInfo.StepIndexToOptionalDirectiveEntry
+	(*speechkit.TDirective)(nil),                           // 5: NAlice.NSpeechKit.TDirective
+	(*protos.Directive)(nil),                               // 6: quasar.proto.Directive
+	(iot_scenarios.TIotScenariosCapability_EStepStatus)(0), // 7: NAlice.TIotScenariosCapability.EStepStatus
 	(iot.TLocalScenario_TStepResult_TDirectivesStepResult_TDirectiveExecResult_EDirectiveExecStatus)(0), // 8: NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatus
-	(*iot.TLocalScenarioCondition)(nil),                                                                 // 9: NAlice.NIot.TLocalScenarioCondition
+	(*iot.TLocalScenarioCondition)(nil), // 9: NAlice.NIot.TLocalScenarioCondition
 }
 var file_yandex_io_capabilities_iot_scenarios_proto_launch_info_proto_depIdxs = []int32{
-	5,  // 0: quasar.proto.TDirectiveLaunchInfo.Directive:type_name -> NAlice.NAliceApi.TDirective
+	5,  // 0: quasar.proto.TDirectiveLaunchInfo.Directive:type_name -> NAlice.NSpeechKit.TDirective
 	6,  // 1: quasar.proto.TDirectiveLaunchInfo.SdkDirective:type_name -> quasar.proto.Directive
 	7,  // 2: quasar.proto.TDirectiveLaunchInfo.Status:type_name -> NAlice.TIotScenariosCapability.EStepStatus
 	8,  // 3: quasar.proto.TDirectiveLaunchInfo.Result:type_name -> NAlice.NIot.TLocalScenario.TStepResult.TDirectivesStepResult.TDirectiveExecResult.EDirectiveExecStatus
-	5,  // 4: quasar.proto.TOptionalDirectiveLaunchInfo.OptionalDirective:type_name -> NAlice.NAliceApi.TDirective
+	5,  // 4: quasar.proto.TOptionalDirectiveLaunchInfo.OptionalDirective:type_name -> NAlice.NSpeechKit.TDirective
 	6,  // 5: quasar.proto.TOptionalDirectiveLaunchInfo.OptionalSdkDirective:type_name -> quasar.proto.Directive
 	0,  // 6: quasar.proto.TOptionalDirectiveLaunchInfo.InternalDirectivesLaunchInfo:type_name -> quasar.proto.TDirectiveLaunchInfo
 	0,  // 7: quasar.proto.TStepLaunchInfo.SubstepLaunchInfo:type_name -> quasar.proto.TDirectiveLaunchInfo

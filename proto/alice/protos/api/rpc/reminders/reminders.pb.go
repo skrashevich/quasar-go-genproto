@@ -1298,8 +1298,8 @@ const file_alice_protos_api_rpc_reminders_reminders_proto_rawDesc = "" +
 	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12d\n" +
 	"\rTriggerPolicy\x18\x03 \x01(\v2).NAlice.NReminders.NRpcApi.TTriggerPolicyB\x12\xaa\xdd\x1b\x0etrigger_policyR\x0etrigger_policy\x12`\n" +
 	"\fPlaySettings\x18\x04 \x01(\v2(.NAlice.NReminders.NRpcApi.TPlaySettingsB\x11\xaa\xdd\x1b\rplay_settingsR\rplay_settings:\x04\xa8\xdd\x1b\x04\"\x1f\n" +
-	"\x17TUpdateReminderResponse:\x04\xa8\xdd\x1b\x04Bl\n" +
-	"(ru.yandex.alice.protos.api.rpc.remindersB\x0fRemindersRpcApiZ/a.yandex-team.ru/alice/protos/api/rpc/remindersb\x06proto3"
+	"\x17TUpdateReminderResponse:\x04\xa8\xdd\x1b\x04B\x8b\x01\n" +
+	"(ru.yandex.alice.protos.api.rpc.remindersB\x0fRemindersRpcApiZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/remindersb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_reminders_reminders_proto_rawDescOnce sync.Once

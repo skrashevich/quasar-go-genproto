@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_hud/capability.proto
 
-package automotive_hudpb
+package automotive_hud
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -948,8 +948,8 @@ const file_alice_protos_endpoint_capabilities_automotive_hud_capability_proto_ra
 	"\x14HudDisplayBrightness\x10\x01\x12\x14\n" +
 	"\x10HudDisplayHeight\x10\x02\x12\x12\n" +
 	"\x0eHudDisplayMode\x10\x03\x12\f\n" +
-	"\bHudState\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x85\x01B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAutomotiveHudCapabilityProtoZSa.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_hud;automotive_hudpbb\x06proto3"
+	"\bHudState\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x85\x01B\xaf\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cAutomotiveHudCapabilityProtoZagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_hudb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_hud_capability_proto_rawDescOnce sync.Once

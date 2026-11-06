@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/life_log_audio_sync/capability.proto
 
-package lifelogaudiosyncpb
+package life_log_audio_sync
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -177,8 +177,8 @@ const file_alice_protos_endpoint_capabilities_life_log_audio_sync_capability_pro
 	"\x05State\x18\x03 \x01(\v2*.NAlice.TLifeLogAudioSyncCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1ah\n" +
 	"\x06TState\x12X\n" +
-	"\x16LastSentChunkTimestamp\x18\x01 \x01(\x03B\x1d\xaa\xdd\x1b\x19last_sent_chunk_timestampR\x19last_sent_chunk_timestamp:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9f\x02B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15LifeLogAudioSyncProtoZZa.yandex-team.ru/alice/protos/endpoint/capabilities/life_log_audio_sync;lifelogaudiosyncpbb\x06proto3"
+	"\x16LastSentChunkTimestamp\x18\x01 \x01(\x03B\x1d\xaa\xdd\x1b\x19last_sent_chunk_timestampR\x19last_sent_chunk_timestamp:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x9f\x02B\xad\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x15LifeLogAudioSyncProtoZfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/life_log_audio_syncb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_life_log_audio_sync_capability_proto_rawDescOnce sync.Once

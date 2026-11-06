@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/make_order/capability.proto
 
-package makeorderpb
+package make_order
 
 import (
 	data "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data"
@@ -1065,8 +1065,8 @@ const file_alice_protos_endpoint_capabilities_make_order_capability_proto_rawDes
 	"\fUnauthorized\x10\x02\x12\x19\n" +
 	"\x15ProviderResponseError\x10\x03:\x04\xa8\xdd\x1b\x04:/\x92\x82\x19\"make_order_process_checkout_result\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd7\x02B\x14\n" +
 	"\x06Result\x12\n" +
-	"\xaa\xdd\x1b\x06result:\b\xa8\xdd\x1b\x04\xa0\xc8\x1clB\x94\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18MakeOrderCapabilityProtoZJa.yandex-team.ru/alice/protos/endpoint/capabilities/make_order;makeorderpbb\x06proto3"
+	"\xaa\xdd\x1b\x06result:\b\xa8\xdd\x1b\x04\xa0\xc8\x1clB\xa7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18MakeOrderCapabilityProtoZ]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/make_orderb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_make_order_capability_proto_rawDescOnce sync.Once

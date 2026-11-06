@@ -92,9 +92,9 @@ func (TContentId_EContentType) EnumDescriptor() ([]byte, []int) {
 
 type TContentId struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Type          TContentId_EContentType `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.NData.NMusic.TContentId_EContentType" json:"Type,omitempty"`
-	Id            string                  `protobuf:"bytes,2,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Ids           []string                `protobuf:"bytes,3,rep,name=Ids,json=ids,proto3" json:"Ids,omitempty"`
+	Type          TContentId_EContentType `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.NData.NMusic.TContentId_EContentType" json:"Type,omitempty"`
+	Id            string                  `protobuf:"bytes,2,opt,name=Id,proto3" json:"Id,omitempty"`
+	Ids           []string                `protobuf:"bytes,3,rep,name=Ids,proto3" json:"Ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -152,8 +152,8 @@ func (x *TContentId) GetIds() []string {
 
 type TContentIdWithProvider struct {
 	state         protoimpl.MessageState       `protogen:"open.v1"`
-	ContentId     *music_provider.ContentId    `protobuf:"bytes,1,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
-	MusicProvider music_provider.MusicProvider `protobuf:"varint,2,opt,name=MusicProvider,json=music_provider,proto3,enum=Alice.Music.MusicProvider" json:"MusicProvider,omitempty"`
+	ContentId     *music_provider.ContentId    `protobuf:"bytes,1,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
+	MusicProvider music_provider.MusicProvider `protobuf:"varint,2,opt,name=MusicProvider,proto3,enum=Alice.Music.MusicProvider" json:"MusicProvider,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -206,12 +206,12 @@ var File_alice_protos_data_scenario_music_content_id_proto protoreflect.FileDesc
 
 const file_alice_protos_data_scenario_music_content_id_proto_rawDesc = "" +
 	"\n" +
-	"1alice/protos/data/scenario/music/content_id.proto\x12\x13NAlice.NData.NMusic\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9a\x02\n" +
+	"1alice/protos/data/scenario/music/content_id.proto\x12\x13NAlice.NData.NMusic\x1a4alice/protos/data/music_provider/provider_meta.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfa\x01\n" +
 	"\n" +
-	"TContentId\x12J\n" +
-	"\x04Type\x18\x01 \x01(\x0e2,.NAlice.NData.NMusic.TContentId.EContentTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x16\n" +
-	"\x02Id\x18\x02 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x18\n" +
-	"\x03Ids\x18\x03 \x03(\tB\x06\xaa\xdd\x1b\x02dsR\x03ids\"\x87\x01\n" +
+	"TContentId\x12@\n" +
+	"\x04Type\x18\x01 \x01(\x0e2,.NAlice.NData.NMusic.TContentId.EContentTypeR\x04Type\x12\x0e\n" +
+	"\x02Id\x18\x02 \x01(\tR\x02Id\x12\x10\n" +
+	"\x03Ids\x18\x03 \x03(\tR\x03Ids\"\x87\x01\n" +
 	"\fEContentType\x12\t\n" +
 	"\x05Track\x10\x00\x12\t\n" +
 	"\x05Album\x10\x01\x12\n" +
@@ -223,13 +223,11 @@ const file_alice_protos_data_scenario_music_content_id_proto_rawDesc = "" +
 	"Generative\x10\x05\x12\v\n" +
 	"\aFmRadio\x10\x06\x12\f\n" +
 	"\bShowTail\x10\a\x12\x11\n" +
-	"\rGeneratedRecs\x10\b:\x04\xa8\xdd\x1b\x04\"\xbc\x01\n" +
-	"\x16TContentIdWithProvider\x12E\n" +
-	"\tContentId\x18\x01 \x01(\v2\x16.Alice.Music.ContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x12U\n" +
-	"\rMusicProvider\x18\x02 \x01(\x0e2\x1a.Alice.Music.MusicProviderB\x12\xaa\xdd\x1b\x0emusic_providerR\x0emusic_provider:\x04\xa8\xdd\x1b\x04B_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\rGeneratedRecs\x10\b\"\x90\x01\n" +
+	"\x16TContentIdWithProvider\x124\n" +
+	"\tContentId\x18\x01 \x01(\v2\x16.Alice.Music.ContentIdR\tContentId\x12@\n" +
+	"\rMusicProvider\x18\x02 \x01(\x0e2\x1a.Alice.Music.MusicProviderR\rMusicProviderB\xe9\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x0eContentIdProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_content_id_proto_rawDescOnce sync.Once

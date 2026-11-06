@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_matter_node_network_diagnostics/capability.proto
 
-package iotmatternodenetworkdiagnosticspb
+package iot_matter_node_network_diagnostics
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -203,9 +203,9 @@ func (TIotMatterNodeNetworkDiagnosticsCapability_EWiFiVersion) EnumDescriptor() 
 
 type TIotMatterNodeNetworkDiagnosticsCapability struct {
 	state         protoimpl.MessageState                                  `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta                             `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotMatterNodeNetworkDiagnosticsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotMatterNodeNetworkDiagnosticsCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta                             `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotMatterNodeNetworkDiagnosticsCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotMatterNodeNetworkDiagnosticsCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,11 +263,11 @@ func (x *TIotMatterNodeNetworkDiagnosticsCapability) GetState() *TIotMatterNodeN
 
 type TIotMatterNodeNetworkDiagnosticsCapability_TWiFiDiagnostics struct {
 	state         protoimpl.MessageState                                       `protogen:"open.v1"`
-	Bssid         []byte                                                       `protobuf:"bytes,1,opt,name=Bssid,json=bssid,proto3" json:"Bssid,omitempty"`
-	SecurityType  TIotMatterNodeNetworkDiagnosticsCapability_EWiFiSecurityType `protobuf:"varint,2,opt,name=SecurityType,json=security_type,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EWiFiSecurityType" json:"SecurityType,omitempty"`
-	WiFiVersion   TIotMatterNodeNetworkDiagnosticsCapability_EWiFiVersion      `protobuf:"varint,3,opt,name=WiFiVersion,json=wifi_version,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EWiFiVersion" json:"WiFiVersion,omitempty"`
-	ChannelNumber uint32                                                       `protobuf:"varint,4,opt,name=ChannelNumber,json=channel_number,proto3" json:"ChannelNumber,omitempty"`
-	Rssi          int32                                                        `protobuf:"varint,5,opt,name=Rssi,json=rssi,proto3" json:"Rssi,omitempty"`
+	Bssid         []byte                                                       `protobuf:"bytes,1,opt,name=Bssid,proto3" json:"Bssid,omitempty"`
+	SecurityType  TIotMatterNodeNetworkDiagnosticsCapability_EWiFiSecurityType `protobuf:"varint,2,opt,name=SecurityType,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EWiFiSecurityType" json:"SecurityType,omitempty"`
+	WiFiVersion   TIotMatterNodeNetworkDiagnosticsCapability_EWiFiVersion      `protobuf:"varint,3,opt,name=WiFiVersion,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EWiFiVersion" json:"WiFiVersion,omitempty"`
+	ChannelNumber uint32                                                       `protobuf:"varint,4,opt,name=ChannelNumber,proto3" json:"ChannelNumber,omitempty"`
+	Rssi          int32                                                        `protobuf:"varint,5,opt,name=Rssi,proto3" json:"Rssi,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -398,7 +398,7 @@ type isTIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics_NetworkInf
 }
 
 type TIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics_WiFi struct {
-	WiFi *TIotMatterNodeNetworkDiagnosticsCapability_TWiFiDiagnostics `protobuf:"bytes,1,opt,name=WiFi,json=wifi,proto3,oneof"`
+	WiFi *TIotMatterNodeNetworkDiagnosticsCapability_TWiFiDiagnostics `protobuf:"bytes,1,opt,name=WiFi,proto3,oneof"`
 }
 
 func (*TIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics_WiFi) isTIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics_NetworkInfo() {
@@ -406,7 +406,7 @@ func (*TIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics_WiFi) isTI
 
 type TIotMatterNodeNetworkDiagnosticsCapability_TParameters struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	InterfaceType TIotMatterNodeNetworkDiagnosticsCapability_EInterfaceType `protobuf:"varint,1,opt,name=InterfaceType,json=interface_type,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EInterfaceType" json:"InterfaceType,omitempty"`
+	InterfaceType TIotMatterNodeNetworkDiagnosticsCapability_EInterfaceType `protobuf:"varint,1,opt,name=InterfaceType,proto3,enum=NAlice.TIotMatterNodeNetworkDiagnosticsCapability_EInterfaceType" json:"InterfaceType,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -450,7 +450,7 @@ func (x *TIotMatterNodeNetworkDiagnosticsCapability_TParameters) GetInterfaceTyp
 
 type TIotMatterNodeNetworkDiagnosticsCapability_TState struct {
 	state              protoimpl.MessageState                                          `protogen:"open.v1"`
-	NetworkDiagnostics *TIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics `protobuf:"bytes,1,opt,name=NetworkDiagnostics,json=network_diagnostics,proto3" json:"NetworkDiagnostics,omitempty"`
+	NetworkDiagnostics *TIotMatterNodeNetworkDiagnosticsCapability_TNetworkDiagnostics `protobuf:"bytes,1,opt,name=NetworkDiagnostics,proto3" json:"NetworkDiagnostics,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -494,7 +494,7 @@ func (x *TIotMatterNodeNetworkDiagnosticsCapability_TState) GetNetworkDiagnostic
 
 type TIotMatterNodeNetworkDiagnosticsCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	Capability    *TIotMatterNodeNetworkDiagnosticsCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotMatterNodeNetworkDiagnosticsCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -540,32 +540,30 @@ var File_alice_protos_endpoint_capabilities_iot_matter_node_network_diagnostics_
 
 const file_alice_protos_endpoint_capabilities_iot_matter_node_network_diagnostics_capability_proto_rawDesc = "" +
 	"\n" +
-	"Walice/protos/endpoint/capabilities/iot_matter_node_network_diagnostics/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c\x0e\n" +
-	"*TIotMatterNodeNetworkDiagnosticsCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12n\n" +
+	"Walice/protos/endpoint/capabilities/iot_matter_node_network_diagnostics/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9b\f\n" +
+	"*TIotMatterNodeNetworkDiagnosticsCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12^\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2>.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12Z\n" +
-	"\x05State\x18\x03 \x01(\v29.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x86\x03\n" +
-	"\x10TWiFiDiagnostics\x12\x1f\n" +
-	"\x05Bssid\x18\x01 \x01(\fB\t\xaa\xdd\x1b\x05bssidR\x05bssid\x12|\n" +
-	"\fSecurityType\x18\x02 \x01(\x0e2D.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EWiFiSecurityTypeB\x11\xaa\xdd\x1b\rsecurity_typeR\rsecurity_type\x12t\n" +
-	"\vWiFiVersion\x18\x03 \x01(\x0e2?.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EWiFiVersionB\x10\xaa\xdd\x1b\fwifi_versionR\fwifi_version\x129\n" +
-	"\rChannelNumber\x18\x04 \x01(\rB\x12\xaa\xdd\x1b\x0echannel_numberR\x0echannel_number\x12\x1c\n" +
-	"\x04Rssi\x18\x05 \x01(\x05B\b\xaa\xdd\x1b\x04rssiR\x04rssi:\x04\xa8\xdd\x1b\x04\x1a\x8f\x01\n" +
-	"\x13TNetworkDiagnostics\x12c\n" +
-	"\x04WiFi\x18\x01 \x01(\v2C.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TWiFiDiagnosticsB\b\xaa\xdd\x1b\x04wifiH\x00R\x04wifi:\x04\xa8\xdd\x1b\x04B\r\n" +
-	"\vNetworkInfo\x1a\x91\x01\n" +
-	"\vTParameters\x12|\n" +
-	"\rInterfaceType\x18\x01 \x01(\x0e2A.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EInterfaceTypeB\x12\xaa\xdd\x1b\x0einterface_typeR\x0einterface_type:\x04\xa8\xdd\x1b\x04\x1a\xa1\x01\n" +
-	"\x06TState\x12\x90\x01\n" +
-	"\x12NetworkDiagnostics\x18\x01 \x01(\v2F.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TNetworkDiagnosticsB\x17\xaa\xdd\x1b\x13network_diagnosticsR\x13network_diagnostics:\x04\xa8\xdd\x1b\x04\x1a\x82\x01\n" +
-	"\x11TUpdateStateEvent\x12b\n" +
+	"Parameters\x18\x02 \x01(\v2>.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TParametersR\n" +
+	"Parameters\x12O\n" +
+	"\x05State\x18\x03 \x01(\v29.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TStateR\x05State\x1a\xaf\x02\n" +
+	"\x10TWiFiDiagnostics\x12\x14\n" +
+	"\x05Bssid\x18\x01 \x01(\fR\x05Bssid\x12h\n" +
+	"\fSecurityType\x18\x02 \x01(\x0e2D.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EWiFiSecurityTypeR\fSecurityType\x12a\n" +
+	"\vWiFiVersion\x18\x03 \x01(\x0e2?.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EWiFiVersionR\vWiFiVersion\x12$\n" +
+	"\rChannelNumber\x18\x04 \x01(\rR\rChannelNumber\x12\x12\n" +
+	"\x04Rssi\x18\x05 \x01(\x05R\x04Rssi\x1a\x7f\n" +
+	"\x13TNetworkDiagnostics\x12Y\n" +
+	"\x04WiFi\x18\x01 \x01(\v2C.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TWiFiDiagnosticsH\x00R\x04WiFiB\r\n" +
+	"\vNetworkInfo\x1av\n" +
+	"\vTParameters\x12g\n" +
+	"\rInterfaceType\x18\x01 \x01(\x0e2A.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.EInterfaceTypeR\rInterfaceType\x1a\x80\x01\n" +
+	"\x06TState\x12v\n" +
+	"\x12NetworkDiagnostics\x18\x01 \x01(\v2F.NAlice.TIotMatterNodeNetworkDiagnosticsCapability.TNetworkDiagnosticsR\x12NetworkDiagnostics\x1ag\n" +
+	"\x11TUpdateStateEvent\x12R\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v22.NAlice.TIotMatterNodeNetworkDiagnosticsCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xa2\x01\"\x94\x01\n" +
+	"Capability\x18\x01 \x01(\v22.NAlice.TIotMatterNodeNetworkDiagnosticsCapabilityR\n" +
+	"Capability\"\x94\x01\n" +
 	"\x0eEInterfaceType\x12\x1c\n" +
 	"\x18InterfaceTypeUnspecified\x10\x00\x12\x15\n" +
 	"\x11InterfaceTypeWifi\x10\x01\x12\x19\n" +
@@ -587,8 +585,9 @@ const file_alice_protos_endpoint_capabilities_iot_matter_node_network_diagnostic
 	"\fWiFiVersionN\x10\x04\x12\x11\n" +
 	"\rWiFiVersionAC\x10\x05\x12\x11\n" +
 	"\rWiFiVersionAX\x10\x06\x12\x11\n" +
-	"\rWiFiVersionAH\x10\a:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf1\x01B\xd9\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB.IotMatterNodeNetworkDiagnosticsCapabilityProtoZya.yandex-team.ru/alice/protos/endpoint/capabilities/iot_matter_node_network_diagnostics;iotmatternodenetworkdiagnosticspbb\x06proto3"
+	"\rWiFiVersionAH\x10\aB\xcd\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zvgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_matter_node_network_diagnostics\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_matter_node_network_diagnostics_capability_proto_rawDescOnce sync.Once

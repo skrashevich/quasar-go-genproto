@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/companion_screen/capability.proto
 
-package companionscreenpb
+package companion_screen
 
 import (
 	notes "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/notes"
@@ -1248,8 +1248,8 @@ const file_alice_protos_endpoint_capabilities_companion_screen_capability_proto_
 	"\x14PlayOnceTillEndOfTTS\x10\x02\x12\x1a\n" +
 	"\x16RepeatLastTillEndOfTTS\x10\x03\x12\x1f\n" +
 	"\x1bRepeatLastTillNextDirective\x10\x04\x12\x19\n" +
-	"\x15RepeatTillScreenAlive\x10\x05:%\x92\x82\x19\x18show_animation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdc\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf3\x01B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eCompanionScreenCapabilityProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/companion_screen;companionscreenpbb\x06proto3"
+	"\x15RepeatTillScreenAlive\x10\x05:%\x92\x82\x19\x18show_animation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdc\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xf3\x01B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eCompanionScreenCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/companion_screenb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_companion_screen_capability_proto_rawDescOnce sync.Once

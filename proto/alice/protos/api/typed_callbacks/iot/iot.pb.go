@@ -27,8 +27,8 @@ const (
 
 type TActionDeviceResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ID            string                 `protobuf:"bytes,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=Status,json=status,proto3" json:"Status,omitempty"`
+	ID            string                 `protobuf:"bytes,1,opt,name=ID,proto3" json:"ID,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=Status,proto3" json:"Status,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -79,9 +79,9 @@ func (x *TActionDeviceResult) GetStatus() string {
 
 type TScenarioActionDeviceResultCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	LaunchID      string                 `protobuf:"bytes,1,opt,name=LaunchID,json=launch_id,proto3" json:"LaunchID,omitempty"`
-	DeviceResults []*TActionDeviceResult `protobuf:"bytes,2,rep,name=DeviceResults,json=device_results,proto3" json:"DeviceResults,omitempty"`
-	StepIndex     uint64                 `protobuf:"varint,3,opt,name=StepIndex,json=step_index,proto3" json:"StepIndex,omitempty"`
+	LaunchID      string                 `protobuf:"bytes,1,opt,name=LaunchID,proto3" json:"LaunchID,omitempty"`
+	DeviceResults []*TActionDeviceResult `protobuf:"bytes,2,rep,name=DeviceResults,proto3" json:"DeviceResults,omitempty"`
+	StepIndex     uint64                 `protobuf:"varint,3,opt,name=StepIndex,proto3" json:"StepIndex,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -139,14 +139,14 @@ func (x *TScenarioActionDeviceResultCallback) GetStepIndex() uint64 {
 
 type TFinishDiscoveryCallback struct {
 	state                protoimpl.MessageState                            `protogen:"open.v1"`
-	Protocols            []iot_discovery.TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,json=protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
-	Networks             *iot_discovery.TIotDiscoveryCapability_TNetworks  `protobuf:"bytes,2,opt,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
-	DiscoveredEndpoints  []*endpoint.TEndpoint                             `protobuf:"bytes,3,rep,name=DiscoveredEndpoints,json=discovered_endpoints,proto3" json:"DiscoveredEndpoints,omitempty"`
-	SystemInfo           string                                            `protobuf:"bytes,4,opt,name=SystemInfo,json=system_info,proto3" json:"SystemInfo,omitempty"`
-	CallbackId           uint32                                            `protobuf:"varint,5,opt,name=CallbackId,json=callback_id,proto3" json:"CallbackId,omitempty"`
-	SessionId            string                                            `protobuf:"bytes,6,opt,name=SessionId,json=session_id,proto3" json:"SessionId,omitempty"`
-	DiscoveredAggregates []*endpoint.TAggregate                            `protobuf:"bytes,7,rep,name=DiscoveredAggregates,json=discovered_aggregates,proto3" json:"DiscoveredAggregates,omitempty"`
-	Mode                 iot_discovery.TIotDiscoveryCapability_EMode       `protobuf:"varint,8,opt,name=Mode,json=mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
+	Protocols            []iot_discovery.TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
+	Networks             *iot_discovery.TIotDiscoveryCapability_TNetworks  `protobuf:"bytes,2,opt,name=Networks,proto3" json:"Networks,omitempty"`
+	DiscoveredEndpoints  []*endpoint.TEndpoint                             `protobuf:"bytes,3,rep,name=DiscoveredEndpoints,proto3" json:"DiscoveredEndpoints,omitempty"`
+	SystemInfo           string                                            `protobuf:"bytes,4,opt,name=SystemInfo,proto3" json:"SystemInfo,omitempty"`
+	CallbackId           uint32                                            `protobuf:"varint,5,opt,name=CallbackId,proto3" json:"CallbackId,omitempty"`
+	SessionId            string                                            `protobuf:"bytes,6,opt,name=SessionId,proto3" json:"SessionId,omitempty"`
+	DiscoveredAggregates []*endpoint.TAggregate                            `protobuf:"bytes,7,rep,name=DiscoveredAggregates,proto3" json:"DiscoveredAggregates,omitempty"`
+	Mode                 iot_discovery.TIotDiscoveryCapability_EMode       `protobuf:"varint,8,opt,name=Mode,proto3,enum=NAlice.TIotDiscoveryCapability_EMode" json:"Mode,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -239,12 +239,12 @@ func (x *TFinishDiscoveryCallback) GetMode() iot_discovery.TIotDiscoveryCapabili
 
 type TFinishSystemDiscoveryCallback struct {
 	state                protoimpl.MessageState                            `protogen:"open.v1"`
-	Protocols            []iot_discovery.TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,json=protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
-	Networks             *iot_discovery.TIotDiscoveryCapability_TNetworks  `protobuf:"bytes,2,opt,name=Networks,json=networks,proto3" json:"Networks,omitempty"`
-	DiscoveredEndpoints  []*endpoint.TEndpoint                             `protobuf:"bytes,3,rep,name=DiscoveredEndpoints,json=discovered_endpoints,proto3" json:"DiscoveredEndpoints,omitempty"`
-	SystemInfo           string                                            `protobuf:"bytes,4,opt,name=SystemInfo,json=system_info,proto3" json:"SystemInfo,omitempty"`
-	CallbackId           uint32                                            `protobuf:"varint,5,opt,name=CallbackId,json=callback_id,proto3" json:"CallbackId,omitempty"`
-	DiscoveredAggregates []*endpoint.TAggregate                            `protobuf:"bytes,6,rep,name=DiscoveredAggregates,json=discovered_aggregates,proto3" json:"DiscoveredAggregates,omitempty"`
+	Protocols            []iot_discovery.TIotDiscoveryCapability_TProtocol `protobuf:"varint,1,rep,packed,name=Protocols,proto3,enum=NAlice.TIotDiscoveryCapability_TProtocol" json:"Protocols,omitempty"`
+	Networks             *iot_discovery.TIotDiscoveryCapability_TNetworks  `protobuf:"bytes,2,opt,name=Networks,proto3" json:"Networks,omitempty"`
+	DiscoveredEndpoints  []*endpoint.TEndpoint                             `protobuf:"bytes,3,rep,name=DiscoveredEndpoints,proto3" json:"DiscoveredEndpoints,omitempty"`
+	SystemInfo           string                                            `protobuf:"bytes,4,opt,name=SystemInfo,proto3" json:"SystemInfo,omitempty"`
+	CallbackId           uint32                                            `protobuf:"varint,5,opt,name=CallbackId,proto3" json:"CallbackId,omitempty"`
+	DiscoveredAggregates []*endpoint.TAggregate                            `protobuf:"bytes,6,rep,name=DiscoveredAggregates,proto3" json:"DiscoveredAggregates,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -323,7 +323,7 @@ func (x *TFinishSystemDiscoveryCallback) GetDiscoveredAggregates() []*endpoint.T
 
 type TCancelDiscoveryCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SessionIds    []string               `protobuf:"bytes,1,rep,name=SessionIds,json=session_ids,proto3" json:"SessionIds,omitempty"`
+	SessionIds    []string               `protobuf:"bytes,1,rep,name=SessionIds,proto3" json:"SessionIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -369,43 +369,44 @@ var File_alice_protos_api_typed_callbacks_iot_iot_proto protoreflect.FileDescrip
 
 const file_alice_protos_api_typed_callbacks_iot_iot_proto_rawDesc = "" +
 	"\n" +
-	".alice/protos/api/typed_callbacks/iot/iot.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a%alice/protos/endpoint/aggregate.proto\x1aAalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"W\n" +
-	"\x13TActionDeviceResult\x12\x16\n" +
-	"\x02ID\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\"\n" +
-	"\x06Status\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status:\x04\xa8\xdd\x1b\x04\"\xfb\x01\n" +
-	"#TScenarioActionDeviceResultCallback\x12*\n" +
-	"\bLaunchID\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tlaunch_idR\tlaunch_id\x12V\n" +
-	"\rDeviceResults\x18\x02 \x03(\v2\x1b.NAlice.TActionDeviceResultB\x12\xaa\xdd\x1b\x0edevice_resultsR\x0edevice_results\x12-\n" +
-	"\tStepIndex\x18\x03 \x01(\x04B\x0e\xaa\xdd\x1b\n" +
-	"step_indexR\n" +
-	"step_index:!\xa8\xdd\x1b\x04\xba\xff\x1b\x19alice.iot.scenario.action\"\x87\x05\n" +
-	"\x18TFinishDiscoveryCallback\x12V\n" +
-	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\r\xaa\xdd\x1b\tprotocolsR\tprotocols\x12S\n" +
-	"\bNetworks\x18\x02 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksB\f\xaa\xdd\x1b\bnetworksR\bnetworks\x12^\n" +
-	"\x13DiscoveredEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointB\x18\xaa\xdd\x1b\x14discovered_endpointsR\x14discovered_endpoints\x120\n" +
+	".alice/protos/api/typed_callbacks/iot/iot.proto\x12\x06NAlice\x1a(alice/protos/extensions/extensions.proto\x1a$alice/protos/endpoint/endpoint.proto\x1a%alice/protos/endpoint/aggregate.proto\x1aAalice/protos/endpoint/capabilities/iot_discovery/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"=\n" +
+	"\x13TActionDeviceResult\x12\x0e\n" +
+	"\x02ID\x18\x01 \x01(\tR\x02ID\x12\x16\n" +
+	"\x06Status\x18\x02 \x01(\tR\x06Status\"\xa2\x01\n" +
+	"#TScenarioActionDeviceResultCallback\x12\x1a\n" +
+	"\bLaunchID\x18\x01 \x01(\tR\bLaunchID\x12A\n" +
+	"\rDeviceResults\x18\x02 \x03(\v2\x1b.NAlice.TActionDeviceResultR\rDeviceResults\x12\x1c\n" +
+	"\tStepIndex\x18\x03 \x01(\x04R\tStepIndex\"\xd0\x03\n" +
+	"\x18TFinishDiscoveryCallback\x12G\n" +
+	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\tProtocols\x12E\n" +
+	"\bNetworks\x18\x02 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksR\bNetworks\x12C\n" +
+	"\x13DiscoveredEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointR\x13DiscoveredEndpoints\x12\x1e\n" +
 	"\n" +
-	"SystemInfo\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vsystem_infoR\vsystem_info\x120\n" +
+	"SystemInfo\x18\x04 \x01(\tR\n" +
+	"SystemInfo\x12\x1e\n" +
 	"\n" +
-	"CallbackId\x18\x05 \x01(\rB\x0f\xaa\xdd\x1b\vcallback_idR\vcallback_id\x12-\n" +
-	"\tSessionId\x18\x06 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"session_idR\n" +
-	"session_id\x12b\n" +
-	"\x14DiscoveredAggregates\x18\a \x03(\v2\x12.NAlice.TAggregateB\x19\xaa\xdd\x1b\x15discovered_aggregatesR\x15discovered_aggregates\x12C\n" +
-	"\x04Mode\x18\b \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeB\b\xaa\xdd\x1b\x04modeR\x04mode:\"\xa8\xdd\x1b\x04\xba\xff\x1b\x1aalice.iot.discovery.finish\"\xa0\x04\n" +
-	"\x1eTFinishSystemDiscoveryCallback\x12V\n" +
-	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolB\r\xaa\xdd\x1b\tprotocolsR\tprotocols\x12S\n" +
-	"\bNetworks\x18\x02 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksB\f\xaa\xdd\x1b\bnetworksR\bnetworks\x12^\n" +
-	"\x13DiscoveredEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointB\x18\xaa\xdd\x1b\x14discovered_endpointsR\x14discovered_endpoints\x120\n" +
+	"CallbackId\x18\x05 \x01(\rR\n" +
+	"CallbackId\x12\x1c\n" +
+	"\tSessionId\x18\x06 \x01(\tR\tSessionId\x12F\n" +
+	"\x14DiscoveredAggregates\x18\a \x03(\v2\x12.NAlice.TAggregateR\x14DiscoveredAggregates\x129\n" +
+	"\x04Mode\x18\b \x01(\x0e2%.NAlice.TIotDiscoveryCapability.EModeR\x04Mode\"\xfd\x02\n" +
+	"\x1eTFinishSystemDiscoveryCallback\x12G\n" +
+	"\tProtocols\x18\x01 \x03(\x0e2).NAlice.TIotDiscoveryCapability.TProtocolR\tProtocols\x12E\n" +
+	"\bNetworks\x18\x02 \x01(\v2).NAlice.TIotDiscoveryCapability.TNetworksR\bNetworks\x12C\n" +
+	"\x13DiscoveredEndpoints\x18\x03 \x03(\v2\x11.NAlice.TEndpointR\x13DiscoveredEndpoints\x12\x1e\n" +
 	"\n" +
-	"SystemInfo\x18\x04 \x01(\tB\x0f\xaa\xdd\x1b\vsystem_infoR\vsystem_info\x120\n" +
+	"SystemInfo\x18\x04 \x01(\tR\n" +
+	"SystemInfo\x12\x1e\n" +
 	"\n" +
-	"CallbackId\x18\x05 \x01(\rB\x0f\xaa\xdd\x1b\vcallback_idR\vcallback_id\x12b\n" +
-	"\x14DiscoveredAggregates\x18\x06 \x03(\v2\x12.NAlice.TAggregateB\x19\xaa\xdd\x1b\x15discovered_aggregatesR\x15discovered_aggregates:)\xa8\xdd\x1b\x04\xba\xff\x1b!alice.iot.system_discovery.finish\"p\n" +
-	"\x18TCancelDiscoveryCallback\x120\n" +
+	"CallbackId\x18\x05 \x01(\rR\n" +
+	"CallbackId\x12F\n" +
+	"\x14DiscoveredAggregates\x18\x06 \x03(\v2\x12.NAlice.TAggregateR\x14DiscoveredAggregates\":\n" +
+	"\x18TCancelDiscoveryCallback\x12\x1e\n" +
 	"\n" +
-	"SessionIds\x18\x01 \x03(\tB\x0f\xaa\xdd\x1b\vsession_idsR\vsession_ids:\"\xa8\xdd\x1b\x04\xba\xff\x1b\x1aalice.iot.discovery.cancelBi\n" +
-	".ru.yandex.alice.protos.api.typed_callbacks.iotP\x01Z5a.yandex-team.ru/alice/protos/api/typed_callbacks/iotb\x06proto3"
+	"SessionIds\x18\x01 \x03(\tR\n" +
+	"SessionIdsB\xa4\x01\n" +
+	"\n" +
+	"com.NAliceB\bIotProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/iot\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_iot_iot_proto_rawDescOnce sync.Once

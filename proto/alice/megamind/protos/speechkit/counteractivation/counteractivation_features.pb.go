@@ -26,14 +26,14 @@ const (
 
 type TCounteractivationFeatures struct {
 	state                protoimpl.MessageState                                       `protogen:"open.v1"`
-	HasDirective         bool                                                         `protobuf:"varint,1,opt,name=HasDirective,json=has_directive,proto3" json:"HasDirective,omitempty"`
-	HasClientDirective   bool                                                         `protobuf:"varint,2,opt,name=HasClientDirective,json=has_client_directive,proto3" json:"HasClientDirective,omitempty"`
-	ScenarioFeatures     *counteractivation.TScenarioCounteractivationFeatures        `protobuf:"bytes,3,opt,name=ScenarioFeatures,json=scenario_features,proto3" json:"ScenarioFeatures,omitempty"`
-	DeferredApply        bool                                                         `protobuf:"varint,4,opt,name=DeferredApply,json=deferred_apply,proto3" json:"DeferredApply,omitempty"`
-	HasModalWinReason    bool                                                         `protobuf:"varint,5,opt,name=HasModalWinReason,json=has_modal_win_reason,proto3" json:"HasModalWinReason,omitempty"`
-	CurrentTvScreen      string                                                       `protobuf:"bytes,7,opt,name=CurrentTvScreen,json=current_tv_screen,proto3" json:"CurrentTvScreen,omitempty"`
-	VideoInputDeviceType source_input.TSourceInputCapability_TSourceInput_EDeviceType `protobuf:"varint,8,opt,name=VideoInputDeviceType,json=video_input_device_type,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_EDeviceType" json:"VideoInputDeviceType,omitempty"`
-	IsDeviceOn           *bool                                                        `protobuf:"varint,6,opt,name=IsDeviceOn,json=is_device_on,proto3,oneof" json:"IsDeviceOn,omitempty"`
+	HasDirective         bool                                                         `protobuf:"varint,1,opt,name=HasDirective,proto3" json:"HasDirective,omitempty"`
+	HasClientDirective   bool                                                         `protobuf:"varint,2,opt,name=HasClientDirective,proto3" json:"HasClientDirective,omitempty"`
+	ScenarioFeatures     *counteractivation.TScenarioCounteractivationFeatures        `protobuf:"bytes,3,opt,name=ScenarioFeatures,proto3" json:"ScenarioFeatures,omitempty"`
+	DeferredApply        bool                                                         `protobuf:"varint,4,opt,name=DeferredApply,proto3" json:"DeferredApply,omitempty"`
+	HasModalWinReason    bool                                                         `protobuf:"varint,5,opt,name=HasModalWinReason,proto3" json:"HasModalWinReason,omitempty"`
+	CurrentTvScreen      string                                                       `protobuf:"bytes,7,opt,name=CurrentTvScreen,proto3" json:"CurrentTvScreen,omitempty"`
+	VideoInputDeviceType source_input.TSourceInputCapability_TSourceInput_EDeviceType `protobuf:"varint,8,opt,name=VideoInputDeviceType,proto3,enum=NAlice.TSourceInputCapability_TSourceInput_EDeviceType" json:"VideoInputDeviceType,omitempty"`
+	IsDeviceOn           *bool                                                        `protobuf:"varint,6,opt,name=IsDeviceOn,proto3,oneof" json:"IsDeviceOn,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -128,19 +128,21 @@ var File_alice_megamind_protos_speechkit_counteractivation_counteractivation_fea
 
 const file_alice_megamind_protos_speechkit_counteractivation_counteractivation_features_proto_rawDesc = "" +
 	"\n" +
-	"Ralice/megamind/protos/speechkit/counteractivation/counteractivation_features.proto\x12\x06NAlice\x1aMalice/protos/data/counteractivation/scenario_counteractivation_features.proto\x1a@alice/protos/endpoint/capabilities/source_input/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xbb\x05\n" +
-	"\x1aTCounteractivationFeatures\x126\n" +
-	"\fHasDirective\x18\x01 \x01(\bB\x11\xaa\xdd\x1b\rhas_directiveR\rhas_directive\x12J\n" +
-	"\x12HasClientDirective\x18\x02 \x01(\bB\x18\xaa\xdd\x1b\x14has_client_directiveR\x14has_client_directive\x12t\n" +
-	"\x10ScenarioFeatures\x18\x03 \x01(\v20.NAlice.NData.TScenarioCounteractivationFeaturesB\x15\xaa\xdd\x1b\x11scenario_featuresR\x11scenario_features\x129\n" +
-	"\rDeferredApply\x18\x04 \x01(\bB\x12\xaa\xdd\x1b\x0edeferred_applyR\x0edeferred_apply\x12I\n" +
-	"\x11HasModalWinReason\x18\x05 \x01(\bB\x18\xaa\xdd\x1b\x14has_modal_win_reasonR\x14has_modal_win_reason\x12A\n" +
-	"\x0fCurrentTvScreen\x18\a \x01(\tB\x15\xaa\xdd\x1b\x11current_tv_screenR\x11current_tv_screen\x12\x8b\x01\n" +
-	"\x14VideoInputDeviceType\x18\b \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.EDeviceTypeB\x1b\xaa\xdd\x1b\x17video_input_device_typeR\x17video_input_device_type\x127\n" +
+	"Ralice/megamind/protos/speechkit/counteractivation/counteractivation_features.proto\x12\x06NAlice\x1aMalice/protos/data/counteractivation/scenario_counteractivation_features.proto\x1a@alice/protos/endpoint/capabilities/source_input/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xed\x03\n" +
+	"\x1aTCounteractivationFeatures\x12\"\n" +
+	"\fHasDirective\x18\x01 \x01(\bR\fHasDirective\x12.\n" +
+	"\x12HasClientDirective\x18\x02 \x01(\bR\x12HasClientDirective\x12\\\n" +
+	"\x10ScenarioFeatures\x18\x03 \x01(\v20.NAlice.NData.TScenarioCounteractivationFeaturesR\x10ScenarioFeatures\x12$\n" +
+	"\rDeferredApply\x18\x04 \x01(\bR\rDeferredApply\x12,\n" +
+	"\x11HasModalWinReason\x18\x05 \x01(\bR\x11HasModalWinReason\x12(\n" +
+	"\x0fCurrentTvScreen\x18\a \x01(\tR\x0fCurrentTvScreen\x12k\n" +
+	"\x14VideoInputDeviceType\x18\b \x01(\x0e27.NAlice.TSourceInputCapability.TSourceInput.EDeviceTypeR\x14VideoInputDeviceType\x12#\n" +
 	"\n" +
-	"IsDeviceOn\x18\x06 \x01(\bB\x10\xaa\xdd\x1b\fis_device_onH\x00R\fis_device_on\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\r\n" +
-	"\v_IsDeviceOnB\xa1\x01\n" +
-	";ru.yandex.alice.megamind.protos.speechkit.counteractivationB\x1eCounteractivationFeaturesProtoZBa.yandex-team.ru/alice/megamind/protos/speechkit/counteractivationb\x06proto3"
+	"IsDeviceOn\x18\x06 \x01(\bH\x00R\n" +
+	"IsDeviceOn\x88\x01\x01B\r\n" +
+	"\v_IsDeviceOnB\xc7\x01\n" +
+	"\n" +
+	"com.NAliceB\x1eCounteractivationFeaturesProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/megamind/protos/speechkit/counteractivation\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_megamind_protos_speechkit_counteractivation_counteractivation_features_proto_rawDescOnce sync.Once

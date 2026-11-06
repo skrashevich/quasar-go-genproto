@@ -82,8 +82,8 @@ const file_alice_protos_data_tv_channels_carousel_item_proto_rawDesc = "" +
 	"NAlice.NTv\x1a*alice/protos/data/tv/channels/common.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9e\x01\n" +
 	"\x15TTvChannelItemWrapper\x12;\n" +
 	"\aChannel\x18\x01 \x01(\v2\x14.NAlice.NTv.TChannelB\v\xaa\xdd\x1b\achannelR\achannel\x12B\n" +
-	"\bPrograms\x18\x02 \x03(\v2\x18.NAlice.NTv.TProgramItemB\f\xaa\xdd\x1b\bprogramsR\bprograms:\x04\xa8\xdd\x1b\x04B[\n" +
-	"'ru.yandex.alice.protos.data.tv.channelsP\x01Z.a.yandex-team.ru/alice/protos/data/tv/channelsb\x06proto3"
+	"\bPrograms\x18\x02 \x03(\v2\x18.NAlice.NTv.TProgramItemB\f\xaa\xdd\x1b\bprogramsR\bprograms:\x04\xa8\xdd\x1b\x04Bz\n" +
+	"'ru.yandex.alice.protos.data.tv.channelsP\x01ZMgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/channelsb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_channels_carousel_item_proto_rawDescOnce sync.Once

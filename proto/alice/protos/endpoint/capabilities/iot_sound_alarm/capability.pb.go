@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_sound_alarm/capability.proto
 
-package iotsoundalarmpb
+package iot_sound_alarm
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -27,9 +27,9 @@ const (
 
 type TSoundAlarmCapability struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSoundAlarmCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSoundAlarmCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta        `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSoundAlarmCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSoundAlarmCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,7 +87,7 @@ func (x *TSoundAlarmCapability) GetState() *TSoundAlarmCapability_TState {
 
 type TSoundAlarmCapability_TParameters struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutRangeSec *endpoint.TRange       `protobuf:"bytes,3,opt,name=TimeoutRangeSec,json=timeout_range_sec,proto3" json:"TimeoutRangeSec,omitempty"`
+	TimeoutRangeSec *endpoint.TRange       `protobuf:"bytes,3,opt,name=TimeoutRangeSec,proto3" json:"TimeoutRangeSec,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -203,7 +203,7 @@ func (*TSoundAlarmCapability_TInfinityPolicy) Descriptor() ([]byte, []int) {
 
 type TSoundAlarmCapability_TTimeoutPolicy struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimeoutSec    float64                `protobuf:"fixed64,2,opt,name=TimeoutSec,json=timeout_sec,proto3" json:"TimeoutSec,omitempty"`
+	TimeoutSec    float64                `protobuf:"fixed64,2,opt,name=TimeoutSec,proto3" json:"TimeoutSec,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -326,15 +326,15 @@ type isTSoundAlarmCapability_TStrategy_Policy interface {
 }
 
 type TSoundAlarmCapability_TStrategy_Disable struct {
-	Disable *TSoundAlarmCapability_TDisablePolicy `protobuf:"bytes,1,opt,name=Disable,json=disable,proto3,oneof"`
+	Disable *TSoundAlarmCapability_TDisablePolicy `protobuf:"bytes,1,opt,name=Disable,proto3,oneof"`
 }
 
 type TSoundAlarmCapability_TStrategy_Infinity struct {
-	Infinity *TSoundAlarmCapability_TInfinityPolicy `protobuf:"bytes,2,opt,name=Infinity,json=infinity,proto3,oneof"`
+	Infinity *TSoundAlarmCapability_TInfinityPolicy `protobuf:"bytes,2,opt,name=Infinity,proto3,oneof"`
 }
 
 type TSoundAlarmCapability_TStrategy_Timeout struct {
-	Timeout *TSoundAlarmCapability_TTimeoutPolicy `protobuf:"bytes,3,opt,name=Timeout,json=timeout,proto3,oneof"`
+	Timeout *TSoundAlarmCapability_TTimeoutPolicy `protobuf:"bytes,3,opt,name=Timeout,proto3,oneof"`
 }
 
 func (*TSoundAlarmCapability_TStrategy_Disable) isTSoundAlarmCapability_TStrategy_Policy() {}
@@ -345,8 +345,8 @@ func (*TSoundAlarmCapability_TStrategy_Timeout) isTSoundAlarmCapability_TStrateg
 
 type TSoundAlarmCapability_TState struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Strategy      *TSoundAlarmCapability_TStrategy `protobuf:"bytes,1,opt,name=Strategy,json=strategy,proto3" json:"Strategy,omitempty"`
-	IsAlarmActive bool                             `protobuf:"varint,2,opt,name=IsAlarmActive,json=is_alarm_active,proto3" json:"IsAlarmActive,omitempty"`
+	Strategy      *TSoundAlarmCapability_TStrategy `protobuf:"bytes,1,opt,name=Strategy,proto3" json:"Strategy,omitempty"`
+	IsAlarmActive bool                             `protobuf:"varint,2,opt,name=IsAlarmActive,proto3" json:"IsAlarmActive,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -397,8 +397,8 @@ func (x *TSoundAlarmCapability_TState) GetIsAlarmActive() bool {
 
 type TSoundAlarmCapability_TSetStrategyDirective struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Strategy      *TSoundAlarmCapability_TStrategy `protobuf:"bytes,1,opt,name=Strategy,json=strategy,proto3" json:"Strategy,omitempty"`
-	Name          string                           `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Strategy      *TSoundAlarmCapability_TStrategy `protobuf:"bytes,1,opt,name=Strategy,proto3" json:"Strategy,omitempty"`
+	Name          string                           `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -449,7 +449,7 @@ func (x *TSoundAlarmCapability_TSetStrategyDirective) GetName() string {
 
 type TSoundAlarmCapability_TStopCurrentSoundAlarmDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -493,7 +493,7 @@ func (x *TSoundAlarmCapability_TStopCurrentSoundAlarmDirective) GetName() string
 
 type TSoundAlarmCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Capability    *TSoundAlarmCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TSoundAlarmCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -539,41 +539,40 @@ var File_alice_protos_endpoint_capabilities_iot_sound_alarm_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_iot_sound_alarm_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/iot_sound_alarm/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc9\n" +
+	"Calice/protos/endpoint/capabilities/iot_sound_alarm/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8d\b\n" +
+	"\x15TSoundAlarmCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12I\n" +
 	"\n" +
-	"\x15TSoundAlarmCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Y\n" +
-	"\n" +
-	"Parameters\x18\x02 \x01(\v2).NAlice.TSoundAlarmCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12E\n" +
-	"\x05State\x18\x03 \x01(\v2$.NAlice.TSoundAlarmCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x8d\x01\n" +
-	"\vTParameters\x12Q\n" +
-	"\x0fTimeoutRangeSec\x18\x03 \x01(\v2\x0e.NAlice.TRangeB\x15\xaa\xdd\x1b\x11timeout_range_secR\x11timeout_range_sec:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\vTimeoutUnitR\fTimeoutRange\x1a\x10\n" +
+	"Parameters\x18\x02 \x01(\v2).NAlice.TSoundAlarmCapability.TParametersR\n" +
+	"Parameters\x12:\n" +
+	"\x05State\x18\x03 \x01(\v2$.NAlice.TSoundAlarmCapability.TStateR\x05State\x1an\n" +
+	"\vTParameters\x128\n" +
+	"\x0fTimeoutRangeSec\x18\x03 \x01(\v2\x0e.NAlice.TRangeR\x0fTimeoutRangeSecJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\vTimeoutUnitR\fTimeoutRange\x1a\x10\n" +
 	"\x0eTDisablePolicy\x1a\x11\n" +
-	"\x0fTInfinityPolicy\x1aN\n" +
-	"\x0eTTimeoutPolicy\x120\n" +
+	"\x0fTInfinityPolicy\x1a<\n" +
+	"\x0eTTimeoutPolicy\x12\x1e\n" +
 	"\n" +
-	"TimeoutSec\x18\x02 \x01(\x01B\x0f\xaa\xdd\x1b\vtimeout_secR\vtimeout_secJ\x04\b\x01\x10\x02R\x04Time\x1a\x9e\x02\n" +
-	"\tTStrategy\x12U\n" +
-	"\aDisable\x18\x01 \x01(\v2,.NAlice.TSoundAlarmCapability.TDisablePolicyB\v\xaa\xdd\x1b\adisableH\x00R\adisable\x12Y\n" +
-	"\bInfinity\x18\x02 \x01(\v2-.NAlice.TSoundAlarmCapability.TInfinityPolicyB\f\xaa\xdd\x1b\binfinityH\x00R\binfinity\x12U\n" +
-	"\aTimeout\x18\x03 \x01(\v2,.NAlice.TSoundAlarmCapability.TTimeoutPolicyB\v\xaa\xdd\x1b\atimeoutH\x00R\atimeoutB\b\n" +
-	"\x06Policy\x1a\x9e\x01\n" +
-	"\x06TState\x12Q\n" +
-	"\bStrategy\x18\x01 \x01(\v2'.NAlice.TSoundAlarmCapability.TStrategyB\f\xaa\xdd\x1b\bstrategyR\bstrategy\x12;\n" +
-	"\rIsAlarmActive\x18\x02 \x01(\bB\x13\xaa\xdd\x1b\x0fis_alarm_activeR\x0fis_alarm_active:\x04\xa8\xdd\x1b\x04\x1a\xa0\x01\n" +
+	"TimeoutSec\x18\x02 \x01(\x01R\n" +
+	"TimeoutSecJ\x04\b\x01\x10\x02R\x04Time\x1a\xf6\x01\n" +
+	"\tTStrategy\x12H\n" +
+	"\aDisable\x18\x01 \x01(\v2,.NAlice.TSoundAlarmCapability.TDisablePolicyH\x00R\aDisable\x12K\n" +
+	"\bInfinity\x18\x02 \x01(\v2-.NAlice.TSoundAlarmCapability.TInfinityPolicyH\x00R\bInfinity\x12H\n" +
+	"\aTimeout\x18\x03 \x01(\v2,.NAlice.TSoundAlarmCapability.TTimeoutPolicyH\x00R\aTimeoutB\b\n" +
+	"\x06Policy\x1as\n" +
+	"\x06TState\x12C\n" +
+	"\bStrategy\x18\x01 \x01(\v2'.NAlice.TSoundAlarmCapability.TStrategyR\bStrategy\x12$\n" +
+	"\rIsAlarmActive\x18\x02 \x01(\bR\rIsAlarmActive\x1aq\n" +
 	"\x15TSetStrategyDirective\x12C\n" +
-	"\bStrategy\x18\x01 \x01(\v2'.NAlice.TSoundAlarmCapability.TStrategyR\bstrategy\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:#\x92\x82\x19\x16set_strategy_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xad\x04\x1aq\n" +
-	"\x1fTStopCurrentSoundAlarmDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:/\x92\x82\x19\"stop_current_sound_alarm_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xae\x04\x1am\n" +
-	"\x11TUpdateStateEvent\x12M\n" +
+	"\bStrategy\x18\x01 \x01(\v2'.NAlice.TSoundAlarmCapability.TStrategyR\bStrategy\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1a6\n" +
+	"\x1fTStopCurrentSoundAlarmDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x1aR\n" +
+	"\x11TUpdateStateEvent\x12=\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1d.NAlice.TSoundAlarmCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x95\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xdd\x01B\xa0\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19SoundAlarmCapabilityProtoP\x01ZSa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_sound_alarm;iotsoundalarmpbb\x06proto3"
+	"Capability\x18\x01 \x01(\v2\x1d.NAlice.TSoundAlarmCapabilityR\n" +
+	"CapabilityB\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_sound_alarm\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_sound_alarm_capability_proto_rawDescOnce sync.Once

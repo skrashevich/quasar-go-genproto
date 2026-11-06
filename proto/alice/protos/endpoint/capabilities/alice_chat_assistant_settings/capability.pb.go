@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_assistant_settings/capability.proto
 
-package alicechatassistantsettingspb
+package alice_chat_assistant_settings
 
 import (
 	aliceapp_native_settings "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/aliceapp_native_settings"
@@ -543,8 +543,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_assistant_settings_capa
 	"\x16EAssistantResponseMode\x12\b\n" +
 	"\x04AUTO\x10\x00\x12\x0f\n" +
 	"\vNEVER_VOICE\x10\x01\x12\x10\n" +
-	"\fALWAYS_VOICE\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc3\x02B\xbf\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fAliceChatAssistantSettingsProtoZna.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_assistant_settings;alicechatassistantsettingspbb\x06proto3"
+	"\fALWAYS_VOICE\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc3\x02B\xc1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1fAliceChatAssistantSettingsProtoZpgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_assistant_settingsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_assistant_settings_capability_proto_rawDescOnce sync.Once

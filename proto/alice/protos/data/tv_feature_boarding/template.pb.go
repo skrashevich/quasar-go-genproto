@@ -720,8 +720,8 @@ const file_alice_protos_data_tv_feature_boarding_template_proto_rawDesc = "" +
 	"\fTemplateName\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rtemplate_nameR\rtemplate_name\x12@\n" +
 	"\aDivJson\x18\x02 \x01(\v2\x17.google.protobuf.StructB\f\xaa\xdd\x1b\bdiv_jsonR\bdiv_json\x12\x19\n" +
 	"\x03Ttl\x18\x03 \x01(\x05B\a\xaa\xdd\x1b\x03ttlR\x03ttl:\x04\xa8\xdd\x1b\x04:Q\n" +
-	"\x13promo_template_name\x12\x1f.google.protobuf.MessageOptions\x18\xf4\xbf\x03 \x01(\tR\x11promoTemplateNameB\x84\x01\n" +
-	"/ru.yandex.alice.protos.data.tv_feature_boardingB\x19TvFeatureBoardingTemplateZ6a.yandex-team.ru/alice/protos/data/tv_feature_boardingb\x06proto3"
+	"\x13promo_template_name\x12\x1f.google.protobuf.MessageOptions\x18\xf4\xbf\x03 \x01(\tR\x11promoTemplateNameB\xa3\x01\n" +
+	"/ru.yandex.alice.protos.data.tv_feature_boardingB\x19TvFeatureBoardingTemplateZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv_feature_boardingb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_feature_boarding_template_proto_rawDescOnce sync.Once

@@ -24,8 +24,8 @@ const (
 
 type TTimezone struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TimezoneName  string                 `protobuf:"bytes,1,opt,name=TimezoneName,json=timezone_name,proto3" json:"TimezoneName,omitempty"`
-	OffsetSeconds int64                  `protobuf:"varint,2,opt,name=OffsetSeconds,json=offset_seconds,proto3" json:"OffsetSeconds,omitempty"`
+	TimezoneName  string                 `protobuf:"bytes,1,opt,name=TimezoneName,proto3" json:"TimezoneName,omitempty"`
+	OffsetSeconds int64                  `protobuf:"varint,2,opt,name=OffsetSeconds,proto3" json:"OffsetSeconds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -76,8 +76,8 @@ func (x *TTimezone) GetOffsetSeconds() int64 {
 
 type TDateTime struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Epoch         uint64                 `protobuf:"varint,1,opt,name=Epoch,json=epoch,proto3" json:"Epoch,omitempty"`
-	TimeZone      string                 `protobuf:"bytes,2,opt,name=TimeZone,json=timezone,proto3" json:"TimeZone,omitempty"`
+	Epoch         uint64                 `protobuf:"varint,1,opt,name=Epoch,proto3" json:"Epoch,omitempty"`
+	TimeZone      string                 `protobuf:"bytes,2,opt,name=TimeZone,proto3" json:"TimeZone,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -130,14 +130,14 @@ var File_alice_protos_data_timezone_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_timezone_proto_rawDesc = "" +
 	"\n" +
-	" alice/protos/data/timezone.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"\x84\x01\n" +
-	"\tTTimezone\x126\n" +
-	"\fTimezoneName\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rtimezone_nameR\rtimezone_name\x129\n" +
-	"\rOffsetSeconds\x18\x02 \x01(\x03B\x12\xaa\xdd\x1b\x0eoffset_secondsR\x0eoffset_seconds:\x04\xa8\xdd\x1b\x04\"\\\n" +
-	"\tTDateTime\x12\x1f\n" +
-	"\x05Epoch\x18\x01 \x01(\x04B\t\xaa\xdd\x1b\x05epochR\x05epoch\x12(\n" +
-	"\bTimeZone\x18\x02 \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	" alice/protos/data/timezone.proto\x12\fNAlice.NData\x1a&yt/yt_proto/yt/formats/extension.proto\"U\n" +
+	"\tTTimezone\x12\"\n" +
+	"\fTimezoneName\x18\x01 \x01(\tR\fTimezoneName\x12$\n" +
+	"\rOffsetSeconds\x18\x02 \x01(\x03R\rOffsetSeconds\"=\n" +
+	"\tTDateTime\x12\x14\n" +
+	"\x05Epoch\x18\x01 \x01(\x04R\x05Epoch\x12\x1a\n" +
+	"\bTimeZone\x18\x02 \x01(\tR\bTimeZoneB\xb5\x01\n" +
+	"\x10com.NAlice.NDataB\rTimezoneProtoP\x01ZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_timezone_proto_rawDescOnce sync.Once

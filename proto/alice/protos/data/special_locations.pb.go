@@ -78,8 +78,8 @@ const file_alice_protos_data_special_locations_proto_rawDesc = "" +
 	"\x10ESpecialLocation\x12\x1e\n" +
 	"\x1aSPECIAL_LOCATION_UNDEFINED\x10\x00\x12\x19\n" +
 	"\x15SPECIAL_LOCATION_HOME\x10\x01\x12\x19\n" +
-	"\x15SPECIAL_LOCATION_WORK\x10\x02BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\x15SPECIAL_LOCATION_WORK\x10\x02B`\n" +
+	"\x1bru.yandex.alice.protos.dataZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/datab\x06proto3"
 
 var (
 	file_alice_protos_data_special_locations_proto_rawDescOnce sync.Once

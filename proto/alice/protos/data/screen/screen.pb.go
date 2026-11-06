@@ -950,8 +950,8 @@ const file_alice_protos_data_screen_screen_proto_rawDesc = "" +
 	"\tTTvUpdate\"\x0e\n" +
 	"\fTScreensaver\"\r\n" +
 	"\vTTvCategory\"\x0e\n" +
-	"\fTExternalAppB\\\n" +
-	"\"ru.yandex.alice.protos.data.screenB\vScreenProtoZ)a.yandex-team.ru/alice/protos/data/screenb\x06proto3"
+	"\fTExternalAppB{\n" +
+	"\"ru.yandex.alice.protos.data.screenB\vScreenProtoZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/screenb\x06proto3"
 
 var (
 	file_alice_protos_data_screen_screen_proto_rawDescOnce sync.Once

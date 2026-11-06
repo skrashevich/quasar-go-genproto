@@ -24,8 +24,8 @@ const (
 
 type TAvatarMdsImage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	BaseUrl       string                 `protobuf:"bytes,1,opt,name=BaseUrl,json=base_url,proto3" json:"BaseUrl,omitempty"`
-	Sizes         []string               `protobuf:"bytes,2,rep,name=Sizes,json=sizes,proto3" json:"Sizes,omitempty"`
+	BaseUrl       string                 `protobuf:"bytes,1,opt,name=BaseUrl,proto3" json:"BaseUrl,omitempty"`
+	Sizes         []string               `protobuf:"bytes,2,rep,name=Sizes,proto3" json:"Sizes,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,11 +78,12 @@ var File_alice_protos_data_avatar_avatar_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_avatar_avatar_proto_rawDesc = "" +
 	"\n" +
-	"%alice/protos/data/avatar/avatar.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"a\n" +
-	"\x0fTAvatarMdsImage\x12'\n" +
-	"\aBaseUrl\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bbase_urlR\bbase_url\x12\x1f\n" +
-	"\x05Sizes\x18\x02 \x03(\tB\t\xaa\xdd\x1b\x05sizesR\x05sizes:\x04\xa8\xdd\x1b\x04B\\\n" +
-	"\"ru.yandex.alice.protos.data.avatarB\vAvatarProtoZ)a.yandex-team.ru/alice/protos/data/avatarb\x06proto3"
+	"%alice/protos/data/avatar/avatar.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"A\n" +
+	"\x0fTAvatarMdsImage\x12\x18\n" +
+	"\aBaseUrl\x18\x01 \x01(\tR\aBaseUrl\x12\x14\n" +
+	"\x05Sizes\x18\x02 \x03(\tR\x05SizesB\x9b\x01\n" +
+	"\n" +
+	"com.NAliceB\vAvatarProtoP\x01ZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/avatar\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_avatar_avatar_proto_rawDescOnce sync.Once

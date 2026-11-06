@@ -348,8 +348,8 @@ const file_alice_protos_data_scenario_child_education_common_proto_rawDesc = "" 
 	"\tEGameMode\x12\x13\n" +
 	"\x0fCHILD_EDUCATION\x10\x00\x12\x12\n" +
 	"\x0eBABY_EDUCATION\x10\x01\x12\x14\n" +
-	"\x10SCHOOL_KNOWLEDGE\x10\x02Bs\n" +
-	"4ru.yandex.alice.protos.data.scenario.child_educationZ;a.yandex-team.ru/alice/protos/data/scenario/child_educationb\x06proto3"
+	"\x10SCHOOL_KNOWLEDGE\x10\x02B\x92\x01\n" +
+	"4ru.yandex.alice.protos.data.scenario.child_educationZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/child_educationb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_child_education_common_proto_rawDescOnce sync.Once

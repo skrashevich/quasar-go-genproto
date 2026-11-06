@@ -830,8 +830,8 @@ const file_yandex_io_services_glagold_endpoints_protos_protocol_proto_rawDesc = 
 	"\bendpoint\x18\x01 \x01(\v2\x16.quasar.proto.EndpointR\bendpoint\x1aD\n" +
 	"\x0eRemoveEndpoint\x122\n" +
 	"\bendpoint\x18\x01 \x01(\v2\x16.quasar.proto.EndpointR\bendpointB\t\n" +
-	"\amessageB-\n" +
-	"\x19ru.yandex.quasar.protobufB\x10EndpointProtocol"
+	"\amessageB\xcf\x01\n" +
+	"\x10com.quasar.protoB\rProtocolProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/yandex_io/services/glagold/endpoints/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_services_glagold_endpoints_protos_protocol_proto_rawDescOnce sync.Once

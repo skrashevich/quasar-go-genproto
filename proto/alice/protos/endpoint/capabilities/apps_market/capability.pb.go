@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/apps_market/capability.proto
 
-package appsmarketpb
+package apps_market
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -419,8 +419,8 @@ const file_alice_protos_endpoint_capabilities_apps_market_capability_proto_rawDe
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
 	"\vVersionName\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fversion_nameR\fversion_name\x123\n" +
 	"\vDownloadUrl\x18\x03 \x01(\tB\x10\xaa\xdd\x1b\fdownload_urlR\fdownload_url\x123\n" +
-	"\vPackageName\x18\x04 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name:\x1f\x92\x82\x19\x12install_market_app\xa8\xdd\x1b\x04\xa8\xc8\x1c\x91\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c(B\x97\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AppsMarketCapabilityProtoZLa.yandex-team.ru/alice/protos/endpoint/capabilities/apps_market;appsmarketpbb\x06proto3"
+	"\vPackageName\x18\x04 \x01(\tB\x10\xaa\xdd\x1b\fpackage_nameR\fpackage_name:\x1f\x92\x82\x19\x12install_market_app\xa8\xdd\x1b\x04\xa8\xc8\x1c\x91\x03:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c(B\xa9\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x19AppsMarketCapabilityProtoZ^github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/apps_marketb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_apps_market_capability_proto_rawDescOnce sync.Once

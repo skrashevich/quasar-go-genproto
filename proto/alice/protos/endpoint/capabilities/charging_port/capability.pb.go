@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/charging_port/capability.proto
 
-package chargingportpb
+package charging_port
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -255,8 +255,8 @@ const file_alice_protos_endpoint_capabilities_charging_port_capability_proto_raw
 	"last_eventR\n" +
 	"last_event:\x04\xa8\xdd\x1b\x04\x1a\"\n" +
 	"\x15TChargingPortHotEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xc5\x01\x1a%\n" +
-	"\x18TChargingPortNormalEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xc6\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x93\x02B\x93\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11ChargingPortProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/charging_port;chargingportpbb\x06proto3"
+	"\x18TChargingPortNormalEvent:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\xc6\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x93\x02B\xa3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x11ChargingPortProtoZ`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/charging_portb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_charging_port_capability_proto_rawDescOnce sync.Once

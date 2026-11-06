@@ -77,11 +77,11 @@ func (TRemindersSettings_EPlayOn) EnumDescriptor() ([]byte, []int) {
 }
 
 type TState struct {
-	state             protoimpl.MessageState               `protogen:"open.v1"`
-	Reminders         []*TState_TReminder                  `protobuf:"bytes,1,rep,name=Reminders,json=reminders,proto3" json:"Reminders,omitempty"`
-	Cancelled         map[string]uint64                    `protobuf:"bytes,2,rep,name=Cancelled,json=cancelled,proto3" json:"Cancelled,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
-	SurfacesSyncState map[string]*TState_TSurfaceSyncState `protobuf:"bytes,3,rep,name=SurfacesSyncState,json=surfaces_sync_state,proto3" json:"SurfacesSyncState,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	RemindersSettings *TRemindersSettings                  `protobuf:"bytes,4,opt,name=RemindersSettings,json=reminders_settings,proto3" json:"RemindersSettings,omitempty"`
+	state             protoimpl.MessageState           `protogen:"open.v1"`
+	Reminders         []*TState_TReminder              `protobuf:"bytes,1,rep,name=Reminders,proto3" json:"Reminders,omitempty"`
+	Cancelled         []*TState_CancelledEntry         `protobuf:"bytes,2,rep,name=Cancelled,proto3" json:"Cancelled,omitempty"`
+	SurfacesSyncState []*TState_SurfacesSyncStateEntry `protobuf:"bytes,3,rep,name=SurfacesSyncState,proto3" json:"SurfacesSyncState,omitempty"`
+	RemindersSettings *TRemindersSettings              `protobuf:"bytes,4,opt,name=RemindersSettings,proto3" json:"RemindersSettings,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -123,14 +123,14 @@ func (x *TState) GetReminders() []*TState_TReminder {
 	return nil
 }
 
-func (x *TState) GetCancelled() map[string]uint64 {
+func (x *TState) GetCancelled() []*TState_CancelledEntry {
 	if x != nil {
 		return x.Cancelled
 	}
 	return nil
 }
 
-func (x *TState) GetSurfacesSyncState() map[string]*TState_TSurfaceSyncState {
+func (x *TState) GetSurfacesSyncState() []*TState_SurfacesSyncStateEntry {
 	if x != nil {
 		return x.SurfacesSyncState
 	}
@@ -146,10 +146,10 @@ func (x *TState) GetRemindersSettings() *TRemindersSettings {
 
 type TRemindersSettings struct {
 	state                  protoimpl.MessageState     `protogen:"open.v1"`
-	SendMobileNotification bool                       `protobuf:"varint,1,opt,name=SendMobileNotification,json=send_mobile_notification,proto3" json:"SendMobileNotification,omitempty"`
-	PlayOn                 TRemindersSettings_EPlayOn `protobuf:"varint,2,opt,name=PlayOn,json=play_on,proto3,enum=NAlice.NData.NReminders.TRemindersSettings_EPlayOn" json:"PlayOn,omitempty"`
-	DeviceIds              []string                   `protobuf:"bytes,3,rep,name=DeviceIds,json=device_ids,proto3" json:"DeviceIds,omitempty"`
-	OrmMigrationVersion    int32                      `protobuf:"varint,4,opt,name=OrmMigrationVersion,json=orm_migration_version,proto3" json:"OrmMigrationVersion,omitempty"`
+	SendMobileNotification bool                       `protobuf:"varint,1,opt,name=SendMobileNotification,proto3" json:"SendMobileNotification,omitempty"`
+	PlayOn                 TRemindersSettings_EPlayOn `protobuf:"varint,2,opt,name=PlayOn,proto3,enum=NAlice.NData.NReminders.TRemindersSettings_EPlayOn" json:"PlayOn,omitempty"`
+	DeviceIds              []string                   `protobuf:"bytes,3,rep,name=DeviceIds,proto3" json:"DeviceIds,omitempty"`
+	OrmMigrationVersion    int32                      `protobuf:"varint,4,opt,name=OrmMigrationVersion,proto3" json:"OrmMigrationVersion,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -214,7 +214,7 @@ func (x *TRemindersSettings) GetOrmMigrationVersion() int32 {
 
 type TState_TWeekdaysTriggerPolicy struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	InitivalInvocations []uint64               `protobuf:"varint,1,rep,packed,name=InitivalInvocations,json=initial_invocations,proto3" json:"InitivalInvocations,omitempty"`
+	InitivalInvocations []uint64               `protobuf:"varint,1,rep,packed,name=InitivalInvocations,proto3" json:"InitivalInvocations,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -317,23 +317,23 @@ type isTState_TTriggerPolicy_Type interface {
 }
 
 type TState_TTriggerPolicy_WeekdaysTriggerPolicy struct {
-	WeekdaysTriggerPolicy *TState_TWeekdaysTriggerPolicy `protobuf:"bytes,1,opt,name=WeekdaysTriggerPolicy,json=weekdays_trigger_policy,proto3,oneof"`
+	WeekdaysTriggerPolicy *TState_TWeekdaysTriggerPolicy `protobuf:"bytes,1,opt,name=WeekdaysTriggerPolicy,proto3,oneof"`
 }
 
 func (*TState_TTriggerPolicy_WeekdaysTriggerPolicy) isTState_TTriggerPolicy_Type() {}
 
 type TState_TReminder struct {
 	state                  protoimpl.MessageState `protogen:"open.v1"`
-	Id                     string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Text                   string                 `protobuf:"bytes,2,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
-	TimeZone               string                 `protobuf:"bytes,4,opt,name=TimeZone,json=timezone,proto3" json:"TimeZone,omitempty"`
-	Origin                 string                 `protobuf:"bytes,5,opt,name=Origin,json=origin,proto3" json:"Origin,omitempty"`
-	ShootAt                uint64                 `protobuf:"varint,6,opt,name=ShootAt,json=shoot_at,proto3" json:"ShootAt,omitempty"`
-	Extensions             *TReminderExtensions   `protobuf:"bytes,8,opt,name=Extensions,json=extensions,proto3" json:"Extensions,omitempty"`
-	OriginPlatformFeatures []string               `protobuf:"bytes,9,rep,name=OriginPlatformFeatures,json=origin_platform_features,proto3" json:"OriginPlatformFeatures,omitempty"`
-	Language               language.ELang         `protobuf:"varint,11,opt,name=Language,json=language,proto3,enum=NAlice.ELang" json:"Language,omitempty"`
-	TriggerPolicy          *TState_TTriggerPolicy `protobuf:"bytes,10,opt,name=TriggerPolicy,json=trigger_policy,proto3,oneof" json:"TriggerPolicy,omitempty"`
-	IsXiva                 *bool                  `protobuf:"varint,12,opt,name=IsXiva,json=is_xiva,proto3,oneof" json:"IsXiva,omitempty"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Text                   string                 `protobuf:"bytes,2,opt,name=Text,proto3" json:"Text,omitempty"`
+	TimeZone               string                 `protobuf:"bytes,4,opt,name=TimeZone,proto3" json:"TimeZone,omitempty"`
+	Origin                 string                 `protobuf:"bytes,5,opt,name=Origin,proto3" json:"Origin,omitempty"`
+	ShootAt                uint64                 `protobuf:"varint,6,opt,name=ShootAt,proto3" json:"ShootAt,omitempty"`
+	Extensions             *TReminderExtensions   `protobuf:"bytes,8,opt,name=Extensions,proto3" json:"Extensions,omitempty"`
+	OriginPlatformFeatures []string               `protobuf:"bytes,9,rep,name=OriginPlatformFeatures,proto3" json:"OriginPlatformFeatures,omitempty"`
+	Language               language.ELang         `protobuf:"varint,11,opt,name=Language,proto3,enum=NAlice.ELang" json:"Language,omitempty"`
+	TriggerPolicy          *TState_TTriggerPolicy `protobuf:"bytes,10,opt,name=TriggerPolicy,proto3,oneof" json:"TriggerPolicy,omitempty"`
+	IsXiva                 *bool                  `protobuf:"varint,12,opt,name=IsXiva,proto3,oneof" json:"IsXiva,omitempty"`
 	unknownFields          protoimpl.UnknownFields
 	sizeCache              protoimpl.SizeCache
 }
@@ -440,8 +440,8 @@ func (x *TState_TReminder) GetIsXiva() bool {
 
 type TState_TSurfaceSyncState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	State         ERemindersSyncState    `protobuf:"varint,1,opt,name=State,json=state,proto3,enum=NAlice.NData.NReminders.ERemindersSyncState" json:"State,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=CreatedAt,json=created_at,proto3" json:"CreatedAt,omitempty"`
+	State         ERemindersSyncState    `protobuf:"varint,1,opt,name=State,proto3,enum=NAlice.NData.NReminders.ERemindersSyncState" json:"State,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -490,64 +490,164 @@ func (x *TState_TSurfaceSyncState) GetCreatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type TState_CancelledEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         uint64                 `protobuf:"varint,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TState_CancelledEntry) Reset() {
+	*x = TState_CancelledEntry{}
+	mi := &file_alice_protos_data_scenario_reminders_state_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TState_CancelledEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TState_CancelledEntry) ProtoMessage() {}
+
+func (x *TState_CancelledEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_reminders_state_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TState_CancelledEntry.ProtoReflect.Descriptor instead.
+func (*TState_CancelledEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_reminders_state_proto_rawDescGZIP(), []int{0, 4}
+}
+
+func (x *TState_CancelledEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TState_CancelledEntry) GetValue() uint64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+type TState_SurfacesSyncStateEntry struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Key           string                    `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Value         *TState_TSurfaceSyncState `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TState_SurfacesSyncStateEntry) Reset() {
+	*x = TState_SurfacesSyncStateEntry{}
+	mi := &file_alice_protos_data_scenario_reminders_state_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TState_SurfacesSyncStateEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TState_SurfacesSyncStateEntry) ProtoMessage() {}
+
+func (x *TState_SurfacesSyncStateEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_data_scenario_reminders_state_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TState_SurfacesSyncStateEntry.ProtoReflect.Descriptor instead.
+func (*TState_SurfacesSyncStateEntry) Descriptor() ([]byte, []int) {
+	return file_alice_protos_data_scenario_reminders_state_proto_rawDescGZIP(), []int{0, 5}
+}
+
+func (x *TState_SurfacesSyncStateEntry) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *TState_SurfacesSyncStateEntry) GetValue() *TState_TSurfaceSyncState {
+	if x != nil {
+		return x.Value
+	}
+	return nil
+}
+
 var File_alice_protos_data_scenario_reminders_state_proto protoreflect.FileDescriptor
 
 const file_alice_protos_data_scenario_reminders_state_proto_rawDesc = "" +
 	"\n" +
-	"0alice/protos/data/scenario/reminders/state.proto\x12\x17NAlice.NData.NReminders\x1a)alice/protos/data/language/language.proto\x1a5alice/protos/data/scenario/reminders/extensions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xdc\r\n" +
-	"\x06TState\x12V\n" +
-	"\tReminders\x18\x01 \x03(\v2).NAlice.NData.NReminders.TState.TReminderB\r\xaa\xdd\x1b\tremindersR\treminders\x12[\n" +
-	"\tCancelled\x18\x02 \x03(\v2..NAlice.NData.NReminders.TState.CancelledEntryB\r\xaa\xdd\x1b\tcancelledR\tcancelled\x12\x7f\n" +
-	"\x11SurfacesSyncState\x18\x03 \x03(\v26.NAlice.NData.NReminders.TState.SurfacesSyncStateEntryB\x17\xaa\xdd\x1b\x13surfaces_sync_stateR\x13surfaces_sync_state\x12r\n" +
-	"\x11RemindersSettings\x18\x04 \x01(\v2+.NAlice.NData.NReminders.TRemindersSettingsB\x16\xaa\xdd\x1b\x12reminders_settingsR\x12reminders_settings\x1ai\n" +
-	"\x16TWeekdaysTriggerPolicy\x12I\n" +
-	"\x13InitivalInvocations\x18\x01 \x03(\x04B\x17\xaa\xdd\x1b\x13initial_invocationsR\x13initial_invocations:\x04\xa8\xdd\x1b\x04\x1a\xb8\x01\n" +
-	"\x0eTTriggerPolicy\x12\x8d\x01\n" +
-	"\x15WeekdaysTriggerPolicy\x18\x01 \x01(\v26.NAlice.NData.NReminders.TState.TWeekdaysTriggerPolicyB\x1b\xaa\xdd\x1b\x17weekdays_trigger_policyH\x00R\x17weekdays_trigger_policy:\x04\xa8\xdd\x1b\x04B\x10\n" +
-	"\x04Type\x12\b\xaa\xdd\x1b\x04type\x1a\x94\x05\n" +
-	"\tTReminder\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text\x12(\n" +
-	"\bTimeZone\x18\x04 \x01(\tB\f\xaa\xdd\x1b\btimezoneR\btimezone\x12\"\n" +
-	"\x06Origin\x18\x05 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06originR\x06origin\x12'\n" +
-	"\aShootAt\x18\x06 \x01(\x04B\f\xaa\xdd\x1b\bshoot_atR\bshoot_at\x12`\n" +
+	"0alice/protos/data/scenario/reminders/state.proto\x12\x17NAlice.NData.NReminders\x1a)alice/protos/data/language/language.proto\x1a5alice/protos/data/scenario/reminders/extensions.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xeb\n" +
 	"\n" +
-	"Extensions\x18\b \x01(\v2,.NAlice.NData.NReminders.TReminderExtensionsB\x12\xa0\xdd\x1b\x05\xaa\xdd\x1b\n" +
-	"extensionsR\n" +
-	"extensions\x12V\n" +
-	"\x16OriginPlatformFeatures\x18\t \x03(\tB\x1c\xaa\xdd\x1b\x18origin_platform_featuresR\x18origin_platform_features\x127\n" +
-	"\bLanguage\x18\v \x01(\x0e2\r.NAlice.ELangB\f\xaa\xdd\x1b\blanguageR\blanguage\x12n\n" +
+	"\x06TState\x12G\n" +
+	"\tReminders\x18\x01 \x03(\v2).NAlice.NData.NReminders.TState.TReminderR\tReminders\x12L\n" +
+	"\tCancelled\x18\x02 \x03(\v2..NAlice.NData.NReminders.TState.CancelledEntryR\tCancelled\x12d\n" +
+	"\x11SurfacesSyncState\x18\x03 \x03(\v26.NAlice.NData.NReminders.TState.SurfacesSyncStateEntryR\x11SurfacesSyncState\x12Y\n" +
+	"\x11RemindersSettings\x18\x04 \x01(\v2+.NAlice.NData.NReminders.TRemindersSettingsR\x11RemindersSettings\x1aJ\n" +
+	"\x16TWeekdaysTriggerPolicy\x120\n" +
+	"\x13InitivalInvocations\x18\x01 \x03(\x04R\x13InitivalInvocations\x1a\x88\x01\n" +
+	"\x0eTTriggerPolicy\x12n\n" +
+	"\x15WeekdaysTriggerPolicy\x18\x01 \x01(\v26.NAlice.NData.NReminders.TState.TWeekdaysTriggerPolicyH\x00R\x15WeekdaysTriggerPolicyB\x06\n" +
+	"\x04Type\x1a\xee\x03\n" +
+	"\tTReminder\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\x12\n" +
+	"\x04Text\x18\x02 \x01(\tR\x04Text\x12\x1a\n" +
+	"\bTimeZone\x18\x04 \x01(\tR\bTimeZone\x12\x16\n" +
+	"\x06Origin\x18\x05 \x01(\tR\x06Origin\x12\x18\n" +
+	"\aShootAt\x18\x06 \x01(\x04R\aShootAt\x12L\n" +
+	"\n" +
+	"Extensions\x18\b \x01(\v2,.NAlice.NData.NReminders.TReminderExtensionsR\n" +
+	"Extensions\x126\n" +
+	"\x16OriginPlatformFeatures\x18\t \x03(\tR\x16OriginPlatformFeatures\x12)\n" +
+	"\bLanguage\x18\v \x01(\x0e2\r.NAlice.ELangR\bLanguage\x12Y\n" +
 	"\rTriggerPolicy\x18\n" +
-	" \x01(\v2..NAlice.NData.NReminders.TState.TTriggerPolicyB\x12\xaa\xdd\x1b\x0etrigger_policyH\x00R\x0etrigger_policy\x88\x01\x01\x12)\n" +
-	"\x06IsXiva\x18\f \x01(\bB\v\xaa\xdd\x1b\ais_xivaH\x01R\ais_xiva\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x10\n" +
+	" \x01(\v2..NAlice.NData.NReminders.TState.TTriggerPolicyH\x00R\rTriggerPolicy\x88\x01\x01\x12\x1b\n" +
+	"\x06IsXiva\x18\f \x01(\bH\x01R\x06IsXiva\x88\x01\x01B\x10\n" +
 	"\x0e_TriggerPolicyB\t\n" +
-	"\a_IsXivaJ\x04\b\x03\x10\x04J\x04\b\a\x10\bR\x05EpochR\x16ClientTimeDeltaSeconds\x1a\xad\x01\n" +
-	"\x11TSurfaceSyncState\x12M\n" +
-	"\x05State\x18\x01 \x01(\x0e2,.NAlice.NData.NReminders.ERemindersSyncStateB\t\xaa\xdd\x1b\x05stateR\x05state\x12I\n" +
-	"\tCreatedAt\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampB\x0e\xaa\xdd\x1b\n" +
-	"created_atR\n" +
-	"created_at\x1a<\n" +
+	"\a_IsXivaJ\x04\b\x03\x10\x04J\x04\b\a\x10\bR\x05EpochR\x16ClientTimeDeltaSeconds\x1a\x91\x01\n" +
+	"\x11TSurfaceSyncState\x12B\n" +
+	"\x05State\x18\x01 \x01(\x0e2,.NAlice.NData.NReminders.ERemindersSyncStateR\x05State\x128\n" +
+	"\tCreatedAt\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\tCreatedAt\x1a8\n" +
 	"\x0eCancelledEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x04R\x05value:\x028\x01\x1aw\n" +
+	"\x05value\x18\x02 \x01(\x04R\x05value\x1as\n" +
 	"\x16SurfacesSyncStateEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12G\n" +
-	"\x05value\x18\x02 \x01(\v21.NAlice.NData.NReminders.TState.TSurfaceSyncStateR\x05value:\x028\x01:\x04\xa8\xdd\x1b\x04\"\x93\x03\n" +
-	"\x12TRemindersSettings\x12V\n" +
-	"\x16SendMobileNotification\x18\x01 \x01(\bB\x1c\xaa\xdd\x1b\x18send_mobile_notificationR\x18send_mobile_notification\x12Y\n" +
-	"\x06PlayOn\x18\x02 \x01(\x0e23.NAlice.NData.NReminders.TRemindersSettings.EPlayOnB\v\xaa\xdd\x1b\aplay_onR\aplay_on\x12-\n" +
-	"\tDeviceIds\x18\x03 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"device_idsR\n" +
-	"device_ids\x12M\n" +
-	"\x13OrmMigrationVersion\x18\x04 \x01(\x05B\x19\xaa\xdd\x1b\x15orm_migration_versionR\x15orm_migration_version\"F\n" +
+	"\x05value\x18\x02 \x01(\v21.NAlice.NData.NReminders.TState.TSurfaceSyncStateR\x05value\"\xb1\x02\n" +
+	"\x12TRemindersSettings\x126\n" +
+	"\x16SendMobileNotification\x18\x01 \x01(\bR\x16SendMobileNotification\x12K\n" +
+	"\x06PlayOn\x18\x02 \x01(\x0e23.NAlice.NData.NReminders.TRemindersSettings.EPlayOnR\x06PlayOn\x12\x1c\n" +
+	"\tDeviceIds\x18\x03 \x03(\tR\tDeviceIds\x120\n" +
+	"\x13OrmMigrationVersion\x18\x04 \x01(\x05R\x13OrmMigrationVersion\"F\n" +
 	"\aEPlayOn\x12\r\n" +
 	"\tUndefined\x10\x00\x12\x0e\n" +
 	"\n" +
 	"SameDevice\x10\x01\x12\x13\n" +
 	"\x0fSelectedDevices\x10\x02\x12\a\n" +
-	"\x03All\x10\x03:\x04\xa8\xdd\x1b\x04Bg\n" +
-	".ru.yandex.alice.protos.data.scenario.remindersZ5a.yandex-team.ru/alice/protos/data/scenario/remindersb\x06proto3"
+	"\x03All\x10\x03B\xfd\x01\n" +
+	"\x1bcom.NAlice.NData.NRemindersB\n" +
+	"StateProtoP\x01ZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/reminders\xa2\x02\x03NNN\xaa\x02\x17NAlice.NData.NReminders\xca\x02\x17NAlice\\NData\\NReminders\xe2\x02#NAlice\\NData\\NReminders\\GPBMetadata\xea\x02\x19NAlice::NData::NRemindersb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_reminders_state_proto_rawDescOnce sync.Once
@@ -571,8 +671,8 @@ var file_alice_protos_data_scenario_reminders_state_proto_goTypes = []any{
 	(*TState_TTriggerPolicy)(nil),         // 4: NAlice.NData.NReminders.TState.TTriggerPolicy
 	(*TState_TReminder)(nil),              // 5: NAlice.NData.NReminders.TState.TReminder
 	(*TState_TSurfaceSyncState)(nil),      // 6: NAlice.NData.NReminders.TState.TSurfaceSyncState
-	nil,                                   // 7: NAlice.NData.NReminders.TState.CancelledEntry
-	nil,                                   // 8: NAlice.NData.NReminders.TState.SurfacesSyncStateEntry
+	(*TState_CancelledEntry)(nil),         // 7: NAlice.NData.NReminders.TState.CancelledEntry
+	(*TState_SurfacesSyncStateEntry)(nil), // 8: NAlice.NData.NReminders.TState.SurfacesSyncStateEntry
 	(*TReminderExtensions)(nil),           // 9: NAlice.NData.NReminders.TReminderExtensions
 	(language.ELang)(0),                   // 10: NAlice.ELang
 	(ERemindersSyncState)(0),              // 11: NAlice.NData.NReminders.ERemindersSyncState

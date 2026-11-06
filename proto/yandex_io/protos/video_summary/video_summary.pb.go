@@ -300,8 +300,8 @@ const file_yandex_io_protos_video_summary_video_summary_proto_rawDesc = "" +
 	"\x05Video\x18\x01 \x01(\v2\x15.NAlice.TVideoSummaryH\x00R\x05video\x88\x01\x01B\b\n" +
 	"\x06_Video\"b\n" +
 	"(TLegacyDeviceStateVideoCapabilitySummary\x126\n" +
-	"\x05State\x18\x03 \x01(\v2 .NAlice.TLegacyVideoStateSummaryR\x05stateBE\n" +
-	"0ru.yandex.arcadia.yandex_io.protos.video_summaryB\x11VideoSummaryProtob\x06proto3"
+	"\x05State\x18\x03 \x01(\v2 .NAlice.TLegacyVideoStateSummaryR\x05stateB\x95\x01\n" +
+	"0ru.yandex.arcadia.yandex_io.protos.video_summaryB\x11VideoSummaryProtoZNgithub.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos/video_summaryb\x06proto3"
 
 var (
 	file_yandex_io_protos_video_summary_video_summary_proto_rawDescOnce sync.Once

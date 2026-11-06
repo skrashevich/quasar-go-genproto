@@ -83,8 +83,8 @@ const file_alice_protos_api_dialogs_store_type_proto_rawDesc = "" +
 	"\x12STORE_TYPE_UNKNOWN\x10\x00\x12\x11\n" +
 	"\rSTORE_TYPE_TV\x10\x01\x12\x1b\n" +
 	"\x17STORE_TYPE_SMART_SCREEN\x10\x02\x12\x13\n" +
-	"\x0fSTORE_TYPE_AUTO\x10\x03B&\n" +
-	"\"ru.yandex.alice.protos.api.dialogsP\x01b\x06proto3"
+	"\x0fSTORE_TYPE_AUTO\x10\x03Bp\n" +
+	"\"ru.yandex.alice.protos.api.dialogsP\x01ZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/dialogsb\x06proto3"
 
 var (
 	file_alice_protos_api_dialogs_store_type_proto_rawDescOnce sync.Once

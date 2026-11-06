@@ -24,9 +24,9 @@ const (
 
 type TRequestStat struct {
 	state            protoimpl.MessageState    `protogen:"open.v1"`
-	Timestamps       *TRequestStat_TTimestamps `protobuf:"bytes,1,opt,name=Timestamps,json=timestamps,proto3" json:"Timestamps,omitempty"`
-	RequestMessageId string                    `protobuf:"bytes,2,opt,name=RequestMessageId,json=refMessageId,proto3" json:"RequestMessageId,omitempty"`
-	Error            *string                   `protobuf:"bytes,3,opt,name=Error,json=error,proto3,oneof" json:"Error,omitempty"`
+	Timestamps       *TRequestStat_TTimestamps `protobuf:"bytes,1,opt,name=Timestamps,proto3" json:"Timestamps,omitempty"`
+	RequestMessageId string                    `protobuf:"bytes,2,opt,name=RequestMessageId,proto3" json:"RequestMessageId,omitempty"`
+	Error            *string                   `protobuf:"bytes,3,opt,name=Error,proto3,oneof" json:"Error,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -84,27 +84,27 @@ func (x *TRequestStat) GetError() string {
 
 type TRequestStat_TTimestamps struct {
 	state                           protoimpl.MessageState `protogen:"open.v1"`
-	OnSoundPlayerEndTime            *string                `protobuf:"bytes,1,opt,name=OnSoundPlayerEndTime,json=onSoundPlayerEndTime,proto3,oneof" json:"OnSoundPlayerEndTime,omitempty"`
-	OnVinsResponseTime              *string                `protobuf:"bytes,2,opt,name=OnVinsResponseTime,json=onVinsResponseTime,proto3,oneof" json:"OnVinsResponseTime,omitempty"`
-	OnInterruptionPhraseSpottedTime *string                `protobuf:"bytes,3,opt,name=OnInterruptionPhraseSpottedTime,json=onInterruptionPhraseSpottedTime,proto3,oneof" json:"OnInterruptionPhraseSpottedTime,omitempty"`
-	OnFirstSynthesisChunkTime       *string                `protobuf:"bytes,4,opt,name=OnFirstSynthesisChunkTime,json=onFirstSynthesisChunkTime,proto3,oneof" json:"OnFirstSynthesisChunkTime,omitempty"`
-	OnRecognitionBeginTime          *string                `protobuf:"bytes,5,opt,name=OnRecognitionBeginTime,json=onRecognitionBeginTime,proto3,oneof" json:"OnRecognitionBeginTime,omitempty"`
-	OnRecognitionEndTime            *string                `protobuf:"bytes,6,opt,name=OnRecognitionEndTime,json=onRecognitionEndTime,proto3,oneof" json:"OnRecognitionEndTime,omitempty"`
-	RequestDurationTime             *string                `protobuf:"bytes,7,opt,name=RequestDurationTime,json=requestDurationTime,proto3,oneof" json:"RequestDurationTime,omitempty"`
-	SpotterConfirmationTime         *string                `protobuf:"bytes,8,opt,name=SpotterConfirmationTime,json=spotterConfirmationTime,proto3,oneof" json:"SpotterConfirmationTime,omitempty"`
-	OnPhraseSpottedTime             *string                `protobuf:"bytes,9,opt,name=OnPhraseSpottedTime,json=onPhraseSpottedTime,proto3,oneof" json:"OnPhraseSpottedTime,omitempty"`
-	PrevSoundPlayerEndTime          *string                `protobuf:"bytes,10,opt,name=PrevSoundPlayerEndTime,json=prevSoundPlayerEndTime,proto3,oneof" json:"PrevSoundPlayerEndTime,omitempty"`
-	OnStartVoiceInputTime           *string                `protobuf:"bytes,11,opt,name=OnStartVoiceInputTime,json=onStartVoiceInputTime,proto3,oneof" json:"OnStartVoiceInputTime,omitempty"`
-	OnStartVinsRequestTime          *string                `protobuf:"bytes,12,opt,name=OnStartVinsRequestTime,json=onStartVinsRequestTime,proto3,oneof" json:"OnStartVinsRequestTime,omitempty"`
-	OnFirstSocketActivityTime       *string                `protobuf:"bytes,13,opt,name=OnFirstSocketActivityTime,json=onFirstSocketActivityTime,proto3,oneof" json:"OnFirstSocketActivityTime,omitempty"`
-	OnLastSynthesisChunkTime        *string                `protobuf:"bytes,14,opt,name=OnLastSynthesisChunkTime,json=onLastSynthesisChunkTime,proto3,oneof" json:"OnLastSynthesisChunkTime,omitempty"`
+	OnSoundPlayerEndTime            *string                `protobuf:"bytes,1,opt,name=OnSoundPlayerEndTime,proto3,oneof" json:"OnSoundPlayerEndTime,omitempty"`
+	OnVinsResponseTime              *string                `protobuf:"bytes,2,opt,name=OnVinsResponseTime,proto3,oneof" json:"OnVinsResponseTime,omitempty"`
+	OnInterruptionPhraseSpottedTime *string                `protobuf:"bytes,3,opt,name=OnInterruptionPhraseSpottedTime,proto3,oneof" json:"OnInterruptionPhraseSpottedTime,omitempty"`
+	OnFirstSynthesisChunkTime       *string                `protobuf:"bytes,4,opt,name=OnFirstSynthesisChunkTime,proto3,oneof" json:"OnFirstSynthesisChunkTime,omitempty"`
+	OnRecognitionBeginTime          *string                `protobuf:"bytes,5,opt,name=OnRecognitionBeginTime,proto3,oneof" json:"OnRecognitionBeginTime,omitempty"`
+	OnRecognitionEndTime            *string                `protobuf:"bytes,6,opt,name=OnRecognitionEndTime,proto3,oneof" json:"OnRecognitionEndTime,omitempty"`
+	RequestDurationTime             *string                `protobuf:"bytes,7,opt,name=RequestDurationTime,proto3,oneof" json:"RequestDurationTime,omitempty"`
+	SpotterConfirmationTime         *string                `protobuf:"bytes,8,opt,name=SpotterConfirmationTime,proto3,oneof" json:"SpotterConfirmationTime,omitempty"`
+	OnPhraseSpottedTime             *string                `protobuf:"bytes,9,opt,name=OnPhraseSpottedTime,proto3,oneof" json:"OnPhraseSpottedTime,omitempty"`
+	PrevSoundPlayerEndTime          *string                `protobuf:"bytes,10,opt,name=PrevSoundPlayerEndTime,proto3,oneof" json:"PrevSoundPlayerEndTime,omitempty"`
+	OnStartVoiceInputTime           *string                `protobuf:"bytes,11,opt,name=OnStartVoiceInputTime,proto3,oneof" json:"OnStartVoiceInputTime,omitempty"`
+	OnStartVinsRequestTime          *string                `protobuf:"bytes,12,opt,name=OnStartVinsRequestTime,proto3,oneof" json:"OnStartVinsRequestTime,omitempty"`
+	OnFirstSocketActivityTime       *string                `protobuf:"bytes,13,opt,name=OnFirstSocketActivityTime,proto3,oneof" json:"OnFirstSocketActivityTime,omitempty"`
+	OnLastSynthesisChunkTime        *string                `protobuf:"bytes,14,opt,name=OnLastSynthesisChunkTime,proto3,oneof" json:"OnLastSynthesisChunkTime,omitempty"`
 	StartPlayer                     *string                `protobuf:"bytes,15,opt,name=StartPlayer,proto3,oneof" json:"StartPlayer,omitempty"`
 	OnPlayerBegin                   *string                `protobuf:"bytes,16,opt,name=OnPlayerBegin,proto3,oneof" json:"OnPlayerBegin,omitempty"`
 	OnPlayerEnd                     *string                `protobuf:"bytes,17,opt,name=OnPlayerEnd,proto3,oneof" json:"OnPlayerEnd,omitempty"`
-	OnSoundPlayerBeginTime          *string                `protobuf:"bytes,18,opt,name=OnSoundPlayerBeginTime,json=onSoundPlayerBeginTime,proto3,oneof" json:"OnSoundPlayerBeginTime,omitempty"`
-	OnFirstMessageMergedTime        *string                `protobuf:"bytes,19,opt,name=OnFirstMessageMergedTime,json=onFirstMessageMergedTime,proto3,oneof" json:"OnFirstMessageMergedTime,omitempty"`
-	OnFirstNonEmptyPartialTime      *string                `protobuf:"bytes,20,opt,name=OnFirstNonEmptyPartialTime,json=onFirstNonEmptyPartialTime,proto3,oneof" json:"OnFirstNonEmptyPartialTime,omitempty"`
-	OnLastCompletedPartialTime      *string                `protobuf:"bytes,21,opt,name=OnLastCompletedPartialTime,json=onLastCompletedPartialTime,proto3,oneof" json:"OnLastCompletedPartialTime,omitempty"`
+	OnSoundPlayerBeginTime          *string                `protobuf:"bytes,18,opt,name=OnSoundPlayerBeginTime,proto3,oneof" json:"OnSoundPlayerBeginTime,omitempty"`
+	OnFirstMessageMergedTime        *string                `protobuf:"bytes,19,opt,name=OnFirstMessageMergedTime,proto3,oneof" json:"OnFirstMessageMergedTime,omitempty"`
+	OnFirstNonEmptyPartialTime      *string                `protobuf:"bytes,20,opt,name=OnFirstNonEmptyPartialTime,proto3,oneof" json:"OnFirstNonEmptyPartialTime,omitempty"`
+	OnLastCompletedPartialTime      *string                `protobuf:"bytes,21,opt,name=OnLastCompletedPartialTime,proto3,oneof" json:"OnLastCompletedPartialTime,omitempty"`
 	SubRequestOffsetTime            *string                `protobuf:"bytes,22,opt,name=SubRequestOffsetTime,json=subRequestOffsetTime,proto3,oneof" json:"SubRequestOffsetTime,omitempty"`
 	unknownFields                   protoimpl.UnknownFields
 	sizeCache                       protoimpl.SizeCache
@@ -298,39 +298,38 @@ var File_alice_protos_api_alicekit_events_request_stat_request_stat_proto protor
 
 const file_alice_protos_api_alicekit_events_request_stat_request_stat_proto_rawDesc = "" +
 	"\n" +
-	"@alice/protos/api/alicekit/events/request_stat/request_stat.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x98\x15\n" +
-	"\fTRequestStat\x12Z\n" +
+	"@alice/protos/api/alicekit/events/request_stat/request_stat.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa9\x10\n" +
+	"\fTRequestStat\x12J\n" +
 	"\n" +
-	"Timestamps\x18\x01 \x01(\v2*.NAlice.NAliceApi.TRequestStat.TTimestampsB\x0e\xaa\xdd\x1b\n" +
-	"timestampsR\n" +
-	"timestamps\x128\n" +
-	"\x10RequestMessageId\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\frefMessageIdR\frefMessageId\x12$\n" +
-	"\x05Error\x18\x03 \x01(\tB\t\xaa\xdd\x1b\x05errorH\x00R\x05error\x88\x01\x01\x1a\xbb\x13\n" +
-	"\vTTimestamps\x12Q\n" +
-	"\x14OnSoundPlayerEndTime\x18\x01 \x01(\tB\x18\xaa\xdd\x1b\x14onSoundPlayerEndTimeH\x00R\x14onSoundPlayerEndTime\x88\x01\x01\x12K\n" +
-	"\x12OnVinsResponseTime\x18\x02 \x01(\tB\x16\xaa\xdd\x1b\x12onVinsResponseTimeH\x01R\x12onVinsResponseTime\x88\x01\x01\x12r\n" +
-	"\x1fOnInterruptionPhraseSpottedTime\x18\x03 \x01(\tB#\xaa\xdd\x1b\x1fonInterruptionPhraseSpottedTimeH\x02R\x1fonInterruptionPhraseSpottedTime\x88\x01\x01\x12`\n" +
-	"\x19OnFirstSynthesisChunkTime\x18\x04 \x01(\tB\x1d\xaa\xdd\x1b\x19onFirstSynthesisChunkTimeH\x03R\x19onFirstSynthesisChunkTime\x88\x01\x01\x12W\n" +
-	"\x16OnRecognitionBeginTime\x18\x05 \x01(\tB\x1a\xaa\xdd\x1b\x16onRecognitionBeginTimeH\x04R\x16onRecognitionBeginTime\x88\x01\x01\x12Q\n" +
-	"\x14OnRecognitionEndTime\x18\x06 \x01(\tB\x18\xaa\xdd\x1b\x14onRecognitionEndTimeH\x05R\x14onRecognitionEndTime\x88\x01\x01\x12N\n" +
-	"\x13RequestDurationTime\x18\a \x01(\tB\x17\xaa\xdd\x1b\x13requestDurationTimeH\x06R\x13requestDurationTime\x88\x01\x01\x12Z\n" +
-	"\x17SpotterConfirmationTime\x18\b \x01(\tB\x1b\xaa\xdd\x1b\x17spotterConfirmationTimeH\aR\x17spotterConfirmationTime\x88\x01\x01\x12N\n" +
-	"\x13OnPhraseSpottedTime\x18\t \x01(\tB\x17\xaa\xdd\x1b\x13onPhraseSpottedTimeH\bR\x13onPhraseSpottedTime\x88\x01\x01\x12W\n" +
+	"Timestamps\x18\x01 \x01(\v2*.NAlice.NAliceApi.TRequestStat.TTimestampsR\n" +
+	"Timestamps\x12*\n" +
+	"\x10RequestMessageId\x18\x02 \x01(\tR\x10RequestMessageId\x12\x19\n" +
+	"\x05Error\x18\x03 \x01(\tH\x00R\x05Error\x88\x01\x01\x1a\xfb\x0e\n" +
+	"\vTTimestamps\x127\n" +
+	"\x14OnSoundPlayerEndTime\x18\x01 \x01(\tH\x00R\x14OnSoundPlayerEndTime\x88\x01\x01\x123\n" +
+	"\x12OnVinsResponseTime\x18\x02 \x01(\tH\x01R\x12OnVinsResponseTime\x88\x01\x01\x12M\n" +
+	"\x1fOnInterruptionPhraseSpottedTime\x18\x03 \x01(\tH\x02R\x1fOnInterruptionPhraseSpottedTime\x88\x01\x01\x12A\n" +
+	"\x19OnFirstSynthesisChunkTime\x18\x04 \x01(\tH\x03R\x19OnFirstSynthesisChunkTime\x88\x01\x01\x12;\n" +
+	"\x16OnRecognitionBeginTime\x18\x05 \x01(\tH\x04R\x16OnRecognitionBeginTime\x88\x01\x01\x127\n" +
+	"\x14OnRecognitionEndTime\x18\x06 \x01(\tH\x05R\x14OnRecognitionEndTime\x88\x01\x01\x125\n" +
+	"\x13RequestDurationTime\x18\a \x01(\tH\x06R\x13RequestDurationTime\x88\x01\x01\x12=\n" +
+	"\x17SpotterConfirmationTime\x18\b \x01(\tH\aR\x17SpotterConfirmationTime\x88\x01\x01\x125\n" +
+	"\x13OnPhraseSpottedTime\x18\t \x01(\tH\bR\x13OnPhraseSpottedTime\x88\x01\x01\x12;\n" +
 	"\x16PrevSoundPlayerEndTime\x18\n" +
-	" \x01(\tB\x1a\xaa\xdd\x1b\x16prevSoundPlayerEndTimeH\tR\x16prevSoundPlayerEndTime\x88\x01\x01\x12T\n" +
-	"\x15OnStartVoiceInputTime\x18\v \x01(\tB\x19\xaa\xdd\x1b\x15onStartVoiceInputTimeH\n" +
-	"R\x15onStartVoiceInputTime\x88\x01\x01\x12W\n" +
-	"\x16OnStartVinsRequestTime\x18\f \x01(\tB\x1a\xaa\xdd\x1b\x16onStartVinsRequestTimeH\vR\x16onStartVinsRequestTime\x88\x01\x01\x12`\n" +
-	"\x19OnFirstSocketActivityTime\x18\r \x01(\tB\x1d\xaa\xdd\x1b\x19onFirstSocketActivityTimeH\fR\x19onFirstSocketActivityTime\x88\x01\x01\x12]\n" +
-	"\x18OnLastSynthesisChunkTime\x18\x0e \x01(\tB\x1c\xaa\xdd\x1b\x18onLastSynthesisChunkTimeH\rR\x18onLastSynthesisChunkTime\x88\x01\x01\x126\n" +
-	"\vStartPlayer\x18\x0f \x01(\tB\x0f\xaa\xdd\x1b\vStartPlayerH\x0eR\vStartPlayer\x88\x01\x01\x12<\n" +
-	"\rOnPlayerBegin\x18\x10 \x01(\tB\x11\xaa\xdd\x1b\rOnPlayerBeginH\x0fR\rOnPlayerBegin\x88\x01\x01\x126\n" +
-	"\vOnPlayerEnd\x18\x11 \x01(\tB\x0f\xaa\xdd\x1b\vOnPlayerEndH\x10R\vOnPlayerEnd\x88\x01\x01\x12W\n" +
-	"\x16OnSoundPlayerBeginTime\x18\x12 \x01(\tB\x1a\xaa\xdd\x1b\x16onSoundPlayerBeginTimeH\x11R\x16onSoundPlayerBeginTime\x88\x01\x01\x12]\n" +
-	"\x18OnFirstMessageMergedTime\x18\x13 \x01(\tB\x1c\xaa\xdd\x1b\x18onFirstMessageMergedTimeH\x12R\x18onFirstMessageMergedTime\x88\x01\x01\x12c\n" +
-	"\x1aOnFirstNonEmptyPartialTime\x18\x14 \x01(\tB\x1e\xaa\xdd\x1b\x1aonFirstNonEmptyPartialTimeH\x13R\x1aonFirstNonEmptyPartialTime\x88\x01\x01\x12c\n" +
-	"\x1aOnLastCompletedPartialTime\x18\x15 \x01(\tB\x1e\xaa\xdd\x1b\x1aonLastCompletedPartialTimeH\x14R\x1aonLastCompletedPartialTime\x88\x01\x01\x12Q\n" +
-	"\x14SubRequestOffsetTime\x18\x16 \x01(\tB\x18\xaa\xdd\x1b\x14subRequestOffsetTimeH\x15R\x14subRequestOffsetTime\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x17\n" +
+	" \x01(\tH\tR\x16PrevSoundPlayerEndTime\x88\x01\x01\x129\n" +
+	"\x15OnStartVoiceInputTime\x18\v \x01(\tH\n" +
+	"R\x15OnStartVoiceInputTime\x88\x01\x01\x12;\n" +
+	"\x16OnStartVinsRequestTime\x18\f \x01(\tH\vR\x16OnStartVinsRequestTime\x88\x01\x01\x12A\n" +
+	"\x19OnFirstSocketActivityTime\x18\r \x01(\tH\fR\x19OnFirstSocketActivityTime\x88\x01\x01\x12?\n" +
+	"\x18OnLastSynthesisChunkTime\x18\x0e \x01(\tH\rR\x18OnLastSynthesisChunkTime\x88\x01\x01\x12%\n" +
+	"\vStartPlayer\x18\x0f \x01(\tH\x0eR\vStartPlayer\x88\x01\x01\x12)\n" +
+	"\rOnPlayerBegin\x18\x10 \x01(\tH\x0fR\rOnPlayerBegin\x88\x01\x01\x12%\n" +
+	"\vOnPlayerEnd\x18\x11 \x01(\tH\x10R\vOnPlayerEnd\x88\x01\x01\x12;\n" +
+	"\x16OnSoundPlayerBeginTime\x18\x12 \x01(\tH\x11R\x16OnSoundPlayerBeginTime\x88\x01\x01\x12?\n" +
+	"\x18OnFirstMessageMergedTime\x18\x13 \x01(\tH\x12R\x18OnFirstMessageMergedTime\x88\x01\x01\x12C\n" +
+	"\x1aOnFirstNonEmptyPartialTime\x18\x14 \x01(\tH\x13R\x1aOnFirstNonEmptyPartialTime\x88\x01\x01\x12C\n" +
+	"\x1aOnLastCompletedPartialTime\x18\x15 \x01(\tH\x14R\x1aOnLastCompletedPartialTime\x88\x01\x01\x12Q\n" +
+	"\x14SubRequestOffsetTime\x18\x16 \x01(\tB\x18\xaa\xdd\x1b\x14subRequestOffsetTimeH\x15R\x14subRequestOffsetTime\x88\x01\x01B\x17\n" +
 	"\x15_OnSoundPlayerEndTimeB\x15\n" +
 	"\x13_OnVinsResponseTimeB\"\n" +
 	" _OnInterruptionPhraseSpottedTimeB\x1c\n" +
@@ -352,9 +351,9 @@ const file_alice_protos_api_alicekit_events_request_stat_request_stat_proto_rawD
 	"\x19_OnFirstMessageMergedTimeB\x1d\n" +
 	"\x1b_OnFirstNonEmptyPartialTimeB\x1d\n" +
 	"\x1b_OnLastCompletedPartialTimeB\x17\n" +
-	"\x15_SubRequestOffsetTime:\x04\xa8\xdd\x1b\x04B\b\n" +
-	"\x06_ErrorB\x88\x01\n" +
-	"7ru.yandex.alice.protos.api.alicekit.events.request_statB\vRequestStatP\x01Z>a.yandex-team.ru/alice/protos/api/alicekit/events/request_statb\x06proto3"
+	"\x15_SubRequestOffsetTimeB\b\n" +
+	"\x06_ErrorB\xe8\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x10RequestStatProtoP\x01Z]github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/request_stat\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_request_stat_request_stat_proto_rawDescOnce sync.Once

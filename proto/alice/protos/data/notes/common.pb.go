@@ -80,8 +80,8 @@ const file_alice_protos_data_notes_common_proto_rawDesc = "" +
 	"TS_UNTIMED\x10\x00\x12\r\n" +
 	"\tTS_ACTIVE\x10\x01\x12\x0e\n" +
 	"\n" +
-	"TS_EXPIRED\x10\x02BM\n" +
-	"!ru.yandex.alice.protos.data.notesZ(a.yandex-team.ru/alice/protos/data/notesb\x06proto3"
+	"TS_EXPIRED\x10\x02Bl\n" +
+	"!ru.yandex.alice.protos.data.notesZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/notesb\x06proto3"
 
 var (
 	file_alice_protos_data_notes_common_proto_rawDescOnce sync.Once

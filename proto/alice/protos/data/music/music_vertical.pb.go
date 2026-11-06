@@ -324,8 +324,8 @@ const file_alice_protos_data_music_music_vertical_proto_rawDesc = "" +
 	"block_type\x1aC\n" +
 	"\vTArtistInfo\x12\x16\n" +
 	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x04\xa8\xdd\x1b\x04J\x04\b\x05\x10\x06R\vTypedActionBM\n" +
-	"!ru.yandex.alice.protos.data.musicZ(a.yandex-team.ru/alice/protos/data/musicb\x06proto3"
+	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x04\xa8\xdd\x1b\x04J\x04\b\x05\x10\x06R\vTypedActionBl\n" +
+	"!ru.yandex.alice.protos.data.musicZGgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/musicb\x06proto3"
 
 var (
 	file_alice_protos_data_music_music_vertical_proto_rawDescOnce sync.Once

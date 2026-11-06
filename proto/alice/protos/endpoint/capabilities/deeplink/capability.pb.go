@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/deeplink/capability.proto
 
-package deeplinkpb
+package deeplink
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -326,8 +326,8 @@ const file_alice_protos_endpoint_capabilities_deeplink_capability_proto_rawDesc 
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\x19\n" +
 	"\x03Uri\x18\x02 \x01(\tB\a\xaa\xdd\x1b\x03uriR\x03uri:$\x92\x82\x19\x17open_deeplink_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdb\x02\x1aS\n" +
 	"\x1dTUpdateDeeplinksPrefixesEvent\x12(\n" +
-	"\bPrefixes\x18\x01 \x03(\tB\f\xaa\xdd\x1b\bprefixesR\bprefixes:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cr:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cEB\x90\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17DeeplinkCapabilityProtoZGa.yandex-team.ru/alice/protos/endpoint/capabilities/deeplink;deeplinkpbb\x06proto3"
+	"\bPrefixes\x18\x01 \x03(\tB\f\xaa\xdd\x1b\bprefixesR\bprefixes:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cr:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cEB\xa4\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17DeeplinkCapabilityProtoZ[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/deeplinkb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_deeplink_capability_proto_rawDescOnce sync.Once

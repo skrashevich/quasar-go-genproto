@@ -148,8 +148,7 @@ const (
 	TEventSource_Hardware      TEventSource_ESource = 2
 	TEventSource_Software      TEventSource_ESource = 3
 	TEventSource_TWS           TEventSource_ESource = 4
-	// Deprecated: Marked as deprecated in alice/protos/data/event_source/event_source.proto.
-	TEventSource_OverlayedUI TEventSource_ESource = 5
+	TEventSource_OverlayedUI   TEventSource_ESource = 5
 )
 
 // Enum value maps for TEventSource_ESource.
@@ -268,12 +267,12 @@ func (TEventSource_EType) EnumDescriptor() ([]byte, []int) {
 
 type TEventSource struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Event         TEventSource_EEvent    `protobuf:"varint,1,opt,name=Event,json=event,proto3,enum=NAlice.TEventSource_EEvent" json:"Event,omitempty"`
-	Source        TEventSource_ESource   `protobuf:"varint,2,opt,name=Source,json=source,proto3,enum=NAlice.TEventSource_ESource" json:"Source,omitempty"`
-	Type          TEventSource_EType     `protobuf:"varint,3,opt,name=Type,json=type,proto3,enum=NAlice.TEventSource_EType" json:"Type,omitempty"`
-	Id            *string                `protobuf:"bytes,4,opt,name=Id,json=id,proto3,oneof" json:"Id,omitempty"`
-	EndpointId    *string                `protobuf:"bytes,5,opt,name=EndpointId,json=endpoint_id,proto3,oneof" json:"EndpointId,omitempty"`
-	SourceName    *string                `protobuf:"bytes,6,opt,name=SourceName,json=source_name,proto3,oneof" json:"SourceName,omitempty"`
+	Event         TEventSource_EEvent    `protobuf:"varint,1,opt,name=Event,proto3,enum=NAlice.TEventSource_EEvent" json:"Event,omitempty"`
+	Source        TEventSource_ESource   `protobuf:"varint,2,opt,name=Source,proto3,enum=NAlice.TEventSource_ESource" json:"Source,omitempty"`
+	Type          TEventSource_EType     `protobuf:"varint,3,opt,name=Type,proto3,enum=NAlice.TEventSource_EType" json:"Type,omitempty"`
+	Id            *string                `protobuf:"bytes,4,opt,name=Id,proto3,oneof" json:"Id,omitempty"`
+	EndpointId    *string                `protobuf:"bytes,5,opt,name=EndpointId,proto3,oneof" json:"EndpointId,omitempty"`
+	SourceName    *string                `protobuf:"bytes,6,opt,name=SourceName,proto3,oneof" json:"SourceName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -354,17 +353,18 @@ var File_alice_protos_data_event_source_event_source_proto protoreflect.FileDesc
 
 const file_alice_protos_data_event_source_event_source_proto_rawDesc = "" +
 	"\n" +
-	"1alice/protos/data/event_source/event_source.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x91\b\n" +
-	"\fTEventSource\x12<\n" +
-	"\x05Event\x18\x01 \x01(\x0e2\x1b.NAlice.TEventSource.EEventB\t\xaa\xdd\x1b\x05eventR\x05event\x12@\n" +
-	"\x06Source\x18\x02 \x01(\x0e2\x1c.NAlice.TEventSource.ESourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\x128\n" +
-	"\x04Type\x18\x03 \x01(\x0e2\x1a.NAlice.TEventSource.ETypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12\x1b\n" +
-	"\x02Id\x18\x04 \x01(\tB\x06\xaa\xdd\x1b\x02idH\x00R\x02id\x88\x01\x01\x125\n" +
+	"1alice/protos/data/event_source/event_source.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\xba\a\n" +
+	"\fTEventSource\x121\n" +
+	"\x05Event\x18\x01 \x01(\x0e2\x1b.NAlice.TEventSource.EEventR\x05Event\x124\n" +
+	"\x06Source\x18\x02 \x01(\x0e2\x1c.NAlice.TEventSource.ESourceR\x06Source\x12.\n" +
+	"\x04Type\x18\x03 \x01(\x0e2\x1a.NAlice.TEventSource.ETypeR\x04Type\x12\x13\n" +
+	"\x02Id\x18\x04 \x01(\tH\x00R\x02Id\x88\x01\x01\x12#\n" +
 	"\n" +
-	"EndpointId\x18\x05 \x01(\tB\x0f\xaa\xdd\x1b\vendpoint_idH\x01R\vendpoint_id\x88\x01\x01\x125\n" +
+	"EndpointId\x18\x05 \x01(\tH\x01R\n" +
+	"EndpointId\x88\x01\x01\x12#\n" +
 	"\n" +
-	"SourceName\x18\x06 \x01(\tB\x0f\xaa\xdd\x1b\vsource_nameH\x02R\vsource_name\x88\x01\x01\"\x98\x03\n" +
+	"SourceName\x18\x06 \x01(\tH\x02R\n" +
+	"SourceName\x88\x01\x01\"\x98\x03\n" +
 	"\x06EEvent\x12\x10\n" +
 	"\fUnknownEvent\x10\x00\x12\v\n" +
 	"\aSpotter\x10\x01\x12\r\n" +
@@ -396,14 +396,14 @@ const file_alice_protos_data_event_source_event_source_proto_rawDesc = "" +
 	"\bRcuClick\x10\x16\x12\x12\n" +
 	"\x0eLazyAutoListen\x10\x17\x12\f\n" +
 	"\bBotQuery\x10\x18\x12\x12\n" +
-	"\x0eBotInlineQuery\x10\x19\"i\n" +
+	"\x0eBotInlineQuery\x10\x19\"e\n" +
 	"\aESource\x12\x11\n" +
 	"\rUnknownSource\x10\x00\x12\x11\n" +
 	"\rUserInterface\x10\x01\x12\f\n" +
 	"\bHardware\x10\x02\x12\f\n" +
 	"\bSoftware\x10\x03\x12\a\n" +
-	"\x03TWS\x10\x04\x12\x13\n" +
-	"\vOverlayedUI\x10\x05\x1a\x02\b\x01\"\x8a\x01\n" +
+	"\x03TWS\x10\x04\x12\x0f\n" +
+	"\vOverlayedUI\x10\x05\"\x8a\x01\n" +
 	"\x05EType\x12\x0f\n" +
 	"\vUnknownType\x10\x00\x12\b\n" +
 	"\x04Text\x10\x01\x12\t\n" +
@@ -413,11 +413,12 @@ const file_alice_protos_data_event_source_event_source_proto_rawDesc = "" +
 	"\tRecognize\x10\x05\x12\f\n" +
 	"\bVocalize\x10\x06\x12\r\n" +
 	"\tDataInput\x10\a\x12\x0f\n" +
-	"\vSpeechInput\x10\b:\x04\xa8\xdd\x1b\x04B\x05\n" +
+	"\vSpeechInput\x10\bB\x05\n" +
 	"\x03_IdB\r\n" +
 	"\v_EndpointIdB\r\n" +
-	"\v_SourceNameBi\n" +
-	"'ru.yandex.alice.protos.data.eventsourceB\vEventSourceP\x01Z/a.yandex-team.ru/alice/protos/data/event_sourceb\x06proto3"
+	"\v_SourceNameB\xa6\x01\n" +
+	"\n" +
+	"com.NAliceB\x10EventSourceProtoP\x01ZNgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/event_source\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_event_source_event_source_proto_rawDescOnce sync.Once

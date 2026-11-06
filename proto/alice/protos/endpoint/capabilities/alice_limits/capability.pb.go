@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_limits/capability.proto
 
-package alicelimitspb
+package alice_limits
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -415,8 +415,8 @@ const file_alice_protos_endpoint_capabilities_alice_limits_capability_proto_rawD
 	"\n" +
 	"EK_UNKNOWN\x10\x00\x12\x12\n" +
 	"\x0eEK_RUNNING_OUT\x10\x01\x12\x10\n" +
-	"\fEK_EXHAUSTED\x10\x02:*\x92\x82\x19\x1dexpert_limit_notice_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa2\x02B\x90\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10AliceLimitsProtoZNa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_limits;alicelimitspbb\x06proto3"
+	"\fEK_EXHAUSTED\x10\x02:*\x92\x82\x19\x1dexpert_limit_notice_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf3\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xa2\x02B\xa1\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x10AliceLimitsProtoZ_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_limitsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_limits_capability_proto_rawDescOnce sync.Once

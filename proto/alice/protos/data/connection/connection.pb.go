@@ -24,8 +24,8 @@ const (
 
 type TConnectionStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsConnected   bool                   `protobuf:"varint,1,opt,name=IsConnected,json=is_connected,proto3" json:"IsConnected,omitempty"`
-	LocalPort     *uint32                `protobuf:"varint,2,opt,name=LocalPort,json=local_port,proto3,oneof" json:"LocalPort,omitempty"`
+	IsConnected   bool                   `protobuf:"varint,1,opt,name=IsConnected,proto3" json:"IsConnected,omitempty"`
+	LocalPort     *uint32                `protobuf:"varint,2,opt,name=LocalPort,proto3,oneof" json:"LocalPort,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,15 +78,14 @@ var File_alice_protos_data_connection_connection_proto protoreflect.FileDescript
 
 const file_alice_protos_data_connection_connection_proto_rawDesc = "" +
 	"\n" +
-	"-alice/protos/data/connection/connection.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x90\x01\n" +
-	"\x11TConnectionStatus\x123\n" +
-	"\vIsConnected\x18\x01 \x01(\bB\x10\xaa\xdd\x1b\fis_connectedR\fis_connected\x122\n" +
-	"\tLocalPort\x18\x02 \x01(\rB\x0e\xaa\xdd\x1b\n" +
-	"local_portH\x00R\n" +
-	"local_port\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\f\n" +
+	"-alice/protos/data/connection/connection.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"f\n" +
+	"\x11TConnectionStatus\x12 \n" +
+	"\vIsConnected\x18\x01 \x01(\bR\vIsConnected\x12!\n" +
+	"\tLocalPort\x18\x02 \x01(\rH\x00R\tLocalPort\x88\x01\x01B\f\n" +
 	"\n" +
-	"_LocalPortBn\n" +
-	"&ru.yandex.alice.protos.data.connectionB\x15ConnectionStatusProtoZ-a.yandex-team.ru/alice/protos/data/connectionb\x06proto3"
+	"_LocalPortB\xa3\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fConnectionProtoP\x01ZLgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/connection\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_data_connection_connection_proto_rawDescOnce sync.Once

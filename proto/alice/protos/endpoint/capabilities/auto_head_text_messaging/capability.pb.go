@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/auto_head_text_messaging/capability.proto
 
-package autoheadtextmessagingpb
+package auto_head_text_messaging
 
 import (
 	telecom "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/telecom"
@@ -639,8 +639,8 @@ const file_alice_protos_endpoint_capabilities_auto_head_text_messaging_capabilit
 	"\x1aTOpenPopupMessageDirective\x12\x1c\n" +
 	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12b\n" +
 	"\x0fProviderContact\x18\x02 \x01(\v2!.NAlice.NTelecom.TProviderContactB\x14\xaa\xdd\x1b\x10provider_contactR\x10provider_contact\x12%\n" +
-	"\aMessage\x18\x03 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage:8\x92\x82\x19+auto_head_text_messaging_open_popup_message\xa8\xdd\x1b\x04\xa8\xc8\x1c\x88\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c*B\xbc\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB&AutoHeadTextMessagingCapabilitiesProtoZda.yandex-team.ru/alice/protos/endpoint/capabilities/auto_head_text_messaging;autoheadtextmessagingpbb\x06proto3"
+	"\aMessage\x18\x03 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage:8\x92\x82\x19+auto_head_text_messaging_open_popup_message\xa8\xdd\x1b\x04\xa8\xc8\x1c\x88\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c*B\xc3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB&AutoHeadTextMessagingCapabilitiesProtoZkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/auto_head_text_messagingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_auto_head_text_messaging_capability_proto_rawDescOnce sync.Once

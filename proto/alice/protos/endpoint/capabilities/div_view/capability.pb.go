@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/div_view/capability.proto
 
-package divviewpb
+package div_view
 
 import (
 	div "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div"
@@ -193,9 +193,9 @@ func (TDivViewCapability_TSetDivVariablesDirective_TSetVariable_EVariableType) E
 
 type TDivViewCapability struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TDivViewCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TDivViewCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta     `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TDivViewCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TDivViewCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -252,13 +252,12 @@ func (x *TDivViewCapability) GetState() *TDivViewCapability_TState {
 }
 
 type TDivViewCapability_TParameters struct {
-	state                  protoimpl.MessageState `protogen:"open.v1"`
-	SupportsStringDiv2Card bool                   `protobuf:"varint,1,opt,name=SupportsStringDiv2Card,json=supports_string_div2_card,proto3" json:"SupportsStringDiv2Card,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/div_view/capability.proto.
-	SupportsCardStashing     bool                                            `protobuf:"varint,2,opt,name=SupportsCardStashing,json=supports_card_stashing,proto3" json:"SupportsCardStashing,omitempty"`
-	UIFamily                 TDivViewCapability_TParameters_EUIFamily        `protobuf:"varint,3,opt,name=UIFamily,json=ui_family,proto3,enum=NAlice.TDivViewCapability_TParameters_EUIFamily" json:"UIFamily,omitempty"`
-	DivKitFeatures           []TDivViewCapability_TParameters_EDivKitFeature `protobuf:"varint,4,rep,packed,name=DivKitFeatures,json=div_kit_features,proto3,enum=NAlice.TDivViewCapability_TParameters_EDivKitFeature" json:"DivKitFeatures,omitempty"`
-	AvailableExternalSources []div.TDivExternalVariable_ESourceType          `protobuf:"varint,5,rep,packed,name=availableExternalSources,json=available_external_sources,proto3,enum=NAlice.TDivExternalVariable_ESourceType" json:"availableExternalSources,omitempty"`
+	state                    protoimpl.MessageState                          `protogen:"open.v1"`
+	SupportsStringDiv2Card   bool                                            `protobuf:"varint,1,opt,name=SupportsStringDiv2Card,proto3" json:"SupportsStringDiv2Card,omitempty"`
+	SupportsCardStashing     bool                                            `protobuf:"varint,2,opt,name=SupportsCardStashing,proto3" json:"SupportsCardStashing,omitempty"`
+	UIFamily                 TDivViewCapability_TParameters_EUIFamily        `protobuf:"varint,3,opt,name=UIFamily,proto3,enum=NAlice.TDivViewCapability_TParameters_EUIFamily" json:"UIFamily,omitempty"`
+	DivKitFeatures           []TDivViewCapability_TParameters_EDivKitFeature `protobuf:"varint,4,rep,packed,name=DivKitFeatures,proto3,enum=NAlice.TDivViewCapability_TParameters_EDivKitFeature" json:"DivKitFeatures,omitempty"`
+	AvailableExternalSources []div.TDivExternalVariable_ESourceType          `protobuf:"varint,5,rep,packed,name=availableExternalSources,proto3,enum=NAlice.TDivExternalVariable_ESourceType" json:"availableExternalSources,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -300,7 +299,6 @@ func (x *TDivViewCapability_TParameters) GetSupportsStringDiv2Card() bool {
 	return false
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/div_view/capability.proto.
 func (x *TDivViewCapability_TParameters) GetSupportsCardStashing() bool {
 	if x != nil {
 		return x.SupportsCardStashing
@@ -331,7 +329,7 @@ func (x *TDivViewCapability_TParameters) GetAvailableExternalSources() []div.TDi
 
 type TDivViewCapability_TState struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	GlobalTemplatesCache []string               `protobuf:"bytes,1,rep,name=GlobalTemplatesCache,json=global_templates_cache,proto3" json:"GlobalTemplatesCache,omitempty"`
+	GlobalTemplatesCache []string               `protobuf:"bytes,1,rep,name=GlobalTemplatesCache,proto3" json:"GlobalTemplatesCache,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -375,8 +373,8 @@ func (x *TDivViewCapability_TState) GetGlobalTemplatesCache() []string {
 
 type TDivViewCapability_TStashViewDirective struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Name               string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
+	Name               string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -427,8 +425,8 @@ func (x *TDivViewCapability_TStashViewDirective) GetCardSearchCriteria() *div.TD
 
 type TDivViewCapability_TUnstashViewDirective struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Name               string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,json=card_search_criteria,proto3" json:"CardSearchCriteria,omitempty"`
+	Name               string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	CardSearchCriteria *div.TDiv2Id           `protobuf:"bytes,2,opt,name=CardSearchCriteria,proto3" json:"CardSearchCriteria,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -479,8 +477,8 @@ func (x *TDivViewCapability_TUnstashViewDirective) GetCardSearchCriteria() *div.
 
 type TDivViewCapability_TSetDivVariablesDirective struct {
 	state         protoimpl.MessageState                                       `protogen:"open.v1"`
-	Name          string                                                       `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SetVariable   []*TDivViewCapability_TSetDivVariablesDirective_TSetVariable `protobuf:"bytes,2,rep,name=SetVariable,json=set_variable,proto3" json:"SetVariable,omitempty"`
+	Name          string                                                       `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	SetVariable   []*TDivViewCapability_TSetDivVariablesDirective_TSetVariable `protobuf:"bytes,2,rep,name=SetVariable,proto3" json:"SetVariable,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -531,8 +529,8 @@ func (x *TDivViewCapability_TSetDivVariablesDirective) GetSetVariable() []*TDivV
 
 type TDivViewCapability_TSetDivVariablesDirective_TSetVariable struct {
 	state        protoimpl.MessageState                                                  `protogen:"open.v1"`
-	VariableName string                                                                  `protobuf:"bytes,4,opt,name=VariableName,json=variable_name,proto3" json:"VariableName,omitempty"`
-	VariableType TDivViewCapability_TSetDivVariablesDirective_TSetVariable_EVariableType `protobuf:"varint,5,opt,name=VariableType,json=variable_type,proto3,enum=NAlice.TDivViewCapability_TSetDivVariablesDirective_TSetVariable_EVariableType" json:"VariableType,omitempty"`
+	VariableName string                                                                  `protobuf:"bytes,4,opt,name=VariableName,proto3" json:"VariableName,omitempty"`
+	VariableType TDivViewCapability_TSetDivVariablesDirective_TSetVariable_EVariableType `protobuf:"varint,5,opt,name=VariableType,proto3,enum=NAlice.TDivViewCapability_TSetDivVariablesDirective_TSetVariable_EVariableType" json:"VariableType,omitempty"`
 	// Types that are valid to be assigned to SetVariable:
 	//
 	//	*TDivViewCapability_TSetDivVariablesDirective_TSetVariable_BoolValue
@@ -626,15 +624,15 @@ type isTDivViewCapability_TSetDivVariablesDirective_TSetVariable_SetVariable int
 }
 
 type TDivViewCapability_TSetDivVariablesDirective_TSetVariable_BoolValue struct {
-	BoolValue bool `protobuf:"varint,1,opt,name=BoolValue,json=bool_value,proto3,oneof"`
+	BoolValue bool `protobuf:"varint,1,opt,name=BoolValue,proto3,oneof"`
 }
 
 type TDivViewCapability_TSetDivVariablesDirective_TSetVariable_StringValue struct {
-	StringValue string `protobuf:"bytes,2,opt,name=StringValue,json=string_value,proto3,oneof"`
+	StringValue string `protobuf:"bytes,2,opt,name=StringValue,proto3,oneof"`
 }
 
 type TDivViewCapability_TSetDivVariablesDirective_TSetVariable_LongValue struct {
-	LongValue int64 `protobuf:"varint,3,opt,name=LongValue,json=long_value,proto3,oneof"`
+	LongValue int64 `protobuf:"varint,3,opt,name=LongValue,proto3,oneof"`
 }
 
 func (*TDivViewCapability_TSetDivVariablesDirective_TSetVariable_BoolValue) isTDivViewCapability_TSetDivVariablesDirective_TSetVariable_SetVariable() {
@@ -650,20 +648,19 @@ var File_alice_protos_endpoint_capabilities_div_view_capability_proto protorefle
 
 const file_alice_protos_endpoint_capabilities_div_view_capability_proto_rawDesc = "" +
 	"\n" +
-	"<alice/protos/endpoint/capabilities/div_view/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1dalice/protos/div/div2id.proto\x1a4alice/protos/div/div_external_variable_sources.proto\"\xda\x10\n" +
-	"\x12TDivViewCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12V\n" +
+	"<alice/protos/endpoint/capabilities/div_view/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\x1a\x1dalice/protos/div/div2id.proto\x1a4alice/protos/div/div_external_variable_sources.proto\"\xc2\f\n" +
+	"\x12TDivViewCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12F\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2&.NAlice.TDivViewCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12B\n" +
-	"\x05State\x18\x03 \x01(\v2!.NAlice.TDivViewCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x8f\x06\n" +
-	"\vTParameters\x12X\n" +
-	"\x16SupportsStringDiv2Card\x18\x01 \x01(\bB\x1d\xaa\xdd\x1b\x19supports_string_div2_cardR\x19supports_string_div2_card\x12R\n" +
-	"\x14SupportsCardStashing\x18\x02 \x01(\bB\x1c\xaa\xdd\x1b\x16supports_card_stashing\x18\x01R\x16supports_card_stashing\x12\\\n" +
-	"\bUIFamily\x18\x03 \x01(\x0e20.NAlice.TDivViewCapability.TParameters.EUIFamilyB\r\xaa\xdd\x1b\tui_familyR\tui_family\x12u\n" +
-	"\x0eDivKitFeatures\x18\x04 \x03(\x0e25.NAlice.TDivViewCapability.TParameters.EDivKitFeatureB\x14\xaa\xdd\x1b\x10div_kit_featuresR\x10div_kit_features\x12\x86\x01\n" +
-	"\x18availableExternalSources\x18\x05 \x03(\x0e2(.NAlice.TDivExternalVariable.ESourceTypeB\x1e\xaa\xdd\x1b\x1aavailable_external_sourcesR\x1aavailable_external_sources\"\xbd\x01\n" +
+	"Parameters\x18\x02 \x01(\v2&.NAlice.TDivViewCapability.TParametersR\n" +
+	"Parameters\x127\n" +
+	"\x05State\x18\x03 \x01(\v2!.NAlice.TDivViewCapability.TStateR\x05State\x1a\xfc\x04\n" +
+	"\vTParameters\x126\n" +
+	"\x16SupportsStringDiv2Card\x18\x01 \x01(\bR\x16SupportsStringDiv2Card\x122\n" +
+	"\x14SupportsCardStashing\x18\x02 \x01(\bR\x14SupportsCardStashing\x12L\n" +
+	"\bUIFamily\x18\x03 \x01(\x0e20.NAlice.TDivViewCapability.TParameters.EUIFamilyR\bUIFamily\x12]\n" +
+	"\x0eDivKitFeatures\x18\x04 \x03(\x0e25.NAlice.TDivViewCapability.TParameters.EDivKitFeatureR\x0eDivKitFeatures\x12d\n" +
+	"\x18availableExternalSources\x18\x05 \x03(\x0e2(.NAlice.TDivExternalVariable.ESourceTypeR\x18availableExternalSources\"\xbd\x01\n" +
 	"\tEUIFamily\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x0f\n" +
 	"\vSmartScreen\x10\x01\x12\x06\n" +
@@ -679,36 +676,32 @@ const file_alice_protos_endpoint_capabilities_div_view_capability_proto_rawDesc 
 	"\bAliceApp\x10\n" +
 	"\".\n" +
 	"\x0eEDivKitFeature\x12\x1c\n" +
-	"\x18TextCenteringDivKit39Fix\x10\x00:\x04\xa8\xdd\x1b\x04\x1a`\n" +
-	"\x06TState\x12P\n" +
-	"\x14GlobalTemplatesCache\x18\x01 \x03(\tB\x1a\xaa\xdd\x1b\x16global_templates_cacheR\x16global_templates_cache:\x04\xa8\xdd\x1b\x04\x1a\xa8\x01\n" +
-	"\x13TStashViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria:\x16\x92\x82\x19\n" +
-	"stash_view\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1e\x1a\xac\x01\n" +
-	"\x15TUnstashViewDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12[\n" +
-	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdB\x18\xaa\xdd\x1b\x14card_search_criteriaR\x14card_search_criteria:\x18\x92\x82\x19\funstash_view\xa8\xdd\x1b\x04\xa8\xc8\x1c\x1f\x1a\x96\x05\n" +
-	"\x19TSetDivVariablesDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12v\n" +
-	"\vSetVariable\x18\x02 \x03(\v2A.NAlice.TDivViewCapability.TSetDivVariablesDirective.TSetVariableB\x10\xaa\xdd\x1b\fset_variableR\fset_variable\x1a\xc3\x03\n" +
-	"\fTSetVariable\x126\n" +
-	"\fVariableName\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\rvariable_nameR\rvariable_name\x12\x87\x01\n" +
-	"\fVariableType\x18\x05 \x01(\x0e2O.NAlice.TDivViewCapability.TSetDivVariablesDirective.TSetVariable.EVariableTypeB\x11\xaa\xdd\x1b\rvariable_typeR\rvariable_type\x12/\n" +
-	"\tBoolValue\x18\x01 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"bool_valueH\x00R\n" +
-	"bool_value\x125\n" +
-	"\vStringValue\x18\x02 \x01(\tB\x10\xaa\xdd\x1b\fstring_valueH\x00R\fstring_value\x12/\n" +
-	"\tLongValue\x18\x03 \x01(\x03B\x0e\xaa\xdd\x1b\n" +
-	"long_valueH\x00R\n" +
-	"long_value\"1\n" +
+	"\x18TextCenteringDivKit39Fix\x10\x00\x1a<\n" +
+	"\x06TState\x122\n" +
+	"\x14GlobalTemplatesCache\x18\x01 \x03(\tR\x14GlobalTemplatesCache\x1aj\n" +
+	"\x13TStashViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x1al\n" +
+	"\x15TUnstashViewDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12?\n" +
+	"\x12CardSearchCriteria\x18\x02 \x01(\v2\x0f.NAlice.TDiv2IdR\x12CardSearchCriteria\x1a\xe4\x03\n" +
+	"\x19TSetDivVariablesDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12c\n" +
+	"\vSetVariable\x18\x02 \x03(\v2A.NAlice.TDivViewCapability.TSetDivVariablesDirective.TSetVariableR\vSetVariable\x1a\xcd\x02\n" +
+	"\fTSetVariable\x12\"\n" +
+	"\fVariableName\x18\x04 \x01(\tR\fVariableName\x12s\n" +
+	"\fVariableType\x18\x05 \x01(\x0e2O.NAlice.TDivViewCapability.TSetDivVariablesDirective.TSetVariable.EVariableTypeR\fVariableType\x12\x1e\n" +
+	"\tBoolValue\x18\x01 \x01(\bH\x00R\tBoolValue\x12\"\n" +
+	"\vStringValue\x18\x02 \x01(\tH\x00R\vStringValue\x12\x1e\n" +
+	"\tLongValue\x18\x03 \x01(\x03H\x00R\tLongValue\"1\n" +
 	"\rEVariableType\x12\n" +
 	"\n" +
 	"\x06Global\x10\x00\x12\t\n" +
 	"\x05Local\x10\x01\x12\t\n" +
-	"\x05Mixed\x10\x02:\x04\xa8\xdd\x1b\x04B\x1f\n" +
-	"\vSetVariable\x12\x10\xaa\xdd\x1b\fset_variable:\x1d\x92\x82\x19\x11set_div_variables\xa8\xdd\x1b\x04\xa8\xc8\x1cG:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x12B\x84\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\fDivViewProtoZFa.yandex-team.ru/alice/protos/endpoint/capabilities/div_view;divviewpbb\x06proto3"
+	"\x05Mixed\x10\x02B\r\n" +
+	"\vSetVariableB\xb2\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/div_view\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_div_view_capability_proto_rawDescOnce sync.Once

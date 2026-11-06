@@ -727,8 +727,8 @@ const file_alice_protos_data_scenario_photoframe_screen_saver_proto_rawDesc = ""
 	"\x10EOrientationType\x12\a\n" +
 	"\x03Any\x10\x00\x12\x11\n" +
 	"\rLandscapeOnly\x10\x01\x12\x10\n" +
-	"\fPortraitOnly\x10\x02:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataBi\n" +
-	"/ru.yandex.alice.protos.data.scenario.photoframeZ6a.yandex-team.ru/alice/protos/data/scenario/photoframeb\x06proto3"
+	"\fPortraitOnly\x10\x02:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataB\x88\x01\n" +
+	"/ru.yandex.alice.protos.data.scenario.photoframeZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/photoframeb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_photoframe_screen_saver_proto_rawDescOnce sync.Once

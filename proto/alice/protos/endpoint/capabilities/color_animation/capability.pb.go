@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/color_animation/capability.proto
 
-package coloranimationpb
+package color_animation
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -140,9 +140,9 @@ func (TColorAnimationCapability_EAnimationType) EnumDescriptor() ([]byte, []int)
 
 type TColorAnimationCapability struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TColorAnimationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TColorAnimationCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta            `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TColorAnimationCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TColorAnimationCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -329,35 +329,35 @@ type isTColorAnimationCapability_AnimationSetting_TSetting interface {
 }
 
 type TColorAnimationCapability_AnimationSetting_RgbColor struct {
-	RgbColor *TColorAnimationCapability_AnimationSetting_TRgbColorSetting `protobuf:"bytes,1,opt,name=RgbColor,json=rgb_color,proto3,oneof"`
+	RgbColor *TColorAnimationCapability_AnimationSetting_TRgbColorSetting `protobuf:"bytes,1,opt,name=RgbColor,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_TemperatureKColor struct {
-	TemperatureKColor *TColorAnimationCapability_AnimationSetting_TTemperatureKColorSetting `protobuf:"bytes,2,opt,name=TemperatureKColor,json=temperature_k_color,proto3,oneof"`
+	TemperatureKColor *TColorAnimationCapability_AnimationSetting_TTemperatureKColorSetting `protobuf:"bytes,2,opt,name=TemperatureKColor,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_BackgroundSound struct {
-	BackgroundSound *TColorAnimationCapability_AnimationSetting_TBackgroundSoundSetting `protobuf:"bytes,3,opt,name=BackgroundSound,json=background_sound,proto3,oneof"`
+	BackgroundSound *TColorAnimationCapability_AnimationSetting_TBackgroundSoundSetting `protobuf:"bytes,3,opt,name=BackgroundSound,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_AutoPlay struct {
-	AutoPlay *TColorAnimationCapability_AnimationSetting_TAutoPlaySetting `protobuf:"bytes,4,opt,name=AutoPlay,json=auto_play,proto3,oneof"`
+	AutoPlay *TColorAnimationCapability_AnimationSetting_TAutoPlaySetting `protobuf:"bytes,4,opt,name=AutoPlay,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_AutoRun struct {
-	AutoRun *TColorAnimationCapability_AnimationSetting_TAutoRunSetting `protobuf:"bytes,5,opt,name=AutoRun,json=auto_run,proto3,oneof"`
+	AutoRun *TColorAnimationCapability_AnimationSetting_TAutoRunSetting `protobuf:"bytes,5,opt,name=AutoRun,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_HsvColor struct {
-	HsvColor *endpoint.THueAndSaturation `protobuf:"bytes,6,opt,name=HsvColor,json=hsv_color,proto3,oneof"`
+	HsvColor *endpoint.THueAndSaturation `protobuf:"bytes,6,opt,name=HsvColor,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_Speed struct {
-	Speed *TColorAnimationCapability_AnimationSetting_TSpeedSetting `protobuf:"bytes,7,opt,name=Speed,json=speed,proto3,oneof"`
+	Speed *TColorAnimationCapability_AnimationSetting_TSpeedSetting `protobuf:"bytes,7,opt,name=Speed,proto3,oneof"`
 }
 
 type TColorAnimationCapability_AnimationSetting_VisualEffect struct {
-	VisualEffect *TColorAnimationCapability_AnimationSetting_TVisualEffectSetting `protobuf:"bytes,8,opt,name=VisualEffect,json=visual_effect,proto3,oneof"`
+	VisualEffect *TColorAnimationCapability_AnimationSetting_TVisualEffectSetting `protobuf:"bytes,8,opt,name=VisualEffect,proto3,oneof"`
 }
 
 func (*TColorAnimationCapability_AnimationSetting_RgbColor) isTColorAnimationCapability_AnimationSetting_TSetting() {
@@ -386,11 +386,11 @@ func (*TColorAnimationCapability_AnimationSetting_VisualEffect) isTColorAnimatio
 
 type TColorAnimationCapability_TAnimationState struct {
 	state              protoimpl.MessageState                        `protogen:"open.v1"`
-	Type               TColorAnimationCapability_EAnimationType      `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"Type,omitempty"`
-	LastAnimationId    string                                        `protobuf:"bytes,2,opt,name=LastAnimationId,json=last_animation_id,proto3" json:"LastAnimationId,omitempty"`
-	CommonSettings     []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,3,rep,name=CommonSettings,json=common_settings,proto3" json:"CommonSettings,omitempty"`
-	Animations         []*TColorAnimationCapability_TAnimation       `protobuf:"bytes,4,rep,name=Animations,json=animations,proto3" json:"Animations,omitempty"`
-	LastAnimationIndex uint32                                        `protobuf:"varint,5,opt,name=LastAnimationIndex,json=last_animation_index,proto3" json:"LastAnimationIndex,omitempty"`
+	Type               TColorAnimationCapability_EAnimationType      `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"Type,omitempty"`
+	LastAnimationId    string                                        `protobuf:"bytes,2,opt,name=LastAnimationId,proto3" json:"LastAnimationId,omitempty"`
+	CommonSettings     []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,3,rep,name=CommonSettings,proto3" json:"CommonSettings,omitempty"`
+	Animations         []*TColorAnimationCapability_TAnimation       `protobuf:"bytes,4,rep,name=Animations,proto3" json:"Animations,omitempty"`
+	LastAnimationIndex uint32                                        `protobuf:"varint,5,opt,name=LastAnimationIndex,proto3" json:"LastAnimationIndex,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -462,9 +462,9 @@ func (x *TColorAnimationCapability_TAnimationState) GetLastAnimationIndex() uint
 
 type TColorAnimationCapability_TAnimation struct {
 	state          protoimpl.MessageState                        `protogen:"open.v1"`
-	AnimationId    string                                        `protobuf:"bytes,1,opt,name=AnimationId,json=animation_id,proto3" json:"AnimationId,omitempty"`
-	Settings       []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,2,rep,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	AnimationIndex uint32                                        `protobuf:"varint,3,opt,name=AnimationIndex,json=animation_index,proto3" json:"AnimationIndex,omitempty"`
+	AnimationId    string                                        `protobuf:"bytes,1,opt,name=AnimationId,proto3" json:"AnimationId,omitempty"`
+	Settings       []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,2,rep,name=Settings,proto3" json:"Settings,omitempty"`
+	AnimationIndex uint32                                        `protobuf:"varint,3,opt,name=AnimationIndex,proto3" json:"AnimationIndex,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -522,9 +522,9 @@ func (x *TColorAnimationCapability_TAnimation) GetAnimationIndex() uint32 {
 
 type TColorAnimationCapability_TAnimationParameters struct {
 	state               protoimpl.MessageState                                       `protogen:"open.v1"`
-	Type                TColorAnimationCapability_EAnimationType                     `protobuf:"varint,1,opt,name=Type,json=type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"Type,omitempty"`
-	Parameters          []*TColorAnimationCapability_TAnimationParameters_TParameter `protobuf:"bytes,2,rep,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	SupportedAnimations []*TColorAnimationCapability_TAnimation                      `protobuf:"bytes,3,rep,name=SupportedAnimations,json=supported_animations,proto3" json:"SupportedAnimations,omitempty"`
+	Type                TColorAnimationCapability_EAnimationType                     `protobuf:"varint,1,opt,name=Type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"Type,omitempty"`
+	Parameters          []*TColorAnimationCapability_TAnimationParameters_TParameter `protobuf:"bytes,2,rep,name=Parameters,proto3" json:"Parameters,omitempty"`
+	SupportedAnimations []*TColorAnimationCapability_TAnimation                      `protobuf:"bytes,3,rep,name=SupportedAnimations,proto3" json:"SupportedAnimations,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -582,7 +582,7 @@ func (x *TColorAnimationCapability_TAnimationParameters) GetSupportedAnimations(
 
 type TColorAnimationCapability_TParameters struct {
 	state               protoimpl.MessageState                            `protogen:"open.v1"`
-	AnimationParameters []*TColorAnimationCapability_TAnimationParameters `protobuf:"bytes,1,rep,name=AnimationParameters,json=animation_parameters,proto3" json:"AnimationParameters,omitempty"`
+	AnimationParameters []*TColorAnimationCapability_TAnimationParameters `protobuf:"bytes,1,rep,name=AnimationParameters,proto3" json:"AnimationParameters,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -626,8 +626,8 @@ func (x *TColorAnimationCapability_TParameters) GetAnimationParameters() []*TCol
 
 type TColorAnimationCapability_TState struct {
 	state                protoimpl.MessageState                       `protogen:"open.v1"`
-	CurrentAnimationType TColorAnimationCapability_EAnimationType     `protobuf:"varint,1,opt,name=CurrentAnimationType,json=current_animation_type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"CurrentAnimationType,omitempty"`
-	AnimationStates      []*TColorAnimationCapability_TAnimationState `protobuf:"bytes,2,rep,name=AnimationStates,json=animation_states,proto3" json:"AnimationStates,omitempty"`
+	CurrentAnimationType TColorAnimationCapability_EAnimationType     `protobuf:"varint,1,opt,name=CurrentAnimationType,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"CurrentAnimationType,omitempty"`
+	AnimationStates      []*TColorAnimationCapability_TAnimationState `protobuf:"bytes,2,rep,name=AnimationStates,proto3" json:"AnimationStates,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -678,9 +678,9 @@ func (x *TColorAnimationCapability_TState) GetAnimationStates() []*TColorAnimati
 
 type TColorAnimationCapability_TSetAnimationTypeCommonSettingDirective struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	Name          string                                      `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AnimationType TColorAnimationCapability_EAnimationType    `protobuf:"varint,1,opt,name=AnimationType,json=animation_type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"AnimationType,omitempty"`
-	Setting       *TColorAnimationCapability_AnimationSetting `protobuf:"bytes,2,opt,name=Setting,json=setting,proto3" json:"Setting,omitempty"`
+	Name          string                                      `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AnimationType TColorAnimationCapability_EAnimationType    `protobuf:"varint,1,opt,name=AnimationType,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"AnimationType,omitempty"`
+	Setting       *TColorAnimationCapability_AnimationSetting `protobuf:"bytes,2,opt,name=Setting,proto3" json:"Setting,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -738,12 +738,12 @@ func (x *TColorAnimationCapability_TSetAnimationTypeCommonSettingDirective) GetS
 
 type TColorAnimationCapability_TSetAnimationColorAnimationDirective struct {
 	state          protoimpl.MessageState                        `protogen:"open.v1"`
-	Name           string                                        `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AnimationId    string                                        `protobuf:"bytes,1,opt,name=AnimationId,json=animation_id,proto3" json:"AnimationId,omitempty"`
-	AutoEnable     bool                                          `protobuf:"varint,2,opt,name=AutoEnable,json=autoenable,proto3" json:"AutoEnable,omitempty"`
-	Settings       []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,3,rep,name=Settings,json=settings,proto3" json:"Settings,omitempty"`
-	AnimationType  TColorAnimationCapability_EAnimationType      `protobuf:"varint,5,opt,name=AnimationType,json=animation_type,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"AnimationType,omitempty"`
-	AnimationIndex *uint32                                       `protobuf:"varint,4,opt,name=AnimationIndex,json=animation_index,proto3,oneof" json:"AnimationIndex,omitempty"`
+	Name           string                                        `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AnimationId    string                                        `protobuf:"bytes,1,opt,name=AnimationId,proto3" json:"AnimationId,omitempty"`
+	AutoEnable     bool                                          `protobuf:"varint,2,opt,name=AutoEnable,proto3" json:"AutoEnable,omitempty"`
+	Settings       []*TColorAnimationCapability_AnimationSetting `protobuf:"bytes,3,rep,name=Settings,proto3" json:"Settings,omitempty"`
+	AnimationType  TColorAnimationCapability_EAnimationType      `protobuf:"varint,5,opt,name=AnimationType,proto3,enum=NAlice.TColorAnimationCapability_EAnimationType" json:"AnimationType,omitempty"`
+	AnimationIndex *uint32                                       `protobuf:"varint,4,opt,name=AnimationIndex,proto3,oneof" json:"AnimationIndex,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -822,7 +822,7 @@ func (x *TColorAnimationCapability_TSetAnimationColorAnimationDirective) GetAnim
 
 type TColorAnimationCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Capability    *TColorAnimationCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TColorAnimationCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -866,9 +866,9 @@ func (x *TColorAnimationCapability_TUpdateStateEvent) GetCapability() *TColorAni
 
 type TColorAnimationCapability_AnimationSetting_TRgbColorSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Red           uint32                 `protobuf:"varint,1,opt,name=Red,json=red,proto3" json:"Red,omitempty"`
-	Green         uint32                 `protobuf:"varint,2,opt,name=Green,json=green,proto3" json:"Green,omitempty"`
-	Blue          uint32                 `protobuf:"varint,3,opt,name=Blue,json=blue,proto3" json:"Blue,omitempty"`
+	Red           uint32                 `protobuf:"varint,1,opt,name=Red,proto3" json:"Red,omitempty"`
+	Green         uint32                 `protobuf:"varint,2,opt,name=Green,proto3" json:"Green,omitempty"`
+	Blue          uint32                 `protobuf:"varint,3,opt,name=Blue,proto3" json:"Blue,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -926,7 +926,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TRgbColorSetting) GetBlue() 
 
 type TColorAnimationCapability_AnimationSetting_TTemperatureKColorSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	TemperatureK  uint64                 `protobuf:"varint,1,opt,name=TemperatureK,json=temperature_k,proto3" json:"TemperatureK,omitempty"`
+	TemperatureK  uint64                 `protobuf:"varint,1,opt,name=TemperatureK,proto3" json:"TemperatureK,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -970,7 +970,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TTemperatureKColorSetting) G
 
 type TColorAnimationCapability_AnimationSetting_TBackgroundSoundSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1014,7 +1014,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TBackgroundSoundSetting) Get
 
 type TColorAnimationCapability_AnimationSetting_TAutoPlaySetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1058,7 +1058,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TAutoPlaySetting) GetEnabled
 
 type TColorAnimationCapability_AnimationSetting_TAutoRunSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1102,7 +1102,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TAutoRunSetting) GetEnabled(
 
 type TColorAnimationCapability_AnimationSetting_TSpeedSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Value         float32                `protobuf:"fixed32,1,opt,name=Value,json=value,proto3" json:"Value,omitempty"`
+	Value         float32                `protobuf:"fixed32,1,opt,name=Value,proto3" json:"Value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1146,7 +1146,7 @@ func (x *TColorAnimationCapability_AnimationSetting_TSpeedSetting) GetValue() fl
 
 type TColorAnimationCapability_AnimationSetting_TVisualEffectSetting struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Effect        TColorAnimationCapability_EVisualEffect `protobuf:"varint,1,opt,name=Effect,json=effect,proto3,enum=NAlice.TColorAnimationCapability_EVisualEffect" json:"Effect,omitempty"`
+	Effect        TColorAnimationCapability_EVisualEffect `protobuf:"varint,1,opt,name=Effect,proto3,enum=NAlice.TColorAnimationCapability_EVisualEffect" json:"Effect,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1309,31 +1309,31 @@ type isTColorAnimationCapability_TAnimationParameters_TParameter_Parameter inter
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_ColorMusicAutoplayParameter struct {
-	ColorMusicAutoplayParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorMusicAutoplayParameter `protobuf:"bytes,2,opt,name=ColorMusicAutoplayParameter,json=color_music_autoplay,proto3,oneof"`
+	ColorMusicAutoplayParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorMusicAutoplayParameter `protobuf:"bytes,2,opt,name=ColorMusicAutoplayParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_ColorModelHSVParameter struct {
-	ColorModelHSVParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelHSVParameter `protobuf:"bytes,3,opt,name=ColorModelHSVParameter,json=color_model_hsv,proto3,oneof"`
+	ColorModelHSVParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelHSVParameter `protobuf:"bytes,3,opt,name=ColorModelHSVParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_ColorModelRGBParameter struct {
-	ColorModelRGBParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelRGBParameter `protobuf:"bytes,4,opt,name=ColorModelRGBParameter,json=color_model_rgb,proto3,oneof"`
+	ColorModelRGBParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelRGBParameter `protobuf:"bytes,4,opt,name=ColorModelRGBParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_ColorModelTemperatureKParameter struct {
-	ColorModelTemperatureKParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelTemperatureKParameter `protobuf:"bytes,5,opt,name=ColorModelTemperatureKParameter,json=color_model_temperature_k,proto3,oneof"`
+	ColorModelTemperatureKParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelTemperatureKParameter `protobuf:"bytes,5,opt,name=ColorModelTemperatureKParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_ColorMusicAutorunParameter struct {
-	ColorMusicAutorunParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorMusicAutorunParameter `protobuf:"bytes,6,opt,name=ColorMusicAutorunParameter,json=color_music_autorun,proto3,oneof"`
+	ColorMusicAutorunParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TColorMusicAutorunParameter `protobuf:"bytes,6,opt,name=ColorMusicAutorunParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_CustomSceneSpeedParameter struct {
-	CustomSceneSpeedParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneSpeedParameter `protobuf:"bytes,7,opt,name=CustomSceneSpeedParameter,json=custom_scene_speed,proto3,oneof"`
+	CustomSceneSpeedParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneSpeedParameter `protobuf:"bytes,7,opt,name=CustomSceneSpeedParameter,proto3,oneof"`
 }
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_CustomSceneVisualEffectParameter struct {
-	CustomSceneVisualEffectParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter `protobuf:"bytes,8,opt,name=CustomSceneVisualEffectParameter,json=custom_scene_visual_effect,proto3,oneof"`
+	CustomSceneVisualEffectParameter *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter `protobuf:"bytes,8,opt,name=CustomSceneVisualEffectParameter,proto3,oneof"`
 }
 
 func (*TColorAnimationCapability_TAnimationParameters_TParameter_ColorMusicAutoplayParameter) isTColorAnimationCapability_TAnimationParameters_TParameter_Parameter() {
@@ -1544,8 +1544,8 @@ func (*TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelRGBP
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelTemperatureKParameter struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           uint64                 `protobuf:"varint,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           uint64                 `protobuf:"varint,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Min           uint64                 `protobuf:"varint,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           uint64                 `protobuf:"varint,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1597,8 +1597,8 @@ func (x *TColorAnimationCapability_TAnimationParameters_TParameter_TColorModelTe
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneSpeedParameter struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Min           float32                `protobuf:"fixed32,1,opt,name=Min,json=min,proto3" json:"Min,omitempty"`
-	Max           float32                `protobuf:"fixed32,2,opt,name=Max,json=max,proto3" json:"Max,omitempty"`
+	Min           float32                `protobuf:"fixed32,1,opt,name=Min,proto3" json:"Min,omitempty"`
+	Max           float32                `protobuf:"fixed32,2,opt,name=Max,proto3" json:"Max,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1650,7 +1650,7 @@ func (x *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneS
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter struct {
 	state            protoimpl.MessageState                                                                                       `protogen:"open.v1"`
-	SupportedEffects []*TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter_TVisualEffect `protobuf:"bytes,1,rep,name=SupportedEffects,json=supported_effects,proto3" json:"SupportedEffects,omitempty"`
+	SupportedEffects []*TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter_TVisualEffect `protobuf:"bytes,1,rep,name=SupportedEffects,proto3" json:"SupportedEffects,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -1695,7 +1695,7 @@ func (x *TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneV
 
 type TColorAnimationCapability_TAnimationParameters_TParameter_TCustomSceneVisualEffectParameter_TVisualEffect struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Effect        TColorAnimationCapability_EVisualEffect `protobuf:"varint,1,opt,name=Effect,json=effect,proto3,enum=NAlice.TColorAnimationCapability_EVisualEffect" json:"Effect,omitempty"`
+	Effect        TColorAnimationCapability_EVisualEffect `protobuf:"varint,1,opt,name=Effect,proto3,enum=NAlice.TColorAnimationCapability_EVisualEffect" json:"Effect,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1742,114 +1742,108 @@ var File_alice_protos_endpoint_capabilities_color_animation_capability_proto pro
 
 const file_alice_protos_endpoint_capabilities_color_animation_capability_proto_rawDesc = "" +
 	"\n" +
-	"Calice/protos/endpoint/capabilities/color_animation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc92\n" +
-	"\x19TColorAnimationCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12]\n" +
+	"Calice/protos/endpoint/capabilities/color_animation/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a\"alice/protos/endpoint/common.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8c)\n" +
+	"\x19TColorAnimationCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12M\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2-.NAlice.TColorAnimationCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12I\n" +
-	"\x05State\x18\x03 \x01(\v2(.NAlice.TColorAnimationCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\xa5\f\n" +
-	"\x10AnimationSetting\x12q\n" +
-	"\bRgbColor\x18\x01 \x01(\v2C.NAlice.TColorAnimationCapability.AnimationSetting.TRgbColorSettingB\r\xaa\xdd\x1b\trgb_colorH\x00R\trgb_color\x12\x97\x01\n" +
-	"\x11TemperatureKColor\x18\x02 \x01(\v2L.NAlice.TColorAnimationCapability.AnimationSetting.TTemperatureKColorSettingB\x17\xaa\xdd\x1b\x13temperature_k_colorH\x00R\x13temperature_k_color\x12\x8d\x01\n" +
-	"\x0fBackgroundSound\x18\x03 \x01(\v2J.NAlice.TColorAnimationCapability.AnimationSetting.TBackgroundSoundSettingB\x14\xaa\xdd\x1b\x10background_soundH\x00R\x10background_sound\x12q\n" +
-	"\bAutoPlay\x18\x04 \x01(\v2C.NAlice.TColorAnimationCapability.AnimationSetting.TAutoPlaySettingB\r\xaa\xdd\x1b\tauto_playH\x00R\tauto_play\x12m\n" +
-	"\aAutoRun\x18\x05 \x01(\v2B.NAlice.TColorAnimationCapability.AnimationSetting.TAutoRunSettingB\f\xaa\xdd\x1b\bauto_runH\x00R\bauto_run\x12G\n" +
-	"\bHsvColor\x18\x06 \x01(\v2\x19.NAlice.THueAndSaturationB\r\xaa\xdd\x1b\thsv_colorH\x00R\thsv_color\x12c\n" +
-	"\x05Speed\x18\a \x01(\v2@.NAlice.TColorAnimationCapability.AnimationSetting.TSpeedSettingB\t\xaa\xdd\x1b\x05speedH\x00R\x05speed\x12\x81\x01\n" +
-	"\fVisualEffect\x18\b \x01(\v2G.NAlice.TColorAnimationCapability.AnimationSetting.TVisualEffectSettingB\x11\xaa\xdd\x1b\rvisual_effectH\x00R\rvisual_effect\x1ar\n" +
-	"\x10TRgbColorSetting\x12\x19\n" +
-	"\x03Red\x18\x01 \x01(\rB\a\xaa\xdd\x1b\x03redR\x03red\x12\x1f\n" +
-	"\x05Green\x18\x02 \x01(\rB\t\xaa\xdd\x1b\x05greenR\x05green\x12\x1c\n" +
-	"\x04Blue\x18\x03 \x01(\rB\b\xaa\xdd\x1b\x04blueR\x04blue:\x04\xa8\xdd\x1b\x04\x1aY\n" +
-	"\x19TTemperatureKColorSetting\x126\n" +
-	"\fTemperatureK\x18\x01 \x01(\x04B\x11\xaa\xdd\x1b\rtemperature_kR\rtemperature_k:\x04\xa8\xdd\x1b\x04\x1aF\n" +
-	"\x17TBackgroundSoundSetting\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a?\n" +
-	"\x10TAutoPlaySetting\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a>\n" +
-	"\x0fTAutoRunSetting\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a6\n" +
-	"\rTSpeedSetting\x12\x1f\n" +
-	"\x05Value\x18\x01 \x01(\x02B\t\xaa\xdd\x1b\x05valueR\x05value:\x04\xa8\xdd\x1b\x04\x1aq\n" +
-	"\x14TVisualEffectSetting\x12S\n" +
-	"\x06Effect\x18\x01 \x01(\x0e2/.NAlice.TColorAnimationCapability.EVisualEffectB\n" +
-	"\xaa\xdd\x1b\x06effectR\x06effect:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x17\n" +
-	"\bTSetting\x12\v\xaa\xdd\x1b\asetting\x1a\xc6\x03\n" +
-	"\x0fTAnimationState\x12N\n" +
-	"\x04Type\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12A\n" +
-	"\x0fLastAnimationId\x18\x02 \x01(\tB\x15\xaa\xdd\x1b\x11last_animation_idR\x11last_animation_id\x12p\n" +
-	"\x0eCommonSettings\x18\x03 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingB\x13\xaa\xdd\x1b\x0fcommon_settingsR\x0fcommon_settings\x12\\\n" +
+	"Parameters\x18\x02 \x01(\v2-.NAlice.TColorAnimationCapability.TParametersR\n" +
+	"Parameters\x12>\n" +
+	"\x05State\x18\x03 \x01(\v2(.NAlice.TColorAnimationCapability.TStateR\x05State\x1a\xe5\t\n" +
+	"\x10AnimationSetting\x12a\n" +
+	"\bRgbColor\x18\x01 \x01(\v2C.NAlice.TColorAnimationCapability.AnimationSetting.TRgbColorSettingH\x00R\bRgbColor\x12|\n" +
+	"\x11TemperatureKColor\x18\x02 \x01(\v2L.NAlice.TColorAnimationCapability.AnimationSetting.TTemperatureKColorSettingH\x00R\x11TemperatureKColor\x12v\n" +
+	"\x0fBackgroundSound\x18\x03 \x01(\v2J.NAlice.TColorAnimationCapability.AnimationSetting.TBackgroundSoundSettingH\x00R\x0fBackgroundSound\x12a\n" +
+	"\bAutoPlay\x18\x04 \x01(\v2C.NAlice.TColorAnimationCapability.AnimationSetting.TAutoPlaySettingH\x00R\bAutoPlay\x12^\n" +
+	"\aAutoRun\x18\x05 \x01(\v2B.NAlice.TColorAnimationCapability.AnimationSetting.TAutoRunSettingH\x00R\aAutoRun\x127\n" +
+	"\bHsvColor\x18\x06 \x01(\v2\x19.NAlice.THueAndSaturationH\x00R\bHsvColor\x12X\n" +
+	"\x05Speed\x18\a \x01(\v2@.NAlice.TColorAnimationCapability.AnimationSetting.TSpeedSettingH\x00R\x05Speed\x12m\n" +
+	"\fVisualEffect\x18\b \x01(\v2G.NAlice.TColorAnimationCapability.AnimationSetting.TVisualEffectSettingH\x00R\fVisualEffect\x1aN\n" +
+	"\x10TRgbColorSetting\x12\x10\n" +
+	"\x03Red\x18\x01 \x01(\rR\x03Red\x12\x14\n" +
+	"\x05Green\x18\x02 \x01(\rR\x05Green\x12\x12\n" +
+	"\x04Blue\x18\x03 \x01(\rR\x04Blue\x1a?\n" +
+	"\x19TTemperatureKColorSetting\x12\"\n" +
+	"\fTemperatureK\x18\x01 \x01(\x04R\fTemperatureK\x1a3\n" +
+	"\x17TBackgroundSoundSetting\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a,\n" +
+	"\x10TAutoPlaySetting\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a+\n" +
+	"\x0fTAutoRunSetting\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a%\n" +
+	"\rTSpeedSetting\x12\x14\n" +
+	"\x05Value\x18\x01 \x01(\x02R\x05Value\x1a_\n" +
+	"\x14TVisualEffectSetting\x12G\n" +
+	"\x06Effect\x18\x01 \x01(\x0e2/.NAlice.TColorAnimationCapability.EVisualEffectR\x06EffectB\n" +
 	"\n" +
-	"Animations\x18\x04 \x03(\v2,.NAlice.TColorAnimationCapability.TAnimationB\x0e\xaa\xdd\x1b\n" +
-	"animationsR\n" +
-	"animations\x12J\n" +
-	"\x12LastAnimationIndex\x18\x05 \x01(\rB\x18\xaa\xdd\x1b\x14last_animation_indexR\x14last_animation_index:\x04\xa8\xdd\x1b\x04\x1a\xe3\x01\n" +
+	"\bTSetting\x1a\xdb\x02\n" +
+	"\x0fTAnimationState\x12D\n" +
+	"\x04Type\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeR\x04Type\x12(\n" +
+	"\x0fLastAnimationId\x18\x02 \x01(\tR\x0fLastAnimationId\x12Z\n" +
+	"\x0eCommonSettings\x18\x03 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingR\x0eCommonSettings\x12L\n" +
 	"\n" +
-	"TAnimation\x123\n" +
-	"\vAnimationId\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fanimation_idR\fanimation_id\x12\\\n" +
-	"\bSettings\x18\x02 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12<\n" +
-	"\x0eAnimationIndex\x18\x03 \x01(\rB\x13\xaa\xdd\x1b\x0fanimation_indexR\x0fanimation_index:\x04\xa8\xdd\x1b\x04\x1a\xd1\x12\n" +
-	"\x14TAnimationParameters\x12N\n" +
-	"\x04Type\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12q\n" +
+	"Animations\x18\x04 \x03(\v2,.NAlice.TColorAnimationCapability.TAnimationR\n" +
+	"Animations\x12.\n" +
+	"\x12LastAnimationIndex\x18\x05 \x01(\rR\x12LastAnimationIndex\x1a\xa6\x01\n" +
 	"\n" +
-	"Parameters\x18\x02 \x03(\v2A.NAlice.TColorAnimationCapability.TAnimationParameters.TParameterB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12y\n" +
-	"\x13SupportedAnimations\x18\x03 \x03(\v2,.NAlice.TColorAnimationCapability.TAnimationB\x18\xaa\xdd\x1b\x14supported_animationsR\x14supported_animations\x1a\xf4\x0f\n" +
+	"TAnimation\x12 \n" +
+	"\vAnimationId\x18\x01 \x01(\tR\vAnimationId\x12N\n" +
+	"\bSettings\x18\x02 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingR\bSettings\x12&\n" +
+	"\x0eAnimationIndex\x18\x03 \x01(\rR\x0eAnimationIndex\x1a\xa8\x10\n" +
+	"\x14TAnimationParameters\x12D\n" +
+	"\x04Type\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeR\x04Type\x12a\n" +
 	"\n" +
-	"TParameter\x12\xb5\x01\n" +
-	"\x1bColorMusicAutoplayParameter\x18\x02 \x01(\v2^.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorMusicAutoplayParameterB\x18\xaa\xdd\x1b\x14color_music_autoplayH\x00R\x14color_music_autoplay\x12\xa1\x01\n" +
-	"\x16ColorModelHSVParameter\x18\x03 \x01(\v2Y.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelHSVParameterB\x13\xaa\xdd\x1b\x0fcolor_model_hsvH\x00R\x0fcolor_model_hsv\x12\xa1\x01\n" +
-	"\x16ColorModelRGBParameter\x18\x04 \x01(\v2Y.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelRGBParameterB\x13\xaa\xdd\x1b\x0fcolor_model_rgbH\x00R\x0fcolor_model_rgb\x12\xc7\x01\n" +
-	"\x1fColorModelTemperatureKParameter\x18\x05 \x01(\v2b.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelTemperatureKParameterB\x1d\xaa\xdd\x1b\x19color_model_temperature_kH\x00R\x19color_model_temperature_k\x12\xb1\x01\n" +
-	"\x1aColorMusicAutorunParameter\x18\x06 \x01(\v2].NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorMusicAutorunParameterB\x17\xaa\xdd\x1b\x13color_music_autorunH\x00R\x13color_music_autorun\x12\xad\x01\n" +
-	"\x19CustomSceneSpeedParameter\x18\a \x01(\v2\\.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneSpeedParameterB\x16\xaa\xdd\x1b\x12custom_scene_speedH\x00R\x12custom_scene_speed\x12\xcb\x01\n" +
-	" CustomSceneVisualEffectParameter\x18\b \x01(\v2c.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneVisualEffectParameterB\x1e\xaa\xdd\x1b\x1acustom_scene_visual_effectH\x00R\x1acustom_scene_visual_effect\x1a1\n" +
+	"Parameters\x18\x02 \x03(\v2A.NAlice.TColorAnimationCapability.TAnimationParameters.TParameterR\n" +
+	"Parameters\x12^\n" +
+	"\x13SupportedAnimations\x18\x03 \x03(\v2,.NAlice.TColorAnimationCapability.TAnimationR\x13SupportedAnimations\x1a\x86\x0e\n" +
+	"\n" +
+	"TParameter\x12\xa2\x01\n" +
+	"\x1bColorMusicAutoplayParameter\x18\x02 \x01(\v2^.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorMusicAutoplayParameterH\x00R\x1bColorMusicAutoplayParameter\x12\x93\x01\n" +
+	"\x16ColorModelHSVParameter\x18\x03 \x01(\v2Y.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelHSVParameterH\x00R\x16ColorModelHSVParameter\x12\x93\x01\n" +
+	"\x16ColorModelRGBParameter\x18\x04 \x01(\v2Y.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelRGBParameterH\x00R\x16ColorModelRGBParameter\x12\xae\x01\n" +
+	"\x1fColorModelTemperatureKParameter\x18\x05 \x01(\v2b.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorModelTemperatureKParameterH\x00R\x1fColorModelTemperatureKParameter\x12\x9f\x01\n" +
+	"\x1aColorMusicAutorunParameter\x18\x06 \x01(\v2].NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TColorMusicAutorunParameterH\x00R\x1aColorMusicAutorunParameter\x12\x9c\x01\n" +
+	"\x19CustomSceneSpeedParameter\x18\a \x01(\v2\\.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneSpeedParameterH\x00R\x19CustomSceneSpeedParameter\x12\xb1\x01\n" +
+	" CustomSceneVisualEffectParameter\x18\b \x01(\v2c.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneVisualEffectParameterH\x00R CustomSceneVisualEffectParameter\x1a1\n" +
 	"\x1dTSupportedAnimationsParameterJ\x04\b\x01\x10\x02R\n" +
 	"Animations\x1a\x1e\n" +
 	"\x1cTColorMusicAutoplayParameter\x1a\x1d\n" +
 	"\x1bTColorMusicAutorunParameter\x1a\x19\n" +
 	"\x17TColorModelHSVParameter\x1a\x19\n" +
-	"\x17TColorModelRGBParameter\x1aX\n" +
-	" TColorModelTemperatureKParameter\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x04B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x04B\a\xaa\xdd\x1b\x03maxR\x03max\x1aX\n" +
-	"\x1aTCustomSceneSpeedParameter\x12\x19\n" +
-	"\x03Min\x18\x01 \x01(\x02B\a\xaa\xdd\x1b\x03minR\x03min\x12\x19\n" +
-	"\x03Max\x18\x02 \x01(\x02B\a\xaa\xdd\x1b\x03maxR\x03max:\x04\xa8\xdd\x1b\x04\x1a\xcd\x02\n" +
-	"!TCustomSceneVisualEffectParameter\x12\xb5\x01\n" +
-	"\x10SupportedEffects\x18\x01 \x03(\v2q.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneVisualEffectParameter.TVisualEffectB\x15\xaa\xdd\x1b\x11supported_effectsR\x11supported_effects\x1aj\n" +
-	"\rTVisualEffect\x12S\n" +
-	"\x06Effect\x18\x01 \x01(\x0e2/.NAlice.TColorAnimationCapability.EVisualEffectB\n" +
-	"\xaa\xdd\x1b\x06effectR\x06effect:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x1a\n" +
-	"\tParameter\x12\r\xaa\xdd\x1b\tparameterJ\x04\b\x01\x10\x02R\x1cSupportedAnimationsParameter:\x04\xa8\xdd\x1b\x04\x1a\x99\x01\n" +
-	"\vTParameters\x12\x83\x01\n" +
-	"\x13AnimationParameters\x18\x01 \x03(\v26.NAlice.TColorAnimationCapability.TAnimationParametersB\x18\xaa\xdd\x1b\x14animation_parametersR\x14animation_parameters:\x04\xa8\xdd\x1b\x04\x1a\x87\x02\n" +
-	"\x06TState\x12\x82\x01\n" +
-	"\x14CurrentAnimationType\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeB\x1a\xaa\xdd\x1b\x16current_animation_typeR\x16current_animation_type\x12r\n" +
-	"\x0fAnimationStates\x18\x02 \x03(\v21.NAlice.TColorAnimationCapability.TAnimationStateB\x14\xaa\xdd\x1b\x10animation_statesR\x10animation_states:\x04\xa8\xdd\x1b\x04\x1a\xca\x02\n" +
-	"'TSetAnimationTypeCommonSettingDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12k\n" +
-	"\rAnimationType\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeB\x12\xaa\xdd\x1b\x0eanimation_typeR\x0eanimation_type\x12Y\n" +
-	"\aSetting\x18\x02 \x01(\v22.NAlice.TColorAnimationCapability.AnimationSettingB\v\xaa\xdd\x1b\asettingR\asetting:8\x92\x82\x19+set_animation_type_common_setting_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x99\x04\x1a\x81\x04\n" +
-	"$TSetAnimationColorAnimationDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x123\n" +
-	"\vAnimationId\x18\x01 \x01(\tB\x10\xaa\xdd\x1b\fanimation_idR\fanimation_id\x12.\n" +
+	"\x17TColorModelRGBParameter\x1aF\n" +
+	" TColorModelTemperatureKParameter\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x04R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x04R\x03Max\x1a@\n" +
+	"\x1aTCustomSceneSpeedParameter\x12\x10\n" +
+	"\x03Min\x18\x01 \x01(\x02R\x03Min\x12\x10\n" +
+	"\x03Max\x18\x02 \x01(\x02R\x03Max\x1a\x9d\x02\n" +
+	"!TCustomSceneVisualEffectParameter\x12\x9d\x01\n" +
+	"\x10SupportedEffects\x18\x01 \x03(\v2q.NAlice.TColorAnimationCapability.TAnimationParameters.TParameter.TCustomSceneVisualEffectParameter.TVisualEffectR\x10SupportedEffects\x1aX\n" +
+	"\rTVisualEffect\x12G\n" +
+	"\x06Effect\x18\x01 \x01(\x0e2/.NAlice.TColorAnimationCapability.EVisualEffectR\x06EffectB\v\n" +
+	"\tParameterJ\x04\b\x01\x10\x02R\x1cSupportedAnimationsParameter\x1aw\n" +
+	"\vTParameters\x12h\n" +
+	"\x13AnimationParameters\x18\x01 \x03(\v26.NAlice.TColorAnimationCapability.TAnimationParametersR\x13AnimationParameters\x1a\xcb\x01\n" +
+	"\x06TState\x12d\n" +
+	"\x14CurrentAnimationType\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeR\x14CurrentAnimationType\x12[\n" +
+	"\x0fAnimationStates\x18\x02 \x03(\v21.NAlice.TColorAnimationCapability.TAnimationStateR\x0fAnimationStates\x1a\xe4\x01\n" +
+	"'TSetAnimationTypeCommonSettingDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12V\n" +
+	"\rAnimationType\x18\x01 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeR\rAnimationType\x12L\n" +
+	"\aSetting\x18\x02 \x01(\v22.NAlice.TColorAnimationCapability.AnimationSettingR\aSetting\x1a\xe5\x02\n" +
+	"$TSetAnimationColorAnimationDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12 \n" +
+	"\vAnimationId\x18\x01 \x01(\tR\vAnimationId\x12\x1e\n" +
 	"\n" +
-	"AutoEnable\x18\x02 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"autoenableR\n" +
-	"autoenable\x12\\\n" +
-	"\bSettings\x18\x03 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingB\f\xaa\xdd\x1b\bsettingsR\bsettings\x12k\n" +
-	"\rAnimationType\x18\x05 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeB\x12\xaa\xdd\x1b\x0eanimation_typeR\x0eanimation_type\x12A\n" +
-	"\x0eAnimationIndex\x18\x04 \x01(\rB\x13\xaa\xdd\x1b\x0fanimation_indexH\x00R\x0fanimation_index\x88\x01\x01:4\x92\x82\x19'set_animation_color_animation_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x82\x04B\x11\n" +
-	"\x0f_AnimationIndex\x1aq\n" +
-	"\x11TUpdateStateEvent\x12Q\n" +
+	"AutoEnable\x18\x02 \x01(\bR\n" +
+	"AutoEnable\x12N\n" +
+	"\bSettings\x18\x03 \x03(\v22.NAlice.TColorAnimationCapability.AnimationSettingR\bSettings\x12V\n" +
+	"\rAnimationType\x18\x05 \x01(\x0e20.NAlice.TColorAnimationCapability.EAnimationTypeR\rAnimationType\x12+\n" +
+	"\x0eAnimationIndex\x18\x04 \x01(\rH\x00R\x0eAnimationIndex\x88\x01\x01B\x11\n" +
+	"\x0f_AnimationIndex\x1aV\n" +
+	"\x11TUpdateStateEvent\x12A\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2!.NAlice.TColorAnimationCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x85\x01\"V\n" +
+	"Capability\x18\x01 \x01(\v2!.NAlice.TColorAnimationCapabilityR\n" +
+	"Capability\"V\n" +
 	"\rEVisualEffect\x12\v\n" +
 	"\aUnknown\x10\x00\x12\t\n" +
 	"\x05Pulse\x10\x01\x12\n" +
@@ -1866,8 +1860,9 @@ const file_alice_protos_endpoint_capabilities_color_animation_capability_proto_r
 	"\x05Scene\x10\x02\x12\x0e\n" +
 	"\n" +
 	"ColorMusic\x10\x03\x12\x0f\n" +
-	"\vCustomScene\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc8\x01B\xa3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dColorAnimationCapabilityProtoZTa.yandex-team.ru/alice/protos/endpoint/capabilities/color_animation;coloranimationpbb\x06proto3"
+	"\vCustomScene\x10\x04B\xb9\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zbgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/color_animation\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_color_animation_capability_proto_rawDescOnce sync.Once

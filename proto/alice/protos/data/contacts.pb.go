@@ -661,8 +661,8 @@ const file_alice_protos_data_contacts_proto_rawDesc = "" +
 	"SecondName\x18\x06 \x01(\tB\x13\xaa\xdd\x1b\vsecond_name\xf8\x91*\x03R\vsecond_name:\x04\xa8\xdd\x1b\x04\x1a\xcb\x01\n" +
 	"\fTContactInfo\x12\x8a\x01\n" +
 	"\x13TelegramContactInfo\x18\x01 \x01(\v29.NAlice.NData.TUpdateContactsRequest.TTelegramContactInfoB\x19\xaa\xdd\x1b\x15telegram_contact_infoH\x00R\x15telegram_contact_info:\x04\xa8\xdd\x1b\x04B(\n" +
-	"\vContactInfo\x12\x19\xaa\xdd\x1b\x15optional_contact_info:\x04\xa8\xdd\x1b\x04BA\n" +
-	"\x1bru.yandex.alice.protos.dataZ\"a.yandex-team.ru/alice/protos/datab\x06proto3"
+	"\vContactInfo\x12\x19\xaa\xdd\x1b\x15optional_contact_info:\x04\xa8\xdd\x1b\x04B`\n" +
+	"\x1bru.yandex.alice.protos.dataZAgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/datab\x06proto3"
 
 var (
 	file_alice_protos_data_contacts_proto_rawDescOnce sync.Once

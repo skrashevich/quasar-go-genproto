@@ -236,8 +236,8 @@ const file_yandex_io_protos_fast_command_proto_rawDesc = "" +
 	"TVScreenOn\x10\x06\x12\x10\n" +
 	"\fActiveScreen\x10\a\x12\x11\n" +
 	"\rContentResume\x10\b\x12\v\n" +
-	"\aUnknown\x10\tB-\n" +
-	"\x19ru.yandex.quasar.protobufB\x10FastCommandProto"
+	"\aUnknown\x10\tB\xb7\x01\n" +
+	"\x10com.quasar.protoB\x10FastCommandProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/yandex_io/protos\xa2\x02\x03QPX\xaa\x02\fQuasar.Proto\xca\x02\fQuasar\\Proto\xe2\x02\x18Quasar\\Proto\\GPBMetadata\xea\x02\rQuasar::Proto"
 
 var (
 	file_yandex_io_protos_fast_command_proto_rawDescOnce sync.Once

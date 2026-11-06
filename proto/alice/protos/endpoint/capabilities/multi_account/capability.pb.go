@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/multi_account/capability.proto
 
-package multiaccountpb
+package multi_account
 
 import (
 	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/library/censor/protos"
@@ -143,9 +143,9 @@ func (TMultiAccountCapability_TOpenAccountListDirective_ESource) EnumDescriptor(
 
 type TMultiAccountCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TMultiAccountCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TMultiAccountCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TMultiAccountCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TMultiAccountCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -202,9 +202,8 @@ func (x *TMultiAccountCapability) GetState() *TMultiAccountCapability_TState {
 }
 
 type TMultiAccountCapability_TParameters struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/multi_account/capability.proto.
-	SupportsAddAccountDirective bool `protobuf:"varint,1,opt,name=SupportsAddAccountDirective,json=supports_add_account_directive,proto3" json:"SupportsAddAccountDirective,omitempty"`
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	SupportsAddAccountDirective bool                   `protobuf:"varint,1,opt,name=SupportsAddAccountDirective,proto3" json:"SupportsAddAccountDirective,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -239,7 +238,6 @@ func (*TMultiAccountCapability_TParameters) Descriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_multi_account_capability_proto_rawDescGZIP(), []int{0, 0}
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/multi_account/capability.proto.
 func (x *TMultiAccountCapability_TParameters) GetSupportsAddAccountDirective() bool {
 	if x != nil {
 		return x.SupportsAddAccountDirective
@@ -249,11 +247,11 @@ func (x *TMultiAccountCapability_TParameters) GetSupportsAddAccountDirective() b
 
 type TMultiAccountCapability_TAccount struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	IsActive      bool                   `protobuf:"varint,3,opt,name=IsActive,json=is_active,proto3" json:"IsActive,omitempty"`
-	IsChild       bool                   `protobuf:"varint,4,opt,name=IsChild,json=is_child,proto3" json:"IsChild,omitempty"`
-	IsOwner       bool                   `protobuf:"varint,5,opt,name=IsOwner,json=is_owner,proto3" json:"IsOwner,omitempty"`
-	PersonId      string                 `protobuf:"bytes,6,opt,name=PersonId,json=person_id,proto3" json:"PersonId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	IsActive      bool                   `protobuf:"varint,3,opt,name=IsActive,proto3" json:"IsActive,omitempty"`
+	IsChild       bool                   `protobuf:"varint,4,opt,name=IsChild,proto3" json:"IsChild,omitempty"`
+	IsOwner       bool                   `protobuf:"varint,5,opt,name=IsOwner,proto3" json:"IsOwner,omitempty"`
+	PersonId      string                 `protobuf:"bytes,6,opt,name=PersonId,proto3" json:"PersonId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -325,9 +323,9 @@ func (x *TMultiAccountCapability_TAccount) GetPersonId() string {
 
 type TMultiAccountCapability_TState struct {
 	state                          protoimpl.MessageState                             `protogen:"open.v1"`
-	Accounts                       []*TMultiAccountCapability_TAccount                `protobuf:"bytes,1,rep,name=Accounts,json=accounts,proto3" json:"Accounts,omitempty"`
-	ChildAccountSwitchBlockEnabled bool                                               `protobuf:"varint,2,opt,name=ChildAccountSwitchBlockEnabled,json=child_account_switch_block_enabled,proto3" json:"ChildAccountSwitchBlockEnabled,omitempty"`
-	ParentalControlsSettings       *TMultiAccountCapability_TParentalControlsSettings `protobuf:"bytes,3,opt,name=ParentalControlsSettings,json=parental_controls_settings,proto3" json:"ParentalControlsSettings,omitempty"`
+	Accounts                       []*TMultiAccountCapability_TAccount                `protobuf:"bytes,1,rep,name=Accounts,proto3" json:"Accounts,omitempty"`
+	ChildAccountSwitchBlockEnabled bool                                               `protobuf:"varint,2,opt,name=ChildAccountSwitchBlockEnabled,proto3" json:"ChildAccountSwitchBlockEnabled,omitempty"`
+	ParentalControlsSettings       *TMultiAccountCapability_TParentalControlsSettings `protobuf:"bytes,3,opt,name=ParentalControlsSettings,proto3" json:"ParentalControlsSettings,omitempty"`
 	unknownFields                  protoimpl.UnknownFields
 	sizeCache                      protoimpl.SizeCache
 }
@@ -385,13 +383,13 @@ func (x *TMultiAccountCapability_TState) GetParentalControlsSettings() *TMultiAc
 
 type TMultiAccountCapability_TParentalControlsSettings struct {
 	state                        protoimpl.MessageState `protogen:"open.v1"`
-	Enabled                      bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
-	AppWhiteListEnabled          bool                   `protobuf:"varint,2,opt,name=AppWhiteListEnabled,json=app_whitelist_enabled,proto3" json:"AppWhiteListEnabled,omitempty"`
-	AppWhitelistPackageNames     []string               `protobuf:"bytes,3,rep,name=AppWhitelistPackageNames,json=app_whitelist_package_names,proto3" json:"AppWhitelistPackageNames,omitempty"`
-	VideoSearchProhibited        bool                   `protobuf:"varint,4,opt,name=VideoSearchProhibited,json=video_search_prohibited,proto3" json:"VideoSearchProhibited,omitempty"`
-	YoutubeProhibited            bool                   `protobuf:"varint,5,opt,name=YoutubeProhibited,json=youtube_prohibited,proto3" json:"YoutubeProhibited,omitempty"`
-	BrowserProhibited            bool                   `protobuf:"varint,6,opt,name=BrowserProhibited,json=browser_prohibited,proto3" json:"BrowserProhibited,omitempty"`
-	HistoryRecordTrackingEnabled bool                   `protobuf:"varint,7,opt,name=HistoryRecordTrackingEnabled,json=history_record_tracking_enabled,proto3" json:"HistoryRecordTrackingEnabled,omitempty"`
+	Enabled                      bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
+	AppWhiteListEnabled          bool                   `protobuf:"varint,2,opt,name=AppWhiteListEnabled,proto3" json:"AppWhiteListEnabled,omitempty"`
+	AppWhitelistPackageNames     []string               `protobuf:"bytes,3,rep,name=AppWhitelistPackageNames,proto3" json:"AppWhitelistPackageNames,omitempty"`
+	VideoSearchProhibited        bool                   `protobuf:"varint,4,opt,name=VideoSearchProhibited,proto3" json:"VideoSearchProhibited,omitempty"`
+	YoutubeProhibited            bool                   `protobuf:"varint,5,opt,name=YoutubeProhibited,proto3" json:"YoutubeProhibited,omitempty"`
+	BrowserProhibited            bool                   `protobuf:"varint,6,opt,name=BrowserProhibited,proto3" json:"BrowserProhibited,omitempty"`
+	HistoryRecordTrackingEnabled bool                   `protobuf:"varint,7,opt,name=HistoryRecordTrackingEnabled,proto3" json:"HistoryRecordTrackingEnabled,omitempty"`
 	unknownFields                protoimpl.UnknownFields
 	sizeCache                    protoimpl.SizeCache
 }
@@ -477,9 +475,9 @@ func (x *TMultiAccountCapability_TParentalControlsSettings) GetHistoryRecordTrac
 
 type TMultiAccountCapability_TSwitchAccountDirective struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	SelectedPersonId string                 `protobuf:"bytes,1,opt,name=SelectedPersonId,json=selected_person_id,proto3" json:"SelectedPersonId,omitempty"`
-	Name             string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ShouldCheckPIN   bool                   `protobuf:"varint,3,opt,name=ShouldCheckPIN,json=should_check_pin,proto3" json:"ShouldCheckPIN,omitempty"`
+	SelectedPersonId string                 `protobuf:"bytes,1,opt,name=SelectedPersonId,proto3" json:"SelectedPersonId,omitempty"`
+	Name             string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	ShouldCheckPIN   bool                   `protobuf:"varint,3,opt,name=ShouldCheckPIN,proto3" json:"ShouldCheckPIN,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -537,8 +535,8 @@ func (x *TMultiAccountCapability_TSwitchAccountDirective) GetShouldCheckPIN() bo
 
 type TMultiAccountCapability_TOpenAccountListDirective struct {
 	state         protoimpl.MessageState                                    `protogen:"open.v1"`
-	Name          string                                                    `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Source        TMultiAccountCapability_TOpenAccountListDirective_ESource `protobuf:"varint,2,opt,name=Source,json=source,proto3,enum=NAlice.TMultiAccountCapability_TOpenAccountListDirective_ESource" json:"Source,omitempty"`
+	Name          string                                                    `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Source        TMultiAccountCapability_TOpenAccountListDirective_ESource `protobuf:"varint,2,opt,name=Source,proto3,enum=NAlice.TMultiAccountCapability_TOpenAccountListDirective_ESource" json:"Source,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -589,8 +587,8 @@ func (x *TMultiAccountCapability_TOpenAccountListDirective) GetSource() TMultiAc
 
 type TMultiAccountCapability_TRefreshAccountDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	PersonId      string                 `protobuf:"bytes,2,opt,name=PersonId,json=person_id,proto3" json:"PersonId,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	PersonId      string                 `protobuf:"bytes,2,opt,name=PersonId,proto3" json:"PersonId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -641,13 +639,13 @@ func (x *TMultiAccountCapability_TRefreshAccountDirective) GetPersonId() string 
 
 type TMultiAccountCapability_TAddAccountDirective struct {
 	state               protoimpl.MessageState                 `protogen:"open.v1"`
-	Name                string                                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	EncryptedCode       string                                 `protobuf:"bytes,2,opt,name=EncryptedCode,json=encrypted_code,proto3" json:"EncryptedCode,omitempty"`
-	Signature           string                                 `protobuf:"bytes,3,opt,name=Signature,json=signature,proto3" json:"Signature,omitempty"`
-	EncryptedSessionKey string                                 `protobuf:"bytes,4,opt,name=EncryptedSessionKey,json=encrypted_session_key,proto3" json:"EncryptedSessionKey,omitempty"`
-	Puid                string                                 `protobuf:"bytes,5,opt,name=Puid,json=puid,proto3" json:"Puid,omitempty"`
-	OnSuccess           *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,6,opt,name=OnSuccess,json=on_success,proto3" json:"OnSuccess,omitempty"`
-	OnFail              *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,7,opt,name=OnFail,json=on_fail,proto3" json:"OnFail,omitempty"`
+	Name                string                                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	EncryptedCode       string                                 `protobuf:"bytes,2,opt,name=EncryptedCode,proto3" json:"EncryptedCode,omitempty"`
+	Signature           string                                 `protobuf:"bytes,3,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	EncryptedSessionKey string                                 `protobuf:"bytes,4,opt,name=EncryptedSessionKey,proto3" json:"EncryptedSessionKey,omitempty"`
+	Puid                string                                 `protobuf:"bytes,5,opt,name=Puid,proto3" json:"Puid,omitempty"`
+	OnSuccess           *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,6,opt,name=OnSuccess,proto3" json:"OnSuccess,omitempty"`
+	OnFail              *typed_callbacks.TTypedCallbackRequest `protobuf:"bytes,7,opt,name=OnFail,proto3" json:"OnFail,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -733,7 +731,7 @@ func (x *TMultiAccountCapability_TAddAccountDirective) GetOnFail() *typed_callba
 
 type TMultiAccountCapability_TLocalAddAccountDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=Code,json=code,proto3" json:"Code,omitempty"`
+	Code          string                 `protobuf:"bytes,1,opt,name=Code,proto3" json:"Code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -777,7 +775,7 @@ func (x *TMultiAccountCapability_TLocalAddAccountDirective) GetCode() string {
 
 type TMultiAccountCapability_TExpandAccountListDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -821,7 +819,7 @@ func (x *TMultiAccountCapability_TExpandAccountListDirective) GetName() string {
 
 type TMultiAccountCapability_TShowLoginScreenDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -865,8 +863,8 @@ func (x *TMultiAccountCapability_TShowLoginScreenDirective) GetName() string {
 
 type TMultiAccountCapability_TAuthorizePupaDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	PupaPuid      string                 `protobuf:"bytes,1,opt,name=PupaPuid,json=pupa_puid,proto3" json:"PupaPuid,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	PupaPuid      string                 `protobuf:"bytes,1,opt,name=PupaPuid,proto3" json:"PupaPuid,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -917,8 +915,8 @@ func (x *TMultiAccountCapability_TAuthorizePupaDirective) GetName() string {
 
 type TMultiAccountCapability_TAddGuestUserDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	JwtToken      string                 `protobuf:"bytes,2,opt,name=JwtToken,json=jwt_token,proto3" json:"JwtToken,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	JwtToken      string                 `protobuf:"bytes,2,opt,name=JwtToken,proto3" json:"JwtToken,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -968,11 +966,10 @@ func (x *TMultiAccountCapability_TAddGuestUserDirective) GetJwtToken() string {
 }
 
 type TMultiAccountCapability_TClearGuestUserDirective struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Name  string                 `protobuf:"bytes,1,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/multi_account/capability.proto.
-	UserId        string `protobuf:"bytes,2,opt,name=UserId,json=user_id,proto3" json:"UserId,omitempty"`
-	OwnerId       string `protobuf:"bytes,3,opt,name=OwnerId,json=owner_id,proto3" json:"OwnerId,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=UserId,proto3" json:"UserId,omitempty"`
+	OwnerId       string                 `protobuf:"bytes,3,opt,name=OwnerId,proto3" json:"OwnerId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1014,7 +1011,6 @@ func (x *TMultiAccountCapability_TClearGuestUserDirective) GetName() string {
 	return ""
 }
 
-// Deprecated: Marked as deprecated in alice/protos/endpoint/capabilities/multi_account/capability.proto.
 func (x *TMultiAccountCapability_TClearGuestUserDirective) GetUserId() string {
 	if x != nil {
 		return x.UserId
@@ -1353,74 +1349,70 @@ var File_alice_protos_endpoint_capabilities_multi_account_capability_proto proto
 
 const file_alice_protos_endpoint_capabilities_multi_account_capability_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/endpoint/capabilities/multi_account/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x9d$\n" +
-	"\x17TMultiAccountCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Aalice/protos/endpoint/capabilities/multi_account/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a+alice/library/censor/protos/extension.proto\x1a/alice/library/yt/extensions/alice_options.proto\x1a=alice/protos/api/typed_callbacks/typed_callback_request.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa6\x1a\n" +
+	"\x17TMultiAccountCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TMultiAccountCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TMultiAccountCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a~\n" +
-	"\vTParameters\x12i\n" +
-	"\x1bSupportsAddAccountDirective\x18\x01 \x01(\bB$\xaa\xdd\x1b\x1esupports_add_account_directive\x18\x01R\x1esupports_add_account_directive:\x04\xa8\xdd\x1b\x04\x1a\xe4\x01\n" +
-	"\bTAccount\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bIsActive\x18\x03 \x01(\bB\r\xaa\xdd\x1b\tis_activeR\tis_active\x12'\n" +
-	"\aIsChild\x18\x04 \x01(\bB\f\xaa\xdd\x1b\bis_childR\bis_child\x12'\n" +
-	"\aIsOwner\x18\x05 \x01(\bB\f\xaa\xdd\x1b\bis_ownerR\bis_owner\x12*\n" +
-	"\bPersonId\x18\x06 \x01(\tB\r\xaa\xdd\x1b\tperson_idR\tperson_id:\x04\xa8\xdd\x1b\x04J\x04\b\x02\x10\x03R\x04Puid\x1a\xf0\x02\n" +
-	"\x06TState\x12R\n" +
-	"\bAccounts\x18\x01 \x03(\v2(.NAlice.TMultiAccountCapability.TAccountB\f\xaa\xdd\x1b\baccountsR\baccounts\x12r\n" +
-	"\x1eChildAccountSwitchBlockEnabled\x18\x02 \x01(\bB&\xaa\xdd\x1b\"child_account_switch_block_enabledR\"child_account_switch_block_enabled\x12\x97\x01\n" +
-	"\x18ParentalControlsSettings\x18\x03 \x01(\v29.NAlice.TMultiAccountCapability.TParentalControlsSettingsB\x1e\xaa\xdd\x1b\x1aparental_controls_settingsR\x1aparental_controls_settings:\x04\xa8\xdd\x1b\x04\x1a\xc6\x04\n" +
-	"\x19TParentalControlsSettings\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled\x12M\n" +
-	"\x13AppWhiteListEnabled\x18\x02 \x01(\bB\x19\xaa\xdd\x1b\x15app_whitelist_enabledR\x15app_whitelist_enabled\x12^\n" +
-	"\x18AppWhitelistPackageNames\x18\x03 \x03(\tB\x1f\xaa\xdd\x1b\x1bapp_whitelist_package_namesR\x1bapp_whitelist_package_names\x12S\n" +
-	"\x15VideoSearchProhibited\x18\x04 \x01(\bB\x1b\xaa\xdd\x1b\x17video_search_prohibitedR\x17video_search_prohibited\x12E\n" +
-	"\x11YoutubeProhibited\x18\x05 \x01(\bB\x16\xaa\xdd\x1b\x12youtube_prohibitedR\x12youtube_prohibited\x12E\n" +
-	"\x11BrowserProhibited\x18\x06 \x01(\bB\x16\xaa\xdd\x1b\x12browser_prohibitedR\x12browser_prohibited\x12j\n" +
-	"\x1cHistoryRecordTrackingEnabled\x18\a \x01(\bB#\xaa\xdd\x1b\x1fhistory_record_tracking_enabledR\x1fhistory_record_tracking_enabled:\x04\xa8\xdd\x1b\x04\x1a\xe4\x01\n" +
-	"\x17TSwitchAccountDirective\x12D\n" +
-	"\x10SelectedPersonId\x18\x01 \x01(\tB\x16\xaa\xdd\x1b\x12selected_person_idR\x12selected_person_id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12>\n" +
-	"\x0eShouldCheckPIN\x18\x03 \x01(\bB\x14\xaa\xdd\x1b\x10should_check_pinR\x10should_check_pin:%\x92\x82\x19\x18switch_account_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xad\x01\x1a\xf9\x01\n" +
-	"\x19TOpenAccountListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12e\n" +
-	"\x06Source\x18\x02 \x01(\x0e2A.NAlice.TMultiAccountCapability.TOpenAccountListDirective.ESourceB\n" +
-	"\xaa\xdd\x1b\x06sourceR\x06source\"-\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TMultiAccountCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TMultiAccountCapability.TStateR\x05State\x1aO\n" +
+	"\vTParameters\x12@\n" +
+	"\x1bSupportsAddAccountDirective\x18\x01 \x01(\bR\x1bSupportsAddAccountDirective\x1a\x96\x01\n" +
+	"\bTAccount\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1a\n" +
+	"\bIsActive\x18\x03 \x01(\bR\bIsActive\x12\x18\n" +
+	"\aIsChild\x18\x04 \x01(\bR\aIsChild\x12\x18\n" +
+	"\aIsOwner\x18\x05 \x01(\bR\aIsOwner\x12\x1a\n" +
+	"\bPersonId\x18\x06 \x01(\tR\bPersonIdJ\x04\b\x02\x10\x03R\x04Puid\x1a\x8d\x02\n" +
+	"\x06TState\x12D\n" +
+	"\bAccounts\x18\x01 \x03(\v2(.NAlice.TMultiAccountCapability.TAccountR\bAccounts\x12F\n" +
+	"\x1eChildAccountSwitchBlockEnabled\x18\x02 \x01(\bR\x1eChildAccountSwitchBlockEnabled\x12u\n" +
+	"\x18ParentalControlsSettings\x18\x03 \x01(\v29.NAlice.TMultiAccountCapability.TParentalControlsSettingsR\x18ParentalControlsSettings\x1a\xf9\x02\n" +
+	"\x19TParentalControlsSettings\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x120\n" +
+	"\x13AppWhiteListEnabled\x18\x02 \x01(\bR\x13AppWhiteListEnabled\x12:\n" +
+	"\x18AppWhitelistPackageNames\x18\x03 \x03(\tR\x18AppWhitelistPackageNames\x124\n" +
+	"\x15VideoSearchProhibited\x18\x04 \x01(\bR\x15VideoSearchProhibited\x12,\n" +
+	"\x11YoutubeProhibited\x18\x05 \x01(\bR\x11YoutubeProhibited\x12,\n" +
+	"\x11BrowserProhibited\x18\x06 \x01(\bR\x11BrowserProhibited\x12B\n" +
+	"\x1cHistoryRecordTrackingEnabled\x18\a \x01(\bR\x1cHistoryRecordTrackingEnabled\x1a\x81\x01\n" +
+	"\x17TSwitchAccountDirective\x12*\n" +
+	"\x10SelectedPersonId\x18\x01 \x01(\tR\x10SelectedPersonId\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12&\n" +
+	"\x0eShouldCheckPIN\x18\x03 \x01(\bR\x0eShouldCheckPIN\x1a\xb9\x01\n" +
+	"\x19TOpenAccountListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12Y\n" +
+	"\x06Source\x18\x02 \x01(\x0e2A.NAlice.TMultiAccountCapability.TOpenAccountListDirective.ESourceR\x06Source\"-\n" +
 	"\aESource\x12\r\n" +
 	"\tUndefined\x10\x00\x12\x13\n" +
-	"\x0fVoiceEnrollment\x10\x01:(\x92\x82\x19\x1bopen_account_list_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xbc\x01\x1a\x8c\x01\n" +
-	"\x18TRefreshAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bPersonId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tperson_idR\tperson_id:&\x92\x82\x19\x19refresh_account_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xee\x01\x1a\xe0\x03\n" +
-	"\x14TAddAccountDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12A\n" +
-	"\rEncryptedCode\x18\x02 \x01(\tB\x1a\xaa\xdd\x1b\x0eencrypted_code\xa8\x8d'\x02\xf8\x91*\x03R\x0eencrypted_code\x123\n" +
-	"\tSignature\x18\x03 \x01(\tB\x15\xaa\xdd\x1b\tsignature\xa8\x8d'\x02\xf8\x91*\x03R\tsignature\x12U\n" +
-	"\x13EncryptedSessionKey\x18\x04 \x01(\tB!\xaa\xdd\x1b\x15encrypted_session_key\xa8\x8d'\x02\xf8\x91*\x03R\x15encrypted_session_key\x12$\n" +
-	"\x04Puid\x18\x05 \x01(\tB\x10\xaa\xdd\x1b\x04puid\xa8\x8d'\x02\xf8\x91*\x03R\x04puid\x12L\n" +
-	"\tOnSuccess\x18\x06 \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\x0e\xaa\xdd\x1b\n" +
-	"on_successR\n" +
-	"on_success\x12C\n" +
-	"\x06OnFail\x18\a \x01(\v2\x1d.NAlice.TTypedCallbackRequestB\v\xaa\xdd\x1b\aon_failR\aon_fail:\"\x92\x82\x19\x15add_account_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x8f\x02\x1ac\n" +
-	"\x19TLocalAddAccountDirective\x12\x1c\n" +
-	"\x04Code\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04codeR\x04code:(\x92\x82\x19\x1blocal_add_account_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x96\x02\x1ag\n" +
-	"\x1bTExpandAccountListDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:*\x92\x82\x19\x1dexpand_account_list_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xaa\x02\x1ac\n" +
-	"\x19TShowLoginScreenDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:(\x92\x82\x19\x1bshow_login_screen_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xab\x02\x1a\x92\x01\n" +
-	"\x17TAuthorizePupaDirective\x122\n" +
-	"\bPupaPuid\x18\x01 \x01(\tB\x15\xaa\xdd\x1b\tpupa_puid\xa8\x8d'\x02\xf8\x91*\x03R\tpupa_puid\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:%\x92\x82\x19\x18authorize_pupa_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xac\x02\x1a\x89\x01\n" +
-	"\x16TAddGuestUserDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bJwtToken\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tjwt_tokenR\tjwt_token:%\x92\x82\x19\x18add_guest_user_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x96\x04\x1a\xb2\x01\n" +
-	"\x18TClearGuestUserDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12&\n" +
-	"\x06UserId\x18\x02 \x01(\tB\r\xaa\xdd\x1b\auser_id\x18\x01R\auser_id\x12'\n" +
-	"\aOwnerId\x18\x03 \x01(\tB\f\xaa\xdd\x1b\bowner_idR\bowner_id:'\x92\x82\x19\x1aclear_guest_user_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x97\x04\x1a|\n" +
+	"\x0fVoiceEnrollment\x10\x01\x1aJ\n" +
+	"\x18TRefreshAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1a\n" +
+	"\bPersonId\x18\x02 \x01(\tR\bPersonId\x1a\xa8\x02\n" +
+	"\x14TAddAccountDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12$\n" +
+	"\rEncryptedCode\x18\x02 \x01(\tR\rEncryptedCode\x12\x1c\n" +
+	"\tSignature\x18\x03 \x01(\tR\tSignature\x120\n" +
+	"\x13EncryptedSessionKey\x18\x04 \x01(\tR\x13EncryptedSessionKey\x12\x12\n" +
+	"\x04Puid\x18\x05 \x01(\tR\x04Puid\x12;\n" +
+	"\tOnSuccess\x18\x06 \x01(\v2\x1d.NAlice.TTypedCallbackRequestR\tOnSuccess\x125\n" +
+	"\x06OnFail\x18\a \x01(\v2\x1d.NAlice.TTypedCallbackRequestR\x06OnFail\x1a/\n" +
+	"\x19TLocalAddAccountDirective\x12\x12\n" +
+	"\x04Code\x18\x01 \x01(\tR\x04Code\x1a1\n" +
+	"\x1bTExpandAccountListDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1a/\n" +
+	"\x19TShowLoginScreenDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x1aI\n" +
+	"\x17TAuthorizePupaDirective\x12\x1a\n" +
+	"\bPupaPuid\x18\x01 \x01(\tR\bPupaPuid\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x1aH\n" +
+	"\x16TAddGuestUserDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x1a\n" +
+	"\bJwtToken\x18\x02 \x01(\tR\bJwtToken\x1a`\n" +
+	"\x18TClearGuestUserDirective\x12\x12\n" +
+	"\x04Name\x18\x01 \x01(\tR\x04Name\x12\x16\n" +
+	"\x06UserId\x18\x02 \x01(\tR\x06UserId\x12\x18\n" +
+	"\aOwnerId\x18\x03 \x01(\tR\aOwnerId\x1a|\n" +
 	"\x1eTAddAccountWithCookieDirective\x12*\n" +
 	"\x06Cookie\x18\x01 \x01(\tB\x12\xaa\xdd\x1b\x06cookie\xa8\x8d'\x02\xf8\x91*\x03R\x06cookie:.\x92\x82\x19!add_account_with_cookie_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd3\x05\x1af\n" +
 	"\x17TRemoveAccountDirective\x12$\n" +
@@ -1454,8 +1446,9 @@ const file_alice_protos_endpoint_capabilities_multi_account_capability_proto_raw
 	"\x16AUTH_FAILURE_TRANSPORT\x10\x05\x12\"\n" +
 	"\x1eAUTH_FAILURE_ACCOUNT_NOT_FOUND\x10\x06\x12'\n" +
 	"#AUTH_FAILURE_ACCOUNT_NOT_AUTHORIZED\x10\a\x12\x18\n" +
-	"\x14AUTH_FAILURE_NETWORK\x10\b:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c;B\x9d\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bMultiAccountCapabilityProtoZPa.yandex-team.ru/alice/protos/endpoint/capabilities/multi_account;multiaccountpbb\x06proto3"
+	"\x14AUTH_FAILURE_NETWORK\x10\bB\xb7\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Z`github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/multi_account\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_multi_account_capability_proto_rawDescOnce sync.Once

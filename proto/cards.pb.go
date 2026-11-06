@@ -816,8 +816,8 @@ const file_cards_proto_rawDesc = "" +
 	"\x05EMode\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\b\n" +
 	"\x04LIVE\x10\x01B\x06\n" +
-	"\x04ModeB)\n" +
-	"\x16com.yandex.quark.protoB\x0fAliceCardsProtob\x06proto3"
+	"\x04ModeBZ\n" +
+	"\x16com.yandex.quark.protoB\x0fAliceCardsProtoZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_cards_proto_rawDescOnce sync.Once

@@ -96,8 +96,8 @@ func (*TTextQueryDivAction) Descriptor() ([]byte, []int) {
 
 type TDivActions struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	DirectiveDivAction *TDirectiveDivAction   `protobuf:"bytes,1,opt,name=DirectiveDivAction,json=directive_div_action,proto3" json:"DirectiveDivAction,omitempty"`
-	TextQueryDivAction *TTextQueryDivAction   `protobuf:"bytes,2,opt,name=TextQueryDivAction,json=text_query_div_action,proto3" json:"TextQueryDivAction,omitempty"`
+	DirectiveDivAction *TDirectiveDivAction   `protobuf:"bytes,1,opt,name=DirectiveDivAction,proto3" json:"DirectiveDivAction,omitempty"`
+	TextQueryDivAction *TTextQueryDivAction   `protobuf:"bytes,2,opt,name=TextQueryDivAction,proto3" json:"TextQueryDivAction,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -150,13 +150,14 @@ var File_alice_protos_div_div_actions_proto protoreflect.FileDescriptor
 
 const file_alice_protos_div_div_actions_proto_rawDesc = "" +
 	"\n" +
-	"\"alice/protos/div/div_actions.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x1b\n" +
-	"\x13TDirectiveDivAction:\x04\xa8\xdd\x1b\x04\"\x1b\n" +
-	"\x13TTextQueryDivAction:\x04\xa8\xdd\x1b\x04\"\xe7\x01\n" +
-	"\vTDivActions\x12g\n" +
-	"\x12DirectiveDivAction\x18\x01 \x01(\v2\x1b.NAlice.TDirectiveDivActionB\x18\xaa\xdd\x1b\x14directive_div_actionR\x14directive_div_action\x12i\n" +
-	"\x12TextQueryDivAction\x18\x02 \x01(\v2\x1b.NAlice.TTextQueryDivActionB\x19\xaa\xdd\x1b\x15text_query_div_actionR\x15text_query_div_action:\x04\xa8\xdd\x1b\x04BP\n" +
-	"\x1aru.yandex.alice.protos.divB\x0fDivActionsProtoZ!a.yandex-team.ru/alice/protos/divb\x06proto3"
+	"\"alice/protos/div/div_actions.proto\x12\x06NAlice\x1a&yt/yt_proto/yt/formats/extension.proto\"\x15\n" +
+	"\x13TDirectiveDivAction\"\x15\n" +
+	"\x13TTextQueryDivAction\"\xa7\x01\n" +
+	"\vTDivActions\x12K\n" +
+	"\x12DirectiveDivAction\x18\x01 \x01(\v2\x1b.NAlice.TDirectiveDivActionR\x12DirectiveDivAction\x12K\n" +
+	"\x12TextQueryDivAction\x18\x02 \x01(\v2\x1b.NAlice.TTextQueryDivActionR\x12TextQueryDivActionB\x97\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fDivActionsProtoP\x01Z@github.com/skrashevich/quasar-go-genproto/proto/alice/protos/div\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_div_div_actions_proto_rawDescOnce sync.Once

@@ -93,11 +93,11 @@ type isTAudioTranscriptionInputResponse_Response interface {
 }
 
 type TAudioTranscriptionInputResponse_StartStream struct {
-	StartStream *TAudioTranscriptionInputResponse_TStartStream `protobuf:"bytes,1,opt,name=StartStream,json=start_stream,proto3,oneof"`
+	StartStream *TAudioTranscriptionInputResponse_TStartStream `protobuf:"bytes,1,opt,name=StartStream,proto3,oneof"`
 }
 
 type TAudioTranscriptionInputResponse_Ack struct {
-	Ack *TAudioTranscriptionInputResponse_TAck `protobuf:"bytes,2,opt,name=Ack,json=ack,proto3,oneof"`
+	Ack *TAudioTranscriptionInputResponse_TAck `protobuf:"bytes,2,opt,name=Ack,proto3,oneof"`
 }
 
 func (*TAudioTranscriptionInputResponse_StartStream) isTAudioTranscriptionInputResponse_Response() {}
@@ -142,7 +142,7 @@ func (*TAudioTranscriptionInputResponse_TStartStream) Descriptor() ([]byte, []in
 
 type TAudioTranscriptionInputResponse_TAck struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	AudioEndTimestampMs *uint64                `protobuf:"varint,1,opt,name=AudioEndTimestampMs,json=audio_end_timestamp_ms,proto3,oneof" json:"AudioEndTimestampMs,omitempty"`
+	AudioEndTimestampMs *uint64                `protobuf:"varint,1,opt,name=AudioEndTimestampMs,proto3,oneof" json:"AudioEndTimestampMs,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -188,16 +188,17 @@ var File_alice_protos_api_alicekit_events_audio_transcription_input_audio_transc
 
 const file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_response_proto_rawDesc = "" +
 	"\n" +
-	"calice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa2\x03\n" +
-	" TAudioTranscriptionInputResponse\x12v\n" +
-	"\vStartStream\x18\x01 \x01(\v2?.NAlice.NAliceApi.TAudioTranscriptionInputResponse.TStartStreamB\x10\xaa\xdd\x1b\fstart_streamH\x00R\fstart_stream\x12T\n" +
-	"\x03Ack\x18\x02 \x01(\v27.NAlice.NAliceApi.TAudioTranscriptionInputResponse.TAckB\a\xaa\xdd\x1b\x03ackH\x00R\x03ack\x1a\x14\n" +
-	"\fTStartStream:\x04\xa8\xdd\x1b\x04\x1az\n" +
-	"\x04TAck\x12T\n" +
-	"\x13AudioEndTimestampMs\x18\x01 \x01(\x04B\x1a\xaa\xdd\x1b\x16audio_end_timestamp_msH\x00R\x16audio_end_timestamp_ms\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\x14_AudioEndTimestampMs:\x04\xa8\xdd\x1b\x04B\x18\n" +
-	"\bResponse\x12\f\xaa\xdd\x1b\bresponseB\xb6\x01\n" +
-	"Dru.yandex.alice.protos.api.alicekit.events.audio_transcription_inputB\x1fAudioTranscriptionInputResponseP\x01ZKa.yandex-team.ru/alice/protos/api/alicekit/events/audio_transcription_inputb\x06proto3"
+	"calice/protos/api/alicekit/events/audio_transcription_input/audio_transcription_input_response.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc7\x02\n" +
+	" TAudioTranscriptionInputResponse\x12c\n" +
+	"\vStartStream\x18\x01 \x01(\v2?.NAlice.NAliceApi.TAudioTranscriptionInputResponse.TStartStreamH\x00R\vStartStream\x12K\n" +
+	"\x03Ack\x18\x02 \x01(\v27.NAlice.NAliceApi.TAudioTranscriptionInputResponse.TAckH\x00R\x03Ack\x1a\x0e\n" +
+	"\fTStartStream\x1aU\n" +
+	"\x04TAck\x125\n" +
+	"\x13AudioEndTimestampMs\x18\x01 \x01(\x04H\x00R\x13AudioEndTimestampMs\x88\x01\x01B\x16\n" +
+	"\x14_AudioEndTimestampMsB\n" +
+	"\n" +
+	"\bResponseB\x89\x02\n" +
+	"\x14com.NAlice.NAliceApiB$AudioTranscriptionInputResponseProtoP\x01Zjgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/audio_transcription_input\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_audio_transcription_input_audio_transcription_input_response_proto_rawDescOnce sync.Once

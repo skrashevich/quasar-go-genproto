@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/body/capability.proto
 
-package bodypb
+package body
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -1770,8 +1770,8 @@ const file_alice_protos_endpoint_capabilities_body_capability_proto_rawDesc = ""
 	"\x18EVehicleAreaSunVisorSide\x12\x15\n" +
 	"\x11SUN_VISOR_UNKNOWN\x10\x00\x12\x18\n" +
 	"\x14SUN_VISOR_ROOF_FRONT\x10\x01\x12\x17\n" +
-	"\x13SUN_VISOR_ROOF_BACK\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cqB\x8e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAutomotiveBodyCapabilityProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/body;bodypbb\x06proto3"
+	"\x13SUN_VISOR_ROOF_BACK\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cqB\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAutomotiveBodyCapabilityProtoZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/bodyb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_body_capability_proto_rawDescOnce sync.Once

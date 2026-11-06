@@ -93,8 +93,8 @@ const file_dialog_type_proto_rawDesc = "" +
 	"\n" +
 	"\x06CHERRY\x10\n" +
 	"\x12\b\n" +
-	"\x04NOTA\x10\rB-\n" +
-	"\x19ru.yandex.quasar.protobufB\x10DialogTypeProtosb\x06proto3"
+	"\x04NOTA\x10\rB^\n" +
+	"\x19ru.yandex.quasar.protobufB\x10DialogTypeProtosZ/github.com/skrashevich/quasar-go-genproto/protob\x06proto3"
 
 var (
 	file_dialog_type_proto_rawDescOnce sync.Once

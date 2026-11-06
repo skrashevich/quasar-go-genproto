@@ -125,7 +125,8 @@ const file_voicetech_library_channel_types_proto_channel_types_proto_rawDesc = "
 	"\x12VQE_OMNI_WITH_GAIN\x10\t\x12\r\n" +
 	"\tVQE_STATE\x10\n" +
 	"\x12\f\n" +
-	"\bVQE_ZONE\x10\v"
+	"\bVQE_ZONE\x10\vB\xbd\x01\n" +
+	"\rcom.voicetechB\x11ChannelTypesProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/voicetech/library/channel_types/proto\xa2\x02\x03VXX\xaa\x02\tVoicetech\xca\x02\tVoicetech\xe2\x02\x15Voicetech\\GPBMetadata\xea\x02\tVoicetech"
 
 var (
 	file_voicetech_library_channel_types_proto_channel_types_proto_rawDescOnce sync.Once

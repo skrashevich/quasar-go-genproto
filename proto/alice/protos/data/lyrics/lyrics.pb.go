@@ -157,8 +157,8 @@ const file_alice_protos_data_lyrics_lyrics_proto_rawDesc = "" +
 	"\xaa\xdd\x1b\x06sourceR\x06source\x1as\n" +
 	"\tTSongLine\x12H\n" +
 	"\x12OffsetMilliseconds\x18\x01 \x01(\rB\x17\xaa\xdd\x1b\x13offset_millisecondsR\x13offset_milliseconds\x12\x1c\n" +
-	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04textBO\n" +
-	"\"ru.yandex.alice.protos.data.lyricsZ)a.yandex-team.ru/alice/protos/data/lyricsb\x06proto3"
+	"\x04Text\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04textBn\n" +
+	"\"ru.yandex.alice.protos.data.lyricsZHgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/lyricsb\x06proto3"
 
 var (
 	file_alice_protos_data_lyrics_lyrics_proto_rawDescOnce sync.Once

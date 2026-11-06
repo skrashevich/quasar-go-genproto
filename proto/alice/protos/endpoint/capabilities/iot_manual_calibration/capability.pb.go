@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_manual_calibration/capability.proto
 
-package manualcalibration_fwpb
+package iot_manual_calibration
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -536,8 +536,8 @@ const file_alice_protos_endpoint_capabilities_iot_manual_calibration_capability_
 	"\fEStageStatus\x12\x16\n" +
 	"\x12StageStatusUnknown\x10\x00\x12\x16\n" +
 	"\x12StageStatusSuccess\x10\x01\x12\x15\n" +
-	"\x11StageStatusFailed\x10\x02\"\x04\b\x03\x10\x03*\x13StageStatusMeasured:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x92\x02B\xb5\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB ManualCalibrationCapabilityProtoP\x01Zaa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_manual_calibration;manualcalibration_fwpbb\x06proto3"
+	"\x11StageStatusFailed\x10\x02\"\x04\b\x03\x10\x03*\x13StageStatusMeasured:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x92\x02B\xbd\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB ManualCalibrationCapabilityProtoP\x01Zigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_manual_calibrationb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_manual_calibration_capability_proto_rawDescOnce sync.Once

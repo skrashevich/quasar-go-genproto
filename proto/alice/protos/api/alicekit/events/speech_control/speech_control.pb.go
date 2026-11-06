@@ -93,7 +93,6 @@ func (x *TSpeechControl) GetResult() *TSpeechControl_TResult {
 	return nil
 }
 
-// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/speech_control/speech_control.proto.
 func (x *TSpeechControl) GetRecognition() *TSpeechControl_TRecognition {
 	if x != nil {
 		if x, ok := x.Message.(*TSpeechControl_Recognition); ok {
@@ -126,24 +125,23 @@ type isTSpeechControl_Message interface {
 }
 
 type TSpeechControl_Begin struct {
-	Begin *TSpeechControl_TBegin `protobuf:"bytes,1,opt,name=Begin,json=begin,proto3,oneof"`
+	Begin *TSpeechControl_TBegin `protobuf:"bytes,1,opt,name=Begin,proto3,oneof"`
 }
 
 type TSpeechControl_Result struct {
-	Result *TSpeechControl_TResult `protobuf:"bytes,2,opt,name=Result,json=result,proto3,oneof"`
+	Result *TSpeechControl_TResult `protobuf:"bytes,2,opt,name=Result,proto3,oneof"`
 }
 
 type TSpeechControl_Recognition struct {
-	// Deprecated: Marked as deprecated in alice/protos/api/alicekit/events/speech_control/speech_control.proto.
-	Recognition *TSpeechControl_TRecognition `protobuf:"bytes,3,opt,name=Recognition,json=recognition,proto3,oneof"`
+	Recognition *TSpeechControl_TRecognition `protobuf:"bytes,3,opt,name=Recognition,proto3,oneof"`
 }
 
 type TSpeechControl_Cancel struct {
-	Cancel *TSpeechControl_TCancel `protobuf:"bytes,4,opt,name=Cancel,json=cancel,proto3,oneof"`
+	Cancel *TSpeechControl_TCancel `protobuf:"bytes,4,opt,name=Cancel,proto3,oneof"`
 }
 
 type TSpeechControl_Finish struct {
-	Finish *TSpeechControl_TFinish `protobuf:"bytes,5,opt,name=Finish,json=finish,proto3,oneof"`
+	Finish *TSpeechControl_TFinish `protobuf:"bytes,5,opt,name=Finish,proto3,oneof"`
 }
 
 func (*TSpeechControl_Begin) isTSpeechControl_Message() {}
@@ -158,7 +156,7 @@ func (*TSpeechControl_Finish) isTSpeechControl_Message() {}
 
 type TSpeechControl_TBegin struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	ChunkId       uint64                              `protobuf:"varint,1,opt,name=ChunkId,json=chunk_id,proto3" json:"ChunkId,omitempty"`
+	ChunkId       uint64                              `protobuf:"varint,1,opt,name=ChunkId,proto3" json:"ChunkId,omitempty"`
 	ChunkMeta     *client_chunk_meta.TClientChunkMeta `protobuf:"bytes,2,opt,name=ChunkMeta,json=chunk_meta,proto3" json:"ChunkMeta,omitempty"`
 	AudioOffset   *durationpb.Duration                `protobuf:"bytes,3,opt,name=AudioOffset,json=audio_offset,proto3" json:"AudioOffset,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -218,8 +216,8 @@ func (x *TSpeechControl_TBegin) GetAudioOffset() *durationpb.Duration {
 
 type TSpeechControl_TResult struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	EndOfUtt      bool                                `protobuf:"varint,1,opt,name=EndOfUtt,json=endOfUtt,proto3" json:"EndOfUtt,omitempty"`
-	ChunkId       uint64                              `protobuf:"varint,2,opt,name=ChunkId,json=chunk_id,proto3" json:"ChunkId,omitempty"`
+	EndOfUtt      bool                                `protobuf:"varint,1,opt,name=EndOfUtt,proto3" json:"EndOfUtt,omitempty"`
+	ChunkId       uint64                              `protobuf:"varint,2,opt,name=ChunkId,proto3" json:"ChunkId,omitempty"`
 	ChunkMeta     *client_chunk_meta.TClientChunkMeta `protobuf:"bytes,3,opt,name=ChunkMeta,json=chunk_meta,proto3" json:"ChunkMeta,omitempty"`
 	AudioOffset   *durationpb.Duration                `protobuf:"bytes,4,opt,name=AudioOffset,json=audio_offset,proto3" json:"AudioOffset,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -286,7 +284,7 @@ func (x *TSpeechControl_TResult) GetAudioOffset() *durationpb.Duration {
 
 type TSpeechControl_TRecognition struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Text          string                 `protobuf:"bytes,1,opt,name=Text,json=text,proto3" json:"Text,omitempty"`
+	Text          string                 `protobuf:"bytes,1,opt,name=Text,proto3" json:"Text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -404,36 +402,32 @@ var File_alice_protos_api_alicekit_events_speech_control_speech_control_proto pr
 
 const file_alice_protos_api_alicekit_events_speech_control_speech_control_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/api/alicekit/events/speech_control/speech_control.proto\x12\x10NAlice.NAliceApi\x1aJalice/protos/api/alicekit/events/client_chunk_meta/client_chunk_meta.proto\x1a\x1egoogle/protobuf/duration.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8d\b\n" +
-	"\x0eTSpeechControl\x12J\n" +
-	"\x05Begin\x18\x01 \x01(\v2'.NAlice.NAliceApi.TSpeechControl.TBeginB\t\xaa\xdd\x1b\x05beginH\x00R\x05begin\x12N\n" +
-	"\x06Result\x18\x02 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TResultB\n" +
-	"\xaa\xdd\x1b\x06resultH\x00R\x06result\x12d\n" +
-	"\vRecognition\x18\x03 \x01(\v2-.NAlice.NAliceApi.TSpeechControl.TRecognitionB\x11\xaa\xdd\x1b\vrecognition\x18\x01H\x00R\vrecognition\x12N\n" +
-	"\x06Cancel\x18\x04 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TCancelB\n" +
-	"\xaa\xdd\x1b\x06cancelH\x00R\x06cancel\x12N\n" +
-	"\x06Finish\x18\x05 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TFinishB\n" +
-	"\xaa\xdd\x1b\x06finishH\x00R\x06finish\x1a\xda\x01\n" +
-	"\x06TBegin\x12'\n" +
-	"\aChunkId\x18\x01 \x01(\x04B\f\xaa\xdd\x1b\bchunk_idR\bchunk_id\x12Q\n" +
+	"Dalice/protos/api/alicekit/events/speech_control/speech_control.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\x1aJalice/protos/api/alicekit/events/client_chunk_meta/client_chunk_meta.proto\x1a\x1egoogle/protobuf/duration.proto\"\xe2\x06\n" +
+	"\x0eTSpeechControl\x12?\n" +
+	"\x05Begin\x18\x01 \x01(\v2'.NAlice.NAliceApi.TSpeechControl.TBeginH\x00R\x05Begin\x12B\n" +
+	"\x06Result\x18\x02 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TResultH\x00R\x06Result\x12Q\n" +
+	"\vRecognition\x18\x03 \x01(\v2-.NAlice.NAliceApi.TSpeechControl.TRecognitionH\x00R\vRecognition\x12B\n" +
+	"\x06Cancel\x18\x04 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TCancelH\x00R\x06Cancel\x12B\n" +
+	"\x06Finish\x18\x05 \x01(\v2(.NAlice.NAliceApi.TSpeechControl.TFinishH\x00R\x06Finish\x1a\xc5\x01\n" +
+	"\x06TBegin\x12\x18\n" +
+	"\aChunkId\x18\x01 \x01(\x04R\aChunkId\x12Q\n" +
 	"\tChunkMeta\x18\x02 \x01(\v2\".NAlice.NAliceApi.TClientChunkMetaB\x0e\xaa\xdd\x1b\n" +
 	"chunk_metaR\n" +
 	"chunk_meta\x12N\n" +
-	"\vAudioOffset\x18\x03 \x01(\v2\x19.google.protobuf.DurationB\x10\xaa\xdd\x1b\faudio_offsetR\faudio_offset:\x04\xa8\xdd\x1b\x04\x1a\x87\x02\n" +
-	"\aTResult\x12*\n" +
-	"\bEndOfUtt\x18\x01 \x01(\bB\x0e\xaa\xdd\x1b\n" +
-	"end_of_uttR\bendOfUtt\x12'\n" +
-	"\aChunkId\x18\x02 \x01(\x04B\f\xaa\xdd\x1b\bchunk_idR\bchunk_id\x12Q\n" +
+	"\vAudioOffset\x18\x03 \x01(\v2\x19.google.protobuf.DurationB\x10\xaa\xdd\x1b\faudio_offsetR\faudio_offset\x1a\xe2\x01\n" +
+	"\aTResult\x12\x1a\n" +
+	"\bEndOfUtt\x18\x01 \x01(\bR\bEndOfUtt\x12\x18\n" +
+	"\aChunkId\x18\x02 \x01(\x04R\aChunkId\x12Q\n" +
 	"\tChunkMeta\x18\x03 \x01(\v2\".NAlice.NAliceApi.TClientChunkMetaB\x0e\xaa\xdd\x1b\n" +
 	"chunk_metaR\n" +
 	"chunk_meta\x12N\n" +
-	"\vAudioOffset\x18\x04 \x01(\v2\x19.google.protobuf.DurationB\x10\xaa\xdd\x1b\faudio_offsetR\faudio_offset:\x04\xa8\xdd\x1b\x04\x1a2\n" +
-	"\fTRecognition\x12\x1c\n" +
-	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text:\x04\xa8\xdd\x1b\x04\x1a\x0f\n" +
-	"\aTCancel:\x04\xa8\xdd\x1b\x04\x1a\x0f\n" +
-	"\aTFinish:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aMessage\x12\v\xaa\xdd\x1b\amessageB\x8e\x01\n" +
-	"9ru.yandex.alice.protos.api.alicekit.events.speech_controlB\rSpeechControlP\x01Z@a.yandex-team.ru/alice/protos/api/alicekit/events/speech_controlb\x06proto3"
+	"\vAudioOffset\x18\x04 \x01(\v2\x19.google.protobuf.DurationB\x10\xaa\xdd\x1b\faudio_offsetR\faudio_offset\x1a\"\n" +
+	"\fTRecognition\x12\x12\n" +
+	"\x04Text\x18\x01 \x01(\tR\x04Text\x1a\t\n" +
+	"\aTCancel\x1a\t\n" +
+	"\aTFinishB\t\n" +
+	"\aMessageB\xec\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x12SpeechControlProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/speech_control\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_speech_control_speech_control_proto_rawDescOnce sync.Once

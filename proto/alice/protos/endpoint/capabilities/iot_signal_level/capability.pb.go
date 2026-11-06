@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_signal_level/capability.proto
 
-package iotsignallevelpb
+package iot_signal_level
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -23,58 +23,6 @@ const (
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
-
-type TSignalLevelCapability_ESignalValueType int32
-
-const (
-	TSignalLevelCapability_SignalValueTypeUnknown TSignalLevelCapability_ESignalValueType = 0
-	TSignalLevelCapability_SignalValueTypeStatus  TSignalLevelCapability_ESignalValueType = 1
-	TSignalLevelCapability_SignalValueTypeRawRssi TSignalLevelCapability_ESignalValueType = 2
-	TSignalLevelCapability_SignalValueTypeRawLqa  TSignalLevelCapability_ESignalValueType = 3
-)
-
-// Enum value maps for TSignalLevelCapability_ESignalValueType.
-var (
-	TSignalLevelCapability_ESignalValueType_name = map[int32]string{
-		0: "SignalValueTypeUnknown",
-		1: "SignalValueTypeStatus",
-		2: "SignalValueTypeRawRssi",
-		3: "SignalValueTypeRawLqa",
-	}
-	TSignalLevelCapability_ESignalValueType_value = map[string]int32{
-		"SignalValueTypeUnknown": 0,
-		"SignalValueTypeStatus":  1,
-		"SignalValueTypeRawRssi": 2,
-		"SignalValueTypeRawLqa":  3,
-	}
-)
-
-func (x TSignalLevelCapability_ESignalValueType) Enum() *TSignalLevelCapability_ESignalValueType {
-	p := new(TSignalLevelCapability_ESignalValueType)
-	*p = x
-	return p
-}
-
-func (x TSignalLevelCapability_ESignalValueType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (TSignalLevelCapability_ESignalValueType) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[0].Descriptor()
-}
-
-func (TSignalLevelCapability_ESignalValueType) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[0]
-}
-
-func (x TSignalLevelCapability_ESignalValueType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use TSignalLevelCapability_ESignalValueType.Descriptor instead.
-func (TSignalLevelCapability_ESignalValueType) EnumDescriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_rawDescGZIP(), []int{0, 0}
-}
 
 type TSignalLevelCapability_ESignalQualityStatus int32
 
@@ -118,11 +66,11 @@ func (x TSignalLevelCapability_ESignalQualityStatus) String() string {
 }
 
 func (TSignalLevelCapability_ESignalQualityStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[1].Descriptor()
+	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[0].Descriptor()
 }
 
 func (TSignalLevelCapability_ESignalQualityStatus) Type() protoreflect.EnumType {
-	return &file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[1]
+	return &file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[0]
 }
 
 func (x TSignalLevelCapability_ESignalQualityStatus) Number() protoreflect.EnumNumber {
@@ -131,14 +79,66 @@ func (x TSignalLevelCapability_ESignalQualityStatus) Number() protoreflect.EnumN
 
 // Deprecated: Use TSignalLevelCapability_ESignalQualityStatus.Descriptor instead.
 func (TSignalLevelCapability_ESignalQualityStatus) EnumDescriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_rawDescGZIP(), []int{0, 0}
+}
+
+type TSignalLevelCapability_ESignalValueType int32
+
+const (
+	TSignalLevelCapability_SignalValueTypeUnknown TSignalLevelCapability_ESignalValueType = 0
+	TSignalLevelCapability_SignalValueTypeStatus  TSignalLevelCapability_ESignalValueType = 1
+	TSignalLevelCapability_SignalValueTypeRawRssi TSignalLevelCapability_ESignalValueType = 2
+	TSignalLevelCapability_SignalValueTypeRawLqa  TSignalLevelCapability_ESignalValueType = 3
+)
+
+// Enum value maps for TSignalLevelCapability_ESignalValueType.
+var (
+	TSignalLevelCapability_ESignalValueType_name = map[int32]string{
+		0: "SignalValueTypeUnknown",
+		1: "SignalValueTypeStatus",
+		2: "SignalValueTypeRawRssi",
+		3: "SignalValueTypeRawLqa",
+	}
+	TSignalLevelCapability_ESignalValueType_value = map[string]int32{
+		"SignalValueTypeUnknown": 0,
+		"SignalValueTypeStatus":  1,
+		"SignalValueTypeRawRssi": 2,
+		"SignalValueTypeRawLqa":  3,
+	}
+)
+
+func (x TSignalLevelCapability_ESignalValueType) Enum() *TSignalLevelCapability_ESignalValueType {
+	p := new(TSignalLevelCapability_ESignalValueType)
+	*p = x
+	return p
+}
+
+func (x TSignalLevelCapability_ESignalValueType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (TSignalLevelCapability_ESignalValueType) Descriptor() protoreflect.EnumDescriptor {
+	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[1].Descriptor()
+}
+
+func (TSignalLevelCapability_ESignalValueType) Type() protoreflect.EnumType {
+	return &file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes[1]
+}
+
+func (x TSignalLevelCapability_ESignalValueType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use TSignalLevelCapability_ESignalValueType.Descriptor instead.
+func (TSignalLevelCapability_ESignalValueType) EnumDescriptor() ([]byte, []int) {
 	return file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_rawDescGZIP(), []int{0, 1}
 }
 
 type TSignalLevelCapability struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TSignalLevelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TSignalLevelCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta         `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TSignalLevelCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TSignalLevelCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -240,7 +240,7 @@ func (x *TSignalLevelCapability_TParameters) GetSignalValueType() TSignalLevelCa
 
 type TSignalLevelCapability_TState struct {
 	state         protoimpl.MessageState                      `protogen:"open.v1"`
-	Status        TSignalLevelCapability_ESignalQualityStatus `protobuf:"varint,1,opt,name=Status,json=status,proto3,enum=NAlice.TSignalLevelCapability_ESignalQualityStatus" json:"Status,omitempty"`
+	Status        TSignalLevelCapability_ESignalQualityStatus `protobuf:"varint,1,opt,name=Status,proto3,enum=NAlice.TSignalLevelCapability_ESignalQualityStatus" json:"Status,omitempty"`
 	Rssi          *int32                                      `protobuf:"varint,2,opt,name=Rssi,json=rssi,proto3,oneof" json:"Rssi,omitempty"`
 	Lqa           *uint32                                     `protobuf:"varint,3,opt,name=Lqa,json=lqa,proto3,oneof" json:"Lqa,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -300,7 +300,7 @@ func (x *TSignalLevelCapability_TState) GetLqa() uint32 {
 
 type TSignalLevelCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
-	Capability    *TSignalLevelCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TSignalLevelCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -346,41 +346,39 @@ var File_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto pr
 
 const file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_rawDesc = "" +
 	"\n" +
-	"Dalice/protos/endpoint/capabilities/iot_signal_level/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x94\a\n" +
-	"\x16TSignalLevelCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12Z\n" +
+	"Dalice/protos/endpoint/capabilities/iot_signal_level/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb1\x06\n" +
+	"\x16TSignalLevelCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12J\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2*.NAlice.TSignalLevelCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12F\n" +
-	"\x05State\x18\x03 \x01(\v2%.NAlice.TSignalLevelCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x87\x01\n" +
+	"Parameters\x18\x02 \x01(\v2*.NAlice.TSignalLevelCapability.TParametersR\n" +
+	"Parameters\x12;\n" +
+	"\x05State\x18\x03 \x01(\v2%.NAlice.TSignalLevelCapability.TStateR\x05State\x1a\x81\x01\n" +
 	"\vTParameters\x12r\n" +
-	"\x0fSignalValueType\x18\x01 \x01(\x0e2/.NAlice.TSignalLevelCapability.ESignalValueTypeB\x15\xaa\xdd\x1b\x11signal_value_typeR\x11signal_value_type:\x04\xa8\xdd\x1b\x04\x1a\xbb\x01\n" +
-	"\x06TState\x12W\n" +
-	"\x06Status\x18\x01 \x01(\x0e23.NAlice.TSignalLevelCapability.ESignalQualityStatusB\n" +
-	"\xaa\xdd\x1b\x06statusR\x06status\x12!\n" +
+	"\x0fSignalValueType\x18\x01 \x01(\x0e2/.NAlice.TSignalLevelCapability.ESignalValueTypeB\x15\xaa\xdd\x1b\x11signal_value_typeR\x11signal_value_type\x1a\xa9\x01\n" +
+	"\x06TState\x12K\n" +
+	"\x06Status\x18\x01 \x01(\x0e23.NAlice.TSignalLevelCapability.ESignalQualityStatusR\x06Status\x12!\n" +
 	"\x04Rssi\x18\x02 \x01(\x05B\b\xaa\xdd\x1b\x04rssiH\x00R\x04rssi\x88\x01\x01\x12\x1e\n" +
-	"\x03Lqa\x18\x03 \x01(\rB\a\xaa\xdd\x1b\x03lqaH\x01R\x03lqa\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\a\n" +
+	"\x03Lqa\x18\x03 \x01(\rB\a\xaa\xdd\x1b\x03lqaH\x01R\x03lqa\x88\x01\x01B\a\n" +
 	"\x05_RssiB\x06\n" +
-	"\x04_Lqa\x1an\n" +
-	"\x11TUpdateStateEvent\x12N\n" +
+	"\x04_Lqa\x1aS\n" +
+	"\x11TUpdateStateEvent\x12>\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TSignalLevelCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\t\xa8\xdd\x1b\x04\xb0\xc8\x1c\x88\x01\"\x80\x01\n" +
-	"\x10ESignalValueType\x12\x1a\n" +
-	"\x16SignalValueTypeUnknown\x10\x00\x12\x19\n" +
-	"\x15SignalValueTypeStatus\x10\x01\x12\x1a\n" +
-	"\x16SignalValueTypeRawRssi\x10\x02\x12\x19\n" +
-	"\x15SignalValueTypeRawLqa\x10\x03\"W\n" +
+	"Capability\x18\x01 \x01(\v2\x1e.NAlice.TSignalLevelCapabilityR\n" +
+	"Capability\"W\n" +
 	"\x14ESignalQualityStatus\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\a\n" +
 	"\x03BAD\x10\x01\x12\b\n" +
 	"\x04WEAK\x10\x02\x12\x06\n" +
 	"\x02OK\x10\x03\x12\b\n" +
 	"\x04GOOD\x10\x04\x12\r\n" +
-	"\tEXCELLENT\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcf\x01B\xa1\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1aSignalLevelCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_signal_level;iotsignallevelpbb\x06proto3"
+	"\tEXCELLENT\x10\x05\"\x80\x01\n" +
+	"\x10ESignalValueType\x12\x1a\n" +
+	"\x16SignalValueTypeUnknown\x10\x00\x12\x19\n" +
+	"\x15SignalValueTypeStatus\x10\x01\x12\x1a\n" +
+	"\x16SignalValueTypeRawRssi\x10\x02\x12\x19\n" +
+	"\x15SignalValueTypeRawLqa\x10\x03B\xba\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_signal_level\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_rawDescOnce sync.Once
@@ -397,8 +395,8 @@ func file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_r
 var file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_goTypes = []any{
-	(TSignalLevelCapability_ESignalValueType)(0),     // 0: NAlice.TSignalLevelCapability.ESignalValueType
-	(TSignalLevelCapability_ESignalQualityStatus)(0), // 1: NAlice.TSignalLevelCapability.ESignalQualityStatus
+	(TSignalLevelCapability_ESignalQualityStatus)(0), // 0: NAlice.TSignalLevelCapability.ESignalQualityStatus
+	(TSignalLevelCapability_ESignalValueType)(0),     // 1: NAlice.TSignalLevelCapability.ESignalValueType
 	(*TSignalLevelCapability)(nil),                   // 2: NAlice.TSignalLevelCapability
 	(*TSignalLevelCapability_TParameters)(nil),       // 3: NAlice.TSignalLevelCapability.TParameters
 	(*TSignalLevelCapability_TState)(nil),            // 4: NAlice.TSignalLevelCapability.TState
@@ -409,8 +407,8 @@ var file_alice_protos_endpoint_capabilities_iot_signal_level_capability_proto_de
 	6, // 0: NAlice.TSignalLevelCapability.Meta:type_name -> NAlice.TCapability.TMeta
 	3, // 1: NAlice.TSignalLevelCapability.Parameters:type_name -> NAlice.TSignalLevelCapability.TParameters
 	4, // 2: NAlice.TSignalLevelCapability.State:type_name -> NAlice.TSignalLevelCapability.TState
-	0, // 3: NAlice.TSignalLevelCapability.TParameters.SignalValueType:type_name -> NAlice.TSignalLevelCapability.ESignalValueType
-	1, // 4: NAlice.TSignalLevelCapability.TState.Status:type_name -> NAlice.TSignalLevelCapability.ESignalQualityStatus
+	1, // 3: NAlice.TSignalLevelCapability.TParameters.SignalValueType:type_name -> NAlice.TSignalLevelCapability.ESignalValueType
+	0, // 4: NAlice.TSignalLevelCapability.TState.Status:type_name -> NAlice.TSignalLevelCapability.ESignalQualityStatus
 	2, // 5: NAlice.TSignalLevelCapability.TUpdateStateEvent.Capability:type_name -> NAlice.TSignalLevelCapability
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type

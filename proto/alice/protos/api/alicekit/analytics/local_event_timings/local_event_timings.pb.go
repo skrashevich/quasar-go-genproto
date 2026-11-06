@@ -126,8 +126,8 @@ const file_alice_protos_api_alicekit_analytics_local_event_timings_local_event_t
 	"\x06Events\x18\x01 \x03(\v2+.NAlice.NAliceApi.TLocalEventTimings.TEventR\x06events\x1aL\n" +
 	"\x06TEvent\x12\x12\n" +
 	"\x04Name\x18\x01 \x01(\tR\x04name\x12.\n" +
-	"\x11SteadyTimepointMs\x18\x02 \x01(\x03R\x13steady_timepoint_msB\xa7\x01\n" +
-	"Aru.yandex.alice.protos.api.alicekit.analytics.local_event_timingsB\x16LocalEventTimingsProtoP\x01ZHa.yandex-team.ru/alice/protos/api/alicekit/analytics/local_event_timingsb\x06proto3"
+	"\x11SteadyTimepointMs\x18\x02 \x01(\x03R\x13steady_timepoint_msB\xc6\x01\n" +
+	"Aru.yandex.alice.protos.api.alicekit.analytics.local_event_timingsB\x16LocalEventTimingsProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/analytics/local_event_timingsb\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_analytics_local_event_timings_local_event_timings_proto_rawDescOnce sync.Once

@@ -26,11 +26,11 @@ const (
 
 type TLocalAnalyticsInfo struct {
 	state             protoimpl.MessageState         `protogen:"open.v1"`
-	LocalRequest      *TLocalAnalyticsInfo_TRequest  `protobuf:"bytes,3,opt,name=LocalRequest,json=local_request,proto3" json:"LocalRequest,omitempty"`
-	LocalResponse     *TLocalAnalyticsInfo_TResponse `protobuf:"bytes,4,opt,name=LocalResponse,json=local_response,proto3" json:"LocalResponse,omitempty"`
-	LocalError        *TLocalAnalyticsInfo_TError    `protobuf:"bytes,5,opt,name=LocalError,json=local_error,proto3" json:"LocalError,omitempty"`
-	UsedLocalResponse bool                           `protobuf:"varint,6,opt,name=UsedLocalResponse,json=used_local_response,proto3" json:"UsedLocalResponse,omitempty"`
-	IsHybridRequest   bool                           `protobuf:"varint,7,opt,name=IsHybridRequest,json=is_hybrid_request,proto3" json:"IsHybridRequest,omitempty"`
+	LocalRequest      *TLocalAnalyticsInfo_TRequest  `protobuf:"bytes,3,opt,name=LocalRequest,proto3" json:"LocalRequest,omitempty"`
+	LocalResponse     *TLocalAnalyticsInfo_TResponse `protobuf:"bytes,4,opt,name=LocalResponse,proto3" json:"LocalResponse,omitempty"`
+	LocalError        *TLocalAnalyticsInfo_TError    `protobuf:"bytes,5,opt,name=LocalError,proto3" json:"LocalError,omitempty"`
+	UsedLocalResponse bool                           `protobuf:"varint,6,opt,name=UsedLocalResponse,proto3" json:"UsedLocalResponse,omitempty"`
+	IsHybridRequest   bool                           `protobuf:"varint,7,opt,name=IsHybridRequest,proto3" json:"IsHybridRequest,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -102,7 +102,7 @@ func (x *TLocalAnalyticsInfo) GetIsHybridRequest() bool {
 
 type TLocalAnalyticsInfo_TRequest struct {
 	state         protoimpl.MessageState            `protogen:"open.v1"`
-	Payload       *alice_request.TAliceRequestProto `protobuf:"bytes,1,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	Payload       *alice_request.TAliceRequestProto `protobuf:"bytes,1,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -146,7 +146,7 @@ func (x *TLocalAnalyticsInfo_TRequest) GetPayload() *alice_request.TAliceRequest
 
 type TLocalAnalyticsInfo_TResponse struct {
 	state         protoimpl.MessageState              `protogen:"open.v1"`
-	Payload       *alice_response.TAliceResponseProto `protobuf:"bytes,1,opt,name=Payload,json=payload,proto3" json:"Payload,omitempty"`
+	Payload       *alice_response.TAliceResponseProto `protobuf:"bytes,1,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -190,7 +190,7 @@ func (x *TLocalAnalyticsInfo_TResponse) GetPayload() *alice_response.TAliceRespo
 
 type TLocalAnalyticsInfo_TError struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Message       string                 `protobuf:"bytes,1,opt,name=Message,json=message,proto3" json:"Message,omitempty"`
+	Message       string                 `protobuf:"bytes,1,opt,name=Message,proto3" json:"Message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -236,21 +236,22 @@ var File_alice_protos_api_alicekit_analytics_local_analytics_info_local_analytic
 
 const file_alice_protos_api_alicekit_analytics_local_analytics_info_local_analytics_info_proto_rawDesc = "" +
 	"\n" +
-	"Salice/protos/api/alicekit/analytics/local_analytics_info/local_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe5\x05\n" +
-	"\x13TLocalAnalyticsInfo\x12f\n" +
-	"\fLocalRequest\x18\x03 \x01(\v2..NAlice.NAliceApi.TLocalAnalyticsInfo.TRequestB\x11\xaa\xdd\x1b\rlocal_requestR\rlocal_request\x12j\n" +
-	"\rLocalResponse\x18\x04 \x01(\v2/.NAlice.NAliceApi.TLocalAnalyticsInfo.TResponseB\x12\xaa\xdd\x1b\x0elocal_responseR\x0elocal_response\x12^\n" +
+	"Salice/protos/api/alicekit/analytics/local_analytics_info/local_analytics_info.proto\x12\x10NAlice.NAliceApi\x1aBalice/protos/api/alicekit/events/alice_request/alice_request.proto\x1aDalice/protos/api/alicekit/events/alice_response/alice_response.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc9\x04\n" +
+	"\x13TLocalAnalyticsInfo\x12R\n" +
+	"\fLocalRequest\x18\x03 \x01(\v2..NAlice.NAliceApi.TLocalAnalyticsInfo.TRequestR\fLocalRequest\x12U\n" +
+	"\rLocalResponse\x18\x04 \x01(\v2/.NAlice.NAliceApi.TLocalAnalyticsInfo.TResponseR\rLocalResponse\x12L\n" +
 	"\n" +
-	"LocalError\x18\x05 \x01(\v2,.NAlice.NAliceApi.TLocalAnalyticsInfo.TErrorB\x0f\xaa\xdd\x1b\vlocal_errorR\vlocal_error\x12G\n" +
-	"\x11UsedLocalResponse\x18\x06 \x01(\bB\x17\xaa\xdd\x1b\x13used_local_responseR\x13used_local_response\x12A\n" +
-	"\x0fIsHybridRequest\x18\a \x01(\bB\x15\xaa\xdd\x1b\x11is_hybrid_requestR\x11is_hybrid_request\x1aM\n" +
-	"\bTRequest\x12A\n" +
-	"\aPayload\x18\x01 \x01(\v2\x1a.NAlice.TAliceRequestProtoB\v\xaa\xdd\x1b\apayloadR\apayload\x1aY\n" +
-	"\tTResponse\x12L\n" +
-	"\aPayload\x18\x01 \x01(\v2%.NAlice.NAliceApi.TAliceResponseProtoB\v\xaa\xdd\x1b\apayloadR\apayload\x1a/\n" +
-	"\x06TError\x12%\n" +
-	"\aMessage\x18\x01 \x01(\tB\v\xaa\xdd\x1b\amessageR\amessage:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\x0eErrorAnalyticsR\x11ResponseAnalyticsB\xaa\x01\n" +
-	"Bru.yandex.alice.protos.api.alicekit.analytics.local_analytics_infoB\x17LocalAnalyticsInfoProtoP\x01ZIa.yandex-team.ru/alice/protos/api/alicekit/analytics/local_analytics_infob\x06proto3"
+	"LocalError\x18\x05 \x01(\v2,.NAlice.NAliceApi.TLocalAnalyticsInfo.TErrorR\n" +
+	"LocalError\x12,\n" +
+	"\x11UsedLocalResponse\x18\x06 \x01(\bR\x11UsedLocalResponse\x12(\n" +
+	"\x0fIsHybridRequest\x18\a \x01(\bR\x0fIsHybridRequest\x1a@\n" +
+	"\bTRequest\x124\n" +
+	"\aPayload\x18\x01 \x01(\v2\x1a.NAlice.TAliceRequestProtoR\aPayload\x1aL\n" +
+	"\tTResponse\x12?\n" +
+	"\aPayload\x18\x01 \x01(\v2%.NAlice.NAliceApi.TAliceResponseProtoR\aPayload\x1a\"\n" +
+	"\x06TError\x12\x18\n" +
+	"\aMessage\x18\x01 \x01(\tR\aMessageJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\x0eErrorAnalyticsR\x11ResponseAnalyticsB\xfa\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x17LocalAnalyticsInfoProtoP\x01Zhgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/analytics/local_analytics_info\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_analytics_local_analytics_info_local_analytics_info_proto_rawDescOnce sync.Once

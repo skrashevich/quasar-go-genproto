@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_motor_direction/capability.proto
 
-package iotmotordirectionpb
+package iot_motor_direction
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -76,9 +76,9 @@ func (TIotMotorDirectionCapability_EDirection) EnumDescriptor() ([]byte, []int) 
 
 type TIotMotorDirectionCapability struct {
 	state         protoimpl.MessageState                    `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta               `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotMotorDirectionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotMotorDirectionCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta               `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotMotorDirectionCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotMotorDirectionCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -172,7 +172,7 @@ func (*TIotMotorDirectionCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotMotorDirectionCapability_TState struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Direction     TIotMotorDirectionCapability_EDirection `protobuf:"varint,1,opt,name=Direction,json=direction,proto3,enum=NAlice.TIotMotorDirectionCapability_EDirection" json:"Direction,omitempty"`
+	Direction     TIotMotorDirectionCapability_EDirection `protobuf:"varint,1,opt,name=Direction,proto3,enum=NAlice.TIotMotorDirectionCapability_EDirection" json:"Direction,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -216,8 +216,8 @@ func (x *TIotMotorDirectionCapability_TState) GetDirection() TIotMotorDirectionC
 
 type TIotMotorDirectionCapability_TSetMotorDirectionDirective struct {
 	state         protoimpl.MessageState                  `protogen:"open.v1"`
-	Name          string                                  `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Direction     TIotMotorDirectionCapability_EDirection `protobuf:"varint,1,opt,name=Direction,json=direction,proto3,enum=NAlice.TIotMotorDirectionCapability_EDirection" json:"Direction,omitempty"`
+	Name          string                                  `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Direction     TIotMotorDirectionCapability_EDirection `protobuf:"varint,1,opt,name=Direction,proto3,enum=NAlice.TIotMotorDirectionCapability_EDirection" json:"Direction,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -268,7 +268,7 @@ func (x *TIotMotorDirectionCapability_TSetMotorDirectionDirective) GetDirection(
 
 type TIotMotorDirectionCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Capability    *TIotMotorDirectionCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotMotorDirectionCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -314,32 +314,31 @@ var File_alice_protos_endpoint_capabilities_iot_motor_direction_capability_proto
 
 const file_alice_protos_endpoint_capabilities_iot_motor_direction_capability_proto_rawDesc = "" +
 	"\n" +
-	"Galice/protos/endpoint/capabilities/iot_motor_direction/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x88\x06\n" +
-	"\x1cTIotMotorDirectionCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12`\n" +
+	"Galice/protos/endpoint/capabilities/iot_motor_direction/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xde\x04\n" +
+	"\x1cTIotMotorDirectionCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12P\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v20.NAlice.TIotMotorDirectionCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12L\n" +
-	"\x05State\x18\x03 \x01(\v2+.NAlice.TIotMotorDirectionCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1al\n" +
-	"\x06TState\x12\\\n" +
-	"\tDirection\x18\x01 \x01(\x0e2/.NAlice.TIotMotorDirectionCapability.EDirectionB\r\xaa\xdd\x1b\tdirectionR\tdirection:\x04\xa8\xdd\x1b\x04\x1a\xc6\x01\n" +
-	"\x1bTSetMotorDirectionDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\\\n" +
-	"\tDirection\x18\x01 \x01(\x0e2/.NAlice.TIotMotorDirectionCapability.EDirectionB\r\xaa\xdd\x1b\tdirectionR\tdirection:*\x92\x82\x19\x1dset_motor_direction_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe6\x03\x1as\n" +
-	"\x11TUpdateStateEvent\x12T\n" +
+	"Parameters\x18\x02 \x01(\v20.NAlice.TIotMotorDirectionCapability.TParametersR\n" +
+	"Parameters\x12A\n" +
+	"\x05State\x18\x03 \x01(\v2+.NAlice.TIotMotorDirectionCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aW\n" +
+	"\x06TState\x12M\n" +
+	"\tDirection\x18\x01 \x01(\x0e2/.NAlice.TIotMotorDirectionCapability.EDirectionR\tDirection\x1a\x81\x01\n" +
+	"\x1bTSetMotorDirectionDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12M\n" +
+	"\tDirection\x18\x01 \x01(\x0e2/.NAlice.TIotMotorDirectionCapability.EDirectionR\tDirection\x1aY\n" +
+	"\x11TUpdateStateEvent\x12D\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2$.NAlice.TIotMotorDirectionCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cz\"3\n" +
+	"Capability\x18\x01 \x01(\v2$.NAlice.TIotMotorDirectionCapabilityR\n" +
+	"Capability\"3\n" +
 	"\n" +
 	"EDirection\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x01\x12\f\n" +
-	"\bREVERSED\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb8\x01B\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB IotMotorDirectionCapabilityProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/iot_motor_direction;iotmotordirectionpbb\x06proto3"
+	"\bREVERSED\x10\x02B\xbd\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zfgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_motor_direction\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_motor_direction_capability_proto_rawDescOnce sync.Once

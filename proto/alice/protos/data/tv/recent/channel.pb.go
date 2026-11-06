@@ -25,11 +25,11 @@ const (
 
 type TRecentChannelItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            *channels.TTvChannelId `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	ChannelType   channels.EChannelType  `protobuf:"varint,3,opt,name=ChannelType,json=channel_type,proto3,enum=NAlice.NTv.EChannelType" json:"ChannelType,omitempty"`
-	InputId       string                 `protobuf:"bytes,4,opt,name=InputId,json=input_id,proto3" json:"InputId,omitempty"`
-	IconUri       string                 `protobuf:"bytes,5,opt,name=IconUri,json=icon_uri,proto3" json:"IconUri,omitempty"`
+	Id            *channels.TTvChannelId `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	ChannelType   channels.EChannelType  `protobuf:"varint,3,opt,name=ChannelType,proto3,enum=NAlice.NTv.EChannelType" json:"ChannelType,omitempty"`
+	InputId       string                 `protobuf:"bytes,4,opt,name=InputId,proto3" json:"InputId,omitempty"`
+	IconUri       string                 `protobuf:"bytes,5,opt,name=IconUri,proto3" json:"IconUri,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -104,14 +104,16 @@ var File_alice_protos_data_tv_recent_channel_proto protoreflect.FileDescriptor
 const file_alice_protos_data_tv_recent_channel_proto_rawDesc = "" +
 	"\n" +
 	")alice/protos/data/tv/recent/channel.proto\x12\n" +
-	"NAlice.NTv\x1a*alice/protos/data/tv/channels/common.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x8b\x02\n" +
-	"\x12TRecentChannelItem\x120\n" +
-	"\x02Id\x18\x01 \x01(\v2\x18.NAlice.NTv.TTvChannelIdB\x06\xaa\xdd\x1b\x02idR\x02id\x12\x1c\n" +
-	"\x04Name\x18\x02 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12M\n" +
-	"\vChannelType\x18\x03 \x01(\x0e2\x18.NAlice.NTv.EChannelTypeB\x10\xaa\xdd\x1b\fchannel_typeR\fchannel_type\x12'\n" +
-	"\aInputId\x18\x04 \x01(\tB\f\xaa\xdd\x1b\binput_idR\binput_id\x12'\n" +
-	"\aIconUri\x18\x05 \x01(\tB\f\xaa\xdd\x1b\bicon_uriR\bicon_uri:\x04\xa8\xdd\x1b\x04Bd\n" +
-	"%ru.yandex.alice.protos.data.tv.recentB\rRecentChannelZ,a.yandex-team.ru/alice/protos/data/tv/recentb\x06proto3"
+	"NAlice.NTv\x1a*alice/protos/data/tv/channels/common.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc2\x01\n" +
+	"\x12TRecentChannelItem\x12(\n" +
+	"\x02Id\x18\x01 \x01(\v2\x18.NAlice.NTv.TTvChannelIdR\x02Id\x12\x12\n" +
+	"\x04Name\x18\x02 \x01(\tR\x04Name\x12:\n" +
+	"\vChannelType\x18\x03 \x01(\x0e2\x18.NAlice.NTv.EChannelTypeR\vChannelType\x12\x18\n" +
+	"\aInputId\x18\x04 \x01(\tR\aInputId\x12\x18\n" +
+	"\aIconUri\x18\x05 \x01(\tR\aIconUriB\xb4\x01\n" +
+	"\x0ecom.NAlice.NTvB\fChannelProtoP\x01ZKgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/tv/recent\xa2\x02\x03NNX\xaa\x02\n" +
+	"NAlice.NTv\xca\x02\n" +
+	"NAlice\\NTv\xe2\x02\x16NAlice\\NTv\\GPBMetadata\xea\x02\vNAlice::NTvb\x06proto3"
 
 var (
 	file_alice_protos_data_tv_recent_channel_proto_rawDescOnce sync.Once

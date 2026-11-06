@@ -24,7 +24,7 @@ const (
 
 type TTtsChunkMeta struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SubStreamId   *uint32                `protobuf:"varint,1,opt,name=SubStreamId,json=sub_stream_id,proto3,oneof" json:"SubStreamId,omitempty"`
+	SubStreamId   *uint32                `protobuf:"varint,1,opt,name=SubStreamId,proto3,oneof" json:"SubStreamId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,11 +70,11 @@ var File_alice_protos_api_alicekit_events_tts_speak_tts_chunk_meta_proto protore
 
 const file_alice_protos_api_alicekit_events_tts_speak_tts_chunk_meta_proto_rawDesc = "" +
 	"\n" +
-	"?alice/protos/api/alicekit/events/tts_speak/tts_chunk_meta.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"a\n" +
-	"\rTTtsChunkMeta\x12:\n" +
-	"\vSubStreamId\x18\x01 \x01(\rB\x11\xaa\xdd\x1b\rsub_stream_idH\x00R\rsub_stream_id\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x0e\n" +
-	"\f_SubStreamIdB\x83\x01\n" +
-	"4ru.yandex.alice.protos.api.alicekit.events.tts_speakB\fTtsChunkMetaP\x01Z;a.yandex-team.ru/alice/protos/api/alicekit/events/tts_speakb\x06proto3"
+	"?alice/protos/api/alicekit/events/tts_speak/tts_chunk_meta.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"F\n" +
+	"\rTTtsChunkMeta\x12%\n" +
+	"\vSubStreamId\x18\x01 \x01(\rH\x00R\vSubStreamId\x88\x01\x01B\x0e\n" +
+	"\f_SubStreamIdB\xe6\x01\n" +
+	"\x14com.NAlice.NAliceApiB\x11TtsChunkMetaProtoP\x01ZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/events/tts_speak\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_events_tts_speak_tts_chunk_meta_proto_rawDescOnce sync.Once

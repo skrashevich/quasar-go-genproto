@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/web_video_player_control/capability.proto
 
-package webvideoplayercontrolpb
+package web_video_player_control
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -216,8 +216,8 @@ const file_alice_protos_endpoint_capabilities_web_video_player_control_capabilit
 	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\x0e\n" +
 	"\x06TState:\x04\xa8\xdd\x1b\x04\x1am\n" +
 	"\"TDontAutoPlayRelatedVideoDirective\x12\x1c\n" +
-	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:)\x92\x82\x19\x1cdont_auto_play_related_video\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa9\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cmB\xb6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB TWebPlayerControlCapabilityProtoZda.yandex-team.ru/alice/protos/endpoint/capabilities/web_video_player_control;webvideoplayercontrolpbb\x06proto3"
+	"\x04Name\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:)\x92\x82\x19\x1cdont_auto_play_related_video\xa8\xdd\x1b\x04\xa8\xc8\x1c\xa9\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cmB\xbd\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB TWebPlayerControlCapabilityProtoZkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/web_video_player_controlb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_web_video_player_control_capability_proto_rawDescOnce sync.Once

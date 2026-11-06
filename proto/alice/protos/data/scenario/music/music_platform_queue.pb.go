@@ -142,7 +142,7 @@ type TOperatingFeatures struct {
 	IsAliceShow             *bool                  `protobuf:"varint,2,opt,name=IsAliceShow,proto3,oneof" json:"IsAliceShow,omitempty"`
 	IsFairytale             *bool                  `protobuf:"varint,3,opt,name=IsFairytale,proto3,oneof" json:"IsFairytale,omitempty"`
 	IsTrackRemovedOnDislike *bool                  `protobuf:"varint,4,opt,name=IsTrackRemovedOnDislike,proto3,oneof" json:"IsTrackRemovedOnDislike,omitempty"`
-	IsAudiobook             *bool                  `protobuf:"varint,5,opt,name=IsAudiobook,json=is_audiobook,proto3,oneof" json:"IsAudiobook,omitempty"`
+	IsAudiobook             *bool                  `protobuf:"varint,5,opt,name=IsAudiobook,proto3,oneof" json:"IsAudiobook,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -1184,13 +1184,13 @@ const file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDesc =
 	"\x13_CurrentEntityIndex\"\xad\x01\n" +
 	"\x1bTPlaybackEntityWithProvider\x12@\n" +
 	"\rMusicProvider\x18\x01 \x01(\x0e2\x1a.Alice.Music.MusicProviderR\rMusicProvider\x12L\n" +
-	"\x0ePlaybackEntity\x18\x02 \x01(\v2$.NAlice.NData.NMusic.TPlaybackEntityR\x0ePlaybackEntity\"\xd8\x02\n" +
+	"\x0ePlaybackEntity\x18\x02 \x01(\v2$.NAlice.NData.NMusic.TPlaybackEntityR\x0ePlaybackEntity\"\xc5\x02\n" +
 	"\x12TOperatingFeatures\x12!\n" +
 	"\tIsPodcast\x18\x01 \x01(\bH\x00R\tIsPodcast\x88\x01\x01\x12%\n" +
 	"\vIsAliceShow\x18\x02 \x01(\bH\x01R\vIsAliceShow\x88\x01\x01\x12%\n" +
 	"\vIsFairytale\x18\x03 \x01(\bH\x02R\vIsFairytale\x88\x01\x01\x12=\n" +
-	"\x17IsTrackRemovedOnDislike\x18\x04 \x01(\bH\x03R\x17IsTrackRemovedOnDislike\x88\x01\x01\x128\n" +
-	"\vIsAudiobook\x18\x05 \x01(\bB\x10\xaa\xdd\x1b\fis_audiobookH\x04R\fis_audiobook\x88\x01\x01B\f\n" +
+	"\x17IsTrackRemovedOnDislike\x18\x04 \x01(\bH\x03R\x17IsTrackRemovedOnDislike\x88\x01\x01\x12%\n" +
+	"\vIsAudiobook\x18\x05 \x01(\bH\x04R\vIsAudiobook\x88\x01\x01B\f\n" +
 	"\n" +
 	"_IsPodcastB\x0e\n" +
 	"\f_IsAliceShowB\x0e\n" +
@@ -1208,19 +1208,19 @@ const file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDesc =
 	"\aIsTrial\x18f \x01(\bH\x01R\aIsTrial\x88\x01\x01B\b\n" +
 	"\x06EntityB\n" +
 	"\n" +
-	"\b_IsTrial\"\x98\x01\n" +
-	"\x0eTPlatformTrack\x12\x18\n" +
-	"\x04Uuid\x18\x03 \x01(\tB\x04\xf8\x91*\x03R\x04Uuid\x12\x13\n" +
+	"\b_IsTrial\"\x92\x01\n" +
+	"\x0eTPlatformTrack\x12\x12\n" +
+	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12\x13\n" +
 	"\x02Id\x18\x01 \x01(\tH\x00R\x02Id\x88\x01\x01\x127\n" +
 	"\x14PositionInsideEntity\x18\x02 \x01(\rH\x01R\x14PositionInsideEntity\x88\x01\x01B\x05\n" +
 	"\x03_IdB\x17\n" +
-	"\x15_PositionInsideEntity\"\x9c\x01\n" +
+	"\x15_PositionInsideEntity\"\x96\x01\n" +
 	"\fTTrackEntity\x129\n" +
 	"\x05Track\x18\x01 \x01(\v2#.NAlice.NData.NMusic.TPlatformTrackR\x05Track\x127\n" +
 	"\n" +
 	"RepeatType\x18\x02 \x01(\x0e2\x17.Alice.Music.RepeatTypeR\n" +
-	"RepeatType\x12\x18\n" +
-	"\x04Uuid\x18\x03 \x01(\tB\x04\xf8\x91*\x03R\x04Uuid\"h\n" +
+	"RepeatType\x12\x12\n" +
+	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\"h\n" +
 	"\fTAlbumEntity\x12X\n" +
 	"\x12MusicContainerInfo\x18\x01 \x01(\v2(.NAlice.NData.NMusic.TMusicContainerInfoR\x12MusicContainerInfo\"i\n" +
 	"\rTArtistEntity\x12X\n" +
@@ -1228,9 +1228,9 @@ const file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDesc =
 	"\x0fTPlaylistEntity\x12X\n" +
 	"\x12MusicContainerInfo\x18\x01 \x01(\v2(.NAlice.NData.NMusic.TMusicContainerInfoR\x12MusicContainerInfo\"x\n" +
 	"\x0eTFmRadioEntity\x12f\n" +
-	"\x16RadioStationsContainer\x18\x01 \x01(\v2..NAlice.NData.NMusic.TFmRadioStationsContainerR\x16RadioStationsContainer\"\xbb\x02\n" +
-	"\x19TFmRadioStationsContainer\x12\x18\n" +
-	"\x04Uuid\x18\x01 \x01(\tB\x04\xf8\x91*\x03R\x04Uuid\x12c\n" +
+	"\x16RadioStationsContainer\x18\x01 \x01(\v2..NAlice.NData.NMusic.TFmRadioStationsContainerR\x16RadioStationsContainer\"\xb5\x02\n" +
+	"\x19TFmRadioStationsContainer\x12\x12\n" +
+	"\x04Uuid\x18\x01 \x01(\tR\x04Uuid\x12c\n" +
 	"\x15RadioStationsPlayback\x18\x04 \x01(\v2-.NAlice.NData.NMusic.TFmRadioStationsPlaybackR\x15RadioStationsPlayback\x127\n" +
 	"\x14HistoryStartPosition\x18\x02 \x01(\rH\x00R\x14HistoryStartPosition\x88\x01\x01\x125\n" +
 	"\x13QueueFinishPosition\x18\x03 \x01(\rH\x01R\x13QueueFinishPosition\x88\x01\x01B\x17\n" +
@@ -1241,19 +1241,19 @@ const file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDesc =
 	"\x18CurrentRadioStationIndex\x18\x02 \x01(\rH\x00R\x18CurrentRadioStationIndex\x88\x01\x01\x129\n" +
 	"\x15CurrentGlobalPosition\x18\x03 \x01(\rH\x01R\x15CurrentGlobalPosition\x88\x01\x01B\x1b\n" +
 	"\x19_CurrentRadioStationIndexB\x18\n" +
-	"\x16_CurrentGlobalPosition\"\x99\x01\n" +
-	"\x0fTFmRadioStation\x12\x18\n" +
-	"\x04Uuid\x18\x01 \x01(\tB\x04\xf8\x91*\x03R\x04Uuid\x12\x13\n" +
+	"\x16_CurrentGlobalPosition\"\x93\x01\n" +
+	"\x0fTFmRadioStation\x12\x12\n" +
+	"\x04Uuid\x18\x01 \x01(\tR\x04Uuid\x12\x13\n" +
 	"\x02Id\x18\x02 \x01(\tH\x00R\x02Id\x88\x01\x01\x127\n" +
 	"\x14PositionInsideEntity\x18\x03 \x01(\rH\x01R\x14PositionInsideEntity\x88\x01\x01B\x05\n" +
 	"\x03_IdB\x17\n" +
-	"\x15_PositionInsideEntity\"\xf0\x03\n" +
+	"\x15_PositionInsideEntity\"\xea\x03\n" +
 	"\x13TMusicContainerInfo\x12L\n" +
 	"\x0eTracksPlayback\x18\x04 \x01(\v2$.NAlice.NData.NMusic.TTracksPlaybackR\x0eTracksPlayback\x127\n" +
 	"\n" +
 	"RepeatType\x18\x06 \x01(\x0e2\x17.Alice.Music.RepeatTypeR\n" +
-	"RepeatType\x12\x18\n" +
-	"\x04Uuid\x18\a \x01(\tB\x04\xf8\x91*\x03R\x04Uuid\x12\x13\n" +
+	"RepeatType\x12\x12\n" +
+	"\x04Uuid\x18\a \x01(\tR\x04Uuid\x12\x13\n" +
 	"\x02Id\x18\x01 \x01(\tH\x00R\x02Id\x88\x01\x01\x127\n" +
 	"\x14HistoryStartPosition\x18\x02 \x01(\rH\x01R\x14HistoryStartPosition\x88\x01\x01\x125\n" +
 	"\x13QueueFinishPosition\x18\x03 \x01(\rH\x02R\x13QueueFinishPosition\x88\x01\x01\x12%\n" +
@@ -1276,8 +1276,8 @@ const file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDesc =
 	"\x11CurrentTrackIndex\x18\x02 \x01(\rH\x00R\x11CurrentTrackIndex\x88\x01\x01\x129\n" +
 	"\x15CurrentGlobalPosition\x18\x03 \x01(\rH\x01R\x15CurrentGlobalPosition\x88\x01\x01B\x14\n" +
 	"\x12_CurrentTrackIndexB\x18\n" +
-	"\x16_CurrentGlobalPositionB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"\x16_CurrentGlobalPositionB\xf2\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x17MusicPlatformQueueProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_music_platform_queue_proto_rawDescOnce sync.Once

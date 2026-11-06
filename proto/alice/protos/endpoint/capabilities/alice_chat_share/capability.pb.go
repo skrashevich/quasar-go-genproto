@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/alice_chat_share/capability.proto
 
-package alicechatsharepb
+package alice_chat_share
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -367,8 +367,8 @@ const file_alice_protos_endpoint_capabilities_alice_chat_share_capability_proto_
 	"\fTTextContent\x12\x1c\n" +
 	"\x04Text\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04textR\x04text:\x04\xa8\xdd\x1b\x04\x1a/\n" +
 	"\fTLinkContent\x12\x19\n" +
-	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xec\x01B\xa4\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceChatShareCapabilityProtoZUa.yandex-team.ru/alice/protos/endpoint/capabilities/alice_chat_share;alicechatsharepbb\x06proto3"
+	"\x03Url\x18\x01 \x01(\tB\a\xaa\xdd\x1b\x03urlR\x03url:\x04\xa8\xdd\x1b\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xec\x01B\xb2\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1dAliceChatShareCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/alice_chat_shareb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_alice_chat_share_capability_proto_rawDescOnce sync.Once

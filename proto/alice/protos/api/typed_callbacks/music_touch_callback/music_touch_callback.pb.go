@@ -80,7 +80,7 @@ func (TMusicTouchTypedCallback_TShowAllArtistContent_EContentType) EnumDescripto
 
 type TMusicTouchTypedCallback struct {
 	state         protoimpl.MessageState             `protogen:"open.v1"`
-	Command       *TMusicTouchTypedCallback_TCommand `protobuf:"bytes,2,opt,name=Command,json=command,proto3" json:"Command,omitempty"`
+	Command       *TMusicTouchTypedCallback_TCommand `protobuf:"bytes,2,opt,name=Command,proto3" json:"Command,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,7 +124,7 @@ func (x *TMusicTouchTypedCallback) GetCommand() *TMusicTouchTypedCallback_TComma
 
 type TCollectMusicVerticalTypedCallback struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	IsStashUpdate bool                   `protobuf:"varint,1,opt,name=IsStashUpdate,json=is_stash_update,proto3" json:"IsStashUpdate,omitempty"`
+	IsStashUpdate bool                   `protobuf:"varint,1,opt,name=IsStashUpdate,proto3" json:"IsStashUpdate,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -168,11 +168,11 @@ func (x *TCollectMusicVerticalTypedCallback) GetIsStashUpdate() bool {
 
 type TCentaurMusicEnrichTracksTypedCallback struct {
 	state           protoimpl.MessageState                          `protogen:"open.v1"`
-	TracksIds       []string                                        `protobuf:"bytes,1,rep,name=TracksIds,json=tracks_ids,proto3" json:"TracksIds,omitempty"`
-	CurrentTrackId  string                                          `protobuf:"bytes,2,opt,name=CurrentTrackId,json=current_track_id,proto3" json:"CurrentTrackId,omitempty"`
-	Limit           uint32                                          `protobuf:"varint,3,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
-	ParentContentId *music.TContentId                               `protobuf:"bytes,4,opt,name=ParentContentId,json=parent_content_id,proto3" json:"ParentContentId,omitempty"`
-	Div2Id          *TCentaurMusicEnrichTracksTypedCallback_TDiv2Id `protobuf:"bytes,5,opt,name=Div2Id,json=div2_id,proto3" json:"Div2Id,omitempty"`
+	TracksIds       []string                                        `protobuf:"bytes,1,rep,name=TracksIds,proto3" json:"TracksIds,omitempty"`
+	CurrentTrackId  string                                          `protobuf:"bytes,2,opt,name=CurrentTrackId,proto3" json:"CurrentTrackId,omitempty"`
+	Limit           uint32                                          `protobuf:"varint,3,opt,name=Limit,proto3" json:"Limit,omitempty"`
+	ParentContentId *music.TContentId                               `protobuf:"bytes,4,opt,name=ParentContentId,proto3" json:"ParentContentId,omitempty"`
+	Div2Id          *TCentaurMusicEnrichTracksTypedCallback_TDiv2Id `protobuf:"bytes,5,opt,name=Div2Id,proto3" json:"Div2Id,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -244,10 +244,10 @@ func (x *TCentaurMusicEnrichTracksTypedCallback) GetDiv2Id() *TCentaurMusicEnric
 
 type TMusicSearchTypedCallback struct {
 	state         protoimpl.MessageState                            `protogen:"open.v1"`
-	Query         string                                            `protobuf:"bytes,1,opt,name=Query,json=query,proto3" json:"Query,omitempty"`
-	Type          music_search.TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,json=type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
-	Offset        uint32                                            `protobuf:"varint,3,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
-	Limit         uint32                                            `protobuf:"varint,4,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Query         string                                            `protobuf:"bytes,1,opt,name=Query,proto3" json:"Query,omitempty"`
+	Type          music_search.TMusicSearchRequest_EMusicSearchType `protobuf:"varint,2,opt,name=Type,proto3,enum=NAlice.NMusic.TMusicSearchRequest_EMusicSearchType" json:"Type,omitempty"`
+	Offset        uint32                                            `protobuf:"varint,3,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	Limit         uint32                                            `protobuf:"varint,4,opt,name=Limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -312,7 +312,7 @@ func (x *TMusicSearchTypedCallback) GetLimit() uint32 {
 
 type TMusicTouchTypedCallback_TLikeCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
+	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -356,7 +356,7 @@ func (x *TMusicTouchTypedCallback_TLikeCommand) GetContentId() *music.TContentId
 
 type TMusicTouchTypedCallback_TRemoveLikeCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
+	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -400,7 +400,7 @@ func (x *TMusicTouchTypedCallback_TRemoveLikeCommand) GetContentId() *music.TCon
 
 type TMusicTouchTypedCallback_TDislikeCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
+	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -444,7 +444,7 @@ func (x *TMusicTouchTypedCallback_TDislikeCommand) GetContentId() *music.TConten
 
 type TMusicTouchTypedCallback_TRemoveDislikeCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
+	ContentId     *music.TContentId      `protobuf:"bytes,1,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -488,7 +488,7 @@ func (x *TMusicTouchTypedCallback_TRemoveDislikeCommand) GetContentId() *music.T
 
 type TMusicTouchTypedCallback_TRepeatCommand struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
-	RepeatMode    music_entities.ERepeatMode `protobuf:"varint,1,opt,name=RepeatMode,json=repeat_mode,proto3,enum=NAlice.NData.ERepeatMode" json:"RepeatMode,omitempty"`
+	RepeatMode    music_entities.ERepeatMode `protobuf:"varint,1,opt,name=RepeatMode,proto3,enum=NAlice.NData.ERepeatMode" json:"RepeatMode,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -604,7 +604,7 @@ func (*TMusicTouchTypedCallback_TUnshuffleCommand) Descriptor() ([]byte, []int) 
 
 type TMusicTouchTypedCallback_TNextTrackCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SetPause      bool                   `protobuf:"varint,1,opt,name=SetPause,json=set_pause,proto3" json:"SetPause,omitempty"`
+	SetPause      bool                   `protobuf:"varint,1,opt,name=SetPause,proto3" json:"SetPause,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -648,7 +648,7 @@ func (x *TMusicTouchTypedCallback_TNextTrackCommand) GetSetPause() bool {
 
 type TMusicTouchTypedCallback_TPrevTrackCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	SetPause      bool                   `protobuf:"varint,1,opt,name=SetPause,json=set_pause,proto3" json:"SetPause,omitempty"`
+	SetPause      bool                   `protobuf:"varint,1,opt,name=SetPause,proto3" json:"SetPause,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -692,7 +692,7 @@ func (x *TMusicTouchTypedCallback_TPrevTrackCommand) GetSetPause() bool {
 
 type TMusicTouchTypedCallback_TContinueCommand struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	SkipPlayerStateCheck bool                   `protobuf:"varint,1,opt,name=SkipPlayerStateCheck,json=skip_player_state_check,proto3" json:"SkipPlayerStateCheck,omitempty"`
+	SkipPlayerStateCheck bool                   `protobuf:"varint,1,opt,name=SkipPlayerStateCheck,proto3" json:"SkipPlayerStateCheck,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -844,8 +844,8 @@ func (*TMusicTouchTypedCallback_TDisableKaraokeModeCommand) Descriptor() ([]byte
 
 type TMusicTouchTypedCallback_TFmRadioPlayCommand struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	FmRadioStation string                 `protobuf:"bytes,1,opt,name=FmRadioStation,json=fm_radio_station,proto3" json:"FmRadioStation,omitempty"`
-	FmRadioFreq    string                 `protobuf:"bytes,2,opt,name=FmRadioFreq,json=fm_radio_freq,proto3" json:"FmRadioFreq,omitempty"`
+	FmRadioStation string                 `protobuf:"bytes,1,opt,name=FmRadioStation,proto3" json:"FmRadioStation,omitempty"`
+	FmRadioFreq    string                 `protobuf:"bytes,2,opt,name=FmRadioFreq,proto3" json:"FmRadioFreq,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -896,18 +896,18 @@ func (x *TMusicTouchTypedCallback_TFmRadioPlayCommand) GetFmRadioFreq() string {
 
 type TMusicTouchTypedCallback_TMusicPlayCommand struct {
 	state                     protoimpl.MessageState       `protogen:"open.v1"`
-	StartFromTrackId          string                       `protobuf:"bytes,3,opt,name=StartFromTrackId,json=start_from_track_id,proto3" json:"StartFromTrackId,omitempty"`
-	ContentId                 *music.TContentId            `protobuf:"bytes,4,opt,name=ContentId,json=content_id,proto3" json:"ContentId,omitempty"`
-	UseIchwillRecommendations bool                         `protobuf:"varint,5,opt,name=UseIchwillRecommendations,json=use_ichwill_recommendations,proto3" json:"UseIchwillRecommendations,omitempty"`
-	DisableAutoflow           bool                         `protobuf:"varint,6,opt,name=DisableAutoflow,json=disable_autoflow,proto3" json:"DisableAutoflow,omitempty"`
-	PlaySingleTrack           bool                         `protobuf:"varint,7,opt,name=PlaySingleTrack,json=play_single_track,proto3" json:"PlaySingleTrack,omitempty"`
-	DurationRestrictions      *music.TDurationRestrictions `protobuf:"bytes,8,opt,name=DurationRestrictions,json=duration_restrictions,proto3" json:"DurationRestrictions,omitempty"`
-	KeepInStack               bool                         `protobuf:"varint,9,opt,name=KeepInStack,json=keep_in_stack,proto3" json:"KeepInStack,omitempty"`
-	KaraokeMode               music.EKaraokeMode           `protobuf:"varint,10,opt,name=KaraokeMode,json=karaoke_mode,proto3,enum=NAlice.NData.NMusic.EKaraokeMode" json:"KaraokeMode,omitempty"`
-	DisableAutoflowSoft       bool                         `protobuf:"varint,11,opt,name=DisableAutoflowSoft,json=disable_autoflow_soft,proto3" json:"DisableAutoflowSoft,omitempty"`
-	IsStashUpdate             bool                         `protobuf:"varint,12,opt,name=IsStashUpdate,json=is_stash_update,proto3" json:"IsStashUpdate,omitempty"`
-	Offset                    string                       `protobuf:"bytes,13,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
-	TrackOffsetIndex          uint32                       `protobuf:"varint,14,opt,name=TrackOffsetIndex,json=track_offset_index,proto3" json:"TrackOffsetIndex,omitempty"`
+	StartFromTrackId          string                       `protobuf:"bytes,3,opt,name=StartFromTrackId,proto3" json:"StartFromTrackId,omitempty"`
+	ContentId                 *music.TContentId            `protobuf:"bytes,4,opt,name=ContentId,proto3" json:"ContentId,omitempty"`
+	UseIchwillRecommendations bool                         `protobuf:"varint,5,opt,name=UseIchwillRecommendations,proto3" json:"UseIchwillRecommendations,omitempty"`
+	DisableAutoflow           bool                         `protobuf:"varint,6,opt,name=DisableAutoflow,proto3" json:"DisableAutoflow,omitempty"`
+	PlaySingleTrack           bool                         `protobuf:"varint,7,opt,name=PlaySingleTrack,proto3" json:"PlaySingleTrack,omitempty"`
+	DurationRestrictions      *music.TDurationRestrictions `protobuf:"bytes,8,opt,name=DurationRestrictions,proto3" json:"DurationRestrictions,omitempty"`
+	KeepInStack               bool                         `protobuf:"varint,9,opt,name=KeepInStack,proto3" json:"KeepInStack,omitempty"`
+	KaraokeMode               music.EKaraokeMode           `protobuf:"varint,10,opt,name=KaraokeMode,proto3,enum=NAlice.NData.NMusic.EKaraokeMode" json:"KaraokeMode,omitempty"`
+	DisableAutoflowSoft       bool                         `protobuf:"varint,11,opt,name=DisableAutoflowSoft,proto3" json:"DisableAutoflowSoft,omitempty"`
+	IsStashUpdate             bool                         `protobuf:"varint,12,opt,name=IsStashUpdate,proto3" json:"IsStashUpdate,omitempty"`
+	Offset                    string                       `protobuf:"bytes,13,opt,name=Offset,proto3" json:"Offset,omitempty"`
+	TrackOffsetIndex          uint32                       `protobuf:"varint,14,opt,name=TrackOffsetIndex,proto3" json:"TrackOffsetIndex,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -1028,8 +1028,8 @@ func (x *TMusicTouchTypedCallback_TMusicPlayCommand) GetTrackOffsetIndex() uint3
 
 type TMusicTouchTypedCallback_TMoveToTrackIdCommand struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	StartFromTrackId   string                 `protobuf:"bytes,1,opt,name=StartFromTrackId,json=start_from_track_id,proto3" json:"StartFromTrackId,omitempty"`
-	StartFromTrackUuid *string                `protobuf:"bytes,2,opt,name=StartFromTrackUuid,json=start_from_track_uuid,proto3,oneof" json:"StartFromTrackUuid,omitempty"`
+	StartFromTrackId   string                 `protobuf:"bytes,1,opt,name=StartFromTrackId,proto3" json:"StartFromTrackId,omitempty"`
+	StartFromTrackUuid *string                `protobuf:"bytes,2,opt,name=StartFromTrackUuid,proto3,oneof" json:"StartFromTrackUuid,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1080,8 +1080,8 @@ func (x *TMusicTouchTypedCallback_TMoveToTrackIdCommand) GetStartFromTrackUuid()
 
 type TMusicTouchTypedCallback_TShowArtistCommand struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	Id                 string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	DisableShowView    bool                   `protobuf:"varint,2,opt,name=DisableShowView,json=disable_show_view,proto3" json:"DisableShowView,omitempty"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
+	DisableShowView    bool                   `protobuf:"varint,2,opt,name=DisableShowView,proto3" json:"DisableShowView,omitempty"`
 	PopularTracksLimit uint32                 `protobuf:"varint,3,opt,name=PopularTracksLimit,json=popular_tracks_limit,proto3" json:"PopularTracksLimit,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
@@ -1140,7 +1140,7 @@ func (x *TMusicTouchTypedCallback_TShowArtistCommand) GetPopularTracksLimit() ui
 
 type TMusicTouchTypedCallback_TShowAlbumCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	Offset        uint32                 `protobuf:"varint,2,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
 	Limit         uint32                 `protobuf:"varint,3,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1200,8 +1200,8 @@ func (x *TMusicTouchTypedCallback_TShowAlbumCommand) GetLimit() uint32 {
 
 type TMusicTouchTypedCallback_TShowAllArtistContent struct {
 	state         protoimpl.MessageState                                      `protogen:"open.v1"`
-	ArtistId      string                                                      `protobuf:"bytes,1,opt,name=ArtistId,json=artist_id,proto3" json:"ArtistId,omitempty"`
-	ContentType   TMusicTouchTypedCallback_TShowAllArtistContent_EContentType `protobuf:"varint,2,opt,name=ContentType,json=content_type,proto3,enum=NAlice.TMusicTouchTypedCallback_TShowAllArtistContent_EContentType" json:"ContentType,omitempty"`
+	ArtistId      string                                                      `protobuf:"bytes,1,opt,name=ArtistId,proto3" json:"ArtistId,omitempty"`
+	ContentType   TMusicTouchTypedCallback_TShowAllArtistContent_EContentType `protobuf:"varint,2,opt,name=ContentType,proto3,enum=NAlice.TMusicTouchTypedCallback_TShowAllArtistContent_EContentType" json:"ContentType,omitempty"`
 	Offset        uint32                                                      `protobuf:"varint,3,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
 	Limit         uint32                                                      `protobuf:"varint,4,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1268,7 +1268,7 @@ func (x *TMusicTouchTypedCallback_TShowAllArtistContent) GetLimit() uint32 {
 
 type TMusicTouchTypedCallback_TShowPlaylistCommand struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	Offset        uint32                 `protobuf:"varint,2,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
 	Limit         uint32                 `protobuf:"varint,3,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1577,83 +1577,83 @@ type isTMusicTouchTypedCallback_TCommand_Value interface {
 }
 
 type TMusicTouchTypedCallback_TCommand_Like struct {
-	Like *TMusicTouchTypedCallback_TLikeCommand `protobuf:"bytes,1,opt,name=Like,json=like,proto3,oneof"`
+	Like *TMusicTouchTypedCallback_TLikeCommand `protobuf:"bytes,1,opt,name=Like,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_RemoveLike struct {
-	RemoveLike *TMusicTouchTypedCallback_TRemoveLikeCommand `protobuf:"bytes,2,opt,name=RemoveLike,json=remove_like,proto3,oneof"`
+	RemoveLike *TMusicTouchTypedCallback_TRemoveLikeCommand `protobuf:"bytes,2,opt,name=RemoveLike,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_Dislike struct {
-	Dislike *TMusicTouchTypedCallback_TDislikeCommand `protobuf:"bytes,3,opt,name=Dislike,json=dislike,proto3,oneof"`
+	Dislike *TMusicTouchTypedCallback_TDislikeCommand `protobuf:"bytes,3,opt,name=Dislike,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_RemoveDislike struct {
-	RemoveDislike *TMusicTouchTypedCallback_TRemoveDislikeCommand `protobuf:"bytes,4,opt,name=RemoveDislike,json=remove_dislike,proto3,oneof"`
+	RemoveDislike *TMusicTouchTypedCallback_TRemoveDislikeCommand `protobuf:"bytes,4,opt,name=RemoveDislike,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_Repeat struct {
-	Repeat *TMusicTouchTypedCallback_TRepeatCommand `protobuf:"bytes,5,opt,name=Repeat,json=repeat,proto3,oneof"`
+	Repeat *TMusicTouchTypedCallback_TRepeatCommand `protobuf:"bytes,5,opt,name=Repeat,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_Shuffle struct {
-	Shuffle *TMusicTouchTypedCallback_TShuffleCommand `protobuf:"bytes,6,opt,name=Shuffle,json=shuffle,proto3,oneof"`
+	Shuffle *TMusicTouchTypedCallback_TShuffleCommand `protobuf:"bytes,6,opt,name=Shuffle,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_Unshuffle struct {
-	Unshuffle *TMusicTouchTypedCallback_TUnshuffleCommand `protobuf:"bytes,7,opt,name=Unshuffle,json=unshuffle,proto3,oneof"`
+	Unshuffle *TMusicTouchTypedCallback_TUnshuffleCommand `protobuf:"bytes,7,opt,name=Unshuffle,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_NextTrack struct {
-	NextTrack *TMusicTouchTypedCallback_TNextTrackCommand `protobuf:"bytes,8,opt,name=NextTrack,json=next_track,proto3,oneof"`
+	NextTrack *TMusicTouchTypedCallback_TNextTrackCommand `protobuf:"bytes,8,opt,name=NextTrack,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_PrevTrack struct {
-	PrevTrack *TMusicTouchTypedCallback_TPrevTrackCommand `protobuf:"bytes,9,opt,name=PrevTrack,json=prev_track,proto3,oneof"`
+	PrevTrack *TMusicTouchTypedCallback_TPrevTrackCommand `protobuf:"bytes,9,opt,name=PrevTrack,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_FmRadioPlay struct {
-	FmRadioPlay *TMusicTouchTypedCallback_TFmRadioPlayCommand `protobuf:"bytes,10,opt,name=FmRadioPlay,json=fm_radio_play,proto3,oneof"`
+	FmRadioPlay *TMusicTouchTypedCallback_TFmRadioPlayCommand `protobuf:"bytes,10,opt,name=FmRadioPlay,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_MusicPlay struct {
-	MusicPlay *TMusicTouchTypedCallback_TMusicPlayCommand `protobuf:"bytes,11,opt,name=MusicPlay,json=music_play,proto3,oneof"`
+	MusicPlay *TMusicTouchTypedCallback_TMusicPlayCommand `protobuf:"bytes,11,opt,name=MusicPlay,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_GetLyrics struct {
-	GetLyrics *TMusicTouchTypedCallback_TGetLyricsCommand `protobuf:"bytes,12,opt,name=GetLyrics,json=get_lyrics,proto3,oneof"`
+	GetLyrics *TMusicTouchTypedCallback_TGetLyricsCommand `protobuf:"bytes,12,opt,name=GetLyrics,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_MoveToTrackId struct {
-	MoveToTrackId *TMusicTouchTypedCallback_TMoveToTrackIdCommand `protobuf:"bytes,13,opt,name=MoveToTrackId,json=change_track_number,proto3,oneof"`
+	MoveToTrackId *TMusicTouchTypedCallback_TMoveToTrackIdCommand `protobuf:"bytes,13,opt,name=MoveToTrackId,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_Continue struct {
-	Continue *TMusicTouchTypedCallback_TContinueCommand `protobuf:"bytes,14,opt,name=Continue,json=continue,proto3,oneof"`
+	Continue *TMusicTouchTypedCallback_TContinueCommand `protobuf:"bytes,14,opt,name=Continue,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_ShowAlbum struct {
-	ShowAlbum *TMusicTouchTypedCallback_TShowAlbumCommand `protobuf:"bytes,15,opt,name=ShowAlbum,json=show_album,proto3,oneof"`
+	ShowAlbum *TMusicTouchTypedCallback_TShowAlbumCommand `protobuf:"bytes,15,opt,name=ShowAlbum,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_ShowArtist struct {
-	ShowArtist *TMusicTouchTypedCallback_TShowArtistCommand `protobuf:"bytes,16,opt,name=ShowArtist,json=show_artist,proto3,oneof"`
+	ShowArtist *TMusicTouchTypedCallback_TShowArtistCommand `protobuf:"bytes,16,opt,name=ShowArtist,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_ShowAllArtistContent struct {
-	ShowAllArtistContent *TMusicTouchTypedCallback_TShowAllArtistContent `protobuf:"bytes,17,opt,name=ShowAllArtistContent,json=show_all_artist_content,proto3,oneof"`
+	ShowAllArtistContent *TMusicTouchTypedCallback_TShowAllArtistContent `protobuf:"bytes,17,opt,name=ShowAllArtistContent,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_ShowPlaylist struct {
-	ShowPlaylist *TMusicTouchTypedCallback_TShowPlaylistCommand `protobuf:"bytes,18,opt,name=ShowPlaylist,json=show_playlist,proto3,oneof"`
+	ShowPlaylist *TMusicTouchTypedCallback_TShowPlaylistCommand `protobuf:"bytes,18,opt,name=ShowPlaylist,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_EnableKaraokeMode struct {
-	EnableKaraokeMode *TMusicTouchTypedCallback_TEnableKaraokeModeCommand `protobuf:"bytes,19,opt,name=EnableKaraokeMode,json=enable_karaoke_mode,proto3,oneof"`
+	EnableKaraokeMode *TMusicTouchTypedCallback_TEnableKaraokeModeCommand `protobuf:"bytes,19,opt,name=EnableKaraokeMode,proto3,oneof"`
 }
 
 type TMusicTouchTypedCallback_TCommand_DisableKaraokeMode struct {
-	DisableKaraokeMode *TMusicTouchTypedCallback_TDisableKaraokeModeCommand `protobuf:"bytes,20,opt,name=DisableKaraokeMode,json=disable_karaoke_mode,proto3,oneof"`
+	DisableKaraokeMode *TMusicTouchTypedCallback_TDisableKaraokeModeCommand `protobuf:"bytes,20,opt,name=DisableKaraokeMode,proto3,oneof"`
 }
 
 func (*TMusicTouchTypedCallback_TCommand_Like) isTMusicTouchTypedCallback_TCommand_Value() {}
@@ -1701,8 +1701,8 @@ func (*TMusicTouchTypedCallback_TCommand_DisableKaraokeMode) isTMusicTouchTypedC
 
 type TCentaurMusicEnrichTracksTypedCallback_TDiv2Id struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CardId        string                 `protobuf:"bytes,1,opt,name=CardId,json=card_id,proto3" json:"CardId,omitempty"`
-	CardName      string                 `protobuf:"bytes,2,opt,name=CardName,json=card_name,proto3" json:"CardName,omitempty"`
+	CardId        string                 `protobuf:"bytes,1,opt,name=CardId,proto3" json:"CardId,omitempty"`
+	CardName      string                 `protobuf:"bytes,2,opt,name=CardName,proto3" json:"CardName,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1755,76 +1755,66 @@ var File_alice_protos_api_typed_callbacks_music_touch_callback_music_touch_callb
 
 const file_alice_protos_api_typed_callbacks_music_touch_callback_music_touch_callback_proto_rawDesc = "" +
 	"\n" +
-	"Palice/protos/api/typed_callbacks/music_touch_callback/music_touch_callback.proto\x12\x06NAlice\x1a:alice/protos/api/rpc/music/music_search/music_search.proto\x1a2alice/protos/data/music_entities/repeat_mode.proto\x1a-alice/protos/data/scenario/music/common.proto\x1a1alice/protos/data/scenario/music/content_id.proto\x1a3alice/protos/data/scenario/music/karaoke_mode.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xf1(\n" +
-	"\x18TMusicTouchTypedCallback\x12P\n" +
-	"\aCommand\x18\x02 \x01(\v2).NAlice.TMusicTouchTypedCallback.TCommandB\v\xaa\xdd\x1b\acommandR\acommand\x1a^\n" +
-	"\fTLikeCommand\x12N\n" +
-	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x1ad\n" +
-	"\x12TRemoveLikeCommand\x12N\n" +
-	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x1aa\n" +
-	"\x0fTDislikeCommand\x12N\n" +
-	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x1ag\n" +
-	"\x15TRemoveDislikeCommand\x12N\n" +
-	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x1a]\n" +
-	"\x0eTRepeatCommand\x12K\n" +
+	"Palice/protos/api/typed_callbacks/music_touch_callback/music_touch_callback.proto\x12\x06NAlice\x1a:alice/protos/api/rpc/music/music_search/music_search.proto\x1a2alice/protos/data/music_entities/repeat_mode.proto\x1a-alice/protos/data/scenario/music/common.proto\x1a1alice/protos/data/scenario/music/content_id.proto\x1a3alice/protos/data/scenario/music/karaoke_mode.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xd6 \n" +
+	"\x18TMusicTouchTypedCallback\x12C\n" +
+	"\aCommand\x18\x02 \x01(\v2).NAlice.TMusicTouchTypedCallback.TCommandR\aCommand\x1aM\n" +
+	"\fTLikeCommand\x12=\n" +
+	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\tContentId\x1aS\n" +
+	"\x12TRemoveLikeCommand\x12=\n" +
+	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\tContentId\x1aP\n" +
+	"\x0fTDislikeCommand\x12=\n" +
+	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\tContentId\x1aV\n" +
+	"\x15TRemoveDislikeCommand\x12=\n" +
+	"\tContentId\x18\x01 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\tContentId\x1aK\n" +
+	"\x0eTRepeatCommand\x129\n" +
 	"\n" +
-	"RepeatMode\x18\x01 \x01(\x0e2\x19.NAlice.NData.ERepeatModeB\x0f\xaa\xdd\x1b\vrepeat_modeR\vrepeat_mode\x1a\x11\n" +
+	"RepeatMode\x18\x01 \x01(\x0e2\x19.NAlice.NData.ERepeatModeR\n" +
+	"RepeatMode\x1a\x11\n" +
 	"\x0fTShuffleCommand\x1a\x13\n" +
-	"\x11TUnshuffleCommand\x1a?\n" +
-	"\x11TNextTrackCommand\x12*\n" +
-	"\bSetPause\x18\x01 \x01(\bB\r\xaa\xdd\x1b\tset_pauseR\tset_pause\x1a?\n" +
-	"\x11TPrevTrackCommand\x12*\n" +
-	"\bSetPause\x18\x01 \x01(\bB\r\xaa\xdd\x1b\tset_pauseR\tset_pause\x1af\n" +
-	"\x10TContinueCommand\x12R\n" +
-	"\x14SkipPlayerStateCheck\x18\x01 \x01(\bB\x1b\xaa\xdd\x1b\x17skip_player_state_checkR\x17skip_player_state_check\x1a\x13\n" +
+	"\x11TUnshuffleCommand\x1a/\n" +
+	"\x11TNextTrackCommand\x12\x1a\n" +
+	"\bSetPause\x18\x01 \x01(\bR\bSetPause\x1a/\n" +
+	"\x11TPrevTrackCommand\x12\x1a\n" +
+	"\bSetPause\x18\x01 \x01(\bR\bSetPause\x1aF\n" +
+	"\x10TContinueCommand\x122\n" +
+	"\x14SkipPlayerStateCheck\x18\x01 \x01(\bR\x14SkipPlayerStateCheck\x1a\x13\n" +
 	"\x11TGetLyricsCommand\x1a\x1b\n" +
 	"\x19TEnableKaraokeModeCommand\x1a\x1c\n" +
-	"\x1aTDisableKaraokeModeCommand\x1a\x8c\x01\n" +
-	"\x13TFmRadioPlayCommand\x12>\n" +
-	"\x0eFmRadioStation\x18\x01 \x01(\tB\x14\xaa\xdd\x1b\x10fm_radio_stationR\x10fm_radio_station\x125\n" +
-	"\vFmRadioFreq\x18\x02 \x01(\tB\x11\xaa\xdd\x1b\rfm_radio_freqR\rfm_radio_freq\x1a\xb3\a\n" +
-	"\x11TMusicPlayCommand\x12F\n" +
-	"\x10StartFromTrackId\x18\x03 \x01(\tB\x17\xaa\xdd\x1b\x13start_from_track_idR\x13start_from_track_id\x12N\n" +
-	"\tContentId\x18\x04 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x0e\xaa\xdd\x1b\n" +
-	"content_idR\n" +
-	"content_id\x12_\n" +
-	"\x19UseIchwillRecommendations\x18\x05 \x01(\bB\x1f\xaa\xdd\x1b\x1buse_ichwill_recommendationsR\x1buse_ichwill_recommendations\x12?\n" +
-	"\x0fDisableAutoflow\x18\x06 \x01(\bB\x14\xaa\xdd\x1b\x10disable_autoflowR\x10disable_autoflow\x12A\n" +
-	"\x0fPlaySingleTrack\x18\a \x01(\bB\x15\xaa\xdd\x1b\x11play_single_trackR\x11play_single_track\x12z\n" +
-	"\x14DurationRestrictions\x18\b \x01(\v2*.NAlice.NData.NMusic.TDurationRestrictionsB\x19\xaa\xdd\x1b\x15duration_restrictionsR\x15duration_restrictions\x125\n" +
-	"\vKeepInStack\x18\t \x01(\bB\x11\xaa\xdd\x1b\rkeep_in_stackR\rkeep_in_stack\x12V\n" +
+	"\x1aTDisableKaraokeModeCommand\x1a_\n" +
+	"\x13TFmRadioPlayCommand\x12&\n" +
+	"\x0eFmRadioStation\x18\x01 \x01(\tR\x0eFmRadioStation\x12 \n" +
+	"\vFmRadioFreq\x18\x02 \x01(\tR\vFmRadioFreq\x1a\x95\x05\n" +
+	"\x11TMusicPlayCommand\x12*\n" +
+	"\x10StartFromTrackId\x18\x03 \x01(\tR\x10StartFromTrackId\x12=\n" +
+	"\tContentId\x18\x04 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\tContentId\x12<\n" +
+	"\x19UseIchwillRecommendations\x18\x05 \x01(\bR\x19UseIchwillRecommendations\x12(\n" +
+	"\x0fDisableAutoflow\x18\x06 \x01(\bR\x0fDisableAutoflow\x12(\n" +
+	"\x0fPlaySingleTrack\x18\a \x01(\bR\x0fPlaySingleTrack\x12^\n" +
+	"\x14DurationRestrictions\x18\b \x01(\v2*.NAlice.NData.NMusic.TDurationRestrictionsR\x14DurationRestrictions\x12 \n" +
+	"\vKeepInStack\x18\t \x01(\bR\vKeepInStack\x12C\n" +
 	"\vKaraokeMode\x18\n" +
-	" \x01(\x0e2!.NAlice.NData.NMusic.EKaraokeModeB\x10\xaa\xdd\x1b\fkaraoke_modeR\fkaraoke_mode\x12M\n" +
-	"\x13DisableAutoflowSoft\x18\v \x01(\bB\x19\xaa\xdd\x1b\x15disable_autoflow_softR\x15disable_autoflow_soft\x12;\n" +
-	"\rIsStashUpdate\x18\f \x01(\bB\x13\xaa\xdd\x1b\x0fis_stash_updateR\x0fis_stash_update\x12\"\n" +
-	"\x06Offset\x18\r \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06offsetR\x06offset\x12D\n" +
-	"\x10TrackOffsetIndex\x18\x0e \x01(\rB\x16\xaa\xdd\x1b\x12track_offset_indexR\x12track_offset_indexJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\n" +
-	"ObjectTypeR\bObjectId\x1a\xc9\x01\n" +
-	"\x15TMoveToTrackIdCommand\x12F\n" +
-	"\x10StartFromTrackId\x18\x01 \x01(\tB\x17\xaa\xdd\x1b\x13start_from_track_idR\x13start_from_track_id\x12Q\n" +
-	"\x12StartFromTrackUuid\x18\x02 \x01(\tB\x19\xaa\xdd\x1b\x15start_from_track_uuidH\x00R\x15start_from_track_uuid\x88\x01\x01B\x15\n" +
-	"\x13_StartFromTrackUuid\x1a\xbb\x01\n" +
-	"\x12TShowArtistCommand\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12A\n" +
-	"\x0fDisableShowView\x18\x02 \x01(\bB\x15\xaa\xdd\x1b\x11disable_show_viewR\x11disable_show_view\x12J\n" +
-	"\x12PopularTracksLimit\x18\x03 \x01(\rB\x18\xaa\xdd\x1b\x14popular_tracks_limitR\x14popular_tracks_limit\x1ap\n" +
-	"\x11TShowAlbumCommand\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\"\n" +
+	" \x01(\x0e2!.NAlice.NData.NMusic.EKaraokeModeR\vKaraokeMode\x120\n" +
+	"\x13DisableAutoflowSoft\x18\v \x01(\bR\x13DisableAutoflowSoft\x12$\n" +
+	"\rIsStashUpdate\x18\f \x01(\bR\rIsStashUpdate\x12\x16\n" +
+	"\x06Offset\x18\r \x01(\tR\x06Offset\x12*\n" +
+	"\x10TrackOffsetIndex\x18\x0e \x01(\rR\x10TrackOffsetIndexJ\x04\b\x01\x10\x02J\x04\b\x02\x10\x03R\n" +
+	"ObjectTypeR\bObjectId\x1a\x8f\x01\n" +
+	"\x15TMoveToTrackIdCommand\x12*\n" +
+	"\x10StartFromTrackId\x18\x01 \x01(\tR\x10StartFromTrackId\x123\n" +
+	"\x12StartFromTrackUuid\x18\x02 \x01(\tH\x00R\x12StartFromTrackUuid\x88\x01\x01B\x15\n" +
+	"\x13_StartFromTrackUuid\x1a\x9a\x01\n" +
+	"\x12TShowArtistCommand\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12(\n" +
+	"\x0fDisableShowView\x18\x02 \x01(\bR\x0fDisableShowView\x12J\n" +
+	"\x12PopularTracksLimit\x18\x03 \x01(\rB\x18\xaa\xdd\x1b\x14popular_tracks_limitR\x14popular_tracks_limit\x1ah\n" +
+	"\x11TShowAlbumCommand\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\"\n" +
 	"\x06Offset\x18\x02 \x01(\rB\n" +
 	"\xaa\xdd\x1b\x06offsetR\x06offset\x12\x1f\n" +
-	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x1a\xcd\x02\n" +
-	"\x15TShowAllArtistContent\x12*\n" +
-	"\bArtistId\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tartist_idR\tartist_id\x12x\n" +
-	"\vContentType\x18\x02 \x01(\x0e2C.NAlice.TMusicTouchTypedCallback.TShowAllArtistContent.EContentTypeB\x10\xaa\xdd\x1b\fcontent_typeR\fcontent_type\x12\"\n" +
+	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x1a\xaa\x02\n" +
+	"\x15TShowAllArtistContent\x12\x1a\n" +
+	"\bArtistId\x18\x01 \x01(\tR\bArtistId\x12e\n" +
+	"\vContentType\x18\x02 \x01(\x0e2C.NAlice.TMusicTouchTypedCallback.TShowAllArtistContent.EContentTypeR\vContentType\x12\"\n" +
 	"\x06Offset\x18\x03 \x01(\rB\n" +
 	"\xaa\xdd\x1b\x06offsetR\x06offset\x12\x1f\n" +
 	"\x05Limit\x18\x04 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\"I\n" +
@@ -1834,68 +1824,57 @@ const file_alice_protos_api_typed_callbacks_music_touch_callback_music_touch_cal
 	"\x0eSimilarArtists\x10\x01\x12\n" +
 	"\n" +
 	"\x06Albums\x10\x02\x12\r\n" +
-	"\tPlaylists\x10\x03\x1as\n" +
-	"\x14TShowPlaylistCommand\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12\"\n" +
+	"\tPlaylists\x10\x03\x1ak\n" +
+	"\x14TShowPlaylistCommand\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12\"\n" +
 	"\x06Offset\x18\x02 \x01(\rB\n" +
 	"\xaa\xdd\x1b\x06offsetR\x06offset\x12\x1f\n" +
-	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x1a\xf3\x10\n" +
-	"\bTCommand\x12M\n" +
-	"\x04Like\x18\x01 \x01(\v2-.NAlice.TMusicTouchTypedCallback.TLikeCommandB\b\xaa\xdd\x1b\x04likeH\x00R\x04like\x12g\n" +
+	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x1a\xf6\r\n" +
+	"\bTCommand\x12C\n" +
+	"\x04Like\x18\x01 \x01(\v2-.NAlice.TMusicTouchTypedCallback.TLikeCommandH\x00R\x04Like\x12U\n" +
 	"\n" +
-	"RemoveLike\x18\x02 \x01(\v23.NAlice.TMusicTouchTypedCallback.TRemoveLikeCommandB\x0f\xaa\xdd\x1b\vremove_likeH\x00R\vremove_like\x12Y\n" +
-	"\aDislike\x18\x03 \x01(\v20.NAlice.TMusicTouchTypedCallback.TDislikeCommandB\v\xaa\xdd\x1b\adislikeH\x00R\adislike\x12s\n" +
-	"\rRemoveDislike\x18\x04 \x01(\v26.NAlice.TMusicTouchTypedCallback.TRemoveDislikeCommandB\x12\xaa\xdd\x1b\x0eremove_dislikeH\x00R\x0eremove_dislike\x12U\n" +
-	"\x06Repeat\x18\x05 \x01(\v2/.NAlice.TMusicTouchTypedCallback.TRepeatCommandB\n" +
-	"\xaa\xdd\x1b\x06repeatH\x00R\x06repeat\x12Y\n" +
-	"\aShuffle\x18\x06 \x01(\v20.NAlice.TMusicTouchTypedCallback.TShuffleCommandB\v\xaa\xdd\x1b\ashuffleH\x00R\ashuffle\x12a\n" +
-	"\tUnshuffle\x18\a \x01(\v22.NAlice.TMusicTouchTypedCallback.TUnshuffleCommandB\r\xaa\xdd\x1b\tunshuffleH\x00R\tunshuffle\x12c\n" +
-	"\tNextTrack\x18\b \x01(\v22.NAlice.TMusicTouchTypedCallback.TNextTrackCommandB\x0e\xaa\xdd\x1b\n" +
-	"next_trackH\x00R\n" +
-	"next_track\x12c\n" +
-	"\tPrevTrack\x18\t \x01(\v22.NAlice.TMusicTouchTypedCallback.TPrevTrackCommandB\x0e\xaa\xdd\x1b\n" +
-	"prev_trackH\x00R\n" +
-	"prev_track\x12m\n" +
+	"RemoveLike\x18\x02 \x01(\v23.NAlice.TMusicTouchTypedCallback.TRemoveLikeCommandH\x00R\n" +
+	"RemoveLike\x12L\n" +
+	"\aDislike\x18\x03 \x01(\v20.NAlice.TMusicTouchTypedCallback.TDislikeCommandH\x00R\aDislike\x12^\n" +
+	"\rRemoveDislike\x18\x04 \x01(\v26.NAlice.TMusicTouchTypedCallback.TRemoveDislikeCommandH\x00R\rRemoveDislike\x12I\n" +
+	"\x06Repeat\x18\x05 \x01(\v2/.NAlice.TMusicTouchTypedCallback.TRepeatCommandH\x00R\x06Repeat\x12L\n" +
+	"\aShuffle\x18\x06 \x01(\v20.NAlice.TMusicTouchTypedCallback.TShuffleCommandH\x00R\aShuffle\x12R\n" +
+	"\tUnshuffle\x18\a \x01(\v22.NAlice.TMusicTouchTypedCallback.TUnshuffleCommandH\x00R\tUnshuffle\x12R\n" +
+	"\tNextTrack\x18\b \x01(\v22.NAlice.TMusicTouchTypedCallback.TNextTrackCommandH\x00R\tNextTrack\x12R\n" +
+	"\tPrevTrack\x18\t \x01(\v22.NAlice.TMusicTouchTypedCallback.TPrevTrackCommandH\x00R\tPrevTrack\x12X\n" +
 	"\vFmRadioPlay\x18\n" +
-	" \x01(\v24.NAlice.TMusicTouchTypedCallback.TFmRadioPlayCommandB\x11\xaa\xdd\x1b\rfm_radio_playH\x00R\rfm_radio_play\x12c\n" +
-	"\tMusicPlay\x18\v \x01(\v22.NAlice.TMusicTouchTypedCallback.TMusicPlayCommandB\x0e\xaa\xdd\x1b\n" +
-	"music_playH\x00R\n" +
-	"music_play\x12c\n" +
-	"\tGetLyrics\x18\f \x01(\v22.NAlice.TMusicTouchTypedCallback.TGetLyricsCommandB\x0e\xaa\xdd\x1b\n" +
-	"get_lyricsH\x00R\n" +
-	"get_lyrics\x12}\n" +
-	"\rMoveToTrackId\x18\r \x01(\v26.NAlice.TMusicTouchTypedCallback.TMoveToTrackIdCommandB\x17\xaa\xdd\x1b\x13change_track_numberH\x00R\x13change_track_number\x12]\n" +
-	"\bContinue\x18\x0e \x01(\v21.NAlice.TMusicTouchTypedCallback.TContinueCommandB\f\xaa\xdd\x1b\bcontinueH\x00R\bcontinue\x12c\n" +
-	"\tShowAlbum\x18\x0f \x01(\v22.NAlice.TMusicTouchTypedCallback.TShowAlbumCommandB\x0e\xaa\xdd\x1b\n" +
-	"show_albumH\x00R\n" +
-	"show_album\x12g\n" +
+	" \x01(\v24.NAlice.TMusicTouchTypedCallback.TFmRadioPlayCommandH\x00R\vFmRadioPlay\x12R\n" +
+	"\tMusicPlay\x18\v \x01(\v22.NAlice.TMusicTouchTypedCallback.TMusicPlayCommandH\x00R\tMusicPlay\x12R\n" +
+	"\tGetLyrics\x18\f \x01(\v22.NAlice.TMusicTouchTypedCallback.TGetLyricsCommandH\x00R\tGetLyrics\x12^\n" +
+	"\rMoveToTrackId\x18\r \x01(\v26.NAlice.TMusicTouchTypedCallback.TMoveToTrackIdCommandH\x00R\rMoveToTrackId\x12O\n" +
+	"\bContinue\x18\x0e \x01(\v21.NAlice.TMusicTouchTypedCallback.TContinueCommandH\x00R\bContinue\x12R\n" +
+	"\tShowAlbum\x18\x0f \x01(\v22.NAlice.TMusicTouchTypedCallback.TShowAlbumCommandH\x00R\tShowAlbum\x12U\n" +
 	"\n" +
-	"ShowArtist\x18\x10 \x01(\v23.NAlice.TMusicTouchTypedCallback.TShowArtistCommandB\x0f\xaa\xdd\x1b\vshow_artistH\x00R\vshow_artist\x12\x8c\x01\n" +
-	"\x14ShowAllArtistContent\x18\x11 \x01(\v26.NAlice.TMusicTouchTypedCallback.TShowAllArtistContentB\x1b\xaa\xdd\x1b\x17show_all_artist_contentH\x00R\x17show_all_artist_content\x12o\n" +
-	"\fShowPlaylist\x18\x12 \x01(\v25.NAlice.TMusicTouchTypedCallback.TShowPlaylistCommandB\x11\xaa\xdd\x1b\rshow_playlistH\x00R\rshow_playlist\x12\x85\x01\n" +
-	"\x11EnableKaraokeMode\x18\x13 \x01(\v2:.NAlice.TMusicTouchTypedCallback.TEnableKaraokeModeCommandB\x17\xaa\xdd\x1b\x13enable_karaoke_modeH\x00R\x13enable_karaoke_mode\x12\x89\x01\n" +
-	"\x12DisableKaraokeMode\x18\x14 \x01(\v2;.NAlice.TMusicTouchTypedCallback.TDisableKaraokeModeCommandB\x18\xaa\xdd\x1b\x14disable_karaoke_modeH\x00R\x14disable_karaoke_modeB\a\n" +
-	"\x05Value:\x1f\xa8\xdd\x1b\x04\xba\xff\x1b\x17MusicTouchTypedCallbackJ\x04\b\x01\x10\x02R\rCallbackFrame\"\x8c\x01\n" +
-	"\"TCollectMusicVerticalTypedCallback\x12;\n" +
-	"\rIsStashUpdate\x18\x01 \x01(\bB\x13\xaa\xdd\x1b\x0fis_stash_updateR\x0fis_stash_update:)\xa8\xdd\x1b\x04\xba\xff\x1b!CollectMusicVerticalTypedCallback\"\x86\x04\n" +
-	"&TCentaurMusicEnrichTracksTypedCallback\x12-\n" +
-	"\tTracksIds\x18\x01 \x03(\tB\x0e\xaa\xdd\x1b\n" +
-	"tracks_idsR\n" +
-	"tracks_ids\x12>\n" +
-	"\x0eCurrentTrackId\x18\x02 \x01(\tB\x14\xaa\xdd\x1b\x10current_track_idR\x10current_track_id\x12\x1f\n" +
-	"\x05Limit\x18\x03 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit\x12b\n" +
-	"\x0fParentContentId\x18\x04 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdB\x15\xaa\xdd\x1b\x11parent_content_idR\x11parent_content_id\x12\\\n" +
-	"\x06Div2Id\x18\x05 \x01(\v26.NAlice.TCentaurMusicEnrichTracksTypedCallback.TDiv2IdB\v\xaa\xdd\x1b\adiv2_idR\adiv2_id\x1a[\n" +
-	"\aTDiv2Id\x12$\n" +
-	"\x06CardId\x18\x01 \x01(\tB\v\xaa\xdd\x1b\acard_idR\acard_id\x12*\n" +
-	"\bCardName\x18\x02 \x01(\tB\r\xaa\xdd\x1b\tcard_nameR\tcard_name:-\xa8\xdd\x1b\x04\xba\xff\x1b%CentaurMusicEnrichTracksTypedCallback\"\xf6\x01\n" +
-	"\x19TMusicSearchTypedCallback\x12\x1f\n" +
-	"\x05Query\x18\x01 \x01(\tB\t\xaa\xdd\x1b\x05queryR\x05query\x12Q\n" +
-	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeB\b\xaa\xdd\x1b\x04typeR\x04type\x12\"\n" +
-	"\x06Offset\x18\x03 \x01(\rB\n" +
-	"\xaa\xdd\x1b\x06offsetR\x06offset\x12\x1f\n" +
-	"\x05Limit\x18\x04 \x01(\rB\t\xaa\xdd\x1b\x05limitR\x05limit: \xa8\xdd\x1b\x04\xba\xff\x1b\x18MusicSearchTypedCallbackB\xa7\x01\n" +
-	"?ru.yandex.alice.protos.api.typed_callbacks.music_touch_callbackB\x1cMusicTouchTypedCallbackProtoZFa.yandex-team.ru/alice/protos/api/typed_callbacks/music_touch_callbackb\x06proto3"
+	"ShowArtist\x18\x10 \x01(\v23.NAlice.TMusicTouchTypedCallback.TShowArtistCommandH\x00R\n" +
+	"ShowArtist\x12l\n" +
+	"\x14ShowAllArtistContent\x18\x11 \x01(\v26.NAlice.TMusicTouchTypedCallback.TShowAllArtistContentH\x00R\x14ShowAllArtistContent\x12[\n" +
+	"\fShowPlaylist\x18\x12 \x01(\v25.NAlice.TMusicTouchTypedCallback.TShowPlaylistCommandH\x00R\fShowPlaylist\x12j\n" +
+	"\x11EnableKaraokeMode\x18\x13 \x01(\v2:.NAlice.TMusicTouchTypedCallback.TEnableKaraokeModeCommandH\x00R\x11EnableKaraokeMode\x12m\n" +
+	"\x12DisableKaraokeMode\x18\x14 \x01(\v2;.NAlice.TMusicTouchTypedCallback.TDisableKaraokeModeCommandH\x00R\x12DisableKaraokeModeB\a\n" +
+	"\x05ValueJ\x04\b\x01\x10\x02R\rCallbackFrame\"J\n" +
+	"\"TCollectMusicVerticalTypedCallback\x12$\n" +
+	"\rIsStashUpdate\x18\x01 \x01(\bR\rIsStashUpdate\"\xde\x02\n" +
+	"&TCentaurMusicEnrichTracksTypedCallback\x12\x1c\n" +
+	"\tTracksIds\x18\x01 \x03(\tR\tTracksIds\x12&\n" +
+	"\x0eCurrentTrackId\x18\x02 \x01(\tR\x0eCurrentTrackId\x12\x14\n" +
+	"\x05Limit\x18\x03 \x01(\rR\x05Limit\x12I\n" +
+	"\x0fParentContentId\x18\x04 \x01(\v2\x1f.NAlice.NData.NMusic.TContentIdR\x0fParentContentId\x12N\n" +
+	"\x06Div2Id\x18\x05 \x01(\v26.NAlice.TCentaurMusicEnrichTracksTypedCallback.TDiv2IdR\x06Div2Id\x1a=\n" +
+	"\aTDiv2Id\x12\x16\n" +
+	"\x06CardId\x18\x01 \x01(\tR\x06CardId\x12\x1a\n" +
+	"\bCardName\x18\x02 \x01(\tR\bCardName\"\xa8\x01\n" +
+	"\x19TMusicSearchTypedCallback\x12\x14\n" +
+	"\x05Query\x18\x01 \x01(\tR\x05Query\x12G\n" +
+	"\x04Type\x18\x02 \x01(\x0e23.NAlice.NMusic.TMusicSearchRequest.EMusicSearchTypeR\x04Type\x12\x16\n" +
+	"\x06Offset\x18\x03 \x01(\rR\x06Offset\x12\x14\n" +
+	"\x05Limit\x18\x04 \x01(\rR\x05LimitB\xc4\x01\n" +
+	"\n" +
+	"com.NAliceB\x17MusicTouchCallbackProtoP\x01Zegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/typed_callbacks/music_touch_callback\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_api_typed_callbacks_music_touch_callback_music_touch_callback_proto_rawDescOnce sync.Once

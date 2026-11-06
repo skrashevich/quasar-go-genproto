@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/flex/capability.proto
 
-package flexpb
+package flex
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -234,8 +234,8 @@ const file_alice_protos_endpoint_capabilities_flex_capability_proto_rawDesc = ""
 	"\bConsumer\x18\x01 \x01(\tB\f\xaa\xdd\x1b\bconsumerR\bconsumer:\x04\xa8\xdd\x1b\x04\x1a\x91\x01\n" +
 	"\x15TSendPayloadDirective\x12>\n" +
 	"\aPayload\x18\x01 \x01(\v2\x17.google.protobuf.StructB\v\xaa\xdd\x1b\apayloadR\apayload\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x19\x92\x82\x19\fsend_payload\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf6\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcd\x02B\x84\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13FlexCapabilityProtoZ?a.yandex-team.ru/alice/protos/endpoint/capabilities/flex;flexpbb\x06proto3"
+	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:\x19\x92\x82\x19\fsend_payload\xa8\xdd\x1b\x04\xa8\xc8\x1c\xf6\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xcd\x02B\x9c\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x13FlexCapabilityProtoZWgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/flexb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_flex_capability_proto_rawDescOnce sync.Once

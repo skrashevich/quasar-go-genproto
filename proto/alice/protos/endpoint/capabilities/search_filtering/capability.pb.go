@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/search_filtering/capability.proto
 
-package searchfilteringpb
+package search_filtering
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -287,8 +287,8 @@ const file_alice_protos_endpoint_capabilities_search_filtering_capability_proto_
 	"\bMODERATE\x10\x00\x12\n" +
 	"\n" +
 	"\x06FAMILY\x10\x01\x12\t\n" +
-	"\x05CHILD\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x89\x02B\xa6\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eSearchFilteringCapabilityProtoZVa.yandex-team.ru/alice/protos/endpoint/capabilities/search_filtering;searchfilteringpbb\x06proto3"
+	"\x05CHILD\x10\x02:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x89\x02B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1eSearchFilteringCapabilityProtoZcgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/search_filteringb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_search_filtering_capability_proto_rawDescOnce sync.Once

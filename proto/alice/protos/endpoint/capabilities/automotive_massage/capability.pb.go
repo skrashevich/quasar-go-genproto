@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_massage/capability.proto
 
-package automotive_massagepb
+package automotive_massage
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -1368,8 +1368,8 @@ const file_alice_protos_endpoint_capabilities_automotive_massage_capability_prot
 	"\vEPropertyId\x12\x13\n" +
 	"\x0fPropertyUnknown\x10\x00\x12\x14\n" +
 	"\x10MassageSeatSpeed\x10\x01\x12\x13\n" +
-	"\x0fMassageSeatMode\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x7fB\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB AutomotiveMassageCapabilityProtoZ[a.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_massage;automotive_massagepbb\x06proto3"
+	"\x0fMassageSeatMode\x10\x02:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c\x7fB\xb7\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB AutomotiveMassageCapabilityProtoZegithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_massageb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_massage_capability_proto_rawDescOnce sync.Once

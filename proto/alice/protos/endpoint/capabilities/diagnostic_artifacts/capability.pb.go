@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/diagnostic_artifacts/capability.proto
 
-package diagnosticartifactspb
+package diagnostic_artifacts
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -602,8 +602,8 @@ const file_alice_protos_endpoint_capabilities_diagnostic_artifacts_capability_pr
 	"\x0eINTERNAL_ERROR\x10\b\"B\n" +
 	"\rEArtifactType\x12\x1d\n" +
 	"\x19ARTIFACT_TYPE_UNSPECIFIED\x10\x00\x12\x12\n" +
-	"\x0eMUSIC_SDK_LOGS\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc4\x02B\xaa\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18DiagnosticArtifactsProtoP\x01Z^a.yandex-team.ru/alice/protos/endpoint/capabilities/diagnostic_artifacts;diagnosticartifactspbb\x06proto3"
+	"\x0eMUSIC_SDK_LOGS\x10\x01:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xc4\x02B\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18DiagnosticArtifactsProtoP\x01Zggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/diagnostic_artifactsb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_diagnostic_artifacts_capability_proto_rawDescOnce sync.Once

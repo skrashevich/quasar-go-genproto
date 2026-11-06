@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/iot_work_speed/capability.proto
 
-package iotworkspeedpb
+package iot_work_speed
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -79,9 +79,9 @@ func (TIotWorkSpeedCapability_ESpeed) EnumDescriptor() ([]byte, []int) {
 
 type TIotWorkSpeedCapability struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TIotWorkSpeedCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TIotWorkSpeedCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta          `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TIotWorkSpeedCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TIotWorkSpeedCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,7 +175,7 @@ func (*TIotWorkSpeedCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TIotWorkSpeedCapability_TState struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Speed         TIotWorkSpeedCapability_ESpeed `protobuf:"varint,1,opt,name=Speed,json=speed,proto3,enum=NAlice.TIotWorkSpeedCapability_ESpeed" json:"Speed,omitempty"`
+	Speed         TIotWorkSpeedCapability_ESpeed `protobuf:"varint,1,opt,name=Speed,proto3,enum=NAlice.TIotWorkSpeedCapability_ESpeed" json:"Speed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,8 +219,8 @@ func (x *TIotWorkSpeedCapability_TState) GetSpeed() TIotWorkSpeedCapability_ESpe
 
 type TIotWorkSpeedCapability_TSetWorkSpeedDirective struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Name          string                         `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	Speed         TIotWorkSpeedCapability_ESpeed `protobuf:"varint,1,opt,name=Speed,json=speed,proto3,enum=NAlice.TIotWorkSpeedCapability_ESpeed" json:"Speed,omitempty"`
+	Name          string                         `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	Speed         TIotWorkSpeedCapability_ESpeed `protobuf:"varint,1,opt,name=Speed,proto3,enum=NAlice.TIotWorkSpeedCapability_ESpeed" json:"Speed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -271,7 +271,7 @@ func (x *TIotWorkSpeedCapability_TSetWorkSpeedDirective) GetSpeed() TIotWorkSpee
 
 type TIotWorkSpeedCapability_TUpdateStateEvent struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Capability    *TIotWorkSpeedCapability `protobuf:"bytes,1,opt,name=Capability,json=capability,proto3" json:"Capability,omitempty"`
+	Capability    *TIotWorkSpeedCapability `protobuf:"bytes,1,opt,name=Capability,proto3" json:"Capability,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,32 +317,31 @@ var File_alice_protos_endpoint_capabilities_iot_work_speed_capability_proto prot
 
 const file_alice_protos_endpoint_capabilities_iot_work_speed_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/iot_work_speed/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xc1\x05\n" +
-	"\x17TIotWorkSpeedCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12[\n" +
+	"Balice/protos/endpoint/capabilities/iot_work_speed/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa3\x04\n" +
+	"\x17TIotWorkSpeedCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12K\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotWorkSpeedCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12G\n" +
-	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotWorkSpeedCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1aW\n" +
-	"\x06TState\x12G\n" +
-	"\x05Speed\x18\x01 \x01(\x0e2&.NAlice.TIotWorkSpeedCapability.ESpeedB\t\xaa\xdd\x1b\x05speedR\x05speed:\x04\xa8\xdd\x1b\x04\x1a\xa7\x01\n" +
-	"\x16TSetWorkSpeedDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12G\n" +
-	"\x05Speed\x18\x01 \x01(\x0e2&.NAlice.TIotWorkSpeedCapability.ESpeedB\t\xaa\xdd\x1b\x05speedR\x05speed:%\x92\x82\x19\x18set_work_speed_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xe4\x03\x1an\n" +
-	"\x11TUpdateStateEvent\x12O\n" +
+	"Parameters\x18\x02 \x01(\v2+.NAlice.TIotWorkSpeedCapability.TParametersR\n" +
+	"Parameters\x12<\n" +
+	"\x05State\x18\x03 \x01(\v2&.NAlice.TIotWorkSpeedCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1aF\n" +
+	"\x06TState\x12<\n" +
+	"\x05Speed\x18\x01 \x01(\x0e2&.NAlice.TIotWorkSpeedCapability.ESpeedR\x05Speed\x1ak\n" +
+	"\x16TSetWorkSpeedDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12<\n" +
+	"\x05Speed\x18\x01 \x01(\x0e2&.NAlice.TIotWorkSpeedCapability.ESpeedR\x05Speed\x1aT\n" +
+	"\x11TUpdateStateEvent\x12?\n" +
 	"\n" +
-	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotWorkSpeedCapabilityB\x0e\xaa\xdd\x1b\n" +
-	"capabilityR\n" +
-	"capability:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cy\"4\n" +
+	"Capability\x18\x01 \x01(\v2\x1f.NAlice.TIotWorkSpeedCapabilityR\n" +
+	"Capability\"4\n" +
 	"\x06ESpeed\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\a\n" +
 	"\x03LOW\x10\x01\x12\n" +
 	"\n" +
 	"\x06MEDIUM\x10\x02\x12\b\n" +
-	"\x04HIGH\x10\x03:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xb7\x01B\x9e\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1bIotWorkSpeedCapabilityProtoZQa.yandex-team.ru/alice/protos/endpoint/capabilities/iot_work_speed;iotworkspeedpbb\x06proto3"
+	"\x04HIGH\x10\x03B\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/iot_work_speed\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_iot_work_speed_capability_proto_rawDescOnce sync.Once

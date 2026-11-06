@@ -25,10 +25,10 @@ const (
 
 type TSwitchingStreamsMetadata struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	CrossfadeAllowed bool                   `protobuf:"varint,1,opt,name=CrossfadeAllowed,json=crossfade_allowed,proto3" json:"CrossfadeAllowed,omitempty"`
-	Fade             *music_provider.Fade   `protobuf:"bytes,2,opt,name=Fade,json=fade,proto3" json:"Fade,omitempty"`
-	NextFade         *music_provider.Fade   `protobuf:"bytes,3,opt,name=NextFade,json=next_fade,proto3" json:"NextFade,omitempty"`
-	CrossfadeForced  *bool                  `protobuf:"varint,4,opt,name=CrossfadeForced,json=crossfade_forced,proto3,oneof" json:"CrossfadeForced,omitempty"`
+	CrossfadeAllowed bool                   `protobuf:"varint,1,opt,name=CrossfadeAllowed,proto3" json:"CrossfadeAllowed,omitempty"`
+	Fade             *music_provider.Fade   `protobuf:"bytes,2,opt,name=Fade,proto3" json:"Fade,omitempty"`
+	NextFade         *music_provider.Fade   `protobuf:"bytes,3,opt,name=NextFade,proto3" json:"NextFade,omitempty"`
+	CrossfadeForced  *bool                  `protobuf:"varint,4,opt,name=CrossfadeForced,proto3,oneof" json:"CrossfadeForced,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -95,14 +95,14 @@ var File_alice_protos_data_scenario_music_switching_streams_metadata_proto proto
 
 const file_alice_protos_data_scenario_music_switching_streams_metadata_proto_rawDesc = "" +
 	"\n" +
-	"Aalice/protos/data/scenario/music/switching_streams_metadata.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\x1a4alice/protos/data/music_provider/provider_meta.proto\"\xaf\x02\n" +
-	"\x19TSwitchingStreamsMetadata\x12B\n" +
-	"\x10CrossfadeAllowed\x18\x01 \x01(\bB\x15\xaa\xdd\x1b\x11crossfade_allowedR\x11crossfade_allowed\x12/\n" +
-	"\x04Fade\x18\x02 \x01(\v2\x11.Alice.Music.FadeB\b\xaa\xdd\x1b\x04fadeR\x04fade\x12=\n" +
-	"\bNextFade\x18\x03 \x01(\v2\x11.Alice.Music.FadeB\r\xaa\xdd\x1b\tnext_fadeR\tnext_fade\x12D\n" +
-	"\x0fCrossfadeForced\x18\x04 \x01(\bB\x14\xaa\xdd\x1b\x10crossfade_forcedH\x00R\x10crossfade_forced\x88\x01\x01:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x10_CrossfadeForcedB_\n" +
-	"*ru.yandex.alice.protos.data.scenario.musicZ1a.yandex-team.ru/alice/protos/data/scenario/musicb\x06proto3"
+	"Aalice/protos/data/scenario/music/switching_streams_metadata.proto\x12\x13NAlice.NData.NMusic\x1a&yt/yt_proto/yt/formats/extension.proto\x1a4alice/protos/data/music_provider/provider_meta.proto\"\xe0\x01\n" +
+	"\x19TSwitchingStreamsMetadata\x12*\n" +
+	"\x10CrossfadeAllowed\x18\x01 \x01(\bR\x10CrossfadeAllowed\x12%\n" +
+	"\x04Fade\x18\x02 \x01(\v2\x11.Alice.Music.FadeR\x04Fade\x12-\n" +
+	"\bNextFade\x18\x03 \x01(\v2\x11.Alice.Music.FadeR\bNextFade\x12-\n" +
+	"\x0fCrossfadeForced\x18\x04 \x01(\bH\x00R\x0fCrossfadeForced\x88\x01\x01B\x12\n" +
+	"\x10_CrossfadeForcedB\xf8\x01\n" +
+	"\x17com.NAlice.NData.NMusicB\x1dSwitchingStreamsMetadataProtoP\x01ZPgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/music\xa2\x02\x03NNN\xaa\x02\x13NAlice.NData.NMusic\xca\x02\x13NAlice\\NData\\NMusic\xe2\x02\x1fNAlice\\NData\\NMusic\\GPBMetadata\xea\x02\x15NAlice::NData::NMusicb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_music_switching_streams_metadata_proto_rawDescOnce sync.Once

@@ -24,10 +24,10 @@ const (
 
 type TLocalScenarioResponseData struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
-	ScenarioName        string                 `protobuf:"bytes,1,opt,name=ScenarioName,json=scenario_name,proto3" json:"ScenarioName,omitempty"`
-	ProductScenarioName string                 `protobuf:"bytes,2,opt,name=ProductScenarioName,json=product_scenario_name,proto3" json:"ProductScenarioName,omitempty"`
-	RequestText         string                 `protobuf:"bytes,3,opt,name=RequestText,json=request_text,proto3" json:"RequestText,omitempty"`
-	ResponseText        string                 `protobuf:"bytes,4,opt,name=ResponseText,json=response_text,proto3" json:"ResponseText,omitempty"`
+	ScenarioName        string                 `protobuf:"bytes,1,opt,name=ScenarioName,proto3" json:"ScenarioName,omitempty"`
+	ProductScenarioName string                 `protobuf:"bytes,2,opt,name=ProductScenarioName,proto3" json:"ProductScenarioName,omitempty"`
+	RequestText         string                 `protobuf:"bytes,3,opt,name=RequestText,proto3" json:"RequestText,omitempty"`
+	ResponseText        string                 `protobuf:"bytes,4,opt,name=ResponseText,proto3" json:"ResponseText,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -94,13 +94,13 @@ var File_alice_protos_api_local_scenario_response_data_proto protoreflect.FileDe
 
 const file_alice_protos_api_local_scenario_response_data_proto_rawDesc = "" +
 	"\n" +
-	"3alice/protos/api/local_scenario/response_data.proto\x12\vNAlice.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\x96\x02\n" +
-	"\x1aTLocalScenarioResponseData\x126\n" +
-	"\fScenarioName\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rscenario_nameR\rscenario_name\x12M\n" +
-	"\x13ProductScenarioName\x18\x02 \x01(\tB\x19\xaa\xdd\x1b\x15product_scenario_nameR\x15product_scenario_name\x123\n" +
-	"\vRequestText\x18\x03 \x01(\tB\x10\xaa\xdd\x1b\frequest_textR\frequest_text\x126\n" +
-	"\fResponseText\x18\x04 \x01(\tB\x11\xaa\xdd\x1b\rresponse_textR\rresponse_text:\x04\xa8\xdd\x1b\x04B]\n" +
-	")ru.yandex.alice.protos.api.local_scenarioZ0a.yandex-team.ru/alice/protos/api/local_scenariob\x06proto3"
+	"3alice/protos/api/local_scenario/response_data.proto\x12\vNAlice.NApi\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb8\x01\n" +
+	"\x1aTLocalScenarioResponseData\x12\"\n" +
+	"\fScenarioName\x18\x01 \x01(\tR\fScenarioName\x120\n" +
+	"\x13ProductScenarioName\x18\x02 \x01(\tR\x13ProductScenarioName\x12 \n" +
+	"\vRequestText\x18\x03 \x01(\tR\vRequestText\x12\"\n" +
+	"\fResponseText\x18\x04 \x01(\tR\fResponseTextB\xc2\x01\n" +
+	"\x0fcom.NAlice.NApiB\x11ResponseDataProtoP\x01ZOgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/local_scenario\xa2\x02\x03NNX\xaa\x02\vNAlice.NApi\xca\x02\vNAlice\\NApi\xe2\x02\x17NAlice\\NApi\\GPBMetadata\xea\x02\fNAlice::NApib\x06proto3"
 
 var (
 	file_alice_protos_api_local_scenario_response_data_proto_rawDescOnce sync.Once

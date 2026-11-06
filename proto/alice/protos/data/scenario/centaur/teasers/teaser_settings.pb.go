@@ -676,8 +676,8 @@ const file_alice_protos_data_scenario_centaur_teasers_teaser_settings_proto_rawD
 	"\n" +
 	"TeaserName\x18\x02 \x01(\tB\x0f\xaa\xdd\x1b\vteaser_nameR\vteaser_name\x12\x8b\x01\n" +
 	"\x19TeaserPreviewScenarioData\x18\x03 \x01(\v2(.NAlice.NData.TTeaserPreviewScenarioDataB \xaa\xdd\x1b\x1cteaser_preview_scenario_dataR\x1cteaser_preview_scenario_data\x129\n" +
-	"\x0fIsNotConfigured\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\ris_configuredR\ris_configured:\x04\xa8\xdd\x1b\x04:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataBs\n" +
-	"4ru.yandex.alice.protos.data.scenario.centaur.teasersZ;a.yandex-team.ru/alice/protos/data/scenario/centaur/teasersb\x06proto3"
+	"\x0fIsNotConfigured\x18\x04 \x01(\bB\x11\xaa\xdd\x1b\ris_configuredR\ris_configured:\x04\xa8\xdd\x1b\x04:9\xa8\xdd\x1b\x04\xd2\xff\x1b1ru.yandex.alice.protos.data.scenario.ScenarioDataB\x92\x01\n" +
+	"4ru.yandex.alice.protos.data.scenario.centaur.teasersZZgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/centaur/teasersb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_centaur_teasers_teaser_settings_proto_rawDescOnce sync.Once

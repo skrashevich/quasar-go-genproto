@@ -24,7 +24,7 @@ const (
 
 type TTimePoint struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Time          string                 `protobuf:"bytes,1,opt,name=Time,json=time,proto3" json:"Time,omitempty"`
+	Time          string                 `protobuf:"bytes,1,opt,name=Time,proto3" json:"Time,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -68,8 +68,8 @@ func (x *TTimePoint) GetTime() string {
 
 type TTimeInterval struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	StartTime     string                 `protobuf:"bytes,1,opt,name=StartTime,json=start_time,proto3" json:"StartTime,omitempty"`
-	EndTime       string                 `protobuf:"bytes,2,opt,name=EndTime,json=end_time,proto3" json:"EndTime,omitempty"`
+	StartTime     string                 `protobuf:"bytes,1,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
+	EndTime       string                 `protobuf:"bytes,2,opt,name=EndTime,proto3" json:"EndTime,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -189,11 +189,11 @@ type isTTimeInfo_Value interface {
 }
 
 type TTimeInfo_TimePoint struct {
-	TimePoint *TTimePoint `protobuf:"bytes,1,opt,name=TimePoint,json=time_point,proto3,oneof"`
+	TimePoint *TTimePoint `protobuf:"bytes,1,opt,name=TimePoint,proto3,oneof"`
 }
 
 type TTimeInfo_TimeInterval struct {
-	TimeInterval *TTimeInterval `protobuf:"bytes,2,opt,name=TimeInterval,json=time_interval,proto3,oneof"`
+	TimeInterval *TTimeInterval `protobuf:"bytes,2,opt,name=TimeInterval,proto3,oneof"`
 }
 
 func (*TTimeInfo_TimePoint) isTTimeInfo_Value() {}
@@ -202,7 +202,7 @@ func (*TTimeInfo_TimeInterval) isTTimeInfo_Value() {}
 
 type TReaction struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Type  string                 `protobuf:"bytes,1,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
+	Type  string                 `protobuf:"bytes,1,opt,name=Type,proto3" json:"Type,omitempty"`
 	// Types that are valid to be assigned to Parameters:
 	//
 	//	*TReaction_ActionParameters
@@ -269,14 +269,14 @@ type isTReaction_Parameters interface {
 }
 
 type TReaction_ActionParameters struct {
-	ActionParameters *TReaction_TActionParameters `protobuf:"bytes,2,opt,name=ActionParameters,json=action_parameters,proto3,oneof"`
+	ActionParameters *TReaction_TActionParameters `protobuf:"bytes,2,opt,name=ActionParameters,proto3,oneof"`
 }
 
 func (*TReaction_ActionParameters) isTReaction_Parameters() {}
 
 type TReactions struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Reactions     []*TReaction           `protobuf:"bytes,1,rep,name=Reactions,json=reactions,proto3" json:"Reactions,omitempty"`
+	Reactions     []*TReaction           `protobuf:"bytes,1,rep,name=Reactions,proto3" json:"Reactions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -320,9 +320,9 @@ func (x *TReactions) GetReactions() []*TReaction {
 
 type TScenarioAnalyticsInfo struct {
 	state               protoimpl.MessageState            `protogen:"open.v1"`
-	Intent              string                            `protobuf:"bytes,2,opt,name=Intent,json=intent,proto3" json:"Intent,omitempty"`
-	Objects             []*TScenarioAnalyticsInfo_TObject `protobuf:"bytes,5,rep,name=Objects,json=objects,proto3" json:"Objects,omitempty"`
-	ProductScenarioName string                            `protobuf:"bytes,9,opt,name=ProductScenarioName,json=product_scenario_name,proto3" json:"ProductScenarioName,omitempty"`
+	Intent              string                            `protobuf:"bytes,2,opt,name=Intent,proto3" json:"Intent,omitempty"`
+	Objects             []*TScenarioAnalyticsInfo_TObject `protobuf:"bytes,5,rep,name=Objects,proto3" json:"Objects,omitempty"`
+	ProductScenarioName string                            `protobuf:"bytes,9,opt,name=ProductScenarioName,proto3" json:"ProductScenarioName,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -380,13 +380,13 @@ func (x *TScenarioAnalyticsInfo) GetProductScenarioName() string {
 
 type TReaction_TActionParameters struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
-	CapabilityType     string                 `protobuf:"bytes,1,opt,name=CapabilityType,json=capability_type,proto3" json:"CapabilityType,omitempty"`
-	CapabilityInstance string                 `protobuf:"bytes,2,opt,name=CapabilityInstance,json=capability_instance,proto3" json:"CapabilityInstance,omitempty"`
-	CapabilityUnit     string                 `protobuf:"bytes,3,opt,name=CapabilityUnit,json=capability_unit,proto3" json:"CapabilityUnit,omitempty"`
-	RelativityType     string                 `protobuf:"bytes,4,opt,name=RelativityType,json=relativity_type,proto3" json:"RelativityType,omitempty"`
-	CapabilityValue    string                 `protobuf:"bytes,5,opt,name=CapabilityValue,json=capability_value,proto3" json:"CapabilityValue,omitempty"`
-	Devices            []string               `protobuf:"bytes,6,rep,name=Devices,json=devices,proto3" json:"Devices,omitempty"`
-	TimeInfo           *TTimeInfo             `protobuf:"bytes,7,opt,name=TimeInfo,json=time_info,proto3" json:"TimeInfo,omitempty"`
+	CapabilityType     string                 `protobuf:"bytes,1,opt,name=CapabilityType,proto3" json:"CapabilityType,omitempty"`
+	CapabilityInstance string                 `protobuf:"bytes,2,opt,name=CapabilityInstance,proto3" json:"CapabilityInstance,omitempty"`
+	CapabilityUnit     string                 `protobuf:"bytes,3,opt,name=CapabilityUnit,proto3" json:"CapabilityUnit,omitempty"`
+	RelativityType     string                 `protobuf:"bytes,4,opt,name=RelativityType,proto3" json:"RelativityType,omitempty"`
+	CapabilityValue    string                 `protobuf:"bytes,5,opt,name=CapabilityValue,proto3" json:"CapabilityValue,omitempty"`
+	Devices            []string               `protobuf:"bytes,6,rep,name=Devices,proto3" json:"Devices,omitempty"`
+	TimeInfo           *TTimeInfo             `protobuf:"bytes,7,opt,name=TimeInfo,proto3" json:"TimeInfo,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -472,7 +472,7 @@ func (x *TReaction_TActionParameters) GetTimeInfo() *TTimeInfo {
 
 type TScenarioAnalyticsInfo_TObject struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	Id    string                 `protobuf:"bytes,1,opt,name=Id,proto3" json:"Id,omitempty"`
 	// Types that are valid to be assigned to Payload:
 	//
 	//	*TScenarioAnalyticsInfo_TObject_IotReactions
@@ -539,7 +539,7 @@ type isTScenarioAnalyticsInfo_TObject_Payload interface {
 }
 
 type TScenarioAnalyticsInfo_TObject_IotReactions struct {
-	IotReactions *TReactions `protobuf:"bytes,32,opt,name=IotReactions,json=iot_reactions,proto3,oneof"`
+	IotReactions *TReactions `protobuf:"bytes,32,opt,name=IotReactions,proto3,oneof"`
 }
 
 func (*TScenarioAnalyticsInfo_TObject_IotReactions) isTScenarioAnalyticsInfo_TObject_Payload() {}
@@ -548,56 +548,50 @@ var File_alice_protos_api_alicekit_analytics_scenario_analytics_info_scenario_an
 
 const file_alice_protos_api_alicekit_analytics_scenario_analytics_info_scenario_analytics_info_proto_rawDesc = "" +
 	"\n" +
-	"Yalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\"0\n" +
+	"Yalice/protos/api/alicekit/analytics/scenario_analytics_info/scenario_analytics_info.proto\x12\x10NAlice.NAliceApi\x1a&yt/yt_proto/yt/formats/extension.proto\" \n" +
 	"\n" +
-	"TTimePoint\x12\x1c\n" +
-	"\x04Time\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04timeR\x04time:\x04\xa8\xdd\x1b\x04\"m\n" +
-	"\rTTimeInterval\x12-\n" +
-	"\tStartTime\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
-	"start_timeR\n" +
-	"start_time\x12'\n" +
-	"\aEndTime\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bend_timeR\bend_time:\x04\xa8\xdd\x1b\x04\"\xd9\x01\n" +
-	"\tTTimeInfo\x12M\n" +
-	"\tTimePoint\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TTimePointB\x0e\xaa\xdd\x1b\n" +
-	"time_pointH\x00R\n" +
-	"time_point\x12Y\n" +
-	"\fTimeInterval\x18\x02 \x01(\v2\x1f.NAlice.NAliceApi.TTimeIntervalB\x11\xaa\xdd\x1b\rtime_intervalH\x00R\rtime_interval:\x04\xa8\xdd\x1b\x04B\x12\n" +
-	"\x05Value\x12\t\xaa\xdd\x1b\x05valueJ\b\bԻ\x03\x10ջ\x03\"\xda\x05\n" +
-	"\tTReaction\x12\x1c\n" +
-	"\x04Type\x18\x01 \x01(\tB\b\xaa\xdd\x1b\x04typeR\x04type\x12s\n" +
-	"\x10ActionParameters\x18\x02 \x01(\v2-.NAlice.NAliceApi.TReaction.TActionParametersB\x15\xaa\xdd\x1b\x11action_parametersH\x00R\x11action_parameters\x1a\xce\x03\n" +
-	"\x11TActionParameters\x12<\n" +
-	"\x0eCapabilityType\x18\x01 \x01(\tB\x13\xaa\xdd\x1b\x0fcapability_typeR\x0fcapability_type\x12H\n" +
-	"\x12CapabilityInstance\x18\x02 \x01(\tB\x17\xaa\xdd\x1b\x13capability_instanceR\x13capability_instance\x12<\n" +
-	"\x0eCapabilityUnit\x18\x03 \x01(\tB\x13\xaa\xdd\x1b\x0fcapability_unitR\x0fcapability_unit\x12<\n" +
-	"\x0eRelativityType\x18\x04 \x01(\tB\x13\xaa\xdd\x1b\x0frelativity_typeR\x0frelativity_type\x12?\n" +
-	"\x0fCapabilityValue\x18\x05 \x01(\tB\x14\xaa\xdd\x1b\x10capability_valueR\x10capability_value\x12%\n" +
-	"\aDevices\x18\x06 \x03(\tB\v\xaa\xdd\x1b\adevicesR\adevices\x12G\n" +
-	"\bTimeInfo\x18\a \x01(\v2\x1b.NAlice.NAliceApi.TTimeInfoB\r\xaa\xdd\x1b\ttime_infoR\ttime_info:\x04\xa8\xdd\x1b\x04:\x04\xa8\xdd\x1b\x04B\x1c\n" +
+	"TTimePoint\x12\x12\n" +
+	"\x04Time\x18\x01 \x01(\tR\x04Time\"G\n" +
+	"\rTTimeInterval\x12\x1c\n" +
+	"\tStartTime\x18\x01 \x01(\tR\tStartTime\x12\x18\n" +
+	"\aEndTime\x18\x02 \x01(\tR\aEndTime\"\xa3\x01\n" +
+	"\tTTimeInfo\x12<\n" +
+	"\tTimePoint\x18\x01 \x01(\v2\x1c.NAlice.NAliceApi.TTimePointH\x00R\tTimePoint\x12E\n" +
+	"\fTimeInterval\x18\x02 \x01(\v2\x1f.NAlice.NAliceApi.TTimeIntervalH\x00R\fTimeIntervalB\a\n" +
+	"\x05ValueJ\b\bԻ\x03\x10ջ\x03\"\x8c\x04\n" +
+	"\tTReaction\x12\x12\n" +
+	"\x04Type\x18\x01 \x01(\tR\x04Type\x12[\n" +
+	"\x10ActionParameters\x18\x02 \x01(\v2-.NAlice.NAliceApi.TReaction.TActionParametersH\x00R\x10ActionParameters\x1a\xb8\x02\n" +
+	"\x11TActionParameters\x12&\n" +
+	"\x0eCapabilityType\x18\x01 \x01(\tR\x0eCapabilityType\x12.\n" +
+	"\x12CapabilityInstance\x18\x02 \x01(\tR\x12CapabilityInstance\x12&\n" +
+	"\x0eCapabilityUnit\x18\x03 \x01(\tR\x0eCapabilityUnit\x12&\n" +
+	"\x0eRelativityType\x18\x04 \x01(\tR\x0eRelativityType\x12(\n" +
+	"\x0fCapabilityValue\x18\x05 \x01(\tR\x0fCapabilityValue\x12\x18\n" +
+	"\aDevices\x18\x06 \x03(\tR\aDevices\x127\n" +
+	"\bTimeInfo\x18\a \x01(\v2\x1b.NAlice.NAliceApi.TTimeInfoR\bTimeInfoB\f\n" +
 	"\n" +
-	"Parameters\x12\x0e\xaa\xdd\x1b\n" +
-	"parametersJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06R\x0fQueryParametersR\x12ScenarioParametersR\x0ePushParameters\"\\\n" +
+	"ParametersJ\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x05\x10\x06R\x0fQueryParametersR\x12ScenarioParametersR\x0ePushParameters\"G\n" +
 	"\n" +
-	"TReactions\x12H\n" +
-	"\tReactions\x18\x01 \x03(\v2\x1b.NAlice.NAliceApi.TReactionB\r\xaa\xdd\x1b\treactionsR\treactions:\x04\xa8\xdd\x1b\x04\"\xe6\x11\n" +
-	"\x16TScenarioAnalyticsInfo\x12\"\n" +
-	"\x06Intent\x18\x02 \x01(\tB\n" +
-	"\xaa\xdd\x1b\x06intentR\x06intent\x12W\n" +
-	"\aObjects\x18\x05 \x03(\v20.NAlice.NAliceApi.TScenarioAnalyticsInfo.TObjectB\v\xaa\xdd\x1b\aobjectsR\aobjects\x12M\n" +
-	"\x13ProductScenarioName\x18\t \x01(\tB\x19\xaa\xdd\x1b\x15product_scenario_nameR\x15product_scenario_name\x1a\x87\x0e\n" +
-	"\aTObject\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id\x12V\n" +
-	"\fIotReactions\x18  \x01(\v2\x1c.NAlice.NAliceApi.TReactionsB\x11\xaa\xdd\x1b\riot_reactionsH\x00R\riot_reactions:\x04\xa8\xdd\x1b\x04B\x16\n" +
-	"\aPayload\x12\v\xaa\xdd\x1b\apayloadJ\x04\b\x05\x10\x06J\b\bԻ\x03\x10ջ\x03J\x04\b(\x10)J\x04\b,\x10-J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
+	"TReactions\x129\n" +
+	"\tReactions\x18\x01 \x03(\v2\x1b.NAlice.NAliceApi.TReactionR\tReactions\"\xfb\x10\n" +
+	"\x16TScenarioAnalyticsInfo\x12\x16\n" +
+	"\x06Intent\x18\x02 \x01(\tR\x06Intent\x12J\n" +
+	"\aObjects\x18\x05 \x03(\v20.NAlice.NAliceApi.TScenarioAnalyticsInfo.TObjectR\aObjects\x120\n" +
+	"\x13ProductScenarioName\x18\t \x01(\tR\x13ProductScenarioName\x1a\xd8\r\n" +
+	"\aTObject\x12\x0e\n" +
+	"\x02Id\x18\x01 \x01(\tR\x02Id\x12B\n" +
+	"\fIotReactions\x18  \x01(\v2\x1c.NAlice.NAliceApi.TReactionsH\x00R\fIotReactionsB\t\n" +
+	"\aPayloadJ\x04\b\x05\x10\x06J\b\bԻ\x03\x10ջ\x03J\x04\b(\x10)J\x04\b,\x10-J\x04\b\x02\x10\x03J\x04\b\x03\x10\x04J\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"J\x04\b\n" +
 	"\x10\vJ\x04\b\v\x10\fJ\x04\b\f\x10\rJ\x04\b\r\x10\x0eJ\x04\b\x0e\x10\x0fJ\x04\b\x0f\x10\x10J\x04\b\x10\x10\x11J\x04\b\x11\x10\x12J\x04\b\x12\x10\x13J\x04\b\x13\x10\x14J\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18J\x04\b\x18\x10\x19J\x04\b\x19\x10\x1aJ\x04\b\x1a\x10\x1bJ\x04\b\x1b\x10\x1cJ\x04\b\x1c\x10\x1dJ\x04\b\x1d\x10\x1eJ\x04\b\x1e\x10\x1fJ\x04\b\x1f\x10 J\x04\b!\x10\"J\x04\b\"\x10#J\x04\b#\x10$J\x04\b$\x10%J\x04\b%\x10&J\x04\b&\x10'J\x04\b'\x10(J\x04\b)\x10*J\x04\b*\x10+J\x04\b+\x10,J\x04\b-\x10.J\x04\b.\x10/J\x04\b/\x100J\x04\b0\x101J\x04\b1\x102J\x04\b2\x103J\x04\b3\x104J\x04\b4\x105J\x04\b5\x106J\x04\b6\x107J\x04\b7\x108J\x04\b8\x109J\x04\b9\x10:J\x04\b:\x10;J\x04\b;\x10<J\x04\b<\x10=J\x04\b=\x10>J\x04\b>\x10?J\x04\b?\x10@J\x04\b@\x10AJ\x04\bA\x10BJ\x04\bB\x10CJ\x04\bC\x10DR\x0fReduceTitleInfoR\x1aProviderSearchChoosedItemsR\x04NameR\rHumanReadableR\x05EmptyR\x05SkillR\tSkillUserR\fSkillSessionR\x16VideoDescriptionScreenR\x18VideoSearchGalleryScreenR\x18VideoSeasonGalleryScreenR\x0eGCResponseInfoR\n" +
 	"VinsGcMetaR\rVinsErrorMetaR\n" +
 	"FirstTrackR\x14SkillRecommendationsR\x19MovieAkinatorResponseInfoR\x06RecipeR\n" +
 	"RecipeStepR\rRecipeSessionR\vAudioStreamR\n" +
 	"HypothesesR\x12SelectedHypothesesR\x15CurrentlyPlayingVideoR\tTaxiOrderR\fNewsProviderR\n" +
-	"SearchFactR\x0fMatchedContactsR\tPhoneBookR\x11BestPricesRequestR\fGoodsRequestR\tContentIdR\rDummyResponseR\x16SkillSuggestedExamplesR\x11SearchGenericInfoR\fTelegramUserR\tStageInfoR\vContentInfoR\fPoiOperationR\x12NamePronounciationR\x11ProviderOrderInfoR\x15MapsCallSearchResultsR\x19ProviderSearchChoosedItemR\x14EntertainmentContextR\x11EntertainmentItemR\x1cNannyDailyRoutineTaleContextR\x1cNannyDailyRoutineContentItemR$NannyDailyRoutineNatureSoundsContextR\x16MusicPlatformContentIdR\x1aMusicPlatformSearchResultsR\x1aMusicPlatformSubscriptionsR\x0fCalendarServiceR)NannyDailyRoutineTimeToSleepChoiceContextR\x1aMultiQuerySequencerResultsR\x19ChildEducationPushContextR\x1cNannyDailyRoutinePushContextR\x1cSearchTemplateClassifierInfoR\x15AliceResponseFeedbackR\x19DrawPictureGenerationInfoR\x12ChildTimetableItemR\x1dNannyDailyRoutineAlarmContextR\x19OrderRenderedProviderInfoR\x0fRemindersObjectR\vAlarmObject:\x04\xa8\xdd\x1b\x04J\x04\b\x01\x10\x02J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\n" +
-	"\x10\vJ\x04\b\v\x10\fJ\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18R\aActionsR\x06EventsR\x15TunnellerRawResponsesR\x0fScenarioTimingsR\x17NlgRenderHistoryRecordsR\x1aScenarioClassificationInfoR\x10AliceParserPatchR\x16WebSearchAnalyticsInfoR\x10VisulizationInfoB\xb3\x01\n" +
-	"Eru.yandex.alice.protos.api.alicekit.analytics.scenario_analytics_infoB\x1aScenarioAnalyticsInfoProtoP\x01ZLa.yandex-team.ru/alice/protos/api/alicekit/analytics/scenario_analytics_infob\x06proto3"
+	"SearchFactR\x0fMatchedContactsR\tPhoneBookR\x11BestPricesRequestR\fGoodsRequestR\tContentIdR\rDummyResponseR\x16SkillSuggestedExamplesR\x11SearchGenericInfoR\fTelegramUserR\tStageInfoR\vContentInfoR\fPoiOperationR\x12NamePronounciationR\x11ProviderOrderInfoR\x15MapsCallSearchResultsR\x19ProviderSearchChoosedItemR\x14EntertainmentContextR\x11EntertainmentItemR\x1cNannyDailyRoutineTaleContextR\x1cNannyDailyRoutineContentItemR$NannyDailyRoutineNatureSoundsContextR\x16MusicPlatformContentIdR\x1aMusicPlatformSearchResultsR\x1aMusicPlatformSubscriptionsR\x0fCalendarServiceR)NannyDailyRoutineTimeToSleepChoiceContextR\x1aMultiQuerySequencerResultsR\x19ChildEducationPushContextR\x1cNannyDailyRoutinePushContextR\x1cSearchTemplateClassifierInfoR\x15AliceResponseFeedbackR\x19DrawPictureGenerationInfoR\x12ChildTimetableItemR\x1dNannyDailyRoutineAlarmContextR\x19OrderRenderedProviderInfoR\x0fRemindersObjectR\vAlarmObjectJ\x04\b\x01\x10\x02J\x04\b\x03\x10\x04J\x04\b\x06\x10\aJ\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\n" +
+	"\x10\vJ\x04\b\v\x10\fJ\x04\b\x14\x10\x15J\x04\b\x15\x10\x16J\x04\b\x16\x10\x17J\x04\b\x17\x10\x18R\aActionsR\x06EventsR\x15TunnellerRawResponsesR\x0fScenarioTimingsR\x17NlgRenderHistoryRecordsR\x1aScenarioClassificationInfoR\x10AliceParserPatchR\x16WebSearchAnalyticsInfoR\x10VisulizationInfoB\x80\x02\n" +
+	"\x14com.NAlice.NAliceApiB\x1aScenarioAnalyticsInfoProtoP\x01Zkgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/analytics/scenario_analytics_info\xa2\x02\x03NNX\xaa\x02\x10NAlice.NAliceApi\xca\x02\x10NAlice\\NAliceApi\xe2\x02\x1cNAlice\\NAliceApi\\GPBMetadata\xea\x02\x11NAlice::NAliceApib\x06proto3"
 
 var (
 	file_alice_protos_api_alicekit_analytics_scenario_analytics_info_scenario_analytics_info_proto_rawDescOnce sync.Once

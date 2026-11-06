@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_fragrance/capability.proto
 
-package automotive_fragrancepb
+package automotive_fragrance
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -900,8 +900,8 @@ const file_alice_protos_endpoint_capabilities_automotive_fragrance_capability_pr
 	"\x12FRAGRANCE_POWER_ON\x10\x01\x12\x12\n" +
 	"\x0eFRAGRANCE_TYPE\x10\x02\x12\x17\n" +
 	"\x13FRAGRANCE_INTENSITY\x10\x03\x12\x17\n" +
-	"\x13FRAGRANCE_AVAILABLE\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xab\x02B\xb3\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AutomotiveFragranceCapabilityProtoZ_a.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_fragrance;automotive_fragrancepbb\x06proto3"
+	"\x13FRAGRANCE_AVAILABLE\x10\x04:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\xab\x02B\xbb\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\"AutomotiveFragranceCapabilityProtoZggithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_fragranceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_fragrance_capability_proto_rawDescOnce sync.Once

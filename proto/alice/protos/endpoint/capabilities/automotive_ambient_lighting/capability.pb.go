@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/automotive_ambient_lighting/capability.proto
 
-package automotive_ambient_lightingpb
+package automotive_ambient_lighting
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -979,8 +979,8 @@ const file_alice_protos_endpoint_capabilities_automotive_ambient_lighting_capabi
 	"\vModeBreathe\x10\x02\x12\x0f\n" +
 	"\vModeFlowing\x10\x03\x12\x12\n" +
 	"\x0eModeMulticolor\x10\x04\x12\x13\n" +
-	"\x0fModeMusicRhythm\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x86\x01B\xc7\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB(AutomotiveAmbientLightingCapabilityProtoZma.yandex-team.ru/alice/protos/endpoint/capabilities/automotive_ambient_lighting;automotive_ambient_lightingpbb\x06proto3"
+	"\x0fModeMusicRhythm\x10\x05:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x86\x01B\xc8\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB(AutomotiveAmbientLightingCapabilityProtoZngithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/automotive_ambient_lightingb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_automotive_ambient_lighting_capability_proto_rawDescOnce sync.Once

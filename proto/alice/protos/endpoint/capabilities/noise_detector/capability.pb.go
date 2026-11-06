@@ -4,11 +4,10 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/noise_detector/capability.proto
 
-package noisedetectorpb
+package noise_detector
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
-	_ "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/extensions"
 	_ "github.com/skrashevich/quasar-go-genproto/proto/yt/yt_proto/yt/formats"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -111,9 +110,9 @@ func (TNoiseDetectorCapability_ENoiseEventType) EnumDescriptor() ([]byte, []int)
 
 type TNoiseDetectorCapability struct {
 	state         protoimpl.MessageState                `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TNoiseDetectorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TNoiseDetectorCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta           `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TNoiseDetectorCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TNoiseDetectorCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -207,7 +206,7 @@ func (*TNoiseDetectorCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TNoiseDetectorCapability_TState struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,json=enabled,proto3" json:"Enabled,omitempty"`
+	Enabled       bool                   `protobuf:"varint,1,opt,name=Enabled,proto3" json:"Enabled,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -249,54 +248,10 @@ func (x *TNoiseDetectorCapability_TState) GetEnabled() bool {
 	return false
 }
 
-type TNoiseDetectorCapability_TCustomNoise struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TNoiseDetectorCapability_TCustomNoise) Reset() {
-	*x = TNoiseDetectorCapability_TCustomNoise{}
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TNoiseDetectorCapability_TCustomNoise) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TNoiseDetectorCapability_TCustomNoise) ProtoMessage() {}
-
-func (x *TNoiseDetectorCapability_TCustomNoise) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TNoiseDetectorCapability_TCustomNoise.ProtoReflect.Descriptor instead.
-func (*TNoiseDetectorCapability_TCustomNoise) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 2}
-}
-
-func (x *TNoiseDetectorCapability_TCustomNoise) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
 type TNoiseDetectorCapability_TNoiseDetectedEvent struct {
 	state          protoimpl.MessageState                   `protogen:"open.v1"`
-	NoiseEventType TNoiseDetectorCapability_ENoiseEventType `protobuf:"varint,1,opt,name=NoiseEventType,json=noise_event_type,proto3,enum=NAlice.TNoiseDetectorCapability_ENoiseEventType" json:"NoiseEventType,omitempty"`
-	EventId        *string                                  `protobuf:"bytes,2,opt,name=EventId,json=event_id,proto3,oneof" json:"EventId,omitempty"`
+	NoiseEventType TNoiseDetectorCapability_ENoiseEventType `protobuf:"varint,1,opt,name=NoiseEventType,proto3,enum=NAlice.TNoiseDetectorCapability_ENoiseEventType" json:"NoiseEventType,omitempty"`
+	EventId        *string                                  `protobuf:"bytes,2,opt,name=EventId,proto3,oneof" json:"EventId,omitempty"`
 	CustomNoise    *TNoiseDetectorCapability_TCustomNoise   `protobuf:"bytes,3,opt,name=CustomNoise,json=custom_noise,proto3,oneof" json:"CustomNoise,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -304,7 +259,7 @@ type TNoiseDetectorCapability_TNoiseDetectedEvent struct {
 
 func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) Reset() {
 	*x = TNoiseDetectorCapability_TNoiseDetectedEvent{}
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[4]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -316,7 +271,7 @@ func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) String() string {
 func (*TNoiseDetectorCapability_TNoiseDetectedEvent) ProtoMessage() {}
 
 func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[4]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -329,7 +284,7 @@ func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) ProtoReflect() protorefle
 
 // Deprecated: Use TNoiseDetectorCapability_TNoiseDetectedEvent.ProtoReflect.Descriptor instead.
 func (*TNoiseDetectorCapability_TNoiseDetectedEvent) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 3}
+	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 2}
 }
 
 func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) GetNoiseEventType() TNoiseDetectorCapability_ENoiseEventType {
@@ -353,6 +308,110 @@ func (x *TNoiseDetectorCapability_TNoiseDetectedEvent) GetCustomNoise() *TNoiseD
 	return nil
 }
 
+type TNoiseDetectorCapability_TCondition struct {
+	state           protoimpl.MessageState                     `protogen:"open.v1"`
+	Events          []endpoint.TCapability_EEventType          `protobuf:"varint,1,rep,packed,name=Events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
+	NoiseEventTypes []TNoiseDetectorCapability_ENoiseEventType `protobuf:"varint,2,rep,packed,name=NoiseEventTypes,proto3,enum=NAlice.TNoiseDetectorCapability_ENoiseEventType" json:"NoiseEventTypes,omitempty"`
+	CustomNoises    []*TNoiseDetectorCapability_TCustomNoise   `protobuf:"bytes,3,rep,name=CustomNoises,json=custom_noises,proto3" json:"CustomNoises,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TNoiseDetectorCapability_TCondition) Reset() {
+	*x = TNoiseDetectorCapability_TCondition{}
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TNoiseDetectorCapability_TCondition) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TNoiseDetectorCapability_TCondition) ProtoMessage() {}
+
+func (x *TNoiseDetectorCapability_TCondition) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TNoiseDetectorCapability_TCondition.ProtoReflect.Descriptor instead.
+func (*TNoiseDetectorCapability_TCondition) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 3}
+}
+
+func (x *TNoiseDetectorCapability_TCondition) GetEvents() []endpoint.TCapability_EEventType {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
+func (x *TNoiseDetectorCapability_TCondition) GetNoiseEventTypes() []TNoiseDetectorCapability_ENoiseEventType {
+	if x != nil {
+		return x.NoiseEventTypes
+	}
+	return nil
+}
+
+func (x *TNoiseDetectorCapability_TCondition) GetCustomNoises() []*TNoiseDetectorCapability_TCustomNoise {
+	if x != nil {
+		return x.CustomNoises
+	}
+	return nil
+}
+
+type TNoiseDetectorCapability_TCustomNoise struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=Id,json=id,proto3" json:"Id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TNoiseDetectorCapability_TCustomNoise) Reset() {
+	*x = TNoiseDetectorCapability_TCustomNoise{}
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TNoiseDetectorCapability_TCustomNoise) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TNoiseDetectorCapability_TCustomNoise) ProtoMessage() {}
+
+func (x *TNoiseDetectorCapability_TCustomNoise) ProtoReflect() protoreflect.Message {
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TNoiseDetectorCapability_TCustomNoise.ProtoReflect.Descriptor instead.
+func (*TNoiseDetectorCapability_TCustomNoise) Descriptor() ([]byte, []int) {
+	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 4}
+}
+
+func (x *TNoiseDetectorCapability_TCustomNoise) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 type TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
@@ -363,7 +422,7 @@ type TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective struct {
 
 func (x *TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) Reset() {
 	*x = TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[5]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -375,7 +434,7 @@ func (x *TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) String() 
 func (*TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) ProtoMessage() {}
 
 func (x *TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[5]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +447,7 @@ func (x *TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) ProtoRefl
 
 // Deprecated: Use TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective.ProtoReflect.Descriptor instead.
 func (*TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 4}
+	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 5}
 }
 
 func (x *TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective) GetName() string {
@@ -415,7 +474,7 @@ type TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective struct {
 
 func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) Reset() {
 	*x = TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective{}
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -427,7 +486,7 @@ func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) String() s
 func (*TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) ProtoMessage() {}
 
 func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[6]
+	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -440,7 +499,7 @@ func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) ProtoRefle
 
 // Deprecated: Use TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective.ProtoReflect.Descriptor instead.
 func (*TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 5}
+	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 6}
 }
 
 func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) GetName() string {
@@ -457,90 +516,34 @@ func (x *TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective) GetSession
 	return ""
 }
 
-type TNoiseDetectorCapability_TCondition struct {
-	state           protoimpl.MessageState                     `protogen:"open.v1"`
-	Events          []endpoint.TCapability_EEventType          `protobuf:"varint,1,rep,packed,name=Events,json=events,proto3,enum=NAlice.TCapability_EEventType" json:"Events,omitempty"`
-	NoiseEventTypes []TNoiseDetectorCapability_ENoiseEventType `protobuf:"varint,2,rep,packed,name=NoiseEventTypes,json=noise_event_types,proto3,enum=NAlice.TNoiseDetectorCapability_ENoiseEventType" json:"NoiseEventTypes,omitempty"`
-	CustomNoises    []*TNoiseDetectorCapability_TCustomNoise   `protobuf:"bytes,3,rep,name=CustomNoises,json=custom_noises,proto3" json:"CustomNoises,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
-}
-
-func (x *TNoiseDetectorCapability_TCondition) Reset() {
-	*x = TNoiseDetectorCapability_TCondition{}
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TNoiseDetectorCapability_TCondition) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TNoiseDetectorCapability_TCondition) ProtoMessage() {}
-
-func (x *TNoiseDetectorCapability_TCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TNoiseDetectorCapability_TCondition.ProtoReflect.Descriptor instead.
-func (*TNoiseDetectorCapability_TCondition) Descriptor() ([]byte, []int) {
-	return file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescGZIP(), []int{0, 6}
-}
-
-func (x *TNoiseDetectorCapability_TCondition) GetEvents() []endpoint.TCapability_EEventType {
-	if x != nil {
-		return x.Events
-	}
-	return nil
-}
-
-func (x *TNoiseDetectorCapability_TCondition) GetNoiseEventTypes() []TNoiseDetectorCapability_ENoiseEventType {
-	if x != nil {
-		return x.NoiseEventTypes
-	}
-	return nil
-}
-
-func (x *TNoiseDetectorCapability_TCondition) GetCustomNoises() []*TNoiseDetectorCapability_TCustomNoise {
-	if x != nil {
-		return x.CustomNoises
-	}
-	return nil
-}
-
 var File_alice_protos_endpoint_capabilities_noise_detector_capability_proto protoreflect.FileDescriptor
 
 const file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDesc = "" +
 	"\n" +
-	"Balice/protos/endpoint/capabilities/noise_detector/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb0\f\n" +
-	"\x18TNoiseDetectorCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12\\\n" +
+	"Balice/protos/endpoint/capabilities/noise_detector/capability.proto\x12\x06NAlice\x1a&alice/protos/endpoint/capability.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\x86\v\n" +
+	"\x18TNoiseDetectorCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12L\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2,.NAlice.TNoiseDetectorCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12H\n" +
-	"\x05State\x18\x03 \x01(\v2'.NAlice.TNoiseDetectorCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a5\n" +
-	"\x06TState\x12%\n" +
-	"\aEnabled\x18\x01 \x01(\bB\v\xaa\xdd\x1b\aenabledR\aenabled:\x04\xa8\xdd\x1b\x04\x1a,\n" +
-	"\fTCustomNoise\x12\x16\n" +
-	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\x04\xa8\xdd\x1b\x04\x1a\xc4\x02\n" +
-	"\x13TNoiseDetectedEvent\x12p\n" +
-	"\x0eNoiseEventType\x18\x01 \x01(\x0e20.NAlice.TNoiseDetectorCapability.ENoiseEventTypeB\x14\xaa\xdd\x1b\x10noise_event_typeR\x10noise_event_type\x12,\n" +
-	"\aEventId\x18\x02 \x01(\tB\f\xaa\xdd\x1b\bevent_idH\x00R\bevent_id\x88\x01\x01\x12g\n" +
-	"\vCustomNoise\x18\x03 \x01(\v2-.NAlice.TNoiseDetectorCapability.TCustomNoiseB\x10\xaa\xdd\x1b\fcustom_noiseH\x01R\fcustom_noise\x88\x01\x01:\b\xa8\xdd\x1b\x04\xb0\xc8\x1cSB\n" +
+	"Parameters\x18\x02 \x01(\v2,.NAlice.TNoiseDetectorCapability.TParametersR\n" +
+	"Parameters\x12=\n" +
+	"\x05State\x18\x03 \x01(\v2'.NAlice.TNoiseDetectorCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\"\n" +
+	"\x06TState\x12\x18\n" +
+	"\aEnabled\x18\x01 \x01(\bR\aEnabled\x1a\x93\x02\n" +
+	"\x13TNoiseDetectedEvent\x12X\n" +
+	"\x0eNoiseEventType\x18\x01 \x01(\x0e20.NAlice.TNoiseDetectorCapability.ENoiseEventTypeR\x0eNoiseEventType\x12\x1d\n" +
+	"\aEventId\x18\x02 \x01(\tH\x00R\aEventId\x88\x01\x01\x12g\n" +
+	"\vCustomNoise\x18\x03 \x01(\v2-.NAlice.TNoiseDetectorCapability.TCustomNoiseB\x10\xaa\xdd\x1b\fcustom_noiseH\x01R\fcustom_noise\x88\x01\x01B\n" +
 	"\n" +
 	"\b_EventIdB\x0e\n" +
-	"\f_CustomNoise\x1a\xa8\x01\n" +
+	"\f_CustomNoise\x1a\x87\x02\n" +
+	"\n" +
+	"TCondition\x126\n" +
+	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeR\x06Events\x12Z\n" +
+	"\x0fNoiseEventTypes\x18\x02 \x03(\x0e20.NAlice.TNoiseDetectorCapability.ENoiseEventTypeR\x0fNoiseEventTypes\x12e\n" +
+	"\fCustomNoises\x18\x03 \x03(\v2-.NAlice.TNoiseDetectorCapability.TCustomNoiseB\x11\xaa\xdd\x1b\rcustom_noisesR\rcustom_noises\x1a,\n" +
+	"\fTCustomNoise\x12\x16\n" +
+	"\x02Id\x18\x01 \x01(\tB\x06\xaa\xdd\x1b\x02idR\x02id:\x04\xa8\xdd\x1b\x04\x1a\xa8\x01\n" +
 	"#TStartCustomNoiseRecordingDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
 	"\tSessionId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
@@ -550,13 +553,7 @@ const file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_ra
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12-\n" +
 	"\tSessionId\x18\x01 \x01(\tB\x0e\xaa\xdd\x1b\n" +
 	"session_idR\n" +
-	"session_id:2\x92\x82\x19%stop_custom_noise_recording_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdf\x05\x1a\xb7\x02\n" +
-	"\n" +
-	"TCondition\x12B\n" +
-	"\x06Events\x18\x01 \x03(\x0e2\x1e.NAlice.TCapability.EEventTypeB\n" +
-	"\xaa\xdd\x1b\x06eventsR\x06events\x12s\n" +
-	"\x0fNoiseEventTypes\x18\x02 \x03(\x0e20.NAlice.TNoiseDetectorCapability.ENoiseEventTypeB\x15\xaa\xdd\x1b\x11noise_event_typesR\x11noise_event_types\x12e\n" +
-	"\fCustomNoises\x18\x03 \x03(\v2-.NAlice.TNoiseDetectorCapability.TCustomNoiseB\x11\xaa\xdd\x1b\rcustom_noisesR\rcustom_noises:\t\xa8\xdd\x1b\x04\xba\xc8\x1c\x01S\"\xd8\x01\n" +
+	"session_id:2\x92\x82\x19%stop_custom_noise_recording_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xdf\x05\"\xd8\x01\n" +
 	"\x0fENoiseEventType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\b\n" +
 	"\x04CLAP\x10\x01\x12\b\n" +
@@ -574,8 +571,9 @@ const file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_ra
 	"\fUNIDENTIFIED\x10\f\x12\x0f\n" +
 	"\vDOUBLE_CLAP\x10\r\x12\n" +
 	"\n" +
-	"\x06CUSTOM\x10\x0e:\t\xa8\xdd\x1b\x04\xa0\xc8\x1c\x94\x01B\xa2\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x1cNoiseDetectorCapabilityProtoP\x01ZRa.yandex-team.ru/alice/protos/endpoint/capabilities/noise_detector;noisedetectorpbb\x06proto3"
+	"\x06CUSTOM\x10\x0eB\xb8\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01Zagithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/noise_detector\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_rawDescOnce sync.Once
@@ -596,11 +594,11 @@ var file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_goTy
 	(*TNoiseDetectorCapability)(nil),                                     // 1: NAlice.TNoiseDetectorCapability
 	(*TNoiseDetectorCapability_TParameters)(nil),                         // 2: NAlice.TNoiseDetectorCapability.TParameters
 	(*TNoiseDetectorCapability_TState)(nil),                              // 3: NAlice.TNoiseDetectorCapability.TState
-	(*TNoiseDetectorCapability_TCustomNoise)(nil),                        // 4: NAlice.TNoiseDetectorCapability.TCustomNoise
-	(*TNoiseDetectorCapability_TNoiseDetectedEvent)(nil),                 // 5: NAlice.TNoiseDetectorCapability.TNoiseDetectedEvent
-	(*TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective)(nil), // 6: NAlice.TNoiseDetectorCapability.TStartCustomNoiseRecordingDirective
-	(*TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective)(nil),  // 7: NAlice.TNoiseDetectorCapability.TStopCustomNoiseRecordingDirective
-	(*TNoiseDetectorCapability_TCondition)(nil),                          // 8: NAlice.TNoiseDetectorCapability.TCondition
+	(*TNoiseDetectorCapability_TNoiseDetectedEvent)(nil),                 // 4: NAlice.TNoiseDetectorCapability.TNoiseDetectedEvent
+	(*TNoiseDetectorCapability_TCondition)(nil),                          // 5: NAlice.TNoiseDetectorCapability.TCondition
+	(*TNoiseDetectorCapability_TCustomNoise)(nil),                        // 6: NAlice.TNoiseDetectorCapability.TCustomNoise
+	(*TNoiseDetectorCapability_TStartCustomNoiseRecordingDirective)(nil), // 7: NAlice.TNoiseDetectorCapability.TStartCustomNoiseRecordingDirective
+	(*TNoiseDetectorCapability_TStopCustomNoiseRecordingDirective)(nil),  // 8: NAlice.TNoiseDetectorCapability.TStopCustomNoiseRecordingDirective
 	(*endpoint.TCapability_TMeta)(nil),                                   // 9: NAlice.TCapability.TMeta
 	(endpoint.TCapability_EEventType)(0),                                 // 10: NAlice.TCapability.EEventType
 }
@@ -609,10 +607,10 @@ var file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_depI
 	2,  // 1: NAlice.TNoiseDetectorCapability.Parameters:type_name -> NAlice.TNoiseDetectorCapability.TParameters
 	3,  // 2: NAlice.TNoiseDetectorCapability.State:type_name -> NAlice.TNoiseDetectorCapability.TState
 	0,  // 3: NAlice.TNoiseDetectorCapability.TNoiseDetectedEvent.NoiseEventType:type_name -> NAlice.TNoiseDetectorCapability.ENoiseEventType
-	4,  // 4: NAlice.TNoiseDetectorCapability.TNoiseDetectedEvent.CustomNoise:type_name -> NAlice.TNoiseDetectorCapability.TCustomNoise
+	6,  // 4: NAlice.TNoiseDetectorCapability.TNoiseDetectedEvent.CustomNoise:type_name -> NAlice.TNoiseDetectorCapability.TCustomNoise
 	10, // 5: NAlice.TNoiseDetectorCapability.TCondition.Events:type_name -> NAlice.TCapability.EEventType
 	0,  // 6: NAlice.TNoiseDetectorCapability.TCondition.NoiseEventTypes:type_name -> NAlice.TNoiseDetectorCapability.ENoiseEventType
-	4,  // 7: NAlice.TNoiseDetectorCapability.TCondition.CustomNoises:type_name -> NAlice.TNoiseDetectorCapability.TCustomNoise
+	6,  // 7: NAlice.TNoiseDetectorCapability.TCondition.CustomNoises:type_name -> NAlice.TNoiseDetectorCapability.TCustomNoise
 	8,  // [8:8] is the sub-list for method output_type
 	8,  // [8:8] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name
@@ -625,7 +623,7 @@ func file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_ini
 	if File_alice_protos_endpoint_capabilities_noise_detector_capability_proto != nil {
 		return
 	}
-	file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[4].OneofWrappers = []any{}
+	file_alice_protos_endpoint_capabilities_noise_detector_capability_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/smart_home_client_view/capability.proto
 
-package smart_home_client_viewpb
+package smart_home_client_view
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -432,8 +432,8 @@ const file_alice_protos_endpoint_capabilities_smart_home_client_view_capability_
 	"\x06Remote\x10\x01\x12\f\n" +
 	"\bScenario\x10\x02:+\x92\x82\x19\x1eopen_smart_home_page_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xd7\x01B\x14\n" +
 	"\x06Params\x12\n" +
-	"\xaa\xdd\x1b\x06paramsJ\x04\b\x02\x10\x03R\x04Path:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cIB\xad\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18SmartHomeClientViewProtoZca.yandex-team.ru/alice/protos/endpoint/capabilities/smart_home_client_view;smart_home_client_viewpbb\x06proto3"
+	"\xaa\xdd\x1b\x06paramsJ\x04\b\x02\x10\x03R\x04Path:\b\xa8\xdd\x1b\x04\xa0\xc8\x1cIB\xb3\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x18SmartHomeClientViewProtoZigithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/smart_home_client_viewb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_smart_home_client_view_capability_proto_rawDescOnce sync.Once

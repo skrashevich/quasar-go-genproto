@@ -126,10 +126,10 @@ func (ERecentType) EnumDescriptor() ([]byte, []int) {
 
 type TRecentCall struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
-	Contact       *video_call.TProviderContactData `protobuf:"bytes,1,opt,name=Contact,json=contact,proto3" json:"Contact,omitempty"`
-	CallType      ECallType                        `protobuf:"varint,2,opt,name=CallType,json=call_type,proto3,enum=NAlice.NData.ECallType" json:"CallType,omitempty"`
-	RecentType    ERecentType                      `protobuf:"varint,3,opt,name=RecentType,json=recent_type,proto3,enum=NAlice.NData.ERecentType" json:"RecentType,omitempty"`
-	TimeContacted uint64                           `protobuf:"varint,4,opt,name=TimeContacted,json=time_contacted,proto3" json:"TimeContacted,omitempty"`
+	Contact       *video_call.TProviderContactData `protobuf:"bytes,1,opt,name=Contact,proto3" json:"Contact,omitempty"`
+	CallType      ECallType                        `protobuf:"varint,2,opt,name=CallType,proto3,enum=NAlice.NData.ECallType" json:"CallType,omitempty"`
+	RecentType    ERecentType                      `protobuf:"varint,3,opt,name=RecentType,proto3,enum=NAlice.NData.ERecentType" json:"RecentType,omitempty"`
+	TimeContacted uint64                           `protobuf:"varint,4,opt,name=TimeContacted,proto3" json:"TimeContacted,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -196,13 +196,14 @@ var File_alice_protos_data_scenario_video_call_recent_proto protoreflect.FileDes
 
 const file_alice_protos_data_scenario_video_call_recent_proto_rawDesc = "" +
 	"\n" +
-	"2alice/protos/data/scenario/video_call/recent.proto\x12\fNAlice.NData\x1a-alice/protos/data/video_call/video_call.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xa5\x02\n" +
-	"\vTRecentCall\x12I\n" +
-	"\aContact\x18\x01 \x01(\v2\".NAlice.NData.TProviderContactDataB\v\xaa\xdd\x1b\acontactR\acontact\x12C\n" +
-	"\bCallType\x18\x02 \x01(\x0e2\x17.NAlice.NData.ECallTypeB\r\xaa\xdd\x1b\tcall_typeR\tcall_type\x12K\n" +
+	"2alice/protos/data/scenario/video_call/recent.proto\x12\fNAlice.NData\x1a-alice/protos/data/video_call/video_call.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xe1\x01\n" +
+	"\vTRecentCall\x12<\n" +
+	"\aContact\x18\x01 \x01(\v2\".NAlice.NData.TProviderContactDataR\aContact\x123\n" +
+	"\bCallType\x18\x02 \x01(\x0e2\x17.NAlice.NData.ECallTypeR\bCallType\x129\n" +
 	"\n" +
-	"RecentType\x18\x03 \x01(\x0e2\x19.NAlice.NData.ERecentTypeB\x0f\xaa\xdd\x1b\vrecent_typeR\vrecent_type\x129\n" +
-	"\rTimeContacted\x18\x04 \x01(\x04B\x12\xaa\xdd\x1b\x0etime_contactedR\x0etime_contacted*6\n" +
+	"RecentType\x18\x03 \x01(\x0e2\x19.NAlice.NData.ERecentTypeR\n" +
+	"RecentType\x12$\n" +
+	"\rTimeContacted\x18\x04 \x01(\x04R\rTimeContacted*6\n" +
 	"\tECallType\x12\x13\n" +
 	"\x0fUnknownCallType\x10\x00\x12\t\n" +
 	"\x05Audio\x10\x01\x12\t\n" +
@@ -212,8 +213,8 @@ const file_alice_protos_data_scenario_video_call_recent_proto_rawDesc = "" +
 	"\n" +
 	"\x06Missed\x10\x01\x12\f\n" +
 	"\bIncoming\x10\x02\x12\f\n" +
-	"\bOutgoing\x10\x03Bk\n" +
-	"/ru.yandex.alice.protos.data.scenario.video_callP\x01Z6a.yandex-team.ru/alice/protos/data/scenario/video_callb\x06proto3"
+	"\bOutgoing\x10\x03B\xc7\x01\n" +
+	"\x10com.NAlice.NDataB\vRecentProtoP\x01ZUgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/video_call\xa2\x02\x03NNX\xaa\x02\fNAlice.NData\xca\x02\fNAlice\\NData\xe2\x02\x18NAlice\\NData\\GPBMetadata\xea\x02\rNAlice::NDatab\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_video_call_recent_proto_rawDescOnce sync.Once

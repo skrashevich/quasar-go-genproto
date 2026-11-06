@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/adhan/capability.proto
 
-package adhanpb
+package adhan
 
 import (
 	adhan "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/adhan"
@@ -28,9 +28,9 @@ const (
 
 type TAdhanCapability struct {
 	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,json=meta,proto3" json:"Meta,omitempty"`
-	Parameters    *TAdhanCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,json=parameters,proto3" json:"Parameters,omitempty"`
-	State         *TAdhanCapability_TState      `protobuf:"bytes,3,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Meta          *endpoint.TCapability_TMeta   `protobuf:"bytes,1,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	Parameters    *TAdhanCapability_TParameters `protobuf:"bytes,2,opt,name=Parameters,proto3" json:"Parameters,omitempty"`
+	State         *TAdhanCapability_TState      `protobuf:"bytes,3,opt,name=State,proto3" json:"State,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,10 +124,10 @@ func (*TAdhanCapability_TParameters) Descriptor() ([]byte, []int) {
 
 type TAdhanCapability_TState struct {
 	state                protoimpl.MessageState       `protogen:"open.v1"`
-	Adhans               []*adhan.TAdhan              `protobuf:"bytes,1,rep,name=Adhans,json=adhans,proto3" json:"Adhans,omitempty"`
-	SoundLevel           uint32                       `protobuf:"varint,2,opt,name=SoundLevel,json=sound_level,proto3" json:"SoundLevel,omitempty"`
-	AdhanMuezzinSettings *adhan.TAdhanMuezzinSettings `protobuf:"bytes,3,opt,name=AdhanMuezzinSettings,json=adhan_muezzin_settings,proto3" json:"AdhanMuezzinSettings,omitempty"`
-	CurrentlyPlaying     bool                         `protobuf:"varint,4,opt,name=CurrentlyPlaying,json=currently_playing,proto3" json:"CurrentlyPlaying,omitempty"`
+	Adhans               []*adhan.TAdhan              `protobuf:"bytes,1,rep,name=Adhans,proto3" json:"Adhans,omitempty"`
+	SoundLevel           uint32                       `protobuf:"varint,2,opt,name=SoundLevel,proto3" json:"SoundLevel,omitempty"`
+	AdhanMuezzinSettings *adhan.TAdhanMuezzinSettings `protobuf:"bytes,3,opt,name=AdhanMuezzinSettings,proto3" json:"AdhanMuezzinSettings,omitempty"`
+	CurrentlyPlaying     bool                         `protobuf:"varint,4,opt,name=CurrentlyPlaying,proto3" json:"CurrentlyPlaying,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -192,8 +192,8 @@ func (x *TAdhanCapability_TState) GetCurrentlyPlaying() bool {
 
 type TAdhanCapability_TAdhanSetSoundLevelDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	SoundLevel    uint32                 `protobuf:"varint,1,opt,name=SoundLevel,json=sound_level,proto3" json:"SoundLevel,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	SoundLevel    uint32                 `protobuf:"varint,1,opt,name=SoundLevel,proto3" json:"SoundLevel,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -244,8 +244,8 @@ func (x *TAdhanCapability_TAdhanSetSoundLevelDirective) GetSoundLevel() uint32 {
 
 type TAdhanCapability_TAdhanSetMuezzinSettingsDirective struct {
 	state                protoimpl.MessageState       `protogen:"open.v1"`
-	Name                 string                       `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AdhanMuezzinSettings *adhan.TAdhanMuezzinSettings `protobuf:"bytes,1,opt,name=AdhanMuezzinSettings,json=adhan_muezzin_settings,proto3" json:"AdhanMuezzinSettings,omitempty"`
+	Name                 string                       `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AdhanMuezzinSettings *adhan.TAdhanMuezzinSettings `protobuf:"bytes,1,opt,name=AdhanMuezzinSettings,proto3" json:"AdhanMuezzinSettings,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -296,8 +296,8 @@ func (x *TAdhanCapability_TAdhanSetMuezzinSettingsDirective) GetAdhanMuezzinSett
 
 type TAdhanCapability_TAdhanAddOrUpdateDirective struct {
 	state                     protoimpl.MessageState                                                   `protogen:"open.v1"`
-	Name                      string                                                                   `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AdhansWithActivationTimes []*TAdhanCapability_TAdhanAddOrUpdateDirective_TAdhanWithActivationTimes `protobuf:"bytes,1,rep,name=AdhansWithActivationTimes,json=adhans_with_activation_times,proto3" json:"AdhansWithActivationTimes,omitempty"`
+	Name                      string                                                                   `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AdhansWithActivationTimes []*TAdhanCapability_TAdhanAddOrUpdateDirective_TAdhanWithActivationTimes `protobuf:"bytes,1,rep,name=AdhansWithActivationTimes,proto3" json:"AdhansWithActivationTimes,omitempty"`
 	unknownFields             protoimpl.UnknownFields
 	sizeCache                 protoimpl.SizeCache
 }
@@ -348,8 +348,8 @@ func (x *TAdhanCapability_TAdhanAddOrUpdateDirective) GetAdhansWithActivationTim
 
 type TAdhanCapability_TAdhanRemoveDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AdhanIds      []string               `protobuf:"bytes,1,rep,name=AdhanIds,json=adhan_ids,proto3" json:"AdhanIds,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AdhanIds      []string               `protobuf:"bytes,1,rep,name=AdhanIds,proto3" json:"AdhanIds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -400,8 +400,8 @@ func (x *TAdhanCapability_TAdhanRemoveDirective) GetAdhanIds() []string {
 
 type TAdhanCapability_TAdhanUpdateActivationTimesDirective struct {
 	state                 protoimpl.MessageState                                                         `protogen:"open.v1"`
-	Name                  string                                                                         `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
-	AdhansActivationTimes []*TAdhanCapability_TAdhanUpdateActivationTimesDirective_TAdhanActivationTimes `protobuf:"bytes,1,rep,name=AdhansActivationTimes,json=adhans_activation_times,proto3" json:"AdhansActivationTimes,omitempty"`
+	Name                  string                                                                         `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
+	AdhansActivationTimes []*TAdhanCapability_TAdhanUpdateActivationTimesDirective_TAdhanActivationTimes `protobuf:"bytes,1,rep,name=AdhansActivationTimes,proto3" json:"AdhansActivationTimes,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -452,7 +452,7 @@ func (x *TAdhanCapability_TAdhanUpdateActivationTimesDirective) GetAdhansActivat
 
 type TAdhanCapability_TAdhanStopDirective struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          string                 `protobuf:"bytes,1000,opt,name=Name,json=name,proto3" json:"Name,omitempty"`
+	Name          string                 `protobuf:"bytes,1000,opt,name=Name,proto3" json:"Name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -496,8 +496,8 @@ func (x *TAdhanCapability_TAdhanStopDirective) GetName() string {
 
 type TAdhanCapability_TAdhanAddOrUpdateDirective_TAdhanWithActivationTimes struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	Adhan                *adhan.TAdhan          `protobuf:"bytes,1,opt,name=Adhan,json=adhan,proto3" json:"Adhan,omitempty"`
-	ActivationTimestamps []uint64               `protobuf:"varint,2,rep,packed,name=ActivationTimestamps,json=activation_timestamps,proto3" json:"ActivationTimestamps,omitempty"`
+	Adhan                *adhan.TAdhan          `protobuf:"bytes,1,opt,name=Adhan,proto3" json:"Adhan,omitempty"`
+	ActivationTimestamps []uint64               `protobuf:"varint,2,rep,packed,name=ActivationTimestamps,proto3" json:"ActivationTimestamps,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -548,8 +548,8 @@ func (x *TAdhanCapability_TAdhanAddOrUpdateDirective_TAdhanWithActivationTimes) 
 
 type TAdhanCapability_TAdhanUpdateActivationTimesDirective_TAdhanActivationTimes struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
-	AdhanId              string                 `protobuf:"bytes,1,opt,name=AdhanId,json=adhan_id,proto3" json:"AdhanId,omitempty"`
-	ActivationTimestamps []uint64               `protobuf:"varint,2,rep,packed,name=ActivationTimestamps,json=activation_timestamps,proto3" json:"ActivationTimestamps,omitempty"`
+	AdhanId              string                 `protobuf:"bytes,1,opt,name=AdhanId,proto3" json:"AdhanId,omitempty"`
+	ActivationTimestamps []uint64               `protobuf:"varint,2,rep,packed,name=ActivationTimestamps,proto3" json:"ActivationTimestamps,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -602,48 +602,49 @@ var File_alice_protos_endpoint_capabilities_adhan_capability_proto protoreflect.
 
 const file_alice_protos_endpoint_capabilities_adhan_capability_proto_rawDesc = "" +
 	"\n" +
-	"9alice/protos/endpoint/capabilities/adhan/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/adhan/adhan.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xb6\x10\n" +
-	"\x10TAdhanCapability\x127\n" +
-	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaB\b\xaa\xdd\x1b\x04metaR\x04meta\x12T\n" +
+	"9alice/protos/endpoint/capabilities/adhan/capability.proto\x12\x06NAlice\x1a google/protobuf/descriptor.proto\x1a,alice/protos/data/scenario/adhan/adhan.proto\x1a&alice/protos/endpoint/capability.proto\x1a(alice/protos/extensions/extensions.proto\x1a&yt/yt_proto/yt/formats/extension.proto\"\xfa\n" +
 	"\n" +
-	"Parameters\x18\x02 \x01(\v2$.NAlice.TAdhanCapability.TParametersB\x0e\xaa\xdd\x1b\n" +
-	"parametersR\n" +
-	"parameters\x12@\n" +
-	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAdhanCapability.TStateB\t\xaa\xdd\x1b\x05stateR\x05state\x1a\x13\n" +
-	"\vTParameters:\x04\xa8\xdd\x1b\x04\x1a\xb5\x02\n" +
-	"\x06TState\x128\n" +
-	"\x06Adhans\x18\x01 \x03(\v2\x14.NAlice.NData.TAdhanB\n" +
-	"\xaa\xdd\x1b\x06adhansR\x06adhans\x120\n" +
+	"\x10TAdhanCapability\x12-\n" +
+	"\x04Meta\x18\x01 \x01(\v2\x19.NAlice.TCapability.TMetaR\x04Meta\x12D\n" +
 	"\n" +
-	"SoundLevel\x18\x02 \x01(\rB\x0f\xaa\xdd\x1b\vsound_levelR\vsound_level\x12u\n" +
-	"\x14AdhanMuezzinSettings\x18\x03 \x01(\v2#.NAlice.NData.TAdhanMuezzinSettingsB\x1a\xaa\xdd\x1b\x16adhan_muezzin_settingsR\x16adhan_muezzin_settings\x12B\n" +
-	"\x10CurrentlyPlaying\x18\x04 \x01(\bB\x15\xaa\xdd\x1b\x11currently_playingR\x11currently_playing:\x04\xa8\xdd\x1b\x04\x1a\x9d\x01\n" +
-	"\x1cTAdhanSetSoundLevelDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x120\n" +
+	"Parameters\x18\x02 \x01(\v2$.NAlice.TAdhanCapability.TParametersR\n" +
+	"Parameters\x125\n" +
+	"\x05State\x18\x03 \x01(\v2\x1f.NAlice.TAdhanCapability.TStateR\x05State\x1a\r\n" +
+	"\vTParameters\x1a\xdb\x01\n" +
+	"\x06TState\x12,\n" +
+	"\x06Adhans\x18\x01 \x03(\v2\x14.NAlice.NData.TAdhanR\x06Adhans\x12\x1e\n" +
 	"\n" +
-	"SoundLevel\x18\x01 \x01(\rB\x0f\xaa\xdd\x1b\vsound_levelR\vsound_level:,\x92\x82\x19\x1fadhan_set_sound_level_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x91\x01\x1a\xec\x01\n" +
-	"!TAdhanSetMuezzinSettingsDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12u\n" +
-	"\x14AdhanMuezzinSettings\x18\x01 \x01(\v2#.NAlice.NData.TAdhanMuezzinSettingsB\x1a\xaa\xdd\x1b\x16adhan_muezzin_settingsR\x16adhan_muezzin_settings:1\x92\x82\x19$adhan_set_muezzin_settings_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x92\x01\x1a\xc5\x03\n" +
-	"\x1aTAdhanAddOrUpdateDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xb0\x01\n" +
-	"\x19AdhansWithActivationTimes\x18\x01 \x03(\v2M.NAlice.TAdhanCapability.TAdhanAddOrUpdateDirective.TAdhanWithActivationTimesB \xaa\xdd\x1b\x1cadhans_with_activation_timesR\x1cadhans_with_activation_times\x1a\xa8\x01\n" +
-	"\x19TAdhanWithActivationTimes\x125\n" +
-	"\x05Adhan\x18\x01 \x01(\v2\x14.NAlice.NData.TAdhanB\t\xaa\xdd\x1b\x05adhanR\x05adhan\x12N\n" +
-	"\x14ActivationTimestamps\x18\x02 \x03(\x04B\x19\xaa\xdd\x1b\x15activation_timestampsR\x15activation_timestamps:\x04\xa8\xdd\x1b\x04:*\x92\x82\x19\x1dadhan_add_or_update_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x93\x01\x1a\x87\x01\n" +
-	"\x15TAdhanRemoveDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
-	"\bAdhanIds\x18\x01 \x03(\tB\r\xaa\xdd\x1b\tadhan_idsR\tadhan_ids:#\x92\x82\x19\x16adhan_remove_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x94\x01\x1a\xbf\x03\n" +
-	"$TAdhanUpdateActivationTimesDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12\xa8\x01\n" +
-	"\x15AdhansActivationTimes\x18\x01 \x03(\v2S.NAlice.TAdhanCapability.TAdhanUpdateActivationTimesDirective.TAdhanActivationTimesB\x1b\xaa\xdd\x1b\x17adhans_activation_timesR\x17adhans_activation_times\x1a\x96\x01\n" +
-	"\x15TAdhanActivationTimes\x12'\n" +
-	"\aAdhanId\x18\x01 \x01(\tB\f\xaa\xdd\x1b\badhan_idR\badhan_id\x12N\n" +
-	"\x14ActivationTimestamps\x18\x02 \x03(\x04B\x19\xaa\xdd\x1b\x15activation_timestampsR\x15activation_timestamps:\x04\xa8\xdd\x1b\x04:4\x92\x82\x19'adhan_update_activation_times_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x95\x01\x1aW\n" +
-	"\x13TAdhanStopDirective\x12\x1d\n" +
-	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name:!\x92\x82\x19\x14adhan_stop_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\x96\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c7B}\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\n" +
-	"AdhanProtoZAa.yandex-team.ru/alice/protos/endpoint/capabilities/adhan;adhanpbb\x06proto3"
+	"SoundLevel\x18\x02 \x01(\rR\n" +
+	"SoundLevel\x12W\n" +
+	"\x14AdhanMuezzinSettings\x18\x03 \x01(\v2#.NAlice.NData.TAdhanMuezzinSettingsR\x14AdhanMuezzinSettings\x12*\n" +
+	"\x10CurrentlyPlaying\x18\x04 \x01(\bR\x10CurrentlyPlaying\x1aS\n" +
+	"\x1cTAdhanSetSoundLevelDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1e\n" +
+	"\n" +
+	"SoundLevel\x18\x01 \x01(\rR\n" +
+	"SoundLevel\x1a\x91\x01\n" +
+	"!TAdhanSetMuezzinSettingsDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12W\n" +
+	"\x14AdhanMuezzinSettings\x18\x01 \x01(\v2#.NAlice.NData.TAdhanMuezzinSettingsR\x14AdhanMuezzinSettings\x1a\xbc\x02\n" +
+	"\x1aTAdhanAddOrUpdateDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x8b\x01\n" +
+	"\x19AdhansWithActivationTimes\x18\x01 \x03(\v2M.NAlice.TAdhanCapability.TAdhanAddOrUpdateDirective.TAdhanWithActivationTimesR\x19AdhansWithActivationTimes\x1a{\n" +
+	"\x19TAdhanWithActivationTimes\x12*\n" +
+	"\x05Adhan\x18\x01 \x01(\v2\x14.NAlice.NData.TAdhanR\x05Adhan\x122\n" +
+	"\x14ActivationTimestamps\x18\x02 \x03(\x04R\x14ActivationTimestamps\x1aH\n" +
+	"\x15TAdhanRemoveDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x1a\n" +
+	"\bAdhanIds\x18\x01 \x03(\tR\bAdhanIds\x1a\xae\x02\n" +
+	"$TAdhanUpdateActivationTimesDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04Name\x12\x89\x01\n" +
+	"\x15AdhansActivationTimes\x18\x01 \x03(\v2S.NAlice.TAdhanCapability.TAdhanUpdateActivationTimesDirective.TAdhanActivationTimesR\x15AdhansActivationTimes\x1ae\n" +
+	"\x15TAdhanActivationTimes\x12\x18\n" +
+	"\aAdhanId\x18\x01 \x01(\tR\aAdhanId\x122\n" +
+	"\x14ActivationTimestamps\x18\x02 \x03(\x04R\x14ActivationTimestamps\x1a*\n" +
+	"\x13TAdhanStopDirective\x12\x13\n" +
+	"\x04Name\x18\xe8\a \x01(\tR\x04NameB\xaf\x01\n" +
+	"\n" +
+	"com.NAliceB\x0fCapabilityProtoP\x01ZXgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/adhan\xa2\x02\x03NXX\xaa\x02\x06NAlice\xca\x02\x06NAlice\xe2\x02\x12NAlice\\GPBMetadata\xea\x02\x06NAliceb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_adhan_capability_proto_rawDescOnce sync.Once

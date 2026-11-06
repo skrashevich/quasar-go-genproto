@@ -4,7 +4,7 @@
 // 	protoc        v7.36.1
 // source: alice/protos/endpoint/capabilities/category/capability.proto
 
-package categorypb
+package category
 
 import (
 	endpoint "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint"
@@ -472,8 +472,8 @@ const file_alice_protos_endpoint_capabilities_category_capability_proto_rawDesc 
 	"\x18TShowWhatYouCanDirective\x12\x1d\n" +
 	"\x04Name\x18\xe8\a \x01(\tB\b\xaa\xdd\x1b\x04nameR\x04name\x12*\n" +
 	"\bVideoUrl\x18\x01 \x01(\tB\r\xaa\xdd\x1b\tvideo_urlR\tvideo_url\x12<\n" +
-	"\x0ePlaceholderUrl\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fplaceholder_urlR\x0fplaceholder_url:(\x92\x82\x19\x1bshow_what_you_can_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c1B\x92\x01\n" +
-	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17CategoryCapabilityProtoP\x01ZGa.yandex-team.ru/alice/protos/endpoint/capabilities/category;categorypbb\x06proto3"
+	"\x0ePlaceholderUrl\x18\x02 \x01(\tB\x13\xaa\xdd\x1b\x0fplaceholder_urlR\x0fplaceholder_url:(\x92\x82\x19\x1bshow_what_you_can_directive\xa8\xdd\x1b\x04\xa8\xc8\x1c\xb3\x01:\b\xa8\xdd\x1b\x04\xa0\xc8\x1c1B\xa6\x01\n" +
+	",ru.yandex.alice.protos.endpoint.capabilitiesB\x17CategoryCapabilityProtoP\x01Z[github.com/skrashevich/quasar-go-genproto/proto/alice/protos/endpoint/capabilities/categoryb\x06proto3"
 
 var (
 	file_alice_protos_endpoint_capabilities_category_capability_proto_rawDescOnce sync.Once

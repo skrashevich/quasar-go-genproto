@@ -446,8 +446,8 @@ const file_alice_protos_data_scenario_reminders_shoot_source_info_proto_rawDesc 
 	"_TechJobId:\x04\xa8\xdd\x1b\x04B\x18\n" +
 	"\n" +
 	"SourceInfo\x12\n" +
-	"\xaa\xdd\x1b\x06sourceBg\n" +
-	".ru.yandex.alice.protos.data.scenario.remindersZ5a.yandex-team.ru/alice/protos/data/scenario/remindersb\x06proto3"
+	"\xaa\xdd\x1b\x06sourceB\x86\x01\n" +
+	".ru.yandex.alice.protos.data.scenario.remindersZTgithub.com/skrashevich/quasar-go-genproto/proto/alice/protos/data/scenario/remindersb\x06proto3"
 
 var (
 	file_alice_protos_data_scenario_reminders_shoot_source_info_proto_rawDescOnce sync.Once

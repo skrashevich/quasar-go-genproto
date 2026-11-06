@@ -191,8 +191,8 @@ const file_alice_protos_api_rpc_file_service_voice_cloning_voice_data_proto_rawD
 	"\x04Male\x10\x02:\x04\xa8\xdd\x1b\x04\"\x89\x01\n" +
 	"\x0fTVoiceEmbedding\x126\n" +
 	"\fModelVersion\x18\x01 \x01(\tB\x11\xaa\xdd\x1b\rmodel_versionR\rmodel_version\x128\n" +
-	"\fBioEmbedding\x18\x02 \x03(\x02B\x13\xaa\xdd\x1b\rbio_embedding\x10\x01R\rbio_embedding:\x04\xa8\xdd\x1b\x04B\x8f\x01\n" +
-	"9ru.yandex.alice.protos.api.rpc.file_service.voice_cloningB\x0eVoiceDataProtoP\x01Z@a.yandex-team.ru/alice/protos/api/rpc/file_service/voice_cloningb\x06proto3"
+	"\fBioEmbedding\x18\x02 \x03(\x02B\x13\xaa\xdd\x1b\rbio_embedding\x10\x01R\rbio_embedding:\x04\xa8\xdd\x1b\x04B\xae\x01\n" +
+	"9ru.yandex.alice.protos.api.rpc.file_service.voice_cloningB\x0eVoiceDataProtoP\x01Z_github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/rpc/file_service/voice_cloningb\x06proto3"
 
 var (
 	file_alice_protos_api_rpc_file_service_voice_cloning_voice_data_proto_rawDescOnce sync.Once
