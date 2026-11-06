@@ -240,6 +240,7 @@
   "license_sha256": "f7f653923a9a4f6b6eb1c32e5e6207663f7597ce342501ece9e244b7e2905d1c",
   "protoc": "libprotoc 36.1",
   "protoc_gen_go": "protoc-gen-go v1.36.12",
+  "protoc_gen_go_build_go": "go1.27.0",
   "repository": "https://github.com/v3rt3p/quasar-protos",
   "revision": "14217ab44835dc0b107ae27c710b27cb9329e1d2",
   "root_directories": [

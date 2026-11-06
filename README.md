@@ -47,7 +47,7 @@ including its `include/` directory next to `bin/`. Put `protoc` on `PATH`, then
 install the pinned Go generator and regenerate from the checked-in snapshot:
 
 ```sh
-go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
+GOTOOLCHAIN=go1.27.0 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12
 export PATH="$(go env GOPATH)/bin:$PATH"
 python3 scripts/update-protos.py
 python3 scripts/update-protos.py --check
@@ -55,8 +55,12 @@ go test ./...
 go vet ./...
 ```
 
-The script requires exactly protoc 36.1 and protoc-gen-go v1.36.12. Generation
-is offline and uses source-relative output paths and explicit Go import
+The script requires exactly protoc 36.1 and protoc-gen-go v1.36.12 built with
+Go 1.27.0. The generator's build toolchain controls its embedded `go/format`,
+so it must be pinned as well to reproduce the output bytes. The script checks
+the plugin's build metadata with `go version -m`. This generation requirement
+does not change the Go 1.23 minimum for using the generated packages.
+Generation is offline and uses source-relative output paths and explicit Go import
 mappings. Google well-known schemas come from protoc's includes and use the
 official Go runtime packages. `--check` verifies source hashes and the exact
 set and bytes of generated files, without changing the checkout. Executables
@@ -83,7 +87,8 @@ The manual **Update schemas** GitHub Actions workflow takes the same exact
 revision, regenerates and checks the result, then commits and pushes changes
 to `main`. It does not create version tags; publish a chosen version after
 reviewing the update. CI verifies regeneration, compilation, and vet checks
-with pinned tools.
+with pinned tools. A separate CI job compiles and tests all packages with
+Go 1.23.0 to check the supported runtime minimum.
 
 ## Rights notice
 

@@ -21,6 +21,7 @@ REPOSITORY = "https://github.com/v3rt3p/quasar-protos"
 GO_IMPORT = "github.com/skrashevich/quasar-go-genproto/proto"
 PROTOC_VERSION = "libprotoc 36.1"
 PLUGIN_VERSION = "protoc-gen-go v1.36.12"
+PLUGIN_BUILD_GO = "go1.27.0"
 LEGACY_PATH = "alice/cuttlefish/library/speechkit_proto/client_ws.proto"
 LEGACY_REVISION = "1044fbdfcd0c2d6d8a26681e31186d13fbb5aef6"
 
@@ -131,6 +132,7 @@ def update_source(revision, source_dir, temporary):
         "revision": revision,
         "protoc": PROTOC_VERSION,
         "protoc_gen_go": PLUGIN_VERSION,
+        "protoc_gen_go_build_go": PLUGIN_BUILD_GO,
         "root_directories": list(ROOT_DIRS),
         "legacy_overrides": {
             LEGACY_PATH: {
@@ -153,6 +155,8 @@ def read_snapshot():
         raise ValueError("root packages changed; refresh the snapshot with --revision")
     if manifest["protoc"] != PROTOC_VERSION or manifest["protoc_gen_go"] != PLUGIN_VERSION:
         raise ValueError("snapshot tool versions differ from the generator")
+    if manifest["protoc_gen_go_build_go"] != PLUGIN_BUILD_GO:
+        raise ValueError("snapshot generator build Go version differs from the generator")
     if manifest["legacy_overrides"][LEGACY_PATH]["revision"] != LEGACY_REVISION:
         raise ValueError("legacy schema revision differs from the generator")
     schemas = {path.relative_to(SNAPSHOT).as_posix(): path.read_bytes() for path in sorted(SNAPSHOT.rglob("*.proto"))}
@@ -179,6 +183,16 @@ def executable(name, expected):
 def generate(schemas, temporary, protoc_name, plugin_name):
     protoc = executable(protoc_name, PROTOC_VERSION)
     plugin = executable(plugin_name, PLUGIN_VERSION)
+    # protoc-gen-go uses its build toolchain's go/format. Matching the plugin
+    # module version alone does not guarantee identical generated whitespace.
+    build_info = run(["go", "version", "-m", str(plugin)]).decode().splitlines()[0]
+    build_go = build_info.rsplit(": ", 1)[-1]
+    if build_go != PLUGIN_BUILD_GO:
+        raise ValueError(
+            f"{plugin}: expected a plugin built with {PLUGIN_BUILD_GO}, found {build_go}; "
+            f"reinstall with GOTOOLCHAIN={PLUGIN_BUILD_GO} go install "
+            "google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.12"
+        )
     includes = protoc.parent.parent / "include"
     if not (includes / "google/protobuf/descriptor.proto").is_file():
         raise ValueError(f"missing protoc well-known includes in {includes}; install the complete protoc distribution")

@@ -3,7 +3,8 @@
 These files are unmodified source bytes from
 [v3rt3p/quasar-protos](https://github.com/v3rt3p/quasar-protos).
 `manifest.json` records the exact Git revision, per-file SHA-256 hashes, root
-packages, tool versions, and the retained legacy schema revision.
+packages, tool versions (including the generator's Go build toolchain), and
+the retained legacy schema revision.
 `LICENSE.upstream` reproduces the upstream rights notice verbatim.
 
 The snapshot is the transitive import closure of selected packages used by
