@@ -25,40 +25,6 @@ PLUGIN_BUILD_GO = "go1.27.0"
 LEGACY_PATH = "alice/cuttlefish/library/speechkit_proto/client_ws.proto"
 LEGACY_REVISION = "1044fbdfcd0c2d6d8a26681e31186d13fbb5aef6"
 
-# Packages used by Bridge, its tests, and the Kuyase control helper. Include all
-# schemas in each package, then follow imports rather than compiling the full
-# upstream tree (which also contains unrelated reconstructed definitions).
-ROOT_DIRS = (
-    "alice/cuttlefish/library/speechkit_proto",
-    "alice/library/client/protos",
-    "alice/megamind/protos/common",
-    "alice/megamind/protos/common/subscription_state",
-    "alice/protos/api/alicekit/common/device_state",
-    "alice/protos/api/alicekit/common/environment_state",
-    "alice/protos/api/alicekit/directives",
-    "alice/protos/api/alicekit/events/alice_request",
-    "alice/protos/api/alicekit/events/alice_response",
-    "alice/protos/api/alicekit/events/asr_result",
-    "alice/protos/api/alicekit/events/asr_result/common",
-    "alice/protos/api/alicekit/events/cancel_request",
-    "alice/protos/api/alicekit/events/capability_update_state",
-    "alice/protos/api/alicekit/events/common/event_header",
-    "alice/protos/api/alicekit/events/continue_request",
-    "alice/protos/api/alicekit/events/input_start_ack",
-    "alice/protos/api/alicekit/events/stream_control",
-    "alice/protos/api/alicekit/events/tts_generate",
-    "alice/protos/api/alicekit/events/tts_speak",
-    "alice/protos/api/alicekit/protocol/client",
-    "alice/protos/api/alicekit/protocol/server",
-    "alice/protos/api/alicekit/streaming",
-    "alice/protos/data/channel",
-    "alice/protos/endpoint",
-    "alice/protos/endpoint/capabilities/alice_pro",
-    "alice/protos/endpoint/capabilities/audio_file_player",
-    "alice/protos/endpoint/capabilities/brick",
-)
-IMPORT = re.compile(rb'^\s*import\s+(?:public\s+|weak\s+)?"([^"]+)"', re.MULTILINE)
-
 
 def run(command):
     return subprocess.check_output(command)
@@ -85,28 +51,6 @@ def read_revision(source, revision):
         }
 
 
-def closure(schemas):
-    selected = set()
-    for directory in ROOT_DIRS:
-        roots = {name for name in schemas if str(pathlib.PurePosixPath(name).parent) == directory}
-        if not roots:
-            raise ValueError(f"no schemas found for required package {directory}")
-        selected.update(roots)
-    pending = list(selected)
-    while pending:
-        name = pending.pop()
-        for raw_import in IMPORT.findall(schemas[name]):
-            imported = raw_import.decode("utf-8")
-            if imported.startswith("google/protobuf/"):
-                continue
-            if imported not in schemas:
-                raise ValueError(f"{name}: missing imported schema {imported}")
-            if imported not in selected:
-                selected.add(imported)
-                pending.append(imported)
-    return {name: schemas[name] for name in sorted(selected)}
-
-
 def update_source(revision, source_dir, temporary):
     require_revision(revision)
     source = source_dir
@@ -123,7 +67,10 @@ def update_source(revision, source_dir, temporary):
     # The legacy websocket envelope was deleted upstream. Keep its exact final
     # known source rather than retaining an otherwise stale generated module.
     upstream[LEGACY_PATH] = legacy[LEGACY_PATH]
-    schemas = closure({name: data for name, data in upstream.items() if name.endswith(".proto")})
+    schemas = {
+        name: upstream[name] for name in sorted(upstream)
+        if name.endswith(".proto") and not name.startswith("google/protobuf/")
+    }
     license_bytes = upstream["LICENSE"]
     if legacy["LICENSE"] != license_bytes:
         raise ValueError("legacy and current upstream licenses differ; review before updating")
@@ -133,7 +80,7 @@ def update_source(revision, source_dir, temporary):
         "protoc": PROTOC_VERSION,
         "protoc_gen_go": PLUGIN_VERSION,
         "protoc_gen_go_build_go": PLUGIN_BUILD_GO,
-        "root_directories": list(ROOT_DIRS),
+        "scope": "all_non_google_protobuf_schemas",
         "legacy_overrides": {
             LEGACY_PATH: {
                 "revision": LEGACY_REVISION,
@@ -151,8 +98,8 @@ def read_snapshot():
     require_revision(manifest["revision"])
     if manifest["repository"] != REPOSITORY:
         raise ValueError("snapshot repository differs from the generator")
-    if manifest["root_directories"] != list(ROOT_DIRS):
-        raise ValueError("root packages changed; refresh the snapshot with --revision")
+    if manifest.get("scope") != "all_non_google_protobuf_schemas":
+        raise ValueError("schema scope changed; refresh the snapshot with --revision")
     if manifest["protoc"] != PROTOC_VERSION or manifest["protoc_gen_go"] != PLUGIN_VERSION:
         raise ValueError("snapshot tool versions differ from the generator")
     if manifest["protoc_gen_go_build_go"] != PLUGIN_BUILD_GO:
@@ -162,8 +109,6 @@ def read_snapshot():
     schemas = {path.relative_to(SNAPSHOT).as_posix(): path.read_bytes() for path in sorted(SNAPSHOT.rglob("*.proto"))}
     if {name: sha256(data) for name, data in schemas.items()} != manifest["files"]:
         raise ValueError("snapshot schema files or hashes differ from manifest.json")
-    if set(closure(schemas)) != set(schemas):
-        raise ValueError("snapshot contains schemas outside the required import closure")
     license_bytes = (SNAPSHOT / "LICENSE.upstream").read_bytes()
     if sha256(license_bytes) != manifest["license_sha256"]:
         raise ValueError("snapshot license hash differs from manifest.json")
@@ -178,6 +123,13 @@ def executable(name, expected):
     if actual != expected:
         raise ValueError(f"{name}: expected {expected}, found {actual}")
     return pathlib.Path(path).resolve()
+
+
+def go_directory(name):
+    path = pathlib.PurePosixPath(name)
+    # Reconstructed directories group unrelated protobuf namespaces. A package
+    # per schema avoids Go import cycles between their synthetic directories.
+    return path.with_suffix("") if name.startswith("reconstructed/") else path.parent
 
 
 def generate(schemas, temporary, protoc_name, plugin_name):
@@ -206,10 +158,10 @@ def generate(schemas, temporary, protoc_name, plugin_name):
         path.write_bytes(data)
     command = [
         str(protoc), f"--proto_path={source}", f"--proto_path={includes}",
-        f"--plugin=protoc-gen-go={plugin}", f"--go_out={generated}", "--go_opt=paths=source_relative",
+        f"--plugin=protoc-gen-go={plugin}", f"--go_out={generated}", f"--go_opt=module={GO_IMPORT}",
     ]
     command.extend(
-        f"--go_opt=M{name}={GO_IMPORT}/{pathlib.PurePosixPath(name).parent}"
+        f"--go_opt=M{name}={pathlib.PurePosixPath(GO_IMPORT) / go_directory(name)}"
         for name in schemas
     )
     # An argument file avoids platform command-line length limits. Every path
@@ -217,7 +169,14 @@ def generate(schemas, temporary, protoc_name, plugin_name):
     arguments = temporary / "protoc.args"
     arguments.write_text("\n".join(command[1:] + list(schemas)) + "\n")
     subprocess.run([str(protoc), "@" + str(arguments)], check=True)
-    return {path.relative_to(generated).as_posix(): path.read_bytes() for path in generated.rglob("*.pb.go")}
+    bindings = {path.relative_to(generated).as_posix(): path.read_bytes() for path in generated.rglob("*.pb.go")}
+    expected = {
+        (go_directory(name) / (pathlib.PurePosixPath(name).stem + ".pb.go")).as_posix()
+        for name in schemas
+    }
+    if set(bindings) != expected:
+        raise ValueError("generated output does not cover the schema snapshot")
+    return bindings
 
 
 def sync(directory, files, pattern):

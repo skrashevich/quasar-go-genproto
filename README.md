@@ -1,16 +1,17 @@
 # Quasar Go protobuf bindings
 
-Go bindings for the Quasar schemas used by
-[Quasar Bridge](https://github.com/skrashevich/quasar-bridge), generated from
-[v3rt3p/quasar-protos](https://github.com/v3rt3p/quasar-protos).
+This module provides Go bindings for all Quasar protobuf schemas in
+[v3rt3p/quasar-protos](https://github.com/v3rt3p/quasar-protos), including
+those used by [Quasar Bridge](https://github.com/skrashevich/quasar-bridge).
+At upstream commit
+[`14217ab44835dc0b107ae27c710b27cb9329e1d2`](https://github.com/v3rt3p/quasar-protos/commit/14217ab44835dc0b107ae27c710b27cb9329e1d2)
+the snapshot covers 860 upstream schemas and one retained legacy schema.
+Standard `google/protobuf/` imports use protoc's includes and the official
+Go protobuf packages.
 
-The initial snapshot was imported from upstream commit
-[`14217ab44835dc0b107ae27c710b27cb9329e1d2`](https://github.com/v3rt3p/quasar-protos/commit/14217ab44835dc0b107ae27c710b27cb9329e1d2).
-It included 230 schemas across the packages Bridge uses and their transitive
-imports. This repository maintains a selected subset of upstream. The current
-revision, source file list, per-file SHA-256 hashes, root packages, and tool
-versions are recorded in [`schemas/manifest.json`](schemas/manifest.json).
-Source bytes are under `schemas/`; generated Go packages are under `proto/`.
+The upstream revision, source paths, per-file SHA-256 hashes, and tool versions
+are recorded in [`schemas/manifest.json`](schemas/manifest.json). Source bytes
+are under `schemas/` and generated Go packages are under `proto/`.
 
 The legacy SpeechKit websocket envelope,
 `alice/cuttlefish/library/speechkit_proto/client_ws.proto`, was deleted upstream
@@ -29,11 +30,16 @@ chosen:
 go get github.com/skrashevich/quasar-go-genproto@VERSION
 ```
 
-Import the generated packages using the original schema directory layout:
+Import generated packages using the original schema directory layout. For example:
 
 ```go
 import client "github.com/skrashevich/quasar-go-genproto/proto/alice/protos/api/alicekit/protocol/client"
 ```
+
+Top-level schemas share the module's `proto` package. Under `reconstructed/`,
+each schema has its own Go package at the schema path without the `.proto`
+suffix. For example, `reconstructed/alice/protos/data/memory.proto` maps to
+`github.com/skrashevich/quasar-go-genproto/proto/reconstructed/alice/protos/data/memory`.
 
 Normal Go builds use the checked-in bindings and do not need protoc or access
 to the schema repository. The only direct runtime dependency is
@@ -60,9 +66,8 @@ Go 1.27.0. The generator's build toolchain controls its embedded `go/format`,
 so it must be pinned as well to reproduce the output bytes. The script checks
 the plugin's build metadata with `go version -m`. This generation requirement
 does not change the Go 1.23 minimum for using the generated packages.
-Generation is offline and uses source-relative output paths and explicit Go import
-mappings. Google well-known schemas come from protoc's includes and use the
-official Go runtime packages. `--check` verifies source hashes and the exact
+Generation is offline and uses explicit Go import mappings. Google well-known
+schemas come from protoc's includes and use the official Go runtime packages. `--check` verifies source hashes and the exact
 set and bytes of generated files, without changing the checkout. Executables
 can be selected using `--protoc` and `--protoc-gen-go`.
 
@@ -78,10 +83,9 @@ go vet ./...
 ```
 
 The update fetches that commit and the pinned legacy commit, refreshes the
-selected schema snapshot, and regenerates the bindings. Add
+full schema snapshot, and regenerates the bindings. Add
 `--source-dir /path/to/quasar-protos` to read exact commits from a local Git
-clone instead of fetching; uncommitted source changes are ignored. Root
-packages are listed in `scripts/update-protos.py`.
+clone instead of fetching; uncommitted source changes are ignored.
 
 The manual **Update schemas** GitHub Actions workflow takes the same exact
 revision, regenerates and checks the result, then commits and pushes changes
