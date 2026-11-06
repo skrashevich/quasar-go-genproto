@@ -158,6 +158,11 @@ def generate(schemas, temporary, protoc_name, plugin_name):
         path.write_bytes(data)
     from google.protobuf import descriptor_pb2
 
+    baseline = temporary / "freequasar.pb"
+    subprocess.run([
+        "sh", str(ROOT / "scripts" / "export-freequasar.sh"),
+        str(temporary / "freequasar"), str(baseline),
+    ], check=True)
     current = temporary / "current.pb"
     merged = temporary / "merged.pb"
     arguments = temporary / "protoc.args"
@@ -168,7 +173,7 @@ def generate(schemas, temporary, protoc_name, plugin_name):
     subprocess.run([str(protoc), "@" + str(arguments)], check=True)
     subprocess.run([
         sys.executable, str(ROOT / "scripts" / "merge-descriptors.py"),
-        str(ROOT / "compatibility" / "freequasar.pb"), str(current), str(merged),
+        str(baseline), str(current), str(merged),
     ], check=True)
     descriptors = descriptor_pb2.FileDescriptorSet.FromString(merged.read_bytes())
     names = [file.name for file in descriptors.file if not file.name.startswith("google/protobuf/")]

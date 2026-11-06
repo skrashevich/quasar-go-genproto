@@ -15,7 +15,7 @@ cd "$temp/client"
 go mod init example.org/compat-client
 go mod edit "-require=$module@v0.0.0" "-replace=$module=$root"
 cp "$root/scripts/testdata/consumer_test.go" .
-cp "$root/compatibility/freequasar.pb" .
+sh "$root/scripts/export-freequasar.sh" "$temp/upstream" "$temp/client/freequasar.pb"
 # Force all original packages into one process so their init functions run.
 go list -mod=mod "$module/proto/..." > packages
 {

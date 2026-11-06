@@ -77,14 +77,17 @@ Go 1.27.0. The generator's build toolchain controls its embedded `go/format`,
 so it must be pinned as well to reproduce the output bytes. The script checks
 the plugin's build metadata with `go version -m`. This generation requirement
 does not change the Go 1.23 minimum for using the generated packages.
-Generation is offline and uses explicit Go import mappings. Google well-known
+Generation fetches the pinned original Go module to export its descriptors and
+uses explicit Go import mappings. Access to GitHub and the Go dependencies is
+required for generation and compatibility checks. Google well-known
 schemas come from protoc's includes and use the official Go runtime packages. `--check` verifies source hashes and the exact
 set and bytes of generated files, without changing the checkout. Executables
 can be selected using `--protoc` and `--protoc-gen-go`.
 
 ## Check the original Go API
 
-The offline compatibility check loads every package in one external client and
+The compatibility check exports descriptors from the pinned original commit,
+loads every package in one external client and
 compares all original descriptors, plus a legacy binary and ProtoJSON envelope.
 CI also compares every exported Go declaration against the pinned original, accounting
 for the module path change:
